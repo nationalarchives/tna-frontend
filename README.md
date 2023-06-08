@@ -108,14 +108,14 @@ C4Context
     Rel(github_application_image, npm_package, "consumes", "GitHub action")
     UpdateRelStyle(github_application_image, npm_package, $offsetX="-50", $offsetY="-10")
     Rel(github_application_image, pypi_package, "consumes", "GitHub action")
-    UpdateRelStyle(github_application_image, pypi_package, $offsetX="80", $offsetY="-10")
+    UpdateRelStyle(github_application_image, pypi_package, $offsetX="-120", $offsetY="-10")
 
     %% Rel(dev, docker, "uses")
     %% Rel(docker, npm_package, "consumes")
     %% Rel(docker, pypi_package, "consumes")
 
     Rel(app, github_application_image, "consumes")
-    UpdateRelStyle(app, github_application_image, $offsetX="255", $offsetY="-130")
+    UpdateRelStyle(app, github_application_image, $offsetX="-70", $offsetY="-10")
 
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="2")
 ```

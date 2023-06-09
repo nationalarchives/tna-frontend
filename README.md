@@ -13,6 +13,8 @@ The source files will be compiled down to a NodeJS package and deployed to [NPM]
 - A single CSS file containing all the styles which can be included with a normal `<style>` element
 - The Nunjucks templates for each component that might be required in other projects such as prototyping tools (other implementations can be made such as [Jinja templates](https://github.com/nationalarchives/tna-frontend-jinja))
 
+There is already a similar solution in [nationalarchives/tdr-components](https://github.com/nationalarchives/tdr-components) which is specific to TDR and extends the GOV.UK components and styles. My intention is to create more generic set of components that are suitable for every TNA service, while still extending the GOV.UK components and styles but with a more TNA-branded look and feel.
+
 ## Component resources
 
 Each component in this repository should contain:

@@ -6,7 +6,7 @@ A collection of components that can be used on TNA projects.
 
 TNA needs a frontend toolkit that is:
 
-- standardised - a single source of truth for all TNA
+- standardised - a single source of truth for all TNA that follows all our coding standards (currently non-existent)
 - version controlled - as well as [semantically versioned](https://semver.org/) with a [changelog](https://keepachangelog.com/en/1.0.0/)
 - open - all source code should be [open and available to anyone](https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open)
 - accessible - all components meet WCAG 2.1 AA standards

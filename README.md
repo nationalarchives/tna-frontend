@@ -21,6 +21,7 @@ It would also be nice to have a toolkit that is:
 
 - extendable - rather than providing a static snapshot of the toolkit, we should always be able to extend it for any given application
 - documentable - not just from a technical perspective but also from a user-centred design perspective with best practices of when and how to use each component (this might be a separate project where we can [share information such as user research](https://www.gov.uk/service-manual/service-standard/point-13-use-common-standards-components-patterns))
+- prototype-able - by using Nunjucks, we could easily create a toolkit that integrated with the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/) which means we could very easily create high fidelity prototypes to test with, ultimately helping with user research
 
 ## Current solutions
 

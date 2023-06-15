@@ -1,4 +1,4 @@
-const glob = require("glob");
+const {glob} = require("glob");
 const fs = require("fs");
 const Diff = require("diff");
 const nunjucks = require("nunjucks");

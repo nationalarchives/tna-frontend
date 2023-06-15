@@ -1,0 +1,49 @@
+{% set containerHtmlElement = params.htmlElement if params.htmlElement else 'div' %}
+{% set containerClasses = [params.classes] if params.classes else [] %}
+{% if params.maxWidth %}
+    {% set containerClasses = containerClasses.concat('container--max') %}
+{% endif %}
+{% if params.noPadding %}
+    {% set containerClasses = containerClasses.concat('container--no-padding') %}
+{% endif %}
+
+<{{ containerHtmlElement }} class="container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+    {% for item in params.columns %}
+        {% set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' %}
+        {% set columnClasses = [item.classes] if item.classes else [] %}
+        {% if item.width %}
+            {% if item.width == 'full' %}
+                {% set columnClasses = columnClasses.concat('column--full') %}
+            {% else %}
+                {% set columnClasses = columnClasses.concat('column--width-' + item.width) %}
+            {% endif %}
+        {% endif %}
+        {% if item.widthMedium %}
+            {% if item.widthMedium == 'full' %}
+                {% set columnClasses = columnClasses.concat('column--full-medium') %}
+            {% else %}
+                {% set columnClasses = columnClasses.concat('column--width-' + item.widthMedium + '-medium') %}
+            {% endif %}
+        {% endif %}
+        {% if item.widthSmall %}
+            {% if item.widthSmall == 'full' %}
+                {% set columnClasses = columnClasses.concat('column--full-small') %}
+            {% else %}
+                {% set columnClasses = columnClasses.concat('column--width-' + item.widthSmall + '-small') %}
+            {% endif %}
+        {% endif %}
+        {% if item.widthTiny %}
+            {% if item.widthTiny == 'full' %}
+                {% set columnClasses = columnClasses.concat('column--full-tiny') %}
+            {% else %}
+                {% set columnClasses = columnClasses.concat('column--width-' + item.widthTiny + '-tiny') %}
+            {% endif %}
+        {% endif %}
+        {% if item.noPadding %}
+            {% set columnClasses = columnClasses.concat('column--noPadding') %}
+        {% endif %}
+        <{{ columnHtmlElement }} class="column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+            {{ item.html | safe }}
+        </{{ columnHtmlElement }}>
+    {% endfor %}
+</{{ containerHtmlElement }}>

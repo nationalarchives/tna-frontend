@@ -24,7 +24,7 @@
     {%- if params.actions -%}
     <div class="tna-card__actions">
     {%- for item in params.actions -%}
-        <a href="{{ item.href }}" class="tna-card__action" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
+        <a href="{{ item.href }}" class="tna-card__action tna-button" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
     {%- endfor -%}
     </div>
     {%- endif -%}

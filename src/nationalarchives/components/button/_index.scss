@@ -1,0 +1,26 @@
+@include nationalarchives-exports("nationalarchives/components/button") {
+  .tna-button {
+    padding: 0.25rem 1rem;
+
+    display: inline-block;
+
+    color: #fff;
+    text-decoration: none;
+
+    background-color: #000;
+
+    &:hover {
+      background-color: #069;
+    }
+  }
+
+  .tna-button--secondary {
+    color: #000;
+
+    background-color: #ff0;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import Header from "./template.njk";
+import Card from "./template.njk";
 import "../../all.scss";
 import "./_card.scss";
 import macroOptions from "./macro-options.json";
@@ -39,7 +39,7 @@ const Template = ({
   classes,
   attributes,
 }) => {
-  return Header({
+  return Card({
     params: {
       supertitle,
       title,
@@ -67,13 +67,9 @@ Standard.args = {
   body: "<p>Card body</p>",
   actions: [
     {
-      text: "Card action 1",
+      text: "Card action",
       href: "#",
-      title: "Go and do the first action",
-    },
-    {
-      text: "Card action 2",
-      href: "#",
+      title: "Go and do the action",
     },
   ],
   htmlElement: "article",

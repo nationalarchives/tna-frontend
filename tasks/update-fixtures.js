@@ -39,7 +39,7 @@ components.forEach((component) => {
 
   fs.writeFile(
     `${componentsDirectory}${component}${componentFixturesFile}`,
-    JSON.stringify(newComponentFixtures, null, 4),
+    `${JSON.stringify(newComponentFixtures, null, 2).trim()}\n`,
     (err) => {
       if (err) throw err;
       console.log(

@@ -1,188 +1,21 @@
 @use "sass:math";
 
-@mixin flexbox-core() {
-  display: -ms-flexbox;
-  display: flex;
-}
+@import "../../variables/all";
+@import "../../utilities/grid";
 
-@mixin flexbox() {
-  @include flexbox-core;
-}
-
-@mixin inline-flexbox() {
-  display: inline-flex;
-}
-
-@mixin flexbox-vertical() {
-  @include flexbox-core;
-  -ms-box-orient: vertical;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-$largest-width: 75.25rem;
-$largest-medium-device: 1024px;
-$largest-small-device: 768px;
-$largest-tiny-device: 480px;
-
-$media-large: "(min-width: #{$largest-medium-device + 1px})";
-$media-lt-large: "(max-width: #{$largest-medium-device})";
-$media-medium: "(min-width: #{$largest-small-device + 1px}) and (max-width: #{$largest-medium-device})";
-$media-gt-mobile: "(min-width: #{$largest-small-device + 1px})";
-$media-mobile: "(max-width: #{$largest-small-device})";
-$media-small: "(min-width: #{$largest-tiny-device + 1px}) and (max-width: #{$largest-small-device})";
-$media-gt-tiny: "(min-width: #{$largest-tiny-device + 1px})";
-$media-tiny: "(max-width: #{$largest-tiny-device})";
-
-$gutter: 2rem;
-$gutter-mobile: 0.75rem;
-$column-count: 12;
-$column-count-medium: 6;
-$column-count-small: 4;
-$column-count-tiny: 2;
-
-@mixin columns-generator($count, $suffix: "") {
-  @for $i from 1 through $count - 1 {
-    $simplestFractionFound: false;
-
-    @for $j from math.div($count, 2) through 1 {
-      @if (
-        $count % $j == 0 and $i % $j == 0 and $simplestFractionFound != true
-      ) {
-        .column--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-          width: math.div(100%, $count) * $i;
-        }
-
-        // .column--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-        //   margin-right: math.div(100%, $count) * $i;
-        // }
-
-        // .column--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-        //   margin-left: math.div(100%, $count) * $i;
-        // }
-
-        $simplestFractionFound: true;
-      }
-    }
-
-    @if ($simplestFractionFound != true) {
-      .column--width-#{$i}-#{$count}#{$suffix} {
-        width: math.div(100%, $count) * $i;
-      }
-
-      //   .column--margin-right-#{$i}-#{$count}#{$suffix} {
-      //     margin-right: math.div(100%, $count) * $i;
-      //   }
-
-      //   .column--margin-left-#{$i}-#{$count}#{$suffix} {
-      //     margin-left: math.div(100%, $count) * $i;
-      //   }
-    }
-  }
-}
-
-@mixin grid-medium {
-  .column--width-full-medium {
-    width: 100%;
-  }
-
-  @for $i from 1 through 3 {
-    .column--flex-#{$i}-medium {
-      flex: $i 0;
-    }
-  }
-
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-medium {
-  //     order: $i;
-  //   }
-  // }
-
-  @include columns-generator($column-count-medium, "-medium");
-}
-
-@mixin grid-mobile {
+@include nationalarchives-exports("nationalarchives/utilities/grid") {
   .container {
-    padding-right: math.div($gutter-mobile, 2);
-    padding-left: math.div($gutter-mobile, 2);
-  }
-
-  .column {
-    padding-right: math.div($gutter-mobile, 2);
-    padding-left: math.div($gutter-mobile, 2);
-  }
-
-  // .column--width-full-mobile {
-  //   width: 100%;
-  // }
-
-  // @for $i from 1 through 3 {
-  //   .column--flex-#{$i}-mobile {
-  //     flex: $i 0;
-  //   }
-  // }
-
-  //   @for $i from 1 through 3 {
-  //     .column--order-#{$i}-mobile {
-  //       order: $i;
-  //     }
-  //   }
-}
-
-@mixin grid-small {
-  .column--width-full-small {
-    width: 100%;
-  }
-
-  @for $i from 1 through 3 {
-    .column--flex-#{$i}-small {
-      flex: $i 0;
-    }
-  }
-
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-small {
-  //     order: $i;
-  //   }
-  // }
-
-  @include columns-generator($column-count-small, "-small");
-}
-
-@mixin grid-tiny {
-  .column--width-full-tiny {
-    width: 100%;
-  }
-
-  @for $i from 1 through 3 {
-    .column--flex-#{$i}-tiny {
-      width: auto;
-
-      flex: $i 0;
-    }
-  }
-
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-tiny {
-  //     order: $i;
-  //   }
-  // }
-
-  @include columns-generator($column-count-tiny, "-tiny");
-}
-
-@include govuk-exports("nationalarchives/utilities/grid") {
-  .container {
-    max-width: $largest-width;
+    max-width: $largest-container-width;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: math.div($gutter, 2);
-    padding-left: math.div($gutter, 2);
+    padding-right: math.div($gutter-width, 2);
+    padding-left: math.div($gutter-width, 2);
 
     box-sizing: border-box;
 
-    @include flexbox;
+    display: -ms-flexbox;
+    display: flex;
     flex-wrap: wrap;
     justify-content: stretch;
     align-items: stretch;
@@ -192,7 +25,7 @@ $column-count-tiny: 2;
     }
 
     &.container--no-padding {
-      max-width: $largest-width - ($gutter * 2);
+      max-width: $largest-container-width - ($gutter-width * 2);
       padding-right: 0;
       padding-left: 0;
 
@@ -204,8 +37,8 @@ $column-count-tiny: 2;
   }
 
   .column {
-    padding-right: math.div($gutter, 2);
-    padding-left: math.div($gutter, 2);
+    padding-right: math.div($gutter-width, 2);
+    padding-left: math.div($gutter-width, 2);
 
     box-sizing: border-box;
 

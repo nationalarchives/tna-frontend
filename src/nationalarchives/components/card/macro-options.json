@@ -1,0 +1,84 @@
+[
+  {
+    "name": "supertitle",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "href",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "image",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "src",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "body",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "actions",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the container."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the container."
+  }
+]

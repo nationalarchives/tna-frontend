@@ -1,0 +1,30 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<div class="tna-card {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+    <hgroup class="tna-card__heading">
+    {%- if params.supertitle -%}
+        <p class="tna-card__supertitle">{{ params.supertitle }}</p>
+    {%- endif -%}
+        <h1 class="tna-card__title">
+        {%- if params.href -%}
+            <a href="{{ params.href }}" class="tna-card__title-link">{{ params.title }}</a>
+        {%- else -%}
+            {{ params.title }}
+        {%- endif -%}
+        </h1>
+    </hgroup>
+    <img src="https://loremflickr.com/640/360" class="tna-card__image" />
+    <div class="tna-card__body">
+    {%- if params.text -%}
+        <p>{{ params.text }}</p>
+    {%- else -%}
+        {{ params.body | safe }}
+    {%- endif -%}
+    </div>
+    {%- if params.actions -%}
+    <div class="tna-card__actions">
+    {%- for item in params.actions -%}
+        <a href="{{ item.href }}" class="tna-card__action" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
+    {%- endfor -%}
+    </div>
+    {%- endif -%}
+</div>

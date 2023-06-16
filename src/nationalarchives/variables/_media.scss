@@ -1,0 +1,12 @@
+$largest-medium-device: 1024px;
+$largest-small-device: 768px;
+$largest-tiny-device: 480px;
+
+$media-large: "(min-width: #{$largest-medium-device + 1px})";
+$media-lt-large: "(max-width: #{$largest-medium-device})";
+$media-medium: "(min-width: #{$largest-small-device + 1px}) and (max-width: #{$largest-medium-device})";
+$media-gt-mobile: "(min-width: #{$largest-small-device + 1px})";
+$media-mobile: "(max-width: #{$largest-small-device})";
+$media-small: "(min-width: #{$largest-tiny-device + 1px}) and (max-width: #{$largest-small-device})";
+$media-gt-tiny: "(min-width: #{$largest-tiny-device + 1px})";
+$media-tiny: "(max-width: #{$largest-tiny-device})";

@@ -1,3 +1,4 @@
+{%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.maxWidth -%}
     {%- set containerClasses = containerClasses.concat('container--max') -%}
@@ -5,8 +6,9 @@
 {%- if params.noPadding -%}
     {%- set containerClasses = containerClasses.concat('container--no-padding') -%}
 {%- endif -%}
-<{{ params.htmlElement if params.htmlElement else 'div' }} class="container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+<{{ htmlElement }} class="container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
 {%- for item in params.columns -%}
+    {%- set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' -%}
     {%- set columnClasses = [item.classes] if item.classes else [] -%}
     {%- if item.width -%}
         {%- set columnClasses = columnClasses.concat('column--full') if item.width == 'full' else ( columnClasses.concat('column--width-' + item.width) ) -%}
@@ -35,8 +37,8 @@
     {%- if item.noPadding -%}
         {%- set columnClasses = columnClasses.concat('column--noPadding') -%}
     {%- endif -%}
-    <{{ item.htmlElement if item.htmlElement else 'div' }} class="column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+    <{{ columnHtmlElement }} class="column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
         {{ item.html | safe }}
-    </{{ item.htmlElement if item.htmlElement else 'div' }}>
+    </{{ columnHtmlElement }}>
 {%- endfor -%}
-</{{ params.htmlElement if params.htmlElement else 'div' }}>
+</{{ htmlElement }}>

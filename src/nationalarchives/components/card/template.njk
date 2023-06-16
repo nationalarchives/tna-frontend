@@ -1,5 +1,6 @@
+{%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<div class="tna-card {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+<{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
     <hgroup class="tna-card__heading">
     {%- if params.supertitle -%}
         <p class="tna-card__supertitle">{{ params.supertitle }}</p>
@@ -27,4 +28,4 @@
     {%- endfor -%}
     </div>
     {%- endif -%}
-</div>
+</{{ htmlElement }}>

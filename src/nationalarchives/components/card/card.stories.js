@@ -9,7 +9,9 @@ const argTypes = {
   href: { control: "text" },
   image: { control: "object" },
   body: { control: "text" },
+  text: { control: "text" },
   actions: { control: "object" },
+  htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "text" },
 };
@@ -31,7 +33,9 @@ const Template = ({
   href,
   image,
   body,
+  text,
   actions,
+  htmlElement,
   classes,
   attributes,
 }) => {
@@ -42,7 +46,9 @@ const Template = ({
       href,
       image,
       body,
+      text,
       actions,
+      htmlElement,
       classes,
       attributes,
     },
@@ -70,5 +76,6 @@ Standard.args = {
       href: "#",
     },
   ],
+  htmlElement: "article",
   classes: "tna-card--demo",
 };

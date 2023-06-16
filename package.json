@@ -5,8 +5,8 @@
   "scripts": {
     "start": "storybook dev -p 6006",
     "build": "storybook build -o storybook",
-    "lint": "prettier --check '{src,.storybook,tasks,bin}/**/*.{js,mjs,scss,json}'",
-    "prettier": "prettier --write '{src,.storybook,tasks,bin}/**/*.{js,mjs,scss,json}'",
+    "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}'",
+    "prettier": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}'",
     "package:sass": "sass --style=compressed --quiet-deps --load-path=node_modules src/nationalarchives/all.scss package/nationalarchives/all.css",
     "package:scripts": "webpack"
   },

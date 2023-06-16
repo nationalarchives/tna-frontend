@@ -1,5 +1,5 @@
 const path = require("path");
-const glob = require('glob');
+const glob = require("glob");
 
 module.exports = {
   entry: {
@@ -8,13 +8,19 @@ module.exports = {
       filename: "all.js",
       library: {
         name: "TNAFrontend",
-        type: "umd"
-      }
+        type: "umd",
+      },
     },
-    ...glob.sync('./src/nationalarchives/components/**/*.mjs').reduce((acc, path) => {
-      acc[path.replace(/^(\.\/)?src\/nationalarchives\//, '').replace('.mjs', '')] = `./${path}`.replace('././', './');
-      return acc;
-    }, {})
+    ...glob
+      .sync("./src/nationalarchives/components/**/*.mjs")
+      .reduce((acc, path) => {
+        acc[
+          path
+            .replace(/^(\.\/)?src\/nationalarchives\//, "")
+            .replace(".mjs", "")
+        ] = `./${path}`.replace("././", "./");
+        return acc;
+      }, {}),
   },
   mode: "production",
   module: {

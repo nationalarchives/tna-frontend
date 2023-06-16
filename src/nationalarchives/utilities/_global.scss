@@ -1,0 +1,39 @@
+.tna-template {
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (prefers-reduced-motion) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+.tna-template__body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #fff;
+
+  overflow: auto;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+
+  display: block;
+}
+
+video,
+canvas {
+  width: 100%;
+}

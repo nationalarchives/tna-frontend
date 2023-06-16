@@ -1,0 +1,17 @@
+// Temporary - will eventually bundle font files into package
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
+
+.tna-template {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  direction: ltr;
+}
+
+.tna-template__body {
+  font-size: 1rem;
+  line-height: 1.6;
+}

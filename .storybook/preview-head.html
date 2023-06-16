@@ -1,0 +1,15 @@
+<script type="module" defer>
+  import { initAll } from "./all.mjs";
+
+  window.addEventListener("onload", function () {
+    initAll();
+  });
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      initAll();
+    },
+    false
+  );
+</script>

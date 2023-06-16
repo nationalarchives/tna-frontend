@@ -1,0 +1,84 @@
+@use "sass:math";
+
+@import "../../variables/all";
+@import "../../utilities/grid";
+
+@include nationalarchives-exports("nationalarchives/utilities/grid") {
+  .container {
+    max-width: $largest-container-width;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: math.div($gutter-width, 2);
+    padding-left: math.div($gutter-width, 2);
+
+    box-sizing: border-box;
+
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
+
+    &.container--max {
+      max-width: none;
+    }
+
+    &.container--no-padding {
+      max-width: $largest-container-width - ($gutter-width * 2);
+      padding-right: 0;
+      padding-left: 0;
+
+      .column {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .column {
+    padding-right: math.div($gutter-width, 2);
+    padding-left: math.div($gutter-width, 2);
+
+    box-sizing: border-box;
+
+    &.column--full {
+      width: 100%;
+    }
+
+    // &.column--no-padding {
+    //   padding-right: 0;
+    //   padding-left: 0;
+    // }
+  }
+
+  @for $i from 1 through 3 {
+    .column--flex-#{$i} {
+      flex: $i 0;
+    }
+  }
+
+  //   @for $i from 1 through 3 {
+  //     .column--order-#{$i} {
+  //       order: $i;
+  //     }
+  //   }
+
+  @include columns-generator($column-count);
+
+  @media #{$media-medium} {
+    @include grid-medium;
+  }
+
+  @media #{$media-mobile} {
+    @include grid-mobile;
+  }
+
+  @media #{$media-small} {
+    @include grid-small;
+  }
+
+  @media #{$media-tiny} {
+    @include grid-tiny;
+  }
+}

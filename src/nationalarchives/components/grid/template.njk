@@ -1,0 +1,44 @@
+{%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.maxWidth -%}
+    {%- set containerClasses = containerClasses.concat('container--max') -%}
+{%- endif -%}
+{%- if params.noPadding -%}
+    {%- set containerClasses = containerClasses.concat('container--no-padding') -%}
+{%- endif -%}
+<{{ htmlElement }} class="container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+{%- for item in params.columns -%}
+    {%- set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' -%}
+    {%- set columnClasses = [item.classes] if item.classes else [] -%}
+    {%- if item.width -%}
+        {%- set columnClasses = columnClasses.concat('column--full') if item.width == 'full' else ( columnClasses.concat('column--width-' + item.width) ) -%}
+    {%- endif -%}
+    {%- if item.widthMedium -%}
+        {%- set columnClasses = columnClasses.concat('column--full-medium') if item.widthMedium == 'full' else ( columnClasses.concat('column--width-' + item.widthMedium + '-medium') ) -%}
+    {%- endif -%}
+    {%- if item.widthSmall -%}
+        {%- set columnClasses = columnClasses.concat('column--full-small') if item.widthSmall == 'full' else ( columnClasses.concat('column--width-' + item.widthSmall + '-small') ) -%}
+    {%- endif -%}
+    {%- if item.widthTiny -%}
+        {%- set columnClasses = columnClasses.concat('column--full-tiny') if item.widthTiny == 'full' else ( columnClasses.concat('column--width-' + item.widthTiny + '-tiny') ) -%}
+    {%- endif -%}
+    {%- if item.flex -%}
+        {%- set columnClasses = columnClasses.concat('column--flex-' + item.flex) -%}
+    {%- endif -%}
+    {%- if item.flexMedium -%}
+        {%- set columnClasses = columnClasses.concat('column--flex-' + item.flexMedium + '-medium') -%}
+    {%- endif -%}
+    {%- if item.flexSmall -%}
+        {%- set columnClasses = columnClasses.concat('column--flex-' + item.flexSmall + '-small') -%}
+    {%- endif -%}
+    {%- if item.flexTiny -%}
+        {%- set columnClasses = columnClasses.concat('column--flex-' + item.flexTiny + '-tiny') -%}
+    {%- endif -%}
+    {%- if item.noPadding -%}
+        {%- set columnClasses = columnClasses.concat('column--noPadding') -%}
+    {%- endif -%}
+    <{{ columnHtmlElement }} class="column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+        {{ item.html | safe }}
+    </{{ columnHtmlElement }}>
+{%- endfor -%}
+</{{ htmlElement }}>

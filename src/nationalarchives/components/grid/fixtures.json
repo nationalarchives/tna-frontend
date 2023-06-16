@@ -1,0 +1,273 @@
+{
+  "component": "grid",
+  "fixtures": [
+    {
+      "name": "container only",
+      "options": {},
+      "html": "<div class=\"container \"></div>",
+      "hidden": false
+    },
+    {
+      "name": "container max width",
+      "options": {
+        "maxWidth": true,
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"container container--max\"><div class=\"column column--full\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "container no padding",
+      "options": {
+        "noPadding": true,
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"container container--no-padding\"><div class=\"column column--full\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "container element",
+      "options": {
+        "htmlElement": "article",
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<article class=\"container \"><div class=\"column column--full\">\n        <p>Full width</p>\n    </div></article>",
+      "hidden": false
+    },
+    {
+      "name": "container classes",
+      "options": {
+        "classes": "container__test-class",
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"container container__test-class\"><div class=\"column column--full\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "container attributes",
+      "options": {
+        "attributes": {
+          "data-testattribute": "foobar"
+        },
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"container \" data-testattribute=\"foobar\"><div class=\"column column--full\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "different columns",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Two thirds</p>",
+            "width": "2-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Two thirds</p>",
+            "width": "2-3"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column column--full\">\n        <p>Full width</p>\n    </div><div class=\"column column--width-1-2\">\n        <p>Half</p>\n    </div><div class=\"column column--width-1-2\">\n        <p>Half</p>\n    </div><div class=\"column column--width-1-3\">\n        <p>Third</p>\n    </div><div class=\"column column--width-1-3\">\n        <p>Third</p>\n    </div><div class=\"column column--width-1-3\">\n        <p>Third</p>\n    </div><div class=\"column column--width-2-3\">\n        <p>Two thirds</p>\n    </div><div class=\"column column--width-1-3\">\n        <p>Third</p>\n    </div><div class=\"column column--width-1-3\">\n        <p>Third</p>\n    </div><div class=\"column column--width-2-3\">\n        <p>Two thirds</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-2\">\n        <p>Half</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-2\">\n        <p>Half</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-4\">\n        <p>Quarter</p>\n    </div><div class=\"column column--width-1-2\">\n        <p>Half</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "column widths",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full",
+            "widthMedium": "full",
+            "widthSmall": "full",
+            "widthTiny": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column column--full column--full-medium column--full-small column--full-tiny\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "responsive column widths",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "1-5",
+            "widthMedium": "1-4",
+            "widthSmall": "1-3",
+            "widthTiny": "1-2"
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column column--width-1-5 column--width-1-4-medium column--width-1-3-small column--width-1-2-tiny\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "flexible column widths",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "flex": "4",
+            "flexMedium": "3",
+            "flexSmall": "2",
+            "flexTiny": "1"
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column column--flex-4 column--flex-3-medium column--flex-2-small column--flex-1-tiny\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "column element",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "element": "section"
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column \">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "column classes",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "classes": "column--test-class"
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column column--test-class\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    },
+    {
+      "name": "column attributes",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "attributes": {
+              "data-testattribute": "foobar"
+            }
+          }
+        ]
+      },
+      "html": "<div class=\"container \"><div class=\"column \" data-testattribute=\"foobar\">\n        <p>Full width</p>\n    </div></div>",
+      "hidden": false
+    }
+  ]
+}

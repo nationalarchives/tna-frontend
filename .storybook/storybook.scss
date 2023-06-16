@@ -1,0 +1,74 @@
+// $govuk-assets-path: "/node_modules/govuk-frontend/govuk/assets/";
+// $nationalarchives-assets-path: "/src/nationalarchives/assets/";
+
+.sb-show-main.sb-main-padded {
+  padding: 30px;
+}
+
+.app-example-page__wrapper {
+  background-color: #fff;
+
+  overflow: auto;
+}
+
+.container--demo {
+  padding-top: 2rem;
+
+  background-color: #bbb;
+
+  .column {
+    min-height: 6rem;
+    margin-bottom: 2rem;
+
+    position: relative;
+
+    background-color: #aaa;
+    background-clip: content-box;
+
+    &::before {
+      padding: 0.5rem;
+
+      position: absolute;
+      right: 1rem;
+      bottom: 0;
+      left: 1rem;
+
+      color: #fff;
+      line-height: 1em;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.75rem;
+
+      background-color: #111;
+
+      content: attr(class);
+    }
+
+    &::after {
+      height: 1.75rem;
+
+      display: block;
+
+      content: "";
+    }
+
+    &:nth-child(odd) {
+      background-color: #eee;
+    }
+    &:nth-child(even) {
+      background-color: #ccc;
+    }
+  }
+
+  &.container--no-padding {
+    .column {
+      &::before {
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.tna-card--demo {
+  max-width: 300px;
+}

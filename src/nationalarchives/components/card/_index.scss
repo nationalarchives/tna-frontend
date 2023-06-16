@@ -1,0 +1,40 @@
+// @import "../../variables/all";
+// @import "../../utilities/grid";
+
+@include nationalarchives-exports("nationalarchives/components/card") {
+  .tna-card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .tna-card__heading {
+    order: 2;
+  }
+
+  .tna-card__supertitle {
+  }
+
+  .tna-card__title {
+  }
+
+  .tna-card__title-link {
+  }
+
+  .tna-card__image {
+    order: 1;
+  }
+
+  .tna-card__body {
+    order: 3;
+  }
+
+  .tna-card__actions {
+    order: 4;
+  }
+
+  .tna-card__action {
+  }
+}

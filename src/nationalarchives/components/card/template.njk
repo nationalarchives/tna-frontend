@@ -13,7 +13,9 @@
         {%- endif -%}
         </h1>
     </hgroup>
-    <img src="https://loremflickr.com/640/360" class="tna-card__image" />
+    {%- if params.image -%}
+    <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" class="tna-card__image" />
+    {%- endif -%}
     <div class="tna-card__body">
     {%- if params.text -%}
         <p>{{ params.text }}</p>

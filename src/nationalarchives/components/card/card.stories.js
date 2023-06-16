@@ -62,7 +62,7 @@ Standard.args = {
   href: "#",
   image: {
     src: "https://loremflickr.com/640/360",
-    alt: "",
+    alt: "A placeholder image",
   },
   body: "<p>Card body</p>",
   actions: [

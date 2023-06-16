@@ -32,7 +32,7 @@
       {
         "name": "alt",
         "type": "string",
-        "required": false,
+        "required": true,
         "description": ""
       }
     ]

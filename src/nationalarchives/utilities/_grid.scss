@@ -8,7 +8,7 @@
       @if (
         $count % $j == 0 and $i % $j == 0 and $simplestFractionFound != true
       ) {
-        .column--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+        .tna-column--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
           width: math.div(100%, $count) * $i;
         }
 
@@ -25,7 +25,7 @@
     }
 
     @if ($simplestFractionFound != true) {
-      .column--width-#{$i}-#{$count}#{$suffix} {
+      .tna-column--width-#{$i}-#{$count}#{$suffix} {
         width: math.div(100%, $count) * $i;
       }
 
@@ -41,12 +41,12 @@
 }
 
 @mixin grid-medium {
-  .column--width-full-medium {
+  .tna-column--width-full-medium {
     width: 100%;
   }
 
   @for $i from 1 through 3 {
-    .column--flex-#{$i}-medium {
+    .tna-column--flex-#{$i}-medium {
       flex: $i 0;
     }
   }
@@ -61,12 +61,12 @@
 }
 
 @mixin grid-mobile {
-  .container {
+  .tna-container {
     padding-right: math.div($gutter-width-mobile, 2);
     padding-left: math.div($gutter-width-mobile, 2);
   }
 
-  .column {
+  .tna-column {
     padding-right: math.div($gutter-width-mobile, 2);
     padding-left: math.div($gutter-width-mobile, 2);
   }
@@ -89,12 +89,12 @@
 }
 
 @mixin grid-small {
-  .column--width-full-small {
+  .tna-column--width-full-small {
     width: 100%;
   }
 
   @for $i from 1 through 3 {
-    .column--flex-#{$i}-small {
+    .tna-column--flex-#{$i}-small {
       flex: $i 0;
     }
   }
@@ -109,12 +109,12 @@
 }
 
 @mixin grid-tiny {
-  .column--width-full-tiny {
+  .tna-column--width-full-tiny {
     width: 100%;
   }
 
   @for $i from 1 through 3 {
-    .column--flex-#{$i}-tiny {
+    .tna-column--flex-#{$i}-tiny {
       width: auto;
 
       flex: $i 0;

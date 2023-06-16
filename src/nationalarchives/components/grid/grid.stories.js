@@ -45,7 +45,7 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  classes: "container--demo",
+  classes: "tna-container--demo",
   columns: [
     {
       html: "<p>Full width</p>",
@@ -139,6 +139,42 @@ Standard.args = {
       html: "<p>Half</p>",
       width: "1-2",
     },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
+    {
+      html: "<p>Half</p>",
+      width: "1-2",
+    },
+    {
+      html: "<p>Third</p>",
+      width: "1-3",
+    },
+    {
+      html: "<p>Sixth</p>",
+      width: "1-6",
+    },
   ],
 };
 
@@ -151,6 +187,6 @@ const responsiveColumn = {
   widthTiny: "full",
 };
 Responsive.args = {
-  classes: "container--demo",
+  classes: "tna-container--demo",
   columns: Array(12).fill({ ...responsiveColumn }),
 };

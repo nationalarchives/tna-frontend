@@ -11,12 +11,12 @@
   overflow: auto;
 }
 
-.container--demo {
+.tna-container--demo {
   padding-top: 2rem;
 
   background-color: #bbb;
 
-  .column {
+  .tna-column {
     min-height: 6rem;
     margin-bottom: 2rem;
 
@@ -59,8 +59,8 @@
     }
   }
 
-  &.container--no-padding {
-    .column {
+  &.tna-container--no-padding {
+    .tna-column {
       &::before {
         right: 0;
         left: 0;

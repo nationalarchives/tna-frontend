@@ -1,4 +1,29 @@
 {
   "component": "card",
-  "fixtures": []
+  "fixtures": [
+    {
+      "name": "TEMP TEST",
+      "options": {
+        "supertitle": "Card supertitle",
+        "title": "Card title",
+        "href": "#",
+        "image": {
+          "src": "https://loremflickr.com/640/360",
+          "alt": "A placeholder image"
+        },
+        "body": "<p>Card body</p>",
+        "actions": [
+          {
+            "text": "Card action",
+            "href": "#",
+            "title": "Go and do the action"
+          }
+        ],
+        "htmlElement": "article",
+        "classes": "tna-card--demo"
+      },
+      "html": "<article class=\"tna-card tna-card--demo\">\n    <hgroup class=\"tna-card__heading tna-hgroup\"><p class=\"tna-card__supertitle tna-hgroup__supertitle\">Card supertitle</p><h1 class=\"tna-card__title tna-hgroup__title\"><a href=\"#\" class=\"tna-card__title-link\">Card title</a></h1>\n    </hgroup><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" class=\"tna-card__image\" /><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action tna-button\"title=\"Go and do the action\">Card action</a></div></article>",
+      "hidden": false
+    }
+  ]
 }

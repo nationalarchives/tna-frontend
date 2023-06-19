@@ -1,0 +1,58 @@
+[
+  {
+    "name": "image",
+    "type": "object",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "src",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "width",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "string",
+        "required": true,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "warning",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "action",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the card."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the card."
+  }
+]

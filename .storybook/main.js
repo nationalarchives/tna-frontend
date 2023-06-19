@@ -2,7 +2,7 @@ const path = require("path");
 const webpackConfig = require("../webpack.config");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx)"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

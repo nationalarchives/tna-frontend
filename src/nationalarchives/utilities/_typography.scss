@@ -15,3 +15,68 @@
   font-size: 1rem;
   line-height: 1.6;
 }
+
+.tna-heading {
+}
+
+.tna-heading--xl {
+  font-size: 4rem;
+}
+
+.tna-heading--l {
+  font-size: 2rem;
+}
+
+.tna-heading--m {
+  font-size: 1.3rem;
+}
+
+.tna-heading--s {
+  font-size: 1.125rem;
+}
+
+.tna-hgroup {
+}
+
+.tna-hgroup--xl {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 4rem;
+  }
+}
+
+.tna-hgroup--l {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 2rem;
+  }
+}
+
+.tna-hgroup--m {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 1.3rem;
+  }
+}
+
+.tna-hgroup--s {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 1.125rem;
+  }
+}
+
+.tna-hgroup__supertitle {
+  text-transform: uppercase;
+}
+
+.tna-hgroup__title {
+}

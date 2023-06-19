@@ -1,0 +1,22 @@
+import { Meta, Primary, Controls, Story, Canvas, Typeset } from "@storybook/blocks";
+import * as HeadingStories from './headings.stories';
+import * as HeadingGroupStories from './heading-groups.stories';
+import * as TypographyStories from './typography.stories';
+
+<Meta of={TypographyStories} />
+
+# Typography
+
+We use a set of typefaces...
+
+<Story of={HeadingStories.Heading1} />
+<Story of={HeadingStories.Heading2} />
+<Story of={HeadingStories.Heading3} />
+<Story of={HeadingGroupStories.HeadingGroup} />
+<Story of={TypographyStories.BodyFont} />
+
+<Canvas of={HeadingStories.Heading1} />
+<Canvas of={HeadingStories.Heading2} />
+<Canvas of={HeadingStories.Heading3} />
+<Canvas of={HeadingGroupStories.HeadingGroup} />
+<Canvas of={TypographyStories.BodyFont} />

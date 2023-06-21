@@ -97,4 +97,10 @@
       font-size: 1.125rem;
     }
   }
+
+  a {
+    &:hover {
+      text-decoration-thickness: 3px;
+    }
+  }
 }

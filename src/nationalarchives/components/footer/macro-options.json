@@ -34,6 +34,18 @@
             "type": "string",
             "required": false,
             "description": ""
+          },
+          {
+            "name": "image",
+            "type": "string",
+            "required": false,
+            "description": ""
+          },
+          {
+            "name": "imageSrc",
+            "type": "string",
+            "required": false,
+            "description": ""
           }
         ]
       }

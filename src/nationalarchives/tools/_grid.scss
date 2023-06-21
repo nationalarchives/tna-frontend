@@ -10,6 +10,7 @@
       ) {
         .tna-column--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
           width: math.div(100%, $count) * $i;
+          flex: none;
         }
 
         // .column--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
@@ -27,6 +28,7 @@
     @if ($simplestFractionFound != true) {
       .tna-column--width-#{$i}-#{$count}#{$suffix} {
         width: math.div(100%, $count) * $i;
+        flex: none;
       }
 
       //   .column--margin-right-#{$i}-#{$count}#{$suffix} {
@@ -41,8 +43,9 @@
 }
 
 @mixin grid-medium {
-  .tna-column--width-full-medium {
+  .tna-column--full-medium {
     width: 100%;
+    flex: none;
   }
 
   @for $i from 1 through 3 {
@@ -89,8 +92,9 @@
 }
 
 @mixin grid-small {
-  .tna-column--width-full-small {
+  .tna-column--full-small {
     width: 100%;
+    flex: none;
   }
 
   @for $i from 1 through 3 {
@@ -109,8 +113,9 @@
 }
 
 @mixin grid-tiny {
-  .tna-column--width-full-tiny {
+  .tna-column--full-tiny {
     width: 100%;
+    flex: none;
   }
 
   @for $i from 1 through 3 {

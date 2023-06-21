@@ -43,6 +43,10 @@
 
   .tna-footer__social {
     padding-bottom: 4rem;
+
+    &.tna-container {
+      align-items: flex-end;
+    }
   }
 
   .tna-footer__social-item {
@@ -50,6 +54,17 @@
   }
 
   .tna-footer__social-item-link {
+    display: block;
+  }
+
+  .tna-footer__social-item-link-image {
+    display: block;
+  }
+
+  .tna-footer__licence {
+    &.tna-container {
+      align-items: center;
+    }
   }
 
   .tna-footer__licence-logo {

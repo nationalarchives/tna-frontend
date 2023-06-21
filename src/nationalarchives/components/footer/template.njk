@@ -3,7 +3,7 @@
     {%- if params.navigation -%}
     <div class="tna-container tna-footer__navigation">
     {%- for group in params.navigation -%}
-        <div class="tna-column tna-column--flex-1 tna-footer__navigation-group">
+        <div class="tna-column tna-column--flex-1 tna-column--width-1-2-small tna-column--full-tiny tna-footer__navigation-group">
             <h4 class="tna-footer__navigation-group-title">{{ group.title }}</h4>
             <ul class="tna-footer__navigation-group-items">
             {%- for item in group.items -%}
@@ -20,16 +20,27 @@
     <div class="tna-container tna-footer__social">
     {%- for item in params.social -%}
         <div class="tna-column tna-column--flex-1 tna-footer__social-item">
-            <a href="{{ item.href }}" class="tna-footer__social-item-link tna-footer__link" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
+            <a href="{{ item.href }}" class="tna-footer__social-item-link tna-footer__link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
+            {%- if item.image -%}
+                <span class="tna-footer__social-item-link-image">
+                    {{ item.image | safe }}
+                </span>
+            {%- elif item.imageSrc -%}
+                <span class="tna-footer__social-item-link-image">
+                    <image src="{{ item.imageSrc }}" alt="" />
+                </span>
+            {%- endif -%}
+                {{ item.text }}
+            </a>
         </div>
     {%- endfor -%}
     </div>
     {%- endif -%}
-    <div class="tna-container">
+    <div class="tna-container tna-footer__licence">
         <div class="tna-column">
             <svg aria-hidden="true" focusable="false" class="tna-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
-          <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
-        </svg>
+                <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
+            </svg>
         </div>
         <div class="tna-column tna-column--flex-1">
             <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" class="tna-footer__link">Open Government Licence v3.0</a>, except where otherwise stated</p>

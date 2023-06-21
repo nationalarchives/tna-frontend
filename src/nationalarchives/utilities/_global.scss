@@ -40,4 +40,8 @@
   canvas {
     width: 100%;
   }
+
+  *:focus {
+    outline: 3px #f0a solid;
+  }
 }

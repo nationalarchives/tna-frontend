@@ -24,10 +24,6 @@ module.exports = {
             from: "./src/nationalarchives",
             to: "./",
           },
-          {
-            from: "./node_modules/govuk-frontend",
-            to: "./node_modules/govuk-frontend",
-          },
         ],
       })
     );
@@ -39,9 +35,6 @@ module.exports = {
         use: [
           {
             loader: "simple-nunjucks-loader",
-            options: {
-              searchPaths: ["node_modules/govuk-frontend"],
-            },
           },
         ],
       },

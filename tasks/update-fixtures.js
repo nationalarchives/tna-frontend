@@ -20,17 +20,13 @@ const components = globSync(
 components.forEach((component) => {
   const componentFixtures = require(`../${componentsDirectory}${component}${componentFixturesFile}`);
   const componentNunjucks = require(`../${componentsDirectory}${component}/template.njk`);
-  const componentNunjucksAliased = componentNunjucks.replace(
-    '{% include "govuk/',
-    '{% include "node_modules/govuk-frontend/govuk/'
-  );
 
   const newComponentFixtures = {
     ...componentFixtures,
     fixtures: [...componentFixtures.fixtures].map((fixture) => ({
       ...fixture,
       html: nunjucks
-        .renderString(componentNunjucksAliased, {
+        .renderString(componentNunjucks, {
           params: fixture.options,
         })
         .trim(),

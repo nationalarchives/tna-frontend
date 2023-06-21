@@ -1,9 +1,6 @@
-name: Deploy
+name: CI
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   test:
@@ -39,22 +36,3 @@ jobs:
         run: ./bin/build-release.sh
       - name: Test package
         run: node tasks/test-package.js || exit 1
-  
-  build-and-deploy:
-    needs:
-      - test
-      - package
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: storybook

@@ -1,6 +1,6 @@
 {
   "name": "@nationalarchives/frontend",
-  "version": "0.1.3-prerelease",
+  "version": "0.1.4-prerelease",
   "description": "The National Archives frontend styles",
   "scripts": {
     "start": "storybook dev -p 6006",
@@ -8,7 +8,7 @@
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}'",
     "test": "node tasks/test-fixtures.js",
     "prettier": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}'",
-    "package:sass": "sass --style=compressed --quiet-deps --load-path=node_modules src/nationalarchives/all.scss package/nationalarchives/all.css",
+    "package:sass": "sass --style=compressed --quiet-deps src/nationalarchives/all.scss package/nationalarchives/all.css",
     "package:scripts": "webpack"
   },
   "repository": {

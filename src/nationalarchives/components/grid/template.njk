@@ -6,7 +6,7 @@
 {%- if params.noPadding -%}
     {%- set containerClasses = containerClasses.concat('tna-container--no-padding') -%}
 {%- endif -%}
-<{{ htmlElement }} class="tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+<{{ htmlElement }} class="tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 {%- for item in params.columns -%}
     {%- set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' -%}
     {%- set columnClasses = [item.classes] if item.classes else [] -%}

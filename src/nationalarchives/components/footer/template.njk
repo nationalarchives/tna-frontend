@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<footer class="tna-footer {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+<footer class="tna-footer {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
     {%- if params.navigation -%}
     <div class="tna-container tna-footer__navigation">
     {%- for group in params.navigation -%}

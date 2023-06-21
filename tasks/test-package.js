@@ -10,7 +10,6 @@ const componentJavascriptFiles = (component) => [
 ];
 
 const componentFiles = (component, excludeJavaScript = false) => [
-  `nationalarchives/components/${component}`,
   `nationalarchives/components/${component}/_${component}.scss`,
   `nationalarchives/components/${component}/_index.scss`,
   `nationalarchives/components/${component}/fixtures.json`,
@@ -22,14 +21,11 @@ const componentFiles = (component, excludeJavaScript = false) => [
 
 const packageDirectory = "package";
 const checkExists = [
-  "",
   // Root files
   "package.json",
   "govuk-prototype-kit.config.json",
   "README.md",
-  "nationalarchives",
   "nationalarchives/_base.scss",
-  "nationalarchives/_prototype-kit.scss",
   "nationalarchives/all.css",
   "nationalarchives/all.css.map",
   "nationalarchives/all.js",
@@ -37,7 +33,6 @@ const checkExists = [
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
   // Assets
-  "nationalarchives/assets",
   "nationalarchives/assets/images/apple-touch-icon-152x152.png",
   "nationalarchives/assets/images/apple-touch-icon-167x167.png",
   "nationalarchives/assets/images/apple-touch-icon-180x180.png",
@@ -50,24 +45,20 @@ const checkExists = [
   "nationalarchives/assets/images/tna-square-logo-inverted.svg",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
-  "nationalarchives/components",
   ...componentFiles("button", true),
   ...componentFiles("card", true),
   ...componentFiles("footer", true),
   ...componentFiles("grid", true),
   ...componentFiles("sensitive-image"),
   // Tools
-  "nationalarchives/tools",
   "nationalarchives/tools/_all.scss",
   "nationalarchives/tools/_exports.scss",
   "nationalarchives/tools/_grid.scss",
   // Utilities
-  "nationalarchives/utilities",
   "nationalarchives/utilities/_all.scss",
   "nationalarchives/utilities/_global.scss",
   "nationalarchives/utilities/_typography.scss",
   // Variables
-  "nationalarchives/variables",
   "nationalarchives/variables/_all.scss",
   "nationalarchives/variables/_grid.scss",
   "nationalarchives/variables/_media.scss",

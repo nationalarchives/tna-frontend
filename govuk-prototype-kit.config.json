@@ -9,6 +9,6 @@
     "/nationalarchives/assets"
   ],
   "sass": [
-    "/nationalarchives/_prototype-kit.scss"
+    "/nationalarchives/all.scss"
   ]
 }

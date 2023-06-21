@@ -19,7 +19,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Utilities/Grid",
+  title: "Components/Grid",
   argTypes,
 };
 

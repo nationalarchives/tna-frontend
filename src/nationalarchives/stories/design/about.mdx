@@ -1,0 +1,25 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design/Prototyping" />
+
+# Prototyping with the styles
+
+The National Archives frontend styles include support for the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/).
+
+You can use the components and styles within the prototype kit to make rich HTML prototypes.
+
+## Create a new prototype
+
+1. Create an empty directory `mkdir my-new-prototype`
+1. Use `npx govuk-prototype-kit create` to create a new prototype project
+1. Install the frontend styles with `npm install @nationalarchives/frontend`
+1. Run `npm run dev` to start up the prototype kit
+1. Use the National Archives components!
+
+```Nunjucks
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+{{ tnaButton({
+  text: "I am a button",
+  url: "#"
+}) }}
+```

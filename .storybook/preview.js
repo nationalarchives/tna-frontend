@@ -7,9 +7,4 @@ export const parameters = {
   actions: {
     disable: true,
   },
-  parameters: {
-    options: {
-      order: ["Development", "Global styles", "Utilies", "Components"],
-    },
-  },
 };

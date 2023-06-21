@@ -3,7 +3,7 @@ const argTypes = {
 };
 
 export default {
-  title: "Global styles/Typography",
+  title: "Utilities/Typography",
   argTypes,
 };
 

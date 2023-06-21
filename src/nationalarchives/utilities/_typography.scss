@@ -1,82 +1,100 @@
-// Temporary - will eventually bundle font files into package
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
+@import "../base";
 
-.tna-template {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: none;
-  direction: ltr;
-}
+@include nationalarchives-exports("nationalarchives/utilities/typography") {
+  // Temporary - will eventually bundle font files into package
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
 
-.tna-template__body {
-  font-size: 1rem;
-  line-height: 1.6;
-}
+  .tna-template {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: none;
+    direction: ltr;
 
-.tna-heading {
-}
-
-.tna-heading--xl {
-  font-size: 4rem;
-}
-
-.tna-heading--l {
-  font-size: 2rem;
-}
-
-.tna-heading--m {
-  font-size: 1.3rem;
-}
-
-.tna-heading--s {
-  font-size: 1.125rem;
-}
-
-.tna-hgroup {
-}
-
-.tna-hgroup--xl {
-  .tna-hgroup__supertitle {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    li {
+      color: inherit;
+      font-family: inherit;
+    }
   }
 
-  .tna-hgroup__title {
+  .tna-template__body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .tna-heading {
+  }
+
+  .tna-heading--xl {
     font-size: 4rem;
   }
-}
 
-.tna-hgroup--l {
-  .tna-hgroup__supertitle {
-  }
-
-  .tna-hgroup__title {
+  .tna-heading--l {
     font-size: 2rem;
   }
-}
 
-.tna-hgroup--m {
-  .tna-hgroup__supertitle {
-  }
-
-  .tna-hgroup__title {
+  .tna-heading--m {
     font-size: 1.3rem;
   }
-}
 
-.tna-hgroup--s {
+  .tna-heading--s {
+    font-size: 1.125rem;
+  }
+
+  .tna-hgroup {
+  }
+
   .tna-hgroup__supertitle {
+    text-transform: uppercase;
   }
 
   .tna-hgroup__title {
-    font-size: 1.125rem;
   }
-}
 
-.tna-hgroup__supertitle {
-  text-transform: uppercase;
-}
+  .tna-hgroup--xl {
+    .tna-hgroup__supertitle {
+    }
 
-.tna-hgroup__title {
+    .tna-hgroup__title {
+      font-size: 4rem;
+    }
+  }
+
+  .tna-hgroup--l {
+    .tna-hgroup__supertitle {
+    }
+
+    .tna-hgroup__title {
+      font-size: 2rem;
+    }
+  }
+
+  .tna-hgroup--m {
+    .tna-hgroup__supertitle {
+    }
+
+    .tna-hgroup__title {
+      font-size: 1.3rem;
+    }
+  }
+
+  .tna-hgroup--s {
+    .tna-hgroup__supertitle {
+    }
+
+    .tna-hgroup__title {
+      font-size: 1.125rem;
+    }
+  }
 }

@@ -1,12 +1,12 @@
-$largest-medium-device: 1024px;
-$largest-small-device: 768px;
-$largest-tiny-device: 480px;
+$largest-medium-device: 1024px !default;
+$largest-small-device: 768px !default;
+$largest-tiny-device: 480px !default;
 
-$media-large: "(min-width: #{$largest-medium-device + 1px})";
-$media-lt-large: "(max-width: #{$largest-medium-device})";
-$media-medium: "(min-width: #{$largest-small-device + 1px}) and (max-width: #{$largest-medium-device})";
-$media-gt-mobile: "(min-width: #{$largest-small-device + 1px})";
-$media-mobile: "(max-width: #{$largest-small-device})";
-$media-small: "(min-width: #{$largest-tiny-device + 1px}) and (max-width: #{$largest-small-device})";
-$media-gt-tiny: "(min-width: #{$largest-tiny-device + 1px})";
-$media-tiny: "(max-width: #{$largest-tiny-device})";
+$media-large: "(min-width: #{$largest-medium-device + 1px})" !default;
+$media-lt-large: "(max-width: #{$largest-medium-device})" !default;
+$media-medium: "(min-width: #{$largest-small-device + 1px}) and (max-width: #{$largest-medium-device})" !default;
+$media-gt-mobile: "(min-width: #{$largest-small-device + 1px})" !default;
+$media-mobile: "(max-width: #{$largest-small-device})" !default;
+$media-small: "(min-width: #{$largest-tiny-device + 1px}) and (max-width: #{$largest-small-device})" !default;
+$media-gt-tiny: "(min-width: #{$largest-tiny-device + 1px})" !default;
+$media-tiny: "(max-width: #{$largest-tiny-device})" !default;

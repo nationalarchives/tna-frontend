@@ -1,7 +1,16 @@
-import { Meta, Primary, Controls, Story } from "@storybook/blocks";
+import { Meta } from "@storybook/blocks";
 
 <Meta title="Development/Publishing" />
 
 # Publishing a new version
 
-[Technical details]
+1. Update `version` in `package.json` using [SemVer](https://semver.org/)
+1. Update the CHANGELOG
+1. Run `nvm use` to ensure the correct Node version is used
+1. Run `npm install` to update the `package-lock.json`
+1. Merge all changes to `main` via a pull request
+1. Tag the version with `git tag v1.0.0` (ensure leading `v` and change version number as necessary)
+1. Push the new tag with `git push origin --tags`
+1. Create a [new release on GitHub](https://github.com/nationalarchives/tna-frontend/releases/new) using the tag you just created
+
+Once a release is created, the [publish pipeline](https://github.com/nationalarchives/tna-frontend/blob/main/.github/workflows/npm-publish.yml) will be triggered.

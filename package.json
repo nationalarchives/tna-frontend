@@ -6,6 +6,7 @@
     "start": "storybook dev -p 6006",
     "build": "storybook build -o storybook",
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}'",
+    "test": "node tasks/test-fixtures.js",
     "prettier": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}'",
     "package:sass": "sass --style=compressed --quiet-deps --load-path=node_modules src/nationalarchives/all.scss package/nationalarchives/all.css",
     "package:scripts": "webpack"

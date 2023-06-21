@@ -1,4 +1,56 @@
 {
   "component": "button",
-  "fixtures": []
+  "fixtures": [
+    {
+      "name": "plain button",
+      "options": {
+        "text": "Log in",
+        "href": "#"
+      },
+      "html": "<a href=\"#\" class=\"tna-button \">\n    Log in\n</a>",
+      "hidden": false
+    },
+    {
+      "name": "with title",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "title": "Log in to the service"
+      },
+      "html": "<a href=\"#\" class=\"tna-button \" title=\"Log in to the service\">\n    Log in\n</a>",
+      "hidden": false
+    },
+    {
+      "name": "secondary",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "secondary": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--secondary\">\n    Log in\n</a>",
+      "hidden": false
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "classes": "button__test-class"
+      },
+      "html": "<a href=\"#\" class=\"tna-button button__test-class\">\n    Log in\n</a>",
+      "hidden": false
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<a href=\"#\" class=\"tna-button \" data-testattribute=\"foobar\">\n    Log in\n</a>",
+      "hidden": false
+    }
+  ]
 }

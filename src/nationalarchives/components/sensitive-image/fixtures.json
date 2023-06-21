@@ -1,4 +1,54 @@
 {
-  "component": "card",
-  "fixtures": []
+  "component": "sensitive image",
+  "fixtures": [
+    {
+      "name": "minimal",
+      "options": {
+        "image": {
+          "src": "https://picsum.photos/id/237/800/600",
+          "alt": "A placeholder image",
+          "width": 800,
+          "height": 600
+        },
+        "warning": "This is a gory photo",
+        "action": "Show me the gory photo"
+      },
+      "html": "<div class=\"tna-sensitive-image \" data-module=\"tna-sensitive-image\" style=\"--sensitive-image: url('https://picsum.photos/id/237/800/600'); --sensitive-image-width: 800; --sensitive-image-height: 600\">\n    <p class=\"tna-sensitive-image__warning\">This is a gory photo</p>\n    <details class=\"tna-sensitive-image__details\">\n        <summary class=\"tna-sensitive-image__show\" data-action=\"Show me the gory photo\">Show me the gory photo</summary>\n        <div class=\"tna-sensitive-image__container\">\n            <img src=\"https://picsum.photos/id/237/800/600\" alt=\"A placeholder image\" class=\"tna-sensitive-image__image\" />\n        </div>\n    </details>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "image": {
+          "src": "https://picsum.photos/id/237/800/600",
+          "alt": "A placeholder image",
+          "width": 800,
+          "height": 600
+        },
+        "warning": "This is a gory photo",
+        "action": "Show me the gory photo",
+        "classes": "sensitive-image__test-class"
+      },
+      "html": "<div class=\"tna-sensitive-image sensitive-image__test-class\" data-module=\"tna-sensitive-image\" style=\"--sensitive-image: url('https://picsum.photos/id/237/800/600'); --sensitive-image-width: 800; --sensitive-image-height: 600\">\n    <p class=\"tna-sensitive-image__warning\">This is a gory photo</p>\n    <details class=\"tna-sensitive-image__details\">\n        <summary class=\"tna-sensitive-image__show\" data-action=\"Show me the gory photo\">Show me the gory photo</summary>\n        <div class=\"tna-sensitive-image__container\">\n            <img src=\"https://picsum.photos/id/237/800/600\" alt=\"A placeholder image\" class=\"tna-sensitive-image__image\" />\n        </div>\n    </details>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "image": {
+          "src": "https://picsum.photos/id/237/800/600",
+          "alt": "A placeholder image",
+          "width": 800,
+          "height": 600
+        },
+        "warning": "This is a gory photo",
+        "action": "Show me the gory photo",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-sensitive-image \" data-module=\"tna-sensitive-image\" style=\"--sensitive-image: url('https://picsum.photos/id/237/800/600'); --sensitive-image-width: 800; --sensitive-image-height: 600\" data-testattribute=\"foobar\">\n    <p class=\"tna-sensitive-image__warning\">This is a gory photo</p>\n    <details class=\"tna-sensitive-image__details\">\n        <summary class=\"tna-sensitive-image__show\" data-action=\"Show me the gory photo\">Show me the gory photo</summary>\n        <div class=\"tna-sensitive-image__container\">\n            <img src=\"https://picsum.photos/id/237/800/600\" alt=\"A placeholder image\" class=\"tna-sensitive-image__image\" />\n        </div>\n    </details>\n</div>",
+      "hidden": false
+    }
+  ]
 }

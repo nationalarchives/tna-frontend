@@ -1,7 +1,7 @@
 @use "sass:math";
 
 @import "../../variables/all";
-@import "../../utilities/grid";
+@import "../../tools/grid";
 
 @include nationalarchives-exports("nationalarchives/utilities/grid") {
   .tna-container {

@@ -30,6 +30,17 @@ npm start
 npx sb upgrade
 ```
 
+### Release
+
+```sh
+# Update version in package.json
+npm install
+# Commit and push to main
+git tag v0.1.0
+git push origin --tags
+# Create a new release on GitHub: https://github.com/nationalarchives/tna-frontend/releases/new
+```
+
 ## Needs
 
 TNA needs a frontend toolkit that is:

@@ -60,11 +60,11 @@ const checkExists = [
   "nationalarchives/tools",
   "nationalarchives/tools/_all.scss",
   "nationalarchives/tools/_exports.scss",
+  "nationalarchives/tools/_grid.scss",
   // Utilities
   "nationalarchives/utilities",
   "nationalarchives/utilities/_all.scss",
   "nationalarchives/utilities/_global.scss",
-  "nationalarchives/utilities/_grid.scss",
   "nationalarchives/utilities/_typography.scss",
   // Variables
   "nationalarchives/variables",

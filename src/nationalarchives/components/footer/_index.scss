@@ -1,92 +1,87 @@
-// @import "../../variables/all";
-// @import "../../utilities/grid";
+.tna-footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
-@include nationalarchives-exports("nationalarchives/components/footer") {
-  .tna-footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  color: #fff;
 
-    color: #fff;
+  background-color: #26262a;
+}
 
-    background-color: #26262a;
+.tna-footer__link {
+  color: inherit;
+
+  &:hover {
+    color: #f0a;
   }
+}
 
-  .tna-footer__link {
-    color: inherit;
+.tna-footer__navigation {
+  padding-bottom: 3rem;
+}
 
-    &:hover {
-      color: #f0a;
-    }
+.tna-footer__navigation-group {
+}
+
+.tna-footer__navigation-group-title {
+}
+
+.tna-footer__navigation-group-items {
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.tna-footer__navigation-group-item {
+}
+
+.tna-footer__navigation-group-item-link {
+}
+
+.tna-footer__social {
+  padding-bottom: 4rem;
+
+  &.tna-container {
+    align-items: flex-end;
   }
+}
 
-  .tna-footer__navigation {
-    padding-bottom: 3rem;
+.tna-footer__social-item {
+  text-align: center;
+}
+
+.tna-footer__social-item-link {
+  display: block;
+}
+
+.tna-footer__social-item-link-image {
+  display: block;
+}
+
+.tna-footer__licence {
+  &.tna-container {
+    align-items: center;
   }
+}
 
-  .tna-footer__navigation-group {
+.tna-footer__licence-logo {
+  display: block;
+}
+
+.tna-footer__govuk-link {
+  display: inline-block;
+
+  color: inherit;
+  fill: #fff;
+
+  &:hover {
+    color: #f0a;
+    fill: #f0a;
   }
+}
 
-  .tna-footer__navigation-group-title {
-  }
+.tna-footer__govuk-logotype-crown {
+  margin: 0 auto;
+  display: block;
 
-  .tna-footer__navigation-group-items {
-    padding-left: 0;
-
-    list-style: none;
-  }
-
-  .tna-footer__navigation-group-item {
-  }
-
-  .tna-footer__navigation-group-item-link {
-  }
-
-  .tna-footer__social {
-    padding-bottom: 4rem;
-
-    &.tna-container {
-      align-items: flex-end;
-    }
-  }
-
-  .tna-footer__social-item {
-    text-align: center;
-  }
-
-  .tna-footer__social-item-link {
-    display: block;
-  }
-
-  .tna-footer__social-item-link-image {
-    display: block;
-  }
-
-  .tna-footer__licence {
-    &.tna-container {
-      align-items: center;
-    }
-  }
-
-  .tna-footer__licence-logo {
-    display: block;
-  }
-
-  .tna-footer__govuk-link {
-    display: inline-block;
-
-    color: inherit;
-    fill: #fff;
-
-    &:hover {
-      color: #f0a;
-      fill: #f0a;
-    }
-  }
-
-  .tna-footer__govuk-logotype-crown {
-    margin: 0 auto;
-    display: block;
-
-    fill: inherit;
-  }
+  fill: inherit;
 }

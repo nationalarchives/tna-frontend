@@ -1,4 +1,5 @@
-@import "../variables/all";
+@use "sass:math";
+@use "../variables/grid";
 
 @mixin columns-generator($count, $suffix: "") {
   @for $i from 1 through $count - 1 {
@@ -40,97 +41,4 @@
       //   }
     }
   }
-}
-
-@mixin grid-medium {
-  .tna-column--full-medium {
-    width: 100%;
-    flex: none;
-  }
-
-  @for $i from 1 through 3 {
-    .tna-column--flex-#{$i}-medium {
-      flex: $i 0;
-    }
-  }
-
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-medium {
-  //     order: $i;
-  //   }
-  // }
-
-  @include columns-generator($column-count-medium, "-medium");
-}
-
-@mixin grid-mobile {
-  .tna-container {
-    padding-right: math.div($gutter-width-mobile, 2) + 0.75rem;
-    padding-left: math.div($gutter-width-mobile, 2) + 0.75rem;
-  }
-
-  .tna-column {
-    padding-right: math.div($gutter-width-mobile, 2);
-    padding-left: math.div($gutter-width-mobile, 2);
-  }
-
-  // .column--width-full-mobile {
-  //   width: 100%;
-  // }
-
-  // @for $i from 1 through 3 {
-  //   .column--flex-#{$i}-mobile {
-  //     flex: $i 0;
-  //   }
-  // }
-
-  //   @for $i from 1 through 3 {
-  //     .column--order-#{$i}-mobile {
-  //       order: $i;
-  //     }
-  //   }
-}
-
-@mixin grid-small {
-  .tna-column--full-small {
-    width: 100%;
-    flex: none;
-  }
-
-  @for $i from 1 through 3 {
-    .tna-column--flex-#{$i}-small {
-      flex: $i 0;
-    }
-  }
-
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-small {
-  //     order: $i;
-  //   }
-  // }
-
-  @include columns-generator($column-count-small, "-small");
-}
-
-@mixin grid-tiny {
-  .tna-column--full-tiny {
-    width: 100%;
-    flex: none;
-  }
-
-  @for $i from 1 through 3 {
-    .tna-column--flex-#{$i}-tiny {
-      width: auto;
-
-      flex: $i 0;
-    }
-  }
-
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-tiny {
-  //     order: $i;
-  //   }
-  // }
-
-  @include columns-generator($column-count-tiny, "-tiny");
 }

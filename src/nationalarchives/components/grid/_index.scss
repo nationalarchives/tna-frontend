@@ -1,84 +1,159 @@
 @use "sass:math";
+@use "../../variables/grid";
+@use "../../variables/media";
+@use "../../tools/grid" as tools;
 
-@import "../../variables/all";
-@import "../../tools/grid";
+.tna-container {
+  max-width: grid.$largest-container-width;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: math.div(grid.$gutter-width, 2);
+  padding-left: math.div(grid.$gutter-width, 2);
 
-@include nationalarchives-exports("nationalarchives/utilities/grid") {
-  .tna-container {
-    max-width: $largest-container-width;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: math.div($gutter-width, 2);
-    padding-left: math.div($gutter-width, 2);
+  box-sizing: border-box;
 
-    box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
 
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch;
-    align-items: stretch;
-
-    &.tna-container--max {
-      max-width: none;
-    }
-
-    &.tna-container--no-padding {
-      max-width: $largest-container-width - ($gutter-width * 2);
-      padding-right: 0;
-      padding-left: 0;
-
-      .tna-column {
-        padding-right: 0;
-        padding-left: 0;
-      }
-    }
+  &.tna-container--max {
+    max-width: none;
   }
 
-  .tna-column {
-    padding-right: math.div($gutter-width, 2);
-    padding-left: math.div($gutter-width, 2);
+  &.tna-container--no-padding {
+    max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
+    padding-right: 0;
+    padding-left: 0;
 
-    box-sizing: border-box;
-
-    &.tna-column--full {
-      width: 100%;
+    .tna-column {
+      padding-right: 0;
+      padding-left: 0;
     }
+  }
+}
 
-    // &.column--no-padding {
-    //   padding-right: 0;
-    //   padding-left: 0;
-    // }
+.tna-column {
+  padding-right: math.div(grid.$gutter-width, 2);
+  padding-left: math.div(grid.$gutter-width, 2);
+
+  box-sizing: border-box;
+
+  &.tna-column--full {
+    width: 100%;
+  }
+
+  // &.column--no-padding {
+  //   padding-right: 0;
+  //   padding-left: 0;
+  // }
+}
+
+@for $i from 1 through 3 {
+  .tna-column--flex-#{$i} {
+    flex: $i 0;
+  }
+}
+
+//   @for $i from 1 through 3 {
+//     .column--order-#{$i} {
+//       order: $i;
+//     }
+//   }
+
+@include tools.columns-generator(grid.$column-count);
+
+@media #{media.$media-medium} {
+  .tna-column--full-medium {
+    width: 100%;
+    flex: none;
   }
 
   @for $i from 1 through 3 {
-    .tna-column--flex-#{$i} {
+    .tna-column--flex-#{$i}-medium {
       flex: $i 0;
     }
   }
 
+  // @for $i from 1 through 3 {
+  //   .column--order-#{$i}-medium {
+  //     order: $i;
+  //   }
+  // }
+
+  @include tools.columns-generator(grid.$column-count-medium, "-medium");
+}
+
+@media #{media.$media-mobile} {
+  .tna-container {
+    padding-right: math.div(grid.$gutter-width-mobile, 2) + 0.75rem;
+    padding-left: math.div(grid.$gutter-width-mobile, 2) + 0.75rem;
+  }
+
+  .tna-column {
+    padding-right: math.div(grid.$gutter-width-mobile, 2);
+    padding-left: math.div(grid.$gutter-width-mobile, 2);
+  }
+
+  // .column--width-full-mobile {
+  //   width: 100%;
+  // }
+
+  // @for $i from 1 through 3 {
+  //   .column--flex-#{$i}-mobile {
+  //     flex: $i 0;
+  //   }
+  // }
+
   //   @for $i from 1 through 3 {
-  //     .column--order-#{$i} {
+  //     .column--order-#{$i}-mobile {
   //       order: $i;
   //     }
   //   }
+}
 
-  @include columns-generator($column-count);
-
-  @media #{$media-medium} {
-    @include grid-medium;
+@media #{media.$media-small} {
+  .tna-column--full-small {
+    width: 100%;
+    flex: none;
   }
 
-  @media #{$media-mobile} {
-    @include grid-mobile;
+  @for $i from 1 through 3 {
+    .tna-column--flex-#{$i}-small {
+      flex: $i 0;
+    }
   }
 
-  @media #{$media-small} {
-    @include grid-small;
+  // @for $i from 1 through 3 {
+  //   .column--order-#{$i}-small {
+  //     order: $i;
+  //   }
+  // }
+
+  @include tools.columns-generator(grid.$column-count-small, "-small");
+}
+
+@media #{media.$media-tiny} {
+  .tna-column--full-tiny {
+    width: 100%;
+    flex: none;
   }
 
-  @media #{$media-tiny} {
-    @include grid-tiny;
+  @for $i from 1 through 3 {
+    .tna-column--flex-#{$i}-tiny {
+      width: auto;
+
+      flex: $i 0;
+    }
   }
+
+  // @for $i from 1 through 3 {
+  //   .column--order-#{$i}-tiny {
+  //     order: $i;
+  //   }
+  // }
+
+  @include tools.columns-generator(grid.$column-count-tiny, "-tiny");
 }

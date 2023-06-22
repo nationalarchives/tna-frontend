@@ -7,9 +7,8 @@ export default {
   argTypes,
 };
 
-const BodyFontTemplate = ({ text }) => `<p>${text}</p>`;
-
-export const BodyFont = BodyFontTemplate.bind({});
-BodyFont.args = {
+const ParagraphTemplate = ({ text }) => `<p class="tna-p">${text}</p>`;
+export const Paragraph = ParagraphTemplate.bind({});
+Paragraph.args = {
   text: "This is some body text",
 };

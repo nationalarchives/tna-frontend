@@ -1,6 +1,5 @@
 import Header from "./template.njk";
-import "../../all.scss";
-import "./_grid.scss";
+import "./_index.scss";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {

@@ -1,84 +1,80 @@
-@include nationalarchives-exports(
-  "nationalarchives/components/sensitive-image"
-) {
-  .tna-sensitive-image {
-  }
+.tna-sensitive-image {
+}
 
-  .tna-sensitive-image__warning {
-  }
+.tna-sensitive-image__warning {
+}
 
-  .tna-sensitive-image__details {
-    position: relative;
+.tna-sensitive-image__details {
+  position: relative;
 
-    // overflow: hidden;
+  // overflow: hidden;
 
-    &::after {
-      width: 100%;
-      padding-bottom: calc(
-        100% * var(--sensitive-image-height) / var(--sensitive-image-width)
-      );
-
-      display: block;
-
-      position: relative;
-      z-index: -1;
-
-      background-image: var(--sensitive-image);
-      background-clip: padding-box;
-      background-size: contain;
-
-      filter: blur(20px) saturate(0);
-
-      content: "";
-    }
-  }
-
-  .tna-sensitive-image__show {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-
-    font-size: 0;
-
-    cursor: pointer;
-
-    &::after {
-      padding: 0.5rem 2rem;
-
-      font-size: 1rem;
-
-      background-color: #ff0;
-
-      content: attr(data-action);
-    }
-
-    &:hover {
-      &::after {
-        color: #fff;
-
-        background-color: #000;
-      }
-    }
-  }
-
-  .tna-sensitive-image__container {
-  }
-
-  .tna-sensitive-image__image {
+  &::after {
     width: 100%;
+    padding-bottom: calc(
+      100% * var(--sensitive-image-height) / var(--sensitive-image-width)
+    );
+
+    display: block;
+
+    position: relative;
+    z-index: -1;
+
+    background-image: var(--sensitive-image);
+    background-clip: padding-box;
+    background-size: contain;
+
+    filter: blur(20px) saturate(0);
+
+    content: "";
+  }
+}
+
+.tna-sensitive-image__show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  font-size: 0;
+
+  cursor: pointer;
+
+  &::after {
+    padding: 0.5rem 2rem;
+
+    font-size: 1rem;
+
+    background-color: #ff0;
+
+    content: attr(data-action);
   }
 
-  .tna-sensitive-image__details[open] {
-    &::after,
-    .tna-sensitive-image__show {
-      display: none;
+  &:hover {
+    &::after {
+      color: #fff;
+
+      background-color: #000;
     }
+  }
+}
+
+.tna-sensitive-image__container {
+}
+
+.tna-sensitive-image__image {
+  width: 100%;
+}
+
+.tna-sensitive-image__details[open] {
+  &::after,
+  .tna-sensitive-image__show {
+    display: none;
   }
 }

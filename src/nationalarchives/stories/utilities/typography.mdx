@@ -2,6 +2,7 @@ import { Meta, Primary, Controls, Story, Canvas, Typeset } from "@storybook/bloc
 import * as HeadingStories from './headings.stories';
 import * as HeadingGroupStories from './heading-groups.stories';
 import * as TypographyStories from './typography.stories';
+import * as ListStories from './lists.stories';
 
 <Meta of={TypographyStories} />
 
@@ -13,10 +14,20 @@ We use a set of typefaces...
 <Story of={HeadingStories.Heading2} />
 <Story of={HeadingStories.Heading3} />
 <Story of={HeadingGroupStories.HeadingGroup} />
-<Story of={TypographyStories.BodyFont} />
+<Story of={HeadingGroupStories.HeadingGroupSeparated} />
+<Story of={TypographyStories.Paragraph} />
+<Story of={ListStories.UnorderedList} />
+<Story of={ListStories.UnorderedListPlain} />
+<Story of={ListStories.OrderedList} />
+<Story of={ListStories.OrderedListPlain} />
 
 <Canvas of={HeadingStories.Heading1} />
 <Canvas of={HeadingStories.Heading2} />
 <Canvas of={HeadingStories.Heading3} />
 <Canvas of={HeadingGroupStories.HeadingGroup} />
-<Canvas of={TypographyStories.BodyFont} />
+<Canvas of={HeadingGroupStories.HeadingGroupSeparated} />
+<Canvas of={TypographyStories.Paragraph} />
+<Canvas of={ListStories.UnorderedList} />
+<Canvas of={ListStories.UnorderedListPlain} />
+<Canvas of={ListStories.OrderedList} />
+<Canvas of={ListStories.OrderedListPlain} />

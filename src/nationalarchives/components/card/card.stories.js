@@ -1,6 +1,5 @@
 import Card from "./template.njk";
-import "../../all.scss";
-import "./_card.scss";
+import "./_index.scss";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {

@@ -1,4 +1,5 @@
-@import "base";
+@use "tools/all" as tools;
+@use "variables/all" as variables;
 
-@import "utilities/all";
-@import "components/all";
+@use "utilities/all" as utilities;
+@use "components/all" as components;

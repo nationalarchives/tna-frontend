@@ -1,106 +1,192 @@
-@import "../base";
+// Temporary - will eventually bundle font files into package
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
 
-@include nationalarchives-exports("nationalarchives/utilities/typography") {
-  // Temporary - will eventually bundle font files into package
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
+.tna-template {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  direction: ltr;
 
-  .tna-template {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -webkit-text-size-adjust: none;
-    direction: ltr;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    ul,
-    ol,
-    li {
-      color: inherit;
-      font-family: inherit;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li {
+    color: inherit;
+    font-family: inherit;
+    line-height: inherit;
   }
 
-  .tna-template__body {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol {
+    margin: 0 0 2rem;
 
-  .tna-heading {
-  }
-
-  .tna-heading--xl {
-    font-size: 4rem;
-  }
-
-  .tna-heading--l {
-    font-size: 2rem;
-  }
-
-  .tna-heading--m {
-    font-size: 1.3rem;
-  }
-
-  .tna-heading--s {
-    font-size: 1.125rem;
-  }
-
-  .tna-hgroup {
-  }
-
-  .tna-hgroup__supertitle {
-    text-transform: uppercase;
-  }
-
-  .tna-hgroup__title {
-  }
-
-  .tna-hgroup--xl {
-    .tna-hgroup__supertitle {
-    }
-
-    .tna-hgroup__title {
-      font-size: 4rem;
-    }
-  }
-
-  .tna-hgroup--l {
-    .tna-hgroup__supertitle {
-    }
-
-    .tna-hgroup__title {
-      font-size: 2rem;
-    }
-  }
-
-  .tna-hgroup--m {
-    .tna-hgroup__supertitle {
-    }
-
-    .tna-hgroup__title {
-      font-size: 1.3rem;
-    }
-  }
-
-  .tna-hgroup--s {
-    .tna-hgroup__supertitle {
-    }
-
-    .tna-hgroup__title {
-      font-size: 1.125rem;
+    &:first-child {
+      margin-top: 0;
     }
   }
 
   a {
-    &:hover {
-      text-decoration-thickness: 3px;
+    &,
+    &:link {
+      &:hover {
+        text-decoration-thickness: 3px;
+      }
+
+      &:active {
+        text-decoration-thickness: 4px;
+      }
     }
+  }
+}
+
+// $block-text-elements: p, ul, ol;
+// $block-text-elements-selector: "";
+// @each $element in $block-text-elements {
+//   .tna-template #{$element},
+//   .tna-#{$element} {
+//     margin: 0 0 2rem;
+
+//     outline: 1px #f90 solid;
+
+//     &:first-child {
+//       margin-top: 0;
+//     }
+//   }
+// }
+.tna-template p,
+.tna-p,
+.tna-template ul,
+.tna-ul,
+.tna-template ol,
+.tna-ol {
+  // margin: 0 0 2rem;
+
+  // outline: 1px #f90 solid;
+
+  // &:first-child {
+  //   margin-top: 0;
+  // }
+}
+
+// $list-elements: ul, ol;
+// @each $element in $list-elements {
+//   .tna-template #{$element},
+//   .tna-#{$element} {
+//     padding-left: 2rem;
+
+//     &.tna-#{$element}--plain {
+//       padding-left: 0;
+
+//       list-style: none;
+//     }
+//   }
+// }
+.tna-template ul,
+.tna-ul,
+.tna-template ol,
+.tna-ol {
+  padding-left: 2rem;
+}
+
+.tna-template .tna-ul--plain,
+.tna-template .tna-ol--plain {
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.tna-template__body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.tna-heading {
+  margin-bottom: 2rem;
+}
+
+.tna-heading--xl {
+  font-size: 4rem;
+}
+
+.tna-heading--l {
+  font-size: 2rem;
+}
+
+.tna-heading--m {
+  font-size: 1.3rem;
+}
+
+.tna-heading--s {
+  font-size: 1.125rem;
+}
+
+.tna-hgroup {
+}
+
+.tna-hgroup__supertitle {
+  .tna-hgroup & {
+    margin: 0;
+  }
+
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.tna-hgroup__title {
+  .tna-hgroup__supertitle {
+    display: block;
+  }
+}
+
+.tna-hgroup--xl {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 4rem;
+  }
+}
+
+.tna-hgroup--l {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 2rem;
+  }
+}
+
+.tna-hgroup--m {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 1.3rem;
+  }
+}
+
+.tna-hgroup--s {
+  .tna-hgroup__supertitle {
+  }
+
+  .tna-hgroup__title {
+    font-size: 1.125rem;
   }
 }

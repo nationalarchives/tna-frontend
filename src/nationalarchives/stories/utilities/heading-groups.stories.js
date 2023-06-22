@@ -1,6 +1,7 @@
 const argTypes = {
   supertitle: { control: "text" },
   title: { control: "text" },
+  singleSentence: { control: "boolean" },
 };
 
 export default {
@@ -8,10 +9,15 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  supertitle,
-  title,
-}) => `<hgroup class="tna-hgroup tna-hgroup--heading-2">
+const Template = ({ supertitle, title, singleSentence }) =>
+  singleSentence
+    ? `<hgroup class="tna-hgroup tna-hgroup--heading-2">
+  <h2 class="tna-hgroup__title">
+    <span class="tna-hgroup__supertitle">${supertitle}</span>
+    ${title}
+  </h2>
+</hgroup>`
+    : `<hgroup class="tna-hgroup tna-hgroup--heading-2">
   <p class="tna-hgroup__supertitle">${supertitle}</p>
   <h2 class="tna-hgroup__title">${title}</h2>
 </hgroup>`;
@@ -19,5 +25,12 @@ const Template = ({
 export const HeadingGroup = Template.bind({});
 HeadingGroup.args = {
   supertitle: "The story of",
-  title: "This is a title",
+  title: "Alice Hawkins",
+  singleSentence: true,
+};
+
+export const HeadingGroupSeparated = Template.bind({});
+HeadingGroupSeparated.args = {
+  supertitle: "Record revealed",
+  title: "The Monteagle Letter",
 };

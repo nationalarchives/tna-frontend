@@ -1,6 +1,5 @@
 import SensitiveImage from "./template.njk";
-import "../../all.scss";
-import "./_sensitive-image.scss";
+import "./_index.scss";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {

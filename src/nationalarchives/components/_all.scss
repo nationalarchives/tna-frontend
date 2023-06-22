@@ -1,7 +1,5 @@
-@import "../base";
-
-@import "button/index";
-@import "card/index";
-@import "footer/index";
-@import "grid/index";
-@import "sensitive-image/index";
+@use "button/index" as button;
+@use "card/index" as card;
+@use "footer/index" as footer;
+@use "grid/index" as grid;
+@use "sensitive-image/index" as sensitive-image;

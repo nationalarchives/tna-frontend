@@ -46,7 +46,7 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              additionalData: '@import "/.storybook/storybook.scss";',
+              additionalData: '@use "/.storybook/storybook.scss";',
             },
           },
         ],

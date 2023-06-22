@@ -1,3 +1,5 @@
+@use "../variables/typography";
+
 .tna-template {
   min-width: 320px;
   width: 100%;
@@ -6,6 +8,8 @@
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  font-size: typography.$baseFontSizePx;
 
   @media (prefers-reduced-motion) {
     * {

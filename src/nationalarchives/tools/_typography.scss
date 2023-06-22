@@ -1,0 +1,6 @@
+@use "sass:math";
+@use "../variables/typography";
+
+@mixin relativeFontSize($fontSizePx) {
+  font-size: #{math.div($fontSizePx, typography.$baseFontSizePx)}rem;
+}

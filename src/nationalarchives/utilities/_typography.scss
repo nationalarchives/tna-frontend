@@ -1,9 +1,13 @@
+@use "../variables/typography";
+@use "../tools/typography" as tools;
+
 // Temporary - will eventually bundle font files into package
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
+@import url("https://use.typekit.net/hkj3kuz.css");
 
 .tna-template {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-family: typography.$fontFamilyMain;
+  font-weight: typography.$fontWeightMain;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -18,26 +22,11 @@
   h6,
   p,
   ul,
-  ol,
-  li {
-    color: inherit;
-    font-family: inherit;
-    line-height: inherit;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
   ol {
     margin: 0 0 2rem;
 
-    &:first-child {
-      margin-top: 0;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -117,41 +106,45 @@
 }
 
 .tna-template__body {
-  font-size: 1rem;
+  @include tools.relativeFontSize(16);
   line-height: 1.6;
 }
 
 .tna-heading {
   margin-bottom: 2rem;
+
+  font-family: typography.$fontFamilyHeading;
+  font-weight: typography.$fontWeightHeading;
 }
 
 .tna-heading--xl {
-  font-size: 4rem;
+  @include tools.relativeFontSize(64);
 }
 
 .tna-heading--l {
-  font-size: 2rem;
+  @include tools.relativeFontSize(32);
 }
 
 .tna-heading--m {
-  font-size: 1.3rem;
+  @include tools.relativeFontSize(20);
 }
 
 .tna-heading--s {
-  font-size: 1.125rem;
+  @include tools.relativeFontSize(18);
 }
 
 .tna-hgroup {
 }
 
 .tna-hgroup__supertitle {
+  @include tools.relativeFontSize(14);
+  font-family: typography.$fontFamilyDetail;
+  font-weight: typography.$fontWeightDetail;
+  text-transform: uppercase;
+
   .tna-hgroup & {
     margin: 0;
   }
-
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 .tna-hgroup__title {
@@ -165,7 +158,7 @@
   }
 
   .tna-hgroup__title {
-    font-size: 4rem;
+    @include tools.relativeFontSize(64);
   }
 }
 
@@ -174,7 +167,7 @@
   }
 
   .tna-hgroup__title {
-    font-size: 2rem;
+    @include tools.relativeFontSize(32);
   }
 }
 
@@ -183,7 +176,7 @@
   }
 
   .tna-hgroup__title {
-    font-size: 1.3rem;
+    @include tools.relativeFontSize(20);
   }
 }
 
@@ -192,6 +185,6 @@
   }
 
   .tna-hgroup__title {
-    font-size: 1.125rem;
+    @include tools.relativeFontSize(18);
   }
 }

@@ -1,3 +1,5 @@
+@use "../../tools/typography" as typographyTools;
+
 .tna-sensitive-image {
 }
 
@@ -49,8 +51,7 @@
   &::after {
     padding: 0.5rem 2rem;
 
-    font-size: 1rem;
-
+    @include typographyTools.relativeFontSize(16);
     background-color: #ff0;
 
     content: attr(data-action);

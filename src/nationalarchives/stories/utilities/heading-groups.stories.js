@@ -1,6 +1,8 @@
 const argTypes = {
   supertitle: { control: "text" },
   title: { control: "text" },
+  level: { control: "number", min: 1, max: 6, step: 1 },
+  size: { control: "radio", options: ["m", "l", "xl"] },
   singleSentence: { control: "boolean" },
 };
 
@@ -9,17 +11,23 @@ export default {
   argTypes,
 };
 
-const Template = ({ supertitle, title, singleSentence }) =>
+const Template = ({
+  supertitle,
+  title,
+  level = 3,
+  size = "l",
+  singleSentence,
+}) =>
   singleSentence
-    ? `<hgroup class="tna-hgroup tna-hgroup--heading-2">
-  <h2 class="tna-hgroup__title">
+    ? `<hgroup class="tna-hgroup tna-hgroup--${size}">
+  <h${level} class="tna-hgroup__title">
     <span class="tna-hgroup__supertitle">${supertitle}</span>
     ${title}
-  </h2>
+  </h${level}>
 </hgroup>`
-    : `<hgroup class="tna-hgroup tna-hgroup--heading-2">
+    : `<hgroup class="tna-hgroup tna-hgroup--${size}">
   <p class="tna-hgroup__supertitle">${supertitle}</p>
-  <h2 class="tna-hgroup__title">${title}</h2>
+  <h${level} class="tna-hgroup__title">${title}</h${level}>
 </hgroup>`;
 
 export const HeadingGroup = Template.bind({});

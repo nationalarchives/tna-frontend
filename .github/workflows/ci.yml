@@ -17,21 +17,8 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Test
+      - name: Test fixtures
         run: node tasks/test-fixtures.js || exit 1
-
-  package:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: lts/hydrogen
-          cache: npm
-      - name: Install
-        run: npm ci
       - name: Build package
         run: ./bin/build-release.sh
       - name: Test package

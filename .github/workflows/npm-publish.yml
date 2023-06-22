@@ -5,14 +5,6 @@ on:
     types: [created]
 
 jobs:
-  check-version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Check version numbers
-        run: ./bin/validate-version.sh
-
   test:
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +15,9 @@ jobs:
         with:
           node-version: lts/hydrogen
           cache: npm
-      - name: Install
+      - name: Check version numbers
+        run: ./bin/validate-version.sh
+      - name: Install dependencies
         run: npm ci
       - name: Lint
         run: npm run lint
@@ -36,7 +30,6 @@ jobs:
 
   publish-npm:
     needs:
-      - check-version
       - test
     runs-on: ubuntu-latest
     steps:
@@ -47,12 +40,10 @@ jobs:
         with:
           node-version: lts/hydrogen
           registry-url: https://registry.npmjs.org/
-      - name: Install
+      - name: Install dependencies
         run: npm ci
       - name: Build package
         run: ./bin/build-release.sh
-      - name: Test package
-        run: node tasks/test-package.js || exit 1
       - name: Publish to npm
         run: cd package && npm publish
         env:

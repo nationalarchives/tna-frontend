@@ -1,15 +1,41 @@
 [
   {
-    "name": "supertitle",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
-    "name": "title",
-    "type": "string",
+    "name": "heading",
+    "type": "object",
     "required": true,
-    "description": ""
+    "description": "",
+    "params": [
+      {
+        "name": "supertitle",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "level",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "size",
+        "type": "text",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "singleSentence",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    ]
   },
   {
     "name": "href",
@@ -52,7 +78,7 @@
   {
     "name": "actions",
     "type": "array",
-    "required": true,
+    "required": false,
     "description": "",
     "params": [
       {

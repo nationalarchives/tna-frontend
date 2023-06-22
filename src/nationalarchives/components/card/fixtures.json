@@ -2,14 +2,116 @@
   "component": "card",
   "fixtures": [
     {
-      "name": "TEMP TEST",
+      "name": "basic card",
       "options": {
-        "supertitle": "Card supertitle",
-        "title": "Card title",
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with supertitle",
+      "options": {
+        "heading": {
+          "supertitle": "Card supertitle",
+          "title": "Card title",
+          "level": 3
+        },
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><hgroup class=\"tna-card__heading tna-hgroup tna-hgroup--m\">\n            <p class=\"tna-card__supertitle tna-hgroup__supertitle\">Card supertitle</p>\n            <h3 class=\"tna-card__title tna-hgroup__title\">Card title</h3>\n        </hgroup><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with single sentence supertitle",
+      "options": {
+        "heading": {
+          "supertitle": "Card supertitle",
+          "title": "Card title",
+          "level": 3,
+          "singleSentence": true
+        },
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><hgroup class=\"tna-card__heading tna-hgroup tna-hgroup--m\">\n            <h3 class=\"tna-card__title tna-hgroup__title\">\n                <span class=\"tna-card__supertitle tna-hgroup__supertitle\">Card supertitle</span>Card title</h3>\n        </hgroup><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "heading size",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3,
+          "size": "m"
+        },
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "heading level",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 1
+        },
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><h1 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h1><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with link",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
         "href": "#",
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><h3 class=\"tna-card__title tna-heading tna-heading--m\"><a href=\"#\" class=\"tna-card__title-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with text",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
+        "text": "Card body"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with image",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
         "image": {
           "src": "https://loremflickr.com/640/360",
           "alt": "A placeholder image"
+        },
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"https://loremflickr.com/640/360\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" class=\"tna-card__image\" /><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with actions",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
         },
         "body": "<p>Card body</p>",
         "actions": [
@@ -18,11 +120,37 @@
             "href": "#",
             "title": "Go and do the action"
           }
-        ],
-        "htmlElement": "article",
-        "classes": "tna-card--demo"
+        ]
       },
-      "html": "<article class=\"tna-card tna-card--demo\">\n    <hgroup class=\"tna-card__heading tna-hgroup\"><p class=\"tna-card__supertitle tna-hgroup__supertitle\">Card supertitle</p><h1 class=\"tna-card__title tna-hgroup__title\"><a href=\"#\" class=\"tna-card__title-link\">Card title</a></h1>\n    </hgroup><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" class=\"tna-card__image\" /><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action tna-button\"title=\"Go and do the action\">Card action</a></div></article>",
+      "html": "<div class=\"tna-card \" data-cardimage=\"\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action tna-button\"title=\"Go and do the action\">Card action</a></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
+        "body": "<p>Card body</p>",
+        "classes": "card__test-class"
+      },
+      "html": "<div class=\"tna-card card__test-class\" data-cardimage=\"\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
+        "body": "<p>Card body</p>",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-card \" data-cardimage=\"\" data-testattribute=\"foobar\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div>",
       "hidden": false
     }
   ]

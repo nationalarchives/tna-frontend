@@ -102,6 +102,11 @@
 .tna-template ol,
 .tna-ol {
   padding-left: 2rem;
+
+  li::marker {
+    color: #f0a;
+    font-weight: 700;
+  }
 }
 
 .tna-template .tna-ul--plain,

@@ -3,8 +3,7 @@ import "./_index.scss";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  supertitle: { control: "text" },
-  title: { control: "text" },
+  heading: { control: "object" },
   href: { control: "text" },
   image: { control: "object" },
   body: { control: "text" },
@@ -27,8 +26,7 @@ export default {
 };
 
 const Template = ({
-  supertitle,
-  title,
+  heading,
   href,
   image,
   body,
@@ -40,8 +38,7 @@ const Template = ({
 }) => {
   return Card({
     params: {
-      supertitle,
-      title,
+      heading,
       href,
       image,
       body,
@@ -56,8 +53,13 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  supertitle: "Card supertitle",
-  title: "Card title",
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "m",
+    singleSentence: true,
+  },
   href: "#",
   image: {
     src: "https://loremflickr.com/640/360",

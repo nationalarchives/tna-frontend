@@ -1,21 +1,43 @@
+{%- set headingSize = params.heading.size if params.heading.size else "m" -%}
 {%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-    <hgroup class="tna-card__heading tna-hgroup">
-    {%- if params.supertitle -%}
-        <p class="tna-card__supertitle tna-hgroup__supertitle">{{ params.supertitle }}</p>
+<{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" data-cardimage="{{ params.image.src }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- if params.heading.supertitle -%}
+    {%- if params.heading.singleSentence -%}
+        <hgroup class="tna-card__heading tna-hgroup tna-hgroup--{{ headingSize }}">
+            <h{{ params.heading.level }} class="tna-card__title tna-hgroup__title">
+                <span class="tna-card__supertitle tna-hgroup__supertitle">{{ params.heading.supertitle }}</span>
+            {%- if params.href -%}
+                <a href="{{ params.href }}" class="tna-card__title-link">{{ params.heading.title }}</a>
+            {%- else -%}
+                {{ params.heading.title }}
+            {%- endif -%}
+            </h{{ params.heading.level }}>
+        </hgroup>
+    {%- else -%}
+        <hgroup class="tna-card__heading tna-hgroup tna-hgroup--{{ headingSize }}">
+            <p class="tna-card__supertitle tna-hgroup__supertitle">{{ params.heading.supertitle }}</p>
+            <h{{ params.heading.level }} class="tna-card__title tna-hgroup__title">
+            {%- if params.href -%}
+                <a href="{{ params.href }}" class="tna-card__title-link">{{ params.heading.title }}</a>
+            {%- else -%}
+                {{ params.heading.title }}
+            {%- endif -%}
+            </h{{ params.heading.level }}>
+        </hgroup>
     {%- endif -%}
-        <h1 class="tna-card__title tna-hgroup__title">
-        {%- if params.href -%}
-            <a href="{{ params.href }}" class="tna-card__title-link">{{ params.title }}</a>
-        {%- else -%}
-            {{ params.title }}
-        {%- endif -%}
-        </h1>
-    </hgroup>
-    {%- if params.image -%}
+{%- else -%}
+    <h{{ params.heading.level }} class="tna-card__title tna-heading tna-heading--{{ headingSize }}">
+    {%- if params.href -%}
+        <a href="{{ params.href }}" class="tna-card__title-link">{{ params.heading.title }}</a>
+    {%- else -%}
+        {{ params.heading.title }}
+    {%- endif -%}
+    </h{{ params.heading.level }}>
+{%- endif -%}
+{%- if params.image -%}
     <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" class="tna-card__image" />
-    {%- endif -%}
+{%- endif -%}
     <div class="tna-card__body">
     {%- if params.text -%}
         <p>{{ params.text }}</p>
@@ -23,11 +45,11 @@
         {{ params.body | safe }}
     {%- endif -%}
     </div>
-    {%- if params.actions -%}
+{%- if params.actions -%}
     <div class="tna-card__actions">
     {%- for item in params.actions -%}
         <a href="{{ item.href }}" class="tna-card__action tna-button" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
     {%- endfor -%}
     </div>
-    {%- endif -%}
+{%- endif -%}
 </{{ htmlElement }}>

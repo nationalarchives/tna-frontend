@@ -10,7 +10,6 @@ const componentJavascriptFiles = (component) => [
 ];
 
 const componentFiles = (component, excludeJavaScript = false) => [
-  `nationalarchives/components/${component}/_${component}.scss`,
   `nationalarchives/components/${component}/_index.scss`,
   `nationalarchives/components/${component}/fixtures.json`,
   `nationalarchives/components/${component}/macro-options.json`,
@@ -25,7 +24,6 @@ const checkExists = [
   "package.json",
   "govuk-prototype-kit.config.json",
   "README.md",
-  "nationalarchives/_base.scss",
   "nationalarchives/all.css",
   "nationalarchives/all.css.map",
   "nationalarchives/all.js",
@@ -52,7 +50,6 @@ const checkExists = [
   ...componentFiles("sensitive-image"),
   // Tools
   "nationalarchives/tools/_all.scss",
-  "nationalarchives/tools/_exports.scss",
   "nationalarchives/tools/_grid.scss",
   // Utilities
   "nationalarchives/utilities/_all.scss",

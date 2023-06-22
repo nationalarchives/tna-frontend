@@ -102,6 +102,12 @@
     ]
   },
   {
+    "name": "featured",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "htmlElement",
     "type": "string",
     "required": false,

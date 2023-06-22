@@ -9,6 +9,7 @@ const argTypes = {
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
+  featured: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "text" },
@@ -32,6 +33,7 @@ const Template = ({
   body,
   text,
   actions,
+  featured,
   htmlElement,
   classes,
   attributes,
@@ -44,6 +46,7 @@ const Template = ({
       body,
       text,
       actions,
+      featured,
       htmlElement,
       classes,
       attributes,
@@ -73,6 +76,33 @@ Standard.args = {
       title: "Go and do the action",
     },
   ],
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Featured = Template.bind({});
+Featured.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "m",
+    singleSentence: true,
+  },
+  href: "#",
+  image: {
+    src: "https://loremflickr.com/640/360",
+    alt: "A placeholder image",
+  },
+  body: "<p>Card body</p>",
+  actions: [
+    {
+      text: "Card action",
+      href: "#",
+      title: "Go and do the action",
+    },
+  ],
+  featured: true,
   htmlElement: "article",
   classes: "tna-card--demo",
 };

@@ -59,6 +59,9 @@ const checkExists = [
   "nationalarchives/variables/_all.scss",
   "nationalarchives/variables/_grid.scss",
   "nationalarchives/variables/_media.scss",
+  // Templates
+  "nationalarchives/templates/homepage.njk",
+  "nationalarchives/templates/layouts/_generic.njk",
 ];
 
 console.log(`Testing package file structure`);

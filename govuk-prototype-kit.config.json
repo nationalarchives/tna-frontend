@@ -10,5 +10,13 @@
   ],
   "sass": [
     "/nationalarchives/all.scss"
-  ]
+  ],
+  "stylesheets": [
+    "/nationalarchives/all.css"
+  ],
+  "templates": {
+    "name": "National Archives homepage",
+    "path": "/nationalarchives/templates/homepage.njk",
+    "type": "nunjucks"
+  }
 }

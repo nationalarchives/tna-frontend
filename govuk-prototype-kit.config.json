@@ -14,9 +14,16 @@
   "stylesheets": [
     "/nationalarchives/all.css"
   ],
-  "templates": {
-    "name": "National Archives homepage",
-    "path": "/nationalarchives/templates/homepage.njk",
-    "type": "nunjucks"
-  }
+  "templates": [
+    {
+      "name": "Homepage",
+      "path": "/nationalarchives/templates/homepage.njk",
+      "type": "nunjucks"
+    },
+    {
+      "name": "Search results",
+      "path": "/nationalarchives/templates/search-results.njk",
+      "type": "nunjucks"
+    }
+  ]
 }

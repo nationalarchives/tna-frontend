@@ -18,21 +18,15 @@
   flex-wrap: wrap;
   justify-content: stretch;
   align-items: stretch;
+}
 
-  &.tna-container--max {
-    max-width: none;
-  }
+.tna-container--max {
+  max-width: none;
+}
 
-  &.tna-container--no-padding {
-    max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
-    padding-right: 0;
-    padding-left: 0;
-
-    .tna-column {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
+.tna-container--no-padding,
+.tna-container--no-padding-all {
+  max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
 }
 
 .tna-column {
@@ -40,15 +34,28 @@
   padding-left: math.div(grid.$gutter-width, 2);
 
   box-sizing: border-box;
+}
 
-  &.tna-column--full {
-    width: 100%;
-  }
+.tna-column--full {
+  width: 100%;
+}
 
-  // &.column--no-padding {
-  //   padding-right: 0;
-  //   padding-left: 0;
-  // }
+.tna-column--container {
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.tna-container--no-padding,
+.tna-container--no-padding-all,
+.tna-container--no-padding-all > .tna-column,
+.tna-column--no-padding,
+.tna-column--container--no-padding-all,
+.tna-column--container--no-padding-all > .tna-column {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 @for $i from 1 through 3 {

@@ -61,6 +61,7 @@ const checkExists = [
   "nationalarchives/variables/_media.scss",
   // Templates
   "nationalarchives/templates/homepage.njk",
+  "nationalarchives/templates/search-results.njk",
   "nationalarchives/templates/layouts/_generic.njk",
 ];
 

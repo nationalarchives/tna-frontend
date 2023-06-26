@@ -2,6 +2,9 @@
 @use "../../tools/media";
 
 .tna-breadcrumbs {
+}
+
+.tna-breadcrumbs__list {
   padding: 0;
 
   list-style: none;
@@ -26,7 +29,7 @@
   }
 }
 
-.tna-breadcrumbs__item-link {
+.tna-breadcrumbs__link {
   display: inline-block;
 
   color: colour.$base-font-colour;
@@ -41,6 +44,8 @@
     &,
     + .tna-breadcrumbs__item {
       &::before {
+        margin-left: 0;
+
         display: none;
       }
     }
@@ -50,18 +55,13 @@
     }
 
     &:nth-last-child(2) {
-      // outline: 1px #f0a solid;
-
-      &::before {
-        margin-left: 0;
-
-        content: "\2190";
-        // content: "\21E6";
-      }
-
-      .tna-breadcrumbs__item-link {
+      .tna-breadcrumbs__link {
         &::before {
-          content: "\2190";
+          // content: "\2190";
+          // content: "\21E6";
+          // content: "\21FD";
+          // content: "\2794";
+          content: "\2190\00a0"attr(data-prefix);
         }
       }
     }

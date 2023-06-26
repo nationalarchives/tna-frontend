@@ -6,7 +6,7 @@ const argTypes = {
   navigation: { control: "object" },
   social: { control: "object" },
   classes: { control: "text" },
-  attributes: { control: "text" },
+  attributes: { control: "object" },
 };
 
 Object.keys(argTypes).forEach((argType) => {

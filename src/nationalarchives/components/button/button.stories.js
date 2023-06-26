@@ -8,7 +8,7 @@ const argTypes = {
   title: { control: "text" },
   secondary: { control: "boolean" },
   classes: { control: "text" },
-  attributes: { control: "text" },
+  attributes: { control: "object" },
 };
 
 Object.keys(argTypes).forEach((argType) => {

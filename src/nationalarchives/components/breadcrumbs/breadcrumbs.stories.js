@@ -5,7 +5,7 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   items: { control: "object" },
   classes: { control: "text" },
-  attributes: { control: "text" },
+  attributes: { control: "object" },
 };
 
 Object.keys(argTypes).forEach((argType) => {

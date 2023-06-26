@@ -12,7 +12,7 @@ const argTypes = {
   featured: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
-  attributes: { control: "text" },
+  attributes: { control: "object" },
 };
 
 Object.keys(argTypes).forEach((argType) => {

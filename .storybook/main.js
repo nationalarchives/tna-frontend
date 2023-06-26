@@ -9,6 +9,7 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-mdx-gfm",
+    "@storybook/addon-interactions",
   ],
   framework: {
     name: "@storybook/html-webpack5",

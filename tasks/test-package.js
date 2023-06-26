@@ -51,14 +51,18 @@ const checkExists = [
   // Tools
   "nationalarchives/tools/_all.scss",
   "nationalarchives/tools/_grid.scss",
+  "nationalarchives/tools/_media.scss",
+  "nationalarchives/tools/_typography.scss",
   // Utilities
   "nationalarchives/utilities/_all.scss",
   "nationalarchives/utilities/_global.scss",
   "nationalarchives/utilities/_typography.scss",
   // Variables
   "nationalarchives/variables/_all.scss",
+  "nationalarchives/variables/_colour.scss",
   "nationalarchives/variables/_grid.scss",
   "nationalarchives/variables/_media.scss",
+  "nationalarchives/variables/_typography.scss",
   // Templates
   "nationalarchives/templates/homepage.njk",
   "nationalarchives/templates/search-results.njk",

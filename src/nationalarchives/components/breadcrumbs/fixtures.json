@@ -1,0 +1,26 @@
+{
+  "component": "breadcrumbs",
+  "fixtures": [
+    {
+      "name": "plain breadcrumbs",
+      "options": {
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#/alpha"
+          },
+          {
+            "text": "Beta",
+            "href": "#/beta"
+          },
+          {
+            "text": "Gamma",
+            "href": "#/gamma"
+          }
+        ]
+      },
+      "html": "<a href=\"#\" class=\"tna-button \">\n    Log in\n</a>",
+      "hidden": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{%- set breadcrumbClasses = [params.classes] if params.classes else [] -%}
+<ul class="tna-breadcrumbs {{ breadcrumbClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- for item in params.items -%}
+    <li class="tna-breadcrumbs__item">
+        <a href="{{ item.href }}" class="tna-breadcrumbs__item-link" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+            {{ item.text }}
+        </a>
+    </li>
+{%- endfor -%}
+</ul>

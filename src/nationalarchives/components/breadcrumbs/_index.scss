@@ -1,0 +1,36 @@
+@use "../../variables/colour";
+
+.tna-breadcrumbs {
+  padding: 0;
+
+  list-style: none;
+
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tna-breadcrumbs__item {
+  display: -ms-flexbox;
+  display: flex;
+
+  + .tna-breadcrumbs__item {
+    &::before {
+      margin: 0 0.5rem;
+
+      display: inline-block;
+
+      content: "\203A";
+    }
+  }
+}
+
+.tna-breadcrumbs__item-link {
+  display: inline-block;
+
+  color: colour.$base-font-colour;
+
+  &:hover {
+    color: #f0a;
+  }
+}

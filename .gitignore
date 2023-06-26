@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
+__snapshots__
 node_modules
 package
 storybook

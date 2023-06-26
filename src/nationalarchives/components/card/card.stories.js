@@ -65,7 +65,7 @@ Standard.args = {
   },
   href: "#",
   image: {
-    src: "https://loremflickr.com/640/360",
+    src: "https://picsum.photos/id/29/640/360",
     alt: "A placeholder image",
   },
   body: "<p>Card body</p>",
@@ -91,7 +91,7 @@ Featured.args = {
   },
   href: "#",
   image: {
-    src: "https://loremflickr.com/640/360",
+    src: "https://picsum.photos/id/24/640/360",
     alt: "A placeholder image",
   },
   body: "<p>Card body</p>",

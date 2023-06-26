@@ -48,13 +48,12 @@
 }
 
 .tna-card--featured {
-  padding-left: 50%;
-
   position: relative;
 
   background-color: #ff0;
 
   .tna-card__inner {
+    margin-left: 50%;
     padding: 2rem;
   }
 

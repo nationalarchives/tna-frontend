@@ -1,0 +1,62 @@
+@use "../variables/media";
+
+//   0 ============= 480 ===== 768 == 1024 ==========================
+//   |               |         |      |
+//   | TINY          | SMALL   | MED  | LARGE
+//   |               |         |      |
+//   |<------------->|         .      .            onTiny
+//   |<----------------------->|      .            onMobile
+//   |<------------------------------>|            onSmallerThanLarge
+//   .               |<------->|      .            onSmall
+//   .               |<-------------------------   onLargerThanTiny
+//   .               .         |<---->|            onMedium
+//   .               .         |<---------------   onLargerThanMobile
+//   .               .         .      |<--------   onLarge
+
+@mixin onLarge() {
+  @media #{media.$media-large} {
+    @content;
+  }
+}
+
+@mixin onMedium() {
+  @media #{media.$media-medium} {
+    @content;
+  }
+}
+
+@mixin onSmall() {
+  @media #{media.$media-small} {
+    @content;
+  }
+}
+
+@mixin onTiny() {
+  @media #{media.$media-tiny} {
+    @content;
+  }
+}
+
+@mixin onLargerThanMobile() {
+  @media #{media.$media-gt-mobile} {
+    @content;
+  }
+}
+
+@mixin onLargerThanTiny() {
+  @media #{media.$media-gt-tiny} {
+    @content;
+  }
+}
+
+@mixin onSmallerThanLarge() {
+  @media #{media.$media-lt-large} {
+    @content;
+  }
+}
+
+@mixin onMobile() {
+  @media #{media.$media-mobile} {
+    @content;
+  }
+}

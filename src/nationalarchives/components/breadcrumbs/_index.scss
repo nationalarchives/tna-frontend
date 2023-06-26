@@ -1,4 +1,5 @@
 @use "../../variables/colour";
+@use "../../tools/media";
 
 .tna-breadcrumbs {
   padding: 0;
@@ -32,5 +33,37 @@
 
   &:hover {
     color: #f0a;
+  }
+}
+
+@include media.onMobile {
+  .tna-breadcrumbs__item {
+    &,
+    + .tna-breadcrumbs__item {
+      &::before {
+        display: none;
+      }
+    }
+
+    &:not(:nth-last-child(2)) {
+      display: none;
+    }
+
+    &:nth-last-child(2) {
+      // outline: 1px #f0a solid;
+
+      &::before {
+        margin-left: 0;
+
+        content: "\2190";
+        // content: "\21E6";
+      }
+
+      .tna-breadcrumbs__item-link {
+        &::before {
+          content: "\2190";
+        }
+      }
+    }
   }
 }

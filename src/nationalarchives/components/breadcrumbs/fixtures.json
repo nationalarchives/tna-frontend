@@ -19,7 +19,7 @@
           }
         ]
       },
-      "html": "<a href=\"#\" class=\"tna-button \">\n    Log in\n</a>",
+      "html": "<ul class=\"tna-breadcrumbs \"><li class=\"tna-breadcrumbs__item\">\n        <a href=\"#/alpha\" class=\"tna-breadcrumbs__item-link\">\n            Alpha\n        </a>\n    </li><li class=\"tna-breadcrumbs__item\">\n        <a href=\"#/beta\" class=\"tna-breadcrumbs__item-link\">\n            Beta\n        </a>\n    </li><li class=\"tna-breadcrumbs__item\">\n        <a href=\"#/gamma\" class=\"tna-breadcrumbs__item-link\">\n            Gamma\n        </a>\n    </li></ul>",
       "hidden": false
     }
   ]

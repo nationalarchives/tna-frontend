@@ -19,7 +19,7 @@ jobs:
         run: npm run lint
       - name: Start Storybook
         run: npm start &
-      - name: Test fixtures
+      - name: Run tests
         run: npm run test
       - name: Build package
         run: ./bin/build-release.sh

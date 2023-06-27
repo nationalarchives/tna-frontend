@@ -2,9 +2,6 @@ const path = require("path");
 const webpackConfig = require("../webpack.config");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  core: {
-    builder: "webpack5",
-  },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx)"],
   addons: [
     "@storybook/addon-links",
@@ -12,6 +9,7 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-interactions",
+    "@storybook/addon-mdx-gfm",
   ],
   framework: {
     name: "@storybook/html-webpack5",

@@ -47,6 +47,7 @@
     "@storybook/addon-essentials": "^7.0.23",
     "@storybook/addon-interactions": "^7.0.23",
     "@storybook/addon-links": "^7.0.23",
+    "@storybook/addon-mdx-gfm": "^7.0.23",
     "@storybook/html": "^7.0.23",
     "@storybook/html-webpack5": "^7.0.23",
     "@storybook/jest": "^0.1.0",

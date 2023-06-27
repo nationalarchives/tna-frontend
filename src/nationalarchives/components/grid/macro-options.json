@@ -81,7 +81,13 @@
   },
   {
     "name": "noPadding",
-    "type": "string",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "noPaddingAll",
+    "type": "boolean",
     "required": false,
     "description": ""
   },

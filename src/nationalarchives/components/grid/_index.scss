@@ -20,13 +20,13 @@
   align-items: stretch;
 }
 
-.tna-container--max {
-  max-width: none;
-}
-
 .tna-container--no-padding,
 .tna-container--no-padding-all {
   max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
+}
+
+.tna-container--max {
+  max-width: none;
 }
 
 .tna-column {

@@ -91,7 +91,7 @@
 
 .tna-hgroup__supertitle {
   @include tools.relative-font-size(14);
-  font-family: typography.$fontFamilyDetail;
+  font-family: typography.$font-family-detail;
   font-weight: typography.$font-weight-detail;
   text-transform: uppercase;
 

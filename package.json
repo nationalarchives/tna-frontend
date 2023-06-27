@@ -32,6 +32,9 @@
     },
     "./nationalarchives/": "./nationalarchives/"
   },
+  "resolutions": {
+    "webpack": "^5"
+  },
   "sass": "nationalarchives/all.scss",
   "engines": {
     "npm": "8.x",

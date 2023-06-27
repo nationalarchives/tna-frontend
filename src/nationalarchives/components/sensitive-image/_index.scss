@@ -38,10 +38,7 @@
   justify-content: center;
 
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
 
   font-size: 0;
@@ -51,7 +48,7 @@
   &::after {
     padding: 0.5rem 2rem;
 
-    @include typographyTools.relativeFontSize(16);
+    @include typographyTools.relative-font-size(16);
     background-color: #ff0;
 
     content: attr(data-action);

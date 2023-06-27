@@ -3,11 +3,11 @@
 
 @mixin columns-generator($count, $suffix: "") {
   @for $i from 1 through $count - 1 {
-    $simplestFractionFound: false;
+    $simplest-fraction-found: false;
 
     @for $j from math.div($count, 2) through 1 {
       @if (
-        $count % $j == 0 and $i % $j == 0 and $simplestFractionFound != true
+        $count % $j == 0 and $i % $j == 0 and $simplest-fraction-found != true
       ) {
         .tna-column--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
           width: math.div(100%, $count) * $i;
@@ -22,11 +22,11 @@
         //   margin-left: math.div(100%, $count) * $i;
         // }
 
-        $simplestFractionFound: true;
+        $simplest-fraction-found: true;
       }
     }
 
-    @if ($simplestFractionFound != true) {
+    @if $simplest-fraction-found != true {
       .tna-column--width-#{$i}-#{$count}#{$suffix} {
         width: math.div(100%, $count) * $i;
         flex: none;

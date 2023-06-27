@@ -4,58 +4,58 @@
 //   |               |         |      |
 //   | TINY          | SMALL   | MED  | LARGE
 //   |               |         |      |
-//   |<------------->|         .      .            onTiny
-//   |<----------------------->|      .            onMobile
-//   |<------------------------------>|            onSmallerThanLarge
-//   .               |<------->|      .            onSmall
-//   .               |<-------------------------   onLargerThanTiny
-//   .               .         |<---->|            onMedium
-//   .               .         |<---------------   onLargerThanMobile
-//   .               .         .      |<--------   onLarge
+//   |<------------->|         .      .            on-tiny
+//   |<----------------------->|      .            on-mobile
+//   |<------------------------------>|            on-smaller-than-large
+//   .               |<------->|      .            on-small
+//   .               |<-------------------------   on-larger-than-tiny
+//   .               .         |<---->|            on-medium
+//   .               .         |<---------------   on-larger-than-mobile
+//   .               .         .      |<--------   on-large
 
-@mixin onLarge() {
+@mixin on-large() {
   @media #{media.$media-large} {
     @content;
   }
 }
 
-@mixin onMedium() {
+@mixin on-medium() {
   @media #{media.$media-medium} {
     @content;
   }
 }
 
-@mixin onSmall() {
+@mixin on-small() {
   @media #{media.$media-small} {
     @content;
   }
 }
 
-@mixin onTiny() {
+@mixin on-tiny() {
   @media #{media.$media-tiny} {
     @content;
   }
 }
 
-@mixin onLargerThanMobile() {
+@mixin on-larger-than-mobile() {
   @media #{media.$media-gt-mobile} {
     @content;
   }
 }
 
-@mixin onLargerThanTiny() {
+@mixin on-larger-than-tiny() {
   @media #{media.$media-gt-tiny} {
     @content;
   }
 }
 
-@mixin onSmallerThanLarge() {
+@mixin on-smaller-than-large() {
   @media #{media.$media-lt-large} {
     @content;
   }
 }
 
-@mixin onMobile() {
+@mixin on-mobile() {
   @media #{media.$media-mobile} {
     @content;
   }

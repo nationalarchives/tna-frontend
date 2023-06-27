@@ -39,7 +39,7 @@
   }
 }
 
-@include media.onMobile {
+@include media.on-mobile {
   .tna-breadcrumbs__item {
     &,
     + .tna-breadcrumbs__item {

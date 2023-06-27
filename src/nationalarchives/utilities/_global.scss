@@ -9,7 +9,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  font-size: typography.$baseFontSizePx;
+  font-size: typography.$base-font-size-px;
 
   @media (prefers-reduced-motion) {
     * {

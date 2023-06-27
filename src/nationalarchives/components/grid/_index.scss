@@ -72,7 +72,7 @@
 
 @include tools.columns-generator(grid.$column-count);
 
-@include media.onMedium {
+@include media.on-medium {
   .tna-column--full-medium {
     width: 100%;
     flex: none;
@@ -93,7 +93,7 @@
   @include tools.columns-generator(grid.$column-count-medium, "-medium");
 }
 
-@include media.onMobile {
+@include media.on-mobile {
   .tna-container {
     padding-right: math.div(grid.$gutter-width-mobile, 2) + 0.75rem;
     padding-left: math.div(grid.$gutter-width-mobile, 2) + 0.75rem;
@@ -121,7 +121,7 @@
   //   }
 }
 
-@include media.onSmall {
+@include media.on-small {
   .tna-column--full-small {
     width: 100%;
     flex: none;
@@ -142,7 +142,7 @@
   @include tools.columns-generator(grid.$column-count-small, "-small");
 }
 
-@include media.onTiny {
+@include media.on-tiny {
   .tna-column--full-tiny {
     width: 100%;
     flex: none;

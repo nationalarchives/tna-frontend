@@ -2,12 +2,12 @@
 @use "../tools/typography" as tools;
 
 // Temporary - will eventually bundle font files into package
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap");
-@import url("https://use.typekit.net/hkj3kuz.css");
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap";
+@import "https://use.typekit.net/hkj3kuz.css";
 
 .tna-template {
-  font-family: typography.$fontFamilyMain;
-  font-weight: typography.$fontWeightMain;
+  font-family: typography.$font-family-main;
+  font-weight: typography.$font-weight-main;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -31,65 +31,17 @@
   }
 
   a {
-    &,
-    &:link {
-      &:hover {
-        text-decoration-thickness: 3px;
-      }
+    &:active {
+      text-decoration-thickness: 4px;
+    }
 
-      &:active {
-        text-decoration-thickness: 4px;
-      }
+    &:hover {
+      text-decoration-thickness: 3px;
     }
   }
 }
 
-// $block-text-elements: p, ul, ol;
-// $block-text-elements-selector: "";
-// @each $element in $block-text-elements {
-//   .tna-template #{$element},
-//   .tna-#{$element} {
-//     margin: 0 0 2rem;
-
-//     outline: 1px #f90 solid;
-
-//     &:first-child {
-//       margin-top: 0;
-//     }
-//   }
-// }
-.tna-template p,
-.tna-p,
-.tna-template ul,
 .tna-ul,
-.tna-template ol,
-.tna-ol {
-  // margin: 0 0 2rem;
-
-  // outline: 1px #f90 solid;
-
-  // &:first-child {
-  //   margin-top: 0;
-  // }
-}
-
-// $list-elements: ul, ol;
-// @each $element in $list-elements {
-//   .tna-template #{$element},
-//   .tna-#{$element} {
-//     padding-left: 2rem;
-
-//     &.tna-#{$element}--plain {
-//       padding-left: 0;
-
-//       list-style: none;
-//     }
-//   }
-// }
-
-// .tna-template ul,
-.tna-ul,
-// .tna-template ol,
 .tna-ol {
   padding-left: 2rem;
 
@@ -107,40 +59,40 @@
 }
 
 .tna-template__body {
-  @include tools.relativeFontSize(16);
+  @include tools.relative-font-size(16);
   line-height: 1.6;
 }
 
 .tna-heading {
   margin-bottom: 2rem;
 
-  font-family: typography.$fontFamilyHeading;
-  font-weight: typography.$fontWeightHeading;
+  font-family: typography.$font-family-heading;
+  font-weight: typography.$font-weight-heading;
 }
 
 .tna-heading--xl {
-  @include tools.relativeFontSize(64);
+  @include tools.relative-font-size(64);
 }
 
 .tna-heading--l {
-  @include tools.relativeFontSize(32);
+  @include tools.relative-font-size(32);
 }
 
 .tna-heading--m {
-  @include tools.relativeFontSize(20);
+  @include tools.relative-font-size(20);
 }
 
 .tna-heading--s {
-  @include tools.relativeFontSize(18);
+  @include tools.relative-font-size(18);
 }
 
 .tna-hgroup {
 }
 
 .tna-hgroup__supertitle {
-  @include tools.relativeFontSize(14);
+  @include tools.relative-font-size(14);
   font-family: typography.$fontFamilyDetail;
-  font-weight: typography.$fontWeightDetail;
+  font-weight: typography.$font-weight-detail;
   text-transform: uppercase;
 
   .tna-hgroup & {
@@ -159,7 +111,7 @@
   }
 
   .tna-hgroup__title {
-    @include tools.relativeFontSize(64);
+    @include tools.relative-font-size(64);
   }
 }
 
@@ -168,7 +120,7 @@
   }
 
   .tna-hgroup__title {
-    @include tools.relativeFontSize(32);
+    @include tools.relative-font-size(32);
   }
 }
 
@@ -177,7 +129,7 @@
   }
 
   .tna-hgroup__title {
-    @include tools.relativeFontSize(20);
+    @include tools.relative-font-size(20);
   }
 }
 
@@ -186,6 +138,6 @@
   }
 
   .tna-hgroup__title {
-    @include tools.relativeFontSize(18);
+    @include tools.relative-font-size(18);
   }
 }

@@ -1,3 +1,5 @@
+/** @define tna-card */
+
 @use "../../tools/typography" as typographyTools;
 
 .tna-card {
@@ -69,10 +71,7 @@
     justify-content: center;
 
     position: absolute;
-    top: 0;
-    right: 50%;
-    bottom: 0;
-    left: 0;
+    top: 0 50% 0 0;
   }
 
   .tna-card__image {

@@ -8,7 +8,6 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
-    "@storybook/addon-mdx-gfm",
     "@storybook/addon-interactions",
   ],
   framework: {
@@ -16,8 +15,6 @@ module.exports = {
     options: {},
   },
   webpackFinal: async (config, { configType }) => {
-    // config.resolve.alias = { ...webpackConfig.resolve.alias };
-
     config.plugins.push(
       new CopyPlugin({
         patterns: [

@@ -2,6 +2,9 @@ const path = require("path");
 const webpackConfig = require("../webpack.config");
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
+  core: {
+    builder: "webpack5",
+  },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx)"],
   addons: [
     "@storybook/addon-links",

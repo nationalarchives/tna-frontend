@@ -32,12 +32,9 @@
     },
     "./nationalarchives/": "./nationalarchives/"
   },
-  "resolutions": {
-    "webpack": "^5"
-  },
   "sass": "nationalarchives/all.scss",
   "engines": {
-    "npm": "8.x",
+    "npm": "9.x",
     "node": "18.x"
   },
   "homepage": "https://github.com/nationalarchives/tna-frontend#readme",

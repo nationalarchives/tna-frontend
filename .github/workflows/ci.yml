@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,7 +19,9 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Test fixtures
-        run: node tasks/test-fixtures.js || exit 1
+        run: npm run test
+      - name: Build Storybook
+        run: npm run build
       - name: Build package
         run: ./bin/build-release.sh
       - name: Test package

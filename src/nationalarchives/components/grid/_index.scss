@@ -18,15 +18,15 @@
   flex-wrap: wrap;
   justify-content: stretch;
   align-items: stretch;
-}
 
-.tna-container--no-padding,
-.tna-container--no-padding-all {
-  max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
-}
+  &--no-padding,
+  &--no-padding-all {
+    max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
+  }
 
-.tna-container--max {
-  max-width: none;
+  &--max {
+    max-width: none;
+  }
 }
 
 .tna-column {
@@ -34,18 +34,24 @@
   padding-left: math.div(grid.$gutter-width, 2);
 
   box-sizing: border-box;
-}
 
-.tna-column--full {
-  width: 100%;
-}
+  &--full {
+    width: 100%;
+  }
 
-.tna-column--container {
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: stretch;
-  align-items: stretch;
+  &--container {
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+
+  @for $i from 1 through 3 {
+    &--flex-#{$i} {
+      flex: $i 0;
+    }
+  }
 }
 
 .tna-container--no-padding,
@@ -58,14 +64,8 @@
   padding-left: 0;
 }
 
-@for $i from 1 through 3 {
-  .tna-column--flex-#{$i} {
-    flex: $i 0;
-  }
-}
-
 //   @for $i from 1 through 3 {
-//     .column--order-#{$i} {
+//     .tna-column--order-#{$i} {
 //       order: $i;
 //     }
 //   }
@@ -73,22 +73,24 @@
 @include tools.columns-generator(grid.$column-count);
 
 @include media.on-medium {
-  .tna-column--full-medium {
-    width: 100%;
-    flex: none;
-  }
-
-  @for $i from 1 through 3 {
-    .tna-column--flex-#{$i}-medium {
-      flex: $i 0;
+  .tna-column {
+    &--full-medium {
+      width: 100%;
+      flex: none;
     }
-  }
 
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-medium {
-  //     order: $i;
-  //   }
-  // }
+    @for $i from 1 through 3 {
+      &--flex-#{$i}-medium {
+        flex: $i 0;
+      }
+    }
+
+    // @for $i from 1 through 3 {
+    //   &--order-#{$i}-medium {
+    //     order: $i;
+    //   }
+    // }
+  }
 
   @include tools.columns-generator(grid.$column-count-medium, "-medium");
 }
@@ -103,64 +105,52 @@
     padding-right: math.div(grid.$gutter-width-mobile, 2);
     padding-left: math.div(grid.$gutter-width-mobile, 2);
   }
-
-  // .column--width-full-mobile {
-  //   width: 100%;
-  // }
-
-  // @for $i from 1 through 3 {
-  //   .column--flex-#{$i}-mobile {
-  //     flex: $i 0;
-  //   }
-  // }
-
-  //   @for $i from 1 through 3 {
-  //     .column--order-#{$i}-mobile {
-  //       order: $i;
-  //     }
-  //   }
 }
 
 @include media.on-small {
-  .tna-column--full-small {
-    width: 100%;
-    flex: none;
-  }
-
-  @for $i from 1 through 3 {
-    .tna-column--flex-#{$i}-small {
-      flex: $i 0;
+  .tna-column {
+    &--full-small {
+      width: 100%;
+      flex: none;
     }
-  }
 
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-small {
-  //     order: $i;
-  //   }
-  // }
+    @for $i from 1 through 3 {
+      &--flex-#{$i}-small {
+        flex: $i 0;
+      }
+    }
+
+    // @for $i from 1 through 3 {
+    //   &--order-#{$i}-small {
+    //     order: $i;
+    //   }
+    // }
+  }
 
   @include tools.columns-generator(grid.$column-count-small, "-small");
 }
 
 @include media.on-tiny {
-  .tna-column--full-tiny {
-    width: 100%;
-    flex: none;
-  }
-
-  @for $i from 1 through 3 {
-    .tna-column--flex-#{$i}-tiny {
-      width: auto;
-
-      flex: $i 0;
+  .tna-column {
+    &--full-tiny {
+      width: 100%;
+      flex: none;
     }
-  }
 
-  // @for $i from 1 through 3 {
-  //   .column--order-#{$i}-tiny {
-  //     order: $i;
-  //   }
-  // }
+    @for $i from 1 through 3 {
+      &--flex-#{$i}-tiny {
+        width: auto;
+
+        flex: $i 0;
+      }
+    }
+
+    // @for $i from 1 through 3 {
+    //   &--order-#{$i}-tiny {
+    //     order: $i;
+    //   }
+    // }
+  }
 
   @include tools.columns-generator(grid.$column-count-tiny, "-tiny");
 }

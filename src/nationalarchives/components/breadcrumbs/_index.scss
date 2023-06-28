@@ -2,66 +2,65 @@
 @use "../../tools/media";
 
 .tna-breadcrumbs {
-}
+  &__list {
+    padding: 0;
 
-.tna-breadcrumbs__list {
-  padding: 0;
+    list-style: none;
 
-  list-style: none;
-
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tna-breadcrumbs__item {
-  display: -ms-flexbox;
-  display: flex;
-
-  + .tna-breadcrumbs__item {
-    &::before {
-      margin: 0 0.5rem;
-
-      display: inline-block;
-
-      content: "\203A";
-    }
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
   }
-}
 
-.tna-breadcrumbs__link {
-  display: inline-block;
+  &__item {
+    display: -ms-flexbox;
+    display: flex;
 
-  color: colour.$base-font-colour;
-
-  &:hover {
-    color: #f0a;
-  }
-}
-
-@include media.on-mobile {
-  .tna-breadcrumbs__item {
-    &,
     + .tna-breadcrumbs__item {
       &::before {
-        margin-left: 0;
+        margin: 0 0.5rem;
 
-        display: none;
+        display: inline-block;
+
+        content: "\203A";
       }
     }
+  }
 
-    &:not(:nth-last-child(2)) {
-      display: none;
+  &__link {
+    display: inline-block;
+
+    color: colour.$base-font-colour;
+
+    &:hover {
+      color: #f0a;
     }
+  }
 
-    &:nth-last-child(2) {
-      .tna-breadcrumbs__link {
+  @include media.on-mobile {
+    &__item {
+      &,
+      + .tna-breadcrumbs__item {
         &::before {
-          // content: "\2190";
-          // content: "\21E6";
-          // content: "\21FD";
-          // content: "\2794";
-          content: "\2190\00a0"attr(data-prefix);
+          margin-left: 0;
+
+          display: none;
+        }
+      }
+
+      &:not(:nth-last-child(2)) {
+        display: none;
+      }
+
+      &:nth-last-child(2) {
+        .tna-breadcrumbs__link {
+          &::before {
+            // content: "\2190";
+            // content: "\21E6";
+            // content: "\21FD";
+            // content: "\2794";
+            content: "\2190\00a0"attr(data-prefix);
+          }
         }
       }
     }

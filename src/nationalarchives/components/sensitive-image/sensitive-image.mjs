@@ -17,7 +17,7 @@ SensitiveImage.prototype.init = function () {
   );
 };
 
-SensitiveImage.prototype.handleImageDetailsToggle = function (e) {
+SensitiveImage.prototype.handleImageDetailsToggle = function () {
   if (this.$imageDetails.hasAttribute("open")) {
     this.$image.focus({ preventScroll: true, focusVisible: true });
   }

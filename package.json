@@ -6,8 +6,8 @@
     "start": "storybook dev -p 6006",
     "build": "storybook build -o storybook",
     "test": "test-storybook --stories-json && node tasks/test-fixtures.js",
-    "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}' && stylelint 'src/**/*.scss'",
-    "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}' && stylelint --fix 'src/**/*.scss'",
+    "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.mjs'",
+    "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.mjs'",
     "package:sass": "sass --style=compressed --quiet-deps src/nationalarchives/all.scss package/nationalarchives/all.css",
     "package:scripts": "webpack"
   },
@@ -34,7 +34,7 @@
   },
   "sass": "nationalarchives/all.scss",
   "engines": {
-    "npm": "8.x",
+    "npm": "9.x",
     "node": "18.x"
   },
   "homepage": "https://github.com/nationalarchives/tna-frontend#readme",
@@ -57,6 +57,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "diff": "^5.1.0",
+    "eslint": "^8.43.0",
     "glob": "^10.2.7",
     "jest-image-snapshot": "^6.1.0",
     "nunjucks": "^3.2.3",

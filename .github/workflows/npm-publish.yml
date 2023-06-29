@@ -21,7 +21,9 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Test
+      - name: Start Storybook
+        run: npm start &
+      - name: Run tests
         run: npm run test
       - name: Build package
         run: ./bin/build-release.sh

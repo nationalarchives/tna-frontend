@@ -47,6 +47,7 @@ const checkExists = [
   ...componentFiles("card", true),
   ...componentFiles("footer", true),
   ...componentFiles("grid", true),
+  ...componentFiles("hero", true),
   ...componentFiles("sensitive-image"),
   // Tools
   "nationalarchives/tools/_all.scss",

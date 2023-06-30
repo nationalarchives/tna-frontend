@@ -35,6 +35,8 @@ jobs:
     needs:
       - test
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -48,13 +50,7 @@ jobs:
         run: npm ci
       - name: Build package
         run: ./bin/build-release.sh
-      - name: Show local files
-        run: ls -alh
-      - name: npmrc
-        run: cat.npmrc
       - name: Check npm credentials
         run: npm whoami
       - name: Publish to npm
         run: cd package && npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

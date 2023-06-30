@@ -1,58 +1,52 @@
 [
   {
-    "name": "image",
-    "type": "object",
+    "name": "items",
+    "type": "array",
     "required": true,
     "description": "",
     "params": [
       {
-        "name": "src",
+        "name": "label",
         "type": "string",
         "required": true,
         "description": ""
       },
       {
-        "name": "alt",
+        "name": "href",
         "type": "string",
         "required": true,
         "description": ""
       },
       {
-        "name": "width",
+        "name": "title",
         "type": "string",
-        "required": true,
+        "required": false,
         "description": ""
       },
       {
-        "name": "height",
-        "type": "string",
-        "required": true,
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
         "description": ""
       }
     ]
   },
   {
-    "name": "warning",
-    "type": "string",
-    "required": true,
-    "description": ""
-  },
-  {
-    "name": "action",
-    "type": "string",
-    "required": true,
+    "name": "stack",
+    "type": "boolean",
+    "required": false,
     "description": ""
   },
   {
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the sensitive image."
+    "description": "Classes to add to the filters."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the sensitive image."
+    "description": "HTML attributes (for example data attributes) to add to the filters."
   }
 ]

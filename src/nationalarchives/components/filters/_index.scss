@@ -1,0 +1,45 @@
+.tna-filters {
+  &__item {
+    margin: 0 0.75rem 0.75rem 0;
+
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &--stacked &__item {
+    display: block;
+  }
+
+  &__item--selected #{&}__link {
+    color: #fff;
+
+    background-color: #004c7e;
+  }
+
+  &__link {
+    padding: 0.125rem 0.75rem;
+
+    display: inline-block;
+
+    color: #000;
+    text-decoration: none;
+
+    background-color: #d4e5ef;
+
+    border-radius: 99rem;
+
+    transition: color 400ms, background-color 400ms;
+
+    &:hover {
+      color: #fff;
+
+      background-color: #004c7e;
+
+      transition: color 100ms, background-color 100ms;
+    }
+  }
+}

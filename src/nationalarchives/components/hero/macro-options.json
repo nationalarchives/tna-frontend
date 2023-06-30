@@ -47,12 +47,12 @@
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the card."
+    "description": "Classes to add to the hero."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the card."
+    "description": "HTML attributes (for example data attributes) to add to the hero."
   }
 ]

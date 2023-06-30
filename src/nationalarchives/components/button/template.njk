@@ -2,6 +2,6 @@
 {%- if params.secondary -%}
     {%- set buttonClasses = buttonClasses.concat('tna-button--secondary') -%}
 {%- endif -%}
-<a href="{{ params.href }}" class="tna-button {{ buttonClasses | join(' ') }}" {%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<a href="{{ params.href }}" class="tna-button {{ buttonClasses | join(' ') }}"{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
     {{ params.text }}
 </a>

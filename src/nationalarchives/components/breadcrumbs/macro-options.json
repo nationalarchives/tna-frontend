@@ -29,12 +29,12 @@
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the button."
+    "description": "Classes to add to the breadcrumbs."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the button."
+    "description": "HTML attributes (for example data attributes) to add to the breadcrumbs."
   }
 ]

@@ -10,11 +10,26 @@ import * as ListStories from './lists.stories';
 
 We use a set of typefaces...
 
+## Headings
+
 <Canvas of={HeadingStories.Heading1} />
 <Canvas of={HeadingStories.Heading2} />
 <Canvas of={HeadingStories.Heading3} />
+
+## Heading groups
+
+Although visually identical, there are two types of header groups based on whether the group should be read as a single sentence or not.
+
+In the first example, the heading will be read by screen readers as `The story of Alice Hawkins.`
+
 <Canvas of={HeadingGroupStories.HeadingGroup} />
+
+In the second example, the heading will be read as two separate sentences; `Record revealed. The Monteagle Letter.`
+
 <Canvas of={HeadingGroupStories.HeadingGroupSeparated} />
+
+## General typography
+
 <Canvas of={TypographyStories.Paragraph} />
 <Canvas of={ListStories.UnorderedList} />
 <Canvas of={ListStories.UnorderedListPlain} />

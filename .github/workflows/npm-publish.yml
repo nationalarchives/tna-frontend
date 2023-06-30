@@ -48,10 +48,12 @@ jobs:
         run: npm ci
       - name: Build package
         run: ./bin/build-release.sh
-      - name: Check npm credentials
-        run: npm whoami
       - name: Show local files
         run: ls -alh
+      - name: npmrc
+        run: cat.npmrc
+      - name: Check npm credentials
+        run: npm whoami
       - name: Publish to npm
         run: cd package && npm publish
         env:

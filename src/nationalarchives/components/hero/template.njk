@@ -13,17 +13,19 @@
     {%- endif -%}
     <div class="tna-container tna-hero__inner">
         <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content">
-            {%- if params.heading -%}
-            <h1 class="tna-heading tna-heading--xl tna-hero__heading">
-                {{ params.heading }}
-            </h1>
-            {%- endif -%}
-            <div class="tna-hero__body">
-            {%- if params.text -%}
-                <p>{{ params.text }}</p>
-            {%- elseif params.body -%}
-                {{ params.body | safe }}
-            {%- endif -%}
+            <div class="tna-hero__content-inner">
+                {%- if params.heading -%}
+                <h1 class="tna-heading tna-heading--xl tna-hero__heading">
+                    {{ params.heading }}
+                </h1>
+                {%- endif -%}
+                <div class="tna-hero__body">
+                {%- if params.text -%}
+                    <p>{{ params.text }}</p>
+                {%- elseif params.body -%}
+                    {{ params.body | safe }}
+                {%- endif -%}
+                </div>
             </div>
         </div>
     </div>

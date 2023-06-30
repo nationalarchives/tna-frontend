@@ -1,7 +1,7 @@
 @use "../../tools/media";
 
 .tna-hero {
-  min-height: min(20vw, 300px);
+  min-height: min(35vw, 480px);
   padding-top: 5.25rem;
   padding-bottom: 3.25rem;
 
@@ -11,7 +11,7 @@
 
   position: relative;
 
-  background-color: #000;
+  background-color: #26262a; // Variable
 
   &__image {
     width: 100%;
@@ -22,6 +22,14 @@
     z-index: 1;
 
     object-fit: cover;
+
+    @include media.on-small {
+      height: 320px;
+    }
+
+    @include media.on-tiny {
+      height: 240px;
+    }
   }
 
   &__image-details {
@@ -76,8 +84,10 @@
   }
 
   &__content {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  }
+
+  &__content-inner {
+    padding: 2.5rem 1.5rem;
 
     background-color: #fff;
   }
@@ -118,6 +128,9 @@
     }
 
     &__content {
+    }
+
+    &__content-inner {
       color: #fff;
 
       background-color: inherit;

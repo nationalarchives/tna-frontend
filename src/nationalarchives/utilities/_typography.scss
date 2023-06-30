@@ -1,4 +1,5 @@
 @use "../variables/typography";
+@use "../tools/media";
 @use "../tools/typography" as tools;
 
 // Temporary - will eventually bundle font files into package
@@ -68,11 +69,27 @@
     &--xl {
       @include tools.relative-font-size(64);
       line-height: 1;
+
+      @include media.on-medium {
+        @include tools.relative-font-size(42);
+      }
+
+      @include media.on-mobile {
+        @include tools.relative-font-size(36);
+      }
     }
 
     &--l {
       @include tools.relative-font-size(32);
       line-height: 1.2;
+
+      @include media.on-medium {
+        @include tools.relative-font-size(26);
+      }
+
+      @include media.on-mobile {
+        @include tools.relative-font-size(24);
+      }
     }
 
     &--m {

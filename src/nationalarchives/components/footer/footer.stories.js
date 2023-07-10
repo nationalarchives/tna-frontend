@@ -96,7 +96,7 @@ Standard.args = {
           href: "#",
         },
         {
-          text: "Legislation.gov.ukOpens a new window",
+          text: "Legislation.gov.uk",
           href: "#",
         },
         {

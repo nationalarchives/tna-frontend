@@ -20,7 +20,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Sensitive image",
+  title: "Experimental/Sensitive image",
   argTypes,
 };
 

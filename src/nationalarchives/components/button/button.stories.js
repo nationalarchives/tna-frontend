@@ -13,7 +13,7 @@ const argTypes = {
 
 Object.keys(argTypes).forEach((argType) => {
   argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType
+    (option) => option.name === argType,
   )?.description;
 });
 

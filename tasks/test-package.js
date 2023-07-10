@@ -79,7 +79,7 @@ checkExists.forEach((checkFile) => {
     console.log(
       `🟢 [PASS] ${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
-      } exists: ${checkFilePath.replace(/\/$/, "")}`
+      } exists: ${checkFilePath.replace(/\/$/, "")}`,
     );
   } catch (err) {
     console.error(`🔴 [FAIL] ${err}`);
@@ -95,7 +95,7 @@ if (packageJson.version === compiledPackageJson.version) {
   console.log(`🟢 [PASS] Version ${packageJson.version} is set in the package`);
 } else {
   console.error(
-    `🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`
+    `🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
   );
   failure = 2;
 }
@@ -114,19 +114,19 @@ expectedPrototypeKitConfigProperties.forEach(
   (expectedPrototypeKitConfigProperty) => {
     if (
       Object.keys(prototypeKitConfig).includes(
-        expectedPrototypeKitConfigProperty
+        expectedPrototypeKitConfigProperty,
       )
     ) {
       console.log(
-        `🟢 [PASS] The prototype kit config contains "${expectedPrototypeKitConfigProperty}"`
+        `🟢 [PASS] The prototype kit config contains "${expectedPrototypeKitConfigProperty}"`,
       );
     } else {
       console.error(
-        `🔴 [FAIL] The prototype kit config is missing "${expectedPrototypeKitConfigProperty}"`
+        `🔴 [FAIL] The prototype kit config is missing "${expectedPrototypeKitConfigProperty}"`,
       );
       failure = 3;
     }
-  }
+  },
 );
 
 // console.log("------------------------------------------");

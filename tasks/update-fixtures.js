@@ -10,11 +10,11 @@ const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
 const components = globSync(
-  `${componentsDirectory}*${componentFixturesFile}`
+  `${componentsDirectory}*${componentFixturesFile}`,
 ).map((componentFixtureFile) =>
   componentFixtureFile
     .replace(new RegExp(`^${componentsDirectory}`), "")
-    .replace(new RegExp(`${componentFixturesFile}$`), "")
+    .replace(new RegExp(`${componentFixturesFile}$`), ""),
 );
 
 components.forEach((component) => {
@@ -39,8 +39,8 @@ components.forEach((component) => {
     (err) => {
       if (err) throw err;
       console.log(
-        `All ${componentFixtures.fixtures.length} ${component} fixture(s) updated successfully`
+        `All ${componentFixtures.fixtures.length} ${component} fixture(s) updated successfully`,
       );
-    }
+    },
   );
 });

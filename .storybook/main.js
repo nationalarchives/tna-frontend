@@ -24,7 +24,7 @@ module.exports = {
             to: "./",
           },
         ],
-      })
+      }),
     );
     config.module.rules = [
       ...config.module.rules,

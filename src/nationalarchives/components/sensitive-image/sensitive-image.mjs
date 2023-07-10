@@ -13,7 +13,7 @@ SensitiveImage.prototype.init = function () {
   }
   this.$imageDetails.addEventListener(
     "toggle",
-    this.handleImageDetailsToggle.bind(this)
+    this.handleImageDetailsToggle.bind(this),
   );
 };
 

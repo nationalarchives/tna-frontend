@@ -5,7 +5,7 @@ const initAll = (options) => {
   const scope = typeof options.scope !== "undefined" ? options.scope : document;
 
   const $toggleButton = scope.querySelector(
-    '[data-module="tna-sensitive-image"]'
+    '[data-module="tna-sensitive-image"]',
   );
   new SensitiveImage($toggleButton).init();
 };

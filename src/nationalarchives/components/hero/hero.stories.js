@@ -15,7 +15,7 @@ const argTypes = {
 
 Object.keys(argTypes).forEach((argType) => {
   argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType
+    (option) => option.name === argType,
   )?.description;
 });
 
@@ -54,7 +54,7 @@ Standard.play = async ({ args, canvasElement }) => {
   const image = canvas.getByAltText(args.image.alt);
   const title = canvas.getByText(args.heading);
   const summary = canvasElement.querySelector(
-    ".tna-hero__image-details-summary"
+    ".tna-hero__image-details-summary",
   );
   const information = canvas.getByText(args.image.information);
 

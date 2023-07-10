@@ -11,11 +11,11 @@ const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
 const components = globSync(
-  `${componentsDirectory}*${componentFixturesFile}`
+  `${componentsDirectory}*${componentFixturesFile}`,
 ).map((componentFixtureFile) =>
   componentFixtureFile
     .replace(new RegExp(`^${componentsDirectory}`), "")
-    .replace(new RegExp(`${componentFixturesFile}$`), "")
+    .replace(new RegExp(`${componentFixturesFile}$`), ""),
 );
 
 const failedComponents = components.filter((component) => {
@@ -36,7 +36,7 @@ const failedComponents = components.filter((component) => {
           (part) =>
             `${
               part.added ? "\x1b[32m" : part.removed ? "\x1b[31m" : "\x1b[0m"
-            }${part.value}`
+            }${part.value}`,
         )
         .join("");
       console.log(diff);
@@ -53,14 +53,14 @@ if (failedComponents.length) {
   console.error(
     `🔴 [FAIL] ${failedComponents.length} out of ${
       components.length
-    } component${components.length === 1 ? "" : "s"} failed`
+    } component${components.length === 1 ? "" : "s"} failed`,
   );
   process.exit(1);
 } else {
   console.log(
     `🟢 [PASS] ${components.length} component${
       components.length === 1 ? "" : "s"
-    } passed successfully`
+    } passed successfully`,
   );
 }
 console.log("------------------------------------------");

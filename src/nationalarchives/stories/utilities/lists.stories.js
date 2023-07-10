@@ -10,7 +10,7 @@ export default {
 const UnorderedListTemplate = ({ items, plain }) =>
   `<ul class="tna-ul${plain ? " tna-ul--plain" : ""}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
-    ""
+    "",
   )}</ul>`;
 export const UnorderedList = UnorderedListTemplate.bind({});
 UnorderedList.args = {
@@ -25,7 +25,7 @@ UnorderedListPlain.args = {
 const OrderedListTemplate = ({ items, plain }) =>
   `<ol class="tna-ol${plain ? " tna-ol--plain" : ""}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
-    ""
+    "",
   )}</ol>`;
 export const OrderedList = OrderedListTemplate.bind({});
 OrderedList.args = {

@@ -3,7 +3,7 @@
     {%- if params.navigation -%}
     <div class="tna-container tna-footer__navigation">
     {%- for group in params.navigation -%}
-        <div class="tna-column tna-column--flex-1 tna-column--width-1-2-small tna-column--full-tiny tna-footer__navigation-group">
+        <nav class="tna-column tna-column--flex-1 tna-column--width-1-2-small tna-column--full-tiny tna-footer__navigation-group">
             <h4 class="tna-footer__navigation-group-title">{{ group.title }}</h4>
             <ul class="tna-footer__navigation-group-items">
             {%- for item in group.items -%}
@@ -12,12 +12,12 @@
                 </li>
             {%- endfor -%}
             </ul>
-        </div>
+        </nav>
     {%- endfor -%}
     </div>
     {%- endif -%}
     {%- if params.social -%}
-    <div class="tna-container tna-footer__social">
+    <nav class="tna-container tna-footer__social">
     {%- for item in params.social -%}
         <div class="tna-column tna-column--flex-1 tna-footer__social-item">
             <a href="{{ item.href }}" class="tna-footer__social-item-link tna-footer__link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
@@ -34,7 +34,7 @@
             </a>
         </div>
     {%- endfor -%}
-    </div>
+    </nav>
     {%- endif -%}
     <div class="tna-container tna-footer__licence">
         <div class="tna-column">

@@ -1,0 +1,19 @@
+{%- set classes = [params.classes] if params.classes else [] -%}
+<header class="tna-header {{ classes | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+    <div class="tna-container">
+        <div class="tna-column tna-column--flex-1 tna-header__logo">
+            <p>The National Archives</p>
+        </div>
+        {%- if params.navigation -%}
+        <nav class="tna-column tna-header__navigation">
+            <ul class="tna-header__navigation-items">
+            {%- for item in params.navigation -%}
+                <li class="tna-header__navigation-item">
+                    <a href="{{ item.href }}" class="tna-header__navigation-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
+                </li>
+            {%- endfor -%}
+            </ul>
+        </nav>
+        {%- endif -%}
+    </div>
+</header>

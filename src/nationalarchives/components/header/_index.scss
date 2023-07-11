@@ -1,0 +1,36 @@
+.tna-header {
+  color: #fff;
+
+  background-color: #000;
+
+  &__logo {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &__navigation {
+    align-self: flex-end;
+  }
+
+  &__navigation-items {
+    margin: 0;
+
+    list-style: none;
+  }
+
+  &__navigation-item {
+    margin-left: 1rem;
+
+    display: inline-block;
+  }
+
+  &__navigation-item-link {
+    padding: 0.5rem 1rem;
+
+    display: inline-block;
+
+    color: #000;
+
+    background-color: #fff;
+  }
+}

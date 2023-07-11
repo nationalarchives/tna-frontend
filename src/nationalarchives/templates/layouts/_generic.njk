@@ -10,19 +10,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {% block headIcons %}
-      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ assetPath | default('/assets') }}/images/favicon.ico" type="image/x-icon">
-      <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/govuk-mask-icon.svg" color="{{ themeColor | default('#0b0c0c') }}"> {# Hardcoded value of $govuk-black #}
-      <link rel="apple-touch-icon" sizes="180x180" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-180x180.png">
-      <link rel="apple-touch-icon" sizes="167x167" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-167x167.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-152x152.png">
-      <link rel="apple-touch-icon" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon.png">
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ assetPath | default('/assets') }}/images/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/govuk-mask-icon.svg" color="{{ themeColor | default('#0b0c0c') }}"> {# Hardcoded value of $govuk-black #}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon.png">
     {% endblock %}
 
     {% block head %}{% endblock %}
 
-    {% block stylesheets %}
-        {% include "govuk-prototype-kit/includes/stylesheets-plugins.njk" %}
-    {% endblock %}
+    {% block stylesheets %}{% endblock %}
 
     {# OpenGraph images needs to be absolute, so we need either a URL for the image or for assetUrl to be set #}
     {% if opengraphImageUrl or assetUrl %}
@@ -30,31 +28,30 @@
     {% endif %}
   </head>
   <body class="tna-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>
-    
-    {% block bodyStart %}{% endblock %}
+  {% block bodyStart %}{% endblock %}
 
-    {% block skipLink %}
-      {#{ govukSkipLink({
-        href: '#main-content',
-        text: 'Skip to main content'
-      }) }#}
-    {% endblock %}
+  {% block skipLink %}
+    {#{ govukSkipLink({
+      href: '#main-content',
+      text: 'Skip to main content'
+    }) }#}
+  {% endblock %}
 
-    {% block header %}
-      <h1>HEADER</h1>
-    {% endblock %}
+  {% block header %}
+  <h1>HEADER</h1>
+  {% endblock %}
 
-    {% block main %}
-        {% block beforeContent %}{% endblock %}
-        <main class="tna-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-          {% block content %}{% endblock %}
-        </main>
-    {% endblock %}
+  {% block main %}
+    {% block beforeContent %}{% endblock %}
+    <main class="tna-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+      {% block content %}{% endblock %}
+    </main>
+  {% endblock %}
 
-    {% block footer %}
-      <h1>FOOTER</h1>
-    {% endblock %}
+  {% block footer %}
+  <h1>FOOTER</h1>
+  {% endblock %}
 
-    {% block bodyEnd %}{% endblock %}
+  {% block bodyEnd %}{% endblock %}
   </body>
 </html>

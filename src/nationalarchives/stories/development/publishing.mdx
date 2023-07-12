@@ -15,3 +15,12 @@ import { Meta } from "@storybook/blocks";
 1. Create a [new release on GitHub](https://github.com/nationalarchives/tna-frontend/releases/new) using the tag you just created
 
 Once a release is created, the [publish pipeline](https://github.com/nationalarchives/tna-frontend/blob/main/.github/workflows/npm-publish.yml) will be triggered.
+
+## Oops!
+
+To delete a tag:
+
+```sh
+git tag -d v0.1.0
+git push --delete origin v0.1.0
+```

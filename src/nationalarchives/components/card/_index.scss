@@ -1,4 +1,4 @@
-@use "../../tools/typography" as typographyTools;
+@use "../../variables/colour";
 
 .tna-card {
   &__inner {
@@ -48,7 +48,7 @@
   &--featured {
     position: relative;
 
-    background-color: #ff0;
+    background-color: colour.$tna-yellow;
 
     .tna-card__inner {
       margin-left: 50%;
@@ -58,7 +58,11 @@
     .tna-card__heading {
       padding-bottom: 2rem;
 
-      border-bottom: 2px #000 solid;
+      border-bottom: 2px colour.$tna-black solid;
+    }
+
+    .tna-card__title-link {
+      color: colour.$tna-black;
     }
 
     .tna-card__image-container {

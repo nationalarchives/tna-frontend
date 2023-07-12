@@ -1,3 +1,5 @@
+@use "../../variables/colour";
+
 .tna-button {
   padding: 0.25rem 1rem;
 
@@ -7,19 +9,37 @@
   font-weight: 700;
   text-decoration: none;
 
-  background-color: #000;
+  background-color: colour.$tna-black;
+
+  border: 0.25rem colour.$tna-black solid;
+
+  transition:
+    color 200ms,
+    background-color 200ms,
+    border-color 200ms;
 
   &:hover {
-    background-color: #069;
+    color: colour.$tna-black;
+
+    background-color: #fff;
+
+    transition:
+      color 50ms,
+      background-color 50ms,
+      border-color 50ms;
   }
 
   &--secondary {
-    color: #000;
+    color: colour.$tna-black;
 
-    background-color: #ff0;
+    background-color: colour.$tna-yellow;
+
+    border-color: colour.$tna-yellow;
 
     &:hover {
-      color: #fff;
+      color: colour.$tna-black;
+
+      border-color: colour.$tna-black;
     }
   }
 }

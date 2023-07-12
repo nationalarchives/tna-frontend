@@ -4,7 +4,10 @@ import macroOptions from "./macro-options.json";
 
 const argTypes = {
   navigation: { control: "object" },
-  colour: { control: "radio", options: ["black", "yellow"] },
+  colour: {
+    control: "radio",
+    options: ["black", "yellow", "pink", "orange", "green", "blue"],
+  },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -48,5 +51,6 @@ Standard.args = {
       href: "#/gamma",
     },
   ],
+  colour: "yellow",
   classes: "tna-header--demo",
 };

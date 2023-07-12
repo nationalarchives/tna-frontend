@@ -61,6 +61,7 @@
     margin-top: 0;
     margin-bottom: 1.5rem;
 
+    color: colour.$tna-black;
     font-family: typography.$font-family-heading;
     font-weight: typography.$font-weight-heading;
 
@@ -115,6 +116,7 @@
     &__supertitle {
       margin: 0;
 
+      color: colour.$base-font-colour;
       @include tools.relative-font-size(14);
       font-family: typography.$font-family-detail;
       font-weight: typography.$font-weight-detail;
@@ -128,8 +130,12 @@
     &__title {
       margin: 0;
 
+      color: colour.$tna-black;
+
       .tna-hgroup__supertitle {
         display: block;
+
+        color: colour.$base-font-colour;
       }
     }
 

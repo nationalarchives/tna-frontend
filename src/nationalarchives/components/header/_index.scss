@@ -111,10 +111,12 @@
     }
   }
 
-  &--yellow {
-    color: colour.$base-font-colour;
-
-    background-color: colour.$tna-yellow;
+  &--yellow,
+  &--pink,
+  &--orange,
+  &--green,
+  &--blue {
+    color: colour.$tna-black;
 
     .tna-header__logo-link {
       &:hover {
@@ -129,6 +131,26 @@
     .tna-header__hamburger {
       background-color: colour.$tna-black;
     }
+  }
+
+  &--yellow {
+    background-color: colour.$tna-yellow;
+  }
+
+  &--pink {
+    background-color: colour.$tna-pink;
+  }
+
+  &--orange {
+    background-color: colour.$tna-orange;
+  }
+
+  &--green {
+    background-color: colour.$tna-green;
+  }
+
+  &--blue {
+    background-color: colour.$tna-blue;
   }
 
   &__navigation {
@@ -169,7 +191,7 @@
 
     &:hover,
     &--selected {
-      color: colour.$base-font-colour;
+      color: colour.$tna-black;
 
       background-color: #fff;
 

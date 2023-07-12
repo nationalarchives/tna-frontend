@@ -1,10 +1,12 @@
+@use "../../variables/colour";
+
 .tna-footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
 
   color: #fff;
 
-  background-color: #26262a;
+  background-color: colour.$dark;
 
   &__link {
     color: inherit;

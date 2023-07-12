@@ -1,5 +1,11 @@
 [
   {
+    "name": "strapline",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "navigation",
     "type": "array",
     "required": false,

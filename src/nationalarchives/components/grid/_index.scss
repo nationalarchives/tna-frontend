@@ -35,22 +35,12 @@
 
   box-sizing: border-box;
 
-  &--full {
-    width: 100%;
-  }
-
   &--container {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
     justify-content: stretch;
     align-items: stretch;
-  }
-
-  @for $i from 1 through 3 {
-    &--flex-#{$i} {
-      flex: $i 0;
-    }
   }
 }
 
@@ -64,35 +54,10 @@
   padding-left: 0;
 }
 
-//   @for $i from 1 through 3 {
-//     .tna-column--order-#{$i} {
-//       order: $i;
-//     }
-//   }
-
 @include tools.columns-generator(grid.$column-count);
 
 @include media.on-medium {
-  .tna-column {
-    &--full-medium {
-      width: 100%;
-      flex: none;
-    }
-
-    @for $i from 1 through 3 {
-      &--flex-#{$i}-medium {
-        flex: $i 0;
-      }
-    }
-
-    // @for $i from 1 through 3 {
-    //   &--order-#{$i}-medium {
-    //     order: $i;
-    //   }
-    // }
-  }
-
-  @include tools.columns-generator(grid.$column-count-medium, "-medium");
+  @include tools.columns-generator(grid.$column-count-medium, "medium");
 }
 
 @include media.on-mobile {
@@ -108,49 +73,9 @@
 }
 
 @include media.on-small {
-  .tna-column {
-    &--full-small {
-      width: 100%;
-      flex: none;
-    }
-
-    @for $i from 1 through 3 {
-      &--flex-#{$i}-small {
-        flex: $i 0;
-      }
-    }
-
-    // @for $i from 1 through 3 {
-    //   &--order-#{$i}-small {
-    //     order: $i;
-    //   }
-    // }
-  }
-
-  @include tools.columns-generator(grid.$column-count-small, "-small");
+  @include tools.columns-generator(grid.$column-count-small, "small");
 }
 
 @include media.on-tiny {
-  .tna-column {
-    &--full-tiny {
-      width: 100%;
-      flex: none;
-    }
-
-    @for $i from 1 through 3 {
-      &--flex-#{$i}-tiny {
-        width: auto;
-
-        flex: $i 0;
-      }
-    }
-
-    // @for $i from 1 through 3 {
-    //   &--order-#{$i}-tiny {
-    //     order: $i;
-    //   }
-    // }
-  }
-
-  @include tools.columns-generator(grid.$column-count-tiny, "-tiny");
+  @include tools.columns-generator(grid.$column-count-tiny, "tiny");
 }

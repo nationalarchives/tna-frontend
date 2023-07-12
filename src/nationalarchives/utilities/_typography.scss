@@ -1,3 +1,4 @@
+@use "../variables/colour";
 @use "../variables/typography";
 @use "../tools/media";
 @use "../tools/typography" as tools;
@@ -9,6 +10,7 @@
 .tna-template {
   font-family: typography.$font-family-main;
   font-weight: typography.$font-weight-main;
+  color: colour.$base-font-colour;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

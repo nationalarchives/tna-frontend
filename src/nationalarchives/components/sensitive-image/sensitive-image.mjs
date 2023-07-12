@@ -7,7 +7,6 @@ function SensitiveImage($module) {
 }
 
 SensitiveImage.prototype.init = function () {
-  console.log(this);
   if (!this.$module || !this.$imageDetails || !this.$image) {
     return;
   }

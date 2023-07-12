@@ -1,32 +1,32 @@
 {%- set classes = [params.classes] if params.classes else [] -%}
 <header class="tna-hero {{ classes | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-    <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" class="tna-hero__image">
-    {%- if params.image.information -%}
-    <details class="tna-hero__image-details">
-        <summary class="tna-hero__image-details-summary">
-            <span class="tna-hero__image-details-summary-icon">I</span>nformation about this image
-        </summary>
-        <div class="tna-hero__image-information">
-            <p>{{ params.image.information }}</p>
-        </div>
-    </details>
-    {%- endif -%}
-    <div class="tna-container tna-hero__inner">
-        <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content">
-            <div class="tna-hero__content-inner">
-                {%- if params.heading -%}
-                <h1 class="tna-heading tna-heading--xl tna-hero__heading">
-                    {{ params.heading }}
-                </h1>
-                {%- endif -%}
-                <div class="tna-hero__body">
-                {%- if params.text -%}
-                    <p>{{ params.text }}</p>
-                {%- elseif params.body -%}
-                    {{ params.body | safe }}
-                {%- endif -%}
-                </div>
-            </div>
-        </div>
+  <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" class="tna-hero__image">
+  {%- if params.image.information -%}
+  <details class="tna-hero__image-details">
+    <summary class="tna-hero__image-details-summary">
+      <span class="tna-hero__image-details-summary-icon">I</span>nformation about this image
+    </summary>
+    <div class="tna-hero__image-information">
+      <p>{{ params.image.information }}</p>
     </div>
+  </details>
+  {%- endif -%}
+  <div class="tna-container tna-hero__inner">
+    <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content">
+      <div class="tna-hero__content-inner">
+        {%- if params.heading -%}
+        <h1 class="tna-heading tna-heading--xl tna-hero__heading">
+          {{ params.heading }}
+        </h1>
+        {%- endif -%}
+        <div class="tna-hero__body">
+        {%- if params.text -%}
+          <p>{{ params.text }}</p>
+        {%- elseif params.body -%}
+          {{ params.body | safe }}
+        {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
 </header>

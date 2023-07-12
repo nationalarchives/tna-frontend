@@ -7,7 +7,7 @@
         "text": "Log in",
         "href": "#"
       },
-      "html": "<a href=\"#\" class=\"tna-button \">\n    Log in\n</a>",
+      "html": "<a href=\"#\" class=\"tna-button \">\n  Log in\n</a>",
       "hidden": false
     },
     {
@@ -17,7 +17,7 @@
         "href": "#",
         "title": "Log in to the service"
       },
-      "html": "<a href=\"#\" class=\"tna-button \" title=\"Log in to the service\">\n    Log in\n</a>",
+      "html": "<a href=\"#\" class=\"tna-button \" title=\"Log in to the service\">\n  Log in\n</a>",
       "hidden": false
     },
     {
@@ -27,7 +27,7 @@
         "href": "#",
         "secondary": true
       },
-      "html": "<a href=\"#\" class=\"tna-button tna-button--secondary\">\n    Log in\n</a>",
+      "html": "<a href=\"#\" class=\"tna-button tna-button--secondary\">\n  Log in\n</a>",
       "hidden": false
     },
     {
@@ -37,7 +37,7 @@
         "href": "#",
         "classes": "button__test-class"
       },
-      "html": "<a href=\"#\" class=\"tna-button button__test-class\">\n    Log in\n</a>",
+      "html": "<a href=\"#\" class=\"tna-button button__test-class\">\n  Log in\n</a>",
       "hidden": false
     },
     {
@@ -49,7 +49,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<a href=\"#\" class=\"tna-button \" data-testattribute=\"foobar\">\n    Log in\n</a>",
+      "html": "<a href=\"#\" class=\"tna-button \" data-testattribute=\"foobar\">\n  Log in\n</a>",
       "hidden": false
     }
   ]

@@ -48,7 +48,7 @@ const checkExists = [
   ...componentFiles("filters", true),
   ...componentFiles("footer", true),
   ...componentFiles("grid", true),
-  ...componentFiles("header", true),
+  ...componentFiles("header"),
   ...componentFiles("hero", true),
   ...componentFiles("sensitive-image"),
   // Tools

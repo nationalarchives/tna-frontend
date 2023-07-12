@@ -1,25 +1,154 @@
+@use "sass:math";
+@use "../../variables/colour";
+@use "../../variables/grid";
+@use "../../variables/typography";
+@use "../../tools/media";
+
 .tna-header {
   color: #fff;
 
-  background-color: #000;
+  background-color: colour.$tna-black;
+
+  &__contents {
+    &.tna-container {
+      justify-content: space-between;
+    }
+  }
 
   &__logo {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__logo-link {
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-end;
+
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      outline: 0.375rem #fff solid;
+    }
+  }
+
+  .tna-logo {
+    width: 100px;
+    height: 100px;
+
+    display: inline-block;
+  }
+
+  .tna-logo__foreground {
+    fill: #fff;
+  }
+
+  .tna-logo__background {
+  }
+
+  &__logo-strapline {
+    margin: 0 0.75rem;
+
+    display: inline-block;
+
+    line-height: 2.125rem;
+    text-transform: uppercase;
+  }
+
+  &__navigation-toggle {
+  }
+
+  &__navigation-toggle-button {
+    height: 2rem;
+    padding: 0;
+
+    display: block;
+
+    position: relative;
+
+    appearance: none;
+
+    font-size: 0;
+
+    background: none;
+
+    border: 0 transparent solid;
+    border-width: 0.25rem 0;
+
+    cursor: pointer;
+  }
+
+  &__hamburger {
+    width: 2rem;
+    height: 0.25rem;
+
+    display: block;
+
+    background-color: #fff;
+
+    &::before,
+    &::after {
+      height: 0.25rem;
+
+      display: block;
+
+      position: absolute;
+      right: 0;
+      left: 0;
+
+      background-color: inherit;
+
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &--yellow {
+    color: colour.$base-font-colour;
+
+    background-color: colour.$tna-yellow;
+
+    .tna-header__logo-link {
+      &:hover {
+        outline-color: #000;
+      }
+    }
+
+    .tna-logo__foreground {
+      fill: #000;
+    }
+
+    .tna-header__hamburger {
+      background-color: colour.$tna-black;
+    }
   }
 
   &__navigation {
-    align-self: flex-end;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
   &__navigation-items {
     margin: 0;
+    padding: 0;
 
     list-style: none;
+
+    white-space: nowrap;
   }
 
   &__navigation-item {
-    margin-left: 1rem;
+    margin-left: 0.75rem;
 
     display: inline-block;
   }
@@ -29,8 +158,129 @@
 
     display: inline-block;
 
-    color: #000;
+    color: inherit;
+    font-family: typography.$font-family-heading;
+    font-weight: typography.$font-weight-heading;
+    text-decoration: none;
 
-    background-color: #fff;
+    transition:
+      color 200ms,
+      background-color 200ms;
+
+    &:hover,
+    &--selected {
+      color: colour.$base-font-colour;
+
+      background-color: #fff;
+
+      transition:
+        color 50ms,
+        background-color 50ms;
+    }
+  }
+
+  @include media.on-larger-than-mobile {
+    .tna-header__navigation-toggle {
+      display: none;
+    }
+  }
+
+  @include media.on-mobile {
+    $compensated-container-padding: grid.$gutter-width-mobile + 0.75rem;
+
+    &__contents {
+      &.tna-container {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    &__logo {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      &.tna-column {
+        padding-right: $compensated-container-padding;
+        padding-left: $compensated-container-padding;
+      }
+    }
+
+    &__navigation-toggle {
+      &.tna-column {
+        padding-top: 1rem;
+        padding-right: $compensated-container-padding;
+        padding-left: 0;
+      }
+    }
+
+    &__navigation {
+      color: colour.$base-font-colour;
+
+      &.tna-column {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .js-enabled & {
+        display: none;
+
+        &--open {
+          display: block;
+        }
+      }
+    }
+
+    &__navigation-items {
+      width: 100%;
+
+      background-color: #fff;
+    }
+
+    &__navigation-item {
+      margin: 0;
+
+      display: block;
+
+      border-bottom: 1px colour.$keyline-colour solid;
+    }
+
+    &__navigation-item-link {
+      padding-right: $compensated-container-padding;
+      padding-left: $compensated-container-padding;
+
+      display: block;
+
+      position: relative;
+
+      &::after {
+        width: 0;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: colour.$tna-black;
+
+        transition: width 200ms;
+
+        content: "";
+      }
+
+      &:hover {
+        &::after {
+          width: 0.25rem;
+
+          transition: width 50ms;
+        }
+      }
+
+      &--selected {
+        &::after,
+        &:hover::after {
+          width: 0.5rem;
+        }
+      }
+    }
   }
 }

@@ -1,3 +1,4 @@
+@use "../variables/colour";
 @use "../variables/typography";
 
 .tna-template {
@@ -9,7 +10,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  font-size: typography.$base-font-size-px;
+  font-size: #{typography.$base-font-size-px}px;
 
   @media (prefers-reduced-motion) {
     * {
@@ -20,6 +21,7 @@
 }
 
 .tna-template__body {
+  min-height: 100%;
   margin: 0;
   padding: 0;
 
@@ -42,7 +44,11 @@ canvas {
   width: 100%;
 }
 
+[hidden] {
+  display: none;
+}
+
 *:focus {
-  outline: 0.3125rem #004c7e solid;
+  outline: 0.3125rem colour.$focus-colour solid;
   outline-offset: 0.125rem;
 }

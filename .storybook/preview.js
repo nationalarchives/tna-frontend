@@ -1,7 +1,11 @@
+import "../src/nationalarchives/all.scss";
+
 document.documentElement.classList.add("tna-template");
-document.documentElement.classList.add("app-example-page__wrapper");
+if (window.self !== window.top) {
+  document.documentElement.classList.add("tna-template--padded");
+}
+// document.documentElement.classList.remove("js-disabled");
 document.body.classList.add("tna-template__body");
-document.body.classList.add("js-enabled");
 
 export const parameters = {
   actions: {

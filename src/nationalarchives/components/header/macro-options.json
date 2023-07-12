@@ -22,6 +22,12 @@
         "type": "string",
         "required": false,
         "description": ""
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "description": ""
       }
     ]
   },

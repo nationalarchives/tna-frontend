@@ -2,43 +2,68 @@
 @use "../variables/grid";
 
 @mixin columns-generator($count, $suffix: "") {
-  @for $i from 1 through $count - 1 {
-    $simplest-fraction-found: false;
+  @if $suffix != "" {
+    $suffix: "-" + $suffix;
+  }
 
-    @for $j from math.div($count, 2) through 1 {
-      @if (
-        $count % $j == 0 and $i % $j == 0 and $simplest-fraction-found != true
-      ) {
-        .tna-column--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+  .tna-column {
+    &--full#{$suffix} {
+      width: 100%;
+      flex: none;
+    }
+
+    @for $i from 1 through $count - 1 {
+      $simplest-fraction-found: false;
+
+      @for $j from math.div($count, 2) through 1 {
+        @if (
+          $count % $j == 0 and $i % $j == 0 and $simplest-fraction-found != true
+        ) {
+          &--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+            width: math.div(100%, $count) * $i;
+            flex: none;
+          }
+
+          // .column--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+          //   margin-right: math.div(100%, $count) * $i;
+          // }
+
+          // .column--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+          //   margin-left: math.div(100%, $count) * $i;
+          // }
+
+          $simplest-fraction-found: true;
+        }
+      }
+
+      @if $simplest-fraction-found != true {
+        &--width-#{$i}-#{$count}#{$suffix} {
           width: math.div(100%, $count) * $i;
           flex: none;
         }
 
-        // .column--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-        //   margin-right: math.div(100%, $count) * $i;
-        // }
+        //   .column--margin-right-#{$i}-#{$count}#{$suffix} {
+        //     margin-right: math.div(100%, $count) * $i;
+        //   }
 
-        // .column--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-        //   margin-left: math.div(100%, $count) * $i;
-        // }
-
-        $simplest-fraction-found: true;
+        //   .column--margin-left-#{$i}-#{$count}#{$suffix} {
+        //     margin-left: math.div(100%, $count) * $i;
+        //   }
       }
     }
 
-    @if $simplest-fraction-found != true {
-      .tna-column--width-#{$i}-#{$count}#{$suffix} {
-        width: math.div(100%, $count) * $i;
-        flex: none;
+    @for $i from 1 through 2 {
+      &--flex-#{$i}#{$suffix} {
+        width: auto;
+
+        flex: $i 0;
       }
+    }
 
-      //   .column--margin-right-#{$i}-#{$count}#{$suffix} {
-      //     margin-right: math.div(100%, $count) * $i;
-      //   }
-
-      //   .column--margin-left-#{$i}-#{$count}#{$suffix} {
-      //     margin-left: math.div(100%, $count) * $i;
-      //   }
+    @for $i from 1 through 3 {
+      &--order-#{$i}#{$suffix} {
+        order: $i;
+      }
     }
   }
 }

@@ -5,34 +5,34 @@
 {% block pageTitle %}The National Archives | Results{% endblock %}
 
 {% block main %}
-    <div class="tna-container">
-        <div class="tna-column tna-column--1-4 tna-column--width-1-3-medium tna-column--full-small tna-column--full-tiny">
-            <h2>Search filters...</h2>
-        </div>
-        <main class="tna-main-wrapper tna-column tna-column--container tna-column--3-4 tna-column--width-2-3-medium tna-column--full-small tna-column--full-tiny {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-            {% block beforeContent %}{% endblock %}
-            <div class="tna-column tna-column--full">
-                <h1 class="tna-heading tna-heading--xl">
-                    Search results for "foobar"
-                </h1>
-            </div>
-            {% for item in range(0, 6) -%}
-                <div class="tna-column tna-column--width-1-2 tna-column--width-full-small tna-column--width-full-tiny">
-                    {{ tnaCard({
-                        "heading": {
-                            "supertitle": "Card supertitle",
-                            "title": "Card title",
-                            "level": 2
-                        },
-                        "href": "#",
-                        "image": {
-                            "src": "https://loremflickr.com/640/360",
-                            "alt": "A placeholder image"
-                        },
-                        "body": "<p>Card body</p>",
-                    }) }}
-                </div>
-            {%- endfor %}
-        </main>
+  <div class="tna-container">
+    <div class="tna-column tna-column--1-4 tna-column--width-1-3-medium tna-column--full-small tna-column--full-tiny">
+      <h2>Search filters...</h2>
     </div>
+    <main class="tna-main-wrapper tna-column tna-column--container tna-column--3-4 tna-column--width-2-3-medium tna-column--full-small tna-column--full-tiny {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+      {% block beforeContent %}{% endblock %}
+      <div class="tna-column tna-column--full">
+        <h1 class="tna-heading tna-heading--xl">
+          Search results for "foobar"
+        </h1>
+      </div>
+      {% for item in range(0, 6) -%}
+        <div class="tna-column tna-column--width-1-2 tna-column--width-full-small tna-column--width-full-tiny">
+          {{ tnaCard({
+            "heading": {
+              "supertitle": "Card supertitle",
+              "title": "Card title",
+              "level": 2
+            },
+            "href": "#",
+            "image": {
+              "src": "https://loremflickr.com/640/360",
+              "alt": "A placeholder image"
+            },
+            "body": "<p>Card body</p>",
+          }) }}
+        </div>
+      {%- endfor %}
+    </main>
+  </div>
 {% endblock %}

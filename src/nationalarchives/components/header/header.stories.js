@@ -1,11 +1,10 @@
 import Header from "./template.njk";
 import "./_index.scss";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
 
 const argTypes = {
   navigation: { control: "object" },
+  colour: { control: "radio", options: ["black", "yellow"] },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -21,10 +20,11 @@ export default {
   argTypes,
 };
 
-const Template = ({ navigation, classes, attributes }) => {
+const Template = ({ navigation, colour, classes, attributes }) => {
   return Header({
     params: {
       navigation,
+      colour,
       classes,
       attributes,
     },
@@ -37,6 +37,7 @@ Standard.args = {
     {
       text: "Alpha",
       href: "#/alpha",
+      selected: true,
     },
     {
       text: "Beta",

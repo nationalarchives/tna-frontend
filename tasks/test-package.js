@@ -40,7 +40,6 @@ const checkExists = [
   "nationalarchives/assets/images/nationalarchives-opengraph-image.png",
   "nationalarchives/assets/images/tna-horizontal-logo-inverted.svg",
   "nationalarchives/assets/images/tna-horizontal-logo.svg",
-  "nationalarchives/assets/images/tna-square-logo-inverted.svg",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
   ...componentFiles("button", true),

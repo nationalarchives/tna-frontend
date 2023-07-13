@@ -3,7 +3,7 @@ import "./_index.scss";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  strapline: { control: "text" },
+  logo: { control: "object" },
   navigation: { control: "object" },
   colour: {
     control: "radio",
@@ -24,10 +24,10 @@ export default {
   argTypes,
 };
 
-const Template = ({ strapline, navigation, colour, classes, attributes }) => {
+const Template = ({ logo, navigation, colour, classes, attributes }) => {
   return Header({
     params: {
-      strapline,
+      logo,
       navigation,
       colour,
       classes,
@@ -38,7 +38,10 @@ const Template = ({ strapline, navigation, colour, classes, attributes }) => {
 
 export const Standard = Template.bind({});
 Standard.args = {
-  strapline: "Beta",
+  logo: {
+    strapline: "Beta",
+    href: "#/",
+  },
   navigation: [
     {
       text: "Alpha",

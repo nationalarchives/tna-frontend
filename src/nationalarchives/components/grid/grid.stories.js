@@ -47,7 +47,7 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  classes: "tna-container--demo",
+  classes: "tna-grid--demo",
   columns: [
     {
       html: "<p>Full width</p>",
@@ -189,6 +189,6 @@ const responsiveColumn = {
   widthTiny: "full",
 };
 Responsive.args = {
-  classes: "tna-container--demo",
+  classes: "tna-grid--demo",
   columns: Array(12).fill({ ...responsiveColumn }),
 };

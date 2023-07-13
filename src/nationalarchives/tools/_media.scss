@@ -1,17 +1,18 @@
 @use "../variables/media";
 
-//   0 ============= 480 ===== 768 == 1024 ==========================
-//   |               |         |      |
-//   | TINY          | SMALL   | MED  | LARGE
-//   |               |         |      |
-//   |<------------->|         .      .            on-tiny
-//   |<----------------------->|      .            on-mobile
+//   0 ======= 320 = 480 ===== 768 == 1024 ========================== min-width/max-width (px)
+//   |         .     |         |      |
+//   |-TINY----------|-SMALL---|-MED--|-LARGE------------------------
+//   |         .     |         |      |
+//   |<------------->|         |      |            on-tiny
+//   |<----------------------->|      |            on-mobile
 //   |<------------------------------>|            on-smaller-than-large
-//   .               |<------->|      .            on-small
-//   .               |<-------------------------   on-larger-than-tiny
-//   .               .         |<---->|            on-medium
-//   .               .         |<---------------   on-larger-than-mobile
-//   .               .         .      |<--------   on-large
+//   |         .     |<------->|      |            on-small
+//   |         .     |<-------------------------   on-larger-than-tiny
+//   |         .     |         |<---->|            on-medium
+//   |         .     |         |<---------------   on-larger-than-mobile
+//   |         .     |         |      |<--------   on-large
+//   |<------->.     |         |      |            Smallest device
 
 @mixin on-large() {
   @media #{media.$media-large} {

@@ -1,5 +1,28 @@
+@use "../features";
 @use "../variables/colour";
 @use "../variables/typography";
+
+:root {
+  @include colour.colour-css-vars;
+
+  @if features.$support-colour-schemes {
+    @media (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-dark;
+    }
+
+    @media (prefers-contrast: more) {
+      @include colour.colour-css-vars-high-contrast;
+
+      * {
+        background-image: none !important;
+      }
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-high-contrast-dark;
+    }
+  }
+}
 
 .tna-template {
   min-width: 320px;
@@ -11,6 +34,54 @@
   -webkit-overflow-scrolling: touch;
 
   font-size: #{typography.$base-font-size-px}px;
+
+  @include colour.colour-background("page-background");
+
+  &--back-accent {
+    accent-color: colour.$tna-black;
+  }
+
+  &--yellow-accent {
+    accent-color: colour.$tna-yellow;
+  }
+
+  &--pink-accent {
+    accent-color: colour.$tna-pink;
+  }
+
+  &--orange-accent {
+    accent-color: colour.$tna-orange;
+  }
+
+  &--green-accent {
+    accent-color: colour.$tna-green;
+  }
+
+  &--blue-accent {
+    accent-color: colour.$tna-blue;
+  }
+
+  @if features.$support-colour-schemes {
+    &--light-theme {
+      @include colour.colour-css-vars;
+    }
+
+    &--dark-theme {
+      @include colour.colour-css-vars-dark;
+    }
+
+    &--high-contrast-theme {
+      @include colour.colour-css-vars-high-contrast;
+
+      * {
+        background-image: none !important;
+      }
+
+      &.tna-template--dark-theme {
+        @include colour.colour-css-vars-high-contrast-dark;
+      }
+    }
+  }
 
   @media (prefers-reduced-motion) {
     * {
@@ -25,7 +96,7 @@
   margin: 0;
   padding: 0;
 
-  background-color: #fff;
+  // background-color: #fff;
 
   overflow: auto;
 }
@@ -49,6 +120,8 @@ canvas {
 }
 
 *:focus {
-  outline: 0.3125rem colour.$focus-colour solid;
+  // outline: 0.3125rem colour.$focus-colour solid;
+  outline: 0.3125rem solid;
+  @include colour.colour-outline("focus-outline");
   outline-offset: 0.125rem;
 }

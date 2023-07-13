@@ -30,7 +30,8 @@
   &__link {
     display: inline-block;
 
-    color: colour.$base-font-colour;
+    // color: colour.$base-font-colour;
+    @include colour.colour-font("base-font");
 
     &:hover {
       color: colour.$tna-black;

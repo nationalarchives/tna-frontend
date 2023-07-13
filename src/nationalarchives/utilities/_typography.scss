@@ -10,7 +10,8 @@
 .tna-template {
   font-family: typography.$font-family-main;
   font-weight: typography.$font-weight-main;
-  color: colour.$base-font-colour;
+  // color: colour.$base-font-colour;
+  @include colour.colour-font("base-font");
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -116,7 +117,8 @@
     &__supertitle {
       margin: 0;
 
-      color: colour.$base-font-colour;
+      // color: colour.$base-font-colour;
+      @include colour.colour-font("base-font");
       @include tools.relative-font-size(14);
       font-family: typography.$font-family-detail;
       font-weight: typography.$font-weight-detail;
@@ -135,7 +137,8 @@
       .tna-hgroup__supertitle {
         display: block;
 
-        color: colour.$base-font-colour;
+        // color: colour.$base-font-colour;
+        @include colour.colour-font("base-font");
       }
     }
 

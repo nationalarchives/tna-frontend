@@ -1,11 +1,95 @@
+@use "sass:map";
+
 $tna-black: #000;
 $tna-yellow: #fc0;
 $tna-pink: #fe1d57;
 $tna-orange: #fd3f03;
 $tna-green: #86bc25;
 $tna-blue: #00b0ff;
+$dark: #26262a;
 
-$dark: #26262a !default;
-$base-font-colour: #343338 !default;
-$focus-colour: #004c7e !default;
-$keyline-colour: #ccc !default;
+$page-background: #fff;
+$base-font: #343338;
+$focus-outline: #004c7e;
+$keyline: #ccc;
+
+$colour-palette-default: (
+  "page-background": $page-background,
+  "base-font": $base-font,
+  "dark-font": $tna-black,
+  "focus-outline": $focus-outline,
+  "keyline": $keyline,
+);
+
+$colour-palette-dark: map.merge(
+  $colour-palette-default,
+  (
+    "page-background": $dark,
+    "base-font": #eee,
+    "dark-font": #fff,
+    "focus-outline": $tna-yellow,
+    "keyline": #444,
+  )
+);
+
+$colour-palette-high-contrast: map.merge(
+  $colour-palette-default,
+  (
+    "base-font": $tna-black,
+    "focus-outline": #f0a,
+    "keyline": $tna-black,
+  )
+);
+
+$colour-palette-high-contrast-dark: map.merge(
+  $colour-palette-dark,
+  (
+    "page-background": $tna-black,
+    "base-font": #fff,
+    "keyline": #fff,
+  )
+);
+
+@mixin colour-css-vars() {
+  @each $name, $value in $colour-palette-default {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-css-vars-dark() {
+  @each $name, $value in $colour-palette-dark {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-css-vars-high-contrast() {
+  @each $name, $value in $colour-palette-high-contrast {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-css-vars-high-contrast-dark() {
+  @each $name, $value in $colour-palette-high-contrast-dark {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-font($colour) {
+  color: map.get($colour-palette-default, $colour);
+  color: var(--#{$colour});
+}
+
+@mixin colour-background($colour) {
+  background-color: map.get($colour-palette-default, $colour);
+  background-color: var(--#{$colour});
+}
+
+@mixin colour-border($colour) {
+  border-color: map.get($colour-palette-default, $colour);
+  border-color: var(--#{$colour});
+}
+
+@mixin colour-outline($colour) {
+  outline-color: map.get($colour-palette-default, $colour);
+  outline-color: var(--#{$colour});
+}

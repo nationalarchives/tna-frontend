@@ -10,6 +10,84 @@
 
   background-color: colour.$tna-black;
 
+  &__exit {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    text-align: right;
+
+    background-color: colour.$dark;
+  }
+
+  &__exit-link {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+
+      // .tna-header__exit-link-icon {
+      //   border-color: colour.$tna-yellow;
+
+      //   &::before {
+      //     border-top-color: colour.$tna-yellow;
+      //     border-right-color: colour.$tna-yellow;
+      //   }
+
+      //   &::after {
+      //     background-color: colour.$tna-yellow;
+      //   }
+      // }
+    }
+  }
+
+  &__exit-link-icon {
+    width: 0.825rem;
+    height: 0.825rem;
+    margin-right: 0.125rem;
+    margin-left: 0.5rem;
+
+    display: inline-block;
+
+    position: relative;
+
+    vertical-align: middle;
+
+    border: 0.125rem #fff solid;
+
+    &::before {
+      position: absolute;
+      top: -0.25rem;
+      right: -0.25rem;
+      z-index: 2;
+
+      border: 0.25rem transparent solid;
+      border-top-color: #fff;
+      border-right-color: #fff;
+
+      content: "";
+    }
+
+    &::after {
+      width: 0.25rem;
+      height: 0.825rem;
+
+      position: absolute;
+      top: -0.125rem;
+      right: -0.125rem;
+      z-index: 1;
+
+      background-color: #fff;
+
+      outline: 0.2rem colour.$dark solid;
+
+      transform: rotate(45deg) translateX(50%);
+      transform-origin: 100% 0;
+
+      content: "";
+    }
+  }
+
   &__contents {
     &.tna-container {
       justify-content: space-between;

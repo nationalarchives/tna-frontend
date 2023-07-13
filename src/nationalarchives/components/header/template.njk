@@ -3,6 +3,20 @@
   {%- set classes = classes.concat('tna-header--' + params.colour) -%}
 {%- endif -%}
 <header class="tna-header {{ classes | join(' ') }}" data-module="tna-header" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- if params.exit -%}
+  <div class="tna-header__exit">
+    <div class="tna-container">
+      <div class="tna-column tna-column--full">
+        <a href="{{ params.exit.href }}" class="tna-header__exit-link"{%- if params.exit.target -%} target="{{ params.exit.target }}"{%- endif -%}>
+          {{ params.exit.text }}
+          {%- if params.exit.target == "_blank" -%}
+          <span class="tna-header__exit-link-icon"></span>
+          {%- endif -%}
+        </a>
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
   <div class="tna-container tna-header__contents">
     <div class="tna-column tna-header__logo">
       <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-link tna-header__logo-link--href"{%- else -%}span class="tna-header__logo-link"{%- endif -%}>

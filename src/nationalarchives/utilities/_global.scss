@@ -125,3 +125,23 @@ canvas {
   @include colour.colour-outline("focus-outline");
   outline-offset: 0.125rem;
 }
+
+.tna-visually-hidden {
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -1 !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0, 0, 0, 0) !important;
+
+  border: 0 !important;
+
+  background-color: transparent !important;
+}

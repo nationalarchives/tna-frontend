@@ -9,7 +9,6 @@ const argTypes = {
     control: "radio",
     options: ["black", "yellow", "pink", "orange", "green", "blue"],
   },
-  phase: { control: "object" },
   exit: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -26,21 +25,12 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  logo,
-  navigation,
-  colour,
-  phase,
-  exit,
-  classes,
-  attributes,
-}) => {
+const Template = ({ logo, navigation, colour, exit, classes, attributes }) => {
   return Header({
     params: {
       logo,
       navigation,
       colour,
-      phase,
       exit,
       classes,
       attributes,
@@ -70,5 +60,10 @@ Standard.args = {
     },
   ],
   colour: "yellow",
+  exit: {
+    text: "Go to the current National Archives website",
+    href: "#",
+    target: "_blank",
+  },
   classes: "tna-header--demo",
 };

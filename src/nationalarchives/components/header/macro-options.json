@@ -64,26 +64,6 @@
     "description": ""
   },
   {
-    "name": "phase",
-    "type": "object",
-    "required": false,
-    "description": "",
-    "params": [
-      {
-        "name": "status",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "message",
-        "type": "string",
-        "required": true,
-        "description": ""
-      }
-    ]
-  },
-  {
     "name": "exit",
     "type": "object",
     "required": false,
@@ -99,6 +79,12 @@
         "name": "href",
         "type": "string",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "target",
+        "type": "string",
+        "required": false,
         "description": ""
       }
     ]

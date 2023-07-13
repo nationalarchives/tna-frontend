@@ -16,6 +16,7 @@ module.exports = {
     name: "@storybook/html-webpack5",
     options: {},
   },
+  staticDirs: ["../src/nationalarchives/assets"],
   webpackFinal: async (config, { configType }) => {
     config.plugins.push(
       new CopyPlugin({

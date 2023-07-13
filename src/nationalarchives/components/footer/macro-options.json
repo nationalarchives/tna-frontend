@@ -1,5 +1,17 @@
 [
   {
+    "name": "title",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "address",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "navigation",
     "type": "array",
     "required": false,
@@ -37,12 +49,6 @@
           },
           {
             "name": "image",
-            "type": "string",
-            "required": false,
-            "description": ""
-          },
-          {
-            "name": "imageSrc",
             "type": "string",
             "required": false,
             "description": ""

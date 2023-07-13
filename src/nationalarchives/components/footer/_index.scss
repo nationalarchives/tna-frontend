@@ -1,8 +1,9 @@
 @use "../../variables/colour";
+@use "../../tools/media";
 
 .tna-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   color: #fff;
 
@@ -16,6 +17,22 @@
     }
   }
 
+  &__top {
+    margin-bottom: 2rem;
+
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+
+    color: inherit;
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
   &__navigation {
     padding-bottom: 3rem;
   }
@@ -24,6 +41,7 @@
   }
 
   &__navigation-group-title {
+    color: inherit;
   }
 
   &__navigation-group-items {
@@ -39,7 +57,9 @@
   }
 
   &__social {
-    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+
+    justify-content: space-evenly;
 
     &.tna-container {
       align-items: flex-end;
@@ -47,6 +67,8 @@
   }
 
   &__social-item {
+    margin-bottom: 2rem;
+
     text-align: center;
   }
 
@@ -55,6 +77,9 @@
   }
 
   &__social-item-link-image {
+    width: 2.25em;
+    margin: 0 auto 0.5rem;
+
     display: block;
   }
 
@@ -62,10 +87,20 @@
     &.tna-container {
       align-items: center;
     }
+
+    .tna-column {
+      margin-top: 1rem;
+    }
   }
 
   &__licence-logo {
     display: block;
+  }
+
+  &__govuk {
+    margin-top: 2rem;
+
+    text-align: center;
   }
 
   &__govuk-link {
@@ -85,5 +120,13 @@
     display: block;
 
     fill: inherit;
+  }
+
+  @include media.on-mobile {
+    padding-top: 1rem;
+
+    &__social {
+      justify-content: center;
+    }
   }
 }

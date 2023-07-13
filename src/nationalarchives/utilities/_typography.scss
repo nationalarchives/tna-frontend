@@ -18,8 +18,16 @@
   -webkit-text-size-adjust: none;
   direction: ltr;
 
+  // h1,
+  // h2,
+  // h3,
+  // h4,
+  // h5,
+  // h6,
+  // ul,
+  // ol,
   p {
-    margin: 0 0 2rem;
+    margin: 0 0 1.5rem;
 
     &:last-child {
       margin-bottom: 0;
@@ -35,147 +43,145 @@
       text-decoration-thickness: 3px;
     }
   }
+}
 
-  .tna-template__body {
-    @include tools.relative-font-size(16);
-    line-height: 1.6;
+.tna-template__body {
+  @include tools.relative-font-size(16);
+  line-height: 1.6;
+}
+
+.tna-ul,
+.tna-ol {
+  padding-left: 2rem;
+
+  li::marker {
+    color: #f0a;
+    font-weight: 700;
   }
 
-  .tna-ul,
-  .tna-ol {
-    padding-left: 2rem;
-
-    li::marker {
-      color: #f0a;
-      font-weight: 700;
-    }
-  }
-
-  .tna-ul--plain,
-  .tna-ol--plain {
+  &--plain {
     padding-left: 0;
 
     list-style: none;
   }
+}
 
-  .tna-heading {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+.tna-heading {
+  margin-bottom: 1.5rem;
 
-    color: colour.$tna-black;
-    font-family: typography.$font-family-heading;
-    font-weight: typography.$font-weight-heading;
+  color: colour.$tna-black;
+  font-family: typography.$font-family-heading;
+  font-weight: typography.$font-weight-heading;
 
-    &:last-child {
-      margin-bottom: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--xl {
+    @include tools.relative-font-size(64);
+    line-height: 1;
+
+    @include media.on-medium {
+      @include tools.relative-font-size(42);
     }
 
-    &--xl {
-      @include tools.relative-font-size(64);
-      line-height: 1;
-
-      @include media.on-medium {
-        @include tools.relative-font-size(42);
-      }
-
-      @include media.on-mobile {
-        @include tools.relative-font-size(36);
-      }
-    }
-
-    &--l {
-      @include tools.relative-font-size(32);
-      line-height: 1.2;
-
-      @include media.on-medium {
-        @include tools.relative-font-size(26);
-      }
-
-      @include media.on-mobile {
-        @include tools.relative-font-size(24);
-      }
-    }
-
-    &--m {
-      @include tools.relative-font-size(20);
-      line-height: 1.4;
-    }
-
-    &--s {
-      @include tools.relative-font-size(18);
-      line-height: 1.6;
+    @include media.on-mobile {
+      @include tools.relative-font-size(36);
     }
   }
 
-  .tna-hgroup {
-    margin-bottom: 2rem;
+  &--l {
+    @include tools.relative-font-size(32);
+    line-height: 1.2;
 
-    &:last-child {
-      margin-bottom: 0;
+    @include media.on-medium {
+      @include tools.relative-font-size(26);
     }
 
-    &__supertitle {
-      margin: 0;
+    @include media.on-mobile {
+      @include tools.relative-font-size(24);
+    }
+  }
+
+  &--m {
+    @include tools.relative-font-size(20);
+    line-height: 1.4;
+  }
+
+  &--s {
+    @include tools.relative-font-size(18);
+    line-height: 1.6;
+  }
+}
+
+.tna-hgroup {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__supertitle {
+    margin: 0;
+
+    // color: colour.$base-font-colour;
+    @include colour.colour-font("base-font");
+    @include tools.relative-font-size(14);
+    font-family: typography.$font-family-detail;
+    font-weight: typography.$font-weight-detail;
+    text-transform: uppercase;
+
+    // .tna-hgroup & {
+    //   margin: 0;
+    // }
+  }
+
+  &__title {
+    margin: 0;
+
+    color: colour.$tna-black;
+
+    .tna-hgroup__supertitle {
+      display: block;
 
       // color: colour.$base-font-colour;
       @include colour.colour-font("base-font");
-      @include tools.relative-font-size(14);
-      font-family: typography.$font-family-detail;
-      font-weight: typography.$font-weight-detail;
-      text-transform: uppercase;
+    }
+  }
 
-      // .tna-hgroup & {
-      //   margin: 0;
-      // }
+  &--xl {
+    .tna-hgroup__supertitle {
     }
 
-    &__title {
-      margin: 0;
+    .tna-hgroup__title {
+      @include tools.relative-font-size(64);
+    }
+  }
 
-      color: colour.$tna-black;
-
-      .tna-hgroup__supertitle {
-        display: block;
-
-        // color: colour.$base-font-colour;
-        @include colour.colour-font("base-font");
-      }
+  &--l {
+    .tna-hgroup__supertitle {
     }
 
-    &--xl {
-      .tna-hgroup__supertitle {
-      }
+    .tna-hgroup__title {
+      @include tools.relative-font-size(32);
+    }
+  }
 
-      .tna-hgroup__title {
-        @include tools.relative-font-size(64);
-      }
+  &--m {
+    .tna-hgroup__supertitle {
     }
 
-    &--l {
-      .tna-hgroup__supertitle {
-      }
+    .tna-hgroup__title {
+      @include tools.relative-font-size(20);
+    }
+  }
 
-      .tna-hgroup__title {
-        @include tools.relative-font-size(32);
-      }
+  &--s {
+    .tna-hgroup__supertitle {
     }
 
-    &--m {
-      .tna-hgroup__supertitle {
-      }
-
-      .tna-hgroup__title {
-        @include tools.relative-font-size(20);
-      }
-    }
-
-    &--s {
-      .tna-hgroup__supertitle {
-      }
-
-      .tna-hgroup__title {
-        @include tools.relative-font-size(18);
-      }
+    .tna-hgroup__title {
+      @include tools.relative-font-size(18);
     }
   }
 }

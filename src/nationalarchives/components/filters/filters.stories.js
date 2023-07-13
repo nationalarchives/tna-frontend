@@ -16,7 +16,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Experimental/Filters",
+  title: "Components/Experimental/Filters",
   argTypes,
 };
 

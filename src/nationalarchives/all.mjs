@@ -27,22 +27,17 @@ window.addEventListener("touchstart", onFirstTouch);
 window.addEventListener("keydown", onKeyDown);
 window.addEventListener("mousedown", onMouseDown);
 
-
-
-if (document.documentElement.classList.contains('tna-template--system-theme')) {
-  if (window.matchMedia('(prefers-contrast: more)').matches) {
-    document.documentElement.classList.add('tna-template--high-contrast-theme')
+if (document.documentElement.classList.contains("tna-template--system-theme")) {
+  if (window.matchMedia("(prefers-contrast: more)").matches) {
+    document.documentElement.classList.add("tna-template--high-contrast-theme");
   } else {
     document.documentElement.classList.add(
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'tna-template--dark-theme'
-        : 'tna-template--light-theme'
-    )
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "tna-template--dark-theme"
+        : "tna-template--light-theme",
+    );
   }
 }
-
-
-
 
 const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};

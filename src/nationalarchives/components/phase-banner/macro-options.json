@@ -1,0 +1,26 @@
+[
+  {
+    "name": "phase",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "message",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the phase banner."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the phase banner."
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "component": "phase-banner",
+  "fixtures": [
+    {
+      "name": "beta",
+      "options": {
+        "phase": "Beta",
+        "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Beta\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    }
+  ]
+}

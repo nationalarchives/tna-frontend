@@ -1,0 +1,16 @@
+{%- set classes = [params.classes] if params.classes else [] -%}
+{%- set classes = classes.concat('tna-phase-banner--' + params.phase | lower) -%}
+<div class="tna-phase-banner {{ classes | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="tna-container">
+    <div class="tna-column">
+      <span class="tna-phase-banner__phase">
+        {{ params.phase }}
+      </span>
+    </div>
+    <div class="tna-column">
+      <p class="tna-phase-banner__message">
+        {{ params.message | safe }}
+      </p>
+    </div>
+  </div>
+</div>

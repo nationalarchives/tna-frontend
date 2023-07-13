@@ -1,0 +1,42 @@
+@use "../../tools/media";
+@use "../../tools/typography";
+
+.tna-phase-banner {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  .tna-container {
+    align-items: center;
+    flex-wrap: nowrap;
+
+    // @include media.on-tiny {
+    //   flex-wrap: wrap;
+    // }
+  }
+
+  &__phase {
+    margin: 0.25rem 0;
+    padding: 0.125rem 0.5rem;
+
+    display: block;
+
+    font-weight: 700;
+    text-transform: uppercase;
+
+    background-color: #fff;
+  }
+
+  &__message {
+    margin: 0.25rem 0;
+
+    // @include typography.relative-font-size(14);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &--beta {
+    background-color: #f9f7e2;
+  }
+}

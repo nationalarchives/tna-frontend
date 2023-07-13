@@ -49,6 +49,7 @@ const checkExists = [
   ...componentFiles("grid", true),
   ...componentFiles("header"),
   ...componentFiles("hero", true),
+  ...componentFiles("phase-banner", true),
   ...componentFiles("sensitive-image"),
   // Tools
   "nationalarchives/tools/_all.scss",

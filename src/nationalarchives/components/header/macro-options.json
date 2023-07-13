@@ -64,15 +64,55 @@
     "description": ""
   },
   {
+    "name": "phase",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "status",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "message",
+        "type": "string",
+        "required": true,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "exit",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      }
+    ]
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the hero."
+    "description": "Classes to add to the header."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the hero."
+    "description": "HTML attributes (for example data attributes) to add to the header."
   }
 ]

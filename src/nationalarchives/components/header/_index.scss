@@ -3,6 +3,7 @@
 @use "../../variables/grid";
 @use "../../variables/typography";
 @use "../../tools/media";
+@use "../../tools/typography" as tools;
 
 .tna-header {
   color: #fff;
@@ -16,8 +17,8 @@
   }
 
   &__logo {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   &__logo-link {
@@ -62,6 +63,45 @@
     align-self: center;
   }
 
+  &__hamburger {
+    width: 2rem;
+    height: 0.25rem;
+
+    display: block;
+
+    background-color: #fff;
+
+    transition: height 1ms 200ms;
+
+    &::before,
+    &::after {
+      height: 0.25rem;
+
+      display: block;
+
+      position: absolute;
+      right: 0;
+      left: 0;
+
+      background-color: inherit;
+
+      transition:
+        top 200ms 200ms,
+        bottom 200ms 200ms,
+        transform 200ms;
+
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
   &__navigation-toggle-button {
     height: 2rem;
     padding: 0;
@@ -80,37 +120,31 @@
     border-width: 0.25rem 0;
 
     cursor: pointer;
-  }
 
-  &__hamburger {
-    width: 2rem;
-    height: 0.25rem;
+    &--opened {
+      .tna-header__hamburger {
+        height: 0;
 
-    display: block;
+        &::before,
+        &::after {
+          transition:
+            top 200ms,
+            bottom 200ms,
+            transform 200ms 200ms;
+        }
 
-    background-color: #fff;
+        &::before {
+          top: 0.625rem;
 
-    &::before,
-    &::after {
-      height: 0.25rem;
+          transform: rotate(-135deg);
+        }
 
-      display: block;
+        &::after {
+          bottom: 0.625rem;
 
-      position: absolute;
-      right: 0;
-      left: 0;
-
-      background-color: inherit;
-
-      content: "";
-    }
-
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
+          transform: rotate(135deg);
+        }
+      }
     }
   }
 
@@ -186,6 +220,7 @@
     color: inherit;
     font-family: typography.$font-family-heading;
     text-decoration: none;
+    line-height: 2;
 
     transition:
       color 200ms,
@@ -247,6 +282,7 @@
 
     &__navigation {
       color: colour.$base-font-colour;
+      @include tools.relative-font-size(20);
 
       &.tna-column {
         padding-right: 0;
@@ -283,6 +319,8 @@
       display: block;
 
       position: relative;
+
+      line-height: 1.6;
 
       &::after {
         width: 0;

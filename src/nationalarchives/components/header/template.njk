@@ -37,9 +37,7 @@
       </{%- if params.logo.href -%}a{%- else -%}span{%- endif -%}>
     </div>
     {%- if params.navigation -%}
-    <div class="tna-column tna-column--flex-1- tna-header__navigation-toggle">
-      <!-- POPULATED BY JAVASCRIPT IF ENABLED -->
-    </div>
+    <div class="tna-column tna-column--flex-1- tna-header__navigation-toggle"><!-- POPULATED BY JAVASCRIPT IF ENABLED --></div>
     <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" aria-label="Main site navigation">
       <ul class="tna-header__navigation-items">
       {%- for item in params.navigation -%}

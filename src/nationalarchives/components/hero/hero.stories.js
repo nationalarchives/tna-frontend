@@ -48,7 +48,7 @@ Standard.args = {
   classes: "tna-hero--demo",
 };
 
-Standard.play = async ({ args, canvasElement }) => {
+Standard.play = async ({ args, canvasElement, step }) => {
   const canvas = within(canvasElement);
   const image = canvas.getByAltText(args.image.alt);
   const title = canvas.getByText(args.heading);
@@ -57,17 +57,20 @@ Standard.play = async ({ args, canvasElement }) => {
   );
   const information = canvas.getByText(args.image.information);
 
-  await expect(image).toBeVisible();
-  await expect(title).toBeVisible();
-  await expect(summary).toBeVisible();
-  await expect(information).not.toBeVisible();
+  await step("Initial load", async () => {
+    await expect(image).toBeVisible();
+    await expect(title).toBeVisible();
+    await expect(summary).toBeVisible();
+    await expect(information).not.toBeVisible();
+  });
 
-  await userEvent.click(summary);
-  await expect(image).toBeVisible();
-  await expect(title).toBeVisible();
-  await expect(summary).toBeVisible();
-  await expect(information).toBeVisible();
+  await step("Open information", async () => {
+    await userEvent.click(summary);
+    await expect(information).toBeVisible();
+  });
 
-  await userEvent.click(summary);
-  await expect(information).not.toBeVisible();
+  await step("Close information", async () => {
+    await userEvent.click(summary);
+    await expect(information).not.toBeVisible();
+  });
 };

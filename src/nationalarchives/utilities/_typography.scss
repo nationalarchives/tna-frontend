@@ -18,14 +18,17 @@
   -webkit-text-size-adjust: none;
   direction: ltr;
 
-  // h1,
-  // h2,
-  // h3,
-  // h4,
-  // h5,
-  // h6,
-  // ul,
-  // ol,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol {
+    margin-top: 0;
+  }
+
   p {
     margin: 0 0 1.5rem;
 

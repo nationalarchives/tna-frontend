@@ -38,6 +38,6 @@ jobs:
       - name: Run tests
         run: npm run test
       - name: Build package
-        run: ./bin/build-package.sh
+        run: ./tasks/build-package.sh
       - name: Test package
         run: node tasks/test-package.js || exit 1

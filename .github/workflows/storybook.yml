@@ -32,6 +32,8 @@ jobs:
         run: npm ci
       - name: Build Storybook
         run: npm run build
+      - name: Publish to Chromatic
+        run: npx chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }} --build-script-name=build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

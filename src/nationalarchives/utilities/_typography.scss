@@ -8,7 +8,7 @@
 @import "https://use.typekit.net/hkj3kuz.css";
 
 .tna-template {
-  font-family: typography.$font-family-main;
+  font-family: "Courier New", monospace;
   font-weight: typography.$font-weight-main;
   // color: colour.$base-font-colour;
   @include colour.colour-font("base-font");

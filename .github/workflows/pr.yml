@@ -1,0 +1,43 @@
+name: PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - ready_for_review
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Build Storybook
+        run: npm run build
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook
+          exitZeroOnChanges: true
+      - name: Start Storybook
+        run: npm start &
+      - name: Run tests
+        run: npm run test
+      - name: Build package
+        run: ./bin/build-package.sh
+      - name: Test package
+        run: node tasks/test-package.js || exit 1

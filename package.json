@@ -5,7 +5,7 @@
   "scripts": {
     "start": "storybook dev -p 6006",
     "build": "storybook build -o storybook",
-    "test": "test-storybook --stories-json && node tasks/test-fixtures.js",
+    "test": "test-storybook --verbose --stories-json --browsers chromium webkit && node tasks/test-fixtures.js",
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.mjs'",
     "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.mjs'",
     "package:sass": "sass --style=compressed --quiet-deps src/nationalarchives/all.scss package/nationalarchives/all.css",

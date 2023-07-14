@@ -19,11 +19,14 @@
           {{ params.heading }}
         </h1>
         {%- endif -%}
-        <div class="tna-hero__body">
         {%- if params.text -%}
+        <div class="tna-hero__body">
           <p>{{ params.text }}</p>
+        </div>
         {%- elseif params.body -%}
+        <div class="tna-hero__body">
           {{ params.body | safe }}
+        </div>
         {%- endif -%}
         </div>
       </div>

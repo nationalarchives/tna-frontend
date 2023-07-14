@@ -74,3 +74,13 @@ Standard.play = async ({ args, canvasElement, step }) => {
     await expect(information).not.toBeVisible();
   });
 };
+
+export const TitleOnly = Template.bind({});
+TitleOnly.args = {
+  heading: "Title",
+  image: {
+    src: "https://picsum.photos/id/29/640/360",
+    alt: "A placeholder image",
+  },
+  classes: "tna-hero--demo",
+};

@@ -2,12 +2,79 @@
   "component": "phase-banner",
   "fixtures": [
     {
+      "name": "discovery",
+      "options": {
+        "phase": "discovery",
+        "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--discovery\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Discovery\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "alpha",
+      "options": {
+        "phase": "alpha",
+        "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--alpha\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Alpha\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
       "name": "beta",
       "options": {
-        "phase": "Beta",
+        "phase": "beta",
         "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
       },
       "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Beta\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "live",
+      "options": {
+        "phase": "live",
+        "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--live\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Live\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "capital letters",
+      "options": {
+        "phase": "BETA",
+        "message": "Message"
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Beta\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "unknown phase",
+      "options": {
+        "phase": "unknown",
+        "message": "Message"
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--unknown\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Unknown\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "phase": "live",
+        "message": "Message",
+        "classes": "tna-phase-banner--fixture"
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--fixture tna-phase-banner--live\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Live\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "hidden": false
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "phase": "live",
+        "message": "Message",
+        "attributes": {
+          "data-fixturetest": "pass"
+        }
+      },
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--live\" data-fixturetest=\"pass\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Live\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
       "hidden": false
     }
   ]

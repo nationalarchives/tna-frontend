@@ -1,5 +1,5 @@
-@use "assets";
-@use "colour";
-@use "grid";
-@use "media";
-@use "typography";
+@forward "assets";
+@forward "colour";
+@forward "grid";
+@forward "media";
+@forward "typography";

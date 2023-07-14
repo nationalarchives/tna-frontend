@@ -1,15 +1,31 @@
 <script type="module" defer>
   import { initAll } from "./all.mjs";
 
-  window.addEventListener("onload", function () {
-    initAll();
-  });
+  const params =
+    new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    }) || {};
 
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-      initAll();
-    },
-    false
-  );
+  const removeAllClasses = () => {
+    const $classedElements = document.querySelectorAll(
+      "#storybook-root [class]",
+    );
+    for (let i = 0; i < $classedElements.length; i++) {
+      $classedElements[i].setAttribute("class", "");
+    }
+  };
+
+  if (params.noJS !== null) {
+    const $body = document.documentElement;
+    $body.classList.remove("tna-template--js-enabled");
+    $body.classList.add("tna-template--js-disabled");
+  } else {
+    window.addEventListener("onload", initAll);
+    document.addEventListener("DOMContentLoaded", initAll, false);
+  }
+
+  if (params.noCSS !== null) {
+    window.addEventListener("onload", removeAllClasses);
+    document.addEventListener("DOMContentLoaded", removeAllClasses, false);
+  }
 </script>

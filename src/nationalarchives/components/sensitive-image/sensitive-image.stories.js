@@ -1,5 +1,4 @@
 import SensitiveImage from "./template.njk";
-import "./_index.scss";
 import macroOptions from "./macro-options.json";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";

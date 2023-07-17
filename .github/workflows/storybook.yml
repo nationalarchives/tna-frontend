@@ -34,12 +34,12 @@ jobs:
         run: npm ci
       - name: Build Storybook
         run: npm run build
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook
-          exitZeroOnChanges: true
+      # - name: Publish to Chromatic
+      #   uses: chromaui/action@v1
+      #   with:
+      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      #     storybookBuildDir: storybook
+      #     exitZeroOnChanges: true
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

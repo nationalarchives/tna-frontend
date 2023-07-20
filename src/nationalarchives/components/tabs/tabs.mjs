@@ -35,7 +35,7 @@ export class Tabs {
         "aria-labelledby",
         `${$tabItem.getAttribute("id")}-tab`,
       );
-      $tabItem.setAttribute("tabindex", "-1");
+      $tabItem.setAttribute("tabindex", "0");
       if (
         (startingTarget && $tabItem.getAttribute("id") !== startingTarget) ||
         (!startingTarget && index > 0)
@@ -60,6 +60,7 @@ export class Tabs {
         "aria-controls",
         $tabListItemLink.getAttribute("href").replace(/^#/, ""),
       );
+      $replacementButton.setAttribute("tabindex", "-1");
       this.$newTabList.appendChild($replacementButton);
     });
 
@@ -78,10 +79,16 @@ export class Tabs {
       ) {
         $tabListItemLink.classList.add("tna-tabs__list-item-link--selected");
         $tabListItemLink.setAttribute("aria-selected", true);
+        $tabListItemLink.setAttribute("tabindex", "0");
       } else {
         $tabListItemLink.setAttribute("aria-selected", false);
       }
 
+      $tabListItemLink.addEventListener(
+        "keydown",
+        (e) => this.handleItemLinkKeyDown(e),
+        true,
+      );
       $tabListItemLink.addEventListener(
         "click",
         (e) => this.handleItemLinkClick(e),
@@ -92,15 +99,18 @@ export class Tabs {
 
   handleItemLinkClick(itemLinkClickEvent) {
     itemLinkClickEvent.preventDefault();
-    const targetItem = itemLinkClickEvent.target.getAttribute("aria-controls");
+    const targetItem =
+      itemLinkClickEvent.currentTarget.getAttribute("aria-controls");
 
     this.$tabListItemLinks.forEach(($tabListItemLink) => {
       if ($tabListItemLink.getAttribute("aria-controls") === targetItem) {
         $tabListItemLink.classList.add("tna-tabs__list-item-link--selected");
         $tabListItemLink.setAttribute("aria-selected", true);
+        $tabListItemLink.setAttribute("tabindex", "0");
       } else {
         $tabListItemLink.classList.remove("tna-tabs__list-item-link--selected");
         $tabListItemLink.setAttribute("aria-selected", false);
+        $tabListItemLink.setAttribute("tabindex", "-1");
       }
     });
 
@@ -115,11 +125,57 @@ export class Tabs {
     this.showItem(targetItem.replace(/^#/, ""));
   }
 
+  handleItemLinkKeyDown(itemLinkKeyDownEvent) {
+    const tgt = itemLinkKeyDownEvent.currentTarget;
+    let overwriteKeyAction = false;
+
+    switch (itemLinkKeyDownEvent.key) {
+      case "ArrowLeft":
+        this.setSelectedToPreviousTab(tgt);
+        overwriteKeyAction = true;
+        break;
+
+      case "ArrowRight":
+        this.setSelectedToNextTab(tgt);
+        overwriteKeyAction = true;
+        break;
+
+      case "Home":
+        this.setSelectedTab(this.firstTab);
+        overwriteKeyAction = true;
+        break;
+
+      case "End":
+        this.setSelectedTab(this.lastTab);
+        overwriteKeyAction = true;
+        break;
+
+      default:
+        break;
+    }
+
+    if (overwriteKeyAction) {
+      itemLinkKeyDownEvent.stopPropagation();
+      itemLinkKeyDownEvent.preventDefault();
+    }
+  }
+
+  setSelectedToPreviousTab() {
+    console.log("setSelectedToPreviousTab");
+  }
+
+  setSelectedToNextTab() {
+    console.log("setSelectedToNextTab");
+  }
+
+  setSelectedTab() {
+    console.log("setSelectedTab");
+  }
+
   showItem(targetId) {
     this.$tabItems.forEach(($tabItem) => {
       if ($tabItem.getAttribute("id") === targetId) {
         $tabItem.removeAttribute("hidden");
-        $tabItem.focus();
       } else {
         $tabItem.setAttribute("hidden", true);
       }

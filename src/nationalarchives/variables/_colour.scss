@@ -17,6 +17,7 @@ $colour-palette-default: (
   "page-background": $page-background,
   "base-font": $base-font,
   "dark-font": $tna-black,
+  "light-font": #666,
   "focus-outline": $focus-outline,
   "keyline": $keyline,
 );
@@ -27,6 +28,7 @@ $colour-palette-dark: map.merge(
     "page-background": $dark,
     "base-font": #eee,
     "dark-font": #fff,
+    "light-font": #ccc,
     "focus-outline": $tna-yellow,
     "keyline": #444,
   )
@@ -36,6 +38,7 @@ $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
     "base-font": $tna-black,
+    "light-font": $tna-black,
     "focus-outline": #f0a,
     "keyline": $tna-black,
   )
@@ -46,6 +49,7 @@ $colour-palette-high-contrast-dark: map.merge(
   (
     "page-background": $tna-black,
     "base-font": #fff,
+    "light-font": #fff,
     "keyline": #fff,
   )
 );

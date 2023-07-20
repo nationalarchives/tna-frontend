@@ -1,5 +1,6 @@
 import { Header } from "./components/header/header.mjs";
 import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs";
+import { Tabs } from "./components/tabs/tabs.mjs";
 
 const $body = document.documentElement;
 
@@ -55,6 +56,11 @@ const initAll = (options) => {
   $sensitiveImages.forEach(($sensitiveImage) => {
     new SensitiveImage($sensitiveImage).init();
   });
+
+  const $tabs = $scope.querySelectorAll('[data-module="tna-tabs"]');
+  $tabs.forEach(($tabModule) => {
+    new Tabs($tabModule).init();
+  });
 };
 
-export { initAll, Header, SensitiveImage };
+export { initAll, Header, SensitiveImage, Tabs };

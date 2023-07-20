@@ -1,10 +1,10 @@
 {%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
-{%- set classes = [params.classes] if params.classes else [] -%}
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set headingSize = params.heading.size if params.heading.size else "m" -%}
 {%- if params.featured -%}
-  {%- set classes = classes.concat('tna-card--featured') -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--featured') -%}
 {%- endif -%}
-<{{ htmlElement }} class="tna-card {{ classes | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
   {%- if params.heading.supertitle -%}
     {%- if params.heading.singleSentence -%}

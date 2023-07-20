@@ -1,6 +1,5 @@
-{%- set breadcrumbClasses = [params.classes] if params.classes else [] -%}
-
-<nav class="tna-breadcrumbs {{ breadcrumbClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<nav class="tna-breadcrumbs {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <ol class="tna-breadcrumbs__list">
   {%- for item in params.items -%}
     <li class="tna-breadcrumbs__item">

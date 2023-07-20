@@ -20,17 +20,8 @@ export class Header {
       return;
     }
 
-    // const uniqueLinkIds = []
-
-    // for (let i = 0; i < this.$links.length; i++) {
-    //   const uniqueLinkId = uuidv4()
-    //   this.$links[i].setAttribute("id", uniqueLinkId);
-    //   uniqueLinkIds.push(uniqueLinkId)
-    // }
-
     const uniqueId = `menu-content-${uuidv4()}`;
     this.$navigation.setAttribute("id", uniqueId);
-    // this.$navigation.setAttribute("aria-owns", uniqueLinkIds.join(","));
 
     this.$toggleButton = document.createElement("button");
     this.$toggleButton.innerText = "Menu";
@@ -52,10 +43,8 @@ export class Header {
 
     if ("addEventListener" in this.mql) {
       this.mql.addEventListener("change", () => this.syncState());
-      // this.mql.addEventListener("change", this.syncState.bind(this));
     } else {
       this.mql.addListener(() => this.syncState());
-      // this.mql.addListener(this.syncState.bind(this));
     }
   }
 

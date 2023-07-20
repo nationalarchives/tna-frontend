@@ -1,5 +1,5 @@
-{%- set classes = [params.classes] if params.classes else [] -%}
-<header class="tna-hero {{ classes | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<header class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" class="tna-hero__image">
   {%- if params.image.information -%}
   <details class="tna-hero__image-details">

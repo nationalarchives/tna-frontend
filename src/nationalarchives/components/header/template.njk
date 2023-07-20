@@ -1,8 +1,8 @@
-{%- set classes = [params.classes] if params.classes else [] -%}
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.colour -%}
-  {%- set classes = classes.concat('tna-header--' + params.colour) -%}
+  {%- set containerClasses = containerClasses.concat('tna-header--' + params.colour) -%}
 {%- endif -%}
-<header class="tna-header {{ classes | join(' ') }}" data-module="tna-header" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<header class="tna-header {{ containerClasses | join(' ') }}" data-module="tna-header" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- if params.exit -%}
   <div class="tna-header__exit">
     <div class="tna-container">

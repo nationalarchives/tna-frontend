@@ -51,6 +51,7 @@ const checkExists = [
   ...componentFiles("hero", true),
   ...componentFiles("phase-banner", true),
   ...componentFiles("sensitive-image"),
+  ...componentFiles("tabs"),
   // Tools
   "nationalarchives/tools/_all.scss",
   "nationalarchives/tools/_grid.scss",

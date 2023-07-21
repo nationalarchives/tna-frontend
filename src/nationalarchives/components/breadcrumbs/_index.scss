@@ -7,13 +7,13 @@
 
     list-style: none;
 
-    display: -ms-flexbox;
+    
     display: flex;
     flex-wrap: wrap;
   }
 
   &__item {
-    display: -ms-flexbox;
+    
     display: flex;
 
     + .tna-breadcrumbs__item {

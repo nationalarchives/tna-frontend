@@ -5,21 +5,26 @@
     margin: 0 0 1rem;
     padding: 0;
 
-    display: -ms-flexbox;
     display: flex;
+    align-items: stretch;
 
     list-style: none;
   }
 
   &__list-item {
-    display: inline-block;
+    display: inline-flex;
+
+    & + & {
+      margin-left: 1rem;
+    }
   }
 
   &__list-item-link {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
 
-    display: inline-block;
+    display: flex;
 
+    align-items: center;
     position: relative;
 
     @include colour.colour-font("dark-font");
@@ -28,6 +33,7 @@
     font-weight: 700;
     text-decoration: none;
     line-height: 1.5;
+    text-align: center;
 
     background: none;
 
@@ -35,13 +41,17 @@
 
     cursor: pointer;
 
+    & + & {
+      margin-left: 1rem;
+    }
+
     &::after {
       height: 0;
 
       position: absolute;
-      right: 0.5rem;
+      right: 0;
       bottom: 0;
-      left: 0.5rem;
+      left: 0;
 
       background-color: colour.$dark;
 

@@ -17,7 +17,6 @@ export class Tabs {
       !this.$tabItems ||
       this.$tabListItemLinks.length !== this.$tabItems.length
     ) {
-      console.error("test");
       return;
     }
 
@@ -102,51 +101,35 @@ export class Tabs {
     const targetItem =
       itemLinkClickEvent.currentTarget.getAttribute("aria-controls");
 
-    this.$tabListItemLinks.forEach(($tabListItemLink) => {
-      if ($tabListItemLink.getAttribute("aria-controls") === targetItem) {
-        $tabListItemLink.classList.add("tna-tabs__list-item-link--selected");
-        $tabListItemLink.setAttribute("aria-selected", true);
-        $tabListItemLink.setAttribute("tabindex", "0");
-      } else {
-        $tabListItemLink.classList.remove("tna-tabs__list-item-link--selected");
-        $tabListItemLink.setAttribute("aria-selected", false);
-        $tabListItemLink.setAttribute("tabindex", "-1");
-      }
-    });
-
-    if (this.sticky) {
-      if (history.replaceState) {
-        history.replaceState(null, null, targetItem);
-      } else {
-        location.hash = targetItem;
-      }
-    }
-
-    this.showItem(targetItem.replace(/^#/, ""));
+    this.switchTab(targetItem);
   }
 
   handleItemLinkKeyDown(itemLinkKeyDownEvent) {
-    const tgt = itemLinkKeyDownEvent.currentTarget;
+    const targetItem = itemLinkKeyDownEvent.currentTarget;
     let overwriteKeyAction = false;
 
     switch (itemLinkKeyDownEvent.key) {
       case "ArrowLeft":
-        this.setSelectedToPreviousTab(tgt);
+        this.setSelectedToPreviousTab(targetItem);
         overwriteKeyAction = true;
         break;
 
       case "ArrowRight":
-        this.setSelectedToNextTab(tgt);
+        this.setSelectedToNextTab(targetItem);
         overwriteKeyAction = true;
         break;
 
       case "Home":
-        this.setSelectedTab(this.firstTab);
+        this.switchTab(this.$tabListItemLinks[0].getAttribute("aria-controls"));
         overwriteKeyAction = true;
         break;
 
       case "End":
-        this.setSelectedTab(this.lastTab);
+        this.switchTab(
+          this.$tabListItemLinks[
+            this.$tabListItemLinks.length - 1
+          ].getAttribute("aria-controls"),
+        );
         overwriteKeyAction = true;
         break;
 
@@ -160,19 +143,56 @@ export class Tabs {
     }
   }
 
-  setSelectedToPreviousTab() {
-    console.log("setSelectedToPreviousTab");
+  setSelectedToNextTab(targetItem) {
+    console.log("setSelectedToNextTab", targetItem);
+    const currentIndex = [...this.$tabListItemLinks].findIndex(
+      ($tabListItemLink) =>
+        $tabListItemLink.getAttribute("id") === targetItem.getAttribute("id"),
+    );
+    let newIndex;
+    if (currentIndex < this.$tabListItemLinks.length - 1) {
+      newIndex = currentIndex + 1;
+    } else {
+      newIndex = 0;
+    }
+    console.log(currentIndex, newIndex);
+    this.switchTab(
+      this.$tabListItemLinks[newIndex].getAttribute("aria-controls"),
+    );
   }
 
-  setSelectedToNextTab() {
-    console.log("setSelectedToNextTab");
+  setSelectedToPreviousTab(targetItem) {
+    console.log("setSelectedToPreviousTab", targetItem);
+    const currentIndex = [...this.$tabListItemLinks].findIndex(
+      ($tabListItemLink) =>
+        $tabListItemLink.getAttribute("id") === targetItem.getAttribute("id"),
+    );
+    let newIndex;
+    if (currentIndex >= 1) {
+      newIndex = currentIndex - 1;
+    } else {
+      newIndex = this.$tabListItemLinks.length - 1;
+    }
+    console.log(currentIndex, newIndex);
+    this.switchTab(
+      this.$tabListItemLinks[newIndex].getAttribute("aria-controls"),
+    );
   }
 
-  setSelectedTab() {
-    console.log("setSelectedTab");
-  }
+  switchTab(targetId) {
+    this.$tabListItemLinks.forEach(($tabListItemLink) => {
+      if ($tabListItemLink.getAttribute("aria-controls") === targetId) {
+        $tabListItemLink.classList.add("tna-tabs__list-item-link--selected");
+        $tabListItemLink.setAttribute("aria-selected", true);
+        $tabListItemLink.setAttribute("tabindex", "0");
+        $tabListItemLink.focus();
+      } else {
+        $tabListItemLink.classList.remove("tna-tabs__list-item-link--selected");
+        $tabListItemLink.setAttribute("aria-selected", false);
+        $tabListItemLink.setAttribute("tabindex", "-1");
+      }
+    });
 
-  showItem(targetId) {
     this.$tabItems.forEach(($tabItem) => {
       if ($tabItem.getAttribute("id") === targetId) {
         $tabItem.removeAttribute("hidden");
@@ -180,5 +200,13 @@ export class Tabs {
         $tabItem.setAttribute("hidden", true);
       }
     });
+
+    if (this.sticky) {
+      if (history.replaceState) {
+        history.replaceState(null, null, `#${targetId}`);
+      } else {
+        location.hash = `#${targetId}`;
+      }
+    }
   }
 }

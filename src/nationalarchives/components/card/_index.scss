@@ -2,10 +2,7 @@
 
 .tna-card {
   &__inner {
-    
     display: flex;
-    -ms-box-orient: vertical;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
 

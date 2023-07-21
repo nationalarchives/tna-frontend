@@ -11,7 +11,6 @@
         "declaration-empty-line-before": null,
         "property-no-vendor-prefix": null,
         "value-keyword-case": null,
-        "value-no-vendor-prefix": null,
         "scss/dollar-variable-empty-line-before": null,
         "scss/double-slash-comment-empty-line-before": null,
         "selector-class-pattern": null,

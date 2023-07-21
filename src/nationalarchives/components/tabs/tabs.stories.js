@@ -91,6 +91,69 @@ Test.play = async ({ args, canvasElement, step }) => {
     canvasElement.querySelector(`#${item.id}`),
   );
 
+  const expectButtonToBeCurrent = async (button) => {
+    await expect(button).toHaveAttribute("tabindex", "0");
+    await expect(button).toHaveAttribute("aria-selected", "true");
+    await expect(button).toHaveFocus();
+  };
+
+  const expectButtonNotToBeCurrent = async (button) => {
+    await expect(button).toHaveAttribute("tabindex", "-1");
+    await expect(button).toHaveAttribute("aria-selected", "false");
+  };
+
+  const expectSectionToBeCurrent = async (section) => {
+    await expect(section).toBeVisible();
+    await expect(section).toHaveAttribute("tabindex", "0");
+  };
+
+  const expectSectionNotToBeCurrent = async (section) => {
+    await expect(section).not.toBeVisible();
+    await expect(section).toHaveAttribute("tabindex", "-1");
+  };
+
+  const expectButtonAndSectionAToBeCurrent = async (section) => {
+    await step("Test tab buttons", async () => {
+      await expectButtonToBeCurrent(buttonA);
+      await expectButtonNotToBeCurrent(buttonB);
+      await expectButtonNotToBeCurrent(buttonC);
+    });
+
+    await step("Test tab sections", async () => {
+      await expectSectionToBeCurrent(sectionA);
+      await expectSectionNotToBeCurrent(sectionB);
+      await expectSectionNotToBeCurrent(sectionC);
+    });
+  };
+
+  const expectButtonAndSectionBToBeCurrent = async (section) => {
+    await step("Test tab buttons", async () => {
+      await expectButtonNotToBeCurrent(buttonA);
+      await expectButtonToBeCurrent(buttonB);
+      await expectButtonNotToBeCurrent(buttonC);
+    });
+
+    await step("Test tab sections", async () => {
+      await expectSectionNotToBeCurrent(sectionA);
+      await expectSectionToBeCurrent(sectionB);
+      await expectSectionNotToBeCurrent(sectionC);
+    });
+  };
+
+  const expectButtonAndSectionCToBeCurrent = async (section) => {
+    await step("Test tab buttons", async () => {
+      await expectButtonNotToBeCurrent(buttonA);
+      await expectButtonNotToBeCurrent(buttonB);
+      await expectButtonToBeCurrent(buttonC);
+    });
+
+    await step("Test tab sections", async () => {
+      await expectSectionNotToBeCurrent(sectionA);
+      await expectSectionNotToBeCurrent(sectionB);
+      await expectSectionToBeCurrent(sectionC);
+    });
+  };
+
   await step("Initial load", async () => {
     await step("Test tablist", async () => {
       await expect(tablist).toBeDefined();
@@ -165,129 +228,73 @@ Test.play = async ({ args, canvasElement, step }) => {
     });
   });
 
+  await userEvent.click(buttonA);
+
   await step("First tab (already selected)", async () => {
-    await step("Test tab sections", async () => {
-      await userEvent.click(buttonA);
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
-    });
+    await userEvent.click(buttonA);
+    await expectButtonAndSectionAToBeCurrent();
   });
 
   await step("Second tab", async () => {
-    await step("Test tab sections", async () => {
-      await userEvent.click(buttonB);
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).toBeVisible();
-      await expect(sectionC).not.toBeVisible();
-    });
+    await userEvent.click(buttonB);
+    await expectButtonAndSectionBToBeCurrent();
   });
 
   await step("Third tab", async () => {
-    await step("Test tab sections", async () => {
-      await userEvent.click(buttonC);
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).toBeVisible();
-    });
+    await userEvent.click(buttonC);
+    await expectButtonAndSectionCToBeCurrent();
   });
 
   await step("First tab", async () => {
-    await step("Test tab sections", async () => {
-      await userEvent.click(buttonA);
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
-    });
+    await userEvent.click(buttonA);
+    await expectButtonAndSectionAToBeCurrent();
   });
 
   await step("Keyboard interaciton", async () => {
     await step("Left/right", async () => {
       await userEvent.click(buttonA);
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
 
       await userEvent.keyboard("[ArrowRight]");
-      await expect(buttonB).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionBToBeCurrent();
 
       await userEvent.keyboard("[ArrowRight]");
-      await expect(buttonC).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).toBeVisible();
+      await expectButtonAndSectionCToBeCurrent();
 
       await userEvent.keyboard("[ArrowRight]");
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
 
       await userEvent.keyboard("[ArrowRight]");
-      await expect(buttonB).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionBToBeCurrent();
 
       await userEvent.keyboard("[ArrowLeft]");
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
 
       await userEvent.keyboard("[ArrowLeft]");
-      await expect(buttonC).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).toBeVisible();
+      await expectButtonAndSectionCToBeCurrent();
 
       await userEvent.keyboard("[ArrowLeft]");
-      await expect(buttonB).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionBToBeCurrent();
 
       await userEvent.keyboard("[ArrowLeft]");
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
     });
 
     await step("Home/end", async () => {
       await userEvent.click(buttonA);
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
 
       await userEvent.keyboard("[Home]");
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
 
       await userEvent.keyboard("[End]");
-      await expect(buttonC).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).toBeVisible();
+      await expectButtonAndSectionCToBeCurrent();
 
       await userEvent.keyboard("[End]");
-      await expect(buttonC).toHaveFocus();
-      await expect(sectionA).not.toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).toBeVisible();
+      await expectButtonAndSectionCToBeCurrent();
 
       await userEvent.keyboard("[Home]");
-      await expect(buttonA).toHaveFocus();
-      await expect(sectionA).toBeVisible();
-      await expect(sectionB).not.toBeVisible();
-      await expect(sectionC).not.toBeVisible();
+      await expectButtonAndSectionAToBeCurrent();
     });
   });
 };

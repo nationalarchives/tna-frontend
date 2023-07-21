@@ -1,7 +1,7 @@
 {# Based on https://github.com/alphagov/govuk-frontend/blob/8b6bf304b9fc891f64459c25a08f3d623f3fea72/packages/govuk-frontend/src/govuk/template.njk #}
 {#% from "./components/skip-link/macro.njk" import tnaSkipLink -%#}
 <!DOCTYPE html>
-<html lang="{{ htmlLang | default('en') }}" class="tna-template tna-template--js-disabled {{ htmlClasses }}">
+<html lang="{{ htmlLang | default('en') }}" class="tna-template {{ htmlClasses }}">
   <head>
   <meta charset="utf-8">
   <title{% if pageTitleLang %} lang="{{ pageTitleLang }}"{% endif %}>{% block pageTitle %}The National Archives{% endblock %}</title>

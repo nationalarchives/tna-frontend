@@ -4,7 +4,6 @@ import { Tabs } from "./components/tabs/tabs.mjs";
 
 const $body = document.documentElement;
 
-$body.classList.remove("tna-template--js-disabled");
 $body.classList.add("tna-template--js-enabled");
 
 const onFirstTouch = () => {

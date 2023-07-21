@@ -2,8 +2,11 @@
 
 .tna-tabs {
   &__list {
-    margin: 0;
+    margin: 0 0 1rem;
     padding: 0;
+
+    display: -ms-flexbox;
+    display: flex;
 
     list-style: none;
   }
@@ -24,6 +27,7 @@
     font-family: inherit;
     font-weight: 700;
     text-decoration: none;
+    line-height: 1.5;
 
     background: none;
 
@@ -42,6 +46,14 @@
       background-color: colour.$dark;
 
       content: "";
+    }
+
+    &:hover,
+    &--selected,
+    &--selected:hover {
+      &::after {
+        height: 0.25rem;
+      }
     }
 
     .tna-template--js-enabled & {
@@ -73,19 +85,25 @@
   }
 
   &__item {
-    .tna-template--js-disabled & {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+
+    &:has(~ :target) {
       display: none;
+    }
 
-      &:first-child {
-        display: block;
-      }
+    &:target {
+      display: block;
+    }
 
-      &:has(~ :target) {
+    .tna-template--js-enabled & {
+      display: block;
+
+      &[hidden] {
         display: none;
-      }
-
-      &:target {
-        display: block;
       }
     }
 

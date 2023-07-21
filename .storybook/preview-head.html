@@ -18,7 +18,6 @@
   if (params.noJS !== null) {
     const $body = document.documentElement;
     $body.classList.remove("tna-template--js-enabled");
-    $body.classList.add("tna-template--js-disabled");
   } else {
     window.addEventListener("onload", initAll);
     document.addEventListener("DOMContentLoaded", initAll, false);

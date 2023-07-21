@@ -196,8 +196,10 @@ export class Tabs {
     this.$tabItems.forEach(($tabItem) => {
       if ($tabItem.getAttribute("id") === targetId) {
         $tabItem.removeAttribute("hidden");
+        $tabItem.setAttribute("tabindex", "0");
       } else {
         $tabItem.setAttribute("hidden", true);
+        $tabItem.setAttribute("tabindex", "-1");
       }
     });
 

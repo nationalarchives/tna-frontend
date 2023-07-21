@@ -45,6 +45,8 @@
   &--featured {
     position: relative;
 
+    color: colour.$base-font;
+
     background-color: colour.$tna-yellow;
 
     .tna-card__inner {
@@ -56,6 +58,10 @@
       padding-bottom: 2rem;
 
       border-bottom: 2px colour.$tna-black solid;
+    }
+
+    .tna-card__supertitle {
+      color: inherit;
     }
 
     .tna-card__title-link {

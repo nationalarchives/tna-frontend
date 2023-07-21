@@ -1,3 +1,4 @@
+@use "../../variables/colour";
 @use "../../tools/media";
 
 .tna-hero {
@@ -35,6 +36,8 @@
     right: 1.25rem;
     bottom: 1.25rem;
     z-index: 3;
+
+    color: colour.$base-font;
   }
 
   &__image-details-summary {

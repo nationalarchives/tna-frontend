@@ -10,7 +10,6 @@
 .tna-template {
   font-family: typography.$font-family-main;
   font-weight: typography.$font-weight-main;
-  // color: colour.$base-font-colour;
   @include colour.colour-font("base-font");
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -49,6 +48,7 @@
 }
 
 .tna-template__body {
+  color: inherit;
   @include tools.relative-font-size(16);
   line-height: 1.6;
 }

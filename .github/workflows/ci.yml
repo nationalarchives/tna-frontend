@@ -38,9 +38,10 @@ jobs:
       - name: Install
         run: npm ci
       - name: Build package
-        run: ./tasks/build-package.sh
-      - name: Pack artifacts
-        run: npm pack --pack-destination .
+        run: >
+          ./tasks/build-package.sh &&
+          cd package &&
+          npm pack --pack-destination .
       - name: Create prototype
         run: >
           mkdir prototype &&
@@ -50,9 +51,8 @@ jobs:
         run: echo "{\"collectUsageData\":false}" > prototype/usage-data-config.json
       - name: Install package
         run: >
-          CURRENT_VERSION=$(node -p "require('./package.json').version") &&
           cd prototype &&
-          npm install ../nationalarchives-frontend-$CURRENT_VERSION.tgz
+          npm install ../package/nationalarchives-frontend-$(node -p "require('./package.json').version").tgz
       - name: Add imports to template
         run: >
           echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&

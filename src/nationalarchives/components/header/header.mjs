@@ -20,7 +20,7 @@ export class Header {
       return;
     }
 
-    const uniqueId = `menu-content-${uuidv4()}`;
+    const uniqueId = `tna-menu-content-${uuidv4()}`;
     this.$navigation.setAttribute("id", uniqueId);
 
     this.$toggleButton = document.createElement("button");

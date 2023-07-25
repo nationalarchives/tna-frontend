@@ -41,7 +41,7 @@ Standard.args = {
   heading: "Title",
   body: "<p>Body</p>",
   image: {
-    src: "https://picsum.photos/id/29/640/360",
+    src: "https://picsum.photos/800/600",
     alt: "A placeholder image",
     information: "Photo of some mountains by a famous photographer, ©2012",
   },
@@ -79,7 +79,7 @@ export const TitleOnly = Template.bind({});
 TitleOnly.args = {
   heading: "Title",
   image: {
-    src: "https://picsum.photos/id/29/640/360",
+    src: "https://picsum.photos/800/600",
     alt: "A placeholder image",
   },
   classes: "tna-hero--demo",

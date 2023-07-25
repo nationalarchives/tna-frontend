@@ -1,0 +1,88 @@
+[
+  {
+    "name": "src",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "alt",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "width",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "height",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "sources",
+    "type": "array",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "media",
+        "type": "text",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "src",
+        "type": "text",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "caption",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "transcript",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "translation",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the phase banner."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the phase banner."
+  }
+]

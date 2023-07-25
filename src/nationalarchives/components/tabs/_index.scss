@@ -53,7 +53,7 @@
       bottom: 0;
       left: 0;
 
-      background-color: colour.$dark;
+      @include colour.colour-background("keyline-dark");
 
       content: "";
     }

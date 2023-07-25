@@ -36,6 +36,9 @@ module.exports = {
         use: [
           {
             loader: "simple-nunjucks-loader",
+            options: {
+              searchPaths: ["src"],
+            },
           },
         ],
       },

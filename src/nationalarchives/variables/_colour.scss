@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "../features";
 
 $tna-black: #000;
 $tna-yellow: #fc0;
@@ -8,29 +9,28 @@ $tna-green: #86bc25;
 $tna-blue: #00b0ff;
 $dark: #26262a;
 
-$page-background: #fff;
 $base-font: #343338;
-$focus-outline: #004c7e;
-$keyline: #ccc;
 
 $colour-palette-default: (
-  "page-background": $page-background,
+  "page-background": #fff,
   "base-font": $base-font,
   "dark-font": $tna-black,
-  "light-font": #666,
-  "focus-outline": $focus-outline,
-  "keyline": $keyline,
+  "light-font": rgba($base-font, 0.7),
+  "focus-outline": #004c7e,
+  "keyline": #ccc,
+  "keyline-dark": $dark,
 );
 
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
     "page-background": $dark,
-    "base-font": #eee,
+    "base-font": rgba(#fff, 0.95),
     "dark-font": #fff,
-    "light-font": #ccc,
+    "light-font": rgba(#fff, 0.8),
     "focus-outline": $tna-yellow,
-    "keyline": #444,
+    "keyline": rgba(#fff, 0.5),
+    "keyline-dark": #fff,
   )
 );
 
@@ -41,6 +41,7 @@ $colour-palette-high-contrast: map.merge(
     "light-font": $tna-black,
     "focus-outline": #f0a,
     "keyline": $tna-black,
+    "keyline-dark": $tna-black,
   )
 );
 
@@ -96,4 +97,25 @@ $colour-palette-high-contrast-dark: map.merge(
 @mixin colour-outline($colour) {
   outline-color: map.get($colour-palette-default, $colour);
   outline-color: var(--#{$colour});
+}
+
+@mixin invert {
+  @include colour-css-vars-dark;
+
+  @media (prefers-contrast: more) {
+    @include colour-css-vars-high-contrast-dark;
+  }
+
+  @if features.$support-colour-schemes {
+    @media (prefers-color-scheme: dark) {
+      @include colour-css-vars;
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour-css-vars-high-contrast;
+    }
+  }
+
+  @include colour-font("base-font");
+  @include colour-background("page-background");
 }

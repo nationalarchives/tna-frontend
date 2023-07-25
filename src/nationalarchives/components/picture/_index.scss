@@ -1,0 +1,58 @@
+@use "../../variables/colour";
+
+.tna-picture {
+  margin: 0;
+  padding: 0;
+
+  &__image-wrapper {
+    // padding: 1rem 0;
+
+    position: relative;
+
+    background-color: #f4f4f4;
+  }
+
+  &__image {
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &__toggle-transcript {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  &__transcript {
+    @include colour.invert;
+
+    padding: 1rem 1.5rem 1.5rem;
+
+    // background-color: colour.$dark;
+
+    .tna-template--clicked &:focus {
+      outline: none;
+    }
+  }
+
+  &__caption {
+    padding: 1rem 0;
+
+    position: relative;
+
+    text-align: center;
+
+    &::after {
+      height: 1px;
+
+      position: absolute;
+      right: 20%;
+      bottom: 0;
+      left: 20%;
+
+      @include colour.colour-background("keyline");
+
+      content: "";
+    }
+  }
+}

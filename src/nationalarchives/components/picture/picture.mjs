@@ -32,7 +32,7 @@ export class Picture {
 
     this.$transcript.setAttribute("id", uniqueId);
     this.$transcript.setAttribute("hidden", true);
-    this.$transcript.setAttribute("tabindex", "-1");
+    // this.$transcript.setAttribute("tabindex", "-1");
   }
 
   handleToggleTranscript() {
@@ -44,14 +44,14 @@ export class Picture {
       this.$transcriptToggle.setAttribute("aria-expanded", true);
       this.$transcriptToggle.innerText = "Close transcript";
       this.$transcript.removeAttribute("hidden");
-      this.$transcript.setAttribute("tabindex", "0");
-      this.$transcript.focus();
+      // this.$transcript.setAttribute("tabindex", "0");
+      // this.$transcript.focus();
     } else {
       this.$transcriptToggle.classList.remove(transcriptToggleOpenedClass);
       this.$transcriptToggle.setAttribute("aria-expanded", false);
       this.$transcriptToggle.innerText = "Open transcript";
       this.$transcript.setAttribute("hidden", true);
-      this.$transcript.setAttribute("tabindex", "-1");
+      // this.$transcript.setAttribute("tabindex", "-1");
     }
   }
 }

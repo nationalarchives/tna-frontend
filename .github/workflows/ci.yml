@@ -55,7 +55,7 @@ jobs:
           npm install ../package/nationalarchives-frontend-$(node -p "require('../package.json').version").tgz
       - name: Add imports to template
         run: >
-          echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/buttons/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       - name: Add components to template
         run: >
@@ -67,21 +67,10 @@ jobs:
         run: >
           cd prototype &&
           npm run dev &
-      - name: Wait for server
+      - name: Wait for server response of 200
         uses: nev7n/wait_for_response@v1
         with:
           url: "http://localhost:3000"
           responseCode: 200
           timeout: 10000
           interval: 500
-      - name: Get response code
-        run: >
-          RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" localhost:3000) &&
-          print $RESPONSE_CODE &&
-          echo "response_code=$RESPONSE_CODE" >> "$GITHUB_ENV"
-      - name: Test response code for errors
-        if: env.response_code != '200'
-        uses: actions/github-script@v3
-        with:
-          script: |
-              core.setFailed('Response code is not 200')

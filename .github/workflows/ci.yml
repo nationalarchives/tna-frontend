@@ -64,9 +64,12 @@ jobs:
           echo "{{ tnaHeader({}) }}" >> prototype/app/views/index.html &&
           echo "{% endblock %}" >> prototype/app/views/index.html
       - name: Run prototype
-        run: >
-          cd prototype &&
-          npm run dev &
+        uses: ./
+        with:
+          working-directory: prototype
+          start: npm run dev
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 60
       - name: Get response code 1
         run: >
           RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" localhost:3000)
@@ -84,4 +87,4 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-              core.setFailed('Response code is not 200')
+              core.setFailed("Response code is not 200")

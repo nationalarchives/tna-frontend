@@ -39,32 +39,41 @@ jobs:
         run: npm ci
       - name: Build package
         run: ./tasks/build-package.sh
+      - name: Pack artifacts
+        run: npm pack --pack-destination .
       - name: Create prototype
         run: >
           mkdir prototype &&
           cd prototype &&
           npx govuk-prototype-kit create
-      - name: Copy package
+      - name: Create usage data config
+        run: echo "{\"collectUsageData\":false}" > prototype/usage-data-config.json
+      - name: Install package
         run: >
-          mkdir -p prototype/node_modules/@nationalarchives/frontend &&
-          cp -fR package/* prototype/node_modules/@nationalarchives/frontend
-      - name: Cat template
-        run: cat prototype/app/views/index.html
+          CURRENT_VERSION=$(node -p "require('./package.json').version") &&
+          cd prototype &&
+          npm install ../nationalarchives-frontend-$CURRENT_VERSION.tgz
       - name: Add imports to template
         run: >
-          echo -e "{% from "nationalarchives/components/button/macro.njk" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-          echo -e "{% from "nationalarchives/components/header/macro.njk" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
-      - name: Cat template
-        run: cat prototype/app/views/index.html
+          echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       - name: Add components to template
         run: >
-          echo "{% block bodyEnd %}" >> prototype/app/views/index.html &&
+          echo "\n{% block bodyEnd %}" >> prototype/app/views/index.html &&
           echo "{{ tnaButton({text:\"I am a button\",url:\"#\"}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaHeader({}) }}" >> prototype/app/views/index.html &&
           echo "{% endblock %}" >> prototype/app/views/index.html
-      - name: Cat template
-        run: cat prototype/app/views/index.html
       - name: Run prototype
         run: >
           cd prototype &&
           npm run dev &
+      - name: Get response code
+        run: >
+          RESPONSE_CODE=$(curl -s --fail -o /dev/null -w "%{http_code}" localhost:3000) &&
+          echo "RESPONSE_CODE=$RESPONSE_CODE" >> "$GITHUB_ENV"
+      - name: Test response code for errors
+        if: env.RESPONSE_CODE != '200'
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('Response code is not 200')

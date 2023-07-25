@@ -55,7 +55,7 @@ jobs:
           npm install ../package/nationalarchives-frontend-$(node -p "require('../package.json').version").tgz
       - name: Add imports to template
         run: >
-          echo -e "{% from \"nationalarchives/components/buttons/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       - name: Add components to template
         run: >

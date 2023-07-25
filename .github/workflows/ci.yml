@@ -72,5 +72,5 @@ jobs:
         with:
           url: "http://localhost:3000"
           responseCode: 200
-          timeout: 10000
+          timeout: 30000
           interval: 500

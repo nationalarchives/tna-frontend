@@ -68,9 +68,7 @@ jobs:
           cd prototype &&
           npm run dev &
       - name: Get response code
-        run: >
-          RESPONSE_CODE=$(curl -s --fail -o /dev/null -w "%{http_code}" localhost:3000) &&
-          echo "RESPONSE_CODE=$RESPONSE_CODE" >> "$GITHUB_ENV"
+        run: echo "RESPONSE_CODE=$(curl -s --fail -o /dev/null -w "%{http_code}" localhost:3000)" >> "$GITHUB_ENV"
       - name: Test response code for errors
         if: env.RESPONSE_CODE != '200'
         uses: actions/github-script@v3

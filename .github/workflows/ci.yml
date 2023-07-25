@@ -24,3 +24,32 @@ jobs:
         run: npm start &
       - name: Run tests
         run: npm run test
+
+  prototype-kit:
+    name: Prototype kit integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install
+        run: npm ci
+      - name: Build package
+        run: ./tasks/build-package.sh
+      - name: Create prototype
+        run: >
+          mkdir prototype
+          cd prototype
+          npx govuk-prototype-kit create
+      - name: Copy package
+        run: >
+          mkdir -p prototype/node_modules/@nationalarchives/frontend
+          cp -fR package/* prototype/node_modules/@nationalarchives/frontend
+      # - name: Add pages # TODO
+      - name: Run prototype
+        run: >
+          mkdir prototype
+          npm run dev

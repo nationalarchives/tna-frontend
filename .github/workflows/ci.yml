@@ -41,15 +41,15 @@ jobs:
         run: ./tasks/build-package.sh
       - name: Create prototype
         run: >
-          mkdir prototype
-          cd prototype
+          mkdir prototype &&
+          cd prototype &&
           npx govuk-prototype-kit create
       - name: Copy package
         run: >
-          mkdir -p prototype/node_modules/@nationalarchives/frontend
+          mkdir -p prototype/node_modules/@nationalarchives/frontend &&
           cp -fR package/* prototype/node_modules/@nationalarchives/frontend
       # - name: Add pages # TODO
       - name: Run prototype
         run: >
-          mkdir prototype
+          mkdir prototype &&
           npm run dev

@@ -134,9 +134,9 @@
     font-weight: typography.$font-weight-detail;
     text-transform: uppercase;
 
-    // .tna-hgroup & {
-    //   margin: 0;
-    // }
+    .tna-hgroup & {
+      margin: 0;
+    }
   }
 
   &__title {

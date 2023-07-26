@@ -18,7 +18,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Phase banner",
+  title: "Components/Work in progress/Phase banner",
   argTypes,
 };
 

@@ -135,6 +135,8 @@
     }
 
     &__content-inner {
+      padding: 1.5rem 0;
+
       color: #fff;
 
       background-color: inherit;
@@ -145,6 +147,8 @@
     }
 
     &__body {
+      margin-top: 1rem;
+
       color: inherit;
     }
   }

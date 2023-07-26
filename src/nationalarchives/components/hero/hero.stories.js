@@ -43,7 +43,7 @@ Standard.args = {
   image: {
     src: "https://picsum.photos/800/600",
     alt: "A placeholder image",
-    information: "Photo of some mountains by a famous photographer, ©2012",
+    information: "An interesting photo by a famous photographer ©2023",
   },
   classes: "tna-hero--demo",
 };

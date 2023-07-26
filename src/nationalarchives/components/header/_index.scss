@@ -305,10 +305,8 @@
 
     &:hover,
     &--selected {
-      // color: colour.$tna-black;
-      @include colour.colour-font("dark-font");
+      @include colour.colour-font("font-dark");
 
-      // background-color: #fff;
       @include colour.colour-background("page-background");
 
       transition:
@@ -361,7 +359,7 @@
 
     &__navigation {
       // color: colour.$base-font-colour;
-      @include colour.colour-font("base-font");
+      @include colour.colour-font("font-base");
       @include tools.relative-font-size(20);
 
       &.tna-column {
@@ -414,7 +412,7 @@
         left: 0;
 
         // background-color: colour.$tna-black;
-        @include colour.colour-background("dark-font");
+        @include colour.colour-background("font-dark");
 
         transition: width 200ms;
 

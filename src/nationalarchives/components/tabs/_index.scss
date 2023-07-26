@@ -27,7 +27,7 @@
     align-items: center;
     position: relative;
 
-    @include colour.colour-font("dark-font");
+    @include colour.colour-font("font-dark");
     font-size: inherit;
     font-family: inherit;
     font-weight: 700;
@@ -67,7 +67,7 @@
     }
 
     .tna-template--js-enabled & {
-      @include colour.colour-font("light-font");
+      @include colour.colour-font("font-light");
 
       &:hover {
         &::after {
@@ -76,7 +76,7 @@
       }
 
       &--selected {
-        @include colour.colour-font("dark-font");
+        @include colour.colour-font("font-dark");
 
         &::after,
         &:hover::after {

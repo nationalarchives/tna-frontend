@@ -2,6 +2,7 @@
 @use "../features";
 
 $tna-black: #000;
+$tna-white: #fff;
 $tna-yellow: #fc0;
 $tna-pink: #fe1d57;
 $tna-orange: #fd3f03;
@@ -12,10 +13,12 @@ $dark: #26262a;
 $base-font: #343338;
 
 $colour-palette-default: (
-  "page-background": #fff,
-  "base-font": $base-font,
-  "dark-font": $tna-black,
-  "light-font": rgba($base-font, 0.7),
+  "page-background": $tna-white,
+  "font-base": $base-font,
+  "font-dark": $tna-black,
+  "font-light": rgba($base-font, 0.7),
+  "link": #1d70ab,
+  "link-visited": #4c2c92,
   "focus-outline": #004c7e,
   "keyline": #ccc,
   "keyline-dark": $dark,
@@ -25,21 +28,23 @@ $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
     "page-background": $dark,
-    "base-font": rgba(#fff, 0.95),
-    "dark-font": #fff,
-    "light-font": rgba(#fff, 0.8),
+    "font-base": rgba($tna-white, 0.95),
+    "font-dark": $tna-white,
+    "font-light": rgba($tna-white, 0.8),
+    "link": #f0a,
+    "link-visited": #90f,
     "focus-outline": $tna-yellow,
-    "keyline": rgba(#fff, 0.5),
-    "keyline-dark": #fff,
+    "keyline": rgba($tna-white, 0.5),
+    "keyline-dark": $tna-white,
   )
 );
 
 $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
-    "base-font": $tna-black,
-    "light-font": $tna-black,
-    "focus-outline": #f0a,
+    "font-base": $tna-black,
+    "font-light": $tna-black,
+    "focus-outline": $tna-blue,
     "keyline": $tna-black,
     "keyline-dark": $tna-black,
   )
@@ -49,54 +54,97 @@ $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
     "page-background": $tna-black,
-    "base-font": #fff,
-    "light-font": #fff,
-    "keyline": #fff,
+    "font-base": $tna-white,
+    "font-light": $tna-white,
+    "keyline": $tna-white,
   )
 );
 
 @mixin colour-css-vars() {
-  @each $name, $value in $colour-palette-default {
-    --#{$name}: #{$value};
+  @if features.$support-css-variables {
+    @each $name, $value in $colour-palette-default {
+      --#{$name}: #{$value};
+    }
   }
 }
 
 @mixin colour-css-vars-dark() {
-  @each $name, $value in $colour-palette-dark {
-    --#{$name}: #{$value};
+  @if features.$support-css-variables {
+    @each $name, $value in $colour-palette-dark {
+      --#{$name}: #{$value};
+    }
   }
 }
 
 @mixin colour-css-vars-high-contrast() {
-  @each $name, $value in $colour-palette-high-contrast {
-    --#{$name}: #{$value};
+  @if features.$support-css-variables {
+    @each $name, $value in $colour-palette-high-contrast {
+      --#{$name}: #{$value};
+    }
   }
 }
 
 @mixin colour-css-vars-high-contrast-dark() {
-  @each $name, $value in $colour-palette-high-contrast-dark {
-    --#{$name}: #{$value};
+  @if features.$support-css-variables {
+    @each $name, $value in $colour-palette-high-contrast-dark {
+      --#{$name}: #{$value};
+    }
   }
 }
 
-@mixin colour-font($colour) {
-  color: map.get($colour-palette-default, $colour);
-  color: var(--#{$colour});
+@mixin colour-font($colour, $inverted: false) {
+  @if $inverted {
+    color: map.get($colour-palette-dark, $colour);
+  } @else {
+    color: map.get($colour-palette-default, $colour);
+  }
+  @if features.$support-css-variables {
+    color: var(--#{$colour});
+  }
 }
 
-@mixin colour-background($colour) {
-  background-color: map.get($colour-palette-default, $colour);
-  background-color: var(--#{$colour});
+@mixin colour-background($colour, $inverted: false) {
+  @if $inverted {
+    background-color: map.get($colour-palette-dark, $colour);
+  } @else {
+    background-color: map.get($colour-palette-default, $colour);
+  }
+  @if features.$support-css-variables {
+    background-color: var(--#{$colour});
+  }
 }
 
-@mixin colour-border($colour) {
-  border-color: map.get($colour-palette-default, $colour);
-  border-color: var(--#{$colour});
+@mixin colour-border($colour, $inverted: false) {
+  @if $inverted {
+    border-color: map.get($colour-palette-dark, $colour);
+  } @else {
+    border-color: map.get($colour-palette-default, $colour);
+  }
+  @if features.$support-css-variables {
+    border-color: var(--#{$colour});
+  }
 }
 
-@mixin colour-outline($colour) {
-  outline-color: map.get($colour-palette-default, $colour);
-  outline-color: var(--#{$colour});
+@mixin colour-outline($colour, $inverted: false) {
+  @if $inverted {
+    outline-color: map.get($colour-palette-dark, $colour);
+  } @else {
+    outline-color: map.get($colour-palette-default, $colour);
+  }
+  @if features.$support-css-variables {
+    outline-color: var(--#{$colour});
+  }
+}
+
+@mixin colour-fill($colour, $inverted: false) {
+  @if $inverted {
+    fill: map.get($colour-palette-dark, $colour);
+  } @else {
+    fill: map.get($colour-palette-default, $colour);
+  }
+  @if features.$support-css-variables {
+    fill: var(--#{$colour});
+  }
 }
 
 @mixin invert {
@@ -116,6 +164,6 @@ $colour-palette-high-contrast-dark: map.merge(
     }
   }
 
-  @include colour-font("base-font");
-  @include colour-background("page-background");
+  @include colour-font("font-base", true);
+  @include colour-background("page-background", true);
 }

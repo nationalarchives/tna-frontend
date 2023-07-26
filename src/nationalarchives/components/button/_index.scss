@@ -5,7 +5,6 @@
 
   display: inline-block;
 
-  color: #fff;
   font-weight: 700;
   text-decoration: none;
 
@@ -19,6 +18,12 @@
     border-color 200ms;
 
   cursor: pointer;
+
+  &,
+  &:link,
+  &:visited {
+    color: #fff;
+  }
 
   &:hover {
     color: colour.$tna-black;

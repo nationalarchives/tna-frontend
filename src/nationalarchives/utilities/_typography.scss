@@ -10,47 +10,53 @@
 .tna-template {
   font-family: typography.$font-family-main;
   font-weight: typography.$font-weight-main;
-  @include colour.colour-font("base-font");
+  @include colour.colour-font("font-base");
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
   direction: ltr;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol {
-    margin-top: 0;
-  }
-
-  p {
-    margin: 0 0 1.5rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-    &:active {
-      text-decoration-thickness: 4px;
-    }
-
-    &:hover {
-      text-decoration-thickness: 3px;
-    }
-  }
 }
 
 .tna-template__body {
   color: inherit;
   @include tools.relative-font-size(16);
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin-top: 0;
+}
+
+p {
+  margin: 0 0 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  @include colour.colour-font("link");
+
+  &:visited {
+    @include colour.colour-font("link-visited");
+  }
+
+  &:active {
+    text-decoration-thickness: 4px;
+  }
+
+  &:hover {
+    text-decoration-thickness: 3px;
+  }
 }
 
 .tna-ul,
@@ -73,6 +79,7 @@
   margin-bottom: 1.5rem;
 
   color: colour.$tna-black;
+  @include colour.colour-font("font-dark");
   font-family: typography.$font-family-heading;
   font-weight: typography.$font-weight-heading;
 
@@ -128,7 +135,7 @@
     margin: 0;
 
     // color: colour.$base-font-colour;
-    @include colour.colour-font("base-font");
+    @include colour.colour-font("font-base");
     @include tools.relative-font-size(14);
     font-family: typography.$font-family-detail;
     font-weight: typography.$font-weight-detail;
@@ -148,7 +155,7 @@
       display: block;
 
       // color: colour.$base-font-colour;
-      @include colour.colour-font("base-font");
+      @include colour.colour-font("font-base");
     }
   }
 

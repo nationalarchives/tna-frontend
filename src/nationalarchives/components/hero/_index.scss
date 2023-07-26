@@ -11,8 +11,6 @@
 
   position: relative;
 
-  background-color: #26262a; // Variable
-
   &__image {
     width: 100%;
     height: 100%;
@@ -90,7 +88,7 @@
   &__content-inner {
     padding: 2.5rem 1.5rem;
 
-    background-color: #fff;
+    @include colour.colour-background("page-background");
   }
 
   &__heading {
@@ -105,6 +103,8 @@
     padding: 0;
 
     display: block;
+
+    @include colour.invert;
 
     &__image {
       height: 320px;
@@ -136,10 +136,6 @@
 
     &__content-inner {
       padding: 1.5rem 0;
-
-      color: #fff;
-
-      background-color: inherit;
     }
 
     &__heading {

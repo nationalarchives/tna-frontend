@@ -29,7 +29,7 @@
     display: inline-block;
 
     // color: colour.$base-font-colour;
-    @include colour.colour-font("base-font");
+    @include colour.colour-font("font-base");
 
     &:hover {
       color: colour.$tna-black;

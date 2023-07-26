@@ -5,15 +5,13 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  color: #fff;
-
-  background-color: colour.$dark;
+  @include colour.invert;
 
   &__link {
     color: inherit;
 
     &:hover {
-      color: #f0a;
+      @include colour.colour-font("link");
     }
   }
 
@@ -110,8 +108,8 @@
     fill: #fff;
 
     &:hover {
-      color: #f0a;
-      fill: #f0a;
+      @include colour.colour-font("link");
+      @include colour.colour-fill("link");
     }
   }
 

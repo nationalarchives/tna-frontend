@@ -33,6 +33,22 @@
     .tna-template--clicked &:focus {
       outline: none;
     }
+
+    .tna-tabs__list-item-link {
+      @include colour.colour-font("font-dark", true);
+
+      &::after {
+        @include colour.colour-background("keyline-dark", true);
+      }
+
+      .tna-template--js-enabled & {
+        @include colour.colour-font("font-light", true);
+
+        &--selected {
+          @include colour.colour-font("font-dark", true);
+        }
+      }
+    }
   }
 
   &__caption {

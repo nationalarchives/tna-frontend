@@ -37,11 +37,15 @@
   }
 
   &--secondary {
-    color: colour.$tna-black;
-
     background-color: colour.$tna-yellow;
 
     border-color: colour.$tna-yellow;
+
+    &,
+    &:link,
+    &:visited {
+      color: colour.$tna-black;
+    }
 
     &:hover {
       color: colour.$tna-black;

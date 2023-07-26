@@ -24,7 +24,7 @@
         "description": ""
       },
       {
-        "name": "content",
+        "name": "body",
         "type": "string",
         "required": true,
         "description": ""

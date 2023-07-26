@@ -64,17 +64,17 @@ Test.args = {
     {
       id: "unique-id-a",
       title: "Alpha section",
-      html: "<h2>Alpha title</h2><p>Lorem ipsum</p>",
+      body: "<h2>Alpha title</h2><p>Lorem ipsum</p>",
     },
     {
       id: "unique-id-b",
       title: "Beta section",
-      html: "<h2>Beta title</h2><p>Lorem ipsum</p>",
+      body: "<h2>Beta title</h2><p>Lorem ipsum</p>",
     },
     {
       id: "unique-id-c",
       title: "Gamma section",
-      html: "<h2>Gamma title</h2><p>Lorem ipsum</p>",
+      body: "<h2>Gamma title</h2><p>Lorem ipsum</p>",
     },
   ],
   classes: "tna-tabs--demo",

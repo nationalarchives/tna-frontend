@@ -188,3 +188,35 @@
     }
   }
 }
+
+.tna-blockquote {
+  margin: 0;
+  padding: 1rem 1rem 1rem 2rem;
+
+  border-left: 0.35rem solid;
+  @include colour.colour-border("keyline");
+
+  quotes: "“" "”" "‘" "’";
+
+  &::before {
+    float: left;
+    
+    content: open-quote;
+  }
+
+  &__quote {
+    font-weight: 700;
+  }
+
+  &__author {
+    font-style: italic;
+
+    .tna-blockquote & {
+      margin: 1rem 0 0;
+    }
+
+    &::before {
+      content: "\2014" " ";
+    }
+  }
+}

@@ -38,21 +38,24 @@
   &__caption {
     padding: 1rem 0;
 
-    position: relative;
+    // position: relative;
 
     text-align: center;
 
-    &::after {
-      height: 1px;
+    border-bottom: 1px solid;
+    @include colour.colour-border("keyline");
 
-      position: absolute;
-      right: 20%;
-      bottom: 0;
-      left: 20%;
+    // &::after {
+    //   height: 1px;
 
-      @include colour.colour-background("keyline");
+    //   position: absolute;
+    //   right: 20%;
+    //   bottom: 0;
+    //   left: 20%;
 
-      content: "";
-    }
+    //   @include colour.colour-background("keyline");
+
+    //   content: "";
+    // }
   }
 }

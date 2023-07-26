@@ -13,7 +13,7 @@
   <div class="tna-tabs__items">
   {% for item in params.items %}
     <section id="{{ item.id }}" class="tna-tabs__item">
-      {{ item.html | safe }}
+      {{ item.body | safe }}
     </section>
   {% endfor %}
   </div>

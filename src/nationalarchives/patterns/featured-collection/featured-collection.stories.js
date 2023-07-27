@@ -14,7 +14,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Work in progress/Patterns/Featured collection",
+  title: "Experimental/Patterns/Featured collection",
   argTypes,
 };
 

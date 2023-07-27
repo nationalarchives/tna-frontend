@@ -29,7 +29,9 @@ components.forEach((component) => {
         .renderString(componentNunjucks, {
           params: fixture.options,
         })
-        .trim().replace(/>\n\s*/g, ">").replace(/\n\s*</g, "<"),
+        .trim()
+        .replace(/>\n\s*/g, ">")
+        .replace(/\n\s*</g, "<"),
     })),
   };
 

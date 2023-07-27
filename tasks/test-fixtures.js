@@ -27,7 +27,8 @@ const failedComponents = components.filter((component) => {
       .renderString(componentNunjucks, {
         params: fixture.options,
       })
-      .trim().replace(/>\n\s*/g, ">");
+      .trim()
+      .replace(/>\n\s*/g, ">");
     const mismatch = result !== fixture.html;
     if (mismatch) {
       console.error(`  🔴 [FAIL] ${fixture.name}\n`);

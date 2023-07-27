@@ -7,7 +7,7 @@
         "phase": "discovery",
         "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--discovery\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Discovery\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--discovery\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Discovery</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">This is a new service – <a href='#'>give us your feedback</a> to help improve it.</p></div></div></div>",
       "hidden": false
     },
     {
@@ -16,7 +16,7 @@
         "phase": "alpha",
         "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--alpha\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Alpha\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--alpha\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Alpha</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">This is a new service – <a href='#'>give us your feedback</a> to help improve it.</p></div></div></div>",
       "hidden": false
     },
     {
@@ -25,7 +25,7 @@
         "phase": "beta",
         "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Beta\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">This is a new service – <a href='#'>give us your feedback</a> to help improve it.</p></div></div></div>",
       "hidden": false
     },
     {
@@ -34,7 +34,7 @@
         "phase": "live",
         "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--live\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Live\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        This is a new service – <a href='#'>give us your feedback</a> to help improve it.\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--live\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">This is a new service – <a href='#'>give us your feedback</a> to help improve it.</p></div></div></div>",
       "hidden": false
     },
     {
@@ -43,7 +43,7 @@
         "phase": "BETA",
         "message": "Message"
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Beta\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--beta\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
       "hidden": false
     },
     {
@@ -52,7 +52,7 @@
         "phase": "unknown",
         "message": "Message"
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--unknown\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Unknown\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--unknown\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Unknown</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
       "hidden": false
     },
     {
@@ -62,7 +62,7 @@
         "message": "Message",
         "classes": "tna-phase-banner--fixture"
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--fixture tna-phase-banner--live\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Live\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--fixture tna-phase-banner--live\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
       "hidden": false
     },
     {
@@ -74,7 +74,7 @@
           "data-fixturetest": "pass"
         }
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--live\" data-fixturetest=\"pass\">\n  <div class=\"tna-container\">\n    <div class=\"tna-column\">\n      <span class=\"tna-phase-banner__phase\">\n        Live\n      </span>\n    </div>\n    <div class=\"tna-column\">\n      <p class=\"tna-phase-banner__message\">\n        Message\n      </p>\n    </div>\n  </div>\n</div>",
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--live\" data-fixturetest=\"pass\"><div class=\"tna-container\"><div class=\"tna-column\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
       "hidden": false
     }
   ]

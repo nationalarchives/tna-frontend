@@ -29,7 +29,7 @@ components.forEach((component) => {
         .renderString(componentNunjucks, {
           params: fixture.options,
         })
-        .trim(),
+        .trim().replace(/>\n\s*/g, ">").replace(/\n\s*</g, "<"),
     })),
   };
 

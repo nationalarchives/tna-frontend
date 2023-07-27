@@ -56,31 +56,29 @@
 //   },
 // };
 
-// https://github.com/storybookjs/test-runner/issues/85
+const { getStoryContext } = require("@storybook/test-runner");
+const { MINIMAL_VIEWPORTS } = require("@storybook/addon-viewport");
 
-// const { getStoryContext } = require('@storybook/test-runner');
-// const { MINIMAL_VIEWPORTS } = require('@storybook/addon-viewport');
+const DEFAULT_VP_SIZE = { width: 1280, height: 720 };
 
-// const DEFAULT_VP_SIZE = { width: 1280, height: 720 };
+module.exports = {
+  async preRender(page, story) {
+    const context = await getStoryContext(page, story);
+    const vpName = context.parameters?.viewport?.defaultViewport;
+    const vpParams = MINIMAL_VIEWPORTS[vpName];
 
-// module.exports = {
-// 	async preRender(page, story) {
-// 		const context = await getStoryContext(page, story);
-// 		const vpName = context.parameters?.viewport?.defaultViewport;
-// 		const vpParams = MINIMAL_VIEWPORTS[vpName];
+    if (vpParams) {
+      const vpSize = Object.entries(vpParams.styles).reduce(
+        (acc, [screen, size]) => ({
+          ...acc,
+          [screen]: parseInt(size),
+        }),
+        {},
+      );
 
-// 		if (vpParams) {
-// 			const vpSize = Object.entries(vpParams.styles).reduce(
-// 				(acc, [screen, size]) => ({
-// 					...acc,
-// 					[screen]: parseInt(size),
-// 				}),
-// 				{}
-// 			);
-
-// 			page.setViewportSize(vpSize);
-// 		} else {
-// 			page.setViewportSize(DEFAULT_VP_SIZE);
-// 		}
-// 	},
-// };
+      page.setViewportSize(vpSize);
+    } else {
+      page.setViewportSize(DEFAULT_VP_SIZE);
+    }
+  },
+};

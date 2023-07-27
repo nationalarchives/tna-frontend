@@ -1,5 +1,7 @@
 import Header from "./template.njk";
 import macroOptions from "./macro-options.json";
+import { expect } from "@storybook/jest";
+import { within, userEvent } from "@storybook/testing-library";
 
 const argTypes = {
   logo: { control: "object" },
@@ -65,4 +67,82 @@ Standard.args = {
     target: "_blank",
   },
   classes: "tna-header--demo",
+};
+Standard.play = async ({ canvasElement }) => {
+  const navigationItems = canvasElement.querySelector(
+    `.tna-header__navigation-items`,
+  );
+  const navigationToggle = canvasElement.querySelector(
+    `.tna-header__navigation-toggle-button`,
+  );
+
+  await expect(navigationItems).toBeVisible();
+  await expect(navigationToggle).not.toBeVisible();
+};
+
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "mobile2",
+  },
+};
+Mobile.args = {
+  navigation: [
+    {
+      text: "Alpha",
+      href: "#/alpha",
+      selected: true,
+    },
+    {
+      text: "Beta",
+      href: "#/beta",
+    },
+    {
+      text: "Gamma",
+      href: "#/gamma",
+    },
+  ],
+  classes: "tna-header--demo",
+};
+Mobile.play = async ({ args, canvasElement, step }) => {
+  const canvas = within(canvasElement);
+
+  const navigationItems = canvasElement.querySelector(
+    `.tna-header__navigation-items`,
+  );
+  const [linkA, linkB, linkC] = args.navigation.map((navigationItem) =>
+    canvas.getByText(navigationItem.text),
+  );
+  const navigationToggle = canvasElement.querySelector(
+    `.tna-header__navigation-toggle-button`,
+  );
+
+  await step("Initial load", async () => {
+    await expect(navigationItems).not.toBeVisible();
+    await expect(navigationToggle).toBeVisible();
+    await expect(navigationToggle).toHaveAttribute("aria-expanded", "false");
+    await expect(linkA).not.toBeVisible();
+    await expect(linkB).not.toBeVisible();
+    await expect(linkC).not.toBeVisible();
+  });
+
+  await step("Open the menu", async () => {
+    await userEvent.click(navigationToggle);
+    await expect(navigationItems).toBeVisible();
+    await expect(navigationToggle).toBeVisible();
+    await expect(navigationToggle).toHaveAttribute("aria-expanded", "true");
+    await expect(linkA).toBeVisible();
+    await expect(linkB).toBeVisible();
+    await expect(linkC).toBeVisible();
+  });
+
+  await step("Close the menu", async () => {
+    await userEvent.click(navigationToggle);
+    await expect(navigationItems).not.toBeVisible();
+    await expect(navigationToggle).toBeVisible();
+    await expect(navigationToggle).toHaveAttribute("aria-expanded", "false");
+    await expect(linkA).not.toBeVisible();
+    await expect(linkB).not.toBeVisible();
+    await expect(linkC).not.toBeVisible();
+  });
 };

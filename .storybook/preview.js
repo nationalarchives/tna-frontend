@@ -1,5 +1,5 @@
 import "../src/nationalarchives/all.scss";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 document.documentElement.classList.add("tna-template");
 document.documentElement.classList.add("tna-template--system-theme");
@@ -9,14 +9,7 @@ if (window.self !== window.top) {
 document.body.classList.add("tna-template__body");
 
 const customViewports = {
-  ...INITIAL_VIEWPORTS,
-  // kindleFire2: {
-  //   name: "Kindle Fire 2",
-  //   styles: {
-  //     width: "600px",
-  //     height: "963px",
-  //   },
-  // },
+  ...MINIMAL_VIEWPORTS,
   // kindleFireHD: {
   //   name: "Kindle Fire HD",
   //   styles: {

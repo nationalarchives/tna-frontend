@@ -42,16 +42,6 @@
   }
 }
 
-.tna-container--no-padding,
-.tna-container--no-padding-all,
-.tna-container--no-padding-all > .tna-column,
-.tna-column--no-padding,
-.tna-column--container--no-padding-all,
-.tna-column--container--no-padding-all > .tna-column {
-  padding-right: 0;
-  padding-left: 0;
-}
-
 @include tools.columns-generator(grid.$column-count);
 
 @include media.on-medium {
@@ -76,4 +66,14 @@
 
 @include media.on-tiny {
   @include tools.columns-generator(grid.$column-count-tiny, "tiny");
+}
+
+.tna-container--no-padding,
+.tna-container--no-padding-all,
+.tna-container--no-padding-all > .tna-column,
+.tna-column--no-padding,
+.tna-column--container--no-padding-all,
+.tna-column--container--no-padding-all > .tna-column {
+  padding-right: 0;
+  padding-left: 0;
 }

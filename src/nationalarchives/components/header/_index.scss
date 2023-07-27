@@ -16,7 +16,7 @@
 
     text-align: right;
 
-    background-color: colour.$dark;
+    background-color: colour.$dark-grey;
   }
 
   &__exit-link {
@@ -79,7 +79,7 @@
 
       background-color: #fff;
 
-      outline: 0.2rem colour.$dark solid;
+      outline: 0.2rem colour.$dark-grey solid;
 
       transform: rotate(45deg) translateX(50%);
       transform-origin: 100% 0;

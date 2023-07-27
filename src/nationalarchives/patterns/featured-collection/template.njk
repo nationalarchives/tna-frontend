@@ -1,0 +1,96 @@
+{% from "nationalarchives/components/grid/macro.njk" import tnaGrid %}
+{% from "nationalarchives/components/card/macro.njk" import tnaCard %}
+
+{% set exampleCard = {
+  heading: {
+    title: "Card title",
+    level: 3,
+    size: "m",
+    singleSentence: true
+  },
+  href: "#",
+  image: {
+    src: "https://picsum.photos/id/29/640/360",
+    alt: "A placeholder image"
+  },
+  body: "<p>Card body</p>"
+} %}
+
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- set containerClasses = containerClasses.concat('tna-featured-collection') -%}
+
+{{ tnaGrid({
+  columns: [
+    {
+      width: "full",
+      widthMedium: "full",
+      widthSmall: "full",
+      widthTiny: "full",
+      html: "<h2 class=\"tna-heading\">" + params.heading + "</h2>"
+    },
+    {
+      width: "1-2",
+      widthMedium: "2-3",
+      widthSmall: "1-2",
+      widthTiny: "full",
+      html: tnaCard({
+        heading: {
+          title: "Card title",
+          level: 3,
+          size: "m",
+          singleSentence: true
+        },
+        href: "#",
+        image: {
+          src: "https://picsum.photos/id/29/640/360",
+          alt: "A placeholder image",
+          label: "Feature"
+        },
+        body: "<p>Card body</p>"
+      })
+    },
+    {
+      width: "1-2",
+      widthMedium: "1-3",
+      widthSmall: "1-2",
+      widthTiny: "full",
+      html: tnaGrid({
+        columns: [
+          {
+            width: "1-2",
+            widthMedium: "full",
+            widthSmall: "full",
+            widthTiny: "full",
+            html: tnaCard(exampleCard)
+          },
+          {
+            width: "1-2",
+            widthMedium: "full",
+            widthSmall: "full",
+            widthTiny: "full",
+            html: tnaCard(exampleCard)
+          },
+          {
+            width: "1-2",
+            widthMedium: "full",
+            widthSmall: "full",
+            widthTiny: "full",
+            html: tnaCard(exampleCard)
+          },
+          {
+            width: "1-2",
+            widthMedium: "full",
+            widthSmall: "full",
+            widthTiny: "full",
+            html: tnaCard(exampleCard)
+          }
+        ],
+        noPadding: true
+      }),
+      noPadding: true
+    }
+  ],
+  htmlElement: "section",
+  classes: containerClasses | join(' '),
+  attributes: params.attributes
+}) }}

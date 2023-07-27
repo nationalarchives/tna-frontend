@@ -21,10 +21,23 @@
   }
 
   &__image-container {
+    position: relative;
     order: 1;
   }
 
   &__image {
+  }
+
+  &__image-label {
+    padding: 0 0.5rem;
+
+    position: absolute;
+    top: 1rem;
+    left: 0;
+
+    text-transform: uppercase;
+
+    background-color: #f0a;
   }
 
   &__body {

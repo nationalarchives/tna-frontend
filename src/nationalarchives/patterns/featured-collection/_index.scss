@@ -1,0 +1,13 @@
+@use "../../variables/colour";
+
+.tna-featured-collection {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  background-color: colour.$tna-cream;
+
+  .tna-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -2,14 +2,29 @@
 @use "../features";
 
 $tna-black: #000;
+$tna-grey: #8c9694;
+$tna-light-grey: #d9d9d6;
 $tna-white: #fff;
+
 $tna-yellow: #fc0;
 $tna-pink: #fe1d57;
 $tna-orange: #fd3f03;
 $tna-green: #86bc25;
 $tna-blue: #00b0ff;
-$dark: #26262a;
 
+$tna-brown: #654e37;
+$tna-maroon: #9c193a;
+$tna-chestnut: #8f3415;
+$tna-forest: #00623b;
+$tna-navy: #004c7e;
+
+$tna-cream: #f9f7e2;
+$tna-pastel-pink: #fad3d4;
+$tna-pastel-orange: #f9e1bc;
+$tna-pastel-green: #dde5d5;
+$tna-pastel-blue: #d4e5ef;
+
+$dark-grey: #26262a;
 $base-font: #343338;
 
 $colour-palette-default: (
@@ -21,13 +36,13 @@ $colour-palette-default: (
   "link-visited": #4c2c92,
   "focus-outline": #004c7e,
   "keyline": #ccc,
-  "keyline-dark": $dark,
+  "keyline-dark": $dark-grey,
 );
 
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": $dark,
+    "page-background": $dark-grey,
     "font-base": rgba($tna-white, 0.95),
     "font-dark": $tna-white,
     "font-light": rgba($tna-white, 0.8),

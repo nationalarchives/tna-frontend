@@ -38,7 +38,7 @@
     {%- set columnClasses = columnClasses.concat('tna-column--flex-' + item.flexTiny + '-tiny') -%}
   {%- endif -%}
   {%- if item.noPadding -%}
-    {%- set columnClasses = columnClasses.concat('tna-column--noPadding') -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--no-padding') -%}
   {%- endif -%}
   <{{ columnHtmlElement }} class="tna-column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
     {{ item.html | safe }}

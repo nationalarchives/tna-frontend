@@ -60,6 +60,12 @@
         "description": ""
       },
       {
+        "name": "noPadding",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "classes",
         "type": "string",
         "required": false,

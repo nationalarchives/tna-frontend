@@ -60,12 +60,14 @@ Standard.args = {
     title: "Card title",
     level: 3,
     size: "m",
-    singleSentence: true,
+    singleSentence: false,
   },
   href: "#",
   image: {
-    src: "https://picsum.photos/id/29/640/360",
+    src: "https://picsum.photos/640/360",
     alt: "A placeholder image",
+    width: 640,
+    height: 360,
   },
   body: "<p>Card body</p>",
   actions: [
@@ -86,12 +88,14 @@ Featured.args = {
     title: "Card title",
     level: 3,
     size: "m",
-    singleSentence: true,
+    singleSentence: false,
   },
   href: "#",
   image: {
-    src: "https://picsum.photos/id/24/640/360",
+    src: "https://picsum.photos/640/360",
     alt: "A placeholder image",
+    width: 640,
+    height: 360,
   },
   body: "<p>Card body</p>",
   actions: [

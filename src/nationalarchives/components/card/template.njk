@@ -41,7 +41,7 @@
   {%- endif -%}
   {%- if params.image -%}
     <div class="tna-card__image-container">
-      <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" class="tna-card__image" />
+      <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" width="{{ params.image.width }}" height="{{ params.image.height }}" class="tna-card__image" />
       {%- if params.image.label -%}
       <div class="tna-card__image-label">
         {{ params.image.label }}

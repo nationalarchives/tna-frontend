@@ -66,6 +66,18 @@
         "type": "string",
         "required": false,
         "description": ""
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": true,
+        "description": ""
       }
     ]
   },

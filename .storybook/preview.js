@@ -2,7 +2,8 @@ import "../src/nationalarchives/all.scss";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 document.documentElement.classList.add("tna-template");
-document.documentElement.classList.add("tna-template--system-theme");
+// document.documentElement.classList.add("tna-template--system-theme");
+document.documentElement.classList.add("tna-template--light-theme");
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");
 }
@@ -24,4 +25,5 @@ export const parameters = {
     disable: true,
   },
   viewport: { viewports: customViewports },
+  options: { showPanel: true },
 };

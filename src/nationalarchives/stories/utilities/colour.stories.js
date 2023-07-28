@@ -16,7 +16,7 @@ const themes = [
   },
 ];
 
-const Template = ({ text }) =>
+const Template = () =>
   themes.reduce(
     (html, theme) => `${html}<div class="tna-template ${theme.classes}">
   <div class="tna-template__body tna-template__body--padded">
@@ -38,4 +38,5 @@ const Template = ({ text }) =>
 <br>`,
     "",
   );
-export const Test = Template.bind({});
+export const Examples = Template.bind({});
+// Examples.parameters = { options: { showPanel: false } };

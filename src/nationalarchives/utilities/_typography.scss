@@ -134,7 +134,6 @@ a {
   &__supertitle {
     margin: 0;
 
-    // color: colour.$base-font-colour;
     @include colour.colour-font("font-base");
     @include tools.relative-font-size(14);
     font-family: typography.$font-family-detail;
@@ -149,12 +148,11 @@ a {
   &__title {
     margin: 0;
 
-    color: colour.$tna-black;
+    @include colour.colour-font("font-dark");
 
     .tna-hgroup__supertitle {
       display: block;
 
-      // color: colour.$base-font-colour;
       @include colour.colour-font("font-base");
     }
   }

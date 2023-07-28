@@ -5,22 +5,20 @@
 :root {
   @include colour.colour-css-vars;
 
-  @if features.$support-colour-schemes {
-    @media (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-dark;
-    }
+  @media (prefers-color-scheme: dark) {
+    @include colour.colour-css-vars-dark;
+  }
 
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast;
+  @media (prefers-contrast: more) {
+    @include colour.colour-css-vars-high-contrast;
 
-      * {
-        background-image: none !important;
-      }
+    * {
+      background-image: none !important;
     }
+  }
 
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
+  @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+    @include colour.colour-css-vars-high-contrast-dark;
   }
 }
 
@@ -37,7 +35,7 @@
 
   @include colour.colour-background("page-background");
 
-  &--back-accent {
+  &--black-accent {
     accent-color: colour.$tna-black;
   }
 
@@ -61,25 +59,23 @@
     accent-color: colour.$tna-blue;
   }
 
-  @if features.$support-colour-schemes {
-    &--light-theme {
-      @include colour.colour-css-vars;
+  &--light-theme {
+    @include colour.colour-css-vars;
+  }
+
+  &--dark-theme {
+    @include colour.colour-css-vars-dark;
+  }
+
+  &--high-contrast-theme {
+    @include colour.colour-css-vars-high-contrast;
+
+    * {
+      background-image: none !important;
     }
 
-    &--dark-theme {
-      @include colour.colour-css-vars-dark;
-    }
-
-    &--high-contrast-theme {
-      @include colour.colour-css-vars-high-contrast;
-
-      * {
-        background-image: none !important;
-      }
-
-      &.tna-template--dark-theme {
-        @include colour.colour-css-vars-high-contrast-dark;
-      }
+    &.tna-template--dark-theme {
+      @include colour.colour-css-vars-high-contrast-dark;
     }
   }
 

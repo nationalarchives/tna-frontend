@@ -76,34 +76,26 @@ $colour-palette-high-contrast-dark: map.merge(
 );
 
 @mixin colour-css-vars() {
-  @if features.$support-css-variables {
-    @each $name, $value in $colour-palette-default {
-      --#{$name}: #{$value};
-    }
+  @each $name, $value in $colour-palette-default {
+    --#{$name}: #{$value};
   }
 }
 
 @mixin colour-css-vars-dark() {
-  @if features.$support-css-variables {
-    @each $name, $value in $colour-palette-dark {
-      --#{$name}: #{$value};
-    }
+  @each $name, $value in $colour-palette-dark {
+    --#{$name}: #{$value};
   }
 }
 
 @mixin colour-css-vars-high-contrast() {
-  @if features.$support-css-variables {
-    @each $name, $value in $colour-palette-high-contrast {
-      --#{$name}: #{$value};
-    }
+  @each $name, $value in $colour-palette-high-contrast {
+    --#{$name}: #{$value};
   }
 }
 
 @mixin colour-css-vars-high-contrast-dark() {
-  @if features.$support-css-variables {
-    @each $name, $value in $colour-palette-high-contrast-dark {
-      --#{$name}: #{$value};
-    }
+  @each $name, $value in $colour-palette-high-contrast-dark {
+    --#{$name}: #{$value};
   }
 }
 
@@ -113,7 +105,7 @@ $colour-palette-high-contrast-dark: map.merge(
   } @else {
     color: map.get($colour-palette-default, $colour);
   }
-  @if features.$support-css-variables {
+  @if features.$support-colour-schemes {
     color: var(--#{$colour});
   }
 }
@@ -124,7 +116,7 @@ $colour-palette-high-contrast-dark: map.merge(
   } @else {
     background-color: map.get($colour-palette-default, $colour);
   }
-  @if features.$support-css-variables {
+  @if features.$support-colour-schemes {
     background-color: var(--#{$colour});
   }
 }
@@ -135,7 +127,7 @@ $colour-palette-high-contrast-dark: map.merge(
   } @else {
     border-color: map.get($colour-palette-default, $colour);
   }
-  @if features.$support-css-variables {
+  @if features.$support-colour-schemes {
     border-color: var(--#{$colour});
   }
 }
@@ -146,7 +138,7 @@ $colour-palette-high-contrast-dark: map.merge(
   } @else {
     outline-color: map.get($colour-palette-default, $colour);
   }
-  @if features.$support-css-variables {
+  @if features.$support-colour-schemes {
     outline-color: var(--#{$colour});
   }
 }
@@ -157,7 +149,7 @@ $colour-palette-high-contrast-dark: map.merge(
   } @else {
     fill: map.get($colour-palette-default, $colour);
   }
-  @if features.$support-css-variables {
+  @if features.$support-colour-schemes {
     fill: var(--#{$colour});
   }
 }
@@ -169,14 +161,12 @@ $colour-palette-high-contrast-dark: map.merge(
     @include colour-css-vars-high-contrast-dark;
   }
 
-  @if features.$support-colour-schemes {
-    @media (prefers-color-scheme: dark) {
-      @include colour-css-vars;
-    }
+  @media (prefers-color-scheme: dark) {
+    @include colour-css-vars;
+  }
 
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour-css-vars-high-contrast;
-    }
+  @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+    @include colour-css-vars-high-contrast;
   }
 
   @include colour-font("font-base", true);

@@ -42,14 +42,16 @@ const checkExists = [
   "nationalarchives/assets/images/tna-horizontal-logo.svg",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
+  ...componentFiles("breadcrumbs", true),
   ...componentFiles("button", true),
-  ...componentFiles("card", true),
+  ...componentFiles("card"),
   ...componentFiles("filters", true),
   ...componentFiles("footer", true),
   ...componentFiles("grid", true),
   ...componentFiles("header"),
   ...componentFiles("hero", true),
   ...componentFiles("phase-banner", true),
+  ...componentFiles("picture"),
   ...componentFiles("sensitive-image"),
   ...componentFiles("tabs"),
   // Tools

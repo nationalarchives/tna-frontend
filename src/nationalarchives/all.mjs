@@ -1,3 +1,4 @@
+import { Card } from "./components/card/card.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
 import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs";
@@ -50,6 +51,16 @@ const initAll = (options) => {
     new Header($header).init();
   }
 
+  const $cards = $scope.querySelectorAll('[data-module="tna-card"]');
+  $cards.forEach(($card) => {
+    new Card($card).init();
+  });
+
+  const $pictures = $scope.querySelectorAll('[data-module="tna-picture"]');
+  $pictures.forEach(($picture) => {
+    new Picture($picture).init();
+  });
+
   const $sensitiveImages = $scope.querySelectorAll(
     '[data-module="tna-sensitive-image"]',
   );
@@ -60,11 +71,6 @@ const initAll = (options) => {
   const $tabs = $scope.querySelectorAll('[data-module="tna-tabs"]');
   $tabs.forEach(($tabModule) => {
     new Tabs($tabModule).init();
-  });
-
-  const $pictures = $scope.querySelectorAll('[data-module="tna-picture"]');
-  $pictures.forEach(($picture) => {
-    new Picture($picture).init();
   });
 };
 

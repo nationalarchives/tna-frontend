@@ -70,13 +70,13 @@ Standard.args = {
     height: 360,
   },
   body: "<p>Card body</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-    },
-  ],
+  // actions: [
+  //   {
+  //     text: "Card action",
+  //     href: "#",
+  //     title: "Go and do the action",
+  //   },
+  // ],
   htmlElement: "article",
   classes: "tna-card--demo",
 };

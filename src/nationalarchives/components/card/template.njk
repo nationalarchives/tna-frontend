@@ -4,7 +4,7 @@
 {%- if params.featured -%}
   {%- set containerClasses = containerClasses.concat('tna-card--featured') -%}
 {%- endif -%}
-<{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" data-module="tna-card" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
   {%- if params.heading.supertitle -%}
     {%- if params.heading.singleSentence -%}

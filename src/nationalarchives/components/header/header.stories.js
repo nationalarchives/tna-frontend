@@ -68,7 +68,32 @@ Standard.args = {
   },
   classes: "tna-header--demo",
 };
-Standard.play = async ({ canvasElement }) => {
+
+export const Desktop = Template.bind({});
+Desktop.parameters = {
+  viewport: {
+    defaultViewport: "tablet",
+  },
+};
+Desktop.args = {
+  navigation: [
+    {
+      text: "Alpha",
+      href: "#/alpha",
+      selected: true,
+    },
+    {
+      text: "Beta",
+      href: "#/beta",
+    },
+    {
+      text: "Gamma",
+      href: "#/gamma",
+    },
+  ],
+  classes: "tna-header--demo",
+};
+Desktop.play = async ({ canvasElement }) => {
   const navigationItems = canvasElement.querySelector(
     `.tna-header__navigation-items`,
   );

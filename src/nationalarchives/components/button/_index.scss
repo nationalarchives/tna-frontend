@@ -8,9 +8,12 @@
   font-weight: 700;
   text-decoration: none;
 
-  background-color: colour.$tna-black;
+  // background-color: colour.$tna-black;
+  @include colour.colour-background("button-primary-background");
 
-  border: 0.25rem colour.$tna-black solid;
+  // border: 0.25rem colour.$tna-black solid;
+  border: 0.25rem transparent solid;
+  @include colour.colour-border("button-primary-background");
 
   transition:
     color 200ms,
@@ -22,13 +25,16 @@
   &,
   &:link,
   &:visited {
-    color: #fff;
+    // color: #fff;
+    @include colour.colour-font("button-primary-text");
   }
 
   &:hover {
-    color: colour.$tna-black;
+    // color: colour.$tna-black;
+    @include colour.colour-font("button-primary-hover-text");
 
-    background-color: #fff;
+    // background-color: #fff;
+    @include colour.colour-background("button-primary-hover-background");
 
     transition:
       color 50ms,
@@ -37,20 +43,25 @@
   }
 
   &--secondary {
-    background-color: colour.$tna-yellow;
+    // background-color: colour.$tna-yellow;
+    @include colour.colour-background("button-secondary-background");
 
-    border-color: colour.$tna-yellow;
+    // border-color: colour.$tna-yellow;
+    @include colour.colour-border("button-secondary-background");
 
     &,
     &:link,
     &:visited {
-      color: colour.$tna-black;
+      // color: colour.$tna-black;
+      @include colour.colour-font("button-secondary-text");
     }
 
     &:hover {
-      color: colour.$tna-black;
+      // color: colour.$tna-black;
+      @include colour.colour-font("button-secondary-hover-text");
 
-      border-color: colour.$tna-black;
+      // border-color: colour.$tna-black;
+      @include colour.colour-background("button-secondary-hover-background");
     }
   }
 }

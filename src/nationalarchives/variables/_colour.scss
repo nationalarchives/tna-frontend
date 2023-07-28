@@ -37,6 +37,14 @@ $colour-palette-default: (
   "focus-outline": #004c7e,
   "keyline": #ccc,
   "keyline-dark": $dark-grey,
+  "button-primary-text": $tna-white,
+  "button-primary-background": $tna-black,
+  "button-primary-hover-text": $tna-black,
+  "button-primary-hover-background": $tna-white,
+  "button-secondary-text": $tna-black,
+  "button-secondary-background": $tna-yellow,
+  "button-secondary-hover-text": $tna-black,
+  "button-secondary-hover-background": $tna-white,
 );
 
 $colour-palette-dark: map.merge(

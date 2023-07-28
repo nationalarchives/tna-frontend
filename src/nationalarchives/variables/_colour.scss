@@ -42,7 +42,7 @@ $colour-palette-default: (
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": $dark-grey,
+    "page-background": #222,
     "font-base": rgba($tna-white, 0.95),
     "font-dark": $tna-white,
     "font-light": rgba($tna-white, 0.8),
@@ -68,7 +68,7 @@ $colour-palette-high-contrast: map.merge(
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": $tna-black,
+    "page-background": #191919,
     "font-base": $tna-white,
     "font-light": $tna-white,
     "keyline": $tna-white,

@@ -32,7 +32,8 @@
     @include colour.colour-font("font-base");
 
     &:hover {
-      color: colour.$tna-black;
+      // color: colour.$tna-black;
+      @include colour.colour-font("font-dark");
     }
   }
 

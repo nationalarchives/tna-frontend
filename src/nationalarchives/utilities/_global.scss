@@ -122,6 +122,12 @@ canvas {
   outline-offset: 0.125rem;
 }
 
+hr {
+  border-width: 1px 0 0;
+  @include colour.colour-border("keyline");
+  border-style: solid;
+}
+
 .tna-visually-hidden {
   width: 1px !important;
   height: 1px !important;

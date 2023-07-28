@@ -1,9 +1,10 @@
 export class Card {
-  constructor($module) {
+  constructor($module, tapTimeMax = 300) {
     this.$module = $module;
     this.$cardTitleLink =
       $module && $module.querySelector(".tna-card__title-link");
     this.$cardAction = $module && $module.querySelector(".tna-card__action");
+    this.tapTimeMax = tapTimeMax;
   }
 
   init() {
@@ -15,15 +16,32 @@ export class Card {
       return;
     }
 
-    this.$module.addEventListener("click", () => this.handleCardClick());
+    this.touchStartTime = null;
+
+    this.$module.addEventListener("touchstart", () =>
+      this.handleCardTouchStart(),
+    );
+    this.$module.addEventListener("touchend", () => this.handleCardTouchEnd());
+    // this.$module.addEventListener("click", () => this.handleCardClick());
   }
 
   handleCardClick() {
     console.log("CLICK");
-    // if (this.$cardTitleLink) {
-    //   this.$cardTitleLink.click();
-    // } else if (this.$cardAction) {
-    //   this.$cardAction.click();
-    // }
+    if (this.$cardTitleLink) {
+      this.$cardTitleLink.click();
+    } else if (this.$cardAction) {
+      this.$cardAction.click();
+    }
+  }
+
+  handleCardTouchStart() {
+    this.touchStartTime = new Date();
+  }
+
+  handleCardTouchEnd() {
+    const duration = new Date().getTime() - this.touchStartTime.getTime();
+    if (duration < this.tapTimeMax) {
+      this.handleCardClick();
+    }
   }
 }

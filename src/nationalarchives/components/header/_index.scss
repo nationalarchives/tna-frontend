@@ -10,6 +10,8 @@
 
   background-color: colour.$tna-black;
 
+  // @include colour.invert;
+
   &__exit {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -358,7 +360,6 @@
     }
 
     &__navigation {
-      // color: colour.$base-font-colour;
       @include colour.colour-font("font-base");
       @include tools.relative-font-size(20);
 
@@ -379,7 +380,6 @@
     &__navigation-items {
       width: 100%;
 
-      // background-color: #fff;
       @include colour.colour-background("page-background");
     }
 
@@ -388,7 +388,6 @@
 
       display: block;
 
-      // border-bottom: 1px colour.$keyline-colour solid;
       border-bottom: 1px solid;
       @include colour.colour-border("keyline");
     }
@@ -411,7 +410,6 @@
         bottom: 0;
         left: 0;
 
-        // background-color: colour.$tna-black;
         @include colour.colour-background("font-dark");
 
         transition: width 200ms;

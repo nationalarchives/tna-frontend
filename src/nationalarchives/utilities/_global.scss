@@ -35,29 +35,29 @@
 
   @include colour.colour-background("page-background");
 
-  &--black-accent {
-    accent-color: colour.$tna-black;
-  }
+  // &--black-accent {
+  //   accent-color: colour.$_tna-black;
+  // }
 
-  &--yellow-accent {
-    accent-color: colour.$tna-yellow;
-  }
+  // &--yellow-accent {
+  //   accent-color: colour.$_tna-yellow;
+  // }
 
-  &--pink-accent {
-    accent-color: colour.$tna-pink;
-  }
+  // &--pink-accent {
+  //   accent-color: colour.$_tna-pink;
+  // }
 
-  &--orange-accent {
-    accent-color: colour.$tna-orange;
-  }
+  // &--orange-accent {
+  //   accent-color: colour.$_tna-orange;
+  // }
 
-  &--green-accent {
-    accent-color: colour.$tna-green;
-  }
+  // &--green-accent {
+  //   accent-color: colour.$_tna-green;
+  // }
 
-  &--blue-accent {
-    accent-color: colour.$tna-blue;
-  }
+  // &--blue-accent {
+  //   accent-color: colour.$_tna-blue;
+  // }
 
   &--light-theme {
     @include colour.colour-css-vars;

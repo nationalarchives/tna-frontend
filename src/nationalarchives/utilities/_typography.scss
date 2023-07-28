@@ -78,7 +78,6 @@ a {
 .tna-heading {
   margin-bottom: 1.5rem;
 
-  color: colour.$tna-black;
   @include colour.colour-font("font-dark");
   font-family: typography.$font-family-heading;
   font-weight: typography.$font-weight-heading;

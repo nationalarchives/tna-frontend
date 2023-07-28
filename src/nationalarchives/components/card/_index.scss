@@ -58,9 +58,10 @@
   &--featured {
     position: relative;
 
-    color: colour.$base-font;
+    @include colour.colour-font("font-base");
 
     background-color: colour.$tna-yellow;
+    // @include colour.colour-background("accent");
 
     .tna-card__inner {
       margin-left: 50%;
@@ -70,7 +71,8 @@
     .tna-card__heading {
       padding-bottom: 2rem;
 
-      border-bottom: 2px colour.$tna-black solid;
+      border-bottom: 2px transparent solid;
+      @include colour.colour-border("keyline-dark");
     }
 
     .tna-card__supertitle {
@@ -78,7 +80,7 @@
     }
 
     .tna-card__title-link {
-      color: colour.$tna-black;
+      @include colour.colour-font("font-dark");
     }
 
     .tna-card__image-container {

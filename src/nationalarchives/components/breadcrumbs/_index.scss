@@ -28,11 +28,9 @@
   &__link {
     display: inline-block;
 
-    // color: colour.$base-font-colour;
     @include colour.colour-font("font-base");
 
     &:hover {
-      // color: colour.$tna-black;
       @include colour.colour-font("font-dark");
     }
   }

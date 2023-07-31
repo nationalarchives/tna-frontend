@@ -109,7 +109,6 @@
 
     border: 1px transparent solid;
     @include colour.colour-border("keyline-dark");
-    border-radius: 0.5rem;
   }
 
   .tna-template--high-contrast-theme & {

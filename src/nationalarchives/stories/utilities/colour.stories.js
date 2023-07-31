@@ -5,7 +5,7 @@ import Hero from "../../components/hero/template.njk";
 import Picture from "../../components/picture/template.njk";
 import Tabs from "../../components/tabs/template.njk";
 import Footer from "../../components/footer/template.njk";
-import { supportColourSchemes } from "../../../../.storybook/preview";
+import { supportDynamicColourSchemes } from "../../../../.storybook/preview";
 
 const argTypes = {
   theme: {
@@ -26,7 +26,7 @@ export default {
 };
 
 const Template = ({ theme }) => {
-  if (supportColourSchemes) {
+  if (supportDynamicColourSchemes) {
     // document.documentElement.classList.remove("tna-template--light-theme");
     // document.documentElement.classList.add("tna-template--system-theme");
   }

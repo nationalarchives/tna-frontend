@@ -2,10 +2,10 @@ import "../src/nationalarchives/all.scss";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 // Also need to change $support-colour-schemes in src/nationalarchives/_features.scss
-export const supportColourSchemes = true;
+export const supportDynamicColourSchemes = false;
 document.documentElement.classList.add(
   "tna-template",
-  supportColourSchemes
+  supportDynamicColourSchemes
     ? "tna-template--system-theme"
     : "tna-template--light-theme",
 );

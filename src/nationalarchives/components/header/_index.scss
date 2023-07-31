@@ -297,7 +297,6 @@
 
     display: inline-block;
 
-    color: inherit;
     font-family: typography.$font-family-heading;
     text-decoration: none;
     line-height: 2;
@@ -306,12 +305,21 @@
     //   color 200ms,
     //   background-color 200ms;
 
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
     &:hover,
     &--selected {
-      @include colour.colour-font("font-dark");
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("font-dark");
 
-      @include colour.colour-background("page-background");
-
+        @include colour.colour-background("page-background");
+      }
       // transition:
       //   color 50ms,
       //   background-color 50ms;

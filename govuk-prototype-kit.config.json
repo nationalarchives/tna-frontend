@@ -11,9 +11,6 @@
   "sass": [
     "/nationalarchives/all.scss"
   ],
-  "stylesheets": [
-    "/nationalarchives/all.css"
-  ],
   "templates": [
     {
       "name": "Homepage",

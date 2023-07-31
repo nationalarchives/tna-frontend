@@ -161,6 +161,10 @@
     &__content-inner {
       border: 1px transparent solid;
       @include colour.colour-border("keyline-dark");
+
+      @include media.on-mobile {
+        border: none;
+      }
     }
   }
 

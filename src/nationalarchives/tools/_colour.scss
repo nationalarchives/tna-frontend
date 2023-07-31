@@ -1,0 +1,125 @@
+@use "sass:map";
+@use "../features";
+@use "../variables/colour";
+
+@mixin colour-css-vars() {
+  @each $name, $value in colour.$colour-palette-default {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-css-vars-dark() {
+  @each $name, $value in colour.$colour-palette-dark {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-css-vars-high-contrast() {
+  @each $name, $value in colour.$colour-palette-high-contrast {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-css-vars-high-contrast-dark() {
+  @each $name, $value in colour.$colour-palette-high-contrast-dark {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin colour-font($colour, $inverted: false) {
+  @if $inverted {
+    color: map.get(colour.$colour-palette-dark, $colour);
+  } @else {
+    color: map.get(colour.$colour-palette-default, $colour);
+  }
+  @if features.$support-colour-schemes {
+    color: var(--#{$colour});
+  }
+}
+
+@mixin colour-background($colour, $inverted: false) {
+  @if $inverted {
+    background-color: map.get(colour.$colour-palette-dark, $colour);
+  } @else {
+    background-color: map.get(colour.$colour-palette-default, $colour);
+  }
+  @if features.$support-colour-schemes {
+    background-color: var(--#{$colour});
+  }
+}
+
+@mixin colour-border($colour, $inverted: false) {
+  @if $inverted {
+    border-color: map.get(colour.$colour-palette-dark, $colour);
+  } @else {
+    border-color: map.get(colour.$colour-palette-default, $colour);
+  }
+  @if features.$support-colour-schemes {
+    border-color: var(--#{$colour});
+  }
+}
+
+@mixin colour-outline($colour, $inverted: false) {
+  @if $inverted {
+    outline-color: map.get(colour.$colour-palette-dark, $colour);
+  } @else {
+    outline-color: map.get(colour.$colour-palette-default, $colour);
+  }
+  @if features.$support-colour-schemes {
+    outline-color: var(--#{$colour});
+  }
+}
+
+@mixin colour-fill($colour, $inverted: false) {
+  @if $inverted {
+    fill: map.get(colour.$colour-palette-dark, $colour);
+  } @else {
+    fill: map.get(colour.$colour-palette-default, $colour);
+  }
+  @if features.$support-colour-schemes {
+    fill: var(--#{$colour});
+  }
+}
+
+@mixin fixed {
+  @include colour-css-vars;
+
+  @include colour-font("font-base");
+}
+
+@mixin invert {
+  .tna-template--system-theme & {
+    @include colour-css-vars-dark;
+
+    @media (prefers-color-scheme: dark) {
+      @include colour-css-vars;
+    }
+
+    @media (prefers-contrast: more) {
+      @include colour-css-vars-high-contrast-dark;
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour-css-vars-high-contrast;
+    }
+  }
+
+  .tna-template--light-theme & {
+    @include colour-css-vars-dark;
+  }
+
+  .tna-template--dark-theme & {
+    @include colour-css-vars;
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include colour-css-vars-high-contrast-dark;
+  }
+
+  .tna-template--dark-theme.tna-template--high-contrast-theme & {
+    @include colour-css-vars-high-contrast;
+  }
+
+  @include colour-font("font-base", true);
+  @include colour-background("page-background", true);
+}

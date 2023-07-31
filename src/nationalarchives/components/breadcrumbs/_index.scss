@@ -1,8 +1,12 @@
-@use "../../variables/colour";
+@use "../../tools/colour";
 @use "../../tools/media";
 
 .tna-breadcrumbs {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
   &__list {
+    margin: 0;
     padding: 0;
 
     list-style: none;
@@ -61,6 +65,27 @@
           }
         }
       }
+    }
+  }
+
+  @mixin high-contrast {
+    &__link {
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+
+      border: 1px transparent solid;
+      @include colour.colour-border("keyline-dark");
+      border-radius: 0.5rem;
+    }
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include high-contrast;
+  }
+
+  @media (prefers-contrast: more) {
+    .tna-template--system-theme & {
+      @include high-contrast;
     }
   }
 }

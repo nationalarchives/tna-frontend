@@ -1,4 +1,4 @@
-@use "../src/nationalarchives/variables/colour";
+@use "../src/nationalarchives/tools/colour";
 
 .sb-show-main.sb-main-padded {
   padding: 0;
@@ -7,9 +7,9 @@
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
-  @media (prefers-color-scheme: dark) {
-    @include colour.colour-css-vars-dark;
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @include colour.colour-css-vars-dark;
+  // }
 
   @include colour.colour-background("page-background");
 }

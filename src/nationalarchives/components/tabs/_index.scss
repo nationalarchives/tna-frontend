@@ -1,6 +1,8 @@
-@use "../../variables/colour";
+@use "../../tools/colour";
 
 .tna-tabs {
+  margin-bottom: 1rem;
+
   &__list {
     margin: 0 0 1rem;
     padding: 0;
@@ -119,6 +121,29 @@
 
     .tna-template--clicked &:focus {
       outline: none;
+    }
+  }
+
+  @mixin high-contrast {
+    &__list-item-link {
+      padding-right: 1rem;
+      padding-left: 1rem;
+
+      overflow: hidden;
+
+      border: 1px transparent solid;
+      @include colour.colour-border("keyline-dark");
+      border-radius: 0.5rem;
+    }
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include high-contrast;
+  }
+
+  @media (prefers-contrast: more) {
+    .tna-template--system-theme & {
+      @include high-contrast;
     }
   }
 }

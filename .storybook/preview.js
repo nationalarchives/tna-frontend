@@ -1,9 +1,14 @@
 import "../src/nationalarchives/all.scss";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
-document.documentElement.classList.add("tna-template");
-// document.documentElement.classList.add("tna-template--system-theme");
-document.documentElement.classList.add("tna-template--light-theme");
+// Also need to change $support-colour-schemes in src/nationalarchives/_features.scss
+export const supportColourSchemes = true;
+document.documentElement.classList.add(
+  "tna-template",
+  supportColourSchemes
+    ? "tna-template--system-theme"
+    : "tna-template--light-theme",
+);
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");
 }

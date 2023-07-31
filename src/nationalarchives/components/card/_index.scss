@@ -1,6 +1,8 @@
-@use "../../variables/colour";
+@use "../../tools/colour";
 
 .tna-card {
+  margin-bottom: 1rem;
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -59,12 +61,14 @@
   }
 
   &--featured {
+    @include colour.fixed;
+
     position: relative;
 
     @include colour.colour-font("font-base");
 
-    background-color: colour.$tna-yellow;
-    // @include colour.colour-background("accent");
+    // background-color: colour.$tna-yellow;
+    @include colour.colour-background("accent");
 
     .tna-card__inner {
       margin-left: 50%;
@@ -87,6 +91,8 @@
     }
 
     .tna-card__image-container {
+      margin-bottom: 0;
+
       position: absolute;
       inset: 0 50% 0 0;
     }
@@ -98,7 +104,7 @@
     }
   }
 
-  .tna-template--high-contrast-theme & {
+  @mixin high-contrast {
     padding: 1rem;
 
     border: 1px transparent solid;
@@ -106,13 +112,13 @@
     border-radius: 0.5rem;
   }
 
+  .tna-template--high-contrast-theme & {
+    @include high-contrast;
+  }
+
   @media (prefers-contrast: more) {
     .tna-template--system-theme & {
-      padding: 1rem;
-
-      border: 1px transparent solid;
-      @include colour.colour-border("keyline-dark");
-      border-radius: 0.5rem;
+      @include high-contrast;
     }
   }
 }

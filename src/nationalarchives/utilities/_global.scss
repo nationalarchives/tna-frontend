@@ -1,5 +1,5 @@
 @use "../features";
-@use "../variables/colour";
+@use "../tools/colour";
 @use "../variables/typography";
 
 :root {
@@ -59,6 +59,26 @@
   //   accent-color: colour.$_tna-blue;
   // }
 
+  /* &--system-theme {
+    @include colour.colour-css-vars;
+
+    @media (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-dark;
+    }
+
+    @media (prefers-contrast: more) {
+      @include colour.colour-css-vars-high-contrast;
+
+      * {
+        background-image: none !important;
+      }
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-high-contrast-dark;
+    }
+  } */
+
   &--light-theme {
     @include colour.colour-css-vars;
   }
@@ -92,7 +112,7 @@
   margin: 0;
   padding: 0;
 
-  // background-color: #fff;
+  // @include colour.colour-background("page-background");
 
   overflow: auto;
 }
@@ -123,6 +143,8 @@ canvas {
 }
 
 hr {
+  margin: 1rem;
+
   border-width: 1px 0 0;
   @include colour.colour-border("keyline");
   border-style: solid;

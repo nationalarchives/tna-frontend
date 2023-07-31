@@ -1,7 +1,7 @@
-@use "../../variables/colour";
+@use "../../tools/colour";
 
 .tna-picture {
-  margin: 0;
+  margin: 0 0 1rem;
   padding: 0;
 
   &__image-wrapper {
@@ -26,7 +26,7 @@
   &__transcript {
     @include colour.invert;
 
-    padding: 1rem 1.5rem 1.5rem;
+    padding: 1rem 1.5rem 0.5rem;
 
     .tna-template--clicked &:focus {
       outline: none;

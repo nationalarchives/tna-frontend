@@ -26,6 +26,8 @@ $-tna-pastel-blue: #d4e5ef;
 
 $-dark-grey: #26262a;
 $-base-font: #343338;
+$accent-colour: $-tna-yellow !default;
+$accent-colour-dark: $accent-colour !default;
 
 // TODO: Scoped variables should not be used directly outside of this file
 $tna-black: $-tna-black;
@@ -44,9 +46,11 @@ $colour-palette-default: (
   "font-light": rgba($-base-font, 0.7),
   "link": #1d70ab,
   "link-visited": #4c2c92,
-  "focus-outline": #004c7e,
+  // "focus-outline": #004c7e,
+  "focus-outline": $-tna-blue,
   "keyline": #ccc,
   "keyline-dark": $-dark-grey,
+  "accent": $accent-colour,
   "button-primary-text": $-tna-white,
   "button-primary-background": $-tna-black,
   "button-primary-hover-text": $-tna-black,
@@ -65,10 +69,10 @@ $colour-palette-dark: map.merge(
     "font-dark": $-tna-white,
     "font-light": rgba($-tna-white, 0.8),
     "link": $-tna-blue,
-    // "link-visited": #90f,
-    "focus-outline": $-tna-yellow,
+    "link-visited": #b9f,
     "keyline": rgba($-tna-white, 0.5),
     "keyline-dark": $-tna-white,
+    "accent": $accent-colour-dark,
   )
 );
 
@@ -77,7 +81,9 @@ $colour-palette-high-contrast: map.merge(
   (
     "font-base": $-tna-black,
     "font-light": $-tna-black,
-    "focus-outline": $-tna-blue,
+    "link": $-tna-black,
+    "link-visited": $-tna-black,
+    "focus-outline": $-tna-orange,
     "keyline": $-tna-black,
     "keyline-dark": $-tna-black,
   )
@@ -89,104 +95,8 @@ $colour-palette-high-contrast-dark: map.merge(
     "page-background": #191919,
     "font-base": $-tna-white,
     "font-light": $-tna-white,
+    "link": $-tna-white,
+    "link-visited": $-tna-white,
     "keyline": $-tna-white,
   )
 );
-
-@mixin colour-css-vars() {
-  @each $name, $value in $colour-palette-default {
-    --#{$name}: #{$value};
-  }
-}
-
-@mixin colour-css-vars-dark() {
-  @each $name, $value in $colour-palette-dark {
-    --#{$name}: #{$value};
-  }
-}
-
-@mixin colour-css-vars-high-contrast() {
-  @each $name, $value in $colour-palette-high-contrast {
-    --#{$name}: #{$value};
-  }
-}
-
-@mixin colour-css-vars-high-contrast-dark() {
-  @each $name, $value in $colour-palette-high-contrast-dark {
-    --#{$name}: #{$value};
-  }
-}
-
-@mixin colour-font($colour, $inverted: false) {
-  @if $inverted {
-    color: map.get($colour-palette-dark, $colour);
-  } @else {
-    color: map.get($colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    color: var(--#{$colour});
-  }
-}
-
-@mixin colour-background($colour, $inverted: false) {
-  @if $inverted {
-    background-color: map.get($colour-palette-dark, $colour);
-  } @else {
-    background-color: map.get($colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    background-color: var(--#{$colour});
-  }
-}
-
-@mixin colour-border($colour, $inverted: false) {
-  @if $inverted {
-    border-color: map.get($colour-palette-dark, $colour);
-  } @else {
-    border-color: map.get($colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    border-color: var(--#{$colour});
-  }
-}
-
-@mixin colour-outline($colour, $inverted: false) {
-  @if $inverted {
-    outline-color: map.get($colour-palette-dark, $colour);
-  } @else {
-    outline-color: map.get($colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    outline-color: var(--#{$colour});
-  }
-}
-
-@mixin colour-fill($colour, $inverted: false) {
-  @if $inverted {
-    fill: map.get($colour-palette-dark, $colour);
-  } @else {
-    fill: map.get($colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    fill: var(--#{$colour});
-  }
-}
-
-@mixin invert {
-  @include colour-css-vars-dark;
-
-  @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast-dark;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    @include colour-css-vars;
-  }
-
-  @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-    @include colour-css-vars-high-contrast;
-  }
-
-  @include colour-font("font-base", true);
-  @include colour-background("page-background", true);
-}

@@ -1,4 +1,4 @@
-@use "../variables/colour";
+@use "../tools/colour";
 @use "../variables/typography";
 @use "../tools/media";
 @use "../tools/typography" as tools;
@@ -64,7 +64,7 @@ a {
   padding-left: 2rem;
 
   li::marker {
-    color: #f0a;
+    @include colour.colour-font("accent");
     font-weight: 700;
   }
 

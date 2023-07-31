@@ -1,4 +1,4 @@
-@use "../../variables/colour";
+@use "../../tools/colour";
 @use "../../tools/media";
 
 .tna-hero {
@@ -154,6 +154,24 @@
   @include media.on-tiny {
     &__image {
       height: 240px;
+    }
+  }
+
+  @mixin high-contrast {
+    &__content-inner {
+      border: 1px transparent solid;
+      @include colour.colour-border("keyline-dark");
+      border-radius: 0.5rem;
+    }
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include high-contrast;
+  }
+
+  @media (prefers-contrast: more) {
+    .tna-template--system-theme & {
+      @include high-contrast;
     }
   }
 }

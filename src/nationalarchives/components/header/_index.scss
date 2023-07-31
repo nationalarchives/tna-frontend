@@ -1,5 +1,6 @@
 @use "sass:math";
-@use "../../variables/colour";
+@use "../../tools/colour";
+@use "../../variables/colour" as colourVars;
 @use "../../variables/grid";
 @use "../../variables/typography";
 @use "../../tools/media";
@@ -8,7 +9,7 @@
 .tna-header {
   color: #fff;
 
-  background-color: colour.$tna-black;
+  background-color: colourVars.$tna-black;
 
   // @include colour.invert;
 
@@ -18,7 +19,7 @@
 
     text-align: right;
 
-    background-color: colour.$dark-grey;
+    background-color: colourVars.$dark-grey;
   }
 
   &__exit-link {
@@ -81,7 +82,7 @@
 
       background-color: #fff;
 
-      outline: 0.2rem colour.$dark-grey solid;
+      outline: 0.2rem colourVars.$dark-grey solid;
 
       transform: rotate(45deg) translateX(50%);
       transform-origin: 100% 0;
@@ -233,7 +234,7 @@
   &--orange,
   &--green,
   &--blue {
-    color: colour.$tna-black;
+    color: colourVars.$tna-black;
 
     .tna-header__logo-link {
       &:hover {
@@ -246,28 +247,28 @@
     }
 
     .tna-header__hamburger {
-      background-color: colour.$tna-black;
+      background-color: colourVars.$tna-black;
     }
   }
 
   &--yellow {
-    background-color: colour.$tna-yellow;
+    background-color: colourVars.$tna-yellow;
   }
 
   &--pink {
-    background-color: colour.$tna-pink;
+    background-color: colourVars.$tna-pink;
   }
 
   &--orange {
-    background-color: colour.$tna-orange;
+    background-color: colourVars.$tna-orange;
   }
 
   &--green {
-    background-color: colour.$tna-green;
+    background-color: colourVars.$tna-green;
   }
 
   &--blue {
-    background-color: colour.$tna-blue;
+    background-color: colourVars.$tna-blue;
   }
 
   &__navigation {
@@ -301,9 +302,9 @@
     text-decoration: none;
     line-height: 2;
 
-    transition:
-      color 200ms,
-      background-color 200ms;
+    // transition:
+    //   color 200ms,
+    //   background-color 200ms;
 
     &:hover,
     &--selected {
@@ -311,9 +312,9 @@
 
       @include colour.colour-background("page-background");
 
-      transition:
-        color 50ms,
-        background-color 50ms;
+      // transition:
+      //   color 50ms,
+      //   background-color 50ms;
     }
   }
 
@@ -412,7 +413,7 @@
 
         @include colour.colour-background("font-dark");
 
-        transition: width 200ms;
+        // transition: width 200ms;
 
         content: "";
       }
@@ -421,7 +422,7 @@
         &::after {
           width: 0.25rem;
 
-          transition: width 50ms;
+          // transition: width 50ms;
         }
       }
 

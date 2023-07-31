@@ -1,0 +1,11 @@
+@use "../features";
+
+@if features.$debug-interactable-areas {
+  a,
+  button,
+  label[for] {
+    background-color: rgba(#f0a, 0.25) !important;
+
+    box-shadow: 0 0 0 1px #f0a !important;
+  }
+}

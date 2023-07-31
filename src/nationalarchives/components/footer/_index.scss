@@ -49,6 +49,9 @@
   }
 
   &__navigation-group-item {
+    & + & {
+      margin-top: 1rem;
+    }
   }
 
   &__navigation-group-item-link {

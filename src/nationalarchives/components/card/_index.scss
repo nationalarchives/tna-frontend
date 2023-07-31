@@ -21,6 +21,8 @@
   }
 
   &__image-container {
+    margin-bottom: 1rem;
+
     position: relative;
     order: 1;
   }
@@ -93,6 +95,24 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  .tna-template--high-contrast-theme & {
+    padding: 1rem;
+
+    border: 1px transparent solid;
+    @include colour.colour-border("keyline-dark");
+    border-radius: 0.5rem;
+  }
+
+  @media (prefers-contrast: more) {
+    .tna-template--system-theme & {
+      padding: 1rem;
+
+      border: 1px transparent solid;
+      @include colour.colour-border("keyline-dark");
+      border-radius: 0.5rem;
     }
   }
 }

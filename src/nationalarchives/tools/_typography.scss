@@ -4,3 +4,18 @@
 @mixin relative-font-size($fontSizePx) {
   font-size: #{math.div($fontSizePx, typography.$base-font-size-px)}rem;
 }
+
+@mixin main-font {
+  font-family: typography.$font-family-main;
+  font-weight: typography.$font-weight-main;
+}
+
+@mixin heading-font {
+  font-family: typography.$font-family-heading;
+  font-weight: typography.$font-weight-heading;
+}
+
+@mixin detail-font {
+  font-family: typography.$font-family-detail;
+  font-weight: typography.$font-weight-detail;
+}

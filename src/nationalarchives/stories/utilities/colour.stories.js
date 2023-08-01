@@ -177,8 +177,7 @@ const Template = ({ theme }) => {
     <article>
     ${Footer({})}
   </div>
-</div>
-<br>`;
+</div>`;
 };
 
 export const Examples = Template.bind({});

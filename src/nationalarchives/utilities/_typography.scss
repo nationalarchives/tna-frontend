@@ -1,16 +1,14 @@
 @use "../tools/colour";
-@use "../variables/typography";
 @use "../tools/media";
-@use "../tools/typography" as tools;
+@use "../tools/typography";
 
 // Temporary - will eventually bundle font files into package
 @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@500;700&display=swap";
 @import "https://use.typekit.net/hkj3kuz.css";
 
 .tna-template {
-  font-family: typography.$font-family-main;
-  font-weight: typography.$font-weight-main;
   @include colour.colour-font("font-base");
+  @include typography.main-font;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -20,7 +18,7 @@
 
 .tna-template__body {
   color: inherit;
-  @include tools.relative-font-size(16);
+  @include typography.relative-font-size(18);
   line-height: 1.6;
 }
 
@@ -79,46 +77,45 @@ a {
   margin-bottom: 1.5rem;
 
   @include colour.colour-font("font-dark");
-  font-family: typography.$font-family-heading;
-  font-weight: typography.$font-weight-heading;
+  @include typography.heading-font;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   &--xl {
-    @include tools.relative-font-size(64);
+    @include typography.relative-font-size(64);
     line-height: 1;
 
     @include media.on-medium {
-      @include tools.relative-font-size(42);
+      @include typography.relative-font-size(42);
     }
 
     @include media.on-mobile {
-      @include tools.relative-font-size(36);
+      @include typography.relative-font-size(36);
     }
   }
 
   &--l {
-    @include tools.relative-font-size(32);
+    @include typography.relative-font-size(32);
     line-height: 1.2;
 
     @include media.on-medium {
-      @include tools.relative-font-size(26);
+      @include typography.relative-font-size(26);
     }
 
     @include media.on-mobile {
-      @include tools.relative-font-size(24);
+      @include typography.relative-font-size(24);
     }
   }
 
   &--m {
-    @include tools.relative-font-size(20);
+    @include typography.relative-font-size(20);
     line-height: 1.4;
   }
 
   &--s {
-    @include tools.relative-font-size(18);
+    @include typography.relative-font-size(18);
     line-height: 1.6;
   }
 }
@@ -134,9 +131,8 @@ a {
     margin: 0;
 
     @include colour.colour-font("font-base");
-    @include tools.relative-font-size(14);
-    font-family: typography.$font-family-detail;
-    font-weight: typography.$font-weight-detail;
+    @include typography.relative-font-size(14);
+    @include typography.detail-font;
     text-transform: uppercase;
 
     .tna-hgroup & {
@@ -161,7 +157,7 @@ a {
     }
 
     .tna-hgroup__title {
-      @include tools.relative-font-size(64);
+      @include typography.relative-font-size(64);
     }
   }
 
@@ -170,7 +166,7 @@ a {
     }
 
     .tna-hgroup__title {
-      @include tools.relative-font-size(32);
+      @include typography.relative-font-size(32);
     }
   }
 
@@ -179,7 +175,7 @@ a {
     }
 
     .tna-hgroup__title {
-      @include tools.relative-font-size(20);
+      @include typography.relative-font-size(20);
     }
   }
 
@@ -188,7 +184,7 @@ a {
     }
 
     .tna-hgroup__title {
-      @include tools.relative-font-size(18);
+      @include typography.relative-font-size(18);
     }
   }
 }

@@ -1,10 +1,9 @@
 @use "sass:math";
 @use "../../tools/colour";
-@use "../../variables/colour" as colourVars;
+@use "../../variables/colour" as colourVars; // TODO
 @use "../../variables/grid";
-@use "../../variables/typography";
+@use "../../tools/typography";
 @use "../../tools/media";
-@use "../../tools/typography" as tools;
 
 .tna-header {
   color: #fff;
@@ -297,7 +296,7 @@
 
     display: inline-block;
 
-    font-family: typography.$font-family-heading;
+    @include typography.heading-font;
     text-decoration: none;
     line-height: 2;
 
@@ -370,7 +369,7 @@
 
     &__navigation {
       @include colour.colour-font("font-base");
-      @include tools.relative-font-size(20);
+      @include typography.relative-font-size(20);
 
       &.tna-column {
         padding-right: 0;

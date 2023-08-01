@@ -15,7 +15,7 @@
 }
 
 .tna-template--padded {
-  .tna-template__body {
+  > .tna-template__body {
     padding: 16px;
   }
 }

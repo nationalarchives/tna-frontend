@@ -1,4 +1,4 @@
-name: CI
+name: Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Test
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
         run: npm run test
 
   prototype-kit:
-    name: Prototype kit integration
+    name: Test GOV.UK prototype kit integration
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,7 +35,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-      - name: Install
+      - name: Install dependencies
         run: npm ci
       - name: Build package
         run: >

@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Publish Storybook
 
 on:
   push:
@@ -34,13 +34,7 @@ jobs:
         run: npm ci
       - name: Build Storybook
         run: npm run build
-      # - name: Publish to Chromatic
-      #   uses: chromaui/action@v1
-      #   with:
-      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      #     storybookBuildDir: storybook
-      #     exitZeroOnChanges: true
-      - name: Setup Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -49,3 +43,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook
+          exitZeroOnChanges: true

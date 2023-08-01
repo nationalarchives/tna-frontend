@@ -1,4 +1,4 @@
-name: Publish
+name: Publish new release
 
 on:
   release:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Test
+    name: Run tests and lint checking
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,15 +26,10 @@ jobs:
         run: npm start &
       - name: Run tests
         run: npm run test
-      - name: Build package
-        run: ./tasks/build-package.sh
-      - name: Test package
-        run: node tasks/test-package.js || exit 1
 
   publish-npm:
     name: Publish
-    needs:
-      - test
+    needs: test
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -51,6 +46,8 @@ jobs:
         run: npm ci
       - name: Build package
         run: ./tasks/build-package.sh
+      - name: Test package
+        run: node tasks/test-package.js || exit 1
       - name: Check npm credentials
         run: npm whoami
       - name: Publish to npm

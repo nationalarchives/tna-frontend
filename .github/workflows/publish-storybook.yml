@@ -15,8 +15,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    name: Build and deploy
+  github-pages:
+    name: Build and deploy to GitHub Pages
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -43,6 +43,26 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+  chromatic:
+    name: Build and deploy to Chromatic
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Storybook
+        run: npm run build
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:

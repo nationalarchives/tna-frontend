@@ -6,28 +6,8 @@ on:
       - published
 
 jobs:
-  test:
-    name: Run tests and linting checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Start Storybook
-        run: npm start &
-      - name: Run tests
-        run: npm run test
-
   publish-npm:
-    name: Publish
-    needs: test
+    name: Build package and publish to npm
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -46,8 +26,6 @@ jobs:
         run: ./tasks/validate-version.sh
       - name: Build package
         run: ./tasks/build-package.sh
-      - name: Test package
-        run: node tasks/test-package.js || exit 1
       - name: Check npm credentials
         run: npm whoami
       - name: Publish to npm

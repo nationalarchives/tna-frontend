@@ -95,8 +95,10 @@ const Template = ({ theme }) => {
         params: {
           heading: "Title",
           image: {
-            src: "https://picsum.photos/800/600",
-            alt: "A placeholder image",
+            src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+            alt: "The National Archives office",
+            width: 1996,
+            height: 1331,
           },
           classes: "tna-hero--demo",
         },
@@ -128,10 +130,10 @@ const Template = ({ theme }) => {
               },
               href: "#",
               image: {
-                src: "https://picsum.photos/640/360",
-                alt: "A placeholder image",
-                width: 640,
-                height: 360,
+                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+                alt: "The National Archives office",
+                width: 1996,
+                height: 1331,
               },
               body: "<p>Card body</p>",
               classes: "tna-card--demo",
@@ -162,10 +164,10 @@ const Template = ({ theme }) => {
           })}
           ${Picture({
             params: {
-              src: "https://picsum.photos/800/600",
-              alt: "",
-              width: 800,
-              height: 600,
+              src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+              alt: "The National Archives office",
+              width: 1996,
+              height: 1331,
               caption: "<p>This is a pretty image</p>",
               transcript: "<p>Lorem ipsum transcript</p>",
               translation: "<p>Lorem ipsum translation</p>",

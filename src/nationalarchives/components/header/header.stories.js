@@ -24,6 +24,9 @@ Object.keys(argTypes).forEach((argType) => {
 export default {
   title: "Work in progress/Components/Header",
   argTypes,
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
 };
 
 const Template = ({ logo, navigation, colour, exit, classes, attributes }) => {

@@ -2,6 +2,7 @@ import Header from "./template.njk";
 import macroOptions from "./macro-options.json";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
+import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 const argTypes = {
   logo: { control: "object" },
@@ -77,6 +78,9 @@ Desktop.parameters = {
   viewport: {
     defaultViewport: "tablet",
   },
+  chromatic: {
+    viewports: [MINIMAL_VIEWPORTS["tablet"]],
+  },
 };
 Desktop.args = {
   navigation: [
@@ -112,6 +116,9 @@ export const Mobile = Template.bind({});
 Mobile.parameters = {
   viewport: {
     defaultViewport: "mobile2",
+  },
+  chromatic: {
+    viewports: [MINIMAL_VIEWPORTS["mobile2"]],
   },
 };
 Mobile.args = {

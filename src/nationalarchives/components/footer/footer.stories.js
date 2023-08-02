@@ -155,32 +155,32 @@ Standard.args = {
     {
       text: "Twitter",
       href: "#",
-      image: "/images/footer/twitter.svg",
+      image: "./images/footer/twitter.svg",
     },
     {
       text: "YouTube",
       href: "#",
-      image: "/images/footer/youtube.svg",
+      image: "./images/footer/youtube.svg",
     },
     {
       text: "Flickr",
       href: "#",
-      image: "/images/footer/flickr.svg",
+      image: "./images/footer/flickr.svg",
     },
     {
       text: "Facebook",
       href: "#",
-      image: "/images/footer/facebook.svg",
+      image: "./images/footer/facebook.svg",
     },
     {
       text: "Instagram",
       href: "#",
-      image: "/images/footer/instagram.svg",
+      image: "./images/footer/instagram.svg",
     },
     {
       text: "RSS",
       href: "#",
-      image: "/images/footer/rss.svg",
+      image: "./images/footer/rss.svg",
     },
   ],
   classes: "tna-footer--demo",

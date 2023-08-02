@@ -180,4 +180,6 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     await expect(linkB).not.toBeVisible();
     await expect(linkC).not.toBeVisible();
   });
+
+  navigationToggle.blur();
 };

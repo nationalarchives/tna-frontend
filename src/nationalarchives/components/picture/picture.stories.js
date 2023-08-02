@@ -52,10 +52,10 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  src: "https://picsum.photos/800/600",
-  alt: "",
-  width: 800,
-  height: 600,
+  src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  alt: "The National Archives office",
+  width: 1996,
+  height: 1331,
   caption: "<p>This is a pretty image</p>",
   transcript: "<p>Lorem ipsum transcript</p>",
   translation: "<p>Lorem ipsum translation</p>",

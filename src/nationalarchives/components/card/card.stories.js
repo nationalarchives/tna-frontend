@@ -64,10 +64,10 @@ Standard.args = {
   },
   href: "#",
   image: {
-    src: "https://picsum.photos/640/360",
-    alt: "A placeholder image",
-    width: 640,
-    height: 360,
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
   },
   body: "<p>Card body</p>",
   // actions: [
@@ -92,10 +92,10 @@ Featured.args = {
   },
   href: "#",
   image: {
-    src: "https://picsum.photos/640/360",
-    alt: "A placeholder image",
-    width: 640,
-    height: 360,
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
   },
   body: "<p>Card body</p>",
   actions: [

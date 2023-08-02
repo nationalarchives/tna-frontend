@@ -41,8 +41,8 @@ Standard.args = {
   heading: "Title",
   body: "<p>Body</p>",
   image: {
-    src: "https://picsum.photos/800/600",
-    alt: "A placeholder image",
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
     information: "An interesting photo by a famous photographer ©2023",
   },
   classes: "tna-hero--demo",
@@ -79,8 +79,8 @@ export const TitleOnly = Template.bind({});
 TitleOnly.args = {
   heading: "Title",
   image: {
-    src: "https://picsum.photos/800/600",
-    alt: "A placeholder image",
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
   },
   classes: "tna-hero--demo",
 };

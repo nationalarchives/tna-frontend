@@ -1,4 +1,19 @@
 {
   "component": "hero",
-  "fixtures": []
+  "fixtures": [
+    {
+      "name": "minimal",
+      "options": {
+        "heading": "Title",
+        "image": {
+          "src": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+          "alt": "The National Archives office",
+          "width": 1996,
+          "height": 1331
+        }
+      },
+      "html": "<header class=\"tna-hero \"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" class=\"tna-hero__image\" width=\"1996\" height=\"1331\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner\"><h1 class=\"tna-heading tna-heading--xl tna-hero__heading\">Title</h1></div></div></div></header>",
+      "hidden": false
+    }
+  ]
 }

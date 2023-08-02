@@ -20,7 +20,7 @@
   {
     "name": "image",
     "type": "object",
-    "required": false,
+    "required": true,
     "description": "",
     "params": [
       {
@@ -32,6 +32,18 @@
       {
         "name": "alt",
         "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "number",
         "required": true,
         "description": ""
       },

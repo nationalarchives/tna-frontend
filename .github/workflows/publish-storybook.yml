@@ -44,25 +44,25 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
 
-  # chromatic:
-  #   name: Build and deploy to Chromatic
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0
-  #     - name: Set up Node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version-file: .nvmrc
-  #     - name: Install dependencies
-  #       run: npm ci
-  #     - name: Build Storybook
-  #       run: npm run build
-  #     - name: Publish to Chromatic
-  #       uses: chromaui/action@v1
-  #       with:
-  #         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-  #         storybookBuildDir: storybook
-  #         exitZeroOnChanges: true
+  chromatic:
+    name: Build and deploy to Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Storybook
+        run: npm run build
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook
+          exitZeroOnChanges: true

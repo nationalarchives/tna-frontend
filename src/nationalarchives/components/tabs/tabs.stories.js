@@ -296,5 +296,7 @@ Test.play = async ({ args, canvasElement, step }) => {
       await userEvent.keyboard("[Home]");
       await expectButtonAndSectionAToBeCurrent();
     });
+
+    buttonA.blur();
   });
 };

@@ -79,7 +79,7 @@ Desktop.parameters = {
     defaultViewport: "tablet",
   },
   chromatic: {
-    viewports: [MINIMAL_VIEWPORTS["tablet"]],
+    viewports: [MINIMAL_VIEWPORTS["tablet"].styles.width.replace(/px$/, "")],
   },
 };
 Desktop.args = {
@@ -118,7 +118,7 @@ Mobile.parameters = {
     defaultViewport: "mobile2",
   },
   chromatic: {
-    viewports: [MINIMAL_VIEWPORTS["mobile2"]],
+    viewports: [MINIMAL_VIEWPORTS["mobile2"].styles.width.replace(/px$/, "")],
   },
 };
 Mobile.args = {

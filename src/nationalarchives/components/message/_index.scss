@@ -1,0 +1,26 @@
+@use "../../variables/colour" as colourVars;
+@use "../../tools/colour";
+
+.tna-message {
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  @include colour.colour-background("keyline");
+
+  border-left: 0.5rem transparent solid;
+  @include colour.colour-border("keyline-dark");
+
+  // &--yellow {
+    background-color: colourVars.$tna-cream;
+  
+    border-left-color: colourVars.$tna-yellow;
+  // }
+
+  &__icon {
+    margin-right: 1rem;
+  }
+
+  &__message {}
+}

@@ -31,7 +31,15 @@ export default {
   },
 };
 
-const Template = ({ logo, topNavigation,navigation, colour, exit, classes, attributes }) => {
+const Template = ({
+  logo,
+  topNavigation,
+  navigation,
+  colour,
+  exit,
+  classes,
+  attributes,
+}) => {
   return Header({
     params: {
       logo,

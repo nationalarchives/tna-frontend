@@ -428,10 +428,6 @@
       }
     }
 
-
-
-
-
     &__top-navigation-items {
       padding: 0.5rem 1rem;
 
@@ -442,18 +438,14 @@
       border-bottom: 1px solid;
       @include colour.colour-border("keyline");
     }
-  
+
     &__top-navigation-item {
       margin: 0;
       padding: 0.5rem;
     }
-  
+
     &__top-navigation-item-link {
     }
-
-
-
-
 
     &__navigation-items {
       width: 100%;

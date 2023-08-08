@@ -30,5 +30,6 @@ const Template = ({ phase, message, classes, attributes }) => {
 
 export const Standard = Template.bind({});
 Standard.args = {
-  message: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+  message:
+    "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
 };

@@ -13,14 +13,15 @@
   @include colour.colour-border("keyline-dark");
 
   // &--yellow {
-    background-color: colourVars.$tna-cream;
-  
-    border-left-color: colourVars.$tna-yellow;
+  background-color: colourVars.$tna-cream;
+
+  border-left-color: colourVars.$tna-yellow;
   // }
 
   &__icon {
     margin-right: 1rem;
   }
 
-  &__message {}
+  &__message {
+  }
 }

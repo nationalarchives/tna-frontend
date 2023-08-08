@@ -1,0 +1,15 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<div class="tna-profile tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="tna-column tna-column--order-2">
+    <img src="https://avatar.iran.liara.run/public" width="200" height="200" />
+  </div>
+  <div class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-column--order-1 tna-column--order-3-small tna-column--order-3-tiny">
+    <hgroup class="tna-hgroup tna-hgroup--xl">
+      <p class="tna-hgroup__supertitle">Profile</p>
+      <h1 class="tna-hgroup__title tna-heading">Max Smith</h1>
+    </hgroup>
+    <p>
+      Master of Documents
+    </p>
+  </div>
+</div>

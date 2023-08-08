@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated dependencies
 
+### Fixed
+
+- Basic accent colour fixed
+
 ## [v0.1.11-prerelease] - 2023-08-08
 
 ### Added

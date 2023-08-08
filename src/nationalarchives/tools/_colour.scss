@@ -123,3 +123,7 @@
   @include colour-font("font-base", true);
   @include colour-background("page-background", true);
 }
+
+%tna-invert {
+  @include invert;
+}

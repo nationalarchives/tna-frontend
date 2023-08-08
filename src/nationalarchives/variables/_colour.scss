@@ -26,8 +26,26 @@ $-tna-pastel-blue: #d4e5ef;
 
 $-dark-grey: #26262a;
 $-base-font: #343338;
-$accent-colour: $-tna-yellow !default;
-$accent-colour-dark: $accent-colour !default;
+
+$-accent-colour: $-tna-yellow;
+$-accent-colour-dark: $-accent-colour;
+
+// @debug $-accent-colour;
+// @mixin configure($accent-colour: null) {
+//   @debug $accent-colour;
+//   @if $accent-colour {
+//     $-accent-colour: $accent-colour !global;
+//   }
+// }
+// @debug $-accent-colour;
+
+// @function -accent-colour() {
+//   @return $-accent-colour or $-tna-yellow;
+// }
+
+// @function -accent-colour-dark() {
+//   @return $-accent-colour-dark or -accent-colour();
+// }
 
 // TODO: Scoped variables should not be used directly outside of this file
 $tna-black: $-tna-black;
@@ -50,7 +68,7 @@ $colour-palette-default: (
   "focus-outline": $-tna-blue,
   "keyline": #ccc,
   "keyline-dark": $-dark-grey,
-  "accent": $accent-colour,
+  "accent": -accent-colour(),
   "button-primary-text": $-tna-white,
   "button-primary-background": $-tna-black,
   "button-primary-hover-text": $-tna-black,
@@ -72,7 +90,7 @@ $colour-palette-dark: map.merge(
     "link-visited": #b9f,
     "keyline": rgba($-tna-white, 0.5),
     "keyline-dark": $-tna-white,
-    "accent": $accent-colour-dark,
+    "accent": -accent-colour-dark(),
   )
 );
 

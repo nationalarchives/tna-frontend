@@ -1,3 +1,4 @@
+@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 @use "../../tools/media";
 
@@ -5,7 +6,8 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  @include colour.invert;
+  // @include colour.invert;
+  @extend %tna-invert;
 
   &__link {
     color: inherit;
@@ -60,9 +62,8 @@
   &__social {
     margin-bottom: 2rem;
 
-    justify-content: space-evenly;
-
     &.tna-container {
+      justify-content: space-evenly;
       align-items: flex-end;
     }
   }

@@ -1,9 +1,9 @@
-$accent-colour: #f0a;
-$accent-colour-dark: #0ff;
+@use "variables";
+@use "tools";
 
-@use "tools/all" as tools;
-@use "variables/all" as variables;
+@use "utilities";
+@use "components";
+@use "patterns";
 
-@use "utilities/all" as utilities;
-@use "components/all" as components;
-@use "patterns/all" as patterns;
+// @use "variables/colour";
+// @include colour.configure(#f0a);

@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 @use "../../variables/colour" as colourVars; // TODO
 @use "../../variables/grid";

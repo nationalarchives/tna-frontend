@@ -1,3 +1,4 @@
+@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 
 .tna-picture {
@@ -24,7 +25,8 @@
   }
 
   &__transcript {
-    @include colour.invert;
+    // @include colour.invert;
+    @extend %tna-invert;
 
     padding: 1rem 1.5rem 0.5rem;
 

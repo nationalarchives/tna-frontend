@@ -1,0 +1,94 @@
+[
+  {
+    "name": "heading",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "src",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "subtitle",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "columns",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "columnsMedium",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "columnsSmall",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "columnsTiny",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the container."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the container."
+  }
+]

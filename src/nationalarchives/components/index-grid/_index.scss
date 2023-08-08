@@ -1,0 +1,46 @@
+@use "../../utilities/global"; // To get %tna-invert
+@use "../../tools/colour";
+
+.tna-index-grid {
+  &__item-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  &__item {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    // @include colour.invert;
+    @extend %tna-invert;
+    text-decoration: none;
+  }
+
+  &__item-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__item-content {
+    padding: 1rem;
+
+    flex: 1;
+  }
+
+  &__item-title {
+    text-decoration: underline;
+
+    .tna-index-grid__item:hover & {
+      &,
+      &:link,
+      &:visited {
+        text-decoration-thickness: 3px;
+      }
+    }
+  }
+
+  &__item-subtitle {
+    @include colour.colour-font("font-light", true);
+  }
+}

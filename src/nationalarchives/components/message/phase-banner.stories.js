@@ -18,7 +18,7 @@ export default {
   argTypes,
 };
 
-const Template = ({ phase, message, classes, attributes }) => {
+const Template = ({ message, classes, attributes }) => {
   return Message({
     params: {
       message,
@@ -32,4 +32,5 @@ export const Standard = Template.bind({});
 Standard.args = {
   message:
     "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+  classes: "tna-messaage--demo",
 };

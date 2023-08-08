@@ -40,31 +40,31 @@
   }
 
   @include media.on-mobile {
-    &__item {
-      &,
-      + .tna-breadcrumbs__item {
-        &::before {
-          margin-left: 0;
+    // &__item {
+    //   &,
+    //   + .tna-breadcrumbs__item {
+    //     &::before {
+    //       margin-left: 0;
 
-          display: none;
-        }
-      }
+    //       display: none;
+    //     }
+    //   }
 
-      &:not(:nth-last-child(2)) {
-        display: none;
-      }
+    //   &:not(:nth-last-child(2)) {
+    //     display: none;
+    //   }
 
-      &:nth-last-child(2) {
-        .tna-breadcrumbs__link {
-          &::before {
-            // content: "\2190";
-            // content: "\21E6";
-            // content: "\21FD";
-            // content: "\2794";
-            content: "\2190\00a0" attr(data-prefix);
-          }
-        }
-      }
+    //   &:nth-last-child(2) {
+    //     .tna-breadcrumbs__link {
+    //       &::before {
+    //         content: "\2190\00a0" attr(data-prefix);
+    //       }
+    //     }
+    //   }
+    // }
+
+    &__item:not(:first-child, :last-child) {
+      display: none;
     }
   }
 

@@ -18,15 +18,13 @@ export class Card {
 
     this.touchStartTime = null;
 
-    this.$module.addEventListener("touchstart", () =>
-      this.handleCardTouchStart(),
-    );
-    this.$module.addEventListener("touchend", () => this.handleCardTouchEnd());
-    // this.$module.addEventListener("click", () => this.handleCardClick());
+    // this.$module.addEventListener("touchstart", () =>
+    //   this.handleCardTouchStart(),
+    // );
+    // this.$module.addEventListener("touchend", () => this.handleCardTouchEnd());
   }
 
   handleCardClick() {
-    console.log("CLICK");
     if (this.$cardTitleLink) {
       this.$cardTitleLink.click();
     } else if (this.$cardAction) {

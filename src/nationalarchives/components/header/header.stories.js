@@ -59,20 +59,20 @@ Standard.args = {
     strapline: "Beta",
     href: "#/",
   },
-  // topNavigation: [
-  //   {
-  //     text: "Top item 1",
-  //     href: "#/top-1"
-  //   },
-  //   {
-  //     text: "Top item 2",
-  //     href: "#/top-2",
-  //   },
-  //   {
-  //     text: "Top item 3",
-  //     href: "#/top-3",
-  //   },
-  // ],
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+    },
+    {
+      text: "Top item 3",
+      href: "#/top-3",
+    },
+  ],
   navigation: [
     {
       text: "Alpha",

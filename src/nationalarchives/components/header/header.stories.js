@@ -6,6 +6,7 @@ import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 const argTypes = {
   logo: { control: "object" },
+  topNavigation: { control: "object" },
   navigation: { control: "object" },
   colour: {
     control: "radio",
@@ -30,10 +31,11 @@ export default {
   },
 };
 
-const Template = ({ logo, navigation, colour, exit, classes, attributes }) => {
+const Template = ({ logo, topNavigation,navigation, colour, exit, classes, attributes }) => {
   return Header({
     params: {
       logo,
+      topNavigation,
       navigation,
       colour,
       exit,
@@ -49,6 +51,20 @@ Standard.args = {
     strapline: "Beta",
     href: "#/",
   },
+  // topNavigation: [
+  //   {
+  //     text: "Top item 1",
+  //     href: "#/top-1"
+  //   },
+  //   {
+  //     text: "Top item 2",
+  //     href: "#/top-2",
+  //   },
+  //   {
+  //     text: "Top item 3",
+  //     href: "#/top-3",
+  //   },
+  // ],
   navigation: [
     {
       text: "Alpha",

@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hero component styling inline with ETNA
 
 
-[unreleased]: https://github.com/nationalarchives/tna-frontend/compare/v0.1.10-prerelease...HEAD
+[unreleased]: https://github.com/nationalarchives/tna-frontend/compare/v0.1.11-prerelease...HEAD
+[v0.1.11-prerelease]: https://github.com/nationalarchives/tna-frontend/compare/v0.1.10-prerelease...v0.1.11-prerelease
 [v0.1.10-prerelease]: https://github.com/nationalarchives/tna-frontend/compare/v0.1.9-prerelease...v0.1.10-prerelease
 [v0.1.9-prerelease]: https://github.com/nationalarchives/tna-frontend/releases/tag/v0.1.9-prerelease

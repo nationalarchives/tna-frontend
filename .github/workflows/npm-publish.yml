@@ -6,9 +6,31 @@ on:
       - published
 
 jobs:
+  check:
+    name: Pre-release checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Start Storybook
+        run: npm start &
+      - name: Run tests
+        run: npm run test
+      - name: Check version numbers
+        run: ./tasks/validate-version.sh
+
   publish-npm:
     name: Build package and publish to npm
     runs-on: ubuntu-latest
+    needs: check
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
@@ -22,8 +44,6 @@ jobs:
           scope: '@nationalarchives'
       - name: Install dependencies
         run: npm ci
-      - name: Check version numbers
-        run: ./tasks/validate-version.sh
       - name: Build package
         run: ./tasks/build-package.sh
       - name: Check npm credentials

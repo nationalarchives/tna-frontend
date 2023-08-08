@@ -13,6 +13,7 @@
 {%- for item in params.columns -%}
   {%- set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' -%}
   {%- set columnClasses = [item.classes] if item.classes else [] -%}
+  
   {%- if item.width -%}
     {%- set columnClasses = columnClasses.concat('tna-column--full') if item.width == 'full' else ( columnClasses.concat('tna-column--width-' + item.width) ) -%}
   {%- endif -%}
@@ -25,6 +26,7 @@
   {%- if item.widthTiny -%}
     {%- set columnClasses = columnClasses.concat('tna-column--full-tiny') if item.widthTiny == 'full' else ( columnClasses.concat('tna-column--width-' + item.widthTiny + '-tiny') ) -%}
   {%- endif -%}
+
   {%- if item.flex -%}
     {%- set columnClasses = columnClasses.concat('tna-column--flex-' + item.flex) -%}
   {%- endif -%}
@@ -37,6 +39,20 @@
   {%- if item.flexTiny -%}
     {%- set columnClasses = columnClasses.concat('tna-column--flex-' + item.flexTiny + '-tiny') -%}
   {%- endif -%}
+
+  {%- if item.order -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--order-' + item.order) -%}
+  {%- endif -%}
+  {%- if item.orderMedium -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--order-' + item.orderMedium + '-medium') -%}
+  {%- endif -%}
+  {%- if item.orderSmall -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--order-' + item.orderSmall + '-small') -%}
+  {%- endif -%}
+  {%- if item.orderTiny -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--order-' + item.orderTiny + '-tiny') -%}
+  {%- endif -%}
+
   {%- if item.noPadding -%}
     {%- set columnClasses = columnClasses.concat('tna-column--no-padding') -%}
   {%- endif -%}

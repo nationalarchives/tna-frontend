@@ -188,6 +188,60 @@ const responsiveColumn = {
   widthTiny: "full",
 };
 Responsive.args = {
-  classes: "tna-grid--demo",
+  classes: "tna-grid--demo tna-grid--demo-tall",
   columns: Array(12).fill({ ...responsiveColumn }),
+};
+
+export const Flex = Template.bind({});
+Flex.args = {
+  classes: "tna-grid--demo",
+  columns: [
+    {
+      html: "<h1>A</h1>",
+      width: "1-4",
+    },
+    {
+      html: "<h1>B</h1>",
+      flex: 1,
+    },
+  ],
+};
+
+export const Order = Template.bind({});
+Order.args = {
+  classes: "tna-grid--demo tna-grid--demo-tall",
+  columns: [
+    {
+      html: "<h1>A</h1>",
+      width: "1-4",
+      order: 1,
+      orderMedium: 2,
+      orderSmall: 3,
+      orderTiny: 4,
+    },
+    {
+      html: "<h1>B</h1>",
+      width: "1-4",
+      order: 2,
+      orderMedium: 1,
+      orderSmall: 4,
+      orderTiny: 3,
+    },
+    {
+      html: "<h1>C</h1>",
+      width: "1-4",
+      order: 3,
+      orderMedium: 4,
+      orderSmall: 1,
+      orderTiny: 2,
+    },
+    {
+      html: "<h1>D</h1>",
+      width: "1-4",
+      order: 4,
+      orderMedium: 3,
+      orderSmall: 2,
+      orderTiny: 1,
+    },
+  ],
 };

@@ -60,6 +60,30 @@
         "description": ""
       },
       {
+        "name": "order",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "orderMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "orderSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "orderTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "noPadding",
         "type": "boolean",
         "required": false,

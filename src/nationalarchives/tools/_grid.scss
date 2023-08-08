@@ -52,7 +52,7 @@
       }
     }
 
-    @for $i from 1 through 2 {
+    @for $i from 1 through 3 {
       &--flex-#{$i}#{$suffix} {
         width: auto;
 
@@ -60,7 +60,7 @@
       }
     }
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 4 {
       &--order-#{$i}#{$suffix} {
         order: $i;
       }

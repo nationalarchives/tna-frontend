@@ -4,8 +4,8 @@
 @use "../../tools/media";
 
 .tna-footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
   // @include colour.invert;
   @extend %tna-invert;
@@ -23,7 +23,7 @@
   }
 
   &__top {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 
     text-align: center;
   }

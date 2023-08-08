@@ -52,6 +52,7 @@ const checkExists = [
   ...componentFiles("hero", true),
   ...componentFiles("phase-banner", true),
   ...componentFiles("picture"),
+  ...componentFiles("profile", true),
   ...componentFiles("sensitive-image"),
   ...componentFiles("tabs"),
   // Tools

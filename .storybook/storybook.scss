@@ -20,9 +20,9 @@
   }
 }
 
-.tna-invert {
-  @include colour.invert;
-}
+// .tna-invert {
+//   @include colour.invert;
+// }
 
 .tna-grid--demo {
   padding-top: 2rem;
@@ -80,6 +80,12 @@
       }
     }
   }
+
+  &-tall {
+    .tna-column {
+      min-height: 10rem;
+    }
+  }
 }
 
 .tna-card--demo {
@@ -96,7 +102,4 @@
 
 .tna-picture--demo {
   max-width: 400px;
-}
-
-.tna-featured-collection--demo {
 }

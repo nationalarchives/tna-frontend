@@ -50,6 +50,7 @@ const checkExists = [
   ...componentFiles("grid", true),
   ...componentFiles("header"),
   ...componentFiles("hero", true),
+  ...componentFiles("message", true),
   ...componentFiles("phase-banner", true),
   ...componentFiles("picture"),
   ...componentFiles("profile", true),

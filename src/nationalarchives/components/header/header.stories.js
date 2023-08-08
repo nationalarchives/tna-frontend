@@ -24,7 +24,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Work in progress/Components/Header",
+  title: "Components/Header",
   argTypes,
   parameters: {
     chromatic: { delay: 1000 },

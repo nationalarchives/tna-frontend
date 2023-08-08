@@ -14,7 +14,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Work in progress/Components/Breadcrumbs",
+  title: "Components/Breadcrumbs",
   argTypes,
 };
 

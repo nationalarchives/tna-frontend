@@ -1,4 +1,5 @@
 @use "../../utilities/global"; // To get %tna-invert
+@use "../../variables/colour" as colourVars;
 @use "../../tools/colour";
 @use "../../tools/media";
 
@@ -10,10 +11,14 @@
   @extend %tna-invert;
 
   &__link {
-    color: inherit;
+    &,
+    &:visited {
+      color: inherit;
+    }
 
     &:hover {
-      @include colour.colour-font("link");
+      // @include colour.colour-font("link");
+      color: colourVars.$tna-blue;
     }
   }
 
@@ -108,12 +113,17 @@
   &__govuk-link {
     display: inline-block;
 
-    color: inherit;
-    fill: #fff;
+    &,
+    &:visited {
+      color: inherit;
+      fill: #fff;
+    }
 
     &:hover {
-      @include colour.colour-font("link");
-      @include colour.colour-fill("link");
+      // @include colour.colour-font("link");
+      // @include colour.colour-fill("link");
+      color: colourVars.$tna-blue;
+      fill: colourVars.$tna-blue;
     }
   }
 

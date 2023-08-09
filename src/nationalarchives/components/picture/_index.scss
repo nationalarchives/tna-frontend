@@ -28,10 +28,14 @@
     // @include colour.invert;
     @extend %tna-invert;
 
-    padding: 1rem 1.5rem 0.5rem;
+    padding: 1rem 1.5rem;
 
     .tna-template--clicked &:focus {
       outline: none;
+    }
+
+    .tna-tabs {
+      margin-bottom: 0.5rem;
     }
 
     .tna-tabs__list-item-link {

@@ -50,10 +50,10 @@ const Template = ({
 const exampleItem = {
   href: "#",
   src: "https://placekitten.com/800/600",
-  alt: "A kitten",
+  alt: "Photo of a kitten",
   width: "800",
   height: "600",
-  title: "Item 1",
+  title: "Cat",
   subtitle: "4 photos",
 };
 export const Standard = Template.bind({});
@@ -61,11 +61,14 @@ Standard.args = {
   heading: "My cats",
   items: Array(12)
     .fill({ ...exampleItem })
-    .map((item, index) => ({
-      ...item,
-      title: `Item ${index + 1}`,
-      subtitle: `${Math.round(Math.random() * 20) + 1} photos`,
-    })),
+    .map((item, index) => {
+      const pseudoRandom = ((index * 29) % 8) + 1;
+      return {
+        ...item,
+        title: `Category #${index + 101}`,
+        subtitle: `${pseudoRandom} photos`,
+      };
+    }),
   columns: 4,
   columnsMedium: 3,
   columnsSmall: 2,

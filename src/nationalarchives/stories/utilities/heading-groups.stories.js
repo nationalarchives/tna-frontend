@@ -41,4 +41,5 @@ export const HeadingGroupSeparated = Template.bind({});
 HeadingGroupSeparated.args = {
   supertitle: "Record revealed",
   title: "The Monteagle Letter",
+  singleSentence: false,
 };

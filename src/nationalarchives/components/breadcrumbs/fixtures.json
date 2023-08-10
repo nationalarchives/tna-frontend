@@ -19,7 +19,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-breadcrumbs tna-container \"><nav class=\"tna-column tna-column--full\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" data-prefix=\"Back to\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" data-prefix=\"Back to\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" data-prefix=\"Back to\">Gamma</a></li></ol></nav></div>",
+      "html": "<div class=\"tna-breadcrumbs tna-container \"><nav class=\"tna-column tna-column--full\" aria-label=\"Breadcrumb\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" data-prefix=\"Back to\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" data-prefix=\"Back to\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" data-prefix=\"Back to\">Gamma</a></li></ol></nav></div>",
       "hidden": false
     }
   ]

@@ -49,8 +49,8 @@ const Template = ({
 
 const exampleItem = {
   href: "#",
-  src: "https://placekitten.com/800/600",
-  alt: "Photo of a kitten",
+  src: "https://picsum.photos/id/237/800/600",
+  alt: "Photo of a puppy",
   width: "800",
   height: "600",
   title: "Cat",
@@ -58,7 +58,7 @@ const exampleItem = {
 };
 export const Standard = Template.bind({});
 Standard.args = {
-  heading: "My cats",
+  heading: "My dogs",
   items: Array(12)
     .fill({ ...exampleItem })
     .map((item, index) => {

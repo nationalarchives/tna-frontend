@@ -56,8 +56,11 @@
 //   },
 // };
 
+import { a11yConfig } from "./config";
+
 const { getStoryContext } = require("@storybook/test-runner");
 const { MINIMAL_VIEWPORTS } = require("@storybook/addon-viewport");
+const { injectAxe, checkA11y } = require("axe-playwright");
 
 const DEFAULT_VP_SIZE = { width: 1280, height: 720 };
 
@@ -80,5 +83,9 @@ module.exports = {
     } else {
       page.setViewportSize(DEFAULT_VP_SIZE);
     }
+    await injectAxe(page);
+  },
+  async postRender(page, story) {
+    await checkA11y(page, "#storybook-root", a11yConfig);
   },
 };

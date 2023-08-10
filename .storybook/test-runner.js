@@ -56,7 +56,7 @@
 //   },
 // };
 
-import { a11yConfig } from "./config";
+import { a11yConfig } from "./storybook-config";
 
 const { getStoryContext } = require("@storybook/test-runner");
 const { MINIMAL_VIEWPORTS } = require("@storybook/addon-viewport");

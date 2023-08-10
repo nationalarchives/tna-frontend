@@ -1,5 +1,5 @@
 import "../src/nationalarchives/all.scss";
-import { a11yConfig } from "./config";
+import { a11yConfig } from "./storybook-config";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 // Also need to change $support-colour-schemes in src/nationalarchives/_features.scss

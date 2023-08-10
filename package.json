@@ -9,8 +9,7 @@
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.mjs'",
     "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.mjs'",
     "package:sass": "sass --style=compressed --quiet-deps src/nationalarchives/all.scss package/nationalarchives/all.css",
-    "package:scripts": "webpack",
-    "package:test": "tasks/build-package.sh && node tasks/test-package.js"
+    "package:scripts": "webpack"
   },
   "repository": {
     "type": "git",

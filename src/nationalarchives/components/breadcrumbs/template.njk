@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <div class="tna-breadcrumbs tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <nav class="tna-column tna-column--full">
+  <nav class="tna-column tna-column--full" aria-label="Breadcrumb">
     <ol class="tna-breadcrumbs__list">
     {%- for item in params.items -%}
       <li class="tna-breadcrumbs__item">

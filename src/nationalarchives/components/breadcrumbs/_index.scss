@@ -32,7 +32,11 @@
   &__link {
     display: inline-block;
 
-    @include colour.colour-font("font-base");
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-base");
+    }
 
     &:hover {
       @include colour.colour-font("font-dark");

@@ -5,7 +5,7 @@ import { within, userEvent } from "@storybook/testing-library";
 
 const argTypes = {
   title: { control: "text" },
-  items: { control: "array" },
+  items: { control: "object" },
   sticky: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -81,6 +81,8 @@ Test.args = {
 };
 
 Test.play = async ({ args, canvasElement, step }) => {
+  await new Promise((r) => setTimeout(r, 100));
+
   const canvas = within(canvasElement);
 
   const tablist = canvas.getByRole("tablist");

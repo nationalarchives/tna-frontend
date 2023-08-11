@@ -5,17 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.13-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.14-prerelease...HEAD)
 
 ### Added
 ### Changed
-
-- Simplified SCSS for inverted colours
-
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## [v0.1.14-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.13-prerelease...v0.1.14-prerelease) - 2023-08-11
+
+### Changed
+
+- Simplified SCSS for inverted colours and introduced contrasting option
+
+### Fixed
+
+- Default colour scheme works without having to define a theme class on `tna-template`
+- Fixed top navigation layout in header when on mobile with no JavaScript enabled
 
 ## [v0.1.13-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.12-prerelease...v0.1.13-prerelease) - 2023-08-11
 

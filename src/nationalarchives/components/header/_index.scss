@@ -439,8 +439,12 @@
     }
 
     &__navigation {
+      @include colour.uninvert;
       @include colour.colour-font("font-base");
       @include typography.relative-font-size(20);
+
+      align-items: stretch;
+      flex-direction: column;
 
       &.tna-column {
         padding-right: 0;
@@ -451,7 +455,7 @@
         display: none;
 
         &--open {
-          display: block;
+          display: flex;
         }
       }
     }

@@ -5,9 +5,9 @@ import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 export const dynamicColourSchemeStories = false;
 document.documentElement.classList.add(
   "tna-template",
-  dynamicColourSchemeStories
-    ? "tna-template--system-theme"
-    : "tna-template--light-theme",
+  // dynamicColourSchemeStories
+  //   ? "tna-template--system-theme"
+  //   : "tna-template--light-theme",
 );
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");

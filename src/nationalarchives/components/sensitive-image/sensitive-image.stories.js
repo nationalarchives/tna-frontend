@@ -68,6 +68,8 @@ Test.args = {
 };
 
 Test.play = async ({ args, canvasElement }) => {
+  await new Promise((r) => setTimeout(r, 100));
+
   const canvas = within(canvasElement);
 
   const image = canvas.getByAltText(args.image.alt);

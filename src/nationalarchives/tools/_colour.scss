@@ -71,6 +71,8 @@
 }
 
 @mixin uninvert {
+  @include colour-css-vars;
+
   .tna-template--system-theme & {
     @include colour-css-vars;
 

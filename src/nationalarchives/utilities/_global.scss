@@ -2,9 +2,9 @@
 @use "../tools/colour";
 @use "../variables/typography";
 
-// :root {
-//   @include colour.colour-css-vars;
-// }
+:root {
+  @include colour.colour-css-vars;
+}
 
 .tna-template {
   min-width: 320px;

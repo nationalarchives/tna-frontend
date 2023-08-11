@@ -51,6 +51,8 @@ Standard.args = {
 };
 
 Standard.play = async ({ args, canvasElement, step }) => {
+  await new Promise((r) => setTimeout(r, 100));
+
   const canvas = within(canvasElement);
   const image = canvas.getByAltText(args.image.alt);
   const title = canvas.getByText(args.heading);

@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.12-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.13-prerelease...HEAD)
 
 ### Added
 ### Changed
@@ -13,6 +13,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 ### Security
+
+## [v0.1.13-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.12-prerelease...v0.1.13-prerelease) - 2023-08-11
+
+### Added
+
+- Automated accessibility testing for all stories
+- Support for colour schemes
+- Initial release of index-grid and message components
+- Footer link to GOV.UK added (https://www.gov.uk/)
+- Full-height layouts for pages with a `.tna-header`, `.tna-footer` and `#main[role="main"]`
+
+### Changed
+
+- Breadcrumbs collapse to first and last item on mobile (as per GOV.UK breadcrumbs)
+- Increased padding on top and bottom of footer
+- Exit link and top navigation font-size decreased to 16px
+- Better outline on hover of TNA logo in the header
+- Phase banner title is first-letter Capitalised rather than all CAPITALISED
+- Altered weight of Roboto Mono (500 -> 400)
+- Altered weight of Supria sans condensed (600 -> 400)
+- Reduced bottom margin of all `.tna-heading` elements
+- Increased contrast between "normal" and "light" fonts
+- Updates to `_generic` layout template
+
+### Removed
+
+- Removed `package:test` npm script
+
+### Fixed
+
+- Breadcrumb visited link colour
+- Header logo text visited link colour
+- `aria-label` added to breadcrumb nav for accessibility compliance
 
 ## [v0.1.12-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.11-prerelease...v0.1.12-prerelease) - 2023-08-08
 

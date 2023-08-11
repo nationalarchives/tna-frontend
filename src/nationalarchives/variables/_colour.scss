@@ -59,6 +59,11 @@ $tna-green: $-tna-green;
 $tna-blue: $-tna-blue;
 $tna-cream: $-tna-cream;
 
+/*
+=========================================
+LIGHT THEME
+=========================================
+*/
 $colour-palette-default: (
   "page-background": $-tna-white,
   "font-base": $-base-font,
@@ -89,6 +94,11 @@ $colour-palette-default: (
   "contrast-keyline-dark": rgba($-tna-white, 0.8),
 );
 
+/*
+=========================================
+DARK THEME
+=========================================
+*/
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
@@ -107,6 +117,11 @@ $colour-palette-dark: map.merge(
   )
 );
 
+/*
+=========================================
+LIGHT, HIGH_CONTRAST THEME
+=========================================
+*/
 $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
@@ -120,14 +135,19 @@ $colour-palette-high-contrast: map.merge(
     "contrast-background": #f0f0f0,
     "contrast-font-base": $-tna-black,
     "contrast-font-dark": $-tna-black,
-    "contrast-font-light": rgba($-tna-black, 0.7),
+    "contrast-font-light": $-tna-black,
     "contrast-link": $-tna-black,
     "contrast-link-visited": $-tna-black,
-    "contrast-keyline": rgba($-tna-black, 0.5),
-    "contrast-keyline-dark": rgba($-tna-black, 0.8),
+    "contrast-keyline": $-tna-black,
+    "contrast-keyline-dark": $-tna-black,
   )
 );
 
+/*
+=========================================
+DARK, HIGH_CONTRAST THEME
+=========================================
+*/
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (

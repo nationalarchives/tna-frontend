@@ -6,11 +6,9 @@
 @use "../../tools/media";
 
 .tna-header {
-  color: #fff;
+  @include colour.invert;
 
   background-color: colourVars.$tna-black;
-
-  @include colour.invert;
 
   &__exit {
     padding-top: 0.5rem;

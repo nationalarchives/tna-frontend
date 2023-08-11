@@ -46,18 +46,11 @@
 
     border-bottom: 1px solid;
     @include colour.colour-border("keyline");
+  }
 
-    // &::after {
-    //   height: 1px;
-
-    //   position: absolute;
-    //   right: 20%;
-    //   bottom: 0;
-    //   left: 20%;
-
-    //   @include colour.colour-background("keyline");
-
-    //   content: "";
-    // }
+  @include colour.on-high-contrast {
+    border-width: 1px 1px 0;
+    @include colour.colour-border("keyline-dark");
+    border-style: solid;
   }
 }

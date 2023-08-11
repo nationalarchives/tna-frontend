@@ -182,38 +182,38 @@ const Template = ({ theme }) => {
               classes: "tna-picture--demo",
             },
           })}
-          ${IndexGrid({
-            params: {
-              heading: "My dogs",
-              items: Array(12)
-                .fill({
-                  ...{
-                    href: "#",
-                    src: "https://picsum.photos/id/237/800/600",
-                    alt: "Photo of a puppy",
-                    width: "800",
-                    height: "600",
-                    title: "Cat",
-                    subtitle: "4 photos",
-                  },
-                })
-                .map((item, index) => {
-                  const pseudoRandom = ((index * 29) % 8) + 1;
-                  return {
-                    ...item,
-                    href: `#/category-${index}`,
-                    title: `Category #${index + 101}`,
-                    subtitle: `${pseudoRandom} photos`,
-                  };
-                }),
-              columns: 4,
-              columnsMedium: 3,
-              columnsSmall: 2,
-              columnsTiny: 1,
-            },
-          })}
         </div>
       </div>
+      ${IndexGrid({
+        params: {
+          heading: "My dogs",
+          items: Array(12)
+            .fill({
+              ...{
+                href: "#",
+                src: "https://picsum.photos/id/237/800/600",
+                alt: "Photo of a puppy",
+                width: "800",
+                height: "600",
+                title: "Cat",
+                subtitle: "4 photos",
+              },
+            })
+            .map((item, index) => {
+              const pseudoRandom = ((index * 29) % 8) + 1;
+              return {
+                ...item,
+                href: `#/category-${index}`,
+                title: `Category #${index + 101}`,
+                subtitle: `${pseudoRandom} photos`,
+              };
+            }),
+          columns: 4,
+          columnsMedium: 3,
+          columnsSmall: 2,
+          columnsTiny: 1,
+        },
+      })}
     <article>
     ${Footer({})}
   </div>

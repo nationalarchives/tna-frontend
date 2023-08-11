@@ -105,3 +105,15 @@
     @include colour-css-vars-high-contrast-dark;
   }
 }
+
+@mixin on-high-contrast {
+  .tna-template--high-contrast-theme & {
+    @content;
+  }
+
+  @media (prefers-contrast: more) {
+    .tna-template--system-theme & {
+      @content;
+    }
+  }
+}

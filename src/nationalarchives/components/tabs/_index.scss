@@ -124,7 +124,7 @@
     }
   }
 
-  @mixin high-contrast {
+  @include colour.on-high-contrast {
     &__list-item-link {
       padding-right: 1rem;
       padding-left: 1rem;
@@ -133,16 +133,6 @@
 
       border: 1px transparent solid;
       @include colour.colour-border("keyline-dark");
-    }
-  }
-
-  .tna-template--high-contrast-theme & {
-    @include high-contrast;
-  }
-
-  @media (prefers-contrast: more) {
-    .tna-template--system-theme & {
-      @include high-contrast;
     }
   }
 }

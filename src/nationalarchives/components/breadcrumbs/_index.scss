@@ -41,6 +41,24 @@
     &:hover {
       @include colour.colour-font("font-dark");
     }
+
+    @include colour.on-high-contrast {
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+
+      text-decoration: none;
+
+      border: 1px transparent solid;
+      @include colour.colour-border("keyline-dark");
+
+      &:hover {
+        text-decoration: underline;
+
+        @include colour.colour-font("contrast-background");
+
+        @include colour.colour-background("contrast-font-base");
+      }
+    }
   }
 
   @include media.on-mobile {
@@ -69,26 +87,6 @@
 
     &__item:not(:first-child, :last-child) {
       display: none;
-    }
-  }
-
-  @mixin high-contrast {
-    &__link {
-      padding-right: 0.75rem;
-      padding-left: 0.75rem;
-
-      border: 1px transparent solid;
-      @include colour.colour-border("keyline-dark");
-    }
-  }
-
-  .tna-template--high-contrast-theme & {
-    @include high-contrast;
-  }
-
-  @media (prefers-contrast: more) {
-    .tna-template--system-theme & {
-      @include high-contrast;
     }
   }
 }

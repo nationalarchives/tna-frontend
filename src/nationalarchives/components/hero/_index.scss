@@ -157,7 +157,7 @@
     }
   }
 
-  @mixin high-contrast {
+  @include colour.on-high-contrast {
     &__content-inner {
       border: 1px transparent solid;
       @include colour.colour-border("keyline-dark");
@@ -165,16 +165,6 @@
       @include media.on-mobile {
         border: none;
       }
-    }
-  }
-
-  .tna-template--high-contrast-theme & {
-    @include high-contrast;
-  }
-
-  @media (prefers-contrast: more) {
-    .tna-template--system-theme & {
-      @include high-contrast;
     }
   }
 }

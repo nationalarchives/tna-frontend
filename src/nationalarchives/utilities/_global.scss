@@ -98,11 +98,11 @@
 
   overflow: auto;
 
-  &:has(.tna-header):has(#main[role="main"]):has(.tna-footer) {
+  &:has(.tna-header):has(#main-content[role="main"]):has(.tna-footer) {
     display: flex;
     flex-direction: column;
 
-    #main[role="main"] {
+    #main-content[role="main"] {
       flex: 1;
     }
   }

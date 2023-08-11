@@ -1,4 +1,3 @@
-@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 @use "../../tools/media";
 
@@ -106,7 +105,6 @@
     display: block;
 
     @include colour.invert;
-    // @extend %tna-invert;
 
     &__image {
       height: 320px;

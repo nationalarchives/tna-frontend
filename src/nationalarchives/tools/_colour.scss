@@ -26,59 +26,29 @@
   }
 }
 
-@mixin colour-font($colour, $inverted: false) {
-  @if $inverted {
-    color: map.get(colour.$colour-palette-dark, $colour);
-  } @else {
-    color: map.get(colour.$colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    color: var(--#{$colour});
-  }
+@mixin colour-font($colour) {
+  color: map.get(colour.$colour-palette-default, $colour);
+  color: var(--#{$colour});
 }
 
-@mixin colour-background($colour, $inverted: false) {
-  @if $inverted {
-    background-color: map.get(colour.$colour-palette-dark, $colour);
-  } @else {
-    background-color: map.get(colour.$colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    background-color: var(--#{$colour});
-  }
+@mixin colour-background($colour) {
+  background-color: map.get(colour.$colour-palette-default, $colour);
+  background-color: var(--#{$colour});
 }
 
-@mixin colour-border($colour, $inverted: false) {
-  @if $inverted {
-    border-color: map.get(colour.$colour-palette-dark, $colour);
-  } @else {
-    border-color: map.get(colour.$colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    border-color: var(--#{$colour});
-  }
+@mixin colour-border($colour) {
+  border-color: map.get(colour.$colour-palette-default, $colour);
+  border-color: var(--#{$colour});
 }
 
-@mixin colour-outline($colour, $inverted: false) {
-  @if $inverted {
-    outline-color: map.get(colour.$colour-palette-dark, $colour);
-  } @else {
-    outline-color: map.get(colour.$colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    outline-color: var(--#{$colour});
-  }
+@mixin colour-outline($colour) {
+  outline-color: map.get(colour.$colour-palette-default, $colour);
+  outline-color: var(--#{$colour});
 }
 
-@mixin colour-fill($colour, $inverted: false) {
-  @if $inverted {
-    fill: map.get(colour.$colour-palette-dark, $colour);
-  } @else {
-    fill: map.get(colour.$colour-palette-default, $colour);
-  }
-  @if features.$support-colour-schemes {
-    fill: var(--#{$colour});
-  }
+@mixin colour-fill($colour) {
+  fill: map.get(colour.$colour-palette-default, $colour);
+  fill: var(--#{$colour});
 }
 
 @mixin fixed {
@@ -88,42 +58,48 @@
 }
 
 @mixin invert {
+  --font-base: var(--contrast-font-base);
+  --font-dark: var(--contrast-font-dark);
+  --font-light: var(--contrast-font-light);
+  --link: var(--contrast-link);
+  --link-visited: var(--contrast-link-visited);
+  --keyline: var(--contrast-keyline);
+  --keyline-dark: var(--contrast-keyline-dark);
+
+  @include colour-font("contrast-font-base");
+  @include colour-background("contrast-background");
+}
+
+@mixin uninvert {
   .tna-template--system-theme & {
-    @include colour-css-vars-dark;
+    @include colour-css-vars;
 
     @media (prefers-color-scheme: dark) {
-      @include colour-css-vars;
+      @include colour-css-vars-dark;
     }
 
     @media (prefers-contrast: more) {
-      @include colour-css-vars-high-contrast-dark;
+      @include colour-css-vars-high-contrast;
     }
 
     @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour-css-vars-high-contrast;
+      @include colour-css-vars-high-contrast-dark;
     }
   }
 
   .tna-template--light-theme & {
-    @include colour-css-vars-dark;
-  }
-
-  .tna-template--dark-theme & {
     @include colour-css-vars;
   }
 
-  .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast-dark;
+  .tna-template--dark-theme & {
+    @include colour-css-vars-dark;
   }
 
-  .tna-template--dark-theme.tna-template--high-contrast-theme & {
+  .tna-template--high-contrast-theme & {
     @include colour-css-vars-high-contrast;
   }
 
-  @include colour-font("font-base", true);
-  @include colour-background("page-background", true);
-}
-
-%tna-invert {
-  @include invert;
+  .tna-template--high-contrast-theme.tna-template--dark-theme & {
+    @include colour-css-vars-high-contrast-dark;
+  }
 }

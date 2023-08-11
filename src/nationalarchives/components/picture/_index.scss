@@ -1,4 +1,3 @@
-@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 
 .tna-picture {
@@ -25,8 +24,7 @@
   }
 
   &__transcript {
-    // @include colour.invert;
-    @extend %tna-invert;
+    @include colour.invert;
 
     padding: 1rem 1.5rem;
 
@@ -36,22 +34,6 @@
 
     .tna-tabs {
       margin-bottom: 0.5rem;
-    }
-
-    .tna-tabs__list-item-link {
-      @include colour.colour-font("font-dark", true);
-
-      &::after {
-        @include colour.colour-background("keyline-dark", true);
-      }
-
-      .tna-template--js-enabled & {
-        @include colour.colour-font("font-light", true);
-
-        &--selected {
-          @include colour.colour-font("font-dark", true);
-        }
-      }
     }
   }
 

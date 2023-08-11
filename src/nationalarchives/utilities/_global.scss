@@ -2,25 +2,9 @@
 @use "../tools/colour";
 @use "../variables/typography";
 
-:root {
-  @include colour.colour-css-vars;
-
-  @media (prefers-color-scheme: dark) {
-    @include colour.colour-css-vars-dark;
-  }
-
-  @media (prefers-contrast: more) {
-    @include colour.colour-css-vars-high-contrast;
-
-    * {
-      background-image: none !important;
-    }
-  }
-
-  @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-    @include colour.colour-css-vars-high-contrast-dark;
-  }
-}
+// :root {
+//   @include colour.colour-css-vars;
+// }
 
 .tna-template {
   min-width: 320px;
@@ -59,7 +43,7 @@
   //   accent-color: colour.$_tna-blue;
   // }
 
-  /* &--system-theme {
+  &--system-theme {
     @include colour.colour-css-vars;
 
     @media (prefers-color-scheme: dark) {
@@ -77,7 +61,7 @@
     @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
       @include colour.colour-css-vars-high-contrast-dark;
     }
-  } */
+  }
 
   &--light-theme {
     @include colour.colour-css-vars;

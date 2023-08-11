@@ -1,4 +1,3 @@
-@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 
 .tna-index-grid {
@@ -12,8 +11,7 @@
     display: flex;
     flex-direction: column;
 
-    // @include colour.invert;
-    @extend %tna-invert;
+    @include colour.invert;
     text-decoration: none;
   }
 
@@ -41,6 +39,6 @@
   }
 
   &__item-subtitle {
-    @include colour.colour-font("font-light", true);
+    @include colour.colour-font("font-light");
   }
 }

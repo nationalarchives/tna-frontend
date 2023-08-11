@@ -65,6 +65,7 @@ Standard.args = {
       const pseudoRandom = ((index * 29) % 8) + 1;
       return {
         ...item,
+        href: `#/category-${index}`,
         title: `Category #${index + 101}`,
         subtitle: `${pseudoRandom} photos`,
       };

@@ -1,5 +1,4 @@
 @use "sass:math";
-@use "../../utilities/global"; // To get %tna-invert
 @use "../../tools/colour";
 @use "../../variables/colour" as colourVars; // TODO
 @use "../../variables/grid";
@@ -11,7 +10,7 @@
 
   background-color: colourVars.$tna-black;
 
-  // @include colour.invert;
+  @include colour.invert;
 
   &__exit {
     padding-top: 0.5rem;
@@ -387,8 +386,8 @@
       &,
       &:link,
       &:visited {
+        @include colour.uninvert;
         @include colour.colour-font("font-dark");
-
         @include colour.colour-background("page-background");
       }
       // transition:

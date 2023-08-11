@@ -79,20 +79,31 @@ $colour-palette-default: (
   "button-secondary-background": $-tna-yellow,
   "button-secondary-hover-text": $-tna-black,
   "button-secondary-hover-background": $-tna-white,
+  "contrast-background": $-dark-grey,
+  "contrast-font-base": $-tna-white,
+  "contrast-font-dark": $-tna-white,
+  "contrast-font-light": rgba($-tna-white, 0.7),
+  "contrast-link": $-tna-white,
+  "contrast-link-visited": #b9f,
+  "contrast-keyline": rgba($-tna-white, 0.5),
+  "contrast-keyline-dark": rgba($-tna-white, 0.8),
 );
 
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #222,
+    "page-background": #111,
     "font-base": rgba($-tna-white, 0.95),
     "font-dark": $-tna-white,
     "font-light": rgba($-tna-white, 0.5),
     "link": $-tna-blue,
-    "link-visited": #b9f,
+    "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
     "keyline": rgba($-tna-white, 0.5),
     "keyline-dark": $-tna-white,
     "accent": accent-colour-dark(),
+    "contrast-background": #222,
+    "contrast-link-visited":
+      map.get($colour-palette-default, "contrast-link-visited"),
   )
 );
 
@@ -106,17 +117,26 @@ $colour-palette-high-contrast: map.merge(
     "focus-outline": $-tna-orange,
     "keyline": $-tna-black,
     "keyline-dark": $-tna-black,
+    "contrast-background": #f0f0f0,
+    "contrast-font-base": $-tna-black,
+    "contrast-font-dark": $-tna-black,
+    "contrast-font-light": rgba($-tna-black, 0.7),
+    "contrast-link": $-tna-black,
+    "contrast-link-visited": $-tna-black,
+    "contrast-keyline": rgba($-tna-black, 0.5),
+    "contrast-keyline-dark": rgba($-tna-black, 0.8),
   )
 );
 
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": #191919,
+    "page-background": $tna-black,
     "font-base": $-tna-white,
     "font-light": $-tna-white,
     "link": $-tna-white,
     "link-visited": $-tna-white,
     "keyline": $-tna-white,
+    "contrast-background": #111,
   )
 );

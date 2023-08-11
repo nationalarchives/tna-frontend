@@ -2,6 +2,8 @@ import Header from "../../components/header/template.njk";
 import Breadcrumbs from "../../components/breadcrumbs/template.njk";
 import Card from "../../components/card/template.njk";
 import Hero from "../../components/hero/template.njk";
+import IndexGrid from "../../components/index-grid/template.njk";
+import Message from "../../components/message/template.njk";
 import Picture from "../../components/picture/template.njk";
 import Tabs from "../../components/tabs/template.njk";
 import Footer from "../../components/footer/template.njk";
@@ -119,6 +121,12 @@ const Template = ({ theme }) => {
           <a href="#" class="tna-button">Primary button</a>
           <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
           <hr>
+          ${Message({
+            params: {
+              message:
+                "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+            },
+          })}
           ${Card({
             params: {
               heading: {
@@ -174,6 +182,36 @@ const Template = ({ theme }) => {
               classes: "tna-picture--demo",
             },
           })}
+          ${IndexGrid({
+            params: {
+              heading: "My dogs",
+              items: Array(12)
+                .fill({
+                  ...{
+                    href: "#",
+                    src: "https://picsum.photos/id/237/800/600",
+                    alt: "Photo of a puppy",
+                    width: "800",
+                    height: "600",
+                    title: "Cat",
+                    subtitle: "4 photos",
+                  },
+                })
+                .map((item, index) => {
+                  const pseudoRandom = ((index * 29) % 8) + 1;
+                  return {
+                    ...item,
+                    href: `#/category-${index}`,
+                    title: `Category #${index + 101}`,
+                    subtitle: `${pseudoRandom} photos`,
+                  };
+                }),
+              columns: 4,
+              columnsMedium: 3,
+              columnsSmall: 2,
+              columnsTiny: 1,
+            },
+          })}
         </div>
       </div>
     <article>
@@ -185,5 +223,5 @@ const Template = ({ theme }) => {
 export const Examples = Template.bind({});
 // Examples.parameters = { options: { showPanel: false } };
 Examples.args = {
-  theme: "system",
+  theme: "light",
 };

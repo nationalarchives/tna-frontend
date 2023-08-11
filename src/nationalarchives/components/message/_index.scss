@@ -7,6 +7,8 @@
   display: flex;
   align-items: center;
 
+  color: colourVars.$tna-black;
+
   @include colour.colour-background("keyline");
 
   border-left: 0.5rem transparent solid;

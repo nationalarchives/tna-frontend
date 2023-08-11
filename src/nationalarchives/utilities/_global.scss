@@ -112,9 +112,16 @@
   margin: 0;
   padding: 0;
 
-  // @include colour.colour-background("page-background");
-
   overflow: auto;
+
+  &:has(.tna-header):has(#main[role="main"]):has(.tna-footer) {
+    display: flex;
+    flex-direction: column;
+
+    #main[role="main"] {
+      flex: 1;
+    }
+  }
 }
 
 img,

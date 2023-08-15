@@ -8,6 +8,10 @@ on:
       - edited
       - ready_for_review
 
+concurrency:
+  group: pull-request-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     name: Run lint checking

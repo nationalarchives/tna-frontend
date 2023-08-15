@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { Card } from "./components/card/card.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
@@ -45,15 +46,20 @@ const initAll = (options) => {
   const $scope =
     options.scope instanceof HTMLElement ? options.scope : document;
 
-  const $header = $scope.querySelector('[data-module="tna-header"]');
-  if ($header) {
-    new Header($header).init();
+  const $breadcrumbs = $scope.querySelector('[data-module="tna-breadcrumbs"]');
+  if ($breadcrumbs) {
+    new Breadcrumbs($breadcrumbs).init();
   }
 
   const $cards = $scope.querySelectorAll('[data-module="tna-card"]');
   $cards.forEach(($card) => {
     new Card($card).init();
   });
+
+  const $header = $scope.querySelector('[data-module="tna-header"]');
+  if ($header) {
+    new Header($header).init();
+  }
 
   const $pictures = $scope.querySelectorAll('[data-module="tna-picture"]');
   $pictures.forEach(($picture) => {
@@ -73,4 +79,4 @@ const initAll = (options) => {
   });
 };
 
-export { initAll, Header, SensitiveImage, Tabs };
+export { initAll, Breadcrumbs, Card, Header, Picture, SensitiveImage, Tabs };

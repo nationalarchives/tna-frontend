@@ -134,11 +134,15 @@ canvas {
 }
 
 hr {
-  margin: 1rem;
+  margin: 3rem 0;
 
   border-width: 1px 0 0;
   @include colour.colour-border("keyline");
-  border-style: solid;
+  border-style: dashed;
+
+  @include colour.on-high-contrast {
+    border-style: solid;
+  }
 }
 
 .tna-visually-hidden {

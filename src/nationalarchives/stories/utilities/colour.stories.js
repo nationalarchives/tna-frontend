@@ -111,7 +111,11 @@ const Template = ({ theme }) => {
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
-          <hr>
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
           <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
           <ul class="tna-ul">
             <li>Alpha</li>
@@ -120,13 +124,22 @@ const Template = ({ theme }) => {
           </ul>
           <a href="#" class="tna-button">Primary button</a>
           <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
-          <hr>
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
           ${Message({
             params: {
               message:
                 "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
             },
           })}
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
           ${Card({
             params: {
               heading: {
@@ -147,6 +160,11 @@ const Template = ({ theme }) => {
               classes: "tna-card--demo",
             },
           })}
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
           ${Tabs({
             params: {
               title: "Example tabs",
@@ -170,6 +188,11 @@ const Template = ({ theme }) => {
               classes: "tna-tabs--demo",
             },
           })}
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
           ${Picture({
             params: {
               src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -184,6 +207,7 @@ const Template = ({ theme }) => {
           })}
         </div>
       </div>
+      <hr>
       ${IndexGrid({
         params: {
           heading: "My dogs",

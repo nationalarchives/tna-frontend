@@ -59,7 +59,12 @@ a {
 
 .tna-ul,
 .tna-ol {
-  padding-left: 2rem;
+  margin: 0 0 2rem;
+  padding: 0 0 0 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   li::marker {
     @include colour.colour-font("accent");
@@ -190,13 +195,17 @@ a {
 }
 
 .tna-blockquote {
-  margin: 0;
+  margin: 0 0 2rem;
   padding: 1rem 1rem 1rem 2rem;
 
   border-left: 0.35rem solid;
   @include colour.colour-border("keyline");
 
   quotes: "“" "”" "‘" "’";
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &::before {
     float: left;

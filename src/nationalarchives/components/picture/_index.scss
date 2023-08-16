@@ -1,8 +1,12 @@
 @use "../../tools/colour";
 
 .tna-picture {
-  margin: 0 0 1rem;
+  margin: 0 0 2rem;
   padding: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__image-wrapper {
     // padding: 1rem 0;

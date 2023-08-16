@@ -5,6 +5,14 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 
+  &__wrapper {
+    .tna-template--clicked & {
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+
   &__list {
     margin: 0;
     padding: 0;
@@ -26,6 +34,10 @@
 
         content: "\203A";
       }
+    }
+
+    &--expandable {
+      display: none;
     }
   }
 
@@ -61,6 +73,30 @@
     }
   }
 
+  button#{&}__link {
+    margin: 0;
+    padding: 0;
+
+    font-size: inherit;
+    line-height: inherit;
+
+    background-color: transparent;
+
+    border: none;
+
+    appearance: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
+  }
+
+  &__link-expandable-label {
+    font-size: 0;
+  }
+
   @include media.on-mobile {
     // &__item {
     //   &,
@@ -85,8 +121,17 @@
     //   }
     // }
 
-    &__item:not(:first-child, :last-child) {
+    &__list--collapse-on-mobile
+      #{&}__item:not(
+        :first-child,
+        .tna-breadcrumbs__item--expandable,
+        :last-child
+      ) {
       display: none;
+    }
+
+    &__list--collapse-on-mobile #{&}__item--expandable {
+      display: inline-block;
     }
   }
 }

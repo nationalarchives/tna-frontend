@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improvements to high contrast themes
 - Full-height layouts need a `#main-content[role="main"]` rather than just a `#main[role="main"]`
 - Added `role="button"` to all TNA buttons
+- Allow collapsed breadcrumbs to be expanded on mobile devices
 
 ### Deprecated
 ### Removed

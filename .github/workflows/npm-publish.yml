@@ -46,6 +46,8 @@ jobs:
         run: npm ci
       - name: Build package
         run: ./tasks/build-package.sh
+      - name: Test package
+        run: node tasks/test-package.js || exit 1
       - name: Check npm credentials
         run: npm whoami
       - name: Publish to npm

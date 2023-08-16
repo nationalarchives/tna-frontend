@@ -32,6 +32,8 @@
 
         display: inline-block;
 
+        vertical-align: baseline;
+
         content: "\203A";
       }
     }
@@ -76,9 +78,11 @@
   button#{&}__link {
     margin: 0;
     padding: 0;
+    height: 100%;
 
     font-size: inherit;
     line-height: inherit;
+    font-weight: inherit;
 
     background-color: transparent;
 
@@ -91,10 +95,6 @@
       text-decoration: underline;
       text-decoration-thickness: 3px;
     }
-  }
-
-  &__link-expandable-label {
-    font-size: 0;
   }
 
   @include media.on-mobile {

@@ -2,7 +2,11 @@
 @use "../../variables/colour" as colourVars;
 
 .tna-card {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__inner {
     display: flex;

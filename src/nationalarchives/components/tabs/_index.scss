@@ -1,7 +1,11 @@
 @use "../../tools/colour";
 
 .tna-tabs {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__list {
     margin: 0 0 1rem;

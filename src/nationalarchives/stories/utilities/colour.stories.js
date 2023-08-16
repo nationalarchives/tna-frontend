@@ -111,11 +111,6 @@ const Template = ({ theme }) => {
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
-        </div>
-      </div>
-      <hr>
-      <div class="tna-container">
-        <div class="tna-column tna-column--full">
           <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
           <ul class="tna-ul">
             <li>Alpha</li>
@@ -124,6 +119,17 @@ const Template = ({ theme }) => {
           </ul>
           <a href="#" class="tna-button">Primary button</a>
           <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
+          <p class="tna-!--no-margin-bottom">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!__padding-top--xs">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!__padding-top--s">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!__padding-top--m">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!__padding-top--l">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!__padding-top--xl">Lorem ipsum</p>
         </div>
       </div>
       <hr>
@@ -157,6 +163,32 @@ const Template = ({ theme }) => {
                 height: 1331,
               },
               body: "<p>Card body</p>",
+              classes: "tna-card--demo",
+            },
+          })}
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
+          ${Card({
+            params: {
+              heading: {
+                supertitle: "Card supertitle",
+                title: "Card title",
+                level: 3,
+                size: "m",
+                singleSentence: false,
+              },
+              href: "#",
+              image: {
+                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+                alt: "The National Archives office",
+                width: 1996,
+                height: 1331,
+              },
+              body: "<p>Card body</p>",
+              featured: true,
               classes: "tna-card--demo",
             },
           })}

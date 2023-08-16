@@ -1,5 +1,5 @@
-@use "variables";
-@use "tools";
+@forward "variables";
+@forward "tools";
 
 @use "utilities";
 @use "components";

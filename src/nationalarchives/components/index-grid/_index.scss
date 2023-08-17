@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../../tools/colour";
 
 .tna-index-grid {
@@ -31,7 +32,9 @@
 
   &__item-image {
     width: 100%;
-    height: auto;
+    height: #{math.div(2, 3) * 100%};
+
+    object-fit: cover;
   }
 
   &__item-content {

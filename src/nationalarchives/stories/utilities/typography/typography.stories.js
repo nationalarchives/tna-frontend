@@ -7,10 +7,15 @@ export default {
   argTypes,
 };
 
-const ParagraphTemplate = ({ text }) => `<p class="tna-p">${text}</p>`;
+const ParagraphTemplate = ({ paragraphs }) =>
+  paragraphs.map((paragraph) => `<p class="tna-p">${paragraph}</p>`).join("");
 export const Paragraph = ParagraphTemplate.bind({});
 Paragraph.args = {
-  text: "This is some body text",
+  paragraphs: [
+    "This is some body text.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh. Donec ac tellus in dui rutrum maximus. Aliquam vel euismod eros. Integer ut magna velit. Fusce sed dui sit amet metus eleifend dictum quis vitae mi. Aenean sagittis euismod purus, in accumsan metus venenatis nec. Nullam nec velit felis. Sed nec felis eu nisl varius dictum eu quis nisl. Donec dapibus est arcu, vel pellentesque risus pellentesque eget.",
+    "Nam a posuere lectus. Vivamus facilisis est pretium augue aliquet iaculis. Phasellus ligula orci, commodo eget lectus et, tincidunt scelerisque erat. Aliquam in est vel purus ultricies vulputate non sed ligula. Pellentesque ut felis ullamcorper, eleifend erat dapibus, feugiat metus. Phasellus vitae dolor commodo, posuere nisl sed, luctus mauris. Etiam malesuada tincidunt enim, ac fermentum est pulvinar id. Maecenas id accumsan libero. Curabitur at velit nisi. Nullam gravida mauris quam, tempor pharetra risus venenatis vel. Proin quis malesuada lacus. Nulla condimentum facilisis turpis, et elementum leo. Nulla gravida quam mauris, id scelerisque est rhoncus ac.",
+  ],
 };
 
 const BlockquoteTemplate = ({

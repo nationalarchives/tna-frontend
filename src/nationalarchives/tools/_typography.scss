@@ -5,9 +5,17 @@
   font-size: #{math.div($fontSizePx, typography.$base-font-size-px)}rem;
 }
 
+@mixin main-font-weight {
+  font-weight: typography.$font-weight-main;
+}
+
+@mixin main-font-weight-bold {
+  font-weight: typography.$font-weight-main-bold;
+}
+
 @mixin main-font {
   font-family: typography.$font-family-main;
-  font-weight: typography.$font-weight-main;
+  @include main-font-weight;
 }
 
 @mixin heading-font {

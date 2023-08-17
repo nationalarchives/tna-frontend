@@ -21,10 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Index grid changed to `<ul>`
 - Index grid header requires an object of `title`, `level` and optionally, `size` (default "l")
 - Card images are now wrapped in `<a>` elements
+- Images in normal card and mobile feature cards are fixed to a 3:2 ratio
 
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Featured cards fixed for mobile layouts
+
 ### Security
 
 ## [v0.1.14-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.13-prerelease...v0.1.14-prerelease) - 2023-08-11

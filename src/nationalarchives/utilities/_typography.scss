@@ -2,8 +2,8 @@
 @use "../tools/media";
 @use "../tools/typography";
 
-// Temporary - will eventually bundle font files into package
-@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap";
+// TODO: Temporary - will eventually bundle font files into package
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=Roboto+Mono:wght@400&display=swap";
 @import "https://use.typekit.net/hkj3kuz.css";
 
 .tna-template {
@@ -31,6 +31,16 @@ h6,
 ul,
 ol {
   margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong{
+  @include typography.main-font-weight-bold;
 }
 
 p {

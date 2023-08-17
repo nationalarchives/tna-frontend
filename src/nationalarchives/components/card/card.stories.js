@@ -87,7 +87,7 @@ Featured.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
-    size: "m",
+    size: "l",
     singleSentence: false,
   },
   href: "#",

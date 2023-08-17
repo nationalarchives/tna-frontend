@@ -1,0 +1,83 @@
+name: Test GOV.UK prototype kit integration
+
+on:
+  workflow_call:
+
+jobs:
+  prototype-kit:
+    name: Test GOV.UK prototype kit integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: npm ci
+      - name: Build package
+        run: >
+          ./tasks/build-package.sh &&
+          cd package &&
+          npm pack --pack-destination .
+      - name: Test package
+        run: node tasks/test-package.js || exit 1
+      - name: Create prototype
+        run: >
+          mkdir prototype &&
+          cd prototype &&
+          npx govuk-prototype-kit create
+      - name: Create usage data config
+        run: echo "{\"collectUsageData\":false}" > prototype/usage-data-config.json
+      - name: Install package
+        run: >
+          cd prototype &&
+          npm install ../package/nationalarchives-frontend-$(node -p "require('../package.json').version").tgz
+      - name: Add imports to template
+        run: >
+          echo -e "{% from \"nationalarchives/components/breadcrumbs/macro.njk\" import tnaBreadcrumbs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/filters/macro.njk\" import tnaFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/grid/macro.njk\" import tnaGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/hero/macro.njk\" import tnaHero %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/index-grid/macro.njk\" import tnaIndexGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/message/macro.njk\" import tnaMessage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/profile/macro.njk\" import tnaProfile %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/sensitive-image/macro.njk\" import tnaSensitiveImage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+      - name: Add components to template
+        run: >
+          echo "\n{% block bodyEnd %}" >> prototype/app/views/index.html &&
+          echo "{{ tnaBreadcrumbs({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaButton({text:\"I am a button\",url:\"#\"}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaFilters({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaFooter({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaGrid({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaHeader({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaHero({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaIndexGrid({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaMessage({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaPhaseBanner({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaProfile({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaSensitiveImage({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
+          echo "{% endblock %}" >> prototype/app/views/index.html
+      - name: Run prototype
+        run: >
+          cd prototype &&
+          npm run dev &
+      - name: Wait for server response of 200
+        uses: nev7n/wait_for_response@v1
+        with:
+          url: "http://localhost:3000"
+          responseCode: 200
+          timeout: 30000
+          interval: 500

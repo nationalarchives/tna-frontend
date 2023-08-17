@@ -6,31 +6,37 @@ on:
       - published
 
 jobs:
+  lint:
+    name: Run lint checking
+    uses: ./.github/workflows/_lint.yml
+  
+  tests:
+    name: Run tests
+    needs:
+      - lint
+    uses: ./.github/workflows/_tests.yml
+
   check:
     name: Pre-release checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Start Storybook
-        run: npm start &
-      - name: Run tests
-        run: npm run test
       - name: Check version numbers
         run: ./tasks/validate-version.sh
+
+  prototype-kit:
+    name: Test GOV.UK prototype kit integration
+    needs:
+      - check
+      - tests
+    uses: ./.github/workflows/_prototype-kit-test.yml
 
   publish-npm:
     name: Build package and publish to npm
     runs-on: ubuntu-latest
-    needs: check
+    needs:
+      - prototype-kit
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
@@ -46,8 +52,6 @@ jobs:
         run: npm ci
       - name: Build package
         run: ./tasks/build-package.sh
-      - name: Test package
-        run: node tasks/test-package.js || exit 1
       - name: Check npm credentials
         run: npm whoami
       - name: Publish to npm

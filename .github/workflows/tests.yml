@@ -1,4 +1,4 @@
-name: Tests
+name: CI
 
 on:
   push:
@@ -6,21 +6,12 @@ on:
       - '**'
 
 jobs:
-  test:
-    name: Run tests and linting checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
-      - name: Install
-        run: npm ci
-      - name: Lint
-        run: npm run lint
-      - name: Start Storybook
-        run: npm start &
-      - name: Run tests
-        run: npm run test
+  lint:
+    name: Run lint checking
+    uses: ./.github/workflows/_lint.yml
+  
+  tests:
+    name: Run tests
+    needs:
+      - lint
+    uses: ./.github/workflows/_tests.yml

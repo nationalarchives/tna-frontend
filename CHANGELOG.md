@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Body font (Open Sans) weight changed from `400` to `500`
 - Index grid changed to `<ul>`
 - Index grid header requires an object of `title`, `level` and optionally, `size` (default "l")
+- Card images are now wrapped in `<a>` elements
 
 ### Deprecated
 ### Removed

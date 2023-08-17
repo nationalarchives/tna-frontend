@@ -40,14 +40,14 @@
     </h{{ params.heading.level }}>
   {%- endif -%}
   {%- if params.image -%}
-    <div class="tna-card__image-container">
+    <a href="{{ item.href }}" class="tna-card__image-container" tabindex="-1">
       <img src="{{ params.image.src }}" alt="{{ params.image.alt }}" width="{{ params.image.width }}" height="{{ params.image.height }}" class="tna-card__image" />
       {%- if params.image.label -%}
       <div class="tna-card__image-label">
         {{ params.image.label }}
       </div>
       {%- endif -%}
-    </div>
+    </a>
   {%- endif -%}
     <div class="tna-card__body">
     {%- if params.text -%}

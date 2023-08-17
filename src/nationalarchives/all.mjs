@@ -1,5 +1,4 @@
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
-import { Card } from "./components/card/card.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
 import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs";
@@ -51,11 +50,6 @@ const initAll = (options) => {
     new Breadcrumbs($breadcrumbs).init();
   }
 
-  const $cards = $scope.querySelectorAll('[data-module="tna-card"]');
-  $cards.forEach(($card) => {
-    new Card($card).init();
-  });
-
   const $header = $scope.querySelector('[data-module="tna-header"]');
   if ($header) {
     new Header($header).init();
@@ -79,4 +73,4 @@ const initAll = (options) => {
   });
 };
 
-export { initAll, Breadcrumbs, Card, Header, Picture, SensitiveImage, Tabs };
+export { initAll, Breadcrumbs, Header, Picture, SensitiveImage, Tabs };

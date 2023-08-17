@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../tools/colour";
 @use "../tools/media";
 @use "../tools/typography";
@@ -19,7 +20,8 @@
 .tna-template__body {
   color: inherit;
   @include typography.relative-font-size(18);
-  line-height: 1.6;
+  // line-height: 1.6;
+  line-height: #{math.div(16, 18) * 2};
 }
 
 h1,
@@ -39,7 +41,7 @@ h3,
 h4,
 h5,
 h6,
-strong{
+strong {
   @include typography.main-font-weight-bold;
 }
 
@@ -53,17 +55,15 @@ p {
 
 a {
   @include colour.colour-font("link");
+  text-decoration-thickness: 1.5px;
 
   &:visited {
     @include colour.colour-font("link-visited");
   }
 
+  &:hover,
   &:active {
-    text-decoration-thickness: 4px;
-  }
-
-  &:hover {
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 3.5px;
   }
 }
 

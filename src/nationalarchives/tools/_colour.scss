@@ -28,12 +28,20 @@
 
 @mixin colour-font($colour) {
   color: map.get(colour.$colour-palette-default, $colour);
-  color: var(--#{$colour});
+  @if $colour == "accent" {
+    color: var(--#{$colour}, var(--accent-default));
+  } @else {
+    color: var(--#{$colour});
+  }
 }
 
 @mixin colour-background($colour) {
   background-color: map.get(colour.$colour-palette-default, $colour);
-  background-color: var(--#{$colour});
+  @if $colour == "accent" {
+    background-color: var(--#{$colour}, var(--accent-default));
+  } @else {
+    background-color: var(--#{$colour});
+  }
 }
 
 @mixin colour-border($colour) {

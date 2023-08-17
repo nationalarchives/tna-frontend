@@ -500,7 +500,7 @@
 
       position: relative;
 
-      line-height: 1.6;
+      line-height: #{math.div(1, 1.125) * 2};
 
       &::after {
         width: 0;

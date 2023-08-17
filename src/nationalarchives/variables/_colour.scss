@@ -27,27 +27,8 @@ $-tna-pastel-blue: #d4e5ef;
 $-dark-grey: #26262a;
 $-base-font: #343338;
 
-$-accent-colour: $-tna-yellow;
-$-accent-colour-dark: $-accent-colour;
-
-// @debug $-accent-colour;
-// @mixin configure($accent-colour: null) {
-//   @debug $accent-colour;
-//   @if $accent-colour {
-//     $-accent-colour: $accent-colour !global;
-//   }
-// }
-// @debug $-accent-colour;
-
-@function accent-colour() {
-  // @return $-accent-colour or $-tna-yellow;
-  @return $-accent-colour;
-}
-
-@function accent-colour-dark() {
-  // @return $-accent-colour-dark or -accent-colour();
-  @return $-accent-colour-dark or accent-colour();
-}
+$-accent-colour-default: $-tna-yellow;
+$-accent-colour-default-dark: $-accent-colour-default;
 
 // TODO: Scoped variables should not be used directly outside of this file
 $tna-black: $-tna-black;
@@ -75,7 +56,7 @@ $colour-palette-default: (
   "focus-outline": $-tna-blue,
   "keyline": #ccc,
   "keyline-dark": $-dark-grey,
-  "accent": accent-colour(),
+  "accent-default": $-accent-colour-default,
   "button-primary-text": $-tna-white,
   "button-primary-background": $-tna-black,
   "button-primary-hover-text": $-tna-black,
@@ -102,7 +83,7 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #111,
+    "page-background": #222,
     "font-base": rgba($-tna-white, 0.95),
     "font-dark": $-tna-white,
     "font-light": rgba($-tna-white, 0.5),
@@ -110,8 +91,8 @@ $colour-palette-dark: map.merge(
     "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
     "keyline": rgba($-tna-white, 0.25),
     "keyline-dark": $-tna-white,
-    "accent": accent-colour-dark(),
-    "contrast-background": #222,
+    "accent-default": $-accent-colour-default-dark,
+    "contrast-background": #111,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
   )
@@ -157,6 +138,6 @@ $colour-palette-high-contrast-dark: map.merge(
     "link": $-tna-white,
     "link-visited": $-tna-white,
     "keyline": $-tna-white,
-    "contrast-background": #111,
+    "contrast-background": $tna-black,
   )
 );

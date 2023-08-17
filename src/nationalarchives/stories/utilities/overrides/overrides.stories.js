@@ -1,7 +1,14 @@
 const argTypes = {
   marginTop: {
     control: "radio",
-    options: ["none", "xs", "s", "m", "l", "xl"],
+    options: [
+      "none",
+      // "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+    ],
   },
 };
 
@@ -16,7 +23,6 @@ const Template = ({ marginTop }) => {
       ? `tna-!--no-margin-top`
       : `tna-!--margin-top-${marginTop}`;
   return `<p class="tna-!--no-margin-bottom">Lorem ipsum</p>
-    <p class="tna-!--no-margin-bottom tna-!--margin-top-xs">Lorem ipsum (tna-!--margin-top-xs)</p>
     <p class="tna-!--no-margin-bottom tna-!--margin-top-s">Lorem ipsum (tna-!--margin-top-s)</p>
     <p class="tna-!--no-margin-bottom tna-!--margin-top-m">Lorem ipsum (tna-!--margin-top-m)</p>
     <p class="tna-!--no-margin-bottom tna-!--margin-top-l">Lorem ipsum (tna-!--margin-top-l)</p>

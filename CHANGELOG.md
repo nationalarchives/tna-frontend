@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Override classes available e.g. `tna-!--no-margin-bottom` and `tna-!__padding-top--s`
+- Accent colour can be changed with `:root { --accent: #bada55; }`
 
 ### Changed
 

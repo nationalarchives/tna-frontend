@@ -2,7 +2,6 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
-@use "../../variables/colour" as colourVars; // TODO
 
 .tna-card {
   margin-bottom: 2rem;
@@ -59,7 +58,7 @@
 
     text-transform: uppercase;
 
-    background-color: colourVars.$tna-yellow;
+    @include colour.colour-background("accent");
   }
 
   &__body {

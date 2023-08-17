@@ -2,12 +2,9 @@ import "../src/nationalarchives/all.scss";
 import { a11yConfig } from "./storybook-config";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
-export const dynamicColourSchemeStories = false;
 document.documentElement.classList.add(
   "tna-template",
-  // dynamicColourSchemeStories
-  //   ? "tna-template--system-theme"
-  //   : "tna-template--light-theme",
+  // "tna-template--system-theme",
 );
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");
@@ -16,13 +13,6 @@ document.body.classList.add("tna-template__body");
 
 const customViewports = {
   ...MINIMAL_VIEWPORTS,
-  // kindleFireHD: {
-  //   name: "Kindle Fire HD",
-  //   styles: {
-  //     width: "533px",
-  //     height: "801px",
-  //   },
-  // },
 };
 
 export const parameters = {
@@ -33,5 +23,13 @@ export const parameters = {
   options: { showPanel: true },
   a11y: {
     config: a11yConfig,
+  },
+  // backgrounds: { disable: true },
+  backgrounds: {
+    values: [],
+    grid: {
+      cellSize: 16,
+      cellAmount: 4,
+    },
   },
 };

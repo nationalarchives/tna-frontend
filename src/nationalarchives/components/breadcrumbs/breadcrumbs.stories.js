@@ -54,3 +54,31 @@ Standard.args = {
   ],
   classes: "tna-breadcrumbs--demo",
 };
+
+// TODO
+// export const NoCollapse = Template.bind({});
+// NoCollapse.args = {
+//   items: [
+//     {
+//       text: "Alpha",
+//       href: "#/alpha",
+//     },
+//     {
+//       text: "Beta",
+//       href: "#/beta",
+//     },
+//     {
+//       text: "Gamma",
+//       href: "#/gamma",
+//     },
+//     {
+//       text: "Delta",
+//       href: "#/delta",
+//     },
+//     {
+//       text: "Epsilon",
+//       href: "#/epsilon",
+//     },
+//   ],
+//   classes: "tna-breadcrumbs--demo",
+// };

@@ -4,6 +4,33 @@
   padding: 0;
 }
 
+#storybook-docs {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  background-color: #ddd;
+
+  outline: #ddd 100vmax solid;
+}
+
+.sbdocs {
+  &.sbdocs-wrapper {
+    margin: 0;
+    padding: 2rem;
+
+    box-shadow:
+      0 1rem 2rem rgba(0, 0, 0, 0.125),
+      0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+
+    border-radius: 0.25rem;
+  }
+
+  &.sbdocs-content {
+    max-width: none;
+  }
+}
+
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
@@ -85,7 +112,7 @@
 }
 
 .tna-card--demo {
-  max-width: 300px;
+  max-width: 320px;
 }
 
 .tna-card--featured {
@@ -93,9 +120,9 @@
 }
 
 .tna-sensitive-image--demo {
-  max-width: 400px;
+  max-width: 480px;
 }
 
 .tna-picture--demo {
-  max-width: 400px;
+  max-width: 480px;
 }

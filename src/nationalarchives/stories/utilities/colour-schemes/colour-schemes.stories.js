@@ -1,13 +1,13 @@
-import Header from "../../components/header/template.njk";
-import Breadcrumbs from "../../components/breadcrumbs/template.njk";
-import Card from "../../components/card/template.njk";
-import Hero from "../../components/hero/template.njk";
-import IndexGrid from "../../components/index-grid/template.njk";
-import Message from "../../components/message/template.njk";
-import Picture from "../../components/picture/template.njk";
-import Tabs from "../../components/tabs/template.njk";
-import Footer from "../../components/footer/template.njk";
-import { supportDynamicColourSchemes } from "../../../../.storybook/preview";
+import Header from "../../../components/header/template.njk";
+import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
+import Card from "../../../components/card/template.njk";
+import Hero from "../../../components/hero/template.njk";
+import IndexGrid from "../../../components/index-grid/template.njk";
+import Message from "../../../components/message/template.njk";
+import Picture from "../../../components/picture/template.njk";
+import Tabs from "../../../components/tabs/template.njk";
+import Footer from "../../../components/footer/template.njk";
+import { supportDynamicColourSchemes } from "../../../../../.storybook/preview";
 
 const argTypes = {
   theme: {
@@ -23,7 +23,7 @@ const argTypes = {
 };
 
 export default {
-  title: "Experimental/Utilities/Colour themes",
+  title: "Utilities/Colour schemes",
   argTypes,
 };
 
@@ -276,8 +276,28 @@ const Template = ({ theme }) => {
 </div>`;
 };
 
-export const Examples = Template.bind({});
-// Examples.parameters = { options: { showPanel: false } };
-Examples.args = {
+export const System = Template.bind({});
+// System.parameters = { options: { showPanel: false } };
+System.args = {
+  theme: "system",
+};
+
+export const Light = Template.bind({});
+Light.args = {
   theme: "light",
+};
+
+export const Dark = Template.bind({});
+Dark.args = {
+  theme: "dark",
+};
+
+export const LightHighContrast = Template.bind({});
+LightHighContrast.args = {
+  theme: "light high-contrast",
+};
+
+export const DarkHighContrast = Template.bind({});
+DarkHighContrast.args = {
+  theme: "dark high-contrast",
 };

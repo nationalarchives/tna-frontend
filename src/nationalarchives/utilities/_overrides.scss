@@ -1,17 +1,15 @@
 @use "../variables/spacing";
 
-@each $property in margin, padding, border {
-  @each $direction in top, bottom {
-    .tna-\!--no-#{$property}-#{$direction} {
-      #{$property}-#{$direction}: 0 !important;
-    }
-  }
-}
-
 @each $property in margin, padding {
   @each $direction in top, bottom {
+    .tna-\!--no-#{$property}-#{$direction},
+    .tna-\!--no-#{$property}-vertical {
+      #{$property}-#{$direction}: 0 !important;
+    }
+
     @each $size, $amount in spacing.$spacing {
-      .tna-\!__#{$property}-#{$direction}--#{$size} {
+      .tna-\!--#{$property}-#{$direction}-#{$size},
+      .tna-\!--#{$property}-vertical-#{$size} {
         #{$property}-#{$direction}: #{$amount}rem !important;
       }
     }

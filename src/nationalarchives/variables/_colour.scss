@@ -61,7 +61,7 @@ $tna-cream: $-tna-cream;
 
 /*
 =========================================
-LIGHT THEME
+LIGHT/DEFAULT THEME
 =========================================
 */
 $colour-palette-default: (
@@ -71,7 +71,7 @@ $colour-palette-default: (
   "font-light": rgba($-base-font, 0.7),
   "link": #1d70ab,
   "link-visited": #4c2c92,
-  // "focus-outline": #004c7e,
+  // "focus-outline": #004c7e, // Old value
   "focus-outline": $-tna-blue,
   "keyline": #ccc,
   "keyline-dark": $-dark-grey,

@@ -12,7 +12,8 @@ const HeadingTemplate = ({ params }, level) => `<h${level} class="tna-heading${
   params.size ? ` tna-heading--${params.size}` : ""
 }">
   ${params.text} (${params.size.toUpperCase()})
-</h${level}>`;
+</h${level}>
+`;
 
 const HeadingsTemplate = ({ text }) =>
   `${HeadingTemplate({ params: { text, size: "xl" } }, 1)}${HeadingTemplate(

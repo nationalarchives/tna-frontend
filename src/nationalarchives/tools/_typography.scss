@@ -26,4 +26,8 @@
 @mixin detail-font {
   font-family: typography.$font-family-detail;
   font-weight: typography.$font-weight-detail;
+  @include relative-font-size(14);
+  text-transform: uppercase;
+  line-height: #{math.div(typography.$base-font-size-px, 14)};
+  // line-height: 1;
 }

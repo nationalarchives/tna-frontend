@@ -143,15 +143,13 @@ a {
   }
 
   &__supertitle {
-    margin: 0;
+    margin: 0 0 0.5rem;
 
     @include colour.colour-font("font-base");
-    @include typography.relative-font-size(14);
     @include typography.detail-font;
-    text-transform: uppercase;
 
     .tna-hgroup & {
-      margin: 0;
+      // margin: 0;
     }
   }
 
@@ -168,38 +166,30 @@ a {
   }
 
   &--xl {
-    .tna-hgroup__supertitle {
-    }
-
     .tna-hgroup__title {
       @include typography.relative-font-size(64);
+      line-height: 1;
     }
   }
 
   &--l {
-    .tna-hgroup__supertitle {
-    }
-
     .tna-hgroup__title {
       @include typography.relative-font-size(32);
+      line-height: 1.2;
     }
   }
 
   &--m {
-    .tna-hgroup__supertitle {
-    }
-
     .tna-hgroup__title {
       @include typography.relative-font-size(20);
+      line-height: 1.4;
     }
   }
 
   &--s {
-    .tna-hgroup__supertitle {
-    }
-
     .tna-hgroup__title {
       @include typography.relative-font-size(18);
+      line-height: 1.6;
     }
   }
 }

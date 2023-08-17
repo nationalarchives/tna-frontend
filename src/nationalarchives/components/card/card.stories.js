@@ -5,6 +5,7 @@ const argTypes = {
   heading: { control: "object" },
   href: { control: "text" },
   image: { control: "object" },
+  label: { control: "text" },
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
@@ -29,6 +30,7 @@ const Template = ({
   heading,
   href,
   image,
+  label,
   body,
   text,
   actions,
@@ -42,6 +44,7 @@ const Template = ({
       heading,
       href,
       image,
+      label,
       body,
       text,
       actions,
@@ -69,6 +72,7 @@ Standard.args = {
     width: 1996,
     height: 1331,
   },
+  label: "New",
   body: "<p>Card body</p>",
   // actions: [
   //   {
@@ -97,6 +101,7 @@ Featured.args = {
     width: 1996,
     height: 1331,
   },
+  label: "New",
   body: "<p>Card body</p>",
   actions: [
     {

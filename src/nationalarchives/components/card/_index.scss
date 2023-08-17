@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../variables/colour" as colourVars; // TODO
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
@@ -50,15 +51,27 @@
   }
 
   &__image-label {
-    padding: 0 0.5rem;
+    max-width: calc(100% - 2rem);
+    padding: 0.25rem 0.5rem;
 
     position: absolute;
     top: 1rem;
     left: 0;
 
+    @include colour.fixed;
+
+    @include colour.colour-font("font-dark");
+    @include typography.relative-font-size(14);
+    @include typography.main-font-weight-bold;
     text-transform: uppercase;
+    line-height: #{math.div(16, 14)};
 
     @include colour.colour-background("accent");
+  }
+
+  &--green-label #{&}__image-label {
+    // color: colourVars.$tna-white;
+    background-color: colourVars.$tna-green;
   }
 
   &__body {
@@ -104,6 +117,10 @@
       @include colour.colour-font("font-dark");
     }
 
+    .tna-card__image-container {
+      margin-bottom: 2rem;
+    }
+
     @include media.on-larger-than-mobile {
       .tna-card__inner {
         margin-left: 50%;
@@ -137,9 +154,14 @@
   }
 
   @include colour.on-high-contrast {
-    padding: 1rem;
-
     border: 1px transparent solid;
     @include colour.colour-border("keyline-dark");
+
+    .tna-card__heading,
+    .tna-card__body,
+    .tna-card__actions {
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
   }
 }

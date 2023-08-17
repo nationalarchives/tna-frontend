@@ -2,7 +2,7 @@ import IndexGrid from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  heading: { control: "text" },
+  heading: { control: "object" },
   items: { control: "object" },
   columns: { control: "number" },
   columnsMedium: { control: "number" },
@@ -58,7 +58,10 @@ const exampleItem = {
 };
 export const Standard = Template.bind({});
 Standard.args = {
-  heading: "My dogs",
+  heading: {
+    title: "My dogs",
+    level: 2,
+  },
   items: Array(12)
     .fill({ ...exampleItem })
     .map((item, index) => {

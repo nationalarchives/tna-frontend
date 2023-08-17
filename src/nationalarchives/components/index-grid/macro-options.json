@@ -1,9 +1,29 @@
 [
   {
     "name": "heading",
-    "type": "string",
+    "type": "object",
     "required": true,
-    "description": ""
+    "description": "",
+    "params": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "level",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "size",
+        "type": "text",
+        "required": false,
+        "description": ""
+      }
+    ]
   },
   {
     "name": "items",

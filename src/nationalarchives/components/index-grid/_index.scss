@@ -1,6 +1,15 @@
 @use "../../tools/colour";
 
 .tna-index-grid {
+  &__heading {
+  }
+
+  &__items {
+    margin: 1rem 0 0;
+
+    list-style: none;
+  }
+
   &__item-wrapper {
     margin-bottom: 2rem;
   }

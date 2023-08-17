@@ -2,10 +2,16 @@
 <nav class="tna-index-grid {{ containerClasses | join(' ') }}" aria-label="{{ params.heading }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--full">
-      <h1>
-        {{ params.heading }}
-      </h1>
+      {%- set headingSize = 'l' -%}
+      {%- if params.heading.size -%}
+        {%- set headingSize = params.heading.size -%}
+      {%- endif -%}
+      <h{{ params.heading.level }} class="tna-heading tna-heading--{{ headingSize }} tna-index-grid__heading">
+        {{ params.heading.title }}
+      </h{{ params.heading.level }}>
     </div>
+  </div>
+  <ul class="tna-index-grid__items tna-container">
     {%- set itemClasses = ['tna-index-grid__item-wrapper', 'tna-column'] -%}
 
     {%- if params.columns == 1 -%}
@@ -39,7 +45,7 @@
     {%- endif -%}
 
     {%- for item in params.items -%}
-    <div class="{{ itemClasses | join(' ') }}">
+    <li class="{{ itemClasses | join(' ') }}">
       <a href="{{ item.href }}" class="tna-index-grid__item" title="{{ item.title }}">
         <img src="{{ item.src }}" class="tna-index-grid__item-image" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" />
         <span class="tna-index-grid__item-content">
@@ -50,7 +56,7 @@
           {%- endif -%}
         </span>
       </a>
-    </div>
+    </li>
     {%- endfor -%}
-  </div>
+  </ul>
 <nav>

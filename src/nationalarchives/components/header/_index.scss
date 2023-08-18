@@ -8,7 +8,7 @@
 .tna-header {
   @include colour.invert;
 
-  background-color: colourVars.$tna-black;
+  background-color: colour.brand-colour("black");
 
   &__exit {
     padding-top: 0.5rem;
@@ -262,7 +262,7 @@
   &--orange,
   &--green,
   &--blue {
-    color: colourVars.$tna-black;
+    color: colour.brand-colour("black");
 
     .tna-header__logo-link {
       &:hover {
@@ -277,28 +277,28 @@
     }
 
     .tna-header__hamburger {
-      background-color: colourVars.$tna-black;
+      background-color: colour.brand-colour("black");
     }
   }
 
   &--yellow {
-    background-color: colourVars.$tna-yellow;
+    background-color: colour.brand-colour("yellow");
   }
 
   &--pink {
-    background-color: colourVars.$tna-pink;
+    background-color: colour.brand-colour("pink");
   }
 
   &--orange {
-    background-color: colourVars.$tna-orange;
+    background-color: colour.brand-colour("orange");
   }
 
   &--green {
-    background-color: colourVars.$tna-green;
+    background-color: colour.brand-colour("green");
   }
 
   &--blue {
-    background-color: colourVars.$tna-blue;
+    background-color: colour.brand-colour("blue");
   }
 
   &__navigation {

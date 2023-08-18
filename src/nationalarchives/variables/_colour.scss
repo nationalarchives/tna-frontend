@@ -1,80 +1,70 @@
 @use "sass:map";
 @use "../features";
 
-$-tna-black: #000;
-$-tna-grey: #8c9694;
-$-tna-light-grey: #d9d9d6;
-$-tna-white: #fff;
+$colour-palette-brand: (
+  "black": #000,
+  "grey": #8c9694,
+  "light-grey": #d9d9d6,
+  "white": #fff,
 
-$-tna-yellow: #fc0;
-$-tna-pink: #fe1d57;
-$-tna-orange: #fd3f03;
-$-tna-green: #86bc25;
-$-tna-blue: #00b0ff;
+  "yellow": #fc0,
+  "pink": #fe1d57,
+  "orange": #fd3f03,
+  "green": #86bc25,
+  "blue": #00b0ff,
 
-$-tna-brown: #654e37;
-$-tna-maroon: #9c193a;
-$-tna-chestnut: #8f3415;
-$-tna-forest: #00623b;
-$-tna-navy: #004c7e;
+  "brown": #654e37,
+  "maroon": #9c193a,
+  "chestnut": #8f3415,
+  "forest": #00623b,
+  "navy": #004c7e,
 
-$-tna-cream: #f9f7e2;
-$-tna-pastel-pink: #fad3d4;
-$-tna-pastel-orange: #f9e1bc;
-$-tna-pastel-green: #dde5d5;
-$-tna-pastel-blue: #d4e5ef;
+  "cream": #f9f7e2,
+  "pastel-pink": #fad3d4,
+  "pastel-orange": #f9e1bc,
+  "pastel-green": #dde5d5,
+  "pastel-blue": #d4e5ef,
+);
 
-$-dark-grey: #26262a;
-$-base-font: #343338;
+$dark-grey: #26262a;
+$base-font: #343338;
 
-$-accent-colour-default: $-tna-yellow;
+$-accent-colour-default: map.get($colour-palette-brand, "yellow");
 $-accent-colour-default-dark: $-accent-colour-default;
-
-// TODO: Scoped variables should not be used directly outside of this file
-$tna-black: $-tna-black;
-$dark-grey: $-dark-grey;
-$tna-yellow: $-tna-yellow;
-$tna-pink: $-tna-pink;
-$tna-orange: $-tna-orange;
-$tna-green: $-tna-green;
-$tna-forest: $-tna-forest;
-$tna-blue: $-tna-blue;
-$tna-cream: $-tna-cream;
-$tna-white: $-tna-white;
 
 /*
 =========================================
-LIGHT/DEFAULT THEME
+LIGHT THEME (DEFAULT)
 =========================================
 */
 $colour-palette-default: (
-  "page-background": $-tna-white,
-  "font-base": $-base-font,
-  "font-dark": $-tna-black,
-  "font-light": rgba($-base-font, 0.7),
+  "page-background": map.get($colour-palette-brand, "white"),
+  "font-base": $base-font,
+  "font-dark": map.get($colour-palette-brand, "black"),
+  "font-light": rgba($base-font, 0.7),
   "link": #1d70ab,
   "link-visited": #4c2c92,
   // "focus-outline": #004c7e, // Old value
-  "focus-outline": $-tna-blue,
+  "focus-outline": map.get($colour-palette-brand, "blue"),
   "keyline": #ccc,
-  "keyline-dark": $-dark-grey,
+  "keyline-dark": $dark-grey,
   "accent-default": $-accent-colour-default,
-  "button-primary-text": $-tna-white,
-  "button-primary-background": $-tna-black,
-  "button-primary-hover-text": $-tna-black,
-  "button-primary-hover-background": $-tna-white,
-  "button-secondary-text": $-tna-black,
-  "button-secondary-background": $-tna-yellow,
-  "button-secondary-hover-text": $-tna-black,
-  "button-secondary-hover-background": $-tna-white,
-  "contrast-background": $-dark-grey,
-  "contrast-font-base": $-tna-white,
-  "contrast-font-dark": $-tna-white,
-  "contrast-font-light": rgba($-tna-white, 0.7),
-  "contrast-link": $-tna-white,
+  "button-primary-text": map.get($colour-palette-brand, "white"),
+  "button-primary-background": map.get($colour-palette-brand, "black"),
+  "button-primary-hover-text": map.get($colour-palette-brand, "black"),
+  "button-primary-hover-background": map.get($colour-palette-brand, "white"),
+  "button-secondary-text": map.get($colour-palette-brand, "black"),
+  "button-secondary-background": map.get($colour-palette-brand, "yellow"),
+  "button-secondary-hover-text": map.get($colour-palette-brand, "black"),
+  "button-secondary-hover-background": map.get($colour-palette-brand, "white"),
+  "contrast-background": $dark-grey,
+  "contrast-font-base": map.get($colour-palette-brand, "white"),
+  "contrast-font-dark": map.get($colour-palette-brand, "white"),
+  "contrast-font-light": rgba(map.get($colour-palette-brand, "white"), 0.7),
+  "contrast-link": map.get($colour-palette-brand, "white"),
   "contrast-link-visited": #b9f,
-  "contrast-keyline": rgba($-tna-white, 0.5),
-  "contrast-keyline-dark": rgba($-tna-white, 0.8),
+  "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
+  "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
 );
 
 /*
@@ -86,13 +76,13 @@ $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
     "page-background": #222,
-    "font-base": rgba($-tna-white, 0.95),
-    "font-dark": $-tna-white,
-    "font-light": rgba($-tna-white, 0.5),
-    "link": $-tna-blue,
+    "font-base": rgba(map.get($colour-palette-brand, "white"), 0.95),
+    "font-dark": map.get($colour-palette-brand, "white"),
+    "font-light": rgba(map.get($colour-palette-brand, "white"), 0.5),
+    "link": map.get($colour-palette-brand, "blue"),
     "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
-    "keyline": rgba($-tna-white, 0.25),
-    "keyline-dark": $-tna-white,
+    "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
+    "keyline-dark": map.get($colour-palette-brand, "white"),
     "accent-default": $-accent-colour-default-dark,
     "contrast-background": #111,
     "contrast-link-visited":
@@ -108,21 +98,21 @@ LIGHT, HIGH_CONTRAST THEME
 $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
-    "font-base": $-tna-black,
-    "font-light": $-tna-black,
-    "link": $-tna-black,
-    "link-visited": $-tna-black,
-    "focus-outline": $-tna-orange,
-    "keyline": $-tna-black,
-    "keyline-dark": $-tna-black,
-    "contrast-background": $-tna-white,
-    "contrast-font-base": $-tna-black,
-    "contrast-font-dark": $-tna-black,
-    "contrast-font-light": $-tna-black,
-    "contrast-link": $-tna-black,
-    "contrast-link-visited": $-tna-black,
-    "contrast-keyline": $-tna-black,
-    "contrast-keyline-dark": $-tna-black,
+    "font-base": map.get($colour-palette-brand, "black"),
+    "font-light": map.get($colour-palette-brand, "black"),
+    "link": map.get($colour-palette-brand, "black"),
+    "link-visited": map.get($colour-palette-brand, "black"),
+    "focus-outline": map.get($colour-palette-brand, "orange"),
+    "keyline": map.get($colour-palette-brand, "black"),
+    "keyline-dark": map.get($colour-palette-brand, "black"),
+    "contrast-background": map.get($colour-palette-brand, "white"),
+    "contrast-font-base": map.get($colour-palette-brand, "black"),
+    "contrast-font-dark": map.get($colour-palette-brand, "black"),
+    "contrast-font-light": map.get($colour-palette-brand, "black"),
+    "contrast-link": map.get($colour-palette-brand, "black"),
+    "contrast-link-visited": map.get($colour-palette-brand, "black"),
+    "contrast-keyline": map.get($colour-palette-brand, "black"),
+    "contrast-keyline-dark": map.get($colour-palette-brand, "black"),
   )
 );
 
@@ -134,12 +124,12 @@ DARK, HIGH_CONTRAST THEME
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": $tna-black,
-    "font-base": $-tna-white,
-    "font-light": $-tna-white,
-    "link": $-tna-white,
-    "link-visited": $-tna-white,
-    "keyline": $-tna-white,
-    "contrast-background": $tna-black,
+    "page-background": map.get($colour-palette-brand, "black"),
+    "font-base": map.get($colour-palette-brand, "white"),
+    "font-light": map.get($colour-palette-brand, "white"),
+    "link": map.get($colour-palette-brand, "white"),
+    "link-visited": map.get($colour-palette-brand, "white"),
+    "keyline": map.get($colour-palette-brand, "white"),
+    "contrast-background": map.get($colour-palette-brand, "black"),
   )
 );

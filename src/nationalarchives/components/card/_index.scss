@@ -1,5 +1,4 @@
 @use "sass:math";
-@use "../../variables/colour" as colourVars; // TODO
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
@@ -70,8 +69,8 @@
   }
 
   &--green-label #{&}__image-label {
-    // color: colourVars.$tna-white;
-    background-color: colourVars.$tna-green;
+    // color: colour.brand-colour("white");
+    background-color: colour.brand-colour("green");
   }
 
   &__body {

@@ -1,10 +1,10 @@
-@use "../../variables/colour" as colourVars; // TODO
+@use "../../tools/colour";
 
 .tna-featured-collection {
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  background-color: colourVars.$tna-cream;
+  background-color: colour.brand-colour("cream");
 
   .tna-card {
     margin-top: 1rem;

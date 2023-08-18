@@ -23,7 +23,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Check version numbers
-        run: ./tasks/validate-version.sh
+        run: |
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          ./tasks/validate-version.sh $VERSION
 
   prototype-kit:
     name: Test GOV.UK prototype kit integration
@@ -56,3 +60,14 @@ jobs:
         run: npm whoami
       - name: Publish to npm
         run: cd package && npm publish
+
+  notify-slack:
+    runs-on: ubuntu-latest
+    needs:
+      - publish-npm
+    steps:
+    - uses: actions/checkout@v3
+    - uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_TITLE: "A deployment to ${{ github.head_ref || github.ref_name }} is imminent"

@@ -1,4 +1,3 @@
-@use "../../variables/colour" as colourVars; // TODO
 @use "../../tools/colour";
 
 .tna-message {
@@ -7,7 +6,7 @@
   display: flex;
   align-items: center;
 
-  color: colourVars.$tna-black;
+  color: colour.brand-colour("black");
 
   @include colour.colour-background("keyline");
 
@@ -15,9 +14,9 @@
   @include colour.colour-border("keyline-dark");
 
   // &--yellow {
-  background-color: colourVars.$tna-cream;
+  background-color: colour.brand-colour("cream");
 
-  border-left-color: colourVars.$tna-yellow;
+  border-left-color: colour.brand-colour("yellow");
   // }
 
   &__icon {

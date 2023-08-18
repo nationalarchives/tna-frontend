@@ -2,6 +2,10 @@
 @use "../features";
 @use "../variables/colour";
 
+@function brand-colour($colour) {
+  @return map.get(colour.$colour-palette-brand, $colour);
+}
+
 @mixin colour-css-vars() {
   @each $name, $value in colour.$colour-palette-default {
     --#{$name}: #{$value};

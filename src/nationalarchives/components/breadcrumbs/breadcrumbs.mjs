@@ -37,7 +37,7 @@ export class Breadcrumbs {
         "tna-breadcrumbs__item",
         "tna-breadcrumbs__item--expandable",
       );
-      $expandable.style.display = "none"
+      $expandable.style.display = "none";
 
       const $expandButton = document.createElement("button");
       $expandButton.classList.add("tna-breadcrumbs__link");

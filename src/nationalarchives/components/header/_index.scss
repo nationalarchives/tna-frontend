@@ -406,8 +406,6 @@
   }
 
   @include media.on-mobile {
-    $compensated-container-padding: grid.$gutter-width-mobile + 0.75rem;
-
     &__contents {
       &.tna-container {
         padding-right: 0;
@@ -420,8 +418,8 @@
       padding-bottom: 1rem;
 
       &.tna-column {
-        padding-right: $compensated-container-padding;
-        padding-left: $compensated-container-padding;
+        padding-right: grid.$gutter-width-mobile;
+        padding-left: grid.$gutter-width-mobile;
       }
     }
 
@@ -436,7 +434,7 @@
 
     &__navigation-toggle {
       &.tna-column {
-        padding-right: $compensated-container-padding;
+        padding-right: grid.$gutter-width-mobile;
         padding-left: 0;
       }
     }
@@ -498,8 +496,8 @@
     }
 
     &__navigation-item-link {
-      padding-right: $compensated-container-padding;
-      padding-left: $compensated-container-padding;
+      padding-right: grid.$gutter-width-mobile;
+      padding-left: grid.$gutter-width-mobile + 1rem;
 
       display: block;
 

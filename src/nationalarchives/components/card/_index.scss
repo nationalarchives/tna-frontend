@@ -10,6 +10,10 @@
     margin-bottom: 0;
   }
 
+  .tna-column > & {
+    margin-bottom: 3rem;
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;

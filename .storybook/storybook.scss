@@ -114,6 +114,10 @@
 
 .tna-card--demo {
   max-width: 320px;
+
+  .tna-container & {
+    max-width: none;
+  }
 }
 
 .tna-card--featured {

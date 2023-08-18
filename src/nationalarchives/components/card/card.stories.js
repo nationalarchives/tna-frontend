@@ -112,3 +112,68 @@ Featured.args = {
   htmlElement: "article",
   classes: "tna-card--demo",
 };
+
+const GridTemplate = ({
+  heading,
+  href,
+  image,
+  label,
+  body,
+  text,
+  actions,
+  featured,
+  htmlElement,
+  classes,
+  attributes,
+}) =>
+  `<div class="tna-container">
+    ${Array(12)
+      .fill(
+        `<div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+          ${Card({
+            params: {
+              heading,
+              href,
+              image,
+              label,
+              body,
+              text,
+              actions,
+              featured,
+              htmlElement,
+              classes,
+              attributes,
+            },
+          })}
+        </div>`,
+      )
+      .join("")}
+  </div>`;
+
+export const Grid = GridTemplate.bind({});
+Grid.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    singleSentence: false,
+  },
+  href: "#",
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  // actions: [
+  //   {
+  //     text: "Card action",
+  //     href: "#",
+  //     title: "Go and do the action",
+  //   },
+  // ],
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};

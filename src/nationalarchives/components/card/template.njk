@@ -1,6 +1,6 @@
 {%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-{%- set headingSize = params.heading.size if params.heading.size else "m" -%}
+{%- set headingSize = "l" if params.featured else "m" -%}
 {%- if params.featured -%}
   {%- set containerClasses = containerClasses.concat('tna-card--featured') -%}
 {%- endif -%}

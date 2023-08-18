@@ -154,6 +154,19 @@
       },
       "html": "<div class=\"tna-card \" data-module=\"tna-card\" data-testattribute=\"foobar\"><div class=\"tna-card__inner\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
       "hidden": false
+    },
+    {
+      "name": "with a label",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
+        "label": "New",
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-card__title tna-heading tna-heading--m\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
+      "hidden": false
     }
   ]
 }

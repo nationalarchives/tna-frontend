@@ -24,6 +24,9 @@
 
   &__title {
     order: 2;
+
+    @include typography.main-font;
+    @include typography.main-font-weight-bold;
   }
 
   &__title-link {

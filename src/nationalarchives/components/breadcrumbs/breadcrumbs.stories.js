@@ -3,6 +3,7 @@ import macroOptions from "./macro-options.json";
 
 const argTypes = {
   items: { control: "object" },
+  noCollapse: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -18,10 +19,11 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, classes, attributes }) => {
+const Template = ({ items, noCollapse, classes, attributes }) => {
   return Breadcrumbs({
     params: {
       items,
+      noCollapse,
       classes,
       attributes,
     },
@@ -55,30 +57,8 @@ Standard.args = {
   classes: "tna-breadcrumbs--demo",
 };
 
-// TODO
-// export const NoCollapse = Template.bind({});
-// NoCollapse.args = {
-//   items: [
-//     {
-//       text: "Alpha",
-//       href: "#/alpha",
-//     },
-//     {
-//       text: "Beta",
-//       href: "#/beta",
-//     },
-//     {
-//       text: "Gamma",
-//       href: "#/gamma",
-//     },
-//     {
-//       text: "Delta",
-//       href: "#/delta",
-//     },
-//     {
-//       text: "Epsilon",
-//       href: "#/epsilon",
-//     },
-//   ],
-//   classes: "tna-breadcrumbs--demo",
-// };
+export const NoCollapse = Template.bind({});
+NoCollapse.args = {
+  ...Standard.args,
+  noCollapse: true,
+};

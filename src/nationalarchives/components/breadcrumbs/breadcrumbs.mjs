@@ -26,7 +26,10 @@ export class Breadcrumbs {
       return;
     }
 
-    if (this.$breadcrumbs.length > 2) {
+    if (
+      this.$breadcrumbs.length > 2 &&
+      !this.$module.classList.contains("tna-breadcrumbs--no-collapse")
+    ) {
       const uniqueId = `tna-breadcrumbs-${uuidv4()}`;
 
       const $expandable = document.createElement("li");
@@ -34,6 +37,7 @@ export class Breadcrumbs {
         "tna-breadcrumbs__item",
         "tna-breadcrumbs__item--expandable",
       );
+      $expandable.style.display = "none"
 
       const $expandButton = document.createElement("button");
       $expandButton.classList.add("tna-breadcrumbs__link");
@@ -42,9 +46,10 @@ export class Breadcrumbs {
       $expandButton.setAttribute("aria-expanded", "false");
       $expandButton.setAttribute("aria-controls", uniqueId);
       $expandButton.addEventListener("click", () => {
-        this.$breadcrumbsList.classList.remove(
-          "tna-breadcrumbs__list--collapse-on-mobile",
-        );
+        // this.$breadcrumbsList.classList.remove(
+        //   "tna-breadcrumbs__list--collapse-on-mobile",
+        // );
+        this.$module.classList.remove("tna-breadcrumbs--collapsed");
         $expandable.remove();
         this.$breadcrumbsListWrapper.setAttribute("tabindex", "0");
         this.$breadcrumbsListWrapper.focus();
@@ -58,6 +63,8 @@ export class Breadcrumbs {
         $expandable,
         this.$breadcrumbs[this.$breadcrumbs.length - 2].nextSibling,
       );
+
+      this.$module.classList.add("tna-breadcrumbs--collapsed");
     }
   }
 }

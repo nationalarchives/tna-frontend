@@ -26,6 +26,12 @@
     ]
   },
   {
+    "name": "noCollapse",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

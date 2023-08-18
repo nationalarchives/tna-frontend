@@ -40,6 +40,10 @@
 
     &--expandable {
       display: none;
+
+      @include media.on-mobile {
+        display: inline-block !important;
+      }
     }
   }
 
@@ -98,40 +102,8 @@
   }
 
   @include media.on-mobile {
-    // &__item {
-    //   &,
-    //   + .tna-breadcrumbs__item {
-    //     &::before {
-    //       margin-left: 0;
-
-    //       display: none;
-    //     }
-    //   }
-
-    //   &:not(:nth-last-child(2)) {
-    //     display: none;
-    //   }
-
-    //   &:nth-last-child(2) {
-    //     .tna-breadcrumbs__link {
-    //       &::before {
-    //         content: "\2190\00a0" attr(data-prefix);
-    //       }
-    //     }
-    //   }
-    // }
-
-    &__list--collapse-on-mobile
-      #{&}__item:not(
-        :first-child,
-        .tna-breadcrumbs__item--expandable,
-        :last-child
-      ) {
+    &--collapsed &__item:not(:first-child, &__item--expandable, :last-child) {
       display: none;
-    }
-
-    &__list--collapse-on-mobile #{&}__item--expandable {
-      display: inline-block;
     }
   }
 }

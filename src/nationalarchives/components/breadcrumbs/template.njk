@@ -1,10 +1,13 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.noCollapse -%}
+  {%- set containerClasses = containerClasses.concat('tna-breadcrumbs--no-collapse') -%}
+{%- endif -%}
 <div class="tna-breadcrumbs tna-container {{ containerClasses | join(' ') }}" data-module="tna-breadcrumbs" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <nav class="tna-breadcrumbs__wrapper tna-column tna-column--full" aria-label="Breadcrumb">
     <ol class="tna-breadcrumbs__list tna-breadcrumbs__list--collapse-on-mobile">
     {%- for item in params.items -%}
       <li class="tna-breadcrumbs__item">
-        <a href="{{ item.href }}" class="tna-breadcrumbs__link" data-prefix="{{ params.prefix if params.prefix else 'Back to' }}" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+        <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} title="{{ item.title }}"{% endif %}>
           {{ item.text }}
         </a>
       </li>

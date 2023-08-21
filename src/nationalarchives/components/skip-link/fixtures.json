@@ -1,0 +1,11 @@
+{
+  "component": "skip link",
+  "fixtures": [
+    {
+      "name": "minimal",
+      "options": {},
+      "html": "<a href=\"#main-content\" class=\"tna-skip-link \">Skip to main content</a>",
+      "hidden": false
+    }
+  ]
+}

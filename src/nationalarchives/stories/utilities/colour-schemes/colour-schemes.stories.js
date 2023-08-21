@@ -1,3 +1,4 @@
+import SkipLink from "../../../components/skip-link/template.njk";
 import Header from "../../../components/header/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Card from "../../../components/card/template.njk";
@@ -41,8 +42,17 @@ const Template = ({ theme }) => {
       : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
+    ${SkipLink({
+      params: {
+        href: "main-content",
+      },
+    })}
     ${Header({
       params: {
+        logo: {
+          strapline: "Colours",
+          href: "#/",
+        },
         navigation: [
           {
             text: "Alpha",
@@ -87,7 +97,7 @@ const Template = ({ theme }) => {
         ],
       },
     })}
-    <article>
+    <main id="main-content" role="main">
       ${Hero({
         params: {
           heading: "Title",
@@ -185,6 +195,13 @@ const Template = ({ theme }) => {
               },
               label: "New",
               body: "<p>Card body</p>",
+              actions: [
+                {
+                  text: "Card action",
+                  href: "#",
+                  title: "Go and do the action",
+                },
+              ],
               featured: true,
               classes: "tna-card--demo",
             },

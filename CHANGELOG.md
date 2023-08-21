@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.15-prerelease...HEAD)
 
 ### Added
+
+- New skip link component
+
 ### Changed
 
 - Restructured brand colour variables

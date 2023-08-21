@@ -56,6 +56,7 @@ const checkExists = [
   ...componentFiles("picture"),
   ...componentFiles("profile", true),
   ...componentFiles("sensitive-image"),
+  ...componentFiles("skip-link", true),
   ...componentFiles("tabs"),
   // Tools
   "nationalarchives/tools/_index.scss",

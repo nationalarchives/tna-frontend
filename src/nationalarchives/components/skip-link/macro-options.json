@@ -1,0 +1,26 @@
+[
+  {
+    "name": "text",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "href",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the skip link."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the skip link."
+  }
+]

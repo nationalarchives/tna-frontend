@@ -1,5 +1,0 @@
-@use "../variables/assets";
-
-@function tna-asset-url($asset) {
-  @return #{assets.$tna-assets-path}/#{$asset};
-}

@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../features";
 @use "../variables/colour";
+@use "../tools/media";
 
 @function brand-colour($colour) {
   @return map.get(colour.$colour-palette-brand, $colour);
@@ -90,7 +91,7 @@
   // @include colour-font("font-base");
 }
 
-@mixin invert {
+%invert {
   --font-base: var(--contrast-font-base);
   --font-dark: var(--contrast-font-dark);
   --font-light: var(--contrast-font-light);
@@ -101,6 +102,29 @@
 
   // @include colour-font("contrast-font-base");
   @include colour-background("contrast-background");
+}
+
+@mixin invert {
+  @extend %invert;
+}
+
+%invert-on-mobile {
+  @include media.on-mobile {
+    --font-base: var(--contrast-font-base);
+    --font-dark: var(--contrast-font-dark);
+    --font-light: var(--contrast-font-light);
+    --link: var(--contrast-link);
+    --link-visited: var(--contrast-link-visited);
+    --keyline: var(--contrast-keyline);
+    --keyline-dark: var(--contrast-keyline-dark);
+
+    // @include colour-font("contrast-font-base");
+    @include colour-background("contrast-background");
+  }
+}
+
+@mixin invert-on-mobile {
+  @extend %invert-on-mobile;
 }
 
 @mixin uninvert {

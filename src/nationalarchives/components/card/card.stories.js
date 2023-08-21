@@ -129,7 +129,7 @@ const GridTemplate = ({
   `<div class="tna-container">
     ${Array(12)
       .fill(
-        `<div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+        `<div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny tna-!--margin-bottom-l">
           ${Card({
             params: {
               heading,

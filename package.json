@@ -8,7 +8,7 @@
     "test": "node tasks/test-fixtures.js && test-storybook --verbose --stories-json",
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.mjs'",
     "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.mjs'",
-    "package:sass": "sass --style=compressed --quiet-deps src/nationalarchives/all.scss package/nationalarchives/all.css",
+    "package:sass": "sass --style=compressed --embed-sources src/nationalarchives/all.scss package/nationalarchives/all.css",
     "package:scripts": "webpack"
   },
   "repository": {

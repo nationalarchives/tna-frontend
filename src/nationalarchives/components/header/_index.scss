@@ -8,6 +8,8 @@
 .tna-header {
   @include colour.invert;
 
+  color: colour.brand-colour("white");
+
   background-color: colour.brand-colour("black");
 
   &__exit {

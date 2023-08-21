@@ -107,8 +107,6 @@
 
     display: block;
 
-    // @include colour.invert;
-
     &__image {
       height: 320px;
 
@@ -144,13 +142,10 @@
     }
 
     &__heading {
-      // color: inherit;
     }
 
     &__body {
       margin-top: 1rem;
-
-      // color: inherit;
     }
   }
 

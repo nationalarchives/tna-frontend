@@ -284,7 +284,7 @@ const Template = ({ theme }) => {
           columnsTiny: 1,
         },
       })}
-    <article>
+    </main>
     ${Footer({})}
   </div>
 </div>`;

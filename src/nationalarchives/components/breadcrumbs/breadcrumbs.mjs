@@ -46,9 +46,6 @@ export class Breadcrumbs {
       $expandButton.setAttribute("aria-expanded", "false");
       $expandButton.setAttribute("aria-controls", uniqueId);
       $expandButton.addEventListener("click", () => {
-        // this.$breadcrumbsList.classList.remove(
-        //   "tna-breadcrumbs__list--collapse-on-mobile",
-        // );
         this.$module.classList.remove("tna-breadcrumbs--collapsed");
         $expandable.remove();
         this.$breadcrumbsListWrapper.setAttribute("tabindex", "0");

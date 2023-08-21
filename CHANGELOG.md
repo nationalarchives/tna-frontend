@@ -10,15 +10,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - New skip link component
+- Breadcrumbs have non-collapsable option
+- `colour.colour-border()` has support for extra optional parameters - `$width`, `$style` and `$direction`
+- Brand colours can be retrieved with the helper `colour.brand-colour()`
 
 ### Changed
 
 - Restructured brand colour variables
+- `package-lock.json` and `LICENCE` added to the npm package
 
 ### Deprecated
 ### Removed
 
 - Removed extra gutter on mobile grid
+- Card heading sizes can no longer be changed
 
 ### Fixed
 ### Security

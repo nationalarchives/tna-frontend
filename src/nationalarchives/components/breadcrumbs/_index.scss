@@ -6,11 +6,9 @@
   padding-bottom: 1rem;
 
   &__wrapper {
-    // .tna-template--clicked & {
     &:focus {
       outline: none !important;
     }
-    // }
   }
 
   &__list {

@@ -19,7 +19,6 @@
     }
 
     &:hover {
-      // color: colour.brand-colour("blue");
       @include colour.colour-font("link");
     }
   }
@@ -32,8 +31,6 @@
 
   &__title {
     margin-bottom: 0.5rem;
-
-    // color: inherit;
   }
 
   &__address {
@@ -48,7 +45,6 @@
   }
 
   &__navigation-group-title {
-    // color: inherit;
   }
 
   &__navigation-group-items {
@@ -117,16 +113,10 @@
 
     &,
     &:visited {
-      // color: inherit;
-      // fill: #fff;
       @include colour.colour-font("font-dark");
     }
 
     &:hover {
-      // @include colour.colour-font("link");
-      // @include colour.colour-fill("link");
-      // color: colour.brand-colour("blue");
-      // fill: colour.brand-colour("blue");
       @include colour.colour-font("link");
     }
   }
@@ -134,8 +124,6 @@
   &__govuk-logotype-crown {
     margin: 0 auto;
     display: block;
-
-    // fill: inherit;
   }
 
   @include media.on-mobile {

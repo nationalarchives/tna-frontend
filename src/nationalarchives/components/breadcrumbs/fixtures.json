@@ -19,7 +19,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-breadcrumbs tna-container \" data-module=\"tna-breadcrumbs\"><nav class=\"tna-breadcrumbs__wrapper tna-column tna-column--full\" aria-label=\"Breadcrumb\"><ol class=\"tna-breadcrumbs__list tna-breadcrumbs__list--collapse-on-mobile\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav></div>",
+      "html": "<div class=\"tna-breadcrumbs tna-container \" data-module=\"tna-breadcrumbs\"><nav class=\"tna-breadcrumbs__wrapper tna-column tna-column--full\" aria-label=\"Breadcrumb\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav></div>",
       "hidden": false
     },
     {
@@ -41,7 +41,7 @@
         ]
       },
       "noCollapse": true,
-      "html": "<div class=\"tna-breadcrumbs tna-container \" data-module=\"tna-breadcrumbs\"><nav class=\"tna-breadcrumbs__wrapper tna-column tna-column--full\" aria-label=\"Breadcrumb\"><ol class=\"tna-breadcrumbs__list tna-breadcrumbs__list--collapse-on-mobile\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav></div>",
+      "html": "<div class=\"tna-breadcrumbs tna-container \" data-module=\"tna-breadcrumbs\"><nav class=\"tna-breadcrumbs__wrapper tna-column tna-column--full\" aria-label=\"Breadcrumb\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav></div>",
       "hidden": false
     }
   ]

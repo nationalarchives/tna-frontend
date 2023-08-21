@@ -48,9 +48,30 @@
   }
 }
 
-@mixin colour-border($colour) {
-  border-color: map.get(colour.$colour-palette-default, $colour);
-  border-color: var(--#{$colour});
+@mixin colour-border($colour, $width: "", $style: solid, $direction: "") {
+  @if $direction != "" {
+    @if $width != "" {
+      $property: border-#{$direction};
+      border-#{$direction}: $width
+        map.get(colour.$colour-palette-default, $colour)
+        $style;
+      border-#{$direction}: $width var(--#{$colour}) $style;
+    } @else {
+      border-#{$direction}-color: map.get(
+        colour.$colour-palette-default,
+        $colour
+      );
+      border-#{$direction}-color: var(--#{$colour});
+    }
+  } @else {
+    @if $width != "" {
+      border: $width map.get(colour.$colour-palette-default, $colour) $style;
+      border: $width var(--#{$colour}) $style;
+    } @else {
+      border-color: map.get(colour.$colour-palette-default, $colour);
+      border-color: var(--#{$colour});
+    }
+  }
 }
 
 @mixin colour-outline($colour) {
@@ -66,7 +87,7 @@
 @mixin fixed {
   @include colour-css-vars;
 
-  @include colour-font("font-base");
+  // @include colour-font("font-base");
 }
 
 @mixin invert {
@@ -78,7 +99,7 @@
   --keyline: var(--contrast-keyline);
   --keyline-dark: var(--contrast-keyline-dark);
 
-  @include colour-font("contrast-font-base");
+  // @include colour-font("contrast-font-base");
   @include colour-background("contrast-background");
 }
 

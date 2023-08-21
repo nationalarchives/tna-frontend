@@ -10,8 +10,7 @@
 
   @include colour.colour-background("button-primary-background");
 
-  border: 0.25rem transparent solid;
-  @include colour.colour-border("button-primary-background");
+  @include colour.colour-border("button-primary-background", 0.25rem, solid);
 
   transition:
     color 200ms,

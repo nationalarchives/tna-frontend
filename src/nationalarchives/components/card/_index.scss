@@ -107,8 +107,7 @@
     .tna-card__heading {
       padding-bottom: 2rem;
 
-      border-bottom: 2px transparent solid;
-      @include colour.colour-border("keyline-dark");
+      @include colour.colour-border("keyline-dark", 2px, solid, "bottom");
     }
 
     .tna-card__supertitle {
@@ -160,8 +159,11 @@
   }
 
   @include colour.on-high-contrast {
-    border: 1px transparent solid;
-    @include colour.colour-border("keyline-dark");
+    @include colour.colour-border("keyline-dark", 1px, solid);
+
+    .tna-card__inner {
+      padding-bottom: 1rem;
+    }
 
     .tna-card__heading,
     .tna-card__body,

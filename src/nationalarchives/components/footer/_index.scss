@@ -6,10 +6,10 @@
   padding-bottom: 3rem;
 
   @include colour.invert;
+  @include colour.colour-font("contrast-font-base");
 
   @include colour.on-high-contrast {
-    border-top: 1px transparent solid;
-    @include colour.colour-border("keyline");
+    @include colour.colour-border("keyline", 1px, solid, "top");
   }
 
   &__link {
@@ -19,8 +19,8 @@
     }
 
     &:hover {
-      // @include colour.colour-font("link");
-      color: colour.brand-colour("blue");
+      // color: colour.brand-colour("blue");
+      @include colour.colour-font("link");
     }
   }
 
@@ -33,7 +33,7 @@
   &__title {
     margin-bottom: 0.5rem;
 
-    color: inherit;
+    // color: inherit;
   }
 
   &__address {
@@ -48,7 +48,7 @@
   }
 
   &__navigation-group-title {
-    color: inherit;
+    // color: inherit;
   }
 
   &__navigation-group-items {
@@ -117,15 +117,17 @@
 
     &,
     &:visited {
-      color: inherit;
-      fill: #fff;
+      // color: inherit;
+      // fill: #fff;
+      @include colour.colour-font("font-dark");
     }
 
     &:hover {
       // @include colour.colour-font("link");
       // @include colour.colour-fill("link");
-      color: colour.brand-colour("blue");
-      fill: colour.brand-colour("blue");
+      // color: colour.brand-colour("blue");
+      // fill: colour.brand-colour("blue");
+      @include colour.colour-font("link");
     }
   }
 
@@ -133,7 +135,7 @@
     margin: 0 auto;
     display: block;
 
-    fill: inherit;
+    // fill: inherit;
   }
 
   @include media.on-mobile {

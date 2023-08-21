@@ -10,8 +10,7 @@
 
   @include colour.colour-background("keyline");
 
-  border-left: 0.5rem transparent solid;
-  @include colour.colour-border("keyline-dark");
+  @include colour.colour-border("keyline-dark", 0.5rem, solid, "left");
 
   // &--yellow {
   background-color: colour.brand-colour("cream");

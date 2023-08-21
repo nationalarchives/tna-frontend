@@ -25,8 +25,7 @@
     text-decoration: none;
 
     @include colour.on-high-contrast {
-      border: 1px transparent solid;
-      @include colour.colour-border("keyline-dark");
+      @include colour.colour-border("keyline-dark", 1px, solid);
     }
   }
 

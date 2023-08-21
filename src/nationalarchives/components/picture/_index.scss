@@ -50,13 +50,11 @@
 
     text-align: center;
 
-    border-bottom: 1px solid;
-    @include colour.colour-border("keyline");
+    @include colour.colour-border("keyline", 1px, solid, "bottom");
   }
 
   @include colour.on-high-contrast {
-    border-width: 1px 1px 0;
-    @include colour.colour-border("keyline-dark");
-    border-style: solid;
+    @include colour.colour-border("keyline-dark", 1px, solid);
+    border-bottom-width: 0;
   }
 }

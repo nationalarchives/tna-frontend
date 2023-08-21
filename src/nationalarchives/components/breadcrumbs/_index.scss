@@ -66,8 +66,7 @@
 
       text-decoration: none;
 
-      border: 1px transparent solid;
-      @include colour.colour-border("keyline-dark");
+      @include colour.colour-border("keyline-dark", 1px, solid);
 
       &:hover {
         text-decoration: underline;
@@ -96,8 +95,11 @@
     cursor: pointer;
 
     &:hover {
+      color: inherit;
       text-decoration: underline;
       text-decoration-thickness: 3px;
+
+      background-color: transparent;
     }
   }
 

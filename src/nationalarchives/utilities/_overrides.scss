@@ -1,4 +1,5 @@
 @use "../variables/spacing";
+@use "../tools/media";
 
 @each $property in margin, padding {
   @each $direction in top, bottom {
@@ -6,12 +7,24 @@
     .tna-\!--no-#{$property}-vertical {
       #{$property}-#{$direction}: 0 !important;
     }
+  }
+}
 
-    @each $size, $amount in spacing.$spacing {
-      .tna-\!--#{$property}-#{$direction}-#{$size},
-      .tna-\!--#{$property}-vertical-#{$size} {
-        #{$property}-#{$direction}: #{$amount}rem !important;
+@mixin overrides($spacing) {
+  @each $property in margin, padding {
+    @each $direction in top, bottom {
+      @each $size, $amount in $spacing {
+        .tna-\!--#{$property}-#{$direction}-#{$size},
+        .tna-\!--#{$property}-vertical-#{$size} {
+          #{$property}-#{$direction}: #{$amount}rem !important;
+        }
       }
     }
   }
+}
+
+@include overrides(spacing.$spacing);
+
+@include media.on-mobile {
+  @include overrides(spacing.$spacing-mobile);
 }

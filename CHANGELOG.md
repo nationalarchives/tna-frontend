@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Restructured brand colour variables
 - `package-lock.json` and `LICENCE` added to the npm package
+- Additional `<div>` added to breadcrumbs for layout purposes
 
 ### Deprecated
 ### Removed

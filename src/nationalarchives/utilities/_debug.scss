@@ -1,11 +1,51 @@
 @use "../features";
 
+/*
+ * ==========================================
+ * WCAG 2.2 SC 2.5.8
+ * https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum
+ * ------------------------------------------
+ * AA - Small green circles should not intersect
+ * ------------------------------------------
+ */
 @if features.$debug-interactable-areas {
   a,
   button,
   label[for] {
     background-color: rgba(#f0a, 0.25) !important;
 
-    box-shadow: 0 0 0 1px #f0a !important;
+    box-shadow:
+      0 0 0 2px #f0a,
+      0 0 0.5rem #f0a !important;
+
+    position: relative;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      background-color: rgba(#0f3, 0.25) !important;
+
+      border-radius: 100%;
+      outline: 2px #0f3 solid;
+      outline-offset: 10px;
+
+      box-shadow:
+        0 0 0 2px #0f3,
+        0 0 0.5rem #0f3 !important;
+
+      transform: translateX(-50%) translateY(-50%);
+
+      content: "";
+    }
+
+    .tna-template--dark-theme & {
+    }
   }
 }

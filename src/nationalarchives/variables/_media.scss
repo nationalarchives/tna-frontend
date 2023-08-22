@@ -1,40 +1,40 @@
 @use "sass:math";
 @use "./typography";
 
-$largest-medium-device-px: 1024 !default;
-$largest-small-device-px: 768 !default;
-$largest-tiny-device-px: 480 !default;
+$-largest-medium-device-px: 1024 !default;
+$-largest-small-device-px: 768 !default;
+$-largest-tiny-device-px: 480 !default;
 
-$smallest-large-device-em: #{math.div(
-    $largest-medium-device-px + 1,
+$-smallest-large-device-em: #{math.div(
+    $-largest-medium-device-px + 1,
     typography.$base-font-size-px
   )}em;
-$largest-medium-device-em: #{math.div(
-    $largest-medium-device-px,
+$-largest-medium-device-em: #{math.div(
+    $-largest-medium-device-px,
     typography.$base-font-size-px
   )}em;
-$smallest-medium-device-em: #{math.div(
-    $largest-small-device-px + 1,
+$-smallest-medium-device-em: #{math.div(
+    $-largest-small-device-px + 1,
     typography.$base-font-size-px
   )}em;
-$largest-small-device-em: #{math.div(
-    $largest-small-device-px,
+$-largest-small-device-em: #{math.div(
+    $-largest-small-device-px,
     typography.$base-font-size-px
   )}em;
-$smallest-small-device-em: #{math.div(
-    $largest-tiny-device-px + 1,
+$-smallest-small-device-em: #{math.div(
+    $-largest-tiny-device-px + 1,
     typography.$base-font-size-px
   )}em;
-$largest-tiny-device-em: #{math.div(
-    $largest-tiny-device-px,
+$-largest-tiny-device-em: #{math.div(
+    $-largest-tiny-device-px,
     typography.$base-font-size-px
   )}em;
 
-$media-large: "(min-width: #{$smallest-large-device-em})";
-$media-lt-large: "(max-width: #{$largest-medium-device-em})";
-$media-medium: "(min-width: #{$smallest-medium-device-em}) and (max-width: #{$largest-medium-device-em})";
-$media-gt-mobile: "(min-width: #{$smallest-medium-device-em})";
-$media-mobile: "(max-width: #{$largest-small-device-em})";
-$media-small: "(min-width: #{$smallest-small-device-em}) and (max-width: #{$largest-small-device-em})";
-$media-gt-tiny: "(min-width: #{$smallest-small-device-em})";
-$media-tiny: "(max-width: #{$largest-tiny-device-em})";
+$media-large: "(min-width: #{$-smallest-large-device-em})";
+$media-lt-large: "(max-width: #{$-largest-medium-device-em})";
+$media-medium: "(min-width: #{$-smallest-medium-device-em}) and (max-width: #{$-largest-medium-device-em})";
+$media-gt-mobile: "(min-width: #{$-smallest-medium-device-em})";
+$media-mobile: "(max-width: #{$-largest-small-device-em})";
+$media-small: "(min-width: #{$-smallest-small-device-em}) and (max-width: #{$-largest-small-device-em})";
+$media-gt-tiny: "(min-width: #{$-smallest-small-device-em})";
+$media-tiny: "(max-width: #{$-largest-tiny-device-em})";

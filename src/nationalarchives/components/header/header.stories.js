@@ -39,8 +39,8 @@ const Template = ({
   exit,
   classes,
   attributes,
-}) => {
-  return Header({
+}) =>
+  Header({
     params: {
       logo,
       topNavigation,
@@ -51,7 +51,6 @@ const Template = ({
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

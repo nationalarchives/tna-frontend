@@ -17,14 +17,13 @@ export default {
   argTypes,
 };
 
-const Template = ({ classes, attributes }) => {
-  return Profile({
+const Template = ({ classes, attributes }) =>
+  Profile({
     params: {
       classes,
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

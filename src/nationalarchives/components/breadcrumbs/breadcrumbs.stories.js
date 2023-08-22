@@ -19,8 +19,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, noCollapse, classes, attributes }) => {
-  return Breadcrumbs({
+const Template = ({ items, noCollapse, classes, attributes }) =>
+  Breadcrumbs({
     params: {
       items,
       noCollapse,
@@ -28,7 +28,6 @@ const Template = ({ items, noCollapse, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

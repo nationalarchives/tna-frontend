@@ -30,8 +30,8 @@ const Template = ({
   htmlElement,
   classes,
   attributes,
-}) => {
-  return Header({
+}) =>
+  Header({
     params: {
       columns,
       maxWidth,
@@ -42,7 +42,6 @@ const Template = ({
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

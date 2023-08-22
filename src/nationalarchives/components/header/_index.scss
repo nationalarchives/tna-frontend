@@ -470,7 +470,7 @@
 
       @include colour.colour-background("page-background");
 
-      @include colour.colour-border("keyline", 1px, solid, "bottom");
+      @include colour.colour-border("keyline", 1px, solid, bottom);
     }
 
     &__top-navigation-item {
@@ -492,7 +492,7 @@
 
       display: block;
 
-      @include colour.colour-border("keyline", 1px, solid, "bottom");
+      @include colour.colour-border("keyline", 1px, solid, bottom);
     }
 
     &__navigation-item-link {

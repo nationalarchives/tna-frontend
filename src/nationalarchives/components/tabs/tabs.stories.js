@@ -22,8 +22,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ title, items, sticky, classes, attributes }) => {
-  return Tabs({
+const Template = ({ title, items, sticky, classes, attributes }) =>
+  Tabs({
     params: {
       title,
       items,
@@ -32,7 +32,6 @@ const Template = ({ title, items, sticky, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

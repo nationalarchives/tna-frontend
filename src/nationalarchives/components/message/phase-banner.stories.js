@@ -18,15 +18,14 @@ export default {
   argTypes,
 };
 
-const Template = ({ message, classes, attributes }) => {
-  return Message({
+const Template = ({ message, classes, attributes }) =>
+  Message({
     params: {
       message,
       classes,
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

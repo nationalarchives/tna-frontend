@@ -19,8 +19,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, stack, classes, attributes }) => {
-  return Filters({
+const Template = ({ items, stack, classes, attributes }) =>
+  Filters({
     params: {
       items,
       stack,
@@ -28,7 +28,6 @@ const Template = ({ items, stack, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

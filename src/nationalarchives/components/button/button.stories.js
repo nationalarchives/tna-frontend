@@ -21,8 +21,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ text, href, title, secondary, classes, attributes }) => {
-  return Button({
+const Template = ({ text, href, title, secondary, classes, attributes }) =>
+  Button({
     params: {
       text,
       href,
@@ -32,7 +32,6 @@ const Template = ({ text, href, title, secondary, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

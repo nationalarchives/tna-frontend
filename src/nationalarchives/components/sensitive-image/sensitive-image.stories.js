@@ -23,8 +23,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ image, warning, action, classes, attributes }) => {
-  return SensitiveImage({
+const Template = ({ image, warning, action, classes, attributes }) =>
+  SensitiveImage({
     params: {
       image,
       warning,
@@ -33,7 +33,6 @@ const Template = ({ image, warning, action, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

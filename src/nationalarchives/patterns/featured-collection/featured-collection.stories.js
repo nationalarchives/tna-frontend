@@ -18,15 +18,14 @@ export default {
   argTypes,
 };
 
-const Template = ({ heading, classes, attributes }) => {
-  return FeaturedCollection({
+const Template = ({ heading, classes, attributes }) =>
+  FeaturedCollection({
     params: {
       heading,
       classes,
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

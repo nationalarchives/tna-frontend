@@ -32,8 +32,8 @@ const Template = ({
   columnsTiny,
   classes,
   attributes,
-}) => {
-  return IndexGrid({
+}) =>
+  IndexGrid({
     params: {
       heading,
       items,
@@ -45,7 +45,6 @@ const Template = ({
       attributes,
     },
   });
-};
 
 const exampleItem = {
   href: "#",

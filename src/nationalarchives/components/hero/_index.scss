@@ -157,7 +157,7 @@
 
   @include colour.on-high-contrast {
     &__content-inner {
-      @include colour.colour-border("keyline-dark", 1px, solid);
+      @include colour.colour-border("keyline-dark", 1px);
 
       @include media.on-mobile {
         border: none;

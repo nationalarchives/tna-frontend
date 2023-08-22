@@ -163,4 +163,9 @@ hr {
   border: 0 !important;
 
   background-color: transparent !important;
+
+  &::before,
+  &::after {
+    content: "\00a0";
+  }
 }

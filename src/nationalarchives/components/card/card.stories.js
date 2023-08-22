@@ -38,8 +38,8 @@ const Template = ({
   htmlElement,
   classes,
   attributes,
-}) => {
-  return Card({
+}) =>
+  Card({
     params: {
       heading,
       href,
@@ -54,7 +54,6 @@ const Template = ({
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

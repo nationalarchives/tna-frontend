@@ -22,8 +22,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ phase, message, classes, attributes }) => {
-  return PhaseBanner({
+const Template = ({ phase, message, classes, attributes }) =>
+  PhaseBanner({
     params: {
       phase,
       message,
@@ -31,7 +31,6 @@ const Template = ({ phase, message, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Discovery = Template.bind({});
 Discovery.args = {

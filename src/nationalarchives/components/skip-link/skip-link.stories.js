@@ -17,14 +17,13 @@ export default {
   argTypes,
 };
 
-const Template = ({ classes, attributes }) => {
-  return SkipLink({
+const Template = ({ classes, attributes }) =>
+  `${SkipLink({
     params: {
       classes,
       attributes,
     },
-  });
-};
+  })}<p>To view the skip link component tab to this example, or click inside this example and press tab.</p>`;
 
 export const Standard = Template.bind({});
 Standard.args = {

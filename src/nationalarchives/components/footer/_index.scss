@@ -9,7 +9,7 @@
   @include colour.colour-font("contrast-font-base");
 
   @include colour.on-high-contrast {
-    @include colour.colour-border("keyline", 1px, solid, "top");
+    @include colour.colour-border("keyline", 1px, solid, top);
   }
 
   &__link {

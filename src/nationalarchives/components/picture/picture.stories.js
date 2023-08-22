@@ -34,8 +34,8 @@ const Template = ({
   translation,
   classes,
   attributes,
-}) => {
-  return Picture({
+}) =>
+  Picture({
     params: {
       src,
       width,
@@ -48,7 +48,6 @@ const Template = ({
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

@@ -28,8 +28,8 @@ const Template = ({
   social,
   classes,
   attributes,
-}) => {
-  return Footer({
+}) =>
+  Footer({
     params: {
       title,
       address,
@@ -39,7 +39,6 @@ const Template = ({
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

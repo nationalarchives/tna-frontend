@@ -23,8 +23,8 @@ export default {
   argTypes,
 };
 
-const Template = ({ heading, body, text, image, classes, attributes }) => {
-  return Hero({
+const Template = ({ heading, body, text, image, classes, attributes }) =>
+  Hero({
     params: {
       heading,
       body,
@@ -34,7 +34,6 @@ const Template = ({ heading, body, text, image, classes, attributes }) => {
       attributes,
     },
   });
-};
 
 export const Standard = Template.bind({});
 Standard.args = {

@@ -2,6 +2,7 @@
 @use "../tools/colour";
 @use "../tools/media";
 @use "../tools/typography";
+@use "../variables/grid";
 
 // TODO: Temporary - will eventually bundle font files into package
 @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=Roboto+Mono:wght@400&display=swap";
@@ -63,7 +64,7 @@ a {
 
   &:hover,
   &:active {
-    text-decoration-thickness: 3.5px;
+    @include typography.interacted-text-decoration;
   }
 }
 
@@ -226,5 +227,41 @@ a {
     &::before {
       content: "\2014" " ";
     }
+  }
+}
+
+.tna-columns {
+  column-gap: grid.$gutter-width;
+
+  &--2 {
+    column-count: 2;
+  }
+
+  &--3 {
+    column-count: 3;
+  }
+
+  @include media.on-mobile {
+    column-gap: grid.$gutter-width-mobile;
+  }
+
+  @include media.on-small {
+    @for $i from 1 through 4 {
+      &--#{$i}-small {
+        column-count: $i;
+      }
+    }
+  }
+
+  @include media.on-tiny {
+    @for $i from 1 through 4 {
+      &--#{$i}-tiny {
+        column-count: $i;
+      }
+    }
+  }
+
+  &__block {
+    break-inside: avoid;
   }
 }

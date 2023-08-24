@@ -54,6 +54,8 @@
 
       display: inline-block;
 
+      vertical-align: top;
+
       &-link {
         padding: 0 3px;
 
@@ -68,8 +70,10 @@
         &-text {
         }
 
-        &:hover {
-          @include colour.colour-border("link", 3px, solid, bottom);
+        &:has(#{&}-image) {
+          &:hover {
+            @include colour.colour-border("link", 3px, solid, bottom);
+          }
         }
       }
     }
@@ -109,6 +113,54 @@
 
           &:hover {
             @include typography.interacted-text-decoration;
+          }
+
+          &-icon {
+            width: 0.825rem;
+            height: 0.825rem;
+            margin-right: 0.125rem;
+            margin-left: 0.5rem;
+
+            display: inline-block;
+
+            position: relative;
+
+            vertical-align: middle;
+
+            border: 1px #fff solid;
+
+            &::before {
+              position: absolute;
+              top: -0.25rem;
+              right: -0.25rem;
+              z-index: 2;
+
+              border: 0.25rem transparent solid;
+              border-top-color: #fff;
+              border-right-color: #fff;
+
+              content: "";
+            }
+
+            &::after {
+              width: 4px;
+              height: 13px;
+
+              position: absolute;
+              top: -0.125rem;
+              right: -0.125rem;
+              z-index: 1;
+
+              background-color: #fff;
+
+              outline: 3px transparent solid;
+              @include colour.colour-outline("contrast-background");
+
+              transform: rotate(45deg) translateX(50%);
+              transform-origin: 100% 0;
+
+              content: "";
+            }
           }
         }
       }

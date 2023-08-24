@@ -24,6 +24,12 @@
         "description": ""
       },
       {
+        "name": "image",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
         "name": "title",
         "type": "string",
         "required": false,
@@ -68,8 +74,8 @@
             "description": ""
           },
           {
-            "name": "image",
-            "type": "string",
+            "name": "newTab",
+            "type": "boolean",
             "required": false,
             "description": ""
           }

@@ -130,18 +130,22 @@ Standard.args = {
         {
           text: "UK Government Web Archive",
           href: "#",
+          newTab: true,
         },
         {
           text: "Legislation.gov.uk",
           href: "#",
+          newTab: true,
         },
         {
           text: "Find case law",
           href: "#",
+          newTab: true,
         },
         {
           text: "The Gazette",
           href: "#",
+          newTab: true,
         },
       ],
     },

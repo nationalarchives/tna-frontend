@@ -1,7 +1,7 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <footer class="tna-footer {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
-    <div class="tna-column tna-column--width-1-4 tna-column--width-1-2-medium tna-column--width-1-2-small tna-column--full-tiny tna-column--order-1">
+    <div class="tna-column tna-column--flex-1 tna-column--width-1-2-medium tna-column--width-1-2-small tna-column--full-tiny tna-column--order-1">
       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" style="enable-background:new 0 0 160 160" viewBox="0 0 160 160" width="96" height="96">
         <path fill="transparent" d="M0 0h160v160H0z" class="tna-logo__background"/>
         <g class="tna-logo__foreground" fill="currentColor">
@@ -25,12 +25,16 @@
           {%- for item in params.social -%}
             <li class="tna-footer__social-item">
               <a href="{{ item.href }}" class="tna-footer__social-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
-              {%- if item.image -%}
-                <img class="tna-footer__social-item-link-image" src="{{ item.image }}" alt="" width="32" height="32" />
-              {%- endif -%}
+                {%- if item.image -%}
+                <img class="tna-footer__social-item-link-image" src="{{ item.image }}" alt="{{ item.text }} logo" width="32" height="32" />
                 <span class="tna-footer__social-item-link-text tna-visually-hidden">
                   {{ item.text }}
                 </span>
+                {%- else -%}
+                <span class="tna-footer__social-item-link-text">
+                  {{ item.text }}
+                </span>
+                {%- endif -%}
               </a>
             </li>
           {%- endfor -%}
@@ -38,8 +42,8 @@
         </nav>
       {%- endif -%}
     </div>
-    {%- if params.showNewsletter -%}
-    <div class="tna-footer__navigation tna-column tna-column--width-1-2 tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-2 tna-column--order-4-medium tna-column--order-4-small tna-columns tna-columns--2 tna-columns--1-tiny">
+    {%- if params.navigation -%}
+    <div class="tna-footer__navigation tna-column {% if params.showNewsletter %}tna-column--width-1-2{% else %}tna-column--width-2-3{% endif %} tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-2 tna-column--order-4-medium tna-column--order-4-small tna-columns tna-columns--2 tna-columns--1-tiny">
       {%- for group in params.navigation -%}
       <nav class="tna-footer__navigation-block tna-columns__block" aria-label="{{ group.title }}">
         <h3 class="tna-footer__navigation-block-heading tna-heading tna-heading--m">
@@ -48,8 +52,12 @@
         <ul class="tna-footer__navigation-block-items tna-ul tna-ul--plain">
         {%- for item in group.items -%}
           <li class="tna-footer__navigation-block-item">
-            <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
+            <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link"{%- if item.title %} title="{{ item.title }}"{% endif %}{%- if item.newTab %} target="_blank"{% endif %}>
               {{ item.text }}
+              {%- if item.newTab -%}
+              <span class="tna-footer__navigation-block-item-link-icon"></span>
+              <span class="tna-visually-hidden">(opens in new tab)</span>
+              {%- endif -%}
             </a>
           </li>
         {%- endfor -%}

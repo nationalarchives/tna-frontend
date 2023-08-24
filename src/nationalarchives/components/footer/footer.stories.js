@@ -22,12 +22,21 @@ export default {
   argTypes,
 };
 
-const Template = ({ meta, social, navigation, showNewsletter, legal, classes, attributes }) =>
+const Template = ({
+  meta,
+  social,
+  navigation,
+  showNewsletter,
+  legal,
+  classes,
+  attributes,
+}) =>
   Footer({
     params: {
       meta,
       social,
-      navigation, showNewsletter,
+      navigation,
+      showNewsletter,
       legal,
       classes,
       attributes,

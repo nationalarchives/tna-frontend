@@ -234,4 +234,35 @@
     padding-top: 0;
     padding-bottom: 2rem;
   }
+
+  @include colour.on-high-contrast {
+    &__social {
+      &-item {
+        &-link {
+          background-color: colour.brand-colour("black");
+
+          outline: 1px transparent solid;
+          @include colour.colour-outline("keyline-dark");
+
+          &:hover {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+
+    &__navigation {
+      &-block {
+        &-items {
+          @include colour.colour-border("keyline-dark", 0.25rem, solid, top);
+        }
+      }
+    }
+
+    &__mailing-list {
+      background-color: transparent;
+
+      @include colour.colour-border("keyline-dark", 1px, solid);
+    }
+  }
 }

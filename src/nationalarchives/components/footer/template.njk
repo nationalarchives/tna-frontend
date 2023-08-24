@@ -11,12 +11,14 @@
       </svg>
       <h2 class="tna-heading tna-heading--l tna-footer__title">The National Archives</h2>
       <address class="tna-footer__address">
-        Kew, Richmond TW9 4DU
+        Kew, Richmond<br />
+        TW9 4DU
       </address>
-      <p class="tna-footer__meta">
-        Open today<br>
-        09:00&mdash;19:00
-      </p>
+      {%- if params.meta -%}
+      <div class="tna-footer__meta">
+        {{ params.meta | safe }}
+      </div>
+      {%- endif -%}
       {%- if params.social -%}
         <nav class="tna-footer__social" aria-label="Social links">
           <ul class="tna-ul tna-ul--plain tna-footer__social-items">
@@ -36,19 +38,7 @@
         </nav>
       {%- endif -%}
     </div>
-    <div class="tna-column tna-column--width-1-4 tna-column--width-1-2-medium tna-column--width-1-2-small tna-column--full-tiny tna-column--order-3">
-      <div class="tna-footer__mailing-list">
-        <h3 class="tna-footer__navigation-block-heading tna-heading tna-heading--m">
-          Join the National Archives' mailing list
-        </h3>
-        <p>
-          Subscribe for regular news, updates and priority booking for events.
-        </p>
-        <a href="#" class="tna-button tna-button--secondary" role="button">
-          Button
-        </a>
-      </div>
-    </div>
+    {%- if params.showNewsletter -%}
     <div class="tna-footer__navigation tna-column tna-column--width-1-2 tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-2 tna-column--order-4-medium tna-column--order-4-small tna-columns tna-columns--2 tna-columns--1-tiny">
       {%- for group in params.navigation -%}
       <nav class="tna-footer__navigation-block tna-columns__block" aria-label="{{ group.title }}">
@@ -58,45 +48,51 @@
         <ul class="tna-footer__navigation-block-items tna-ul tna-ul--plain">
         {%- for item in group.items -%}
           <li class="tna-footer__navigation-block-item">
-            <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>{{ item.text }}</a>
+            <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
+              {{ item.text }}
+            </a>
           </li>
         {%- endfor -%}
         </ul>
       </nav>
       {%- endfor -%}
     </div>
+    {%- endif -%}
+    {%- if params.showNewsletter -%}
+    <div class="tna-column tna-column--width-1-4 tna-column--width-1-2-medium tna-column--width-1-2-small tna-column--full-tiny tna-column--order-3">
+      <div class="tna-footer__mailing-list">
+        <h3 class="tna-footer__navigation-block-heading tna-heading tna-heading--m">
+          Join the National Archives' mailing list
+        </h3>
+        <p>
+          Subscribe for regular news, updates and priority booking for events.
+        </p>
+        <a href="#" class="tna-button tna-button--secondary" role="button">
+          Subscribe
+        </a>
+      </div>
+    </div>
+    {%- endif -%}
   </div>
   <div class="tna-container">
+    {%- if params.legal -%}
     <nav class="tna-footer__legal tna-column tna-column--full" aria-label="General site links">
       <ul class="tna-footer__legal-items tna-ul tna-ul--plain">
+        {%- for item in params.legal -%}
         <li class="tna-footer__legal-item">
-          <a href="#" class="tna-footer__legal-item-link">
-            Accessibility statement
+          <a href="{{ item.href }}" class="tna-footer__legal-item-link" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+            {{ item.text }}
           </a>
         </li>
-        <li class="tna-footer__legal-item">
-          <a href="#" class="tna-footer__legal-item-link">
-            Freedom of information
-          </a>
-        </li>
-        <li class="tna-footer__legal-item">
-          <a href="#" class="tna-footer__legal-item-link">
-            Terms and condidtions
-          </a>
-        </li>
-        <li class="tna-footer__legal-item">
-          <a href="#" class="tna-footer__legal-item-link">
-            Privacy policy
-          </a>
-        </li>
-        <li class="tna-footer__legal-item">
-          <a href="#" class="tna-footer__legal-item-link">
-            Cookies
-          </a>
-        </li>
+        {%- endfor -%}
       </ul>
-      <hr>
+      <hr />
     </nav>
+    {%- else -%}
+    <div class="tna-column--full">
+      <hr />
+    </div>
+    {%- endif -%}
   </div>
   <div class="tna-container tna-footer__licence">
       <div class="tna-column tna-column--full-tiny">

@@ -2,10 +2,11 @@ import Footer from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  title: { control: "text" },
-  address: { control: "text" },
-  navigation: { control: "object" },
+  meta: { control: "text" },
   social: { control: "object" },
+  navigation: { control: "object" },
+  showNewsletter: { control: "boolean" },
+  legal: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -21,20 +22,13 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  title,
-  address,
-  navigation,
-  social,
-  classes,
-  attributes,
-}) =>
+const Template = ({ meta, social, navigation, showNewsletter, legal, classes, attributes }) =>
   Footer({
     params: {
-      title,
-      address,
-      navigation,
+      meta,
       social,
+      navigation, showNewsletter,
+      legal,
       classes,
       attributes,
     },
@@ -42,66 +36,88 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  title: "The National Archives",
-  address: "Kew, Richmond TW9 4DU",
+  meta: "<p>Open today<br />09:00&mdash;19:00</p>",
+  social: [
+    {
+      text: "Twitter",
+      href: "#",
+      image: "./images/footer/twitter.svg",
+    },
+    {
+      text: "YouTube",
+      href: "#",
+      image: "./images/footer/youtube.svg",
+    },
+    {
+      text: "Facebook",
+      href: "#",
+      image: "./images/footer/facebook.svg",
+    },
+    {
+      text: "Flickr",
+      href: "#",
+      image: "./images/footer/flickr.svg",
+    },
+    {
+      text: "Instagram",
+      href: "#",
+      image: "./images/footer/instagram.svg",
+    },
+    {
+      text: "RSS",
+      href: "#",
+      image: "./images/footer/rss.svg",
+    },
+  ],
   navigation: [
     {
-      title: "Find out more",
+      title: "About us",
       items: [
+        {
+          text: "Our role",
+          href: "#",
+        },
+        {
+          text: "Our history",
+          href: "#",
+        },
+        {
+          text: "Our collection",
+          href: "#",
+        },
+        {
+          text: "Our people",
+          href: "#",
+        },
+        {
+          text: "How we are run",
+          href: "#",
+        },
+        {
+          text: "Our research amd academic collaboration",
+          href: "#",
+        },
+        {
+          text: "News",
+          href: "#",
+        },
         {
           text: "Contact us",
           href: "#",
         },
         {
-          text: "Press room",
+          text: "Jobs & careers",
           href: "#",
         },
         {
-          text: "Jobs and careers",
-          href: "#",
-        },
-        {
-          text: "Friends of The National Archives",
+          text: "Get involved",
           href: "#",
         },
       ],
     },
     {
-      title: "Site help",
+      title: "Our websites help",
       items: [
-        {
-          text: "Help",
-          href: "#",
-        },
-        {
-          text: "Website A-Z index",
-          href: "#",
-        },
-        {
-          text: "Accessibility",
-          href: "#",
-        },
-      ],
-    },
-    {
-      title: "Websites",
-      items: [
-        {
-          text: "Blog",
-          href: "#",
-        },
-        {
-          text: "Podcasts and videos",
-          href: "#",
-        },
-        {
-          text: "Shop",
-          href: "#",
-        },
-        {
-          text: "Image library",
-          href: "#",
-        },
         {
           text: "UK Government Web Archive",
           href: "#",
@@ -121,66 +137,46 @@ Standard.args = {
       ],
     },
     {
-      title: "Legal",
+      title: "Quick links",
       items: [
         {
-          text: "Terms of use",
+          text: "Press room",
           href: "#",
         },
         {
-          text: "Privacy policy",
-          href: "#",
-        },
-        {
-          text: "Cookies",
-          href: "#",
-        },
-        {
-          text: "Freedom of Information",
-          href: "#",
-        },
-        {
-          text: "Transparency",
-          href: "#",
-        },
-        {
-          text: "Our fees",
+          text: "Venue hire",
           href: "#",
         },
       ],
     },
   ],
-  social: [
+  showNewsletter: true,
+  legal: [
     {
-      text: "Twitter",
+      text: "Accessibility statement",
       href: "#",
-      image: "./images/footer/twitter.svg",
     },
     {
-      text: "YouTube",
+      text: "Freedom of information",
       href: "#",
-      image: "./images/footer/youtube.svg",
     },
     {
-      text: "Flickr",
+      text: "Terms and condidtions",
       href: "#",
-      image: "./images/footer/flickr.svg",
     },
     {
-      text: "Facebook",
+      text: "Privacy policy",
       href: "#",
-      image: "./images/footer/facebook.svg",
     },
     {
-      text: "Instagram",
+      text: "Cookies",
       href: "#",
-      image: "./images/footer/instagram.svg",
-    },
-    {
-      text: "RSS",
-      href: "#",
-      image: "./images/footer/rss.svg",
     },
   ],
+  classes: "tna-footer--demo",
+};
+
+export const Minimal = Template.bind({});
+Minimal.args = {
   classes: "tna-footer--demo",
 };

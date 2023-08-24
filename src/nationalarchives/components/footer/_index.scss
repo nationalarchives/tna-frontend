@@ -33,15 +33,18 @@
   }
 
   &__address {
-    margin-bottom: 1rem;
-
     font-style: normal;
   }
 
   &__meta {
+    margin-top: 1rem;
+
+    @include typography.relative-font-size(16);
   }
 
   &__social {
+    margin-top: 2rem;
+
     &-items {
     }
 
@@ -52,8 +55,11 @@
       display: inline-block;
 
       &-link {
+        padding: 0 3px;
+
         display: inline-block;
 
+        border-top: 3px transparent solid;
         border-bottom: 3px transparent solid;
 
         &-image {
@@ -63,7 +69,7 @@
         }
 
         &:hover {
-          @include colour.colour-border("link-hover");
+          @include colour.colour-border("link", 3px, solid, bottom);
         }
       }
     }
@@ -72,6 +78,8 @@
   &__mailing-list {
     margin-top: 2rem;
     padding: 1rem;
+
+    @include typography.relative-font-size(16);
 
     @include colour.colour-border("keyline-dark", 1px, dashed);
 
@@ -117,7 +125,7 @@
 
       text-align: center;
 
-      @include media.on-mobile {
+      @include media.on-tiny {
         text-align: inherit;
       }
     }
@@ -127,7 +135,7 @@
 
       display: inline-block;
 
-      @include media.on-mobile {
+      @include media.on-tiny {
         display: block;
       }
 
@@ -136,13 +144,20 @@
     }
   }
 
+  hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
   &__licence {
+    @include typography.relative-font-size(16);
+
     &.tna-container {
       align-items: center;
     }
 
     .tna-column {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -151,22 +166,11 @@
   }
 
   &__govuk {
-    margin-top: 2rem;
-
     text-align: center;
   }
 
   &__govuk-link {
     display: inline-block;
-
-    &,
-    &:visited {
-      // @include colour.colour-font("font-dark");
-    }
-
-    &:hover {
-      // @include colour.colour-font("link");
-    }
   }
 
   &__govuk-logotype-crown {
@@ -175,10 +179,7 @@
   }
 
   @include media.on-mobile {
-    // padding-top: 1rem;
-
-    // &__social {
-    //   justify-content: center;
-    // }
+    padding-top: 0;
+    padding-bottom: 2rem;
   }
 }

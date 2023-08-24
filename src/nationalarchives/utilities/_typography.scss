@@ -264,4 +264,8 @@ a {
   &__block {
     break-inside: avoid;
   }
+
+  &:has(&__block:only-of-type) {
+    column-count: 1;
+  }
 }

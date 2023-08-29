@@ -84,7 +84,7 @@
   {
     "name": "body",
     "type": "string",
-    "required": false,
+    "required": true,
     "description": ""
   },
   {

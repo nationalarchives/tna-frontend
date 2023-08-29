@@ -7,6 +7,7 @@
 
   font-weight: 700;
   text-decoration: none;
+  text-align: center;
 
   @include colour.colour-background("button-primary-background");
 
@@ -52,5 +53,21 @@
 
       @include colour.colour-background("button-secondary-hover-background");
     }
+  }
+
+  &-group {
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-group & {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
   }
 }

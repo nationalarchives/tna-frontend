@@ -47,3 +47,31 @@ Secondary.args = {
   secondary: true,
   classes: "tna-button--demo",
 };
+
+const GroupTemplate = ({ buttons }) =>
+  `<div class="tna-button-group">
+    ${buttons.map((button) => Template(button)).join("")}
+</div>`;
+
+export const Group = GroupTemplate.bind({});
+Group.args = {
+  buttons: [
+    {
+      text: "Button 1",
+      href: "#",
+      classes: "tna-button--demo",
+    },
+    {
+      text: "Button 2",
+      href: "#",
+      secondary: true,
+      classes: "tna-button--demo",
+    },
+    {
+      text: "Button 3",
+      href: "#",
+      secondary: true,
+      classes: "tna-button--demo",
+    },
+  ],
+};

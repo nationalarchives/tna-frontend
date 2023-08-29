@@ -140,8 +140,10 @@ const Template = ({ theme, accent }) => {
             <li>Beta</li>
             <li>Gamma</li>
           </ul>
-          <a href="#" class="tna-button">Primary button</a>
-          <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
+          <div class="tna-button-group">
+            <a href="#" class="tna-button">Primary button</a>
+            <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
+          </div>
           <h1 class="tna-heading tna-heading--xl">
             This is a heading (XL)
           </h1>

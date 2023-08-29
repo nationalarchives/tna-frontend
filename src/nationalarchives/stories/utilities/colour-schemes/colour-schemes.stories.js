@@ -293,6 +293,7 @@ const Template = ({ theme, accent }) => {
           })}
         </div>
       </div>
+      <hr>
       <div class="tna-background--accent-light">
         ${IndexGrid({
           params: {

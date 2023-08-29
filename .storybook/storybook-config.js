@@ -12,9 +12,6 @@ const enableRulesByTag = (tags = []) => {
 const checkWCAG21AAA = false;
 export const a11yConfig = {
   detailedReport: true,
-  detailedReportOptions: {
-    html: true,
-  },
   rules: enableRulesByTag([
     "wcag2a",
     "wcag21a",
@@ -22,4 +19,11 @@ export const a11yConfig = {
     "wcag21aa",
     ...(checkWCAG21AAA ? ["wcag2aaa", "wcag21aaa"] : []),
   ]),
+  axeOptions: {
+    selectors: true,
+    elementRef: true,
+    xpath: true,
+    performanceTimer: true,
+    frameWaitTime: 15000,
+  },
 };

@@ -101,7 +101,8 @@ $colour-palette-dark: map.merge(
     "contrast-background": #111,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
-    "accent-background-light": #111, // Same as --contrast-background
+    "accent-background-light": #111,
+    // --accent-background-light is the same as --contrast-background on dark themes
   )
 );
 

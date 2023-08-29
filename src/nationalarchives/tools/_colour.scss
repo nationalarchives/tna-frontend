@@ -30,6 +30,7 @@
     --#{$name}: #{$value};
   }
 }
+
 @mixin accent-css-vars($colour) {
   @if $colour == "yellow" {
     --accent: #{brand-colour("yellow")};

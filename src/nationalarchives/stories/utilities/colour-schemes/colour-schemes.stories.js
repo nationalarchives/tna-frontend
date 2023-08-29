@@ -20,6 +20,10 @@ const argTypes = {
       "dark high-contrast",
     ],
   },
+  accent: {
+    control: "radio",
+    options: ["none", "black", "yellow", "pink", "orange", "green", "blue"],
+  },
 };
 
 export default {
@@ -27,7 +31,7 @@ export default {
   argTypes,
 };
 
-const Template = ({ theme }) => {
+const Template = ({ theme, accent }) => {
   return `<div class="tna-template ${
     theme === "system"
       ? "tna-template--system-theme"
@@ -39,6 +43,20 @@ const Template = ({ theme }) => {
       ? "tna-template--light-theme tna-template--high-contrast-theme"
       : theme === "dark high-contrast"
       ? "tna-template--dark-theme tna-template--high-contrast-theme"
+      : ""
+  } ${
+    accent === "black"
+      ? "tna-template--black-accent"
+      : accent === "yellow"
+      ? "tna-template--yellow-accent"
+      : accent === "pink"
+      ? "tna-template--pink-accent"
+      : accent === "orange"
+      ? "tna-template--orange-accent"
+      : accent === "green"
+      ? "tna-template--green-accent"
+      : accent === "blue"
+      ? "tna-template--blue-accent"
       : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
@@ -124,17 +142,39 @@ const Template = ({ theme }) => {
           </ul>
           <a href="#" class="tna-button">Primary button</a>
           <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
+          <h1 class="tna-heading tna-heading--xl">
+            This is a heading (XL)
+          </h1>
+          <h2 class="tna-heading tna-heading--l">
+            This is a heading (L)
+          </h2>
+          <h3 class="tna-heading tna-heading--m">
+            This is a heading (M)
+          </h3>
+          <p class="tna-scene-setter">
+            We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.
+          </p>
+          <blockquote class="tna-blockquote">
+            <div class="tna-blockquote__quote">
+              <p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>
+            </div>
+            <p class="tna-blockquote__author">Douglas Adams, Mostly Harmless</p>
+          </blockquote>
+          <h2 class="tna-heading">
+            <a href="#">Reaerching with The National Archives</a>
+          </h2>
+          <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
         </div>
       </div>
       <hr>
       <div class="tna-container">
         <div class="tna-column tna-column--full">
           <p class="tna-!--no-margin-bottom">Lorem ipsum</p>
-          <p class="tna-!--no-margin-bottom tna-!__padding-top--xs">Lorem ipsum</p>
-          <p class="tna-!--no-margin-bottom tna-!__padding-top--s">Lorem ipsum</p>
-          <p class="tna-!--no-margin-bottom tna-!__padding-top--m">Lorem ipsum</p>
-          <p class="tna-!--no-margin-bottom tna-!__padding-top--l">Lorem ipsum</p>
-          <p class="tna-!--no-margin-bottom tna-!__padding-top--xl">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!--padding-top-xs">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!--padding-top-s">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!--padding-top-m">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!--padding-top-l">Lorem ipsum</p>
+          <p class="tna-!--no-margin-bottom tna-!--padding-top-xl">Lorem ipsum</p>
         </div>
       </div>
       <hr>
@@ -253,37 +293,70 @@ const Template = ({ theme }) => {
           })}
         </div>
       </div>
-      <hr>
-      ${IndexGrid({
-        params: {
-          heading: "My dogs",
-          items: Array(12)
-            .fill({
-              ...{
-                href: "#",
-                src: "https://picsum.photos/id/237/800/600",
-                alt: "Photo of a puppy",
-                width: "800",
-                height: "600",
-                title: "Cat",
-                subtitle: "4 photos",
-              },
-            })
-            .map((item, index) => {
-              const pseudoRandom = ((index * 29) % 8) + 1;
-              return {
-                ...item,
-                href: `#/category-${index}`,
-                title: `Category #${index + 101}`,
-                subtitle: `${pseudoRandom} photos`,
-              };
-            }),
-          columns: 4,
-          columnsMedium: 3,
-          columnsSmall: 2,
-          columnsTiny: 1,
-        },
-      })}
+      <div class="tna-background--accent-light">
+        ${IndexGrid({
+          params: {
+            heading: "My dogs",
+            items: Array(12)
+              .fill({
+                ...{
+                  href: "#",
+                  src: "https://picsum.photos/id/237/800/600",
+                  alt: "Photo of a puppy",
+                  width: "800",
+                  height: "600",
+                  title: "Cat",
+                  subtitle: "4 photos",
+                },
+              })
+              .map((item, index) => {
+                const pseudoRandom = ((index * 29) % 8) + 1;
+                return {
+                  ...item,
+                  href: `#/category-${index}`,
+                  title: `Category #${index + 101}`,
+                  subtitle: `${pseudoRandom} photos`,
+                };
+              }),
+            columns: 4,
+            columnsMedium: 3,
+            columnsSmall: 2,
+            columnsTiny: 1,
+          },
+        })}
+      </div>
+      <div class="tna-background--accent">
+        ${IndexGrid({
+          params: {
+            heading: "My dogs",
+            items: Array(12)
+              .fill({
+                ...{
+                  href: "#",
+                  src: "https://picsum.photos/id/237/800/600",
+                  alt: "Photo of a puppy",
+                  width: "800",
+                  height: "600",
+                  title: "Cat",
+                  subtitle: "4 photos",
+                },
+              })
+              .map((item, index) => {
+                const pseudoRandom = ((index * 29) % 8) + 1;
+                return {
+                  ...item,
+                  href: `#/category-${index}`,
+                  title: `Category #${index + 101}`,
+                  subtitle: `${pseudoRandom} photos`,
+                };
+              }),
+            columns: 4,
+            columnsMedium: 3,
+            columnsSmall: 2,
+            columnsTiny: 1,
+          },
+        })}
+      </div>
     </main>
     ${Footer({})}
   </div>
@@ -294,24 +367,29 @@ export const System = Template.bind({});
 // System.parameters = { options: { showPanel: false } };
 System.args = {
   theme: "system",
+  accent: "none",
 };
 
 export const Light = Template.bind({});
 Light.args = {
   theme: "light",
+  accent: "none",
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   theme: "dark",
+  accent: "none",
 };
 
 export const LightHighContrast = Template.bind({});
 LightHighContrast.args = {
   theme: "light high-contrast",
+  accent: "none",
 };
 
 export const DarkHighContrast = Template.bind({});
 DarkHighContrast.args = {
   theme: "dark high-contrast",
+  accent: "none",
 };

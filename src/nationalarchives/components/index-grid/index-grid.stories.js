@@ -52,6 +52,7 @@ const exampleItem = {
   alt: "Photo of a puppy",
   width: "800",
   height: "600",
+  label: "Time period",
   title: "Cat",
   subtitle: "4 photos",
 };

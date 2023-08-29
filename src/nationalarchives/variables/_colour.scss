@@ -29,9 +29,6 @@ $colour-palette-brand: (
 $dark-grey: #26262a;
 $base-font: #343338;
 
-$-accent-colour-default: map.get($colour-palette-brand, "yellow");
-$-accent-colour-default-dark: $-accent-colour-default;
-
 /*
 =========================================
 LIGHT THEME (DEFAULT)
@@ -48,7 +45,6 @@ $colour-palette-default: (
   "focus-outline": map.get($colour-palette-brand, "blue"),
   "keyline": #ccc,
   "keyline-dark": $dark-grey,
-  "accent-default": $-accent-colour-default,
   "button-primary-text": map.get($colour-palette-brand, "white"),
   "button-primary-background": map.get($colour-palette-brand, "black"),
   "button-primary-hover-text": map.get($colour-palette-brand, "black"),
@@ -65,6 +61,19 @@ $colour-palette-default: (
   "contrast-link-visited": #b9f,
   "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
   "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
+  "accent-default": map.get($colour-palette-brand, "black"),
+  "accent-background-default": map.get($colour-palette-brand, "black"),
+  "accent-background-light-default":
+    map.get($colour-palette-brand, "light-grey"),
+  "accent-font-base-default": map.get($colour-palette-brand, "white"),
+  "accent-font-dark-default": map.get($colour-palette-brand, "white"),
+  "accent-font-light-default":
+    rgba(map.get($colour-palette-brand, "white"), 0.7),
+  "accent-link-default": map.get($colour-palette-brand, "white"),
+  "accent-link-visited-default": #b9f,
+  "accent-keyline-default": rgba(map.get($colour-palette-brand, "white"), 0.5),
+  "accent-keyline-dark-default":
+    rgba(map.get($colour-palette-brand, "white"), 0.8),
 );
 
 /*
@@ -83,10 +92,10 @@ $colour-palette-dark: map.merge(
     "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
     "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
     "keyline-dark": map.get($colour-palette-brand, "white"),
-    "accent-default": $-accent-colour-default-dark,
     "contrast-background": #111,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
+    "accent-background-light": $dark-grey,
   )
 );
 

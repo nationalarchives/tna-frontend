@@ -9,7 +9,7 @@ const argTypes = {
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
-  featured: { control: "boolean" },
+  horizontal: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -34,7 +34,7 @@ const Template = ({
   body,
   text,
   actions,
-  featured,
+  horizontal,
   htmlElement,
   classes,
   attributes,
@@ -48,7 +48,7 @@ const Template = ({
       body,
       text,
       actions,
-      featured,
+      horizontal,
       htmlElement,
       classes,
       attributes,
@@ -83,8 +83,8 @@ Standard.args = {
   classes: "tna-card--demo",
 };
 
-export const Featured = Template.bind({});
-Featured.args = {
+export const Horizontal = Template.bind({});
+Horizontal.args = {
   heading: {
     supertitle: "Card supertitle",
     title: "Card title",
@@ -107,7 +107,7 @@ Featured.args = {
       title: "Go and do the action",
     },
   ],
-  featured: true,
+  horizontal: true,
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -120,7 +120,7 @@ const GridTemplate = ({
   body,
   text,
   actions,
-  featured,
+  horizontal,
   htmlElement,
   classes,
   attributes,
@@ -138,7 +138,7 @@ const GridTemplate = ({
               body,
               text,
               actions,
-              featured,
+              horizontal,
               htmlElement,
               classes,
               attributes,

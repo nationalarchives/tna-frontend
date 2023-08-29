@@ -18,6 +18,25 @@ Paragraph.args = {
   ],
 };
 
+const HeadingLinkTemplate = ({ text, href }) =>
+  `<h2 class="tna-heading">
+    <a href="${href}">${text}</a>
+  </h2>`;
+export const HeadingLink = HeadingLinkTemplate.bind({});
+HeadingLink.args = {
+  text: "Reaerching with The National Archives",
+  href: "#",
+};
+
+const SceneSetterTemplate = ({ text, href }) =>
+  `<p class="tna-scene-setter">
+    ${text}
+  </p>`;
+export const SceneSetter = SceneSetterTemplate.bind({});
+SceneSetter.args = {
+  text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
+};
+
 const BlockquoteTemplate = ({
   html,
   author,
@@ -26,7 +45,7 @@ const BlockquoteTemplate = ({
     ${html}
   </div>
   <p class="tna-blockquote__author">${author}</p>
-</p>`;
+</blockquote>`;
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.args = {
   html: "<p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>",

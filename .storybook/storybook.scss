@@ -115,12 +115,12 @@
 .tna-card--demo {
   max-width: 360px;
 
-  &.tna-card--featured {
-    max-width: none;
+  &.tna-card--horizontal {
+    // max-width: none;
   }
 }
 
-.tna-card--featured {
+.tna-card--horizontal {
   max-width: 800px;
 }
 

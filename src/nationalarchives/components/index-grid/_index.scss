@@ -6,7 +6,8 @@
   }
 
   &__items {
-    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-top: 2rem;
 
     list-style: none;
   }
@@ -20,6 +21,8 @@
 
     display: flex;
     flex-direction: column;
+
+    position: relative;
 
     @include colour.invert;
     text-decoration: none;
@@ -40,6 +43,12 @@
     padding: 1rem;
 
     flex: 1;
+  }
+
+  &__item-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
   }
 
   &__item-title {

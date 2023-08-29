@@ -62,6 +62,12 @@
         "description": ""
       },
       {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "title",
         "type": "string",
         "required": true,

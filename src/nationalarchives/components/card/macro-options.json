@@ -24,6 +24,12 @@
         "description": ""
       },
       {
+        "name": "size",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "singleSentence",
         "type": "boolean",
         "required": false,
@@ -114,7 +120,7 @@
     ]
   },
   {
-    "name": "featured",
+    "name": "horizontal",
     "type": "boolean",
     "required": false,
     "description": ""

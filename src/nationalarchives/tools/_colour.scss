@@ -93,12 +93,7 @@
 
 @mixin colour-background($colour, $important: false) {
   background-color: map.get(colour.$colour-palette-default, $colour);
-  // @if $colour == "accent-background" or $colour == "accent-background-light" {
-  //   background-color: var(--#{$colour}, var(--#{$colour}-default))
-  //     if($important, !important, null);
-  // } @else {
   background-color: var(--#{$colour}) if($important, !important, null);
-  // }
 }
 
 @mixin colour-border(

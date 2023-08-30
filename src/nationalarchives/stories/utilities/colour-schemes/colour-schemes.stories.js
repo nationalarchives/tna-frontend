@@ -142,7 +142,7 @@ const Template = ({ theme, accent }) => {
           </ul>
           <div class="tna-button-group">
             <a href="#" class="tna-button">Primary button</a>
-            <a href="#" class="tna-button tna-button--secondary">Secondary button</a>
+            <a href="#" class="tna-button tna-button--accent">Accent button</a>
           </div>
           <h1 class="tna-heading tna-heading--xl">
             This is a heading (XL)
@@ -327,6 +327,14 @@ const Template = ({ theme, accent }) => {
             columnsTiny: 1,
           },
         })}
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            <div class="tna-button-group">
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="tna-background--accent">
         ${IndexGrid({
@@ -359,6 +367,13 @@ const Template = ({ theme, accent }) => {
             columnsTiny: 1,
           },
         })}
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            <div class="tna-button-group">
+              <a href="#" class="tna-button">Primary button</a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     ${Footer({})}

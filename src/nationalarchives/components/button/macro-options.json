@@ -18,7 +18,7 @@
     "description": ""
   },
   {
-    "name": "secondary",
+    "name": "accent",
     "type": "boolean",
     "required": false,
     "description": ""

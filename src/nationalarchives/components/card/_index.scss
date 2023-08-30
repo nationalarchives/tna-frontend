@@ -30,6 +30,9 @@
   }
 
   &__title-link {
+    &::after {
+      display: none !important;
+    }
   }
 
   &__image-container {

@@ -21,6 +21,8 @@ export class Picture {
     this.$transcriptToggle.classList.add(
       "tna-picture__toggle-transcript",
       "tna-button",
+      "tna-button--accent",
+      "tna-button--solid-hover",
     );
     this.$transcriptToggle.setAttribute("aria-controls", uniqueId);
     this.$transcriptToggle.setAttribute("aria-expanded", false);

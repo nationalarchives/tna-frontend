@@ -19,36 +19,6 @@
 
   @include colour.colour-background("page-background");
 
-  // &--black-accent {
-  @include colour.accent-css-vars("black");
-  accent-color: var(--accent);
-  // }
-
-  &--yellow-accent {
-    @include colour.accent-css-vars("yellow");
-    accent-color: var(--accent);
-  }
-
-  &--pink-accent {
-    @include colour.accent-css-vars("pink");
-    accent-color: var(--accent);
-  }
-
-  &--orange-accent {
-    @include colour.accent-css-vars("orange");
-    accent-color: var(--accent);
-  }
-
-  &--green-accent {
-    @include colour.accent-css-vars("green");
-    accent-color: var(--accent);
-  }
-
-  &--blue-accent {
-    @include colour.accent-css-vars("blue");
-    accent-color: var(--accent);
-  }
-
   &--system-theme {
     @include colour.colour-css-vars;
 
@@ -87,6 +57,36 @@
     &.tna-template--dark-theme {
       @include colour.colour-css-vars-high-contrast-dark;
     }
+  }
+
+  &--black-accent {
+    @include colour.accent-css-vars("black");
+    accent-color: var(--accent);
+  }
+
+  &--yellow-accent {
+    @include colour.accent-css-vars("yellow");
+    accent-color: var(--accent);
+  }
+
+  &--pink-accent {
+    @include colour.accent-css-vars("pink");
+    accent-color: var(--accent);
+  }
+
+  &--orange-accent {
+    @include colour.accent-css-vars("orange");
+    accent-color: var(--accent);
+  }
+
+  &--green-accent {
+    @include colour.accent-css-vars("green");
+    accent-color: var(--accent);
+  }
+
+  &--blue-accent {
+    @include colour.accent-css-vars("blue");
+    accent-color: var(--accent);
   }
 
   @media (prefers-reduced-motion) {

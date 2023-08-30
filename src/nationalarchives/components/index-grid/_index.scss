@@ -17,6 +17,10 @@
   }
 
   &__item {
+    @include colour.invert;
+
+    @include colour.colour-font("contrast-font-base");
+
     height: 100%;
 
     display: flex;
@@ -24,7 +28,6 @@
 
     position: relative;
 
-    @include colour.invert;
     text-decoration: none;
 
     @include colour.on-high-contrast {

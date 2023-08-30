@@ -27,32 +27,16 @@
   }
 
   &:hover {
-    @include colour.colour-font("button-primary-hover-text");
+    // @include colour.colour-font("button-primary-hover-text");
+    @include colour.colour-font("font-dark");
 
-    @include colour.colour-background("button-primary-hover-background");
+    // @include colour.colour-background("button-primary-hover-background");
+    background: transparent;
 
     transition:
       color 50ms,
       background-color 50ms,
       border-color 50ms;
-  }
-
-  &--secondary {
-    @include colour.colour-background("button-secondary-background");
-
-    @include colour.colour-border("button-secondary-background");
-
-    &,
-    &:link,
-    &:visited {
-      @include colour.colour-font("button-secondary-text");
-    }
-
-    &:hover {
-      @include colour.colour-font("button-secondary-hover-text");
-
-      @include colour.colour-background("button-secondary-hover-background");
-    }
   }
 
   &-group {
@@ -69,5 +53,29 @@
   &-group & {
     margin-right: 1rem;
     margin-bottom: 1rem;
+  }
+
+  &--accent {
+    @include colour.colour-background("button-accent-background");
+
+    @include colour.colour-border("button-accent-background");
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("button-accent-text");
+    }
+
+    &:hover {
+      @include colour.colour-font("font-dark");
+    }
+  }
+
+  &--solid-hover,
+  .tna-background--accent &,
+  .tna-background--accent-light & {
+    &:hover {
+      @include colour.colour-background("page-background");
+    }
   }
 }

@@ -161,7 +161,10 @@ const Template = ({ theme, accent }) => {
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
-          <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
+          <p class="tna-p">This is some body text <a href="#">link</a>.</p>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p class="tna-p">Donec ac tellus in dui rutrum maximus. Aliquam vel euismod eros. Integer ut magna velit. Fusce sed dui sit amet metus eleifend dictum quis vitae mi. Aenean sagittis euismod purus, in accumsan metus venenatis nec. Nullam nec velit felis. Sed nec felis eu nisl varius dictum eu quis nisl.</p>
+          <p class="tna-p">Donec dapibus est arcu, vel pellentesque risus pellentesque eget.</p>
           <ul class="tna-ul">
             <li>Alpha</li>
             <li>Beta</li>

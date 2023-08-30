@@ -3,11 +3,16 @@
 {%- if params.horizontal -%}
   {%- set containerClasses = containerClasses.concat('tna-card--horizontal') -%}
 {%- endif -%}
+{%- if params.style == "boxed" -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--contrast') -%}
+{%- elseif params.style == "accent" -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--accent') -%}
+{%- endif -%}
 <{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" data-module="tna-card" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
   {%- if params.heading.supertitle -%}
     {%- if params.heading.singleSentence -%}
-      <hgroup class="tna-card__heading tna-hgroup tna-hgroup--{{ params.heading.size or 'm' }}">
+      <hgroup class="tna-card__heading tna-hgroup tna-hgroup--{{ params.heading.size or 'l' }}">
         <h{{ params.heading.level }} class="tna-card__title tna-hgroup__title">
           <span class="tna-card__supertitle tna-hgroup__supertitle">{{ params.heading.supertitle }}</span>
         {%- if params.href -%}
@@ -18,7 +23,7 @@
         </h{{ params.heading.level }}>
       </hgroup>
     {%- else -%}
-      <hgroup class="tna-card__heading tna-hgroup tna-hgroup--{{ params.heading.size or 'm' }}">
+      <hgroup class="tna-card__heading tna-hgroup tna-hgroup--{{ params.heading.size or 'l' }}">
         <p class="tna-card__supertitle tna-hgroup__supertitle">{{ params.heading.supertitle }}</p>
         <h{{ params.heading.level }} class="tna-card__title tna-hgroup__title">
         {%- if params.href -%}
@@ -30,7 +35,7 @@
       </hgroup>
     {%- endif -%}
   {%- else -%}
-    <h{{ params.heading.level }} class="tna-card__title tna-heading tna-heading--{{ params.heading.size or 'm' }}">
+    <h{{ params.heading.level }} class="tna-card__title tna-heading tna-heading--{{ params.heading.size or 'l' }}">
     {%- if params.href -%}
       <a href="{{ params.href }}" class="tna-card__title-link">{{ params.heading.title }}</a>
     {%- else -%}

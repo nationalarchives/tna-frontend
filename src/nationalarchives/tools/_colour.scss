@@ -166,6 +166,7 @@
   --keyline-dark: var(--contrast-keyline-dark);
 
   @include colour-background("contrast-background");
+
   @include colour-font("font-base");
 }
 
@@ -184,6 +185,7 @@
     --keyline-dark: var(--contrast-keyline-dark);
 
     @include colour-background("contrast-background");
+
     @include colour-font("font-base");
   }
 }
@@ -236,7 +238,10 @@
   --link-visited: var(--accent-link-visited, var(--accent-link-visited));
   --keyline: var(--accent-keyline, var(--accent-keyline));
   --keyline-dark: var(--accent-keyline-dark, var(--accent-keyline-dark));
+
   @include colour-background("accent-background");
+
+  @include colour-font("font-base");
 }
 
 @mixin accent {

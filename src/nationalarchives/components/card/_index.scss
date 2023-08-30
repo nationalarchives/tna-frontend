@@ -76,32 +76,34 @@
   &__action {
   }
 
+  &--contrast,
+  &--accent {
+    .tna-card__inner {
+      padding-bottom: 1rem;
+    }
+
+    .tna-card__heading,
+    .tna-card__body,
+    .tna-card__actions {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &--contrast {
+    @include colour.invert;
+  }
+
+  &--accent {
+    @include colour.accent;
+  }
+
+  &--accent &__supertitle {
+    @include colour.invert;
+  }
+
   &--horizontal {
-    // @include colour.accent;
-
     position: relative;
-
-    // @include colour.colour-font("font-base");
-
-    // @include colour.colour-background("accent");
-
-    .tna-card__heading {
-      // padding-bottom: 2rem;
-
-      // @include colour.colour-border("keyline-dark", 2px, solid, bottom);
-    }
-
-    .tna-card__supertitle {
-      // color: inherit;
-    }
-
-    .tna-card__title {
-      // @include typography.heading-font;
-    }
-
-    .tna-card__title-link {
-      // @include colour.colour-font("font-dark");
-    }
 
     @include media.on-larger-than-mobile {
       .tna-card__inner {
@@ -118,6 +120,13 @@
 
         position: absolute;
         inset: 0 50% 0 0;
+      }
+
+      .tna-card__heading,
+      .tna-card__body,
+      .tna-card__actions {
+        margin-right: 0;
+        margin-left: 0;
       }
     }
 
@@ -149,8 +158,8 @@
     .tna-card__heading,
     .tna-card__body,
     .tna-card__actions {
-      margin-right: 2rem;
-      margin-left: 2rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
     }
   }
 }

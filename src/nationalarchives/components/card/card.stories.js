@@ -10,6 +10,7 @@ const argTypes = {
   text: { control: "text" },
   actions: { control: "object" },
   horizontal: { control: "boolean" },
+  style: { control: "text" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -35,6 +36,7 @@ const Template = ({
   text,
   actions,
   horizontal,
+  style,
   htmlElement,
   classes,
   attributes,
@@ -49,6 +51,7 @@ const Template = ({
       text,
       actions,
       horizontal,
+      style,
       htmlElement,
       classes,
       attributes,
@@ -61,6 +64,7 @@ Standard.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
+    size: "l",
     singleSentence: false,
   },
   href: "#",
@@ -83,12 +87,59 @@ Standard.args = {
   classes: "tna-card--demo",
 };
 
+export const Boxed = Template.bind({});
+Boxed.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "l",
+    singleSentence: false,
+  },
+  href: "#",
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  style: "contrast",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Accent = Template.bind({});
+Accent.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "l",
+    singleSentence: false,
+  },
+  href: "#",
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  style: "accent",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   heading: {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
+    size: "l",
     singleSentence: false,
   },
   href: "#",

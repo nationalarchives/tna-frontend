@@ -20,7 +20,7 @@
   &__item {
     @include colour.invert;
 
-    @include colour.colour-font("contrast-font-base");
+    // @include colour.colour-font("contrast-font-base");
 
     height: 100%;
 
@@ -56,6 +56,7 @@
   }
 
   &__item-title {
+    @include typography.heading-font;
     text-decoration: underline;
 
     .tna-index-grid__item:hover & {
@@ -69,5 +70,6 @@
 
   &__item-subtitle {
     @include colour.colour-font("font-light");
+    @include typography.relative-font-size(16);
   }
 }

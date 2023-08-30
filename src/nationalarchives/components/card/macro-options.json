@@ -126,6 +126,12 @@
     "description": ""
   },
   {
+    "name": "style",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "htmlElement",
     "type": "string",
     "required": false,

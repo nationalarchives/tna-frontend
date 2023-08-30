@@ -48,6 +48,7 @@ $colour-palette-default: (
   "button-primary-hover-text": map.get($colour-palette-brand, "black"),
   "button-primary-hover-background": map.get($colour-palette-brand, "white"),
   "contrast-background": #1e1e1e,
+  // TODO: #343338 ?
   "contrast-font-base": map.get($colour-palette-brand, "white"),
   "contrast-font-dark": map.get($colour-palette-brand, "white"),
   "contrast-font-light": rgba(map.get($colour-palette-brand, "white"), 0.7),

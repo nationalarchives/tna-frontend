@@ -1,4 +1,5 @@
 @use "../../tools/colour";
+@use "../../tools/media";
 
 .tna-message {
   padding: 1rem;
@@ -20,8 +21,15 @@
 
   &__icon {
     margin-right: 1rem;
+
+    flex: 0 0 2.5rem;
+
+    @include media.on-mobile {
+      flex: 0 0 1.5rem;
+    }
   }
 
   &__message {
+    flex: 1;
   }
 }

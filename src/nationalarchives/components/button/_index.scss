@@ -27,6 +27,7 @@
 
   &:hover {
     @include colour.colour-font("button-primary-hover-text");
+    text-decoration: none;
 
     @include colour.colour-background("button-primary-hover-background");
 

@@ -1,100 +1,215 @@
 @use "../../tools/colour";
+@use "../../tools/typography";
 @use "../../tools/media";
 
 .tna-footer {
-  padding-top: 3rem;
+  padding-top: 1rem;
   padding-bottom: 3rem;
 
   @include colour.invert;
   @include colour.colour-font("contrast-font-base");
 
+  // --link: colour.brand-colour("white");
+
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline", 1px, solid, top);
   }
 
-  &__link {
-    &,
-    &:visited {
-      color: inherit;
+  .tna-logo {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    &__background {
+      fill: transparent;
     }
 
-    &:hover {
-      @include colour.colour-font("link");
+    &__foreground {
+      fill: currentColor;
     }
-  }
-
-  &__top {
-    margin-bottom: 3rem;
-
-    text-align: center;
   }
 
   &__title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   &__address {
     font-style: normal;
   }
 
-  &__navigation {
-    padding-bottom: 3rem;
-  }
+  &__meta {
+    margin-top: 1rem;
 
-  &__navigation-group {
-  }
-
-  &__navigation-group-title {
-  }
-
-  &__navigation-group-items {
-    padding-left: 0;
-
-    list-style: none;
-  }
-
-  &__navigation-group-item {
-    & + & {
-      margin-top: 1rem;
-    }
-  }
-
-  &__navigation-group-item-link {
+    @include typography.relative-font-size(16);
   }
 
   &__social {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 
-    &.tna-container {
-      justify-content: space-evenly;
-      align-items: flex-end;
+    &-items {
+    }
+
+    &-item {
+      margin-right: 1.5rem;
+      margin-bottom: calc(1rem - 3px);
+
+      display: inline-block;
+
+      vertical-align: top;
+
+      &-link {
+        padding: 0 3px;
+
+        display: inline-block;
+
+        border-top: 3px transparent solid;
+        border-bottom: 3px transparent solid;
+
+        &-image {
+        }
+
+        &-text {
+        }
+
+        &:has(#{&}-image) {
+          &:hover {
+            @include colour.colour-border("link", 3px, solid, bottom);
+          }
+        }
+      }
     }
   }
 
-  &__social-item {
-    margin-bottom: 2rem;
+  &__mailing-list {
+    margin-top: 2rem;
+    padding: 1rem;
 
-    text-align: center;
+    @include typography.relative-font-size(16);
+
+    @include colour.colour-border("keyline-dark", 1px, dashed);
+
+    // background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23fff' stroke-width='2' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e") rgba(colour.brand-colour("white"), 0.1);
+    // background-color: rgba(colour.brand-colour("white"), 0.1);
+    background-color: rgba(#fff, 0.1);
   }
 
-  &__social-item-link {
-    display: block;
+  &__navigation {
+    &-block {
+      padding-top: 2rem;
+
+      &-heading {
+      }
+
+      &-items {
+      }
+
+      &-item {
+        padding-top: 0.375rem;
+        padding-bottom: 0.375rem;
+
+        @include colour.colour-border("keyline", 1px, solid, bottom);
+
+        &-link {
+          text-decoration: none;
+
+          &:hover {
+            @include typography.interacted-text-decoration;
+          }
+
+          &-icon {
+            width: 0.825rem;
+            height: 0.825rem;
+            margin-right: 0.125rem;
+            margin-left: 0.5rem;
+
+            display: inline-block;
+
+            position: relative;
+
+            vertical-align: middle;
+
+            border: 1px #fff solid;
+
+            &::before {
+              position: absolute;
+              top: -0.25rem;
+              right: -0.25rem;
+              z-index: 2;
+
+              border: 0.25rem transparent solid;
+              border-top-color: #fff;
+              border-right-color: #fff;
+
+              content: "";
+            }
+
+            &::after {
+              width: 4px;
+              height: 13px;
+
+              position: absolute;
+              top: -0.125rem;
+              right: -0.125rem;
+              z-index: 1;
+
+              background-color: #fff;
+
+              outline: 3px transparent solid;
+              @include colour.colour-outline("contrast-background");
+
+              transform: rotate(45deg) translateX(50%);
+              transform-origin: 100% 0;
+
+              content: "";
+            }
+          }
+        }
+      }
+    }
   }
 
-  &__social-item-link-image {
-    width: 2.25em;
-    margin: 0 auto 0.5rem;
+  &__legal {
+    padding-top: 3rem;
 
-    display: block;
+    @include typography.relative-font-size(16);
+
+    &-items {
+      margin-bottom: 0;
+
+      text-align: center;
+
+      @include media.on-tiny {
+        text-align: inherit;
+      }
+    }
+
+    &-item {
+      padding: 0.5rem;
+
+      display: inline-block;
+
+      @include media.on-tiny {
+        display: block;
+      }
+
+      &-link {
+      }
+    }
+  }
+
+  hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   &__licence {
+    @include typography.relative-font-size(16);
+
     &.tna-container {
       align-items: center;
     }
 
     .tna-column {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -103,22 +218,11 @@
   }
 
   &__govuk {
-    margin-top: 2rem;
-
     text-align: center;
   }
 
   &__govuk-link {
     display: inline-block;
-
-    &,
-    &:visited {
-      @include colour.colour-font("font-dark");
-    }
-
-    &:hover {
-      @include colour.colour-font("link");
-    }
   }
 
   &__govuk-logotype-crown {
@@ -127,10 +231,38 @@
   }
 
   @include media.on-mobile {
-    padding-top: 1rem;
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
 
+  @include colour.on-high-contrast {
     &__social {
-      justify-content: center;
+      &-item {
+        &-link {
+          background-color: colour.brand-colour("black");
+
+          outline: 1px transparent solid;
+          @include colour.colour-outline("keyline-dark");
+
+          &:hover {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+
+    &__navigation {
+      &-block {
+        &-items {
+          @include colour.colour-border("keyline-dark", 0.25rem, solid, top);
+        }
+      }
+    }
+
+    &__mailing-list {
+      background-color: transparent;
+
+      @include colour.colour-border("keyline-dark", 1px, solid);
     }
   }
 }

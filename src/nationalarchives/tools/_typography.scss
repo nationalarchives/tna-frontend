@@ -5,6 +5,11 @@
   font-size: #{math.div($fontSizePx, typography.$base-font-size-px)}rem;
 }
 
+@mixin interacted-text-decoration {
+  text-decoration: underline;
+  text-decoration-thickness: typography.$interactive-text-decoration-thickness;
+}
+
 @mixin main-font-weight {
   font-weight: typography.$font-weight-main;
 }

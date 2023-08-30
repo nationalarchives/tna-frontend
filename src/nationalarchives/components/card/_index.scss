@@ -129,7 +129,10 @@
         margin-left: 0;
       }
     }
+  }
 
+  &--horizontal#{&}--contrast,
+  &--horizontal#{&}--accent {
     @include media.on-mobile {
       .tna-card__inner {
         padding: 0 0 2rem;
@@ -152,14 +155,14 @@
     @include colour.colour-border("keyline-dark", 1px);
 
     .tna-card__inner {
-      padding-bottom: 1rem;
+      // padding-bottom: 1rem;
     }
 
     .tna-card__heading,
     .tna-card__body,
     .tna-card__actions {
-      margin-right: 1rem;
-      margin-left: 1rem;
+      // margin-right: 1rem;
+      // margin-left: 1rem;
     }
   }
 }

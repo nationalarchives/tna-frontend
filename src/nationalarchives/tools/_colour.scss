@@ -194,6 +194,7 @@
   @extend %invert-on-mobile;
 }
 
+// TODO: Only for the header component at the moment - remove on redesign
 @mixin uninvert {
   @include colour-css-vars;
 

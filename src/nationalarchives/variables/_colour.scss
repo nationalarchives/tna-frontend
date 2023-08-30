@@ -86,6 +86,10 @@ $colour-palette-dark: map.merge(
     "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
     "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
     "keyline-dark": map.get($colour-palette-brand, "white"),
+    "button-primary-text": map.get($colour-palette-brand, "black"),
+    "button-primary-background": map.get($colour-palette-brand, "white"),
+    "button-primary-hover-text": map.get($colour-palette-brand, "white"),
+    "button-primary-hover-background": map.get($colour-palette-brand, "black"),
     "contrast-background": #1e1e1e,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
@@ -135,10 +139,6 @@ $colour-palette-high-contrast-dark: map.merge(
     "link": map.get($colour-palette-brand, "white"),
     "link-visited": map.get($colour-palette-brand, "white"),
     "keyline": map.get($colour-palette-brand, "white"),
-    "button-primary-text": map.get($colour-palette-brand, "black"),
-    "button-primary-background": map.get($colour-palette-brand, "white"),
-    "button-primary-hover-text": map.get($colour-palette-brand, "white"),
-    "button-primary-hover-background": map.get($colour-palette-brand, "black"),
     "contrast-background": map.get($colour-palette-brand, "black"),
   )
 );

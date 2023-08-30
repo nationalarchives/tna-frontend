@@ -32,6 +32,33 @@ export default {
 };
 
 const Template = ({ theme, accent }) => {
+  const cardDefaultOptions = {
+    heading: {
+      supertitle: "Card supertitle",
+      title: "Card title",
+      level: 3,
+      size: "m",
+      singleSentence: false,
+    },
+    href: "#",
+    image: {
+      src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+      alt: "The National Archives office",
+      width: 1996,
+      height: 1331,
+    },
+    label: "New",
+    body: "<p>Card body</p>",
+    actions: [
+      {
+        text: "Card action",
+        href: "#",
+        title: "Go and do the action",
+      },
+    ],
+    classes: "tna-card--demo",
+  };
+
   return `<div class="tna-template ${
     theme === "system"
       ? "tna-template--system-theme"
@@ -194,73 +221,17 @@ const Template = ({ theme, accent }) => {
       <div class="tna-container">
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
-            params: {
-              heading: {
-                supertitle: "Card supertitle",
-                title: "Card title",
-                level: 3,
-                size: "m",
-                singleSentence: false,
-              },
-              href: "#",
-              image: {
-                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-                alt: "The National Archives office",
-                width: 1996,
-                height: 1331,
-              },
-              label: "New",
-              body: "<p>Card body</p>",
-              classes: "tna-card--demo",
-            },
+            params: { ...cardDefaultOptions },
           })}
         </div>
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
-            params: {
-              heading: {
-                supertitle: "Card supertitle",
-                title: "Card title",
-                level: 3,
-                size: "m",
-                singleSentence: false,
-              },
-              href: "#",
-              image: {
-                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-                alt: "The National Archives office",
-                width: 1996,
-                height: 1331,
-              },
-              label: "New",
-              body: "<p>Card body</p>",
-              style: "boxed",
-              classes: "tna-card--demo",
-            },
+            params: { ...cardDefaultOptions, style: "boxed" },
           })}
         </div>
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
-            params: {
-              heading: {
-                supertitle: "Card supertitle",
-                title: "Card title",
-                level: 3,
-                size: "m",
-                singleSentence: false,
-              },
-              href: "#",
-              image: {
-                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-                alt: "The National Archives office",
-                width: 1996,
-                height: 1331,
-              },
-              label: "New",
-              body: "<p>Card body</p>",
-              style: "accent",
-              classes: "tna-card--demo",
-            },
+            params: { ...cardDefaultOptions, style: "accent" },
           })}
         </div>
       </div>
@@ -269,22 +240,7 @@ const Template = ({ theme, accent }) => {
         <div class="tna-column tna-column--full">
           ${Card({
             params: {
-              heading: {
-                supertitle: "Card supertitle",
-                title: "Card title",
-                level: 3,
-                size: "m",
-                singleSentence: false,
-              },
-              href: "#",
-              image: {
-                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-                alt: "The National Archives office",
-                width: 1996,
-                height: 1331,
-              },
-              label: "New",
-              body: "<p>Card body</p>",
+              ...cardDefaultOptions,
               horizontal: true,
               classes: "tna-card--demo tna-!--margin-bottom-m",
             },
@@ -293,22 +249,7 @@ const Template = ({ theme, accent }) => {
         <div class="tna-column tna-column--full">
           ${Card({
             params: {
-              heading: {
-                supertitle: "Card supertitle",
-                title: "Card title",
-                level: 3,
-                size: "m",
-                singleSentence: false,
-              },
-              href: "#",
-              image: {
-                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-                alt: "The National Archives office",
-                width: 1996,
-                height: 1331,
-              },
-              label: "New",
-              body: "<p>Card body</p>",
+              ...cardDefaultOptions,
               horizontal: true,
               style: "boxed",
               classes: "tna-card--demo tna-!--margin-bottom-m",
@@ -318,25 +259,9 @@ const Template = ({ theme, accent }) => {
         <div class="tna-column tna-column--full">
           ${Card({
             params: {
-              heading: {
-                supertitle: "Card supertitle",
-                title: "Card title",
-                level: 3,
-                size: "m",
-                singleSentence: false,
-              },
-              href: "#",
-              image: {
-                src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-                alt: "The National Archives office",
-                width: 1996,
-                height: 1331,
-              },
-              label: "New",
-              body: "<p>Card body</p>",
+              ...cardDefaultOptions,
               horizontal: true,
               style: "accent",
-              classes: "tna-card--demo",
             },
           })}
         </div>

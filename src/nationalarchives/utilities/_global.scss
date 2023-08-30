@@ -144,11 +144,11 @@ hr {
 
   border-width: 1px 0 0;
   @include colour.colour-border("keyline");
-  border-style: dashed;
+  border-style: solid;
 
-  @include colour.on-high-contrast {
-    border-style: solid;
-  }
+  // @include colour.on-high-contrast {
+  //   border-style: solid;
+  // }
 }
 
 .tna-background--accent {

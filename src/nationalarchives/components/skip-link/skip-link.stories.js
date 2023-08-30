@@ -18,12 +18,13 @@ export default {
 };
 
 const Template = ({ classes, attributes }) =>
-  `${SkipLink({
+  `<p>To view the skip link component tab to this example, or click inside this example and press tab.</p>
+  ${SkipLink({
     params: {
       classes,
       attributes,
     },
-  })}<p>To view the skip link component tab to this example, or click inside this example and press tab.</p>`;
+  })}`;
 
 export const Standard = Template.bind({});
 Standard.args = {

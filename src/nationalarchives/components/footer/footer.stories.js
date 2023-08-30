@@ -2,10 +2,11 @@ import Footer from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  title: { control: "text" },
-  address: { control: "text" },
-  navigation: { control: "object" },
+  meta: { control: "text" },
   social: { control: "object" },
+  navigation: { control: "object" },
+  showNewsletter: { control: "boolean" },
+  legal: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -22,19 +23,21 @@ export default {
 };
 
 const Template = ({
-  title,
-  address,
-  navigation,
+  meta,
   social,
+  navigation,
+  showNewsletter,
+  legal,
   classes,
   attributes,
 }) =>
   Footer({
     params: {
-      title,
-      address,
-      navigation,
+      meta,
       social,
+      navigation,
+      showNewsletter,
+      legal,
       classes,
       attributes,
     },
@@ -42,114 +45,7 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  title: "The National Archives",
-  address: "Kew, Richmond TW9 4DU",
-  navigation: [
-    {
-      title: "Find out more",
-      items: [
-        {
-          text: "Contact us",
-          href: "#",
-        },
-        {
-          text: "Press room",
-          href: "#",
-        },
-        {
-          text: "Jobs and careers",
-          href: "#",
-        },
-        {
-          text: "Friends of The National Archives",
-          href: "#",
-        },
-      ],
-    },
-    {
-      title: "Site help",
-      items: [
-        {
-          text: "Help",
-          href: "#",
-        },
-        {
-          text: "Website A-Z index",
-          href: "#",
-        },
-        {
-          text: "Accessibility",
-          href: "#",
-        },
-      ],
-    },
-    {
-      title: "Websites",
-      items: [
-        {
-          text: "Blog",
-          href: "#",
-        },
-        {
-          text: "Podcasts and videos",
-          href: "#",
-        },
-        {
-          text: "Shop",
-          href: "#",
-        },
-        {
-          text: "Image library",
-          href: "#",
-        },
-        {
-          text: "UK Government Web Archive",
-          href: "#",
-        },
-        {
-          text: "Legislation.gov.uk",
-          href: "#",
-        },
-        {
-          text: "Find case law",
-          href: "#",
-        },
-        {
-          text: "The Gazette",
-          href: "#",
-        },
-      ],
-    },
-    {
-      title: "Legal",
-      items: [
-        {
-          text: "Terms of use",
-          href: "#",
-        },
-        {
-          text: "Privacy policy",
-          href: "#",
-        },
-        {
-          text: "Cookies",
-          href: "#",
-        },
-        {
-          text: "Freedom of Information",
-          href: "#",
-        },
-        {
-          text: "Transparency",
-          href: "#",
-        },
-        {
-          text: "Our fees",
-          href: "#",
-        },
-      ],
-    },
-  ],
+  meta: "<p>Open today<br />09:00&mdash;19:00</p>",
   social: [
     {
       text: "Twitter",
@@ -162,14 +58,14 @@ Standard.args = {
       image: "./images/footer/youtube.svg",
     },
     {
-      text: "Flickr",
-      href: "#",
-      image: "./images/footer/flickr.svg",
-    },
-    {
       text: "Facebook",
       href: "#",
       image: "./images/footer/facebook.svg",
+    },
+    {
+      text: "Flickr",
+      href: "#",
+      image: "./images/footer/flickr.svg",
     },
     {
       text: "Instagram",
@@ -182,5 +78,118 @@ Standard.args = {
       image: "./images/footer/rss.svg",
     },
   ],
+  navigation: [
+    {
+      title: "About us",
+      items: [
+        {
+          text: "Our role",
+          href: "#",
+        },
+        {
+          text: "Our history",
+          href: "#",
+        },
+        {
+          text: "Our collection",
+          href: "#",
+        },
+        {
+          text: "Our people",
+          href: "#",
+        },
+        {
+          text: "How we are run",
+          href: "#",
+        },
+        {
+          text: "Our research amd academic collaboration",
+          href: "#",
+        },
+        {
+          text: "News",
+          href: "#",
+        },
+        {
+          text: "Contact us",
+          href: "#",
+        },
+        {
+          text: "Jobs & careers",
+          href: "#",
+        },
+        {
+          text: "Get involved",
+          href: "#",
+        },
+      ],
+    },
+    {
+      title: "Our websites help",
+      items: [
+        {
+          text: "UK Government Web Archive",
+          href: "#",
+          newTab: true,
+        },
+        {
+          text: "Legislation.gov.uk",
+          href: "#",
+          newTab: true,
+        },
+        {
+          text: "Find case law",
+          href: "#",
+          newTab: true,
+        },
+        {
+          text: "The Gazette",
+          href: "#",
+          newTab: true,
+        },
+      ],
+    },
+    {
+      title: "Quick links",
+      items: [
+        {
+          text: "Press room",
+          href: "#",
+        },
+        {
+          text: "Venue hire",
+          href: "#",
+        },
+      ],
+    },
+  ],
+  showNewsletter: true,
+  legal: [
+    {
+      text: "Accessibility statement",
+      href: "#",
+    },
+    {
+      text: "Freedom of information",
+      href: "#",
+    },
+    {
+      text: "Terms and condidtions",
+      href: "#",
+    },
+    {
+      text: "Privacy policy",
+      href: "#",
+    },
+    {
+      text: "Cookies",
+      href: "#",
+    },
+  ],
+  classes: "tna-footer--demo",
+};
+
+export const Minimal = Template.bind({});
+Minimal.args = {
   classes: "tna-footer--demo",
 };

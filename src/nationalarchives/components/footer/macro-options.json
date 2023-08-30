@@ -1,15 +1,41 @@
 [
   {
-    "name": "title",
-    "type": "text",
+    "name": "meta",
+    "type": "string",
     "required": false,
     "description": ""
   },
   {
-    "name": "address",
-    "type": "text",
+    "name": "social",
+    "type": "array",
     "required": false,
-    "description": ""
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
   },
   {
     "name": "navigation",
@@ -48,8 +74,8 @@
             "description": ""
           },
           {
-            "name": "image",
-            "type": "string",
+            "name": "newTab",
+            "type": "boolean",
             "required": false,
             "description": ""
           }
@@ -58,7 +84,7 @@
     ]
   },
   {
-    "name": "social",
+    "name": "legal",
     "type": "array",
     "required": false,
     "description": "",

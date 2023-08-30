@@ -51,8 +51,9 @@ $colour-palette-default: (
   "contrast-font-base": map.get($colour-palette-brand, "white"),
   "contrast-font-dark": map.get($colour-palette-brand, "white"),
   "contrast-font-light": rgba(map.get($colour-palette-brand, "white"), 0.7),
-  "contrast-link": map.get($colour-palette-brand, "blue"),
-  "contrast-link-visited": #b9f,
+  "contrast-link": map.get($colour-palette-brand, "white"),
+  // "contrast-link-visited": #b9f, // Don't show visited state on contrasting backgrounds
+  "contrast-link-visited": map.get($colour-palette-brand, "white"),
   "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
   "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
   "accent": map.get($colour-palette-brand, "light-grey"),
@@ -77,7 +78,7 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #222,
+    "page-background": #111,
     "font-base": rgba(map.get($colour-palette-brand, "white"), 0.95),
     "font-dark": map.get($colour-palette-brand, "white"),
     "font-light": rgba(map.get($colour-palette-brand, "white"), 0.5),
@@ -85,11 +86,8 @@ $colour-palette-dark: map.merge(
     "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
     "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
     "keyline-dark": map.get($colour-palette-brand, "white"),
-    "button-primary-text": map.get($colour-palette-brand, "black"),
-    "button-primary-background": map.get($colour-palette-brand, "white"),
-    "button-primary-hover-text": map.get($colour-palette-brand, "white"),
-    "button-primary-hover-background": map.get($colour-palette-brand, "black"),
-    "contrast-background": #111,
+    "accent-default": $-accent-colour-default-dark,
+    "contrast-background": #1e1e1e,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
     // --accent-background-light is the same as --contrast-background on dark themes

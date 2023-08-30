@@ -376,7 +376,151 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
     </main>
-    ${Footer({})}
+    ${Footer({
+      params: {
+        meta: "<p>Open today<br />09:00&mdash;19:00</p>",
+        social: [
+          {
+            text: "Twitter",
+            href: "#",
+            image: "./images/footer/twitter.svg",
+          },
+          {
+            text: "YouTube",
+            href: "#",
+            image: "./images/footer/youtube.svg",
+          },
+          {
+            text: "Facebook",
+            href: "#",
+            image: "./images/footer/facebook.svg",
+          },
+          {
+            text: "Flickr",
+            href: "#",
+            image: "./images/footer/flickr.svg",
+          },
+          {
+            text: "Instagram",
+            href: "#",
+            image: "./images/footer/instagram.svg",
+          },
+          {
+            text: "RSS",
+            href: "#",
+            image: "./images/footer/rss.svg",
+          },
+        ],
+        navigation: [
+          {
+            title: "About us",
+            items: [
+              {
+                text: "Our role",
+                href: "#",
+              },
+              {
+                text: "Our history",
+                href: "#",
+              },
+              {
+                text: "Our collection",
+                href: "#",
+              },
+              {
+                text: "Our people",
+                href: "#",
+              },
+              {
+                text: "How we are run",
+                href: "#",
+              },
+              {
+                text: "Our research amd academic collaboration",
+                href: "#",
+              },
+              {
+                text: "News",
+                href: "#",
+              },
+              {
+                text: "Contact us",
+                href: "#",
+              },
+              {
+                text: "Jobs & careers",
+                href: "#",
+              },
+              {
+                text: "Get involved",
+                href: "#",
+              },
+            ],
+          },
+          {
+            title: "Our websites help",
+            items: [
+              {
+                text: "UK Government Web Archive",
+                href: "#",
+                newTab: true,
+              },
+              {
+                text: "Legislation.gov.uk",
+                href: "#",
+                newTab: true,
+              },
+              {
+                text: "Find case law",
+                href: "#",
+                newTab: true,
+              },
+              {
+                text: "The Gazette",
+                href: "#",
+                newTab: true,
+              },
+            ],
+          },
+          {
+            title: "Quick links",
+            items: [
+              {
+                text: "Press room",
+                href: "#",
+              },
+              {
+                text: "Venue hire",
+                href: "#",
+              },
+            ],
+          },
+        ],
+        showNewsletter: true,
+        legal: [
+          {
+            text: "Accessibility statement",
+            href: "#",
+          },
+          {
+            text: "Freedom of information",
+            href: "#",
+          },
+          {
+            text: "Terms and condidtions",
+            href: "#",
+          },
+          {
+            text: "Privacy policy",
+            href: "#",
+          },
+          {
+            text: "Cookies",
+            href: "#",
+          },
+        ],
+      },
+    })}
   </div>
 </div>`;
 };

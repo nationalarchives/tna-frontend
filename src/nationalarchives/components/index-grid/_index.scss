@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "../../tools/colour";
+@use "../../tools/typography";
 
 .tna-index-grid {
   &__heading {
@@ -61,7 +62,7 @@
       &,
       &:link,
       &:visited {
-        text-decoration-thickness: 3px;
+        @include typography.interacted-text-decoration;
       }
     }
   }

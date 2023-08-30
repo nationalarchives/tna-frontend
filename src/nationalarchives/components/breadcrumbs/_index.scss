@@ -1,5 +1,6 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/typography";
 
 .tna-breadcrumbs {
   padding-top: 1rem;
@@ -94,8 +95,7 @@
 
     &:hover {
       color: inherit;
-      text-decoration: underline;
-      text-decoration-thickness: 3px;
+      @include typography.interacted-text-decoration;
 
       background-color: transparent;
     }

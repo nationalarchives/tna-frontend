@@ -344,8 +344,7 @@
       &,
       &:link,
       &:visited {
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
+        @include typography.interacted-text-decoration;
       }
     }
   }

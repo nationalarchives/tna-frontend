@@ -8,15 +8,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.16-prerelease...HEAD)
 
 ### Added
+
+- Accent colour can be added to the `tna-template` element (e.g. `tna-template--yellow-accent`)
+- Accent buttons `tna-button--accent`
+- Button groups - a wrapper for multiple buttons (`tna-button-group`)
+- Horizontal, contrasting and accent cards (`tna-card--horizontal`, `tna-card--contrast`, `tna-card--accent`)
+- Index grid items can now have tags
+- `tna-section` and `tna-aside` classes added for areas of content
+- `tna-tag` added as supertitles in `<hgroup>` and tags in cards
+- `tna-scene-setter` class added for welcome content
+
 ### Changed
 
 - New footer component implimented
+- `@include colour.invert;` will also set the colour to `font-base`
+- Removed explicit margin from hero component
+- Index grid images are displayed in their original aspect ratio
+- `tna-hgroup` titles should now be wrapped in an element with a `tna-hgroup__title` class
+- Colours tweaked, such as page backgrounds
+- Fallback font for `supria-sans-condensed` is `Arial Narrow`
 
 ### Deprecated
 ### Removed
+
+- Secondary buttons `tna-button--secondary`
+- Featured cards `tna-card--featured`
+- Pattern example
+
 ### Fixed
 
 - Message icon no longer collapses on smaller screens
+- Filters visited state colour
+- Index grid heading was not being output correctly
 
 ### Security
 

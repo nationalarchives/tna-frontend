@@ -34,6 +34,8 @@
 
     padding: 1rem 1.5rem;
 
+    // @include colour.colour-font("font-base");
+
     .tna-template--clicked &:focus {
       outline: none;
     }

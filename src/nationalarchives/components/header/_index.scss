@@ -5,6 +5,43 @@
 @use "../../tools/typography";
 @use "../../tools/media";
 
+// TODO: Only for the header component at the moment - remove on redesign
+@mixin uninvert {
+  @include colour.colour-css-vars;
+
+  .tna-template--system-theme & {
+    @include colour.colour-css-vars;
+
+    @media (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-dark;
+    }
+
+    @media (prefers-contrast: more) {
+      @include colour.colour-css-vars-high-contrast;
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-high-contrast-dark;
+    }
+  }
+
+  .tna-template--light-theme & {
+    @include colour.colour-css-vars;
+  }
+
+  .tna-template--dark-theme & {
+    @include colour.colour-css-vars-dark;
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include colour.colour-css-vars-high-contrast;
+  }
+
+  .tna-template--high-contrast-theme.tna-template--dark-theme & {
+    @include colour.colour-css-vars-high-contrast-dark;
+  }
+}
+
 .tna-header {
   @include colour.invert;
 
@@ -390,7 +427,7 @@
       &,
       &:link,
       &:visited {
-        @include colour.uninvert;
+        @include uninvert;
         @include colour.colour-font("font-dark");
         @include colour.colour-background("page-background");
       }
@@ -441,7 +478,7 @@
     }
 
     &__navigation {
-      @include colour.uninvert;
+      @include uninvert;
       @include colour.colour-font("font-base");
       @include typography.relative-font-size(20);
 

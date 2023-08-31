@@ -1,6 +1,6 @@
 {%- set buttonClasses = [params.classes] if params.classes else [] -%}
-{%- if params.secondary -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--secondary') -%}
+{%- if params.accent -%}
+  {%- set buttonClasses = buttonClasses.concat('tna-button--accent') -%}
 {%- endif -%}
 <a href="{{ params.href }}" class="tna-button {{ buttonClasses | join(' ') }}" role="button"{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {{ params.text }}

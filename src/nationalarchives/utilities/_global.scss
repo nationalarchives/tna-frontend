@@ -1,5 +1,6 @@
 @use "../features";
 @use "../tools/colour";
+@use "../tools/media";
 @use "../variables/typography";
 
 :root {
@@ -19,29 +20,7 @@
 
   @include colour.colour-background("page-background");
 
-  // &--black-accent {
-  //   accent-color: colour.$_tna-black;
-  // }
-
-  // &--yellow-accent {
-  //   accent-color: colour.$_tna-yellow;
-  // }
-
-  // &--pink-accent {
-  //   accent-color: colour.$_tna-pink;
-  // }
-
-  // &--orange-accent {
-  //   accent-color: colour.$_tna-orange;
-  // }
-
-  // &--green-accent {
-  //   accent-color: colour.$_tna-green;
-  // }
-
-  // &--blue-accent {
-  //   accent-color: colour.$_tna-blue;
-  // }
+  accent-color: var(--accent);
 
   &--system-theme {
     @include colour.colour-css-vars;
@@ -81,6 +60,32 @@
     &.tna-template--dark-theme {
       @include colour.colour-css-vars-high-contrast-dark;
     }
+  }
+
+  @include colour.accent-css-vars("black"); // TODO: Temp
+
+  // &--black-accent {
+  //   @include colour.accent-css-vars("black");
+  // }
+
+  &--yellow-accent {
+    @include colour.accent-css-vars("yellow");
+  }
+
+  &--pink-accent {
+    @include colour.accent-css-vars("pink");
+  }
+
+  &--orange-accent {
+    @include colour.accent-css-vars("orange");
+  }
+
+  &--green-accent {
+    @include colour.accent-css-vars("green");
+  }
+
+  &--blue-accent {
+    @include colour.accent-css-vars("blue");
   }
 
   @media (prefers-reduced-motion) {
@@ -134,7 +139,7 @@ canvas {
 }
 
 hr {
-  margin: 3rem 0;
+  margin: 2rem 0;
 
   border-width: 1px 0 0;
   @include colour.colour-border("keyline");
@@ -143,6 +148,45 @@ hr {
   // @include colour.on-high-contrast {
   //   border-style: solid;
   // }
+}
+
+.tna-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include media.on-mobile {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.tna-aside {
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media.on-mobile {
+    padding: 1rem;
+  }
+
+  @include colour.on-high-contrast {
+    @include colour.colour-border("keyline-dark", 1px);
+  }
+}
+
+.tna-background--contrast {
+  @include colour.invert;
+}
+
+.tna-background--accent {
+  @include colour.accent;
+}
+
+.tna-background--accent-light {
+  @include colour.light-accent-background;
 }
 
 .tna-visually-hidden {

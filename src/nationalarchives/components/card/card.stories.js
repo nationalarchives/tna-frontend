@@ -9,7 +9,8 @@ const argTypes = {
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
-  featured: { control: "boolean" },
+  horizontal: { control: "boolean" },
+  style: { control: "text" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -34,7 +35,8 @@ const Template = ({
   body,
   text,
   actions,
-  featured,
+  horizontal,
+  style,
   htmlElement,
   classes,
   attributes,
@@ -48,7 +50,8 @@ const Template = ({
       body,
       text,
       actions,
-      featured,
+      horizontal,
+      style,
       htmlElement,
       classes,
       attributes,
@@ -61,6 +64,7 @@ Standard.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
+    size: "l",
     singleSentence: false,
   },
   href: "#",
@@ -83,12 +87,59 @@ Standard.args = {
   classes: "tna-card--demo",
 };
 
-export const Featured = Template.bind({});
-Featured.args = {
+export const Boxed = Template.bind({});
+Boxed.args = {
   heading: {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
+    size: "l",
+    singleSentence: false,
+  },
+  href: "#",
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  style: "contrast",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Accent = Template.bind({});
+Accent.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "l",
+    singleSentence: false,
+  },
+  href: "#",
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  style: "accent",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Horizontal = Template.bind({});
+Horizontal.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "l",
     singleSentence: false,
   },
   href: "#",
@@ -107,7 +158,7 @@ Featured.args = {
       title: "Go and do the action",
     },
   ],
-  featured: true,
+  horizontal: true,
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -120,7 +171,7 @@ const GridTemplate = ({
   body,
   text,
   actions,
-  featured,
+  horizontal,
   htmlElement,
   classes,
   attributes,
@@ -138,7 +189,7 @@ const GridTemplate = ({
               body,
               text,
               actions,
-              featured,
+              horizontal,
               htmlElement,
               classes,
               attributes,

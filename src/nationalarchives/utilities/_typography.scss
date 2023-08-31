@@ -66,6 +66,22 @@ a {
   &:active {
     @include typography.interacted-text-decoration;
   }
+
+  &.tna-tag {
+    // display: block;
+
+    text-decoration: none;
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-dark");
+    }
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
 }
 
 .tna-ul,
@@ -78,7 +94,7 @@ a {
   }
 
   li::marker {
-    @include colour.colour-font("accent");
+    @include colour.colour-font("accent-background");
     font-weight: 700;
   }
 
@@ -89,7 +105,76 @@ a {
   }
 }
 
-.tna-heading {
+%tag {
+  max-width: max-content;
+  padding: 0.375em 0.5rem;
+
+  // display: inline-block;
+  display: block;
+
+  @include colour.colour-font("font-dark");
+  @include typography.detail-font-small;
+  line-height: 1;
+
+  @include colour.accent;
+}
+
+.tna-tag {
+  @extend %tag;
+}
+
+.tna-tag-list {
+  padding-left: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+
+  &__item {
+    margin: 0 1rem 1rem 0;
+
+    display: inline-block;
+  }
+}
+
+%heading-xl {
+  @include typography.relative-font-size(64);
+  line-height: 1;
+
+  @include media.on-medium {
+    @include typography.relative-font-size(42);
+  }
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(36);
+  }
+}
+
+%heading-l {
+  @include typography.relative-font-size(32);
+  line-height: 1.2;
+
+  @include media.on-medium {
+    @include typography.relative-font-size(26);
+  }
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(24);
+  }
+}
+
+%heading-m {
+  @include typography.relative-font-size(20);
+  line-height: 1.4;
+}
+
+%heading-s {
+  @include typography.relative-font-size(18);
+  line-height: 1.6;
+}
+
+%heading {
   margin-bottom: 1rem;
 
   @include colour.colour-font("font-dark");
@@ -99,99 +184,89 @@ a {
     margin-bottom: 0;
   }
 
+  a {
+    &::after {
+      padding-left: 0.25rem;
+
+      display: inline-block;
+
+      font-weight: 700;
+
+      content: "\203A";
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(0.25rem);
+      }
+    }
+  }
+}
+
+.tna-heading {
+  @extend %heading;
+
   &--xl {
-    @include typography.relative-font-size(64);
-    line-height: 1;
-
-    @include media.on-medium {
-      @include typography.relative-font-size(42);
-    }
-
-    @include media.on-mobile {
-      @include typography.relative-font-size(36);
-    }
+    @extend %heading-xl;
   }
 
   &--l {
-    @include typography.relative-font-size(32);
-    line-height: 1.2;
-
-    @include media.on-medium {
-      @include typography.relative-font-size(26);
-    }
-
-    @include media.on-mobile {
-      @include typography.relative-font-size(24);
-    }
+    @extend %heading-l;
   }
 
   &--m {
-    @include typography.relative-font-size(20);
-    line-height: 1.4;
+    @extend %heading-m;
   }
 
   &--s {
-    @include typography.relative-font-size(18);
-    line-height: 1.6;
+    @extend %heading-s;
   }
 }
 
 .tna-hgroup {
   margin-bottom: 1rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   &__supertitle {
     margin: 0 0 0.5rem;
 
-    @include colour.colour-font("font-base");
-    @include typography.detail-font;
-
-    .tna-hgroup & {
-      // margin: 0;
-    }
+    @extend %tag;
   }
 
   &__title {
     margin: 0;
 
-    @include colour.colour-font("font-dark");
+    display: block;
 
-    .tna-hgroup__supertitle {
-      display: block;
-
-      @include colour.colour-font("font-base");
-    }
+    @extend %heading;
   }
 
-  &--xl {
-    .tna-hgroup__title {
-      @include typography.relative-font-size(64);
-      line-height: 1;
-    }
+  &--xl &__title {
+    @extend %heading-xl;
   }
 
-  &--l {
-    .tna-hgroup__title {
-      @include typography.relative-font-size(32);
-      line-height: 1.2;
-    }
+  &--l &__title {
+    @extend %heading-l;
   }
 
-  &--m {
-    .tna-hgroup__title {
-      @include typography.relative-font-size(20);
-      line-height: 1.4;
-    }
+  // &--m &__title {
+  //   @extend %heading-m;
+  // }
+
+  // &--s &__title {
+  //   @extend %heading-s;
+  // }
+}
+
+.tna-heading,
+.tna-hgroup {
+  margin-top: 3rem;
+
+  &:first-child {
+    margin-top: 0;
   }
 
-  &--s {
-    .tna-hgroup__title {
-      @include typography.relative-font-size(18);
-      line-height: 1.6;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -199,7 +274,7 @@ a {
   margin: 0 0 2rem;
   padding: 1rem 1rem 1rem 2rem;
 
-  @include colour.colour-border("keyline", 0.35rem, solid, left);
+  @include colour.colour-border("accent-background", 0.35rem, solid, left);
 
   // quotes: "“" "”" "‘" "’";
 
@@ -226,6 +301,27 @@ a {
 
     &::before {
       content: "\2014" " ";
+    }
+  }
+}
+
+.tna-scene-setter {
+  @include typography.detail-font;
+  @include colour.colour-font("font-dark");
+  @include typography.relative-font-size(30);
+  line-height: math.div(50, 30);
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(24);
+    line-height: 2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 2px;
+
+    &:hover {
+      text-decoration-thickness: 4.5px;
     }
   }
 }

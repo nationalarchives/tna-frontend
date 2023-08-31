@@ -7,6 +7,7 @@
 
   font-weight: 700;
   text-decoration: none;
+  text-align: center;
 
   @include colour.colour-background("button-primary-background");
 
@@ -29,7 +30,8 @@
     @include colour.colour-font("button-primary-hover-text");
     text-decoration: none;
 
-    @include colour.colour-background("button-primary-hover-background");
+    // @include colour.colour-background("button-primary-hover-background");
+    background: transparent;
 
     transition:
       color 50ms,
@@ -37,21 +39,43 @@
       border-color 50ms;
   }
 
-  &--secondary {
-    @include colour.colour-background("button-secondary-background");
+  &-group {
+    margin-bottom: 1rem;
 
-    @include colour.colour-border("button-secondary-background");
+    display: flex;
+    flex-wrap: wrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-group & {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &--accent {
+    @include colour.colour-background("button-accent-background");
+
+    @include colour.colour-border("button-accent-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("button-secondary-text");
+      @include colour.colour-font("button-accent-text");
     }
 
     &:hover {
-      @include colour.colour-font("button-secondary-hover-text");
+      @include colour.colour-font("font-dark");
+    }
+  }
 
-      @include colour.colour-background("button-secondary-hover-background");
+  &--solid-hover,
+  .tna-background--accent &,
+  .tna-background--accent-light & {
+    &:hover {
+      @include colour.colour-background("page-background");
     }
   }
 }

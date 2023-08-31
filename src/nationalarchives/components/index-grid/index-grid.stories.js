@@ -53,13 +53,14 @@ const exampleItem = {
   width: "800",
   height: "600",
   title: "Cat",
-  subtitle: "4 photos",
 };
+
 export const Standard = Template.bind({});
 Standard.args = {
   heading: {
     title: "My dogs",
     level: 2,
+    href: "#",
   },
   items: Array(12)
     .fill({ ...exampleItem })
@@ -68,11 +69,34 @@ Standard.args = {
       return {
         ...item,
         href: `#/category-${index}`,
+        label: "Time period",
         title: `Category #${index + 101}`,
         subtitle: `${pseudoRandom} photos`,
       };
     }),
   columns: 4,
+  columnsMedium: 3,
+  columnsSmall: 2,
+  columnsTiny: 1,
+  classes: "tna-index-grid--demo",
+};
+
+export const Basic = Template.bind({});
+Basic.args = {
+  heading: {
+    title: "My dogs",
+  },
+  items: Array(6)
+    .fill({ ...exampleItem })
+    .map((item, index) => {
+      const pseudoRandom = ((index * 29) % 8) + 1;
+      return {
+        ...item,
+        href: `#/category-${index}`,
+        title: `Category #${index + 101}`,
+      };
+    }),
+  columns: 3,
   columnsMedium: 3,
   columnsSmall: 2,
   columnsTiny: 1,

@@ -22,6 +22,12 @@
         "type": "text",
         "required": false,
         "description": ""
+      },
+      {
+        "name": "href",
+        "type": "text",
+        "required": false,
+        "description": ""
       }
     ]
   },
@@ -59,6 +65,12 @@
         "name": "height",
         "type": "number",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
         "description": ""
       },
       {

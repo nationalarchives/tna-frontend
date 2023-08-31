@@ -1,4 +1,5 @@
 @use "../../tools/colour";
+@use "../../tools/typography";
 
 .tna-tabs {
   margin-bottom: 2rem;
@@ -34,9 +35,11 @@
     position: relative;
 
     @include colour.colour-font("font-dark");
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: 700;
+    // font-size: inherit;
+    @include typography.relative-font-size(20);
+    // font-family: inherit;
+    @include typography.heading-font;
+    // font-weight: 700;
     text-decoration: none;
     line-height: 1.5;
     text-align: center;

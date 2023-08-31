@@ -3,11 +3,12 @@
 @use "../../tools/media";
 
 .tna-footer {
+  @include colour.invert;
+
   padding-top: 1rem;
   padding-bottom: 3rem;
 
-  @include colour.invert;
-  @include colour.colour-font("contrast-font-base");
+  // @include colour.colour-font("font-base");
 
   // --link: colour.brand-colour("white");
 

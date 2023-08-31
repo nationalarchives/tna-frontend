@@ -15,9 +15,13 @@
   }
 
   &__item--selected #{&}__link {
-    color: #fff;
-
     background-color: #004c7e;
+
+    &,
+    &:link,
+    &:visited {
+      color: #fff;
+    }
   }
 
   &__link {
@@ -25,7 +29,6 @@
 
     display: inline-block;
 
-    color: #000;
     text-decoration: none;
 
     background-color: #d4e5ef;
@@ -35,6 +38,12 @@
     transition:
       color 200ms,
       background-color 200ms;
+
+    &,
+    &:link,
+    &:visited {
+      color: #000;
+    }
 
     &:hover {
       color: #fff;

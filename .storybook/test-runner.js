@@ -86,6 +86,6 @@ module.exports = {
     await injectAxe(page);
   },
   async postRender(page, story) {
-    await checkA11y(page, "#storybook-root", a11yConfig);
+    await checkA11y(page, "#storybook-root", a11yConfig, "v2");
   },
 };

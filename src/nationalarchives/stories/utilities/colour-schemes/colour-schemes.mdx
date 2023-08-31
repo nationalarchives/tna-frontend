@@ -83,3 +83,25 @@ The high contrast themes are applied on top of the existing light and dark theme
 The colours are defined in `src/nationalarchives/variables/_colour.scss` as a separate map for each theme.
 
 This allows you to reference a colour, such as `font-base` without having to worry about which theme is currently in use.
+
+## Accent colours
+
+To add accent colours to the page, add one of the following classes to the `<html>` element:
+
+- `tna-template--yellow-accent`
+- `tna-template--pink-accent`
+- `tna-template--orange-accent`
+- `tna-template--green-accent`
+- `tna-template--blue-accent`
+
+```html
+<html class="tna-template tna-template--system-theme tna-template--yellow-accent">
+  <head>
+    <title>System theme with yellow accents</title>
+  </head>
+  <body class="tna-template__body">
+  </body>
+</html>
+```
+
+

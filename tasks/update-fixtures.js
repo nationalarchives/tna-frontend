@@ -18,8 +18,12 @@ const components = globSync(
 );
 
 components.forEach((component) => {
-  const componentFixtures = require(`../${componentsDirectory}${component}${componentFixturesFile}`);
-  const componentNunjucks = require(`../${componentsDirectory}${component}/template.njk`);
+  const componentFixtures = require(
+    `../${componentsDirectory}${component}${componentFixturesFile}`,
+  );
+  const componentNunjucks = require(
+    `../${componentsDirectory}${component}/template.njk`,
+  );
 
   const newComponentFixtures = {
     ...componentFixtures,

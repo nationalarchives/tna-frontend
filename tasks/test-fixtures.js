@@ -20,8 +20,12 @@ const components = globSync(
 
 const failedComponents = components.filter((component) => {
   console.log(`\nComponent: ${component}`);
-  const componentFixtures = require(`../${componentsDirectory}${component}${componentFixturesFile}`);
-  const componentNunjucks = require(`../${componentsDirectory}${component}/template.njk`);
+  const componentFixtures = require(
+    `../${componentsDirectory}${component}${componentFixturesFile}`,
+  );
+  const componentNunjucks = require(
+    `../${componentsDirectory}${component}/template.njk`,
+  );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
     const result = nunjucks
       .renderString(componentNunjucks, {

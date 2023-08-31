@@ -117,7 +117,9 @@ const expectedPrototypeKitConfigProperties = [
   "assets",
   "sass",
 ];
-const prototypeKitConfig = require(`../${packageDirectory}/govuk-prototype-kit.config.json`);
+const prototypeKitConfig = require(
+  `../${packageDirectory}/govuk-prototype-kit.config.json`,
+);
 expectedPrototypeKitConfigProperties.forEach(
   (expectedPrototypeKitConfigProperty) => {
     if (

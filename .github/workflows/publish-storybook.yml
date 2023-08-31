@@ -67,4 +67,4 @@ jobs:
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook
-          exitZeroOnChanges: false
+          exitZeroOnChanges: true

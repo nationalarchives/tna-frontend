@@ -226,10 +226,6 @@ a {
 .tna-hgroup {
   margin-bottom: 1rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   &__supertitle {
     margin: 0 0 0.5rem;
 
@@ -259,6 +255,19 @@ a {
   // &--s &__title {
   //   @extend %heading-s;
   // }
+}
+
+.tna-heading,
+.tna-hgroup {
+  margin-top: 3rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .tna-blockquote {

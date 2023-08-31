@@ -190,12 +190,15 @@ const Template = ({ theme, accent }) => {
           <h1 class="tna-heading tna-heading--xl">
             This is a heading (XL)
           </h1>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <h2 class="tna-heading tna-heading--l">
             This is a heading (L)
           </h2>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <h3 class="tna-heading tna-heading--m">
             This is a heading (M)
           </h3>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <p class="tna-scene-setter">
             We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.
           </p>

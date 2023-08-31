@@ -22,7 +22,7 @@ const argTypes = {
   },
   accent: {
     control: "radio",
-    options: ["none", "black", "yellow", "pink", "orange", "green", "blue"],
+    options: ["none", /*"black",*/ "yellow", "pink", "orange", "green", "blue"],
   },
 };
 
@@ -155,8 +155,8 @@ const Template = ({ theme, accent }) => {
           classes: "tna-hero--demo",
         },
       })}
-      <div class="tna-container">
-        <div class="tna-column tna-column--full">
+      <div class="tna-container tna-section">
+        <div class="tna-column tna-column--width-2-3 tna-column--full-small">
           <hgroup class="tna-hgroup tna-hgroup--l">
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
@@ -174,6 +174,19 @@ const Template = ({ theme, accent }) => {
             <a href="#" class="tna-button">Primary button</a>
             <a href="#" class="tna-button tna-button--accent">Accent button</a>
           </div>
+        </div>
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small">
+          <div class="tna-aside tna-background--contrast">
+            <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          </div>
+          <div class="tna-aside tna-background--accent">
+            <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="tna-container tna-section">
+        <div class="tna-column tna-column--full">
           <h1 class="tna-heading tna-heading--xl">
             This is a heading (XL)
           </h1>
@@ -196,10 +209,27 @@ const Template = ({ theme, accent }) => {
             <a href="#">Reaerching with The National Archives</a>
           </h2>
           <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
+          <ul class="tna-tag-list">
+            <li class="tna-tag-list__item">
+              <a href="#" class="tna-tag">Tag 1</a>
+            </li>
+            <li class="tna-tag-list__item">
+              <a href="#" class="tna-tag">Tag 2</a>
+            </li>
+            <li class="tna-tag-list__item">
+              <a href="#" class="tna-tag">Tag 3</a>
+            </li>
+          </ul>
+          ${Message({
+            params: {
+              message:
+                "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+            },
+          })}
         </div>
       </div>
       <hr>
-      <div class="tna-container">
+      <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
           <p class="tna-!--no-margin-bottom">Lorem ipsum</p>
           <p class="tna-!--no-margin-bottom tna-!--padding-top-xs">Lorem ipsum</p>
@@ -207,17 +237,6 @@ const Template = ({ theme, accent }) => {
           <p class="tna-!--no-margin-bottom tna-!--padding-top-m">Lorem ipsum</p>
           <p class="tna-!--no-margin-bottom tna-!--padding-top-l">Lorem ipsum</p>
           <p class="tna-!--no-margin-bottom tna-!--padding-top-xl">Lorem ipsum</p>
-        </div>
-      </div>
-      <hr>
-      <div class="tna-container">
-        <div class="tna-column tna-column--full">
-          ${Message({
-            params: {
-              message:
-                "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
-            },
-          })}
         </div>
       </div>
       <hr>
@@ -240,7 +259,7 @@ const Template = ({ theme, accent }) => {
       </div>
       <hr>
       <div class="tna-container">
-        <div class="tna-column tna-column--full">
+        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           ${Card({
             params: {
               ...cardDefaultOptions,
@@ -249,7 +268,7 @@ const Template = ({ theme, accent }) => {
             },
           })}
         </div>
-        <div class="tna-column tna-column--full">
+        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           ${Card({
             params: {
               ...cardDefaultOptions,
@@ -259,7 +278,7 @@ const Template = ({ theme, accent }) => {
             },
           })}
         </div>
-        <div class="tna-column tna-column--full">
+        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           ${Card({
             params: {
               ...cardDefaultOptions,
@@ -279,17 +298,17 @@ const Template = ({ theme, accent }) => {
                 {
                   id: "unique-id-a",
                   title: "Alpha section",
-                  body: "<h2>Alpha title</h2><p>Lorem ipsum</p>",
+                  body: '<h2 class="tna-heading">Alpha title</h2><p>Lorem ipsum</p>',
                 },
                 {
                   id: "unique-id-b",
                   title: "Beta section",
-                  body: "<h2>Beta title</h2><p>Lorem ipsum</p>",
+                  body: '<h2 class="tna-heading">Beta title</h2><p>Lorem ipsum</p>',
                 },
                 {
                   id: "unique-id-c",
                   title: "Gamma section",
-                  body: "<h2>Gamma title</h2><p>Lorem ipsum</p>",
+                  body: '<h2 class="tna-heading">Gamma title</h2><p>Lorem ipsum</p>',
                 },
               ],
               classes: "tna-tabs--demo",
@@ -315,10 +334,10 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-background--accent-light">
+      <div class="tna-section tna-background--contrast">
         ${IndexGrid({
           params: {
-            heading: "My dogs",
+            heading: { title: "My dogs", href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -355,10 +374,50 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <div class="tna-background--accent">
+      <div class="tna-section tna-background--accent-light">
         ${IndexGrid({
           params: {
-            heading: "My dogs",
+            heading: { title: "My dogs", href: "#" },
+            items: Array(12)
+              .fill({
+                ...{
+                  href: "#",
+                  src: "https://picsum.photos/id/237/800/600",
+                  alt: "Photo of a puppy",
+                  width: "800",
+                  height: "600",
+                  title: "Cat",
+                  subtitle: "4 photos",
+                },
+              })
+              .map((item, index) => {
+                const pseudoRandom = ((index * 29) % 8) + 1;
+                return {
+                  ...item,
+                  href: `#/category-${index}`,
+                  title: `Category #${index + 101}`,
+                  subtitle: `${pseudoRandom} photos`,
+                };
+              }),
+            columns: 4,
+            columnsMedium: 3,
+            columnsSmall: 2,
+            columnsTiny: 1,
+          },
+        })}
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            <div class="tna-button-group">
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section tna-background--accent">
+        ${IndexGrid({
+          params: {
+            heading: { title: "My dogs", href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -548,29 +607,29 @@ export const System = Template.bind({});
 // System.parameters = { options: { showPanel: false } };
 System.args = {
   theme: "system",
-  accent: "none",
+  accent: "pink",
 };
 
 export const Light = Template.bind({});
 Light.args = {
   theme: "light",
-  accent: "none",
+  accent: "pink",
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   theme: "dark",
-  accent: "none",
+  accent: "pink",
 };
 
 export const LightHighContrast = Template.bind({});
 LightHighContrast.args = {
   theme: "light high-contrast",
-  accent: "none",
+  accent: "pink",
 };
 
 export const DarkHighContrast = Template.bind({});
 DarkHighContrast.args = {
   theme: "dark high-contrast",
-  accent: "none",
+  accent: "pink",
 };

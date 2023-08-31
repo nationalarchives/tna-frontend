@@ -58,6 +58,7 @@
   &__item-title {
     @include typography.heading-font;
     text-decoration: underline;
+    @include typography.relative-font-size(20);
 
     .tna-index-grid__item:hover & {
       &,

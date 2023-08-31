@@ -49,7 +49,7 @@
     --accent-font-dark: #{brand-colour("white")} !important;
     --accent-font-light: #{rgba(brand-colour("white"), 0.7)} !important;
     --accent-link: #{brand-colour("white")} !important;
-    --accent-link-visited: #b9f !important;
+    --accent-link-visited: #{brand-colour("white")} !important;
     --accent-keyline: #{rgba(brand-colour("white"), 0.5)} !important;
     --accent-keyline-dark: #{rgba(brand-colour("white"), 0.8)} !important;
 
@@ -192,43 +192,6 @@
 
 @mixin invert-on-mobile {
   @extend %invert-on-mobile;
-}
-
-// TODO: Only for the header component at the moment - remove on redesign
-@mixin uninvert {
-  @include colour-css-vars;
-
-  .tna-template--system-theme & {
-    @include colour-css-vars;
-
-    @media (prefers-color-scheme: dark) {
-      @include colour-css-vars-dark;
-    }
-
-    @media (prefers-contrast: more) {
-      @include colour-css-vars-high-contrast;
-    }
-
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour-css-vars-high-contrast-dark;
-    }
-  }
-
-  .tna-template--light-theme & {
-    @include colour-css-vars;
-  }
-
-  .tna-template--dark-theme & {
-    @include colour-css-vars-dark;
-  }
-
-  .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast;
-  }
-
-  .tna-template--high-contrast-theme.tna-template--dark-theme & {
-    @include colour-css-vars-high-contrast-dark;
-  }
 }
 
 %accent {

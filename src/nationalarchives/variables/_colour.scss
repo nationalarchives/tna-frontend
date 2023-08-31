@@ -58,7 +58,7 @@ $colour-palette-default: (
   "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
   "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
   "accent": map.get($colour-palette-brand, "light-grey"),
-  "accent-background": map.get($colour-palette-brand, "black"),
+  "accent-background": #111,
   "accent-background-light": map.get($colour-palette-brand, "light-grey"),
   "accent-font-base": map.get($colour-palette-brand, "white"),
   "accent-font-dark": map.get($colour-palette-brand, "white"),
@@ -115,7 +115,7 @@ $colour-palette-high-contrast: map.merge(
     "focus-outline": map.get($colour-palette-brand, "orange"),
     "keyline": map.get($colour-palette-brand, "black"),
     "keyline-dark": map.get($colour-palette-brand, "black"),
-    "contrast-background": map.get($colour-palette-brand, "white"),
+    "contrast-background": #f4f4f4,
     "contrast-font-base": map.get($colour-palette-brand, "black"),
     "contrast-font-dark": map.get($colour-palette-brand, "black"),
     "contrast-font-light": map.get($colour-palette-brand, "black"),
@@ -140,6 +140,6 @@ $colour-palette-high-contrast-dark: map.merge(
     "link": map.get($colour-palette-brand, "white"),
     "link-visited": map.get($colour-palette-brand, "white"),
     "keyline": map.get($colour-palette-brand, "white"),
-    "contrast-background": map.get($colour-palette-brand, "black"),
+    "contrast-background": #111,
   )
 );

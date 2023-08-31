@@ -22,6 +22,12 @@
         "type": "text",
         "required": false,
         "description": ""
+      },
+      {
+        "name": "href",
+        "type": "text",
+        "required": false,
+        "description": ""
       }
     ]
   },

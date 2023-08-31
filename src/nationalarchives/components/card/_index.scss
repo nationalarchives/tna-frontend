@@ -151,6 +151,21 @@
     }
   }
 
+  &:not(#{&}--horizontal) {
+    @include colour.on-high-contrast {
+      .tna-card__inner {
+        padding-bottom: 1rem;
+      }
+
+      .tna-card__heading,
+      .tna-card__body,
+      .tna-card__actions {
+        margin-right: 1rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline-dark", 1px);
 

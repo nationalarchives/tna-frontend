@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tna-hgroup` titles should now be wrapped in an element with a `tna-hgroup__title` class
 - Colours tweaked, such as page backgrounds
 - Fallback font for `supria-sans-condensed` is `Arial Narrow`
+- Update dependencies including Storybook to `7.4`
 
 ### Deprecated
 ### Removed

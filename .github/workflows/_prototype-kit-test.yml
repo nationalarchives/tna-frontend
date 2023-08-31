@@ -51,6 +51,7 @@ jobs:
           echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/profile/macro.njk\" import tnaProfile %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/sensitive-image/macro.njk\" import tnaSensitiveImage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       - name: Add components to template
         run: >
@@ -69,6 +70,7 @@ jobs:
           echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaProfile({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaSensitiveImage({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaSkipLink({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
           echo "{% endblock %}" >> prototype/app/views/index.html
       - name: Run prototype

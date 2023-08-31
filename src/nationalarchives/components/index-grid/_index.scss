@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "../../tools/colour";
+@use "../../tools/media";
 @use "../../tools/typography";
 
 .tna-index-grid {
@@ -15,6 +16,10 @@
 
   &__item-wrapper {
     margin-bottom: 2rem;
+
+    @include media.on-mobile {
+      margin-bottom: 1rem;
+    }
   }
 
   &__item {
@@ -38,9 +43,10 @@
 
   &__item-image {
     width: 100%;
-    height: #{math.div(2, 3) * 100%};
+    // height: #{math.div(2, 3) * 100%};
+    height: auto;
 
-    object-fit: cover;
+    // object-fit: cover;
   }
 
   &__item-content {
@@ -56,9 +62,9 @@
   }
 
   &__item-title {
-    @include typography.heading-font;
+    // @include typography.heading-font;
     text-decoration: underline;
-    @include typography.relative-font-size(20);
+    // @include typography.relative-font-size(20);
 
     .tna-index-grid__item:hover & {
       &,

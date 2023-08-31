@@ -68,3 +68,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook
           exitZeroOnChanges: true
+          autoAcceptChanges: true

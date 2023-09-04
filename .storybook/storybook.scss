@@ -5,7 +5,8 @@
 }
 
 #storybook-docs {
-  max-width: 800px;
+  width: 800px;
+  max-width: calc(100% - 4rem);
   margin: 0 auto;
   padding: 2rem;
 
@@ -16,7 +17,7 @@
 
 .sbdocs {
   &.sbdocs-wrapper {
-    min-width: 800px;
+    max-width: 100%;
     min-height: 0;
     margin: 0;
     padding: 2rem;
@@ -110,6 +111,14 @@
     .tna-column {
       min-height: 10rem;
     }
+  }
+}
+
+.tna-card--demo {
+  max-width: 400px;
+
+  &.tna-card--horizontal {
+    max-width: 800px;
   }
 }
 

@@ -18,6 +18,18 @@
     "description": ""
   },
   {
+    "name": "icon",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "brandIcon",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "accent",
     "type": "boolean",
     "required": false,

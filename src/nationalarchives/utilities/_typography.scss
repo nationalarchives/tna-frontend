@@ -67,7 +67,7 @@ a {
     @include typography.interacted-text-decoration;
   }
 
-  &.tna-tag {
+  &.tna-chip {
     // display: block;
 
     text-decoration: none;
@@ -105,7 +105,7 @@ a {
   }
 }
 
-%tag {
+%chip {
   max-width: max-content;
   padding: 0.375em 0.5rem;
 
@@ -119,11 +119,11 @@ a {
   @include colour.accent;
 }
 
-.tna-tag {
-  @extend %tag;
+.tna-chip {
+  @extend %chip;
 }
 
-.tna-tag-list {
+.tna-chip-list {
   padding-left: 0;
 
   display: flex;
@@ -205,6 +205,7 @@ a {
 
 .tna-heading {
   @extend %heading;
+  // @extend %heading-l;
 
   &--xl {
     @extend %heading-xl;
@@ -229,7 +230,7 @@ a {
   &__supertitle {
     margin: 0 0 0.5rem;
 
-    @extend %tag;
+    @extend %chip;
   }
 
   &__title {
@@ -238,6 +239,7 @@ a {
     display: block;
 
     @extend %heading;
+    // @extend %heading-l;
   }
 
   &--xl &__title {
@@ -248,13 +250,13 @@ a {
     @extend %heading-l;
   }
 
-  // &--m &__title {
-  //   @extend %heading-m;
-  // }
+  &--m &__title {
+    @extend %heading-m;
+  }
 
-  // &--s &__title {
-  //   @extend %heading-s;
-  // }
+  &--s &__title {
+    @extend %heading-s;
+  }
 }
 
 .tna-heading,

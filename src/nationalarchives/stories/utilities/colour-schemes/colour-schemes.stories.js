@@ -1,6 +1,7 @@
 import SkipLink from "../../../components/skip-link/template.njk";
 import Header from "../../../components/header/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
+import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
@@ -56,7 +57,6 @@ const Template = ({ theme, accent }) => {
         title: "Go and do the action",
       },
     ],
-    classes: "tna-card--demo",
   };
 
   return `<div class="tna-template ${
@@ -156,8 +156,8 @@ const Template = ({ theme, accent }) => {
         },
       })}
       <div class="tna-container tna-section">
-        <div class="tna-column tna-column--width-2-3 tna-column--full-small">
-          <hgroup class="tna-hgroup tna-hgroup--l">
+        <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
+          <hgroup class="tna-hgroup tna-hgroup--xl">
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
@@ -171,12 +171,45 @@ const Template = ({ theme, accent }) => {
             <li>Gamma</li>
           </ul>
           <div class="tna-button-group">
-            <a href="#" class="tna-button">Primary button</a>
-            <a href="#" class="tna-button tna-button--accent">Accent button</a>
+            ${Button({
+              params: {
+                text: "Primary button",
+                href: "#",
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Accent button",
+                href: "#",
+                accent: true,
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Explore the collection",
+                href: "#",
+                icon: "map-location-dot",
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Tweet us",
+                href: "#",
+                brandIcon: "twitter",
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Tweet us",
+                href: "#",
+                accent: true,
+                brandIcon: "twitter",
+              },
+            })}
           </div>
         </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--full-small">
-          <div class="tna-aside tna-background--contrast">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny">
+          <div class="tna-aside tna-background--contrast tna-!--margin-top-l-small tna-!--margin-top-xl-tiny">
             <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           </div>
           <div class="tna-aside tna-background--accent">
@@ -199,6 +232,31 @@ const Template = ({ theme, accent }) => {
             This is a heading (M)
           </h3>
           <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <h4 class="tna-heading tna-heading--s">
+            This is a heading (S)
+          </h4>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <hgroup class="tna-hgroup tna-hgroup--xl">
+            <p class="tna-hgroup__supertitle">Supertitle</p>
+            <h2 class="tna-hgroup__title">This is a heading (XL)</h2>
+          </hgroup>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <hgroup class="tna-hgroup tna-hgroup--l">
+            <p class="tna-hgroup__supertitle">Supertitle</p>
+            <h2 class="tna-hgroup__title">This is a heading (L)</h2>
+          </hgroup>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <hgroup class="tna-hgroup tna-hgroup--m">
+            <p class="tna-hgroup__supertitle">Supertitle</p>
+            <h2 class="tna-hgroup__title">This is a heading (M)</h2>
+          </hgroup>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <hgroup class="tna-hgroup tna-hgroup--s">
+            <p class="tna-hgroup__supertitle">Supertitle</p>
+            <h2 class="tna-hgroup__title">This is a heading (S)</h2>
+          </hgroup>
+          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <p class="tna-scene-setter">
             We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.
           </p>
@@ -208,19 +266,26 @@ const Template = ({ theme, accent }) => {
             </div>
             <p class="tna-blockquote__author">Douglas Adams, Mostly Harmless</p>
           </blockquote>
-          <h2 class="tna-heading">
+          <h2 class="tna-heading tna-heading--l">
             <a href="#">Reaerching with The National Archives</a>
           </h2>
           <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
-          <ul class="tna-tag-list">
-            <li class="tna-tag-list__item">
-              <a href="#" class="tna-tag">Tag 1</a>
+          <hgroup class="tna-hgroup tna-hgroup--l">
+            <p class="tna-hgroup__supertitle">Supertitle</p>
+            <h2 class="tna-hgroup__title">
+              <a href="#">Reaerching with The National Archives</a>
+            </h2>
+          </hgroup>
+          <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
+          <ul class="tna-chip-list">
+            <li class="tna-chip-list__item">
+              <a href="#" class="tna-chip">Chip 1</a>
             </li>
-            <li class="tna-tag-list__item">
-              <a href="#" class="tna-tag">Tag 2</a>
+            <li class="tna-chip-list__item">
+              <a href="#" class="tna-chip">Chip 2</a>
             </li>
-            <li class="tna-tag-list__item">
-              <a href="#" class="tna-tag">Tag 3</a>
+            <li class="tna-chip-list__item">
+              <a href="#" class="tna-chip">Chip 3</a>
             </li>
           </ul>
           ${Message({
@@ -267,7 +332,7 @@ const Template = ({ theme, accent }) => {
             params: {
               ...cardDefaultOptions,
               horizontal: true,
-              classes: "tna-card--demo tna-!--margin-bottom-m",
+              classes: "tna-!--margin-bottom-m",
             },
           })}
         </div>
@@ -277,7 +342,7 @@ const Template = ({ theme, accent }) => {
               ...cardDefaultOptions,
               horizontal: true,
               style: "boxed",
-              classes: "tna-card--demo tna-!--margin-bottom-m",
+              classes: "tna-!--margin-bottom-m",
             },
           })}
         </div>

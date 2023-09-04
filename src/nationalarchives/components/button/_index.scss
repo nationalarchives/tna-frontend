@@ -1,4 +1,5 @@
 @use "../../tools/colour";
+@use "../../tools/media";
 
 .tna-button {
   padding: 0.25rem 1rem;
@@ -40,7 +41,7 @@
   }
 
   &-group {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -48,11 +49,29 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    @include media.on-tiny {
+      display: block;
+    }
   }
 
   &-group & {
     margin-right: 1rem;
     margin-bottom: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include media.on-tiny {
+      margin-right: 0;
+
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &--accent {
@@ -77,5 +96,12 @@
     &:hover {
       @include colour.colour-background("page-background");
     }
+  }
+
+  .fa,
+  .fa-regular,
+  .fa-solid,
+  .fa-brands {
+    margin-right: 0.5rem;
   }
 }

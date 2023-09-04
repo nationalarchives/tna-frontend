@@ -3,5 +3,10 @@
   {%- set buttonClasses = buttonClasses.concat('tna-button--accent') -%}
 {%- endif -%}
 <a href="{{ params.href }}" class="tna-button {{ buttonClasses | join(' ') }}" role="button"{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- if params.brandIcon -%}
+  <i class="fa-brands fa-{{ params.brandIcon }}"></i>
+  {%- elseif params.icon -%}
+  <i class="fa-solid fa-{{ params.icon }}"></i>
+  {%- endif -%}
   {{ params.text }}
 </a>

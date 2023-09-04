@@ -105,7 +105,26 @@
         },
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-card__title tna-heading tna-heading--l\">Card title</h3><a href=\"\" class=\"tna-card__image-container\" tabindex=\"-1\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\" class=\"tna-card__image\" /></a><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
+      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-card__title tna-heading tna-heading--l\">Card title</h3><div class=\"tna-card__image-container\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\" class=\"tna-card__image\" /></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
+      "hidden": false
+    },
+    {
+      "name": "with link and image",
+      "options": {
+        "heading": {
+          "title": "Card title",
+          "level": 3
+        },
+        "image": {
+          "src": "https://loremflickr.com/640/360",
+          "alt": "A placeholder image",
+          "width": 640,
+          "height": 360
+        },
+        "href": "#",
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-card__title tna-heading tna-heading--l\"><a href=\"#\" class=\"tna-card__title-link\">Card title</a></h3><a href=\"\" class=\"tna-card__image-container\" tabindex=\"-1\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\" class=\"tna-card__image\" /></a><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
       "hidden": false
     },
     {

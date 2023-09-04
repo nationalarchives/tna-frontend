@@ -529,32 +529,32 @@ const Template = ({ theme, accent }) => {
           {
             text: "Twitter",
             href: "#",
-            image: "./images/footer/twitter.svg",
+            brandIcon: "twitter",
           },
           {
             text: "YouTube",
             href: "#",
-            image: "./images/footer/youtube.svg",
+            brandIcon: "youtube",
           },
           {
             text: "Facebook",
             href: "#",
-            image: "./images/footer/facebook.svg",
+            brandIcon: "facebook",
           },
           {
             text: "Flickr",
             href: "#",
-            image: "./images/footer/flickr.svg",
+            brandIcon: "flickr",
           },
           {
             text: "Instagram",
             href: "#",
-            image: "./images/footer/instagram.svg",
+            brandIcon: "instagram",
           },
           {
             text: "RSS",
             href: "#",
-            image: "./images/footer/rss.svg",
+            icon: "rss",
           },
         ],
         navigation: [

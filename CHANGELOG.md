@@ -9,8 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Updated social icons in footer to use Font Awesome icons
+
 ### Deprecated
 ### Removed
+
+- Deleted social SVG icons from assets
+
 ### Fixed
 ### Security
 

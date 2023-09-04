@@ -24,7 +24,13 @@
         "description": ""
       },
       {
-        "name": "image",
+        "name": "icon",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "brandIcon",
         "type": "string",
         "required": true,
         "description": ""

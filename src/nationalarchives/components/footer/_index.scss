@@ -48,33 +48,37 @@
     margin-top: 2rem;
 
     &-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
     }
 
     &-item {
-      margin-right: 1.5rem;
-      margin-bottom: calc(1rem - 3px);
-
-      display: inline-block;
-
-      vertical-align: top;
-
       &-link {
-        padding: 0 3px;
+        min-width: calc(2rem + 4px);
+        padding: 4px;
 
-        display: inline-block;
+        display: block;
 
-        border-top: 3px transparent solid;
-        border-bottom: 3px transparent solid;
+        text-align: center;
+        line-height: 1;
 
-        &-image {
+        border: 0 transparent solid;
+        border-width: 4px 0;
+
+        .fa-solid,
+        .fa-brands {
+          font-size: 2rem;
         }
 
         &-text {
         }
 
-        &:has(#{&}-image) {
+        &:has(.fa-solid),
+        &:has(.fa-brands) {
           &:hover {
-            @include colour.colour-border("link", 3px, solid, bottom);
+            @include colour.colour-border("link", 4px, solid, bottom);
           }
         }
       }
@@ -129,7 +133,7 @@
 
             vertical-align: middle;
 
-            border: 1px #fff solid;
+            border: 1px var(--link) solid;
 
             &::before {
               position: absolute;
@@ -138,8 +142,8 @@
               z-index: 2;
 
               border: 0.25rem transparent solid;
-              border-top-color: #fff;
-              border-right-color: #fff;
+              border-top-color: var(--link);
+              border-right-color: var(--link);
 
               content: "";
             }
@@ -153,7 +157,7 @@
               right: -0.125rem;
               z-index: 1;
 
-              background-color: #fff;
+              background-color: var(--link);
 
               outline: 3px transparent solid;
               @include colour.colour-outline("contrast-background");
@@ -221,15 +225,15 @@
 
   &__govuk {
     text-align: center;
-  }
 
-  &__govuk-link {
-    display: inline-block;
-  }
+    &-link {
+      display: inline-block;
+    }
 
-  &__govuk-logotype-crown {
-    margin: 0 auto;
-    display: block;
+    &-logotype-crown {
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   @include media.on-mobile {
@@ -238,21 +242,6 @@
   }
 
   @include colour.on-high-contrast {
-    &__social {
-      &-item {
-        &-link {
-          background-color: colour.brand-colour("black");
-
-          outline: 1px transparent solid;
-          @include colour.colour-outline("keyline-dark");
-
-          &:hover {
-            background-color: inherit;
-          }
-        }
-      }
-    }
-
     &__navigation {
       &-block {
         &-items {

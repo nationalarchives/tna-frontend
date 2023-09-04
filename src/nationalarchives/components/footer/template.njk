@@ -25,8 +25,12 @@
           {%- for item in params.social -%}
             <li class="tna-footer__social-item">
               <a href="{{ item.href }}" class="tna-footer__social-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
-                {%- if item.image -%}
-                <img class="tna-footer__social-item-link-image" src="{{ item.image }}" alt="{{ item.text }} logo" width="32" height="32" />
+                {%- if item.brandIcon or item.icon -%}
+                  {%- if item.brandIcon -%}
+                  <i class="fa-brands fa-{{ item.brandIcon }}"></i>
+                  {%- else -%}
+                  <i class="fa-solid fa-{{ item.icon }}"></i>
+                  {%- endif -%}
                 <span class="tna-footer__social-item-link-text tna-visually-hidden">
                   {{ item.text }}
                 </span>

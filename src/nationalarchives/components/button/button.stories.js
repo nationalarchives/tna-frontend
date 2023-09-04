@@ -5,6 +5,8 @@ const argTypes = {
   text: { control: "text" },
   href: { control: "text" },
   title: { control: "text" },
+  icon: { control: "text" },
+  brandIcon: { control: "text" },
   accent: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -21,12 +23,23 @@ export default {
   argTypes,
 };
 
-const Template = ({ text, href, title, accent, classes, attributes }) =>
+const Template = ({
+  text,
+  href,
+  title,
+  icon,
+  brandIcon,
+  accent,
+  classes,
+  attributes,
+}) =>
   Button({
     params: {
       text,
       href,
       title,
+      icon,
+      brandIcon,
       accent,
       classes,
       attributes,
@@ -48,6 +61,22 @@ Accent.args = {
   classes: "tna-button--demo",
 };
 
+export const Icon = Template.bind({});
+Icon.args = {
+  text: "Explore the collection",
+  href: "#",
+  icon: "map-location-dot",
+  classes: "tna-button--demo",
+};
+
+export const BrandIcon = Template.bind({});
+BrandIcon.args = {
+  text: "Twitter",
+  href: "#",
+  brandIcon: "twitter",
+  classes: "tna-button--demo",
+};
+
 const GroupTemplate = ({ buttons }) =>
   `<div class="tna-button-group">
     ${buttons.map((button) => Template(button)).join("")}
@@ -65,6 +94,12 @@ Group.args = {
       text: "Button 2",
       href: "#",
       accent: true,
+      classes: "tna-button--demo",
+    },
+    {
+      text: "Call us",
+      href: "#",
+      icon: "phone",
       classes: "tna-button--demo",
     },
   ],

@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tna-section` and `tna-aside` classes added for areas of content
 - `tna-tag` added as supertitles in `<hgroup>` and tags in cards
 - `tna-scene-setter` class added for welcome content
+- Buttons can have icons or brand icons
+- Override classes for specific devices available e.g. `tna-!--no-margin-bottom-small` and `tna-!--padding-top-s-tiny`
 
 ### Changed
 
@@ -28,6 +30,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Colours tweaked, such as page backgrounds
 - Fallback font for `supria-sans-condensed` is `Arial Narrow`
 - Update dependencies including Storybook to `7.4`
+- Override classes changed format from `tna-!__padding-top--s` to `tna-!--padding-top-s`
+- `tna-tag` changed to `tna-chip`
+- Altered line heights of headings for better readability
 
 ### Deprecated
 ### Removed

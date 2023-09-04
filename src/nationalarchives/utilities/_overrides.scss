@@ -1,21 +1,45 @@
 @use "../variables/spacing";
 @use "../tools/media";
 
-@each $property in margin, padding {
-  @each $direction in top, bottom {
-    .tna-\!--no-#{$property}-#{$direction},
-    .tna-\!--no-#{$property}-vertical {
-      #{$property}-#{$direction}: 0 !important;
+@mixin no-spacing-generator($suffix: "") {
+  @if $suffix != "" {
+    $suffix: "-" + $suffix;
+  }
+
+  @each $property in margin, padding {
+    @each $direction in top, bottom {
+      .tna-\!--no-#{$property}-#{$direction}#{$suffix},
+      .tna-\!--no-#{$property}-vertical#{$suffix} {
+        #{$property}-#{$direction}: 0 !important;
+      }
     }
   }
 }
 
-@mixin overrides($spacing) {
+@include no-spacing-generator;
+
+@include media.on-medium {
+  @include no-spacing-generator("medium");
+}
+
+@include media.on-small {
+  @include no-spacing-generator("small");
+}
+
+@include media.on-tiny {
+  @include no-spacing-generator("tiny");
+}
+
+@mixin overrides($spacing, $suffix: "") {
+  @if $suffix != "" {
+    $suffix: "-" + $suffix;
+  }
+
   @each $property in margin, padding {
     @each $direction in top, bottom {
       @each $size, $amount in $spacing {
-        .tna-\!--#{$property}-#{$direction}-#{$size},
-        .tna-\!--#{$property}-vertical-#{$size} {
+        .tna-\!--#{$property}-#{$direction}-#{$size}#{$suffix},
+        .tna-\!--#{$property}-vertical-#{$size}#{$suffix} {
           #{$property}-#{$direction}: #{$amount}rem !important;
         }
       }
@@ -25,6 +49,14 @@
 
 @include overrides(spacing.$spacing);
 
-@include media.on-mobile {
-  @include overrides(spacing.$spacing-mobile);
+@include media.on-medium {
+  @include overrides(spacing.$spacing, "medium");
+}
+
+@include media.on-small {
+  @include overrides(spacing.$spacing-mobile, "small");
+}
+
+@include media.on-tiny {
+  @include overrides(spacing.$spacing-mobile, "tiny");
 }

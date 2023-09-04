@@ -5,6 +5,7 @@
     "plugins": [
         "stylelint-selector-bem-pattern"
     ],
+    "ignoreFiles": ["src/nationalarchives/lib/font-awesome/**/*.scss"],
     "rules": {
         "at-rule-empty-line-before": null,
         "block-no-empty": null,

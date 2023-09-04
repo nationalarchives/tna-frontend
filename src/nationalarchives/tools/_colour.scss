@@ -40,7 +40,7 @@
     --accent-font-dark: #{brand-colour("black")} !important;
     --accent-font-light: #{rgba(brand-colour("black"), 0.7)} !important;
     --accent-link: #{brand-colour("black")} !important;
-    --accent-link-visited: #b9f !important;
+    --accent-link-visited: #{brand-colour("black")} !important;
     --accent-keyline: #{rgba(brand-colour("black"), 0.5)} !important;
     --accent-keyline-dark: #{rgba(brand-colour("black"), 0.8)} !important;
     --button-accent-background: #{brand-colour("yellow")} !important;

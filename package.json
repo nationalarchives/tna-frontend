@@ -55,7 +55,7 @@
     "@storybook/testing-library": "^0.2.0",
     "axe-playwright": "^1.2.3",
     "babel-loader": "^9.0.1",
-    "chromatic": "^6.21.0",
+    "chromatic": "^7.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "diff": "^5.1.0",
@@ -73,7 +73,7 @@
     "storybook": "^7.4.0",
     "style-loader": "^3.3.1",
     "stylelint": "^15.10.2",
-    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-config-standard-scss": "^11.0.0",
     "stylelint-selector-bem-pattern": "^3.0.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"

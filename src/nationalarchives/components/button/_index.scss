@@ -1,5 +1,6 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@import "button-group";
 
 .tna-button {
   padding: 0.25rem 1rem;
@@ -31,47 +32,12 @@
     @include colour.colour-font("button-primary-hover-text");
     text-decoration: none;
 
-    // @include colour.colour-background("button-primary-hover-background");
     background: transparent;
 
     transition:
       color 50ms,
       background-color 50ms,
       border-color 50ms;
-  }
-
-  &-group {
-    margin-bottom: 2rem;
-
-    display: flex;
-    flex-wrap: wrap;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include media.on-tiny {
-      display: block;
-    }
-  }
-
-  &-group & {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @include media.on-tiny {
-      margin-right: 0;
-
-      display: block;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
   }
 
   &--accent {

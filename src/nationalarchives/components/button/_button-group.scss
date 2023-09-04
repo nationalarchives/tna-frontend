@@ -1,0 +1,35 @@
+@use "../../tools/media";
+
+.tna-button-group {
+  margin-bottom: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media.on-tiny {
+    display: block;
+  }
+
+  .tna-button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include media.on-tiny {
+      margin-right: 0;
+
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

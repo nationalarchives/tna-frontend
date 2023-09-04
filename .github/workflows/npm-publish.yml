@@ -6,16 +6,6 @@ on:
       - published
 
 jobs:
-  lint:
-    name: Run lint checking
-    uses: ./.github/workflows/_lint.yml
-  
-  tests:
-    name: Run tests
-    needs:
-      - lint
-    uses: ./.github/workflows/_tests.yml
-
   check:
     name: Pre-release checks
     runs-on: ubuntu-latest
@@ -29,10 +19,23 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           ./tasks/validate-version.sh $VERSION
 
+  lint:
+    name: Run lint checking
+    needs:
+      - check
+    uses: ./.github/workflows/_lint.yml
+  
+  tests:
+    name: Run tests
+    needs:
+      - lint
+    uses: ./.github/workflows/_tests.yml
+
   prototype-kit:
     name: Test GOV.UK prototype kit integration
     needs:
       - check
+      - lint
       - tests
     uses: ./.github/workflows/_prototype-kit-test.yml
 
@@ -40,6 +43,7 @@ jobs:
     name: Build package and publish to npm
     runs-on: ubuntu-latest
     needs:
+      - check
       - prototype-kit
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

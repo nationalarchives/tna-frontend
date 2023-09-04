@@ -5,31 +5,14 @@
 
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   @include media.on-tiny {
-    display: block;
-  }
-
-  .tna-button {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @include media.on-tiny {
-      margin-right: 0;
-
-      display: block;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+    flex-direction: column;
+    align-items: stretch;
   }
 }

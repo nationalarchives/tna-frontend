@@ -1,17 +1,15 @@
 .tna-filters {
-  &__item {
-    margin: 0 0.75rem 0.75rem 0;
+  margin-bottom: 2rem;
 
-    display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 
-    &:last-child {
-      margin-right: 0;
-      margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 
-  &--stacked &__item {
-    display: block;
+  &__item {
   }
 
   &__item--selected #{&}__link {
@@ -26,8 +24,6 @@
 
   &__link {
     padding: 0.125rem 0.75rem;
-
-    display: inline-block;
 
     text-decoration: none;
 

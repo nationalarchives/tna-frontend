@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Override classes changed format from `tna-!__padding-top--s` to `tna-!--padding-top-s`
 - `tna-tag` changed to `tna-chip`
 - Altered line heights of headings for better readability
+- Utilised `gap` property for `tna-button-group` and `tna-filters` (thanks [@JohnHeeryTNA](https://github.com/JohnHeeryTNA))
 
 ### Deprecated
 ### Removed

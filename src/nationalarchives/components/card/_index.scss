@@ -74,6 +74,14 @@
   }
 
   &__action {
+    @include typography.main-font-weight-bold;
+
+    .fa,
+    .fa-regular,
+    .fa-solid,
+    .fa-brands {
+      margin-right: 0.5rem;
+    }
   }
 
   &--contrast,

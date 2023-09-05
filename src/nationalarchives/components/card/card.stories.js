@@ -105,7 +105,7 @@ Boxed.args = {
   },
   label: "New",
   body: "<p>Card body</p>",
-  style: "contrast",
+  style: "boxed",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -142,7 +142,6 @@ Horizontal.args = {
     size: "l",
     singleSentence: false,
   },
-  href: "#",
   image: {
     src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
     alt: "The National Archives office",
@@ -156,9 +155,41 @@ Horizontal.args = {
       text: "Card action",
       href: "#",
       title: "Go and do the action",
+      icon: "calendar",
     },
   ],
   horizontal: true,
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const HorizontalBoxed = Template.bind({});
+HorizontalBoxed.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "l",
+    singleSentence: false,
+  },
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  actions: [
+    {
+      text: "Card action",
+      href: "#",
+      title: "Go and do the action",
+      icon: "calendar",
+    },
+  ],
+  horizontal: true,
+  style: "boxed",
   htmlElement: "article",
   classes: "tna-card--demo",
 };

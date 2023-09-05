@@ -113,7 +113,6 @@ const Template = ({ theme, accent }) => {
             href: "#/gamma",
           },
         ],
-        colour: "yellow",
       },
     })}
     ${Breadcrumbs({
@@ -231,7 +230,6 @@ const Template = ({ theme, accent }) => {
           <h3 class="tna-heading tna-heading--m">
             This is a heading (M)
           </h3>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <h4 class="tna-heading tna-heading--s">
             This is a heading (S)

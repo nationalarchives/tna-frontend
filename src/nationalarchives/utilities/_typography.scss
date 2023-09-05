@@ -185,6 +185,8 @@ a {
   }
 
   a {
+    display: inline-block;
+
     &::after {
       padding-left: 0.25rem;
 
@@ -197,7 +199,7 @@ a {
 
     &:hover {
       &::after {
-        transform: translateX(0.25rem);
+        padding-left: 0.5rem;
       }
     }
   }

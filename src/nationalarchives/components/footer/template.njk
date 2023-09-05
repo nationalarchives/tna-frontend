@@ -58,10 +58,9 @@
           <li class="tna-footer__navigation-block-item">
             <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link"{%- if item.title %} title="{{ item.title }}"{% endif %}{%- if item.newTab %} target="_blank"{% endif %}>
               {{ item.text }}
-              {%- if item.newTab -%}
-              <span class="tna-footer__navigation-block-item-link-icon"></span>
-              <span class="tna-visually-hidden">(opens in new tab)</span>
-              {%- endif -%}
+              {%- if item.newTab %}
+              <span class="tna-footer__navigation-block-item-link-icon">(opens in new tab)</span>
+              {% endif -%}
             </a>
           </li>
         {%- endfor -%}

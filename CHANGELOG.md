@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated social icons in footer to use Font Awesome icons
+- Consolidated markup for "opens in new tab" in external footer links
 
 ### Deprecated
 ### Removed
@@ -20,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - `href` on cards is now optional
+- Styling for focus outlines of links within headers
 
 ### Security
 

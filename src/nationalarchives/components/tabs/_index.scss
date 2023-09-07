@@ -14,16 +14,13 @@
 
     display: flex;
     align-items: stretch;
+    gap: 1rem;
 
     list-style: none;
   }
 
   &__list-item {
     display: inline-flex;
-
-    & + & {
-      margin-left: 1rem;
-    }
   }
 
   &__list-item-link {
@@ -34,14 +31,10 @@
     align-items: center;
     position: relative;
 
-    @include colour.colour-font("font-dark");
-    // font-size: inherit;
     @include typography.relative-font-size(20);
-    // font-family: inherit;
     @include typography.heading-font;
-    // font-weight: 700;
     text-decoration: none;
-    line-height: 1.5;
+    // line-height: 1.5;
     text-align: center;
 
     background: transparent;
@@ -50,8 +43,10 @@
 
     cursor: pointer;
 
-    & + & {
-      margin-left: 1.5rem;
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-dark");
     }
 
     &::after {
@@ -70,6 +65,8 @@
     &:hover,
     &--selected,
     &--selected:hover {
+      text-decoration: none;
+
       &::after {
         height: 0.25rem;
       }

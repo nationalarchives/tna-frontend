@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `href` on cards is now optional
 - Styling for focus outlines of links within headers
+- Remove double underline from tab item hover
+- Fix colour of visited tabs when JavaScript is not available
 
 ### Security
 

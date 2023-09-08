@@ -7,11 +7,9 @@ on:
 
 jobs:
   lint:
-    name: Run lint checking
     uses: ./.github/workflows/_lint.yml
   
   tests:
-    name: Run tests
     needs:
       - lint
     uses: ./.github/workflows/_tests.yml

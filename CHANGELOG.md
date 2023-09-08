@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Envelope icon added to newsletter subscription
 - Card actions can have icons or brand icons
+- Gallery component
+- Button elements can be `<a>` or `<button>` with `buttonElement: true`
+- Small button option
 
 ### Changed
 
@@ -28,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Styling for focus outlines of links within headers
 - Remove double underline from tab item hover
 - Fix colour of visited tabs when JavaScript is not available
+- Size of `<button class="tna-button">` now matches `<a class="tna-button">`
 
 ### Security
 

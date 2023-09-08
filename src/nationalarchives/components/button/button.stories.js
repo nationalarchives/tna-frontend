@@ -8,6 +8,8 @@ const argTypes = {
   icon: { control: "text" },
   brandIcon: { control: "text" },
   accent: { control: "boolean" },
+  small: { control: "boolean" },
+  buttonElement: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -30,6 +32,8 @@ const Template = ({
   icon,
   brandIcon,
   accent,
+  small,
+  buttonElement,
   classes,
   attributes,
 }) =>
@@ -41,6 +45,8 @@ const Template = ({
       icon,
       brandIcon,
       accent,
+      small,
+      buttonElement,
       classes,
       attributes,
     },
@@ -77,6 +83,22 @@ BrandIcon.args = {
   classes: "tna-button--demo",
 };
 
+export const Small = Template.bind({});
+Small.args = {
+  text: "Button element",
+  href: "#",
+  small: true,
+  classes: "tna-button--demo",
+};
+
+export const ButtonElement = Template.bind({});
+ButtonElement.args = {
+  text: "Button element",
+  href: "#",
+  buttonElement: true,
+  classes: "tna-button--demo",
+};
+
 const GroupTemplate = ({ buttons }) =>
   `<div class="tna-button-group">
     ${buttons.map((button) => Template(button)).join("")}
@@ -100,6 +122,12 @@ Group.args = {
       text: "Call us",
       href: "#",
       icon: "phone",
+      classes: "tna-button--demo",
+    },
+    {
+      text: "Button",
+      href: "#",
+      buttonElement: true,
       classes: "tna-button--demo",
     },
   ],

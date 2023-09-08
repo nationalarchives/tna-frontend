@@ -16,20 +16,6 @@
   }
 }
 
-@include no-spacing-generator;
-
-@include media.on-medium {
-  @include no-spacing-generator("medium");
-}
-
-@include media.on-small {
-  @include no-spacing-generator("small");
-}
-
-@include media.on-tiny {
-  @include no-spacing-generator("tiny");
-}
-
 @mixin overrides($spacing, $suffix: "") {
   @if $suffix != "" {
     $suffix: "-" + $suffix;
@@ -40,23 +26,27 @@
       @each $size, $amount in $spacing {
         .tna-\!--#{$property}-#{$direction}-#{$size}#{$suffix},
         .tna-\!--#{$property}-vertical-#{$size}#{$suffix} {
-          #{$property}-#{$direction}: #{$amount}rem !important;
+          #{$property}-#{$direction}: #{$amount} !important;
         }
       }
     }
   }
 }
 
+@include no-spacing-generator;
 @include overrides(spacing.$spacing);
 
 @include media.on-medium {
+  @include no-spacing-generator("medium");
   @include overrides(spacing.$spacing, "medium");
 }
 
 @include media.on-small {
+  @include no-spacing-generator("small");
   @include overrides(spacing.$spacing-mobile, "small");
 }
 
 @include media.on-tiny {
+  @include no-spacing-generator("tiny");
   @include overrides(spacing.$spacing-mobile, "tiny");
 }

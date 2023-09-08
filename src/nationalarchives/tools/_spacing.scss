@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "../variables/spacing";
+
+@function spacing($size) {
+  @return map.get(spacing.$spacing, $size);
+}
+
+@function spacing-mobile($size) {
+  @return map.get(spacing.$spacing-mobile, $size);
+}

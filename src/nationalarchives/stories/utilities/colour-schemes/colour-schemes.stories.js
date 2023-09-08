@@ -3,6 +3,7 @@ import Header from "../../../components/header/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import Gallery from "../../../components/gallery/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
 import Message from "../../../components/message/template.njk";
@@ -306,7 +307,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container">
+      <div class="tna-container tna-section">
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
             params: { ...cardDefaultOptions },
@@ -324,7 +325,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container">
+      <div class="tna-container tna-section">
         <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           ${Card({
             params: {
@@ -355,7 +356,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container">
+      <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
           ${Tabs({
             params: {
@@ -383,7 +384,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container">
+      <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
           ${Picture({
             params: {
@@ -400,6 +401,70 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
+      ${Gallery({
+        params: {
+          items: Array(6)
+            .fill({
+              alt: "",
+              width: "",
+              height: "",
+            })
+            .map((item, index) => ({
+              ...item,
+              src: `https://picsum.photos/id/${index + 1}/${
+                index % 3 === 0
+                  ? "800/600"
+                  : index % 3 === 1
+                  ? "600/600"
+                  : "600/800"
+              }`,
+              alt: `Photo ${index + 1}`,
+              description: `Photo #${index + 1}`,
+            })),
+
+          classes: "tna-gallery--demo",
+        },
+      })}
+      <div class="tna-section">
+        ${IndexGrid({
+          params: {
+            heading: { title: "My dogs", href: "#" },
+            items: Array(12)
+              .fill({
+                ...{
+                  href: "#",
+                  src: "https://picsum.photos/id/237/800/600",
+                  alt: "Photo of a puppy",
+                  width: "800",
+                  height: "600",
+                  title: "Cat",
+                  subtitle: "4 photos",
+                },
+              })
+              .map((item, index) => {
+                const pseudoRandom = ((index * 29) % 8) + 1;
+                return {
+                  ...item,
+                  href: `#/category-${index}`,
+                  title: `Category #${index + 101}`,
+                  subtitle: `${pseudoRandom} photos`,
+                };
+              }),
+            columns: 4,
+            columnsMedium: 3,
+            columnsSmall: 2,
+            columnsTiny: 1,
+          },
+        })}
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            <div class="tna-button-group">
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="tna-section tna-background--contrast">
         ${IndexGrid({
           params: {

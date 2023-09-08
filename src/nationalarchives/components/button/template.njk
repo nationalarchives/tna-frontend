@@ -1,12 +1,15 @@
 {%- set buttonClasses = [params.classes] if params.classes else [] -%}
+{%- if params.small -%}
+  {%- set buttonClasses = buttonClasses.concat('tna-button--small') -%}
+{%- endif -%}
 {%- if params.accent -%}
   {%- set buttonClasses = buttonClasses.concat('tna-button--accent') -%}
 {%- endif -%}
-<a href="{{ params.href }}" class="tna-button {{ buttonClasses | join(' ') }}" role="button"{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<{{ 'button' if params.buttonElement else 'a' }} href="{{ params.href }}" class="tna-button {{ buttonClasses | join(' ') }}" role="button"{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- if params.brandIcon -%}
   <i class="fa-brands fa-{{ params.brandIcon }}"></i>
   {%- elseif params.icon -%}
   <i class="fa-solid fa-{{ params.icon }}"></i>
   {%- endif -%}
   {{ params.text }}
-</a>
+</{{ 'button' if params.buttonElement else 'a' }}>

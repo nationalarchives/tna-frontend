@@ -66,4 +66,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook
           exitZeroOnChanges: true
-          autoAcceptChanges: true
+          # autoAcceptChanges: true # TODO: Enable once release - won't be pushing new features directly to main

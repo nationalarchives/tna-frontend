@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Envelope icon added to newsletter subscription
 - Card actions can have icons or brand icons
+- Tabs also respond to the up/down keys on keyboard navigation as well as left/right
 
 ### Changed
 

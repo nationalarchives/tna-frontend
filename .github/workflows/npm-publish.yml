@@ -10,8 +10,7 @@ jobs:
     name: Pre-release checks
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Check version numbers
         run: |
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
@@ -20,19 +19,16 @@ jobs:
           ./tasks/validate-version.sh $VERSION
 
   lint:
-    name: Run lint checking
     needs:
       - check
     uses: ./.github/workflows/_lint.yml
   
   tests:
-    name: Run tests
     needs:
       - lint
     uses: ./.github/workflows/_tests.yml
 
   prototype-kit:
-    name: Test GOV.UK prototype kit integration
     needs:
       - check
       - lint
@@ -48,10 +44,8 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
           registry-url: https://registry.npmjs.org/

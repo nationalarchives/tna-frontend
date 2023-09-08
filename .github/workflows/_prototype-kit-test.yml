@@ -1,4 +1,4 @@
-name: Test GOV.UK prototype kit integration
+name: GOV.UK prototype kit
 
 on:
   workflow_call:
@@ -8,10 +8,8 @@ jobs:
     name: Test GOV.UK prototype kit integration
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
       - name: Install dependencies
@@ -78,8 +76,7 @@ jobs:
         run: >
           cd prototype &&
           npm run dev &
-      - name: Wait for server response of 200
-        uses: nev7n/wait_for_response@v1
+      - uses: nev7n/wait_for_response@v1
         with:
           url: "http://localhost:3000"
           responseCode: 200

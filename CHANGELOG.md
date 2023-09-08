@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Gallery component
 - Button elements can be `<a>` or `<button>` with `buttonElement: true`
 - Small button option
+- Tabs also respond to the up/down keys on keyboard navigation as well as left/right
 
 ### Changed
 

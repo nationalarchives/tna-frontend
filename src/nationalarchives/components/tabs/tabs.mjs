@@ -110,11 +110,13 @@ export class Tabs {
 
     switch (itemLinkKeyDownEvent.key) {
       case "ArrowLeft":
+      case "ArrowUp":
         this.setSelectedToPreviousTab(targetItem);
         overwriteKeyAction = true;
         break;
 
       case "ArrowRight":
+      case "ArrowDown":
         this.setSelectedToNextTab(targetItem);
         overwriteKeyAction = true;
         break;

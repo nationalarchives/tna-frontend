@@ -78,6 +78,8 @@
       &:hover {
         &::after {
           height: 0.125rem;
+
+          @include colour.colour-background("font-light");
         }
       }
 
@@ -87,6 +89,8 @@
         &::after,
         &:hover::after {
           height: 0.25rem;
+
+          @include colour.colour-background("keyline-dark");
         }
       }
     }

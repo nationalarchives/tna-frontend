@@ -39,6 +39,7 @@ jobs:
           echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/filters/macro.njk\" import tnaFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+          echo -e "{% from \"nationalarchives/components/gallery/macro.njk\" import tnaGallery %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/grid/macro.njk\" import tnaGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
           echo -e "{% from \"nationalarchives/components/hero/macro.njk\" import tnaHero %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -58,6 +59,7 @@ jobs:
           echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaFilters({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaFooter({}) }}" >> prototype/app/views/index.html &&
+          echo "{{ tnaGallery({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaGrid({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaHeader({}) }}" >> prototype/app/views/index.html &&
           echo "{{ tnaHero({}) }}" >> prototype/app/views/index.html &&

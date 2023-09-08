@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
+import { Gallery } from "./components/gallery/gallery.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
 import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs";
@@ -49,6 +50,11 @@ const initAll = (options) => {
   if ($breadcrumbs) {
     new Breadcrumbs($breadcrumbs).init();
   }
+
+  const $galleries = $scope.querySelectorAll('[data-module="tna-gallery"]');
+  $galleries.forEach(($gallery) => {
+    new Gallery($gallery).init();
+  });
 
   const $header = $scope.querySelector('[data-module="tna-header"]');
   if ($header) {

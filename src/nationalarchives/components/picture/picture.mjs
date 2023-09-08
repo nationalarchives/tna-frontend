@@ -21,6 +21,7 @@ export class Picture {
     this.$transcriptToggle.classList.add(
       "tna-picture__toggle-transcript",
       "tna-button",
+      "tna-button--small",
       "tna-button--accent",
       "tna-button--solid-hover",
     );

@@ -1,5 +1,7 @@
+@use "sass:math";
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/typography";
 @import "button-group";
 
 .tna-button {
@@ -7,9 +9,11 @@
 
   display: inline-block;
 
+  @include typography.relative-font-size(18);
   font-weight: 700;
   text-decoration: none;
   text-align: center;
+  line-height: #{math.div(16, 18) * 2};
 
   @include colour.colour-background("button-primary-background");
 
@@ -38,6 +42,12 @@
       color 50ms,
       background-color 50ms,
       border-color 50ms;
+  }
+
+  &--small {
+    padding: 0.125rem 0.5rem;
+
+    @include typography.relative-font-size(14);
   }
 
   &--accent {

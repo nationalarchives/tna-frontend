@@ -36,6 +36,18 @@
     "description": ""
   },
   {
+    "name": "small",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "buttonElement",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

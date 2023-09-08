@@ -47,6 +47,7 @@ const checkExists = [
   ...componentFiles("card", true),
   ...componentFiles("filters", true),
   ...componentFiles("footer", true),
+  ...componentFiles("gallery"),
   ...componentFiles("grid", true),
   ...componentFiles("header"),
   ...componentFiles("hero", true),

@@ -426,12 +426,12 @@ const Template = ({ theme, accent }) => {
                 {
                   id: "gallery-tabs-3-1",
                   title: "Transcript",
-                  body: "TEST TRANSCRIPT",
+                  body: "<p>TEST TRANSCRIPT</p>",
                 },
                 {
                   id: "gallery-tabs-3-2",
                   title: "Translation",
-                  body: "TEST TRANSLATION",
+                  body: "<p>TEST TRANSLATION</p>",
                 },
               ],
             },
@@ -445,12 +445,12 @@ const Template = ({ theme, accent }) => {
                 {
                   id: "gallery-tabs-4-1",
                   title: "Transcript",
-                  body: "TEST TRANSCRIPT",
+                  body: "<p>TEST TRANSCRIPT</p>",
                 },
                 {
                   id: "gallery-tabs-4-2",
                   title: "Translation",
-                  body: "TEST TRANSLATION",
+                  body: "<p>TEST TRANSLATION</p>",
                 },
               ],
             },

@@ -53,12 +53,20 @@ Standard.args = {
               {
                 id: "tab-1",
                 title: "Transcript",
-                body: "TEST TRANSCRIPT",
+                body: "<p>TEST TRANSCRIPT</p>",
               },
               {
                 id: "tab-2",
                 title: "Translation",
-                body: "TEST TRANSLATION",
+                body: "<p>TEST TRANSLATION</p>",
+              },
+            ]
+          : index === 1
+          ? [
+              {
+                id: "tab-1",
+                title: "Transcript",
+                body: "<p>TEST TRANSCRIPT</p>",
               },
             ]
           : null,

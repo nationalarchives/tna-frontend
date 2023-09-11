@@ -49,12 +49,12 @@ export class Picture {
       this.$transcript.removeAttribute("hidden");
       // this.$transcript.setAttribute("tabindex", "0");
       // this.$transcript.focus();
+      // this.$transcript.setAttribute("tabindex", "-1");
     } else {
       this.$transcriptToggle.classList.remove(transcriptToggleOpenedClass);
       this.$transcriptToggle.setAttribute("aria-expanded", false);
       this.$transcriptToggle.innerText = "Open transcript";
       this.$transcript.setAttribute("hidden", true);
-      // this.$transcript.setAttribute("tabindex", "-1");
     }
   }
 }

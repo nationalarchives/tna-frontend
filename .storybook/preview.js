@@ -11,7 +11,7 @@ if (window.self !== window.top) {
 }
 document.body.classList.add("tna-template__body");
 
-const customViewports = {
+export const customViewports = {
   // ...MINIMAL_VIEWPORTS,
   // largeMin: {
   //   name: "Smallest large device",

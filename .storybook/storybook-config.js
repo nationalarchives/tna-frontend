@@ -17,9 +17,13 @@ export const a11yConfig = {
     "wcag2aa",
     "wcag21aa",
     ...(checkWCAG21AAA ? ["wcag2aaa", "wcag21aaa"] : []),
+    "best-practice",
   ]),
   axeOptions: {
     selectors: true,
     frameWaitTime: 15000,
+    absolutePaths: true,
+    elementRef: true,
   },
+  verbose: false,
 };

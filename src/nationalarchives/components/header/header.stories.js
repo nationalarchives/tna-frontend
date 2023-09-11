@@ -3,6 +3,7 @@ import macroOptions from "./macro-options.json";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { customViewports } from "../../../../.storybook/preview";
 
 const argTypes = {
   logo: { control: "object" },
@@ -99,10 +100,10 @@ Standard.args = {
 export const Desktop = Template.bind({});
 Desktop.parameters = {
   viewport: {
-    defaultViewport: "tablet",
+    defaultViewport: "medium",
   },
   chromatic: {
-    viewports: [MINIMAL_VIEWPORTS["tablet"].styles.width.replace(/px$/, "")],
+    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
   },
 };
 Desktop.args = {
@@ -140,10 +141,10 @@ Desktop.play = async ({ canvasElement }) => {
 export const Mobile = Template.bind({});
 Mobile.parameters = {
   viewport: {
-    defaultViewport: "mobile2",
+    defaultViewport: "small",
   },
   chromatic: {
-    viewports: [MINIMAL_VIEWPORTS["mobile2"].styles.width.replace(/px$/, "")],
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
   },
 };
 Mobile.args = {

@@ -2,7 +2,7 @@ import Header from "./template.njk";
 import macroOptions from "./macro-options.json";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
-import { customViewports } from "../../../../.storybook/preview";
+import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   logo: { control: "object" },

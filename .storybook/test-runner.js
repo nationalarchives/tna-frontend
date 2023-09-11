@@ -57,7 +57,7 @@
 // };
 
 import { a11yConfig } from "./storybook-config";
-import { customViewports } from "./preview";
+import { customViewports } from "./viewports";
 
 const { getStoryContext } = require("@storybook/test-runner");
 const { injectAxe, checkA11y } = require("axe-playwright");

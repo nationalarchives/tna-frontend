@@ -19,7 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated social icons in footer to use Font Awesome icons
-- Consolidated markup for "opens in new tab" in external footer links
+- Consolidated markup for "opens in new tab" in external footer links#
+- Columns have margin removed by default
 
 ### Deprecated
 ### Removed

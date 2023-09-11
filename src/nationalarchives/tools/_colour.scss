@@ -200,13 +200,13 @@
 }
 
 %accent {
-  --font-base: var(--accent-font-base, var(--accent-font-base));
-  --font-dark: var(--accent-font-dark, var(--accent-font-dark));
-  --font-light: var(--accent-font-light, var(--accent-font-light));
-  --link: var(--accent-link, var(--accent-link));
-  --link-visited: var(--accent-link-visited, var(--accent-link-visited));
-  --keyline: var(--accent-keyline, var(--accent-keyline));
-  --keyline-dark: var(--accent-keyline-dark, var(--accent-keyline-dark));
+  --font-base: var(--accent-font-base);
+  --font-dark: var(--accent-font-dark);
+  --font-light: var(--accent-font-light);
+  --link: var(--accent-link);
+  --link-visited: var(--accent-link-visited);
+  --keyline: var(--accent-keyline);
+  --keyline-dark: var(--accent-keyline-dark);
 
   @include colour-background("accent-background");
 
@@ -227,6 +227,11 @@
 
 %light-accent-background {
   @include colour-background("accent-background-light");
+
+  --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
+  --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
+  --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
+  --link: #{map.get(colour.$colour-palette-default, "font-dark")};
 }
 
 @mixin light-accent-background {

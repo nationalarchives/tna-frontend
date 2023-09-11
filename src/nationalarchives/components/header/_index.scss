@@ -157,6 +157,10 @@
       color: inherit;
     }
 
+    &:hover {
+      text-decoration: none;
+    }
+
     // &--href {
     //   &:hover {
     //       outline: 0.375rem #fff solid;
@@ -424,6 +428,8 @@
 
     &:hover,
     &--selected {
+      text-decoration: none;
+
       &,
       &:link,
       &:visited {

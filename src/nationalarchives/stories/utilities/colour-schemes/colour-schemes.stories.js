@@ -400,35 +400,68 @@ const Template = ({ theme, accent }) => {
           })}
         </div>
       </div>
-      <hr>
       ${Gallery({
         params: {
-          items: Array(6)
-            .fill({
+          heading: { title: "My gallery", level: 3 },
+          items: [
+            {
+              src: "https://picsum.photos/id/1/800/600",
               alt: "",
-              width: "",
-              height: "",
-            })
-            .map((item, index) => ({
-              ...item,
-              src: `https://picsum.photos/id/${index + 1}/${
-                index % 3 === 0
-                  ? "800/600"
-                  : index % 3 === 1
-                  ? "600/600"
-                  : "600/800"
-              }`,
-              alt: `Photo ${index + 1}`,
-              description: `Photo #${index + 1}`,
-            })),
-
+              width: 800,
+              height: 600,
+            },
+            {
+              src: "https://picsum.photos/id/2/600/800",
+              alt: "",
+              width: 600,
+              height: 800,
+              description: "Image description",
+            },
+            {
+              src: "https://picsum.photos/id/3/800/800",
+              alt: "",
+              width: 800,
+              height: 800,
+              tabs: [
+                {
+                  id: "gallery-tabs-3-1",
+                  title: "Transcript",
+                  body: "TEST TRANSCRIPT",
+                },
+                {
+                  id: "gallery-tabs-3-2",
+                  title: "Translation",
+                  body: "TEST TRANSLATION",
+                },
+              ],
+            },
+            {
+              src: "https://picsum.photos/id/4/800/600",
+              alt: "",
+              width: 800,
+              height: 600,
+              description: "Image description",
+              tabs: [
+                {
+                  id: "gallery-tabs-4-1",
+                  title: "Transcript",
+                  body: "TEST TRANSCRIPT",
+                },
+                {
+                  id: "gallery-tabs-4-2",
+                  title: "Translation",
+                  body: "TEST TRANSLATION",
+                },
+              ],
+            },
+          ],
           classes: "tna-gallery--demo",
         },
       })}
       <div class="tna-section">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", href: "#" },
+            heading: { title: "My dogs", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -468,7 +501,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--contrast">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", href: "#" },
+            heading: { title: "My dogs", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -508,7 +541,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--accent-light">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", href: "#" },
+            heading: { title: "My dogs", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -548,7 +581,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--accent">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", href: "#" },
+            heading: { title: "My dogs", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{

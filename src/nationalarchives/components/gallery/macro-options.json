@@ -1,5 +1,31 @@
 [
   {
+    "name": "heading",
+    "type": "object",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "level",
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "size",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
     "name": "items",
     "type": "array",
     "required": true,
@@ -34,6 +60,32 @@
         "type": "string",
         "required": false,
         "description": ""
+      },
+      {
+        "name": "tabs",
+        "type": "array",
+        "required": true,
+        "description": "",
+        "params": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "body",
+            "type": "string",
+            "required": true,
+            "description": ""
+          }
+        ]
       }
     ]
   },

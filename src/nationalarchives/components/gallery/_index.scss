@@ -7,8 +7,13 @@
 
   padding-bottom: 2rem;
 
-  &__items {
+  &__header {
     padding-top: 2rem;
+  }
+
+  &__items {
+    width: 100%;
+    // padding-top: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -24,13 +29,17 @@
     margin: 0;
 
     &-index {
-      margin-bottom: 0.5rem;
+      padding-bottom: 1rem;
 
       text-align: center;
     }
 
+    &-figure {
+    }
+
     &-image {
       margin: 0 auto;
+      height: auto;
     }
 
     &-description {
@@ -39,6 +48,16 @@
 
       @include colour.colour-border("keyline-dark", 4px, solid, left);
     }
+
+    &-tabs {
+      @include media.on-smaller-than-large {
+        padding-top: 2rem;
+      }
+    }
+  }
+
+  &__item + &__item {
+    @include colour.colour-border("keyline", 1px, solid, top);
   }
 
   &__toggle-wrapper {
@@ -73,22 +92,34 @@
   }
 
   &--collapsed &__item + &__item,
-  &--collapsed &__item:first-child &__item-description {
+  &--collapsed &__item:first-child &__item-description,
+  &--collapsed &__item:first-child &__item-tabs {
     display: none;
   }
 
+  &--collapsed &__item-figure {
+    width: 100%;
+  }
+
   @include colour.on-high-contrast {
+    &__items {
+      padding-top: 2rem;
+    }
+
     &__item {
+      padding-bottom: 2rem;
+
       @include colour.colour-border("keyline-dark", 1px);
 
       &-index {
-        padding-top: 0.5rem;
+        // padding-top: 0.5rem;
       }
 
       &-description {
-        padding: 0 1rem 1rem;
+        // margin-bottom: 2rem;
+        // padding: 0 1rem 1rem;
 
-        border: none;
+        // border: none;
       }
     }
   }

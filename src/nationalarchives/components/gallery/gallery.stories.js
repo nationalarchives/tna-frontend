@@ -4,6 +4,7 @@ import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
 const argTypes = {
+  heading: { control: "object" },
   items: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -20,9 +21,10 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, classes, attributes }) =>
+const Template = ({ heading, items, classes, attributes }) =>
   Gallery({
     params: {
+      heading,
       items,
       classes,
       attributes,
@@ -31,6 +33,7 @@ const Template = ({ items, classes, attributes }) =>
 
 export const Standard = Template.bind({});
 Standard.args = {
+  heading: { title: "My gallery", level: 3 },
   items: Array(6)
     .fill({
       alt: "",
@@ -44,6 +47,21 @@ Standard.args = {
       }`,
       alt: `Photo ${index + 1}`,
       description: `Photo #${index + 1}`,
+      tabs:
+        index === 0
+          ? [
+              {
+                id: "tab-1",
+                title: "Transcript",
+                body: "TEST TRANSCRIPT",
+              },
+              {
+                id: "tab-2",
+                title: "Translation",
+                body: "TEST TRANSLATION",
+              },
+            ]
+          : null,
     })),
 
   classes: "tna-gallery--demo",

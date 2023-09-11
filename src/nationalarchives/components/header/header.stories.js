@@ -2,7 +2,6 @@ import Header from "./template.njk";
 import macroOptions from "./macro-options.json";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
-import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { customViewports } from "../../../../.storybook/preview";
 
 const argTypes = {

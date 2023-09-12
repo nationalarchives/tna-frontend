@@ -1,0 +1,64 @@
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../button";
+
+.tna-picture {
+  margin: 0;
+  padding: 0;
+
+  @include spacing.space-below;
+
+  &__image-wrapper {
+    // padding: 1rem 0;
+
+    position: relative;
+
+    background-color: #f4f4f4;
+  }
+
+  &__image {
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &__toggle-transcript {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  &__transcript {
+    @include colour.invert;
+
+    padding: 1rem 1.5rem;
+
+    // @include colour.colour-font("font-base");
+
+    .tna-template--clicked &:focus {
+      outline: none;
+    }
+
+    .tna-tabs {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__caption {
+    padding: 1rem 0;
+
+    // position: relative;
+
+    // text-align: center;
+
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+  }
+
+  @include colour.on-high-contrast {
+    @include colour.colour-border("keyline-dark", 1px);
+    border-bottom-width: 0;
+
+    &__caption {
+      padding: 1rem;
+    }
+  }
+}

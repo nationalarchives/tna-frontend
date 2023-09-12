@@ -1,0 +1,142 @@
+@use "../../tools/colour";
+@use "../../tools/typography";
+@use "../../tools/spacing";
+
+.tna-tabs {
+  @include spacing.space-below;
+
+  &__list {
+    margin: 0 0 1rem;
+    padding: 0;
+
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    flex-wrap: nowrap;
+
+    list-style: none;
+  }
+
+  &__list-item {
+  }
+
+  &__list-item-link {
+    padding: 0.5rem 0;
+
+    display: flex;
+
+    align-items: center;
+    position: relative;
+
+    @include typography.relative-font-size(20);
+    @include typography.heading-font;
+    text-decoration: none;
+    // line-height: 1.5;
+    text-align: center;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-dark");
+    }
+
+    &::after {
+      height: 0;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      @include colour.colour-background("keyline-dark");
+
+      content: "";
+    }
+
+    &:hover,
+    &--selected,
+    &--selected:hover {
+      text-decoration: none;
+
+      &::after {
+        height: 0.25rem;
+      }
+    }
+
+    .tna-template--js-enabled & {
+      @include colour.colour-font("font-light");
+
+      &:hover {
+        &::after {
+          height: 0.125rem;
+
+          @include colour.colour-background("font-light");
+        }
+      }
+
+      &--selected {
+        @include colour.colour-font("font-dark");
+
+        &::after,
+        &:hover::after {
+          height: 0.25rem;
+
+          @include colour.colour-background("keyline-dark");
+        }
+      }
+    }
+  }
+
+  &__items {
+    // &:not(:target-within) {
+    //   .tna-tabs__item:first-child {
+    //     display: block;
+    //   }
+    // }
+  }
+
+  &__item {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+
+    &:has(~ :target) {
+      display: none;
+    }
+
+    &:target {
+      display: block;
+    }
+
+    .tna-template--js-enabled & {
+      display: block;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+
+    .tna-template--clicked &:focus {
+      outline: none;
+    }
+  }
+
+  @include colour.on-high-contrast {
+    &__list-item-link {
+      padding-right: 1rem;
+      padding-left: 1rem;
+
+      overflow: hidden;
+
+      @include colour.colour-border("keyline-dark", 1px);
+    }
+  }
+}

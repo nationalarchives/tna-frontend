@@ -8,7 +8,7 @@
   {
     "name": "href",
     "type": "string",
-    "required": true,
+    "required": false,
     "description": ""
   },
   {
@@ -37,6 +37,12 @@
   },
   {
     "name": "small",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "plain",
     "type": "boolean",
     "required": false,
     "description": ""

@@ -1,0 +1,83 @@
+@use "sass:math";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/typography";
+@use "../grid";
+
+.tna-index-grid {
+  &__heading {
+  }
+
+  &__items {
+    margin-bottom: 0;
+    padding-top: 2rem;
+
+    list-style: none;
+  }
+
+  &__item-wrapper {
+    margin-bottom: 2rem;
+
+    @include media.on-mobile {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__item {
+    @include colour.invert;
+
+    // @include colour.colour-font("contrast-font-base");
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    text-decoration: none;
+
+    @include colour.on-high-contrast {
+      @include colour.colour-border("keyline-dark", 1px);
+    }
+  }
+
+  &__item-image {
+    width: 100%;
+    // height: #{math.div(2, 3) * 100%};
+    height: auto;
+
+    // object-fit: cover;
+  }
+
+  &__item-content {
+    padding: 1rem;
+
+    flex: 1;
+  }
+
+  &__item-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  &__item-title {
+    // @include typography.heading-font;
+    text-decoration: underline;
+    // @include typography.relative-font-size(20);
+
+    .tna-index-grid__item:hover & {
+      &,
+      &:link,
+      &:visited {
+        @include typography.interacted-text-decoration;
+      }
+    }
+  }
+
+  &__item-subtitle {
+    @include colour.colour-font("font-light");
+    @include typography.relative-font-size(16);
+  }
+}

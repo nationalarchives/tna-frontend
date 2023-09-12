@@ -11,6 +11,9 @@ const componentJavascriptFiles = (component) => [
 
 const componentFiles = (component, excludeJavaScript = false) => [
   `nationalarchives/components/${component}/_index.scss`,
+  `nationalarchives/components/${component}/${component}.scss`,
+  `nationalarchives/components/${component}/${component}.css`,
+  `nationalarchives/components/${component}/${component}.css.map`,
   `nationalarchives/components/${component}/fixtures.json`,
   `nationalarchives/components/${component}/macro-options.json`,
   `nationalarchives/components/${component}/macro.njk`,
@@ -45,6 +48,7 @@ const checkExists = [
   ...componentFiles("breadcrumbs"),
   ...componentFiles("button", true),
   ...componentFiles("card", true),
+  ...componentFiles("cookie-banner"),
   ...componentFiles("filters", true),
   ...componentFiles("footer", true),
   ...componentFiles("gallery"),

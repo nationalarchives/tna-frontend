@@ -1,0 +1,35 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+
+.tna-message {
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  color: colour.brand-colour("black");
+
+  @include colour.colour-background("keyline");
+
+  @include colour.colour-border("keyline-dark", 0.5rem, solid, left);
+
+  // &--yellow {
+  background-color: colour.brand-colour("cream");
+
+  border-left-color: colour.brand-colour("yellow");
+  // }
+
+  &__icon {
+    margin-right: 1rem;
+
+    flex: 0 0 2.5rem;
+
+    @include media.on-mobile {
+      flex: 0 0 1.5rem;
+    }
+  }
+
+  &__message {
+    flex: 1;
+  }
+}

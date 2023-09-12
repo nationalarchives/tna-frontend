@@ -10,8 +10,8 @@
  * ------------------------------------------------
  */
 
-@forward "variables";
-@forward "tools";
+@use "variables";
+@use "tools";
 
-@forward "utilities";
-@forward "components";
+@use "utilities";
+@use "components";

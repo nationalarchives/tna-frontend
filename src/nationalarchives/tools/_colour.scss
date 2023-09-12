@@ -169,6 +169,10 @@
   --link-visited: var(--contrast-link-visited);
   --keyline: var(--contrast-keyline);
   --keyline-dark: var(--contrast-keyline-dark);
+  --button-text: var(--contrast-button-text);
+  --button-background: var(--contrast-button-background);
+  --button-hover-text: var(--contrast-button-hover-text);
+  --button-hover-background: var(--contrast-button-hover-background);
 
   @include colour-background("contrast-background");
 
@@ -188,6 +192,10 @@
     --link-visited: var(--contrast-link-visited);
     --keyline: var(--contrast-keyline);
     --keyline-dark: var(--contrast-keyline-dark);
+    --button-text: var(--contrast-button-text);
+    --button-background: var(--contrast-button-background);
+    --button-hover-text: var(--contrast-button-hover-text);
+    --button-hover-background: var(--contrast-button-hover-background);
 
     @include colour-background("contrast-background");
 
@@ -232,6 +240,22 @@
   --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
   --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
   --link: #{map.get(colour.$colour-palette-default, "font-dark")};
+  --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+  --keyline: #{map.get(colour.$colour-palette-default, "keyline")};
+  --keyline-dark: #{map.get(colour.$colour-palette-default, "keyline-dark")};
+  --button-text: #{map.get(colour.$colour-palette-default, "button-text")};
+  --button-background: #{map.get(
+      colour.$colour-palette-default,
+      "button-background"
+    )};
+  --button-hover-text: #{map.get(
+      colour.$colour-palette-default,
+      "button-hover-text"
+    )};
+  --button-hover-background: #{map.get(
+      colour.$colour-palette-default,
+      "button-hover-background"
+    )};
 }
 
 @mixin light-accent-background {

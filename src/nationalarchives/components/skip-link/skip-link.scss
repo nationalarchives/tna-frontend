@@ -1,0 +1,60 @@
+@use "../../tools/colour";
+
+.tna-skip-link {
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 1rem !important;
+
+  display: block !important;
+
+  position: absolute !important;
+
+  overflow: hidden !important;
+
+  white-space: nowrap !important;
+
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+
+  &,
+  &:link,
+  &:visited {
+    @include colour.colour-font("button-text", $important: true);
+  }
+
+  &:active,
+  &:focus {
+    width: auto !important;
+    height: auto !important;
+    margin: inherit !important;
+
+    position: static !important;
+
+    overflow: visible !important;
+
+    white-space: inherit !important;
+
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+  }
+
+  &:focus {
+    @include colour.colour-background("button-background", $important: true);
+
+    @include colour.colour-border("focus-outline", 0.3125rem, $important: true);
+
+    outline: none !important;
+  }
+
+  &:hover {
+    @include colour.colour-font("button-hover-text", $important: true);
+
+    @include colour.colour-background(
+      "button-hover-background",
+      $important: true
+    );
+  }
+}

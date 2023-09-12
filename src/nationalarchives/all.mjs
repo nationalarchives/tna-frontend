@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
+import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
 import { Gallery } from "./components/gallery/gallery.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
@@ -6,7 +7,6 @@ import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs
 import { Tabs } from "./components/tabs/tabs.mjs";
 
 const $body = document.documentElement;
-
 $body.classList.add("tna-template--js-enabled");
 
 const onFirstTouch = () => {
@@ -51,6 +51,13 @@ const initAll = (options) => {
     new Breadcrumbs($breadcrumbs).init();
   }
 
+  const $cookieBanner = $scope.querySelector(
+    '[data-module="tna-cookie-banner"]',
+  );
+  if ($cookieBanner) {
+    new CookieBanner($cookieBanner).init();
+  }
+
   const $galleries = $scope.querySelectorAll('[data-module="tna-gallery"]');
   $galleries.forEach(($gallery) => {
     new Gallery($gallery).init();
@@ -79,4 +86,13 @@ const initAll = (options) => {
   });
 };
 
-export { initAll, Breadcrumbs, Header, Picture, SensitiveImage, Tabs };
+export {
+  initAll,
+  Breadcrumbs,
+  CookieBanner,
+  Gallery,
+  Header,
+  Picture,
+  SensitiveImage,
+  Tabs,
+};

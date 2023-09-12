@@ -1,0 +1,11 @@
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../button";
+@use "../grid";
+
+.tna-cookie-banner {
+  @include colour.invert;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

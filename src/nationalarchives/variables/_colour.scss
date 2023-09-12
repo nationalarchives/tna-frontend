@@ -43,10 +43,10 @@ $colour-palette-default: (
   "focus-outline": map.get($colour-palette-brand, "blue"),
   "keyline": #ccc,
   "keyline-dark": $dark-grey,
-  "button-primary-text": map.get($colour-palette-brand, "white"),
-  "button-primary-background": map.get($colour-palette-brand, "black"),
-  "button-primary-hover-text": map.get($colour-palette-brand, "black"),
-  "button-primary-hover-background": map.get($colour-palette-brand, "white"),
+  "button-text": map.get($colour-palette-brand, "white"),
+  "button-background": map.get($colour-palette-brand, "black"),
+  "button-hover-text": map.get($colour-palette-brand, "black"),
+  "button-hover-background": map.get($colour-palette-brand, "white"),
   "contrast-background": #1e1e1e,
   // TODO: #343338 ?
   "contrast-font-base": map.get($colour-palette-brand, "white"),
@@ -57,6 +57,10 @@ $colour-palette-default: (
   "contrast-link-visited": map.get($colour-palette-brand, "white"),
   "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
   "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
+  "contrast-button-text": map.get($colour-palette-brand, "black"),
+  "contrast-button-background": map.get($colour-palette-brand, "white"),
+  "contrast-button-hover-text": map.get($colour-palette-brand, "white"),
+  "contrast-button-hover-background": map.get($colour-palette-brand, "black"),
   "accent": map.get($colour-palette-brand, "light-grey"),
   "accent-background": #111,
   "accent-background-light": map.get($colour-palette-brand, "light-grey"),
@@ -87,15 +91,15 @@ $colour-palette-dark: map.merge(
     "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
     "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
     "keyline-dark": map.get($colour-palette-brand, "white"),
-    "button-primary-text": map.get($colour-palette-brand, "black"),
-    "button-primary-background": map.get($colour-palette-brand, "white"),
-    "button-primary-hover-text": map.get($colour-palette-brand, "white"),
-    "button-primary-hover-background": map.get($colour-palette-brand, "black"),
+    "button-text": map.get($colour-palette-brand, "black"),
+    "button-background": map.get($colour-palette-brand, "white"),
+    "button-hover-text": map.get($colour-palette-brand, "white"),
+    "button-hover-background": map.get($colour-palette-brand, "black"),
     "contrast-background": #1e1e1e,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
     // --accent-background-light is the same as --contrast-background on dark themes
-    "accent-background-light": #111,
+    "accent-background-light": map.get($colour-palette-brand, "grey"),
   )
 );
 
@@ -123,6 +127,10 @@ $colour-palette-high-contrast: map.merge(
     "contrast-link-visited": map.get($colour-palette-brand, "black"),
     "contrast-keyline": map.get($colour-palette-brand, "black"),
     "contrast-keyline-dark": map.get($colour-palette-brand, "black"),
+    "contrast-button-text": map.get($colour-palette-brand, "white"),
+    "contrast-button-background": map.get($colour-palette-brand, "black"),
+    "contrast-button-hover-text": map.get($colour-palette-brand, "black"),
+    "contrast-button-hover-background": map.get($colour-palette-brand, "white"),
   )
 );
 

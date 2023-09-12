@@ -1,15 +1,16 @@
 import SkipLink from "../../../components/skip-link/template.njk";
-import Header from "../../../components/header/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import Footer from "../../../components/footer/template.njk";
+import CookieBanner from "../../../components/cookie-banner/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
+import Header from "../../../components/header/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
 import Message from "../../../components/message/template.njk";
 import Picture from "../../../components/picture/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
-import Footer from "../../../components/footer/template.njk";
 
 const argTypes = {
   theme: {
@@ -87,6 +88,11 @@ const Template = ({ theme, accent }) => {
       : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
+    ${CookieBanner({
+      params: {
+        cookiesUrl: "#",
+      },
+    })}
     ${SkipLink({
       params: {
         href: "main-content",
@@ -205,6 +211,12 @@ const Template = ({ theme, accent }) => {
                 brandIcon: "twitter",
               },
             })}
+            ${Button({
+              params: {
+                text: "Plain button",
+                plain: true,
+              },
+            })}
           </div>
         </div>
         <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny">
@@ -306,7 +318,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container tna-section tna-!--no-padding-bottom">
+      <div class="tna-container tna-section tna-!--padding-bottom-s">
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
             params: {
@@ -471,7 +483,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 1", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -511,7 +523,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--contrast">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 2", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -551,7 +563,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--accent-light">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 3", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -591,7 +603,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--accent">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 4", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{

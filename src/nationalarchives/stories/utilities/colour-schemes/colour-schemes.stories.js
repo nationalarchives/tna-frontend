@@ -306,20 +306,31 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container tna-section">
+      <div class="tna-container tna-section tna-!--no-padding-bottom">
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
-            params: { ...cardDefaultOptions },
+            params: {
+              ...cardDefaultOptions,
+              classes: "tna-!--margin-bottom-m",
+            },
           })}
         </div>
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
-            params: { ...cardDefaultOptions, style: "boxed" },
+            params: {
+              ...cardDefaultOptions,
+              style: "boxed",
+              classes: "tna-!--margin-bottom-m",
+            },
           })}
         </div>
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
-            params: { ...cardDefaultOptions, style: "accent" },
+            params: {
+              ...cardDefaultOptions,
+              style: "accent",
+              classes: "tna-!--margin-bottom-m",
+            },
           })}
         </div>
       </div>

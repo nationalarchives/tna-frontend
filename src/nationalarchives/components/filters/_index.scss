@@ -1,13 +1,12 @@
+@use "../../tools/spacing";
+
 .tna-filters {
-  margin-bottom: 2rem;
 
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include spacing.space-below;
 
   &__item {
   }

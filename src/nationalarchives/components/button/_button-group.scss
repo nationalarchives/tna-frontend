@@ -1,16 +1,13 @@
 @use "../../tools/media";
+@use "../../tools/spacing";
 
 .tna-button-group {
-  margin-bottom: 2rem;
-
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include spacing.space-below;
 
   @include media.on-tiny {
     flex-direction: column;

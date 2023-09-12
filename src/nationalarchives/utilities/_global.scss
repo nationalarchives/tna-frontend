@@ -1,6 +1,7 @@
 @use "../features";
 @use "../tools/colour";
 @use "../tools/media";
+@use "../tools/spacing";
 @use "../variables/typography";
 
 :root {
@@ -161,12 +162,9 @@ hr {
 }
 
 .tna-aside {
-  margin-bottom: 2rem;
   padding: 2rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include spacing.space-below;
 
   @include media.on-mobile {
     padding: 1rem;

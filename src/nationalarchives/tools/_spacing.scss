@@ -1,6 +1,18 @@
 @use "sass:map";
 @use "../variables/spacing";
 
+%space-below {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin space-below() {
+  @extend %space-below;
+}
+
 @function spacing($size) {
   @return map.get(spacing.$spacing, $size);
 }

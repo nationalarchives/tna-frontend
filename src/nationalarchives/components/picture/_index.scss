@@ -1,12 +1,11 @@
 @use "../../tools/colour";
+@use "../../tools/spacing";
 
 .tna-picture {
-  margin: 0 0 2rem;
+  margin: 0;
   padding: 0;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include spacing.space-below;
 
   &__image-wrapper {
     // padding: 1rem 0;

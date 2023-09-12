@@ -2,13 +2,10 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
+@use "../../tools/spacing";
 
 .tna-card {
-  margin-bottom: 2rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include spacing.space-below;
 
   &__inner {
     display: flex;

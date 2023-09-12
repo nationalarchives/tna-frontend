@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "../tools/colour";
 @use "../tools/media";
+@use "../tools/spacing";
 @use "../tools/typography";
 @use "../variables/grid";
 
@@ -84,12 +85,12 @@ a {
 
 .tna-ul,
 .tna-ol {
-  margin: 0 0 2rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
   padding: 0 0 0 2rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  @include spacing.space-below;
 
   li::marker {
     @include colour.colour-font("accent-background");
@@ -125,13 +126,13 @@ a {
 
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 
   list-style: none;
 
-  &__item {
-    margin: 0 1rem 1rem 0;
+  @include spacing.space-below;
 
-    display: inline-block;
+  &__item {
   }
 }
 
@@ -174,14 +175,8 @@ a {
 }
 
 %heading {
-  margin-bottom: 1rem;
-
   @include colour.colour-font("font-dark");
   @include typography.heading-font;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   a {
     display: inline-block;
@@ -225,8 +220,6 @@ a {
 }
 
 .tna-hgroup {
-  margin-bottom: 1rem;
-
   &__supertitle {
     margin: 0 0 0.5rem;
 
@@ -261,6 +254,7 @@ a {
 .tna-heading,
 .tna-hgroup {
   margin-top: 3rem;
+  margin-bottom: 1rem;
 
   &:first-child {
     margin-top: 0;
@@ -272,22 +266,14 @@ a {
 }
 
 .tna-blockquote {
-  margin: 0 0 2rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
   padding: 1rem 1rem 1rem 2rem;
 
   @include colour.colour-border("accent-background", 0.35rem, solid, left);
 
-  // quotes: "“" "”" "‘" "’";
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  // &::before {
-  //   float: left;
-
-  //   content: open-quote;
-  // }
+  @include spacing.space-below;
 
   &__quote {
     font-weight: 700;

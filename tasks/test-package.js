@@ -97,30 +97,30 @@ checkExists.forEach((checkFile) => {
   try {
     fs.accessSync(checkFilePath);
     console.log(
-      `🟢 [PASS] ${
+      `  🟢 [PASS] ${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
       } exists: ${checkFilePath.replace(/\/$/, "")}`,
     );
   } catch (err) {
-    console.error(`🔴 [FAIL] ${err}`);
+    console.error(`  🔴 [FAIL] ${err}`);
     process.exit();
   }
 });
 
-console.log("------------------------------------------");
+console.log("\n");
 
 console.log(`Testing package version`);
 const compiledPackageJson = require("../package/package.json");
 if (packageJson.version === compiledPackageJson.version) {
-  console.log(`🟢 [PASS] Version ${packageJson.version} is set in the package`);
+  console.log(`  🟢 [PASS] Version ${packageJson.version} is set in the package`);
 } else {
   console.error(
-    `🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
+    `  🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
   );
   process.exit();
 }
 
-console.log("------------------------------------------");
+console.log("\n");
 
 console.log(`Testing prototype kit config`);
 const expectedPrototypeKitConfigProperties = [
@@ -141,18 +141,18 @@ expectedPrototypeKitConfigProperties.forEach(
       )
     ) {
       console.log(
-        `🟢 [PASS] Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
+        `  🟢 [PASS] Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
       );
     } else {
       console.error(
-        `🔴 [FAIL] Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
+        `  🔴 [FAIL] Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
       );
       process.exit();
     }
   },
 );
 
-console.log("------------------------------------------");
+console.log("\n");
 
 console.log(`Testing compiled JavaScript files`);
 const { JSDOM } = jsdom;
@@ -164,9 +164,9 @@ if (
   Object.keys(jsAllPackage).includes("initAll") &&
   typeof jsAllPackage.initAll === "function"
 ) {
-  console.log(`🟢 [PASS] all.js function exists: initAll()`);
+  console.log(`  🟢 [PASS] all.js function exists: initAll()`);
 } else {
-  console.error(`🔴 [FAIL] all.js function missing: initAll()`);
+  console.error(`  🔴 [FAIL] all.js function missing: initAll()`);
   process.exit();
 }
 Object.keys(componentsWithJavaScript).forEach((component) => {
@@ -175,9 +175,9 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     Object.keys(jsAllPackage).includes(componentClass) &&
     typeof jsAllPackage[componentClass] === "function"
   ) {
-    console.log(`🟢 [PASS] all.js function exists: ${componentClass}()`);
+    console.log(`  🟢 [PASS] all.js function exists: ${componentClass}()`);
   } else {
-    console.error(`🔴 [FAIL] all.js function missing: ${componentClass}()`);
+    console.error(`  🔴 [FAIL] all.js function missing: ${componentClass}()`);
     process.exit();
   }
 });
@@ -191,16 +191,16 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     typeof jsComponentPackage[componentClass] === "function"
   ) {
     console.log(
-      `🟢 [PASS] ${component}.js function exists: ${componentClass}()`,
+      `  🟢 [PASS] ${component}.js function exists: ${componentClass}()`,
     );
   } else {
     console.error(
-      `🔴 [FAIL] ${component}.js function missing: ${componentClass}()`,
+      `  🔴 [FAIL] ${component}.js function missing: ${componentClass}()`,
     );
     process.exit();
   }
 });
 
-console.log("------------------------------------------");
+console.log("\n");
 
 // TODO: Test CSS for contents

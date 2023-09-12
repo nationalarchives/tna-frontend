@@ -68,8 +68,6 @@ a {
   }
 
   &.tna-chip {
-    // display: block;
-
     text-decoration: none;
 
     &,
@@ -109,7 +107,6 @@ a {
   max-width: max-content;
   padding: 0.375em 0.5rem;
 
-  // display: inline-block;
   display: block;
 
   @include colour.colour-font("font-dark");
@@ -143,7 +140,8 @@ a {
   line-height: 1.2;
 
   @include media.on-medium {
-    @include typography.relative-font-size(42);
+    // @include typography.relative-font-size(42);
+    @include typography.relative-font-size(50);
   }
 
   @include media.on-mobile {
@@ -156,7 +154,8 @@ a {
   line-height: 1.4;
 
   @include media.on-medium {
-    @include typography.relative-font-size(26);
+    // @include typography.relative-font-size(26);
+    @include typography.relative-font-size(28);
   }
 
   @include media.on-mobile {
@@ -207,7 +206,6 @@ a {
 
 .tna-heading {
   @extend %heading;
-  // @extend %heading-l;
 
   &--xl {
     @extend %heading-xl;
@@ -241,7 +239,6 @@ a {
     display: block;
 
     @extend %heading;
-    // @extend %heading-l;
   }
 
   &--xl &__title {

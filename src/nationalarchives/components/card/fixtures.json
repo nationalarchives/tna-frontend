@@ -27,20 +27,6 @@
       "hidden": false
     },
     {
-      "name": "with single sentence supertitle",
-      "options": {
-        "heading": {
-          "supertitle": "Card supertitle",
-          "title": "Card title",
-          "level": 3,
-          "singleSentence": true
-        },
-        "body": "<p>Card body</p>"
-      },
-      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><hgroup class=\"tna-card__heading tna-hgroup tna-hgroup--l\"><h3 class=\"tna-card__title tna-hgroup__title\"><span class=\"tna-card__supertitle tna-hgroup__supertitle\">Card supertitle</span>Card title</h3></hgroup><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
-    },
-    {
       "name": "heading size",
       "options": {
         "heading": {

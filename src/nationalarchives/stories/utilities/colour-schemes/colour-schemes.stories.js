@@ -40,7 +40,6 @@ const Template = ({ theme, accent }) => {
       title: "Card title",
       level: 3,
       size: "m",
-      singleSentence: false,
     },
     href: "#",
     image: {

@@ -65,7 +65,6 @@ Standard.args = {
     title: "Card title",
     level: 3,
     size: "l",
-    singleSentence: false,
   },
   href: "#",
   image: {
@@ -94,7 +93,6 @@ Boxed.args = {
     title: "Card title",
     level: 3,
     size: "l",
-    singleSentence: false,
   },
   href: "#",
   image: {
@@ -117,7 +115,6 @@ Accent.args = {
     title: "Card title",
     level: 3,
     size: "l",
-    singleSentence: false,
   },
   href: "#",
   image: {
@@ -140,7 +137,6 @@ Horizontal.args = {
     title: "Card title",
     level: 3,
     size: "l",
-    singleSentence: false,
   },
   image: {
     src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -170,7 +166,6 @@ HorizontalBoxed.args = {
     title: "Card title",
     level: 3,
     size: "l",
-    singleSentence: false,
   },
   image: {
     src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -237,7 +232,6 @@ Grid.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
-    singleSentence: false,
   },
   href: "#",
   image: {

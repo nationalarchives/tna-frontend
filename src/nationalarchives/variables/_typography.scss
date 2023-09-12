@@ -2,15 +2,15 @@ $base-font-size-px: 16;
 
 $interactive-text-decoration-thickness: 3.5px;
 
-$font-family-main: "Open Sans", sans-serif;
-$font-weight-main: 500;
-$font-weight-main-bold: 700;
+$font-family-main: "Open Sans", serif;
+// $font-weight-main: 500;
+$font-weight-main: normal;
+// $font-weight-main-bold: 700;
+$font-weight-main-bold: bold;
 
 $font-family-heading: supria-sans-condensed, "Arial Narrow", sans-serif;
 $font-weight-heading: 400;
 
 $font-family-detail: "Roboto Mono", monospace;
-$font-weight-detail: 400;
-$font-weight-detail-bold: 700;
-// $font-family-detail: $font-family-main;
-// $font-weight-detail: $font-weight-main;
+// $font-weight-detail: 400;
+$font-weight-detail: normal;

@@ -33,10 +33,6 @@
   font-weight: typography.$font-weight-detail;
 }
 
-@mixin detail-font-weight-bold {
-  font-weight: typography.$font-weight-detail-bold;
-}
-
 @mixin detail-font-small {
   @include detail-font;
   @include relative-font-size(14);

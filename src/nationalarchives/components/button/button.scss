@@ -2,7 +2,9 @@
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/typography";
-@use "button-group";
+@use "../../lib/font-awesome";
+@use "../../utilities";
+@import "button-group";
 
 .tna-button {
   padding: 0.25rem 1rem;

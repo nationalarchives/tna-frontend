@@ -1,15 +1,20 @@
 const fs = require("fs");
 const packageJson = require("../package.json");
+const jsdom = require("jsdom");
+require("node-self");
 
-let failure = null;
+const componentsWithJavaScript = {};
 
-const componentJavascriptFiles = (component) => [
-  `nationalarchives/components/${component}/${component}.js`,
-  `nationalarchives/components/${component}/${component}.js.map`,
-  `nationalarchives/components/${component}/${component}.mjs`,
-];
+const componentJavascriptFiles = (component, javascriptClass) => {
+  componentsWithJavaScript[component] = javascriptClass;
+  return [
+    `nationalarchives/components/${component}/${component}.js`,
+    `nationalarchives/components/${component}/${component}.js.map`,
+    `nationalarchives/components/${component}/${component}.mjs`,
+  ];
+};
 
-const componentFiles = (component, excludeJavaScript = false) => [
+const componentFiles = (component, javascriptClass = null) => [
   `nationalarchives/components/${component}/_index.scss`,
   `nationalarchives/components/${component}/${component}.scss`,
   `nationalarchives/components/${component}/${component}.css`,
@@ -18,7 +23,9 @@ const componentFiles = (component, excludeJavaScript = false) => [
   `nationalarchives/components/${component}/macro-options.json`,
   `nationalarchives/components/${component}/macro.njk`,
   `nationalarchives/components/${component}/template.njk`,
-  ...(excludeJavaScript ? [] : componentJavascriptFiles(component)),
+  ...(javascriptClass
+    ? componentJavascriptFiles(component, javascriptClass)
+    : []),
 ];
 
 const packageDirectory = "package";
@@ -45,24 +52,24 @@ const checkExists = [
   "nationalarchives/assets/images/tna-horizontal-logo.svg",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
-  ...componentFiles("breadcrumbs"),
-  ...componentFiles("button", true),
-  ...componentFiles("card", true),
-  ...componentFiles("cookie-banner"),
-  ...componentFiles("filters", true),
-  ...componentFiles("footer", true),
-  ...componentFiles("gallery"),
-  ...componentFiles("grid", true),
-  ...componentFiles("header"),
-  ...componentFiles("hero", true),
-  ...componentFiles("index-grid", true),
-  ...componentFiles("message", true),
-  ...componentFiles("phase-banner", true),
-  ...componentFiles("picture"),
-  ...componentFiles("profile", true),
-  ...componentFiles("sensitive-image"),
-  ...componentFiles("skip-link", true),
-  ...componentFiles("tabs"),
+  ...componentFiles("breadcrumbs", "Breadcrumbs"),
+  ...componentFiles("button"),
+  ...componentFiles("card"),
+  ...componentFiles("cookie-banner", "CookieBanner"),
+  ...componentFiles("filters"),
+  ...componentFiles("footer"),
+  ...componentFiles("gallery", "Gallery"),
+  ...componentFiles("grid"),
+  ...componentFiles("header", "Header"),
+  ...componentFiles("hero"),
+  ...componentFiles("index-grid"),
+  ...componentFiles("message"),
+  ...componentFiles("phase-banner"),
+  ...componentFiles("picture", "Picture"),
+  ...componentFiles("profile"),
+  ...componentFiles("sensitive-image", "SensitiveImage"),
+  ...componentFiles("skip-link"),
+  ...componentFiles("tabs", "Tabs"),
   // Tools
   "nationalarchives/tools/_index.scss",
   "nationalarchives/tools/_grid.scss",
@@ -96,7 +103,7 @@ checkExists.forEach((checkFile) => {
     );
   } catch (err) {
     console.error(`🔴 [FAIL] ${err}`);
-    failure = 1;
+    process.exit();
   }
 });
 
@@ -110,7 +117,7 @@ if (packageJson.version === compiledPackageJson.version) {
   console.error(
     `🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
   );
-  failure = 2;
+  process.exit();
 }
 
 console.log("------------------------------------------");
@@ -121,6 +128,7 @@ const expectedPrototypeKitConfigProperties = [
   "scripts",
   "assets",
   "sass",
+  "templates",
 ];
 const prototypeKitConfig = require(
   `../${packageDirectory}/govuk-prototype-kit.config.json`,
@@ -133,26 +141,66 @@ expectedPrototypeKitConfigProperties.forEach(
       )
     ) {
       console.log(
-        `🟢 [PASS] The prototype kit config contains "${expectedPrototypeKitConfigProperty}"`,
+        `🟢 [PASS] Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
       );
     } else {
       console.error(
-        `🔴 [FAIL] The prototype kit config is missing "${expectedPrototypeKitConfigProperty}"`,
+        `🔴 [FAIL] Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
       );
-      failure = 3;
+      process.exit();
     }
   },
 );
 
-// console.log("------------------------------------------");
+console.log("------------------------------------------");
 
-// TODO: Test CSS and JS for contents
-// console.log(`Testing compiled JavaScript file`);
-// const jsPackage = require("../package/nationalarchives/all.js")
-// console.log(jsPackage)
-// const {initAll} = require("../package/nationalarchives/all.mjs")
-// console.log(initAll)
-
-if (failure !== null) {
-  process.exit(failure);
+console.log(`Testing compiled JavaScript files`);
+const { JSDOM } = jsdom;
+const { window } = new JSDOM(``);
+global.window = window;
+global.document = window.document;
+const jsAllPackage = require("../package/nationalarchives/all.js");
+if (
+  Object.keys(jsAllPackage).includes("initAll") &&
+  typeof jsAllPackage.initAll === "function"
+) {
+  console.log(`🟢 [PASS] all.js function exists: initAll()`);
+} else {
+  console.error(`🔴 [FAIL] all.js function missing: initAll()`);
+  process.exit();
 }
+Object.keys(componentsWithJavaScript).forEach((component) => {
+  const componentClass = componentsWithJavaScript[component];
+  if (
+    Object.keys(jsAllPackage).includes(componentClass) &&
+    typeof jsAllPackage[componentClass] === "function"
+  ) {
+    console.log(`🟢 [PASS] all.js function exists: ${componentClass}()`);
+  } else {
+    console.error(`🔴 [FAIL] all.js function missing: ${componentClass}()`);
+    process.exit();
+  }
+});
+Object.keys(componentsWithJavaScript).forEach((component) => {
+  const componentClass = componentsWithJavaScript[component];
+  const jsComponentPackage = require(
+    `../package/nationalarchives/components/${component}/${component}.js`,
+  );
+  if (
+    Object.keys(jsComponentPackage).includes(componentClass) &&
+    typeof jsComponentPackage[componentClass] === "function"
+  ) {
+    console.log(
+      `🟢 [PASS] ${component}.js function exists: ${componentClass}()`,
+    );
+  } else {
+    console.error(
+      `🔴 [FAIL] ${component}.js function missing: ${componentClass}()`,
+    );
+    process.exit();
+  }
+});
+
+console.log("------------------------------------------");
+
+// TODO: Test CSS for contents

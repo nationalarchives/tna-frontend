@@ -1,9 +1,10 @@
 @use "sass:math";
-@use "../../tools/colour";
 @use "../../variables/colour" as colourVars; // TODO
 @use "../../variables/grid" as gridVars;
+@use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
+@use "../../utilities";
 @use "../grid";
 
 // TODO: Only for the header component at the moment - remove on redesign

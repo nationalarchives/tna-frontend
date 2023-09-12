@@ -3,11 +3,31 @@
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
+@use "../variables/assets";
 @use "../variables/grid";
 
-// TODO: Temporary - will eventually bundle font files into package
-@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=Roboto+Mono:wght@400&display=swap";
 @import "https://use.typekit.net/hkj3kuz.css";
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("#{assets.$tna-font-path}/OpenSans-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .tna-template {
   @include colour.colour-font("font-base");

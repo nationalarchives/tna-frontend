@@ -8,7 +8,7 @@ export default {
 };
 
 const ParagraphTemplate = ({ paragraphs }) =>
-  paragraphs.map((paragraph) => `<p class="tna-p">${paragraph}</p>`).join("");
+  paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
 export const Paragraph = ParagraphTemplate.bind({});
 Paragraph.args = {
   paragraphs: [

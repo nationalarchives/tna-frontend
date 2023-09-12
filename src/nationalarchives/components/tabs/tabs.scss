@@ -1,6 +1,7 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/spacing";
+@use "../../utilities";
 
 .tna-tabs {
   @include spacing.space-below;

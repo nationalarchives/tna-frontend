@@ -1,47 +1,64 @@
 [
   {
-    "name": "heading",
-    "type": "object",
+    "name": "supertitle",
+    "type": "string",
+    "required": false,
+    "description": "The smaller title to display above the main card title."
+  },
+  {
+    "name": "title",
+    "type": "string",
     "required": true,
-    "description": "",
-    "params": [
-      {
-        "name": "supertitle",
-        "type": "string",
-        "required": false,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "level",
-        "type": "number",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "size",
-        "type": "string",
-        "required": false,
-        "description": ""
-      }
-    ]
+    "description": "The main title of the card."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "default": "m",
+    "description": "The physical size of the card title."
   },
   {
     "name": "href",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "A URL to use as a link in the card's heading and image (if one is declared)."
   },
   {
-    "name": "image",
-    "type": "object",
+    "name": "imageSrc",
+    "type": "string",
     "required": false,
-    "description": "",
+    "description": "A JPG file to use as the card's image."
+  },
+  {
+    "name": "imageAlt",
+    "type": "string",
+    "required": false,
+    "description": "Alternative text for the image in the event that it can't be displayed."
+  },
+  {
+    "name": "imageWidth",
+    "type": "number",
+    "required": false,
+    "description": "The width of the image in pixels."
+  },
+  {
+    "name": "imageHeight",
+    "type": "number",
+    "required": false,
+    "description": "The height of the image in pixels."
+  },
+  {
+    "name": "imageSources",
+    "type": "array",
+    "required": true,
+    "description": "Alternative sources of the image which can include WebP files.",
     "params": [
       {
         "name": "src",
@@ -50,21 +67,27 @@
         "description": ""
       },
       {
-        "name": "alt",
+        "name": "type",
         "type": "string",
         "required": true,
         "description": ""
       },
       {
+        "name": "media",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "width",
         "type": "number",
-        "required": true,
+        "required": false,
         "description": ""
       },
       {
         "name": "height",
         "type": "number",
-        "required": true,
+        "required": false,
         "description": ""
       }
     ]
@@ -73,25 +96,25 @@
     "name": "label",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "A label which will appear over the top left of the card's image. If there is no imagem, the label is not displayed."
   },
   {
     "name": "body",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The HTML for the main body of the card. Not displayed if `text` is set."
   },
   {
     "name": "text",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The text for the card which will be inserted into a `<p>` element. Overwrites `body` if it is set."
   },
   {
     "name": "actions",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "An array of actions to add at the bottom of the card. Each action is displayed as a button.",
     "params": [
       {
         "name": "text",
@@ -129,13 +152,13 @@
     "name": "horizontal",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices."
   },
   {
     "name": "style",
     "type": "text",
     "required": false,
-    "description": ""
+    "description": "The style of card to use which can be either `boxed` for an inverted card or `accent` for a card that matches the page's accent colour."
   },
   {
     "name": "htmlElement",

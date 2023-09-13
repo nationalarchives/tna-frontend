@@ -29,4 +29,7 @@ export const parameters = {
       cellAmount: 4,
     },
   },
+  controls: {
+    expanded: true,
+  },
 };

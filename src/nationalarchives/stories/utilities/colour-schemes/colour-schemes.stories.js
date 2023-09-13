@@ -36,12 +36,10 @@ export default {
 
 const Template = ({ theme, accent }) => {
   const cardDefaultOptions = {
-    heading: {
-      supertitle: "Card supertitle",
-      title: "Card title",
-      level: 3,
-      size: "m",
-    },
+    supertitle: "Card supertitle",
+    title: "Card title",
+    headingLevel: 3,
+    headingSize: "m",
     href: "#",
     image: {
       src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",

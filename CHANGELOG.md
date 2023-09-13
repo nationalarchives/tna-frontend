@@ -15,12 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Button elements can be `<a>` or `<button>` with `buttonElement: true`
 - Small button option
 - Tabs also respond to the up/down keys on keyboard navigation as well as left/right
+- Allow other image sources in a card image using a `<picture>` element
 
 ### Changed
 
 - Updated social icons in footer to use Font Awesome icons
 - Consolidated markup for "opens in new tab" in external footer links#
 - Columns have margin removed by default
+- Flatten the template parameters for cards (e.g. `image.src` -> `imageSrc`)
 
 ### Deprecated
 ### Removed

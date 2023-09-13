@@ -64,7 +64,7 @@ Standard.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
-    size: "l",
+    size: "m",
   },
   href: "#",
   image: {
@@ -92,7 +92,7 @@ Boxed.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
-    size: "l",
+    size: "m",
   },
   href: "#",
   image: {
@@ -114,7 +114,7 @@ Accent.args = {
     supertitle: "Card supertitle",
     title: "Card title",
     level: 3,
-    size: "l",
+    size: "m",
   },
   href: "#",
   image: {
@@ -185,6 +185,36 @@ HorizontalBoxed.args = {
   ],
   horizontal: true,
   style: "boxed",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const HorizontalAccent = Template.bind({});
+HorizontalAccent.args = {
+  heading: {
+    supertitle: "Card supertitle",
+    title: "Card title",
+    level: 3,
+    size: "l",
+  },
+  image: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    alt: "The National Archives office",
+    width: 1996,
+    height: 1331,
+  },
+  label: "New",
+  body: "<p>Card body</p>",
+  actions: [
+    {
+      text: "Card action",
+      href: "#",
+      title: "Go and do the action",
+      icon: "calendar",
+    },
+  ],
+  horizontal: true,
+  style: "accent",
   htmlElement: "article",
   classes: "tna-card--demo",
 };

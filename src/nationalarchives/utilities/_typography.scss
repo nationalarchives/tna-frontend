@@ -156,6 +156,31 @@ a {
   }
 }
 
+%heading {
+  @include colour.colour-font("font-dark");
+  @include typography.heading-font;
+
+  a {
+    display: inline-block;
+
+    &::after {
+      padding-left: 0.25rem;
+
+      display: inline-block;
+
+      font-weight: 700;
+
+      content: "\203A";
+    }
+
+    &:hover {
+      &::after {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+
 %heading-xl {
   @include typography.relative-font-size(64);
   line-height: 1.2;
@@ -192,31 +217,6 @@ a {
 %heading-s {
   @include typography.relative-font-size(18);
   line-height: 1.6;
-}
-
-%heading {
-  @include colour.colour-font("font-dark");
-  @include typography.heading-font;
-
-  a {
-    display: inline-block;
-
-    &::after {
-      padding-left: 0.25rem;
-
-      display: inline-block;
-
-      font-weight: 700;
-
-      content: "\203A";
-    }
-
-    &:hover {
-      &::after {
-        padding-left: 0.5rem;
-      }
-    }
-  }
 }
 
 .tna-heading {

@@ -64,6 +64,8 @@
     "glob": "^10.2.7",
     "jest-image-snapshot": "^6.2.0",
     "jsdom": "^22.1.0",
+    "mdx-mermaid": "^2.0.0",
+    "node-self": "^1.0.2",
     "nunjucks": "^3.2.3",
     "prettier": "^3.0.1",
     "react": "^18.2.0",
@@ -78,8 +80,5 @@
     "stylelint-selector-bem-pattern": "^3.0.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "node-self": "^1.0.2"
   }
 }

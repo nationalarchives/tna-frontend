@@ -7,9 +7,9 @@ import { Meta } from "@storybook/blocks";
 ## Adding a new component
 
 1. Create a new directory in `src/nationalarchives/components`
-1. Create an `_index.scss`, `fixtures.json`, `macro-options.json`, `macro.njk`, `template.njk` and a `[myComponent].stories.js` in the directory using other components as a guide
+1. Create an `_index.scss`, `[myComponent].scss`, `fixtures.json`, `macro-options.json`, `macro.njk`, `template.njk` and a `[myComponent].stories.js` in the directory using other components as a guide
 1. Add the component SCSS to `src/nationalarchives/components/_all.scss`
-1. Update `tasks/test-package.js` to check for the files as part of the CI (`...componentFiles("myComponent", true)` where `true` ignores the check for any JavaScript files)
+1. Update `tasks/test-package.js` to check for the files as part of the CI - `...componentFiles("myComponent")`
 1. Set the macro in `macro.njk` to be `tnaMyComponent` where "MyComponent" is the name of your component
 1. Add the component import and macro to the prototype kit test in `.github/workflows/ci.yml`
 

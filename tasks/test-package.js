@@ -112,7 +112,9 @@ console.log("\n");
 console.log(`Testing package version`);
 const compiledPackageJson = require("../package/package.json");
 if (packageJson.version === compiledPackageJson.version) {
-  console.log(`  🟢 [PASS] Version ${packageJson.version} is set in the package`);
+  console.log(
+    `  🟢 [PASS] Version ${packageJson.version} is set in the package`,
+  );
 } else {
   console.error(
     `  🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,

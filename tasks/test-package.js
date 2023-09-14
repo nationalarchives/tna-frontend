@@ -171,6 +171,15 @@ if (
   console.error(`  🔴 [FAIL] all.js function missing: initAll()`);
   process.exit();
 }
+if (
+  Object.keys(jsAllPackage).includes("Cookies") &&
+  typeof jsAllPackage.Cookies === "function"
+) {
+  console.log(`  🟢 [PASS] all.js class exists: Cookies`);
+} else {
+  console.error(`  🔴 [FAIL] all.js class missing: Cookies`);
+  process.exit();
+}
 Object.keys(componentsWithJavaScript).forEach((component) => {
   const componentClass = componentsWithJavaScript[component];
   if (

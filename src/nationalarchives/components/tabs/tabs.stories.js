@@ -78,7 +78,6 @@ Test.args = {
   ],
   classes: "tna-tabs--demo",
 };
-
 Test.play = async ({ args, canvasElement, step }) => {
   await new Promise((r) => setTimeout(r, 100));
 

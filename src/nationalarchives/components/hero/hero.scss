@@ -1,0 +1,169 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../utilities";
+@use "../grid";
+
+.tna-hero {
+  min-height: min(35vw, 480px);
+  // margin-bottom: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+
+  @include colour.invert-on-mobile;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    object-fit: cover;
+  }
+
+  picture#{&}__image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__image-details {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 3;
+
+    @include colour.colour-font("font-base");
+  }
+
+  &__image-details-summary {
+    width: 2rem;
+    height: 2rem;
+
+    position: relative;
+    z-index: 2;
+
+    font-size: 0;
+    text-align: center;
+    line-height: 2rem;
+    list-style: none;
+
+    background-color: #fc0;
+
+    border-radius: 1rem;
+
+    cursor: pointer;
+  }
+
+  &__image-details-summary-icon {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  &__image-information {
+    width: 20rem;
+    max-width: 45vw;
+    padding: 0.5rem 1rem;
+
+    position: absolute;
+    right: 0;
+    bottom: 2.5rem;
+    z-index: 1;
+
+    background-color: #fc0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+  }
+
+  &__content-inner {
+    padding: 2.5rem 1.5rem;
+
+    @include colour.colour-background("page-background");
+  }
+
+  &__heading {
+    margin-bottom: 0;
+  }
+
+  &__body {
+    margin-top: 1.5rem;
+  }
+
+  @include media.on-mobile {
+    padding: 0;
+
+    display: block;
+
+    &__image {
+      height: 320px;
+
+      position: static;
+    }
+
+    &__image-details {
+      bottom: auto;
+      top: 1.25rem;
+    }
+
+    &__image-details-summary {
+    }
+
+    &__image-details-summary-icon {
+    }
+
+    &__image-information {
+      top: 2.5rem;
+      bottom: auto;
+    }
+
+    &__inner {
+    }
+
+    &__content {
+    }
+
+    &__content-inner {
+      padding: 1.5rem 0;
+
+      background-color: transparent;
+    }
+
+    &__heading {
+    }
+
+    &__body {
+      margin-top: 1rem;
+    }
+  }
+
+  @include media.on-tiny {
+    &__image {
+      height: 240px;
+    }
+  }
+
+  @include colour.on-high-contrast {
+    &__content-inner {
+      @include colour.colour-border("keyline-dark", 1px);
+
+      @include media.on-mobile {
+        border: none;
+      }
+    }
+  }
+}

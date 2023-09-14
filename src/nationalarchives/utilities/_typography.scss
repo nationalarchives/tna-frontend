@@ -3,11 +3,31 @@
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
+@use "../variables/assets";
 @use "../variables/grid";
 
-// TODO: Temporary - will eventually bundle font files into package
-@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=Roboto+Mono:wght@400&display=swap";
 @import "https://use.typekit.net/hkj3kuz.css";
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("#{assets.$tna-font-path}/OpenSans-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .tna-template {
   @include colour.colour-font("font-base");
@@ -49,6 +69,10 @@ strong {
 
 p {
   margin: 0 0 1.5rem;
+
+  @include media.on-tiny {
+    margin-bottom: 1rem;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -136,6 +160,31 @@ a {
   }
 }
 
+%heading {
+  @include colour.colour-font("font-dark");
+  @include typography.heading-font;
+
+  a {
+    display: inline-block;
+
+    &::after {
+      padding-left: 0.25rem;
+
+      display: inline-block;
+
+      font-weight: 700;
+
+      content: "\203A";
+    }
+
+    &:hover {
+      &::after {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+
 %heading-xl {
   @include typography.relative-font-size(64);
   line-height: 1.2;
@@ -172,31 +221,6 @@ a {
 %heading-s {
   @include typography.relative-font-size(18);
   line-height: 1.6;
-}
-
-%heading {
-  @include colour.colour-font("font-dark");
-  @include typography.heading-font;
-
-  a {
-    display: inline-block;
-
-    &::after {
-      padding-left: 0.25rem;
-
-      display: inline-block;
-
-      font-weight: 700;
-
-      content: "\203A";
-    }
-
-    &:hover {
-      &::after {
-        padding-left: 0.5rem;
-      }
-    }
-  }
 }
 
 .tna-heading {
@@ -297,6 +321,8 @@ a {
   @include colour.colour-font("font-dark");
   @include typography.relative-font-size(30);
   line-height: math.div(50, 30);
+
+  @include spacing.space-below;
 
   @include media.on-mobile {
     @include typography.relative-font-size(24);

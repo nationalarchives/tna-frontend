@@ -1,5 +1,5 @@
-@forward "debug";
-@forward "font-awesome";
-@forward "global";
-@forward "overrides";
-@forward "typography";
+@use "a11y";
+@use "debug";
+@use "global";
+@use "overrides";
+@use "typography";

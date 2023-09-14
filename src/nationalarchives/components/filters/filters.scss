@@ -1,0 +1,53 @@
+@use "../../tools/spacing";
+@use "../../utilities";
+
+.tna-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include spacing.space-below;
+
+  &__item {
+  }
+
+  &__item--selected #{&}__link {
+    background-color: #004c7e;
+
+    &,
+    &:link,
+    &:visited {
+      color: #fff;
+    }
+  }
+
+  &__link {
+    padding: 0.125rem 0.75rem;
+
+    text-decoration: none;
+
+    background-color: #d4e5ef;
+
+    border-radius: 99rem;
+
+    transition:
+      color 200ms,
+      background-color 200ms;
+
+    &,
+    &:link,
+    &:visited {
+      color: #000;
+    }
+
+    &:hover {
+      color: #fff;
+
+      background-color: #004c7e;
+
+      transition:
+        color 50ms,
+        background-color 50ms;
+    }
+  }
+}

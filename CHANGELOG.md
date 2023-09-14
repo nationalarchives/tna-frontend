@@ -15,12 +15,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Button elements can be `<a>` or `<button>` with `buttonElement: true`
 - Small button option
 - Tabs also respond to the up/down keys on keyboard navigation as well as left/right
+- Allow other image sources in a card image using a `<picture>` element
+- Cookie banner and cookie handling
+- Individual JavaScript and CSS files are exported for each component
 
 ### Changed
 
 - Updated social icons in footer to use Font Awesome icons
 - Consolidated markup for "opens in new tab" in external footer links#
 - Columns have margin removed by default
+- Flatten the template parameters for cards (e.g. `image.src` -> `imageSrc`)
+- Open Sans and Roboto Mono are included in the package
+- Gutters on mobile devices have changed from `1rem` to `1.5rem`
 
 ### Deprecated
 ### Removed
@@ -34,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove double underline from tab item hover
 - Fix colour of visited tabs when JavaScript is not available
 - Size of `<button class="tna-button">` now matches `<a class="tna-button">`
+- Button colours for inverted and accented backgrounds
 
 ### Security
 

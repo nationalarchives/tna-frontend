@@ -16,9 +16,15 @@ module.exports = {
       .reduce((acc, path) => {
         acc[
           path
-            .replace(/^(\.\/)?src\/nationalarchives\//, "")
-            .replace(".mjs", "")
-        ] = `./${path}`.replace("././", "./");
+            .replace(
+              /^(\.\/)?src\/nationalarchives\/components\/([\w\-]+\/)/,
+              "",
+            )
+            .replace(/.mjs$/, "")
+        ] = {
+          import: `./${path}`.replace("././", "./"),
+          filename: `components/[name]/[name].js`,
+        };
         return acc;
       }, {}),
   },
@@ -38,7 +44,8 @@ module.exports = {
     ],
   },
   output: {
-    library: ["TNAFrontend", "[name]"],
+    // library: ["TNAFrontend", "[name]"],
+    library: "TNAFrontend",
     libraryTarget: "umd",
     umdNamedDefine: true,
     path: path.resolve(__dirname, "package/nationalarchives"),

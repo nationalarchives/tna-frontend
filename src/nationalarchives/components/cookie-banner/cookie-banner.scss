@@ -1,0 +1,32 @@
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/media";
+@use "../../tools/typography";
+@use "../../utilities";
+@use "../button";
+@use "../grid";
+
+.tna-cookie-banner {
+  @include colour.invert;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include media.on-tiny {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include typography.relative-font-size(16);
+  }
+
+  &__message {
+    &--prompt {
+    }
+
+    &--accepted {
+    }
+
+    &--rejected {
+    }
+  }
+}

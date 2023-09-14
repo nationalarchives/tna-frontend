@@ -1,15 +1,17 @@
 import SkipLink from "../../../components/skip-link/template.njk";
-import Header from "../../../components/header/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import Footer from "../../../components/footer/template.njk";
+import CookieBanner from "../../../components/cookie-banner/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
+import Header from "../../../components/header/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
 import Message from "../../../components/message/template.njk";
+import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
-import Footer from "../../../components/footer/template.njk";
 
 const argTypes = {
   theme: {
@@ -35,19 +37,16 @@ export default {
 
 const Template = ({ theme, accent }) => {
   const cardDefaultOptions = {
-    heading: {
-      supertitle: "Card supertitle",
-      title: "Card title",
-      level: 3,
-      size: "m",
-    },
+    supertitle: "Card supertitle",
+    title: "Card title",
+    headingLevel: 3,
+    headingSize: "m",
     href: "#",
-    image: {
-      src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-      alt: "The National Archives office",
-      width: 1996,
-      height: 1331,
-    },
+    imageSrc:
+      "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    imageAlt: "The National Archives office",
+    imageWidth: 1996,
+    imageHeight: 1331,
     label: "New",
     body: "<p>Card body</p>",
     actions: [
@@ -87,9 +86,21 @@ const Template = ({ theme, accent }) => {
       : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
+    ${CookieBanner({
+      params: {
+        cookiesUrl: "#",
+      },
+    })}
     ${SkipLink({
       params: {
         href: "main-content",
+      },
+    })}
+    ${PhaseBanner({
+      params: {
+        phase: "beta",
+        message:
+          'This is a new service - <a href="#">give us your feedback</a> to help improve it.',
       },
     })}
     ${Header({
@@ -160,10 +171,10 @@ const Template = ({ theme, accent }) => {
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
-          <p class="tna-p">This is some body text <a href="#">link</a>.</p>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <p class="tna-p">Donec ac tellus in dui rutrum maximus. Aliquam vel euismod eros. Integer ut magna velit. Fusce sed dui sit amet metus eleifend dictum quis vitae mi. Aenean sagittis euismod purus, in accumsan metus venenatis nec. Nullam nec velit felis. Sed nec felis eu nisl varius dictum eu quis nisl.</p>
-          <p class="tna-p">Donec dapibus est arcu, vel pellentesque risus pellentesque eget.</p>
+          <p>This is some body text <a href="#">link</a>.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Donec ac tellus in dui rutrum maximus. Aliquam vel euismod eros. Integer ut magna velit. Fusce sed dui sit amet metus eleifend dictum quis vitae mi. Aenean sagittis euismod purus, in accumsan metus venenatis nec. Nullam nec velit felis. Sed nec felis eu nisl varius dictum eu quis nisl.</p>
+          <p>Donec dapibus est arcu, vel pellentesque risus pellentesque eget.</p>
           <ul class="tna-ul">
             <li>Alpha</li>
             <li>Beta</li>
@@ -205,14 +216,20 @@ const Template = ({ theme, accent }) => {
                 brandIcon: "twitter",
               },
             })}
+            ${Button({
+              params: {
+                text: "Plain button",
+                plain: true,
+              },
+            })}
           </div>
         </div>
         <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny">
           <div class="tna-aside tna-background--contrast tna-!--margin-top-l-small tna-!--margin-top-xl-tiny">
-            <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           </div>
           <div class="tna-aside tna-background--accent">
-            <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           </div>
         </div>
       </div>
@@ -222,39 +239,39 @@ const Template = ({ theme, accent }) => {
           <h1 class="tna-heading tna-heading--xl">
             This is a heading (XL)
           </h1>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <h2 class="tna-heading tna-heading--l">
             This is a heading (L)
           </h2>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <h3 class="tna-heading tna-heading--m">
             This is a heading (M)
           </h3>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <h4 class="tna-heading tna-heading--s">
             This is a heading (S)
           </h4>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <hgroup class="tna-hgroup tna-hgroup--xl">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (XL)</h2>
           </hgroup>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <hgroup class="tna-hgroup tna-hgroup--l">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (L)</h2>
           </hgroup>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <hgroup class="tna-hgroup tna-hgroup--m">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (M)</h2>
           </hgroup>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <hgroup class="tna-hgroup tna-hgroup--s">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (S)</h2>
           </hgroup>
-          <p class="tna-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
           <p class="tna-scene-setter">
             We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.
           </p>
@@ -267,14 +284,17 @@ const Template = ({ theme, accent }) => {
           <h2 class="tna-heading tna-heading--l">
             <a href="#">Reaerching with The National Archives</a>
           </h2>
-          <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
+          <p>Lorem ipsum <a href="#">link</a></p>
           <hgroup class="tna-hgroup tna-hgroup--l">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">
               <a href="#">Reaerching with The National Archives</a>
             </h2>
           </hgroup>
-          <p class="tna-p">Lorem ipsum <a href="#">link</a></p>
+          <p>Lorem ipsum <a href="#">link</a></p>
+          <h2 class="tna-heading tna-heading--l">
+            Categories
+          </h2>
           <ul class="tna-chip-list">
             <li class="tna-chip-list__item">
               <a href="#" class="tna-chip">Chip 1</a>
@@ -306,7 +326,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <hr>
-      <div class="tna-container tna-section tna-!--no-padding-bottom">
+      <div class="tna-container tna-section tna-!--padding-bottom-s">
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
             params: {
@@ -471,7 +491,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 1", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -511,7 +531,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--contrast">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 2", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -551,7 +571,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--accent-light">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 3", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{
@@ -591,7 +611,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background--accent">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs", level: 3, href: "#" },
+            heading: { title: "My dogs 4", level: 3, href: "#" },
             items: Array(12)
               .fill({
                 ...{

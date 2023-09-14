@@ -1,0 +1,111 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/typography";
+@use "../../utilities";
+@use "../grid";
+
+.tna-breadcrumbs {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__wrapper {
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+
+    + .tna-breadcrumbs__item {
+      &::before {
+        margin: 0 0.75rem;
+
+        display: inline-block;
+
+        vertical-align: baseline;
+
+        content: "\203A";
+      }
+    }
+
+    &--expandable {
+      display: none;
+
+      @include media.on-mobile {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-base");
+    }
+
+    &:hover {
+      @include colour.colour-font("font-dark");
+    }
+
+    @include colour.on-high-contrast {
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+
+      text-decoration: none;
+
+      @include colour.colour-border("keyline-dark", 1px);
+
+      &:hover {
+        text-decoration: underline;
+
+        @include colour.colour-font("contrast-background");
+
+        @include colour.colour-background("contrast-font-base");
+      }
+    }
+  }
+
+  button#{&}__link {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+
+    background-color: transparent;
+
+    border: none;
+
+    appearance: none;
+    cursor: pointer;
+
+    &:hover {
+      color: inherit;
+      @include typography.interacted-text-decoration;
+
+      background-color: transparent;
+    }
+  }
+
+  @include media.on-mobile {
+    &--collapsed &__item:not(:first-child, &__item--expandable, :last-child) {
+      display: none;
+    }
+  }
+}

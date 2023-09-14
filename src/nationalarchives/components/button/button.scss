@@ -1,0 +1,103 @@
+@use "sass:math";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/typography";
+@use "../../lib/font-awesome";
+@use "../../utilities";
+@import "button-group";
+
+.tna-button {
+  padding: 0.25rem 1rem;
+
+  display: inline-block;
+
+  @include typography.relative-font-size(18);
+  @include typography.main-font-weight-bold;
+  text-decoration: none;
+  text-align: center;
+  line-height: #{math.div(16, 18) * 2};
+
+  @include colour.colour-background("button-background");
+
+  @include colour.colour-border("button-background", 0.25rem);
+
+  transition:
+    color 200ms,
+    background-color 200ms,
+    border-color 200ms;
+
+  cursor: pointer;
+
+  &,
+  &:link,
+  &:visited {
+    @include colour.colour-font("button-text");
+  }
+
+  &:hover {
+    @include colour.colour-font("button-hover-text");
+    text-decoration: none;
+
+    background: transparent;
+
+    transition:
+      color 50ms,
+      background-color 50ms,
+      border-color 50ms;
+  }
+
+  &--plain {
+    @include typography.main-font-weight;
+
+    background-color: transparent;
+
+    border-color: transparent;
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("link");
+    }
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
+  &--small {
+    padding: 0.125rem 0.5rem;
+
+    @include typography.relative-font-size(14);
+  }
+
+  &--accent {
+    @include colour.colour-background("button-accent-background");
+
+    @include colour.colour-border("button-accent-background");
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("button-accent-text");
+    }
+
+    &:hover {
+      @include colour.colour-font("font-dark");
+    }
+  }
+
+  &--solid-hover,
+  .tna-background--accent &,
+  .tna-background--accent-light & {
+    &:hover {
+      @include colour.colour-background("page-background");
+    }
+  }
+
+  .fa,
+  .fa-regular,
+  .fa-solid,
+  .fa-brands {
+    margin-right: 0.5rem;
+  }
+}

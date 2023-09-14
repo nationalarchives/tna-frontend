@@ -9,6 +9,7 @@ const argTypes = {
   brandIcon: { control: "text" },
   accent: { control: "boolean" },
   small: { control: "boolean" },
+  plain: { control: "boolean" },
   buttonElement: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -33,6 +34,7 @@ const Template = ({
   brandIcon,
   accent,
   small,
+  plain,
   buttonElement,
   classes,
   attributes,
@@ -46,6 +48,7 @@ const Template = ({
       brandIcon,
       accent,
       small,
+      plain,
       buttonElement,
       classes,
       attributes,
@@ -75,6 +78,15 @@ Icon.args = {
   classes: "tna-button--demo",
 };
 
+export const SmallIcon = Template.bind({});
+SmallIcon.args = {
+  text: "Explore the collection",
+  href: "#",
+  icon: "map-location-dot",
+  small: true,
+  classes: "tna-button--demo",
+};
+
 export const BrandIcon = Template.bind({});
 BrandIcon.args = {
   text: "Twitter",
@@ -85,9 +97,26 @@ BrandIcon.args = {
 
 export const Small = Template.bind({});
 Small.args = {
-  text: "Button element",
+  text: "Small button",
   href: "#",
   small: true,
+  classes: "tna-button--demo",
+};
+
+export const Plain = Template.bind({});
+Plain.args = {
+  text: "Plain button",
+  href: "#",
+  plain: true,
+  classes: "tna-button--demo",
+};
+
+export const SmallPlain = Template.bind({});
+SmallPlain.args = {
+  text: "Plain small button",
+  href: "#",
+  small: true,
+  plain: true,
   classes: "tna-button--demo",
 };
 
@@ -126,8 +155,12 @@ Group.args = {
     },
     {
       text: "Button",
-      href: "#",
       buttonElement: true,
+      classes: "tna-button--demo",
+    },
+    {
+      text: "Plain",
+      plain: true,
       classes: "tna-button--demo",
     },
   ],

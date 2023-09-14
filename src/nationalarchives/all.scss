@@ -10,8 +10,12 @@
  * ------------------------------------------------
  */
 
-@forward "variables";
-@forward "tools";
+$tna-font-path: "my-fonts-path";
 
-@forward "utilities";
-@forward "components";
+@use "variables";
+@use "tools";
+
+@use "utilities";
+@use "components";
+
+@use "lib";

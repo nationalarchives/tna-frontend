@@ -3,7 +3,7 @@ import uuidv4 from "../../lib/uuid.mjs";
 export class Gallery {
   constructor($module) {
     this.$module = $module;
-    this.$items = $module.querySelector(".tna-gallery__items");
+    this.$items = $module && $module.querySelector(".tna-gallery__items");
     this.opened = false;
   }
 

@@ -8,7 +8,7 @@
     "test": "node tasks/test-fixtures.js && test-storybook --verbose --stories-json",
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.mjs'",
     "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.mjs'",
-    "package:sass": "sass --style=compressed --embed-sources src/nationalarchives/all.scss package/nationalarchives/all.css",
+    "package:sass": "sass --style=compressed --embed-sources src/nationalarchives:package/nationalarchives",
     "package:scripts": "webpack"
   },
   "repository": {
@@ -63,6 +63,9 @@
     "eslint-plugin-storybook": "^0.6.13",
     "glob": "^10.2.7",
     "jest-image-snapshot": "^6.2.0",
+    "jsdom": "^22.1.0",
+    "mdx-mermaid": "^2.0.0",
+    "node-self": "^1.0.2",
     "nunjucks": "^3.2.3",
     "prettier": "^3.0.1",
     "react": "^18.2.0",

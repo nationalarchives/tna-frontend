@@ -1,0 +1,129 @@
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/media";
+@use "../../utilities";
+@use "../button";
+@use "../grid";
+
+.tna-gallery {
+  @include colour.invert;
+
+  padding-bottom: 2rem;
+
+  &__header {
+    padding-top: 2rem;
+  }
+
+  &__items {
+    width: 100%;
+    // padding-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: spacing.spacing("l");
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  &__item {
+    margin: 0;
+
+    &-index {
+      padding-bottom: 1rem;
+
+      text-align: center;
+    }
+
+    &-figure {
+    }
+
+    &-image {
+      margin: 0 auto;
+      height: auto;
+    }
+
+    &-description {
+      margin-top: 1rem;
+      padding: 0.5rem 0 0.5rem 1rem;
+
+      @include colour.colour-border("keyline-dark", 4px, solid, left);
+    }
+
+    &-tabs {
+      @include media.on-smaller-than-large {
+        padding-top: 2rem;
+      }
+    }
+  }
+
+  &__item + &__item {
+    @include colour.colour-border("keyline", 1px, solid, top);
+  }
+
+  &__toggle-wrapper {
+    text-align: center;
+  }
+
+  &__toggle {
+    margin-top: 2rem;
+  }
+
+  &--touchable {
+    .tna-gallery__items {
+      flex-flow: row nowrap;
+      gap: 6rem;
+
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+    }
+
+    .tna-gallery__item {
+      width: 100%;
+
+      scroll-snap-align: center;
+      flex: none;
+    }
+
+    &.tna-gallery--collapsed {
+      .tna-gallery__items {
+        overflow: auto;
+      }
+    }
+  }
+
+  &--collapsed &__item + &__item,
+  &--collapsed &__item:first-child &__item-description,
+  &--collapsed &__item:first-child &__item-tabs {
+    display: none;
+  }
+
+  &--collapsed &__item-figure {
+    width: 100%;
+  }
+
+  @include colour.on-high-contrast {
+    &__items {
+      // padding-top: 2rem;
+    }
+
+    &__item {
+      // padding-bottom: 2rem;
+
+      // @include colour.colour-border("keyline-dark", 1px);
+
+      &-index {
+        // padding-top: 0.5rem;
+      }
+
+      &-description {
+        // margin-bottom: 2rem;
+        // padding: 0 1rem 1rem;
+
+        // border: none;
+      }
+    }
+  }
+}

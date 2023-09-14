@@ -42,12 +42,11 @@ const Template = ({ theme, accent }) => {
     headingLevel: 3,
     headingSize: "m",
     href: "#",
-    image: {
-      src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-      alt: "The National Archives office",
-      width: 1996,
-      height: 1331,
-    },
+    imageSrc:
+      "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    imageAlt: "The National Archives office",
+    imageWidth: 1996,
+    imageHeight: 1331,
     label: "New",
     body: "<p>Card body</p>",
     actions: [

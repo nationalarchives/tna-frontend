@@ -50,27 +50,6 @@ export class CookieBanner {
         $closeButton.addEventListener("click", () => this.close());
       });
     }
-
-    // ==================== DEV ====================
-    // document.getElementById("reset").addEventListener("click", () => {
-    //   this.cookies.delete(this.hideCookieBannerKey);
-    //   this.cookies.delete("cookies_policy");
-    //   window.scrollY = 0;
-    //   window.location = window.location;
-    // });
-    // document
-    //   .getElementById("accept-analytics-policy")
-    //   .addEventListener("click", () => this.cookies.acceptPolicy("analytics"));
-    // document
-    //   .getElementById("reject-analytics-policy")
-    //   .addEventListener("click", () => this.cookies.rejectPolicy("analytics"));
-    // document
-    //   .getElementById("accept-settings-policy")
-    //   .addEventListener("click", () => this.cookies.acceptPolicy("settings"));
-    // document
-    //   .getElementById("reject-settings-policy")
-    //   .addEventListener("click", () => this.cookies.rejectPolicy("settings"));
-    // ==================== END ====================
   }
 
   accept() {

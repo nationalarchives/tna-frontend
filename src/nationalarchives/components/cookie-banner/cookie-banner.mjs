@@ -56,6 +56,8 @@ export class CookieBanner {
     this.$prompt.setAttribute("hidden", true);
     this.complete();
     this.$acceptedMessage.removeAttribute("hidden");
+    this.$acceptedMessage.focus();
+    this.$acceptedMessage.setAttribute("tabindex", "-1");
     this.cookies.acceptAllPolicies();
     if (this.loadScriptsOnAccept) {
       this.loadScriptsOnAccept.split(",").forEach((script) => {
@@ -70,6 +72,8 @@ export class CookieBanner {
     this.$prompt.setAttribute("hidden", true);
     this.complete();
     this.$rejectedMessage.removeAttribute("hidden");
+    this.$rejectedMessage.focus();
+    this.$rejectedMessage.setAttribute("tabindex", "-1");
     this.cookies.rejectAllPolicies();
   }
 

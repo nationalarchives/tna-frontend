@@ -70,6 +70,10 @@ strong {
 p {
   margin: 0 0 1.5rem;
 
+  @include media.on-tiny {
+    margin-bottom: 1rem;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -317,6 +321,8 @@ a {
   @include colour.colour-font("font-dark");
   @include typography.relative-font-size(30);
   line-height: math.div(50, 30);
+
+  @include spacing.space-below;
 
   @include media.on-mobile {
     @include typography.relative-font-size(24);

@@ -155,10 +155,14 @@
   fill: var(--#{$colour}) if($important, !important, null);
 }
 
-@mixin fixed {
+%fixed {
   @include colour-css-vars;
 
-  // @include colour-font("font-base");
+  @include colour-font("font-base");
+}
+
+@mixin fixed {
+  @extend %fixed;
 }
 
 %invert {
@@ -218,7 +222,7 @@
 
   @include colour-background("accent-background");
 
-  @include colour-font("font-base");
+  @include colour-font("font-base", false, colour.$colour-palette-dark);
 }
 
 @mixin accent {
@@ -267,8 +271,8 @@
     @content;
   }
 
-  @media (prefers-contrast: more) {
-    .tna-template--system-theme & {
+  .tna-template--system-theme & {
+    @media (prefers-contrast: more) {
       @content;
     }
   }

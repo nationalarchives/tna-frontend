@@ -5,6 +5,7 @@ import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
 import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
+import Cookies from "./lib/cookies.mjs";
 
 const $body = document.documentElement;
 $body.classList.add("tna-template--js-enabled");
@@ -88,6 +89,7 @@ const initAll = (options) => {
 
 export {
   initAll,
+  Cookies,
   Breadcrumbs,
   CookieBanner,
   Gallery,

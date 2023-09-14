@@ -1,22 +1,104 @@
+import Cookies from "../../lib/cookies.mjs";
+
 export class CookieBanner {
   constructor($module) {
     this.$module = $module;
-    this.$accept = $module && $module.querySelector('[value="accept"]');
-    this.$reject = $module && $module.querySelector('[value="reject"]');
+    this.$acceptButton = $module && $module.querySelector('[value="accept"]');
+    this.$rejectButton = $module && $module.querySelector('[value="reject"]');
+    this.$prompt =
+      $module && $module.querySelector(".tna-cookie-banner__message--prompt");
+    this.$acceptedMessage =
+      $module && $module.querySelector(".tna-cookie-banner__message--accepted");
+    this.$rejectedMessage =
+      $module && $module.querySelector(".tna-cookie-banner__message--rejected");
+    this.$closeButtons = $module && $module.querySelectorAll('[value="close"]');
   }
 
   init() {
-    if (!this.$module || !this.$accept || !this.$reject) {
+    if (
+      !this.$module ||
+      !this.$acceptButton ||
+      !this.$rejectButton ||
+      !this.$prompt ||
+      !this.$acceptedMessage ||
+      !this.$rejectedMessage ||
+      !this.$closeButtons
+    ) {
       return;
     }
 
-    this.$module.removeAttribute("hidden");
+    const policies = this.$module.getAttribute("data-policies");
+    if (!policies) {
+      return;
+    }
+    this.cookies = new Cookies(
+      policies.split(",").map((policy) => policy.trim()),
+    );
 
-    this.$accept.addEventListener("click", () => this.accept());
-    this.$reject.addEventListener("click", () => this.reject());
+    this.loadScriptsOnAccept = this.$module.getAttribute("data-acceptscripts");
+
+    this.hideCookieBannerKey = this.$module.getAttribute("data-hidekey");
+    const cookiePreferencesSet = this.cookies.exists(this.hideCookieBannerKey);
+
+    if (!cookiePreferencesSet) {
+      this.$module.removeAttribute("hidden");
+
+      this.$acceptButton.addEventListener("click", () => this.accept());
+      this.$rejectButton.addEventListener("click", () => this.reject());
+
+      this.$closeButtons.forEach(($closeButton) => {
+        $closeButton.addEventListener("click", () => this.close());
+      });
+    }
+
+    // ==================== DEV ====================
+    // document.getElementById("reset").addEventListener("click", () => {
+    //   this.cookies.delete(this.hideCookieBannerKey);
+    //   this.cookies.delete("cookies_policy");
+    //   window.scrollY = 0;
+    //   window.location = window.location;
+    // });
+    // document
+    //   .getElementById("accept-analytics-policy")
+    //   .addEventListener("click", () => this.cookies.acceptPolicy("analytics"));
+    // document
+    //   .getElementById("reject-analytics-policy")
+    //   .addEventListener("click", () => this.cookies.rejectPolicy("analytics"));
+    // document
+    //   .getElementById("accept-settings-policy")
+    //   .addEventListener("click", () => this.cookies.acceptPolicy("settings"));
+    // document
+    //   .getElementById("reject-settings-policy")
+    //   .addEventListener("click", () => this.cookies.rejectPolicy("settings"));
+    // ==================== END ====================
   }
 
-  accept() {}
+  accept() {
+    this.$prompt.setAttribute("hidden", true);
+    this.complete();
+    this.$acceptedMessage.removeAttribute("hidden");
+    this.cookies.acceptAllPolicies();
+    if (this.loadScriptsOnAccept) {
+      this.loadScriptsOnAccept.split(",").forEach((script) => {
+        const $script = document.createElement("script");
+        $script.src = script;
+        document.head.appendChild($script);
+      });
+    }
+  }
 
-  reject() {}
+  reject() {
+    this.$prompt.setAttribute("hidden", true);
+    this.complete();
+    this.$rejectedMessage.removeAttribute("hidden");
+    this.cookies.rejectAllPolicies();
+  }
+
+  complete() {
+    this.cookies.set(this.hideCookieBannerKey, true);
+  }
+
+  close() {
+    this.$module.setAttribute("hidden", true);
+  }
 }

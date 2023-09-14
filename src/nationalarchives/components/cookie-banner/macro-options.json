@@ -6,6 +6,24 @@
     "description": ""
   },
   {
+    "name": "policies",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "hideCookieBannerKey",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "loadScriptsOnAccept",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

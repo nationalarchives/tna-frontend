@@ -9,6 +9,7 @@ import Header from "../../../components/header/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
 import Message from "../../../components/message/template.njk";
+import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
 
@@ -94,6 +95,13 @@ const Template = ({ theme, accent }) => {
     ${SkipLink({
       params: {
         href: "main-content",
+      },
+    })}
+    ${PhaseBanner({
+      params: {
+        phase: "beta",
+        message:
+          'This is a new service - <a href="#">give us your feedback</a> to help improve it.',
       },
     })}
     ${Header({
@@ -285,6 +293,9 @@ const Template = ({ theme, accent }) => {
             </h2>
           </hgroup>
           <p>Lorem ipsum <a href="#">link</a></p>
+          <h2 class="tna-heading tna-heading--l">
+            Categories
+          </h2>
           <ul class="tna-chip-list">
             <li class="tna-chip-list__item">
               <a href="#" class="tna-chip">Chip 1</a>

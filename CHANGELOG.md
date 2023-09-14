@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Small button option
 - Tabs also respond to the up/down keys on keyboard navigation as well as left/right
 - Allow other image sources in a card image using a `<picture>` element
+- Cookie banner and cookie handling
 
 ### Changed
 

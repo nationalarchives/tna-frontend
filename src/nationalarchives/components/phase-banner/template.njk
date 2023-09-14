@@ -2,12 +2,12 @@
 {%- set containerClasses = containerClasses.concat('tna-phase-banner--' + params.phase | lower) -%}
 <div class="tna-phase-banner {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
-    <div class="tna-column">
+    <div class="tna-column tna-column--full-tiny">
       <span class="tna-phase-banner__phase">
         {{ params.phase | lower | capitalize }}
       </span>
     </div>
-    <div class="tna-column">
+    <div class="tna-column tna-column--flex-1 tna-column--full-tiny">
       <p class="tna-phase-banner__message">
         {{ params.message | safe }}
       </p>

@@ -93,7 +93,7 @@
   &__content-inner {
     padding: 2.5rem 1.5rem;
 
-    @include colour.colour-background("page-background");
+    @include colour.colour-background("background");
   }
 
   &__heading {

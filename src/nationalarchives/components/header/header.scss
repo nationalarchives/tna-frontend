@@ -72,19 +72,6 @@
 
     &:hover {
       text-decoration: underline;
-
-      // .tna-header__exit-link-icon {
-      //   border-color: colour.$tna-yellow;
-
-      //   &::before {
-      //     border-top-color: colour.$tna-yellow;
-      //     border-right-color: colour.$tna-yellow;
-      //   }
-
-      //   &::after {
-      //     background-color: colour.$tna-yellow;
-      //   }
-      // }
     }
   }
 
@@ -437,11 +424,8 @@
       &:visited {
         @include uninvert;
         @include colour.colour-font("font-dark");
-        @include colour.colour-background("page-background");
+        @include colour.colour-background("background");
       }
-      // transition:
-      //   color 50ms,
-      //   background-color 50ms;
     }
   }
 
@@ -512,7 +496,7 @@
 
       // text-align: center;
 
-      @include colour.colour-background("page-background");
+      @include colour.colour-background("background");
 
       @include colour.colour-border("keyline", 1px, solid, bottom);
     }
@@ -528,7 +512,7 @@
     &__navigation-items {
       width: 100%;
 
-      @include colour.colour-background("page-background");
+      @include colour.colour-background("background");
     }
 
     &__navigation-item {

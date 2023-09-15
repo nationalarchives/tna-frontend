@@ -107,6 +107,12 @@ a {
   }
 }
 
+small {
+  @include typography.relative-font-size(
+    typographyVars.$body-font-size-px * 0.85
+  );
+}
+
 .tna-ul,
 .tna-ol {
   margin-top: 0;

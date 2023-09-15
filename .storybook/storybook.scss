@@ -37,7 +37,7 @@
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
-  @include colour.colour-background("page-background");
+  @include colour.colour-background("background");
 }
 
 .tna-template--padded {

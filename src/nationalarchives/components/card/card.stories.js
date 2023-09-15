@@ -13,6 +13,7 @@ const argTypes = {
   imageHeight: { control: { type: "number", min: 1 } },
   imageSources: { control: "object" },
   label: { control: "text" },
+  meta: { control: "text" },
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
@@ -48,6 +49,7 @@ const Template = ({
   imageHeight,
   imageSources,
   label,
+  meta,
   body,
   text,
   actions,
@@ -70,6 +72,7 @@ const Template = ({
       imageHeight,
       imageSources,
       label,
+      meta,
       body,
       text,
       actions,
@@ -94,7 +97,23 @@ Standard.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  body: "<p>Card body</p>",
+  meta: "By Max Smith, 24th September 2023",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Simple = Template.bind({});
+Simple.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "m",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 1996,
+  imageHeight: 1331,
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -112,7 +131,7 @@ Boxed.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   style: "boxed",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -131,7 +150,7 @@ Accent.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   style: "accent",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -149,7 +168,7 @@ Horizontal.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   actions: [
     {
       text: "Card action",
@@ -175,7 +194,7 @@ HorizontalBoxed.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   actions: [
     {
       text: "Card action",
@@ -202,7 +221,7 @@ HorizontalAccent.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   actions: [
     {
       text: "Card action",
@@ -233,7 +252,7 @@ Sources.args = {
       type: "image/webp",
     },
   ],
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -244,7 +263,7 @@ WithoutImage.args = {
   title: "Card title",
   headingLevel: 3,
   headingSize: "m",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -302,7 +321,6 @@ const GridTemplate = ({
 
 export const Grid = GridTemplate.bind({});
 Grid.args = {
-  supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
   headingSize: "m",
@@ -312,8 +330,7 @@ Grid.args = {
   imageAlt: "The National Archives office",
   imageWidth: 1996,
   imageHeight: 1331,
-  label: "New",
-  body: "<p>Card body</p>",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
 };

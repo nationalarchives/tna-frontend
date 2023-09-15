@@ -19,7 +19,7 @@
 
   font-size: #{typography.$relative-1rem-px}px;
 
-  @include colour.colour-background("page-background");
+  @include colour.colour-background("background");
 
   accent-color: var(--accent);
 

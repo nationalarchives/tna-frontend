@@ -166,6 +166,7 @@
 }
 
 %invert {
+  --background: var(--contrast-background);
   --font-base: var(--contrast-font-base);
   --font-dark: var(--contrast-font-dark);
   --font-light: var(--contrast-font-light);
@@ -178,7 +179,7 @@
   --button-hover-text: var(--contrast-button-hover-text);
   --button-hover-background: var(--contrast-button-hover-background);
 
-  @include colour-background("contrast-background");
+  @include colour-background("background");
 
   @include colour-font("font-base", false, colour.$colour-palette-dark);
 }
@@ -189,6 +190,7 @@
 
 %invert-on-mobile {
   @include media.on-mobile {
+    --background: var(--contrast-background);
     --font-base: var(--contrast-font-base);
     --font-dark: var(--contrast-font-dark);
     --font-light: var(--contrast-font-light);
@@ -201,7 +203,7 @@
     --button-hover-text: var(--contrast-button-hover-text);
     --button-hover-background: var(--contrast-button-hover-background);
 
-    @include colour-background("contrast-background");
+    @include colour-background("background");
 
     @include colour-font("font-base", false, colour.$colour-palette-dark);
   }
@@ -212,6 +214,7 @@
 }
 
 %accent {
+  --background: var(--accent-background);
   --font-base: var(--accent-font-base);
   --font-dark: var(--accent-font-dark);
   --font-light: var(--accent-font-light);
@@ -220,7 +223,7 @@
   --keyline: var(--accent-keyline);
   --keyline-dark: var(--accent-keyline-dark);
 
-  @include colour-background("accent-background");
+  @include colour-background("background");
 
   @include colour-font("font-base", false, colour.$colour-palette-dark);
 }
@@ -238,8 +241,7 @@
 }
 
 %light-accent-background {
-  @include colour-background("accent-background-light");
-
+  --background: var(--accent-background-light);
   --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
   --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
   --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
@@ -260,6 +262,8 @@
       colour.$colour-palette-default,
       "button-hover-background"
     )};
+
+  @include colour-background("background");
 }
 
 @mixin light-accent-background {

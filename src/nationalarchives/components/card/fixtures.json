@@ -55,6 +55,17 @@
       "hidden": false
     },
     {
+      "name": "with meta",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "meta": "Card meta",
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading tna-heading--m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p class=\"tna-card__body-meta\"><small><strong>Card meta</strong></small></p><p>Card body</p></div></div></div>",
+      "hidden": false
+    },
+    {
       "name": "with text",
       "options": {
         "title": "Card title",

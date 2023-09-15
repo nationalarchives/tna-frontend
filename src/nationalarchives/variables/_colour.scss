@@ -34,7 +34,7 @@ LIGHT THEME (DEFAULT)
 =========================================
 */
 $colour-palette-default: (
-  "page-background": #f4f4f4,
+  "background": #f4f4f4,
   "font-base": $base-font,
   "font-dark": map.get($colour-palette-brand, "black"),
   "font-light": rgba($base-font, 0.7),
@@ -48,12 +48,10 @@ $colour-palette-default: (
   "button-hover-text": map.get($colour-palette-brand, "black"),
   "button-hover-background": map.get($colour-palette-brand, "white"),
   "contrast-background": #1e1e1e,
-  // TODO: #343338 ?
   "contrast-font-base": map.get($colour-palette-brand, "white"),
   "contrast-font-dark": map.get($colour-palette-brand, "white"),
   "contrast-font-light": rgba(map.get($colour-palette-brand, "white"), 0.7),
   "contrast-link": map.get($colour-palette-brand, "white"),
-  // "contrast-link-visited": #b9f, // Don't show visited state on contrasting backgrounds
   "contrast-link-visited": map.get($colour-palette-brand, "white"),
   "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
   "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
@@ -83,7 +81,7 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #111,
+    "background": #111,
     "font-base": rgba(map.get($colour-palette-brand, "white"), 0.95),
     "font-dark": map.get($colour-palette-brand, "white"),
     "font-light": rgba(map.get($colour-palette-brand, "white"), 0.5),
@@ -111,7 +109,7 @@ LIGHT, HIGH_CONTRAST THEME
 $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
-    "page-background": map.get($colour-palette-brand, "white"),
+    "background": map.get($colour-palette-brand, "white"),
     "font-base": map.get($colour-palette-brand, "black"),
     "font-light": map.get($colour-palette-brand, "black"),
     "link": map.get($colour-palette-brand, "navy"),
@@ -142,7 +140,7 @@ DARK, HIGH_CONTRAST THEME
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": map.get($colour-palette-brand, "black"),
+    "background": map.get($colour-palette-brand, "black"),
     "font-base": map.get($colour-palette-brand, "white"),
     "font-light": map.get($colour-palette-brand, "white"),
     "link": map.get($colour-palette-brand, "white"),

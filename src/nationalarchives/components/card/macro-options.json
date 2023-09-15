@@ -99,6 +99,12 @@
     "description": "A label which will appear over the top left of the card's image. If there is no imagem, the label is not displayed."
   },
   {
+    "name": "meta",
+    "type": "string",
+    "required": false,
+    "description": "A small piece of additional information akin to a subtitle, displayed between the title and the body."
+  },
+  {
     "name": "body",
     "type": "string",
     "required": true,

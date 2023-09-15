@@ -2,7 +2,7 @@
 @use "../variables/typography";
 
 @mixin relative-font-size($fontSizePx) {
-  font-size: #{math.div($fontSizePx, typography.$base-font-size-px)}rem;
+  font-size: #{math.div($fontSizePx, typography.$relative-1rem-px)}rem;
 }
 
 @mixin interacted-text-decoration {
@@ -37,6 +37,6 @@
   @include detail-font;
   @include relative-font-size(14);
   text-transform: uppercase;
-  line-height: #{math.div(typography.$base-font-size-px, 14)};
+  line-height: #{math.div(typography.$relative-1rem-px, 14)};
   // line-height: 1;
 }

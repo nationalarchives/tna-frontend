@@ -10,12 +10,8 @@
  * ------------------------------------------------
  */
 
-$tna-font-path: "my-fonts-path";
-
 @use "variables";
 @use "tools";
-
+@use "lib";
 @use "utilities";
 @use "components";
-
-@use "lib";

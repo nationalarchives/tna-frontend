@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../../variables/grid";
 @use "../../tools/media";
-@use "../../tools/grid" as tools;
+@use "../../tools/grid" as gridTools;
 @use "../../utilities";
 
 .tna-container {
@@ -44,10 +44,10 @@
   }
 }
 
-@include tools.columns-generator(grid.$column-count);
+@include gridTools.columns-generator(grid.$column-count);
 
 @include media.on-medium {
-  @include tools.columns-generator(grid.$column-count-medium, "medium");
+  @include gridTools.columns-generator(grid.$column-count-medium, "medium");
 }
 
 @include media.on-mobile {
@@ -63,11 +63,11 @@
 }
 
 @include media.on-small {
-  @include tools.columns-generator(grid.$column-count-small, "small");
+  @include gridTools.columns-generator(grid.$column-count-small, "small");
 }
 
 @include media.on-tiny {
-  @include tools.columns-generator(grid.$column-count-tiny, "tiny");
+  @include gridTools.columns-generator(grid.$column-count-tiny, "tiny");
 }
 
 .tna-container--no-padding,

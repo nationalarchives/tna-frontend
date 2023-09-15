@@ -1,16 +1,18 @@
-$base-font-size-px: 16;
+@use "sass:math";
 
-$interactive-text-decoration-thickness: 3.5px;
+$relative-1rem-px: 16;
 
-$font-family-main: "Open Sans", serif;
-// $font-weight-main: 500;
-$font-weight-main: normal;
-// $font-weight-main-bold: 700;
-$font-weight-main-bold: bold;
+$body-font-size-px: 18 !default;
+$body-line-height: #{math.div(16, 18) * 2} !default; // 1.77777
 
-$font-family-heading: supria-sans-condensed, "Arial Narrow", sans-serif;
-$font-weight-heading: 400;
+$interactive-text-decoration-thickness: 3.5px !default;
 
-$font-family-detail: "Roboto Mono", monospace;
-// $font-weight-detail: 400;
-$font-weight-detail: normal;
+$font-family-main: "Open Sans", serif !default;
+$font-weight-main: normal !default;
+$font-weight-main-bold: bold !default;
+
+$font-family-heading: supria-sans-condensed, "Arial Narrow", sans-serif !default;
+$font-weight-heading: 400 !default;
+
+$font-family-detail: "Roboto Mono", monospace !default;
+$font-weight-detail: normal !default;

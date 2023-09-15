@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.20-prerelease...HEAD)
 
 ### Added
+
+- Allow use of custom variables when loading SCSS
+
 ### Changed
 
 - Focus on the confirmation message of the cookie banner once accepted or rejected

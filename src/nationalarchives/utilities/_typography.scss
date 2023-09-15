@@ -5,6 +5,7 @@
 @use "../tools/typography";
 @use "../variables/assets";
 @use "../variables/grid";
+@use "../variables/typography" as typographyVars;
 
 @import "https://use.typekit.net/hkj3kuz.css";
 
@@ -41,9 +42,8 @@
 
 .tna-template__body {
   color: inherit;
-  @include typography.relative-font-size(18);
-  // line-height: 1.6;
-  line-height: #{math.div(16, 18) * 2};
+  @include typography.relative-font-size(typographyVars.$body-font-size-px);
+  line-height: typographyVars.$body-line-height;
 }
 
 h1,

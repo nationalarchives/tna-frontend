@@ -17,7 +17,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  font-size: #{typography.$base-font-size-px}px;
+  font-size: #{typography.$relative-1rem-px}px;
 
   @include colour.colour-background("page-background");
 

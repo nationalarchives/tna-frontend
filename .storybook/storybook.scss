@@ -37,10 +37,6 @@
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
-  // @media (prefers-color-scheme: dark) {
-  //   @include colour.colour-css-vars-dark;
-  // }
-
   @include colour.colour-background("page-background");
 }
 

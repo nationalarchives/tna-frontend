@@ -1,5 +1,6 @@
-@import "../variables/assets";
-$fa-font-path: $tna-font-path !default;
+@use "../variables/assets";
+
+$fa-font-path: assets.$fa-font-path;
 @import "font-awesome/fontawesome";
 @import "font-awesome/solid";
 @import "font-awesome/brands";

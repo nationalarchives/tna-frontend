@@ -62,7 +62,7 @@ Accept.play = async ({ canvasElement }) => {
   const cookies = new Cookies();
   deleteAllCookies(cookies);
 
-  await expect(cookies.isPolicyAccepted("analytics")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
 
@@ -71,7 +71,7 @@ Accept.play = async ({ canvasElement }) => {
   await expect(acceptButton).toBeVisible();
   await userEvent.click(acceptButton);
 
-  await expect(cookies.isPolicyAccepted("analytics")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
   await expect(acceptButton).not.toBeVisible();
@@ -94,7 +94,7 @@ Reject.play = async ({ canvasElement }) => {
   const cookies = new Cookies();
   deleteAllCookies(cookies);
 
-  await expect(cookies.isPolicyAccepted("analytics")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
 
@@ -103,7 +103,7 @@ Reject.play = async ({ canvasElement }) => {
   await expect(rejectButton).toBeVisible();
   await userEvent.click(rejectButton);
 
-  await expect(cookies.isPolicyAccepted("analytics")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
 
@@ -120,7 +120,7 @@ CustomPolicies.play = async ({ args, canvasElement }) => {
   const cookies = new Cookies(args.policies.split(","));
   deleteAllCookies(cookies);
 
-  await expect(cookies.isPolicyAccepted("analytics")).toEqual(null);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(null);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(null);
   await expect(cookies.isPolicyAccepted("custom")).toEqual(false);
 
@@ -128,7 +128,7 @@ CustomPolicies.play = async ({ args, canvasElement }) => {
   const acceptButton = canvas.getByText("Accept cookies");
   await userEvent.click(acceptButton);
 
-  await expect(cookies.isPolicyAccepted("analytics")).toEqual(null);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(null);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(null);
   await expect(cookies.isPolicyAccepted("custom")).toEqual(true);
 
@@ -138,7 +138,7 @@ CustomPolicies.play = async ({ args, canvasElement }) => {
 export const AddScriptsOnAccept = Template.bind({});
 AddScriptsOnAccept.args = {
   cookiesUrl: "#",
-  loadScriptsOnAccept: "my-analytics-script.js",
+  loadScriptsOnAccept: "my-usage-script.js",
   classes: "tna-cookie-banner--demo",
 };
 AddScriptsOnAccept.play = async ({ args, canvasElement }) => {

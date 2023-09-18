@@ -164,8 +164,7 @@
 
               background-color: var(--link);
 
-              outline: 3px transparent solid;
-              @include colour.colour-outline("contrast-background");
+              @include colour.colour-outline("contrast-background", 3px, solid);
 
               transform: rotate(45deg) translateX(50%);
               transform-origin: 100% 0;

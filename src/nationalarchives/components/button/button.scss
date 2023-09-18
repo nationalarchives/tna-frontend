@@ -89,7 +89,7 @@
   .tna-background--accent &,
   .tna-background--accent-light & {
     &:hover {
-      @include colour.colour-background("background");
+      @include colour.colour-background("page-background");
     }
   }
 

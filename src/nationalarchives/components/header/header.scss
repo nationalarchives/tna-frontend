@@ -424,7 +424,7 @@
       &:visited {
         @include uninvert;
         @include colour.colour-font("font-dark");
-        @include colour.colour-background("background");
+        @include colour.colour-background("page-background");
       }
     }
   }
@@ -496,7 +496,7 @@
 
       // text-align: center;
 
-      @include colour.colour-background("background");
+      @include colour.colour-background("page-background");
 
       @include colour.colour-border("keyline", 1px, solid, bottom);
     }
@@ -512,7 +512,7 @@
     &__navigation-items {
       width: 100%;
 
-      @include colour.colour-background("background");
+      @include colour.colour-background("page-background");
     }
 
     &__navigation-item {

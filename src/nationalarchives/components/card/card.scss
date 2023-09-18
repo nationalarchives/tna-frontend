@@ -140,18 +140,18 @@
   &--horizontal#{&}--accent {
     @include media.on-mobile {
       .tna-card__inner {
-        padding: 0 0 2rem;
+        padding: 0 0 1rem;
       }
 
       .tna-card__image-container {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
 
       .tna-card__heading,
       .tna-card__body,
       .tna-card__actions {
-        margin-right: 2rem;
-        margin-left: 2rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
       }
     }
   }

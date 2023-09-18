@@ -2,8 +2,8 @@ import Card from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  title: { control: "text" },
   supertitle: { control: "text" },
+  title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["m", "l"] },
   href: { control: "text" },
@@ -38,8 +38,8 @@ export default {
 };
 
 const Template = ({
-  title,
   supertitle,
+  title,
   headingLevel,
   headingSize,
   href,
@@ -61,8 +61,8 @@ const Template = ({
 }) =>
   Card({
     params: {
-      title,
       supertitle,
+      title,
       headingLevel,
       headingSize,
       href,

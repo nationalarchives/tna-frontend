@@ -134,6 +134,81 @@ small {
   }
 }
 
+.tna-dl {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include spacing.space-below;
+
+  dt,
+  dd {
+    margin: 0;
+    padding: 0.5rem 0;
+
+    box-sizing: border-box;
+  }
+
+  dt {
+    width: 25%;
+
+    @include typography.main-font-weight-bold;
+  }
+
+  dd {
+    width: 75%;
+
+    + dd {
+      margin-left: 25%;
+    }
+  }
+
+  &:not(&--plain) {
+    dt,
+    dd {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    dt:first-child,
+    dd:nth-of-type(2n) + dt,
+    dd:nth-of-type(2n + 1) {
+      @include colour.colour-background("background-tint");
+    }
+  }
+
+  @include media.on-mobile {
+    &:not(&--plain) {
+      dt,
+      dd {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      dt {
+        @include colour.colour-background("background-tint");
+      }
+
+      dd {
+        background: transparent !important;
+      }
+    }
+  }
+
+  @include colour.on-high-contrast {
+    @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+
+    dt,
+    dd {
+      padding-left: 0;
+      padding-right: 0;
+
+      background: transparent !important;
+
+      @include colour.colour-border("keyline-dark", 1px, solid, top);
+    }
+  }
+}
+
 %chip {
   max-width: max-content;
   padding: 0.375em 0.5rem;

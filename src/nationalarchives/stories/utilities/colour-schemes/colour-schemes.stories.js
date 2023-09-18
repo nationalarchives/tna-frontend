@@ -227,9 +227,27 @@ const Template = ({ theme, accent }) => {
         <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny">
           <div class="tna-aside tna-background--contrast tna-!--margin-top-l-small tna-!--margin-top-xl-tiny">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+            <div class="tna-button-group">
+              ${Button({
+                params: {
+                  text: "Accent button",
+                  href: "#",
+                  accent: true,
+                },
+              })}
+            </div>
           </div>
           <div class="tna-aside tna-background--accent">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+            <div class="tna-button-group">
+              ${Button({
+                params: {
+                  text: "Primary button",
+                  href: "#",
+                  classes: "tna-button--solid-hover",
+                },
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -292,6 +310,57 @@ const Template = ({ theme, accent }) => {
             </h2>
           </hgroup>
           <p>Lorem ipsum <a href="#">link</a></p>
+          <h3 class="tna-heading tna-heading--m">
+            Descriptions
+          </h3>
+          <dl class="tna-dl">
+            <dt>Alpha</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Beta</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Gamma</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Delta</dt>
+            <dd>Lorem ipsum</dd>
+          </dl>
+          <h3 class="tna-heading tna-heading--m">
+            Descriptions
+          </h3>
+          <dl class="tna-dl">
+            <dt>Alpha</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Beta</dt>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis</dd>
+            <dt>Gamma</dt>
+            <dd>Lorem ipsum 1</dd>
+            <dd>Lorem ipsum 2</dd>
+            <dd>Lorem ipsum 3</dd>
+            <dt>Delta</dt>
+            <dd>Lorem ipsum 1</dd>
+            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis</dd>
+            <dd>Lorem ipsum 3</dd>
+            <dt>Epsilon</dt>
+            <dd>Lorem ipsum 1</dd>
+            <dd>Lorem ipsum 2</dd>
+            <dt>Zeta</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Eta</dt>
+            <dd>Lorem ipsum 1</dd>
+            <dd>Lorem ipsum 2</dd>
+          </dl>
+          <h3 class="tna-heading tna-heading--m">
+            Descriptions
+          </h3>
+          <dl class="tna-dl tna-dl--plain">
+            <dt>Alpha</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Beta</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Gamma</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Delta</dt>
+            <dd>Lorem ipsum</dd>
+          </dl>
           <h2 class="tna-heading tna-heading--l">
             Categories
           </h2>

@@ -239,6 +239,10 @@
   @extend %accent;
 }
 
+@mixin tint-background {
+  @include colour-background("background-tint");
+}
+
 %accent-background {
   @include colour-background("accent-background");
 }

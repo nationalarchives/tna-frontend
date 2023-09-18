@@ -4,10 +4,8 @@ export default class Cookies {
   constructor(
     policies = ["usage", "settings"],
     cookiesPolicyKey = "cookies_policy",
-    crossDomain = false,
   ) {
     this.cookiesPolicyKey = cookiesPolicyKey;
-    this.crossDomain = crossDomain;
     policies.forEach((policy) => {
       this.#policies[policy.toLowerCase()] = false;
     });
@@ -24,10 +22,6 @@ export default class Cookies {
     }
   }
 
-  get data() {
-    return this.#deserialise(document.cookie);
-  }
-
   #deserialise(cookieString) {
     const deserialised = {};
     cookieString.split(";").forEach((cookie) => {
@@ -38,11 +32,11 @@ export default class Cookies {
   }
 
   get all() {
-    return this.data;
+    return this.#deserialise(document.cookie);
   }
 
   exists(key) {
-    return Object.prototype.hasOwnProperty.call(this.data, key);
+    return Object.prototype.hasOwnProperty.call(this.all, key);
   }
 
   hasValue(key, value) {
@@ -50,15 +44,16 @@ export default class Cookies {
   }
 
   get(key) {
-    return decodeURIComponent(this.data[key]);
+    return decodeURIComponent(this.all[key]);
   }
 
-  set(key, value, maxAge = 60 * 60 * 24 * 365, path = "/") {
+  set(key, value, options) {
+    const { maxAge, path, sameSite } = options;
     document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
       value,
-    )}; SameSite=${
-      this.crossDomain ? "None" : "Lax"
-    }; path=${path}; max-age=${maxAge}; Secure`;
+    )}; SameSite=${sameSite || "Lax"}; path=${path || "/"}; max-age=${
+      maxAge || 60 * 60 * 24 * 365
+    }; Secure`;
     this.#getPolicies();
   }
 

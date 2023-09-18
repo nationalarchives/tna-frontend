@@ -38,9 +38,12 @@ export class CookieBanner {
     this.loadScriptsOnAccept = this.$module.getAttribute("data-acceptscripts");
 
     this.hideCookieBannerKey = this.$module.getAttribute("data-hidekey");
-    const cookiePreferencesSet = this.cookies.exists(this.hideCookieBannerKey);
+    const cookieBannerHidden = this.cookies.hasValue(
+      this.hideCookieBannerKey,
+      true,
+    );
 
-    if (!cookiePreferencesSet) {
+    if (!cookieBannerHidden) {
       this.$module.removeAttribute("hidden");
 
       this.$acceptButton.addEventListener("click", () => this.accept());

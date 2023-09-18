@@ -12,10 +12,6 @@
   width: 100%;
   height: 100%;
 
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-
   font-size: #{typography.$relative-1rem-px}px;
 
   @include colour.colour-background("background");
@@ -101,8 +97,6 @@
   margin: 0;
   padding: 0;
 
-  overflow: auto;
-
   &:has(.tna-header):has(#main-content[role="main"]):has(.tna-footer) {
     display: flex;
     flex-direction: column;
@@ -133,9 +127,7 @@ canvas {
 }
 
 *:focus {
-  // outline: 0.3125rem colour.$focus-colour solid;
-  outline: 0.3125rem solid;
-  @include colour.colour-outline("focus-outline");
+  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
   outline-offset: 0.125rem;
 }
 
@@ -145,10 +137,6 @@ hr {
   border-width: 1px 0 0;
   @include colour.colour-border("keyline");
   border-style: solid;
-
-  // @include colour.on-high-contrast {
-  //   border-style: solid;
-  // }
 }
 
 .tna-section {

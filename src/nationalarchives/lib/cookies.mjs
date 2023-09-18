@@ -47,13 +47,15 @@ export default class Cookies {
     return decodeURIComponent(this.all[key]);
   }
 
-  set(key, value, options) {
-    const { maxAge, path, sameSite } = options;
+  set(key, value, options = {}) {
+    const {
+      maxAge = 60 * 60 * 24 * 365,
+      path = "/",
+      sameSite = "Lax",
+    } = options;
     document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
       value,
-    )}; SameSite=${sameSite || "Lax"}; path=${path || "/"}; max-age=${
-      maxAge || 60 * 60 * 24 * 365
-    }; Secure`;
+    )}; SameSite=${sameSite}; path=${path}; max-age=${maxAge}; Secure`;
     this.#getPolicies();
   }
 
@@ -62,7 +64,7 @@ export default class Cookies {
   }
 
   get allPolicies() {
-    return JSON.parse(this.get(this.cookiesPolicyKey));
+    return JSON.parse(this.get(this.cookiesPolicyKey) || "{}");
   }
 
   policy(policy) {

@@ -13,7 +13,7 @@ const argTypes = {
   imageHeight: { control: { type: "number", min: 1 } },
   imageSources: { control: "object" },
   label: { control: "text" },
-  meta: { control: "text" },
+  meta: { control: "object" },
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
@@ -97,7 +97,6 @@ Standard.args = {
   imageWidth: 1996,
   imageHeight: 1331,
   label: "New",
-  meta: "By Max Smith, 24th September 2023",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -113,6 +112,29 @@ Simple.args = {
   imageAlt: "The National Archives office",
   imageWidth: 1996,
   imageHeight: 1331,
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Meta = Template.bind({});
+Meta.args = {
+  supertitle: "Card supertitle",
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "m",
+  href: "#",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 1996,
+  imageHeight: 1331,
+  label: "New",
+  meta: [
+    { text: "24th September 2023", icon: "calendar" },
+    { text: "From £16", icon: "ticket" },
+    { text: "Online", icon: "location-dot" },
+  ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",

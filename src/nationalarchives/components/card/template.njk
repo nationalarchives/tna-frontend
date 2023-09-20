@@ -58,13 +58,16 @@
   {%- endif -%}
     <div class="tna-card__body">
     {%- if params.meta -%}
-      <p class="tna-card__body-meta">
-        <small>
-          <strong>
-            {{ params.meta }}
-          </strong>
-        </small>
-      </p>
+      <ul class="tna-card__meta">
+        {%- for item in params.meta -%}
+        <li class="tna-card__meta-item">
+          {%- if item.icon -%}
+          <i class="fa-solid fa-{{ item.icon }}"></i>
+          {%- endif -%}
+          {{ item.text }}
+        </li>
+        {%- endfor -%}
+      </ul>
     {%- endif -%}
     {%- if params.text -%}
       <p>{{ params.text }}</p>

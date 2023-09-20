@@ -37,7 +37,9 @@ export class CookieBanner {
 
     this.loadScriptsOnAccept = this.$module.getAttribute("data-acceptscripts");
 
-    this.cookiePreferencesSet = this.$module.getAttribute("data-preferenceskey");
+    this.cookiePreferencesSet = this.$module.getAttribute(
+      "data-preferenceskey",
+    );
     const cookieBannerHidden = this.cookies.hasValue(
       this.cookiePreferencesSet,
       true,

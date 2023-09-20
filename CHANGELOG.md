@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Allow use of custom variables when loading SCSS
-- Cards can now have a short meta text under the title
+- Cards can now have meta text/icons under the title
 
 ### Changed
 

@@ -56,11 +56,31 @@
 
   &__body {
     order: 3;
+  }
 
-    &-meta {
-      margin-bottom: 0.5rem;
+  &__meta {
+    margin-bottom: 0.5rem;
+    padding: 0;
 
-      line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+
+    line-height: 1.3;
+
+    list-style: none;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      @include typography.detail-font-small;
+
+      .fa-solid {
+        margin-right: 0.75rem;
+
+        @include colour.colour-font("icon-light");
+      }
     }
   }
 
@@ -73,8 +93,6 @@
   &__action {
     @include typography.main-font-weight-bold;
 
-    .fa,
-    .fa-regular,
     .fa-solid,
     .fa-brands {
       margin-right: 0.5rem;
@@ -104,6 +122,8 @@
 
     .tna-hgroup__supertitle {
       @include colour.invert;
+
+      @include colour.colour-border("contrast-background");
     }
   }
 
@@ -173,5 +193,23 @@
 
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline-dark", 1px);
+
+    &__meta {
+      &-item {
+        padding-right: 0.5rem;
+
+        @include colour.colour-border("keyline-dark", 1px, solid);
+
+        .fa-solid {
+          padding: 0.5rem;
+
+          @include colour.colour-font("contrast-font-base");
+
+          @include colour.colour-background("contrast-background");
+
+          @include colour.colour-border("keyline-dark", 1px, solid, right);
+        }
+      }
+    }
   }
 }

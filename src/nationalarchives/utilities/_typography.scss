@@ -211,15 +211,16 @@ small {
 
 %chip {
   max-width: max-content;
-  padding: 0.375em 0.5rem;
+  padding: 0.125em 0.25rem;
 
   display: block;
 
-  @include colour.colour-font("font-dark");
   @include typography.detail-font-small;
   line-height: 1;
 
   @include colour.accent;
+
+  @include colour.colour-border("accent-background", 0.125rem);
 }
 
 .tna-chip {
@@ -244,6 +245,8 @@ small {
 %heading {
   @include colour.colour-font("font-dark");
   @include typography.heading-font;
+
+  text-wrap: balance;
 
   a {
     display: inline-block;

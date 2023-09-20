@@ -59,10 +59,23 @@
       "options": {
         "title": "Card title",
         "headingLevel": 3,
-        "meta": "Card meta",
+        "meta": [
+          {
+            "text": "24th September 2023",
+            "icon": "calendar"
+          },
+          {
+            "text": "From £16",
+            "icon": "ticket"
+          },
+          {
+            "text": "Online",
+            "icon": "location-dot"
+          }
+        ],
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading tna-heading--m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p class=\"tna-card__body-meta\"><small><strong>Card meta</strong></small></p><p>Card body</p></div></div></div>",
+      "html": "<div class=\"tna-card \" data-module=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading tna-heading--m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><ul class=\"tna-card__meta\"><li class=\"tna-card__meta-item\"><i class=\"fa-solid fa-calendar\"></i>24th September 2023</li><li class=\"tna-card__meta-item\"><i class=\"fa-solid fa-ticket\"></i>From £16</li><li class=\"tna-card__meta-item\"><i class=\"fa-solid fa-location-dot\"></i>Online</li></ul><p>Card body</p></div></div></div>",
       "hidden": false
     },
     {

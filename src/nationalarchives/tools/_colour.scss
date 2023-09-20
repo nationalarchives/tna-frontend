@@ -38,6 +38,7 @@
     --accent-font-base: #{brand-colour("black")} !important;
     --accent-font-dark: #{brand-colour("black")} !important;
     --accent-font-light: #{rgba(brand-colour("black"), 0.7)} !important;
+    --accent-icon-light: #{rgba(brand-colour("black"), 0.45)} !important;
     --accent-link: #{brand-colour("black")} !important;
     --accent-link-visited: #{brand-colour("black")} !important;
     --accent-keyline: #{rgba(brand-colour("black"), 0.5)} !important;
@@ -47,6 +48,7 @@
     --accent-font-base: #{brand-colour("white")} !important;
     --accent-font-dark: #{brand-colour("white")} !important;
     --accent-font-light: #{rgba(brand-colour("white"), 0.7)} !important;
+    --accent-icon-light: #{rgba(brand-colour("white"), 0.45)} !important;
     --accent-link: #{brand-colour("white")} !important;
     --accent-link-visited: #{brand-colour("white")} !important;
     --accent-keyline: #{rgba(brand-colour("white"), 0.5)} !important;
@@ -177,6 +179,7 @@
   --font-base: var(--contrast-font-base);
   --font-dark: var(--contrast-font-dark);
   --font-light: var(--contrast-font-light);
+  --icon-light: var(--contrast-icon-light);
   --link: var(--contrast-link);
   --link-visited: var(--contrast-link-visited);
   --keyline: var(--contrast-keyline);
@@ -201,6 +204,7 @@
     --font-base: var(--contrast-font-base);
     --font-dark: var(--contrast-font-dark);
     --font-light: var(--contrast-font-light);
+    --icon-light: var(--contrast-icon-light);
     --link: var(--contrast-link);
     --link-visited: var(--contrast-link-visited);
     --keyline: var(--contrast-keyline);
@@ -225,6 +229,7 @@
   --font-base: var(--accent-font-base);
   --font-dark: var(--accent-font-dark);
   --font-light: var(--accent-font-light);
+  --icon-light: var(--accent-icon-light);
   --link: var(--accent-link);
   --link-visited: var(--accent-link-visited);
   --keyline: var(--accent-keyline);

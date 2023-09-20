@@ -37,9 +37,9 @@ export class CookieBanner {
 
     this.loadScriptsOnAccept = this.$module.getAttribute("data-acceptscripts");
 
-    this.hideCookieBannerKey = this.$module.getAttribute("data-hidekey");
+    this.cookiePreferencesSet = this.$module.getAttribute("data-preferenceskey");
     const cookieBannerHidden = this.cookies.hasValue(
-      this.hideCookieBannerKey,
+      this.cookiePreferencesSet,
       true,
     );
 
@@ -81,7 +81,7 @@ export class CookieBanner {
   }
 
   complete() {
-    this.cookies.set(this.hideCookieBannerKey, true);
+    this.cookies.set(this.cookiePreferencesSet, true);
   }
 
   close() {

@@ -24,13 +24,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Tests
+      - name: Test build Storybook
         uses: ./.github/actions/test-build
+
+  test-build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test build package
+        uses: ./.github/actions/test-build-package
 
   prototype-kit:
     runs-on: ubuntu-latest
     needs:
       - test-build
+      - test-build-package
     steps:
       - uses: actions/checkout@v3
       - name: GOV.UK prototype kit test

@@ -1,5 +1,6 @@
 const argTypes = {
   items: { control: "object" },
+  plain: { control: "boolean" },
 };
 
 export default {
@@ -38,9 +39,14 @@ OrderedListPlain.args = {
 };
 
 const DescriptionListTemplate = ({ items, plain }) =>
-  `<dl class="tna-dl${plain ? " tna-dl--plain" : ""}">${items.reduce(
+  `<dl class="tna-dl${plain ? " tna-dl--plain" : ""}${
+    items.some((item) => item.icon) ? " tna-dl--icon-padding" : ""
+  }">${items.reduce(
     (list, item) => `${list}
-    <dt>${item.title}</dt>
+    <dt>
+      ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ""}
+      ${item.title}
+    </dt>
     ${
       Array.isArray(item.description)
         ? item.description.reduce(
@@ -51,7 +57,9 @@ const DescriptionListTemplate = ({ items, plain }) =>
         : `<dd>${item.description}</dd>`
     }`,
     "",
-  )}</dl>`;
+  )}
+</dl>`;
+
 export const DescriptionList = DescriptionListTemplate.bind({});
 DescriptionList.args = {
   items: [
@@ -64,6 +72,7 @@ DescriptionList.args = {
     { title: "Eta", description: "Lorem ipsum" },
   ],
 };
+
 export const PlainDescriptionList = DescriptionListTemplate.bind({});
 PlainDescriptionList.args = {
   items: [
@@ -74,6 +83,34 @@ PlainDescriptionList.args = {
   ],
   plain: true,
 };
+
+export const DescriptionListWithIcons = DescriptionListTemplate.bind({});
+DescriptionListWithIcons.args = {
+  items: [
+    {
+      title: "Held by",
+      description: "The National Archives, Kew",
+      icon: "landmark",
+    },
+    { title: "Date", description: "1972&ndash;1979", icon: "calendar" },
+    { title: "Reference", description: "LC 4", icon: "database" },
+  ],
+};
+
+export const PlainDescriptionListWithIcons = DescriptionListTemplate.bind({});
+PlainDescriptionListWithIcons.args = {
+  items: [
+    {
+      title: "Held by",
+      description: "The National Archives, Kew",
+      icon: "landmark",
+    },
+    { title: "Date", description: "1972&ndash;1979", icon: "calendar" },
+    { title: "Reference", description: "LC 4", icon: "database" },
+  ],
+  plain: true,
+};
+
 export const ComplexDescriptionList = DescriptionListTemplate.bind({});
 ComplexDescriptionList.args = {
   items: [

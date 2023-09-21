@@ -326,31 +326,6 @@ const Template = ({ theme, accent }) => {
           <h3 class="tna-heading tna-heading--m">
             Descriptions
           </h3>
-          <dl class="tna-dl">
-            <dt>Alpha</dt>
-            <dd>Lorem ipsum</dd>
-            <dt>Beta</dt>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis</dd>
-            <dt>Gamma</dt>
-            <dd>Lorem ipsum 1</dd>
-            <dd>Lorem ipsum 2</dd>
-            <dd>Lorem ipsum 3</dd>
-            <dt>Delta</dt>
-            <dd>Lorem ipsum 1</dd>
-            <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis</dd>
-            <dd>Lorem ipsum 3</dd>
-            <dt>Epsilon</dt>
-            <dd>Lorem ipsum 1</dd>
-            <dd>Lorem ipsum 2</dd>
-            <dt>Zeta</dt>
-            <dd>Lorem ipsum</dd>
-            <dt>Eta</dt>
-            <dd>Lorem ipsum 1</dd>
-            <dd>Lorem ipsum 2</dd>
-          </dl>
-          <h3 class="tna-heading tna-heading--m">
-            Descriptions
-          </h3>
           <dl class="tna-dl tna-dl--plain">
             <dt>Alpha</dt>
             <dd>Lorem ipsum</dd>
@@ -360,6 +335,26 @@ const Template = ({ theme, accent }) => {
             <dd>Lorem ipsum</dd>
             <dt>Delta</dt>
             <dd>Lorem ipsum</dd>
+          </dl>
+          <h3 class="tna-heading tna-heading--m">
+            Descriptions
+          </h3>
+          <dl class="tna-dl tna-dl--icon-padding ">
+            <dt>
+              <i class="fa-solid fa-landmark"></i>
+              Held by
+            </dt>
+            <dd>The National Archives, Kew</dd>
+            <dt>
+              <i class="fa-solid fa-calendar"></i>
+              Date
+            </dt>
+            <dd>1972–1979</dd>
+            <dt>
+              <i class="fa-solid fa-database"></i>
+              Reference
+            </dt>
+            <dd>LC 4</dd>
           </dl>
           <h2 class="tna-heading tna-heading--l">
             Categories

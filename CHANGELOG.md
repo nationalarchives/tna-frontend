@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Allow use of custom variables when loading SCSS
 - Cards can now have meta text/icons under the title
+- `<dl>` elements are now styled
 
 ### Changed
 

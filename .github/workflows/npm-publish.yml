@@ -24,7 +24,8 @@ jobs:
       - check
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/lint
+      - name: Lint
+        uses: ./.github/actions/lint
       
   tests:
     runs-on: ubuntu-latest
@@ -32,15 +33,26 @@ jobs:
       - check
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/tests
+      - name: Tests
+        uses: ./.github/actions/tests
 
-  prototype-kit:
+  test-build:
     runs-on: ubuntu-latest
     needs:
       - check
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/prototype-kit-test
+      - name: Test build
+        uses: ./.github/actions/test-build
+
+  prototype-kit:
+    runs-on: ubuntu-latest
+    needs:
+      - test-build
+    steps:
+      - uses: actions/checkout@v3
+      - name: GOV.UK prototype kit test
+        uses: ./.github/actions/prototype-kit-test
         
   publish-npm:
     name: Build package and publish to npm

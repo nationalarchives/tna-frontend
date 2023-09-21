@@ -1,4 +1,4 @@
-name: GOV.UK prototype kit
+name: GOV.UK prototype kit test
 
 on:
   workflow_call:
@@ -18,9 +18,6 @@ runs:
         ./tasks/build-package.sh &&
         cd package &&
         npm pack --pack-destination .
-      shell: bash
-    - name: Test package
-      run: node tasks/test-package.js || exit 1
       shell: bash
     - name: Create prototype
       run: >

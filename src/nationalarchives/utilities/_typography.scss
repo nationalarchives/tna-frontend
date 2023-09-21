@@ -327,22 +327,24 @@ small {
 
   text-wrap: balance;
 
-  a {
-    display: inline-block;
-
-    &::after {
-      padding-left: 0.25rem;
-
+  &:not(.tna-heading--no-link-arrow) {
+    a {
       display: inline-block;
 
-      font-weight: 700;
-
-      content: "\203A";
-    }
-
-    &:hover {
       &::after {
-        padding-left: 0.5rem;
+        padding-left: 0.25rem;
+
+        display: inline-block;
+
+        font-weight: 700;
+
+        content: "\203A";
+      }
+
+      &:hover {
+        &::after {
+          padding-left: 0.5rem;
+        }
       }
     }
   }

@@ -9,6 +9,7 @@ import Header from "../../../components/header/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
 import Message from "../../../components/message/template.njk";
+import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
@@ -310,6 +311,8 @@ const Template = ({ theme, accent }) => {
             </h2>
           </hgroup>
           <p>Lorem ipsum <a href="#">link</a></p>
+        </div>
+        <div class="tna-column tna-column--width-1-2 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
           <h3 class="tna-heading tna-heading--m">
             Descriptions
           </h3>
@@ -320,9 +323,9 @@ const Template = ({ theme, accent }) => {
             <dd>Lorem ipsum</dd>
             <dt>Gamma</dt>
             <dd>Lorem ipsum</dd>
-            <dt>Delta</dt>
-            <dd>Lorem ipsum</dd>
           </dl>
+        </div>
+        <div class="tna-column tna-column--width-1-2 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
           <h3 class="tna-heading tna-heading--m">
             Descriptions
           </h3>
@@ -333,9 +336,9 @@ const Template = ({ theme, accent }) => {
             <dd>Lorem ipsum</dd>
             <dt>Gamma</dt>
             <dd>Lorem ipsum</dd>
-            <dt>Delta</dt>
-            <dd>Lorem ipsum</dd>
           </dl>
+        </div>
+        <div class="tna-column tna-column--full tna-!--margin-top-m">
           <h3 class="tna-heading tna-heading--m">
             Descriptions
           </h3>
@@ -708,6 +711,52 @@ const Template = ({ theme, accent }) => {
             <div class="tna-button-group">
               <a href="#" class="tna-button">Primary button</a>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section">
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            ${Pagination({
+              params: {
+                previous: {
+                  href: "#",
+                },
+                items: [
+                  {
+                    number: 1,
+                    href: "#",
+                  },
+                  {
+                    ellipsis: true,
+                  },
+                  {
+                    number: 6,
+                    href: "#",
+                  },
+                  {
+                    number: 7,
+                    current: true,
+                    href: "#",
+                  },
+                  {
+                    number: 8,
+                    href: "#",
+                  },
+                  {
+                    ellipsis: true,
+                  },
+                  {
+                    number: 42,
+                    href: "#",
+                  },
+                ],
+                next: {
+                  href: "#",
+                },
+                classes: "tna-pagination--demo",
+              },
+            })}
           </div>
         </div>
       </div>

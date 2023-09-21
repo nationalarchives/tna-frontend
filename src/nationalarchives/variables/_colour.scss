@@ -92,7 +92,7 @@ $colour-palette-dark: map.merge(
     "font-light": rgba(map.get($colour-palette-brand, "white"), 0.5),
     "icon-light": rgba(map.get($colour-palette-brand, "white"), 0.35),
     "link": map.get($colour-palette-brand, "blue"),
-    "link-visited": map.get($colour-palette-default, "contrast-link-visited"),
+    "link-visited": #a8f,
     "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
     "keyline-dark": map.get($colour-palette-brand, "white"),
     "button-text": map.get($colour-palette-brand, "black"),

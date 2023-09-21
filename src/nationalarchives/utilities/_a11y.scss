@@ -1,3 +1,5 @@
+@use "../tools/colour";
+
 .tna-visually-hidden {
   width: 1px !important;
   height: 1px !important;
@@ -21,4 +23,11 @@
   &::after {
     content: "\00a0";
   }
+}
+
+*:focus {
+  z-index: 9;
+
+  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
+  outline-offset: 0.125rem;
 }

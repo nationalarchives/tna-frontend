@@ -19,21 +19,30 @@ jobs:
           ./tasks/validate-version.sh $VERSION
 
   lint:
+    runs-on: ubuntu-latest
     needs:
       - check
-    uses: ./.github/workflows/_lint.yml
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/lint
   
   tests:
+    runs-on: ubuntu-latest
     needs:
       - lint
-    uses: ./.github/workflows/_tests.yml
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/tests
 
   prototype-kit:
+    runs-on: ubuntu-latest
     needs:
       - check
       - lint
       - tests
-    uses: ./.github/workflows/_prototype-kit-test.yml
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/prototype-kit-test
 
   publish-npm:
     name: Build package and publish to npm

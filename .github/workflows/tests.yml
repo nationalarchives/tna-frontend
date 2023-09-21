@@ -7,13 +7,22 @@ on:
 
 jobs:
   lint:
-    uses: ./.github/workflows/_lint.yml
-  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/lint
+      
   tests:
-    uses: ./.github/workflows/_tests.yml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/tests
 
   prototype-kit:
+    runs-on: ubuntu-latest
     needs:
       - lint
       - tests
-    uses: ./.github/workflows/_prototype-kit-test.yml
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/prototype-kit-test

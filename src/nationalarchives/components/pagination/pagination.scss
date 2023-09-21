@@ -4,7 +4,7 @@
 
 .tna-pagination {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -48,6 +48,7 @@
 
     display: flex;
     align-items: center;
+    // gap: 0.125rem;
 
     list-style: none;
   }
@@ -63,6 +64,14 @@
     &--current {
       @include colour.accent;
     }
+  }
+
+  &__item--current &__link {
+    // border-color: transparent !important;
+  }
+
+  &__item &__link {
+    // @include colour.colour-border("keyline-dark", 0.125rem);
   }
 
   &__prev &__link,

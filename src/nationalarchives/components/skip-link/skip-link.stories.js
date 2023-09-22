@@ -2,6 +2,8 @@ import SkipLink from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
+  text: { control: "text" },
+  href: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -17,13 +19,10 @@ export default {
   argTypes,
 };
 
-const Template = ({ classes, attributes }) =>
+const Template = ({ text, href, classes, attributes }) =>
   `<p>To view the skip link component tab to this example, or click inside this example and press tab.</p>
   ${SkipLink({
-    params: {
-      classes,
-      attributes,
-    },
+    params: { text, href, classes, attributes },
   })}`;
 
 export const Standard = Template.bind({});

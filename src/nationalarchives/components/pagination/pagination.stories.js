@@ -2,6 +2,7 @@ import Pagination from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
+  landmarkLabel: { control: "text" },
   previous: { control: "object" },
   items: { control: "object" },
   next: { control: "object" },

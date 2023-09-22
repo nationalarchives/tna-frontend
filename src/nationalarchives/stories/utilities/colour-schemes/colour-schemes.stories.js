@@ -590,6 +590,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
+                landmarkLabel: "My dogs 1 results",
                 previous: {
                   href: "#",
                 },
@@ -671,6 +672,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
+                landmarkLabel: "My dogs 2 results",
                 previous: {
                   href: "#",
                 },
@@ -752,6 +754,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
+                landmarkLabel: "My dogs 3 results",
                 previous: {
                   href: "#",
                 },
@@ -833,6 +836,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
+                landmarkLabel: "My dogs 4 results",
                 previous: {
                   href: "#",
                 },
@@ -879,212 +883,6 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <!--
-      <div class="tna-section">
-        <div class="tna-container">
-          <div class="tna-column tna-column--full">
-            ${Pagination({
-              params: {
-                previous: {
-                  href: "#",
-                },
-                items: [
-                  {
-                    number: 1,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 6,
-                    href: "#",
-                  },
-                  {
-                    number: 7,
-                    current: true,
-                    href: "#",
-                  },
-                  {
-                    number: 8,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 42,
-                    href: "#",
-                  },
-                ],
-                next: {
-                  href: "#",
-                },
-                classes: "tna-pagination--demo",
-              },
-            })}
-            <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tna-section tna-background--contrast">
-        <div class="tna-container">
-          <div class="tna-column tna-column--full">
-            ${Pagination({
-              params: {
-                previous: {
-                  href: "#",
-                },
-                items: [
-                  {
-                    number: 1,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 6,
-                    href: "#",
-                  },
-                  {
-                    number: 7,
-                    current: true,
-                    href: "#",
-                  },
-                  {
-                    number: 8,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 42,
-                    href: "#",
-                  },
-                ],
-                next: {
-                  href: "#",
-                },
-                classes: "tna-pagination--demo",
-              },
-            })}
-            <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tna-section tna-background--accent-light">
-        <div class="tna-container">
-          <div class="tna-column tna-column--full">
-            ${Pagination({
-              params: {
-                previous: {
-                  href: "#",
-                },
-                items: [
-                  {
-                    number: 1,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 6,
-                    href: "#",
-                  },
-                  {
-                    number: 7,
-                    current: true,
-                    href: "#",
-                  },
-                  {
-                    number: 8,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 42,
-                    href: "#",
-                  },
-                ],
-                next: {
-                  href: "#",
-                },
-                classes: "tna-pagination--demo",
-              },
-            })}
-            <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tna-section tna-background--accent">
-        <div class="tna-container">
-          <div class="tna-column tna-column--full">
-            ${Pagination({
-              params: {
-                previous: {
-                  href: "#",
-                },
-                items: [
-                  {
-                    number: 1,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 6,
-                    href: "#",
-                  },
-                  {
-                    number: 7,
-                    current: true,
-                    href: "#",
-                  },
-                  {
-                    number: 8,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 42,
-                    href: "#",
-                  },
-                ],
-                next: {
-                  href: "#",
-                },
-                classes: "tna-pagination--demo",
-              },
-            })}
-            <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
     </main>
     ${Footer({
       params: {

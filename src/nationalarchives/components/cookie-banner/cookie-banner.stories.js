@@ -106,6 +106,7 @@ Reject.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
+  await expect(acceptButton).not.toBeVisible();
 
   deleteAllCookies(cookies);
 };

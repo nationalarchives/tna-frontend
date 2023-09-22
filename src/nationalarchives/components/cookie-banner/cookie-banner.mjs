@@ -50,10 +50,6 @@ export class CookieBanner {
 
       this.$acceptButton.addEventListener("click", () => this.accept());
       this.$rejectButton.addEventListener("click", () => this.reject());
-
-      this.$closeButtons.forEach(($closeButton) => {
-        $closeButton.addEventListener("click", () => this.close());
-      });
     }
   }
 
@@ -84,6 +80,9 @@ export class CookieBanner {
 
   complete() {
     this.cookies.set(this.cookiePreferencesSet, true);
+    this.$closeButtons.forEach(($closeButton) => {
+      $closeButton.addEventListener("click", () => this.close());
+    });
   }
 
   close() {

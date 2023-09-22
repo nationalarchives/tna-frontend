@@ -10,16 +10,19 @@ export default class Cookies {
       this.#policies[policy.toLowerCase()] = false;
     });
     this.#policies.essential = true;
-    this.#getPolicies();
   }
 
-  #getPolicies() {
-    if (this.exists(this.cookiesPolicyKey)) {
-      this.#policies = {
-        ...this.#policies,
-        ...this.allPolicies,
-      };
-    }
+  get policies() {
+    return this.exists(this.cookiesPolicyKey)
+      ? (this.#policies = {
+          ...this.#policies,
+          ...this.allPolicies,
+        })
+      : this.#policies;
+  }
+
+  set policies(newPolicyValues) {
+    this.#policies = newPolicyValues;
   }
 
   #deserialise(cookieString) {
@@ -44,7 +47,7 @@ export default class Cookies {
   }
 
   get(key) {
-    return decodeURIComponent(this.all[key]);
+    return this.exists(key) ? decodeURIComponent(this.all[key]) : null;
   }
 
   set(key, value, options = {}) {
@@ -56,7 +59,6 @@ export default class Cookies {
     document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
       value,
     )}; SameSite=${sameSite}; path=${path}; max-age=${maxAge}; Secure`;
-    this.#getPolicies();
   }
 
   delete(key, path = "/") {
@@ -68,47 +70,51 @@ export default class Cookies {
   }
 
   policy(policy) {
-    return this.#policies[policy];
+    return this.policies[policy];
   }
 
   acceptPolicy(policy) {
-    this.setPolicy(policy, true);
+    this.#setPolicy(policy, true);
+    this.savePolicies();
   }
 
   rejectPolicy(policy) {
     if (policy === "essential") {
       return;
     }
-    this.setPolicy(policy, false);
+    this.#setPolicy(policy, false);
+    this.savePolicies();
   }
 
-  setPolicy(policy, accepted) {
-    this.#policies = {
-      ...this.#policies,
+  #setPolicy(policy, accepted) {
+    this.policies = {
+      ...this.policies,
       [policy]: accepted,
       essential: true,
     };
-    this.set(this.cookiesPolicyKey, JSON.stringify(this.#policies));
+  }
+
+  savePolicies() {
+    this.set(this.cookiesPolicyKey, JSON.stringify(this.policies));
   }
 
   acceptAllPolicies() {
-    Object.keys(this.#policies)
-      .filter((policy) => policy !== "essential")
-      .filter((policy) => this.#policies[policy] === false)
-      .forEach((policy) => this.acceptPolicy(policy));
+    Object.keys(this.policies).forEach((policy) =>
+      this.#setPolicy(policy, true),
+    );
+    this.savePolicies();
   }
 
   rejectAllPolicies() {
-    Object.keys(this.#policies)
-      .filter((policy) => policy !== "essential")
-      .filter((policy) => this.#policies[policy] === true)
-      .forEach((policy) => this.rejectPolicy(policy));
+    Object.keys(this.policies).forEach((policy) =>
+      this.#setPolicy(policy, false),
+    );
+    this.savePolicies();
   }
 
   isPolicyAccepted(policy) {
-    this.#getPolicies();
-    return Object.prototype.hasOwnProperty.call(this.#policies, policy)
-      ? this.#policies[policy] === true
+    return Object.prototype.hasOwnProperty.call(this.policies, policy)
+      ? this.policies[policy] === true
       : null;
   }
 }

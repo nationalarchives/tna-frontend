@@ -1,13 +1,20 @@
+@use "sass:math";
 @use "../../tools/colour";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 @use "../../utilities";
 
 .tna-pagination {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+
+  @include spacing.space-below;
+
+  &--centered {
+    justify-content: center;
+  }
 
   &__prev {
   }
@@ -16,30 +23,30 @@
   }
 
   &__link {
-    min-width: 2rem;
-    padding: 0.5rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
+    min-width: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 
   &__icon {
     display: inline-block;
 
+    path {
+      fill: currentColor;
+    }
+
     &--prev {
-      margin-right: 0.5rem;
+      margin-left: 0.5rem;
     }
 
     &--next {
-      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
   }
 
   &__link-title {
-    @include typography.main-font-weight-bold;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 
   &__list {
@@ -48,7 +55,7 @@
 
     display: flex;
     align-items: center;
-    // gap: 0.125rem;
+    gap: 0.25rem;
 
     list-style: none;
   }
@@ -62,33 +69,11 @@
     }
 
     &--current {
-      @include colour.accent;
     }
   }
 
   &__item--current &__link {
-    // border-color: transparent !important;
-  }
-
-  &__item &__link {
-    // @include colour.colour-border("keyline-dark", 0.125rem);
-  }
-
-  &__prev &__link,
-  &__next &__link,
-  &__item:not(&__item--current) &__link {
-    &:hover {
-      @include colour.tint-background;
-    }
-  }
-
-  @include colour.on-high-contrast {
-    &__link {
-      @include colour.colour-border("keyline-dark", 1px);
-    }
-
-    &__list {
-      gap: 0.25rem;
+    .tna-background--accent & {
     }
   }
 }

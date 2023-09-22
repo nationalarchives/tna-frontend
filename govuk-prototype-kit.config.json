@@ -9,7 +9,7 @@
     "/nationalarchives/assets"
   ],
   "sass": [
-    "/nationalarchives/all.scss"
+    "/nationalarchives/_prototype-kit.scss"
   ],
   "templates": [
     {
@@ -20,6 +20,11 @@
     {
       "name": "Search results",
       "path": "/nationalarchives/templates/search-results.njk",
+      "type": "nunjucks"
+    },
+    {
+      "name": "Topics",
+      "path": "/nationalarchives/templates/topics.njk",
       "type": "nunjucks"
     }
   ]

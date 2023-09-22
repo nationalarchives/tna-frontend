@@ -1,0 +1,16 @@
+@use "variables/assets" with (
+  $tna-font-path:
+    "/plugin-assets/@nationalarchives/frontend/nationalarchives/assets/fonts",
+  $fa-font-path:
+    "/plugin-assets/@nationalarchives/frontend/nationalarchives/assets/fonts"
+);
+
+@use "all";
+
+.tna-template__body {
+  p {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+}

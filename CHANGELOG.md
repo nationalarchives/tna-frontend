@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated the prototype kit templates
 - Tabs will not try to show a specific one on startup unless the target matches the ID of one of the tabs
+- Closing `</nav>` tag added on to `index-grid`
 
 ### Security
 

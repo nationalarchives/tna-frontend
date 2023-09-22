@@ -1,7 +1,7 @@
 {% from "nationalarchives/components/button/macro.njk" import tnaButton %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<div class="tna-cookie-banner {{ containerClasses | join(' ') }}" role="region" aria-label="Cookie usage" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies else 'usage,settings' }}" data-preferenceskey="{{ params.hideCookieBannerKey if params.hideCookieBannerKey else 'cookies_preferences_set' }}"{% if params.loadScriptsOnAccept %} data-acceptscripts="{{ params.loadScriptsOnAccept }}"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
+<div class="tna-cookie-banner {{ containerClasses | join(' ') }}" role="region" aria-label="Cookie usage" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies else 'usage,settings' }}" data-preferenceskey="{{ params.cookiesPreferencesSetKey if params.cookiesPreferencesSetKey else 'cookies_preferences_set' }}"{% if params.loadScriptsOnAccept %} data-acceptscripts="{{ params.loadScriptsOnAccept }}"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
   <div class="tna-container">
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--prompt">
       <h2>This website uses cookies</h2>

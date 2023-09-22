@@ -126,11 +126,6 @@ canvas {
   display: none;
 }
 
-*:focus {
-  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
-  outline-offset: 0.125rem;
-}
-
 hr {
   margin: 2rem 0;
 

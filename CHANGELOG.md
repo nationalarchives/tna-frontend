@@ -12,14 +12,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allow use of custom variables when loading SCSS
 - Cards can now have meta text/icons under the title
 - `<dl>` elements are now styled
+- Initial pagination component
 
 ### Changed
 
 - Focus on the confirmation message of the cookie banner once accepted or rejected
+- `hideCookieBannerKey` property on cookie banner changed to `cookiesPreferencesSetKey`
 
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Updated the prototype kit templates
+- Tabs will not try to show a specific one on startup unless the target matches the ID of one of the tabs
+- Closing `</nav>` tag added on to `index-grid`
+
 ### Security
 
 ## [0.1.20-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.19-prerelease...v0.1.20-prerelease) - 2023-09-14

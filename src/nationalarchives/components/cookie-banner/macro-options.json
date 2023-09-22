@@ -12,7 +12,7 @@
     "description": ""
   },
   {
-    "name": "hideCookieBannerKey",
+    "name": "cookiesPreferencesSetKey",
     "type": "string",
     "required": false,
     "description": ""

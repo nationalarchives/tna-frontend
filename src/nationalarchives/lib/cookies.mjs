@@ -40,7 +40,7 @@ export default class Cookies {
   }
 
   hasValue(key, value) {
-    return this.get(key) === value;
+    return this.get(key) == value;
   }
 
   get(key) {

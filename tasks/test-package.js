@@ -64,6 +64,7 @@ const checkExists = [
   ...componentFiles("hero"),
   ...componentFiles("index-grid"),
   ...componentFiles("message"),
+  ...componentFiles("pagination"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
   ...componentFiles("profile"),

@@ -1,0 +1,79 @@
+@use "sass:math";
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+@use "../../utilities";
+
+.tna-pagination {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include spacing.space-below;
+
+  &--centered {
+    justify-content: center;
+  }
+
+  &__prev {
+  }
+
+  &__next {
+  }
+
+  &__link {
+    min-width: 1.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  &__icon {
+    display: inline-block;
+
+    path {
+      fill: currentColor;
+    }
+
+    &--prev {
+      margin-left: 0.5rem;
+    }
+
+    &--next {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__link-title {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    list-style: none;
+  }
+
+  &__item {
+    &--ellipses {
+      min-width: 2rem;
+      padding: 0.5rem;
+
+      text-align: center;
+    }
+
+    &--current {
+    }
+  }
+
+  &__item--current &__link {
+    .tna-background--accent & {
+    }
+  }
+}

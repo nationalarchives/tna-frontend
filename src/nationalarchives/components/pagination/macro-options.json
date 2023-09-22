@@ -1,0 +1,116 @@
+[
+  {
+    "name": "previous",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "number",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "current",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "ellipsis",
+        "type": "boolean",
+        "required": false,
+        "description": "Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored."
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "next",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "landmarkLabel",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the pagination."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the pagination."
+  }
+]

@@ -1,19 +1,19 @@
-{% from "../components/card/macro.njk" import tnaCard %}
-{% from "../components/hero/macro.njk" import tnaHero %}
+{% from "nationalarchives/components/card/macro.njk" import tnaCard %}
+{% from "nationalarchives/components/hero/macro.njk" import tnaHero %}
 
-{% extends "./layouts/_prototype-kit.njk" %}
+{% extends "nationalarchives/templates/layouts/_prototype-kit.njk" %}
 
-{% block pageTitle %}The National Archives | Topics{% endblock %}
+{% block pageTitle %}Topics - The National Archives{% endblock %}
 
 {% block main %}
 <main class="tna-main-wrapper">
   {{ tnaHero({
-    "heading": "Title",
-    "body": "<p>Body</p>",
-    "image": {
-      "src": "https://picsum.photos/id/29/640/360",
-      "alt": "A placeholder image",
-      "information": "Photo of some mountains by a famous photographer, ©2012"
+    heading: "Title",
+    body: "<p>Body</p>",
+    image: {
+      src: "https://picsum.photos/id/29/640/360",
+      alt: "A placeholder image",
+      information: "Photo of some mountains by a famous photographer, ©2012"
     }
   }) }}
   <div class="tna-container">
@@ -23,18 +23,14 @@
     {% for item in range(0, 6) -%}
       <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-medium tna-column--width-full-small tna-column--width-full-tiny">
         {{ tnaCard({
-          "heading": {
-            "supertitle": "Card supertitle",
-            "title": "Card title",
-            "level": 3
-          },
-          "href": "#",
-          "image": {
-            "src": "https://loremflickr.com/640/360",
-            "alt": "A placeholder image"
-          },
-          "body": "<p>Card body</p>",
-        }) }}
+            supertitle: "Card supertitle",
+            title: "Card title",
+            headingLevel: 2,
+            href: "#",
+            imageSrc: "https://loremflickr.com/640/360",
+            imageAlt: "A placeholder image",
+            body: "<p>Card body</p>"
+          }) }}
       </div>
     {%- endfor %}
   </div>

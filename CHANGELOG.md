@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Focus on the confirmation message of the cookie banner once accepted or rejected
+- `hideCookieBannerKey` property on cookie banner changed to `cookiesPreferencesSetKey`
 
 ### Deprecated
 ### Removed

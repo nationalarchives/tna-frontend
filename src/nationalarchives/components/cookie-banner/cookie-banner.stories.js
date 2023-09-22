@@ -7,7 +7,7 @@ import Cookies from "../../lib/cookies.mjs";
 const argTypes = {
   url: { control: "text" },
   policies: { control: "text" },
-  hideCookieBannerKey: { control: "text" },
+  cookiesPreferencesSetKey: { control: "text" },
   loadScriptsOnAccept: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -27,7 +27,7 @@ export default {
 const Template = ({
   url,
   policies,
-  hideCookieBannerKey,
+  cookiesPreferencesSetKey,
   loadScriptsOnAccept,
   classes,
   attributes,
@@ -36,7 +36,7 @@ const Template = ({
     params: {
       url,
       policies,
-      hideCookieBannerKey,
+      cookiesPreferencesSetKey,
       loadScriptsOnAccept,
       classes,
       attributes,

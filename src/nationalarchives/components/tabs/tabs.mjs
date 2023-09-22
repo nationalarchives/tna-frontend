@@ -23,6 +23,9 @@ export class Tabs {
     this.sticky = this.$module.classList.contains("tna-tabs--sticky");
 
     const startingTarget = window.location.hash.replace(/^#/, "");
+    const doesStartingTargetExist = [...this.$tabItems].some(
+      ($tabItem) => $tabItem.getAttribute("id") === startingTarget,
+    );
 
     this.$newTabList = document.createElement("div");
     this.$newTabList.setAttribute("role", "tablist");
@@ -36,8 +39,9 @@ export class Tabs {
       );
       $tabItem.setAttribute("tabindex", "0");
       if (
-        (startingTarget && $tabItem.getAttribute("id") !== startingTarget) ||
-        (!startingTarget && index > 0)
+        (doesStartingTargetExist &&
+          $tabItem.getAttribute("id") !== startingTarget) ||
+        (!doesStartingTargetExist && index > 0)
       ) {
         $tabItem.setAttribute("hidden", true);
       }

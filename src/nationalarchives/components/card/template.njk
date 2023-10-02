@@ -10,6 +10,18 @@
 {%- endif -%}
 <{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" data-module="tna-card" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
+  {%- if params.event -%}
+    {%- if params.eventType or params.accessDescriptor -%}
+      <ul class="tna-card__tags">
+        {%- if params.eventType -%}
+          <li class="tna-card__tag tna-card__tag--event-type">{{ params.eventType }}</li>
+        {%- endif -%}
+        {%- if params.accessDescriptor -%}
+          <li class="tna-card__tag tna-card__tag--access">{{ params.accessDescriptor }}</li>
+        {%- endif -%}
+      </ul>
+    {%- endif -%}
+  {%- endif -%}
   {%- if params.supertitle -%}
     <hgroup class="tna-hgroup tna-hgroup--{{ params.headingSize or 'm' }} tna-card__heading">
       <h{{ params.headingLevel }} class="tna-hgroup__title">
@@ -22,13 +34,18 @@
       </h{{ params.headingLevel }}>
     </hgroup>
   {%- else -%}
-    <h{{ params.headingLevel }} class=" tna-heading tna-heading--{{ params.headingSize or 'm' }} tna-card__heading">
+    <h{{ params.headingLevel }} class=" tna-heading tna-heading--{{ params.headingSize or 'm' }} tna-card__heading {% if params.highlight %}tna-card__heading--has-highlight{% endif %}" >
       {%- if params.href -%}
       <a href="{{ params.href }}" class="tna-card__heading-link">{{ params.title }}</a>
       {%- else -%}
       {{ params.title }}
       {%- endif -%}
     </h{{ params.headingLevel }}>
+  {%- endif -%}
+  {%- if params.highlight and params.highlightColor -%}
+    <div class="tna-card__highlight tna-card__highlight--{{ params.highlightColor }}">
+      {{ params.highlight }}
+    </div>
   {%- endif -%}
   {%- if params.imageSrc -%}
     {%- if params.href -%}

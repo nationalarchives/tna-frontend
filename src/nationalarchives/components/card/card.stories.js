@@ -22,6 +22,26 @@ const argTypes = {
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
+  event: { control: "boolean" },
+  eventType: {
+    control: "inline-radio",
+    options: ["Exhibition", "Display", "Talk", "Tour", "Event"],
+  },
+  accessDescriptor: {
+    control: "inline-radio",
+    options: [
+      "Speech to text",
+      "British Sign Language",
+      "Accessible",
+      "Autism-friendly",
+      "",
+    ],
+  },
+  highlight: {
+    control: "inline-radio",
+    options: ["Sold out", "Opening soon", "Last chance"],
+  },
+  highlightColor: { control: "inline-radio", options: ["yellow", "blue"] },
 };
 
 Object.keys(argTypes).forEach((argType) => {
@@ -58,6 +78,11 @@ const Template = ({
   htmlElement,
   classes,
   attributes,
+  event,
+  eventType,
+  accessDescriptor,
+  highlight,
+  highlightColor,
 }) =>
   Card({
     params: {
@@ -81,6 +106,11 @@ const Template = ({
       htmlElement,
       classes,
       attributes,
+      event,
+      eventType,
+      accessDescriptor,
+      highlight,
+      highlightColor,
     },
   });
 
@@ -288,6 +318,34 @@ WithoutImage.args = {
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
+};
+
+export const Event = Template.bind({});
+Event.args = {
+  title: "Behind the Scenes Tours",
+  href: "#",
+  headingLevel: 2,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 400,
+  imageHeight: 243,
+  label: "",
+  body: "<p>We are opening the doors of The National Archives’ repositories to offer you the chance to go behind the scenes.</p>",
+  highlight: "Sold out",
+  highlightColor: "yellow",
+  meta: [
+    { text: "24th September 2023", icon: "calendar" },
+    { text: "From £16", icon: "ticket" },
+    { text: "Online", icon: "location-dot" },
+  ],
+  horizontal: true,
+  event: true,
+  eventType: "Exhibition",
+  accessDescriptor: "Autism-friendly",
+  htmlElement: "article",
+  classes: "tna-card--event tna-card--horizontal-thirds",
 };
 
 const GridTemplate = ({

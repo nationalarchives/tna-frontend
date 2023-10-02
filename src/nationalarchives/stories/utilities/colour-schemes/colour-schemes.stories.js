@@ -448,6 +448,30 @@ const Template = ({ theme, accent }) => {
               ...cardDefaultOptions,
               horizontal: true,
               style: "accent",
+              classes: "tna-!--margin-bottom-m",
+            },
+          })}
+        </div>
+        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+          ${Card({
+            params: {
+              ...cardDefaultOptions,
+              highlight: "Sold out",
+              highlightColor: "yellow",
+              meta: [
+                { text: "24th September 2023", icon: "calendar" },
+                { text: "From £16", icon: "ticket" },
+                { text: "Online", icon: "location-dot" },
+              ],
+              horizontal: true,
+              event: true,
+              eventType: "Exhibition",
+              accessDescriptor: "Autism-friendly",
+              htmlElement: "article",
+              classes: "tna-card--event tna-card--horizontal-thirds",
+              supertitle: "",
+              actions: [],
+              label: "",
             },
           })}
         </div>

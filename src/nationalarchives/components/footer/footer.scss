@@ -11,10 +11,6 @@
   padding-top: 1rem;
   padding-bottom: 3rem;
 
-  // @include colour.colour-font("font-base");
-
-  // --link: colour.brand-colour("white");
-
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline", 1px, solid, top);
   }

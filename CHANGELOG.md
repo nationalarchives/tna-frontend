@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Focus on the confirmation message of the cookie banner once accepted or rejected
 - `hideCookieBannerKey` property on cookie banner changed to `cookiesPreferencesSetKey`
+- The heading size of "The National Archives" in the footer is reduced from `l` to `m`
 
 ### Deprecated
 ### Removed

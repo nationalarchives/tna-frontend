@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial pagination component
 - Variables can now be changed as described in `src/nationalarchives/stories/development/using.mdx`
 - Basic pagination element added
-- `<small>` element now styled
+- `<small>` elements are now styled
 
 ### Changed
 

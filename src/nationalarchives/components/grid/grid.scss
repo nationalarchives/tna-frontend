@@ -16,7 +16,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: stretch;
+  justify-content: flex-start;
   align-items: stretch;
 
   &--no-padding,
@@ -26,6 +26,10 @@
 
   &--max {
     max-width: none;
+  }
+
+  &--centred {
+    justify-content: center;
   }
 }
 

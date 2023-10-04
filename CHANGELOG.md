@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic pagination element added
 - `<small>` elements are now styled
 - Some basic print styles added for tabs, breadcrumbs and cookie banners
+- Grids can be centre aligned with `tna-container--centred`
 
 ### Changed
 

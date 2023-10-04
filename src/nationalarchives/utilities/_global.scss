@@ -12,6 +12,16 @@
   width: 100%;
   height: 100%;
 
+  /*
+   * ------------------------------------------
+   * Support ended with iOS 13 released on 19th
+   * September 2019. Deprecate in the future if
+   * iOS <13 share drops low enough.
+   * https://caniuse.com/mdn-css_properties_-webkit-overflow-scrolling
+   * ------------------------------------------
+   */
+  -webkit-overflow-scrolling: touch;
+
   font-size: #{typography.$relative-1rem-px}px;
 
   @include colour.colour-background("page-background");

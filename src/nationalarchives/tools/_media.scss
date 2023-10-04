@@ -61,3 +61,9 @@
     @content;
   }
 }
+
+@mixin on-print() {
+  @media print {
+    @content;
+  }
+}

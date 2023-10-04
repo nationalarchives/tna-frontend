@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Variables can now be changed as described in `src/nationalarchives/stories/development/using.mdx`
 - Basic pagination element added
 - `<small>` elements are now styled
+- Some basic print styles added for tabs, breadcrumbs and cookie banners
 
 ### Changed
 

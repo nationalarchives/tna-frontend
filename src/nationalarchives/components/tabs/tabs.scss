@@ -1,6 +1,7 @@
 @use "../../tools/colour";
-@use "../../tools/typography";
+@use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 @use "../../utilities";
 
 .tna-tabs {
@@ -138,6 +139,20 @@
       overflow: hidden;
 
       @include colour.colour-border("keyline-dark", 1px);
+    }
+  }
+
+  @include media.on-print {
+    &__list {
+      display: none;
+    }
+
+    &__item {
+      display: block !important;
+
+      & + & {
+        margin-top: 2rem;
+      }
     }
   }
 }

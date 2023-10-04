@@ -108,4 +108,14 @@
       display: none;
     }
   }
+
+  @include media.on-print {
+    &__item {
+      display: flex !important;
+
+      &--expandable {
+        display: none !important;
+      }
+    }
+  }
 }

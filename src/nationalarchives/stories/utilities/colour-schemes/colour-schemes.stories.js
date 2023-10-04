@@ -168,7 +168,7 @@ const Template = ({ theme, accent }) => {
       })}
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
-          <hgroup class="tna-hgroup tna-hgroup--xl">
+          <hgroup class="tna-hgroup tna-hgroup--l">
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
@@ -300,11 +300,11 @@ const Template = ({ theme, accent }) => {
             </div>
             <p class="tna-blockquote__author">Douglas Adams, Mostly Harmless</p>
           </blockquote>
-          <h2 class="tna-heading tna-heading--l">
+          <h2 class="tna-heading tna-heading--m">
             <a href="#">Reaerching with The National Archives</a>
           </h2>
           <p>Lorem ipsum <a href="#">link</a></p>
-          <hgroup class="tna-hgroup tna-hgroup--l">
+          <hgroup class="tna-hgroup tna-hgroup--m">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">
               <a href="#">Reaerching with The National Archives</a>

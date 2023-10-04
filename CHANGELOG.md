@@ -23,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Focus on the confirmation message of the cookie banner once accepted or rejected
 - `hideCookieBannerKey` property on cookie banner changed to `cookiesPreferencesSetKey`
-- The heading size of "The National Archives" in the footer is reduced from `l` to `m`
 - When using the prototype kit, `<p>` tags have some alterations that remove the default GOV.UK styling
 - When using the system theme, JavaScript is no longer required to write specific theme classes to the `<html>` element - all of this is done in CSS
 - Standalone CSS such as `components/button.css` no longer includes Font Awesome
@@ -32,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The SCSS mixin `colour-outline` now accepts optional width and style properties
 - In coloured blocks, the custom CSS property `--background` now gets explictly replaced with `--accent-background`, `--contrast-background` or `--accent-background-light`
 - `typography.$base-font-size-px` is now `typography.$relative-1rem-px`
+- `xl` and `l` headings are Supria Sans and `m` and `s` are Open Sans
 
 ### Deprecated
 ### Removed

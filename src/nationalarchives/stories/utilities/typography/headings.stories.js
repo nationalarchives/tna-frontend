@@ -19,7 +19,10 @@ const HeadingsTemplate = ({ text }) =>
   `${HeadingTemplate({ params: { text, size: "xl" } }, 1)}${HeadingTemplate(
     { params: { text, size: "l" } },
     2,
-  )}${HeadingTemplate({ params: { text, size: "m" } }, 3)}`;
+  )}${HeadingTemplate({ params: { text, size: "m" } }, 3)}${HeadingTemplate(
+    { params: { text, size: "s" } },
+    4,
+  )}`;
 
 export const Headings = HeadingsTemplate.bind({});
 Headings.args = {

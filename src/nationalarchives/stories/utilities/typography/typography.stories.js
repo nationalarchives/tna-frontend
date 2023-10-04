@@ -19,7 +19,7 @@ Paragraph.args = {
 };
 
 const HeadingLinkTemplate = ({ text, href }) =>
-  `<h2 class="tna-heading">
+  `<h2 class="tna-heading tna-heading--s">
     <a href="${href}">${text}</a>
   </h2>`;
 export const HeadingLink = HeadingLinkTemplate.bind({});

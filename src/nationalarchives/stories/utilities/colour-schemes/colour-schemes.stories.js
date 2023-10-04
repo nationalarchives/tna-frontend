@@ -41,7 +41,7 @@ const Template = ({ theme, accent }) => {
     supertitle: "Card supertitle",
     title: "Card title",
     headingLevel: 3,
-    headingSize: "m",
+    headingSize: "s",
     href: "#",
     imageSrc:
       "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",

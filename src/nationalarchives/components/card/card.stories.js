@@ -5,7 +5,7 @@ const argTypes = {
   supertitle: { control: "text" },
   title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["m", "l"] },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
   href: { control: "text" },
   imageSrc: { control: { type: "file", accept: ".jpg" } },
   imageAlt: { control: "text" },
@@ -89,7 +89,7 @@ Standard.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -106,7 +106,7 @@ export const Simple = Template.bind({});
 Simple.args = {
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
@@ -122,7 +122,7 @@ Meta.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -145,7 +145,7 @@ Boxed.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -164,7 +164,7 @@ Accent.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -263,7 +263,7 @@ Sources.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   imageSrc: "https://www.gstatic.com/webp/gallery/2.jpg",
   imageAlt: "A man in a canoe paddling through white water",
   imageWidth: 550,
@@ -284,7 +284,7 @@ WithoutImage.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -345,7 +345,7 @@ export const Grid = GridTemplate.bind({});
 Grid.args = {
   title: "Card title",
   headingLevel: 3,
-  headingSize: "m",
+  headingSize: "s",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",

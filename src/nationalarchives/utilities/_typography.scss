@@ -411,7 +411,7 @@ small {
 
 .tna-hgroup {
   &__supertitle {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.25rem;
 
     @extend %chip;
   }
@@ -445,6 +445,11 @@ small {
 .tna-hgroup {
   margin-top: 3rem;
   margin-bottom: 1rem;
+
+  // &--m,
+  // &--s {
+  //   margin-bottom: 0.5rem;
+  // }
 
   &:first-child {
     margin-top: 0;

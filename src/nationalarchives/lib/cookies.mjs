@@ -66,9 +66,9 @@ export default class Cookies {
    * @param {string|number|boolean} value - The value to check against.
    * @returns
    */
-  // hasValue(key, value) {
-  //   return this.get(key) == value;
-  // }
+  hasValue(key, value) {
+    return this.get(key) == value;
+  }
 
   /**
    * Get a cookie.

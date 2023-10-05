@@ -94,8 +94,8 @@ Standard.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
@@ -110,8 +110,8 @@ Simple.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -127,8 +127,8 @@ Meta.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   meta: [
     { text: "24th September 2023", icon: "calendar" },
@@ -150,8 +150,8 @@ Boxed.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   style: "boxed",
@@ -169,8 +169,8 @@ Accent.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   style: "accent",
@@ -187,8 +187,8 @@ Horizontal.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   actions: [
@@ -213,8 +213,8 @@ HorizontalBoxed.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   actions: [
@@ -240,8 +240,8 @@ HorizontalAccent.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   actions: [
@@ -350,8 +350,8 @@ Grid.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 1996,
-  imageHeight: 1331,
+  imageWidth: 499,
+  imageHeight: 333,
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",

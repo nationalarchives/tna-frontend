@@ -42,8 +42,8 @@ Standard.args = {
   image: {
     src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
     alt: "The National Archives office",
-    width: 1996,
-    height: 1331,
+    width: 499,
+    height: 333,
     information: "An interesting photo by a famous photographer ©2023",
   },
   classes: "tna-hero--demo",
@@ -84,8 +84,8 @@ TitleOnly.args = {
   image: {
     src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
     alt: "The National Archives office",
-    width: 1996,
-    height: 1331,
+    width: 499,
+    height: 333,
   },
   classes: "tna-hero--demo",
 };

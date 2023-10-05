@@ -46,8 +46,8 @@ const Template = ({ theme, accent }) => {
     imageSrc:
       "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
     imageAlt: "The National Archives office",
-    imageWidth: 1996,
-    imageHeight: 1331,
+    imageWidth: 499,
+    imageHeight: 333,
     label: "New",
     body: "<p>Card body</p>",
     actions: [
@@ -157,11 +157,13 @@ const Template = ({ theme, accent }) => {
       ${Hero({
         params: {
           heading: "Title",
+          body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
           image: {
             src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
             alt: "The National Archives office",
-            width: 1996,
-            height: 1331,
+            width: 499,
+            height: 333,
+            information: "An interesting photo by a famous photographer ©2023",
           },
           classes: "tna-hero--demo",
         },
@@ -487,8 +489,8 @@ const Template = ({ theme, accent }) => {
             params: {
               src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
               alt: "The National Archives office",
-              width: 1996,
-              height: 1331,
+              width: 499,
+              height: 333,
               caption: "<p>This is a pretty image</p>",
               transcript: "<p>Lorem ipsum transcript</p>",
               translation: "<p>Lorem ipsum translation</p>",

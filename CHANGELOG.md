@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `typography.$base-font-size-px` is now `typography.$relative-1rem-px`
 - `xl` and `l` headings are Supria Sans and `m` and `s` are Open Sans
 - Card heading size defaults to `s`
+- Markup and styles altered for hero component
 
 ### Deprecated
 ### Removed

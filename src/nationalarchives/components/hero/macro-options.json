@@ -2,7 +2,7 @@
   {
     "name": "heading",
     "type": "string",
-    "required": true,
+    "required": false,
     "description": ""
   },
   {
@@ -18,42 +18,34 @@
     "description": ""
   },
   {
-    "name": "image",
-    "type": "object",
+    "name": "imageSrc",
+    "type": "string",
     "required": true,
-    "description": "",
-    "params": [
-      {
-        "name": "src",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "alt",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "width",
-        "type": "number",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "height",
-        "type": "number",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "information",
-        "type": "string",
-        "required": false,
-        "description": ""
-      }
-    ]
+    "description": ""
+  },
+  {
+    "name": "imageAlt",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "imageWidth",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "imageHeight",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "imageCaption",
+    "type": "string",
+    "required": false,
+    "description": ""
   },
   {
     "name": "classes",

@@ -4,7 +4,7 @@
 {% from "nationalarchives/components/header/macro.njk" import tnaHeader -%}
 {% from "nationalarchives/components/skip-link/macro.njk" import tnaSkipLink -%}
 <!DOCTYPE html>
-<html lang="{{ htmlLang | default('en-GB') }}" class="tna-template {{ htmlClasses | default('tna-template--light-theme tna-template--black-accent') }}">
+<html lang="{{ htmlLang | default('en-GB') }}" class="tna-template tna-template--{{ theme | default('system') }}-theme tna-template--{{ themeAccent | default('black') }}-accent {{ htmlClasses }}">
   <head>
     <meta charset="utf-8">
     <title>{% block pageTitle %}The National Archives{% endblock %}</title>
@@ -14,17 +14,17 @@
 
     {% block headIcons %}
     <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ assetPath | default('/assets') }}/images/favicon.ico" type="image/x-icon">
-    <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/govuk-mask-icon.svg" color="{{ themeColor | default('#0b0c0c') }}"> {# Hardcoded value of $govuk-black #}
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" href="{{ assetPath | default('/assets') }}/images/govuk-apple-touch-icon.png">
+    <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/mask-icon.svg" color="{{ themeColor | default('#000000') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon.png">
     {% endblock %}
 
     {% block head %}{% endblock %}
 
     {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="/static/tna-frontend/all.css">
+      <link rel="stylesheet" type="text/css" href="{{ tnaFrontendCssPath | default('/static/tna-frontend/all.css') }}">
     {% endblock %}
   </head>
     <body class="tna-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>
@@ -60,10 +60,15 @@
     {% endblock %}
 
     {% block bodyEnd %}
-      <script type="module" src="/static/tna-frontend/all.js"></script>
+      {#
+      <script src="{{ tnaFrontendJsPath | default('/static/tna-frontend/all.js') }}"></script>
+      <script>
+        window.TNAFrontend.initAll();
+      </script>
+      #}
       <script type="module">
-        import { initAll } from '/static/tna-frontend/all.js'
-        initAll()
+        import { initAll } from "{{ tnaFrontendJsPath | default('/static/tna-frontend/all.js') }}";
+        initAll();
       </script>
     {% endblock %}
   </body>

@@ -64,6 +64,6 @@ module.exports = {
     return config;
   },
   docs: {
-    autodocs: false,
+    autodocs: true,
   },
 };

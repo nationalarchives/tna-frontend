@@ -185,6 +185,8 @@
       max-width: none;
 
       left: 0;
+
+      @include colour.colour-border("keyline", 1px, solid, bottom);
     }
 
     &__image {
@@ -218,8 +220,19 @@
     &__information,
     &__content-inner {
       @include colour.colour-border("keyline-dark", 1px);
+    }
 
-      @include media.on-mobile {
+    @include media.on-mobile {
+      &__information {
+        // border-bottom: 0
+      }
+
+      &__inner {
+        @include colour.colour-border("keyline-dark", 1px);
+        border-top: 0;
+      }
+
+      &__content-inner {
         border: none;
       }
     }

@@ -3,7 +3,7 @@
 @use "../tools/media";
 
 @function brand-colour($colour) {
-  @return map.get(colour.$colour-palette-brand, $colour);
+  @return colour.brand-colour($colour);
 }
 
 @mixin colour-css-vars() {

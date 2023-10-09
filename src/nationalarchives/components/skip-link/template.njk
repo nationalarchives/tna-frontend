@@ -1,4 +1,4 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<a href="#{{ params.href if params.href else 'main-content' }}" class="tna-skip-link {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<a href="#{{ params.href if params.href else 'main-content' }}" class="tna-skip-link {{ containerClasses | join(' ') }}" data-module="tna-skip-link" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {{ params.text if params.text else 'Skip to main content' }}
 </a>

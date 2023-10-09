@@ -36,8 +36,6 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
-Test.params = {
-}
 Test.args = {
   text: "Skip to main content",
   href: "main-content",

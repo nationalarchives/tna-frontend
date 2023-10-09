@@ -17,6 +17,14 @@
         "selector-class-pattern": null,
         "plugin/selector-bem-pattern": {
             "preset": "bem"
-        }
+        },
+        "color-function-notation": [
+            "legacy",
+            {
+                "ignore": [
+                    "with-var-inside"
+                ]
+            }
+        ]
     }
 }

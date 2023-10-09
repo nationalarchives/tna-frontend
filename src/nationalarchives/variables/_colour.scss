@@ -31,6 +31,8 @@ $colour-palette-brand: (
 
 $dark-grey: #26262a;
 $base-font: #343338 !default;
+$link-colour: #1d70ab !default;
+$link-colour-visited: #4c2c92 !default;
 
 /*
 =========================================
@@ -44,10 +46,10 @@ $colour-palette-default: (
   "font-dark": brand-colour("black"),
   "font-light": rgba($base-font, 0.7),
   "icon-light": rgba($base-font, 0.45),
-  "link": #1d70ab,
-  "link-visited": #4c2c92,
+  "link": $link-colour,
+  "link-visited": $link-colour-visited,
   "focus-outline": brand-colour("blue"),
-  "keyline": #ccc,
+  "keyline": rgba($dark-grey, 0.25),
   "keyline-dark": $dark-grey,
   "button-text": brand-colour("white"),
   "button-background": brand-colour("black"),

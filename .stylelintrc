@@ -19,12 +19,13 @@
             "preset": "bem"
         },
         "color-function-notation": [
-            "legacy",
+            "modern",
             {
                 "ignore": [
                     "with-var-inside"
                 ]
             }
-        ]
+        ],
+        "scss/operator-no-newline-after": null
     }
 }

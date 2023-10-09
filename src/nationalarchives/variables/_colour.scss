@@ -25,8 +25,17 @@ $colour-palette-brand: (
   "pastel-blue": #d4e5ef,
 );
 
-@function brand-colour($colour) {
-  @return map.get($colour-palette-brand, $colour);
+@function hex-to-rgb($hex, $opacity: 1) {
+  @if $opacity == 1 {
+    @return "rgb(" + red($hex) + " " + green($hex) + " " + blue($hex) + ")";
+  } @else {
+    @return "rgb(" + red($hex) + " " + green($hex) + " " + blue($hex) + " / " +
+      $opacity + ")";
+  }
+}
+
+@function brand-colour($colour, $opacity: 1) {
+  @return hex-to-rgb(map.get($colour-palette-brand, $colour), $opacity);
 }
 
 $dark-grey: #26262a;
@@ -44,12 +53,12 @@ $colour-palette-default: (
   "background-tint": #d8d8d8,
   "font-base": $base-font,
   "font-dark": brand-colour("black"),
-  "font-light": rgba($base-font, 0.7),
-  "icon-light": rgba($base-font, 0.45),
+  "font-light": hex-to-rgb($base-font, 0.7),
+  "icon-light": hex-to-rgb($base-font, 0.45),
   "link": $link-colour,
   "link-visited": $link-colour-visited,
   "focus-outline": brand-colour("blue"),
-  "keyline": rgba($dark-grey, 0.25),
+  "keyline": hex-to-rgb($dark-grey, 0.25),
   "keyline-dark": $dark-grey,
   "button-text": brand-colour("white"),
   "button-background": brand-colour("black"),
@@ -58,12 +67,13 @@ $colour-palette-default: (
   "contrast-background": #1e1e1e,
   "contrast-font-base": brand-colour("white"),
   "contrast-font-dark": brand-colour("white"),
-  "contrast-font-light": rgba(brand-colour("white"), 0.7),
-  "contrast-icon-light": rgba(brand-colour("white"), 0.45),
+  // "contrast-font-light": brand-colour("white", 0.7),
+  "contrast-font-light": brand-colour("white", 0.7),
+  "contrast-icon-light": brand-colour("white", 0.45),
   "contrast-link": brand-colour("white"),
   "contrast-link-visited": brand-colour("white"),
-  "contrast-keyline": rgba(brand-colour("white"), 0.5),
-  "contrast-keyline-dark": rgba(brand-colour("white"), 0.8),
+  "contrast-keyline": brand-colour("white", 0.5),
+  "contrast-keyline-dark": brand-colour("white", 0.8),
   "contrast-button-text": brand-colour("black"),
   "contrast-button-background": brand-colour("white"),
   "contrast-button-hover-text": brand-colour("white"),
@@ -73,12 +83,12 @@ $colour-palette-default: (
   "accent-background-light": map.get($colour-palette-brand, "light-grey"),
   "accent-font-base": brand-colour("white"),
   "accent-font-dark": brand-colour("white"),
-  "accent-font-light": rgba(brand-colour("white"), 0.7),
-  "accent-icon-light": rgba(brand-colour("white"), 0.45),
+  "accent-font-light": brand-colour("white", 0.7),
+  "accent-icon-light": brand-colour("white", 0.45),
   "accent-link": brand-colour("white"),
   "accent-link-visited": #b9f,
-  "accent-keyline": rgba(brand-colour("white"), 0.5),
-  "accent-keyline-dark": rgba(brand-colour("white"), 0.8),
+  "accent-keyline": brand-colour("white", 0.5),
+  "accent-keyline-dark": brand-colour("white", 0.8),
   "button-accent-text": brand-colour("black"),
   "button-accent-background": brand-colour("grey"),
 ) !default;
@@ -93,13 +103,13 @@ $colour-palette-dark: map.merge(
   (
     "page-background": #111,
     "background-tint": #333,
-    "font-base": rgba(brand-colour("white"), 0.95),
+    "font-base": brand-colour("white", 0.95),
     "font-dark": brand-colour("white"),
-    "font-light": rgba(brand-colour("white"), 0.5),
-    "icon-light": rgba(brand-colour("white"), 0.35),
+    "font-light": brand-colour("white", 0.5),
+    "icon-light": brand-colour("white", 0.35),
     "link": brand-colour("blue"),
     "link-visited": #a8f,
-    "keyline": rgba(brand-colour("white"), 0.25),
+    "keyline": brand-colour("white", 0.25),
     "keyline-dark": brand-colour("white"),
     "button-text": brand-colour("black"),
     "button-background": brand-colour("white"),
@@ -124,7 +134,7 @@ $colour-palette-high-contrast: map.merge(
     "page-background": brand-colour("white"),
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
-    "icon-light": rgba(brand-colour("black"), 0.75),
+    "icon-light": brand-colour("black", 0.75),
     "link": brand-colour("navy"),
     "link-visited": brand-colour("black"),
     "focus-outline": brand-colour("orange"),
@@ -156,7 +166,7 @@ $colour-palette-high-contrast-dark: map.merge(
     "page-background": brand-colour("black"),
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
-    "icon-light": rgba(brand-colour("white"), 0.75),
+    "icon-light": brand-colour("white", 0.75),
     "link": brand-colour("white"),
     "link-visited": brand-colour("white"),
     "keyline": brand-colour("white"),

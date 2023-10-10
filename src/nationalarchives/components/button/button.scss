@@ -8,7 +8,10 @@
 .tna-button {
   padding: 0.25rem 1rem;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
   @include typography.main-font-weight-bold;
   text-decoration: none;
@@ -84,44 +87,49 @@
     }
   }
 
-  &--icon-right {
-    .fa-solid,
-    .fa-brands {
-      margin-left: 0.5rem;
-      margin-right: 0;
-    }
-  }
-
   .fa-solid,
   .fa-brands {
     min-width: 1.25rem;
-    margin-right: 0.5rem;
+
+    display: block;
   }
 
   &--small,
   &-group--small & {
-    padding: 0.125rem 0.5rem;
+    padding: 0 0.5rem;
 
-    &,
+    @include typography.relative-font-size(14);
+    line-height: 1.5rem;
+
     .fa-solid,
     .fa-brands {
-      @include typography.relative-font-size(14);
+      @include typography.relative-font-size(18);
+      line-height: 2rem;
     }
   }
 
   @mixin icon-only {
+    padding-right: 0;
+    padding-left: 0;
+
+    gap: 0;
+
     font-size: 0;
 
     .fa-solid,
     .fa-brands {
-      margin-right: 0;
-      margin-left: 0;
+      width: 2.5rem;
     }
   }
 
   @mixin icon-only-small {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-right: 0;
+    padding-left: 0;
+
+    .fa-solid,
+    .fa-brands {
+      width: 2rem;
+    }
   }
 
   &--icon-only:has(.fa-solid, .fa-brands) {

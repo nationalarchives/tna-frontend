@@ -3,9 +3,7 @@
   <fieldset class="tna-form__fieldset"{% if params.hint %} aria-describedby="tna-form__{{ params.name }}-hint"{% endif %}>
     <legend class="tna-form__legend">
       <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize }}">
-        <label class="tna-form__label" for="tna-form__{{ params.name }}">
-          {{ params.label }}
-        </label>
+        {{ params.label }}
       </h{{ params.headingLevel }}>
     </legend>
     {%- if params.hint %}
@@ -13,7 +11,7 @@
       {{ params.hint }}
     </div>
     {%- endif %}
-    <div class="tna-checkboxes">
+    <div class="tna-checkboxes{% if params.small %} tna-checkboxes--small{% endif %}">
       {%- for item in params.items %}
       <div class="tna-checkboxes__item">
         <input type="checkbox" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}">

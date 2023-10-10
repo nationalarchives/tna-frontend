@@ -1,24 +1,49 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+{% from "nationalarchives/components/select/macro.njk" import tnaSelect %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <section class="tna-search-view {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <form>
-    <label class="tna-form__label">
-      Sort by
-      <select class="tna-form__select">
-        <option>Relevance</option>
-        <option>Date</option>
-        <option>Title</option>
-      </select>
-    </label>
-    <button type="submit" class="tna-button tna-button--small">Sort</button>
+    {{ tnaSelect({
+      label: "Sort by",
+      headingLevel: 4,
+      headingSize: "m",
+      name: "sort",
+      items: [
+        {
+          text: "Relevance",
+          value: "relevance"
+        },
+        {
+          text: "Date",
+          value: "date"
+        },
+        {
+          text: "Title",
+          value: "title"
+        }
+      ]
+    }) }}
+    {{ tnaButton({
+      text: "Sort",
+      small: true,
+      attributes: {
+        type: "submit"
+      }
+    }) }}
   </form>
   <div class="tna-button-group tna-button-group--small">
-    <a href="#" class="tna-button tna-button--icon-only" role="button">
-      <i class="fa-solid fa-list"></i>
-      Show as a list
-    </a>
-    <a href="#" class="tna-button tna-button--icon-only" role="button">
-      <i class="fa-solid fa-grip"></i>
-      Show as a grid
-    </a>
+    {{ tnaButton({
+      text: "Show as a list",
+      href: "#",
+      icon: "list",
+      iconOnly: true
+    }) }}
+    {{ tnaButton({
+      text: "Show as a grid",
+      href: "#",
+      icon: "grip",
+      iconOnly: true
+    }) }}
   </div>
 </section>

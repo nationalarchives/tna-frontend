@@ -107,6 +107,16 @@ IconOnly.args = {
   classes: "tna-button--demo",
 };
 
+export const SmallIconOnly = Template.bind({});
+SmallIconOnly.args = {
+  text: "Explore the collection",
+  href: "#",
+  icon: "map-location-dot",
+  small: true,
+  iconOnly: true,
+  classes: "tna-button--demo",
+};
+
 export const Small = Template.bind({});
 Small.args = {
   text: "Small button",
@@ -127,6 +137,16 @@ export const SmallPlain = Template.bind({});
 SmallPlain.args = {
   text: "Plain small button",
   href: "#",
+  small: true,
+  plain: true,
+  classes: "tna-button--demo",
+};
+
+export const SmallPlainIcon = Template.bind({});
+SmallPlainIcon.args = {
+  text: "Plain small button",
+  href: "#",
+  icon: "map-location-dot",
   small: true,
   plain: true,
   classes: "tna-button--demo",

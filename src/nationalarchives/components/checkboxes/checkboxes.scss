@@ -7,7 +7,8 @@
 
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: flex-start;
+  gap: 1rem;
 
   &__item {
     padding-left: 3rem;
@@ -16,24 +17,13 @@
 
     line-height: 2rem;
 
-    input {
-      width: 1px;
-      height: 1px;
-      margin: 0;
-      padding: 0;
-
-      position: absolute;
-      top: -1px;
-      left: -1px;
-
-      opacity: 0;
-    }
-
     &-label {
       cursor: pointer;
 
       &::before,
       &::after {
+        width: 2rem;
+
         position: absolute;
         top: 0;
         left: 0;
@@ -42,7 +32,6 @@
       }
 
       &::before {
-        width: 2rem;
         height: 2rem;
 
         display: block;
@@ -57,37 +46,75 @@
 
       &::after {
         width: 1rem;
-        height: 1rem;
-        margin: 0.25rem 0.375rem;
+        height: 0.375rem;
 
         display: none;
 
+        top: 0.5625rem;
+        /* stylelint-disable-next-line number-max-precision */
+        left: 0.40625rem;
         z-index: 2;
 
-        @include colour.colour-font("font-dark");
-        font-size: 1.5rem;
-        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-        font-family: "Font Awesome 6 Free";
-        -webkit-font-smoothing: antialiased;
-        font-style: normal;
-        font-variant: normal;
-        line-height: 1;
-        text-rendering: auto;
+        @include colour.colour-border("font-dark", 0, solid);
+        border-width: 0 0 3px 3px;
 
-        content: "\f00c";
+        transform: rotate(-45deg);
       }
     }
+  }
 
-    input:focus + &-label {
-      &::before {
-        @include a11y.focus-outline;
-      }
-    }
+  &--small {
+    gap: 0.5rem;
+  }
 
-    input:checked + &-label {
+  &--small &__item {
+    padding-left: 2.5rem;
+
+    line-height: 1.5rem;
+
+    &-label {
+      &::before,
       &::after {
-        display: var(--fa-display, inline-block);
+        width: 1.5rem;
       }
+
+      &::before {
+        height: 1.5rem;
+      }
+
+      &::after {
+        width: 0.625rem;
+        height: 0.25rem;
+
+        top: 0.4375rem;
+        /* stylelint-disable-next-line number-max-precision */
+        left: 0.34375rem;
+      }
+    }
+  }
+
+  input {
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    top: -1px;
+    left: -1px;
+
+    opacity: 0;
+  }
+
+  input:focus + &__item-label {
+    &::before {
+      @include a11y.focus-outline;
+    }
+  }
+
+  input:checked + &__item-label {
+    &::after {
+      display: var(--fa-display, inline-block);
     }
   }
 }

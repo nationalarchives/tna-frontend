@@ -1,3 +1,5 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <footer class="tna-footer {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
@@ -79,10 +81,12 @@
         <p>
           Subscribe for regular news, updates and priority booking for events.
         </p>
-        <a href="#" class="tna-button tna-button--accent" role="button">
-          <i class="fa-solid fa-envelope"></i>
-          Subscribe
-        </a>
+        {{ tnaButton({
+          text: "Subscribe",
+          href: "#",
+          accent: true,
+          icon: "envelope"
+        }) }}
       </div>
     </div>
     {%- endif -%}

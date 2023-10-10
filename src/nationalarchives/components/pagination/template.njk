@@ -1,11 +1,18 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <nav class="tna-pagination {{ containerClasses | join(' ') }}" role="navigation" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Results' }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% if params.previous -%}
   <div class="tna-pagination__prev">
-    <a class="tna-button tna-button--icon-only-mobile" href="{{ params.previous.href }}" role="button" rel="prev">
-      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-      {{ params.previous.text if params.previous.text else 'Previous' }}
-    </a>
+    {{ tnaButton({
+      text: params.previous.text if params.previous.text else "Previous",
+      href: "#",
+      icon: "arrow-left",
+      iconOnlyOnMobile: true,
+      attributes: {
+        rel: "prev"
+      }
+    }) }}
   </div>
   {% endif -%}
   <ul class="tna-pagination__list">
@@ -14,19 +21,30 @@
       <li class="tna-pagination__item tna-pagination__item--ellipses">&ctdot;</li>
       {% else -%}
       <li class="tna-pagination__item{{ ' tna-pagination__item--current' if item.current }}">
-        <a class="tna-button{{ ' tna-button--accent' if item.current }} tna-pagination__link" role="button" href="{{ item.href }}" aria-label="{{ item.label }}">
-          {{ item.number }}
-        </a>
+        {{ tnaButton({
+          text: item.number,
+          href: item.href,
+          accent: item.current,
+          classes: "tna-pagination__link",
+          attributes: {
+            "aria-label": item.label
+          }
+        }) }}
       </li>
       {% endif -%}
     {% endfor -%}
   </ul>
   {% if params.next -%}
   <div class="tna-pagination__next">
-    <a class="tna-button tna-button--icon-only-mobile" href="{{ params.next.href }}" role="button" rel="prev">
-      {{ params.next.text if params.next.text else 'Next' }}
-      <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-    </a>
+    {{ tnaButton({
+      text: params.next.text if params.next.text else "Next",
+      href: "#",
+      icon: "arrow-right",
+      iconOnlyOnMobile: true,
+      attributes: {
+        rel: "next"
+      }
+    }) }}
   </div>
   {% endif -%}
 </nav>

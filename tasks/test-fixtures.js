@@ -28,9 +28,15 @@ const failedComponents = components.filter((component) => {
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
     const result = nunjucks
-      .renderString(componentNunjucks, {
-        params: fixture.options,
-      })
+      .renderString(
+        componentNunjucks.replace(
+          '{% from "nationalarchives/components/',
+          '{% from "src/nationalarchives/components/',
+        ),
+        {
+          params: fixture.options,
+        },
+      )
       .trim()
       .replace(/>\n\s*/g, ">")
       .replace(/\n\s*</g, "<");

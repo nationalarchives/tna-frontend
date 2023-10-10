@@ -48,6 +48,18 @@
     "description": ""
   },
   {
+    "name": "iconOnly",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "iconOnlyOnMobile",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "buttonElement",
     "type": "boolean",
     "required": false,

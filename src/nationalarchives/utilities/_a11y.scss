@@ -1,6 +1,6 @@
 @use "../tools/colour";
 
-.tna-visually-hidden {
+.tna-\!--visually-hidden {
   width: 1px !important;
   height: 1px !important;
   margin: 0 !important;
@@ -25,11 +25,15 @@
   }
 }
 
+@mixin focus-outline {
+  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
+  outline-offset: 0.125rem;
+}
+
 *:focus {
   z-index: 9;
 
-  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
-  outline-offset: 0.125rem;
+  @include focus-outline;
 }
 
 .tna-\!--no-focus-style {

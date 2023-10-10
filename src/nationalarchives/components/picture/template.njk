@@ -1,7 +1,7 @@
 {% from "nationalarchives/components/tabs/macro.njk" import tnaTabs %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<figure class="tna-picture {{ containerClasses | join(' ') }}" data-module="tna-picture" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<figure class="tna-picture {{ containerClasses | join(' ') }}" data-module="tna-picture"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-picture__image-wrapper">
     <picture>
     {%- for source in params.sources -%}

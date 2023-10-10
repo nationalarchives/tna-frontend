@@ -10,6 +10,7 @@ const argTypes = {
   accent: { control: "boolean" },
   small: { control: "boolean" },
   plain: { control: "boolean" },
+  iconOnly: { control: "boolean" },
   buttonElement: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -35,6 +36,7 @@ const Template = ({
   accent,
   small,
   plain,
+  iconOnly,
   buttonElement,
   classes,
   attributes,
@@ -49,6 +51,7 @@ const Template = ({
       accent,
       small,
       plain,
+      iconOnly,
       buttonElement,
       classes,
       attributes,
@@ -92,6 +95,15 @@ BrandIcon.args = {
   text: "Twitter",
   href: "#",
   brandIcon: "twitter",
+  classes: "tna-button--demo",
+};
+
+export const IconOnly = Template.bind({});
+IconOnly.args = {
+  text: "Show as a list",
+  href: "#",
+  icon: "list",
+  iconOnly: true,
   classes: "tna-button--demo",
 };
 

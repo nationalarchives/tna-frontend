@@ -2,6 +2,7 @@ import SkipLink from "../../../components/skip-link/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import Checkboxes from "../../../components/checkboxes/template.njk";
 import Footer from "../../../components/footer/template.njk";
 import CookieBanner from "../../../components/cookie-banner/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
@@ -12,7 +13,10 @@ import Message from "../../../components/message/template.njk";
 import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
+import Radios from "../../../components/radios/template.njk";
+import Select from "../../../components/select/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
+import TextInput from "../../../components/text-input/template.njk";
 
 const argTypes = {
   theme: {
@@ -882,6 +886,94 @@ const Template = ({ theme, accent }) => {
               <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
               <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section">
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            <form>
+              <h2 class="tna-heading tna-heading--l">
+                Forms
+              </h2>
+              ${TextInput({
+                params: {
+                  label: "Enter your first name",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  name: "firstname",
+                },
+              })}
+              ${Select({
+                params: {
+                  label: "Sort by",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  name: "sort",
+                  items: [
+                    {
+                      text: "Relevance",
+                      value: "relevance",
+                    },
+                    {
+                      text: "Date",
+                      value: "date",
+                    },
+                    {
+                      text: "Title",
+                      value: "title",
+                    },
+                  ],
+                },
+              })}
+              ${Radios({
+                params: {
+                  label: "Type",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  name: "type",
+                  items: [
+                    {
+                      text: "Audio",
+                      value: "audio",
+                    },
+                    {
+                      text: "Image",
+                      value: "image",
+                    },
+                    {
+                      text: "Video",
+                      value: "video",
+                    },
+                  ],
+                },
+              })}
+              ${Checkboxes({
+                params: {
+                  label: "Categories",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  name: "categories",
+                  items: [
+                    {
+                      text: "Alpha",
+                      value: "alpha",
+                    },
+                    {
+                      text: "Beta",
+                      value: "beta",
+                    },
+                    {
+                      text: "Gamma",
+                      value: "gamma",
+                    },
+                  ],
+                },
+              })}
+              <button type="button" class="tna-button">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>

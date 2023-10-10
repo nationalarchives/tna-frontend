@@ -8,7 +8,10 @@
 {%- if params.plain -%}
   {%- set buttonClasses = buttonClasses.concat('tna-button--plain') -%}
 {%- endif -%}
-<{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button {{ buttonClasses | join(' ') }}"{%- if not params.buttonElement %} role="button"{%- endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- if params.iconOnly -%}
+  {%- set buttonClasses = buttonClasses.concat('tna-button--icon-only') -%}
+{%- endif -%}
+<{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button {{ buttonClasses | join(' ') }}"{%- if not params.buttonElement %} role="button"{%- endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- if params.brandIcon -%}
   <i class="fa-brands fa-{{ params.brandIcon }}"></i>
   {%- elseif params.icon -%}

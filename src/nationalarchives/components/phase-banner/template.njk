@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set containerClasses = containerClasses.concat('tna-phase-banner--' + params.phase | lower) -%}
-<div class="tna-phase-banner {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-phase-banner {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--full-tiny">
       <span class="tna-phase-banner__phase">

@@ -1,0 +1,18 @@
+@use "../../variables/forms";
+@use "../../tools/colour";
+@use "../../utilities";
+
+.tna-text-input {
+  margin-top: 1rem;
+  padding: 0 0.375rem;
+
+  display: block;
+
+  @include colour.colour-font("font-base");
+  font-size: inherit;
+  line-height: 2rem;
+
+  @include colour.colour-background("background");
+
+  @include colour.colour-border("keyline-dark", forms.$form-field-border-width);
+}

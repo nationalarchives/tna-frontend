@@ -62,7 +62,7 @@ $colour-palette-default: (
   "contrast-button-background": map.get($colour-palette-brand, "white"),
   "contrast-button-hover-text": map.get($colour-palette-brand, "white"),
   "contrast-button-hover-background": map.get($colour-palette-brand, "black"),
-  "accent": map.get($colour-palette-brand, "light-grey"),
+  "accent": map.get($colour-palette-brand, "black"),
   "accent-background": #111,
   "accent-background-light": map.get($colour-palette-brand, "light-grey"),
   "accent-font-base": map.get($colour-palette-brand, "white"),

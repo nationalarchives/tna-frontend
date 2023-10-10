@@ -9,7 +9,7 @@
 {%- if params.noPaddingAll -%}
   {%- set containerClasses = containerClasses.concat('tna-container--no-padding-all') -%}
 {%- endif -%}
-<{{ htmlElement }} class="tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<{{ htmlElement }} class="tna-container {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 {%- for item in params.columns -%}
   {%- set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' -%}
   {%- set columnClasses = [item.classes] if item.classes else [] -%}
@@ -56,7 +56,7 @@
   {%- if item.noPadding -%}
     {%- set columnClasses = columnClasses.concat('tna-column--no-padding') -%}
   {%- endif -%}
-  <{{ columnHtmlElement }} class="tna-column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+  <{{ columnHtmlElement }} class="tna-column {{ columnClasses | join(' ') }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
     {{ item.html | safe }}
   </{{ columnHtmlElement }}>
 {%- endfor -%}

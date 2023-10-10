@@ -1,0 +1,93 @@
+@use "../../tools/colour";
+@use "../../utilities/a11y";
+@use "../../utilities";
+
+.tna-checkboxes {
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__item {
+    padding-left: 3rem;
+
+    position: relative;
+
+    line-height: 2rem;
+
+    input {
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+
+      position: absolute;
+      top: -1px;
+      left: -1px;
+
+      opacity: 0;
+    }
+
+    &-label {
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        content: "";
+      }
+
+      &::before {
+        width: 2rem;
+        height: 2rem;
+
+        display: block;
+        box-sizing: border-box;
+
+        z-index: 1;
+
+        @include colour.colour-background("background");
+
+        @include colour.colour-border("keyline-dark", 3px);
+      }
+
+      &::after {
+        width: 1rem;
+        height: 1rem;
+        margin: 0.25rem 0.375rem;
+
+        display: none;
+
+        z-index: 2;
+
+        @include colour.colour-font("font-dark");
+        font-size: 1.5rem;
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+        font-family: "Font Awesome 6 Free";
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-rendering: auto;
+
+        content: "\f00c";
+      }
+    }
+
+    input:focus + &-label {
+      &::before {
+        @include a11y.focus-outline;
+      }
+    }
+
+    input:checked + &-label {
+      &::after {
+        display: var(--fa-display, inline-block);
+      }
+    }
+  }
+}

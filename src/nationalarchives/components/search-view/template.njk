@@ -1,0 +1,24 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<section class="tna-search-view {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <form>
+    <label class="tna-form__label">
+      Sort by
+      <select class="tna-form__select">
+        <option>Relevance</option>
+        <option>Date</option>
+        <option>Title</option>
+      </select>
+    </label>
+    <button type="submit" class="tna-button tna-button--small">Sort</button>
+  </form>
+  <div class="tna-button-group tna-button-group--small">
+    <a href="#" class="tna-button tna-button--icon-only" role="button">
+      <i class="fa-solid fa-list"></i>
+      Show as a list
+    </a>
+    <a href="#" class="tna-button tna-button--icon-only" role="button">
+      <i class="fa-solid fa-grip"></i>
+      Show as a grid
+    </a>
+  </div>
+</section>

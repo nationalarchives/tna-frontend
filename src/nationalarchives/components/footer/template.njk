@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<footer class="tna-footer {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<footer class="tna-footer {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--flex-1 tna-column--width-1-2-medium tna-column--full-small tna-column--full-tiny tna-column--order-1">
       <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" style="enable-background:new 0 0 160 160" viewBox="0 0 160 160" width="96" height="96">
@@ -31,7 +31,7 @@
                   {%- else -%}
                   <i class="fa-solid fa-{{ item.icon }}"></i>
                   {%- endif -%}
-                <span class="tna-footer__social-item-link-text tna-visually-hidden">
+                <span class="tna-footer__social-item-link-text tna-!--visually-hidden">
                   {{ item.text }}
                 </span>
                 {%- else -%}

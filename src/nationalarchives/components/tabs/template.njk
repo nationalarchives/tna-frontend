@@ -2,7 +2,7 @@
 {%- if params.sticky -%}
   {%- set containerClasses = containerClasses.concat('tna-tabs--sticky') -%}
 {%- endif -%}
-<div class="tna-tabs {{ containerClasses | join(' ') }}" data-module="tna-tabs" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-tabs {{ containerClasses | join(' ') }}" data-module="tna-tabs"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <ul class="tna-tabs__list" aria-label="{{ params.title }}">
   {% for item in params.items %}
     <li class="tna-tabs__list-item">

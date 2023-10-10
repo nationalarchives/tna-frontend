@@ -1,0 +1,45 @@
+@use "../utilities/typography" as typographyUtilities;
+@use "../tools/colour";
+@use "../tools/spacing";
+@use "../tools/typography";
+
+.tna-form {
+  &__group {
+    display: block;
+
+    @include spacing.space-below;
+  }
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+  }
+
+  &__legend {
+  }
+
+  &__hint {
+    @include typography.relative-font-size(16);
+    @include colour.colour-font("font-light");
+  }
+
+  &__heading {
+    margin: 0;
+
+    @extend %heading;
+
+    &--m {
+      @extend %heading-m;
+    }
+
+    &--s {
+      @extend %heading-s;
+    }
+  }
+
+  &__label {
+    @include typography.main-font-weight-bold;
+  }
+}

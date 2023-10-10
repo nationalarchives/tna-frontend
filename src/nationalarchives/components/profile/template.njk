@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<div class="tna-profile tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-profile tna-container {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-column tna-column--order-2">
     <img src="https://avatar.iran.liara.run/public/68" width="200" height="200" alt="Photo of Max Smith" />
   </div>

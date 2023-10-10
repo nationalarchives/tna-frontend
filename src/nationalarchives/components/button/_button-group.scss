@@ -13,4 +13,8 @@
     flex-direction: column;
     align-items: stretch;
   }
+
+  &--small {
+    gap: 0.5rem;
+  }
 }

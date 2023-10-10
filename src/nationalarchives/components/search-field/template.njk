@@ -1,0 +1,5 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<form class="tna-search-field {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <input type="search">
+  <button type="submit" class="tna-button">Search</button>
+</form>

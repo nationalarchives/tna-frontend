@@ -1,0 +1,19 @@
+@use "../../variables/forms";
+@use "../../tools/colour";
+@use "../../utilities";
+
+.tna-select {
+  height: calc(2rem + 6px);
+  margin-top: 1rem;
+  padding: 0 0.5rem 0 0.25rem;
+
+  display: block;
+
+  @include colour.colour-font("font-base");
+  font-size: inherit;
+  line-height: 2rem;
+
+  @include colour.colour-background("background");
+
+  @include colour.colour-border("keyline-dark", forms.$form-field-border-width);
+}

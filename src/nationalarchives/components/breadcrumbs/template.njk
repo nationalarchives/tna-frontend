@@ -2,7 +2,7 @@
 {%- if params.noCollapse -%}
   {%- set containerClasses = containerClasses.concat('tna-breadcrumbs--no-collapse') -%}
 {%- endif -%}
-<div class="tna-breadcrumbs {{ containerClasses | join(' ') }}" data-module="tna-breadcrumbs" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-breadcrumbs {{ containerClasses | join(' ') }}" data-module="tna-breadcrumbs"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
     <nav class="tna-breadcrumbs__wrapper tna-column tna-column--full" aria-label="Breadcrumb">
       <ol class="tna-breadcrumbs__list">

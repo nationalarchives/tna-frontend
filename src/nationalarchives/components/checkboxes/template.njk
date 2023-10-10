@@ -1,0 +1,27 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<div class="tna-form__group {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <fieldset class="tna-form__fieldset"{% if params.hint %} aria-describedby="tna-form__{{ params.name }}-hint"{% endif %}>
+    <legend class="tna-form__legend">
+      <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize }}">
+        <label class="tna-form__label" for="tna-form__{{ params.name }}">
+          {{ params.label }}
+        </label>
+      </h{{ params.headingLevel }}>
+    </legend>
+    {%- if params.hint %}
+    <div id="tna-form__{{ params.name }}-hint" class="tna-form__hint">
+      {{ params.hint }}
+    </div>
+    {%- endif %}
+    <div class="tna-checkboxes">
+      {%- for item in params.items %}
+      <div class="tna-checkboxes__item">
+        <input type="checkbox" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}">
+        <label for="tna-form__{{ params.name }}-{{ item.value }}" class="tna-checkboxes__item-label">
+          {{ item.text }}
+        </label>
+      </div>
+      {%- endfor %}
+    </div>
+  </fieldset>
+</div>

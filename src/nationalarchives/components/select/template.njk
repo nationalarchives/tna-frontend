@@ -1,0 +1,18 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<div class="tna-form__group {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize }}">
+    <label class="tna-form__label" for="tna-form__{{ params.name }}">
+      {{ params.label }}
+    </label>
+  </h{{ params.headingLevel }}>
+  {%- if params.hint %}
+  <div id="tna-form__{{ params.name }}-hint" class="tna-form__hint">
+    {{ params.hint }}
+  </div>
+  {%- endif %}
+  <select class="tna-select" id="tna-form__{{ params.name }}"{% if params.hint %} aria-describedby="tna-form__{{ params.name }}-hint"{% endif %}>
+    {%- for item in params.items %}
+    <option value="{{ item.value }}">{{ item.text }}</option>
+    {%- endfor %}
+  </select>
+</div>

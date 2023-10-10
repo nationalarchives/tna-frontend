@@ -1,6 +1,7 @@
 @use "breadcrumbs";
 @use "button";
 @use "card";
+@use "checkboxes";
 @use "cookie-banner";
 @use "filters";
 @use "footer";
@@ -14,6 +15,12 @@
 @use "phase-banner";
 @use "picture";
 @use "profile";
+@use "radios";
 @use "sensitive-image";
+@use "search-field";
+@use "search-result";
+@use "search-view";
+@use "select";
 @use "skip-link";
 @use "tabs";
+@use "text-input";

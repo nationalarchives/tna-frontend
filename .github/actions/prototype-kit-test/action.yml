@@ -38,7 +38,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/breadcrumbs/macro.njk\" import tnaBreadcrumbs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/checkboxes/macro.njk\" import tnaCheckboxes %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/checkboxes/macro.njk\" import tnaCheckboxes %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/filters/macro.njk\" import tnaFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -52,14 +52,14 @@ runs:
         echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/profile/macro.njk\" import tnaProfile %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/radios/macro.njk\" import tnaRadios %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/radios/macro.njk\" import tnaRadios %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/sensitive-image/macro.njk\" import tnaSensitiveImage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-field/macro.njk\" import tnaSearchField %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-result/macro.njk\" import tnaSearchResult %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-view/macro.njk\" import tnaSearchView %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/select/macro.njk\" import tnaSelect %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/select/macro.njk\" import tnaSelect %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       shell: bash
     - name: Add components to template

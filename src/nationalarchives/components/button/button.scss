@@ -87,6 +87,10 @@
     }
   }
 
+  &--icon-right {
+    flex-direction: row-reverse;
+  }
+
   .fa-solid,
   .fa-brands {
     min-width: 1.25rem;

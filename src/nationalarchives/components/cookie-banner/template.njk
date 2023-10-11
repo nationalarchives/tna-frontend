@@ -4,7 +4,7 @@
 <div class="tna-cookie-banner {{ containerClasses | join(' ') }}" role="region" aria-label="Cookie usage" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies else 'usage,settings' }}" data-preferenceskey="{{ params.cookiesPreferencesSetKey if params.cookiesPreferencesSetKey else 'cookies_preferences_set' }}"{% if params.loadScriptsOnAccept %} data-acceptscripts="{{ params.loadScriptsOnAccept }}"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
   <div class="tna-container">
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--prompt">
-      <h2>This website uses cookies</h2>
+      <h2 class="tna-heading tna-heading--m">This website uses cookies</h2>
       <p>We use some essential cookies to make this service work.</p>
       <p>We'd also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
       <div class="tna-button-group">

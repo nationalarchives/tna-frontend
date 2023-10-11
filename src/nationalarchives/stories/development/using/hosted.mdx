@@ -1,0 +1,53 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Development/Using/Hosted" />
+
+# Using with a hosted solution
+
+The `@nationalarchives/frontend` package is available on [jsdelivr.com](https://www.jsdelivr.com/package/npm/@nationalarchives/frontend).
+
+While you can use the CSS and JavaScript from there, the font files which includes the icon font will have to be hosted from your web application.
+
+As a result, **using a hosted solution is not the preferred method for using the `tna-frontend` library**.
+
+## All components and styles
+
+Include the CSS in the `<head>` element of your page:
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/all.css" rel="stylesheet" integrity="sha384-6Egfw6aX1Jrwuf+APn+BMPswroudkIQ6StU095OPkNCKLEzj7ksWGmYxjend8P7g" crossorigin="anonymous">
+```
+
+### JavaScript
+
+Add the JavaScript to the end of your page just before your closing `</body>` tag:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/all.js" integrity="sha384-sBkiMlxl9svXopGxNSMVAdALjzyvh6sQHp+21PE3LGfTxAEbG4EIpK" crossorigin="anonymous"></script>
+<script>
+  // Initialise all TNA components
+  window.TNAFrontend.initAll();
+</script>
+```
+
+...or use the module syntax:
+
+```
+<script type="module">
+  import { initAll } from "https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/all.js";
+  initAll();
+</script>
+```
+
+## Specific components
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/components/tabs.css" rel="stylesheet" integrity="sha384-hkx4svJn1A7pWYlzaDRMmtIBBijZdEop+M1Y/H4Hdg8aAqZRJHG56RokLk/eqJYl" crossorigin="anonymous">
+```
+
+### JavaScript
+
+```html
+<!-- JavaScript for a single component -->
+<script src="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/components/tabs.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+```

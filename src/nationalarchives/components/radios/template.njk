@@ -14,7 +14,7 @@
     <div class="tna-radios{% if params.small %} tna-radios--small{% endif %}">
       {%- for item in params.items %}
       <div class="tna-radios__item">
-        <input type="radio" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}">
+        <input type="radio" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% if params.selected and item.value === params.selected %} checked{% endif %}>
         <label for="tna-form__{{ params.name }}-{{ item.value }}" class="tna-radios__item-label">
           {{ item.text }}
         </label>

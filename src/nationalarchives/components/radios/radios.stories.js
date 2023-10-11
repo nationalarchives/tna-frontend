@@ -8,6 +8,7 @@ const argTypes = {
   name: { control: "text" },
   hint: { control: "text" },
   items: { control: "object" },
+  selected: { control: "text" },
   small: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -31,6 +32,7 @@ const Template = ({
   name,
   hint,
   items,
+  selected,
   small,
   classes,
   attributes,
@@ -43,6 +45,7 @@ const Template = ({
       name,
       hint,
       items,
+      selected,
       small,
       classes,
       attributes,
@@ -82,6 +85,59 @@ Small.args = {
   hint: "You can only select one.",
   items: [
     {
+      text: "Admiralty, Navy, Royal Marines, and Coastguard",
+      value: "ADM",
+    },
+    {
+      text: "Air Ministry and Royal Air Force records",
+      value: "AIR",
+    },
+    {
+      text: "Board of Trade and successors",
+      value: "BT",
+    },
+    {
+      text: "Chancery, the Wardrobe, Royal Household, Exchequer and various commissions",
+      value: "C",
+    },
+    {
+      text: "Colonial Office, Commonwealth and Foreign and Commonwealth Offices",
+      value: "CO",
+    },
+    {
+      text: "Exchequer, Office of First Fruits and Tenths, and the Court of Augmentations",
+      value: "E",
+    },
+    {
+      text: "Foreign Office",
+      value: "FO",
+    },
+    {
+      text: "Home Office",
+      value: "HO",
+    },
+    {
+      text: "Prerogative Court of Canterbury",
+      value: "PROB",
+    },
+    {
+      text: "War Office, Armed Forces, Judge Advocate General, and related bodies",
+      value: "WO",
+    },
+  ],
+  small: true,
+  classes: "tna-radios--demo",
+};
+
+export const Preselected = Template.bind({});
+Preselected.args = {
+  label: "Type",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "type3",
+  hint: "You can only select one.",
+  items: [
+    {
       text: "Audio",
       value: "audio",
     },
@@ -94,6 +150,6 @@ Small.args = {
       value: "video",
     },
   ],
-  small: true,
+  selected: "image",
   classes: "tna-radios--demo",
 };

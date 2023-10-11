@@ -125,3 +125,28 @@ Small.args = {
   small: true,
   classes: "tna-checkboxes--demo",
 };
+
+export const Preselected = Template.bind({});
+Preselected.args = {
+  label: "Categories",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "categories3",
+  hint: "Select all that apply.",
+  items: [
+    {
+      text: "Alpha",
+      value: "alpha",
+    },
+    {
+      text: "Beta",
+      value: "beta",
+      checked: true
+    },
+    {
+      text: "Gamma",
+      value: "gamma",
+    },
+  ],
+  classes: "tna-checkboxes--demo",
+};

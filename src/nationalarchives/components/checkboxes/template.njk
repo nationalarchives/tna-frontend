@@ -14,7 +14,7 @@
     <div class="tna-checkboxes{% if params.small %} tna-checkboxes--small{% endif %}">
       {%- for item in params.items %}
       <div class="tna-checkboxes__item">
-        <input type="checkbox" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}">
+        <input type="checkbox" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% if item.checked %} checked{% endif %}>
         <label for="tna-form__{{ params.name }}-{{ item.value }}" class="tna-checkboxes__item-label">
           {{ item.text }}
         </label>

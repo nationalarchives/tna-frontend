@@ -141,7 +141,7 @@ Preselected.args = {
     {
       text: "Beta",
       value: "beta",
-      checked: true
+      checked: true,
     },
     {
       text: "Gamma",

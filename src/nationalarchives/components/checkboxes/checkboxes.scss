@@ -1,3 +1,4 @@
+@use "../../variables/forms";
 @use "../../tools/colour";
 @use "../../utilities/a11y";
 @use "../../utilities";
@@ -11,13 +12,15 @@
   gap: 1rem;
 
   &__item {
-    padding-left: 3rem;
-
     position: relative;
 
-    line-height: 2rem;
-
     &-label {
+      padding-left: 3rem;
+
+      display: block;
+
+      line-height: 2rem;
+
       cursor: pointer;
 
       &::before,
@@ -39,9 +42,12 @@
 
         z-index: 1;
 
-        @include colour.colour-background("background");
+        @include colour.colour-background("input-background");
 
-        @include colour.colour-border("keyline-dark", 3px);
+        @include colour.colour-border(
+          "input-border",
+          forms.$form-field-border-width
+        );
       }
 
       &::after {
@@ -55,8 +61,9 @@
         left: 0.40625rem;
         z-index: 2;
 
-        @include colour.colour-border("font-dark", 0, solid);
-        border-width: 0 0 3px 3px;
+        @include colour.colour-border("input-foreground", 0, solid);
+        border-width: 0 0 forms.$form-field-border-width
+          forms.$form-field-border-width;
 
         transform: rotate(-45deg);
       }
@@ -68,11 +75,11 @@
   }
 
   &--small &__item {
-    padding-left: 2.5rem;
-
-    line-height: 1.5rem;
-
     &-label {
+      padding-left: 2.5rem;
+
+      line-height: 1.5rem;
+
       &::before,
       &::after {
         width: 1.5rem;
@@ -92,6 +99,12 @@
       }
     }
   }
+
+  // &--small &__item:hover &__item-label {
+  //   &::before {
+  //     box-shadow: 0 0 0 0.25rem #f0a;
+  //   }
+  // }
 
   input {
     width: 1px;

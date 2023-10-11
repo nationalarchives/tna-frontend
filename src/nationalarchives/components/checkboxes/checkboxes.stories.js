@@ -54,7 +54,7 @@ Standard.args = {
   label: "Categories",
   headingLevel: 4,
   headingSize: "m",
-  name: "categories",
+  name: "categories1",
   hint: "Select all that apply.",
   items: [
     {
@@ -78,7 +78,7 @@ Small.args = {
   label: "Categories",
   headingLevel: 4,
   headingSize: "m",
-  name: "categories",
+  name: "categories2",
   hint: "Select all that apply.",
   items: [
     {

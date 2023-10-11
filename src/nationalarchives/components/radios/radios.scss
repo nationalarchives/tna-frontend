@@ -1,3 +1,4 @@
+@use "../../variables/forms";
 @use "../../tools/colour";
 @use "../../utilities/a11y";
 @use "../../utilities";
@@ -11,11 +12,7 @@
   gap: 1rem;
 
   &__item {
-    padding-left: 3rem;
-
     position: relative;
-
-    line-height: 2rem;
 
     input {
       width: 1px;
@@ -31,6 +28,12 @@
     }
 
     &-label {
+      padding-left: 3rem;
+
+      display: block;
+
+      line-height: 2rem;
+
       cursor: pointer;
 
       &::before,
@@ -53,9 +56,12 @@
 
         z-index: 1;
 
-        @include colour.colour-background("background");
+        @include colour.colour-background("input-background");
 
-        @include colour.colour-border("keyline-dark", 3px);
+        @include colour.colour-border(
+          "input-border",
+          forms.$form-field-border-width
+        );
       }
 
       &::after {
@@ -67,7 +73,7 @@
 
         z-index: 2;
 
-        @include colour.colour-background("font-dark");
+        @include colour.colour-background("input-foreground");
       }
     }
 

@@ -45,6 +45,9 @@ $colour-palette-default: (
   "focus-outline": map.get($colour-palette-brand, "blue"),
   "keyline": #ccc,
   "keyline-dark": $dark-grey,
+  "input-foreground": map.get($colour-palette-brand, "black"),
+  "input-background": map.get($colour-palette-brand, "white"),
+  "input-border": map.get($colour-palette-brand, "black"),
   "button-text": map.get($colour-palette-brand, "white"),
   "button-background": map.get($colour-palette-brand, "black"),
   "button-hover-text": map.get($colour-palette-brand, "black"),
@@ -95,6 +98,10 @@ $colour-palette-dark: map.merge(
     "link-visited": #a8f,
     "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
     "keyline-dark": map.get($colour-palette-brand, "white"),
+    "input-foreground": map.get($colour-palette-brand, "white"),
+    "input-background": map.get($colour-palette-brand, "black"),
+    "input-border": map.get($colour-palette-brand, "white"),
+    // "input-border": rgba(map.get($colour-palette-brand, "black"), 0.5),
     "button-text": map.get($colour-palette-brand, "black"),
     "button-background": map.get($colour-palette-brand, "white"),
     "button-hover-text": map.get($colour-palette-brand, "white"),
@@ -102,7 +109,7 @@ $colour-palette-dark: map.merge(
     "contrast-background": #1e1e1e,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
-    // --accent-background-light is the same as --contrast-background on dark themes
+    // accent-background-light is the same as contrast-background on dark themes
     "accent-background-light": map.get($colour-palette-brand, "grey"),
   )
 );

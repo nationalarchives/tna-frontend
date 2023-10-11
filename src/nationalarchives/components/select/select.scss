@@ -9,11 +9,11 @@
 
   display: block;
 
-  @include colour.colour-font("font-base");
+  @include colour.colour-font("input-foreground");
   font-size: inherit;
   line-height: 2rem;
 
-  @include colour.colour-background("background");
+  @include colour.colour-background("input-background");
 
-  @include colour.colour-border("keyline-dark", forms.$form-field-border-width);
+  @include colour.colour-border("input-border", forms.$form-field-border-width);
 }

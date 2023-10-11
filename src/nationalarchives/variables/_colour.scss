@@ -27,9 +27,13 @@ $colour-palette-brand: (
 
 @function hex-to-rgb($hex, $opacity: 1) {
   @if $opacity == 1 {
+    @debug ($hex);
+    @debug (red($hex));
+    @debug (green($hex));
+    @debug (blue($hex));
     @return rgb(red($hex) green($hex) blue($hex));
   } @else {
-    @return rgb(red($hex) green($hex) blue($hex) / $opacity);
+    @return rgb(red($hex) green($hex) blue($hex) / #{$opacity});
   }
 }
 

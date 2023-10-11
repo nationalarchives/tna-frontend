@@ -16,4 +16,5 @@
   @include colour.colour-background("input-background");
 
   @include colour.colour-border("input-border", forms.$form-field-border-width);
+  border-radius: 0;
 }

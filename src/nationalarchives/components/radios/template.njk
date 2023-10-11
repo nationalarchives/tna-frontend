@@ -11,7 +11,7 @@
       {{ params.hint }}
     </div>
     {%- endif %}
-    <div class="tna-radios">
+    <div class="tna-radios{% if params.small %} tna-radios--small{% endif %}">
       {%- for item in params.items %}
       <div class="tna-radios__item">
         <input type="radio" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}">

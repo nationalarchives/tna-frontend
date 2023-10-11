@@ -8,6 +8,7 @@ const argTypes = {
   name: { control: "text" },
   hint: { control: "text" },
   items: { control: "object" },
+  small: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -30,6 +31,7 @@ const Template = ({
   name,
   hint,
   items,
+  small,
   classes,
   attributes,
 }) =>
@@ -41,6 +43,7 @@ const Template = ({
       name,
       hint,
       items,
+      small,
       classes,
       attributes,
     },
@@ -51,7 +54,7 @@ Standard.args = {
   label: "Type",
   headingLevel: 4,
   headingSize: "m",
-  name: "type",
+  name: "type1",
   hint: "You can only select one.",
   items: [
     {
@@ -67,5 +70,30 @@ Standard.args = {
       value: "video",
     },
   ],
+  classes: "tna-radios--demo",
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  label: "Type",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "type2",
+  hint: "You can only select one.",
+  items: [
+    {
+      text: "Audio",
+      value: "audio",
+    },
+    {
+      text: "Image",
+      value: "image",
+    },
+    {
+      text: "Video",
+      value: "video",
+    },
+  ],
+  small: true,
   classes: "tna-radios--demo",
 };

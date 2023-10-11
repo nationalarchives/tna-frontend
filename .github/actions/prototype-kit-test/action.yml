@@ -60,7 +60,8 @@ runs:
         echo -e "{% from \"nationalarchives/components/select/macro.njk\" import tnaSelect %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       shell: bash
     - name: Add components to template
       run: >
@@ -91,6 +92,7 @@ runs:
         echo "{{ tnaSkipLink({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextInput({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaTextarea({}) }}" >> prototype/app/views/index.html &&
         echo "{% endblock %}" >> prototype/app/views/index.html
       shell: bash
     - name: Run prototype

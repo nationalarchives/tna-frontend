@@ -17,6 +17,7 @@ import Radios from "../../../components/radios/template.njk";
 import Select from "../../../components/select/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
 import TextInput from "../../../components/text-input/template.njk";
+import Textarea from "../../../components/textarea/template.njk";
 
 const argTypes = {
   theme: {
@@ -891,7 +892,7 @@ const Template = ({ theme, accent }) => {
       </div>
       <div class="tna-section">
         <div class="tna-container">
-          <div class="tna-column tna-column--full">
+          <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
             <form>
               <h2 class="tna-heading tna-heading--l">
                 Forms
@@ -968,6 +969,14 @@ const Template = ({ theme, accent }) => {
                       value: "gamma",
                     },
                   ],
+                },
+              })}
+              ${Textarea({
+                params: {
+                  label: "Enter your feedback",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  name: "feedback",
                 },
               })}
               <button type="button" class="tna-button">

@@ -48,6 +48,7 @@ $colour-palette-default: (
   "input-foreground": map.get($colour-palette-brand, "black"),
   "input-background": map.get($colour-palette-brand, "white"),
   "input-border": map.get($colour-palette-brand, "black"),
+  "form-error": map.get($colour-palette-brand, "pink"),
   "button-text": map.get($colour-palette-brand, "white"),
   "button-background": map.get($colour-palette-brand, "black"),
   "button-hover-text": map.get($colour-palette-brand, "black"),

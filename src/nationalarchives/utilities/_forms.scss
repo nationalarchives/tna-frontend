@@ -8,6 +8,12 @@
     display: block;
 
     @include spacing.space-below;
+
+    &--error {
+      padding-left: 1rem;
+
+      @include colour.colour-border("form-error", 0.25rem, solid, left);
+    }
   }
 
   &__fieldset {
@@ -23,6 +29,11 @@
   &__hint {
     @include typography.relative-font-size(16);
     @include colour.colour-font("font-light");
+  }
+
+  &__error-message {
+    @include colour.colour-font("form-error");
+    @include typography.main-font-weight-bold;
   }
 
   &__heading {

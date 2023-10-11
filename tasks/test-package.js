@@ -78,6 +78,7 @@ const checkExists = [
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input"),
+  ...componentFiles("textarea"),
   // Tools
   "nationalarchives/tools/_index.scss",
   "nationalarchives/tools/_grid.scss",

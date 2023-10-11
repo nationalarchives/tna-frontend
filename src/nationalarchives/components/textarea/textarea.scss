@@ -2,15 +2,18 @@
 @use "../../tools/colour";
 @use "../../utilities";
 
-.tna-text-input {
+.tna-textarea {
   width: 100%;
+  min-height: 5rem;
   margin-top: 1rem;
-  padding: 0 0.375rem;
+  padding: 0.375rem;
 
   display: block;
   box-sizing: border-box;
+  resize: vertical;
 
   @include colour.colour-font("input-foreground");
+  font-family: inherit;
   font-size: inherit;
   line-height: 2rem;
 
@@ -21,25 +24,5 @@
 
   .tna-form__group--error & {
     @include colour.colour-border("form-error");
-  }
-
-  &--xs {
-    max-width: 5rem;
-  }
-
-  &--s {
-    max-width: 10rem;
-  }
-
-  &--m {
-    max-width: 20rem;
-  }
-
-  &--l {
-    max-width: 40rem;
-  }
-
-  &--xl {
-    max-width: 80rem;
   }
 }

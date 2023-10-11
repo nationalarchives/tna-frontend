@@ -1,4 +1,4 @@
-import Select from "./template.njk";
+import Textarea from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
@@ -7,7 +7,8 @@ const argTypes = {
   headingSize: { control: "inline-radio", options: ["s", "m"] },
   name: { control: "text" },
   hint: { control: "text" },
-  items: { control: "object" },
+  value: { control: "text" },
+  error: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -19,7 +20,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Select",
+  title: "Components/Textarea",
   argTypes,
 };
 
@@ -29,18 +30,20 @@ const Template = ({
   headingSize,
   name,
   hint,
-  items,
+  value,
+  error,
   classes,
   attributes,
 }) =>
-  Select({
+  Textarea({
     params: {
       label,
       headingLevel,
       headingSize,
       name,
       hint,
-      items,
+      value,
+      error,
       classes,
       attributes,
     },
@@ -48,23 +51,31 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  label: "Sort by",
+  label: "Enter your feedback",
   headingLevel: 4,
   headingSize: "m",
-  name: "sort",
-  items: [
-    {
-      text: "Relevance",
-      value: "relevance",
-    },
-    {
-      text: "Date",
-      value: "date",
-    },
-    {
-      text: "Title",
-      value: "title",
-    },
-  ],
-  classes: "tna-select--demo",
+  name: "feedback1",
+  classes: "tna-textarea--demo",
+};
+
+export const Predefined = Template.bind({});
+Predefined.args = {
+  label: "Edit your feedback",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "feedback2",
+  value: "I like this 👍🏼",
+  classes: "tna-textarea--demo",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Enter your feedback",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "feedback3",
+  error: {
+    text: "Enter some feedback",
+  },
+  classes: "tna-textarea--demo",
 };

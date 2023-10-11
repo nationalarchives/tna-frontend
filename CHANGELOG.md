@@ -49,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/nationalarchives/_prototype-kit.scss` is now the entrypoint for the GOV.UK prototype kit SASS which fixes the asset location
 - The cookie banner confirmation message is no longer outlined when highlighted
 - The import routes of the layouts for use in the prototype kit now work
+- Cookie banner header classes added
 
 ### Security
 

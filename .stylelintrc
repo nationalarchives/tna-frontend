@@ -17,6 +17,15 @@
         "selector-class-pattern": null,
         "plugin/selector-bem-pattern": {
             "preset": "bem"
-        }
+        },
+        "color-function-notation": [
+            "modern",
+            {
+                "ignore": [
+                    "with-var-inside"
+                ]
+            }
+        ],
+        "scss/operator-no-newline-after": null
     }
 }

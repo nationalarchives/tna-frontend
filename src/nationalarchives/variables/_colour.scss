@@ -25,8 +25,22 @@ $colour-palette-brand: (
   "pastel-blue": #d4e5ef,
 );
 
+@function hex-to-rgb($hex, $opacity: 1) {
+  @if $opacity == 1 {
+    @return rgb(red($hex) green($hex) blue($hex));
+  } @else {
+    @return rgb(red($hex) green($hex) blue($hex) / #{$opacity});
+  }
+}
+
+@function brand-colour($colour, $opacity: 1) {
+  @return hex-to-rgb(map.get($colour-palette-brand, $colour), $opacity);
+}
+
 $dark-grey: #26262a;
-$base-font: #343338;
+$base-font: #343338 !default;
+$link-colour: #1d70ab !default;
+$link-colour-visited: #4c2c92 !default;
 
 /*
 =========================================
@@ -37,49 +51,49 @@ $colour-palette-default: (
   "page-background": #f4f4f4,
   "background-tint": #d8d8d8,
   "font-base": $base-font,
-  "font-dark": map.get($colour-palette-brand, "black"),
-  "font-light": rgba($base-font, 0.7),
-  "icon-light": rgba($base-font, 0.45),
-  "link": #1d70ab,
-  "link-visited": #4c2c92,
-  "focus-outline": map.get($colour-palette-brand, "blue"),
-  "keyline": #ccc,
+  "font-dark": brand-colour("black"),
+  "font-light": hex-to-rgb($base-font, 0.7),
+  "icon-light": hex-to-rgb($base-font, 0.45),
+  "link": $link-colour,
+  "link-visited": $link-colour-visited,
+  "focus-outline": brand-colour("blue"),
+  "keyline": hex-to-rgb($dark-grey, 0.25),
   "keyline-dark": $dark-grey,
-  "input-foreground": map.get($colour-palette-brand, "black"),
-  "input-background": map.get($colour-palette-brand, "white"),
-  "input-border": map.get($colour-palette-brand, "black"),
-  "form-error": map.get($colour-palette-brand, "pink"),
-  "button-text": map.get($colour-palette-brand, "white"),
-  "button-background": map.get($colour-palette-brand, "black"),
-  "button-hover-text": map.get($colour-palette-brand, "black"),
-  "button-hover-background": map.get($colour-palette-brand, "white"),
+  "input-foreground": brand-colour("black"),
+  "input-background": brand-colour("white"),
+  "input-border": brand-colour("black"),
+  "form-error": brand-colour("pink"),
+  "button-text": brand-colour("white"),
+  "button-background": brand-colour("black"),
+  "button-hover-text": brand-colour("black"),
+  "button-hover-background": brand-colour("white"),
   "contrast-background": #1e1e1e,
-  "contrast-font-base": map.get($colour-palette-brand, "white"),
-  "contrast-font-dark": map.get($colour-palette-brand, "white"),
-  "contrast-font-light": rgba(map.get($colour-palette-brand, "white"), 0.7),
-  "contrast-icon-light": rgba(map.get($colour-palette-brand, "white"), 0.45),
-  "contrast-link": map.get($colour-palette-brand, "white"),
-  "contrast-link-visited": map.get($colour-palette-brand, "white"),
-  "contrast-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
-  "contrast-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
-  "contrast-button-text": map.get($colour-palette-brand, "black"),
-  "contrast-button-background": map.get($colour-palette-brand, "white"),
-  "contrast-button-hover-text": map.get($colour-palette-brand, "white"),
-  "contrast-button-hover-background": map.get($colour-palette-brand, "black"),
-  "accent": map.get($colour-palette-brand, "black"),
+  "contrast-font-base": brand-colour("white"),
+  "contrast-font-dark": brand-colour("white"),
+  "contrast-font-light": brand-colour("white", 0.7),
+  "contrast-icon-light": brand-colour("white", 0.45),
+  "contrast-link": brand-colour("white"),
+  "contrast-link-visited": brand-colour("white"),
+  "contrast-keyline": brand-colour("white", 0.5),
+  "contrast-keyline-dark": brand-colour("white", 0.8),
+  "contrast-button-text": brand-colour("black"),
+  "contrast-button-background": brand-colour("white"),
+  "contrast-button-hover-text": brand-colour("white"),
+  "contrast-button-hover-background": brand-colour("black"),
+  "accent": brand-colour("light-grey"),
   "accent-background": #111,
-  "accent-background-light": map.get($colour-palette-brand, "light-grey"),
-  "accent-font-base": map.get($colour-palette-brand, "white"),
-  "accent-font-dark": map.get($colour-palette-brand, "white"),
-  "accent-font-light": rgba(map.get($colour-palette-brand, "white"), 0.7),
-  "accent-icon-light": rgba(map.get($colour-palette-brand, "white"), 0.45),
-  "accent-link": map.get($colour-palette-brand, "white"),
+  "accent-background-light": brand-colour("light-grey"),
+  "accent-font-base": brand-colour("white"),
+  "accent-font-dark": brand-colour("white"),
+  "accent-font-light": brand-colour("white", 0.7),
+  "accent-icon-light": brand-colour("white", 0.45),
+  "accent-link": brand-colour("white"),
   "accent-link-visited": #b9f,
-  "accent-keyline": rgba(map.get($colour-palette-brand, "white"), 0.5),
-  "accent-keyline-dark": rgba(map.get($colour-palette-brand, "white"), 0.8),
-  "button-accent-text": map.get($colour-palette-brand, "black"),
-  "button-accent-background": map.get($colour-palette-brand, "grey"),
-);
+  "accent-keyline": brand-colour("white", 0.5),
+  "accent-keyline-dark": brand-colour("white", 0.8),
+  "button-accent-text": brand-colour("black"),
+  "button-accent-background": brand-colour("grey"),
+) !default;
 
 /*
 =========================================
@@ -91,29 +105,26 @@ $colour-palette-dark: map.merge(
   (
     "page-background": #111,
     "background-tint": #333,
-    "font-base": rgba(map.get($colour-palette-brand, "white"), 0.95),
-    "font-dark": map.get($colour-palette-brand, "white"),
-    "font-light": rgba(map.get($colour-palette-brand, "white"), 0.5),
-    "icon-light": rgba(map.get($colour-palette-brand, "white"), 0.35),
-    "link": map.get($colour-palette-brand, "blue"),
+    "font-base": brand-colour("white", 0.95),
+    "font-dark": brand-colour("white"),
+    "font-light": brand-colour("white", 0.5),
+    "icon-light": brand-colour("white", 0.35),
+    "link": brand-colour("blue"),
     "link-visited": #a8f,
-    "keyline": rgba(map.get($colour-palette-brand, "white"), 0.25),
-    "keyline-dark": map.get($colour-palette-brand, "white"),
-    "input-foreground": map.get($colour-palette-brand, "white"),
-    "input-background": map.get($colour-palette-brand, "black"),
-    "input-border": map.get($colour-palette-brand, "white"),
-    // "input-border": rgba(map.get($colour-palette-brand, "black"), 0.5),
-    "button-text": map.get($colour-palette-brand, "black"),
-    "button-background": map.get($colour-palette-brand, "white"),
-    "button-hover-text": map.get($colour-palette-brand, "white"),
-    "button-hover-background": map.get($colour-palette-brand, "black"),
+    "keyline": brand-colour("white", 0.25),
+    "keyline-dark": brand-colour("white"),
+    "input-foreground": brand-colour("white"),
+    "input-background": brand-colour("black"),
+    "input-border": brand-colour("white"),
+    "button-text": brand-colour("black"),
+    "button-background": brand-colour("white"),
+    "button-hover-text": brand-colour("white"),
+    "button-hover-background": brand-colour("black"),
     "contrast-background": #1e1e1e,
-    "contrast-link-visited":
-      map.get($colour-palette-default, "contrast-link-visited"),
-    // accent-background-light is the same as contrast-background on dark themes
-    "accent-background-light": map.get($colour-palette-brand, "grey"),
+    // --accent-background-light is the same as --contrast-background on dark themes
+    "accent-background-light": brand-colour("grey"),
   )
-);
+) !default;
 
 /*
 =========================================
@@ -123,29 +134,29 @@ LIGHT, HIGH_CONTRAST THEME
 $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
-    "page-background": map.get($colour-palette-brand, "white"),
-    "font-base": map.get($colour-palette-brand, "black"),
-    "font-light": map.get($colour-palette-brand, "black"),
-    "icon-light": rgba(map.get($colour-palette-brand, "black"), 0.75),
-    "link": map.get($colour-palette-brand, "navy"),
-    "link-visited": map.get($colour-palette-brand, "black"),
-    "focus-outline": map.get($colour-palette-brand, "orange"),
-    "keyline": map.get($colour-palette-brand, "black"),
-    "keyline-dark": map.get($colour-palette-brand, "black"),
+    "page-background": brand-colour("white"),
+    "font-base": brand-colour("black"),
+    "font-light": brand-colour("black"),
+    "icon-light": brand-colour("black", 0.75),
+    "link": brand-colour("navy"),
+    "link-visited": brand-colour("black"),
+    "focus-outline": brand-colour("orange"),
+    "keyline": brand-colour("black"),
+    "keyline-dark": brand-colour("black"),
     "contrast-background": #f4f4f4,
-    "contrast-font-base": map.get($colour-palette-brand, "black"),
-    "contrast-font-dark": map.get($colour-palette-brand, "black"),
-    "contrast-font-light": map.get($colour-palette-brand, "black"),
-    "contrast-link": map.get($colour-palette-brand, "navy"),
-    "contrast-link-visited": map.get($colour-palette-brand, "black"),
-    "contrast-keyline": map.get($colour-palette-brand, "black"),
-    "contrast-keyline-dark": map.get($colour-palette-brand, "black"),
-    "contrast-button-text": map.get($colour-palette-brand, "white"),
-    "contrast-button-background": map.get($colour-palette-brand, "black"),
-    "contrast-button-hover-text": map.get($colour-palette-brand, "black"),
-    "contrast-button-hover-background": map.get($colour-palette-brand, "white"),
+    "contrast-font-base": brand-colour("black"),
+    "contrast-font-dark": brand-colour("black"),
+    "contrast-font-light": brand-colour("black"),
+    "contrast-link": brand-colour("navy"),
+    "contrast-link-visited": brand-colour("black"),
+    "contrast-keyline": brand-colour("black"),
+    "contrast-keyline-dark": brand-colour("black"),
+    "contrast-button-text": brand-colour("white"),
+    "contrast-button-background": brand-colour("black"),
+    "contrast-button-hover-text": brand-colour("black"),
+    "contrast-button-hover-background": brand-colour("white"),
   )
-);
+) !default;
 
 /*
 =========================================
@@ -155,13 +166,13 @@ DARK, HIGH_CONTRAST THEME
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": map.get($colour-palette-brand, "black"),
-    "font-base": map.get($colour-palette-brand, "white"),
-    "font-light": map.get($colour-palette-brand, "white"),
-    "icon-light": rgba(map.get($colour-palette-brand, "white"), 0.75),
-    "link": map.get($colour-palette-brand, "white"),
-    "link-visited": map.get($colour-palette-brand, "white"),
-    "keyline": map.get($colour-palette-brand, "white"),
+    "page-background": brand-colour("black"),
+    "font-base": brand-colour("white"),
+    "font-light": brand-colour("white"),
+    "icon-light": brand-colour("white", 0.75),
+    "link": brand-colour("white"),
+    "link-visited": brand-colour("white"),
+    "keyline": brand-colour("white"),
     "contrast-background": #111,
   )
-);
+) !default;

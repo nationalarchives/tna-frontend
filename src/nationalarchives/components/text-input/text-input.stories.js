@@ -140,13 +140,24 @@ Predefined.args = {
   classes: "tna-text-input--demo",
 };
 
-export const Error = Template.bind({});
-Error.args = {
+export const WithHint = Template.bind({});
+WithHint.args = {
   label: "Enter your first name",
   headingLevel: 4,
   headingSize: "m",
   id: "firstname3",
   name: "firstname3",
+  hint: "What people call you by",
+  classes: "tna-text-input--demo",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Enter your first name",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "firstname4",
+  name: "firstname4",
   error: {
     text: "Enter a name",
   },

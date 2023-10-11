@@ -3,10 +3,16 @@
 @use "../../utilities";
 
 .tna-textarea {
+  $textarea-minimum-lines-visible: 5.5;
+  $textarea-line-height: 1.5rem;
+  $textarea-vertical-padding: 0.25rem;
+
   width: 100%;
-  min-height: 5rem;
+  min-height: #{($textarea-line-height * $textarea-minimum-lines-visible) + (
+      2 * $textarea-vertical-padding
+    )};
   margin-top: 1rem;
-  padding: 0.375rem;
+  padding: $textarea-vertical-padding 0.5rem;
 
   display: block;
   box-sizing: border-box;
@@ -15,7 +21,7 @@
   @include colour.colour-font("input-foreground");
   font-family: inherit;
   font-size: inherit;
-  line-height: 2rem;
+  line-height: 1.5rem;
 
   @include colour.colour-background("input-background");
 
@@ -24,5 +30,17 @@
 
   .tna-form__group--error & {
     @include colour.colour-border("form-error");
+  }
+
+  &--s {
+    max-width: 20rem;
+  }
+
+  &--m {
+    max-width: 40rem;
+  }
+
+  &--l {
+    max-width: 60rem;
   }
 }

@@ -899,10 +899,22 @@ const Template = ({ theme, accent }) => {
               </h2>
               ${TextInput({
                 params: {
-                  label: "Enter your first name",
+                  label: "Enter your name",
                   headingLevel: 3,
                   headingSize: "m",
-                  name: "firstname",
+                  id: "name",
+                  name: "name",
+                  autofill: "name",
+                },
+              })}
+              ${TextInput({
+                params: {
+                  label: "Enter your email",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "email",
+                  name: "email",
+                  autofill: "email",
                 },
               })}
               ${Select({
@@ -910,6 +922,7 @@ const Template = ({ theme, accent }) => {
                   label: "Sort by",
                   headingLevel: 3,
                   headingSize: "m",
+                  id: "sort",
                   name: "sort",
                   items: [
                     {
@@ -932,6 +945,7 @@ const Template = ({ theme, accent }) => {
                   label: "Type",
                   headingLevel: 3,
                   headingSize: "m",
+                  id: "type",
                   name: "type",
                   items: [
                     {
@@ -954,6 +968,7 @@ const Template = ({ theme, accent }) => {
                   label: "Categories",
                   headingLevel: 3,
                   headingSize: "m",
+                  id: "categories",
                   name: "categories",
                   items: [
                     {
@@ -976,12 +991,18 @@ const Template = ({ theme, accent }) => {
                   label: "Enter your feedback",
                   headingLevel: 3,
                   headingSize: "m",
+                  id: "feedback",
                   name: "feedback",
                 },
               })}
-              <button type="button" class="tna-button">
-                Submit
-              </button>
+              <div class="tna-button-group">
+                <button type="button" class="tna-button">
+                  Submit
+                </button>
+                <a href="#" class="tna-button tna-button--plain">
+                  Skip
+                </a>
+              </div>
             </form>
           </div>
         </div>

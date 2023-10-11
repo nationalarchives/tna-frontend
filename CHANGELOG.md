@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<small>` elements are now styled
 - Some basic print styles added for tabs, breadcrumbs and cookie banners
 - Grids can be centre aligned with `tna-container--centred`
+- Skip links will focus on the targeted element with JavaScript once the skip link is clicked
 
 ### Changed
 
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `xl` and `l` headings are Supria Sans and `m` and `s` are Open Sans
 - Card heading size defaults to `s`
 - Markup and styles altered for hero component
+- Updated app icons and favicon
 
 ### Deprecated
 ### Removed

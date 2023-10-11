@@ -31,3 +31,9 @@
   @include colour.colour-outline("focus-outline", 0.3125rem, solid);
   outline-offset: 0.125rem;
 }
+
+.tna-\!--no-focus-style {
+  &:focus {
+    outline: none;
+  }
+}

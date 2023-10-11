@@ -5,11 +5,12 @@
   width: 1px !important;
   height: 1px !important;
   margin: 0 !important;
-  padding: 1rem !important;
+  padding: 0 !important;
 
   display: block !important;
 
   position: absolute !important;
+  left: -100vw;
 
   overflow: hidden !important;
 
@@ -25,11 +26,20 @@
     @include colour.colour-font("button-text", $important: true);
   }
 
+  &:focus {
+    @include colour.colour-background("button-background", $important: true);
+
+    @include colour.colour-border("focus-outline", 0.3125rem, $important: true);
+
+    outline: none !important;
+  }
+
   &:active,
   &:focus {
     width: auto !important;
     height: auto !important;
     margin: inherit !important;
+    padding: 1rem !important;
 
     position: static !important;
 
@@ -40,22 +50,14 @@
     clip: auto !important;
     -webkit-clip-path: none !important;
     clip-path: none !important;
-  }
 
-  &:focus {
-    @include colour.colour-background("button-background", $important: true);
+    &:hover {
+      @include colour.colour-font("button-hover-text", $important: true);
 
-    @include colour.colour-border("focus-outline", 0.3125rem, $important: true);
-
-    outline: none !important;
-  }
-
-  &:hover {
-    @include colour.colour-font("button-hover-text", $important: true);
-
-    @include colour.colour-background(
-      "button-hover-background",
-      $important: true
-    );
+      @include colour.colour-background(
+        "button-hover-background",
+        $important: true
+      );
+    }
   }
 }

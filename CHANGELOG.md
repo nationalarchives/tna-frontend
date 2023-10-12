@@ -30,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<nav>` elements in the footer now have a `role="navigation"` attribute
 - The default cookie policies are now `essential`, `usage` and `settings`
 - The SCSS mixin `colour-outline` now accepts optional width and style properties
-- In coloured blocks, the custom CSS property `--background` now gets explictly replaced with `--accent-background`, `--contrast-background` or `--accent-background-light`
+- In coloured blocks, the custom CSS property `--background` now gets explicitly replaced with `--accent-background`, `--contrast-background` or `--accent-background-light`
 - `typography.$base-font-size-px` is now `typography.$relative-1rem-px`
 - `xl` and `l` headings are Supria Sans and `m` and `s` are Open Sans
 - Card heading size defaults to `s`

@@ -1,10 +1,8 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Development/Using" />
+<Meta title="Development/Using/NPM" />
 
-# Using the styles
-
-## NPM
+# Using with npm
 
 Install the frontend package from NPM with:
 
@@ -12,7 +10,7 @@ Install the frontend package from NPM with:
 npm install @nationalarchives/frontend
 ```
 
-### CSS
+## CSS
 
 From here, you have access to include the SCSS files from the package so you can compile the package yourself:
 
@@ -43,7 +41,7 @@ From here, you have access to include the SCSS files from the package so you can
 - `node_modules/@nationalarchives/frontend/nationalarchives/components/tabs.css`
 - `node_modules/@nationalarchives/frontend/nationalarchives/components/tabs.css.map`
 
-### JavaScript
+## JavaScript
 
 ```JavaScript
 // Import all the JavaScript
@@ -59,29 +57,3 @@ import "node_modules/@nationalarchives/frontend/nationalarchives/components/tabs
 - `node_modules/@nationalarchives/frontend/nationalarchives/all.js.map`
 - `node_modules/@nationalarchives/frontend/nationalarchives/components/tabs.js`
 - `node_modules/@nationalarchives/frontend/nationalarchives/components/tabs.js.map`
-
-## Hosted
-
-### CSS
-
-Include the CSS in the `<head>` element of your page:
-
-```html
-<!-- All styles -->
-<link href="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/all.css" rel="stylesheet" integrity="sha384-6Egfw6aX1Jrwuf+APn+BMPswroudkIQ6StU095OPkNCKLEzj7ksWGmYxjend8P7g" crossorigin="anonymous">
-
-<!-- Styles for a single component -->
-<link href="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/components/tabs.css" rel="stylesheet" integrity="sha384-hkx4svJn1A7pWYlzaDRMmtIBBijZdEop+M1Y/H4Hdg8aAqZRJHG56RokLk/eqJYl" crossorigin="anonymous">
-```
-
-### JavaScript
-
-Add the JavaScript to the end of your page just before your closing `</body>` tag:
-
-```html
-<!-- All JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/all.js" integrity="sha384-sBkiMlxl9svXopGxNSMVAdALjzyvh6sQHp+21PE3LGfTxAEbG4EIpK" crossorigin="anonymous"></script>
-
-<!-- JavaScript for a single component -->
-<script src="https://cdn.jsdelivr.net/npm/@nationalarchives/frontend@0.1.18-prerelease/nationalarchives/components/tabs.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-```

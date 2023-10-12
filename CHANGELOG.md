@@ -36,6 +36,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Card heading size defaults to `s`
 - Markup and styles altered for hero component
 - Updated app icons and favicon
+- Changed gutters on small devices to the same as medium and large, reduced tiny device gutters to `1rem`
+- Body text is reduced from 18px to 17px on mobile devices
+- Reduced the bottom margin on paragraphs from `1.5rem` to `1rem`
 
 ### Deprecated
 ### Removed
@@ -51,6 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The cookie banner confirmation message is no longer outlined when highlighted
 - The import routes of the layouts for use in the prototype kit now work
 - Cookie banner header classes added
+- Visited links within the dark theme are purple again
 
 ### Security
 

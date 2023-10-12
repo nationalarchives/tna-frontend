@@ -44,6 +44,12 @@
   color: inherit;
   @include typography.relative-font-size(typographyVars.$body-font-size-px);
   line-height: typographyVars.$body-line-height;
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(
+      typographyVars.$body-font-size-px-mobile
+    );
+  }
 }
 
 h1,
@@ -68,7 +74,7 @@ strong {
 }
 
 p {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
 
   @include media.on-tiny {
     margin-bottom: 1rem;
@@ -521,8 +527,8 @@ small {
     column-count: 3;
   }
 
-  @include media.on-mobile {
-    column-gap: grid.$gutter-width-mobile;
+  @include media.on-tiny {
+    column-gap: grid.$gutter-width-tiny;
   }
 
   @include media.on-small {

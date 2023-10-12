@@ -228,29 +228,35 @@ const Template = ({ theme, accent }) => {
             })}
           </div>
         </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny">
-          <div class="tna-aside tna-background--contrast tna-!--margin-top-l-small tna-!--margin-top-xl-tiny">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-            <div class="tna-button-group">
-              ${Button({
-                params: {
-                  text: "Accent button",
-                  href: "#",
-                  accent: true,
-                },
-              })}
+        <div class="tna-column tna-column--no-padding tna-column--width-1-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+          <div class="tna-container tna-container--no-padding">
+            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-top-l-medium tna-!--margin-top-l-small tna-!--margin-top-l-tiny">
+              <div class="tna-aside tna-background--contrast">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+                <div class="tna-button-group">
+                  ${Button({
+                    params: {
+                      text: "Accent button",
+                      href: "#",
+                      accent: true,
+                    },
+                  })}
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="tna-aside tna-background--accent">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-            <div class="tna-button-group">
-              ${Button({
-                params: {
-                  text: "Primary button",
-                  href: "#",
-                  classes: "tna-button--solid-hover",
-                },
-              })}
+            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-top-m tna-!--margin-top-l-medium tna-!--margin-top-l-small tna-!--margin-top-l-tiny">
+              <div class="tna-aside tna-background--accent">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
+                <div class="tna-button-group">
+                  ${Button({
+                    params: {
+                      text: "Primary button",
+                      href: "#",
+                      classes: "tna-button--solid-hover",
+                    },
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

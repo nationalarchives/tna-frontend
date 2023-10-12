@@ -244,8 +244,12 @@
   @extend %accent;
 }
 
-@mixin tint-background {
+%tint-background {
   @include colour-background("background-tint");
+}
+
+@mixin tint-background {
+  @extend %tint-background;
 }
 
 %accent-background {

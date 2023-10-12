@@ -168,14 +168,20 @@ hr {
   }
 }
 
-.tna-background--contrast {
-  @include colour.invert;
-}
+.tna-background {
+  &--contrast {
+    @include colour.invert;
+  }
 
-.tna-background--accent {
-  @include colour.accent;
-}
+  &--accent {
+    @include colour.accent;
+  }
 
-.tna-background--accent-light {
-  @include colour.light-accent-background;
+  &--accent-light {
+    @include colour.light-accent-background;
+  }
+
+  &--tint {
+    @include colour.tint-background;
+  }
 }

@@ -446,12 +446,8 @@
     &__logo {
       padding-top: 1rem;
       padding-bottom: 1rem;
-
-      &.tna-column {
-        padding-right: gridVars.$gutter-width-mobile;
-        padding-left: gridVars.$gutter-width-mobile;
-      }
     }
+
 
     .tna-logo {
       width: 4.5rem;
@@ -464,7 +460,7 @@
 
     &__navigation-toggle {
       &.tna-column {
-        padding-right: gridVars.$gutter-width-mobile;
+        padding-right: gridVars.$gutter-width-tiny;
         padding-left: 0;
       }
     }
@@ -524,8 +520,8 @@
     }
 
     &__navigation-item-link {
-      padding-right: gridVars.$gutter-width-mobile;
-      padding-left: gridVars.$gutter-width-mobile + 1rem;
+      padding-right: gridVars.$gutter-width-tiny;
+      padding-left: gridVars.$gutter-width-tiny + 1rem;
 
       display: block;
 
@@ -566,6 +562,13 @@
   }
 
   @include media.on-tiny {
+    &__logo {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width-tiny;
+        padding-left: gridVars.$gutter-width-tiny;
+      }
+    }
+    
     .tna-logo {
       width: 3.5rem;
       height: 3.5rem;

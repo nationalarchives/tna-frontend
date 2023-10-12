@@ -11,15 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Get version number
+      - name: Get and validate version number
         id: get-version
         run: |
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           # Strip "v" prefix from tag name
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
-      - name: Check version number
-        run: ./tasks/validate-version.sh $VERSION
+          ./tasks/validate-version.sh "$VERSION"
     outputs:
       version: ${{ steps.get-version.outputs.VERSION }}
 

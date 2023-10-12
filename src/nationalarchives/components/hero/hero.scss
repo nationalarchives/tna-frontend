@@ -25,7 +25,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: 3;
+    z-index: 5;
 
     overflow: visible;
   }
@@ -138,7 +138,7 @@
 
   &__inner {
     position: relative;
-    z-index: 2;
+    z-index: 4;
   }
 
   &__content {
@@ -151,19 +151,60 @@
   }
 
   &__heading {
-    // margin-bottom: 0;
   }
 
-  // &__body {
-  //   margin-top: 1.5rem;
-  // }
+  &__body {
+  }
+
+  &--tint .tna-hero__figure {
+    // @include colour.colour-border("keyline-dark", 1px, solid, top);
+    // @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+
+    &::before,
+    &::after {
+      position: absolute;
+      inset: 0;
+
+      content: "";
+    }
+
+    &::before {
+      z-index: 2;
+
+      background-color: colour.brand-colour("maroon");
+      @include colour.colour-background("accent-background");
+
+      mix-blend-mode: screen;
+    }
+
+    &::after {
+      z-index: 3;
+
+      background-color: colour.brand-colour("cream");
+
+      mix-blend-mode: multiply;
+    }
+
+    .tna-hero__image {
+      filter: grayscale(1) contrast(1.75) brightness(1.2);
+    }
+
+    .tna-hero__content-inner {
+      // @include colour.colour-border("keyline-dark", 1px);
+
+      @include media.on-mobile {
+        // border: none;
+      }
+    }
+  }
 
   @include media.on-mobile {
     &__figure {
       padding: 0;
 
-      // display: block;
       flex-direction: column;
+
+      background-color: inherit;
     }
 
     &__caption {
@@ -197,6 +238,8 @@
 
     &__inner {
       order: 3;
+
+      background-color: inherit;
     }
 
     &__content {

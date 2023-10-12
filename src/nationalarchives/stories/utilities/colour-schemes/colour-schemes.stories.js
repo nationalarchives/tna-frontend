@@ -87,11 +87,13 @@ const Template = ({ theme, accent }) => {
       : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
+    <!--
     ${CookieBanner({
       params: {
         cookiesUrl: "#",
       },
     })}
+    -->
     ${SkipLink({
       params: {
         href: "main-content",
@@ -158,13 +160,12 @@ const Template = ({ theme, accent }) => {
         params: {
           heading: "Title",
           body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
-          image: {
-            src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-            alt: "The National Archives office",
-            width: 499,
-            height: 333,
-            information: "An interesting photo by a famous photographer ©2023",
-          },
+          imageSrc:
+            "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+          imageAlt: "The National Archives office",
+          imageWidth: 499,
+          imageHeight: 333,
+          imageCaption: "An interesting photo by a famous photographer ©2023",
           classes: "tna-hero--demo",
         },
       })}
@@ -394,7 +395,17 @@ const Template = ({ theme, accent }) => {
           <p class="tna-!--no-margin-bottom tna-!--padding-top-xl">Lorem ipsum</p>
         </div>
       </div>
-      <hr>
+      ${Hero({
+        params: {
+          imageSrc:
+            "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+          imageAlt: "The National Archives office",
+          imageWidth: 499,
+          imageHeight: 333,
+          imageCaption: "An interesting photo by a famous photographer ©2023",
+          classes: "tna-hero--demo",
+        },
+      })}
       <div class="tna-container tna-section tna-!--padding-bottom-s">
         <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
           ${Card({
@@ -968,7 +979,7 @@ const Template = ({ theme, accent }) => {
             ],
           },
           {
-            title: "Our websites help",
+            title: "Our websites",
             items: [
               {
                 text: "UK Government Web Archive",

@@ -104,6 +104,7 @@ const Template = ({ theme, accent }) => {
         phase: "beta",
         message:
           'This is a new service - <a href="#">give us your feedback</a> to help improve it.',
+        classes: "tna-phase-banner--accent",
       },
     })}
     ${Header({
@@ -129,32 +130,36 @@ const Template = ({ theme, accent }) => {
         ],
       },
     })}
-    ${Breadcrumbs({
-      params: {
-        items: [
-          {
-            text: "Alpha",
-            href: "#/alpha",
+    <div class="tna-container">
+      <div class="tna-column tna-column--full">
+        ${Breadcrumbs({
+          params: {
+            items: [
+              {
+                text: "Alpha",
+                href: "#/alpha",
+              },
+              {
+                text: "Beta",
+                href: "#/beta",
+              },
+              {
+                text: "Gamma",
+                href: "#/gamma",
+              },
+              {
+                text: "Delta",
+                href: "#/delta",
+              },
+              {
+                text: "Epsilon",
+                href: "#/epsilon",
+              },
+            ],
           },
-          {
-            text: "Beta",
-            href: "#/beta",
-          },
-          {
-            text: "Gamma",
-            href: "#/gamma",
-          },
-          {
-            text: "Delta",
-            href: "#/delta",
-          },
-          {
-            text: "Epsilon",
-            href: "#/epsilon",
-          },
-        ],
-      },
-    })}
+        })}
+      </div>
+    </div>
     <main id="main-content" role="main">
       ${Hero({
         params: {

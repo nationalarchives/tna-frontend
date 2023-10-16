@@ -47,6 +47,18 @@
 .tna-header {
   @include colour.invert;
 
+  background-color: colour.brand-colour("black");
+
+  .tna-template--system-theme & {
+    @media (prefers-contrast: more) and (prefers-color-scheme: light) {
+      @include colour.colour-background("background-tint");
+    }
+  }
+
+  .tna-template--high-contrast-theme:not(.tna-template--dark-theme) & {
+    @include colour.colour-background("background-tint");
+  }
+
   &__exit {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

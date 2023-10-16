@@ -47,9 +47,17 @@
 .tna-header {
   @include colour.invert;
 
-  color: colour.brand-colour("white");
-
   background-color: colour.brand-colour("black");
+
+  .tna-template--system-theme & {
+    @media (prefers-contrast: more) and (prefers-color-scheme: light) {
+      @include colour.colour-background("background-tint");
+    }
+  }
+
+  .tna-template--high-contrast-theme:not(.tna-template--dark-theme) & {
+    @include colour.colour-background("background-tint");
+  }
 
   &__exit {
     padding-top: 0.5rem;
@@ -148,22 +156,10 @@
 
     &:hover {
       text-decoration: none;
+
+      @include colour.colour-outline("font-dark", 0.375rem, solid);
+      outline-offset: 1px;
     }
-
-    // &--href {
-    //   &:hover {
-    //       outline: 0.375rem #fff solid;
-    //       outline-offset: 1px;
-
-    //     // .tna-logo__background {
-    //     //   fill: #fff;
-    //     // }
-
-    //     // .tna-logo__foreground {
-    //     //   fill: #000;
-    //     // }
-    //   }
-    // }
   }
 
   .tna-logo {
@@ -173,18 +169,8 @@
     display: inline-block;
   }
 
-  &__logo-link--href:hover .tna-logo {
-    outline: 0.375rem #fff solid;
-    outline-offset: 1px;
-  }
-
-  &__logo-link--href:active .tna-logo,
-  &__logo-link--href:focus .tna-logo {
-    outline: none;
-  }
-
   .tna-logo__foreground {
-    fill: #fff;
+    @include colour.colour-fill("font-dark");
   }
 
   .tna-logo__background {
@@ -210,7 +196,7 @@
 
     display: block;
 
-    background-color: #fff;
+    @include colour.colour-background("font-dark");
 
     transition: height 1ms 200ms;
 
@@ -289,50 +275,6 @@
     }
   }
 
-  &--yellow,
-  &--pink,
-  &--orange,
-  &--green,
-  &--blue {
-    color: colour.brand-colour("black");
-
-    .tna-header__logo-link {
-      &:hover {
-        .tna-logo {
-          outline-color: #000;
-        }
-      }
-    }
-
-    .tna-logo__foreground {
-      fill: #000;
-    }
-
-    .tna-header__hamburger {
-      background-color: colour.brand-colour("black");
-    }
-  }
-
-  &--yellow {
-    background-color: colour.brand-colour("yellow");
-  }
-
-  &--pink {
-    background-color: colour.brand-colour("pink");
-  }
-
-  &--orange {
-    background-color: colour.brand-colour("orange");
-  }
-
-  &--green {
-    background-color: colour.brand-colour("green");
-  }
-
-  &--blue {
-    background-color: colour.brand-colour("blue");
-  }
-
   &__navigation {
     display: flex;
     flex-direction: column-reverse;
@@ -376,6 +318,11 @@
       &:visited {
         @include typography.interacted-text-decoration;
       }
+    }
+
+    .fa-solid,
+    .fa-brands {
+      margin-right: 0.375rem;
     }
   }
 
@@ -520,7 +467,7 @@
 
     &__navigation-item-link {
       padding-right: gridVars.$gutter-width-tiny;
-      padding-left: gridVars.$gutter-width-tiny + 1rem;
+      padding-left: gridVars.$gutter-width-tiny + 0.5rem;
 
       display: block;
 
@@ -576,5 +523,9 @@
     &__logo-strapline {
       line-height: 1.25;
     }
+  }
+
+  &--accent {
+    @include colour.accent;
   }
 }

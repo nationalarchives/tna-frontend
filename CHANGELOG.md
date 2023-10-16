@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Breadcrumbs are no longer contained within a container/column layout
+- Header styles have been simplified
 
 ### Deprecated
 ### Removed
@@ -21,11 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Allow use of custom variables when loading SCSS
 - Cards can now have meta text/icons under the title
 - `<dl>` elements are now styled using a `tna-dl` class
-- Initial pagination component
-- Variables can now be changed as described in `src/nationalarchives/stories/development/using.mdx`
+- Allow use of custom variables when loading SCSS as described in `src/nationalarchives/stories/development/using.mdx`
 - Basic pagination element added
 - `<small>` elements are now styled
 - Some basic print styles added for tabs, breadcrumbs and cookie banners

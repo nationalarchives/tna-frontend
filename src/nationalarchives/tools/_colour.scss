@@ -164,14 +164,44 @@
   fill: var(--#{$colour}) if($important, !important, null);
 }
 
-%fixed {
-  @include colour-css-vars;
+%plain {
+  .tna-template--system-theme & {
+    @include colour-css-vars;
 
-  @include colour-font("font-base");
+    @media (prefers-color-scheme: dark) {
+      @include colour-css-vars-dark;
+    }
+
+    @media (prefers-contrast: more) {
+      @include colour-css-vars-high-contrast;
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour-css-vars-high-contrast-dark;
+    }
+  }
+
+  .tna-template--light-theme & {
+    @include colour-css-vars;
+  }
+
+  .tna-template--dark-theme & {
+    @include colour-css-vars-dark;
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include colour-css-vars-high-contrast;
+  }
+
+  .tna-template--high-contrast-theme.tna-template--dark-theme & {
+    @include colour-css-vars-high-contrast-dark;
+  }
+
+  --background: var(--page-background);
 }
 
-@mixin fixed {
-  @extend %fixed;
+@mixin plain {
+  @extend %plain;
 }
 
 %invert {

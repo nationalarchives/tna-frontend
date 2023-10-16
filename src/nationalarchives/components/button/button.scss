@@ -94,7 +94,7 @@
   }
 
   .tna-background--accent &--accent {
-    @include colour.fixed;
+    @include colour.plain;
 
     @include colour.colour-background("page-background");
 

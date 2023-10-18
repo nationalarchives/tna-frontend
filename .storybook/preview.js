@@ -1,7 +1,7 @@
 import "../src/nationalarchives/all.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
-import isChromatic from "chromatic/isChromatic";
+// import isChromatic from "chromatic/isChromatic";
 
 document.documentElement.classList.add("tna-template");
 if (window.self !== window.top) {
@@ -30,12 +30,12 @@ export const parameters = {
   },
 };
 
-const fontLoader = async () => ({
-  fonts: await Promise.all([
-    document.fonts.load("normal 1em Open Sans"),
-    document.fonts.load("bold 1em Open Sans"),
-    document.fonts.load("normal 1em Roboto Mono"),
-  ]),
-});
+// const fontLoader = async () => ({
+//   fonts: await Promise.all([
+//     document.fonts.load("normal 1em Open Sans"),
+//     document.fonts.load("bold 1em Open Sans"),
+//     document.fonts.load("normal 1em Roboto Mono"),
+//   ]),
+// });
 
-export const loaders = isChromatic() && document.fonts ? [fontLoader] : [];
+// export const loaders = isChromatic() && document.fonts ? [fontLoader] : [];

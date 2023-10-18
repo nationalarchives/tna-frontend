@@ -14,7 +14,7 @@
   src: url("#{assets.$tna-font-path}/OpenSans-Medium.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  // font-display: swap;
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf") format("ttf");
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  // font-display: swap;
 }
 
 @font-face {
@@ -30,7 +30,7 @@
   src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  // font-display: swap;
 }
 
 .tna-template {

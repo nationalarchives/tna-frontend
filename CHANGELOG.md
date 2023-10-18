@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Breadcrumbs are no longer contained within a container/column layout
 - Header styles have been simplified
-- Fonts now use `font-display` to avoid blocking rendering
 - External link icons changed from CSS to icon font in header and footer
 - External links in footer have titles suffixed with "opens in new tab"
 - Links in footer and text in buttons have balanced wrapping applied

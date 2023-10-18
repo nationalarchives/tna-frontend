@@ -11,9 +11,7 @@
 
 @font-face {
   font-family: "Open Sans";
-  src:
-    local("Open Sans"),
-    url("#{assets.$tna-font-path}/OpenSans-Medium.ttf") format("ttf");
+  src: url("#{assets.$tna-font-path}/OpenSans-Medium.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -21,9 +19,7 @@
 
 @font-face {
   font-family: "Open Sans";
-  src:
-    local("Open Sans"),
-    url("#{assets.$tna-font-path}/OpenSans-Bold.ttf") format("ttf");
+  src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf") format("ttf");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -31,9 +27,7 @@
 
 @font-face {
   font-family: "Roboto Mono";
-  src:
-    local("Roboto Mono"),
-    url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf") format("ttf");
+  src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

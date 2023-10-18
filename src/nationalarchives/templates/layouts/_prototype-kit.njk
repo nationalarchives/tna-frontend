@@ -1,15 +1,16 @@
 {% extends "./_generic.njk" %}
 
 {% block stylesheets %}
-  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="/plugin-assets/@nationalarchives/frontend/nationalarchives/all.css" media="all" rel="stylesheet" type="text/css" />
-
-  {% include "govuk-prototype-kit/includes/stylesheets-plugins.njk" %}
+{% include "govuk-prototype-kit/includes/stylesheets-plugins.njk" %}
 {% endblock %}
 
 {% block bodyEnd %}
   {% include "govuk-prototype-kit/includes/scripts.njk" %}
   <script>
-    window.TNAFrontend.initAll()
+    if (window.TNAFrontend && window.TNAFrontend.initAll) {
+      document.addEventListener("DOMContentLoaded", function() {
+        window.TNAFrontend.initAll();
+      });
+    }
   </script>
 {% endblock %}

@@ -56,11 +56,10 @@
         <ul class="tna-footer__navigation-block-items tna-ul tna-ul--plain">
         {%- for item in group.items -%}
           <li class="tna-footer__navigation-block-item">
-            <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link"{%- if item.title %} title="{{ item.title }}"{% endif %}{%- if item.newTab %} target="_blank"{% endif %}>
+            <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link"{%- if item.title or item.newTab %} title="{{ item.title if item.title else item.text }}{%- if item.newTab %} (opens in new tab){% endif %}"{% endif %}{%- if item.newTab %} target="_blank"{% endif %}>
               {{ item.text }}
               {%- if item.newTab -%}
-              <!--<i class="fa-solid fa-arrow-up-right-from-square"></i>
-              --><span class="tna-footer__navigation-block-item-link-icon">(opens in new tab)</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
               {%- endif -%}
             </a>
           </li>

@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "../../tools/colour";
+@use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 @use "../../utilities";
@@ -7,13 +8,14 @@
 .tna-pagination {
   display: flex;
   gap: 1rem;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
   @include spacing.space-below;
 
-  &--centered {
-    justify-content: center;
+  &--spaced {
+    justify-content: space-between;
   }
 
   &__prev {
@@ -74,6 +76,23 @@
 
   &__item--current &__link {
     .tna-background--accent & {
+    }
+  }
+
+  @include media.on-mobile {
+    flex-direction: column;
+  }
+
+  @include media.on-tiny {
+    &__item {
+      display: none;
+
+      &:first-child,
+      &:last-child,
+      &--current,
+      &--ellipses {
+        display: block;
+      }
     }
   }
 }

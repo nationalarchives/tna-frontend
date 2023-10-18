@@ -68,11 +68,9 @@
     }
   }
 
-  @include colour.accent-css-vars("black"); // TODO: Temp
-
-  // &--black-accent {
-  //   @include colour.accent-css-vars("black");
-  // }
+  &--black-accent {
+    @include colour.accent-css-vars("black");
+  }
 
   &--yellow-accent {
     @include colour.accent-css-vars("yellow");
@@ -165,6 +163,10 @@ hr {
 
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline-dark", 1px);
+  }
+
+  &--tight {
+    padding: 1rem;
   }
 }
 

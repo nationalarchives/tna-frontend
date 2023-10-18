@@ -24,7 +24,7 @@
     {% block head %}{% endblock %}
 
     {% block stylesheets %}
-      <link rel="stylesheet" type="text/css" href="{{ tnaFrontendCssPath | default('/static/tna-frontend/all.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ tnaFrontendCssPath | default('/static/tna-frontend') }}/all.css">
     {% endblock %}
   </head>
     <body class="tna-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>
@@ -60,15 +60,13 @@
     {% endblock %}
 
     {% block bodyEnd %}
-      {#
-      <script src="{{ tnaFrontendJsPath | default('/static/tna-frontend/all.js') }}"></script>
+      <script src="{{ tnaFrontendJsPath | default('/static/tna-frontend') }}/all.js"></script>
       <script>
-        window.TNAFrontend.initAll();
-      </script>
-      #}
-      <script type="module">
-        import { initAll } from "{{ tnaFrontendJsPath | default('/static/tna-frontend/all.js') }}";
-        initAll();
+        if (window.TNAFrontend && window.TNAFrontend.initAll) {
+          document.addEventListener("DOMContentLoaded", function() {
+            window.TNAFrontend.initAll();
+          });
+        }
       </script>
     {% endblock %}
   </body>

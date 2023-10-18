@@ -11,23 +11,32 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: url("#{assets.$tna-font-path}/OpenSans-Medium.ttf");
+  src:
+    local("Open Sans"),
+    url("#{assets.$tna-font-path}/OpenSans-Medium.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
+  src:
+    local("Open Sans"),
+    url("#{assets.$tna-font-path}/OpenSans-Bold.ttf") format("ttf");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
+  src:
+    local("Roboto Mono"),
+    url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .tna-template {

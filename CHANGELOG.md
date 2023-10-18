@@ -8,14 +8,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.21-prerelease...HEAD)
 
 ### Added
+
+- `tna-aside` now has a `--tight` modifier with less padding
+
 ### Changed
 
 - Breadcrumbs are no longer contained within a container/column layout
 - Header styles have been simplified
+- External link icons changed from CSS to icon font in header and footer
+- External links in footer have titles suffixed with "opens in new tab"
+- Links in footer and text in buttons have balanced wrapping applied
 
 ### Deprecated
 ### Removed
+
+- The black accent is no longer applied by default
+
 ### Fixed
+
+- Font paths fixed for prototype kit, stylesheets and JavaScript loading
+- Better alignment of site name next to logo in header
+- Fixed right/left padding of logo and hamburger on small devices
+
 ### Security
 
 ## [0.1.21-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.20-prerelease...v0.1.21-prerelease) - 2023-10-12

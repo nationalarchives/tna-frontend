@@ -81,52 +81,9 @@
     &:hover {
       text-decoration: underline;
     }
-  }
 
-  &__exit-link-icon {
-    width: 0.825rem;
-    height: 0.825rem;
-    margin-right: 0.125rem;
-    margin-left: 0.5rem;
-
-    display: inline-block;
-
-    position: relative;
-
-    vertical-align: middle;
-
-    border: 0.125rem #fff solid;
-
-    &::before {
-      position: absolute;
-      top: -0.25rem;
-      right: -0.25rem;
-      z-index: 2;
-
-      border: 0.25rem transparent solid;
-      border-top-color: #fff;
-      border-right-color: #fff;
-
-      content: "";
-    }
-
-    &::after {
-      width: 0.25rem;
-      height: 0.825rem;
-
-      position: absolute;
-      top: -0.125rem;
-      right: -0.125rem;
-      z-index: 1;
-
-      background-color: #fff;
-
-      outline: 0.2rem colourVars.$dark-grey solid;
-
-      transform: rotate(45deg) translateX(50%);
-      transform-origin: 100% 0;
-
-      content: "";
+    .fa-solid {
+      margin-left: 0.5rem;
     }
   }
 
@@ -182,7 +139,7 @@
 
     display: inline-block;
 
-    line-height: 2.125;
+    line-height: 2rem;
     text-transform: uppercase;
   }
 
@@ -401,12 +358,12 @@
     }
 
     &__logo-strapline {
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     &__navigation-toggle {
       &.tna-column {
-        padding-right: gridVars.$gutter-width-tiny;
+        // padding-right: gridVars.$gutter-width-tiny;
         padding-left: 0;
       }
     }
@@ -507,6 +464,21 @@
     }
   }
 
+  @include media.on-small {
+    &__logo {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width;
+        padding-left: gridVars.$gutter-width;
+      }
+    }
+
+    &__navigation-toggle {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width;
+      }
+    }
+  }
+
   @include media.on-tiny {
     &__logo {
       &.tna-column {
@@ -521,7 +493,13 @@
     }
 
     &__logo-strapline {
-      line-height: 1.25;
+      line-height: 1;
+    }
+
+    &__navigation-toggle {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width-tiny;
+      }
     }
   }
 

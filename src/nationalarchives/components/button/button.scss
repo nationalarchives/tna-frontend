@@ -15,6 +15,7 @@
   text-decoration: none;
   text-align: center;
   line-height: #{math.div(16, 18) * 2};
+  text-wrap: balance;
 
   @include colour.colour-background("button-background");
 

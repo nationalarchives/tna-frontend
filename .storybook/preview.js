@@ -1,12 +1,9 @@
 import "../src/nationalarchives/all.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
-// import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
+// import isChromatic from "chromatic/isChromatic";
 
-document.documentElement.classList.add(
-  "tna-template",
-  // "tna-template--system-theme",
-);
+document.documentElement.classList.add("tna-template");
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");
 }
@@ -21,7 +18,6 @@ export const parameters = {
   a11y: {
     config: a11yConfig,
   },
-  // backgrounds: { disable: true },
   backgrounds: {
     values: [],
     grid: {
@@ -33,3 +29,13 @@ export const parameters = {
     expanded: true,
   },
 };
+
+// const fontLoader = async () => ({
+//   fonts: await Promise.all([
+//     document.fonts.load("normal 1em Open Sans"),
+//     document.fonts.load("bold 1em Open Sans"),
+//     document.fonts.load("normal 1em Roboto Mono"),
+//   ]),
+// });
+
+// export const loaders = isChromatic() && document.fonts ? [fontLoader] : [];

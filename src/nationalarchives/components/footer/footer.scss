@@ -114,59 +114,17 @@
         @include colour.colour-border("keyline", 1px, solid, bottom);
 
         &-link {
+          display: inline-block;
+
           text-decoration: none;
+          text-wrap: balance;
 
           &:hover {
             @include typography.interacted-text-decoration;
           }
 
-          &-icon {
-            width: 0.825rem;
-            height: 0.825rem;
-            margin-right: 0.125rem;
+          .fa-solid {
             margin-left: 0.75rem;
-
-            display: inline-block;
-
-            position: relative;
-
-            vertical-align: middle;
-
-            font-size: 0;
-
-            border: 1px var(--link) solid;
-
-            &::before {
-              position: absolute;
-              top: -0.25rem;
-              right: -0.25rem;
-              z-index: 2;
-
-              border: 0.25rem transparent solid;
-              border-top-color: var(--link);
-              border-right-color: var(--link);
-
-              content: "";
-            }
-
-            &::after {
-              width: 4px;
-              height: 13px;
-
-              position: absolute;
-              top: -0.125rem;
-              right: -0.125rem;
-              z-index: 1;
-
-              background-color: var(--link);
-
-              @include colour.colour-outline("contrast-background", 3px, solid);
-
-              transform: rotate(45deg) translateX(50%);
-              transform-origin: 100% 0;
-
-              content: "";
-            }
           }
         }
       }

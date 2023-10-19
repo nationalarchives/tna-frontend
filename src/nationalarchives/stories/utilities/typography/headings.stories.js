@@ -8,7 +8,9 @@ export default {
   argTypes,
 };
 
-const HeadingTemplate = ({ params }, level) => `<h${level} class="tna-heading-${params.size}">
+const HeadingTemplate = ({ params }, level) => `<h${level} class="tna-heading-${
+  params.size
+}">
   ${params.text} (${params.size.toUpperCase()})
 </h${level}>
 `;

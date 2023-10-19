@@ -366,7 +366,7 @@ small {
 
 %heading-xl {
   @extend %heading;
-  
+
   @include typography.heading-font;
   @include typography.relative-font-size(64);
   line-height: 1.2;

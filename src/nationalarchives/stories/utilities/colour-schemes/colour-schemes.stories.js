@@ -176,7 +176,7 @@ const Template = ({ theme, accent }) => {
       })}
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
-          <hgroup class="tna-hgroup tna-hgroup--l">
+          <hgroup class="tna-hgroup-l">
             <p class="tna-hgroup__supertitle">TNA colour theme</p>
             <h2 class="tna-hgroup__title">Heading</h2>
           </hgroup>
@@ -269,38 +269,38 @@ const Template = ({ theme, accent }) => {
       <hr>
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
-          <h1 class="tna-heading tna-heading--xl">
+          <h1 class="tna-heading-xl">
             This is a heading (XL)
           </h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <h2 class="tna-heading tna-heading--l">
+          <h2 class="tna-heading-l">
             This is a heading (L)
           </h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <h3 class="tna-heading tna-heading--m">
+          <h3 class="tna-heading-m">
             This is a heading (M)
           </h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <h4 class="tna-heading tna-heading--s">
+          <h4 class="tna-heading-s">
             This is a heading (S)
           </h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <hgroup class="tna-hgroup tna-hgroup--xl">
+          <hgroup class="tna-hgroup-xl">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (XL)</h2>
           </hgroup>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <hgroup class="tna-hgroup tna-hgroup--l">
+          <hgroup class="tna-hgroup-l">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (L)</h2>
           </hgroup>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <hgroup class="tna-hgroup tna-hgroup--m">
+          <hgroup class="tna-hgroup-m">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (M)</h2>
           </hgroup>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
-          <hgroup class="tna-hgroup tna-hgroup--s">
+          <hgroup class="tna-hgroup-s">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">This is a heading (S)</h2>
           </hgroup>
@@ -314,7 +314,7 @@ const Template = ({ theme, accent }) => {
             </div>
             <p class="tna-blockquote__author">Douglas Adams, Mostly Harmless</p>
           </blockquote>
-          <h2 class="tna-heading tna-heading--m">
+          <h2 class="tna-heading-m">
             <a href="#">Reaerching with The National Archives</a>
           </h2>
           <p>Lorem ipsum <a href="#">link</a></p>
@@ -327,7 +327,7 @@ const Template = ({ theme, accent }) => {
           <p>Lorem ipsum <a href="#">link</a></p>
         </div>
         <div class="tna-column tna-column--width-1-2 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
-          <h3 class="tna-heading tna-heading--m">
+          <h3 class="tna-heading-m">
             Descriptions
           </h3>
           <dl class="tna-dl">
@@ -340,7 +340,7 @@ const Template = ({ theme, accent }) => {
           </dl>
         </div>
         <div class="tna-column tna-column--width-1-2 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
-          <h3 class="tna-heading tna-heading--m">
+          <h3 class="tna-heading-m">
             Descriptions
           </h3>
           <dl class="tna-dl tna-dl--plain">
@@ -353,7 +353,7 @@ const Template = ({ theme, accent }) => {
           </dl>
         </div>
         <div class="tna-column tna-column--full tna-!--margin-top-m">
-          <h3 class="tna-heading tna-heading--m">
+          <h3 class="tna-heading-m">
             Descriptions
           </h3>
           <dl class="tna-dl tna-dl--icon-padding ">
@@ -373,7 +373,7 @@ const Template = ({ theme, accent }) => {
             </dt>
             <dd>LC 4</dd>
           </dl>
-          <h2 class="tna-heading tna-heading--l">
+          <h2 class="tna-heading-l">
             Categories
           </h2>
           <ul class="tna-chip-list">

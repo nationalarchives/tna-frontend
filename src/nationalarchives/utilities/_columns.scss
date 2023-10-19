@@ -1,0 +1,42 @@
+@use "../tools/media";
+@use "../variables/grid";
+
+.tna-columns {
+  column-gap: grid.$gutter-width;
+
+  &--2 {
+    column-count: 2;
+  }
+
+  &--3 {
+    column-count: 3;
+  }
+
+  @include media.on-tiny {
+    column-gap: grid.$gutter-width-tiny;
+  }
+
+  @include media.on-small {
+    @for $i from 1 through 4 {
+      &--#{$i}-small {
+        column-count: $i;
+      }
+    }
+  }
+
+  @include media.on-tiny {
+    @for $i from 1 through 4 {
+      &--#{$i}-tiny {
+        column-count: $i;
+      }
+    }
+  }
+
+  &__block {
+    break-inside: avoid;
+  }
+
+  &:has(&__block:only-of-type) {
+    column-count: 1;
+  }
+}

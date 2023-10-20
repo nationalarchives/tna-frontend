@@ -96,6 +96,10 @@
         left: 0;
       }
     }
+
+    dd {
+      padding-left: 2rem;
+    }
   }
 
   &:not(&--plain) {

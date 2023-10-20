@@ -58,16 +58,16 @@
   }
 
   dt {
-    width: 25%;
+    width: 30%;
 
     @include typography.main-font-weight-bold;
   }
 
   dd {
-    width: 75%;
+    width: 70%;
 
     + dd {
-      margin-left: 25%;
+      margin-left: 30%;
     }
   }
 
@@ -107,12 +107,6 @@
   }
 
   &:not(&--plain) {
-    dt,
-    dd {
-      // padding-left: 1rem;
-      // padding-right: 1rem;
-    }
-
     dt:first-child,
     dd:nth-of-type(2n) + dt,
     dd:nth-of-type(2n + 1) {

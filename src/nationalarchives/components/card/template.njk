@@ -11,7 +11,7 @@
 <{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" data-module="tna-card" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
   {%- if params.supertitle -%}
-    <hgroup class="tna-hgroup-{{ params.headingSize or 's' }}">
+    <hgroup class="tna-hgroup-{{ params.headingSize or 's' }} tna-card__heading">
       <h{{ params.headingLevel }} class="tna-hgroup__title">
         <span class="tna-hgroup__supertitle">{{ params.supertitle }}</span>
         {%- if params.href -%}

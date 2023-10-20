@@ -4,13 +4,17 @@
 @use "../tools/typography";
 
 .tna-ul,
-.tna-ol {
-  margin-top: 0;
+.tna-ol,
+.tna-dl {
+  @include spacing.space-above;
   margin-right: 0;
+  margin-bottom: 0;
   margin-left: 0;
-  padding: 0 0 0 2rem;
+}
 
-  @include spacing.space-below;
+.tna-ul,
+.tna-ol {
+  padding: 0 0 0 2rem;
 
   li::marker {
     @include colour.colour-font("accent-background");
@@ -28,7 +32,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   dt,
   dd {

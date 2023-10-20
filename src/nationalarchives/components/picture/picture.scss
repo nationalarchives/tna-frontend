@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__image-wrapper {
     // padding: 1rem 0;

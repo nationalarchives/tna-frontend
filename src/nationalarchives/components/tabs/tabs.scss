@@ -5,7 +5,7 @@
 @use "../../utilities";
 
 .tna-tabs {
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__list {
     margin: 0 0 1rem;

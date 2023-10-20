@@ -318,7 +318,7 @@ const Template = ({ theme, accent }) => {
             <a href="#">Reaerching with The National Archives</a>
           </h2>
           <p>Lorem ipsum <a href="#">link</a></p>
-          <hgroup class="tna-hgroup tna-hgroup--m">
+          <hgroup class="tna-hgroup-m">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">
               <a href="#">Reaerching with The National Archives</a>

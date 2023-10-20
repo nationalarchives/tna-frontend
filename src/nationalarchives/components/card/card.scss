@@ -7,7 +7,7 @@
 @use "../button";
 
 .tna-card {
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__inner {
     display: flex;

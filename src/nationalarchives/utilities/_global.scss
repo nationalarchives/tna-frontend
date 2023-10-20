@@ -155,7 +155,7 @@ hr {
 .tna-aside {
   padding: 2rem;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   @include media.on-mobile {
     padding: 1rem;

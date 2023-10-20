@@ -7,7 +7,7 @@
   align-items: center;
   gap: 1rem;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   @include media.on-tiny {
     flex-direction: column;

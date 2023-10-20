@@ -486,17 +486,17 @@ const Template = ({ theme, accent }) => {
                 {
                   id: "unique-id-a",
                   title: "Alpha section",
-                  body: '<h2 class="tna-heading">Alpha title</h2><p>Lorem ipsum</p>',
+                  body: '<h2 class="tna-heading-l">Alpha title</h2><p>Lorem ipsum</p>',
                 },
                 {
                   id: "unique-id-b",
                   title: "Beta section",
-                  body: '<h2 class="tna-heading">Beta title</h2><p>Lorem ipsum</p>',
+                  body: '<h2 class="tna-heading-l">Beta title</h2><p>Lorem ipsum</p>',
                 },
                 {
                   id: "unique-id-c",
                   title: "Gamma section",
-                  body: '<h2 class="tna-heading">Gamma title</h2><p>Lorem ipsum</p>',
+                  body: '<h2 class="tna-heading-l">Gamma title</h2><p>Lorem ipsum</p>',
                 },
               ],
               classes: "tna-tabs--demo",

@@ -78,13 +78,9 @@ strong {
 
 p {
   margin: 0 0 1rem;
-
-  // @include media.on-tiny {
-  //   margin-bottom: 1rem;
-  // }
-
+  
   + *:not(p, ul, ol) {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   &:last-child {

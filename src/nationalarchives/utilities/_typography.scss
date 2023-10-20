@@ -82,10 +82,6 @@ p {
   &:first-child {
     margin-top: 0;
   }
-
-  + * {
-    @include spacing.space-above;
-  }
 }
 
 a {

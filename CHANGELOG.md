@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - External links in footer have titles suffixed with "opens in new tab"
 - Links in footer and text in buttons have balanced wrapping applied
 - Header and header group class modifiers have been moved to separate blocks (`tna-heading tna-heading--xl` -> `tna-heading-xl`)
+- `space-below` has been replaced with `space-above` and all paddings in between page elements reassessed
 
 ### Deprecated
 ### Removed

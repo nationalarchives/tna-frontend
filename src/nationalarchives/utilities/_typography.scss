@@ -233,6 +233,7 @@ small {
 
 %headings-and-heading-groups {
   @include spacing.space-above;
+  margin-bottom: 1rem;
   padding-top: 1rem;
 
   &:first-child {
@@ -240,6 +241,7 @@ small {
   }
 
   &:last-child {
+    margin-bottom: 0;
     padding-bottom: 0;
   }
 }

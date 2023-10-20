@@ -141,6 +141,8 @@ small {
 }
 
 .tna-chip-list {
+  @include spacing.space-above;
+  margin-bottom: 0;
   padding-left: 0;
 
   display: flex;
@@ -148,8 +150,6 @@ small {
   gap: 1rem;
 
   list-style: none;
-
-  @include spacing.space-above;
 
   &__item {
   }

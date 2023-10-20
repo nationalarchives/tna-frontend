@@ -4,18 +4,13 @@
 @use "../tools/typography";
 
 .tna-ul,
-.tna-ol,
-.tna-dl {
+.tna-ol {
   margin: 1rem 0;
+  padding: 0 0 0 2rem;
 
   &:first-child {
     margin-top: 0;
   }
-}
-
-.tna-ul,
-.tna-ol {
-  padding: 0 0 0 2rem;
 
   li::marker {
     @include colour.colour-font("accent-background");
@@ -30,10 +25,14 @@
 }
 
 .tna-dl {
+  margin: 1rem 0;
+
   display: flex;
   flex-wrap: wrap;
 
-  @include spacing.space-above;
+  &:first-child {
+    margin-top: 0;
+  }
 
   dt,
   dd {

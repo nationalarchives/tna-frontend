@@ -1,8 +1,10 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../utilities";
 
 .tna-message {
+  @include spacing.space-above;
   padding: 1rem;
 
   display: flex;

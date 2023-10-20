@@ -4,7 +4,7 @@
   "description": "The National Archives frontend styles",
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build": "storybook build -o storybook",
+    "build": "storybook build -o storybook --webpack-stats-json",
     "test": "node tasks/test-fixtures.js && test-storybook --verbose --stories-json",
     "lint": "prettier --check '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.mjs'",
     "lint:fix": "prettier --write '{src,.storybook,tasks}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.mjs'",

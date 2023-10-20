@@ -19,13 +19,13 @@ const Template = ({
   singleSentence,
 }) =>
   singleSentence
-    ? `<hgroup class="tna-hgroup tna-hgroup--${size}">
+    ? `<hgroup class="tna-hgroup-${size}">
   <h${level} class="tna-hgroup__title">
   <span class="tna-hgroup__supertitle">${supertitle}</span>
   <span class="tna-hgroup__title">${title}</span>
 </h${level}>
 </hgroup>`
-    : `<hgroup class="tna-hgroup tna-hgroup--${size}">
+    : `<hgroup class="tna-hgroup-${size}">
   <p class="tna-hgroup__supertitle">${supertitle}</p>
   <h${level} class="tna-hgroup__title">${title}</h${level}>
 </hgroup>`;

@@ -77,14 +77,10 @@ strong {
 }
 
 p {
-  margin: 0 0 1rem;
+  margin: 1rem 0 0;
 
-  @include media.on-tiny {
-    margin-bottom: 1rem;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
+  &:first-child {
+    margin-top: 0;
   }
 }
 
@@ -122,181 +118,6 @@ small {
   );
 }
 
-.tna-ul,
-.tna-ol {
-  margin-top: 0;
-  margin-right: 0;
-  margin-left: 0;
-  padding: 0 0 0 2rem;
-
-  @include spacing.space-below;
-
-  li::marker {
-    @include colour.colour-font("accent-background");
-    font-weight: 700;
-  }
-
-  &--plain {
-    padding-left: 0;
-
-    list-style: none;
-  }
-}
-
-.tna-dl {
-  display: flex;
-  flex-wrap: wrap;
-
-  @include spacing.space-below;
-
-  dt,
-  dd {
-    margin: 0;
-    padding: 0.5rem 1rem;
-
-    position: relative;
-
-    box-sizing: border-box;
-
-    word-wrap: break-word;
-    // word-break: break-all;
-  }
-
-  &--plain {
-    dt {
-      padding-left: 0;
-    }
-
-    dd {
-      padding-right: 0;
-    }
-  }
-
-  dt {
-    width: 25%;
-
-    @include typography.main-font-weight-bold;
-  }
-
-  dd {
-    width: 75%;
-
-    + dd {
-      margin-left: 25%;
-    }
-  }
-
-  &--icon-padding {
-    dt {
-      padding-left: 3rem !important;
-
-      position: relative;
-
-      .fa-solid {
-        overflow: visible;
-
-        position: absolute;
-        top: 50%;
-        left: 1rem;
-
-        @include colour.colour-font("icon-light");
-        text-align: left;
-
-        transform: translateY(-50%);
-      }
-    }
-  }
-
-  &--icon-padding#{&}--plain {
-    dt {
-      padding-left: 2rem !important;
-
-      .fa-solid {
-        left: 0;
-      }
-    }
-  }
-
-  &:not(&--plain) {
-    dt,
-    dd {
-      // padding-left: 1rem;
-      // padding-right: 1rem;
-    }
-
-    dt:first-child,
-    dd:nth-of-type(2n) + dt,
-    dd:nth-of-type(2n + 1) {
-      @include colour.colour-background("background-tint");
-    }
-  }
-
-  @include media.on-small {
-    dt {
-      width: 35%;
-    }
-
-    dd {
-      width: 65%;
-
-      + dd {
-        margin-left: 35%;
-      }
-    }
-  }
-
-  @include media.on-tiny {
-    dt,
-    dd {
-      width: 100%;
-      margin-left: 0;
-    }
-
-    dd {
-      padding-left: 1rem;
-    }
-
-    &--plain {
-      dt {
-        padding-bottom: 0;
-      }
-
-      dd {
-        padding-top: 0;
-        // padding-left: 2rem;
-
-        + dt {
-          // @include colour.colour-border("keyline", 1px, solid, top);
-        }
-      }
-    }
-
-    &:not(&--plain) {
-      dt {
-        @include colour.colour-background("background-tint");
-      }
-
-      dd {
-        background: transparent !important;
-      }
-    }
-  }
-
-  @include colour.on-high-contrast {
-    @include colour.colour-border("keyline-dark", 1px, solid, bottom);
-
-    dt,
-    dd {
-      // padding-left: 0;
-      // padding-right: 0;
-
-      background: transparent !important;
-
-      @include colour.colour-border("keyline-dark", 1px, solid, top);
-    }
-  }
-}
-
 %chip {
   max-width: max-content;
   padding: 0.125em 0.25rem;
@@ -316,6 +137,8 @@ small {
 }
 
 .tna-chip-list {
+  @include spacing.space-above;
+  margin-bottom: 0;
   padding-left: 0;
 
   display: flex;
@@ -323,8 +146,6 @@ small {
   gap: 1rem;
 
   list-style: none;
-
-  @include spacing.space-below;
 
   &__item {
   }
@@ -359,6 +180,8 @@ small {
 }
 
 %heading-xl {
+  @extend %heading;
+
   @include typography.heading-font;
   @include typography.relative-font-size(64);
   line-height: 1.2;
@@ -373,6 +196,8 @@ small {
 }
 
 %heading-l {
+  @extend %heading;
+
   @include typography.heading-font;
   @include typography.relative-font-size(32);
   line-height: 1.3;
@@ -387,38 +212,70 @@ small {
 }
 
 %heading-m {
+  @extend %heading;
+
   @include typography.main-font-weight-bold;
   @include typography.relative-font-size(22);
   line-height: 1.6;
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(20);
+  }
 }
 
 %heading-s {
+  @extend %heading;
+
   @include typography.main-font-weight-bold;
   @include typography.relative-font-size(18);
   line-height: 1.6;
 }
 
+%headings-and-heading-groups {
+  @include spacing.space-above;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
 .tna-heading {
-  @extend %heading;
-
-  &--xl {
+  &-xl {
     @extend %heading-xl;
+    @extend %headings-and-heading-groups;
   }
 
-  &--l {
+  &-l {
     @extend %heading-l;
+    @extend %headings-and-heading-groups;
   }
 
-  &--m {
+  &-m {
     @extend %heading-m;
+    @extend %headings-and-heading-groups;
   }
 
-  &--s {
+  &-s {
     @extend %heading-s;
+    @extend %headings-and-heading-groups;
   }
 }
 
 .tna-hgroup {
+  &-xl,
+  &-l,
+  &-m,
+  &-s {
+    @extend %headings-and-heading-groups;
+  }
+
   &__supertitle {
     margin: 0 0 0.25rem;
 
@@ -429,55 +286,33 @@ small {
     margin: 0;
 
     display: block;
-
-    @extend %heading;
   }
 
-  &--xl &__title {
+  &-xl &__title {
     @extend %heading-xl;
   }
 
-  &--l &__title {
+  &-l &__title {
     @extend %heading-l;
   }
 
-  &--m &__title {
+  &-m &__title {
     @extend %heading-m;
   }
 
-  &--s &__title {
+  &-s &__title {
     @extend %heading-s;
   }
 }
 
-.tna-heading,
-.tna-hgroup {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-
-  // &--m,
-  // &--s {
-  //   margin-bottom: 0.5rem;
-  // }
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .tna-blockquote {
-  margin-top: 0;
+  @include spacing.space-above;
   margin-right: 0;
+  margin-bottom: 0;
   margin-left: 0;
   padding: 1rem 1rem 1rem 2rem;
 
   @include colour.colour-border("accent-background", 0.35rem, solid, left);
-
-  @include spacing.space-below;
 
   &__quote {
     font-weight: 700;
@@ -502,7 +337,7 @@ small {
   @include typography.relative-font-size(30);
   line-height: math.div(50, 30);
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   @include media.on-mobile {
     @include typography.relative-font-size(24);
@@ -516,45 +351,5 @@ small {
     &:hover {
       text-decoration-thickness: 4.5px;
     }
-  }
-}
-
-.tna-columns {
-  column-gap: grid.$gutter-width;
-
-  &--2 {
-    column-count: 2;
-  }
-
-  &--3 {
-    column-count: 3;
-  }
-
-  @include media.on-tiny {
-    column-gap: grid.$gutter-width-tiny;
-  }
-
-  @include media.on-small {
-    @for $i from 1 through 4 {
-      &--#{$i}-small {
-        column-count: $i;
-      }
-    }
-  }
-
-  @include media.on-tiny {
-    @for $i from 1 through 4 {
-      &--#{$i}-tiny {
-        column-count: $i;
-      }
-    }
-  }
-
-  &__block {
-    break-inside: avoid;
-  }
-
-  &:has(&__block:only-of-type) {
-    column-count: 1;
   }
 }

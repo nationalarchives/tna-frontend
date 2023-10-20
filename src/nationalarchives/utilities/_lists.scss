@@ -1,0 +1,181 @@
+@use "../tools/colour";
+@use "../tools/media";
+@use "../tools/spacing";
+@use "../tools/typography";
+
+.tna-ul,
+.tna-ol {
+  margin: 1rem 0;
+  padding: 0 0 0 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  li::marker {
+    @include colour.colour-font("accent-background");
+    font-weight: 700;
+  }
+
+  &--plain {
+    padding-left: 0;
+
+    list-style: none;
+  }
+}
+
+.tna-dl {
+  margin: 1rem 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  dt,
+  dd {
+    margin: 0;
+    padding: 0.5rem 1rem;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    word-wrap: break-word;
+    // word-break: break-all;
+  }
+
+  &--plain {
+    dt {
+      padding-left: 0;
+    }
+
+    dd {
+      padding-right: 0;
+    }
+  }
+
+  dt {
+    width: 30%;
+
+    @include typography.main-font-weight-bold;
+  }
+
+  dd {
+    width: 70%;
+
+    + dd {
+      margin-left: 30%;
+    }
+  }
+
+  &--icon-padding {
+    dt {
+      padding-left: 3rem !important;
+
+      position: relative;
+
+      .fa-solid {
+        overflow: visible;
+
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+
+        @include colour.colour-font("icon-light");
+        text-align: left;
+
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &--icon-padding#{&}--plain {
+    dt {
+      padding-left: 2rem !important;
+
+      .fa-solid {
+        left: 0;
+      }
+    }
+
+    dd {
+      padding-left: 2rem;
+    }
+  }
+
+  &:not(&--plain) {
+    dt:first-child,
+    dd:nth-of-type(2n) + dt,
+    dd:nth-of-type(2n + 1) {
+      @include colour.colour-background("background-tint");
+    }
+  }
+
+  @include media.on-small {
+    dt {
+      width: 35%;
+    }
+
+    dd {
+      width: 65%;
+
+      + dd {
+        margin-left: 35%;
+      }
+    }
+  }
+
+  @include media.on-tiny {
+    dt,
+    dd {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    dd {
+      padding-left: 1rem;
+    }
+
+    &--plain {
+      dt {
+        padding-bottom: 0;
+      }
+
+      dd {
+        padding-top: 0;
+        // padding-left: 2rem;
+
+        + dt {
+          // @include colour.colour-border("keyline", 1px, solid, top);
+        }
+      }
+    }
+
+    &:not(&--plain) {
+      dt {
+        @include colour.colour-background("background-tint");
+      }
+
+      dd {
+        background: transparent !important;
+      }
+    }
+  }
+
+  @include colour.on-high-contrast {
+    @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+
+    dt,
+    dd {
+      // padding-left: 0;
+      // padding-right: 0;
+
+      background: transparent !important;
+
+      @include colour.colour-border("keyline-dark", 1px, solid, top);
+    }
+  }
+}

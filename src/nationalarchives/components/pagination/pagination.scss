@@ -12,7 +12,7 @@
   align-items: center;
   flex-wrap: wrap;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &--spaced {
     justify-content: space-between;

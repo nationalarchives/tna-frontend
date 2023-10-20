@@ -6,10 +6,11 @@
 .tna-ul,
 .tna-ol,
 .tna-dl {
-  @include spacing.space-above;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin: 1rem 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .tna-ul,

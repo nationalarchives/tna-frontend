@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Links in footer and text in buttons have balanced wrapping applied
 - Header and header group class modifiers have been moved to separate blocks (`tna-heading tna-heading--xl` -> `tna-heading-xl`)
 - `space-below` has been replaced with `space-above` and all paddings in between page elements reassessed
+- Tweak spacing on hero component and `<hr>` elements
 
 ### Deprecated
 ### Removed

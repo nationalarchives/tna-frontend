@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `tna-aside` now has a `--tight` modifier with less padding
+- Chips can be made plain with `tna-chip--plain`
 
 ### Changed
 

@@ -244,3 +244,24 @@ Order.args = {
     },
   ],
 };
+
+export const Margin = Template.bind({});
+Margin.args = {
+  classes: "tna-grid--demo",
+  columns: [
+    {
+      html: "<h1>A</h1>",
+      width: "1-4",
+    },
+    {
+      html: "<h1>B</h1>",
+      width: "1-4",
+      marginLeft: "1-12",
+    },
+    {
+      html: "<h1>C</h1>",
+      width: "1-4",
+      marginLeft: "1-6",
+    },
+  ],
+};

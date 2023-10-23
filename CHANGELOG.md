@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `tna-aside` now has a `--tight` modifier with less padding
 - Visual regression tests can now be run in the Storyobok UI
+- Allow right/left margins to be added to columns
 
 ### Changed
 

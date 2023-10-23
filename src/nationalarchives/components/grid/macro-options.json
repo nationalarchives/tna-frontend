@@ -60,6 +60,54 @@
         "description": ""
       },
       {
+        "name": "marginLeft",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeftMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeftSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeftTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRight",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRightMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRightSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRightTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "order",
         "type": "number",
         "required": false,

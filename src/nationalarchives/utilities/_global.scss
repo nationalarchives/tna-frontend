@@ -137,7 +137,9 @@ canvas {
 hr {
   margin: 0;
 
-  @include colour.colour-border("keyline", 1px, solid, top);
+  border-width: 1px 0 0;
+  @include colour.colour-border("keyline");
+  border-style: solid;
 }
 
 .tna-section {

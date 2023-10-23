@@ -11,6 +11,7 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-interactions",
     "@storybook/addon-mdx-gfm",
+    "@chromaui/addon-visual-tests",
   ],
   framework: {
     name: "@storybook/html-webpack5",

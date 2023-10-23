@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `tna-aside` now has a `--tight` modifier with less padding
+- Visual regression tests can now be run in the Storyobok UI
 
 ### Changed
 
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `space-below` has been replaced with `space-above` and all paddings in between page elements reassessed
 - Tweak spacing on hero component and `<hr>` elements
 - Added `tna-button-group` around newletter subscription button in the footer
+- Updated Storybook to `7.5.1`
 
 ### Deprecated
 ### Removed

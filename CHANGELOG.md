@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tweak spacing on hero component and `<hr>` elements
 - Added `tna-button-group` around newletter subscription button in the footer
 - Updated Storybook to `7.5.1`
+- Changed Node version from `lts/hydrogen` to `lts/iron`
 
 ### Deprecated
 ### Removed

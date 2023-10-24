@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Font paths fixed for prototype kit, stylesheets and JavaScript loading
 - Better alignment of site name next to logo in header
 - Fixed right/left padding of logo and hamburger on small devices
+- Change Supria Sans weight from `400` to `500` (medium, as provided by TypeKit)
 - Card image type is now variable when using sources
 
 ### Security

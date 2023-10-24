@@ -8,14 +8,13 @@ const argTypes = {
   heading: { control: "text" },
   body: { control: "text" },
   text: { control: "text" },
-
   imageSrc: { control: { type: "file", accept: ".jpg" } },
   imageAlt: { control: "text" },
   imageWidth: { control: { type: "number", min: 1 } },
   imageHeight: { control: { type: "number", min: 1 } },
-
+  imageType: { control: "text" },
+  imageSources: { control: "object" },
   imageCaption: { control: "text" },
-
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -39,6 +38,8 @@ const Template = ({
   imageAlt,
   imageWidth,
   imageHeight,
+  imageType,
+  imageSources,
   imageCaption,
   classes,
   attributes,
@@ -52,6 +53,8 @@ const Template = ({
       imageAlt,
       imageWidth,
       imageHeight,
+      imageType,
+      imageSources,
       imageCaption,
       classes,
       attributes,
@@ -117,6 +120,27 @@ CaptionWithNoHeading.args = {
   imageWidth: 499,
   imageHeight: 333,
   imageCaption: "An interesting photo by a famous photographer ©2023",
+  classes: "tna-hero--demo",
+};
+
+export const Sources = Template.bind({});
+Sources.args = {
+  heading: "Title",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageSources: [
+    {
+      src: "https://www.gstatic.com/webp/gallery/2.webp",
+      type: "image/webp",
+      media: "(max-width: 48em)",
+      width: 550,
+      height: 404,
+    },
+  ],
   classes: "tna-hero--demo",
 };
 

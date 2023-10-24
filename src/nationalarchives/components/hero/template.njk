@@ -13,7 +13,15 @@
       </details>
     </figcaption>
     {%- endif -%}
-    <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" class="tna-hero__image" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
+    <picture class="tna-hero__image">
+      {%- if params.imageSources -%}
+      {%- for source in params.imageSources %}
+      <source srcset="{{ source.src }}" type="{{ source.type }}" width="{{ source.width if source.width else params.imageWidth }}" height="{{ source.height if source.height else params.imageHeight }}"{% if source.media %} media="{{ source.media }}"{% endif %}>
+      {%- endfor %}
+      <source srcset="{{ params.imageSrc }}" type="{{ params.imageType if params.imageType else 'image/jpeg' }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
+      {%- endif -%}
+      <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
+    </picture>
     {%- if params.heading -%}
     <div class="tna-container tna-hero__inner">
       <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content">

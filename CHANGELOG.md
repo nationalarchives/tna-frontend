@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `tna-aside` now has a `--tight` modifier with less padding
 - Chips can be made plain with `tna-chip--plain`
-- Visual regression tests can now be run in the Storyobok UI
+- Visual regression tests can now be run in the Storybook UI
 - Allow right/left margins to be added to columns
 - Hero components can have different image sources with `<source>` elements
 
@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header and header group class modifiers have been moved to separate blocks (`tna-heading tna-heading--xl` -> `tna-heading-xl`)
 - `space-below` has been replaced with `space-above` and all paddings in between page elements reassessed
 - Tweak spacing on hero component and `<hr>` elements
-- Added `tna-button-group` around newletter subscription button in the footer
+- Added `tna-button-group` around newsletter subscription button in the footer
 - Updated Storybook to `7.5.1`
 
 ### Removed

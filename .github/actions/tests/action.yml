@@ -19,6 +19,12 @@ runs:
     - name: Start Storybook
       run: npm start &
       shell: bash
+    - uses: nev7n/wait_for_response@v1
+      with:
+        url: "http://localhost:6006"
+        responseCode: 200
+        timeout: 30000
+        interval: 500
     - name: Run tests
       run: npm run test
       shell: bash

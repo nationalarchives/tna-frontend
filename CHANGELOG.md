@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Chips can be made plain with `tna-chip--plain`
 - Visual regression tests can now be run in the Storyobok UI
 - Allow right/left margins to be added to columns
+- Hero components can have different image sources with `<source>` elements
 
 ### Changed
 
@@ -38,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Better alignment of site name next to logo in header
 - Fixed right/left padding of logo and hamburger on small devices
 - Change Supria Sans weight from `400` to `500` (medium, as provided by TypeKit)
+- Card image type is now variable when using sources
 
 ### Security
 

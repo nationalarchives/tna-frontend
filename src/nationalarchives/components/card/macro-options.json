@@ -55,6 +55,12 @@
     "description": "The height of the image in pixels."
   },
   {
+    "name": "imageType",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "imageSources",
     "type": "array",
     "required": true,

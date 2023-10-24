@@ -83,7 +83,7 @@
 
     @include colour.invert;
 
-    // @include typography.relative-font-size(16);
+    @include typography.relative-font-size(16);
   }
 
   &__image {
@@ -94,7 +94,12 @@
     inset: 0;
     z-index: 1;
 
-    object-fit: cover;
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
   }
 
   &__details[open] &__details-summary {
@@ -234,6 +239,10 @@
       position: static;
 
       order: 1;
+
+      img {
+        height: auto;
+      }
     }
 
     &__inner {

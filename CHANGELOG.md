@@ -25,11 +25,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tweak spacing on hero component and `<hr>` elements
 - Added `tna-button-group` around newletter subscription button in the footer
 - Updated Storybook to `7.5.1`
+- `tna-visually-hidden` changed to `tna-!--visually-hidden`
 
 ### Deprecated
 ### Removed
 
 - The black accent is no longer applied by default
+- Removed margin and padding overrides for device-specific sizes (e.g. `tna-!--margin-top-xl-small`)
 
 ### Fixed
 

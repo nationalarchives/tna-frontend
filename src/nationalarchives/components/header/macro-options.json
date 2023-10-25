@@ -96,8 +96,8 @@
     ]
   },
   {
-    "name": "colour",
-    "type": "string",
+    "name": "accent",
+    "type": "boolean",
     "required": false,
     "description": ""
   },

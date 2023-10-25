@@ -35,7 +35,6 @@
 }
 
 @mixin detail-font-small {
-  @include colour.colour-font("font-dark");
   @include detail-font;
   @include relative-font-size(14);
   text-transform: uppercase;

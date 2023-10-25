@@ -77,10 +77,14 @@ strong {
 }
 
 p {
-  margin: 1rem 0 0;
+  margin: 2rem 0 0;
 
   &:first-child {
     margin-top: 0;
+  }
+
+  + p {
+    margin-top: 1rem
   }
 }
 
@@ -249,7 +253,7 @@ a.tna-chip {
 
 %headings-and-heading-groups {
   @include spacing.space-above;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   padding-top: 1rem;
 
   &:first-child {
@@ -259,6 +263,10 @@ a.tna-chip {
   &:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+
+  + p {
+    margin-top: 1rem;
   }
 }
 
@@ -347,13 +355,19 @@ a.tna-chip {
   }
 }
 
+.tna-large-paragraph {
+  @include spacing.space-above;
+
+  @include typography.relative-font-size(20);
+}
+
 .tna-scene-setter {
+  @include spacing.space-above;
+
   @include typography.detail-font;
   @include colour.colour-font("font-dark");
   @include typography.relative-font-size(30);
   line-height: math.div(50, 30);
-
-  @include spacing.space-above;
 
   @include media.on-mobile {
     @include typography.relative-font-size(24);

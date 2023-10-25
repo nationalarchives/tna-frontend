@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Header allows accent colour to be used with `tna-header--accent`
+- More consistent spacing between elements
+
 ### Security
 
 ## [0.1.22-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.21-prerelease...v0.1.22-prerelease) - 2023-10-24

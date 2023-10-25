@@ -104,7 +104,7 @@ const Template = ({ theme, accent }) => {
         phase: "beta",
         message:
           'This is a new service - <a href="#">give us your feedback</a> to help improve it.',
-        classes: "tna-phase-banner--accent",
+        accent: true,
       },
     })}
     ${Header({

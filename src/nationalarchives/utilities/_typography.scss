@@ -79,12 +79,12 @@ strong {
 p {
   margin: 2rem 0 0;
 
-  &:first-child {
-    margin-top: 0;
-  }
-
   + p {
     margin-top: 1rem;
+  }
+
+  &:first-child {
+    margin-top: 0;
   }
 }
 

@@ -19,7 +19,9 @@ Paragraph.args = {
 };
 
 const LargeParagraphTemplate = ({ paragraphs }) =>
-  paragraphs.map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`).join("");
+  paragraphs
+    .map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`)
+    .join("");
 export const LargeParagraph = LargeParagraphTemplate.bind({});
 LargeParagraph.args = {
   paragraphs: [

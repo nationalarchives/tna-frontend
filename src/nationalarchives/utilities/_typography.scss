@@ -407,7 +407,7 @@ a.tna-chip {
 .tna-large-paragraph {
   @include spacing.space-above;
 
-  @include typography.relative-font-size(20);
+  @include typography.relative-font-size(22);
 }
 
 .tna-scene-setter {
@@ -430,5 +430,9 @@ a.tna-chip {
     &:hover {
       text-decoration-thickness: 4.5px;
     }
+  }
+
+  &--small {
+    @include typography.relative-font-size(24);
   }
 }

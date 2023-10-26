@@ -5,7 +5,7 @@ import { within, userEvent } from "@storybook/testing-library";
 import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {
-  url: { control: "text" },
+  cookiesUrl: { control: "text" },
   policies: { control: "text" },
   cookiesPreferencesSetKey: { control: "text" },
   loadScriptsOnAccept: { control: "text" },
@@ -25,7 +25,7 @@ export default {
 };
 
 const Template = ({
-  url,
+  cookiesUrl,
   policies,
   cookiesPreferencesSetKey,
   loadScriptsOnAccept,
@@ -34,7 +34,7 @@ const Template = ({
 }) =>
   CookieBanner({
     params: {
-      url,
+      cookiesUrl,
       policies,
       cookiesPreferencesSetKey,
       loadScriptsOnAccept,

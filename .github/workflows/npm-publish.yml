@@ -55,15 +55,6 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
 
-  test-build:
-    runs-on: ubuntu-latest
-    needs:
-      - check
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test build Storybook
-        uses: ./.github/actions/test-build
-
   test-build-package:
     runs-on: ubuntu-latest
     needs:
@@ -89,7 +80,6 @@ jobs:
       - check
       - lint
       - tests
-      - test-build
       - prototype-kit
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

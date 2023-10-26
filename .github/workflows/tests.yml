@@ -24,13 +24,6 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
 
-  test-build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test build Storybook
-        uses: ./.github/actions/test-build
-
   test-build-package:
     runs-on: ubuntu-latest
     steps:

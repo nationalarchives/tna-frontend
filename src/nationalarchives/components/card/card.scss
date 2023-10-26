@@ -55,6 +55,8 @@
   }
 
   &__body {
+    padding-top: 1rem;
+
     order: 3;
   }
 
@@ -74,6 +76,7 @@
       display: flex;
       align-items: center;
 
+      @include colour.colour-font("font-dark");
       @include typography.detail-font-small;
 
       .fa-solid {

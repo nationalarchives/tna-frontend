@@ -42,6 +42,50 @@
     "description": ""
   },
   {
+    "name": "imageType",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "imageSources",
+    "type": "array",
+    "required": true,
+    "description": "Alternative sources of the image which can include WebP files.",
+    "params": [
+      {
+        "name": "src",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "media",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "width",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "number",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
     "name": "imageCaption",
     "type": "string",
     "required": false,

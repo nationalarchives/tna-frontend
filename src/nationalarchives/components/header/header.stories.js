@@ -8,9 +8,8 @@ const argTypes = {
   logo: { control: "object" },
   topNavigation: { control: "object" },
   navigation: { control: "object" },
-  colour: {
-    control: "radio",
-    options: ["black", "yellow", "pink", "orange", "green", "blue"],
+  accent: {
+    control: "boolean",
   },
   exit: { control: "object" },
   classes: { control: "text" },
@@ -35,7 +34,7 @@ const Template = ({
   logo,
   topNavigation,
   navigation,
-  colour,
+  accent,
   exit,
   classes,
   attributes,
@@ -45,7 +44,7 @@ const Template = ({
       logo,
       topNavigation,
       navigation,
-      colour,
+      accent,
       exit,
       classes,
       attributes,
@@ -89,7 +88,6 @@ Standard.args = {
       href: "#/gamma",
     },
   ],
-  colour: "yellow",
   exit: {
     text: "Go to the current National Archives website",
     href: "#",

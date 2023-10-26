@@ -5,7 +5,7 @@
 
 .tna-ul,
 .tna-ol {
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   padding: 0 0 0 2rem;
 
   &:first-child {
@@ -25,7 +25,7 @@
 }
 
 .tna-dl {
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +44,6 @@
     box-sizing: border-box;
 
     word-wrap: break-word;
-    // word-break: break-all;
   }
 
   &--plain {
@@ -146,11 +145,6 @@
 
       dd {
         padding-top: 0;
-        // padding-left: 2rem;
-
-        + dt {
-          // @include colour.colour-border("keyline", 1px, solid, top);
-        }
       }
     }
 
@@ -170,9 +164,6 @@
 
     dt,
     dd {
-      // padding-left: 0;
-      // padding-right: 0;
-
       background: transparent !important;
 
       @include colour.colour-border("keyline-dark", 1px, solid, top);

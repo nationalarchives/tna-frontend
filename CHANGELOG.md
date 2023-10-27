@@ -5,13 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.21-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...HEAD)
+
+### Added
+
+- Initial concept of text detail elements
+
+### Changed
+
+- `tna-visually-hidden` changed to `tna-!--visually-hidden`
+- Changed Node version from `lts/hydrogen` to `lts/iron`
+
+### Deprecated
+### Removed
+### Fixed
+
+- Cookie banner URL is now correctly used
+
+### Security
+
+
+## [0.1.23-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.22-prerelease...v0.1.23-prerelease) - 2023-10-25
+
+### Fixed
+
+- Header allows accent colour to be used with `tna-header--accent`
+- More consistent spacing between elements
+
+## [0.1.22-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.21-prerelease...v0.1.22-prerelease) - 2023-10-24
 
 ### Added
 
 - `tna-aside` now has a `--tight` modifier with less padding
-- Visual regression tests can now be run in the Storyobok UI
+- Chips can be made plain with `tna-chip--plain`
+- Visual regression tests can now be run in the Storybook UI
 - Allow right/left margins to be added to columns
+- Hero components can have different image sources with `<source>` elements
 
 ### Changed
 
@@ -23,11 +52,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header and header group class modifiers have been moved to separate blocks (`tna-heading tna-heading--xl` -> `tna-heading-xl`)
 - `space-below` has been replaced with `space-above` and all paddings in between page elements reassessed
 - Tweak spacing on hero component and `<hr>` elements
-- Added `tna-button-group` around newletter subscription button in the footer
+- Added `tna-button-group` around newsletter subscription button in the footer
 - Updated Storybook to `7.5.1`
-- `tna-visually-hidden` changed to `tna-!--visually-hidden`
 
-### Deprecated
 ### Removed
 
 - The black accent is no longer applied by default
@@ -38,8 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Font paths fixed for prototype kit, stylesheets and JavaScript loading
 - Better alignment of site name next to logo in header
 - Fixed right/left padding of logo and hamburger on small devices
-
-### Security
+- Change Supria Sans weight from `400` to `500` (medium, as provided by TypeKit)
+- Card image type is now variable when using sources
 
 ## [0.1.21-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.20-prerelease...v0.1.21-prerelease) - 2023-10-12
 

@@ -47,7 +47,9 @@
 .tna-header {
   @include colour.invert;
 
-  background-color: colour.brand-colour("black");
+  &:not(&--accent) {
+    background-color: colour.brand-colour("black");
+  }
 
   .tna-template--system-theme & {
     @media (prefers-contrast: more) and (prefers-color-scheme: light) {
@@ -243,6 +245,10 @@
     margin: 0;
     padding: 1.25rem 0;
 
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem 1.5rem;
+
     // order: 1;
 
     list-style: none;
@@ -251,13 +257,12 @@
   }
 
   &__top-navigation-item {
-    margin-left: 1.5rem;
-
-    display: inline-block;
+    display: block;
   }
 
   &__top-navigation-item-link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
 
     text-decoration: none;
     @include typography.relative-font-size(16);
@@ -393,7 +398,7 @@
     &__top-navigation-items {
       padding: 0.5rem 1rem;
 
-      // text-align: center;
+      justify-content: flex-start;
 
       @include colour.colour-background("page-background");
 

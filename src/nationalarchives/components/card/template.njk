@@ -38,10 +38,10 @@
     {%- endif -%}
       <picture class="tna-card__image">
         {%- if params.imageSources -%}
-        {%- for source in params.imageSources -%}
+        {%- for source in params.imageSources %}
         <source srcset="{{ source.src }}" type="{{ source.type }}" width="{{ source.width if source.width else params.imageWidth }}" height="{{ source.height if source.height else params.imageHeight }}">
-        {%- endfor -%}
-        <source srcset="{{ params.imageSrc }}" type="image/jpeg" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
+        {%- endfor %}
+        <source srcset="{{ params.imageSrc }}" type="{{ params.imageType if params.imageType else 'image/jpeg' }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
         {%- endif -%}
         <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
       </picture>

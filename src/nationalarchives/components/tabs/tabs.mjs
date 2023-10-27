@@ -150,7 +150,6 @@ export class Tabs {
   }
 
   setSelectedToNextTab(targetItem) {
-    console.log("setSelectedToNextTab", targetItem);
     const currentIndex = [...this.$tabListItemLinks].findIndex(
       ($tabListItemLink) =>
         $tabListItemLink.getAttribute("id") === targetItem.getAttribute("id"),
@@ -161,14 +160,12 @@ export class Tabs {
     } else {
       newIndex = 0;
     }
-    console.log(currentIndex, newIndex);
     this.switchTab(
       this.$tabListItemLinks[newIndex].getAttribute("aria-controls"),
     );
   }
 
   setSelectedToPreviousTab(targetItem) {
-    console.log("setSelectedToPreviousTab", targetItem);
     const currentIndex = [...this.$tabListItemLinks].findIndex(
       ($tabListItemLink) =>
         $tabListItemLink.getAttribute("id") === targetItem.getAttribute("id"),
@@ -179,7 +176,6 @@ export class Tabs {
     } else {
       newIndex = this.$tabListItemLinks.length - 1;
     }
-    console.log(currentIndex, newIndex);
     this.switchTab(
       this.$tabListItemLinks[newIndex].getAttribute("aria-controls"),
     );

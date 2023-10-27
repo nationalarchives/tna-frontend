@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:selector";
 @use "../tools/colour";
 @use "../tools/media";
 @use "../tools/spacing";
@@ -77,7 +78,11 @@ strong {
 }
 
 p {
-  margin: 1rem 0 0;
+  margin: 2rem 0 0;
+
+  + p {
+    margin-top: 1rem;
+  }
 
   &:first-child {
     margin-top: 0;
@@ -97,19 +102,11 @@ a {
     @include typography.interacted-text-decoration;
   }
 
-  &.tna-chip {
-    text-decoration: none;
-
-    &,
-    &:link,
-    &:visited {
-      @include colour.colour-font("font-dark");
-    }
-
-    &:hover {
-      @include typography.interacted-text-decoration;
-    }
-  }
+  // &[target="_blank"]:not([title*="opens in a new"]) {
+  //   &::after {
+  //     content: "" / " (opens in a new window)"
+  //   }
+  // }
 }
 
 small {
@@ -118,22 +115,45 @@ small {
   );
 }
 
-%chip {
-  max-width: max-content;
-  padding: 0.125em 0.25rem;
+.tna-detail[title][data-type] {
+  padding: 0 0.375rem;
 
-  display: block;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  gap: 0.5rem;
 
-  @include typography.detail-font-small;
-  line-height: 1;
+  vertical-align: baseline;
 
-  @include colour.accent;
+  background-color: #ccc;
 
-  @include colour.colour-border("accent-background", 0.125rem);
-}
+  &::after {
+    @include colour.colour-font("font-base");
+    @include typography.detail-font-small;
+    vertical-align: baseline;
 
-.tna-chip {
-  @extend %chip;
+    content: attr(data-type) / "";
+  }
+
+  &[data-type="misc"] {
+    background-color: #f28482;
+  }
+
+  &[data-type="loc"] {
+    background-color: #edae49;
+  }
+
+  &[data-type="per"] {
+    background-color: #b5e2fa;
+  }
+
+  @at-root #{selector.unify("a", &)} {
+    @include colour.colour-font("font-base");
+
+    &::after {
+      text-decoration: none;
+    }
+  }
 }
 
 .tna-chip-list {
@@ -148,6 +168,55 @@ small {
   list-style: none;
 
   &__item {
+  }
+}
+
+%chip {
+  max-width: max-content;
+  padding: 0.125em 0.25rem;
+
+  display: block;
+
+  @include colour.colour-font("font-dark");
+  @include typography.detail-font-small;
+  line-height: 1;
+
+  @include colour.accent;
+
+  @include colour.colour-border("accent-background", 0.125rem);
+}
+
+.tna-chip {
+  @extend %chip;
+
+  &--plain {
+    color: inherit;
+
+    background-color: transparent;
+
+    border-color: transparent;
+  }
+}
+
+a.tna-chip {
+  text-decoration: none;
+
+  &,
+  &:link,
+  &:visited {
+    @include colour.colour-font("font-dark");
+  }
+
+  &:hover {
+    @include typography.interacted-text-decoration;
+  }
+
+  &--plain {
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
   }
 }
 
@@ -233,7 +302,7 @@ small {
 
 %headings-and-heading-groups {
   @include spacing.space-above;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   padding-top: 1rem;
 
   &:first-child {
@@ -243,6 +312,10 @@ small {
   &:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+
+  + p {
+    margin-top: 1rem;
   }
 }
 
@@ -331,13 +404,19 @@ small {
   }
 }
 
+.tna-large-paragraph {
+  @include spacing.space-above;
+
+  @include typography.relative-font-size(22);
+}
+
 .tna-scene-setter {
+  @include spacing.space-above;
+
   @include typography.detail-font;
   @include colour.colour-font("font-dark");
   @include typography.relative-font-size(30);
   line-height: math.div(50, 30);
-
-  @include spacing.space-above;
 
   @include media.on-mobile {
     @include typography.relative-font-size(24);
@@ -351,5 +430,9 @@ small {
     &:hover {
       text-decoration-thickness: 4.5px;
     }
+  }
+
+  &--small {
+    @include typography.relative-font-size(24);
   }
 }

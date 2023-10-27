@@ -27,7 +27,6 @@ concurrency:
 
 jobs:
   github-pages:
-    name: Build and deploy to GitHub Pages
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -51,7 +50,6 @@ jobs:
         uses: actions/deploy-pages@v2
 
   chromatic:
-    name: Build and deploy to Chromatic
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

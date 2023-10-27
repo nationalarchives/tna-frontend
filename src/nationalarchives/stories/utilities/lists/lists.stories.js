@@ -4,7 +4,7 @@ const argTypes = {
 };
 
 export default {
-  title: "Utilities/Typography",
+  title: "Utilities/Lists",
   argTypes,
 };
 

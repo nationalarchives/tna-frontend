@@ -11,6 +11,7 @@ const argTypes = {
   imageAlt: { control: "text" },
   imageWidth: { control: { type: "number", min: 1 } },
   imageHeight: { control: { type: "number", min: 1 } },
+  imageType: { control: "text" },
   imageSources: { control: "object" },
   label: { control: "text" },
   meta: { control: "object" },
@@ -47,6 +48,7 @@ const Template = ({
   imageAlt,
   imageWidth,
   imageHeight,
+  imageType,
   imageSources,
   label,
   meta,
@@ -70,6 +72,7 @@ const Template = ({
       imageAlt,
       imageWidth,
       imageHeight,
+      imageType,
       imageSources,
       label,
       meta,
@@ -270,7 +273,7 @@ Sources.args = {
   imageHeight: 404,
   imageSources: [
     {
-      imageSrc: "https://www.gstatic.com/webp/gallery/2.webp",
+      src: "https://www.gstatic.com/webp/gallery/2.webp",
       type: "image/webp",
     },
   ],

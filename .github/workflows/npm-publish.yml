@@ -7,7 +7,6 @@ on:
 
 jobs:
   check:
-    name: Pre-release checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,6 +20,21 @@ jobs:
           ./tasks/validate-version.sh "$VERSION"
     outputs:
       version: ${{ steps.get-version.outputs.VERSION }}
+
+  release-notes:
+    runs-on: ubuntu-latest
+    needs:
+      - check
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get release notes
+        id: get-release-notes
+        run: |
+          RELEASE_NOTES=$(./tasks/get-release-notes.sh "${{ needs.check.outputs.version }}")
+          echo $RELEASE_NOTES
+          echo "RELEASE_NOTES=$RELEASE_NOTES" >> "$GITHUB_OUTPUT"
+    outputs:
+      release-notes: ${{ steps.get-release-notes.outputs.RELEASE_NOTES }}
 
   lint:
     runs-on: ubuntu-latest
@@ -40,41 +54,30 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
 
-  test-build:
-    runs-on: ubuntu-latest
-    needs:
-      - check
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test build Storybook
-        uses: ./.github/actions/test-build
-
-  test-build-package:
+  test-package:
     runs-on: ubuntu-latest
     needs:
       - check
     steps:
       - uses: actions/checkout@v3
       - name: Test build package
-        uses: ./.github/actions/test-build-package
+        uses: ./.github/actions/test-package
 
   prototype-kit:
     runs-on: ubuntu-latest
     needs:
-      - test-build-package
+      - test-package
     steps:
       - uses: actions/checkout@v3
       - name: GOV.UK prototype kit test
         uses: ./.github/actions/prototype-kit-test
         
   publish-npm:
-    name: Build package and publish to npm
     runs-on: ubuntu-latest
     needs:
       - check
       - lint
       - tests
-      - test-build
       - prototype-kit
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -95,8 +98,10 @@ jobs:
         run: cd package && npm publish
       - name: Rename package directory
         run: mv package "nationalarhives-frontend-${{ needs.check.outputs.version }}"
+      - name: Compress package
+        run: zip -r "nationalarhives-frontend-${{ needs.check.outputs.version }}.zip" "nationalarhives-frontend-${{ needs.check.outputs.version }}"
       - name: Upload the package to the GitHub release
-        run: gh release upload "v${{ needs.check.outputs.version }}" "nationalarhives-frontend-${{ needs.check.outputs.version }}"
+        run: gh release upload "v${{ needs.check.outputs.version }}" "nationalarhives-frontend-${{ needs.check.outputs.version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -104,10 +109,13 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - check
+      - release-notes
       - publish-npm
     steps:
-    - uses: rtCamp/action-slack-notify@v2
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
-        SLACK_TITLE: "v${{ needs.check.outputs.version }} of `tna-frontend` has just been published"
+      - uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_TITLE: "`v${{ needs.check.outputs.version }}` of `tna-frontend` has just been published"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
+          MSG_MINIMAL: true
+          SLACK_MESSAGE: ${{ needs.release-notes.outputs.release-notes }}

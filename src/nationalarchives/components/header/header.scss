@@ -338,6 +338,10 @@
     }
   }
 
+  &--accent {
+    @include colour.accent;
+  }
+
   @include media.on-larger-than-mobile {
     .tna-header__navigation-toggle {
       display: none;
@@ -508,7 +512,38 @@
     }
   }
 
-  &--accent {
-    @include colour.accent;
+  @include colour.on-high-contrast {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      inset: auto 0 0;
+      z-index: 1;
+
+      @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+
+      content: "";
+    }
+
+    &__navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    @include media.on-larger-than-mobile {
+      &__navigation-item-link {
+        border: 1px transparent solid;
+        border-bottom: none;
+
+        &:hover,
+        &--selected {
+          &,
+          &:link,
+          &:visited {
+            @include colour.colour-border("keyline-dark");
+          }
+        }
+      }
+    }
   }
 }

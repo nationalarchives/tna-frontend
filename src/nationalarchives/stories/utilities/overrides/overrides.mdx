@@ -5,42 +5,49 @@ import * as OverrideStories from './overrides.stories';
 
 # Overrides
 
-## Properties
+## Options
 
-Property options: `margin`, `padding`
+`property`:
 
-```css
-tna-!--no-[property]-[direction]
-```
+- `margin`
+- `padding`
 
-### No margin/padding
-
-Direction options:
+`direction`:
 
 - `top`
 - `bottom`
 - `vertical` - `top` and `bottom`
 
-```css
+## Removing space
+
+```
+// For all devices
 tna-!--no-[property]-[direction]
 ```
 
-### Sizes
+`device` options (optional):
 
-Size options: `xs`, `s`, `m`, `l`, `xl`, `xxl`
+- `large`
+- `medium`
+- `small`
+- `tiny`
+
+```
+// For a specific device size
+tna-!--no-[property]-[direction]-[device]
+```
+
+## Adding space
+
+`size` options:
+
+- `xs`
+- `s`
+- `m`
+- `l`
+- `xl`
+- `xxl`
 
 ```css
 tna-!--[property]-[direction]-[size]
 ```
-
-### Responsive
-
-Device options: `medium`, `small`, `tiny`
-
-```css
-tna-!--no-[property]-[direction]-[device]
-tna-!--[property]-[direction]-[size]-[device]
-```
-
-
-

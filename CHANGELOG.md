@@ -10,8 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial concept of text detail elements
+- Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
 
 ### Changed
+
+- `tna-visually-hidden` could instead use the class `tna-!--visually-hidden` (will deprecate one of these in the future)
+- Changed Node version from `lts/hydrogen` to `lts/iron`
+- Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
+
 ### Deprecated
 ### Removed
 ### Fixed
@@ -50,11 +56,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tweak spacing on hero component and `<hr>` elements
 - Added `tna-button-group` around newsletter subscription button in the footer
 - Updated Storybook to `7.5.1`
-- Changed Node version from `lts/hydrogen` to `lts/iron`
 
 ### Removed
 
 - The black accent is no longer applied by default
+- Removed margin and padding overrides for device-specific sizes (e.g. `tna-!--margin-top-xl-small`)
 
 ### Fixed
 

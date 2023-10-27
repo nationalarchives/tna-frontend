@@ -249,7 +249,7 @@ const Template = ({ theme, accent }) => {
                 </div>
               </div>
             </div>
-            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large">
+            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large tna-!--no-margin-bottom-large">
               <div class="tna-aside tna-background--accent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">

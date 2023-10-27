@@ -18,6 +18,17 @@ Paragraph.args = {
   ],
 };
 
+const LargeParagraphTemplate = ({ paragraphs }) =>
+  paragraphs
+    .map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`)
+    .join("");
+export const LargeParagraph = LargeParagraphTemplate.bind({});
+LargeParagraph.args = {
+  paragraphs: [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh. Donec ac tellus in dui rutrum maximus. Aliquam vel euismod eros. Integer ut magna velit. Fusce sed dui sit amet metus eleifend dictum quis vitae mi. Aenean sagittis euismod purus, in accumsan metus venenatis nec. Nullam nec velit felis. Sed nec felis eu nisl varius dictum eu quis nisl. Donec dapibus est arcu, vel pellentesque risus pellentesque eget.",
+  ],
+};
+
 const HeadingLinkTemplate = ({ text, href }) =>
   `<h2 class="tna-heading-s">
     <a href="${href}">${text}</a>
@@ -34,6 +45,15 @@ const SceneSetterTemplate = ({ text }) =>
   </p>`;
 export const SceneSetter = SceneSetterTemplate.bind({});
 SceneSetter.args = {
+  text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
+};
+
+const SceneSetterSmallTemplate = ({ text }) =>
+  `<p class="tna-scene-setter tna-scene-setter--small">
+    ${text}
+  </p>`;
+export const SceneSetterSmall = SceneSetterSmallTemplate.bind({});
+SceneSetterSmall.args = {
   text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
 };
 

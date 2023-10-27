@@ -7,7 +7,6 @@ on:
 
 jobs:
   check:
-    name: Pre-release checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -55,41 +54,30 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
 
-  test-build:
-    runs-on: ubuntu-latest
-    needs:
-      - check
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test build Storybook
-        uses: ./.github/actions/test-build
-
-  test-build-package:
+  test-package:
     runs-on: ubuntu-latest
     needs:
       - check
     steps:
       - uses: actions/checkout@v3
       - name: Test build package
-        uses: ./.github/actions/test-build-package
+        uses: ./.github/actions/test-package
 
   prototype-kit:
     runs-on: ubuntu-latest
     needs:
-      - test-build-package
+      - test-package
     steps:
       - uses: actions/checkout@v3
       - name: GOV.UK prototype kit test
         uses: ./.github/actions/prototype-kit-test
         
   publish-npm:
-    name: Build package and publish to npm
     runs-on: ubuntu-latest
     needs:
       - check
       - lint
       - tests
-      - test-build
       - prototype-kit
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

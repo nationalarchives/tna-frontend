@@ -162,6 +162,7 @@ DARK, HIGH_CONTRAST THEME
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
+    "page-background": #111,
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.75),

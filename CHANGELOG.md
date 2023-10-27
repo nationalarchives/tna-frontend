@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial concept of text detail elements
 
 ### Changed
+
+- Tweaked dark theme colours
+
 ### Deprecated
 ### Removed
 ### Fixed

@@ -100,7 +100,7 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #111,
+    "page-background": #222,
     "background-tint": #333,
     "font-base": brand-colour("white", 0.95),
     "font-dark": brand-colour("white"),
@@ -114,7 +114,7 @@ $colour-palette-dark: map.merge(
     "button-background": brand-colour("white"),
     "button-hover-text": brand-colour("white"),
     "button-hover-background": brand-colour("black"),
-    "contrast-background": #1e1e1e,
+    "contrast-background": #111,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
     // --accent-background-light is the same as --contrast-background on dark themes

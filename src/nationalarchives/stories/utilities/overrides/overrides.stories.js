@@ -1,3 +1,5 @@
+import { customViewports } from "../../../../../.storybook/viewports";
+
 const argTypes = {};
 
 export default {
@@ -20,3 +22,14 @@ const Template = () => {
 
 export const Margin = Template.bind({});
 Margin.args = {};
+
+export const MarginMobile = Template.bind({});
+MarginMobile.parameters = {
+  viewport: {
+    defaultViewport: "small",
+  },
+  chromatic: {
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  },
+};
+MarginMobile.args = {};

@@ -10,11 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial concept of text detail elements
+- Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
 
 ### Changed
 
 - `tna-visually-hidden` changed to `tna-!--visually-hidden`
 - Changed Node version from `lts/hydrogen` to `lts/iron`
+- Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
 
 ### Deprecated
 ### Removed

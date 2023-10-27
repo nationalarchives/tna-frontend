@@ -1,127 +1,32 @@
 @use "sass:map";
-@use "../variables/spacing";
 @use "../tools/media";
+@use "../tools/spacing";
 
-@mixin no-spacing-generator($suffix: "") {
-  @if $suffix != "" {
-    $suffix: "-" + $suffix;
-  }
-
-  @each $property in margin, padding {
-    @each $direction in top, bottom {
-      $combined-direction: "";
-      @if $direction == top or $direction == bottom {
-        $combined-direction: vertical;
-      } @else if $direction == right or $direction == left {
-        $combined-direction: horizontal;
-      }
-      @if $combined-direction {
-        .tna-\!--no-#{$property}-#{$direction}#{$suffix},
-        .tna-\!--no-#{$property}-#{$combined-direction}#{$suffix} {
-          #{$property}-#{$direction}: 0 !important;
-        }
-      } @else {
-        .tna-\!--no-#{$property}-#{$direction}#{$suffix} {
-          #{$property}-#{$direction}: 0 !important;
-        }
-      }
-    }
-  }
-}
-
-@mixin hide($suffix) {
-  .tna-\!--hide-#{$suffix} {
+@mixin hide-on($suffix) {
+  .tna-\!--hide-on-#{$suffix} {
     display: none;
   }
 }
 
-@include no-spacing-generator;
-
-@each $property in margin, padding {
-  @each $direction in top, bottom {
-    @each $size, $amount in spacing.$spacing {
-      @if $direction == all {
-        .tna-\!--#{$property}-#{$size} {
-          #{$property}: #{$amount} !important;
-
-          @include media.on-mobile {
-            #{$property}: #{map.get(spacing.$spacing-mobile, $size)} !important;
-          }
-        }
-      } @else {
-        $combined-direction: "";
-        @if $direction == top or $direction == bottom {
-          $combined-direction: vertical;
-        } @else if $direction == right or $direction == left {
-          $combined-direction: horizontal;
-        }
-        @if $combined-direction {
-          .tna-\!--#{$property}-#{$direction}-#{$size},
-          .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
-            #{$property}-#{$direction}: #{$amount} !important;
-          }
-        } @else {
-          .tna-\!--#{$property}-#{$direction}-#{$size} {
-            #{$property}-#{$direction}: #{$amount} !important;
-          }
-        }
-      }
-    }
-  }
-}
-
-@include media.on-mobile {
-  @each $property in margin, padding {
-    @each $direction in top, bottom {
-      @each $size, $amount in spacing.$spacing {
-        @if $direction == all {
-          .tna-\!--#{$property}-#{$size} {
-            #{$property}: #{map.get(spacing.$spacing-mobile, $size)} !important;
-          }
-        } @else {
-          $combined-direction: "";
-          @if $direction == top or $direction == bottom {
-            $combined-direction: vertical;
-          } @else if $direction == right or $direction == left {
-            $combined-direction: horizontal;
-          }
-          @if $combined-direction {
-            .tna-\!--#{$property}-#{$direction}-#{$size},
-            .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
-              #{$property}-#{$direction}: #{map.get(
-                  spacing.$spacing-mobile,
-                  $size
-                )} !important;
-            }
-          } @else {
-            .tna-\!--#{$property}-#{$direction}-#{$size} {
-              #{$property}-#{$direction}: #{map.get(
-                  spacing.$spacing-mobile,
-                  $size
-                )} !important;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+@include spacing.no-spacing-generator;
+@include spacing.spacing-generator;
 
 @include media.on-large {
-  @include hide("large");
+  @include spacing.no-spacing-generator("large");
+  @include hide-on("large");
 }
 
 @include media.on-medium {
-  @include no-spacing-generator("medium");
-  @include hide("medium");
+  @include spacing.no-spacing-generator("medium");
+  @include hide-on("medium");
 }
 
 @include media.on-small {
-  @include no-spacing-generator("small");
-  @include hide("small");
+  @include spacing.no-spacing-generator("small");
+  @include hide-on("small");
 }
 
 @include media.on-tiny {
-  @include no-spacing-generator("tiny");
-  @include hide("tiny");
+  @include spacing.no-spacing-generator("tiny");
+  @include hide-on("tiny");
 }

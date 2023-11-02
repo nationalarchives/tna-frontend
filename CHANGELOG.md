@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial concept of text detail elements
 - Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
+- Allow links to have no visited state with `tna-link--no-visited-state`
 
 ### Changed
 
@@ -21,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- The `@import` for Supria Sans Condensed (`supria-sans-condensed`) from TypeKit has been removed - each service needs to import their own copy of the fonts
+
 ### Fixed
 
 - Cookie banner URL is now correctly used

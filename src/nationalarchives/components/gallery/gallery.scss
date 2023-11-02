@@ -6,7 +6,7 @@
 @use "../grid";
 
 .tna-gallery {
-  @include colour.invert;
+  @include colour.contrast;
 
   padding-bottom: 2rem;
 

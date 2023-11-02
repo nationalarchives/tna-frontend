@@ -53,14 +53,7 @@
     --accent-link-visited: #{brand-colour("white")} !important;
     --accent-keyline: #{brand-colour("white", 0.5)} !important;
     --accent-keyline-dark: #{brand-colour("white", 0.8)} !important;
-
-    @if $colour == "black" {
-      // --accent: #{brand-colour("light-grey")} !important;
-      // --accent-background: #{brand-colour("black")} !important;
-      // --accent-background-light: #{brand-colour("light-grey")} !important;
-      // --button-accent-text: #{brand-colour("black")} !important;
-      // --button-accent-background: #{brand-colour("grey")} !important;
-    } @else {
+    @if $colour != "black" {
       --button-accent-text: #{brand-colour("white")} !important;
       @if $colour == "pink" {
         --accent: #{brand-colour("pink")} !important;
@@ -204,7 +197,7 @@
   @extend %plain;
 }
 
-%invert {
+%contrast {
   --background: var(--contrast-background);
   --font-base: var(--contrast-font-base);
   --font-dark: var(--contrast-font-dark);
@@ -224,11 +217,11 @@
   @include colour-font("font-base", false, colour.$colour-palette-dark);
 }
 
-@mixin invert {
-  @extend %invert;
+@mixin contrast {
+  @extend %contrast;
 }
 
-%invert-on-mobile {
+%contrast-on-mobile {
   @include media.on-mobile {
     --background: var(--contrast-background);
     --font-base: var(--contrast-font-base);
@@ -250,8 +243,8 @@
   }
 }
 
-@mixin invert-on-mobile {
-  @extend %invert-on-mobile;
+@mixin contrast-on-mobile {
+  @extend %contrast-on-mobile;
 }
 
 %accent {
@@ -274,12 +267,12 @@
   @extend %accent;
 }
 
-%tint-background {
+%tint {
   @include colour-background("background-tint");
 }
 
-@mixin tint-background {
-  @extend %tint-background;
+@mixin tint {
+  @extend %tint;
 }
 
 %accent-background {
@@ -290,7 +283,7 @@
   @extend %accent-background;
 }
 
-%light-accent-background {
+%accent-light {
   --background: var(--accent-background-light);
   --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
   --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
@@ -316,8 +309,8 @@
   @include colour-background("background");
 }
 
-@mixin light-accent-background {
-  @extend %light-accent-background;
+@mixin accent-light {
+  @extend %accent-light;
 }
 
 @mixin on-high-contrast {

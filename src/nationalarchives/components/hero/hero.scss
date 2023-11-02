@@ -5,7 +5,7 @@
 @use "../grid";
 
 .tna-hero {
-  @include colour.invert-on-mobile;
+  @include colour.contrast-on-mobile;
 
   &__figure {
     min-height: min(35vw, 480px);
@@ -81,7 +81,7 @@
     bottom: 0;
     z-index: 1;
 
-    @include colour.invert;
+    @include colour.contrast;
 
     @include typography.relative-font-size(16);
   }
@@ -103,7 +103,7 @@
   }
 
   &__details[open] &__details-summary {
-    @include colour.invert;
+    @include colour.contrast;
 
     &::before,
     &::after {
@@ -150,7 +150,7 @@
   }
 
   &__content-inner {
-    padding: 1.5rem;
+    padding: 2rem;
 
     @include colour.colour-background("page-background");
   }

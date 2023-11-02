@@ -35,7 +35,7 @@ const HeadingLinkTemplate = ({ text, href }) =>
   </h2>`;
 export const HeadingLink = HeadingLinkTemplate.bind({});
 HeadingLink.args = {
-  text: "Reaerching with The National Archives",
+  text: "Researching with The National Archives",
   href: "#",
 };
 

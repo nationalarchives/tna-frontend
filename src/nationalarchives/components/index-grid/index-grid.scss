@@ -25,7 +25,7 @@
   }
 
   &__item {
-    @include colour.invert;
+    @include colour.contrast;
 
     height: 100%;
 

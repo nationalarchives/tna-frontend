@@ -27,7 +27,7 @@
   }
 
   &__transcript {
-    @include colour.invert;
+    @include colour.contrast;
 
     padding: 1rem 1.5rem;
 

@@ -187,6 +187,12 @@
     "description": "The style of card to use which can be either `boxed` for an inverted card or `accent` for a card that matches the page's accent colour."
   },
   {
+    "name": "plainSupertitle",
+    "type": "boolean",
+    "required": false,
+    "description": "Use a plain supertitle, removing the accented background colour."
+  },
+  {
     "name": "htmlElement",
     "type": "string",
     "required": false,

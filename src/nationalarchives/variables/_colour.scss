@@ -39,7 +39,7 @@ $colour-palette-brand: (
 
 $dark-grey: #26262a;
 $base-font: #343338 !default;
-$link-colour: #1d70ab !default;
+$link-colour: brand-colour("navy") !default;
 $link-colour-visited: #4c2c92 !default;
 
 /*
@@ -134,8 +134,8 @@ $colour-palette-high-contrast: map.merge(
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
     "icon-light": brand-colour("black", 0.75),
-    "link": brand-colour("navy"),
-    "link-visited": brand-colour("black"),
+    "link": #34d,
+    "link-visited": #848,
     "focus-outline": brand-colour("orange"),
     "keyline": brand-colour("black"),
     "keyline-dark": brand-colour("black"),
@@ -166,8 +166,8 @@ $colour-palette-high-contrast-dark: map.merge(
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.75),
-    "link": brand-colour("white"),
-    "link-visited": brand-colour("white"),
+    "link": #69f,
+    "link-visited": #a6c,
     "keyline": brand-colour("white"),
     "contrast-background": brand-colour("black"),
   )

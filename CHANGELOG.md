@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial concept of text detail elements
 - Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
+- Allow links to have no visited state with `tna-link--no-visited-state`
+- Card supertitles can be made "plain" with no contrasting colour
 
 ### Changed
 
@@ -18,9 +20,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tna-visually-hidden` could instead use the class `tna-!--visually-hidden` (will deprecate one of these in the future)
 - Changed Node version from `lts/hydrogen` to `lts/iron`
 - Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
+- Mixin `colour.invert` changed to `colour.contrast`
+- Background colour classes changed to BEM (`tna-background--accent` -> `tna-background-accent`)
 
 ### Deprecated
 ### Removed
+
+- The `@import` for Supria Sans Condensed (`supria-sans-condensed`) from TypeKit has been removed - each service needs to import their own copy of the fonts
+
 ### Fixed
 
 - Cookie banner URL is now correctly used

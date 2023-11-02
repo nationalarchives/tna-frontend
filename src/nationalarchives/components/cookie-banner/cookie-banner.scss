@@ -7,7 +7,7 @@
 @use "../grid";
 
 .tna-cookie-banner {
-  @include colour.invert;
+  @include colour.contrast;
 
   padding-top: 2rem;
   padding-bottom: 2rem;

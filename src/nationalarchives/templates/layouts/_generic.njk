@@ -25,6 +25,7 @@
 
     {% block stylesheets %}
       <link rel="stylesheet" type="text/css" href="{{ tnaFrontendCssPath | default('/static/tna-frontend') }}/all.css">
+      <link rel="stylesheet" type="text/css" href="https://use.typekit.net/hkj3kuz.css">
     {% endblock %}
   </head>
     <body class="tna-template__body {{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>

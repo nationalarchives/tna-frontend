@@ -13,7 +13,7 @@
   {%- if params.supertitle -%}
     <hgroup class="tna-hgroup-{{ params.headingSize or 's' }} tna-card__heading">
       <h{{ params.headingLevel }} class="tna-hgroup__title">
-        <span class="tna-hgroup__supertitle">{{ params.supertitle }}</span>
+        <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
         {%- if params.href -%}
         <a href="{{ params.href }}" class="tna-card__heading-link">{{ params.title }}</a>
         {%- else -%}

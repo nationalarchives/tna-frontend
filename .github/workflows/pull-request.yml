@@ -29,4 +29,10 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook
           exitZeroOnChanges: true
-          onlyChanged: false
+          onlyChanged: true
+          externals: |
+            - ".storybook/**"
+            - "src/nationalarchives/variables/**"
+            - "src/nationalarchives/tools/**"
+            - "src/nationalarchives/utilities/**"
+            - "src/nationalarchives/lib/**"

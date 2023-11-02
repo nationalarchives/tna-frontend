@@ -27,7 +27,7 @@ const argTypes = {
   },
   accent: {
     control: "radio",
-    options: ["none", /*"black",*/ "yellow", "pink", "orange", "green", "blue"],
+    options: ["none", "black", "yellow", "pink", "orange", "green", "blue"],
   },
 };
 
@@ -236,7 +236,7 @@ const Template = ({ theme, accent }) => {
         <div class="tna-column tna-column--no-padding tna-column--width-1-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           <div class="tna-container tna-container--no-padding">
             <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large">
-              <div class="tna-aside tna-background--contrast">
+              <div class="tna-aside tna-background-contrast">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
                   ${Button({
@@ -250,7 +250,7 @@ const Template = ({ theme, accent }) => {
               </div>
             </div>
             <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large tna-!--no-margin-bottom-large">
-              <div class="tna-aside tna-background--accent">
+              <div class="tna-aside tna-background-accent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
                   ${Button({
@@ -663,7 +663,7 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background--contrast">
+      <div class="tna-section tna-background-contrast">
         ${IndexGrid({
           params: {
             heading: { title: "My dogs 2", level: 3, href: "#" },
@@ -745,7 +745,7 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background--accent-light">
+      <div class="tna-section tna-background-accent-light">
         ${IndexGrid({
           params: {
             heading: { title: "My dogs 3", level: 3, href: "#" },
@@ -827,7 +827,7 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background--accent">
+      <div class="tna-section tna-background-accent">
         ${IndexGrid({
           params: {
             heading: { title: "My dogs 4", level: 3, href: "#" },

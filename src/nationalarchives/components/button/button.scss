@@ -87,14 +87,14 @@
   }
 
   &--solid-hover,
-  .tna-background--accent-light &,
-  .tna-background--accent &:not(.tna-button--accent) {
+  .tna-background-accent-light &,
+  .tna-background-accent &:not(.tna-button--accent) {
     &:not(.tna-button--plain):hover {
       @include colour.colour-background("page-background");
     }
   }
 
-  .tna-background--accent &--accent {
+  .tna-background-accent &--accent {
     @include colour.plain;
 
     @include colour.colour-background("page-background");

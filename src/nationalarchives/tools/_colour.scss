@@ -32,56 +32,49 @@
 
 @mixin accent-css-vars($colour) {
   @if $colour == "yellow" {
-    --accent: #{brand-colour("yellow")};
-    --accent-background: #{brand-colour("yellow")};
-    --accent-background-light: #{brand-colour("cream")};
-    --accent-font-base: #{brand-colour("black")};
-    --accent-font-dark: #{brand-colour("black")};
-    --accent-font-light: #{brand-colour("black", 0.7)};
-    --accent-icon-light: #{brand-colour("black", 0.45)};
-    --accent-link: #{brand-colour("black")};
-    --accent-link-visited: #{brand-colour("black")};
-    --accent-keyline: #{brand-colour("black", 0.5)};
-    --accent-keyline-dark: #{brand-colour("black", 0.8)};
-    --button-accent-background: #{brand-colour("yellow")};
+    --accent: #{brand-colour("yellow")} !important;
+    --accent-background: #{brand-colour("yellow")} !important;
+    --accent-background-light: #{brand-colour("cream")} !important;
+    --accent-font-base: #{brand-colour("black")} !important;
+    --accent-font-dark: #{brand-colour("black")} !important;
+    --accent-font-light: #{brand-colour("black", 0.7)} !important;
+    --accent-icon-light: #{brand-colour("black", 0.45)} !important;
+    --accent-link: #{brand-colour("black")} !important;
+    --accent-link-visited: #{brand-colour("black")} !important;
+    --accent-keyline: #{brand-colour("black", 0.5)} !important;
+    --accent-keyline-dark: #{brand-colour("black", 0.8)} !important;
+    --button-accent-background: #{brand-colour("yellow")} !important;
   } @else {
-    --accent-font-base: #{brand-colour("white")};
-    --accent-font-dark: #{brand-colour("white")};
-    --accent-font-light: #{brand-colour("white", 0.7)};
-    --accent-icon-light: #{brand-colour("white", 0.45)};
-    --accent-link: #{brand-colour("white")};
-    --accent-link-visited: #{brand-colour("white")};
-    --accent-keyline: #{brand-colour("white", 0.5)};
-    --accent-keyline-dark: #{brand-colour("white", 0.8)};
-
-    @if $colour == "black" {
-      // --accent: #{brand-colour("light-grey")};
-      // --accent-background: #{brand-colour("black")};
-      // --accent-background-light: #{brand-colour("light-grey")};
-      // --button-accent-text: #{brand-colour("black")};
-      // --button-accent-background: #{brand-colour("grey")};
-    } @else {
-      --button-accent-text: #{brand-colour("white")};
+    --accent-font-base: #{brand-colour("white")} !important;
+    --accent-font-dark: #{brand-colour("white")} !important;
+    --accent-font-light: #{brand-colour("white", 0.7)} !important;
+    --accent-icon-light: #{brand-colour("white", 0.45)} !important;
+    --accent-link: #{brand-colour("white")} !important;
+    --accent-link-visited: #{brand-colour("white")} !important;
+    --accent-keyline: #{brand-colour("white", 0.5)} !important;
+    --accent-keyline-dark: #{brand-colour("white", 0.8)} !important;
+    @if $colour != "black" {
+      --button-accent-text: #{brand-colour("white")} !important;
       @if $colour == "pink" {
-        --accent: #{brand-colour("pink")};
-        --accent-background: #{brand-colour("maroon")};
-        --accent-background-light: #{brand-colour("pastel-pink")};
-        --button-accent-background: #{brand-colour("maroon")};
+        --accent: #{brand-colour("pink")} !important;
+        --accent-background: #{brand-colour("maroon")} !important;
+        --accent-background-light: #{brand-colour("pastel-pink")} !important;
+        --button-accent-background: #{brand-colour("maroon")} !important;
       } @else if $colour == "orange" {
-        --accent: #{brand-colour("orange")};
-        --accent-background: #{brand-colour("chestnut")};
-        --accent-background-light: #{brand-colour("pastel-orange")};
-        --button-accent-background: #{brand-colour("chestnut")};
+        --accent: #{brand-colour("orange")} !important;
+        --accent-background: #{brand-colour("chestnut")} !important;
+        --accent-background-light: #{brand-colour("pastel-orange")} !important;
+        --button-accent-background: #{brand-colour("chestnut")} !important;
       } @else if $colour == "green" {
-        --accent: #{brand-colour("green")};
-        --accent-background: #{brand-colour("forest")};
-        --accent-background-light: #{brand-colour("pastel-green")};
-        --button-accent-background: #{brand-colour("forest")};
+        --accent: #{brand-colour("green")} !important;
+        --accent-background: #{brand-colour("forest")} !important;
+        --accent-background-light: #{brand-colour("pastel-green")} !important;
+        --button-accent-background: #{brand-colour("forest")} !important;
       } @else if $colour == "blue" {
-        --accent: #{brand-colour("blue")};
-        --accent-background: #{brand-colour("navy")};
-        --accent-background-light: #{brand-colour("pastel-blue")};
-        --button-accent-background: #{brand-colour("navy")};
+        --accent: #{brand-colour("blue")} !important;
+        --accent-background: #{brand-colour("navy")} !important;
+        --accent-background-light: #{brand-colour("pastel-blue")} !important;
+        --button-accent-background: #{brand-colour("navy")} !important;
       }
     }
   }

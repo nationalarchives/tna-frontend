@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tna-visually-hidden` could instead use the class `tna-!--visually-hidden` (will deprecate one of these in the future)
 - Changed Node version from `lts/hydrogen` to `lts/iron`
 - Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
+- Mixin `colour.invert` changed to `colour.contrast`
+- Background colour classes changed to BEM (`tna-background--accent` -> `tna-background-accent`)
 
 ### Deprecated
 ### Removed

@@ -117,14 +117,14 @@
   }
 
   &--contrast {
-    @include colour.invert;
+    @include colour.contrast;
   }
 
   &--accent {
     @include colour.accent;
 
     .tna-hgroup__supertitle {
-      @include colour.invert;
+      @include colour.contrast;
 
       @include colour.colour-border("contrast-background");
     }

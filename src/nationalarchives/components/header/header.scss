@@ -45,7 +45,7 @@
 }
 
 .tna-header {
-  @include colour.invert;
+  @include colour.contrast;
 
   &:not(&--accent) {
     background-color: colour.brand-colour("black");

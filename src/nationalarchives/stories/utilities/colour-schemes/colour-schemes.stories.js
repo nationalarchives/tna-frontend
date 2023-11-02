@@ -316,13 +316,13 @@ const Template = ({ theme, accent }) => {
             <p class="tna-blockquote__author">Douglas Adams, Mostly Harmless</p>
           </blockquote>
           <h2 class="tna-heading-m">
-            <a href="#">Reaerching with The National Archives</a>
+            <a href="#">Researching with The National Archives</a>
           </h2>
           <p>Lorem ipsum <a href="#">link</a></p>
           <hgroup class="tna-hgroup-m">
             <p class="tna-hgroup__supertitle">Supertitle</p>
             <h2 class="tna-hgroup__title">
-              <a href="#">Reaerching with The National Archives</a>
+              <a href="#">Researching with The National Archives</a>
             </h2>
           </hgroup>
           <p>Lorem ipsum <a href="#">link</a></p>

@@ -2,6 +2,7 @@ import SkipLink from "../../../components/skip-link/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
 import CookieBanner from "../../../components/cookie-banner/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
@@ -392,6 +393,32 @@ const Template = ({ theme, accent }) => {
             params: {
               message:
                 "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+            },
+          })}
+          <h2 class="tna-heading-l">
+            Featured records
+          </h2>
+          ${FeaturedRecords({
+            params: {
+              items: [
+                {
+                  imageSrc:
+                    "https://beta.nationalarchives.gov.uk/media/images/wedderburn-trial.max-832x591.format-webp_i3c9pUH.webp",
+                  imageWidth: 576,
+                  imageHeight: 591,
+                  collection: "TS 11/45/167",
+                  title: "Court records relating to Robert Wedderburn's trial",
+                  href: "#",
+                  date: "1819–1820",
+                },
+                {
+                  collection: "HO 42/191",
+                  title: "Home office letters",
+                  href: "#",
+                  date: "1819",
+                },
+              ],
+              classes: "tna-featured-records--demo",
             },
           })}
         </div>

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Card supertitles can be made "plain" with no contrasting colour
 - Roboto Mono Bold added
 - Ability to either use bundled fonts or fonts hosted by Google
+- Featured records component
 
 ### Changed
 

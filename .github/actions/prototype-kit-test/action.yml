@@ -39,6 +39,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/featured-records/macro.njk\" import tnaFeaturedRecords %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/filters/macro.njk\" import tnaFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/gallery/macro.njk\" import tnaGallery %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -61,6 +62,7 @@ runs:
         echo "{{ tnaButton({text:\"I am a button\",url:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCookieBanner({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaFeaturedRecords({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFooter({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaGallery({}) }}" >> prototype/app/views/index.html &&

@@ -63,7 +63,8 @@ if (failedComponents.length) {
       components.length
     } component${components.length === 1 ? "" : "s"} failed`,
   );
-  process.exit(1);
+  process.exitCode = 1;
+  throw new Error("Fixtures tests failed");
 } else {
   console.log(
     `🟢 [PASS] ${components.length} component${

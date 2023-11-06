@@ -8,3 +8,4 @@ storybook
 *.tgz
 build-storybook.log
 chromatic.config.json
+chromatic.log

@@ -3,7 +3,10 @@ import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 // import isChromatic from "chromatic/isChromatic";
 
-document.documentElement.classList.add("tna-template");
+document.documentElement.classList.add(
+  "tna-template",
+  "tna-template--yellow-accent",
+);
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");
 }

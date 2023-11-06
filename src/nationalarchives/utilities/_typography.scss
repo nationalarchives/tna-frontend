@@ -42,7 +42,7 @@
   }
 } @else {
   // @import "https://use.typekit.net/hkj3kuz.css";
-  @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@#{typographyVars.$main-font-weight};#{typographyVars.$main-font-weight-bold}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap";
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@#{typographyVars.$main-font-weight};#{typographyVars.$main-font-weight-bold}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
 }
 
 .tna-template {

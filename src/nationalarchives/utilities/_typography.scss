@@ -141,46 +141,46 @@ small {
   );
 }
 
-.tna-detail[title][data-type] {
-  padding: 0 0.375rem;
+// .tna-detail[title][data-type] {
+//   padding: 0 0.375rem;
 
-  display: inline-flex;
-  flex-flow: row nowrap;
-  align-items: baseline;
-  gap: 0.5rem;
+//   display: inline-flex;
+//   flex-flow: row nowrap;
+//   align-items: baseline;
+//   gap: 0.5rem;
 
-  vertical-align: baseline;
+//   vertical-align: baseline;
 
-  background-color: #ccc;
+//   background-color: #ccc;
 
-  &::after {
-    @include colour.colour-font("font-base");
-    @include typography.detail-font-small;
-    vertical-align: baseline;
+//   &::after {
+//     @include colour.colour-font("font-base");
+//     @include typography.detail-font-small;
+//     vertical-align: baseline;
 
-    content: attr(data-type) / "";
-  }
+//     content: attr(data-type) / "";
+//   }
 
-  &[data-type="misc"] {
-    background-color: #f28482;
-  }
+//   &[data-type="misc"] {
+//     background-color: #f28482;
+//   }
 
-  &[data-type="loc"] {
-    background-color: #edae49;
-  }
+//   &[data-type="loc"] {
+//     background-color: #edae49;
+//   }
 
-  &[data-type="per"] {
-    background-color: #b5e2fa;
-  }
+//   &[data-type="per"] {
+//     background-color: #b5e2fa;
+//   }
 
-  @at-root #{selector.unify("a", &)} {
-    @include colour.colour-font("font-base");
+//   @at-root #{selector.unify("a", &)} {
+//     @include colour.colour-font("font-base");
 
-    &::after {
-      text-decoration: none;
-    }
-  }
-}
+//     &::after {
+//       text-decoration: none;
+//     }
+//   }
+// }
 
 .tna-chip-list {
   @include spacing.space-above;
@@ -251,12 +251,11 @@ small {
 %heading {
   @include colour.colour-font("font-dark");
 
-  text-wrap: balance;
-
   &:not(.tna-heading--no-link-arrow) {
     a {
       display: inline-block;
 
+      text-wrap: balance;
       // text-decoration-thickness: .1em;
 
       &::after {

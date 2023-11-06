@@ -24,7 +24,7 @@
     gap: spacing.space("l");
 
     &:focus {
-      outline: none !important;
+      outline-color: transparent !important;
     }
   }
 

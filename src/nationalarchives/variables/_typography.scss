@@ -1,5 +1,7 @@
 @use "sass:math";
 
+$use-local-fonts: false !default;
+
 $relative-1rem-px: 16;
 
 $body-font-size-px: 18 !default;
@@ -9,8 +11,8 @@ $body-line-height: #{math.div(16, 18) * 2} !default; // 1.77777
 $interactive-text-decoration-thickness: 3.5px !default;
 
 $main-font-family: "Open Sans", sans-serif !default;
-$main-font-weight: 400 !default; // Defined in utilities/_typography.scss
-$main-font-weight-bold: 700 !default; // Defined in utilities/_typography.scss
+$main-font-weight: 400 !default;
+$main-font-weight-bold: 700 !default;
 
 $heading-font-family: supria-sans-condensed, "Arial Narrow", sans-serif !default;
 $heading-font-weight: 500 !default;

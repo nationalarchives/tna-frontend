@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<nav class="tna-pagination {{ containerClasses | join(' ') }}" role="navigation" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Results' }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<nav class="tna-pagination {{ containerClasses | join(' ') }}" role="navigation" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Pagination' }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% if params.previous -%}
   <div class="tna-pagination__prev">
     <a class="tna-button tna-pagination__link" href="{{ params.previous.href }}" role="button" rel="prev">

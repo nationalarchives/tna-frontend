@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Background colour classes changed to BEM (`tna-background--accent` -> `tna-background-accent`)
 - Text balance on headings removed but left on headings with links
 - `background-tint` colour changed for better accessibility/contrast
+- Change pagination `aria-label` in line with GOV.UK Frontend `5.0.0`
 
 ### Deprecated
 ### Removed

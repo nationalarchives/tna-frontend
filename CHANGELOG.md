@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.24-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...v0.1.24-prerelease) - 2023-11-06
 
 ### Added
 
@@ -29,7 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `background-tint` colour changed for better accessibility/contrast
 - Change pagination `aria-label` in line with GOV.UK Frontend `5.0.0`
 
-### Deprecated
 ### Removed
 
 - The `@import` for Supria Sans Condensed (`supria-sans-condensed`) from TypeKit has been removed - each service needs to import their own copy of the fonts
@@ -39,9 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cookie banner URL is now correctly used
 - Spacing above picture elements fixed
 - Image widths fixed (not stretched)
-
-### Security
-
 
 ## [0.1.23-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.22-prerelease...v0.1.23-prerelease) - 2023-10-25
 

@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial concept of text detail elements
 - Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
 - Allow links to have no visited state with `tna-link--no-visited-state`
 - Card supertitles can be made "plain" with no contrasting colour
@@ -23,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
 - Mixin `colour.invert` changed to `colour.contrast`
 - Background colour classes changed to BEM (`tna-background--accent` -> `tna-background-accent`)
+- Text balance on headings removed but left on headings with links
+- `background-tint` colour changed for better accessibility/contrast
 
 ### Deprecated
 ### Removed
@@ -32,6 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Cookie banner URL is now correctly used
+- Spacing above picture elements fixed
+- Image widths fixed (not stretched)
 
 ### Security
 

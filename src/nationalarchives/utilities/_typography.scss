@@ -12,7 +12,7 @@
   @font-face {
     font-family: "Open Sans";
     src: url("#{assets.$tna-font-path}/OpenSans-Regular.ttf");
-    font-weight: typography.$main-font-weight;
+    font-weight: typographyVars.$main-font-weight;
     font-style: normal;
     // font-display: swap;
   }
@@ -20,7 +20,7 @@
   @font-face {
     font-family: "Open Sans";
     src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
-    font-weight: typography.$main-font-weight-bold;
+    font-weight: typographyVars.$main-font-weight-bold;
     font-style: normal;
     // font-display: swap;
   }
@@ -28,7 +28,7 @@
   @font-face {
     font-family: "Roboto Mono";
     src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
-    font-weight: typography.$detail-font-weight;
+    font-weight: typographyVars.$detail-font-weight;
     font-style: normal;
     // font-display: swap;
   }
@@ -36,13 +36,13 @@
   @font-face {
     font-family: "Roboto Mono";
     src: url("#{assets.$tna-font-path}/RobotoMono-Medium.ttf");
-    font-weight: typography.$detail-font-weight-bold;
+    font-weight: typographyVars.$detail-font-weight-bold;
     font-style: normal;
     // font-display: swap;
   }
 } @else {
   // @import "https://use.typekit.net/hkj3kuz.css";
-  @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@#{typography.$main-font-weight};#{typography.$main-font-weight-bold}&family=Roboto+Mono:wght@#{typography.$detail-font-weight};#{typography.$detail-font-weight-bold}&display=swap";
+  @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@#{typographyVars.$main-font-weight};#{typographyVars.$main-font-weight-bold}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap";
 }
 
 .tna-template {

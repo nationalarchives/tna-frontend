@@ -29,9 +29,17 @@
   font-weight: typography.$heading-font-weight;
 }
 
+@mixin detail-font-weight {
+  font-weight: typography.$detail-font-weight;
+}
+
+@mixin detail-font-weight-bold {
+  font-weight: typography.$detail-font-weight-bold;
+}
+
 @mixin detail-font {
   font-family: typography.$detail-font-family;
-  font-weight: typography.$detail-font-weight;
+  @include detail-font-weight;
 }
 
 @mixin detail-font-small {

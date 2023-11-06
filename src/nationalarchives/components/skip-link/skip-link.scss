@@ -31,7 +31,7 @@
 
     @include colour.colour-border("focus-outline", 0.3125rem, $important: true);
 
-    outline: none !important;
+    outline-color: transparent !important;
   }
 
   &:active,

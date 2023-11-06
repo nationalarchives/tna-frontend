@@ -5,33 +5,45 @@
 @use "../tools/spacing";
 @use "../tools/typography";
 @use "../variables/assets";
+@use "../variables/features";
 @use "../variables/grid";
 @use "../variables/typography" as typographyVars;
 
-// @import "https://use.typekit.net/hkj3kuz.css";
+@if features.$use-local-fonts {
+  @font-face {
+    font-family: "Open Sans";
+    src: url("#{assets.$tna-font-path}/OpenSans-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    // font-display: swap;
+  }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("#{assets.$tna-font-path}/OpenSans-Medium.ttf");
-  font-weight: normal;
-  font-style: normal;
-  // font-display: swap;
-}
+  @font-face {
+    font-family: "Open Sans";
+    src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+    // font-display: swap;
+  }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
-  font-weight: bold;
-  font-style: normal;
-  // font-display: swap;
-}
+  @font-face {
+    font-family: "Roboto Mono";
+    src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    // font-display: swap;
+  }
 
-@font-face {
-  font-family: "Roboto Mono";
-  src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-  // font-display: swap;
+  @font-face {
+    font-family: "Roboto Mono";
+    src: url("#{assets.$tna-font-path}/RobotoMono-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+    // font-display: swap;
+  }
+} @else {
+  // @import "https://use.typekit.net/hkj3kuz.css";
+  @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap";
 }
 
 .tna-template {
@@ -67,12 +79,6 @@ ol {
   margin-top: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 strong {
   @include typography.main-font-weight-bold;
 }

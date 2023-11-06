@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
 - Allow links to have no visited state with `tna-link--no-visited-state`
 - Card supertitles can be made "plain" with no contrasting colour
+- Roboto Mono Bold added
+- Ability to either use bundled fonts or fonts hosted by Google
 
 ### Changed
 
@@ -22,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
 - Mixin `colour.invert` changed to `colour.contrast`
 - Background colour classes changed to BEM (`tna-background--accent` -> `tna-background-accent`)
+- Open Sans body weight changed from `500` to `400`
 
 ### Deprecated
 ### Removed

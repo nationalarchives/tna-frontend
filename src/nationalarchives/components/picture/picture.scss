@@ -4,10 +4,11 @@
 @use "../button";
 
 .tna-picture {
-  margin: 0;
-  padding: 0;
-
   @include spacing.space-above;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 0;
 
   &__image-wrapper {
     position: relative;

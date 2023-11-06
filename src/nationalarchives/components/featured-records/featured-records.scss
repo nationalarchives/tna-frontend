@@ -70,7 +70,7 @@
     padding-bottom: 0.25rem;
 
     @include typography.detail-font;
-    font-weight: 700;
+    @include typography.detail-font-weight-bold;
   }
 
   &__date-label {

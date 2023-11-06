@@ -12,26 +12,34 @@
 }
 
 @mixin main-font-weight {
-  font-weight: typography.$font-weight-main;
+  font-weight: typography.$main-font-weight;
 }
 
 @mixin main-font-weight-bold {
-  font-weight: typography.$font-weight-main-bold;
+  font-weight: typography.$main-font-weight-bold;
 }
 
 @mixin main-font {
-  font-family: typography.$font-family-main;
+  font-family: typography.$main-font-family;
   @include main-font-weight;
 }
 
 @mixin heading-font {
-  font-family: typography.$font-family-heading;
-  font-weight: typography.$font-weight-heading;
+  font-family: typography.$heading-font-family;
+  font-weight: typography.$heading-font-weight;
+}
+
+@mixin detail-font-weight {
+  font-weight: typography.$detail-font-weight;
+}
+
+@mixin detail-font-weight-bold {
+  font-weight: typography.$detail-font-weight-bold;
 }
 
 @mixin detail-font {
-  font-family: typography.$font-family-detail;
-  font-weight: typography.$font-weight-detail;
+  font-family: typography.$detail-font-family;
+  @include detail-font-weight;
 }
 
 @mixin detail-font-small {

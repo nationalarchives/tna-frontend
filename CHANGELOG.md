@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...HEAD)
 
 ### Added
+
+- Grid columns can be aligned along the cross axis with classes `tna-column--align-start`, `tna-column--align-end` and `tna-column--align-centre`
+
 ### Changed
 
 - Moved TypeKit Supria Sans stylesheet to `govuk-prototype-kit.config.json`

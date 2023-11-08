@@ -157,7 +157,7 @@
 
     @include colour.colour-background("font-dark");
 
-    transition: height 1ms 200ms;
+    transition: height 1ms 100ms;
 
     &::before,
     &::after {
@@ -172,9 +172,9 @@
       background-color: inherit;
 
       transition:
-        top 200ms 200ms,
-        bottom 200ms 200ms,
-        transform 200ms;
+        top 100ms 100ms,
+        bottom 100ms 100ms,
+        transform 100ms;
 
       content: "";
     }
@@ -214,9 +214,9 @@
         &::before,
         &::after {
           transition:
-            top 200ms,
-            bottom 200ms,
-            transform 200ms 200ms;
+            top 100ms,
+            bottom 100ms,
+            transform 100ms 100ms;
         }
 
         &::before {
@@ -292,18 +292,16 @@
     margin: 0;
     padding: 0;
 
-    // order: 2;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
 
     list-style: none;
 
     white-space: nowrap;
   }
 
-  &__navigation-item {
-    margin-left: 0.75rem;
-
-    display: inline-block;
-  }
+  &__navigation-item {}
 
   &__navigation-item-link {
     padding: 0.5rem 1rem;
@@ -313,10 +311,6 @@
     @include typography.heading-font;
     text-decoration: none;
     line-height: 2;
-
-    // transition:
-    //   color 200ms,
-    //   background-color 200ms;
 
     &,
     &:link,
@@ -420,6 +414,9 @@
     &__navigation-items {
       width: 100%;
 
+      flex-direction: column;
+      gap: 0;
+
       @include colour.colour-background("page-background");
     }
 
@@ -451,16 +448,12 @@
 
         @include colour.colour-background("font-dark");
 
-        // transition: width 200ms;
-
         content: "";
       }
 
       &:hover {
         &::after {
           width: 0.25rem;
-
-          // transition: width 50ms;
         }
       }
 

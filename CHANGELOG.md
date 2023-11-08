@@ -14,7 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Removed CSS to counter conflicting GOV.UK paragraph styling
+
 ### Fixed
+
+- Assets path fixed for GOV.UK prototype kit
+
 ### Security
 
 ## [0.1.24-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...v0.1.24-prerelease) - 2023-11-06

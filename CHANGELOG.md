@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Moved TypeKit Supria Sans stylesheet to `govuk-prototype-kit.config.json`
+
 ### Deprecated
 ### Removed
 ### Fixed

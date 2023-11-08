@@ -9,7 +9,8 @@
     "/nationalarchives/assets"
   ],
   "stylesheets": [
-    "/nationalarchives/prototype-kit.css"
+    "/nationalarchives/prototype-kit.css",
+    "https://use.typekit.net/hkj3kuz.css"
   ],
   "templates": [
     {

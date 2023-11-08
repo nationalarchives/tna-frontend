@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed CSS to counter conflicting GOV.UK paragraph styling
+- Transitions removed from most elements
 
 ### Fixed
 

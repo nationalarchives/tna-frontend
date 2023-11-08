@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Assets path fixed for GOV.UK prototype kit
+- Colour fixed for plain card supertitles in accented style
 
 ### Security
 

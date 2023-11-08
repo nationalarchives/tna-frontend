@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Assets path fixed for GOV.UK prototype kit
 - Colour fixed for plain card supertitles in accented style
 - Header navigation uses flexbox for layout of tabs and top navigation stacks on mobile
+- Explicitly declare font colour for tinted and light accent backgrounds
 
 ### Security
 

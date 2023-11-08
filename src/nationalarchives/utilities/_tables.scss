@@ -1,0 +1,66 @@
+@use "sass:math";
+@use "sass:selector";
+@use "../tools/colour";
+@use "../tools/media";
+@use "../tools/spacing";
+@use "../tools/typography";
+@use "../variables/assets";
+
+.tna-table {
+  width: 100%;
+  margin-top: 2rem;
+
+  border-collapse: collapse;
+
+  text-align: left;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__caption {
+    text-align: left;
+
+    @include typography.main-font-weight-bold;
+  }
+
+  &__head {
+  }
+
+  &__head &__header {
+    @include colour.colour-border("keyline-dark", 0.25rem, solid, bottom);
+  }
+
+  &__body {
+  }
+
+  &__row {
+  }
+
+  &__header,
+  &__cell {
+    padding: 0.25rem 1rem;
+
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__header {
+  }
+
+  &__cell {
+  }
+
+  p {
+    + p {
+      margin-top: 0.25rem;
+    }
+  }
+}

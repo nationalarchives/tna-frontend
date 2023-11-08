@@ -10,9 +10,9 @@
 {%- endif -%}
 <{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button {{ buttonClasses | join(' ') }}"{%- if not params.buttonElement %} role="button"{%- endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- if params.brandIcon -%}
-  <i class="fa-brands fa-{{ params.brandIcon }}"></i>
+  <i class="fa-brands fa-fw fa-{{ params.brandIcon }}"></i>
   {%- elseif params.icon -%}
-  <i class="fa-solid fa-{{ params.icon }}"></i>
+  <i class="fa-solid fa-fw fa-{{ params.icon }}"></i>
   {%- endif -%}
   {{ params.text }}
 </{{ 'button' if params.buttonElement else 'a' }}>

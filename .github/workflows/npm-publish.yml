@@ -82,11 +82,11 @@ jobs:
       - name: Publish to npm
         run: cd package && npm publish
       - name: Rename package directory
-        run: mv package "nationalarhives-frontend-${{ needs.check.outputs.version }}"
+        run: mv package "tna-frontend-${{ needs.check.outputs.version }}"
       - name: Compress package
-        run: zip -r "nationalarhives-frontend-${{ needs.check.outputs.version }}.zip" "nationalarhives-frontend-${{ needs.check.outputs.version }}"
+        run: zip -r "tna-frontend-${{ needs.check.outputs.version }}.zip" "tna-frontend-${{ needs.check.outputs.version }}"
       - name: Upload the package to the GitHub release
-        run: gh release upload "v${{ needs.check.outputs.version }}" "nationalarhives-frontend-${{ needs.check.outputs.version }}.zip"
+        run: gh release upload "v${{ needs.check.outputs.version }}" "tna-frontend-${{ needs.check.outputs.version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

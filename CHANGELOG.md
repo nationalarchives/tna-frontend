@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Grid columns can be aligned along the cross axis with classes `tna-column--align-start`, `tna-column--align-end` and `tna-column--align-centre`
+- Grid columns can be aligned along the cross axis with classes `tna-column--align-top`, `tna-column--align-bottom` and `tna-column--align-centre`
 - Actions and items using the `href` attribute on cards can now have custom classes and attrbiutes added
 
 ### Changed

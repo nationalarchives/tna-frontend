@@ -47,7 +47,7 @@
     align-items: stretch;
   }
 
-  &--align-start {
+  &--align-top {
     align-self: flex-start;
   }
 
@@ -55,7 +55,7 @@
     align-self: center;
   }
 
-  &--align-end {
+  &--align-bottom {
     align-self: flex-end;
   }
 }

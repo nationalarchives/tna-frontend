@@ -43,4 +43,4 @@ You can also read the [accessibility statement for the National Archives Design 
 
 ### Accessibility warnings
 
-If you get a warning from a linter or accessibility checker, check our list of [issues you should not need to fix](https://github.com/alphagov/govuk-frontend/issues/1280#issuecomment-509588851).
+If you get a warning from a linter or accessibility checker, check our list of [issues you should not need to fix](https://github.com/nationalarchives/tna-frontend/wiki/Accessibility-issues-you-should-not-need-to-fix).

@@ -11,24 +11,25 @@ export default class Cookies {
 
   /**
    * Create a cookie handler.
-   * @param {string[]} [policies=usage,settings] - The cookie policies to manage.
+   * @param {string[]} [extraPolicies=[]] - The extra cookie policies to manage.
    * @param {string} [cookiesPolicyKey=cookies_policy] - The name of the cookie.
    */
   constructor(
-    policies = ["usage", "settings"],
+    extraPolicies = [],
     cookiesPolicyKey = "cookies_policy",
   ) {
-    this.cookiesPolicyKey = cookiesPolicyKey;
-    let allPolicies = {};
-    policies.forEach((policy) => {
-      allPolicies[policy.toLowerCase()] = false;
-    });
-    allPolicies = {
-      ...allPolicies,
+    this.savePolicies({
+      ...Object.fromEntries(extraPolicies.map(k => [k.toLowerCase(), false])),
+      usage: false,
+      settings: false,
       ...this.policies,
       essential: true,
-    };
-    this.savePolicies(allPolicies);
+    });
+    if (Cookies._instance && Cookies._instance.cookiesPolicyKey === cookiesPolicyKey) {
+      return Cookies._instance
+    }
+    Cookies._instance = this;
+    this.cookiesPolicyKey = cookiesPolicyKey;
     this.events = {};
   }
 

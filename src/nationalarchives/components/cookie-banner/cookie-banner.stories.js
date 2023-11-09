@@ -142,8 +142,8 @@ CustomPolicies.play = async ({ args, canvasElement }) => {
   const cookies = new Cookies(args.policies.split(","));
 
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-  await expect(cookies.isPolicyAccepted("usage")).toEqual(null);
-  await expect(cookies.isPolicyAccepted("settings")).toEqual(null);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("custom")).toEqual(false);
 
   const canvas = within(canvasElement);
@@ -151,8 +151,8 @@ CustomPolicies.play = async ({ args, canvasElement }) => {
   await userEvent.click(acceptButton);
 
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-  await expect(cookies.isPolicyAccepted("usage")).toEqual(null);
-  await expect(cookies.isPolicyAccepted("settings")).toEqual(null);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
   await expect(cookies.isPolicyAccepted("custom")).toEqual(true);
 
   deleteAllCookies();

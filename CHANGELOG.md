@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change many instances of Font Awesome icons to a fixed width
 - Adjusted the width of the hero caption
 - Removed margin and padding from all elements by default
+- The standard cookie policies are always `essential`, `usage` and `settings` - other custom policies can be added
 
 ### Deprecated
 ### Removed

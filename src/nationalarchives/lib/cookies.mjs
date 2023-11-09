@@ -14,19 +14,19 @@ export default class Cookies {
    * @param {string[]} [extraPolicies=[]] - The extra cookie policies to manage.
    * @param {string} [cookiesPolicyKey=cookies_policy] - The name of the cookie.
    */
-  constructor(
-    extraPolicies = [],
-    cookiesPolicyKey = "cookies_policy",
-  ) {
+  constructor(extraPolicies = [], cookiesPolicyKey = "cookies_policy") {
     this.savePolicies({
-      ...Object.fromEntries(extraPolicies.map(k => [k.toLowerCase(), false])),
+      ...Object.fromEntries(extraPolicies.map((k) => [k.toLowerCase(), false])),
       usage: false,
       settings: false,
       ...this.policies,
       essential: true,
     });
-    if (Cookies._instance && Cookies._instance.cookiesPolicyKey === cookiesPolicyKey) {
-      return Cookies._instance
+    if (
+      Cookies._instance &&
+      Cookies._instance.cookiesPolicyKey === cookiesPolicyKey
+    ) {
+      return Cookies._instance;
     }
     Cookies._instance = this;
     this.cookiesPolicyKey = cookiesPolicyKey;
@@ -111,8 +111,8 @@ export default class Cookies {
    */
   acceptPolicy(policy) {
     this.setPolicy(policy, true);
-    this.trigger("acceptPolicy", { policy });
-    this.trigger("changePolicy", { policy });
+    this.trigger("acceptPolicy", policy);
+    this.trigger("changePolicy", { [policy]: true });
   }
 
   /**
@@ -121,8 +121,8 @@ export default class Cookies {
    */
   rejectPolicy(policy) {
     this.setPolicy(policy, false);
-    this.trigger("rejectPolicy", { policy });
-    this.trigger("changePolicy", { policy });
+    this.trigger("rejectPolicy", policy);
+    this.trigger("changePolicy", { [policy]: false });
   }
 
   /**
@@ -139,25 +139,16 @@ export default class Cookies {
       [policy]: accepted,
       essential: true,
     });
-    this.trigger("changePolicy", { policy, accepted });
-  }
-
-  /**
-   * Commit policy preferences to the browser.
-   * @param {object} policies - The policies to commit.
-   */
-  savePolicies(policies) {
-    this.set(this.cookiesPolicyKey, JSON.stringify(policies));
+    this.trigger("changePolicy", { [policy]: accepted });
   }
 
   /**
    * Accept all the cookie policies.
    */
   acceptAllPolicies() {
-    const allPolicies = {
-      ...this.policies,
-    };
-    Object.keys(allPolicies).forEach((policy) => (allPolicies[policy] = true));
+    const allPolicies = Object.fromEntries(
+      Object.keys(this.policies).map((k) => [k.toLowerCase(), true]),
+    );
     this.savePolicies(allPolicies);
     this.trigger("acceptAllPolicies");
     this.trigger("changePolicy", allPolicies);
@@ -168,15 +159,22 @@ export default class Cookies {
    */
   rejectAllPolicies() {
     const allPolicies = {
-      ...this.policies,
+      ...Object.fromEntries(
+        Object.keys(this.policies).map((k) => [k.toLowerCase(), false]),
+      ),
+      essential: true,
     };
-    Object.keys(allPolicies)
-      .filter((policy) => policy !== "essential")
-      .forEach((policy) => (allPolicies[policy] = false));
-    allPolicies.essential = true;
     this.savePolicies(allPolicies);
     this.trigger("rejectAllPolicies");
     this.trigger("changePolicy", allPolicies);
+  }
+
+  /**
+   * Commit policy preferences to the browser.
+   * @param {object} policies - The policies to commit.
+   */
+  savePolicies(policies) {
+    this.set(this.cookiesPolicyKey, JSON.stringify(policies));
   }
 
   /**

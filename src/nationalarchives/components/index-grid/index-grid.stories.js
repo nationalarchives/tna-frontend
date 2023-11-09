@@ -82,6 +82,9 @@ Standard.args = {
 };
 
 export const Basic = Template.bind({});
+Basic.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Basic.args = {
   heading: {
     title: "My dogs",

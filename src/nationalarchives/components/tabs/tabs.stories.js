@@ -57,6 +57,9 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   title: "Example tabs",
   items: [

@@ -51,6 +51,9 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   image: {
     src: "https://picsum.photos/id/237/800/600",

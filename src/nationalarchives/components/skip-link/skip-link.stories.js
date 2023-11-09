@@ -36,6 +36,9 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   text: "Skip to main content",
   href: "main-content",

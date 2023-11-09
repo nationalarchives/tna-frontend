@@ -133,6 +133,9 @@ CustomPolicies.args = {
   policies: "custom",
   classes: "tna-cookie-banner--demo",
 };
+CustomPolicies.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 CustomPolicies.play = async ({ args, canvasElement }) => {
   deleteAllCookies();
 

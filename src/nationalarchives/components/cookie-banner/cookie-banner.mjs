@@ -35,8 +35,6 @@ export class CookieBanner {
       policies.split(",").map((policy) => policy.trim()),
     );
 
-    this.loadScriptsOnAccept = this.$module.getAttribute("data-acceptscripts");
-
     this.cookiePreferencesSet =
       this.$module.getAttribute("data-preferenceskey") ||
       "cookies_preferences_set";
@@ -60,13 +58,6 @@ export class CookieBanner {
     this.$acceptedMessage.focus();
     this.$acceptedMessage.setAttribute("tabindex", "-1");
     this.cookies.acceptAllPolicies();
-    if (this.loadScriptsOnAccept) {
-      this.loadScriptsOnAccept.split(",").forEach((script) => {
-        const $script = document.createElement("script");
-        $script.src = script;
-        document.head.appendChild($script);
-      });
-    }
   }
 
   reject() {

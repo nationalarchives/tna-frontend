@@ -6,7 +6,8 @@
  */
 export default class Cookies {
   /** @protected */
-  #policies = {};
+  events = {};
+  cookiesPolicyKey = "cookies_policy";
 
   /**
    * Create a cookie handler.
@@ -18,37 +19,30 @@ export default class Cookies {
     cookiesPolicyKey = "cookies_policy",
   ) {
     this.cookiesPolicyKey = cookiesPolicyKey;
+    let allPolicies = {};
     policies.forEach((policy) => {
-      this.#policies[policy.toLowerCase()] = false;
+      allPolicies[policy.toLowerCase()] = false;
     });
-    this.#policies.essential = true;
+    allPolicies = {
+      ...allPolicies,
+      ...this.policies,
+      essential: true,
+    };
+    this.savePolicies(allPolicies);
+    this.events = {};
   }
 
-  get policies() {
-    return this.exists(this.cookiesPolicyKey)
-      ? (this.#policies = {
-          ...this.#policies,
-          ...this.allPolicies,
-        })
-      : this.#policies;
-  }
-
-  set policies(newPolicyValues) {
-    this.#policies = newPolicyValues;
-  }
-
-  /** @protected */
-  #deserialise(cookieString) {
+  get all() {
     const deserialised = {};
-    cookieString.split(";").forEach((cookie) => {
+    document.cookie.split(";").forEach((cookie) => {
       const parts = cookie.trim().split("=");
       deserialised[parts[0]] = parts[1];
     });
     return deserialised;
   }
 
-  get all() {
-    return this.#deserialise(document.cookie);
+  get policies() {
+    return JSON.parse(this.get(this.cookiesPolicyKey) || "{}");
   }
 
   /**
@@ -97,6 +91,7 @@ export default class Cookies {
     document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
       value,
     )}; SameSite=${sameSite}; path=${path}; max-age=${maxAge}; Secure`;
+    this.trigger("setCookie", { key, value, maxAge, path, sameSite });
   }
 
   /**
@@ -105,11 +100,8 @@ export default class Cookies {
    * @param {string} [path=/] - The path to the cookie is registered on.
    */
   delete(key, path = "/") {
-    this.set(key, "", 0, path);
-  }
-
-  get allPolicies() {
-    return JSON.parse(this.get(this.cookiesPolicyKey) || "{}");
+    this.set(key, "", -1, path);
+    this.trigger("deleteCookie", { key, path });
   }
 
   /**
@@ -117,8 +109,9 @@ export default class Cookies {
    * @param {string} policy - The name of the policy.
    */
   acceptPolicy(policy) {
-    this.#setPolicy(policy, true);
-    this.savePolicies();
+    this.setPolicy(policy, true);
+    this.trigger("acceptPolicy", { policy });
+    this.trigger("changePolicy", { policy });
   }
 
   /**
@@ -126,47 +119,63 @@ export default class Cookies {
    * @param {string} policy - The name of the policy.
    */
   rejectPolicy(policy) {
-    if (policy === "essential") {
-      return;
-    }
-    this.#setPolicy(policy, false);
-    this.savePolicies();
-  }
-
-  /** @protected */
-  #setPolicy(policy, accepted) {
-    this.policies = {
-      ...this.policies,
-      [policy]: accepted,
-      essential: true,
-    };
+    this.setPolicy(policy, false);
+    this.trigger("rejectPolicy", { policy });
+    this.trigger("changePolicy", { policy });
   }
 
   /**
-   * Commit the policy preferences to the browser.
+   * Set a policy.
+   * @param {string} policy - The name of the policy.
+   * @param {boolean} accepted - Whether the policy is accepted or not.
    */
-  savePolicies() {
-    this.set(this.cookiesPolicyKey, JSON.stringify(this.policies));
+  setPolicy(policy, accepted) {
+    if (policy === "essential") {
+      return;
+    }
+    this.savePolicies({
+      ...this.policies,
+      [policy]: accepted,
+      essential: true,
+    });
+    this.trigger("changePolicy", { policy, accepted });
+  }
+
+  /**
+   * Commit policy preferences to the browser.
+   * @param {object} policies - The policies to commit.
+   */
+  savePolicies(policies) {
+    this.set(this.cookiesPolicyKey, JSON.stringify(policies));
   }
 
   /**
    * Accept all the cookie policies.
    */
   acceptAllPolicies() {
-    Object.keys(this.policies).forEach((policy) =>
-      this.#setPolicy(policy, true),
-    );
-    this.savePolicies();
+    const allPolicies = {
+      ...this.policies,
+    };
+    Object.keys(allPolicies).forEach((policy) => (allPolicies[policy] = true));
+    this.savePolicies(allPolicies);
+    this.trigger("acceptAllPolicies");
+    this.trigger("changePolicy", allPolicies);
   }
 
   /**
    * Reject all the cookie policies.
    */
   rejectAllPolicies() {
-    Object.keys(this.policies).forEach((policy) =>
-      this.#setPolicy(policy, false),
-    );
-    this.savePolicies();
+    const allPolicies = {
+      ...this.policies,
+    };
+    Object.keys(allPolicies)
+      .filter((policy) => policy !== "essential")
+      .forEach((policy) => (allPolicies[policy] = false));
+    allPolicies.essential = true;
+    this.savePolicies(allPolicies);
+    this.trigger("rejectAllPolicies");
+    this.trigger("changePolicy", allPolicies);
   }
 
   /**
@@ -178,5 +187,26 @@ export default class Cookies {
     return Object.prototype.hasOwnProperty.call(this.policies, policy)
       ? this.policies[policy] === true
       : null;
+  }
+
+  /**
+   * Accept a policy.
+   * @param {string} event - The event to add a listener for.
+   * @param {function} callback - The callback function to call when the event is triggered.
+   */
+  on(event, callback) {
+    if (!Object.prototype.hasOwnProperty.call(this.events, event)) {
+      this.events[event] = [];
+    }
+    this.events[event] = [...this.events[event], callback];
+  }
+
+  /** @protected */
+  trigger(event, data = {}) {
+    if (Object.prototype.hasOwnProperty.call(this.events, event)) {
+      this.events[event].forEach((eventToTrigger) =>
+        eventToTrigger.call(this, data),
+      );
+    }
   }
 }

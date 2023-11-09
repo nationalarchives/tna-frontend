@@ -18,12 +18,6 @@
     "description": ""
   },
   {
-    "name": "loadScriptsOnAccept",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
     "name": "classes",
     "type": "string",
     "required": false,

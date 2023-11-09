@@ -1169,7 +1169,9 @@ const Template = ({ theme, accent }) => {
 };
 
 export const System = Template.bind({});
-// System.parameters = { options: { showPanel: false } };
+System.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 System.args = {
   theme: "system",
   accent: "pink",

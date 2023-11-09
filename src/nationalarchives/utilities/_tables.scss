@@ -27,14 +27,16 @@
   &__head {
   }
 
-  &__head &__header {
-    @include colour.colour-border("keyline-dark", 0.25rem, solid, bottom);
+  &__header {
   }
 
   &__body {
   }
 
   &__row {
+  }
+
+  &__cell {
   }
 
   &__header,
@@ -52,10 +54,8 @@
     }
   }
 
-  &__header {
-  }
-
-  &__cell {
+  &__head &__header {
+    @include colour.colour-border("keyline-dark", 0.25rem, solid, bottom);
   }
 
   p {

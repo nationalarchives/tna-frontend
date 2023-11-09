@@ -16,7 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Moved TypeKit Supria Sans stylesheet to `govuk-prototype-kit.config.json`
 - Change many instances of Font Awesome icons to a fixed width
 - Adjusted the width of the hero caption
 - Removed margin and padding from all elements by default

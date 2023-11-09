@@ -31,7 +31,9 @@ export class CookieBanner {
     if (!policies) {
       return;
     }
-    this.cookies = new Cookies(
+
+    const cookiesClass = window.TNAFrontend?.Cookies || Cookies;
+    this.cookies = new cookiesClass(
       policies.split(",").map((policy) => policy.trim()),
     );
 

@@ -5,6 +5,7 @@
 @use "../tools/spacing";
 @use "../tools/typography";
 @use "../variables/assets";
+@use "../variables/grid";
 
 .tna-table {
   width: 100%;
@@ -62,5 +63,28 @@
     + p {
       margin-top: 0.25rem;
     }
+  }
+}
+
+.tna-table-wrapper {
+  width: 100%;
+  @include spacing.space-above;
+  padding-left: grid.$gutter-width;
+  padding-right: grid.$gutter-width;
+
+  position: relative;
+  left: -#{grid.$gutter-width};
+
+  overflow: auto;
+
+  .tna-table {
+    width: auto;
+  }
+
+  @include media.on-tiny {
+    padding-left: grid.$gutter-width-tiny;
+    padding-right: grid.$gutter-width-tiny;
+  
+    left: -#{grid.$gutter-width-tiny};
   }
 }

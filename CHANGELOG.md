@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Events can now be added when cookie preferences change
 - Table styles added
 - Pagination component has the option to have no numbers
+- Table wrapper for tables wider than the current viewport
 
 ### Changed
 

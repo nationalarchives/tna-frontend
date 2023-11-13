@@ -2,10 +2,12 @@ import Pagination from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  landmarkLabel: { control: "text" },
   previous: { control: "object" },
   items: { control: "object" },
   next: { control: "object" },
+  currentItemText: { control: "text" },
+  spaced: { control: "boolean" },
+  landmarkLabel: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -21,12 +23,24 @@ export default {
   argTypes,
 };
 
-const Template = ({ previous, items, next, classes, attributes }) =>
+const Template = ({
+  previous,
+  items,
+  next,
+  currentItemText,
+  spaced,
+  landmarkLabel,
+  classes,
+  attributes,
+}) =>
   Pagination({
     params: {
       previous,
       items,
       next,
+      currentItemText,
+      spaced,
+      landmarkLabel,
       classes,
       attributes,
     },
@@ -453,5 +467,22 @@ Last.args = {
       href: "#",
     },
   ],
+  classes: "tna-pagination--demo",
+};
+
+export const NoNumbers = Template.bind({});
+NoNumbers.args = {
+  previous: {
+    href: "#",
+    text: "TS 11/45/166",
+    title: "From the catalogue: TS 11/45/166",
+  },
+  currentItemText: "From the catalogue: TS 11/45/167",
+  next: {
+    href: "#",
+    text: "TS 11/45/168",
+    title: "From the catalogue: TS 11/45/168",
+  },
+  spaced: true,
   classes: "tna-pagination--demo",
 };

@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Actions and items using the `href` attribute on cards can now have custom classes and attributes
 - Events can now be added when cookie preferences change
 - Table styles added
+- Pagination component has the option to have no numbers
 
 ### Changed
 
@@ -36,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header navigation uses flexbox for layout of tabs and top navigation stacks on mobile
 - Explicitly declare font colour for tinted and light accent backgrounds
 - Accepting or declining individual cookie policies now works
+- Removed extra space from nested links
 
 ### Security
 

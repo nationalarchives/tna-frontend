@@ -77,14 +77,10 @@ strong {
 }
 
 p {
-  margin: 2rem 0 0;
+  @include spacing.space-above;
 
   + p {
     margin-top: 1rem;
-  }
-
-  &:first-child {
-    margin-top: 0;
   }
 }
 

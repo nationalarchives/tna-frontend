@@ -446,64 +446,68 @@ const Template = ({ theme, accent }) => {
           classes: "tna-hero--demo",
         },
       })}
-      <div class="tna-container tna-section tna-!--padding-bottom-s">
-        <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              style: "boxed",
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              style: "accent",
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
+      <div class="tna-section tna-!--padding-bottom-s">
+        <ul class="tna-ul tna-ul--plain tna-container">
+          <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                style: "boxed",
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                style: "accent",
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+        </ul>
       </div>
       <hr>
-      <div class="tna-container tna-section">
-        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              horizontal: true,
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              horizontal: true,
-              style: "boxed",
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              horizontal: true,
-              style: "accent",
-            },
-          })}
-        </div>
+      <div class="tna-section">
+        <ul class="tna-ul tna-ul--plain tna-container">
+          <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                horizontal: true,
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                horizontal: true,
+                style: "boxed",
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                horizontal: true,
+                style: "accent",
+              },
+            })}
+          </li>
+        </ul>
       </div>
       <hr>
       <div class="tna-container tna-section">

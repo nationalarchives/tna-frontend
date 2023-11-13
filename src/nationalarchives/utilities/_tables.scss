@@ -9,7 +9,7 @@
 
 .tna-table {
   width: 100%;
-  margin-top: 2rem;
+  @include spacing.space-above;
 
   border-collapse: collapse;
 
@@ -84,7 +84,7 @@
   @include media.on-tiny {
     padding-left: grid.$gutter-width-tiny;
     padding-right: grid.$gutter-width-tiny;
-  
+
     left: -#{grid.$gutter-width-tiny};
   }
 }

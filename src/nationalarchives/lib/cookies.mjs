@@ -6,44 +6,73 @@
  */
 export default class Cookies {
   /** @protected */
+  extraPolicies = [];
+  /** @protected */
+  domain = "";
+  /** @protected */
+  secure = true;
+  /** @protected */
   events = {};
-  cookiesPolicyKey = "cookies_policy";
+  /** @protected */
+  policiesKey = "";
 
   /**
    * Create a cookie handler.
-   * @param {string[]} [extraPolicies=[]] - The extra cookie policies to manage.
-   * @param {string} [cookiesPolicyKey=cookies_policy] - The name of the cookie.
+   * @param {string[]} [extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
+   * @param {string} [options.domain=""] - The domain to register the cookie with.
+   * @param {string} [options.secure=true] - Only set cookie in HTTPS environments.
+   * @param {string} [options.policiesKey=cookies_policy] - The name of the cookie.
    */
-  constructor(extraPolicies = [], cookiesPolicyKey = "cookies_policy") {
+  constructor(extraPolicies = [], options = {}) {
+    const {
+      domain = "",
+      secure = true,
+      policiesKey = "cookies_policy",
+    } = options;
+    if (Cookies._instance && Cookies._instance.policiesKey === policiesKey) {
+      return Cookies._instance;
+    }
+    Cookies._instance = this;
+    this.extraPolicies = extraPolicies;
+    this.domain = domain;
+    this.secure = secure;
+    this.events = {};
+    this.policiesKey = policiesKey;
+    this.init();
+  }
+
+  init() {
     this.savePolicies({
-      ...Object.fromEntries(extraPolicies.map((k) => [k.toLowerCase(), false])),
+      ...Object.fromEntries(
+        this.extraPolicies.map((k) => [k.toLowerCase(), false]),
+      ),
       usage: false,
       settings: false,
       ...this.policies,
       essential: true,
     });
-    if (
-      Cookies._instance &&
-      Cookies._instance.cookiesPolicyKey === cookiesPolicyKey
-    ) {
-      return Cookies._instance;
-    }
-    Cookies._instance = this;
-    this.cookiesPolicyKey = cookiesPolicyKey;
-    this.events = {};
+  }
+
+  destroy() {
+    Cookies._instance = null;
   }
 
   get all() {
     const deserialised = {};
-    document.cookie.split(";").forEach((cookie) => {
-      const parts = cookie.trim().split("=");
-      deserialised[parts[0]] = parts[1];
-    });
+    document.cookie
+      .split(";")
+      .filter((x) => x)
+      .forEach((cookie) => {
+        const parts = cookie.trim().split("=");
+        if (parts[0]) {
+          deserialised[parts[0]] = parts[1];
+        }
+      });
     return deserialised;
   }
 
   get policies() {
-    return JSON.parse(this.get(this.cookiesPolicyKey) || "{}");
+    return JSON.parse(this.get(this.policiesKey) || "{}");
   }
 
   /**
@@ -82,17 +111,36 @@ export default class Cookies {
    * @param {number} [options.maxAge=31536000] - The maximum age of the cookie in seconds.
    * @param {string} [options.path=/] - The path to register the cookie for.
    * @param {string} [options.sameSite=Lax] - The sameSite attribute.
+   * @param {string} [options.domain=this.domain] - The domain to register the cookie with.
+   * @param {string} [options.secure=this.secure] - Only set cookie in HTTPS environments.
    */
   set(key, value, options = {}) {
     const {
       maxAge = 60 * 60 * 24 * 365,
       path = "/",
       sameSite = "Lax",
+      domain = this.domain,
+      secure = this.secure,
     } = options;
-    document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
+    if (!key) {
+      return;
+    }
+    const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)};${
+      domain ? ` domain=${domain};` : ""
+    } samesite=${sameSite}; path=${path}; max-age=${maxAge}${
+      secure ? "; secure" : ""
+    }`;
+    document.cookie = cookie;
+    this.trigger("setCookie", {
+      key,
       value,
-    )}; SameSite=${sameSite}; path=${path}; max-age=${maxAge}; Secure`;
-    this.trigger("setCookie", { key, value, maxAge, path, sameSite });
+      maxAge,
+      path,
+      sameSite,
+      domain,
+      secure,
+      cookie,
+    });
   }
 
   /**
@@ -100,9 +148,20 @@ export default class Cookies {
    * @param {string} key - The cookie name.
    * @param {string} [path=/] - The path to the cookie is registered on.
    */
-  delete(key, path = "/") {
-    this.set(key, "", -1, path);
-    this.trigger("deleteCookie", { key, path });
+  delete(key, path = "/", domain = null) {
+    const options = { maxAge: -1, path, domain: domain || undefined };
+    this.set(key, "", options);
+    this.trigger("deleteCookie", { key, ...options });
+  }
+
+  /**
+   * Delete all cookies.
+   */
+  deleteAll(path = "/", domain = null) {
+    Object.keys(this.all).forEach((cookie) =>
+      this.delete(cookie, path, domain),
+    );
+    this.trigger("deleteAllCookies", { path, domain });
   }
 
   /**
@@ -174,7 +233,7 @@ export default class Cookies {
    * @param {object} policies - The policies to commit.
    */
   savePolicies(policies) {
-    this.set(this.cookiesPolicyKey, JSON.stringify(policies));
+    this.set(this.policiesKey, JSON.stringify(policies));
   }
 
   /**

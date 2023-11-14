@@ -27,19 +27,27 @@ export class CookieBanner {
       return;
     }
 
-    const policies = this.$module.getAttribute("data-policies");
-    if (!policies) {
-      return;
-    }
+    const policies = this.$module.getAttribute("data-policies") || "";
+    const domain = this.$module.getAttribute("data-domain") || undefined;
+    const secure = this.$module.getAttribute("data-secure") || undefined;
+    const policiesKey =
+      this.$module.getAttribute("data-policies-key") || undefined;
 
-    const cookiesClass = window.TNAFrontend?.Cookies || Cookies;
-    this.cookies = new cookiesClass(
-      policies.split(",").map((policy) => policy.trim()),
+    this.cookies = new (window.TNAFrontend?.Cookies || Cookies)(
+      policies
+        .split(",")
+        .filter((x) => x)
+        .map((policy) => policy.trim()),
+      {
+        domain,
+        secure,
+        policiesKey,
+      },
     );
 
     this.cookiePreferencesSet =
       this.$module.getAttribute("data-preferenceskey") ||
-      "cookies_preferences_set";
+      "cookie_preferences_set";
     const cookiePreferencesSet = this.cookies.hasValue(
       this.cookiePreferencesSet,
       "true",

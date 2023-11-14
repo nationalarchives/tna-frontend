@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-{%- if params.colour -%}
-  {%- set containerClasses = containerClasses.concat('tna-header--' + params.colour) -%}
+{%- if params.accent -%}
+  {%- set containerClasses = containerClasses.concat('tna-header--accent') -%}
 {%- endif -%}
 <header class="tna-header {{ containerClasses | join(' ') }}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- if params.exit -%}
@@ -10,7 +10,7 @@
         <a href="{{ params.exit.href }}" class="tna-header__exit-link"{%- if params.exit.target -%} target="{{ params.exit.target }}"{%- endif -%}>
           {{ params.exit.text }}
           {%- if params.exit.target == "_blank" -%}
-          <span class="tna-header__exit-link-icon"></span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
           {%- endif -%}
         </a>
       </div>
@@ -51,6 +51,11 @@
         {%- for item in params.topNavigation -%}
         <li class="tna-header__top-navigation-item">
           <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+            {%- if item.brandIcon -%}
+            <i class="fa-brands fa-{{ item.brandIcon }}"></i>
+            {%- elseif item.icon -%}
+            <i class="fa-solid fa-{{ item.icon }}"></i>
+            {%- endif -%}
             {{ item.text }}
           </a>
         </li>

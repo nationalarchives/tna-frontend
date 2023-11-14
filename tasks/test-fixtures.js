@@ -7,6 +7,8 @@ require.extensions[".njk"] = function (module, filename) {
   module.exports = fs.readFileSync(filename, "utf8");
 };
 
+nunjucks.configure(__dirname + "/../src");
+
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
@@ -67,7 +69,8 @@ if (failedComponents.length) {
       components.length
     } component${components.length === 1 ? "" : "s"} failed`,
   );
-  process.exit(1);
+  process.exitCode = 1;
+  throw new Error("Fixtures tests failed");
 } else {
   console.log(
     `🟢 [PASS] ${components.length} component${

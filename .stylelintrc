@@ -15,6 +15,7 @@
         "scss/dollar-variable-empty-line-before": null,
         "scss/double-slash-comment-empty-line-before": null,
         "selector-class-pattern": null,
+        "no-invalid-position-at-import-rule": null,
         "plugin/selector-bem-pattern": {
             "preset": "bem"
         },

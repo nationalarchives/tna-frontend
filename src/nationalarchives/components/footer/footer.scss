@@ -6,7 +6,7 @@
 @use "../grid";
 
 .tna-footer {
-  @include colour.invert;
+  @include colour.contrast;
 
   padding-top: 1rem;
   padding-bottom: 3rem;
@@ -17,7 +17,6 @@
 
   .tna-logo {
     margin-top: 2rem;
-    margin-bottom: 1rem;
 
     &__background {
       fill: transparent;
@@ -29,8 +28,9 @@
   }
 
   &__title {
-    margin-top: 0;
+    margin-top: 1rem;
     margin-bottom: 0;
+    padding-top: 0;
   }
 
   &__address {
@@ -92,9 +92,7 @@
 
     @include colour.colour-border("keyline-dark", 1px, dashed);
 
-    // background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23fff' stroke-width='2' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e") rgba(colour.brand-colour("white"), 0.1);
-    // background-color: rgba(colour.brand-colour("white"), 0.1);
-    background-color: rgba(#fff, 0.1);
+    background-color: rgb(255 255 255 / 10%);
   }
 
   &__navigation {
@@ -114,59 +112,17 @@
         @include colour.colour-border("keyline", 1px, solid, bottom);
 
         &-link {
+          display: inline-block;
+
           text-decoration: none;
+          text-wrap: balance;
 
           &:hover {
             @include typography.interacted-text-decoration;
           }
 
-          &-icon {
-            width: 0.825rem;
-            height: 0.825rem;
-            margin-right: 0.125rem;
+          .fa-solid {
             margin-left: 0.75rem;
-
-            display: inline-block;
-
-            position: relative;
-
-            vertical-align: middle;
-
-            font-size: 0;
-
-            border: 1px var(--link) solid;
-
-            &::before {
-              position: absolute;
-              top: -0.25rem;
-              right: -0.25rem;
-              z-index: 2;
-
-              border: 0.25rem transparent solid;
-              border-top-color: var(--link);
-              border-right-color: var(--link);
-
-              content: "";
-            }
-
-            &::after {
-              width: 4px;
-              height: 13px;
-
-              position: absolute;
-              top: -0.125rem;
-              right: -0.125rem;
-              z-index: 1;
-
-              background-color: var(--link);
-
-              @include colour.colour-outline("contrast-background", 3px, solid);
-
-              transform: rotate(45deg) translateX(50%);
-              transform-origin: 100% 0;
-
-              content: "";
-            }
           }
         }
       }

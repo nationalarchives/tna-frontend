@@ -1,22 +1,111 @@
 @use "sass:map";
 @use "../variables/spacing";
+@use "../tools/media";
 
-%space-below {
-  margin-bottom: 2rem;
+%space-above {
+  margin-top: 2rem;
 
-  &:last-child {
-    margin-bottom: 0;
+  &:first-child {
+    margin-top: 0;
   }
 }
 
-@mixin space-below {
-  @extend %space-below;
+@mixin space-above {
+  @extend %space-above;
 }
 
-@function spacing($size) {
+@function space($size) {
   @return map.get(spacing.$spacing, $size);
 }
 
-@function spacing-mobile($size) {
+@function space-mobile($size) {
   @return map.get(spacing.$spacing-mobile, $size);
+}
+
+@mixin no-spacing-generator($suffix: "") {
+  @if $suffix != "" {
+    $suffix: "-" + $suffix;
+  }
+  @each $property in margin, padding {
+    @each $direction in top, bottom {
+      $combined-direction: "";
+      @if $direction == top or $direction == bottom {
+        $combined-direction: vertical;
+      } @else if $direction == right or $direction == left {
+        $combined-direction: horizontal;
+      }
+      @if $combined-direction {
+        .tna-\!--no-#{$property}-#{$direction}#{$suffix},
+        .tna-\!--no-#{$property}-#{$combined-direction}#{$suffix} {
+          #{$property}-#{$direction}: 0 !important;
+        }
+      } @else {
+        .tna-\!--no-#{$property}-#{$direction}#{$suffix} {
+          #{$property}-#{$direction}: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin spacing-generator($suffix: "") {
+  @each $property in margin, padding {
+    @each $direction in top, bottom {
+      @each $size, $amount in spacing.$spacing {
+        @if $direction == all {
+          .tna-\!--#{$property}-#{$size} {
+            #{$property}: #{$amount} !important;
+          }
+        } @else {
+          $combined-direction: "";
+          @if $direction == top or $direction == bottom {
+            $combined-direction: vertical;
+          } @else if $direction == right or $direction == left {
+            $combined-direction: horizontal;
+          }
+          @if $combined-direction {
+            .tna-\!--#{$property}-#{$direction}-#{$size},
+            .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
+              #{$property}-#{$direction}: #{$amount} !important;
+            }
+          } @else {
+            .tna-\!--#{$property}-#{$direction}-#{$size} {
+              #{$property}-#{$direction}: #{$amount} !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media.on-mobile {
+    @each $property in margin, padding {
+      @each $direction in top, bottom {
+        @each $size, $amount in spacing.$spacing-mobile {
+          @if $direction == all {
+            .tna-\!--#{$property}-#{$size} {
+              #{$property}: #{$amount} !important;
+            }
+          } @else {
+            $combined-direction: "";
+            @if $direction == top or $direction == bottom {
+              $combined-direction: vertical;
+            } @else if $direction == right or $direction == left {
+              $combined-direction: horizontal;
+            }
+            @if $combined-direction {
+              .tna-\!--#{$property}-#{$direction}-#{$size},
+              .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
+                #{$property}-#{$direction}: #{$amount} !important;
+              }
+            } @else {
+              .tna-\!--#{$property}-#{$direction}-#{$size} {
+                #{$property}-#{$direction}: #{$amount} !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

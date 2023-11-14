@@ -41,15 +41,22 @@ const checkExists = [
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
   // Assets
+  "nationalarchives/assets/fonts/fa-brands-400.ttf",
+  "nationalarchives/assets/fonts/fa-brands-400.woff2",
+  "nationalarchives/assets/fonts/fa-solid-900.ttf",
+  "nationalarchives/assets/fonts/fa-solid-900.woff2",
+  "nationalarchives/assets/fonts/OpenSans-Bold.ttf",
+  "nationalarchives/assets/fonts/OpenSans-Regular.ttf",
+  "nationalarchives/assets/fonts/RobotoMono-Medium.ttf",
+  "nationalarchives/assets/fonts/RobotoMono-Regular.ttf",
   "nationalarchives/assets/images/apple-touch-icon-152x152.png",
   "nationalarchives/assets/images/apple-touch-icon-167x167.png",
   "nationalarchives/assets/images/apple-touch-icon-180x180.png",
   "nationalarchives/assets/images/apple-touch-icon.png",
   "nationalarchives/assets/images/favicon.ico",
   "nationalarchives/assets/images/mask-icon.svg",
+  "nationalarchives/assets/images/mstile-150x150.png",
   "nationalarchives/assets/images/nationalarchives-opengraph-image.png",
-  "nationalarchives/assets/images/tna-horizontal-logo-inverted.svg",
-  "nationalarchives/assets/images/tna-horizontal-logo.svg",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
@@ -57,6 +64,7 @@ const checkExists = [
   ...componentFiles("card"),
   ...componentFiles("checkboxes"),
   ...componentFiles("cookie-banner", "CookieBanner"),
+  ...componentFiles("featured-records"),
   ...componentFiles("filters"),
   ...componentFiles("footer"),
   ...componentFiles("gallery", "Gallery"),
@@ -68,7 +76,6 @@ const checkExists = [
   ...componentFiles("pagination"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
-  ...componentFiles("profile"),
   ...componentFiles("radios"),
   ...componentFiles("sensitive-image", "SensitiveImage"),
   ...componentFiles("search-field"),
@@ -112,7 +119,8 @@ checkExists.forEach((checkFile) => {
     );
   } catch (err) {
     console.error(`  🔴 [FAIL] ${err}`);
-    process.exit();
+    process.exitCode = 1;
+    throw new Error("File structure test failed");
   }
 });
 
@@ -128,7 +136,8 @@ if (packageJson.version === compiledPackageJson.version) {
   console.error(
     `  🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
   );
-  process.exit();
+  process.exitCode = 1;
+  throw new Error("Package version test failed");
 }
 
 console.log("\n");
@@ -138,7 +147,7 @@ const expectedPrototypeKitConfigProperties = [
   "nunjucksPaths",
   "scripts",
   "assets",
-  "sass",
+  "stylesheets",
   "templates",
 ];
 const prototypeKitConfig = require(
@@ -158,7 +167,8 @@ expectedPrototypeKitConfigProperties.forEach(
       console.error(
         `  🔴 [FAIL] Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
       );
-      process.exit();
+      process.exitCode = 1;
+      throw new Error("Prototype kit config test failed");
     }
   },
 );
@@ -178,7 +188,8 @@ if (
   console.log(`  🟢 [PASS] all.js function exists: initAll()`);
 } else {
   console.error(`  🔴 [FAIL] all.js function missing: initAll()`);
-  process.exit();
+  process.exitCode = 1;
+  throw new Error("JavaScript test failed");
 }
 if (
   Object.keys(jsAllPackage).includes("Cookies") &&
@@ -187,7 +198,8 @@ if (
   console.log(`  🟢 [PASS] all.js class exists: Cookies`);
 } else {
   console.error(`  🔴 [FAIL] all.js class missing: Cookies`);
-  process.exit();
+  process.exitCode = 1;
+  throw new Error("JavaScript module test failed");
 }
 Object.keys(componentsWithJavaScript).forEach((component) => {
   const componentClass = componentsWithJavaScript[component];
@@ -198,7 +210,8 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     console.log(`  🟢 [PASS] all.js function exists: ${componentClass}()`);
   } else {
     console.error(`  🔴 [FAIL] all.js function missing: ${componentClass}()`);
-    process.exit();
+    process.exitCode = 1;
+    throw new Error("Component JavaScript test failed");
   }
 });
 Object.keys(componentsWithJavaScript).forEach((component) => {
@@ -217,7 +230,8 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     console.error(
       `  🔴 [FAIL] ${component}.js function missing: ${componentClass}()`,
     );
-    process.exit();
+    process.exitCode = 1;
+    throw new Error("Standalone component JavaScript test failed");
   }
 });
 

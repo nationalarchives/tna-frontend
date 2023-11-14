@@ -11,9 +11,9 @@
 <{{ htmlElement }} class="tna-card {{ containerClasses | join(' ') }}" data-module="tna-card"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
   {%- if params.supertitle -%}
-    <hgroup class="tna-hgroup tna-hgroup--{{ params.headingSize or 's' }} tna-card__heading">
+    <hgroup class="tna-hgroup-{{ params.headingSize or 's' }} tna-card__heading">
       <h{{ params.headingLevel }} class="tna-hgroup__title">
-        <span class="tna-hgroup__supertitle">{{ params.supertitle }}</span>
+        <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
         {%- if params.href -%}
         <a href="{{ params.href }}" class="tna-card__heading-link">{{ params.title }}</a>
         {%- else -%}
@@ -22,7 +22,7 @@
       </h{{ params.headingLevel }}>
     </hgroup>
   {%- else -%}
-    <h{{ params.headingLevel }} class=" tna-heading tna-heading--{{ params.headingSize or 's' }} tna-card__heading">
+    <h{{ params.headingLevel }} class=" tna-heading-{{ params.headingSize or 's' }} tna-card__heading">
       {%- if params.href -%}
       <a href="{{ params.href }}" class="tna-card__heading-link">{{ params.title }}</a>
       {%- else -%}
@@ -38,10 +38,10 @@
     {%- endif -%}
       <picture class="tna-card__image">
         {%- if params.imageSources -%}
-        {%- for source in params.imageSources -%}
+        {%- for source in params.imageSources %}
         <source srcset="{{ source.src }}" type="{{ source.type }}" width="{{ source.width if source.width else params.imageWidth }}" height="{{ source.height if source.height else params.imageHeight }}">
-        {%- endfor -%}
-        <source srcset="{{ params.imageSrc }}" type="image/jpeg" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
+        {%- endfor %}
+        <source srcset="{{ params.imageSrc }}" type="{{ params.imageType if params.imageType else 'image/jpeg' }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
         {%- endif -%}
         <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
       </picture>

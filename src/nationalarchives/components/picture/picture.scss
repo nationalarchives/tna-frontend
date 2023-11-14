@@ -4,14 +4,13 @@
 @use "../button";
 
 .tna-picture {
-  margin: 0;
+  @include spacing.space-above;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
   padding: 0;
 
-  @include spacing.space-below;
-
   &__image-wrapper {
-    // padding: 1rem 0;
-
     position: relative;
 
     background-color: #f4f4f4;
@@ -29,11 +28,9 @@
   }
 
   &__transcript {
-    @include colour.invert;
+    @include colour.contrast;
 
     padding: 1rem 1.5rem;
-
-    // @include colour.colour-font("font-base");
 
     .tna-template--clicked &:focus {
       outline: none;
@@ -46,10 +43,6 @@
 
   &__caption {
     padding: 1rem 0;
-
-    // position: relative;
-
-    // text-align: center;
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }

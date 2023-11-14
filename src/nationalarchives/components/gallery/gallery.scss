@@ -6,7 +6,7 @@
 @use "../grid";
 
 .tna-gallery {
-  @include colour.invert;
+  @include colour.contrast;
 
   padding-bottom: 2rem;
 
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: spacing.spacing("l");
+    gap: spacing.space("l");
 
     &:focus {
       outline: none !important;

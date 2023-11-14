@@ -25,9 +25,7 @@
   }
 
   &__item {
-    @include colour.invert;
-
-    // @include colour.colour-font("contrast-font-base");
+    @include colour.contrast;
 
     height: 100%;
 
@@ -45,10 +43,7 @@
 
   &__item-image {
     width: 100%;
-    // height: #{math.div(2, 3) * 100%};
     height: auto;
-
-    // object-fit: cover;
   }
 
   &__item-content {
@@ -64,9 +59,7 @@
   }
 
   &__item-title {
-    // @include typography.heading-font;
     text-decoration: underline;
-    // @include typography.relative-font-size(20);
 
     .tna-index-grid__item:hover & {
       &,

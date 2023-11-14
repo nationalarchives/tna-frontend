@@ -55,6 +55,12 @@
     "description": "The height of the image in pixels."
   },
   {
+    "name": "imageType",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "imageSources",
     "type": "array",
     "required": true,
@@ -179,6 +185,12 @@
     "type": "text",
     "required": false,
     "description": "The style of card to use which can be either `boxed` for an inverted card or `accent` for a card that matches the page's accent colour."
+  },
+  {
+    "name": "plainSupertitle",
+    "type": "boolean",
+    "required": false,
+    "description": "Use a plain supertitle, removing the accented background colour."
   },
   {
     "name": "htmlElement",

@@ -2,7 +2,7 @@
   {
     "name": "heading",
     "type": "string",
-    "required": true,
+    "required": false,
     "description": ""
   },
   {
@@ -18,10 +18,40 @@
     "description": ""
   },
   {
-    "name": "image",
-    "type": "object",
+    "name": "imageSrc",
+    "type": "string",
     "required": true,
-    "description": "",
+    "description": ""
+  },
+  {
+    "name": "imageAlt",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "imageWidth",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "imageHeight",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "imageType",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "imageSources",
+    "type": "array",
+    "required": true,
+    "description": "Alternative sources of the image which can include WebP files.",
     "params": [
       {
         "name": "src",
@@ -30,30 +60,36 @@
         "description": ""
       },
       {
-        "name": "alt",
+        "name": "type",
         "type": "string",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "media",
+        "type": "string",
+        "required": false,
         "description": ""
       },
       {
         "name": "width",
         "type": "number",
-        "required": true,
+        "required": false,
         "description": ""
       },
       {
         "name": "height",
         "type": "number",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "information",
-        "type": "string",
         "required": false,
         "description": ""
       }
     ]
+  },
+  {
+    "name": "imageCaption",
+    "type": "string",
+    "required": false,
+    "description": ""
   },
   {
     "name": "classes",

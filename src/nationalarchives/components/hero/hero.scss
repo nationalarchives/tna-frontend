@@ -1,20 +1,90 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/typography";
 @use "../../utilities";
 @use "../grid";
 
 .tna-hero {
-  min-height: min(35vw, 480px);
-  // margin-bottom: 2rem;
-  padding-top: 5rem;
-  padding-bottom: 3rem;
+  @include colour.contrast-on-mobile;
 
-  display: flex;
-  align-items: flex-end;
+  &__figure {
+    min-height: min(35vw, 480px);
+    margin: 0;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
 
-  position: relative;
+    display: flex;
+    align-items: flex-end;
 
-  @include colour.invert-on-mobile;
+    position: relative;
+  }
+
+  &__caption {
+    width: 100%;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+
+    overflow: visible;
+  }
+
+  &__details {
+    width: 100%;
+
+    overflow: visible;
+  }
+
+  &__details-summary {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    z-index: 2;
+
+    font-size: 0;
+    text-align: center;
+    line-height: 1.5rem;
+    list-style: none;
+
+    @include colour.accent;
+
+    @include colour.colour-border("background", 0.25rem);
+    border-radius: 100%;
+
+    cursor: pointer;
+
+    &:hover {
+      @include colour.colour-font("background");
+
+      @include colour.colour-background("font-base");
+    }
+  }
+
+  &__details-summary-icon {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  &__information {
+    width: 50rem;
+    max-width: 50vw;
+    padding: 0.5rem 3.25rem 0.5rem 1rem;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    @include colour.contrast;
+
+    @include typography.relative-font-size(16);
+  }
 
   &__image {
     width: 100%;
@@ -24,121 +94,168 @@
     inset: 0;
     z-index: 1;
 
-    object-fit: cover;
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
   }
 
-  picture#{&}__image img {
-    width: 100%;
-    height: 100%;
+  &__details[open] &__details-summary {
+    @include colour.contrast;
 
-    object-fit: cover;
-  }
+    &::before,
+    &::after {
+      width: 1.5rem;
+      height: 0.125rem;
 
-  &__image-details {
-    position: absolute;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    z-index: 3;
+      display: block;
 
-    @include colour.colour-font("font-base");
-  }
+      position: absolute;
+      top: 50%;
+      left: 50%;
 
-  &__image-details-summary {
-    width: 2rem;
-    height: 2rem;
+      @include colour.colour-background("font-dark");
 
-    position: relative;
-    z-index: 2;
+      content: "";
+    }
 
-    font-size: 0;
-    text-align: center;
-    line-height: 2rem;
-    list-style: none;
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
 
-    background-color: #fc0;
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
 
-    border-radius: 1rem;
+    &:hover {
+      &::before,
+      &::after {
+        height: 0.25rem;
+      }
+    }
 
-    cursor: pointer;
-  }
-
-  &__image-details-summary-icon {
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    text-transform: lowercase;
-  }
-
-  &__image-information {
-    width: 20rem;
-    max-width: 45vw;
-    padding: 0.5rem 1rem;
-
-    position: absolute;
-    right: 0;
-    bottom: 2.5rem;
-    z-index: 1;
-
-    background-color: #fc0;
+    &-icon {
+      font-size: 0;
+    }
   }
 
   &__inner {
     position: relative;
-    z-index: 2;
+    z-index: 4;
   }
 
   &__content {
   }
 
   &__content-inner {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem;
 
     @include colour.colour-background("page-background");
   }
 
   &__heading {
-    margin-bottom: 0;
   }
 
   &__body {
-    margin-top: 1.5rem;
+  }
+
+  &--tint .tna-hero__figure {
+    // @include colour.colour-border("keyline-dark", 1px, solid, top);
+    // @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+
+    &::before,
+    &::after {
+      position: absolute;
+      inset: 0;
+
+      content: "";
+    }
+
+    &::before {
+      z-index: 2;
+
+      background-color: colour.brand-colour("maroon");
+      @include colour.colour-background("accent-background");
+
+      mix-blend-mode: screen;
+    }
+
+    &::after {
+      z-index: 3;
+
+      background-color: colour.brand-colour("cream");
+
+      mix-blend-mode: multiply;
+    }
+
+    .tna-hero__image {
+      filter: grayscale(1) contrast(1.75) brightness(1.2);
+    }
+
+    .tna-hero__content-inner {
+      // @include colour.colour-border("keyline-dark", 1px);
+
+      @include media.on-mobile {
+        // border: none;
+      }
+    }
   }
 
   @include media.on-mobile {
-    padding: 0;
+    &__figure {
+      padding: 0;
 
-    display: block;
+      flex-direction: column;
+
+      background-color: inherit;
+    }
+
+    &__caption {
+      position: relative;
+      order: 2;
+    }
+
+    &__details {
+    }
+
+    &__details-summary {
+    }
+
+    &__details-summary-icon {
+    }
+
+    &__information {
+      width: auto;
+      max-width: none;
+
+      left: 0;
+
+      @include colour.colour-border("keyline", 1px, solid, bottom);
+    }
 
     &__image {
-      height: 320px;
-
       position: static;
-    }
 
-    &__image-details {
-      bottom: auto;
-      top: 1.25rem;
-    }
+      order: 1;
 
-    &__image-details-summary {
-    }
-
-    &__image-details-summary-icon {
-    }
-
-    &__image-information {
-      top: 2.5rem;
-      bottom: auto;
+      img {
+        height: auto;
+      }
     }
 
     &__inner {
+      order: 3;
+
+      background-color: inherit;
     }
 
     &__content {
     }
 
     &__content-inner {
-      padding: 1.5rem 0;
+      padding: 2rem 0;
 
       background-color: transparent;
     }
@@ -151,17 +268,23 @@
     }
   }
 
-  @include media.on-tiny {
-    &__image {
-      height: 240px;
-    }
-  }
-
   @include colour.on-high-contrast {
+    &__information,
     &__content-inner {
       @include colour.colour-border("keyline-dark", 1px);
+    }
 
-      @include media.on-mobile {
+    @include media.on-mobile {
+      &__information {
+        // border-bottom: 0
+      }
+
+      &__inner {
+        @include colour.colour-border("keyline-dark", 1px);
+        border-top: 0;
+      }
+
+      &__content-inner {
         border: none;
       }
     }

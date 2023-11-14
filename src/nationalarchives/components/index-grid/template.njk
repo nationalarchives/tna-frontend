@@ -2,7 +2,7 @@
 <nav class="tna-index-grid {{ containerClasses | join(' ') }}" aria-label="{{ params.heading.title }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--full">
-      <h{{ params.heading.level }} class="tna-heading tna-heading--{{ params.heading.size or 'l' }} tna-index-grid__heading">
+      <h{{ params.heading.level }} class="tna-heading-{{ params.heading.size or 'l' }} tna-index-grid__heading">
         {%- if params.heading.href -%}
         <a href="{{ params.heading.href }}">{{ params.heading.title }}</a>
         {%- else -%}

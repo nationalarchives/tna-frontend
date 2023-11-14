@@ -3,10 +3,10 @@ import macroOptions from "./macro-options.json";
 
 const argTypes = {
   phase: {
-    control: "radio",
-    options: ["discovery", "alpha", "beta", "live"],
+    control: "text",
   },
   message: { control: "text" },
+  accent: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -32,32 +32,8 @@ const Template = ({ phase, message, classes, attributes }) =>
     },
   });
 
-export const Discovery = Template.bind({});
-Discovery.args = {
-  phase: "discovery",
-  message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
-};
-
-export const Alpha = Template.bind({});
-Alpha.args = {
-  phase: "alpha",
-  message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
-};
-
-export const Beta = Template.bind({});
-Beta.args = {
+export const Standard = Template.bind({});
+Standard.args = {
   phase: "beta",
-  message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
-};
-
-export const Live = Template.bind({});
-Live.args = {
-  phase: "live",
-  message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
-};
-
-export const Unknown = Template.bind({});
-Unknown.args = {
-  phase: "unknown",
   message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
 };

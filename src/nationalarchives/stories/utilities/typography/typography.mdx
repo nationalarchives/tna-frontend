@@ -1,14 +1,11 @@
 import { Meta, Canvas } from "@storybook/blocks";
-import * as HeadingStories from "./headings.stories";
-import * as HeadingGroupStories from "./heading-groups.stories";
-import * as TypographyStories from "./typography.stories";
-import * as ListStories from "./lists.stories";
+import * as HeadingStories from './headings.stories';
+import * as HeadingGroupStories from './heading-groups.stories';
+import * as TypographyStories from './typography.stories';
 
 <Meta of={TypographyStories} />
 
 # Typography
-
-We use a set of typefaces...
 
 ## Headings
 
@@ -17,32 +14,13 @@ We use a set of typefaces...
 
 ## Heading groups
 
-Although visually identical, there are two types of header groups based on whether the group should be read as a single sentence or not.
-
-In the first example, the heading will be read by screen readers as `The story of Alice Hawkins.`
-
 <Canvas of={HeadingGroupStories.HeadingGroup} />
-
-In the second example, the heading will be read as two separate sentences; `Record revealed. The Monteagle Letter.`
-
 <Canvas of={HeadingGroupStories.HeadingGroupSeparated} />
 
 ## General typography
 
 <Canvas of={TypographyStories.Paragraph} />
-<Canvas of={TypographyStories.Blockquote} />
+<Canvas of={TypographyStories.LargeParagraph} />
 <Canvas of={TypographyStories.SceneSetter} />
-
-## Lists
-
-<Canvas of={ListStories.UnorderedList} />
-<Canvas of={ListStories.OrderedList} />
-<Canvas of={ListStories.DescriptionList} />
-<Canvas of={ListStories.DescriptionListWithIcons} />
-
-### Plain versions
-
-<Canvas of={ListStories.UnorderedListPlain} />
-<Canvas of={ListStories.OrderedListPlain} />
-<Canvas of={ListStories.PlainDescriptionList} />
-<Canvas of={ListStories.PlainDescriptionListWithIcons} />
+<Canvas of={TypographyStories.SceneSetterSmall} />
+<Canvas of={TypographyStories.Blockquote} />

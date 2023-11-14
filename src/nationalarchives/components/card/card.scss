@@ -7,7 +7,7 @@
 @use "../button";
 
 .tna-card {
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__inner {
     display: flex;
@@ -55,6 +55,8 @@
   }
 
   &__body {
+    padding-top: 1rem;
+
     order: 3;
   }
 
@@ -74,6 +76,7 @@
       display: flex;
       align-items: center;
 
+      @include colour.colour-font("font-dark");
       @include typography.detail-font-small;
 
       .fa-solid {
@@ -114,14 +117,14 @@
   }
 
   &--contrast {
-    @include colour.invert;
+    @include colour.contrast;
   }
 
   &--accent {
     @include colour.accent;
 
     .tna-hgroup__supertitle {
-      @include colour.invert;
+      @include colour.contrast;
 
       @include colour.colour-border("contrast-background");
     }

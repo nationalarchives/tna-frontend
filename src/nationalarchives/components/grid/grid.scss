@@ -54,15 +54,15 @@
   @include gridTools.columns-generator(grid.$column-count-medium, "medium");
 }
 
-@include media.on-mobile {
+@include media.on-tiny {
   .tna-container {
-    padding-right: math.div(grid.$gutter-width-mobile, 2);
-    padding-left: math.div(grid.$gutter-width-mobile, 2);
+    padding-right: math.div(grid.$gutter-width-tiny, 2);
+    padding-left: math.div(grid.$gutter-width-tiny, 2);
   }
 
   .tna-column {
-    padding-right: math.div(grid.$gutter-width-mobile, 2);
-    padding-left: math.div(grid.$gutter-width-mobile, 2);
+    padding-right: math.div(grid.$gutter-width-tiny, 2);
+    padding-left: math.div(grid.$gutter-width-tiny, 2);
   }
 }
 

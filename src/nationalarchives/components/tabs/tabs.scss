@@ -5,7 +5,7 @@
 @use "../../utilities";
 
 .tna-tabs {
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__list {
     margin: 0 0 1rem;
@@ -33,7 +33,6 @@
     @include typography.relative-font-size(20);
     @include typography.heading-font;
     text-decoration: none;
-    // line-height: 1.5;
     text-align: center;
 
     background: transparent;

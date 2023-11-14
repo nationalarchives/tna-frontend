@@ -39,7 +39,7 @@ $colour-palette-brand: (
 
 $dark-grey: #26262a;
 $base-font: #343338 !default;
-$link-colour: #1d70ab !default;
+$link-colour: brand-colour("navy") !default;
 $link-colour-visited: #4c2c92 !default;
 
 /*
@@ -49,7 +49,7 @@ LIGHT THEME (DEFAULT)
 */
 $colour-palette-default: (
   "page-background": #f4f4f4,
-  "background-tint": #d8d8d8,
+  "background-tint": #e2e2e2,
   "font-base": $base-font,
   "font-dark": brand-colour("black"),
   "font-light": hex-to-rgb($base-font, 0.7),
@@ -103,7 +103,7 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #111,
+    "page-background": #222,
     "background-tint": #333,
     "font-base": brand-colour("white", 0.95),
     "font-dark": brand-colour("white"),
@@ -120,7 +120,9 @@ $colour-palette-dark: map.merge(
     "button-background": brand-colour("white"),
     "button-hover-text": brand-colour("white"),
     "button-hover-background": brand-colour("black"),
-    "contrast-background": #1e1e1e,
+    "contrast-background": #111,
+    "contrast-link-visited":
+      map.get($colour-palette-default, "contrast-link-visited"),
     // --accent-background-light is the same as --contrast-background on dark themes
     "accent-background-light": brand-colour("grey"),
   )
@@ -138,8 +140,8 @@ $colour-palette-high-contrast: map.merge(
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
     "icon-light": brand-colour("black", 0.75),
-    "link": brand-colour("navy"),
-    "link-visited": brand-colour("black"),
+    "link": #34d,
+    "link-visited": #848,
     "focus-outline": brand-colour("orange"),
     "keyline": brand-colour("black"),
     "keyline-dark": brand-colour("black"),
@@ -166,13 +168,13 @@ DARK, HIGH_CONTRAST THEME
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": brand-colour("black"),
+    "page-background": #111,
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.75),
-    "link": brand-colour("white"),
-    "link-visited": brand-colour("white"),
+    "link": #69f,
+    "link-visited": #a6c,
     "keyline": brand-colour("white"),
-    "contrast-background": #111,
+    "contrast-background": brand-colour("black"),
   )
 ) !default;

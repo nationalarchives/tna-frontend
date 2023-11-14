@@ -8,8 +8,8 @@
   "assets": [
     "/nationalarchives/assets"
   ],
-  "sass": [
-    "/nationalarchives/_prototype-kit.scss"
+  "stylesheets": [
+    "/nationalarchives/prototype-kit.css"
   ],
   "templates": [
     {

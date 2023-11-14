@@ -9,8 +9,8 @@
 {%- if params.noPaddingAll -%}
   {%- set containerClasses = containerClasses.concat('tna-container--no-padding-all') -%}
 {%- endif -%}
-<{{ htmlElement }} class="tna-container {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-{%- for item in params.columns -%}
+<{{ htmlElement }} class="tna-container {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- for item in params.columns %}
   {%- set columnHtmlElement = item.htmlElement if item.htmlElement else 'div' -%}
   {%- set columnClasses = [item.classes] if item.classes else [] -%}
   
@@ -40,6 +40,32 @@
     {%- set columnClasses = columnClasses.concat('tna-column--flex-' + item.flexTiny + '-tiny') -%}
   {%- endif -%}
 
+  {%- if item.marginLeft -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-left-' + item.marginLeft) -%}
+  {%- endif -%}
+  {%- if item.marginLeftMedium -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-left-' + item.marginLeftMedium + '-medium') -%}
+  {%- endif -%}
+  {%- if item.marginLeftSmall -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-left-' + item.marginLeftSmall + '-small') -%}
+  {%- endif -%}
+  {%- if item.marginLeftTiny -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-left-' + item.marginLeftTiny + '-tiny') -%}
+  {%- endif -%}
+
+  {%- if item.marginRight -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-right-' + item.marginRight) -%}
+  {%- endif -%}
+  {%- if item.marginRightMedium -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-right-' + item.marginRightMedium + '-medium') -%}
+  {%- endif -%}
+  {%- if item.marginRightSmall -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-right-' + item.marginRightSmall + '-small') -%}
+  {%- endif -%}
+  {%- if item.marginRightTiny -%}
+    {%- set columnClasses = columnClasses.concat('tna-column--margin-right-' + item.marginRightTiny + '-tiny') -%}
+  {%- endif -%}
+
   {%- if item.order -%}
     {%- set columnClasses = columnClasses.concat('tna-column--order-' + item.order) -%}
   {%- endif -%}
@@ -55,9 +81,9 @@
 
   {%- if item.noPadding -%}
     {%- set columnClasses = columnClasses.concat('tna-column--no-padding') -%}
-  {%- endif -%}
-  <{{ columnHtmlElement }} class="tna-column {{ columnClasses | join(' ') }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
+  {%- endif %}
+  <{{ columnHtmlElement }} class="tna-column {{ columnClasses | join(' ') }}" {%- for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
     {{ item.html | safe }}
   </{{ columnHtmlElement }}>
-{%- endfor -%}
+{%- endfor %}
 </{{ htmlElement }}>

@@ -3,10 +3,6 @@
 @use "../tools/spacing";
 @use "../variables/typography";
 
-:root {
-  @include colour.colour-css-vars;
-}
-
 .tna-template {
   min-width: 320px;
   width: 100%;
@@ -23,81 +19,6 @@
   -webkit-overflow-scrolling: touch;
 
   font-size: #{typography.$relative-1rem-px}px;
-
-  @include colour.colour-background("page-background");
-
-  accent-color: var(--accent);
-
-  &--system-theme {
-    @include colour.colour-css-vars;
-
-    @media (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-dark;
-    }
-
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast;
-
-      * {
-        background-image: none !important;
-      }
-    }
-
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
-  }
-
-  &--light-theme {
-    @include colour.colour-css-vars;
-  }
-
-  &--dark-theme {
-    @include colour.colour-css-vars-dark;
-  }
-
-  &--high-contrast-theme {
-    @include colour.colour-css-vars-high-contrast;
-
-    * {
-      background-image: none !important;
-    }
-
-    &.tna-template--dark-theme {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
-  }
-
-  &--black-accent {
-    @include colour.accent-css-vars("black");
-  }
-
-  &--yellow-accent {
-    @include colour.accent-css-vars("yellow");
-  }
-
-  &--pink-accent {
-    @include colour.accent-css-vars("pink");
-  }
-
-  &--orange-accent {
-    @include colour.accent-css-vars("orange");
-  }
-
-  &--green-accent {
-    @include colour.accent-css-vars("green");
-  }
-
-  &--blue-accent {
-    @include colour.accent-css-vars("blue");
-  }
-
-  @media (prefers-reduced-motion) {
-    * {
-      animation: none !important;
-      transition: none !important;
-    }
-  }
 }
 
 .tna-template__body {
@@ -109,7 +30,7 @@
     display: flex;
     flex-direction: column;
 
-    #main-content[role="main"] {
+    #main-content {
       flex: 1;
     }
   }
@@ -121,6 +42,7 @@ picture,
 video,
 canvas {
   max-width: 100%;
+  height: auto;
 
   display: block;
 }
@@ -135,7 +57,7 @@ canvas {
 }
 
 hr {
-  margin: 2rem 0;
+  margin: 0;
 
   border-width: 1px 0 0;
   @include colour.colour-border("keyline");
@@ -155,7 +77,7 @@ hr {
 .tna-aside {
   padding: 2rem;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   @include media.on-mobile {
     padding: 1rem;
@@ -164,16 +86,8 @@ hr {
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline-dark", 1px);
   }
-}
 
-.tna-background--contrast {
-  @include colour.invert;
-}
-
-.tna-background--accent {
-  @include colour.accent;
-}
-
-.tna-background--accent-light {
-  @include colour.light-accent-background;
+  &--tight {
+    padding: 1rem;
+  }
 }

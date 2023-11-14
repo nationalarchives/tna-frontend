@@ -40,6 +40,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/checkboxes/macro.njk\" import tnaCheckboxes %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/featured-records/macro.njk\" import tnaFeaturedRecords %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/filters/macro.njk\" import tnaFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/gallery/macro.njk\" import tnaGallery %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -51,7 +52,6 @@ runs:
         echo -e "{% from \"nationalarchives/components/pagination/macro.njk\" import tnaPagination %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/profile/macro.njk\" import tnaProfile %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/radios/macro.njk\" import tnaRadios %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/sensitive-image/macro.njk\" import tnaSensitiveImage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-field/macro.njk\" import tnaSearchField %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -71,6 +71,7 @@ runs:
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCheckboxes({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCookieBanner({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaFeaturedRecords({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFooter({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaGallery({}) }}" >> prototype/app/views/index.html &&
@@ -82,7 +83,6 @@ runs:
         echo "{{ tnaPagination({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPhaseBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaProfile({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaRadios({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSensitiveImage({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSearchField({}) }}" >> prototype/app/views/index.html &&

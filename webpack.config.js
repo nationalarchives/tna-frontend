@@ -44,7 +44,6 @@ module.exports = {
     ],
   },
   output: {
-    // library: ["TNAFrontend", "[name]"],
     library: "TNAFrontend",
     libraryTarget: "umd",
     umdNamedDefine: true,

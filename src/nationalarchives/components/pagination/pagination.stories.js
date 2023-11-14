@@ -2,10 +2,12 @@ import Pagination from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  landmarkLabel: { control: "text" },
   previous: { control: "object" },
   items: { control: "object" },
   next: { control: "object" },
+  currentItemText: { control: "text" },
+  spaced: { control: "boolean" },
+  landmarkLabel: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -21,12 +23,24 @@ export default {
   argTypes,
 };
 
-const Template = ({ previous, items, next, classes, attributes }) =>
+const Template = ({
+  previous,
+  items,
+  next,
+  currentItemText,
+  spaced,
+  landmarkLabel,
+  classes,
+  attributes,
+}) =>
   Pagination({
     params: {
       previous,
       items,
       next,
+      currentItemText,
+      spaced,
+      landmarkLabel,
       classes,
       attributes,
     },
@@ -73,6 +87,9 @@ Standard.args = {
 };
 
 export const First = Template.bind({});
+First.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 First.args = {
   items: [
     {
@@ -99,6 +116,9 @@ First.args = {
 };
 
 export const Second = Template.bind({});
+Second.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Second.args = {
   previous: {
     href: "#",
@@ -132,6 +152,9 @@ Second.args = {
 };
 
 export const Third = Template.bind({});
+Third.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Third.args = {
   previous: {
     href: "#",
@@ -169,6 +192,9 @@ Third.args = {
 };
 
 export const Forth = Template.bind({});
+Forth.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Forth.args = {
   previous: {
     href: "#",
@@ -210,6 +236,9 @@ Forth.args = {
 };
 
 export const Fifth = Template.bind({});
+Fifth.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Fifth.args = {
   previous: {
     href: "#",
@@ -250,6 +279,9 @@ Fifth.args = {
 };
 
 export const LastMinus4 = Template.bind({});
+LastMinus4.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 LastMinus4.args = {
   previous: {
     href: "#",
@@ -290,6 +322,9 @@ LastMinus4.args = {
 };
 
 export const LastMinus3 = Template.bind({});
+LastMinus3.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 LastMinus3.args = {
   previous: {
     href: "#",
@@ -331,6 +366,9 @@ LastMinus3.args = {
 };
 
 export const LastMinus2 = Template.bind({});
+LastMinus2.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 LastMinus2.args = {
   previous: {
     href: "#",
@@ -368,6 +406,9 @@ LastMinus2.args = {
 };
 
 export const LastMinus1 = Template.bind({});
+LastMinus1.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 LastMinus1.args = {
   previous: {
     href: "#",
@@ -401,6 +442,9 @@ LastMinus1.args = {
 };
 
 export const Last = Template.bind({});
+Last.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Last.args = {
   previous: {
     href: "#",
@@ -423,5 +467,22 @@ Last.args = {
       href: "#",
     },
   ],
+  classes: "tna-pagination--demo",
+};
+
+export const NoNumbers = Template.bind({});
+NoNumbers.args = {
+  previous: {
+    href: "#",
+    text: "TS 11/45/166",
+    title: "From the catalogue: TS 11/45/166",
+  },
+  currentItemText: "From the catalogue: TS 11/45/167",
+  next: {
+    href: "#",
+    text: "TS 11/45/168",
+    title: "From the catalogue: TS 11/45/168",
+  },
+  spaced: true,
   classes: "tna-pagination--demo",
 };

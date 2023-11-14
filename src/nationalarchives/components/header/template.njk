@@ -52,9 +52,9 @@
         <li class="tna-header__top-navigation-item">
           <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
             {%- if item.brandIcon -%}
-            <i class="fa-brands fa-{{ item.brandIcon }}"></i>
+            <i class="fa-brands fa-fw fa-{{ item.brandIcon }}"></i>
             {%- elseif item.icon -%}
-            <i class="fa-solid fa-{{ item.icon }}"></i>
+            <i class="fa-solid fa-fw fa-{{ item.icon }}"></i>
             {%- endif -%}
             {{ item.text }}
           </a>

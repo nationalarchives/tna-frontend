@@ -7,6 +7,8 @@ const argTypes = {
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
   href: { control: "text" },
+  hrefClasses: { control: "text" },
+  hrefAttributes: { control: "object" },
   imageSrc: { control: { type: "file", accept: ".jpg" } },
   imageAlt: { control: "text" },
   imageWidth: { control: { type: "number", min: 1 } },
@@ -45,6 +47,8 @@ const Template = ({
   headingLevel,
   headingSize,
   href,
+  hrefClasses,
+  hrefAttributes,
   imageSrc,
   imageAlt,
   imageWidth,
@@ -70,6 +74,8 @@ const Template = ({
       headingLevel,
       headingSize,
       href,
+      hrefClasses,
+      hrefAttributes,
       imageSrc,
       imageAlt,
       imageWidth,
@@ -298,84 +304,6 @@ Sources.args = {
       type: "image/webp",
     },
   ],
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  htmlElement: "article",
-  classes: "tna-card--demo",
-};
-
-export const WithoutImage = Template.bind({});
-WithoutImage.args = {
-  supertitle: "Card supertitle",
-  title: "Card title",
-  headingLevel: 3,
-  headingSize: "s",
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  htmlElement: "article",
-  classes: "tna-card--demo",
-};
-
-const GridTemplate = ({
-  title,
-  supertitle,
-  headingLevel,
-  headingSize,
-  href,
-  imageSrc,
-  imageAlt,
-  imageWidth,
-  imageHeight,
-  imageSources,
-  label,
-  body,
-  text,
-  actions,
-  horizontal,
-  htmlElement,
-  classes,
-  attributes,
-}) =>
-  `<div class="tna-container">
-    ${Array(12)
-      .fill(
-        `<div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny tna-!--margin-bottom-m">
-          ${Card({
-            params: {
-              title,
-              supertitle,
-              headingLevel,
-              headingSize,
-              href,
-              imageSrc,
-              imageAlt,
-              imageWidth,
-              imageHeight,
-              imageSources,
-              label,
-              body,
-              text,
-              actions,
-              horizontal,
-              htmlElement,
-              classes,
-              attributes,
-            },
-          })}
-        </div>`,
-      )
-      .join("")}
-  </div>`;
-
-export const Grid = GridTemplate.bind({});
-Grid.args = {
-  title: "Card title",
-  headingLevel: 3,
-  headingSize: "s",
-  href: "#",
-  imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-  imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",

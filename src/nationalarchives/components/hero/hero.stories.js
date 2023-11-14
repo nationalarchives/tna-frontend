@@ -113,6 +113,9 @@ HeadingOnly.args = {
 };
 
 export const CaptionWithNoHeading = Template.bind({});
+CaptionWithNoHeading.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 CaptionWithNoHeading.args = {
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -124,6 +127,9 @@ CaptionWithNoHeading.args = {
 };
 
 export const Sources = Template.bind({});
+Sources.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Sources.args = {
   heading: "Title",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",

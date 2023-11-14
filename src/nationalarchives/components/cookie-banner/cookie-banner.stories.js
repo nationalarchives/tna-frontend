@@ -7,8 +7,10 @@ import Cookies from "../../lib/cookies.mjs";
 const argTypes = {
   cookiesUrl: { control: "text" },
   policies: { control: "text" },
-  cookiesPreferencesSetKey: { control: "text" },
-  loadScriptsOnAccept: { control: "text" },
+  policiesKey: { control: "text" },
+  preferencesSetKey: { control: "text" },
+  cookiesDomain: { control: "text" },
+  allowInsecure: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -27,8 +29,10 @@ export default {
 const Template = ({
   cookiesUrl,
   policies,
-  cookiesPreferencesSetKey,
-  loadScriptsOnAccept,
+  policiesKey,
+  preferencesSetKey,
+  cookiesDomain,
+  allowInsecure,
   classes,
   attributes,
 }) =>
@@ -36,8 +40,10 @@ const Template = ({
     params: {
       cookiesUrl,
       policies,
-      cookiesPreferencesSetKey,
-      loadScriptsOnAccept,
+      policiesKey,
+      preferencesSetKey,
+      cookiesDomain,
+      allowInsecure,
       classes,
       attributes,
     },
@@ -49,23 +55,19 @@ Standard.args = {
   classes: "tna-cookie-banner--demo",
 };
 
-const deleteAllCookies = (cookies) => {
-  Object.keys(cookies.all).forEach((cookie) => cookies.delete(cookie));
-};
-
 export const Accept = Template.bind({});
 Accept.args = {
   cookiesUrl: "#",
+  allowInsecure: true,
   classes: "tna-cookie-banner--demo",
 };
 Accept.play = async ({ canvasElement }) => {
-  const cookies = new Cookies();
-  deleteAllCookies(cookies);
-
+  const cookies = new window.TNAFrontend.Cookies();
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
@@ -78,6 +80,11 @@ Accept.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
+  await expect(cookies.get("cookie_preferences_set")).toEqual("true");
+  await expect(cookies.hasValue("cookie_preferences_set", "true")).toEqual(
+    true,
+  );
   await expect(acceptButton).not.toBeVisible();
   await expect(rejectButton).not.toBeVisible();
 
@@ -86,8 +93,6 @@ Accept.play = async ({ canvasElement }) => {
   // await userEvent.click(closeButton);
 
   // await expect(closeButton).not.toBeVisible();
-
-  deleteAllCookies(cookies);
 };
 
 export const Reject = Template.bind({});
@@ -97,12 +102,11 @@ Reject.args = {
 };
 Reject.play = async ({ canvasElement }) => {
   const cookies = new Cookies();
-  deleteAllCookies(cookies);
-
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
@@ -115,10 +119,15 @@ Reject.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
+  await expect(cookies.get("cookie_preferences_set")).toEqual("true");
+  await expect(cookies.hasValue("cookie_preferences_set", "true")).toEqual(
+    true,
+  );
   await expect(acceptButton).not.toBeVisible();
   await expect(rejectButton).not.toBeVisible();
 
-  deleteAllCookies(cookies);
+  await cookies.deleteAll();
 };
 
 export const CustomPolicies = Template.bind({});
@@ -127,51 +136,93 @@ CustomPolicies.args = {
   policies: "custom",
   classes: "tna-cookie-banner--demo",
 };
+CustomPolicies.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 CustomPolicies.play = async ({ args, canvasElement }) => {
   const cookies = new Cookies(args.policies.split(","));
-  deleteAllCookies(cookies);
-
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-  await expect(cookies.isPolicyAccepted("usage")).toEqual(null);
-  await expect(cookies.isPolicyAccepted("settings")).toEqual(null);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("custom")).toEqual(false);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
   await userEvent.click(acceptButton);
 
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-  await expect(cookies.isPolicyAccepted("usage")).toEqual(null);
-  await expect(cookies.isPolicyAccepted("settings")).toEqual(null);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
   await expect(cookies.isPolicyAccepted("custom")).toEqual(true);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
+  await expect(cookies.get("cookie_preferences_set")).toEqual("true");
+  await expect(cookies.hasValue("cookie_preferences_set", "true")).toEqual(
+    true,
+  );
 
-  deleteAllCookies(cookies);
+  await cookies.deleteAll();
 };
 
-export const AddScriptsOnAccept = Template.bind({});
-AddScriptsOnAccept.args = {
+export const Existing = Template.bind({});
+Existing.args = {
   cookiesUrl: "#",
-  loadScriptsOnAccept: "my-usage-script.js",
+  allowInsecure: true,
   classes: "tna-cookie-banner--demo",
 };
-AddScriptsOnAccept.play = async ({ args, canvasElement }) => {
+Existing.decorators = [
+  (Story) => {
+    const cookies = new Cookies();
+    cookies.set("cookie_preferences_set", true);
+    cookies.destroy();
+    return Story();
+  },
+];
+Existing.play = async ({ canvasElement }) => {
   const cookies = new Cookies();
-  deleteAllCookies(cookies);
-
-  const noScript = document.querySelector(
-    `script[src="${args.loadScriptsOnAccept}"]`,
+  await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
+  await expect(cookies.isPolicyAccepted("unknown")).toEqual(null);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
+  await expect(cookies.get("cookie_preferences_set")).toEqual("true");
+  await expect(cookies.hasValue("cookie_preferences_set", "true")).toEqual(
+    true,
   );
-  await expect(noScript).toEqual(null);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
-  await userEvent.click(acceptButton);
+  const rejectButton = canvas.getByText("Reject cookies");
+  await expect(acceptButton).not.toBeVisible();
+  await expect(rejectButton).not.toBeVisible();
 
-  const script = document.querySelector(
-    `script[src="${args.loadScriptsOnAccept}"]`,
-  );
-  await expect(script).toBeTruthy();
-
-  deleteAllCookies(cookies);
-  script.remove();
+  await cookies.deleteAll();
 };
+
+// export const EventHandling = Template.bind({});
+// EventHandling.args = {
+//   cookiesUrl: "#",
+//   policies: "custom",
+//   classes: "tna-cookie-banner--demo",
+// };
+// EventHandling.play = async ({ args, canvasElement }) => {
+//   deleteAllCookies();
+
+//   const cookies = new Cookies();
+
+//   const onChangePolicy = jest.fn(data => {
+//     console.log(data)
+//   })
+//   cookies.on("changePolicy", onChangePolicy)
+
+//   const canvas = within(canvasElement);
+//   const acceptButton = canvas.getByText("Accept cookies");
+//   await userEvent.click(acceptButton);
+
+//   await expect(onChangePolicy.mock).toHaveBeenCalledTimes(1);
+//   await expect(onChangePolicy.mock.calls).toHaveLength(1);
+//   await expect(onChangePolicy.mock.results[0].value).toHaveProperty("custom");
+//   await expect(onChangePolicy.mock.results[0].value.custom).toEqual(true);
+
+//   deleteAllCookies();
+// };

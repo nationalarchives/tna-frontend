@@ -46,6 +46,18 @@
     justify-content: stretch;
     align-items: stretch;
   }
+
+  &--align-top {
+    align-self: flex-start;
+  }
+
+  &--align-centre {
+    align-self: center;
+  }
+
+  &--align-bottom {
+    align-self: flex-end;
+  }
 }
 
 @include gridTools.columns-generator(grid.$column-count);

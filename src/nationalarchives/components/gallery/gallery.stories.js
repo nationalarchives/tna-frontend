@@ -1,7 +1,7 @@
 import Gallery from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+// import { expect } from "@storybook/jest";
+// import { within, userEvent } from "@storybook/testing-library";
 
 const argTypes = {
   heading: { control: "object" },

@@ -80,7 +80,6 @@ const checkExists = [
   ...componentFiles("sensitive-image", "SensitiveImage"),
   ...componentFiles("search-field"),
   ...componentFiles("search-result"),
-  ...componentFiles("search-view"),
   ...componentFiles("select"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),

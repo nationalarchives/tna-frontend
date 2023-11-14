@@ -56,7 +56,6 @@ runs:
         echo -e "{% from \"nationalarchives/components/sensitive-image/macro.njk\" import tnaSensitiveImage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-field/macro.njk\" import tnaSearchField %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-result/macro.njk\" import tnaSearchResult %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/search-view/macro.njk\" import tnaSearchView %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/select/macro.njk\" import tnaSelect %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -87,7 +86,6 @@ runs:
         echo "{{ tnaSensitiveImage({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSearchField({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSearchResult({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaSearchView({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSelect({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSkipLink({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&

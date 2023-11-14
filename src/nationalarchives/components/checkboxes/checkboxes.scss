@@ -70,16 +70,16 @@
 
         display: none;
 
-        top: 1.0625rem;
+        top: 1rem;
         left: 1rem;
         z-index: 2;
 
         // @include colour.colour-border("input-foreground", 0, solid);
-        // border-width: 0 0 forms.$form-field-border-width
-        //   forms.$form-field-border-width;
+        // border-width: 0 0 forms.$checkbox-checkmark-width
+        //   forms.$checkbox-checkmark-width;
         @include colour.colour-border("input-background", 0, solid);
-        border-width: 0 0 forms.$form-field-border-width
-          forms.$form-field-border-width;
+        border-width: 0 0 forms.$checkbox-checkmark-width
+          forms.$checkbox-checkmark-width;
 
         transform: translateX(-50%) translateY(-50%) rotate(-45deg);
       }

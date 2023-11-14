@@ -33,7 +33,7 @@
 
   &__error-message {
     margin-top: 0;
-    
+
     @include colour.colour-font("form-error");
     @include typography.main-font-weight-bold;
   }

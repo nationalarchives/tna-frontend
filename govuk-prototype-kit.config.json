@@ -1,16 +1,8 @@
 {
-  "nunjucksPaths": [
-    "/"
-  ],
-  "scripts": [
-    "/nationalarchives/all.js"
-  ],
-  "assets": [
-    "/nationalarchives/assets"
-  ],
-  "stylesheets": [
-    "/nationalarchives/prototype-kit.css"
-  ],
+  "nunjucksPaths": ["/"],
+  "scripts": ["/nationalarchives/all.js"],
+  "assets": ["/nationalarchives/assets"],
+  "stylesheets": ["/nationalarchives/prototype-kit.css"],
   "templates": [
     {
       "name": "Homepage",

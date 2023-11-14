@@ -92,7 +92,6 @@ Basic.args = {
   items: Array(6)
     .fill({ ...exampleItem })
     .map((item, index) => {
-      const pseudoRandom = ((index * 29) % 8) + 1;
       return {
         ...item,
         href: `#/category-${index}`,

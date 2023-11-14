@@ -44,7 +44,7 @@ Test.args = {
   href: "main-content",
   classes: "tna-skip-link--demo",
 };
-Test.play = async ({ args, canvasElement, step }) => {
+Test.play = async ({ args, canvasElement }) => {
   const canvas = within(canvasElement);
 
   const $skipLink = canvas.getByText(args.text);

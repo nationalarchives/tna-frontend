@@ -1,6 +1,6 @@
 import CookieBanner from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect, jest } from "@storybook/jest";
+import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 import Cookies from "../../lib/cookies.mjs";
 
@@ -171,7 +171,7 @@ Existing.args = {
   classes: "tna-cookie-banner--demo",
 };
 Existing.decorators = [
-  (Story, ctx) => {
+  (Story) => {
     const cookies = new Cookies();
     cookies.set("cookie_preferences_set", true);
     cookies.destroy();

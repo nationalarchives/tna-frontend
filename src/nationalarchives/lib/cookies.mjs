@@ -41,6 +41,7 @@ export default class Cookies {
     this.init();
   }
 
+  /** @protected */
   init() {
     this.savePolicies({
       ...Object.fromEntries(
@@ -55,6 +56,7 @@ export default class Cookies {
 
   destroy() {
     Cookies._instance = null;
+    this.trigger("destroy");
   }
 
   get all() {

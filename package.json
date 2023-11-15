@@ -65,7 +65,6 @@
     "eslint-plugin-storybook": "^0.6.15",
     "glob": "^10.3.10",
     "jest-environment-jsdom": "^29.7.0",
-    "jsdom": "^22.1.0",
     "mdx-mermaid": "^2.0.0",
     "node-self": "^1.0.2",
     "nunjucks": "^3.2.3",

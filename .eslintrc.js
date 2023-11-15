@@ -7,11 +7,13 @@ module.exports = {
   overrides: [
     {
       env: {
+        browser: true,
+        es2021: true,
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: [".eslintrc.{js,cjs}", "**/*.test.js"],
       parserOptions: {
-        sourceType: "script",
+        sourceType: "module",
       },
     },
   ],

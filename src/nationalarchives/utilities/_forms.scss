@@ -43,6 +43,14 @@
 
     @extend %heading;
 
+    &--xl {
+      @extend %heading-xl;
+    }
+
+    &--l {
+      @extend %heading-l;
+    }
+
     &--m {
       @extend %heading-m;
     }

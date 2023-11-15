@@ -1,8 +1,8 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<div class="tna-form__group {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <fieldset class="tna-form__fieldset"{% if params.hint %} aria-describedby="tna-form__{{ params.name }}-hint"{% endif %}>
     <legend class="tna-form__legend">
-      <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize }}">
+      <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
         {{ params.label }}
       </h{{ params.headingLevel }}>
     </legend>
@@ -10,6 +10,11 @@
     <div id="tna-form__{{ params.name }}-hint" class="tna-form__hint">
       {{ params.hint }}
     </div>
+    {%- endif %}
+    {%- if params.error %}
+    <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
+      <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
+    </p>
     {%- endif %}
     <div class="tna-checkboxes{% if params.small %} tna-checkboxes--small{% endif %}">
       {%- for item in params.items %}

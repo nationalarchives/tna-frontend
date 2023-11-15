@@ -32,15 +32,15 @@
     @include colour.colour-border("form-error");
   }
 
-  &--s {
+  &--m {
     max-width: 20rem;
   }
 
-  &--m {
+  &--l {
     max-width: 40rem;
   }
 
-  &--l {
-    max-width: 60rem;
+  &--xl {
+    max-width: 80rem;
   }
 }

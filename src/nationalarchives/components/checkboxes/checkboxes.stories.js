@@ -4,9 +4,10 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   label: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m"] },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
   name: { control: "text" },
   hint: { control: "text" },
+  error: { control: "object" },
   items: { control: "object" },
   small: { control: "boolean" },
   classes: { control: "text" },
@@ -30,6 +31,7 @@ const Template = ({
   headingSize,
   name,
   hint,
+  error,
   items,
   small,
   classes,
@@ -42,6 +44,7 @@ const Template = ({
       headingSize,
       name,
       hint,
+      error,
       items,
       small,
       classes,
@@ -55,7 +58,6 @@ Standard.args = {
   headingLevel: 4,
   headingSize: "m",
   name: "categories1",
-  hint: "Select all that apply.",
   items: [
     {
       text: "Alpha",
@@ -79,7 +81,6 @@ Small.args = {
   headingLevel: 4,
   headingSize: "m",
   name: "categories2",
-  hint: "Select all that apply.",
   items: [
     {
       text: "Admiralty, Navy, Royal Marines, and Coastguard",
@@ -132,7 +133,6 @@ Preselected.args = {
   headingLevel: 4,
   headingSize: "m",
   name: "categories3",
-  hint: "Select all that apply.",
   items: [
     {
       text: "Alpha",
@@ -142,6 +142,56 @@ Preselected.args = {
       text: "Beta",
       value: "beta",
       checked: true,
+    },
+    {
+      text: "Gamma",
+      value: "gamma",
+    },
+  ],
+  classes: "tna-checkboxes--demo",
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  label: "Categories",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "categories4",
+  hint: "Select all that apply.",
+  items: [
+    {
+      text: "Alpha",
+      value: "alpha",
+    },
+    {
+      text: "Beta",
+      value: "beta",
+    },
+    {
+      text: "Gamma",
+      value: "gamma",
+    },
+  ],
+  classes: "tna-checkboxes--demo",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Categories",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "categories5",
+  error: {
+    text: "You must select a category",
+  },
+  items: [
+    {
+      text: "Alpha",
+      value: "alpha",
+    },
+    {
+      text: "Beta",
+      value: "beta",
     },
     {
       text: "Gamma",

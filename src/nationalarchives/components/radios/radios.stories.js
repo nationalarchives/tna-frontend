@@ -4,9 +4,10 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   label: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m"] },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
   name: { control: "text" },
   hint: { control: "text" },
+  error: { control: "object" },
   items: { control: "object" },
   selected: { control: "text" },
   small: { control: "boolean" },
@@ -31,6 +32,7 @@ const Template = ({
   headingSize,
   name,
   hint,
+  error,
   items,
   selected,
   small,
@@ -44,6 +46,7 @@ const Template = ({
       headingSize,
       name,
       hint,
+      error,
       items,
       selected,
       small,
@@ -58,7 +61,6 @@ Standard.args = {
   headingLevel: 4,
   headingSize: "m",
   name: "type1",
-  hint: "You can only select one.",
   items: [
     {
       text: "Audio",
@@ -82,7 +84,6 @@ Small.args = {
   headingLevel: 4,
   headingSize: "m",
   name: "type2",
-  hint: "You can only select one.",
   items: [
     {
       text: "Admiralty, Navy, Royal Marines, and Coastguard",
@@ -135,7 +136,6 @@ Preselected.args = {
   headingLevel: 4,
   headingSize: "m",
   name: "type3",
-  hint: "You can only select one.",
   items: [
     {
       text: "Audio",
@@ -151,5 +151,55 @@ Preselected.args = {
     },
   ],
   selected: "image",
+  classes: "tna-radios--demo",
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  label: "Type",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "type4",
+  hint: "You can only select one.",
+  items: [
+    {
+      text: "Audio",
+      value: "audio",
+    },
+    {
+      text: "Image",
+      value: "image",
+    },
+    {
+      text: "Video",
+      value: "video",
+    },
+  ],
+  classes: "tna-radios--demo",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Type",
+  headingLevel: 4,
+  headingSize: "m",
+  name: "type5",
+  error: {
+    text: "You must select a type",
+  },
+  items: [
+    {
+      text: "Audio",
+      value: "audio",
+    },
+    {
+      text: "Image",
+      value: "image",
+    },
+    {
+      text: "Video",
+      value: "video",
+    },
+  ],
   classes: "tna-radios--demo",
 };

@@ -1,7 +1,7 @@
 {%- set inputClasses = [params.classes] if params.classes else [] -%}
 {%- set containerClasses = [params.formGroupClasses] if params.formGroupClasses else [] -%}
 <div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}">
-  <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize }}">
+  <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
     <label class="tna-form__label" for="tna-form__{{ params.id }}">
       {{ params.label }}
     </label>

@@ -60,6 +60,12 @@
     "description": ""
   },
   {
+    "name": "rightAlignIcon",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "buttonElement",
     "type": "boolean",
     "required": false,

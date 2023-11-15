@@ -3,6 +3,7 @@
 @use "../../utilities";
 
 .tna-select {
+  max-width: 100%;
   height: calc(2rem + 6px);
   margin-top: 1rem;
   padding: 0 0.5rem 0 0.25rem;
@@ -17,4 +18,20 @@
 
   @include colour.colour-border("input-border", forms.$form-field-border-width);
   border-radius: 0;
+
+  &--s {
+    width: 10rem;
+  }
+
+  &--m {
+    width: 20rem;
+  }
+
+  &--l {
+    width: 40rem;
+  }
+
+  &--xl {
+    width: 80rem;
+  }
 }

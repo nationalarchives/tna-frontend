@@ -12,6 +12,7 @@ const argTypes = {
   plain: { control: "boolean" },
   iconOnly: { control: "boolean" },
   iconOnlyOnMobile: { control: "boolean" },
+  rightAlignIcon: { control: "boolean" },
   buttonElement: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -39,6 +40,7 @@ const Template = ({
   plain,
   iconOnly,
   iconOnlyOnMobile,
+  rightAlignIcon,
   buttonElement,
   classes,
   attributes,
@@ -55,6 +57,7 @@ const Template = ({
       plain,
       iconOnly,
       iconOnlyOnMobile,
+      rightAlignIcon,
       buttonElement,
       classes,
       attributes,
@@ -84,12 +87,12 @@ Icon.args = {
   classes: "tna-button--demo",
 };
 
-export const SmallIcon = Template.bind({});
-SmallIcon.args = {
-  text: "Explore the collection",
+export const RightAlignedIcon = Template.bind({});
+RightAlignedIcon.args = {
+  text: "Search",
   href: "#",
-  icon: "map-location-dot",
-  small: true,
+  icon: "chevron-right",
+  rightAlignIcon: true,
   classes: "tna-button--demo",
 };
 
@@ -110,6 +113,23 @@ IconOnly.args = {
   classes: "tna-button--demo",
 };
 
+export const Small = Template.bind({});
+Small.args = {
+  text: "Small button",
+  href: "#",
+  small: true,
+  classes: "tna-button--demo",
+};
+
+export const SmallWithIcon = Template.bind({});
+SmallWithIcon.args = {
+  text: "Explore the collection",
+  href: "#",
+  icon: "map-location-dot",
+  small: true,
+  classes: "tna-button--demo",
+};
+
 export const SmallIconOnly = Template.bind({});
 SmallIconOnly.args = {
   text: "Explore the collection",
@@ -117,14 +137,6 @@ SmallIconOnly.args = {
   icon: "map-location-dot",
   small: true,
   iconOnly: true,
-  classes: "tna-button--demo",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  text: "Small button",
-  href: "#",
-  small: true,
   classes: "tna-button--demo",
 };
 

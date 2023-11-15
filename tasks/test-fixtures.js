@@ -1,5 +1,6 @@
 const { globSync } = require("glob");
 const fs = require("fs");
+const path = require("path");
 const Diff = require("diff");
 const nunjucks = require("nunjucks");
 
@@ -7,7 +8,7 @@ require.extensions[".njk"] = function (module, filename) {
   module.exports = fs.readFileSync(filename, "utf8");
 };
 
-nunjucks.configure(__dirname + "/../src");
+nunjucks.configure(path.join(__dirname, "..", "src"));
 
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
@@ -30,15 +31,9 @@ const failedComponents = components.filter((component) => {
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
     const result = nunjucks
-      .renderString(
-        componentNunjucks.replace(
-          '{% from "nationalarchives/components/',
-          '{% from "src/nationalarchives/components/',
-        ),
-        {
-          params: fixture.options,
-        },
-      )
+      .renderString(componentNunjucks, {
+        params: fixture.options,
+      })
       .trim()
       .replace(/>\n\s*/g, ">")
       .replace(/\n\s*</g, "<");

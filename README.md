@@ -22,3 +22,25 @@ npm install
 # Start Storybook
 npm start
 ```
+
+## Useful links
+
+- [TNA Frontend Storybook](https://nationalarchives.github.io/tna-frontend/)
+- [TNA Frontend wiki](https://github.com/nationalarchives/tna-frontend/wiki)
+- [National Archives Design System](https://nationalarchives.github.io/design-system/)
+
+## Accessibility
+
+The National Archives Digital Services team works hard to ensure that TNA Frontend is accessible.
+
+Using Frontend will help your service meet [level AA of WCAG 2.2](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag). But you must still [check that your service meets accessibility requirements](https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction), especially if you extend or modify components.
+
+You should also use:
+
+- [the JavaScript from TNA Frontend](https://github.com/nationalarchives/tna-frontend/wiki/Using-TNA-Frontend#javascript)
+
+You can also read the [accessibility statement for the National Archives Design System](https://nationalarchives.github.io/design-system/accessibility/).
+
+### Accessibility warnings
+
+If you get a warning from a linter or accessibility checker, check our list of [issues you should not need to fix](https://github.com/nationalarchives/tna-frontend/wiki/Accessibility-issues-you-should-not-need-to-fix).

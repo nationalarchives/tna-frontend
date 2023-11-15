@@ -269,6 +269,7 @@
 
 %tint {
   @include colour-background("background-tint");
+  @include colour-font("font-base");
 }
 
 @mixin tint {
@@ -307,6 +308,7 @@
     )};
 
   @include colour-background("background");
+  @include colour-font("font-base");
 }
 
 @mixin accent-light {

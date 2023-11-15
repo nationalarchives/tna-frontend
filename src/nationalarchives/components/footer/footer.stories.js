@@ -174,7 +174,7 @@ Standard.args = {
       href: "#",
     },
     {
-      text: "Terms and condidtions",
+      text: "Terms and conditions",
       href: "#",
     },
     {

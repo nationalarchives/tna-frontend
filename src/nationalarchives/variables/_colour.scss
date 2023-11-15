@@ -111,6 +111,7 @@ $colour-palette-dark: map.merge(
     "icon-light": brand-colour("white", 0.35),
     "link": brand-colour("blue"),
     "link-visited": #a8f,
+    "focus-outline": brand-colour("orange"),
     "keyline": brand-colour("white", 0.25),
     "keyline-dark": brand-colour("white"),
     "input-foreground": brand-colour("white"),

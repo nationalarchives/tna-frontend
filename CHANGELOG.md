@@ -8,10 +8,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...HEAD)
 
 ### Added
+
+- Grid columns can be aligned along the cross axis with classes `tna-column--align-top`, `tna-column--align-bottom` and `tna-column--align-centre`
+- Actions and items using the `href` attribute on cards can now have custom classes and attributes
+- Events can now be added when cookie preferences change
+- Table styles added
+- Pagination component has the option to have no numbers
+- Table wrapper for tables wider than the current viewport
+
 ### Changed
+
+- Change many instances of Font Awesome icons to a fixed width
+- Adjusted the width of the hero caption
+- Removed margin and padding from all elements by default
+- The standard cookie policies are always `essential`, `usage` and `settings` - other custom policies can be added
+- Focus outline on dark themes has changed from blue to orange to avoid colour conflict with links
+
 ### Deprecated
 ### Removed
+
+- Removed CSS to counter conflicting GOV.UK paragraph styling
+- Transitions removed from most elements
+- `loadScriptsOnAccept` option for cookie banner removed in favour of callback events
+
 ### Fixed
+
+- Assets path fixed for GOV.UK prototype kit
+- Colour fixed for plain card supertitles in accented style
+- Header navigation uses flexbox for layout of tabs and top navigation stacks on mobile
+- Explicitly declare font colour for tinted and light accent backgrounds
+- Accepting or declining individual cookie policies now works
+- Removed extra space from nested links
+
 ### Security
 
 ## [0.1.24-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...v0.1.24-prerelease) - 2023-11-06

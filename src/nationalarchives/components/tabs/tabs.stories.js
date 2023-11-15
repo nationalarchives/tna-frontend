@@ -57,6 +57,9 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   title: "Example tabs",
   items: [
@@ -112,7 +115,7 @@ Test.play = async ({ args, canvasElement, step }) => {
     await expect(section).toHaveAttribute("tabindex", "-1");
   };
 
-  const expectButtonAndSectionAToBeCurrent = async (section) => {
+  const expectButtonAndSectionAToBeCurrent = async () => {
     await step("Test tab buttons", async () => {
       await expectButtonToBeCurrent(buttonA);
       await expectButtonNotToBeCurrent(buttonB);
@@ -126,7 +129,7 @@ Test.play = async ({ args, canvasElement, step }) => {
     });
   };
 
-  const expectButtonAndSectionBToBeCurrent = async (section) => {
+  const expectButtonAndSectionBToBeCurrent = async () => {
     await step("Test tab buttons", async () => {
       await expectButtonNotToBeCurrent(buttonA);
       await expectButtonToBeCurrent(buttonB);
@@ -140,7 +143,7 @@ Test.play = async ({ args, canvasElement, step }) => {
     });
   };
 
-  const expectButtonAndSectionCToBeCurrent = async (section) => {
+  const expectButtonAndSectionCToBeCurrent = async () => {
     await step("Test tab buttons", async () => {
       await expectButtonNotToBeCurrent(buttonA);
       await expectButtonNotToBeCurrent(buttonB);

@@ -36,12 +36,15 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   text: "Skip to main content",
   href: "main-content",
   classes: "tna-skip-link--demo",
 };
-Test.play = async ({ args, canvasElement, step }) => {
+Test.play = async ({ args, canvasElement }) => {
   const canvas = within(canvasElement);
 
   const $skipLink = canvas.getByText(args.text);

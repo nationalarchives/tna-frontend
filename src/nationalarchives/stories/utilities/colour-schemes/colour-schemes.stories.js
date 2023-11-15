@@ -451,64 +451,68 @@ const Template = ({ theme, accent }) => {
           classes: "tna-hero--demo",
         },
       })}
-      <div class="tna-container tna-section tna-!--padding-bottom-s">
-        <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              style: "boxed",
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              style: "accent",
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
+      <div class="tna-section tna-!--padding-bottom-s">
+        <ul class="tna-ul tna-ul--plain tna-container">
+          <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                style: "boxed",
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                style: "accent",
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+        </ul>
       </div>
       <hr>
-      <div class="tna-container tna-section">
-        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              horizontal: true,
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              horizontal: true,
-              style: "boxed",
-              classes: "tna-!--margin-bottom-m",
-            },
-          })}
-        </div>
-        <div class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          ${Card({
-            params: {
-              ...cardDefaultOptions,
-              horizontal: true,
-              style: "accent",
-            },
-          })}
-        </div>
+      <div class="tna-section">
+        <ul class="tna-ul tna-ul--plain tna-container">
+          <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                horizontal: true,
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                horizontal: true,
+                style: "boxed",
+                classes: "tna-!--margin-bottom-m",
+              },
+            })}
+          </li>
+          <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
+            ${Card({
+              params: {
+                ...cardDefaultOptions,
+                horizontal: true,
+                style: "accent",
+              },
+            })}
+          </li>
+        </ul>
       </div>
       <hr>
       <div class="tna-container tna-section">
@@ -617,7 +621,7 @@ const Template = ({ theme, accent }) => {
         ${IndexGrid({
           params: {
             heading: { title: "My dogs 1", level: 3, href: "#" },
-            items: Array(12)
+            items: Array(6)
               .fill({
                 ...{
                   href: "#",
@@ -695,11 +699,93 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background-contrast">
+      <div class="tna-section tna-background-tint">
         ${IndexGrid({
           params: {
             heading: { title: "My dogs 2", level: 3, href: "#" },
-            items: Array(12)
+            items: Array(6)
+              .fill({
+                ...{
+                  href: "#",
+                  src: "https://picsum.photos/id/237/800/600",
+                  alt: "Photo of a puppy",
+                  width: "800",
+                  height: "600",
+                  title: "Cat",
+                  subtitle: "4 photos",
+                },
+              })
+              .map((item, index) => {
+                const pseudoRandom = ((index * 29) % 8) + 1;
+                return {
+                  ...item,
+                  href: `#/category-${index}`,
+                  title: `Category #${index + 101}`,
+                  subtitle: `${pseudoRandom} photos`,
+                };
+              }),
+            columns: 4,
+            columnsMedium: 3,
+            columnsSmall: 2,
+            columnsTiny: 1,
+          },
+        })}
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            ${Pagination({
+              params: {
+                landmarkLabel: "My dogs 2 results",
+                previous: {
+                  href: "#",
+                },
+                items: [
+                  {
+                    number: 1,
+                    href: "#",
+                  },
+                  {
+                    ellipsis: true,
+                  },
+                  {
+                    number: 6,
+                    href: "#",
+                  },
+                  {
+                    number: 7,
+                    current: true,
+                    href: "#",
+                  },
+                  {
+                    number: 8,
+                    href: "#",
+                  },
+                  {
+                    ellipsis: true,
+                  },
+                  {
+                    number: 42,
+                    href: "#",
+                  },
+                ],
+                next: {
+                  href: "#",
+                },
+                classes: "tna-pagination--demo",
+              },
+            })}
+            <div class="tna-button-group">
+              <a href="#" class="tna-button" role="button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
+              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section tna-background-contrast">
+        ${IndexGrid({
+          params: {
+            heading: { title: "My dogs 3", level: 3, href: "#" },
+            items: Array(6)
               .fill({
                 ...{
                   href: "#",
@@ -780,8 +866,8 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-accent-light">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 3", level: 3, href: "#" },
-            items: Array(12)
+            heading: { title: "My dogs 4", level: 3, href: "#" },
+            items: Array(6)
               .fill({
                 ...{
                   href: "#",
@@ -862,8 +948,8 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-accent">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 4", level: 3, href: "#" },
-            items: Array(12)
+            heading: { title: "My dogs 5", level: 3, href: "#" },
+            items: Array(6)
               .fill({
                 ...{
                   href: "#",
@@ -1190,7 +1276,7 @@ const Template = ({ theme, accent }) => {
             href: "#",
           },
           {
-            text: "Terms and condidtions",
+            text: "Terms and conditions",
             href: "#",
           },
           {
@@ -1209,7 +1295,9 @@ const Template = ({ theme, accent }) => {
 };
 
 export const System = Template.bind({});
-// System.parameters = { options: { showPanel: false } };
+System.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 System.args = {
   theme: "system",
   accent: "pink",

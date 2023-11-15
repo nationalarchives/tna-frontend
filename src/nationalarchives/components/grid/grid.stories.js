@@ -186,12 +186,18 @@ const responsiveColumn = {
   widthSmall: "1-2",
   widthTiny: "full",
 };
+Responsive.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Responsive.args = {
   classes: "tna-grid--demo tna-grid--demo-tall",
   columns: Array(12).fill({ ...responsiveColumn }),
 };
 
 export const Flex = Template.bind({});
+Flex.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Flex.args = {
   classes: "tna-grid--demo",
   columns: [
@@ -207,6 +213,9 @@ Flex.args = {
 };
 
 export const Order = Template.bind({});
+Order.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Order.args = {
   classes: "tna-grid--demo tna-grid--demo-tall",
   columns: [
@@ -246,6 +255,9 @@ Order.args = {
 };
 
 export const Margin = Template.bind({});
+Margin.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Margin.args = {
   classes: "tna-grid--demo",
   columns: [

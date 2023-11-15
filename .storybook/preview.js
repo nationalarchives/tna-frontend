@@ -1,6 +1,7 @@
 import "../src/nationalarchives/all.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
+import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 // import isChromatic from "chromatic/isChromatic";
 
 document.documentElement.classList.add(
@@ -14,7 +15,7 @@ document.body.classList.add("tna-template__body");
 
 export const parameters = {
   actions: {
-    disable: true,
+    // disable: true,
   },
   viewport: { viewports: customViewports },
   options: { showPanel: true },
@@ -32,6 +33,19 @@ export const parameters = {
     expanded: true,
   },
 };
+
+export const decorators = [
+  (Story, ctx) => {
+    window.dataLayer = [];
+    window.TNAFrontend = {
+      Cookies,
+    };
+    const cookies = new Cookies();
+    cookies.deleteAll();
+    cookies.destroy();
+    return Story();
+  },
+];
 
 // const fontLoader = async () => ({
 //   fonts: await Promise.all([

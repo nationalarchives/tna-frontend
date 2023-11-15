@@ -26,12 +26,12 @@
           <ul class="tna-ul tna-ul--plain tna-footer__social-items">
           {%- for item in params.social -%}
             <li class="tna-footer__social-item">
-              <a href="{{ item.href }}" class="tna-footer__social-item-link" {%- if item.title %}title="{{ item.title }}"{% endif %}>
+              <a href="{{ item.href }}" class="tna-footer__social-item-link" {%- if item.title %} title="{{ item.title }}"{% endif %}>
                 {%- if item.brandIcon or item.icon -%}
                   {%- if item.brandIcon -%}
-                  <i class="fa-brands fa-{{ item.brandIcon }}"></i>
+                  <i class="fa-brands fa-fw fa-{{ item.brandIcon }}"></i>
                   {%- else -%}
-                  <i class="fa-solid fa-{{ item.icon }}"></i>
+                  <i class="fa-solid fa-fw fa-{{ item.icon }}"></i>
                   {%- endif -%}
                 <span class="tna-footer__social-item-link-text tna-!--visually-hidden">
                   {{ item.text }}

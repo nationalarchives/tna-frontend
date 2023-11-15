@@ -23,10 +23,10 @@
 
   @include colour.colour-border("button-background", 0.25rem);
 
-  transition:
-    color 200ms,
-    background-color 200ms,
-    border-color 200ms;
+  // transition:
+  //   color 200ms,
+  //   background-color 200ms,
+  //   border-color 200ms;
 
   cursor: pointer;
 
@@ -49,10 +49,10 @@
 
     background: transparent;
 
-    transition:
-      color 50ms,
-      background-color 50ms,
-      border-color 50ms;
+    // transition:
+    //   color 50ms,
+    //   background-color 50ms,
+    //   border-color 50ms;
   }
 
   &--plain {

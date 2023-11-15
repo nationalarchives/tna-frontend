@@ -79,6 +79,10 @@
     }
   }
 
+  &__current-item-text {
+    margin-top: 0;
+  }
+
   @include media.on-mobile {
     flex-direction: column;
   }

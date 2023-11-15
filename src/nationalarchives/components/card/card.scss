@@ -61,7 +61,7 @@
   }
 
   &__meta {
-    margin-bottom: 1rem;
+    margin: 0;
     padding: 0;
 
     display: flex;
@@ -84,6 +84,10 @@
 
         @include colour.colour-font("icon-light");
       }
+    }
+
+    + p {
+      margin-top: 1rem;
     }
   }
 
@@ -123,7 +127,7 @@
   &--accent {
     @include colour.accent;
 
-    .tna-hgroup__supertitle {
+    .tna-hgroup__supertitle:not(.tna-hgroup__supertitle--plain) {
       @include colour.contrast;
 
       @include colour.colour-border("contrast-background");

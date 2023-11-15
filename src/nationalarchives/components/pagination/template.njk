@@ -1,12 +1,16 @@
 {% from "nationalarchives/components/button/macro.njk" import tnaButton %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.spaced -%}
+  {%- set containerClasses = containerClasses.concat('tna-pagination--spaced') -%}
+{%- endif -%}
 <nav class="tna-pagination {{ containerClasses | join(' ') }}" role="navigation" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Pagination' }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% if params.previous -%}
   <div class="tna-pagination__prev">
     {{ tnaButton({
       text: params.previous.text if params.previous.text else "Previous",
       href: "#",
+      title: params.previous.title,
       icon: "arrow-left",
       iconOnlyOnMobile: true,
       attributes: {
@@ -15,6 +19,7 @@
     }) }}
   </div>
   {% endif -%}
+  {% if params.items -%}
   <ul class="tna-pagination__list">
     {% for item in params.items -%}
       {% if item.ellipsis -%}
@@ -34,11 +39,15 @@
       {% endif -%}
     {% endfor -%}
   </ul>
+  {% elif params.currentItemText -%}
+    <p class="tna-pagination__current-item-text">{{ params.currentItemText }}</p>
+  {% endif -%}
   {% if params.next -%}
   <div class="tna-pagination__next">
     {{ tnaButton({
       text: params.next.text if params.next.text else "Next",
       href: "#",
+      title: params.next.title,
       icon: "arrow-right",
       iconOnlyOnMobile: true,
       classes: "tna-button--icon-right",

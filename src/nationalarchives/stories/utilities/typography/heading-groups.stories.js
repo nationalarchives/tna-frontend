@@ -3,7 +3,7 @@ const argTypes = {
   title: { control: "text" },
   level: { control: "number", min: 1, max: 6, step: 1 },
   size: { control: "radio", options: ["m", "l", "xl"] },
-  singleSentence: { control: "boolean" },
+  plainSupertitle: { control: "boolean" },
 };
 
 export default {
@@ -11,35 +11,75 @@ export default {
   argTypes,
 };
 
-const Template = ({
+const HeadingGroupTemplate = ({
   supertitle,
   title,
-  level = 3,
-  size = "l",
-  singleSentence,
+  level,
+  size,
+  plainSupertitle,
 }) =>
-  singleSentence
-    ? `<hgroup class="tna-hgroup-${size}">
-  <h${level} class="tna-hgroup__title">
-  <span class="tna-hgroup__supertitle">${supertitle}</span>
-  <span class="tna-hgroup__title">${title}</span>
-</h${level}>
-</hgroup>`
-    : `<hgroup class="tna-hgroup-${size}">
-  <p class="tna-hgroup__supertitle">${supertitle}</p>
+  `<hgroup class="tna-hgroup-${size}">
+  <p class="tna-hgroup__supertitle${
+    plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
+  }">${supertitle}</p>
   <h${level} class="tna-hgroup__title">${title}</h${level}>
 </hgroup>`;
 
-export const HeadingGroup = Template.bind({});
+export const HeadingGroup = HeadingGroupTemplate.bind({});
 HeadingGroup.args = {
-  supertitle: "The story of",
-  title: "Alice Hawkins",
-  singleSentence: true,
-};
-
-export const HeadingGroupSeparated = Template.bind({});
-HeadingGroupSeparated.args = {
   supertitle: "Record revealed",
   title: "The Monteagle Letter",
-  singleSentence: false,
+  level: 3,
+  size: "l",
+  plainSupertitle: false,
+};
+
+const HeadingGroupSingleSentenceTemplate = ({
+  supertitle,
+  title,
+  level,
+  size,
+  plainSupertitle,
+}) =>
+  `<hgroup class="tna-hgroup-${size}">
+  <h${level} class="tna-hgroup__title">
+    <span class="tna-hgroup__supertitle${
+      plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
+    }">${supertitle}</span>
+    <span class="tna-hgroup__title">${title}</span>
+  </h${level}>
+</hgroup>`;
+
+export const HeadingGroupSingleSentence =
+  HeadingGroupSingleSentenceTemplate.bind({});
+HeadingGroupSingleSentence.args = {
+  supertitle: "The story of",
+  title: "Alice Hawkins",
+  level: 3,
+  size: "l",
+  plainSupertitle: false,
+};
+
+const HeadingGroupPlainSupertitleTemplate = ({
+  supertitle,
+  title,
+  level,
+  size,
+  plainSupertitle,
+}) =>
+  `<hgroup class="tna-hgroup-${size}">
+  <p class="tna-hgroup__supertitle${
+    plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
+  }">${supertitle}</p>
+  <h${level} class="tna-hgroup__title">${title}</h${level}>
+</hgroup>`;
+
+export const HeadingGroupPlainSupertitle =
+  HeadingGroupPlainSupertitleTemplate.bind({});
+HeadingGroupPlainSupertitle.args = {
+  supertitle: "Record revealed",
+  title: "The Monteagle Letter",
+  level: 3,
+  size: "l",
+  plainSupertitle: true,
 };

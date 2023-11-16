@@ -30,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed CSS to counter conflicting GOV.UK paragraph styling
 - Transitions removed from most elements
 - `loadScriptsOnAccept` option for cookie banner removed in favour of callback events
-- Removed the `accent-color` property for the form elements
+- Removed the `accent-color` property for form elements
 
 ### Fixed
 

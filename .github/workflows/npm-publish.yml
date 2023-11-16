@@ -1,4 +1,4 @@
-name: Publish new release
+name: Publish release
 
 on:
   release:
@@ -99,14 +99,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Get release notes
         id: get-release-notes
-        run: |
-          RELEASE_NOTES=$(./tasks/get-release-notes.sh "${{ needs.check.outputs.version }}")
-          echo $RELEASE_NOTES
-          echo "RELEASE_NOTES=$RELEASE_NOTES" >> "$GITHUB_OUTPUT"
+        run: ./tasks/get-release-notes.sh "${{ needs.check.outputs.version }}" > RELEASE_NOTES.txt
       - uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_TITLE: "`v${{ needs.check.outputs.version }}` of `tna-frontend` has just been published"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
           MSG_MINIMAL: true
-          SLACK_MESSAGE: ${{ env.RELEASE_NOTES }}
+          SLACK_MESSAGE: $(cat RELEASE_NOTES.txt)

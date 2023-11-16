@@ -1,22 +1,24 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <fieldset class="tna-form__fieldset"{% if params.hint %} aria-describedby="tna-form__{{ params.name }}-hint"{% endif %}>
-    <legend class="tna-form__legend">
-      <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
-        {{ params.label }}
-      </h{{ params.headingLevel }}>
-    </legend>
-    {%- if params.hint %}
-    <div id="tna-form__{{ params.name }}-hint" class="tna-form__hint">
-      {{ params.hint }}
+  <fieldset class="tna-form__fieldset{% if params.inline %} tna-form__fieldset--inline{% endif %}"{% if params.hint %} aria-describedby="tna-form__{{ params.name }}-hint"{% endif %}>
+    <div class="tna-form__group-contents">
+      <legend class="tna-form__legend">
+        <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
+          {{ params.label }}
+        </h{{ params.headingLevel }}>
+      </legend>
+      {%- if params.hint %}
+      <div id="tna-form__{{ params.name }}-hint" class="tna-form__hint">
+        {{ params.hint }}
+      </div>
+      {%- endif %}
+      {%- if params.error %}
+      <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
+        <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
+      </p>
+      {%- endif %}
     </div>
-    {%- endif %}
-    {%- if params.error %}
-    <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
-      <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
-    </p>
-    {%- endif %}
-    <div class="tna-radios{% if params.small %} tna-radios--small{% endif %}">
+    <div class="tna-radios{% if params.small %} tna-radios--small{% endif %}{% if params.inline %} tna-radios--inline{% endif %}">
       {%- for item in params.items %}
       <div class="tna-radios__item">
         <input type="radio" id="tna-form__{{ params.name }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% if params.selected and item.value === params.selected %} checked{% endif %}>

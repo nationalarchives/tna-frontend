@@ -13,6 +13,7 @@ const argTypes = {
   spellcheck: { control: "boolean" },
   size: { control: "inline-radio", options: ["m", "l", "xl"] },
   rows: { control: "number" },
+  inline: { control: "boolean" },
   classes: { control: "text" },
   formGroupClasses: { control: "text" },
   attributes: { control: "object" },
@@ -41,6 +42,7 @@ const Template = ({
   spellcheck,
   size,
   rows,
+  inline,
   classes,
   formGroupClasses,
   attributes,
@@ -58,6 +60,7 @@ const Template = ({
       spellcheck,
       size,
       rows,
+      inline,
       classes,
       formGroupClasses,
       attributes,
@@ -84,6 +87,7 @@ Predefined.args = {
   value: "I like this 👍🏼",
   classes: "tna-textarea--demo",
 };
+
 export const WithHint = Template.bind({});
 WithHint.args = {
   label: "Enter your feedback",
@@ -105,5 +109,16 @@ Error.args = {
   error: {
     text: "Enter some feedback",
   },
+  classes: "tna-textarea--demo",
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: "Enter your feedback",
+  headingLevel: 4,
+  headingSize: "xs",
+  id: "feedback5",
+  name: "feedback5",
+  inline: true,
   classes: "tna-textarea--demo",
 };

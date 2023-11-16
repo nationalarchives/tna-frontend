@@ -1,14 +1,11 @@
 @use "../utilities/typography" as typographyUtilities;
 @use "../tools/colour";
+@use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
 
 .tna-form {
   &__group {
-    display: block;
-
-    @include spacing.space-above;
-
     &--error {
       padding-left: 1rem;
 
@@ -16,8 +13,37 @@
     }
   }
 
+  &__group-contents {
+    flex: 0 0 39%;
+  }
+
   &__fieldset {
     border: none;
+  }
+
+  &__group,
+  &__fieldset {
+    @include spacing.space-above;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &--inline {
+      // display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+
+      @include media.on-mobile {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__group--inline &__group-contents,
+  &__fieldset--inline &__group-contents {
+    // flex: 0 0 39%;
   }
 
   &__legend {
@@ -54,6 +80,12 @@
 
     &--s {
       @extend %heading-s;
+    }
+
+    &--xs {
+      font-size: 1em;
+      @include typography.main-font;
+      // @include typography.main-font-weight-bold;
     }
   }
 

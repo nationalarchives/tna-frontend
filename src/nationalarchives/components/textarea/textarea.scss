@@ -11,7 +11,7 @@
   min-height: #{($textarea-line-height * $textarea-minimum-lines-visible) + (
       2 * $textarea-vertical-padding
     )};
-  margin-top: 1rem;
+  // margin-top: 1rem;
   padding: $textarea-vertical-padding 0.5rem;
 
   display: block;

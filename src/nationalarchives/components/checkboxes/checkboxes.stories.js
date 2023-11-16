@@ -11,6 +11,7 @@ const argTypes = {
   error: { control: "object" },
   items: { control: "object" },
   small: { control: "boolean" },
+  inline: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -36,6 +37,7 @@ const Template = ({
   error,
   items,
   small,
+  inline,
   classes,
   attributes,
 }) =>
@@ -50,6 +52,7 @@ const Template = ({
       error,
       items,
       small,
+      inline,
       classes,
       attributes,
     },
@@ -206,5 +209,30 @@ Error.args = {
       value: "gamma",
     },
   ],
+  classes: "tna-checkboxes--demo",
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: "Categories",
+  headingLevel: 4,
+  headingSize: "xs",
+  id: "categories6",
+  name: "categories6",
+  items: [
+    {
+      text: "Alpha",
+      value: "alpha",
+    },
+    {
+      text: "Beta",
+      value: "beta",
+    },
+    {
+      text: "Gamma",
+      value: "gamma",
+    },
+  ],
+  inline: true,
   classes: "tna-checkboxes--demo",
 };

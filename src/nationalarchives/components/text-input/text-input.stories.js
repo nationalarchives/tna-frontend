@@ -4,7 +4,10 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   label: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+  headingSize: {
+    control: "inline-radio",
+    options: ["xs", "s", "m", "l", "xl"],
+  },
   id: { control: "text" },
   name: { control: "text" },
   hint: { control: "text" },
@@ -67,6 +70,7 @@ const argTypes = {
   },
   size: { control: "inline-radio", options: ["xs", "s", "m", "l", "xl"] },
   maxLength: { control: "number" },
+  inline: { control: "boolean" },
   classes: { control: "text" },
   formGroupClasses: { control: "text" },
   attributes: { control: "object" },
@@ -97,6 +101,7 @@ const Template = ({
   autofill,
   size,
   maxLength,
+  inline,
   classes,
   formGroupClasses,
   attributes,
@@ -116,6 +121,7 @@ const Template = ({
       autofill,
       size,
       maxLength,
+      inline,
       classes,
       formGroupClasses,
       attributes,
@@ -164,5 +170,16 @@ Error.args = {
   error: {
     text: "Enter a name",
   },
+  classes: "tna-text-input--demo",
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: "Enter your first name",
+  headingLevel: 4,
+  headingSize: "xs",
+  id: "firstname5",
+  name: "firstname5",
+  inline: true,
   classes: "tna-text-input--demo",
 };

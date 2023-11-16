@@ -12,7 +12,9 @@ const argTypes = {
   items: { control: "object" },
   selected: { control: "text" },
   size: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+  inline: { control: "boolean" },
   classes: { control: "text" },
+  formGroupClasses: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -38,7 +40,9 @@ const Template = ({
   items,
   selected,
   size,
+  inline,
   classes,
+  formGroupClasses,
   attributes,
 }) =>
   Select({
@@ -53,7 +57,9 @@ const Template = ({
       items,
       selected,
       size,
+      inline,
       classes,
+      formGroupClasses,
       attributes,
     },
   });
@@ -156,5 +162,30 @@ Error.args = {
       value: "title",
     },
   ],
+  classes: "tna-select--demo",
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: "Sort by",
+  headingLevel: 4,
+  headingSize: "xs",
+  id: "sort5",
+  name: "sort5",
+  items: [
+    {
+      text: "Relevance",
+      value: "relevance",
+    },
+    {
+      text: "Date",
+      value: "date",
+    },
+    {
+      text: "Title",
+      value: "title",
+    },
+  ],
+  inline: true,
   classes: "tna-select--demo",
 };

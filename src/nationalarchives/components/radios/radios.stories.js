@@ -12,6 +12,7 @@ const argTypes = {
   items: { control: "object" },
   selected: { control: "text" },
   small: { control: "boolean" },
+  inline: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -38,6 +39,7 @@ const Template = ({
   items,
   selected,
   small,
+  inline,
   classes,
   attributes,
 }) =>
@@ -53,6 +55,7 @@ const Template = ({
       items,
       selected,
       small,
+      inline,
       classes,
       attributes,
     },
@@ -209,5 +212,30 @@ Error.args = {
       value: "video",
     },
   ],
+  classes: "tna-radios--demo",
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: "Type",
+  headingLevel: 4,
+  headingSize: "xs",
+  id: "type6",
+  name: "type6",
+  items: [
+    {
+      text: "Audio",
+      value: "audio",
+    },
+    {
+      text: "Image",
+      value: "image",
+    },
+    {
+      text: "Video",
+      value: "video",
+    },
+  ],
+  inline: true,
   classes: "tna-radios--demo",
 };

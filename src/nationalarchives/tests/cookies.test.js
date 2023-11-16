@@ -1,4 +1,11 @@
-import { jest, describe, expect, test, afterEach } from "@jest/globals";
+import {
+  jest,
+  describe,
+  expect,
+  test,
+  beforeEach,
+  afterEach,
+} from "@jest/globals";
 import { TextEncoder, TextDecoder, store, options } from "util";
 import Cookies from "../lib/cookies.mjs";
 
@@ -12,12 +19,13 @@ const addCookiesToDocument = (document) => {
   document.__defineGetter__("cookie", () => {
     return Object.keys(_cookies)
       .map((key) => `${key}=${_cookies[key]}`)
-      .join(";");
+      .join("; ");
   });
   document.__defineSetter__("cookie", (s) => {
-    const indexOfSeparator = s.indexOf("=");
-    const key = s.substr(0, indexOfSeparator);
-    const value = s.substring(indexOfSeparator + 1);
+    const keyValue = s.trim().split("=");
+    const key = keyValue[0].trim();
+    const values = keyValue[1].trim().split(";");
+    const value = values[0];
     _cookies[key] = value;
     return `${key}=${value}`;
   });
@@ -30,8 +38,6 @@ addCookiesToDocument(document);
 
 describe("No existing cookies", () => {
   afterEach(() => {
-    const cookies = new Cookies();
-    cookies.destroy();
     document.clearAllCookies();
   });
 
@@ -45,36 +51,14 @@ describe("No existing cookies", () => {
     expect(document.cookie).not.toEqual("");
   });
 
-  test("Destruction", async () => {
-    const cookies = new Cookies();
-
-    expect(Cookies).toHaveProperty("_instance");
-    expect(Cookies._instance).not.toEqual(null);
-
-    cookies.destroy();
-
-    expect(Cookies).toHaveProperty("_instance");
-    expect(Cookies._instance).toEqual(null);
-  });
-
-  test("Singleton", async () => {
-    const cookies1 = new Cookies();
-    const cookies2 = new Cookies();
-
-    expect(cookies1).toBe(cookies2);
-
-    cookies1.destroy();
-    const cookies3 = new Cookies();
-
-    expect(cookies1).not.toBe(cookies3);
-  });
-
   test("Getting/setting", async () => {
     const cookies = new Cookies();
     expect(cookies).toHaveProperty("get");
     expect(cookies).toHaveProperty("set");
     expect(cookies).toHaveProperty("exists");
     expect(cookies).toHaveProperty("hasValue");
+
+    expect(Object.keys(cookies.all)).toHaveLength(1);
 
     const testKey = "foo";
     const testValue = "bar";
@@ -83,6 +67,8 @@ describe("No existing cookies", () => {
     expect(cookies.exists(testKey)).toEqual(false);
 
     cookies.set(testKey, testValue);
+
+    expect(Object.keys(cookies.all)).toHaveLength(2);
 
     expect(cookies.all).toHaveProperty(testKey);
     expect(cookies.all[testKey]).toEqual(testValue);
@@ -271,7 +257,7 @@ describe("No existing cookies", () => {
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
   });
 
-  test("Events", async () => {
+  test("Basic events", async () => {
     const cookies = new Cookies();
     expect(cookies).toHaveProperty("on");
 
@@ -291,21 +277,151 @@ describe("No existing cookies", () => {
       sameSite: "Lax",
       secure: true,
       maxAge: 31536000,
-      cookie: `foo=bar; samesite=Lax; path=/; max-age=31536000; secure`,
+      cookie: `${testKey}=${testValue}; samesite=Lax; path=/; max-age=31536000; secure`,
     });
 
-    cookies.set(testKey, "");
+    cookies.set(testKey, testValue);
 
     expect(mockCallback.mock.calls).toHaveLength(2);
     expect(mockCallback.mock.calls[1][0]).toStrictEqual({
       key: testKey,
-      value: "",
+      value: testValue,
       domain: "",
       path: "/",
       sameSite: "Lax",
       secure: true,
       maxAge: 31536000,
-      cookie: `foo=; samesite=Lax; path=/; max-age=31536000; secure`,
+      cookie: `${testKey}=${testValue}; samesite=Lax; path=/; max-age=31536000; secure`,
     });
+  });
+
+  test("All events", async () => {
+    const cookies = new Cookies();
+
+    const mockSetCookieCallback = jest.fn();
+    cookies.on("setCookie", mockSetCookieCallback);
+    const mockDeleteCookieCallback = jest.fn();
+    cookies.on("deleteCookie", mockDeleteCookieCallback);
+    const mockDeleteAllCookiesCallback = jest.fn();
+    cookies.on("deleteAllCookies", mockDeleteAllCookiesCallback);
+    const mockAcceptPolicyCallback = jest.fn();
+    cookies.on("acceptPolicy", mockAcceptPolicyCallback);
+    const mockRejectPolicyCallback = jest.fn();
+    cookies.on("rejectPolicy", mockRejectPolicyCallback);
+    const mockAcceptAllPoliciesCallback = jest.fn();
+    cookies.on("acceptAllPolicies", mockAcceptAllPoliciesCallback);
+    const mockRejectAllPoliciesCallback = jest.fn();
+    cookies.on("rejectAllPolicies", mockRejectAllPoliciesCallback);
+    const mockChangePolicyCallback = jest.fn();
+    cookies.on("changePolicy", mockChangePolicyCallback);
+
+    const testKey = "foo";
+    const testValue = "bar";
+    cookies.set(testKey, testValue);
+    cookies.delete(testKey);
+    cookies.acceptPolicy("settings");
+    cookies.rejectPolicy("settings");
+    cookies.setPolicy("settings", true);
+    cookies.acceptAllPolicies();
+    cookies.rejectAllPolicies();
+    cookies.deleteAll();
+
+    expect(mockSetCookieCallback.mock.calls).toHaveLength(9);
+    expect(mockDeleteCookieCallback.mock.calls).toHaveLength(3);
+    expect(mockDeleteAllCookiesCallback.mock.calls).toHaveLength(1);
+    expect(mockAcceptPolicyCallback.mock.calls).toHaveLength(1);
+    expect(mockRejectPolicyCallback.mock.calls).toHaveLength(1);
+    expect(mockAcceptAllPoliciesCallback.mock.calls).toHaveLength(1);
+    expect(mockRejectAllPoliciesCallback.mock.calls).toHaveLength(1);
+    expect(mockChangePolicyCallback.mock.calls).toHaveLength(7);
+  });
+
+  test("Shared events", async () => {
+    const mockCallback = jest.fn();
+
+    const cookies1 = new Cookies();
+
+    const cookies2 = new Cookies();
+    cookies2.on("setCookie", mockCallback);
+
+    const testKey = "foo";
+    const testValue = "bar";
+
+    cookies1.set(testKey, testValue);
+    expect(mockCallback.mock.calls).toHaveLength(1);
+
+    cookies1.set(testKey, testValue);
+    expect(mockCallback.mock.calls).toHaveLength(2);
+
+    cookies2.set(testKey, testValue);
+    expect(mockCallback.mock.calls).toHaveLength(3);
+  });
+});
+
+describe("Existing cookies", () => {
+  beforeEach(() => {
+    document.clearAllCookies();
+    document.cookie =
+      "cookies_policy=%7B%22usage%22%3Afalse%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
+  });
+
+  test("Initialisation", async () => {
+    const cookies = new Cookies();
+
+    expect(cookies.all).toHaveProperty("cookies_policy");
+    expect(cookies.policies).toHaveProperty("essential");
+    expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+    expect(cookies.policies).toHaveProperty("settings");
+    expect(cookies.isPolicyAccepted("settings")).toEqual(true);
+    expect(cookies.policies).toHaveProperty("usage");
+    expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+  });
+
+  test("Update policies", async () => {
+    const cookies = new Cookies();
+    cookies.acceptPolicy("usage");
+    cookies.rejectPolicy("settings");
+
+    expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+    expect(cookies.isPolicyAccepted("settings")).toEqual(false);
+    expect(cookies.isPolicyAccepted("usage")).toEqual(true);
+  });
+});
+
+describe("Existing empty cookie policies", () => {
+  beforeEach(() => {
+    document.clearAllCookies();
+    document.cookie = "cookies_policy=%7B%7D";
+  });
+
+  test("Initialisation", async () => {
+    const cookies = new Cookies();
+
+    expect(cookies.all).toHaveProperty("cookies_policy");
+    expect(cookies.policies).toHaveProperty("essential");
+    expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+    expect(cookies.policies).toHaveProperty("settings");
+    expect(cookies.isPolicyAccepted("settings")).toEqual(false);
+    expect(cookies.policies).toHaveProperty("usage");
+    expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+  });
+});
+
+describe("Existing malformed cookie policies", () => {
+  beforeEach(() => {
+    document.clearAllCookies();
+    document.cookie = "cookies_policy=foobar";
+  });
+
+  test("Initialisation", async () => {
+    const cookies = new Cookies();
+
+    expect(cookies.all).toHaveProperty("cookies_policy");
+    expect(cookies.policies).toHaveProperty("essential");
+    expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+    expect(cookies.policies).toHaveProperty("settings");
+    expect(cookies.isPolicyAccepted("settings")).toEqual(false);
+    expect(cookies.policies).toHaveProperty("usage");
+    expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   });
 });

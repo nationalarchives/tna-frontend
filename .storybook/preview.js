@@ -42,7 +42,6 @@ export const decorators = [
     };
     const cookies = new Cookies();
     cookies.deleteAll();
-    cookies.destroy();
     return Story();
   },
 ];

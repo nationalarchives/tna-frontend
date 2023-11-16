@@ -5,6 +5,7 @@ const argTypes = {
   label: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+  id: { control: "text" },
   name: { control: "text" },
   hint: { control: "text" },
   error: { control: "object" },
@@ -30,6 +31,7 @@ const Template = ({
   label,
   headingLevel,
   headingSize,
+  id,
   name,
   hint,
   error,
@@ -44,6 +46,7 @@ const Template = ({
       label,
       headingLevel,
       headingSize,
+      id,
       name,
       hint,
       error,
@@ -60,6 +63,7 @@ Standard.args = {
   label: "Sort by",
   headingLevel: 4,
   headingSize: "m",
+  id: "sort1",
   name: "sort1",
   items: [
     {
@@ -83,6 +87,7 @@ Preselected.args = {
   label: "Sort by",
   headingLevel: 4,
   headingSize: "m",
+  id: "sort2",
   name: "sort2",
   items: [
     {
@@ -107,6 +112,7 @@ WithHint.args = {
   label: "Sort by",
   headingLevel: 4,
   headingSize: "m",
+  id: "sort3",
   name: "sort3",
   hint: "Select a sort.",
   items: [
@@ -131,6 +137,7 @@ Error.args = {
   label: "Sort by",
   headingLevel: 4,
   headingSize: "m",
+  id: "sort4",
   name: "sort4",
   error: {
     text: "You must select a type",

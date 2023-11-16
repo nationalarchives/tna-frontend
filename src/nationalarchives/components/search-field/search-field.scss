@@ -3,7 +3,11 @@
 @use "../../utilities";
 
 .tna-search-field {
-  display: flex;
+  &__fields {
+    margin-top: 1rem;
+
+    display: flex;
+  }
 
   &__input {
     padding: 0 0.375rem;

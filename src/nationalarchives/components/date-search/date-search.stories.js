@@ -1,4 +1,4 @@
-import SearchField from "./template.njk";
+import DateSearch from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
@@ -9,7 +9,10 @@ const argTypes = {
   name: { control: "text" },
   hint: { control: "text" },
   value: { control: "text" },
+  error: { control: "object" },
+  maxWidth: { control: "boolean" },
   classes: { control: "text" },
+  formGroupClasses: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -20,7 +23,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Search field",
+  title: "Components/Date search",
   argTypes,
 };
 
@@ -32,10 +35,13 @@ const Template = ({
   name,
   hint,
   value,
+  error,
+  maxWidth,
   classes,
+  formGroupClasses,
   attributes,
 }) =>
-  SearchField({
+  DateSearch({
     params: {
       label,
       headingLevel,
@@ -44,39 +50,55 @@ const Template = ({
       name,
       hint,
       value,
+      error,
+      maxWidth,
       classes,
+      formGroupClasses,
       attributes,
     },
   });
 
 export const Standard = Template.bind({});
 Standard.args = {
-  label: "Catalogue search results",
-  headingLevel: 1,
-  headingSize: "l",
-  id: "search1",
-  name: "q",
-  classes: "tna-search-field--demo",
+  label: "Enter a start date",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "date1",
+  name: "date1",
+  classes: "tna-date-search--demo",
 };
 
 export const Predefined = Template.bind({});
 Predefined.args = {
-  label: "Catalogue search results",
-  headingLevel: 1,
-  headingSize: "l",
-  id: "search2",
-  name: "q",
-  value: "badgers",
-  classes: "tna-search-field--demo",
+  label: "Enter a start date",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "date2",
+  name: "date2",
+  value: "1986-09-24",
+  classes: "tna-date-search--demo",
 };
 
 export const WithHint = Template.bind({});
 WithHint.args = {
-  label: "Catalogue search results",
-  headingLevel: 1,
-  headingSize: "l",
-  id: "search3",
-  name: "q",
-  hint: "Try searching for something interesting",
-  classes: "tna-search-field--demo",
+  label: "Enter a start date",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "date3",
+  name: "date3",
+  hint: "The earliest date of the record",
+  classes: "tna-date-search--demo",
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Enter a start date",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "date4",
+  name: "date4",
+  error: {
+    text: "Date is not valid",
+  },
+  classes: "tna-date-search--demo",
 };

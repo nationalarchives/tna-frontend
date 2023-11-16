@@ -5,6 +5,7 @@ const argTypes = {
   label: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+  id: { control: "text" },
   name: { control: "text" },
   hint: { control: "text" },
   error: { control: "object" },
@@ -30,6 +31,7 @@ const Template = ({
   label,
   headingLevel,
   headingSize,
+  id,
   name,
   hint,
   error,
@@ -44,6 +46,7 @@ const Template = ({
       label,
       headingLevel,
       headingSize,
+      id,
       name,
       hint,
       error,
@@ -60,6 +63,7 @@ Standard.args = {
   label: "Type",
   headingLevel: 4,
   headingSize: "m",
+  id: "type1",
   name: "type1",
   items: [
     {
@@ -83,6 +87,7 @@ Small.args = {
   label: "Type",
   headingLevel: 4,
   headingSize: "m",
+  id: "type2",
   name: "type2",
   items: [
     {
@@ -135,6 +140,7 @@ Preselected.args = {
   label: "Type",
   headingLevel: 4,
   headingSize: "m",
+  id: "type3",
   name: "type3",
   items: [
     {
@@ -159,6 +165,7 @@ WithHint.args = {
   label: "Type",
   headingLevel: 4,
   headingSize: "m",
+  id: "type4",
   name: "type4",
   hint: "You can only select one.",
   items: [
@@ -183,6 +190,7 @@ Error.args = {
   label: "Type",
   headingLevel: 4,
   headingSize: "m",
+  id: "type5",
   name: "type5",
   error: {
     text: "You must select a type",

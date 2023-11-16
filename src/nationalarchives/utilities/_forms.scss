@@ -17,9 +17,6 @@
   }
 
   &__fieldset {
-    margin: 0;
-    padding: 0;
-
     border: none;
   }
 
@@ -61,6 +58,5 @@
   }
 
   &__label {
-    @include typography.main-font-weight-bold;
   }
 }

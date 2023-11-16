@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.25-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...v0.1.25-prerelease) - 2023-11-16
 
 ### Added
 
@@ -24,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The standard cookie policies are always `essential`, `usage` and `settings` - other custom policies can be added
 - Focus outline on dark themes has changed from blue to orange to avoid colour conflict with links
 
-### Deprecated
 ### Removed
 
 - Removed CSS to counter conflicting GOV.UK paragraph styling
@@ -39,8 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Explicitly declare font colour for tinted and light accent backgrounds
 - Accepting or declining individual cookie policies now works
 - Removed extra space from nested links
-
-### Security
 
 ## [0.1.24-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...v0.1.24-prerelease) - 2023-11-06
 

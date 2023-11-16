@@ -174,7 +174,6 @@ Existing.decorators = [
   (Story) => {
     const cookies = new Cookies();
     cookies.set("cookie_preferences_set", true);
-    cookies.destroy();
     return Story();
   },
 ];

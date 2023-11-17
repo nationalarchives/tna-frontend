@@ -1,5 +1,6 @@
 @use "../../variables/forms";
 @use "../../tools/colour";
+@use "../../tools/media";
 @use "../../utilities/a11y";
 @use "../../utilities";
 
@@ -105,6 +106,11 @@
     flex-flow: row wrap;
     align-items: center;
     gap: 1rem 2rem;
+
+    @include media.on-tiny {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   input:focus + &__item-label {

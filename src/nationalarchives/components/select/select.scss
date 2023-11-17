@@ -6,7 +6,7 @@
   max-width: 100%;
   height: calc(2rem + 6px);
   // margin-top: 1rem;
-  padding: 0 0.5rem 0 0.25rem;
+  padding: 0 1rem 0 0.5rem;
 
   display: block;
 
@@ -18,6 +18,17 @@
 
   @include colour.colour-border("input-border", forms.$form-field-border-width);
   border-radius: 0;
+
+  &--plain {
+    padding: 0 2.5rem 0 0.75rem;
+
+    appearance: none;
+
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUwMHB4IiBoZWlnaHQ9IjUwMHB4IiB2aWV3Qm94PSIwIDAgNTAwIDUwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAwIDUwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSIyNTAsNDAwIDUwLDEwMCA0NTAsMTAwIiBmaWxsPSIjMDAwIi8+PC9zdmc+");
+    background-position: center right 0.5rem;
+    background-size: 0.75rem 0.75rem;
+    background-repeat: no-repeat;
+  }
 
   .tna-form__group--error & {
     @include colour.colour-border("form-error");

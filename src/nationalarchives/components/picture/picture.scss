@@ -47,7 +47,7 @@
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
-  @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px);
     border-bottom-width: 0;
 

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...HEAD)
 
 ### Added
+
+- Form element components have been added: checkboxes, date search, search field, select, text input and textarea
+
 ### Changed
 ### Deprecated
 ### Removed

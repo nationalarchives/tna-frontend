@@ -11,9 +11,9 @@
       </label>
     </h{{ params.headingLevel }}>
     {%- if params.hint %}
-    <div id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
+    <p id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
       {{ params.hint }}
-    </div>
+    </p>
     {%- endif %}
     {%- if params.error %}
     <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
@@ -22,6 +22,6 @@
     {%- endif %}
   </div>
   <input type="date" id="tna-form__{{ params.id }}" class="tna-date-search{% if params.maxWidth %} tna-date-search--max-width{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}"
-  {%- if params.hint or params.error %} aria-describedby="{% if params.hint %}tna-form__{{ params.id }}-hint{% endif %} {% if params.error %}tna-form__{{ params.id }}-error{% endif %}"{% endif %}
+  {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}tna-form__{{ params.id }}-hint{%- endif %} {% if params.error -%}tna-form__{{ params.id }}-error{%- endif -%}"{%- endif %}
   {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
 </div>

@@ -11,9 +11,9 @@
       </label>
     </h{{ params.headingLevel }}>
     {%- if params.hint %}
-    <div id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
+    <p id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
       {{ params.hint }}
-    </div>
+    </p>
     {%- endif %}
     {%- if params.error %}
     <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
@@ -22,7 +22,7 @@
     {%- endif %}
   </div>
   <input type="text" id="tna-form__{{ params.id }}" class="tna-text-input{% if params.size %} tna-text-input--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}"
-  {%- if params.hint or params.error %} aria-describedby="{% if params.hint %}tna-form__{{ params.id }}-hint{% endif %} {% if params.error %}tna-form__{{ params.id }}-error{% endif %}"{% endif %}
+  {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}tna-form__{{ params.id }}-hint{%- endif %} {% if params.error -%}tna-form__{{ params.id }}-error{%- endif -%}"{%- endif %}
   {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
   {%- if params.autofill %} autofill="{{ params.autofill }}"{% endif %}
   {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}

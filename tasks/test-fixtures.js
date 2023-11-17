@@ -10,6 +10,14 @@ require.extensions[".njk"] = function (module, filename) {
 
 nunjucks.configure(path.join(__dirname, "..", "src"));
 
+const pass = (message) => {
+  console.log("\x1b[42m%s\x1b[0m", " PASS ", "\x1b[0m", message);
+};
+
+const fail = (message) => {
+  console.error("\x1b[41m%s\x1b[0m", " FAIL ", "\x1b[0m", message);
+};
+
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
@@ -39,7 +47,8 @@ const failedComponents = components.filter((component) => {
       .replace(/\n\s*</g, "<");
     const mismatch = result !== fixture.html;
     if (mismatch) {
-      console.error(`  🔴 [FAIL] ${fixture.name}\n`);
+      fail(`${fixture.name} - ${componentsDirectory}${component}/template.njk`);
+      console.log("\n");
       const diff = Diff.diffChars(fixture.html, result)
         .map(
           (part) =>
@@ -51,7 +60,7 @@ const failedComponents = components.filter((component) => {
       console.log(diff);
       console.log("\n");
     } else {
-      console.log(`  🟢 [PASS] ${fixture.name}`);
+      pass(fixture.name);
     }
     return mismatch;
   });
@@ -59,16 +68,16 @@ const failedComponents = components.filter((component) => {
 });
 console.log("\n------------------------------------------");
 if (failedComponents.length) {
-  console.error(
-    `🔴 [FAIL] ${failedComponents.length} out of ${
-      components.length
-    } component${components.length === 1 ? "" : "s"} failed`,
+  fail(
+    `${failedComponents.length} out of ${components.length} component${
+      components.length === 1 ? "" : "s"
+    } failed`,
   );
   process.exitCode = 1;
   throw new Error("Fixtures tests failed");
 } else {
-  console.log(
-    `🟢 [PASS] ${components.length} component${
+  pass(
+    `${components.length} component${
       components.length === 1 ? "" : "s"
     } passed successfully`,
   );

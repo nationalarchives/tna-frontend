@@ -29,3 +29,86 @@ import * as SearchFieldStories from "../../../components/search-field/search-fie
 <Canvas of={SelectStories.Inline} />
 <Canvas of={RadiosStories.Inline} />
 <Canvas of={CheckboxesStories.Inline} />
+
+## Structure
+
+### Single form elements
+
+```html
+<div class="tna-form__group"> <!-- Optional: "tna-form__group--error" -->
+
+  <div class="tna-form__group-contents">
+
+    <h4 class="tna-form__heading tna-form__heading--m">
+      <label class="tna-form__label" for="tna-form__ELEMENT-ID">
+        <!-- Field title -->
+      </label>
+    </h4>
+
+    <!-- Optional hint
+    <p id="tna-form__ELEMENT-ID-hint" class="tna-form__hint">
+      [Hint text]
+    </p>
+    -->
+
+    <!-- Optional error
+    <p id="tna-form__ELEMENT-ID-error" class="tna-form__error-message">
+      <span class="tna-!--visually-hidden">Error:</span> [Error text]
+    </p>
+    -->
+
+  </div>
+
+  <!-- Field id="tna-form__ELEMENT-ID"
+    If hint:
+      aria-describedby="tna-form__ELEMENT-ID-hint"
+    If error:
+      aria-describedby="tna-form__ELEMENT-ID-error"
+    If hint and error:
+      aria-describedby="tna-form__ELEMENT-ID-hint tna-form__ELEMENT-ID-error"
+  -->
+
+</div>
+```
+
+### Fieldset (multiple inputs - e.g. checkboxes and radios)
+
+```html
+<div class="tna-form__group"> <!-- Optional: "tna-form__group--error" -->
+
+  <fieldset class="tna-form__fieldset"><!-- Fieldset
+      If hint:
+        aria-describedby="tna-form__ELEMENT-ID-hint"
+      If error:
+        aria-describedby="tna-form__ELEMENT-ID-error"
+      If hint and error:
+        aria-describedby="tna-form__ELEMENT-ID-hint tna-form__ELEMENT-ID-error"
+    -->
+
+    <div class="tna-form__group-contents">
+
+      <legend class="tna-form__legend">
+        <h4 class="tna-form__heading tna-form__heading--m">
+          <!-- Field title -->
+        </h4>
+      </legend>
+
+      <!-- Optional hint
+      <p id="tna-form__ELEMENT-ID-hint" class="tna-form__hint">
+        [Hint text]
+      </p>
+      -->
+
+      <!-- Optional error
+      <p id="tna-form__ELEMENT-ID-error" class="tna-form__error-message">
+        <span class="tna-!--visually-hidden">Error:</span> [Error text]
+      </p>
+      -->
+
+    </div>
+  </fieldset>
+
+  <!-- Fields -->
+  
+</div>
+```

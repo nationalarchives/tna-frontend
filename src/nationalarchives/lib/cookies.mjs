@@ -42,6 +42,8 @@ export default class Cookies {
   /** @protected */
   domain = "";
   /** @protected */
+  path = "";
+  /** @protected */
   secure = true;
   /** @protected */
   policiesKey = "";
@@ -50,17 +52,20 @@ export default class Cookies {
    * Create a cookie handler.
    * @param {string[]} [extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
    * @param {string} [options.domain=""] - The domain to register the cookie with.
+   * @param {string} [options.path=""] - The domain to register the cookie with.
    * @param {string} [options.secure=true] - Only set cookie in HTTPS environments.
    * @param {string} [options.policiesKey=cookies_policy] - The name of the cookie.
    */
   constructor(extraPolicies = [], options = {}) {
     const {
       domain = "",
+      path = "/",
       secure = true,
       policiesKey = "cookies_policy",
     } = options;
     this.extraPolicies = extraPolicies;
     this.domain = domain;
+    this.path = path;
     this.secure = secure;
     this.policiesKey = policiesKey;
     this.events = new CookieEventHandler();
@@ -139,14 +144,15 @@ export default class Cookies {
    * @param {string} [options.path=/] - The path to register the cookie for.
    * @param {string} [options.sameSite=Lax] - The sameSite attribute.
    * @param {string} [options.domain=this.domain] - The domain to register the cookie with.
+   * @param {string} [options.path=this.path] - The path to register the cookie with.
    * @param {string} [options.secure=this.secure] - Only set cookie in HTTPS environments.
    */
   set(key, value, options = {}) {
     const {
       maxAge = 60 * 60 * 24 * 365,
-      path = "/",
       sameSite = "Lax",
       domain = this.domain,
+      path = this.path,
       secure = this.secure,
     } = options;
     if (!key) {
@@ -158,6 +164,7 @@ export default class Cookies {
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;
+    console.log(cookie);
     this.events.trigger("setCookie", {
       key,
       value,

@@ -10,10 +10,9 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 
-  @include media.on-tiny {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  border-bottom: 1px transparent solid;
 
+  @include media.on-mobile {
     @include typography.relative-font-size(16);
   }
 

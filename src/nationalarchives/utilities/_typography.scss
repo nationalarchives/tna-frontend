@@ -113,7 +113,7 @@ a {
     }
 
     &:hover:not(:focus) {
-      box-shadow: 0 0 0 0.3125rem var(--link);
+      box-shadow: 0 0 0 0.3125rem var(--focus-outline);
     }
   }
 

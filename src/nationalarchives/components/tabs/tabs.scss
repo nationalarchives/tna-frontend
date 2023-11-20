@@ -130,7 +130,7 @@
     }
   }
 
-  @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
     &__list-item-link {
       padding-right: 1rem;
       padding-left: 1rem;
@@ -138,6 +138,16 @@
       overflow: hidden;
 
       @include colour.colour-border("keyline-dark", 1px);
+    }
+  }
+
+  @include colour.on-forced-colours {
+    &__list-item-link {
+      &--selected {
+        padding-bottom: 0.125rem;
+
+        border-bottom-width: 0.375rem;
+      }
     }
   }
 

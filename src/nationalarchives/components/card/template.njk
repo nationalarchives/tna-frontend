@@ -59,13 +59,15 @@
   {%- endif %}
     <div class="tna-card__body">
     {%- if params.meta %}
-      <ul class="tna-card__meta">
+      <ul class="tna-card__meta tna-chip-list">
         {%- for item in params.meta %}
-        <li class="tna-card__meta-item">
-          {%- if item.icon %}
-          <i class="fa-solid fa-fw fa-{{ item.icon }}"></i>
-          {%- endif %}
-          {{ item.text }}
+        <li class="tna-chip-list__item">
+          <div class="tna-chip tna-chip--plain">
+            {%- if item.icon %}
+            <i class="fa-solid fa-fw fa-{{ item.icon }}"></i>
+            {%- endif %}
+            {{ item.text }}
+          </div>
         </li>
         {%- endfor %}
       </ul>

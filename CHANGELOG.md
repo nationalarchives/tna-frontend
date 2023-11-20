@@ -10,11 +10,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Form element components have been added: checkboxes, date search, search field, select, text input and textarea
+- High contrast support for chip lists with icons
+- Allow custom cookie path to be passed to cookie banner
 
 ### Changed
+
+- Card meta information changed to chip list
+- Improvements to high contrast modes
+
 ### Deprecated
 ### Removed
+
+- Removed generic `accent` CSS variable
+
 ### Fixed
+
+- Multiple line spacing for chip lists fixed
+
 ### Security
 
 ## [0.1.25-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...v0.1.25-prerelease) - 2023-11-16

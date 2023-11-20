@@ -59,7 +59,7 @@
       @include colour.colour-font("font-dark");
     }
 
-    @include colour.on-high-contrast {
+    @include colour.on-high-contrast-and-forced-colours {
       padding-right: 0.75rem;
       padding-left: 0.75rem;
 

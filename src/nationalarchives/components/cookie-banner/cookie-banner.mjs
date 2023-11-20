@@ -29,6 +29,7 @@ export class CookieBanner {
 
     const policies = this.$module.getAttribute("data-policies") || "";
     const domain = this.$module.getAttribute("data-domain") || undefined;
+    const path = this.$module.getAttribute("data-path") || undefined;
     const secure = this.$module.getAttribute("data-secure") || undefined;
     const policiesKey =
       this.$module.getAttribute("data-policies-key") || undefined;
@@ -40,6 +41,7 @@ export class CookieBanner {
         .map((policy) => policy.trim()),
       {
         domain,
+        path,
         secure,
         policiesKey,
       },

@@ -75,7 +75,7 @@
         ],
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><ul class=\"tna-card__meta\"><li class=\"tna-card__meta-item\"><i class=\"fa-solid fa-fw fa-calendar\"></i>24th September 2023</li><li class=\"tna-card__meta-item\"><i class=\"fa-solid fa-fw fa-ticket\"></i>From £16</li><li class=\"tna-card__meta-item\"><i class=\"fa-solid fa-fw fa-location-dot\"></i>Online</li></ul><p>Card body</p></div></div></div>",
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><ul class=\"tna-card__meta tna-chip-list\"><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-calendar\"></i>24th September 2023</div></li><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-ticket\"></i>From £16</div></li><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-location-dot\"></i>Online</div></li></ul><p>Card body</p></div></div></div>",
       "hidden": false
     },
     {

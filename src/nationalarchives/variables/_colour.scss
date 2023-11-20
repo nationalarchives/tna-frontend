@@ -77,7 +77,7 @@ $colour-palette-default: (
   "contrast-button-background": brand-colour("white"),
   "contrast-button-hover-text": brand-colour("white"),
   "contrast-button-hover-background": brand-colour("black"),
-  "accent": map.get($colour-palette-brand, "light-grey"),
+  // "accent": map.get($colour-palette-brand, "light-grey"),
   "accent-background": #111,
   "accent-background-light": map.get($colour-palette-brand, "light-grey"),
   "accent-font-base": brand-colour("white"),

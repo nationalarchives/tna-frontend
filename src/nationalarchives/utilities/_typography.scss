@@ -201,22 +201,22 @@ small {
       @include colour.colour-border("keyline-dark", 1px, solid);
 
       .tna-chip {
-      // display: flex;
-      // align-items: center;
+        // display: flex;
+        // align-items: center;
 
-      &:has(.fa-solid, .fa-brand) {
-        padding-left: 0;
+        &:has(.fa-solid, .fa-brand) {
+          padding-left: 0;
+
+          .fa-solid,
+          .fa-brand {
+            margin-right: 0.5rem;
+          }
+        }
+      }
 
       .fa-solid,
       .fa-brand {
-        margin-right: 0.5rem;
-      }
-      }
-      }
-
-      .fa-solid,
-      .fa-brand {
-        padding: .375rem .25rem;
+        padding: 0.375rem 0.25rem;
 
         @include colour.colour-font("contrast-font-base");
 

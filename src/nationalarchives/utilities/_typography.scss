@@ -130,111 +130,6 @@ small {
   );
 }
 
-// .tna-detail[title][data-type] {
-//   padding: 0 0.375rem;
-
-//   display: inline-flex;
-//   flex-flow: row nowrap;
-//   align-items: baseline;
-//   gap: 0.5rem;
-
-//   vertical-align: baseline;
-
-//   background-color: #ccc;
-
-//   &::after {
-//     @include colour.colour-font("font-base");
-//     @include typography.detail-font-small;
-//     vertical-align: baseline;
-
-//     content: attr(data-type) / "";
-//   }
-
-//   &[data-type="misc"] {
-//     background-color: #f28482;
-//   }
-
-//   &[data-type="loc"] {
-//     background-color: #edae49;
-//   }
-
-//   &[data-type="per"] {
-//     background-color: #b5e2fa;
-//   }
-
-//   @at-root #{selector.unify("a", &)} {
-//     @include colour.colour-font("font-base");
-
-//     &::after {
-//       text-decoration: none;
-//     }
-//   }
-// }
-
-.tna-chip-list {
-  @include spacing.space-above;
-  // margin-bottom: 0;
-  // padding-left: 0;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-
-  list-style: none;
-
-  &__item {
-    display: flex;
-    align-items: center;
-
-    .tna-chip {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .fa-solid,
-    .fa-brand {
-      @include colour.colour-font("icon-light");
-    }
-
-    @include colour.on-high-contrast {
-      @include colour.colour-border("keyline-dark", 1px, solid);
-
-      .tna-chip {
-        // display: flex;
-        // align-items: center;
-
-        &:has(.fa-solid, .fa-brand) {
-          padding-left: 0;
-
-          .fa-solid,
-          .fa-brand {
-            margin-right: 0.5rem;
-          }
-        }
-      }
-
-      .fa-solid,
-      .fa-brand {
-        padding: 0.375rem 0.25rem;
-
-        @include colour.colour-font("contrast-font-base");
-
-        @include colour.colour-background("contrast-background");
-
-        @include colour.colour-border("keyline-dark", 1px, solid, right);
-      }
-    }
-  }
-
-  &--accent {
-    .fa-solid,
-    .fa-brand {
-      @include colour.colour-font("accent-background");
-    }
-  }
-}
-
 %chip {
   max-width: max-content;
   padding: 0.125em 0.25rem;
@@ -282,6 +177,65 @@ small {
       &:visited {
         color: inherit;
       }
+    }
+  }
+}
+
+.tna-chip-list {
+  @include spacing.space-above;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+
+  list-style: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    .tna-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .fa-solid,
+    .fa-brand {
+      @include colour.colour-font("icon-light");
+    }
+
+    @include colour.on-high-contrast {
+      @include colour.colour-border("keyline-dark", 1px, solid);
+
+      .fa-solid,
+      .fa-brand {
+        padding: 0.375rem 0.25rem;
+
+        @include colour.colour-font("contrast-font-base");
+
+        @include colour.colour-background("contrast-background");
+
+        @include colour.colour-border("keyline-dark", 1px, solid, right);
+      }
+
+      .tna-chip {
+        &:has(.fa-solid, .fa-brand) {
+          padding-left: 0;
+
+          .fa-solid,
+          .fa-brand {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &--accent {
+    .fa-solid,
+    .fa-brand {
+      @include colour.colour-font("accent-background");
     }
   }
 }

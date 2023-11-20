@@ -173,16 +173,65 @@ small {
 
 .tna-chip-list {
   @include spacing.space-above;
-  margin-bottom: 0;
-  padding-left: 0;
+  // margin-bottom: 0;
+  // padding-left: 0;
 
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem 1.5rem;
 
   list-style: none;
 
   &__item {
+    display: flex;
+    align-items: center;
+
+    .tna-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .fa-solid,
+    .fa-brand {
+      @include colour.colour-font("icon-light");
+    }
+
+    @include colour.on-high-contrast {
+      @include colour.colour-border("keyline-dark", 1px, solid);
+
+      .tna-chip {
+      // display: flex;
+      // align-items: center;
+
+      &:has(.fa-solid, .fa-brand) {
+        padding-left: 0;
+
+      .fa-solid,
+      .fa-brand {
+        margin-right: 0.5rem;
+      }
+      }
+      }
+
+      .fa-solid,
+      .fa-brand {
+        padding: .375rem .25rem;
+
+        @include colour.colour-font("contrast-font-base");
+
+        @include colour.colour-background("contrast-background");
+
+        @include colour.colour-border("keyline-dark", 1px, solid, right);
+      }
+    }
+  }
+
+  &--accent {
+    .fa-solid,
+    .fa-brand {
+      @include colour.colour-font("accent-background");
+    }
   }
 }
 

@@ -8,10 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...HEAD)
 
 ### Added
+
+- High contrast support for chip lists with icons
+
 ### Changed
+
+- Card meta information changed to chip list
+
 ### Deprecated
 ### Removed
+
+- Removed generic `accent` CSS variable
+
 ### Fixed
+
+- Multiple line spacing for chip lists fixed
+
 ### Security
 
 ## [0.1.25-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...v0.1.25-prerelease) - 2023-11-16

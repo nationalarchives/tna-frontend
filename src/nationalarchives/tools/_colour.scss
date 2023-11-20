@@ -32,7 +32,7 @@
 
 @mixin accent-css-vars($colour) {
   @if $colour == "yellow" {
-    --accent: #{brand-colour("yellow")} !important;
+    // --accent: #{brand-colour("yellow")} !important;
     --accent-background: #{brand-colour("yellow")} !important;
     --accent-background-light: #{brand-colour("cream")} !important;
     --accent-font-base: #{brand-colour("black")} !important;
@@ -56,22 +56,22 @@
     @if $colour != "black" {
       --button-accent-text: #{brand-colour("white")} !important;
       @if $colour == "pink" {
-        --accent: #{brand-colour("pink")} !important;
+        // --accent: #{brand-colour("pink")} !important;
         --accent-background: #{brand-colour("maroon")} !important;
         --accent-background-light: #{brand-colour("pastel-pink")} !important;
         --button-accent-background: #{brand-colour("maroon")} !important;
       } @else if $colour == "orange" {
-        --accent: #{brand-colour("orange")} !important;
+        // --accent: #{brand-colour("orange")} !important;
         --accent-background: #{brand-colour("chestnut")} !important;
         --accent-background-light: #{brand-colour("pastel-orange")} !important;
         --button-accent-background: #{brand-colour("chestnut")} !important;
       } @else if $colour == "green" {
-        --accent: #{brand-colour("green")} !important;
+        // --accent: #{brand-colour("green")} !important;
         --accent-background: #{brand-colour("forest")} !important;
         --accent-background-light: #{brand-colour("pastel-green")} !important;
         --button-accent-background: #{brand-colour("forest")} !important;
       } @else if $colour == "blue" {
-        --accent: #{brand-colour("blue")} !important;
+        // --accent: #{brand-colour("blue")} !important;
         --accent-background: #{brand-colour("navy")} !important;
         --accent-background-light: #{brand-colour("pastel-blue")} !important;
         --button-accent-background: #{brand-colour("navy")} !important;

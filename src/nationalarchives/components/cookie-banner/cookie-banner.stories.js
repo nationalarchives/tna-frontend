@@ -5,11 +5,13 @@ import { within, userEvent } from "@storybook/testing-library";
 import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {
+  serviceName: { control: "text" },
   cookiesUrl: { control: "text" },
   policies: { control: "text" },
   policiesKey: { control: "text" },
   preferencesSetKey: { control: "text" },
   cookiesDomain: { control: "text" },
+  cookiesPath: { control: "text" },
   allowInsecure: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -27,22 +29,26 @@ export default {
 };
 
 const Template = ({
+  serviceName,
   cookiesUrl,
   policies,
   policiesKey,
   preferencesSetKey,
   cookiesDomain,
+  cookiesPath,
   allowInsecure,
   classes,
   attributes,
 }) =>
   CookieBanner({
     params: {
+      serviceName,
       cookiesUrl,
       policies,
       policiesKey,
       preferencesSetKey,
       cookiesDomain,
+      cookiesPath,
       allowInsecure,
       classes,
       attributes,
@@ -57,6 +63,7 @@ Standard.args = {
 
 export const Accept = Template.bind({});
 Accept.args = {
+  serviceName: "My service",
   cookiesUrl: "#",
   allowInsecure: true,
   classes: "tna-cookie-banner--demo",
@@ -97,6 +104,7 @@ Accept.play = async ({ canvasElement }) => {
 
 export const Reject = Template.bind({});
 Reject.args = {
+  serviceName: "My service",
   cookiesUrl: "#",
   classes: "tna-cookie-banner--demo",
 };
@@ -132,6 +140,7 @@ Reject.play = async ({ canvasElement }) => {
 
 export const CustomPolicies = Template.bind({});
 CustomPolicies.args = {
+  serviceName: "My service",
   cookiesUrl: "#",
   policies: "custom",
   classes: "tna-cookie-banner--demo",
@@ -166,6 +175,7 @@ CustomPolicies.play = async ({ args, canvasElement }) => {
 
 export const Existing = Template.bind({});
 Existing.args = {
+  serviceName: "My service",
   cookiesUrl: "#",
   allowInsecure: true,
   classes: "tna-cookie-banner--demo",
@@ -200,6 +210,7 @@ Existing.play = async ({ canvasElement }) => {
 
 // export const EventHandling = Template.bind({});
 // EventHandling.args = {
+//   serviceName: "My service",
 //   cookiesUrl: "#",
 //   policies: "custom",
 //   classes: "tna-cookie-banner--demo",

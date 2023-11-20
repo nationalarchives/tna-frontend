@@ -1,5 +1,11 @@
 [
   {
+    "name": "serviceName",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
     "name": "cookiesUrl",
     "type": "string",
     "required": true,
@@ -19,6 +25,12 @@
   },
   {
     "name": "cookiesDomain",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "cookiesPath",
     "type": "string",
     "required": false,
     "description": ""

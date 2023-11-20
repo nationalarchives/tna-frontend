@@ -164,7 +164,6 @@ export default class Cookies {
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;
-    console.log(cookie);
     this.events.trigger("setCookie", {
       key,
       value,

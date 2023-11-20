@@ -1,52 +1,32 @@
-@use "../variables/spacing";
+@use "sass:map";
 @use "../tools/media";
+@use "../tools/spacing";
 
-@mixin no-spacing-generator($suffix: "") {
-  @if $suffix != "" {
-    $suffix: "-" + $suffix;
-  }
-
-  @each $property in margin, padding {
-    @each $direction in top, bottom {
-      .tna-\!--no-#{$property}-#{$direction}#{$suffix},
-      .tna-\!--no-#{$property}-vertical#{$suffix} {
-        #{$property}-#{$direction}: 0 !important;
-      }
-    }
+@mixin hide-on($suffix) {
+  .tna-\!--hide-on-#{$suffix} {
+    display: none;
   }
 }
 
-@mixin overrides($spacing, $suffix: "") {
-  @if $suffix != "" {
-    $suffix: "-" + $suffix;
-  }
+@include spacing.no-spacing-generator;
+@include spacing.spacing-generator;
 
-  @each $property in margin, padding {
-    @each $direction in top, bottom {
-      @each $size, $amount in $spacing {
-        .tna-\!--#{$property}-#{$direction}-#{$size}#{$suffix},
-        .tna-\!--#{$property}-vertical-#{$size}#{$suffix} {
-          #{$property}-#{$direction}: #{$amount} !important;
-        }
-      }
-    }
-  }
+@include media.on-large {
+  @include spacing.no-spacing-generator("large");
+  @include hide-on("large");
 }
-
-@include no-spacing-generator;
-@include overrides(spacing.$spacing);
 
 @include media.on-medium {
-  @include no-spacing-generator("medium");
-  @include overrides(spacing.$spacing, "medium");
+  @include spacing.no-spacing-generator("medium");
+  @include hide-on("medium");
 }
 
 @include media.on-small {
-  @include no-spacing-generator("small");
-  @include overrides(spacing.$spacing-mobile, "small");
+  @include spacing.no-spacing-generator("small");
+  @include hide-on("small");
 }
 
 @include media.on-tiny {
-  @include no-spacing-generator("tiny");
-  @include overrides(spacing.$spacing-mobile, "tiny");
+  @include spacing.no-spacing-generator("tiny");
+  @include hide-on("tiny");
 }

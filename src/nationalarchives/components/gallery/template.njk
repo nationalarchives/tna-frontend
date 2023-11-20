@@ -5,7 +5,7 @@
   {%- if params.heading -%}
   <div class="tna-container">
     <div class="tna-column tna-column--full tna-gallery__header">
-      <h{{ params.heading.level }} class="tna-heading tna-heading--{{ params.heading.size or 'l' }}">
+      <h{{ params.heading.level }} class="tna-heading-{{ params.heading.size or 'l' }}">
         {{ params.heading.title }}
       </h{{ params.heading.level }}>
     </div>
@@ -32,7 +32,7 @@
           items: item.tabs
         }) }}
         {%- else -%}
-        <h{{ params.heading.level + 1 }} class="tna-heading tna-heading--m">
+        <h{{ params.heading.level + 1 }} class="tna-heading-m">
           {{ item.tabs[0].title }}
         </h{{ params.heading.level + 1 }}>
         {{ item.tabs[0].body|safe }}

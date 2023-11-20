@@ -3,7 +3,7 @@
 @use "../../tools/media";
 @use "../../tools/typography";
 @use "../../utilities";
-@import "button-group";
+@use "button-group";
 
 .tna-button {
   padding: 0.25rem 1rem;
@@ -15,15 +15,16 @@
   text-decoration: none;
   text-align: center;
   line-height: #{math.div(16, 18) * 2};
+  text-wrap: balance;
 
   @include colour.colour-background("button-background");
 
   @include colour.colour-border("button-background", 0.25rem);
 
-  transition:
-    color 200ms,
-    background-color 200ms,
-    border-color 200ms;
+  // transition:
+  //   color 200ms,
+  //   background-color 200ms,
+  //   border-color 200ms;
 
   cursor: pointer;
 
@@ -39,10 +40,10 @@
 
     background: transparent;
 
-    transition:
-      color 50ms,
-      background-color 50ms,
-      border-color 50ms;
+    // transition:
+    //   color 50ms,
+    //   background-color 50ms,
+    //   border-color 50ms;
   }
 
   &--plain {
@@ -86,15 +87,15 @@
   }
 
   &--solid-hover,
-  .tna-background--accent-light &,
-  .tna-background--accent &:not(.tna-button--accent) {
+  .tna-background-accent-light &,
+  .tna-background-accent &:not(.tna-button--accent) {
     &:not(.tna-button--plain):hover {
       @include colour.colour-background("page-background");
     }
   }
 
-  .tna-background--accent &--accent {
-    @include colour.fixed;
+  .tna-background-accent &--accent {
+    @include colour.plain;
 
     @include colour.colour-background("page-background");
 

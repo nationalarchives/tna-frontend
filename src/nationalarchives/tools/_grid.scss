@@ -24,13 +24,13 @@
             flex: none;
           }
 
-          // .column--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-          //   margin-right: math.div(100%, $count) * $i;
-          // }
+          &--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+            margin-right: math.div(100%, $count) * $i;
+          }
 
-          // .column--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-          //   margin-left: math.div(100%, $count) * $i;
-          // }
+          &--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+            margin-left: math.div(100%, $count) * $i;
+          }
 
           $simplest-fraction-found: true;
         }
@@ -42,13 +42,13 @@
           flex: none;
         }
 
-        //   .column--margin-right-#{$i}-#{$count}#{$suffix} {
-        //     margin-right: math.div(100%, $count) * $i;
-        //   }
+        &--margin-right-#{$i}-#{$count}#{$suffix} {
+          margin-right: math.div(100%, $count) * $i;
+        }
 
-        //   .column--margin-left-#{$i}-#{$count}#{$suffix} {
-        //     margin-left: math.div(100%, $count) * $i;
-        //   }
+        &--margin-left-#{$i}-#{$count}#{$suffix} {
+          margin-left: math.div(100%, $count) * $i;
+        }
       }
     }
 

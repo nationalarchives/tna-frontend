@@ -82,6 +82,9 @@ Standard.args = {
 };
 
 export const Basic = Template.bind({});
+Basic.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Basic.args = {
   heading: {
     title: "My dogs",
@@ -89,7 +92,6 @@ Basic.args = {
   items: Array(6)
     .fill({ ...exampleItem })
     .map((item, index) => {
-      const pseudoRandom = ((index * 29) % 8) + 1;
       return {
         ...item,
         href: `#/category-${index}`,

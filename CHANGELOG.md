@@ -5,15 +5,147 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.20-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...HEAD)
 
 ### Added
 
-- Allow use of custom variables when loading SCSS
+- High contrast support for chip lists with icons
+- Allow custom cookie path to be passed to cookie banner
+
+### Changed
+
+- Card meta information changed to chip list
+- Improvements to high contrast modes
+
+### Deprecated
+### Removed
+
+- Removed generic `accent` CSS variable
+
+### Fixed
+
+- Multiple line spacing for chip lists fixed
+
+### Security
+
+## [0.1.25-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...v0.1.25-prerelease) - 2023-11-16
+
+### Added
+
+- Grid columns can be aligned along the cross axis with classes `tna-column--align-top`, `tna-column--align-bottom` and `tna-column--align-centre`
+- Actions and items using the `href` attribute on cards can now have custom classes and attributes
+- Events can now be added when cookie preferences change
+- Table styles added
+- Pagination component has the option to have no numbers
+- Table wrapper for tables wider than the current viewport
+
+### Changed
+
+- Change many instances of Font Awesome icons to a fixed width
+- Adjusted the width of the hero caption
+- Removed margin and padding from all elements by default
+- The standard cookie policies are always `essential`, `usage` and `settings` - other custom policies can be added
+- Focus outline on dark themes has changed from blue to orange to avoid colour conflict with links
+
+### Removed
+
+- Removed CSS to counter conflicting GOV.UK paragraph styling
+- Transitions removed from most elements
+- `loadScriptsOnAccept` option for cookie banner removed in favour of callback events
+
+### Fixed
+
+- Assets path fixed for GOV.UK prototype kit
+- Colour fixed for plain card supertitles in accented style
+- Header navigation uses flexbox for layout of tabs and top navigation stacks on mobile
+- Explicitly declare font colour for tinted and light accent backgrounds
+- Accepting or declining individual cookie policies now works
+- Removed extra space from nested links
+
+## [0.1.24-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.23-prerelease...v0.1.24-prerelease) - 2023-11-06
+
+### Added
+
+- Elements can be hidden on certain devices with `tna-!--hide-on-[large|medium|small|tiny]`
+- Allow links to have no visited state with `tna-link--no-visited-state`
+- Card supertitles can be made "plain" with no contrasting colour
+- Roboto Mono Bold added
+- Ability to either use bundled fonts or fonts hosted by Google (default is Google fonts)
+- Featured records component
+
+### Changed
+
+- Tweaked dark theme colours
+- `tna-visually-hidden` could instead use the class `tna-!--visually-hidden` (will deprecate one of these in the future)
+- Changed Node version from `lts/hydrogen` to `lts/iron`
+- Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
+- Mixin `colour.invert` changed to `colour.contrast`
+- Background colour classes changed to BEM (`tna-background--accent` -> `tna-background-accent`)
+- Open Sans body weight changed from `500` to `400`
+- Text balance on headings removed but left on headings with links
+- `background-tint` colour changed for better accessibility/contrast
+- Change pagination `aria-label` in line with GOV.UK Frontend `5.0.0`
+
+### Removed
+
+- The `@import` for Supria Sans Condensed (`supria-sans-condensed`) from TypeKit has been removed - each service needs to import their own copy of the fonts
+
+### Fixed
+
+- Cookie banner URL is now correctly used
+- Spacing above picture elements fixed
+- Image widths fixed (not stretched)
+
+## [0.1.23-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.22-prerelease...v0.1.23-prerelease) - 2023-10-25
+
+### Fixed
+
+- Header allows accent colour to be used with `tna-header--accent`
+- More consistent spacing between elements
+
+## [0.1.22-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.21-prerelease...v0.1.22-prerelease) - 2023-10-24
+
+### Added
+
+- `tna-aside` now has a `--tight` modifier with less padding
+- Chips can be made plain with `tna-chip--plain`
+- Visual regression tests can now be run in the Storybook UI
+- Allow right/left margins to be added to columns
+- Hero components can have different image sources with `<source>` elements
+
+### Changed
+
+- Breadcrumbs are no longer contained within a container/column layout
+- Header styles have been simplified
+- External link icons changed from CSS to icon font in header and footer
+- External links in footer have titles suffixed with "opens in new tab"
+- Links in footer and text in buttons have balanced wrapping applied
+- Header and header group class modifiers have been moved to separate blocks (`tna-heading tna-heading--xl` -> `tna-heading-xl`)
+- `space-below` has been replaced with `space-above` and all paddings in between page elements reassessed
+- Tweak spacing on hero component and `<hr>` elements
+- Added `tna-button-group` around newsletter subscription button in the footer
+- Updated Storybook to `7.5.1`
+
+### Removed
+
+- The black accent is no longer applied by default
+- Removed margin and padding overrides for device-specific sizes (e.g. `tna-!--margin-top-xl-small`)
+
+### Fixed
+
+- Font paths fixed for prototype kit, stylesheets and JavaScript loading
+- Better alignment of site name next to logo in header
+- Fixed right/left padding of logo and hamburger on small devices
+- Change Supria Sans weight from `400` to `500` (medium, as provided by TypeKit)
+- Card image type is now variable when using sources
+
+## [0.1.21-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.20-prerelease...v0.1.21-prerelease) - 2023-10-12
+
+### Added
+
 - Cards can now have meta text/icons under the title
 - `<dl>` elements are now styled using a `tna-dl` class
-- Initial pagination component
-- Variables can now be changed as described in `src/nationalarchives/stories/development/using.mdx`
+- Allow use of custom variables when loading SCSS as described in `src/nationalarchives/stories/development/using.mdx`
 - Basic pagination element added
 - `<small>` elements are now styled
 - Some basic print styles added for tabs, breadcrumbs and cookie banners
@@ -34,8 +166,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `typography.$base-font-size-px` is now `typography.$relative-1rem-px`
 - `xl` and `l` headings are Supria Sans and `m` and `s` are Open Sans
 - Card heading size defaults to `s`
+- Markup and styles altered for hero component
+- Updated app icons and favicon
+- Changed gutters on small devices to the same as medium and large, reduced tiny device gutters to `1rem`
+- Body text is reduced from 18px to 17px on mobile devices
+- Reduced the bottom margin on paragraphs from `1.5rem` to `1rem`
 
-### Deprecated
 ### Removed
 
 - Explicit overflow properties applied to `.tna-template` and `.tna-template__body` have been removed
@@ -48,8 +184,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/nationalarchives/_prototype-kit.scss` is now the entrypoint for the GOV.UK prototype kit SASS which fixes the asset location
 - The cookie banner confirmation message is no longer outlined when highlighted
 - The import routes of the layouts for use in the prototype kit now work
-
-### Security
+- Cookie banner header classes added
+- Visited links within the dark theme are purple again
 
 ## [0.1.20-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.19-prerelease...v0.1.20-prerelease) - 2023-09-14
 

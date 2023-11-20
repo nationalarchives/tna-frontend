@@ -40,40 +40,43 @@ Standard.args = {
     {
       id: "unique-id-a",
       title: "Alpha section",
-      body: '<h2 class="tna-heading">Alpha title</h2><p>Lorem ipsum</p>',
+      body: '<h2 class="tna-heading-l">Alpha title</h2><p>Lorem ipsum</p>',
     },
     {
       id: "unique-id-b",
       title: "Beta section",
-      body: '<h2 class="tna-heading">Beta title</h2><p>Lorem ipsum</p>',
+      body: '<h2 class="tna-heading-l">Beta title</h2><p>Lorem ipsum</p>',
     },
     {
       id: "unique-id-c",
       title: "Gamma section",
-      body: '<h2 class="tna-heading">Gamma title</h2><p>Lorem ipsum</p>',
+      body: '<h2 class="tna-heading-l">Gamma title</h2><p>Lorem ipsum</p>',
     },
   ],
   classes: "tna-tabs--demo",
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   title: "Example tabs",
   items: [
     {
       id: "unique-id-a",
       title: "Alpha section",
-      body: '<h2 class="tna-heading">Alpha title</h2><p>Lorem ipsum</p>',
+      body: '<h2 class="tna-heading-l">Alpha title</h2><p>Lorem ipsum</p>',
     },
     {
       id: "unique-id-b",
       title: "Beta section",
-      body: '<h2 class="tna-heading">Beta title</h2><p>Lorem ipsum</p>',
+      body: '<h2 class="tna-heading-l">Beta title</h2><p>Lorem ipsum</p>',
     },
     {
       id: "unique-id-c",
       title: "Gamma section",
-      body: '<h2 class="tna-heading">Gamma title</h2><p>Lorem ipsum</p>',
+      body: '<h2 class="tna-heading-l">Gamma title</h2><p>Lorem ipsum</p>',
     },
   ],
   classes: "tna-tabs--demo",
@@ -112,7 +115,7 @@ Test.play = async ({ args, canvasElement, step }) => {
     await expect(section).toHaveAttribute("tabindex", "-1");
   };
 
-  const expectButtonAndSectionAToBeCurrent = async (section) => {
+  const expectButtonAndSectionAToBeCurrent = async () => {
     await step("Test tab buttons", async () => {
       await expectButtonToBeCurrent(buttonA);
       await expectButtonNotToBeCurrent(buttonB);
@@ -126,7 +129,7 @@ Test.play = async ({ args, canvasElement, step }) => {
     });
   };
 
-  const expectButtonAndSectionBToBeCurrent = async (section) => {
+  const expectButtonAndSectionBToBeCurrent = async () => {
     await step("Test tab buttons", async () => {
       await expectButtonNotToBeCurrent(buttonA);
       await expectButtonToBeCurrent(buttonB);
@@ -140,7 +143,7 @@ Test.play = async ({ args, canvasElement, step }) => {
     });
   };
 
-  const expectButtonAndSectionCToBeCurrent = async (section) => {
+  const expectButtonAndSectionCToBeCurrent = async () => {
     await step("Test tab buttons", async () => {
       await expectButtonNotToBeCurrent(buttonA);
       await expectButtonNotToBeCurrent(buttonB);

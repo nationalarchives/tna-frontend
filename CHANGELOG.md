@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Card meta information changed to chip list
+- Improvements to high contrast modes
 
 ### Deprecated
 ### Removed

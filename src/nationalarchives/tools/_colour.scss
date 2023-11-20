@@ -326,3 +326,19 @@
     }
   }
 }
+
+@mixin on-forced-colours {
+  @media (forced-colors: active) {
+    @content;
+  }
+}
+
+@mixin on-high-contrast-and-forced-colours {
+  @include on-forced-colours {
+    @content;
+  }
+
+  @include on-high-contrast {
+    @content;
+  }
+}

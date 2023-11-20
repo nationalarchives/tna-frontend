@@ -268,17 +268,13 @@
     }
   }
 
-  @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
     &__information,
     &__content-inner {
       @include colour.colour-border("keyline-dark", 1px);
     }
 
     @include media.on-mobile {
-      &__information {
-        // border-bottom: 0
-      }
-
       &__inner {
         @include colour.colour-border("keyline-dark", 1px);
         border-top: 0;

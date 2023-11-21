@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use "../src/nationalarchives/tools/colour";
 @use "../src/nationalarchives/tools/media";
 
@@ -143,5 +145,60 @@
     @include colour.colour-background("background-tint");
 
     // @include colour.colour-border("keyline", 1px, solid, top);
+  }
+}
+
+.tna-colour-contrast-demo {
+  display: table;
+
+  border-top: rgb(0 0 0/0.25) 1px solid;
+  border-left: rgb(0 0 0/0.25) 1px solid;
+
+  &__header {
+    display: table-header-group;
+  }
+
+  &__block {
+    width: #{math.div(100%, 6)};
+    padding: 1rem;
+
+    display: table-cell;
+
+    border-right: rgb(0 0 0/0.25) 1px solid;
+    border-bottom: rgb(0 0 0/0.25) 1px solid;
+  }
+
+  &__examples {
+    display: table-row-group;
+  }
+
+  &__theme-accent {
+    display: table-row;
+  }
+
+  &__example {
+    display: table-cell;
+
+    border-right: rgb(0 0 0/0.25) 1px solid;
+    border-bottom: rgb(0 0 0/0.25) 1px solid;
+
+    &-content {
+      height: 100%;
+      padding: 1rem;
+    }
+  }
+
+  &__link {
+    &--visited {
+      @include colour.colour-font("link-visited", true);
+    }
+  }
+
+  .tna-template {
+    min-width: 15.25rem;
+  }
+
+  .tna-chip {
+    margin: 1rem 0;
   }
 }

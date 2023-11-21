@@ -118,8 +118,7 @@ $colour-palette-dark: map.merge(
     "contrast-background": #111,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
-    // --accent-background-light is the same as --contrast-background on dark themes
-    "accent-background-light": brand-colour("grey"),
+    "accent-background-light": brand-colour("light-grey"),
   )
 ) !default;
 
@@ -168,7 +167,7 @@ $colour-palette-high-contrast-dark: map.merge(
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.75),
     "link": #69f,
-    "link-visited": #a6c,
+    "link-visited": #b9f,
     "keyline": brand-colour("white"),
     "contrast-background": brand-colour("black"),
   )

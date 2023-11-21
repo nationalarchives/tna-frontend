@@ -3,12 +3,12 @@
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the date date search."
+    "description": "Classes to add to the date date input."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the date date search."
+    "description": "HTML attributes (for example data attributes) to add to the date date input."
   }
 ]

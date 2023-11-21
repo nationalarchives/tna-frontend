@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Form element components have been added: checkboxes, date search, search field, select, text input and textarea
+- Form element components have been added: checkboxes, date input, date search, radios, search field, select, text input and textarea
 - High contrast support for chip lists with icons
 - Allow custom cookie path to be passed to cookie banner
 

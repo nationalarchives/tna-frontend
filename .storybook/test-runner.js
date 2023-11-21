@@ -65,7 +65,7 @@ const { injectAxe, checkA11y } = require("axe-playwright");
 const DEFAULT_VP_SIZE = { width: 1280, height: 720 };
 
 module.exports = {
-  async preRender(page, story) {
+  async preVisit(page, story) {
     const context = await getStoryContext(page, story);
     const vpName = context.parameters?.viewport?.defaultViewport;
     const vpParams = customViewports[vpName];
@@ -85,7 +85,7 @@ module.exports = {
     }
     await injectAxe(page);
   },
-  async postRender(page, story) {
+  async postVisit(page) {
     await checkA11y(page, "#storybook-root", a11yConfig, "v2");
   },
 };

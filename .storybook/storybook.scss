@@ -162,7 +162,5 @@
     padding-left: 0.5rem;
 
     @include colour.colour-background("background-tint");
-
-    // @include colour.colour-border("keyline", 1px, solid, top);
   }
 }

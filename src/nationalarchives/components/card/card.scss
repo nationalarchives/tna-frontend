@@ -61,9 +61,6 @@
   }
 
   &__meta {
-    // margin: 0;
-    // padding: 0;
-
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
@@ -71,20 +68,6 @@
     line-height: 1.3;
 
     list-style: none;
-
-    // &-item {
-    //   display: flex;
-    //   align-items: center;
-
-    //   @include colour.colour-font("font-dark");
-    //   @include typography.detail-font-small;
-
-    //   .fa-solid {
-    //     margin-right: 0.75rem;
-
-    //     @include colour.colour-font("icon-light");
-    //   }
-    // }
 
     + p {
       margin-top: 1rem;

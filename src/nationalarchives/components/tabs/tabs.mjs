@@ -61,7 +61,7 @@ export class Tabs {
       );
       $replacementButton.setAttribute(
         "aria-controls",
-        $tabListItemLink.getAttribute("href").replace(/^#/, ""),
+        $tabListItemLink.getAttribute("href")?.replace(/^#/, ""),
       );
       $replacementButton.setAttribute("tabindex", "-1");
       this.$newTabList.appendChild($replacementButton);

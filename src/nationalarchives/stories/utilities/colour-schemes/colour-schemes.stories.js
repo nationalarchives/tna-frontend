@@ -73,9 +73,9 @@ const Template = ({ theme, accent }) => {
       ? "tna-template--dark-theme tna-template--high-contrast-theme"
       : ""
   } ${
-    accent === "black"
+    /*accent === "black"
       ? "tna-template--black-accent"
-      : accent === "yellow"
+      : */ accent === "yellow"
       ? "tna-template--yellow-accent"
       : accent === "pink"
       ? "tna-template--pink-accent"
@@ -258,7 +258,6 @@ const Template = ({ theme, accent }) => {
                     params: {
                       text: "Primary button",
                       href: "#",
-                      classes: "tna-button--solid-hover",
                     },
                   })}
                 </div>
@@ -1204,3 +1203,144 @@ DarkHighContrast.args = {
   theme: "dark high-contrast",
   accent: "pink",
 };
+
+const CombinationsTemplate = () => {
+  const themes = [
+    "tna-template--light-theme",
+    "tna-template--light-theme tna-template--high-contrast-theme",
+    "tna-template--dark-theme",
+    "tna-template--dark-theme tna-template--high-contrast-theme",
+  ];
+
+  const accents = [
+    "",
+    // "tna-template--black-accent",
+    "tna-template--yellow-accent",
+    "tna-template--pink-accent",
+    "tna-template--orange-accent",
+    "tna-template--green-accent",
+    "tna-template--blue-accent",
+  ];
+
+  const blocks = [
+    "",
+    "tna-background-tint",
+    "tna-background-accent-light",
+    "tna-background-accent",
+    "tna-background-contrast",
+  ];
+
+  return `<div class="tna-colour-contrast-demo">
+  <div class="tna-colour-contrast-demo__header">
+    <div class="tna-colour-contrast-demo__block">
+      Blocks
+    </div>
+    ${blocks.reduce(
+      (blockOutput, block) =>
+        `${blockOutput}<div class="tna-colour-contrast-demo__block">
+      ${block.replace(/^tna-background-/, "") || "Base"}
+    </div>`,
+      "",
+    )}
+  </div>
+  <div class="tna-colour-contrast-demo__examples">
+  ${themes.reduce(
+    (themeOutput, theme) =>
+      `${themeOutput}${accents.reduce(
+        (
+          accentOutput,
+          accent,
+        ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
+    <div class="tna-colour-contrast-demo__example">
+      <p>Theme: <strong>${theme
+        .replace(/tna-template--/g, "")
+        .replace(/-theme/g, "")}</strong></p>
+      <p>Accent: <strong>${
+        accent.replace(/tna-template--/g, "").replace(/-accent/g, "") ||
+        "No accent"
+      }</strong></p>
+    </div>
+    ${blocks.reduce(
+      (blockOutput, block) =>
+        `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
+      <div class="tna-template__body">
+        <div class="tna-colour-contrast-demo__example-content ${block}">
+          <p>Text</p>
+          <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
+          <span class="tna-chip">Chip</span>
+          <div class="tna-button-group">
+            ${Button({
+              params: {
+                text: "Button",
+                small: true,
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Button",
+                small: true,
+                accent: true,
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Button",
+                small: true,
+                plain: true,
+              },
+            })}
+            <!--${Button({
+              params: {
+                text: "Button",
+                accent: true,
+                class: "tna-button--solid-hover",
+              },
+            })}-->
+          </div>
+          <!--${Pagination({
+            params: {
+              previous: {
+                href: "#",
+              },
+              items: [
+                {
+                  number: 1,
+                  href: "#",
+                },
+                {
+                  ellipsis: true,
+                },
+                {
+                  number: 7,
+                  current: true,
+                  href: "#",
+                },
+                {
+                  ellipsis: true,
+                },
+                {
+                  number: 42,
+                  href: "#",
+                },
+              ],
+              next: {
+                href: "#",
+              },
+            },
+          })}-->
+        </div>
+      </div>
+    </div>`,
+      "",
+    )}
+  </div>`,
+        "",
+      )}`,
+    "",
+  )}
+  </div>
+</div>`;
+};
+
+export const Combinations = CombinationsTemplate.bind({});
+Combinations.args = {};

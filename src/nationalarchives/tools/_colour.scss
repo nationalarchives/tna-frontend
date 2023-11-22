@@ -53,30 +53,30 @@
     --accent-link-visited: #{brand-colour("white")} !important;
     --accent-keyline: #{brand-colour("white", 0.5)} !important;
     --accent-keyline-dark: #{brand-colour("white", 0.8)} !important;
-    @if $colour != "black" {
-      --button-accent-text: #{brand-colour("white")} !important;
-      @if $colour == "pink" {
-        // --accent: #{brand-colour("pink")} !important;
-        --accent-background: #{brand-colour("maroon")} !important;
-        --accent-background-light: #{brand-colour("pastel-pink")} !important;
-        --button-accent-background: #{brand-colour("maroon")} !important;
-      } @else if $colour == "orange" {
-        // --accent: #{brand-colour("orange")} !important;
-        --accent-background: #{brand-colour("chestnut")} !important;
-        --accent-background-light: #{brand-colour("pastel-orange")} !important;
-        --button-accent-background: #{brand-colour("chestnut")} !important;
-      } @else if $colour == "green" {
-        // --accent: #{brand-colour("green")} !important;
-        --accent-background: #{brand-colour("forest")} !important;
-        --accent-background-light: #{brand-colour("pastel-green")} !important;
-        --button-accent-background: #{brand-colour("forest")} !important;
-      } @else if $colour == "blue" {
-        // --accent: #{brand-colour("blue")} !important;
-        --accent-background: #{brand-colour("navy")} !important;
-        --accent-background-light: #{brand-colour("pastel-blue")} !important;
-        --button-accent-background: #{brand-colour("navy")} !important;
-      }
+    // @if $colour != "black" {
+    --button-accent-text: #{brand-colour("white")} !important;
+    @if $colour == "pink" {
+      // --accent: #{brand-colour("pink")} !important;
+      --accent-background: #{brand-colour("maroon")} !important;
+      --accent-background-light: #{brand-colour("pastel-pink")} !important;
+      --button-accent-background: #{brand-colour("maroon")} !important;
+    } @else if $colour == "orange" {
+      // --accent: #{brand-colour("orange")} !important;
+      --accent-background: #{brand-colour("chestnut")} !important;
+      --accent-background-light: #{brand-colour("pastel-orange")} !important;
+      --button-accent-background: #{brand-colour("chestnut")} !important;
+    } @else if $colour == "green" {
+      // --accent: #{brand-colour("green")} !important;
+      --accent-background: #{brand-colour("forest")} !important;
+      --accent-background-light: #{brand-colour("pastel-green")} !important;
+      --button-accent-background: #{brand-colour("forest")} !important;
+    } @else if $colour == "blue" {
+      // --accent: #{brand-colour("blue")} !important;
+      --accent-background: #{brand-colour("navy")} !important;
+      --accent-background-light: #{brand-colour("pastel-blue")} !important;
+      --button-accent-background: #{brand-colour("navy")} !important;
     }
+    // }
   }
 }
 
@@ -254,7 +254,7 @@
   --font-light: var(--accent-font-light);
   --icon-light: var(--accent-icon-light);
   --link: var(--accent-link);
-  --link-visited: var(--accent-link-visited);
+  --link-visited: var(--accent-link);
   --keyline: var(--accent-keyline);
   --keyline-dark: var(--accent-keyline-dark);
 
@@ -289,8 +289,8 @@
   --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
   --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
   --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
-  --link: #{map.get(colour.$colour-palette-default, "font-dark")};
-  --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+  // --link: #{map.get(colour.$colour-palette-default, "link")};
+  // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
   --keyline: #{map.get(colour.$colour-palette-default, "keyline")};
   --keyline-dark: #{map.get(colour.$colour-palette-default, "keyline-dark")};
   --button-text: #{map.get(colour.$colour-palette-default, "button-text")};
@@ -309,6 +309,18 @@
 
   @include colour-background("background");
   @include colour-font("font-base");
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      --link: #{map.get(colour.$colour-palette-default, "link")};
+      --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+    }
+  }
+
+  .tna-template--dark-theme & {
+    --link: #{map.get(colour.$colour-palette-default, "link")};
+    --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+  }
 }
 
 @mixin accent-light {

@@ -86,11 +86,19 @@
     }
   }
 
-  &--solid-hover,
-  .tna-background-accent-light &,
-  .tna-background-accent &:not(.tna-button--accent) {
+  &--solid-hover/*,
+  // .tna-background-accent-light &,
+  .tna-background-accent &:not(.tna-button--accent)*/ {
     &:not(.tna-button--plain):hover {
+      @include colour.colour-font("font-dark");
+
       @include colour.colour-background("page-background");
+    }
+  }
+
+  .tna-background-accent & {
+    &:hover {
+      @include colour.colour-font("font-dark");
     }
   }
 
@@ -109,8 +117,10 @@
 
     &:hover {
       @include colour.colour-font("page-background");
+      // @include colour.colour-font("accent-font-dark");
 
       @include colour.colour-background("font-dark");
+      // background-color: transparent;
     }
   }
 

@@ -49,9 +49,9 @@
     }
   }
 
-  &--black-accent {
-    @include colour.accent-css-vars("black");
-  }
+  // &--black-accent {
+  //   @include colour.accent-css-vars("black");
+  // }
 
   &--yellow-accent {
     @include colour.accent-css-vars("yellow");

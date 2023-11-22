@@ -39,7 +39,8 @@ $colour-palette-brand: (
 
 $dark-grey: #26262a;
 $base-font: #343338 !default;
-$link-colour: brand-colour("navy") !default;
+// $link-colour: brand-colour("navy") !default;
+$link-colour: #14659f !default;
 $link-colour-visited: #4c2c92 !default;
 
 /*
@@ -49,7 +50,7 @@ LIGHT THEME (DEFAULT)
 */
 $colour-palette-default: (
   "page-background": #f4f4f4,
-  "background-tint": #e2e2e2,
+  "background-tint": #ededed,
   "font-base": $base-font,
   "font-dark": brand-colour("black"),
   "font-light": hex-to-rgb($base-font, 0.7),
@@ -79,7 +80,7 @@ $colour-palette-default: (
   "contrast-button-hover-background": brand-colour("black"),
   // "accent": map.get($colour-palette-brand, "light-grey"),
   "accent-background": #111,
-  "accent-background-light": map.get($colour-palette-brand, "light-grey"),
+  "accent-background-light": #ededed,
   "accent-font-base": brand-colour("white"),
   "accent-font-dark": brand-colour("white"),
   "accent-font-light": brand-colour("white", 0.7),
@@ -118,7 +119,7 @@ $colour-palette-dark: map.merge(
     "contrast-background": #111,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
-    "accent-background-light": brand-colour("light-grey"),
+    // "accent-background-light": brand-colour("light-grey"),
   )
 ) !default;
 
@@ -143,8 +144,8 @@ $colour-palette-high-contrast: map.merge(
     "contrast-font-base": brand-colour("black"),
     "contrast-font-dark": brand-colour("black"),
     "contrast-font-light": brand-colour("black"),
-    "contrast-link": brand-colour("navy"),
-    "contrast-link-visited": brand-colour("black"),
+    "contrast-link": #34d,
+    "contrast-link-visited": #848,
     "contrast-keyline": brand-colour("black"),
     "contrast-keyline-dark": brand-colour("black"),
     "contrast-button-text": brand-colour("white"),

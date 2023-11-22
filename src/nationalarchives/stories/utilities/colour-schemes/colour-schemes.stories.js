@@ -1257,7 +1257,7 @@ const CombinationsTemplate = () => {
         .replace(/-theme/g, "")}</strong></p>
       <p>Accent: <strong>${
         accent.replace(/tna-template--/g, "").replace(/-accent/g, "") ||
-        "No accent"
+        "[none]"
       }</strong></p>
     </div>
     ${blocks.reduce(
@@ -1266,7 +1266,7 @@ const CombinationsTemplate = () => {
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
           <p>Text</p>
-          <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
+          <p><a href="#"><strong>Link</strong></a> / <a href="#" class="tna-colour-contrast-demo__link--visited"><strong>Link (visited)</strong></a></p>
           <span class="tna-chip">Chip</span>
           <div class="tna-button-group">
             ${Button({

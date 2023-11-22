@@ -189,6 +189,7 @@
     border-bottom: rgb(0 0 0/0.25) 1px solid;
 
     &:first-child {
+      min-width: 7rem;
       padding: 1rem;
 
       @include typography.relative-font-size(14);

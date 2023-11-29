@@ -3,6 +3,14 @@ const packageJson = require("../package.json");
 const jsdom = require("jsdom");
 require("node-self");
 
+const pass = (message) => {
+  console.log("\x1b[42m%s\x1b[0m", " PASS ", "\x1b[0m", message);
+};
+
+const fail = (message) => {
+  console.error("\x1b[41m%s\x1b[0m", " FAIL ", "\x1b[0m", message);
+};
+
 const componentsWithJavaScript = {};
 
 const componentJavascriptFiles = (component, javascriptClass) => {
@@ -62,7 +70,10 @@ const checkExists = [
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
   ...componentFiles("button"),
   ...componentFiles("card"),
+  ...componentFiles("checkboxes"),
   ...componentFiles("cookie-banner", "CookieBanner"),
+  ...componentFiles("date-input"),
+  ...componentFiles("date-search"),
   ...componentFiles("featured-records"),
   ...componentFiles("filters"),
   ...componentFiles("footer"),
@@ -75,9 +86,14 @@ const checkExists = [
   ...componentFiles("pagination"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
+  ...componentFiles("radios"),
   ...componentFiles("sensitive-image", "SensitiveImage"),
+  ...componentFiles("search-field"),
+  ...componentFiles("select"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
+  ...componentFiles("text-input"),
+  ...componentFiles("textarea"),
   // Tools
   "nationalarchives/tools/_index.scss",
   "nationalarchives/tools/_grid.scss",
@@ -104,13 +120,13 @@ checkExists.forEach((checkFile) => {
   const checkFilePath = `${packageDirectory}/${checkFile}`;
   try {
     fs.accessSync(checkFilePath);
-    console.log(
-      `  🟢 [PASS] ${
+    pass(
+      `${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
       } exists: ${checkFilePath.replace(/\/$/, "")}`,
     );
   } catch (err) {
-    console.error(`  🔴 [FAIL] ${err}`);
+    fail(err);
     process.exitCode = 1;
     throw new Error("File structure test failed");
   }
@@ -121,12 +137,10 @@ console.log("\n");
 console.log(`Testing package version`);
 const compiledPackageJson = require("../package/package.json");
 if (packageJson.version === compiledPackageJson.version) {
-  console.log(
-    `  🟢 [PASS] Version ${packageJson.version} is set in the package`,
-  );
+  pass(`Version ${packageJson.version} is set in the package`);
 } else {
-  console.error(
-    `  🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
+  fail(
+    `The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
   );
   process.exitCode = 1;
   throw new Error("Package version test failed");
@@ -152,12 +166,12 @@ expectedPrototypeKitConfigProperties.forEach(
         expectedPrototypeKitConfigProperty,
       )
     ) {
-      console.log(
-        `  🟢 [PASS] Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
+      pass(
+        `Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
       );
     } else {
-      console.error(
-        `  🔴 [FAIL] Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
+      fail(
+        `Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
       );
       process.exitCode = 1;
       throw new Error("Prototype kit config test failed");
@@ -177,9 +191,9 @@ if (
   Object.keys(jsAllPackage).includes("initAll") &&
   typeof jsAllPackage.initAll === "function"
 ) {
-  console.log(`  🟢 [PASS] all.js function exists: initAll()`);
+  pass(`all.js function exists: initAll()`);
 } else {
-  console.error(`  🔴 [FAIL] all.js function missing: initAll()`);
+  fail(`all.js function missing: initAll()`);
   process.exitCode = 1;
   throw new Error("JavaScript test failed");
 }
@@ -187,9 +201,9 @@ if (
   Object.keys(jsAllPackage).includes("Cookies") &&
   typeof jsAllPackage.Cookies === "function"
 ) {
-  console.log(`  🟢 [PASS] all.js class exists: Cookies`);
+  pass(`all.js class exists: Cookies`);
 } else {
-  console.error(`  🔴 [FAIL] all.js class missing: Cookies`);
+  fail(`all.js class missing: Cookies`);
   process.exitCode = 1;
   throw new Error("JavaScript module test failed");
 }
@@ -199,9 +213,9 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     Object.keys(jsAllPackage).includes(componentClass) &&
     typeof jsAllPackage[componentClass] === "function"
   ) {
-    console.log(`  🟢 [PASS] all.js function exists: ${componentClass}()`);
+    pass(`all.js function exists: ${componentClass}()`);
   } else {
-    console.error(`  🔴 [FAIL] all.js function missing: ${componentClass}()`);
+    fail(`all.js function missing: ${componentClass}()`);
     process.exitCode = 1;
     throw new Error("Component JavaScript test failed");
   }
@@ -215,13 +229,9 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     Object.keys(jsComponentPackage).includes(componentClass) &&
     typeof jsComponentPackage[componentClass] === "function"
   ) {
-    console.log(
-      `  🟢 [PASS] ${component}.js function exists: ${componentClass}()`,
-    );
+    pass(`${component}.js function exists: ${componentClass}()`);
   } else {
-    console.error(
-      `  🔴 [FAIL] ${component}.js function missing: ${componentClass}()`,
-    );
+    fail(`${component}.js function missing: ${componentClass}()`);
     process.exitCode = 1;
     throw new Error("Standalone component JavaScript test failed");
   }

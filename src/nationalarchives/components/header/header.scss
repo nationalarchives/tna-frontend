@@ -169,7 +169,7 @@
 
     @include colour.colour-background("font-dark");
 
-    transition: height 1ms 100ms;
+    // transition: height 1ms 100ms;
 
     &::before,
     &::after {
@@ -183,10 +183,10 @@
 
       background-color: inherit;
 
-      transition:
-        top 100ms 100ms,
-        bottom 100ms 100ms,
-        transform 100ms;
+      // transition:
+      //   top 100ms 100ms,
+      //   bottom 100ms 100ms,
+      //   transform 100ms;
 
       content: "";
     }
@@ -225,10 +225,10 @@
 
         &::before,
         &::after {
-          transition:
-            top 100ms,
-            bottom 100ms,
-            transform 100ms 100ms;
+          // transition:
+          //   top 100ms,
+          //   bottom 100ms,
+          //   transform 100ms 100ms;
         }
 
         &::before {
@@ -263,8 +263,6 @@
     display: flex;
     justify-content: flex-end;
     gap: 0.5rem 1.5rem;
-
-    // order: 1;
 
     list-style: none;
 
@@ -387,7 +385,6 @@
 
     &__navigation-toggle {
       &.tna-column {
-        // padding-right: gridVars.$gutter-width-tiny;
         padding-left: 0;
       }
     }

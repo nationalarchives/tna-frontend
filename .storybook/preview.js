@@ -2,7 +2,6 @@ import "../src/nationalarchives/all.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
-// import isChromatic from "chromatic/isChromatic";
 
 document.documentElement.classList.add(
   "tna-template",
@@ -14,9 +13,7 @@ if (window.self !== window.top) {
 document.body.classList.add("tna-template__body");
 
 export const parameters = {
-  actions: {
-    // disable: true,
-  },
+  actions: {},
   viewport: { viewports: customViewports },
   options: { showPanel: true },
   a11y: {

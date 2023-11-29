@@ -8,9 +8,11 @@
 .tna-button {
   padding: 0.25rem 1rem;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
-  @include typography.relative-font-size(18);
   @include typography.main-font-weight-bold;
   text-decoration: none;
   text-align: center;
@@ -21,12 +23,14 @@
 
   @include colour.colour-border("button-background", 0.25rem);
 
-  // transition:
-  //   color 200ms,
-  //   background-color 200ms,
-  //   border-color 200ms;
-
   cursor: pointer;
+
+  &,
+  .fa-solid,
+  .fa-brands {
+    @include typography.relative-font-size(18);
+    line-height: #{math.div(16, 18) * 2};
+  }
 
   &,
   &:link,
@@ -39,11 +43,6 @@
     text-decoration: none;
 
     background: transparent;
-
-    // transition:
-    //   color 50ms,
-    //   background-color 50ms,
-    //   border-color 50ms;
   }
 
   &--plain {
@@ -64,12 +63,6 @@
     }
   }
 
-  &--small {
-    padding: 0.125rem 0.5rem;
-
-    @include typography.relative-font-size(14);
-  }
-
   &--accent {
     @include colour.colour-background("button-accent-background");
 
@@ -83,6 +76,75 @@
 
     &:hover {
       @include colour.colour-font("font-dark");
+    }
+  }
+
+  &--icon-right {
+    flex-direction: row-reverse;
+  }
+
+  .fa-solid,
+  .fa-brands {
+    min-width: 1.25rem;
+
+    display: block;
+  }
+
+  &--small,
+  &-group--small & {
+    padding: 0 0.5rem;
+
+    @include typography.relative-font-size(14);
+    line-height: 1.5rem;
+
+    .fa-solid,
+    .fa-brands {
+      @include typography.relative-font-size(18);
+      line-height: 2rem;
+    }
+  }
+
+  @mixin icon-only {
+    padding-right: 0;
+    padding-left: 0;
+
+    gap: 0;
+
+    font-size: 0;
+
+    .fa-solid,
+    .fa-brands {
+      width: 2.5rem;
+    }
+  }
+
+  @mixin icon-only-small {
+    padding-right: 0;
+    padding-left: 0;
+
+    .fa-solid,
+    .fa-brands {
+      width: 2rem;
+    }
+  }
+
+  &--icon-only:has(.fa-solid, .fa-brands) {
+    @include icon-only;
+  }
+
+  &--small#{&}--icon-only:has(.fa-solid, .fa-brands),
+  &-group--small &--icon-only:has(.fa-solid, .fa-brands) {
+    @include icon-only-small;
+  }
+
+  @include media.on-mobile {
+    &--icon-only-mobile:has(.fa-solid, .fa-brands) {
+      @include icon-only;
+    }
+
+    &--small#{&}--icon-only-mobile:has(.fa-solid, .fa-brands),
+    &-group--small &--icon-only-mobile:has(.fa-solid, .fa-brands) {
+      @include icon-only-small;
     }
   }
 
@@ -118,10 +180,5 @@
 
       @include colour.colour-background("font-dark");
     }
-  }
-
-  .fa-solid,
-  .fa-brands {
-    margin-right: 0.5rem;
   }
 }

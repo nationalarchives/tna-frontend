@@ -1,0 +1,117 @@
+import { Meta, Canvas } from "@storybook/blocks";
+import * as TextInputStories from "../../../components/text-input/text-input.stories";
+import * as TextareaStories from "../../../components/textarea/textarea.stories";
+import * as DateInputStories from "../../../components/date-input/date-input.stories";
+import * as DateSearchStories from "../../../components/date-search/date-search.stories";
+import * as SelectStories from "../../../components/select/select.stories";
+import * as RadiosStories from "../../../components/radios/radios.stories";
+import * as CheckboxesStories from "../../../components/checkboxes/checkboxes.stories";
+import * as SearchFieldStories from "../../../components/search-field/search-field.stories";
+
+<Meta title="Utilities/Form elements" />
+
+# Form elements
+
+<Canvas of={TextInputStories.Standard} />
+<Canvas of={TextareaStories.Standard} />
+<Canvas of={SelectStories.Standard} />
+<Canvas of={RadiosStories.Standard} />
+<Canvas of={RadiosStories.Small} />
+<Canvas of={CheckboxesStories.Standard} />
+<Canvas of={CheckboxesStories.Small} />
+<Canvas of={DateSearchStories.Standard} />
+<Canvas of={DateInputStories.Standard} />
+<Canvas of={SearchFieldStories.Standard} />
+
+## Inline
+
+<Canvas of={TextInputStories.Inline} />
+<Canvas of={TextareaStories.Inline} />
+<Canvas of={SelectStories.Inline} />
+<Canvas of={RadiosStories.Inline} />
+<Canvas of={CheckboxesStories.Inline} />
+<Canvas of={DateSearchStories.Inline} />
+<Canvas of={DateInputStories.Inline} />
+
+## Structure
+
+### Single form elements
+
+```html
+<div class="tna-form__group"> <!-- Optional: "tna-form__group--error" -->
+
+  <div class="tna-form__group-contents">
+
+    <h4 class="tna-form__heading tna-form__heading--m">
+      <label class="tna-form__label" for="tna-form__ELEMENT-ID">
+        <!-- Field title -->
+      </label>
+    </h4>
+
+    <!-- Optional hint
+    <p id="tna-form__ELEMENT-ID-hint" class="tna-form__hint">
+      [Hint text]
+    </p>
+    -->
+
+    <!-- Optional error
+    <p id="tna-form__ELEMENT-ID-error" class="tna-form__error-message">
+      <span class="tna-!--visually-hidden">Error:</span> [Error text]
+    </p>
+    -->
+
+  </div>
+
+  <!-- Field id="tna-form__ELEMENT-ID"
+    If hint:
+      aria-describedby="tna-form__ELEMENT-ID-hint"
+    If error:
+      aria-describedby="tna-form__ELEMENT-ID-error"
+    If hint and error:
+      aria-describedby="tna-form__ELEMENT-ID-hint tna-form__ELEMENT-ID-error"
+  -->
+
+</div>
+```
+
+### Fieldset (multiple inputs - e.g. checkboxes and radios)
+
+```html
+<div class="tna-form__group"> <!-- Optional: "tna-form__group--error" -->
+
+  <fieldset class="tna-form__fieldset"><!-- Fieldset
+      If hint:
+        aria-describedby="tna-form__ELEMENT-ID-hint"
+      If error:
+        aria-describedby="tna-form__ELEMENT-ID-error"
+      If hint and error:
+        aria-describedby="tna-form__ELEMENT-ID-hint tna-form__ELEMENT-ID-error"
+    -->
+
+    <div class="tna-form__group-contents">
+
+      <legend class="tna-form__legend">
+        <h4 class="tna-form__heading tna-form__heading--m">
+          <!-- Field title -->
+        </h4>
+      </legend>
+
+      <!-- Optional hint
+      <p id="tna-form__ELEMENT-ID-hint" class="tna-form__hint">
+        [Hint text]
+      </p>
+      -->
+
+      <!-- Optional error
+      <p id="tna-form__ELEMENT-ID-error" class="tna-form__error-message">
+        <span class="tna-!--visually-hidden">Error:</span> [Error text]
+      </p>
+      -->
+
+    </div>
+  </fieldset>
+
+  <!-- Fields -->
+  
+</div>
+```

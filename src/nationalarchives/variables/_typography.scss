@@ -2,11 +2,11 @@
 
 $use-local-fonts: false !default;
 
-$relative-1rem-px: 16;
+$relative-1rem-px: 16; // 16px is always 1rem
 
 $body-font-size-px: 18 !default;
 $body-font-size-px-mobile: 17 !default;
-$body-line-height: #{math.div(16, 18) * 2} !default; // 1.77777
+$body-line-height: #{math.div($relative-1rem-px, $body-font-size-px) * 2} !default; // 1.77777
 
 $interactive-text-decoration-thickness: 3.5px !default;
 

@@ -7,8 +7,6 @@
 .tna-template {
   @include colour.colour-background("page-background");
 
-  accent-color: var(--accent);
-
   &--system-theme {
     @include colour.colour-css-vars;
 
@@ -92,5 +90,15 @@
 
   &-accent-light {
     @include colour.accent-light;
+  }
+}
+
+.tna-border {
+  &-keyline {
+    @include colour.colour-border("keyline", 1px);
+  }
+
+  &-keyline-dark {
+    @include colour.colour-border("keyline-dark", 1px);
   }
 }

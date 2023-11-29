@@ -32,17 +32,6 @@ window.addEventListener("touchstart", onFirstTouch);
 window.addEventListener("keydown", onKeyDown);
 window.addEventListener("mousedown", onMouseDown);
 
-// if (document.documentElement.classList.contains("tna-template--system-theme")) {
-//   document.documentElement.classList.add(
-//     window.matchMedia("(prefers-color-scheme: dark)").matches
-//       ? "tna-template--dark-theme"
-//       : "tna-template--light-theme",
-//   );
-//   if (window.matchMedia("(prefers-contrast: more)").matches) {
-//     document.documentElement.classList.add("tna-template--high-contrast-theme");
-//   }
-// }
-
 const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};
   const $scope =

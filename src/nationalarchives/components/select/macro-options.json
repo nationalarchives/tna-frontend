@@ -1,0 +1,114 @@
+[
+  {
+    "name": "label",
+    "type": "text",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "headingSize",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "id",
+    "type": "text",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "name",
+    "type": "text",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "hint",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "error",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "text",
+        "required": true,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "text",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "value",
+        "type": "text",
+        "required": true,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "selected",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "size",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "inline",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "formGroupClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the select form group."
+  },
+  {
+    "name": "formGroupAttributes",
+    "type": "string",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the select form group."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the select."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the select."
+  }
+]

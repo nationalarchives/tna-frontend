@@ -1,3 +1,5 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.spaced -%}
   {%- set containerClasses = containerClasses.concat('tna-pagination--spaced') -%}
@@ -5,14 +7,16 @@
 <nav class="tna-pagination {{ containerClasses | join(' ') }}" role="navigation" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Pagination' }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% if params.previous -%}
   <div class="tna-pagination__prev">
-    <a class="tna-button tna-pagination__link" href="{{ params.previous.href }}" role="button" rel="prev" {%- if params.previous.title %} title="{{ params.previous.title }}"{% endif %}>
-      <svg class="tna-pagination__icon tna-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="tna-pagination__link-title">
-        {{ params.previous.text if params.previous.text else 'Previous' }}
-      </span>
-    </a>
+    {{ tnaButton({
+      text: params.previous.text if params.previous.text else "Previous",
+      href: "#",
+      title: params.previous.title,
+      icon: "arrow-left",
+      iconOnlyOnMobile: true,
+      attributes: {
+        rel: "prev"
+      }
+    }) }}
   </div>
   {% endif -%}
   {% if params.items -%}
@@ -22,9 +26,15 @@
       <li class="tna-pagination__item tna-pagination__item--ellipses">&ctdot;</li>
       {% else -%}
       <li class="tna-pagination__item{{ ' tna-pagination__item--current' if item.current }}">
-        <a class="tna-button{{ ' tna-button--accent' if item.current }} tna-pagination__link" role="button" href="{{ item.href }}" aria-label="{{ item.label }}">
-          {{ item.number }}
-        </a>
+        {{ tnaButton({
+          text: item.number,
+          href: item.href,
+          accent: item.current,
+          classes: "tna-pagination__link",
+          attributes: {
+            "aria-label": item.label
+          }
+        }) }}
       </li>
       {% endif -%}
     {% endfor -%}
@@ -34,12 +44,17 @@
   {% endif -%}
   {% if params.next -%}
   <div class="tna-pagination__next">
-    <a class="tna-button tna-pagination__link" href="{{ params.next.href }}" role="button" rel="next" {%- if params.next.title %} title="{{ params.next.title }}"{% endif %}>
-      <span class="tna-pagination__link-title">{{ params.next.text if params.next.text else 'Next' }}</span>
-      <svg class="tna-pagination__icon tna-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg>
-    </a>
+    {{ tnaButton({
+      text: params.next.text if params.next.text else "Next",
+      href: "#",
+      title: params.next.title,
+      icon: "arrow-right",
+      iconOnlyOnMobile: true,
+      classes: "tna-button--icon-right",
+      attributes: {
+        rel: "next"
+      }
+    }) }}
   </div>
   {% endif -%}
 </nav>

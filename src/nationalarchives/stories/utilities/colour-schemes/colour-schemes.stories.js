@@ -2,6 +2,7 @@ import SkipLink from "../../../components/skip-link/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import Checkboxes from "../../../components/checkboxes/template.njk";
 import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
 import CookieBanner from "../../../components/cookie-banner/template.njk";
@@ -13,7 +14,11 @@ import Message from "../../../components/message/template.njk";
 import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
+import Radios from "../../../components/radios/template.njk";
+import Select from "../../../components/select/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
+import TextInput from "../../../components/text-input/template.njk";
+import Textarea from "../../../components/textarea/template.njk";
 
 const argTypes = {
   theme: {
@@ -64,26 +69,26 @@ const Template = ({ theme, accent }) => {
     theme === "system"
       ? "tna-template--system-theme"
       : theme === "light"
-      ? "tna-template--light-theme"
-      : theme === "dark"
-      ? "tna-template--dark-theme"
-      : theme === "light high-contrast"
-      ? "tna-template--light-theme tna-template--high-contrast-theme"
-      : theme === "dark high-contrast"
-      ? "tna-template--dark-theme tna-template--high-contrast-theme"
-      : ""
+        ? "tna-template--light-theme"
+        : theme === "dark"
+          ? "tna-template--dark-theme"
+          : theme === "light high-contrast"
+            ? "tna-template--light-theme tna-template--high-contrast-theme"
+            : theme === "dark high-contrast"
+              ? "tna-template--dark-theme tna-template--high-contrast-theme"
+              : ""
   } ${
     accent === "yellow"
       ? "tna-template--yellow-accent"
       : accent === "pink"
-      ? "tna-template--pink-accent"
-      : accent === "orange"
-      ? "tna-template--orange-accent"
-      : accent === "green"
-      ? "tna-template--green-accent"
-      : accent === "blue"
-      ? "tna-template--blue-accent"
-      : ""
+        ? "tna-template--pink-accent"
+        : accent === "orange"
+          ? "tna-template--orange-accent"
+          : accent === "green"
+            ? "tna-template--green-accent"
+            : accent === "blue"
+              ? "tna-template--blue-accent"
+              : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
     <!--
@@ -1026,6 +1031,123 @@ const Template = ({ theme, accent }) => {
               <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
               <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section">
+        <div class="tna-container">
+          <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
+            <form>
+              <h2 class="tna-heading tna-heading--l">
+                Forms
+              </h2>
+              ${TextInput({
+                params: {
+                  label: "Enter your name",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "name",
+                  name: "name",
+                  autofill: "name",
+                },
+              })}
+              ${TextInput({
+                params: {
+                  label: "Enter your email",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "email",
+                  name: "email",
+                  autofill: "email",
+                },
+              })}
+              ${Select({
+                params: {
+                  label: "Sort by",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "sort",
+                  name: "sort",
+                  items: [
+                    {
+                      text: "Relevance",
+                      value: "relevance",
+                    },
+                    {
+                      text: "Date",
+                      value: "date",
+                    },
+                    {
+                      text: "Title",
+                      value: "title",
+                    },
+                  ],
+                },
+              })}
+              ${Radios({
+                params: {
+                  label: "Type",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "type",
+                  name: "type",
+                  items: [
+                    {
+                      text: "Audio",
+                      value: "audio",
+                    },
+                    {
+                      text: "Image",
+                      value: "image",
+                    },
+                    {
+                      text: "Video",
+                      value: "video",
+                    },
+                  ],
+                },
+              })}
+              ${Checkboxes({
+                params: {
+                  label: "Categories",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "categories",
+                  name: "categories",
+                  items: [
+                    {
+                      text: "Alpha",
+                      value: "alpha",
+                    },
+                    {
+                      text: "Beta",
+                      value: "beta",
+                    },
+                    {
+                      text: "Gamma",
+                      value: "gamma",
+                    },
+                  ],
+                },
+              })}
+              ${Textarea({
+                params: {
+                  label: "Enter your feedback",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "feedback",
+                  name: "feedback",
+                },
+              })}
+              <div class="tna-button-group">
+                <button type="button" class="tna-button">
+                  Submit
+                </button>
+                <a href="#" class="tna-button tna-button--plain">
+                  Skip
+                </a>
+              </div>
+            </form>
           </div>
         </div>
       </div>

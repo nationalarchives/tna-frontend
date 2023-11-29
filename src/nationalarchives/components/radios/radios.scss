@@ -1,0 +1,131 @@
+@use "../../variables/forms";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../utilities/a11y";
+@use "../../utilities";
+
+.tna-radios {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  &__item {
+    position: relative;
+
+    input {
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      padding: 0;
+
+      position: absolute;
+      top: -1px;
+      left: -1px;
+
+      opacity: 0;
+    }
+
+    &-label {
+      padding-left: 3rem;
+
+      display: block;
+
+      line-height: 2rem;
+
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        border-radius: 100%;
+
+        content: "";
+      }
+
+      &::before {
+        width: 2rem;
+        height: 2rem;
+
+        display: block;
+        box-sizing: border-box;
+
+        z-index: 1;
+
+        @include colour.colour-background("input-background");
+
+        @include colour.colour-border(
+          "input-border",
+          forms.$form-field-border-width
+        );
+      }
+
+      &::after {
+        width: 1rem;
+        height: 1rem;
+        margin: 0.5rem;
+
+        display: none;
+
+        z-index: 2;
+
+        @include colour.colour-background("input-foreground");
+      }
+    }
+  }
+
+  &--small {
+    gap: 0.5rem;
+  }
+
+  &--small &__item {
+    &-label {
+      padding-left: 2.5rem;
+
+      line-height: 1.5rem;
+
+      &::before {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &::after {
+        width: 0.75rem;
+        height: 0.75rem;
+        margin: 0.375rem;
+      }
+    }
+  }
+
+  &--inline {
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 1rem 2rem;
+
+    @include media.on-tiny {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  input:focus + &__item-label {
+    &::before {
+      @include a11y.focus-outline;
+    }
+  }
+
+  input:checked + &__item-label {
+    &::after {
+      display: block;
+    }
+  }
+
+  &--small &__item:hover &__item-label {
+    &::before {
+      box-shadow: 0 0 0 0.125rem var(--input-border);
+    }
+  }
+}

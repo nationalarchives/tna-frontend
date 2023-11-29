@@ -1,0 +1,102 @@
+[
+  {
+    "name": "label",
+    "type": "text",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "headingSize",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "id",
+    "type": "text",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "name",
+    "type": "text",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "hint",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "error",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "text",
+        "required": true,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "text",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "value",
+        "type": "text",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "checked",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "small",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "inline",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the checkboxes."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the checkboxes."
+  }
+]

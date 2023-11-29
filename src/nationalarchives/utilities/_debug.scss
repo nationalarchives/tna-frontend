@@ -18,9 +18,7 @@
       0 0 0 2px #f0a,
       0 0 0.5rem #f0a !important;
 
-    position: relative;
-
-    &::before {
+    &::after {
       width: 20px;
       height: 20px;
 
@@ -45,7 +43,8 @@
       content: "";
     }
 
-    .tna-template--dark-theme & {
+    &:not(.tna-checkboxes__item-label, .tna-radios__item-label) {
+      position: relative;
     }
   }
 }

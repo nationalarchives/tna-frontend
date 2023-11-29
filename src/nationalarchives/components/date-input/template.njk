@@ -1,0 +1,45 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.inline -%}
+  {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
+{%- endif -%}
+<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <fieldset class="tna-form__fieldset"{% if params.hint %} aria-describedby="tna-form__{{ params.id }}-hint"{% endif %}>
+    <div class="tna-form__group-contents">
+      <legend class="tna-form__legend">
+        <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
+          {{ params.label }}
+        </h{{ params.headingLevel }}>
+      </legend>
+      {%- if params.hint %}
+      <p id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
+        {{ params.hint }}
+      </p>
+      {%- endif %}
+      {%- if params.error %}
+      <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
+        <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
+      </p>
+      {%- endif %}
+    </div>
+    <div class="tna-date-input{% if params.inline %} tna-date-input--inline{% endif %}">
+      <div class="tna-date-input__item">
+        <label for="tna-form__{{ params.id }}-day" class="tna-date-input__item-label">
+          Day
+        </label>
+        <input type="text" id="tna-form__{{ params.id }}-day" value="{{ params.value.day if params.value }}" name="{{ params.name }}-day" class="tna-date-input__item-input" type="text" inputmode="numeric">
+      </div>
+      <div class="tna-date-input__item">
+        <label for="tna-form__{{ params.id }}-month" class="tna-date-input__item-label">
+          Month
+        </label>
+        <input type="text" id="tna-form__{{ params.id }}-month" value="{{ params.value.month if params.value }}" name="{{ params.name }}-month" class="tna-date-input__item-input" type="text" inputmode="numeric">
+      </div>
+      <div class="tna-date-input__item">
+        <label for="tna-form__{{ params.id }}-year" class="tna-date-input__item-label">
+          Year
+        </label>
+        <input type="text" id="tna-form__{{ params.id }}-year" value="{{ params.value.year if params.value }}" name="{{ params.name }}-year" class="tna-date-input__item-input tna-date-input__item-input--wider" type="text" inputmode="numeric">
+      </div>
+    </div>
+  </fieldset>
+</div>

@@ -40,6 +40,27 @@
   }
 }
 
+#storybook-docs {
+  div.docs-story {
+    background-position:
+      16px 16px,
+      16px 16px,
+      16px 16px,
+      16px 16px !important;
+
+    > div {
+      margin: 0;
+      padding: 1rem;
+
+      .innerZoomElementWrapper {
+        > * {
+          border: none !important;
+        }
+      }
+    }
+  }
+}
+
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
@@ -144,8 +165,6 @@
     padding-left: 0.5rem;
 
     @include colour.colour-background("background-tint");
-
-    // @include colour.colour-border("keyline", 1px, solid, top);
   }
 }
 

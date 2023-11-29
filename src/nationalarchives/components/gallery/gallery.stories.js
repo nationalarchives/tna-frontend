@@ -60,14 +60,14 @@ Standard.args = {
               },
             ]
           : index === 1
-            ? [
-                {
-                  id: "tab-1",
-                  title: "Transcript",
-                  body: "<p>TEST TRANSCRIPT</p>",
-                },
-              ]
-            : null,
+          ? [
+              {
+                id: "tab-1",
+                title: "Transcript",
+                body: "<p>TEST TRANSCRIPT</p>",
+              },
+            ]
+          : null,
     })),
 
   classes: "tna-gallery--demo",

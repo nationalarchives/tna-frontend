@@ -80,12 +80,14 @@
         <p>
           Subscribe for regular news, updates and priority booking for events.
         </p>
-        {{ tnaButton({
-          text: "Subscribe",
-          href: "#",
-          accent: true,
-          icon: "envelope"
-        }) }}
+        <div class="tna-button-group">
+          {{ tnaButton({
+            text: "Subscribe",
+            href: "#",
+            accent: true,
+            icon: "envelope"
+          }) }}
+        </div>
       </div>
     </div>
     {%- endif -%}

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improvements to high contrast modes
 - Link colours changed for better contrast
 - Index grid heading options have been flattened to match other components
+- Pagination arrows switched from SVGs to Font Awesome icons
 
 ### Deprecated
 ### Removed

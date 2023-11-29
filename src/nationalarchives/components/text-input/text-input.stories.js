@@ -71,8 +71,9 @@ const argTypes = {
   size: { control: "inline-radio", options: ["xs", "s", "m", "l", "xl"] },
   maxLength: { control: "number" },
   inline: { control: "boolean" },
-  classes: { control: "text" },
   formGroupClasses: { control: "text" },
+  formGroupAttributes: { control: "object" },
+  classes: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -102,8 +103,9 @@ const Template = ({
   size,
   maxLength,
   inline,
-  classes,
   formGroupClasses,
+  formGroupAttributes,
+  classes,
   attributes,
 }) =>
   TextInput({
@@ -122,8 +124,9 @@ const Template = ({
       size,
       maxLength,
       inline,
-      classes,
       formGroupClasses,
+      formGroupAttributes,
+      classes,
       attributes,
     },
   });

@@ -12,8 +12,9 @@ const argTypes = {
   error: { control: "object" },
   maxWidth: { control: "boolean" },
   inline: { control: "boolean" },
-  classes: { control: "text" },
   formGroupClasses: { control: "text" },
+  formGroupAttributes: { control: "object" },
+  classes: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -39,8 +40,9 @@ const Template = ({
   error,
   maxWidth,
   inline,
-  classes,
   formGroupClasses,
+  formGroupAttributes,
+  classes,
   attributes,
 }) =>
   DateSearch({
@@ -55,8 +57,9 @@ const Template = ({
       error,
       maxWidth,
       inline,
-      classes,
       formGroupClasses,
+      formGroupAttributes,
+      classes,
       attributes,
     },
   });

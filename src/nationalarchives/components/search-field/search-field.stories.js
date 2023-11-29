@@ -9,6 +9,8 @@ const argTypes = {
   name: { control: "text" },
   hint: { control: "text" },
   value: { control: "text" },
+  formGroupClasses: { control: "text" },
+  formGroupAttributes: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -32,6 +34,8 @@ const Template = ({
   name,
   hint,
   value,
+  formGroupClasses,
+  formGroupAttributes,
   classes,
   attributes,
 }) =>
@@ -44,6 +48,8 @@ const Template = ({
       name,
       hint,
       value,
+      formGroupClasses,
+      formGroupAttributes,
       classes,
       attributes,
     },

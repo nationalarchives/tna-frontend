@@ -13,8 +13,9 @@ const argTypes = {
   selected: { control: "text" },
   size: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
   inline: { control: "boolean" },
-  classes: { control: "text" },
   formGroupClasses: { control: "text" },
+  formGroupAttributes: { control: "object" },
+  classes: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -41,8 +42,9 @@ const Template = ({
   selected,
   size,
   inline,
-  classes,
   formGroupClasses,
+  formGroupAttributes,
+  classes,
   attributes,
 }) =>
   Select({
@@ -58,8 +60,9 @@ const Template = ({
       selected,
       size,
       inline,
-      classes,
       formGroupClasses,
+      formGroupAttributes,
+      classes,
       attributes,
     },
   });

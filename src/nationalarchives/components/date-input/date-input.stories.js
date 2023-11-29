@@ -10,10 +10,8 @@ const argTypes = {
   hint: { control: "text" },
   value: { control: "object" },
   error: { control: "object" },
-  maxWidth: { control: "boolean" },
   inline: { control: "boolean" },
   classes: { control: "text" },
-  formGroupClasses: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -37,10 +35,8 @@ const Template = ({
   hint,
   value,
   error,
-  maxWidth,
   inline,
   classes,
-  formGroupClasses,
   attributes,
 }) =>
   DateInput({
@@ -53,10 +49,8 @@ const Template = ({
       hint,
       value,
       error,
-      maxWidth,
       inline,
       classes,
-      formGroupClasses,
       attributes,
     },
   });

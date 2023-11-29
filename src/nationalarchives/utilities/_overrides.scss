@@ -4,7 +4,7 @@
 
 @mixin hide-on($suffix) {
   .tna-\!--hide-on-#{$suffix} {
-    display: none;
+    display: none !important;
   }
 }
 

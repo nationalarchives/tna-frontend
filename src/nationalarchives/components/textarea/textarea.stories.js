@@ -14,8 +14,9 @@ const argTypes = {
   size: { control: "inline-radio", options: ["m", "l", "xl"] },
   rows: { control: "number" },
   inline: { control: "boolean" },
-  classes: { control: "text" },
   formGroupClasses: { control: "text" },
+  formGroupAttributes: { control: "object" },
+  classes: { control: "text" },
   attributes: { control: "object" },
 };
 
@@ -43,8 +44,9 @@ const Template = ({
   size,
   rows,
   inline,
-  classes,
   formGroupClasses,
+  formGroupAttributes,
+  classes,
   attributes,
 }) =>
   Textarea({
@@ -61,8 +63,9 @@ const Template = ({
       size,
       rows,
       inline,
-      classes,
       formGroupClasses,
+      formGroupAttributes,
+      classes,
       attributes,
     },
   });

@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<nav class="tna-index-grid {{ containerClasses | join(' ') }}" aria-label="{{ params.heading.title }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<nav class="tna-index-grid {{ containerClasses | join(' ') }}" aria-label="{{ params.title }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
       <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'l' }} tna-index-grid__heading">

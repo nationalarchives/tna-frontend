@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.26-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.27-prerelease...HEAD)
 
 ### Added
 ### Changed
@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 ### Security
+
+## [0.1.27-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.26-prerelease...v0.1.27-prerelease) - 2023-11-29
+
+### Fixed
+
+- Added the correct `aria-label` in index grid components
 
 ## [0.1.26-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...v0.1.26-prerelease) - 2023-11-29
 

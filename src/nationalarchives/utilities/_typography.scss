@@ -147,8 +147,6 @@ small {
   .tna-background-accent &:not(#{&}--plain) {
     @include colour.plain;
 
-    // background-color: #f0a !important;
-
     @include colour.colour-border("background");
   }
 }

@@ -28,7 +28,7 @@ const argTypes = {
   },
   accent: {
     control: "radio",
-    options: ["none", "black", "yellow", "pink", "orange", "green", "blue"],
+    options: ["none", "yellow", "pink", "orange", "green", "blue"],
   },
 };
 
@@ -73,9 +73,7 @@ const Template = ({ theme, accent }) => {
       ? "tna-template--dark-theme tna-template--high-contrast-theme"
       : ""
   } ${
-    /*accent === "black"
-      ? "tna-template--black-accent"
-      : */ accent === "yellow"
+    accent === "yellow"
       ? "tna-template--yellow-accent"
       : accent === "pink"
       ? "tna-template--pink-accent"

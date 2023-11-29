@@ -1,27 +1,26 @@
 @use "sass:math";
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 @use "../../utilities";
 @use "../grid";
 
 .tna-index-grid {
+  @include spacing.space-above;
+
   &__heading {
   }
 
   &__items {
+    @include spacing.space-above;
+
     margin-bottom: 0;
-    padding-top: 2rem;
+
+    display: flex;
+    gap: 2rem 0;
 
     list-style: none;
-  }
-
-  &__item-wrapper {
-    margin-bottom: 2rem;
-
-    @include media.on-mobile {
-      margin-bottom: 1rem;
-    }
   }
 
   &__item {
@@ -35,6 +34,10 @@
     position: relative;
 
     text-decoration: none;
+
+    .tna-background-contrast & {
+      @include colour.plain;
+    }
 
     @include colour.on-high-contrast-and-forced-colours {
       @include colour.colour-border("keyline-dark", 1px);

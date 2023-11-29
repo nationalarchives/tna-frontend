@@ -148,11 +148,17 @@
     }
   }
 
-  &--solid-hover,
-  .tna-background-accent-light &,
-  .tna-background-accent &:not(.tna-button--accent) {
+  &--solid-hover {
     &:not(.tna-button--plain):hover {
+      @include colour.colour-font("font-dark");
+
       @include colour.colour-background("page-background");
+    }
+  }
+
+  .tna-background-accent & {
+    &:hover {
+      @include colour.colour-font("font-dark");
     }
   }
 

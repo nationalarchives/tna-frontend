@@ -1,5 +1,8 @@
+@use "sass:math";
+
 @use "../src/nationalarchives/tools/colour";
 @use "../src/nationalarchives/tools/media";
+@use "../src/nationalarchives/tools/typography";
 
 @import "https://use.typekit.net/hkj3kuz.css";
 
@@ -162,5 +165,87 @@
     padding-left: 0.5rem;
 
     @include colour.colour-background("background-tint");
+  }
+}
+
+.tna-colour-contrast-demo {
+  width: 0;
+  max-width: calc(100% - 1px);
+  display: table;
+  table-layout: auto;
+
+  border-top: rgb(0 0 0/0.25) 1px solid;
+  border-left: rgb(0 0 0/0.25) 1px solid;
+
+  &__header {
+    display: table-header-group;
+  }
+
+  &__block {
+    width: #{math.div(100%, 6)};
+    padding: 1rem;
+
+    display: table-cell;
+
+    @include typography.main-font-weight-bold;
+
+    border-right: rgb(0 0 0/0.25) 1px solid;
+    border-bottom: rgb(0 0 0/0.25) 1px solid;
+  }
+
+  &__examples {
+    display: table-row-group;
+  }
+
+  &__theme-accent {
+    display: table-row;
+  }
+
+  &__example {
+    display: table-cell;
+
+    border-right: rgb(0 0 0/0.25) 1px solid;
+    border-bottom: rgb(0 0 0/0.25) 1px solid;
+
+    &:first-child {
+      min-width: 7rem;
+      padding: 1rem;
+
+      @include typography.relative-font-size(14);
+    }
+
+    &-content {
+      height: 100%;
+      padding: 1rem;
+    }
+  }
+
+  &__link {
+    &--visited {
+      @include colour.colour-font("link-visited", true);
+    }
+  }
+
+  .tna-template {
+    min-width: 15.25rem;
+
+    p:not(:first-child) {
+      margin-top: 0.25rem;
+    }
+  }
+
+  .tna-chip {
+    margin: 1rem 0;
+  }
+
+  .tna-button-group {
+    margin-top: 1rem;
+
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .tna-pagination {
+    margin-top: 1rem;
   }
 }

@@ -143,6 +143,12 @@ small {
   @include colour.accent;
 
   @include colour.colour-border("accent-background", 0.125rem);
+
+  .tna-background-accent &:not(#{&}--plain) {
+    @include colour.plain;
+
+    @include colour.colour-border("background");
+  }
 }
 
 .tna-chip {

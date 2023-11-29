@@ -2,7 +2,12 @@ import IndexGrid from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  heading: { control: "object" },
+  title: { control: "text" },
+  headingLevel: { control: { type: "number", min: 1, max: 6 } },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+  headingHref: { control: "text" },
+  body: { control: "text" },
+  text: { control: "text" },
   items: { control: "object" },
   columns: { control: "number" },
   columnsMedium: { control: "number" },
@@ -24,7 +29,12 @@ export default {
 };
 
 const Template = ({
-  heading,
+  title,
+  headingLevel,
+  headingSize,
+  headingHref,
+  body,
+  text,
   items,
   columns,
   columnsMedium,
@@ -35,7 +45,12 @@ const Template = ({
 }) =>
   IndexGrid({
     params: {
-      heading,
+      title,
+      headingLevel,
+      headingSize,
+      headingHref,
+      body,
+      text,
       items,
       columns,
       columnsMedium,
@@ -50,18 +65,15 @@ const exampleItem = {
   href: "#",
   src: "https://picsum.photos/id/237/800/600",
   alt: "Photo of a puppy",
-  width: "800",
-  height: "600",
+  width: 800,
+  height: 600,
   title: "Cat",
 };
 
 export const Standard = Template.bind({});
 Standard.args = {
-  heading: {
-    title: "My dogs",
-    level: 2,
-    href: "#",
-  },
+  title: "My dogs",
+  headingLevel: 2,
   items: Array(12)
     .fill({ ...exampleItem })
     .map((item, index) => {
@@ -86,9 +98,7 @@ Basic.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Basic.args = {
-  heading: {
-    title: "My dogs",
-  },
+  title: "My dogs",
   items: Array(6)
     .fill({ ...exampleItem })
     .map((item, index) => {
@@ -104,3 +114,4 @@ Basic.args = {
   columnsTiny: 1,
   classes: "tna-index-grid--demo",
 };
+console.log(JSON.stringify(Basic.args));

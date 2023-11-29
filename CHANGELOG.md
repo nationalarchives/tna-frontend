@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.26-prerelease...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.26-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...v0.1.26-prerelease) - 2023-11-29
 
 ### Added
 
@@ -23,7 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pagination arrows switched from SVGs to Font Awesome icons
 
 ### Deprecated
-### Removed
 
 - Removed generic `accent` CSS variable
 - The black theme accent has been removed
@@ -33,8 +41,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Multiple line spacing for chip lists fixed
 - Accented chips can now be used on accented backgrounds
 - Index grid can now be used on a contrast background
-
-### Security
 
 ## [0.1.25-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...v0.1.25-prerelease) - 2023-11-16
 

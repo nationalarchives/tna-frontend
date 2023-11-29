@@ -615,7 +615,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 1", level: 3, href: "#" },
+            title: "My dogs 1",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -683,7 +685,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -697,7 +699,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-tint">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 2", level: 3, href: "#" },
+            title: "My dogs 2",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -765,7 +769,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -779,7 +783,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-contrast">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 3", level: 3, href: "#" },
+            title: "My dogs 3",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -847,7 +853,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -861,7 +867,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-accent-light">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 4", level: 3, href: "#" },
+            title: "My dogs 4",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -929,7 +937,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -943,7 +951,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-accent">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 5", level: 3, href: "#" },
+            title: "My dogs 5",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -1011,7 +1021,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">

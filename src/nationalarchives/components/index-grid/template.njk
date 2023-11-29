@@ -1,14 +1,19 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <nav class="tna-index-grid {{ containerClasses | join(' ') }}" aria-label="{{ params.heading.title }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container">
-    <div class="tna-column tna-column--full">
-      <h{{ params.heading.level }} class="tna-heading-{{ params.heading.size or 'l' }} tna-index-grid__heading">
-        {%- if params.heading.href -%}
-        <a href="{{ params.heading.href }}">{{ params.heading.title }}</a>
+    <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+      <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'l' }} tna-index-grid__heading">
+        {%- if params.headingHref -%}
+        <a href="{{ params.headingHref }}">{{ params.title }}</a>
         {%- else -%}
-        {{ params.heading.title }}
+        {{ params.title }}
         {%- endif -%}
-      </h{{ params.heading.level }}>
+      </h{{ params.headingLevel }}>
+      {%- if params.text %}
+        <p>{{ params.text }}</p>
+      {%- else %}
+        {{ params.body | safe }}
+      {%- endif %}
     </div>
   </div>
   <ul class="tna-index-grid__items tna-container">

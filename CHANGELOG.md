@@ -16,15 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Card meta information changed to chip list
 - Improvements to high contrast modes
+- Link colours changed for better contrast
 
 ### Deprecated
 ### Removed
 
 - Removed generic `accent` CSS variable
+- The black theme accent has been removed
 
 ### Fixed
 
 - Multiple line spacing for chip lists fixed
+- Accented chips can now be used on accented backgrounds
 
 ### Security
 

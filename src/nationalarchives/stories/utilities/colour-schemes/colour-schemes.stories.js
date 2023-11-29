@@ -685,7 +685,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -769,7 +769,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -853,7 +853,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -937,7 +937,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -1021,7 +1021,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">

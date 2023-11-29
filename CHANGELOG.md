@@ -12,11 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Form element components have been added: checkboxes, date input, date search, radios, search field, select, text input and textarea
 - High contrast support for chip lists with icons
 - Allow custom cookie path to be passed to cookie banner
+- Index grids can have text/body as well as a title
 
 ### Changed
 
 - Card meta information changed to chip list
 - Improvements to high contrast modes
+- Index grid heading options have been flattened to match other components
 
 ### Deprecated
 ### Removed
@@ -26,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Multiple line spacing for chip lists fixed
+- Index grid can now be used on a contrast background
 
 ### Security
 

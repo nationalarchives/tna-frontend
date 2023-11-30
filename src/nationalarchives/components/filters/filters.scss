@@ -17,8 +17,8 @@
     &:link,
     &:visited,
     &:hover {
-    @include colour.accent;
-  }
+      @include colour.accent;
+    }
   }
 
   &__link {
@@ -31,7 +31,7 @@
     &,
     &:link,
     &:visited {
-    @include colour.colour-font("font-base");
+      @include colour.colour-font("font-base");
     }
 
     border-radius: 99rem;

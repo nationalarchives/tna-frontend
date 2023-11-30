@@ -1,33 +1,18 @@
 const { globSync } = require("glob");
-const fs = require("fs");
-const path = require("path");
 const Diff = require("diff");
-const nunjucks = require("nunjucks");
-
-require.extensions[".njk"] = function (module, filename) {
-  module.exports = fs.readFileSync(filename, "utf8");
-};
-
-nunjucks.configure(path.join(__dirname, "..", "src"));
-
-const pass = (message) => {
-  console.log("\x1b[42m%s\x1b[0m", " PASS ", "\x1b[0m", message);
-};
-
-const fail = (message) => {
-  console.error("\x1b[41m%s\x1b[0m", " FAIL ", "\x1b[0m", message);
-};
+const { pass, fail } = require("./lib/passfail");
+const { renderNunjucks } = require("./lib/nunjucks");
 
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
-const components = globSync(
-  `${componentsDirectory}*${componentFixturesFile}`,
-).map((componentFixtureFile) =>
-  componentFixtureFile
-    .replace(new RegExp(`^${componentsDirectory}`), "")
-    .replace(new RegExp(`${componentFixturesFile}$`), ""),
-);
+const components = globSync(`${componentsDirectory}*${componentFixturesFile}`)
+  .map((componentFixtureFile) =>
+    componentFixtureFile
+      .replace(new RegExp(`^${componentsDirectory}`), "")
+      .replace(new RegExp(`${componentFixturesFile}$`), ""),
+  )
+  .reverse();
 
 const failedComponents = components.filter((component) => {
   console.log(`\nComponent: ${component}`);
@@ -38,16 +23,10 @@ const failedComponents = components.filter((component) => {
     `../${componentsDirectory}${component}/template.njk`,
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
-    const result = nunjucks
-      .renderString(componentNunjucks, {
-        params: fixture.options,
-      })
-      .trim()
-      .replace(/>\n\s*/g, ">")
-      .replace(/\n\s*</g, "<");
+    const result = renderNunjucks(componentNunjucks, fixture.options, true);
     const mismatch = result !== fixture.html;
     if (mismatch) {
-      fail(`${fixture.name} - ${componentsDirectory}${component}/template.njk`);
+      fail(`${fixture.name} (${componentsDirectory}${component}/template.njk)`);
       console.log("\n");
       const diff = Diff.diffChars(fixture.html, result)
         .map(
@@ -57,12 +36,12 @@ const failedComponents = components.filter((component) => {
             }${part.value}`,
         )
         .join("");
-      console.log(diff);
+      console.log(diff.replace(/></g, ">\n<"));
       console.log("\n");
-    } else {
-      pass(fixture.name);
+      return true;
     }
-    return mismatch;
+    pass(fixture.name);
+    return false;
   });
   return failedFixtures.length;
 });

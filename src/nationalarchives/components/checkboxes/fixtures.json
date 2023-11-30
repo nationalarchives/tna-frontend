@@ -1,4 +1,196 @@
 {
   "component": "checkboxes",
-  "fixtures": []
+  "fixtures": [
+    {
+      "name": "plain checkboxes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"tna-form__categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-beta\" value=\"beta\" name=\"categories\"><label for=\"tna-form__categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"tna-form__categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "small checkboxes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Admiralty, Navy, Royal Marines, and Coastguard",
+            "value": "ADM"
+          },
+          {
+            "text": "Air Ministry and Royal Air Force records",
+            "value": "AIR"
+          },
+          {
+            "text": "Board of Trade and successors",
+            "value": "BT"
+          },
+          {
+            "text": "Chancery, the Wardrobe, Royal Household, Exchequer and various commissions",
+            "value": "C"
+          },
+          {
+            "text": "Colonial Office, Commonwealth and Foreign and Commonwealth Offices",
+            "value": "CO"
+          },
+          {
+            "text": "Exchequer, Office of First Fruits and Tenths, and the Court of Augmentations",
+            "value": "E"
+          },
+          {
+            "text": "Foreign Office",
+            "value": "FO"
+          },
+          {
+            "text": "Home Office",
+            "value": "HO"
+          },
+          {
+            "text": "Prerogative Court of Canterbury",
+            "value": "PROB"
+          },
+          {
+            "text": "War Office, Armed Forces, Judge Advocate General, and related bodies",
+            "value": "WO"
+          }
+        ],
+        "small": true
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes tna-checkboxes--small\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-ADM\" value=\"ADM\" name=\"categories\"><label for=\"tna-form__categories-ADM\" class=\"tna-checkboxes__item-label\">Admiralty, Navy, Royal Marines, and Coastguard</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-AIR\" value=\"AIR\" name=\"categories\"><label for=\"tna-form__categories-AIR\" class=\"tna-checkboxes__item-label\">Air Ministry and Royal Air Force records</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-BT\" value=\"BT\" name=\"categories\"><label for=\"tna-form__categories-BT\" class=\"tna-checkboxes__item-label\">Board of Trade and successors</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-C\" value=\"C\" name=\"categories\"><label for=\"tna-form__categories-C\" class=\"tna-checkboxes__item-label\">Chancery, the Wardrobe, Royal Household, Exchequer and various commissions</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-CO\" value=\"CO\" name=\"categories\"><label for=\"tna-form__categories-CO\" class=\"tna-checkboxes__item-label\">Colonial Office, Commonwealth and Foreign and Commonwealth Offices</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-E\" value=\"E\" name=\"categories\"><label for=\"tna-form__categories-E\" class=\"tna-checkboxes__item-label\">Exchequer, Office of First Fruits and Tenths, and the Court of Augmentations</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-FO\" value=\"FO\" name=\"categories\"><label for=\"tna-form__categories-FO\" class=\"tna-checkboxes__item-label\">Foreign Office</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-HO\" value=\"HO\" name=\"categories\"><label for=\"tna-form__categories-HO\" class=\"tna-checkboxes__item-label\">Home Office</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-PROB\" value=\"PROB\" name=\"categories\"><label for=\"tna-form__categories-PROB\" class=\"tna-checkboxes__item-label\">Prerogative Court of Canterbury</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-WO\" value=\"WO\" name=\"categories\"><label for=\"tna-form__categories-WO\" class=\"tna-checkboxes__item-label\">War Office, Armed Forces, Judge Advocate General, and related bodies</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "checkboxes with a preselected value",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta",
+            "checked": true
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"tna-form__categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-beta\" value=\"beta\" name=\"categories\" checked><label for=\"tna-form__categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"tna-form__categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "checkboxes with a hint",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "hint": "Select all that apply.",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\" aria-describedby=\"tna-form__categories-hint \"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><p id=\"tna-form__categories-hint\" class=\"tna-form__hint\">Select all that apply.</p><div class=\"tna-checkboxes\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"tna-form__categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-beta\" value=\"beta\" name=\"categories\"><label for=\"tna-form__categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"tna-form__categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "checkboxes with an error",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "error": {
+          "text": "You must select a category"
+        },
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group tna-form__group--error \"><fieldset class=\"tna-form__fieldset\" aria-describedby=\" tna-form__categories-error\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><p id=\"tna-form__categories-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a category</p><div class=\"tna-checkboxes\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"tna-form__categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-beta\" value=\"beta\" name=\"categories\"><label for=\"tna-form__categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"tna-form__categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "inline checkboxes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "xs",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "inline": true
+      },
+      "html": "<div class=\"tna-form__group tna-form__group--inline\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--xs\">Categories</h4></legend><div class=\"tna-checkboxes tna-checkboxes--small tna-checkboxes--inline\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"tna-form__categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-beta\" value=\"beta\" name=\"categories\"><label for=\"tna-form__categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"tna-form__categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"tna-form__categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>",
+      "hidden": false
+    }
+  ]
 }

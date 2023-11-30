@@ -1,0 +1,12 @@
+{
+  "extends": ["html-validate:recommended"],
+
+  "rules": {
+    "close-order": "error",
+    "form-dup-name": 0,
+    "no-inline-style": 0,
+    "no-redundant-role": 0,
+    "no-trailing-whitespace": 0,
+    "void-style": 0
+  }
+}

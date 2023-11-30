@@ -4,7 +4,6 @@ import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
 const argTypes = {
-  title: { control: "text" },
   items: { control: "object" },
   sticky: { control: "boolean" },
   classes: { control: "text" },
@@ -22,10 +21,9 @@ export default {
   argTypes,
 };
 
-const Template = ({ title, items, sticky, classes, attributes }) =>
+const Template = ({ items, sticky, classes, attributes }) =>
   Tabs({
     params: {
-      title,
       items,
       sticky,
       classes,
@@ -35,7 +33,6 @@ const Template = ({ title, items, sticky, classes, attributes }) =>
 
 export const Standard = Template.bind({});
 Standard.args = {
-  title: "Example tabs",
   items: [
     {
       id: "unique-id-a",
@@ -61,7 +58,6 @@ Test.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Test.args = {
-  title: "Example tabs",
   items: [
     {
       id: "unique-id-a",

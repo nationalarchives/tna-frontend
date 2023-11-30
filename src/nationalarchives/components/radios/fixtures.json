@@ -1,4 +1,196 @@
 {
   "component": "radios",
-  "fixtures": []
+  "fixtures": [
+    {
+      "name": "plain radios",
+      "options": {
+        "label": "Type",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio"
+          },
+          {
+            "text": "Image",
+            "value": "image"
+          },
+          {
+            "text": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Type</h4></legend><div class=\"tna-radios\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-audio\" value=\"audio\" name=\"type\"><label for=\"tna-form__type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-image\" value=\"image\" name=\"type\"><label for=\"tna-form__type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-video\" value=\"video\" name=\"type\"><label for=\"tna-form__type-video\" class=\"tna-radios__item-label\">Video</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "small radios",
+      "options": {
+        "label": "Type",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "items": [
+          {
+            "text": "Admiralty, Navy, Royal Marines, and Coastguard",
+            "value": "ADM"
+          },
+          {
+            "text": "Air Ministry and Royal Air Force records",
+            "value": "AIR"
+          },
+          {
+            "text": "Board of Trade and successors",
+            "value": "BT"
+          },
+          {
+            "text": "Chancery, the Wardrobe, Royal Household, Exchequer and various commissions",
+            "value": "C"
+          },
+          {
+            "text": "Colonial Office, Commonwealth and Foreign and Commonwealth Offices",
+            "value": "CO"
+          },
+          {
+            "text": "Exchequer, Office of First Fruits and Tenths, and the Court of Augmentations",
+            "value": "E"
+          },
+          {
+            "text": "Foreign Office",
+            "value": "FO"
+          },
+          {
+            "text": "Home Office",
+            "value": "HO"
+          },
+          {
+            "text": "Prerogative Court of Canterbury",
+            "value": "PROB"
+          },
+          {
+            "text": "War Office, Armed Forces, Judge Advocate General, and related bodies",
+            "value": "WO"
+          }
+        ],
+        "small": true
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Type</h4></legend><div class=\"tna-radios tna-radios--small\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-ADM\" value=\"ADM\" name=\"type\"><label for=\"tna-form__type-ADM\" class=\"tna-radios__item-label\">Admiralty, Navy, Royal Marines, and Coastguard</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-AIR\" value=\"AIR\" name=\"type\"><label for=\"tna-form__type-AIR\" class=\"tna-radios__item-label\">Air Ministry and Royal Air Force records</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-BT\" value=\"BT\" name=\"type\"><label for=\"tna-form__type-BT\" class=\"tna-radios__item-label\">Board of Trade and successors</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-C\" value=\"C\" name=\"type\"><label for=\"tna-form__type-C\" class=\"tna-radios__item-label\">Chancery, the Wardrobe, Royal Household, Exchequer and various commissions</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-CO\" value=\"CO\" name=\"type\"><label for=\"tna-form__type-CO\" class=\"tna-radios__item-label\">Colonial Office, Commonwealth and Foreign and Commonwealth Offices</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-E\" value=\"E\" name=\"type\"><label for=\"tna-form__type-E\" class=\"tna-radios__item-label\">Exchequer, Office of First Fruits and Tenths, and the Court of Augmentations</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-FO\" value=\"FO\" name=\"type\"><label for=\"tna-form__type-FO\" class=\"tna-radios__item-label\">Foreign Office</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-HO\" value=\"HO\" name=\"type\"><label for=\"tna-form__type-HO\" class=\"tna-radios__item-label\">Home Office</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-PROB\" value=\"PROB\" name=\"type\"><label for=\"tna-form__type-PROB\" class=\"tna-radios__item-label\">Prerogative Court of Canterbury</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-WO\" value=\"WO\" name=\"type\"><label for=\"tna-form__type-WO\" class=\"tna-radios__item-label\">War Office, Armed Forces, Judge Advocate General, and related bodies</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "radios with a preselected value",
+      "options": {
+        "label": "Type",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio"
+          },
+          {
+            "text": "Image",
+            "value": "image"
+          },
+          {
+            "text": "Video",
+            "value": "video"
+          }
+        ],
+        "selected": "image"
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Type</h4></legend><div class=\"tna-radios\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-audio\" value=\"audio\" name=\"type\"><label for=\"tna-form__type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-image\" value=\"image\" name=\"type\" checked><label for=\"tna-form__type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-video\" value=\"video\" name=\"type\"><label for=\"tna-form__type-video\" class=\"tna-radios__item-label\">Video</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "radios with a hint",
+      "options": {
+        "label": "Type",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "hint": "You can only select one.",
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio"
+          },
+          {
+            "text": "Image",
+            "value": "image"
+          },
+          {
+            "text": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group \"><fieldset class=\"tna-form__fieldset\" aria-describedby=\"tna-form__type-hint \"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Type</h4></legend><p id=\"tna-form__type-hint\" class=\"tna-form__hint\">You can only select one.</p><div class=\"tna-radios\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-audio\" value=\"audio\" name=\"type\"><label for=\"tna-form__type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-image\" value=\"image\" name=\"type\"><label for=\"tna-form__type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-video\" value=\"video\" name=\"type\"><label for=\"tna-form__type-video\" class=\"tna-radios__item-label\">Video</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "radios with an error",
+      "options": {
+        "label": "Type",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "error": {
+          "text": "You must select a type"
+        },
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio"
+          },
+          {
+            "text": "Image",
+            "value": "image"
+          },
+          {
+            "text": "Video",
+            "value": "video"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form__group tna-form__group--error \"><fieldset class=\"tna-form__fieldset\" aria-describedby=\" tna-form__type-error\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Type</h4></legend><p id=\"tna-form__type-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a type</p><div class=\"tna-radios\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-audio\" value=\"audio\" name=\"type\"><label for=\"tna-form__type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-image\" value=\"image\" name=\"type\"><label for=\"tna-form__type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-video\" value=\"video\" name=\"type\"><label for=\"tna-form__type-video\" class=\"tna-radios__item-label\">Video</label></div></div></fieldset></div>",
+      "hidden": false
+    },
+    {
+      "name": "inline radios",
+      "options": {
+        "label": "Type",
+        "headingLevel": 4,
+        "headingSize": "xs",
+        "id": "type",
+        "name": "type",
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio"
+          },
+          {
+            "text": "Image",
+            "value": "image"
+          },
+          {
+            "text": "Video",
+            "value": "video"
+          }
+        ],
+        "inline": true
+      },
+      "html": "<div class=\"tna-form__group tna-form__group--inline\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--xs\">Type</h4></legend><div class=\"tna-radios tna-radios--small tna-radios--inline\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-audio\" value=\"audio\" name=\"type\"><label for=\"tna-form__type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-image\" value=\"image\" name=\"type\"><label for=\"tna-form__type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"tna-form__type-video\" value=\"video\" name=\"type\"><label for=\"tna-form__type-video\" class=\"tna-radios__item-label\">Video</label></div></div></fieldset></div>",
+      "hidden": false
+    }
+  ]
 }

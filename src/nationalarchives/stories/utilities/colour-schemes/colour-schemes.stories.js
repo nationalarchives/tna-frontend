@@ -819,7 +819,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
-                landmarkLabel: "My dogs 2 results",
+                landmarkLabel: "My dogs 3 results",
                 previous: {
                   href: "#",
                 },
@@ -903,7 +903,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
-                landmarkLabel: "My dogs 3 results",
+                landmarkLabel: "My dogs 4 results",
                 previous: {
                   href: "#",
                 },
@@ -987,7 +987,7 @@ const Template = ({ theme, accent }) => {
           <div class="tna-column tna-column--full">
             ${Pagination({
               params: {
-                landmarkLabel: "My dogs 4 results",
+                landmarkLabel: "My dogs 5 results",
                 previous: {
                   href: "#",
                 },

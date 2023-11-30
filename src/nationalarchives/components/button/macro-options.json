@@ -72,6 +72,12 @@
     "description": ""
   },
   {
+    "name": "buttonType",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

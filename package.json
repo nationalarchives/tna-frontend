@@ -9,7 +9,8 @@
     "lint": "prettier --check '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.{js,mjs}'",
     "lint:fix": "prettier --write '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
     "package:sass": "sass --style=compressed --embed-sources src/nationalarchives:package/nationalarchives",
-    "package:scripts": "webpack"
+    "package:scripts": "webpack",
+    "validatehtml": "node tasks/generate-fixture-html.js && html-validate temp"
   },
   "repository": {
     "type": "git",
@@ -64,6 +65,7 @@
     "eslint": "^8.52.0",
     "eslint-plugin-storybook": "^0.6.15",
     "glob": "^10.3.10",
+    "html-validate": "^8.7.3",
     "jest-environment-jsdom": "^29.7.0",
     "mdx-mermaid": "^2.0.0",
     "node-self": "^1.0.2",

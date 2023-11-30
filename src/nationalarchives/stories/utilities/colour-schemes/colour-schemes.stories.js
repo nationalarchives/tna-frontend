@@ -1395,9 +1395,9 @@ const CombinationsTemplate = () => {
         `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
-          <p>Text</p>
+          <p><strong>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span></strong></p>
           <p><a href="#"><strong>Link</strong></a> / <a href="#" class="tna-colour-contrast-demo__link--visited"><strong>Link (visited)</strong></a></p>
-          <span class="tna-chip">Chip</span>
+          <p><span class="tna-chip">Chip</span> <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart light-icon"></i></p>
           <div class="tna-button-group">
             ${Button({
               params: {
@@ -1419,45 +1419,7 @@ const CombinationsTemplate = () => {
                 plain: true,
               },
             })}
-            <!--${Button({
-              params: {
-                text: "Button",
-                accent: true,
-                class: "tna-button--solid-hover",
-              },
-            })}-->
           </div>
-          <!--${Pagination({
-            params: {
-              previous: {
-                href: "#",
-              },
-              items: [
-                {
-                  number: 1,
-                  href: "#",
-                },
-                {
-                  ellipsis: true,
-                },
-                {
-                  number: 7,
-                  current: true,
-                  href: "#",
-                },
-                {
-                  ellipsis: true,
-                },
-                {
-                  number: 42,
-                  href: "#",
-                },
-              ],
-              next: {
-                href: "#",
-              },
-            },
-          })}-->
         </div>
       </div>
     </div>`,

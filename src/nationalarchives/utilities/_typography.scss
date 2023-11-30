@@ -107,15 +107,15 @@ a {
     }
   }
 
-  @include colour.on-high-contrast {
-    &:active {
-      box-shadow: none;
-    }
+  // @include colour.on-high-contrast {
+  //   &:active {
+  //     box-shadow: none;
+  //   }
 
-    &:hover:not(:focus) {
-      box-shadow: 0 0 0 0.3125rem var(--focus-outline);
-    }
-  }
+  //   &:hover:not(:focus) {
+  //     box-shadow: 0 0 0 0.3125rem var(--focus-outline);
+  //   }
+  // }
 
   // &[target="_blank"]:not([title*="opens in a new"]) {
   //   &::after {

@@ -21,11 +21,7 @@
         "headingSize": "m",
         "id": "date",
         "name": "date",
-        "value": {
-          "day": "24",
-          "month": "09",
-          "year": "1986"
-        }
+        "value": "1986-09-24"
       },
       "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__date\">Enter a start date</label></h4></div><input type=\"date\" id=\"tna-form__date\" class=\"tna-date-search \" name=\"date\" value=\"[object Object]\"></div>",
       "hidden": false

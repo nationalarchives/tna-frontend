@@ -236,6 +236,16 @@
 
   .tna-chip {
     margin: 1rem 0;
+
+    display: inline-block;
+  }
+
+  .fa-solid {
+    margin-left: 0.5rem;
+
+    &.light-icon {
+      @include colour.colour-font("icon-light", true);
+    }
   }
 
   .tna-button-group {
@@ -247,5 +257,13 @@
 
   .tna-pagination {
     margin-top: 1rem;
+  }
+
+  .dark-text {
+    @include colour.colour-font("font-dark", true);
+  }
+
+  .light-text {
+    @include colour.colour-font("font-light", true);
   }
 }

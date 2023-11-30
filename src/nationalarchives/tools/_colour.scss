@@ -282,6 +282,7 @@
   --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
   --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
   --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
+  --icon-light: #{map.get(colour.$colour-palette-default, "icon-light")};
   // --link: #{map.get(colour.$colour-palette-default, "link")};
   // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
   --keyline: #{map.get(colour.$colour-palette-default, "keyline")};

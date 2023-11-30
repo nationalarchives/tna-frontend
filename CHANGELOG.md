@@ -9,9 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Light font colour changed for better colour contrast on light accented backgrounds
+
 ### Deprecated
 ### Removed
+
+- High contrast themes don't have outlines when hovering over links
+
 ### Fixed
+
+- Date search predefined value fixture amended
+- Light icons can be used on light accented backgrounds
+
 ### Security
 
 ## [0.1.28-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.27-prerelease...v0.1.28-prerelease) - 2023-11-30

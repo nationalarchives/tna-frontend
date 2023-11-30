@@ -6,13 +6,13 @@ const { renderNunjucks } = require("./lib/nunjucks");
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
-const components = globSync(
-  `${componentsDirectory}*${componentFixturesFile}`,
-).map((componentFixtureFile) =>
-  componentFixtureFile
-    .replace(new RegExp(`^${componentsDirectory}`), "")
-    .replace(new RegExp(`${componentFixturesFile}$`), ""),
-);
+const components = globSync(`${componentsDirectory}*${componentFixturesFile}`)
+  .map((componentFixtureFile) =>
+    componentFixtureFile
+      .replace(new RegExp(`^${componentsDirectory}`), "")
+      .replace(new RegExp(`${componentFixturesFile}$`), ""),
+  )
+  .reverse();
 
 const failedComponents = components.filter((component) => {
   console.log(`\nComponent: ${component}`);
@@ -26,7 +26,7 @@ const failedComponents = components.filter((component) => {
     const result = renderNunjucks(componentNunjucks, fixture.options, true);
     const mismatch = result !== fixture.html;
     if (mismatch) {
-      fail(`${fixture.name} - ${componentsDirectory}${component}/template.njk`);
+      fail(`${fixture.name} (${componentsDirectory}${component}/template.njk)`);
       console.log("\n");
       const diff = Diff.diffChars(fixture.html, result)
         .map(
@@ -36,7 +36,7 @@ const failedComponents = components.filter((component) => {
             }${part.value}`,
         )
         .join("");
-      console.log(diff);
+      console.log(diff.replace(/></g, ">\n<"));
       console.log("\n");
       return true;
     }

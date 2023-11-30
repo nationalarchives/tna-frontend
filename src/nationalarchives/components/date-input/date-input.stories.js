@@ -4,7 +4,10 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   label: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+  headingSize: {
+    control: "inline-radio",
+    options: ["xs", "s", "m", "l", "xl"],
+  },
   id: { control: "text" },
   name: { control: "text" },
   hint: { control: "text" },

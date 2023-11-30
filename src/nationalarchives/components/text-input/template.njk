@@ -3,7 +3,7 @@
 {%- if params.inline -%}
   {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
 {%- endif -%}
-<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}" {%- for attribute, value in params.formGroupAttributes %} {{ attribute }}="{{ value }}"{% endfor %}">
+<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}" {%- for attribute, value in params.formGroupAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-form__group-contents">
     <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
       <label class="tna-form__label" for="tna-form__{{ params.id }}">

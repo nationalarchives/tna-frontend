@@ -1,4 +1,84 @@
 {
   "component": "textarea",
-  "fixtures": []
+  "fixtures": [
+    {
+      "name": "plain textarea",
+      "options": {
+        "label": "Enter your feedback",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "name"
+      },
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__feedback\">Enter your feedback</label></h4></div><textarea id=\"tna-form__feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" rows=\"5\"></textarea></div>",
+      "hidden": false
+    },
+    {
+      "name": "textarea with a preselected value",
+      "options": {
+        "label": "Enter your feedback",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "value": "I like this 👍🏼"
+      },
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__feedback\">Enter your feedback</label></h4></div><textarea id=\"tna-form__feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\">I like this 👍🏼</textarea></div>",
+      "hidden": false
+    },
+    {
+      "name": "textarea with a hint",
+      "options": {
+        "label": "Enter your feedback",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "hint": "What did you think?"
+      },
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__feedback\">Enter your feedback</label></h4><p id=\"tna-form__feedback-hint\" class=\"tna-form__hint\">What did you think?</p></div><textarea id=\"tna-form__feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\" aria-describedby=\"tna-form__feedback-hint \"></textarea></div>",
+      "hidden": false
+    },
+    {
+      "name": "textarea with an error",
+      "options": {
+        "label": "Enter your feedback",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "error": {
+          "text": "Enter some feedback"
+        }
+      },
+      "html": "<div class=\"tna-form__group tna-form__group--error \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__feedback\">Enter your feedback</label></h4><p id=\"tna-form__feedback-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter some feedback</p></div><textarea id=\"tna-form__feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\" aria-describedby=\" tna-form__feedback-error\"></textarea></div>",
+      "hidden": false
+    },
+    {
+      "name": "inline textarea",
+      "options": {
+        "label": "Enter your feedback",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "inline": true
+      },
+      "html": "<div class=\"tna-form__group tna-form__group--inline\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__feedback\">Enter your feedback</label></h4></div><textarea id=\"tna-form__feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\"></textarea></div>",
+      "hidden": false
+    },
+    {
+      "name": "textarea size",
+      "options": {
+        "label": "Enter your feedback",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "size": "m"
+      },
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"tna-form__feedback\">Enter your feedback</label></h4></div><textarea id=\"tna-form__feedback\" class=\"tna-textarea tna-textarea--m \" name=\"feedback\" spellcheck=\"false\" rows=\"5\"></textarea></div>",
+      "hidden": false
+    }
+  ]
 }

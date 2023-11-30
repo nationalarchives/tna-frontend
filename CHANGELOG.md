@@ -8,9 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.27-prerelease...HEAD)
 
 ### Added
+
+- Buttons can now have `buttonType` which sets the `type` attribute for `<button>` elements
+
 ### Changed
+
+- Changed style of filters element to match with accent colour
+
 ### Deprecated
 ### Removed
+
+- Removed `title` attribute from tabs and `aria-label` from HTML
+
 ### Fixed
 
 - Fixed HTML validation errors

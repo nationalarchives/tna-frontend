@@ -14,6 +14,7 @@ const argTypes = {
   iconOnlyOnMobile: { control: "boolean" },
   rightAlignIcon: { control: "boolean" },
   buttonElement: { control: "boolean" },
+  buttonType: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -41,7 +42,7 @@ const Template = ({
   iconOnly,
   iconOnlyOnMobile,
   rightAlignIcon,
-  buttonElement,
+  buttonElement,buttonType,
   classes,
   attributes,
 }) =>
@@ -58,7 +59,7 @@ const Template = ({
       iconOnly,
       iconOnlyOnMobile,
       rightAlignIcon,
-      buttonElement,
+      buttonElement,buttonType,
       classes,
       attributes,
     },

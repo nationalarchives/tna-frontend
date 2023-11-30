@@ -13,6 +13,9 @@ runs:
     - name: Install dependencies
       run: npm ci
       shell: bash
+    - name: Validate HTML
+      run: npm run validatehtml
+      shell: bash
     - name: Build Storybook
       run: npm run build
       shell: bash

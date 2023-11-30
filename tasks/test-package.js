@@ -1,15 +1,8 @@
 const fs = require("fs");
 const packageJson = require("../package.json");
 const jsdom = require("jsdom");
+const { pass, fail } = require("./lib/passfail");
 require("node-self");
-
-const pass = (message) => {
-  console.log("\x1b[42m%s\x1b[0m", " PASS ", "\x1b[0m", message);
-};
-
-const fail = (message) => {
-  console.error("\x1b[41m%s\x1b[0m", " FAIL ", "\x1b[0m", message);
-};
 
 const componentsWithJavaScript = {};
 

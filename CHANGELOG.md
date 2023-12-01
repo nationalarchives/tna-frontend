@@ -5,14 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.28-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.29-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.28-prerelease...v0.1.29-prerelease) - 2023-12-01
+
 ### Changed
 
 - Light font colour changed for better colour contrast on light accented backgrounds
 
-### Deprecated
 ### Removed
 
 - High contrast themes don't have outlines when hovering over links
@@ -21,8 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Date search predefined value fixture amended
 - Light icons can be used on light accented backgrounds
-
-### Security
 
 ## [0.1.28-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.27-prerelease...v0.1.28-prerelease) - 2023-11-30
 

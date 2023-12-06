@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Cookies class parameter `extraPolicies` moved to key inside the options object parameter
+- Card actions are now buttons using `.tna-button`
 
 ### Deprecated
 ### Removed

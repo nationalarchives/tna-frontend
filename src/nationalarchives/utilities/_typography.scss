@@ -134,20 +134,29 @@ small {
   max-width: max-content;
   padding: 0.125em 0.25rem;
 
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   @include colour.colour-font("font-dark");
   @include typography.detail-font-small;
   line-height: 1;
 
-  @include colour.accent;
+  &:not(#{&}--plain) {
+    @include colour.accent;
 
-  @include colour.colour-border("accent-background", 0.125rem);
+    @include colour.colour-border("accent-background", 0.125rem);
+  }
 
   .tna-background-accent &:not(#{&}--plain) {
     @include colour.plain;
 
     @include colour.colour-border("background");
+  }
+
+  .fa-solid,
+  .fa-brand {
+    @include colour.colour-font("icon-light");
   }
 }
 
@@ -162,6 +171,11 @@ small {
     background-color: transparent;
 
     border: none;
+
+    .fa-solid,
+    .fa-brand {
+      color: inherit;
+    }
   }
 
   @at-root #{selector.unify("a", &)} {
@@ -206,42 +220,21 @@ small {
       gap: 0.5rem;
     }
 
-    .fa-solid,
-    .fa-brand {
-      @include colour.colour-font("icon-light");
-    }
-
     @include colour.on-high-contrast {
-      @include colour.colour-border("keyline-dark", 1px, solid);
+      .tna-chip:not(.tna-chip--plain) {
+        padding: 0.25rem 0.5rem;
+
+        @include colour.colour-border("keyline-dark");
+      }
 
       .fa-solid,
       .fa-brand {
-        padding: 0.375rem 0.25rem;
+        padding-right: 0.5rem;
 
-        @include colour.colour-font("contrast-font-base");
-
-        @include colour.colour-background("contrast-background");
+        color: inherit;
 
         @include colour.colour-border("keyline-dark", 1px, solid, right);
       }
-
-      .tna-chip {
-        &:has(.fa-solid, .fa-brand) {
-          padding-left: 0;
-
-          .fa-solid,
-          .fa-brand {
-            margin-right: 0.5rem;
-          }
-        }
-      }
-    }
-  }
-
-  &--accent {
-    .fa-solid,
-    .fa-brand {
-      @include colour.colour-font("accent-background");
     }
   }
 }

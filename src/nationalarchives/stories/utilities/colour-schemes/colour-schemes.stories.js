@@ -1395,9 +1395,19 @@ const CombinationsTemplate = () => {
         `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
-          <p><strong>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span></strong></p>
+          <p><strong>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span></strong> / <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart light-icon"></i></p>
           <p><a href="#"><strong>Link</strong></a> / <a href="#" class="tna-colour-contrast-demo__link--visited"><strong>Link (visited)</strong></a></p>
-          <p><span class="tna-chip">Chip</span> <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart light-icon"></i></p>
+          <ul class="tna-chip-list">
+            <li class="tna-chip-list__item">
+              <span class="tna-chip">Chip</span>
+            </li>
+            <li class="tna-chip-list__item">
+              <span class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</span>
+            </li>
+            <li class="tna-chip-list__item">
+              <span class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart"></i>Chip</span>
+            </li>
+          </ul>
           <div class="tna-button-group">
             ${Button({
               params: {

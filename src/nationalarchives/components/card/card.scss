@@ -105,9 +105,9 @@
   }
 
   &--contrast {
-.tna-card__inner {
-    @include colour.contrast;
-}
+    .tna-card__inner {
+      @include colour.contrast;
+    }
   }
 
   &--accent {

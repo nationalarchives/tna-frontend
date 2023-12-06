@@ -1,6 +1,7 @@
 const argTypes = {
   items: { control: "object" },
   plain: { control: "boolean" },
+  classes: { control: "text" },
 };
 
 export default {
@@ -8,8 +9,8 @@ export default {
   argTypes,
 };
 
-const UnorderedListTemplate = ({ items, plain }) =>
-  `<ul class="tna-ul${plain ? " tna-ul--plain" : ""}">${items.reduce(
+const UnorderedListTemplate = ({ items, plain, classes }) =>
+  `<ul class="tna-ul${plain ? " tna-ul--plain" : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
     "",
   )}</ul>`;
@@ -23,8 +24,8 @@ UnorderedListPlain.args = {
   plain: true,
 };
 
-const OrderedListTemplate = ({ items, plain }) =>
-  `<ol class="tna-ol${plain ? " tna-ol--plain" : ""}">${items.reduce(
+const OrderedListTemplate = ({ items, plain, classes }) =>
+  `<ol class="tna-ol${plain ? " tna-ol--plain" : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
     "",
   )}</ol>`;
@@ -38,10 +39,10 @@ OrderedListPlain.args = {
   plain: true,
 };
 
-const DescriptionListTemplate = ({ items, plain }) =>
+const DescriptionListTemplate = ({ items, plain, classes }) =>
   `<dl class="tna-dl${plain ? " tna-dl--plain" : ""}${
     items.some((item) => item.icon) ? " tna-dl--icon-padding" : ""
-  }">${items.reduce(
+  } ${classes}">${items.reduce(
     (list, item) => `${list}
     <dt>
       ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ""}
@@ -130,10 +131,10 @@ ComplexDescriptionList.args = {
   ],
 };
 
-const ChipListTemplate = ({ items }) =>
-  `<ul class="tna-chip-list">${items.reduce(
+const ChipListTemplate = ({ items, plain, classes }) =>
+  `<ul class="tna-chip-list ${classes}">${items.reduce(
     (list, item) => `${list}<li class="tna-chip-list__item">
-      <span class="tna-chip">
+      <span class="tna-chip${plain ? " tna-chip--plain" : ""}">
         ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ""}
         ${item.text}
       </span>

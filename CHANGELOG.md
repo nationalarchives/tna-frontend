@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...HEAD)
 
 ### Added
+
+- `<dl>` elements can now be stacked with `<dl class="tna-dl tna-dl--stacked">`
+
 ### Changed
 
 - Cookies class parameter `extraPolicies` moved to key inside the options object parameter
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Chip colours and icons in chip lists fixed
+- Better support for `<dl class="tna-dl">` elements
 
 ### Security
 

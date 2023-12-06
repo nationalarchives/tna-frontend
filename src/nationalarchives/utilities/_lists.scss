@@ -29,6 +29,46 @@
   }
 }
 
+@mixin stacked-dl {
+  dt,
+  dd {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  dd {
+    padding-left: 1rem;
+  }
+
+  &.tna-dl--plain {
+    dt {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      .fa-solid {
+        margin-top: 0;
+      }
+    }
+
+    dd {
+      margin-left: 0;
+      padding-top: 0;
+    }
+  }
+
+  &:not(.tna-dl--plain) {
+    dt {
+      @include colour.colour-background("background-tint");
+    }
+
+    dd {
+      background: transparent !important;
+
+      margin-left: 0;
+    }
+  }
+}
+
 .tna-dl {
   margin: 1rem 0 0;
 
@@ -53,11 +93,16 @@
 
   &--plain {
     dt {
+      padding-top: 0;
+      // padding-bottom: 0;
       padding-left: 0;
     }
 
     dd {
+      // margin-bottom: 0.5rem;
+      padding-top: 0;
       padding-right: 0;
+      // padding-bottom: 0;
     }
   }
 
@@ -101,6 +146,8 @@
       padding-left: 2rem !important;
 
       .fa-solid {
+        margin-top: -0.25rem;
+
         left: 0;
       }
     }
@@ -132,36 +179,12 @@
     }
   }
 
+  &--stacked {
+    @include stacked-dl;
+  }
+
   @include media.on-tiny {
-    dt,
-    dd {
-      width: 100%;
-      margin-left: 0;
-    }
-
-    dd {
-      padding-left: 1rem;
-    }
-
-    &--plain {
-      dt {
-        padding-bottom: 0;
-      }
-
-      dd {
-        padding-top: 0;
-      }
-    }
-
-    &:not(&--plain) {
-      dt {
-        @include colour.colour-background("background-tint");
-      }
-
-      dd {
-        background: transparent !important;
-      }
-    }
+    @include stacked-dl;
   }
 
   @include colour.on-high-contrast-and-forced-colours {

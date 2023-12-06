@@ -26,11 +26,15 @@
   }
 }
 
+@mixin focus-outline {
+  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
+  outline-offset: 0.125rem;
+}
+
 *:focus {
   z-index: 9;
 
-  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
-  outline-offset: 0.125rem;
+  @include focus-outline;
 }
 
 .tna-\!--no-focus-style {

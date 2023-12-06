@@ -5,28 +5,87 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...HEAD)
+
+### Added
+### Changed
+
+- Cookies class parameter `extraPolicies` moved to key inside the options object parameter
+
+### Deprecated
+### Removed
+### Fixed
+
+- Chip colours and icons in chip lists fixed
+
+### Security
+
+## [0.1.29-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.28-prerelease...v0.1.29-prerelease) - 2023-12-01
+
+### Changed
+
+- Light font colour changed for better colour contrast on light accented backgrounds
+
+### Removed
+
+- High contrast themes don't have outlines when hovering over links
+
+### Fixed
+
+- Date search predefined value fixture amended
+- Light icons can be used on light accented backgrounds
+
+## [0.1.28-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.27-prerelease...v0.1.28-prerelease) - 2023-11-30
 
 ### Added
 
+- Buttons can now have `buttonType` which sets the `type` attribute for `<button>` elements
+
+### Changed
+
+- Changed style of filters element to match with accent colour
+
+### Removed
+
+- Removed `title` attribute from tabs and `aria-label` from HTML
+
+### Fixed
+
+- Fixed HTML validation errors
+
+## [0.1.27-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.26-prerelease...v0.1.27-prerelease) - 2023-11-29
+
+### Fixed
+
+- Added the correct `aria-label` in index grid components
+
+## [0.1.26-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.25-prerelease...v0.1.26-prerelease) - 2023-11-29
+
+### Added
+
+- Form element components have been added: checkboxes, date input, date search, radios, search field, select, text input and textarea
 - High contrast support for chip lists with icons
 - Allow custom cookie path to be passed to cookie banner
+- Index grids can have text/body as well as a title
 
 ### Changed
 
 - Card meta information changed to chip list
 - Improvements to high contrast modes
+- Link colours changed for better contrast
+- Index grid heading options have been flattened to match other components
+- Pagination arrows switched from SVGs to Font Awesome icons
 
 ### Deprecated
-### Removed
 
 - Removed generic `accent` CSS variable
+- The black theme accent has been removed
 
 ### Fixed
 
 - Multiple line spacing for chip lists fixed
-
-### Security
+- Accented chips can now be used on accented backgrounds
+- Index grid can now be used on a contrast background
 
 ## [0.1.25-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.24-prerelease...v0.1.25-prerelease) - 2023-11-16
 
@@ -52,6 +111,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed CSS to counter conflicting GOV.UK paragraph styling
 - Transitions removed from most elements
 - `loadScriptsOnAccept` option for cookie banner removed in favour of callback events
+- Removed the `accent-color` property for form elements
 
 ### Fixed
 
@@ -162,7 +222,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<nav>` elements in the footer now have a `role="navigation"` attribute
 - The default cookie policies are now `essential`, `usage` and `settings`
 - The SCSS mixin `colour-outline` now accepts optional width and style properties
-- In coloured blocks, the custom CSS property `--background` now gets explictly replaced with `--accent-background`, `--contrast-background` or `--accent-background-light`
+- In coloured blocks, the custom CSS property `--background` now gets explicitly replaced with `--accent-background`, `--contrast-background` or `--accent-background-light`
 - `typography.$base-font-size-px` is now `typography.$relative-1rem-px`
 - `xl` and `l` headings are Supria Sans and `m` and `s` are Open Sans
 - Card heading size defaults to `s`

@@ -2,6 +2,7 @@ import SkipLink from "../../../components/skip-link/template.njk";
 import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
+import Checkboxes from "../../../components/checkboxes/template.njk";
 import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
 import CookieBanner from "../../../components/cookie-banner/template.njk";
@@ -13,7 +14,11 @@ import Message from "../../../components/message/template.njk";
 import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
+import Radios from "../../../components/radios/template.njk";
+import Select from "../../../components/select/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
+import TextInput from "../../../components/text-input/template.njk";
+import Textarea from "../../../components/textarea/template.njk";
 
 const argTypes = {
   theme: {
@@ -28,7 +33,7 @@ const argTypes = {
   },
   accent: {
     control: "radio",
-    options: ["none", "black", "yellow", "pink", "orange", "green", "blue"],
+    options: ["none", "yellow", "pink", "orange", "green", "blue"],
   },
 };
 
@@ -64,28 +69,26 @@ const Template = ({ theme, accent }) => {
     theme === "system"
       ? "tna-template--system-theme"
       : theme === "light"
-      ? "tna-template--light-theme"
-      : theme === "dark"
-      ? "tna-template--dark-theme"
-      : theme === "light high-contrast"
-      ? "tna-template--light-theme tna-template--high-contrast-theme"
-      : theme === "dark high-contrast"
-      ? "tna-template--dark-theme tna-template--high-contrast-theme"
-      : ""
+        ? "tna-template--light-theme"
+        : theme === "dark"
+          ? "tna-template--dark-theme"
+          : theme === "light high-contrast"
+            ? "tna-template--light-theme tna-template--high-contrast-theme"
+            : theme === "dark high-contrast"
+              ? "tna-template--dark-theme tna-template--high-contrast-theme"
+              : ""
   } ${
-    accent === "black"
-      ? "tna-template--black-accent"
-      : accent === "yellow"
+    accent === "yellow"
       ? "tna-template--yellow-accent"
       : accent === "pink"
-      ? "tna-template--pink-accent"
-      : accent === "orange"
-      ? "tna-template--orange-accent"
-      : accent === "green"
-      ? "tna-template--green-accent"
-      : accent === "blue"
-      ? "tna-template--blue-accent"
-      : ""
+        ? "tna-template--pink-accent"
+        : accent === "orange"
+          ? "tna-template--orange-accent"
+          : accent === "green"
+            ? "tna-template--green-accent"
+            : accent === "blue"
+              ? "tna-template--blue-accent"
+              : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
     <!--
@@ -258,7 +261,6 @@ const Template = ({ theme, accent }) => {
                     params: {
                       text: "Primary button",
                       href: "#",
-                      classes: "tna-button--solid-hover",
                     },
                   })}
                 </div>
@@ -383,10 +385,19 @@ const Template = ({ theme, accent }) => {
               <a href="#" class="tna-chip">Chip 1</a>
             </li>
             <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip">Chip 2</a>
+              <a href="#" class="tna-chip">
+                <i class="fa-solid fa-heart"></i>
+                Chip 2
+              </a>
             </li>
             <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip">Chip 3</a>
+              <a href="#" class="tna-chip tna-chip--plain">Chip 3</a>
+            </li>
+            <li class="tna-chip-list__item">
+              <a href="#" class="tna-chip tna-chip--plain">
+                <i class="fa-solid fa-heart"></i>
+                Chip 4
+              </a>
             </li>
           </ul>
           ${Message({
@@ -643,7 +654,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 1", level: 3, href: "#" },
+            title: "My dogs 1",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -711,7 +724,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -725,7 +738,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-tint">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 2", level: 3, href: "#" },
+            title: "My dogs 2",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -793,7 +808,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -807,89 +822,9 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-background-contrast">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 3", level: 3, href: "#" },
-            items: Array(6)
-              .fill({
-                ...{
-                  href: "#",
-                  src: "https://picsum.photos/id/237/800/600",
-                  alt: "Photo of a puppy",
-                  width: "800",
-                  height: "600",
-                  title: "Cat",
-                  subtitle: "4 photos",
-                },
-              })
-              .map((item, index) => {
-                const pseudoRandom = ((index * 29) % 8) + 1;
-                return {
-                  ...item,
-                  href: `#/category-${index}`,
-                  title: `Category #${index + 101}`,
-                  subtitle: `${pseudoRandom} photos`,
-                };
-              }),
-            columns: 4,
-            columnsMedium: 3,
-            columnsSmall: 2,
-            columnsTiny: 1,
-          },
-        })}
-        <div class="tna-container">
-          <div class="tna-column tna-column--full">
-            ${Pagination({
-              params: {
-                landmarkLabel: "My dogs 2 results",
-                previous: {
-                  href: "#",
-                },
-                items: [
-                  {
-                    number: 1,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 6,
-                    href: "#",
-                  },
-                  {
-                    number: 7,
-                    current: true,
-                    href: "#",
-                  },
-                  {
-                    number: 8,
-                    href: "#",
-                  },
-                  {
-                    ellipsis: true,
-                  },
-                  {
-                    number: 42,
-                    href: "#",
-                  },
-                ],
-                next: {
-                  href: "#",
-                },
-                classes: "tna-pagination--demo",
-              },
-            })}
-            <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tna-section tna-background-accent-light">
-        ${IndexGrid({
-          params: {
-            heading: { title: "My dogs 4", level: 3, href: "#" },
+            title: "My dogs 3",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -957,7 +892,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -968,10 +903,12 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background-accent">
+      <div class="tna-section tna-background-accent-light">
         ${IndexGrid({
           params: {
-            heading: { title: "My dogs 5", level: 3, href: "#" },
+            title: "My dogs 4",
+            headingLevel: 3,
+            headingHref: "#",
             items: Array(6)
               .fill({
                 ...{
@@ -1039,7 +976,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo",
+                classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
             <div class="tna-button-group">
@@ -1047,6 +984,207 @@ const Template = ({ theme, accent }) => {
               <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
               <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section tna-background-accent">
+        ${IndexGrid({
+          params: {
+            title: "My dogs 5",
+            headingLevel: 3,
+            headingHref: "#",
+            items: Array(6)
+              .fill({
+                ...{
+                  href: "#",
+                  src: "https://picsum.photos/id/237/800/600",
+                  alt: "Photo of a puppy",
+                  width: "800",
+                  height: "600",
+                  title: "Cat",
+                  subtitle: "4 photos",
+                },
+              })
+              .map((item, index) => {
+                const pseudoRandom = ((index * 29) % 8) + 1;
+                return {
+                  ...item,
+                  href: `#/category-${index}`,
+                  title: `Category #${index + 101}`,
+                  subtitle: `${pseudoRandom} photos`,
+                };
+              }),
+            columns: 4,
+            columnsMedium: 3,
+            columnsSmall: 2,
+            columnsTiny: 1,
+          },
+        })}
+        <div class="tna-container">
+          <div class="tna-column tna-column--full">
+            ${Pagination({
+              params: {
+                landmarkLabel: "My dogs 5 results",
+                previous: {
+                  href: "#",
+                },
+                items: [
+                  {
+                    number: 1,
+                    href: "#",
+                  },
+                  {
+                    ellipsis: true,
+                  },
+                  {
+                    number: 6,
+                    href: "#",
+                  },
+                  {
+                    number: 7,
+                    current: true,
+                    href: "#",
+                  },
+                  {
+                    number: 8,
+                    href: "#",
+                  },
+                  {
+                    ellipsis: true,
+                  },
+                  {
+                    number: 42,
+                    href: "#",
+                  },
+                ],
+                next: {
+                  href: "#",
+                },
+                classes: "tna-pagination--demo tna-!--margin-top-m",
+              },
+            })}
+            <div class="tna-button-group">
+              <a href="#" class="tna-button" role="button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
+              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tna-section">
+        <div class="tna-container">
+          <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
+            <form>
+              <h2 class="tna-heading tna-heading--l">
+                Forms
+              </h2>
+              ${TextInput({
+                params: {
+                  label: "Enter your name",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "name",
+                  name: "name",
+                  autofill: "name",
+                },
+              })}
+              ${TextInput({
+                params: {
+                  label: "Enter your email",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "email",
+                  name: "email",
+                  autofill: "email",
+                },
+              })}
+              ${Select({
+                params: {
+                  label: "Sort by",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "sort",
+                  name: "sort",
+                  items: [
+                    {
+                      text: "Relevance",
+                      value: "relevance",
+                    },
+                    {
+                      text: "Date",
+                      value: "date",
+                    },
+                    {
+                      text: "Title",
+                      value: "title",
+                    },
+                  ],
+                },
+              })}
+              ${Radios({
+                params: {
+                  label: "Type",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "type",
+                  name: "type",
+                  items: [
+                    {
+                      text: "Audio",
+                      value: "audio",
+                    },
+                    {
+                      text: "Image",
+                      value: "image",
+                    },
+                    {
+                      text: "Video",
+                      value: "video",
+                    },
+                  ],
+                },
+              })}
+              ${Checkboxes({
+                params: {
+                  label: "Categories",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "categories",
+                  name: "categories",
+                  items: [
+                    {
+                      text: "Alpha",
+                      value: "alpha",
+                    },
+                    {
+                      text: "Beta",
+                      value: "beta",
+                    },
+                    {
+                      text: "Gamma",
+                      value: "gamma",
+                    },
+                  ],
+                },
+              })}
+              ${Textarea({
+                params: {
+                  label: "Enter your feedback",
+                  headingLevel: 3,
+                  headingSize: "m",
+                  id: "feedback",
+                  name: "feedback",
+                },
+              })}
+              <div class="tna-button-group">
+                <button type="button" class="tna-button">
+                  Submit
+                </button>
+                <a href="#" class="tna-button tna-button--plain">
+                  Skip
+                </a>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -1232,3 +1370,124 @@ DarkHighContrast.args = {
   theme: "dark high-contrast",
   accent: "pink",
 };
+
+const CombinationsTemplate = () => {
+  const themes = [
+    "tna-template--light-theme",
+    "tna-template--light-theme tna-template--high-contrast-theme",
+    "tna-template--dark-theme",
+    "tna-template--dark-theme tna-template--high-contrast-theme",
+  ];
+
+  const accents = [
+    "",
+    // "tna-template--black-accent",
+    "tna-template--yellow-accent",
+    "tna-template--pink-accent",
+    "tna-template--orange-accent",
+    "tna-template--green-accent",
+    "tna-template--blue-accent",
+  ];
+
+  const blocks = [
+    "",
+    "tna-background-tint",
+    "tna-background-accent-light",
+    "tna-background-accent",
+    "tna-background-contrast",
+  ];
+
+  return `<div class="tna-colour-contrast-demo">
+  <div class="tna-colour-contrast-demo__header">
+    <div class="tna-colour-contrast-demo__block">
+      Blocks
+    </div>
+    ${blocks.reduce(
+      (blockOutput, block) =>
+        `${blockOutput}<div class="tna-colour-contrast-demo__block">
+      ${block.replace(/^tna-background-/, "") || "Base"}
+    </div>`,
+      "",
+    )}
+  </div>
+  <div class="tna-colour-contrast-demo__examples">
+  ${themes.reduce(
+    (themeOutput, theme) =>
+      `${themeOutput}${accents.reduce(
+        (
+          accentOutput,
+          accent,
+        ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
+    <div class="tna-colour-contrast-demo__example">
+      <p>Theme: <strong>${theme
+        .replace(/tna-template--/g, "")
+        .replace(/-theme/g, "")}</strong></p>
+      <p>Accent: <strong>${
+        accent.replace(/tna-template--/g, "").replace(/-accent/g, "") ||
+        "[none]"
+      }</strong></p>
+    </div>
+    ${blocks.reduce(
+      (blockOutput, block) =>
+        `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
+      <div class="tna-template__body">
+        <div class="tna-colour-contrast-demo__example-content ${block}">
+          <p><strong>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span></strong> / <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart light-icon"></i></p>
+          <p><a href="#"><strong>Link</strong></a> / <a href="#" class="tna-colour-contrast-demo__link--visited"><strong>Link (visited)</strong></a></p>
+          <!--
+          <span class="tna-chip">Chip</span>
+          <a href="#" class="tna-chip">Chip</a>
+          <a href="#" class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</a>
+          <a href="#" class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart"></i>Chip</a>
+          <span class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</span>
+          <span class="tna-chip tna-chip--plain">Chip</span>
+          -->
+          <ul class="tna-chip-list">
+            <li class="tna-chip-list__item">
+              <span class="tna-chip">Chip</span>
+            </li>
+            <li class="tna-chip-list__item">
+              <span class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</span>
+            </li>
+            <li class="tna-chip-list__item">
+              <span class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart"></i>Chip</span>
+            </li>
+          </ul>
+          <div class="tna-button-group">
+            ${Button({
+              params: {
+                text: "Button",
+                small: true,
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Button",
+                small: true,
+                accent: true,
+              },
+            })}
+            ${Button({
+              params: {
+                text: "Button",
+                small: true,
+                plain: true,
+              },
+            })}
+          </div>
+        </div>
+      </div>
+    </div>`,
+      "",
+    )}
+  </div>`,
+        "",
+      )}`,
+    "",
+  )}
+  </div>
+</div>`;
+};
+
+export const Combinations = CombinationsTemplate.bind({});
+Combinations.args = {};

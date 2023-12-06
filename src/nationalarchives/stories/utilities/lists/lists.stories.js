@@ -129,3 +129,22 @@ ComplexDescriptionList.args = {
     { title: "Eta", description: ["Lorem ipsum 1", "Lorem ipsum 2"] },
   ],
 };
+
+const ChipListTemplate = ({ items }) =>
+  `<ul class="tna-chip-list">${items.reduce(
+    (list, item) => `${list}<li class="tna-chip-list__item">
+      <span class="tna-chip">
+        ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ""}
+        ${item.text}
+      </span>
+    </li>`,
+    "",
+  )}</ul>`;
+export const ChipList = ChipListTemplate.bind({});
+ChipList.args = {
+  items: [
+    { text: "Alpha", icon: "heart" },
+    { text: "Beta" },
+    { text: "Gamma" },
+  ],
+};

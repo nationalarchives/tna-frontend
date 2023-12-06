@@ -57,12 +57,6 @@ SceneSetterSmall.args = {
   text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
 };
 
-// const TextDetailsTemplate = () =>
-//   `<p>
-//     Typed slip with photographs - 'The <span class="tna-detail" title="Italian (miscellaneous)" data-type="misc">Italian</span> Steamer <span class="tna-detail" title="Aida Lauro (person)" data-type="per">Aida Lauro</span> which ran on the rocks near <span class="tna-detail" title="Cape Cornwall (location)" data-type="loc">Cape Cornwall</span> a few days ago is now a total wreck. After a severe buffeting by heavy seas the ship has broken in two. The photograph shows the <span class="tna-detail" title="Aida Lauro (person)" data-type="per">Aida Lauro</span> broken in two by a severe buffeting from the seas near <a href="#" class="tna-detail" title="Cape Cornwall (location)" data-type="loc">Cape Cornwall</a>.
-//   </p>`;
-// export const TextDetails = TextDetailsTemplate.bind({});
-
 const BlockquoteTemplate = ({
   html,
   author,

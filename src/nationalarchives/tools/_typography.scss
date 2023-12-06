@@ -47,5 +47,4 @@
   @include relative-font-size(14);
   text-transform: uppercase;
   line-height: #{math.div(typography.$relative-1rem-px, 14)};
-  // line-height: 1;
 }

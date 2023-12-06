@@ -5,9 +5,9 @@
       "name": "simple",
       "options": {
         "phase": "beta",
-        "message": "This is a new service – <a href='#'>give us your feedback</a> to help improve it."
+        "message": "This is a new service – <a href=\"#\">give us your feedback</a> to help improve it."
       },
-      "html": "<div class=\"tna-phase-banner \"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">This is a new service – <a href='#'>give us your feedback</a> to help improve it.</p></div></div></div>",
+      "html": "<div class=\"tna-phase-banner \"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">This is a new service – <a href=\"#\">give us your feedback</a> to help improve it.</p></div></div></div>",
       "hidden": false
     },
     {

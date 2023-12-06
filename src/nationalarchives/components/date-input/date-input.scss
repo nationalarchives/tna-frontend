@@ -1,0 +1,48 @@
+@use "../../variables/forms";
+@use "../../tools/colour";
+@use "../../tools/typography";
+@use "../../utilities";
+
+.tna-date-input {
+  display: flex;
+  gap: 1rem;
+
+  &__item {
+    &-label {
+      display: block;
+
+      @include typography.relative-font-size(16);
+    }
+
+    &-input {
+      width: 3rem;
+      padding: 0 0.375rem;
+
+      display: block;
+      box-sizing: border-box;
+
+      @include colour.colour-font("input-foreground");
+      font-size: inherit;
+      line-height: 2rem;
+
+      @include colour.colour-background("input-background");
+
+      @include colour.colour-border(
+        "input-border",
+        forms.$form-field-border-width
+      );
+      border-radius: 0;
+
+      &--wider {
+        width: 4.5rem;
+      }
+
+      .tna-form__group--error & {
+        @include colour.colour-border("form-error");
+      }
+    }
+  }
+
+  &--inline {
+  }
+}

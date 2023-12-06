@@ -50,14 +50,15 @@ export default class Cookies {
 
   /**
    * Create a cookie handler.
-   * @param {string[]} [extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
+   * @param {string} [options.extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
    * @param {string} [options.domain=""] - The domain to register the cookie with.
    * @param {string} [options.path=""] - The domain to register the cookie with.
    * @param {string} [options.secure=true] - Only set cookie in HTTPS environments.
    * @param {string} [options.policiesKey=cookies_policy] - The name of the cookie.
    */
-  constructor(extraPolicies = [], options = {}) {
+  constructor(options = {}) {
     const {
+      extraPolicies = [],
       domain = "",
       path = "/",
       secure = true,

@@ -385,10 +385,19 @@ const Template = ({ theme, accent }) => {
               <a href="#" class="tna-chip">Chip 1</a>
             </li>
             <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip">Chip 2</a>
+              <a href="#" class="tna-chip">
+                <i class="fa-solid fa-heart"></i>
+                Chip 2
+              </a>
             </li>
             <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip">Chip 3</a>
+              <a href="#" class="tna-chip tna-chip--plain">Chip 3</a>
+            </li>
+            <li class="tna-chip-list__item">
+              <a href="#" class="tna-chip tna-chip--plain">
+                <i class="fa-solid fa-heart"></i>
+                Chip 4
+              </a>
             </li>
           </ul>
           ${Message({
@@ -1397,6 +1406,14 @@ const CombinationsTemplate = () => {
         <div class="tna-colour-contrast-demo__example-content ${block}">
           <p><strong>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span></strong> / <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart light-icon"></i></p>
           <p><a href="#"><strong>Link</strong></a> / <a href="#" class="tna-colour-contrast-demo__link--visited"><strong>Link (visited)</strong></a></p>
+          <!--
+          <span class="tna-chip">Chip</span>
+          <a href="#" class="tna-chip">Chip</a>
+          <a href="#" class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</a>
+          <a href="#" class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart"></i>Chip</a>
+          <span class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</span>
+          <span class="tna-chip tna-chip--plain">Chip</span>
+          -->
           <ul class="tna-chip-list">
             <li class="tna-chip-list__item">
               <span class="tna-chip">Chip</span>

@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Chip colours and icons in chip lists fixed
+
 ### Security
 
 ## [0.1.29-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.28-prerelease...v0.1.29-prerelease) - 2023-12-01

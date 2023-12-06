@@ -107,16 +107,6 @@ a {
     }
   }
 
-  // @include colour.on-high-contrast {
-  //   &:active {
-  //     box-shadow: none;
-  //   }
-
-  //   &:hover:not(:focus) {
-  //     box-shadow: 0 0 0 0.3125rem var(--focus-outline);
-  //   }
-  // }
-
   // &[target="_blank"]:not([title*="opens in a new"]) {
   //   &::after {
   //     content: "" / " (opens in a new window)"
@@ -130,59 +120,73 @@ small {
   );
 }
 
-%chip {
+%chip-base {
   max-width: max-content;
   padding: 0.125em 0.25rem;
 
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-  @include colour.colour-font("font-dark");
+  @include colour.colour-font("font-base");
   @include typography.detail-font-small;
   line-height: 1;
+}
 
+%chip-plain {
+  padding: 0;
+
+  background-color: transparent;
+
+  border: none;
+}
+
+%chip-accent {
   @include colour.accent;
 
   @include colour.colour-border("accent-background", 0.125rem);
 
-  .tna-background-accent &:not(#{&}--plain) {
-    @include colour.plain;
+  .tna-background-accent & {
+    @include colour.contrast;
 
-    @include colour.colour-border("background");
+    @include colour.colour-border("contrast-background");
   }
 }
 
 .tna-chip {
-  @extend %chip;
+  @extend %chip-base;
 
   &--plain {
-    padding: 0;
+    @extend %chip-plain;
+  }
 
-    color: inherit;
+  &:not(#{&}--plain) {
+    @extend %chip-accent;
+  }
 
-    background-color: transparent;
+  .fa-solid,
+  .fa-brand {
+    @include colour.colour-font("icon-light");
 
-    border: none;
+    @include colour.on-high-contrast {
+      padding-right: 0.5rem;
+
+      color: inherit;
+
+      @include colour.colour-border("keyline-dark", 1px, solid, right);
+    }
   }
 
   @at-root #{selector.unify("a", &)} {
     text-decoration: none;
 
-    &,
-    &:link,
-    &:visited {
-      @include colour.colour-font("font-dark");
-    }
-
     &:hover {
       @include typography.interacted-text-decoration;
     }
 
-    &--plain {
-      &,
-      &:link,
-      &:visited {
-        color: inherit;
-      }
+    .fa-solid,
+    .fa-brand {
+      color: inherit;
     }
   }
 }
@@ -199,50 +203,6 @@ small {
   &__item {
     display: flex;
     align-items: center;
-
-    .tna-chip {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .fa-solid,
-    .fa-brand {
-      @include colour.colour-font("icon-light");
-    }
-
-    @include colour.on-high-contrast {
-      @include colour.colour-border("keyline-dark", 1px, solid);
-
-      .fa-solid,
-      .fa-brand {
-        padding: 0.375rem 0.25rem;
-
-        @include colour.colour-font("contrast-font-base");
-
-        @include colour.colour-background("contrast-background");
-
-        @include colour.colour-border("keyline-dark", 1px, solid, right);
-      }
-
-      .tna-chip {
-        &:has(.fa-solid, .fa-brand) {
-          padding-left: 0;
-
-          .fa-solid,
-          .fa-brand {
-            margin-right: 0.5rem;
-          }
-        }
-      }
-    }
-  }
-
-  &--accent {
-    .fa-solid,
-    .fa-brand {
-      @include colour.colour-font("accent-background");
-    }
   }
 }
 
@@ -376,16 +336,14 @@ small {
   &__supertitle {
     margin: 0 0 0.25rem;
 
-    @extend %chip;
+    @extend %chip-base;
 
     &--plain {
-      padding: 0;
+      @extend %chip-plain;
+    }
 
-      color: inherit;
-
-      background-color: transparent;
-
-      border: none;
+    &:not(#{&}--plain) {
+      @extend %chip-accent;
     }
   }
 

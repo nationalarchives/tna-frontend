@@ -18,10 +18,10 @@
   {%- set buttonClasses = buttonClasses.concat('tna-button--icon-right') -%}
 {%- endif -%}
 <{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button {{ buttonClasses | join(' ') }}"{%- if params.buttonElement %} type="{{ params.buttonType or 'button' }}"{% endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  {%- if params.brandIcon %}
+  {%- if params.brandIcon -%}
   <i class="fa-brands fa-fw fa-{{ params.brandIcon }}" aria-hidden="true"></i>
-  {%- elseif params.icon %}
+  {% elseif params.icon -%}
   <i class="fa-solid fa-fw fa-{{ params.icon }}" aria-hidden="true"></i>
-  {%- endif %}
+  {% endif -%}
   {{ params.text }}
 </{{ 'button' if params.buttonElement else 'a' }}>

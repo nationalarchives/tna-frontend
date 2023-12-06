@@ -182,7 +182,7 @@
   }
 
   &__block {
-    width: #{math.div(100%, 6)};
+    // width: #{math.div(100%, 6)};
     padding: 1rem;
 
     display: table-cell;
@@ -234,14 +234,14 @@
     }
   }
 
-  .tna-chip {
-    margin: 1rem 0;
+  .tna-chip-list {
+    margin-top: 1rem;
 
-    display: inline-block;
+    flex-wrap: nowrap;
   }
 
   .fa-solid {
-    margin-left: 0.5rem;
+    // margin-left: 0.5rem;
 
     &.light-icon {
       @include colour.colour-font("icon-light", true);

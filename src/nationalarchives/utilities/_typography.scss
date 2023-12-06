@@ -128,7 +128,7 @@ small {
   align-items: center;
   gap: 0.5rem;
 
-  @include colour.colour-font("font-dark");
+  @include colour.colour-font("font-base");
   @include typography.detail-font-small;
   line-height: 1;
 }

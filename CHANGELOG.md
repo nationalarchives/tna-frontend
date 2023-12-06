@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Cookies class parameter `extraPolicies` moved to key inside the options object parameter
+
 ### Deprecated
 ### Removed
 ### Fixed

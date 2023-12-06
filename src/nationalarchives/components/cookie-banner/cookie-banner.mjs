@@ -28,24 +28,23 @@ export class CookieBanner {
     }
 
     const policies = this.$module.getAttribute("data-policies") || "";
+    const extraPolicies = policies
+      .split(",")
+      .filter((x) => x)
+      .map((policy) => policy.trim());
     const domain = this.$module.getAttribute("data-domain") || undefined;
     const path = this.$module.getAttribute("data-path") || undefined;
     const secure = this.$module.getAttribute("data-secure") || undefined;
     const policiesKey =
       this.$module.getAttribute("data-policies-key") || undefined;
 
-    this.cookies = new (window.TNAFrontend?.Cookies || Cookies)(
-      policies
-        .split(",")
-        .filter((x) => x)
-        .map((policy) => policy.trim()),
-      {
-        domain,
-        path,
-        secure,
-        policiesKey,
-      },
-    );
+    this.cookies = new (window.TNAFrontend?.Cookies || Cookies)({
+      extraPolicies,
+      domain,
+      path,
+      secure,
+      policiesKey,
+    });
 
     this.cookiePreferencesSet =
       this.$module.getAttribute("data-preferenceskey") ||

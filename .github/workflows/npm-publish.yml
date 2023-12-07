@@ -105,5 +105,3 @@ jobs:
           SLACK_TITLE: "`v${{ needs.check.outputs.version }}` of `tna-frontend` has just been published"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
-          MSG_MINIMAL: true
-          # SLACK_MESSAGE: $(cat RELEASE_NOTES.txt)

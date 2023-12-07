@@ -106,4 +106,4 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
           MSG_MINIMAL: true
-          SLACK_MESSAGE: $(cat RELEASE_NOTES.txt)
+          # SLACK_MESSAGE: $(cat RELEASE_NOTES.txt)

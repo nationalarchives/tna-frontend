@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.30...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.30](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...v0.1.30) - 2023-12-07
 
 ### Added
 
@@ -15,15 +24,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Cookies class parameter `extraPolicies` moved to key inside the options object parameter
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Chip colours and icons in chip lists fixed
 - Better support for `<dl class="tna-dl">` elements
 - Removed some `:has` CSS selectors for better support with Firefox
-
-### Security
 
 ## [0.1.29-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.28-prerelease...v0.1.29-prerelease) - 2023-12-01
 

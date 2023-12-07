@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Chip colours and icons in chip lists fixed
 - Better support for `<dl class="tna-dl">` elements
+- Removed some `:has` CSS selectors for better support with Firefox
 
 ### Security
 

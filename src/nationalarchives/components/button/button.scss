@@ -128,22 +128,22 @@
     }
   }
 
-  &--icon-only:has(.fa-solid, .fa-brands) {
+  &--icon-only {
     @include icon-only;
   }
 
-  &--small#{&}--icon-only:has(.fa-solid, .fa-brands),
-  &-group--small &--icon-only:has(.fa-solid, .fa-brands) {
+  &--small#{&}--icon-only,
+  &-group--small &--icon-only {
     @include icon-only-small;
   }
 
   @include media.on-mobile {
-    &--icon-only-mobile:has(.fa-solid, .fa-brands) {
+    &--icon-only-mobile {
       @include icon-only;
     }
 
-    &--small#{&}--icon-only-mobile:has(.fa-solid, .fa-brands),
-    &-group--small &--icon-only-mobile:has(.fa-solid, .fa-brands) {
+    &--small#{&}--icon-only-mobile,
+    &-group--small &--icon-only-mobile {
       @include icon-only-small;
     }
   }

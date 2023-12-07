@@ -70,11 +70,8 @@
         &-text {
         }
 
-        &:has(.fa-solid),
-        &:has(.fa-brands) {
-          &:hover {
-            @include colour.colour-border("link", 4px, solid, bottom);
-          }
+        &:hover {
+          @include colour.colour-border("link", 4px, solid, bottom);
         }
       }
     }

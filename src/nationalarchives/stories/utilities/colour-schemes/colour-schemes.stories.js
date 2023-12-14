@@ -15,6 +15,7 @@ import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
 import Radios from "../../../components/radios/template.njk";
+import SearchField from "../../../components/search-field/template.njk";
 import Select from "../../../components/select/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
 import TextInput from "../../../components/text-input/template.njk";
@@ -1060,6 +1061,16 @@ const Template = ({ theme, accent }) => {
               <h2 class="tna-heading tna-heading--l">
                 Forms
               </h2>
+              ${SearchField({
+                params: {
+                  label: "Catalogue search results",
+                  headingLevel: 1,
+                  headingSize: "l",
+                  id: "search1",
+                  name: "q",
+                  formGroupClasses: "tna-search-field--no-border",
+                },
+              })}
               ${TextInput({
                 params: {
                   label: "Enter your name",
@@ -1416,14 +1427,6 @@ const CombinationsTemplate = () => {
         <div class="tna-colour-contrast-demo__example-content ${block}">
           <p><strong>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span></strong> / <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-heart light-icon"></i></p>
           <p><a href="#"><strong>Link</strong></a> / <a href="#" class="tna-colour-contrast-demo__link--visited"><strong>Link (visited)</strong></a></p>
-          <!--
-          <span class="tna-chip">Chip</span>
-          <a href="#" class="tna-chip">Chip</a>
-          <a href="#" class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</a>
-          <a href="#" class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart"></i>Chip</a>
-          <span class="tna-chip"><i class="fa-solid fa-heart"></i>Chip</span>
-          <span class="tna-chip tna-chip--plain">Chip</span>
-          -->
           <ul class="tna-chip-list">
             <li class="tna-chip-list__item">
               <span class="tna-chip">Chip</span>
@@ -1435,6 +1438,71 @@ const CombinationsTemplate = () => {
               <span class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart"></i>Chip</span>
             </li>
           </ul>
+          ${TextInput({
+            params: {
+              id: `name-${theme}-${block}-${accent}`,
+              name: `name-${theme}-${block}-${accent}`,
+              value: `name-${theme}-${block}-${accent}`,
+            },
+          })}
+          ${Checkboxes({
+            params: {
+              id: `categories-${theme}-${block}-${accent}`,
+              name: `categories-${theme}-${block}-${accent}`,
+              items: [
+                {
+                  text: "Alpha",
+                  value: "alpha",
+                },
+                {
+                  text: "Beta",
+                  value: "beta",
+                  checked: true,
+                },
+              ],
+              small: true,
+              inline: true,
+            },
+          })}
+          ${Radios({
+            params: {
+              id: `type-${theme}-${block}-${accent}`,
+              name: `type-${theme}-${block}-${accent}`,
+              items: [
+                {
+                  text: "Alpha",
+                  value: "alpha",
+                },
+                {
+                  text: "Beta",
+                  value: "beta",
+                },
+              ],
+              selected: "beta",
+              small: true,
+              inline: true,
+            },
+          })}
+          ${Select({
+            params: {
+              id: `sort-${theme}-${block}-${accent}`,
+              name: `sort-${theme}-${block}-${accent}`,
+              items: [
+                {
+                  text: "Relevance",
+                  value: "relevance",
+                },
+                {
+                  text: "Date",
+                  value: "date",
+                },
+                {
+                  text: "Title",
+                  value: "title",
+                },
+              ],
+            },
+          })}
           <div class="tna-button-group">
             ${Button({
               params: {

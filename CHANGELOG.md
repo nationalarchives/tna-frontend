@@ -8,7 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.31...HEAD)
 
 ### Added
+
+- Mixins for "always light" and "always dark"
+
 ### Changed
+
+- Text-based form inputs (text input, search field, select, date search, date input and textarea) are always "light" themed with dark text on a light background
+
 ### Deprecated
 ### Removed
 ### Fixed

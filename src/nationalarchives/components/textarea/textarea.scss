@@ -17,6 +17,7 @@ $textarea-vertical-padding: 0.25rem !default;
   box-sizing: border-box;
   resize: vertical;
 
+  @include colour.light;
   @include colour.colour-font("input-foreground");
   font-family: inherit;
   font-size: inherit;

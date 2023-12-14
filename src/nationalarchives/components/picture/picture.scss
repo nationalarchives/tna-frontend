@@ -63,10 +63,10 @@
 
   @include media.on-tiny {
     .tna-column & {
-    width: calc(100% + #{grid.$gutter-width-tiny * 2});
+      width: calc(100% + #{grid.$gutter-width-tiny * 2});
 
-    position: relative;
-    left: -#{grid.$gutter-width-tiny};
+      position: relative;
+      left: -#{grid.$gutter-width-tiny};
     }
 
     &__image {

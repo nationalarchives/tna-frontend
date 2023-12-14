@@ -15,8 +15,12 @@ export class Picture {
       return;
     }
 
-    this.openLabel = this.$module.getAttribute("data-informationlabelopen") || "Open transcript"
-    this.closeLabel = this.$module.getAttribute("data-informationlabelclose") || "Close transcript"
+    this.openLabel =
+      this.$module.getAttribute("data-informationlabelopen") ||
+      "Open transcript";
+    this.closeLabel =
+      this.$module.getAttribute("data-informationlabelclose") ||
+      "Close transcript";
 
     const uniqueId = `tna-picture-${uuidv4()}`;
 

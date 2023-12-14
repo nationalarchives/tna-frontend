@@ -79,24 +79,24 @@
     "required": false,
     "description": "",
     "params": [
-        {
-          "name": "id",
-          "type": "string",
-          "required": true,
-          "description": ""
-        },
-        {
-          "name": "title",
-          "type": "string",
-          "required": true,
-          "description": ""
-        },
-        {
-          "name": "body",
-          "type": "string",
-          "required": true,
-          "description": ""
-        }
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "required": true,
+        "description": ""
+      }
     ]
   },
   {

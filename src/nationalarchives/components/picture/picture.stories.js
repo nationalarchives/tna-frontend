@@ -63,13 +63,13 @@ Standard.args = {
     {
       id: "transcript",
       title: "Transcript",
-      body: "<p>Lorem ipsum transcript</p>"
+      body: "<p>Lorem ipsum transcript</p>",
     },
     {
       id: "translation",
       title: "Translation",
-      body: "<p>Lorem ipsum translation</p>"
-    }
+      body: "<p>Lorem ipsum translation</p>",
+    },
   ],
   classes: "tna-picture--demo",
 };

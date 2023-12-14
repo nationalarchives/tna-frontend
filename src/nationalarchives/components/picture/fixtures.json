@@ -7,12 +7,82 @@
         "src": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
         "alt": "The National Archives office",
         "width": 499,
-        "height": 333,
-        "caption": "<p>This is a pretty image</p>",
-        "transcript": "<p>Lorem ipsum transcript</p>",
-        "translation": "<p>Lorem ipsum translation</p>"
+        "height": 333
       },
-      "html": "<figure class=\"tna-picture \" data-module=\"tna-picture\"><div class=\"tna-picture__image-wrapper\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\"></picture></div><div class=\"tna-picture__transcript\"><div class=\"tna-tabs \" data-module=\"tna-tabs\"><ul class=\"tna-tabs__list\"><li class=\"tna-tabs__list-item\"><a href=\"#test1\" class=\"tna-tabs__list-item-link\" id=\"test1-tab\">Transcript</a></li><li class=\"tna-tabs__list-item\"><a href=\"#test2\" class=\"tna-tabs__list-item-link\" id=\"test2-tab\">English translation</a></li></ul><div class=\"tna-tabs__items\"><section id=\"test1\" class=\"tna-tabs__item\"><p>Lorem ipsum transcript</p></section><section id=\"test2\" class=\"tna-tabs__item\"><p>Lorem ipsum translation</p></section></div></div></div><figcaption class=\"tna-picture__caption\"><p>This is a pretty image</p></figcaption></figure>",
+      "html": "<figure class=\"tna-picture \" data-module=\"tna-picture\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\"></picture></div></figure>",
+      "hidden": false
+    },
+    {
+      "name": "with caption",
+      "options": {
+        "src": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+        "alt": "The National Archives office",
+        "width": 499,
+        "height": 333,
+        "caption": "<p>This is a pretty image</p>"
+      },
+      "html": "<figure class=\"tna-picture \" data-module=\"tna-picture\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\"></picture></div><figcaption class=\"tna-picture__caption\"><p>This is a pretty image</p></figcaption></figure>",
+      "hidden": false
+    },
+    {
+      "name": "with information",
+      "options": {
+        "src": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+        "alt": "The National Archives office",
+        "width": 499,
+        "height": 333,
+        "information": [
+          {
+            "id": "transcript",
+            "title": "Transcript",
+            "body": "<p>Lorem ipsum transcript</p>"
+          }
+        ]
+      },
+      "html": "<figure class=\"tna-picture \" data-module=\"tna-picture\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\"></picture></div><div class=\"tna-picture__transcript\"><p>Lorem ipsum transcript</p></div></figure>",
+      "hidden": false
+    },
+    {
+      "name": "with multiple information",
+      "options": {
+        "src": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+        "alt": "The National Archives office",
+        "width": 499,
+        "height": 333,
+        "information": [
+          {
+            "id": "transcript",
+            "title": "Transcript",
+            "body": "<p>Lorem ipsum transcript</p>"
+          },
+          {
+            "id": "translation",
+            "title": "Translation",
+            "body": "<p>Lorem ipsum translation</p>"
+          }
+        ]
+      },
+      "html": "<figure class=\"tna-picture \" data-module=\"tna-picture\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\"></picture></div><div class=\"tna-picture__transcript\"><div class=\"tna-tabs \" data-module=\"tna-tabs\"><ul class=\"tna-tabs__list\"><li class=\"tna-tabs__list-item\"><a href=\"#transcript\" class=\"tna-tabs__list-item-link\" id=\"transcript-tab\">Transcript</a></li><li class=\"tna-tabs__list-item\"><a href=\"#translation\" class=\"tna-tabs__list-item-link\" id=\"translation-tab\">Translation</a></li></ul><div class=\"tna-tabs__items\"><section id=\"transcript\" class=\"tna-tabs__item\"><p>Lorem ipsum transcript</p></section><section id=\"translation\" class=\"tna-tabs__item\"><p>Lorem ipsum translation</p></section></div></div></div></figure>",
+      "hidden": false
+    },
+    {
+      "name": "custom open and close label",
+      "options": {
+        "src": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+        "alt": "The National Archives office",
+        "width": 499,
+        "height": 333,
+        "informationLabelOpen": "Show information",
+        "informationLabelClose": "Hide information",
+        "information": [
+          {
+            "id": "transcript",
+            "title": "Transcript",
+            "body": "<p>Lorem ipsum transcript</p>"
+          }
+        ]
+      },
+      "html": "<figure class=\"tna-picture \" data-module=\"tna-picture\" data-informationlabelopen=\"Show information\" data-informationlabelclose=\"Hide information\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\"></picture></div><div class=\"tna-picture__transcript\"><p>Lorem ipsum transcript</p></div></figure>",
       "hidden": false
     }
   ]

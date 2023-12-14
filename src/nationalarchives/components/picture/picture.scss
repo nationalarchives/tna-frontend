@@ -1,5 +1,8 @@
 @use "../../tools/colour";
+@use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
+@use "../../variables/grid";
 @use "../../utilities";
 @use "../button";
 
@@ -11,12 +14,14 @@
   padding: 0;
 
   &__image-wrapper {
-    position: relative;
+    padding: 1.5rem;
 
-    background-color: #f4f4f4;
+    position: relative;
   }
 
   &__image {
+    width: auto;
+    max-height: 40rem;
     height: auto;
     margin: 0 auto;
   }
@@ -42,9 +47,33 @@
   }
 
   &__caption {
-    padding: 1rem 0;
+    margin: 0 2rem;
+    padding: 1rem;
+
+    @include typography.relative-font-size(16);
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
+  }
+
+  @include media.on-mobile {
+    &__image-wrapper {
+      padding: 0;
+    }
+  }
+
+  @include media.on-tiny {
+    .tna-column & {
+      width: calc(100% + #{grid.$gutter-width-tiny * 2});
+
+      position: relative;
+      left: -#{grid.$gutter-width-tiny};
+    }
+
+    &__image {
+      width: 100%;
+      max-height: none;
+      height: auto;
+    }
   }
 
   @include colour.on-high-contrast-and-forced-colours {

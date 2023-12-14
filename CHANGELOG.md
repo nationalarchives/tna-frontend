@@ -8,9 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.30...HEAD)
 
 ### Added
+
+- Picture elements can have multiple tabs and customisable open/close button text
+
 ### Changed
+
+- Added XML and DOCTYPE to `src/nationalarchives/assets/images/tna-square-logo.svg`
+- Removed `fa-fw` from some icons
+- Message component has a `<div>` rather than a `<p>` for the message which allows `<p>` tags as content
+- Picture elements have a tinted background, a maximum height for images and break out of the grid on tiny devices
+
 ### Deprecated
 ### Removed
+
+- Picture elements no longer have `translation` and `transcript` options
+
 ### Fixed
 ### Security
 

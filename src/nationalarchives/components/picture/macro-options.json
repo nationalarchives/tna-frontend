@@ -62,27 +62,53 @@
     "description": ""
   },
   {
-    "name": "transcript",
+    "name": "informationLabelOpen",
     "type": "string",
     "required": false,
     "description": ""
   },
   {
-    "name": "translation",
+    "name": "informationLabelClose",
     "type": "string",
     "required": false,
     "description": ""
+  },
+  {
+    "name": "information",
+    "type": "array",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "required": true,
+        "description": ""
+      }
+    ]
   },
   {
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the phase banner."
+    "description": "Classes to add to the picture."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the phase banner."
+    "description": "HTML attributes (for example data attributes) to add to the picture."
   }
 ]

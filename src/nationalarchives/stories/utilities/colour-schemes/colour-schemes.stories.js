@@ -558,8 +558,18 @@ const Template = ({ theme, accent }) => {
               width: 499,
               height: 333,
               caption: "<p>This is a pretty image</p>",
-              transcript: "<p>Lorem ipsum transcript</p>",
-              translation: "<p>Lorem ipsum translation</p>",
+              information: [
+                {
+                  id: "transcript",
+                  title: "Transcript",
+                  body: "<p>Lorem ipsum transcript</p>",
+                },
+                {
+                  id: "translation",
+                  title: "Translation",
+                  body: "<p>Lorem ipsum translation</p>",
+                },
+              ],
               classes: "tna-picture--demo",
             },
           })}

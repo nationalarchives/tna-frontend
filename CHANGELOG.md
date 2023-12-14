@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Picture elements can have multiple tabs and customisable open/close button text
+- A separate `@nationalarchives/frontend-cookie-banner` package is published for services just wanting to use the new TNA Cookie Banner
 
 ### Changed
 
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `fa-fw` from some icons
 - Message component has a `<div>` rather than a `<p>` for the message which allows `<p>` tags as content
 - Picture elements have a tinted background, a maximum height for images and break out of the grid on tiny devices
+- Updated the cookie banner attribute `data-policies-key` to `data-policieskey`
 
 ### Deprecated
 ### Removed

@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Message component has a `<div>` rather than a `<p>` for the message which allows HTML as content
 - Hero component caption allows HTML rather than assuming text
 - Picture elements have a tinted background, a maximum height for images and break out of the grid on tiny devices
+- Changed hero caption icon text from "Image caption" to "About this image"
 - Updated the cookie banner attribute `data-policies-key` to `data-policieskey`
 
 ### Deprecated

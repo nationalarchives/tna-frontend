@@ -1,8 +1,8 @@
 {% from "nationalarchives/components/tabs/macro.njk" import tnaTabs %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<figure class="tna-picture {{ containerClasses | join(' ') }}" data-module="tna-picture"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <div class="tna-picture__image-wrapper">
+<figure class="tna-picture {{ containerClasses | join(' ') }}" data-module="tna-picture"{% if params.informationLabelOpen %} data-informationlabelopen="{{ params.informationLabelOpen }}"{% endif %}{% if params.informationLabelClose %} data-informationlabelclose="{{ params.informationLabelClose }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="tna-picture__image-wrapper tna-background-tint">
     <picture>
     {%- for source in params.sources -%}
       <source class="tna-picture__image" media="{{ source.media }}" srcset="{{ source.src }}" width="{{ source.width }}" height="{{ source.height }}">
@@ -10,27 +10,14 @@
       <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}">
     </picture>
   </div>
-{%- if params.transcript or params.translation -%}
+{%- if params.information -%}
   <div class="tna-picture__transcript">
-  {%- if params.transcript and params.translation -%}
+  {%- if params.information | length > 1 -%}
     {{ tnaTabs({
-      items: [
-        {
-          id: "test1",
-          title: "Transcript",
-          body: params.transcript
-        },
-        {
-          id: "test2",
-          title: "English translation",
-          body: params.translation
-        }
-      ]
+      items: params.information
     }) }}
-  {%- elseif params.transcript -%}
-    {{ params.transcript | safe }}
   {%- else -%}
-    {{ params.translation | safe }}
+    {{ params.information[0]['body'] | safe }}
   {%- endif -%}
   </div>
 {%- endif -%}

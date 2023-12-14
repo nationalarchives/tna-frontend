@@ -15,6 +15,9 @@ export class Picture {
       return;
     }
 
+    this.openLabel = this.$module.getAttribute("data-informationlabelopen") || "Open transcript"
+    this.closeLabel = this.$module.getAttribute("data-informationlabelclose") || "Close transcript"
+
     const uniqueId = `tna-picture-${uuidv4()}`;
 
     this.$transcriptToggle = document.createElement("button");
@@ -22,12 +25,11 @@ export class Picture {
       "tna-picture__toggle-transcript",
       "tna-button",
       "tna-button--small",
-      "tna-button--accent",
       "tna-button--solid-hover",
     );
     this.$transcriptToggle.setAttribute("aria-controls", uniqueId);
     this.$transcriptToggle.setAttribute("aria-expanded", false);
-    this.$transcriptToggle.innerText = "Open transcript";
+    this.$transcriptToggle.innerText = this.openLabel;
     this.$transcriptToggle.addEventListener("click", () =>
       this.handleToggleTranscript(),
     );
@@ -44,12 +46,12 @@ export class Picture {
     if (this.transcriptOpened) {
       this.$transcriptToggle.classList.add(transcriptToggleOpenedClass);
       this.$transcriptToggle.setAttribute("aria-expanded", true);
-      this.$transcriptToggle.innerText = "Close transcript";
+      this.$transcriptToggle.innerText = this.closeLabel;
       this.$transcript.removeAttribute("hidden");
     } else {
       this.$transcriptToggle.classList.remove(transcriptToggleOpenedClass);
       this.$transcriptToggle.setAttribute("aria-expanded", false);
-      this.$transcriptToggle.innerText = "Open transcript";
+      this.$transcriptToggle.innerText = this.openLabel;
       this.$transcript.setAttribute("hidden", true);
     }
   }

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.30...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.31...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.31](https://github.com/nationalarchives/tna-frontend/compare/v0.1.30...v0.1.31) - 2023-12-14
 
 ### Added
 
@@ -22,13 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed hero caption icon text from "Image caption" to "About this image"
 - Updated the cookie banner attribute `data-policies-key` to `data-policieskey`
 
-### Deprecated
 ### Removed
 
 - Picture elements no longer have `translation` and `transcript` options (see "Added" above for alternative)
-
-### Fixed
-### Security
 
 ## [0.1.30](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...v0.1.30) - 2023-12-07
 

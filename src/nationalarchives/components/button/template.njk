@@ -23,5 +23,5 @@
   {% elseif params.icon -%}
   <i class="fa-solid fa-{{ params.icon }}" aria-hidden="true"></i>
   {% endif -%}
-  {{ params.text }}
+  {{ params.text -}}
 </{{ 'button' if params.buttonElement else 'a' }}>

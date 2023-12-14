@@ -16,14 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added XML and DOCTYPE to `src/nationalarchives/assets/images/tna-square-logo.svg`
 - Removed `fa-fw` from some icons
-- Message component has a `<div>` rather than a `<p>` for the message which allows `<p>` tags as content
+- Message component has a `<div>` rather than a `<p>` for the message which allows HTML as content
+- Hero component caption allows HTML rather than assuming text
 - Picture elements have a tinted background, a maximum height for images and break out of the grid on tiny devices
+- Changed hero caption icon text from "Image caption" to "About this image"
 - Updated the cookie banner attribute `data-policies-key` to `data-policieskey`
 
 ### Deprecated
 ### Removed
 
-- Picture elements no longer have `translation` and `transcript` options
+- Picture elements no longer have `translation` and `transcript` options (see "Added" above for alternative)
 
 ### Fixed
 ### Security

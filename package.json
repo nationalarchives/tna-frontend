@@ -34,10 +34,6 @@
     "./nationalarchives/": "./nationalarchives/"
   },
   "sass": "nationalarchives/all.scss",
-  "engines": {
-    "npm": "9.x",
-    "node": "18.x"
-  },
   "homepage": "https://github.com/nationalarchives/tna-frontend#readme",
   "devDependencies": {
     "@babel/core": "^7.23.2",

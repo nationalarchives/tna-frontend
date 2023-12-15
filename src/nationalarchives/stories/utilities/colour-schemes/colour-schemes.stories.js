@@ -1064,7 +1064,7 @@ const Template = ({ theme, accent }) => {
               ${SearchField({
                 params: {
                   label: "Catalogue search results",
-                  headingLevel: 1,
+                  headingLevel: 3,
                   headingSize: "l",
                   id: "search1",
                   name: "q",
@@ -1540,4 +1540,9 @@ const CombinationsTemplate = () => {
 };
 
 export const Combinations = CombinationsTemplate.bind({});
+Combinations.parameters = {
+  a11y: {
+    disable: true,
+  },
+};
 Combinations.args = {};

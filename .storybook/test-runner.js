@@ -59,12 +59,13 @@
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 
-const { getStoryContext } = require("@storybook/test-runner");
+const { getStoryContext, getJestConfig } = require("@storybook/test-runner");
 const { injectAxe, checkA11y } = require("axe-playwright");
 
 const DEFAULT_VP_SIZE = { width: 1280, height: 720 };
 
 module.exports = {
+  ...getJestConfig(),
   async preVisit(page, story) {
     const context = await getStoryContext(page, story);
     const vpName = context.parameters?.viewport?.defaultViewport;
@@ -88,5 +89,4 @@ module.exports = {
   async postVisit(page) {
     await checkA11y(page, "#storybook-root", a11yConfig, "v2");
   },
-  testTimeout: 30000,
 };

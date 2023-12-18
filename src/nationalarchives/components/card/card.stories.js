@@ -350,75 +350,11 @@ WithoutImage.args = {
   title: "Card title",
   headingLevel: 3,
   headingSize: "s",
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  htmlElement: "article",
-  classes: "tna-card--demo",
-};
-
-const GridTemplate = ({
-  title,
-  supertitle,
-  headingLevel,
-  headingSize,
-  href,
-  imageSrc,
-  imageAlt,
-  imageWidth,
-  imageHeight,
-  imageSources,
-  label,
-  body,
-  text,
-  actions,
-  layout,
-  style,
-  htmlElement,
-  classes,
-  attributes,
-}) =>
-  `<div class="tna-container">
-    ${Array(12)
-      .fill(
-        `<div class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny tna-!--margin-bottom-m">
-          ${Card({
-            params: {
-              title,
-              supertitle,
-              headingLevel,
-              headingSize,
-              href,
-              imageSrc,
-              imageAlt,
-              imageWidth,
-              imageHeight,
-              imageSources,
-              label,
-              body,
-              text,
-              actions,
-              layout,
-              style,
-              htmlElement,
-              classes,
-              attributes,
-            },
-          })}
-        </div>`,
-      )
-      .join("")}
-  </div>`;
-
-export const Grid = GridTemplate.bind({});
-Grid.args = {
-  title: "Card title",
-  headingLevel: 3,
-  headingSize: "s",
-  href: "#",
-  imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-  imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  meta: [
+    { text: "24th September 2023", icon: "calendar" },
+    { text: "From £16", icon: "ticket" },
+    { text: "Online", icon: "location-dot" },
+  ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
   classes: "tna-card--demo",

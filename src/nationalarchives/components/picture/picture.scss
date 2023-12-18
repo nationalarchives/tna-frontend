@@ -78,10 +78,11 @@
 
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px);
-    border-bottom-width: 0;
 
     &__caption {
-      padding: 1rem;
+      margin: 0;
+
+      border: none;
     }
   }
 }

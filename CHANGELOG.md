@@ -9,9 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Tab elements in high contrast mode have an extra keyline to help with visibility
+- The header element no longer uses background tint in high contrast mode
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Picture elements in high contrast mode have improved borders with no gaps
+
 ### Security
 
 ## [0.1.32](https://github.com/nationalarchives/tna-frontend/compare/v0.1.31...v0.1.32) - 2023-12-18

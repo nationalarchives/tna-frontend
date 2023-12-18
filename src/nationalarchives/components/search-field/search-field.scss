@@ -14,19 +14,32 @@
     display: block;
     flex: 1;
 
+    @include colour.light;
     @include colour.colour-font("input-foreground");
     font-size: inherit;
     line-height: 2rem;
 
     @include colour.colour-background("input-background");
 
-    @include colour.colour-border(
-      "input-border",
-      forms.$form-field-border-width
-    );
+    @include colour.colour-border("input-border");
+    border-width: forms.$form-field-border-width 0
+      forms.$form-field-border-width forms.$form-field-border-width;
     border-radius: 0;
   }
 
   &__button {
+  }
+
+  &--no-border &__input {
+    margin-right: forms.$form-field-border-width;
+
+    border-width: 0;
+
+    @include colour.on-high-contrast-and-forced-colours {
+      margin-right: 0;
+
+      border-width: forms.$form-field-border-width 0
+        forms.$form-field-border-width forms.$form-field-border-width;
+    }
   }
 }

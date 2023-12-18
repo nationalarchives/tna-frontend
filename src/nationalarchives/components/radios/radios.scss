@@ -43,6 +43,8 @@
 
         border-radius: 100%;
 
+        @include colour.light;
+
         content: "";
       }
 
@@ -93,9 +95,9 @@
       }
 
       &::after {
-        width: 0.75rem;
-        height: 0.75rem;
-        margin: 0.375rem;
+        width: 0.875rem;
+        height: 0.875rem;
+        margin: 0.3125rem;
       }
     }
   }

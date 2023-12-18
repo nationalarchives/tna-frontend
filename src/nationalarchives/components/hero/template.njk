@@ -5,11 +5,9 @@
     <figcaption class="tna-hero__caption">
       <details class="tna-hero__details">
         <summary class="tna-hero__details-summary">
-          <span class="tna-hero__details-summary-icon">I</span>mage caption
+          About this <span class="tna-hero__details-summary-icon">i</span>mage
         </summary>
-        <div class="tna-hero__information">
-          <p>{{ params.imageCaption }}</p>
-        </div>
+        <div class="tna-hero__information">{{ params.imageCaption | safe }}</div>
       </details>
     </figcaption>
     {%- endif -%}

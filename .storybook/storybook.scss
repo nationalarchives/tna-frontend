@@ -156,7 +156,7 @@
 }
 
 .tna-picture--demo {
-  max-width: 480px;
+  // max-width: 480px;
 }
 
 .tna-spacing-demo {
@@ -232,6 +232,10 @@
     p:not(:first-child) {
       margin-top: 0.25rem;
     }
+  }
+
+  .tna-form__group {
+    margin-top: 0.5rem;
   }
 
   .tna-chip-list {

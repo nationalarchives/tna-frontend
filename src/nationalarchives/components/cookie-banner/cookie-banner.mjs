@@ -1,5 +1,7 @@
 import Cookies from "../../lib/cookies.mjs";
 
+export { Cookies };
+
 export class CookieBanner {
   constructor($module) {
     this.$module = $module;
@@ -36,7 +38,7 @@ export class CookieBanner {
     const path = this.$module.getAttribute("data-path") || undefined;
     const secure = this.$module.getAttribute("data-secure") || undefined;
     const policiesKey =
-      this.$module.getAttribute("data-policies-key") || undefined;
+      this.$module.getAttribute("data-policieskey") || undefined;
 
     this.cookies = new (window.TNAFrontend?.Cookies || Cookies)({
       extraPolicies,

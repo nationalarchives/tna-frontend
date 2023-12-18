@@ -41,7 +41,6 @@
     // font-display: swap;
   }
 } @else {
-  // @import "https://use.typekit.net/hkj3kuz.css";
   @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@#{typographyVars.$main-font-weight};#{typographyVars.$main-font-weight-bold}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
 }
 
@@ -52,6 +51,7 @@
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   direction: ltr;
 }
 
@@ -213,8 +213,7 @@ small {
     a {
       display: inline-block;
 
-      text-wrap: balance;
-      // text-decoration-thickness: .1em;
+      // text-wrap: balance;
 
       &::after {
         padding-left: 0.25rem;
@@ -226,13 +225,11 @@ small {
         content: "\203A";
       }
 
-      &:hover {
-        // text-decoration-thickness: .15em;
-
-        &::after {
-          padding-left: 0.5rem;
-        }
-      }
+      // &:hover {
+      //   &::after {
+      //     padding-left: 0.5rem;
+      //   }
+      // }
     }
   }
 }

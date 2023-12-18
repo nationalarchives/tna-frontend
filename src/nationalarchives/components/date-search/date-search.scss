@@ -9,6 +9,7 @@
   display: block;
   box-sizing: border-box;
 
+  @include colour.light;
   @include colour.colour-font("input-foreground");
   font-size: inherit;
   line-height: 2rem;

@@ -5,21 +5,62 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.32...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.32](https://github.com/nationalarchives/tna-frontend/compare/v0.1.31...v0.1.32) - 2023-12-18
+
+### Added
+
+- Mixins for "always light" and "always dark"
+
+### Changed
+
+- Text-based form inputs (text input, search field, select, date search, date input and textarea) are always "light" themed with dark text on a light background
+
+## [0.1.31](https://github.com/nationalarchives/tna-frontend/compare/v0.1.30...v0.1.31) - 2023-12-14
+
+### Added
+
+- Picture elements can have multiple tabs and customisable open/close button text
+- A separate `@nationalarchives/frontend-cookie-banner` package is published for services just wanting to use the new TNA Cookie Banner
+
+### Changed
+
+- Added XML and DOCTYPE to `src/nationalarchives/assets/images/tna-square-logo.svg`
+- Removed `fa-fw` from some icons
+- Message component has a `<div>` rather than a `<p>` for the message which allows HTML as content
+- Hero component caption allows HTML rather than assuming text
+- Picture elements have a tinted background, a maximum height for images and break out of the grid on tiny devices
+- Changed hero caption icon text from "Image caption" to "About this image"
+- Updated the cookie banner attribute `data-policies-key` to `data-policieskey`
+
+### Removed
+
+- Picture elements no longer have `translation` and `transcript` options (see "Added" above for alternative)
+
+## [0.1.30](https://github.com/nationalarchives/tna-frontend/compare/v0.1.29-prerelease...v0.1.30) - 2023-12-07
+
+### Added
+
+- `<dl>` elements can now be stacked with `<dl class="tna-dl tna-dl--stacked">`
+
 ### Changed
 
 - Cookies class parameter `extraPolicies` moved to key inside the options object parameter
 - Card actions are now buttons using `.tna-button`
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Chip colours and icons in chip lists fixed
-
-### Security
+- Better support for `<dl class="tna-dl">` elements
+- Removed some `:has` CSS selectors for better support with Firefox
 
 ## [0.1.29-prerelease](https://github.com/nationalarchives/tna-frontend/compare/v0.1.28-prerelease...v0.1.29-prerelease) - 2023-12-01
 

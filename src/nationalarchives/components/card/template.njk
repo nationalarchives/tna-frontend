@@ -1,3 +1,5 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+
 {%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.layout == "horizontal" -%}
@@ -5,10 +7,14 @@
 {%- elseif params.layout == "hero" -%}
   {%- set containerClasses = containerClasses.concat('tna-card--hero') -%}
 {%- endif -%}
-{%- if params.style == "boxed" -%}
+{%- if params.style == "contrast" -%}
   {%- set containerClasses = containerClasses.concat('tna-card--contrast') -%}
 {%- elseif params.style == "accent" -%}
   {%- set containerClasses = containerClasses.concat('tna-card--accent') -%}
+{%- elseif params.style == "tint" -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--tint') -%}
+{%- elseif params.style == "accent-light" -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--accent-light') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <{{ htmlElement }} class="tna-card{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
@@ -83,14 +89,7 @@
   {%- if params.actions %}
     <div class="tna-card__actions tna-button-group">
     {%- for item in params.actions %}
-      <a href="{{ item.href }}" class="tna-button{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- if item.title %} title="{{ item.title }}"{% endif %} {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-        {%- if item.brandIcon %}
-        <i class="fa-brands fa-{{ item.brandIcon }}"></i>
-        {%- elseif item.icon %}
-        <i class="fa-solid fa-{{ item.icon }}"></i>
-        {%- endif %}
-        {{ item.text }}
-      </a>
+      {{ tnaButton(item) }}
     {%- endfor %}
     </div>
   {%- endif %}

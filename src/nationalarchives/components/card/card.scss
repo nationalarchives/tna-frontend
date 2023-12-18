@@ -91,7 +91,9 @@
   }
 
   &--contrast,
-  &--accent {
+  &--accent,
+  &--tint,
+  &--accent-light {
     .tna-card__inner {
       padding-bottom: 1rem;
     }
@@ -104,13 +106,15 @@
     }
   }
 
-  &--contrast {
+  &--contrast,
+  &--contrast#{&}--hero {
     .tna-card__inner {
       @include colour.contrast;
     }
   }
 
-  &--accent {
+  &--accent,
+  &--accent#{&}--hero {
     .tna-card__inner {
       @include colour.accent;
     }
@@ -122,15 +126,17 @@
     }
   }
 
-  &--contrast#{&}--hero {
+  &--tint,
+  &--tint#{&}--hero {
     .tna-card__inner {
-      @include colour.contrast;
+      @include colour.tint;
     }
   }
 
-  &--accent#{&}--hero {
+  &--accent-light,
+  &--accent-light#{&}--hero {
     .tna-card__inner {
-      @include colour.accent;
+      @include colour.accent-light;
     }
   }
 

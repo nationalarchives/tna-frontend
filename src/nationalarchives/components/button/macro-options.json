@@ -3,79 +3,79 @@
     "name": "text",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The text for the button."
   },
   {
     "name": "href",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The URL of the button."
   },
   {
     "name": "title",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional title for the button."
   },
   {
     "name": "icon",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
   },
   {
     "name": "brandIcon",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The name of a Font Awesome brand icon, without the prefixed `fa-`."
   },
   {
     "name": "accent",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Use the accent style for the button."
   },
   {
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Display a smaller button."
   },
   {
     "name": "plain",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Display a plain style button."
   },
   {
     "name": "iconOnly",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Don't display the button text, just an icon."
   },
   {
     "name": "iconOnlyOnMobile",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Hide the button text on mobile and display only the icon."
   },
   {
     "name": "rightAlignIcon",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Align the icon to the right side of the button."
   },
   {
     "name": "buttonElement",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "Output a `<button>` element rather than an `<a>` element."
   },
   {
     "name": "buttonType",
     "type": "text",
     "required": false,
-    "description": ""
+    "description": "When using `buttonElement`, set the `type` of `<button>` element, defaults to `button`."
   },
   {
     "name": "classes",

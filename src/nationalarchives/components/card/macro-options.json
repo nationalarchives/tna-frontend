@@ -153,6 +153,7 @@
     "type": "array",
     "required": false,
     "description": "An array of actions to add at the bottom of the card. Each action is displayed as a button.",
+    "childComponents": "button",
     "params": [
       {
         "name": "text",
@@ -208,7 +209,7 @@
     "name": "style",
     "type": "text",
     "required": false,
-    "description": "The style of card to use which can be either `boxed` for an inverted card or `accent` for a card that matches the page's accent colour."
+    "description": "The style of card to use which can be either `contrast` for an inverted card or `accent` for a card that matches the page's accent colour."
   },
   {
     "name": "plainSupertitle",

@@ -21,7 +21,10 @@ const argTypes = {
   text: { control: "text" },
   actions: { control: "object" },
   layout: { control: "inline-radio", options: ["none", "horizontal", "hero"] },
-  style: { control: "inline-radio", options: ["none", "boxed", "accent"] },
+  style: {
+    control: "inline-radio",
+    options: ["none", "contrast", "accent", "tint", "accent-light"],
+  },
   plainSupertitle: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
@@ -170,8 +173,8 @@ PlainSupertitle.args = {
   classes: "tna-card--demo",
 };
 
-export const Boxed = Template.bind({});
-Boxed.args = {
+export const Contrast = Template.bind({});
+Contrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
@@ -184,7 +187,7 @@ Boxed.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  style: "boxed",
+  style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -227,6 +230,7 @@ Horizontal.args = {
       href: "#",
       title: "Go and do the action",
       icon: "calendar",
+      class: "tna-button--plain",
     },
   ],
   layout: "horizontal",
@@ -234,8 +238,8 @@ Horizontal.args = {
   classes: "tna-card--demo",
 };
 
-export const HorizontalBoxed = Template.bind({});
-HorizontalBoxed.args = {
+export const HorizontalContrast = Template.bind({});
+HorizontalContrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
@@ -256,7 +260,7 @@ HorizontalBoxed.args = {
     },
   ],
   layout: "horizontal",
-  style: "boxed",
+  style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
 };

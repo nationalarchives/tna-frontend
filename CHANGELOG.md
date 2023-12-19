@@ -12,9 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
 - The card style of `boxed` has been changed to `contrast` in line with other components
+- The background tint colour on the light theme is slightly darker for better contrast with the page background
 
 ### Deprecated
 ### Removed
+
+- Removed option for `tna-search-field--no-border` - borders are dictated by the background colours and page theme
+
 ### Fixed
 ### Security
 

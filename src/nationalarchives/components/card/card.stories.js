@@ -21,7 +21,7 @@ const argTypes = {
   text: { control: "text" },
   actions: { control: "object" },
   horizontal: { control: "boolean" },
-  style: { control: "inline-radio", options: ["none", "boxed", "accent"] },
+  style: { control: "inline-radio", options: ["none", "contrast", "accent"] },
   plainSupertitle: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
@@ -170,8 +170,8 @@ PlainSupertitle.args = {
   classes: "tna-card--demo",
 };
 
-export const Boxed = Template.bind({});
-Boxed.args = {
+export const Contrast = Template.bind({});
+Contrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
@@ -184,7 +184,7 @@ Boxed.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  style: "boxed",
+  style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -234,8 +234,8 @@ Horizontal.args = {
   classes: "tna-card--demo",
 };
 
-export const HorizontalBoxed = Template.bind({});
-HorizontalBoxed.args = {
+export const HorizontalContrast = Template.bind({});
+HorizontalContrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
@@ -256,7 +256,7 @@ HorizontalBoxed.args = {
     },
   ],
   horizontal: true,
-  style: "boxed",
+  style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
 };

@@ -74,6 +74,11 @@
       max-height: none;
       height: auto;
     }
+
+    &__caption {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
   @include colour.on-high-contrast-and-forced-colours {

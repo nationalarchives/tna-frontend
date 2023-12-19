@@ -208,7 +208,7 @@
     "name": "style",
     "type": "text",
     "required": false,
-    "description": "The style of card to use which can be either `boxed` for an inverted card or `accent` for a card that matches the page's accent colour."
+    "description": "The style of card to use which can be either `contrast` for an inverted card or `accent` for a card that matches the page's accent colour."
   },
   {
     "name": "plainSupertitle",

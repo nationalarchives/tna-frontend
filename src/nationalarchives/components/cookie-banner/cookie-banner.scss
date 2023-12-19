@@ -7,10 +7,20 @@
 @use "../grid";
 
 .tna-cookie-banner {
-  @include colour.contrast;
-
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  &--contrast {
+    @include colour.contrast;
+  }
+
+  &--accent {
+    @include colour.accent;
+  }
+
+  &--tint {
+    @include colour.tint;
+  }
 
   @include media.on-tiny {
     padding-top: 1rem;

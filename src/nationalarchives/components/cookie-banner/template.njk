@@ -1,6 +1,13 @@
 {% from "nationalarchives/components/button/macro.njk" import tnaButton %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.style == "contrast" -%}
+  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--contrast') -%}
+{%- elseif params.style == "accent" -%}
+  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--accent') -%}
+{%- elseif params.style == "tint" -%}
+  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--tint') -%}
+{%- endif -%}
 <section class="tna-cookie-banner {{ containerClasses | join(' ') }}" data-module="tna-cookie-banner" role="region" data-policies="{{ params.policies if params.policies }}" data-preferenceskey="{{ params.preferencesSetKey if params.preferencesSetKey }}" data-policieskey="{{ params.policiesKey if params.policiesKey }}" data-domain="{{ params.cookiesDomain if params.cookiesDomain }}" data-path="{{ params.cookiesPath if params.cookiesPath }}" data-insecure="{{ true if params.allowInsecure else 'false' }}" aria-label="Cookies on {{ params.serviceName }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
   <div class="tna-container">
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--prompt">

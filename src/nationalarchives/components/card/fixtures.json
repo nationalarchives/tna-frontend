@@ -166,12 +166,12 @@
       "hidden": false
     },
     {
-      "name": "with a boxed style",
+      "name": "with a contrast style",
       "options": {
         "title": "Card title",
         "headingLevel": 3,
         "body": "<p>Card body</p>",
-        "style": "boxed"
+        "style": "contrast"
       },
       "html": "<div class=\"tna-card tna-card--contrast\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
       "hidden": false

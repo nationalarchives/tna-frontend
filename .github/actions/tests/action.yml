@@ -17,7 +17,7 @@ runs:
       run: mkdir temp && npm run validatehtml
       shell: bash
     - name: Build Storybook
-      run: npm run build
+      run: npm run build --test
       shell: bash
     - name: Start Storybook
       run: npm start &

@@ -15,7 +15,7 @@ module.exports = {
   ],
   framework: {
     name: "@storybook/html-webpack5",
-    options: { builder: { useSWC: true } },
+    options: {},
   },
   staticDirs: ["../src/nationalarchives/assets"],
   webpackFinal: async (config, { configType }) => {

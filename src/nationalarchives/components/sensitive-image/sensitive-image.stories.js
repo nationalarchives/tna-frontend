@@ -1,7 +1,6 @@
 import SensitiveImage from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { within, userEvent, expect } from "@storybook/test";
 
 const argTypes = {
   src: { control: "text" },

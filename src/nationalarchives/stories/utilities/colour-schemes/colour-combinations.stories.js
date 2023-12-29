@@ -87,6 +87,7 @@ const Template = () => {
           </ul>
           ${TextInput({
             params: {
+              label: "Input",
               id: `name-${theme}-${block}-${accent}`,
               name: `name-${theme}-${block}-${accent}`,
               value: `Lorem ipsum`,
@@ -132,6 +133,7 @@ const Template = () => {
           })}
           ${Select({
             params: {
+              label: "Select",
               id: `sort-${theme}-${block}-${accent}`,
               name: `sort-${theme}-${block}-${accent}`,
               items: [

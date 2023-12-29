@@ -259,6 +259,11 @@
     flex-wrap: nowrap;
   }
 
+  .tna-form__label {
+    font-size: 0;
+    line-height: 0;
+  }
+
   .tna-pagination {
     margin-top: 1rem;
   }

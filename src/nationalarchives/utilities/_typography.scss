@@ -208,12 +208,11 @@ small {
 
 %heading {
   @include colour.colour-font("font-dark");
+  text-wrap: pretty;
 
   &:not(.tna-heading--no-link-arrow) {
     a {
       display: inline-block;
-
-      // text-wrap: balance;
 
       &::after {
         padding-left: 0.25rem;
@@ -225,11 +224,11 @@ small {
         content: "\203A";
       }
 
-      // &:hover {
-      //   &::after {
-      //     padding-left: 0.5rem;
-      //   }
-      // }
+      &:hover {
+        &::after {
+          padding-left: 0.5rem;
+        }
+      }
     }
   }
 }

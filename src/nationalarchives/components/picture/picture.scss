@@ -47,10 +47,11 @@
   }
 
   &__caption {
-    margin: 0 2rem;
+    margin: 0 1rem;
     padding: 1rem;
 
     @include typography.relative-font-size(16);
+    font-style: italic;
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
@@ -78,6 +79,14 @@
     &__caption {
       margin-right: 0;
       margin-left: 0;
+    }
+
+    @if grid.$gutter-width-tiny != 1.5rem {
+      &__caption,
+      &__transcript {
+        padding-right: grid.$gutter-width-tiny;
+        padding-left: grid.$gutter-width-tiny;
+      }
     }
   }
 

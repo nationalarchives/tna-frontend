@@ -89,7 +89,7 @@ const Template = () => {
             params: {
               id: `name-${theme}-${block}-${accent}`,
               name: `name-${theme}-${block}-${accent}`,
-              value: `name-${theme}-${block}-${accent}`,
+              value: `Lorem ipsum`,
             },
           })}
           ${Checkboxes({

@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
 - The card style of `boxed` has been changed to `contrast` in line with other components
+- Changed `tna-select--plain` to `tna-select--styled`
+- Updated button styles - icon sizes, padding and gaps on small and icon-only buttons
+- Removed slash on void elements (updating `<hr />` to `<hr>`)
+- Italicise picture element captions to distinguish from regular text
+- Use `text-wrap: pretty;` for headings
 
 ### Deprecated
 ### Removed

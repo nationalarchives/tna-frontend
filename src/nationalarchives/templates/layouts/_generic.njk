@@ -1,13 +1,18 @@
 {# Based on https://github.com/alphagov/govuk-frontend/blob/8b6bf304b9fc891f64459c25a08f3d623f3fea72/packages/govuk-frontend/src/govuk/template.njk #}
+
 {% from "nationalarchives/components/cookie-banner/macro.njk" import tnaCookieBanner -%}
 {% from "nationalarchives/components/footer/macro.njk" import tnaFooter -%}
 {% from "nationalarchives/components/header/macro.njk" import tnaHeader -%}
 {% from "nationalarchives/components/skip-link/macro.njk" import tnaSkipLink -%}
+
+{% set siteTitle = 'The National Archives' %}
+{% set pageTitle = '' %}
+
 <!DOCTYPE html>
 <html lang="{{ htmlLang | default('en-GB') }}" class="tna-template tna-template--{{ theme | default('system') }}-theme tna-template--{{ themeAccent | default('black') }}-accent {{ htmlClasses }}">
   <head>
     <meta charset="utf-8">
-    <title>{% block pageTitle %}The National Archives{% endblock %}</title>
+    <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle }}{% else %}{{ siteTitle }}{% endif %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#000000') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

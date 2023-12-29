@@ -19,7 +19,7 @@
   @include colour.colour-border("input-border", forms.$form-field-border-width);
   border-radius: 0;
 
-  &--plain {
+  &--styled {
     padding: 0 2.5rem 0 0.75rem;
 
     appearance: none;

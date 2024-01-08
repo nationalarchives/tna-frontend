@@ -1,5 +1,4 @@
 export const customViewports = {
-  // ...MINIMAL_VIEWPORTS,
   medium: {
     name: "Medium device",
     styles: {

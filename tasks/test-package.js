@@ -232,4 +232,23 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
 
 console.log("\n");
 
-// TODO: Test CSS for contents
+console.log(`Testing compiled CSS files`);
+const cssAllPackage = fs
+  .readFileSync("package/nationalarchives/all.css")
+  .toString();
+const checkForClasses = ["tna-template", "tna-template__body"];
+checkForClasses.forEach((cssClass) => {
+  const escapedClass = cssClass.replace("-", "\\-");
+  const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}\{`, "g"));
+  if (regExp) {
+    pass(
+      `${cssClass.replace(/`{$/, "")} selector occurs ${regExp.length} time${
+        regExp.length === 1 ? "" : "s"
+      } in compiled CSS`,
+    );
+  } else {
+    fail(`${cssClass.replace(/`{$/, "")} selector missing from compiled CSS`);
+    process.exitCode = 1;
+    throw new Error("CSS test failed");
+  }
+});

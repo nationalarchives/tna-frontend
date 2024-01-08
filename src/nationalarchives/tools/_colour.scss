@@ -190,7 +190,7 @@
   @extend %plain;
 }
 
-@mixin light {
+%light {
   @include colour-css-vars;
 
   @media (prefers-contrast: more) {
@@ -198,12 +198,20 @@
   }
 }
 
-@mixin dark {
+@mixin light {
+  @extend %light;
+}
+
+%dark {
   @include colour-css-vars-dark;
 
   @media (prefers-contrast: more) {
     @include colour-css-vars-high-contrast-dark;
   }
+}
+
+@mixin dark {
+  @extend %dark;
 }
 
 %contrast {

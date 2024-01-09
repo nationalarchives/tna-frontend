@@ -1,0 +1,16 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<ul class="tna-compound-filters tna-ul tna-ul--plain {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for item in params.items -%}
+  <li class="tna-compound-filters__item">
+    <span class="tna-compound-filters__label">{{ item.label }}</span>
+    <a href="{{ item.href }}" class="tna-compound-filters__link">{{ item.title if item.title else 'Remove filter' }}</a>
+  </li>
+  {%- endfor -%}
+  {% if params.removeAllHref %}
+  <li class="tna-compound-filters__item tna-compound-filters__item--remove">
+    <a href="{{ params.removeAllHref }}">
+      {{ params.removeAllText if params.removeAllText else 'Remove all filters' }}
+    </a>
+  </li>
+  {% endif %}
+</ul>

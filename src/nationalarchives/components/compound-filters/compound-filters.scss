@@ -24,8 +24,6 @@
     @include colour.colour-border("keyline", 1px);
     border-radius: 1rem;
 
-    @include colour.tint;
-
     &--remove {
       padding-right: 0;
       padding-left: 0;
@@ -45,8 +43,6 @@
     text-decoration: none;
     font-size: 0;
     line-height: 0;
-
-    @include colour.tint;
 
     border-radius: 100%;
 

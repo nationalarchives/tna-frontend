@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Base template can now accept `htmlAttributes`
+- Compound filters can be used to show currently selected search filters
 
 ### Changed
 

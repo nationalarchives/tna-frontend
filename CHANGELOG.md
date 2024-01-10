@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed `href` property of pagination `previous` and `next` links
+
 ### Security
 
 ## [0.1.33](https://github.com/nationalarchives/tna-frontend/compare/v0.1.32...v0.1.33) - 2023-12-29

@@ -9,7 +9,7 @@
   <div class="tna-pagination__prev">
     {{ tnaButton({
       text: params.previous.text if params.previous.text else "Previous",
-      href: "#",
+      href: params.previous.href,
       title: params.previous.title,
       icon: "arrow-left",
       iconOnlyOnMobile: true,
@@ -46,7 +46,7 @@
   <div class="tna-pagination__next">
     {{ tnaButton({
       text: params.next.text if params.next.text else "Next",
-      href: "#",
+      href: params.next.href,
       title: params.next.title,
       icon: "arrow-right",
       iconOnlyOnMobile: true,

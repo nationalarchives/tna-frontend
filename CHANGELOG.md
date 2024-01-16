@@ -8,7 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...HEAD)
 
 ### Added
+
+- More icon sizes added
+
 ### Changed
+
+- Images on horizontal cards are now at least a 3:2 aspect ratio
+- Icon assets have been renamed from `apple-touch-icon-xxx.png` to `icon-xxx.png`
+
 ### Deprecated
 ### Removed
 ### Fixed
@@ -24,7 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Changed `attributes` to `formGroupAttributes` and `classes` to `formClasses` on checkboxes and radios - `attributes` and `classes` now get applied to each checkbox and radio element
-- Images on horizontal cards are now at least a 3:2 aspect ratio
 
 ### Fixed
 

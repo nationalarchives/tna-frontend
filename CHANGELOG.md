@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.35](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...v0.1.35) - 2024-01-16
 
 ### Added
 
@@ -15,11 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Images on horizontal cards are now at least a 3:2 aspect ratio
 - Icon assets have been renamed from `apple-touch-icon-xxx.png` to `icon-xxx.png`
-
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## [0.1.34](https://github.com/nationalarchives/tna-frontend/compare/v0.1.33...v0.1.34) - 2024-01-10
 

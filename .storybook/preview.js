@@ -1,10 +1,12 @@
 import "../src/nationalarchives/all.scss";
+import "../src/nationalarchives/font-awesome.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 
 document.documentElement.classList.add(
   "tna-template",
+  "tna-template--light-theme",
   "tna-template--yellow-accent",
 );
 if (window.self !== window.top) {

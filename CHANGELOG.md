@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 
+- Set smaller minimum width for search field inputs
 - Added more space between the text and chevron in a heading link
 
 ### Deprecated

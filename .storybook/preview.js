@@ -42,13 +42,3 @@ export const decorators = [
     return Story();
   },
 ];
-
-// const fontLoader = async () => ({
-//   fonts: await Promise.all([
-//     document.fonts.load("normal 1em Open Sans"),
-//     document.fonts.load("bold 1em Open Sans"),
-//     document.fonts.load("normal 1em Roboto Mono"),
-//   ]),
-// });
-
-// export const loaders = isChromatic() && document.fonts ? [fontLoader] : [];

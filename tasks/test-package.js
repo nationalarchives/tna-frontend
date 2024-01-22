@@ -41,6 +41,12 @@ const checkExists = [
   "nationalarchives/all.js.map",
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
+  "nationalarchives/font-awesome.css",
+  "nationalarchives/font-awesome.css.map",
+  "nationalarchives/font-awesome.scss",
+  "nationalarchives/prototype-kit.css",
+  "nationalarchives/prototype-kit.css.map",
+  "nationalarchives/prototype-kit.scss",
   // Assets
   "nationalarchives/assets/fonts/fa-brands-400.ttf",
   "nationalarchives/assets/fonts/fa-brands-400.woff2",

@@ -11,6 +11,14 @@ module.exports = {
         type: "umd",
       },
     },
+    analytics: {
+      import: "./src/nationalarchives/analytics.mjs",
+      filename: "analytics.js",
+      library: {
+        name: "TNAFrontendAnalytics",
+        type: "umd",
+      },
+    },
     ...glob
       .sync("./src/nationalarchives/components/**/*.mjs")
       .reduce((acc, path) => {

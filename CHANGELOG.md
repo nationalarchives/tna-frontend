@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set smaller minimum width for search field inputs
 - Added more space between the text and chevron in a heading link
 - Split out Font Awesome into a separate CSS file
+- Change the default `htmlLang` from `en-GB` to `en`
 
 ### Deprecated
 ### Removed

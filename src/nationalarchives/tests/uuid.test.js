@@ -1,11 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { TextEncoder, TextDecoder, store, options } from "util";
 import uuidv4 from "../lib/uuid.mjs";
-
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
-global.store = store;
-global.options = options;
 
 describe("UUID", () => {
   test("Initialisation", async () => {

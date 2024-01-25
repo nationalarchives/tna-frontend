@@ -19,6 +19,9 @@ class EventTracker {
   /** @protected */
   events = [];
 
+  /** @protected */
+  start = new Date();
+
   constructor() {
     componentAnalytics.forEach((componentConfig) => {
       this.addListener(
@@ -83,6 +86,9 @@ class EventTracker {
 
   /** @protected */
   attachListener($el, eventTrigger, $scope, eventName, eventDataInit) {
+    if (!$el) {
+      return;
+    }
     $el.addEventListener(eventTrigger, (event) =>
       this.recordEvent(eventName, {
         ...eventDataInit,
@@ -96,6 +102,7 @@ class EventTracker {
             : eventDataInit.state || null,
         timestamp: new Date().toISOString(),
         uri: window.location.pathname,
+        timeSincePageLoad: new Date() - this.start,
       }),
     );
   }
@@ -140,13 +147,13 @@ class GA4 extends EventTracker {
   recordEvent(eventName, data) {
     const ga4Data = { event: eventName, data };
     window.dataLayer.push(ga4Data);
-    console.log(window.dataLayer);
+    // console.log(window.dataLayer);
   }
 
   /** @protected */
   gtag() {
     window.dataLayer.push(arguments);
-    console.log(window.dataLayer);
+    // console.log(window.dataLayer);
   }
 
   /** @protected */
@@ -223,18 +230,14 @@ analytics.addListener(document.documentElement, "doc", [
     },
   },
 ]);
-// analytics.addListener(
-//   document.getElementById("tna-form__search"),
-//   "search",
-//   [
-//     {
-//       eventName: "search_term_blur",
-//       onEvent: "blur",
-//       data: {
-//         value: valueGetters.value,
-//       },
-//     },
-//   ],
-// );
+analytics.addListener(document.getElementById("tna-form__search"), "search", [
+  {
+    eventName: "search_term_blur",
+    onEvent: "blur",
+    data: {
+      value: valueGetters.value,
+    },
+  },
+]);
 
 export { EventTracker, GA4 };

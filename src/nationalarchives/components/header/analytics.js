@@ -1,17 +1,14 @@
-import { valueGetters } from "../../lib/analytics-helpers.mjs";
-
 export default [
   {
     scope: ".tna-header",
-    data: {
-      name: "Header",
-    },
+    areaName: "header",
     events: [
       {
+        eventName: "toggle",
         targetElement: ".tna-header__navigation-toggle-button",
         onEvent: "click",
         data: {
-          eventName: "toggle",
+          // eslint-disable-next-line no-unused-vars
           state: ($el, $scope, event) => {
             const expanded = $el.getAttribute("aria-expanded");
             if (expanded === null) {

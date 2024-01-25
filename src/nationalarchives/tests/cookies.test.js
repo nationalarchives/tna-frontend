@@ -347,6 +347,8 @@ describe("No existing cookies", () => {
     const testKey = "foo";
     const testValue = "bar";
 
+    expect(mockCallback.mock.calls).toHaveLength(0);
+
     cookies1.set(testKey, testValue);
     expect(mockCallback.mock.calls).toHaveLength(1);
 
@@ -355,6 +357,25 @@ describe("No existing cookies", () => {
 
     cookies2.set(testKey, testValue);
     expect(mockCallback.mock.calls).toHaveLength(3);
+  });
+
+  test("One-time events", async () => {
+    const mockCallback = jest.fn();
+
+    const cookies = new Cookies();
+
+    cookies.once("setCookie", mockCallback);
+
+    const testKey = "foo";
+    const testValue = "bar";
+
+    expect(mockCallback.mock.calls).toHaveLength(0);
+
+    cookies.set(testKey, testValue);
+    expect(mockCallback.mock.calls).toHaveLength(1);
+
+    cookies.set(testKey, testValue);
+    expect(mockCallback.mock.calls).toHaveLength(1);
   });
 
   test("Custom policies", async () => {

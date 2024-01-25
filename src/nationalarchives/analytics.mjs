@@ -14,18 +14,28 @@ const componentAnalytics = [
 
 class EventTracker {
   /** @protected */
-  cookies = new Cookies();
+  cookies = new (window.TNAFrontend?.Cookies || Cookies)();
 
   /** @protected */
   events = [];
 
   constructor() {
-    componentAnalytics.forEach((component) => {
-      this.addListener(component.scope, component.data, component.events);
+    componentAnalytics.forEach((componentConfig) => {
+      this.addListener(
+        componentConfig.scope,
+        componentConfig.areaName,
+        componentConfig.events,
+      );
     });
   }
 
-  addListener(scope, data, events) {
+  /**
+   * Add an event listener.
+   * @param {String|HTMLElement} scope - The element to which the listener is scoped.
+   * @param {String} areaName - The name of the component to pass on to the tracker.
+   * @param {{eventName: String, targetElement: String|undefined, onEvent: String, data: {value: Function|String|undefined, state: Function|String|undefined, [String]: any}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
+   */
+  addListener(scope, areaName, events) {
     let scopeArray;
     if (typeof scope === "string") {
       scopeArray = Array.from(document.querySelectorAll(scope));
@@ -40,29 +50,41 @@ class EventTracker {
         if (!componentTracking.onEvent) {
           return;
         }
-
         if (componentTracking.targetElement) {
           Array.from(
             $scope.querySelectorAll(componentTracking.targetElement),
           ).forEach(($el) =>
-            this.attachListener($el, componentTracking.onEvent, $scope, {
-              ...data,
-              ...componentTracking.data,
-            }),
+            this.attachListener(
+              $el,
+              componentTracking.onEvent,
+              $scope,
+              this.generateEventName(areaName, componentTracking),
+              componentTracking.data,
+            ),
           );
         } else {
-          this.attachListener($scope, componentTracking.onEvent, $scope, {
-            ...data,
-            ...componentTracking.data,
-          });
+          this.attachListener(
+            $scope,
+            componentTracking.onEvent,
+            $scope,
+            this.generateEventName(areaName, componentTracking),
+            componentTracking.data,
+          );
         }
       });
     });
   }
 
-  attachListener($el, eventTrigger, $scope, eventDataInit) {
+  generateEventName(areaName, componentTracking) {
+    return `${areaName}.${
+      componentTracking.eventName || componentTracking.onEvent
+    }`;
+  }
+
+  /** @protected */
+  attachListener($el, eventTrigger, $scope, eventName, eventDataInit) {
     $el.addEventListener(eventTrigger, (event) =>
-      this.recordEvent({
+      this.recordEvent(eventName, {
         ...eventDataInit,
         value:
           typeof eventDataInit.value === "function"
@@ -72,35 +94,89 @@ class EventTracker {
           typeof eventDataInit.state === "function"
             ? eventDataInit.state.call(this, $el, $scope, event)
             : eventDataInit.state || null,
+        timestamp: new Date().toISOString(),
+        uri: window.location.pathname,
       }),
     );
   }
 
-  recordEvent(data) {
-    const expandedData = {
-      ...data,
-      timestamp: new Date().toISOString(),
-      uri: window.location.pathname,
-    };
-    console.log(expandedData);
-    this.events.push(expandedData);
+  /** @protected */
+  recordEvent(eventName, data) {
+    this.events.push({ event: eventName, data });
   }
 }
 
-class GoogleAnalytics4 extends EventTracker {
+/**
+ * Class to handle Google Analytics 4 reporting.
+ * @class GA4
+ * @extends EventTracker
+ * @constructor
+ * @public
+ */
+class GA4 extends EventTracker {
+  trackingCodeAdded = false;
+  trackingEnabled = false;
+  gTagId;
+
   constructor(id) {
     super();
-    console.log(`Tracking ID: ${id}`);
+    this.gTagId = id;
+    window.dataLayer = window.dataLayer || [];
+    if (this.cookies.isPolicyAccepted("usage")) {
+      this.enableTracking();
+    }
+    this.cookies.on("changePolicy", (policies) => {
+      if (Object.hasOwn(policies, "usage")) {
+        if (policies["usage"]) {
+          this.enableTracking();
+        } else {
+          this.disableTracking();
+        }
+      }
+    });
   }
 
-  _addTrackingCode() {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "";
-    document.head.appendChild(script);
+  /** @protected */
+  recordEvent(eventName, data) {
+    const ga4Data = { event: eventName, data };
+    window.dataLayer.push(ga4Data);
+    console.log(window.dataLayer);
   }
 
-  _removeTrackingCode() {}
+  /** @protected */
+  gtag() {
+    window.dataLayer.push(arguments);
+    console.log(window.dataLayer);
+  }
+
+  /** @protected */
+  enableTracking() {
+    if (!this.trackingEnabled) {
+      window["ga-disable-GA_MEASUREMENT_ID"] = false;
+      this.trackingEnabled = true;
+      if (!this.trackingCodeAdded) {
+        const script = document.createElement("script");
+        script.setAttribute("async", true);
+        script.setAttribute(
+          "src",
+          `https://www.googletagmanager.com/gtm.js?id=${this.gTagId}&l=dataLayer`,
+        );
+        // document.head.appendChild(script);
+        this.gtag("js", new Date());
+        this.trackingCodeAdded = true;
+      }
+      this.gtag("set", { allow_ad_personalization_signals: false });
+    }
+  }
+
+  /** @protected */
+  disableTracking() {
+    if (this.trackingEnabled) {
+      window["ga-disable-GA_MEASUREMENT_ID"] = true;
+      this.gtag("set", { allow_ad_personalization_signals: true });
+      this.trackingEnabled = false;
+    }
+  }
 }
 
 /*
@@ -108,23 +184,24 @@ class GoogleAnalytics4 extends EventTracker {
  * TEMP TESTING
  * ==========================================
  */
-const analytics = new GoogleAnalytics4("test");
-analytics.addListener(".etna-article__sidebar", { name: "Sidebar" }, [
+const analytics = new GA4("test");
+analytics.addListener(".etna-article__sidebar", "sidebar", [
   {
+    eventName: "scection_jump",
     targetElement: ".etna-article__sidebar-item",
     onEvent: "click",
     data: {
-      eventName: "scection_jump",
       value: valueGetters.text,
     },
   },
 ]);
-analytics.addListener(".etna-article", { name: "Article" }, [
+analytics.addListener(".etna-article", "article", [
   {
+    eventName: "scection_toggle",
     targetElement: ".etna-article__section-button",
     onEvent: "click",
     data: {
-      eventName: "scection_toggle",
+      // eslint-disable-next-line no-unused-vars
       state: ($el, $scope, event) => {
         const expanded = $el.getAttribute("aria-expanded");
         if (expanded === null) {
@@ -136,37 +213,28 @@ analytics.addListener(".etna-article", { name: "Article" }, [
     },
   },
 ]);
-analytics.addListener(document, { name: "Document" }, [
-  // {
-  //   onEvent: "scroll",
-  //   data: {
-  //     eventName: "page_scroll",
-  //     value: ($el, $scope, event) => $scope.querySelector("html").scrollTop,
-  //   },
-  // },
-]);
-analytics.addListener(document.documentElement, { name: "HTML" }, [
+analytics.addListener(document.documentElement, "doc", [
   {
+    eventName: "double_click",
     onEvent: "dblclick",
     data: {
-      eventName: "double_click",
       state: ($el, $scope, event) => getXPathTo(event.target),
       value: ($el, $scope, event) => event.target.innerHTML,
     },
   },
 ]);
-analytics.addListener(
-  document.getElementById("tna-form__search"),
-  { name: "Search input" },
-  [
-    {
-      onEvent: "blur",
-      data: {
-        eventName: "search_term_blur",
-        value: valueGetters.value,
-      },
-    },
-  ],
-);
+// analytics.addListener(
+//   document.getElementById("tna-form__search"),
+//   "search",
+//   [
+//     {
+//       eventName: "search_term_blur",
+//       onEvent: "blur",
+//       data: {
+//         value: valueGetters.value,
+//       },
+//     },
+//   ],
+// );
 
-export { GoogleAnalytics4 };
+export { EventTracker, GA4 };

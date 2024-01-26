@@ -162,9 +162,6 @@
   }
 
   &--tint .tna-hero__figure {
-    // @include colour.colour-border("keyline-dark", 1px, solid, top);
-    // @include colour.colour-border("keyline-dark", 1px, solid, bottom);
-
     &::before,
     &::after {
       position: absolute;
@@ -192,14 +189,6 @@
 
     .tna-hero__image {
       filter: grayscale(1) contrast(1.75) brightness(1.2);
-    }
-
-    .tna-hero__content-inner {
-      // @include colour.colour-border("keyline-dark", 1px);
-
-      @include media.on-mobile {
-        // border: none;
-      }
     }
   }
 

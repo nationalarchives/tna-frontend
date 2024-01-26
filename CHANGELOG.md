@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 
+- The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
+- The card style of `boxed` has been changed to `contrast` in line with other components
+- The background tint colour on the light theme is slightly darker for better contrast with the page background
 - Set smaller minimum width for search field inputs
 - Added more space between the text and chevron in a heading link
 - Split out Font Awesome into a separate CSS file
@@ -17,6 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Removed option for `tna-search-field--no-border` - borders are dictated by the background colours and page theme
+
 ### Fixed
 ### Security
 

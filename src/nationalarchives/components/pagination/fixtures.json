@@ -5,42 +5,42 @@
       "name": "default",
       "options": {
         "previous": {
-          "href": "#"
+          "href": "#previous"
         },
         "items": [
           {
             "number": 1,
-            "href": "#"
+            "href": "#1"
           },
           {
             "ellipsis": true
           },
           {
             "number": 6,
-            "href": "#"
+            "href": "#6"
           },
           {
             "number": 7,
             "current": true,
-            "href": "#"
+            "href": "#7"
           },
           {
             "number": 8,
-            "href": "#"
+            "href": "#8"
           },
           {
             "ellipsis": true
           },
           {
             "number": 42,
-            "href": "#"
+            "href": "#42"
           }
         ],
         "next": {
-          "href": "#"
+          "href": "#next"
         }
       },
-      "html": "<nav class=\"tna-pagination \" role=\"navigation\" aria-label=\"Pagination\"><div class=\"tna-pagination__prev\"><a href=\"#\" class=\"tna-button tna-button--icon-only-mobile\" rel=\"prev\"><i class=\"fa-solid fa-arrow-left\" aria-hidden=\"true\"></i>Previous</a></div><ul class=\"tna-pagination__list\"><li class=\"tna-pagination__item\"><a href=\"#\" class=\"tna-button tna-pagination__link\" aria-label=\"\">1</a></li><li class=\"tna-pagination__item tna-pagination__item--ellipses\">&ctdot;</li><li class=\"tna-pagination__item\"><a href=\"#\" class=\"tna-button tna-pagination__link\" aria-label=\"\">6</a></li><li class=\"tna-pagination__item tna-pagination__item--current\"><a href=\"#\" class=\"tna-button tna-pagination__link tna-button--accent\" aria-label=\"\">7</a></li><li class=\"tna-pagination__item\"><a href=\"#\" class=\"tna-button tna-pagination__link\" aria-label=\"\">8</a></li><li class=\"tna-pagination__item tna-pagination__item--ellipses\">&ctdot;</li><li class=\"tna-pagination__item\"><a href=\"#\" class=\"tna-button tna-pagination__link\" aria-label=\"\">42</a></li></ul><div class=\"tna-pagination__next\"><a href=\"#\" class=\"tna-button tna-button--icon-right tna-button--icon-only-mobile\" rel=\"next\"><i class=\"fa-solid fa-arrow-right\" aria-hidden=\"true\"></i>Next</a></div></nav>",
+      "html": "<nav class=\"tna-pagination \" role=\"navigation\" aria-label=\"Pagination\"><div class=\"tna-pagination__prev\"><a href=\"#previous\" class=\"tna-button tna-button--icon-only-mobile\" rel=\"prev\"><i class=\"fa-solid fa-arrow-left\" aria-hidden=\"true\"></i>Previous</a></div><ul class=\"tna-pagination__list\"><li class=\"tna-pagination__item\"><a href=\"#1\" class=\"tna-button tna-pagination__link\" aria-label=\"\">1</a></li><li class=\"tna-pagination__item tna-pagination__item--ellipses\">&ctdot;</li><li class=\"tna-pagination__item\"><a href=\"#6\" class=\"tna-button tna-pagination__link\" aria-label=\"\">6</a></li><li class=\"tna-pagination__item tna-pagination__item--current\"><a href=\"#7\" class=\"tna-button tna-pagination__link tna-button--accent\" aria-label=\"\">7</a></li><li class=\"tna-pagination__item\"><a href=\"#8\" class=\"tna-button tna-pagination__link\" aria-label=\"\">8</a></li><li class=\"tna-pagination__item tna-pagination__item--ellipses\">&ctdot;</li><li class=\"tna-pagination__item\"><a href=\"#42\" class=\"tna-button tna-pagination__link\" aria-label=\"\">42</a></li></ul><div class=\"tna-pagination__next\"><a href=\"#next\" class=\"tna-button tna-button--icon-right tna-button--icon-only-mobile\" rel=\"next\"><i class=\"fa-solid fa-arrow-right\" aria-hidden=\"true\"></i>Next</a></div></nav>",
       "hidden": false
     }
   ]

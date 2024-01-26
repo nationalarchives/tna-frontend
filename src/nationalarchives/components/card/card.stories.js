@@ -1,5 +1,6 @@
 import Card from "./template.njk";
 import macroOptions from "./macro-options.json";
+import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   supertitle: { control: "text" },
@@ -21,7 +22,7 @@ const argTypes = {
   text: { control: "text" },
   actions: { control: "object" },
   horizontal: { control: "boolean" },
-  style: { control: "inline-radio", options: ["none", "boxed", "accent"] },
+  style: { control: "inline-radio", options: ["none", "contrast", "accent"] },
   plainSupertitle: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
@@ -170,8 +171,8 @@ PlainSupertitle.args = {
   classes: "tna-card--demo",
 };
 
-export const Boxed = Template.bind({});
-Boxed.args = {
+export const Contrast = Template.bind({});
+Contrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
@@ -184,7 +185,7 @@ Boxed.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  style: "boxed",
+  style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -234,8 +235,8 @@ Horizontal.args = {
   classes: "tna-card--demo",
 };
 
-export const HorizontalBoxed = Template.bind({});
-HorizontalBoxed.args = {
+export const HorizontalContrast = Template.bind({});
+HorizontalContrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
@@ -256,7 +257,7 @@ HorizontalBoxed.args = {
     },
   ],
   horizontal: true,
-  style: "boxed",
+  style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -284,6 +285,44 @@ HorizontalAccent.args = {
   ],
   horizontal: true,
   style: "accent",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const HorizontalMinimal = Template.bind({});
+HorizontalMinimal.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  horizontal: true,
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const HorizontalMobile = Template.bind({});
+HorizontalMobile.parameters = {
+  viewport: {
+    defaultViewport: "small",
+  },
+  chromatic: {
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  },
+};
+HorizontalMobile.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  horizontal: true,
   htmlElement: "article",
   classes: "tna-card--demo",
 };

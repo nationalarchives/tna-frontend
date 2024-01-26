@@ -47,6 +47,8 @@ export default class Cookies {
   secure = true;
   /** @protected */
   policiesKey = "";
+  /** @protected */
+  events = null;
 
   /**
    * Create a cookie handler.

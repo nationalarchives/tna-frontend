@@ -1,8 +1,8 @@
 @use "../tools/colour";
 
-:root {
-  @include colour.colour-css-vars;
-}
+// :root {
+//   @include colour.colour-css-vars;
+// }
 
 .tna-template {
   @include colour.colour-background("page-background");

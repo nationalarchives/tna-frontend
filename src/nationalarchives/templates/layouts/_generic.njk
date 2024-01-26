@@ -1,13 +1,18 @@
 {# Based on https://github.com/alphagov/govuk-frontend/blob/8b6bf304b9fc891f64459c25a08f3d623f3fea72/packages/govuk-frontend/src/govuk/template.njk #}
+
 {% from "nationalarchives/components/cookie-banner/macro.njk" import tnaCookieBanner -%}
 {% from "nationalarchives/components/footer/macro.njk" import tnaFooter -%}
 {% from "nationalarchives/components/header/macro.njk" import tnaHeader -%}
 {% from "nationalarchives/components/skip-link/macro.njk" import tnaSkipLink -%}
+
+{% set siteTitle = 'The National Archives' %}
+{% set pageTitle = '' %}
+
 <!DOCTYPE html>
-<html lang="{{ htmlLang | default('en-GB') }}" class="tna-template tna-template--{{ theme | default('system') }}-theme tna-template--{{ themeAccent | default('black') }}-accent {{ htmlClasses }}">
+<html lang="{{ htmlLang | default('en') }}" class="tna-template tna-template--{{ theme | default('system') }}-theme tna-template--{{ themeAccent | default('black') }}-accent {{ htmlClasses }}"{% for attribute, value in htmlAttributes %} {{attribute}}="{{value}}"{% endfor %}>
   <head>
     <meta charset="utf-8">
-    <title>{% block pageTitle %}The National Archives{% endblock %}</title>
+    <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle }}{% else %}{{ siteTitle }}{% endif %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#000000') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +20,18 @@
     {% block headIcons %}
     <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ assetPath | default('/assets') }}/images/favicon.ico" type="image/x-icon">
     <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/mask-icon.svg" color="{{ themeColor | default('#000000') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" href="{{ assetPath | default('/assets') }}/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="48x48" href="{{ assetPath | default('/assets') }}/images/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ assetPath | default('/assets') }}/images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="{{ assetPath | default('/assets') }}/images/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ assetPath | default('/assets') }}/images/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ assetPath | default('/assets') }}/images/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ assetPath | default('/assets') }}/images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{ assetPath | default('/assets') }}/images/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ assetPath | default('/assets') }}/images/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ assetPath | default('/assets') }}/images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="{{ assetPath | default('/assets') }}/images/icon-256x256.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="{{ assetPath | default('/assets') }}/images/icon-512x512.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="{{ assetPath | default('/assets') }}/images/icon-1024x1024.png">
     {% endblock %}
 
     {% block head %}{% endblock %}

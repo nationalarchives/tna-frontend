@@ -472,7 +472,7 @@ const Template = ({ theme, accent }) => {
             ${Card({
               params: {
                 ...cardDefaultOptions,
-                style: "boxed",
+                style: "contrast",
                 classes: "tna-!--margin-bottom-m",
               },
             })}
@@ -505,7 +505,7 @@ const Template = ({ theme, accent }) => {
               params: {
                 ...cardDefaultOptions,
                 horizontal: true,
-                style: "boxed",
+                style: "contrast",
                 classes: "tna-!--margin-bottom-m",
               },
             })}
@@ -1068,7 +1068,6 @@ const Template = ({ theme, accent }) => {
                   headingSize: "l",
                   id: "search1",
                   name: "q",
-                  formGroupClasses: "tna-search-field--no-border",
                 },
               })}
               ${TextInput({

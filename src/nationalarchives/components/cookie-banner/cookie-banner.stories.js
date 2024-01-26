@@ -71,7 +71,6 @@ export const Accept = Template.bind({});
 Accept.args = {
   serviceName: "My service",
   cookiesUrl: "#",
-  cookiesPath: "/tna-frontend/",
   allowInsecure: true,
   style: "contrast",
   classes: "tna-cookie-banner--demo",
@@ -108,13 +107,14 @@ Accept.play = async ({ canvasElement }) => {
   // await userEvent.click(closeButton);
 
   // await expect(closeButton).not.toBeVisible();
+
+  await cookies.deleteAll();
 };
 
 export const Reject = Template.bind({});
 Reject.args = {
   serviceName: "My service",
   cookiesUrl: "#",
-  cookiesPath: "/tna-frontend/",
   style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
@@ -152,7 +152,6 @@ export const CustomPolicies = Template.bind({});
 CustomPolicies.args = {
   serviceName: "My service",
   cookiesUrl: "#",
-  cookiesPath: "/tna-frontend/",
   policies: "custom",
   style: "contrast",
   classes: "tna-cookie-banner--demo",
@@ -189,7 +188,6 @@ export const Existing = Template.bind({});
 Existing.args = {
   serviceName: "My service",
   cookiesUrl: "#",
-  cookiesPath: "/tna-frontend/",
   allowInsecure: true,
   style: "contrast",
   classes: "tna-cookie-banner--demo",

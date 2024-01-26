@@ -1,11 +1,11 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.accent -%}
-  {%- set containerClasses = containerClasses.concat('tna-header--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-global-header--accent') -%}
 {%- endif -%}
-<header class="tna-header {{ containerClasses | join(' ') }}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <div class="tna-container tna-header__contents">
-    <div class="tna-column tna-header__logo">
-      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-link tna-header__logo-link--href" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-link"{%- endif -%}>
+<header class="tna-global-header {{ containerClasses | join(' ') }}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <div class="tna-container tna-global-header__contents">
+    <div class="tna-column tna-global-header__logo">
+      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-global-header__logo-link tna-global-header__logo-link--href" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-global-header__logo-link"{%- endif -%}>
         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" style="enable-background:new 0 0 160 160" viewBox="0 0 160 160" width="96" height="96">
           <path fill="#fff" d="M0 0h160v160H0z" class="tna-logo__background"/>
           <g class="tna-logo__foreground" fill="#000">
@@ -14,18 +14,18 @@
           </g>
         </svg>
         {%- if params.logo.strapline -%}
-        <span class="tna-header__logo-strapline">{{ params.logo.strapline }}</span>
+        <span class="tna-global-header__logo-strapline">{{ params.logo.strapline }}</span>
         {%- endif -%}
       </{%- if params.logo.href -%}a{%- else -%}span{%- endif -%}>
     </div>
     {%- if params.navigation or params.topNavigation -%}
-    <div class="tna-column tna-column--flex-1- tna-header__navigation-toggle"><!-- POPULATED BY JAVASCRIPT IF ENABLED --></div>
-    <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" aria-label="Main site navigation">
+    <div class="tna-column tna-column--flex-1- tna-global-header__navigation-toggle"><!-- POPULATED BY JAVASCRIPT IF ENABLED --></div>
+    <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-global-header__navigation" aria-label="Main site navigation">
       {%- if params.navigation -%}
-      <ul class="tna-header__navigation-items">
+      <ul class="tna-global-header__navigation-items">
         {%- for item in params.navigation -%}
-        <li class="tna-header__navigation-item">
-          <a href="{{ item.href }}" class="tna-header__navigation-item-link{%- if item.selected %} tna-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="true"{% endif %} {%- if item.title %} title="{{ item.title }}"{% endif %}>
+        <li class="tna-global-header__navigation-item">
+          <a href="{{ item.href }}" class="tna-global-header__navigation-item-link{%- if item.selected %} tna-global-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="true"{% endif %} {%- if item.title %} title="{{ item.title }}"{% endif %}>
             {{ item.text }}
           </a>
         </li>
@@ -33,10 +33,10 @@
       </ul>
       {%- endif -%}
       {%- if params.topNavigation -%}
-      <ul class="tna-header__top-navigation-items">
+      <ul class="tna-global-header__top-navigation-items">
         {%- for item in params.topNavigation -%}
-        <li class="tna-header__top-navigation-item">
-          <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+        <li class="tna-global-header__top-navigation-item">
+          <a href="{{ item.href }}" class="tna-global-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
             {%- if item.brandIcon -%}
             <i class="fa-brands fa-fw fa-{{ item.brandIcon }}"></i>
             {%- elseif item.icon -%}

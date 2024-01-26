@@ -45,7 +45,8 @@
     {% block bodyStart %}
       {% block cookies %}
         {{ tnaCookieBanner({
-          url: '#'
+          cookiesUrl: '#',
+          cookiesPath: "/tna-frontend/"
         }) }}
       {% endblock %}
       

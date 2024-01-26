@@ -1,5 +1,6 @@
 import Card from "./template.njk";
 import macroOptions from "./macro-options.json";
+import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   supertitle: { control: "text" },
@@ -284,6 +285,44 @@ HorizontalAccent.args = {
   ],
   horizontal: true,
   style: "accent",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const HorizontalMinimal = Template.bind({});
+HorizontalMinimal.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  horizontal: true,
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const HorizontalMobile = Template.bind({});
+HorizontalMobile.parameters = {
+  viewport: {
+    defaultViewport: "small",
+  },
+  chromatic: {
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  },
+};
+HorizontalMobile.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  horizontal: true,
   htmlElement: "article",
   classes: "tna-card--demo",
 };

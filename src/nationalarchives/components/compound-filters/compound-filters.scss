@@ -1,0 +1,78 @@
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+@use "../../utilities";
+
+.tna-compound-filters {
+  @include spacing.space-above;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+
+  &__item {
+    padding: 0 0.125rem 0 0.75rem;
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    @include typography.relative-font-size(16);
+    line-height: 1.75;
+
+    @include colour.colour-border("keyline", 1px);
+    border-radius: 1rem;
+
+    &--remove {
+      padding-right: 0;
+      padding-left: 0;
+
+      background: none;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  &__link {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    position: relative;
+
+    text-decoration: none;
+    font-size: 0;
+    line-height: 0;
+
+    border-radius: 100%;
+
+    &::before,
+    &::after {
+      width: 2px;
+      height: 1rem;
+      margin-left: -1px;
+
+      display: block;
+
+      position: absolute;
+      top: 0.25rem;
+      left: 50%;
+
+      @include colour.colour-background("font-base");
+
+      content: "";
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      @include colour.contrast;
+    }
+  }
+}

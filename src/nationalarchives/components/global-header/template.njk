@@ -2,7 +2,7 @@
 {%- if params.accent -%}
   {%- set containerClasses = containerClasses.concat('tna-header--accent') -%}
 {%- endif -%}
-<header class="tna-header {{ containerClasses | join(' ') }}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<header class="tna-header {{ containerClasses | join(' ') }}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container tna-header__contents">
     <div class="tna-column tna-header__logo">
       <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-link tna-header__logo-link--href" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-link"{%- endif -%}>

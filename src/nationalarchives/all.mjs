@@ -55,6 +55,13 @@ const initAll = (options) => {
     new Gallery($gallery).init();
   });
 
+  const $globalHeader = $scope.querySelector(
+    '[data-module="tna-global-header"]',
+  );
+  if ($globalHeader) {
+    new GlobalHeader($globalHeader).init();
+  }
+
   const $header = $scope.querySelector('[data-module="tna-header"]');
   if ($header) {
     new Header($header).init();
@@ -89,6 +96,7 @@ export {
   Breadcrumbs,
   CookieBanner,
   Gallery,
+  GlobalHeader,
   Header,
   Picture,
   SensitiveImage,

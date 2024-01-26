@@ -96,6 +96,7 @@ const Template = ({ theme, accent }) => {
     ${CookieBanner({
       params: {
         cookiesUrl: "#",
+        cookiesPath: "/tna-frontend/",
       },
     })}
     -->

@@ -63,6 +63,7 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   classes: "tna-cookie-banner--demo",
 };
 
@@ -70,6 +71,7 @@ export const Accept = Template.bind({});
 Accept.args = {
   serviceName: "My service",
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   allowInsecure: true,
   style: "contrast",
   classes: "tna-cookie-banner--demo",
@@ -112,6 +114,7 @@ export const Reject = Template.bind({});
 Reject.args = {
   serviceName: "My service",
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
@@ -149,6 +152,7 @@ export const CustomPolicies = Template.bind({});
 CustomPolicies.args = {
   serviceName: "My service",
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   policies: "custom",
   style: "contrast",
   classes: "tna-cookie-banner--demo",
@@ -185,6 +189,7 @@ export const Existing = Template.bind({});
 Existing.args = {
   serviceName: "My service",
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   allowInsecure: true,
   style: "contrast",
   classes: "tna-cookie-banner--demo",
@@ -221,6 +226,7 @@ Existing.play = async ({ canvasElement }) => {
 // EventHandling.args = {
 //   serviceName: "My service",
 //   cookiesUrl: "#",
+//   cookiesPath: "/tna-frontend/",
 //   policies: "custom",
 //   classes: "tna-cookie-banner--demo",
 // };

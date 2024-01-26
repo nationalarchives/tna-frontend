@@ -1,0 +1,116 @@
+[
+  {
+    "name": "logo",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "href",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "strapline",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "navigation",
+    "type": "array",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "topNavigation",
+    "type": "array",
+    "required": false,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "brandIcon",
+        "type": "string",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "accent",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the header."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the header."
+  }
+]

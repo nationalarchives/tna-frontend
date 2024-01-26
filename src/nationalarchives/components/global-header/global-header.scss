@@ -1,0 +1,506 @@
+@use "sass:math";
+@use "../../variables/colour" as colourVars; // TODO
+@use "../../variables/grid" as gridVars;
+@use "../../tools/colour";
+@use "../../tools/typography";
+@use "../../tools/media";
+@use "../../utilities";
+@use "../grid";
+
+// TODO: Only for the header component at the moment - remove on redesign
+@mixin uninvert {
+  @include colour.colour-css-vars;
+
+  .tna-template--system-theme & {
+    @include colour.colour-css-vars;
+
+    @media (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-dark;
+    }
+
+    @media (prefers-contrast: more) {
+      @include colour.colour-css-vars-high-contrast;
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour.colour-css-vars-high-contrast-dark;
+    }
+  }
+
+  .tna-template--light-theme & {
+    @include colour.colour-css-vars;
+  }
+
+  .tna-template--dark-theme & {
+    @include colour.colour-css-vars-dark;
+  }
+
+  .tna-template--high-contrast-theme & {
+    @include colour.colour-css-vars-high-contrast;
+  }
+
+  .tna-template--high-contrast-theme.tna-template--dark-theme & {
+    @include colour.colour-css-vars-high-contrast-dark;
+  }
+}
+
+.tna-header {
+  @include colour.contrast;
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 1;
+
+    border-bottom: 1px transparent solid;
+
+    content: "";
+  }
+
+  &:not(&--accent) {
+    background-color: colour.brand-colour("black");
+  }
+
+  &__contents {
+    &.tna-container {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: flex-end;
+
+    color: inherit;
+    text-decoration: none;
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      @include colour.colour-outline("font-dark", 0.375rem, solid);
+      outline-offset: 1px;
+    }
+  }
+
+  .tna-logo {
+    width: 6rem;
+    height: 6rem;
+
+    display: inline-block;
+  }
+
+  .tna-logo__foreground {
+    @include colour.colour-fill("font-dark");
+  }
+
+  .tna-logo__background {
+    fill: none;
+  }
+
+  &__logo-strapline {
+    margin: 0 0.75rem;
+
+    display: inline-block;
+
+    line-height: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__navigation-toggle {
+    align-self: center;
+  }
+
+  &__hamburger {
+    width: 2rem;
+    height: 0.25rem;
+
+    display: block;
+
+    @include colour.colour-background("font-dark");
+
+    // transition: height 1ms 100ms;
+
+    &::before,
+    &::after {
+      height: 0.25rem;
+
+      display: block;
+
+      position: absolute;
+      right: 0;
+      left: 0;
+
+      background-color: inherit;
+
+      // transition:
+      //   top 100ms 100ms,
+      //   bottom 100ms 100ms,
+      //   transform 100ms;
+
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__navigation-toggle-button {
+    height: 2rem;
+    padding: 0;
+
+    display: block;
+
+    position: relative;
+
+    appearance: none;
+
+    font-size: 0;
+
+    background: none;
+
+    border: 0 transparent solid;
+    border-width: 0.25rem 0;
+
+    cursor: pointer;
+
+    &--opened {
+      .tna-header__hamburger {
+        height: 0;
+
+        &::before,
+        &::after {
+          // transition:
+          //   top 100ms,
+          //   bottom 100ms,
+          //   transform 100ms 100ms;
+        }
+
+        &::before {
+          top: 0.625rem;
+
+          transform: rotate(-135deg);
+        }
+
+        &::after {
+          bottom: 0.625rem;
+
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  &__top-navigation-items {
+    margin: 0;
+    padding: 1.25rem 0;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem 1.5rem;
+
+    list-style: none;
+
+    line-height: 1;
+  }
+
+  &__top-navigation-item {
+    display: block;
+  }
+
+  &__top-navigation-item-link {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    @include typography.relative-font-size(16);
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover,
+    &--selected {
+      &,
+      &:link,
+      &:visited {
+        @include typography.interacted-text-decoration;
+      }
+    }
+
+    .fa-solid,
+    .fa-brands {
+      margin-right: 0.375rem;
+    }
+  }
+
+  &__navigation-items {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+
+    list-style: none;
+
+    white-space: nowrap;
+  }
+
+  &__navigation-item {
+  }
+
+  &__navigation-item-link {
+    padding: 0.5rem 1rem;
+
+    display: inline-block;
+
+    @include typography.heading-font;
+    text-decoration: none;
+    line-height: 2;
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover,
+    &--selected {
+      text-decoration: none;
+
+      &,
+      &:link,
+      &:visited {
+        @include uninvert;
+        @include colour.colour-font("font-dark");
+        @include colour.colour-background("page-background");
+      }
+    }
+  }
+
+  &--accent {
+    @include colour.accent;
+  }
+
+  @include media.on-larger-than-mobile {
+    .tna-header__navigation-toggle {
+      display: none;
+    }
+
+    &__navigation-item-link {
+      border: 1px transparent solid;
+      border-bottom: none;
+    }
+  }
+
+  @include media.on-mobile {
+    &__contents {
+      &.tna-container {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    &__logo {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .tna-logo {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1.5;
+    }
+
+    &__navigation-toggle {
+      &.tna-column {
+        padding-left: 0;
+      }
+    }
+
+    &__navigation {
+      @include uninvert;
+      @include colour.colour-font("font-base");
+      @include typography.relative-font-size(20);
+
+      align-items: stretch;
+      flex-direction: column;
+
+      &.tna-column {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .tna-template--js-enabled & {
+        display: none;
+
+        &--open {
+          display: flex;
+        }
+      }
+    }
+
+    &__top-navigation-items {
+      padding: 0.5rem 1rem;
+
+      justify-content: flex-start;
+
+      @include colour.colour-background("page-background");
+
+      @include colour.colour-border("keyline", 1px, solid, bottom);
+    }
+
+    &__top-navigation-item {
+      margin: 0;
+      padding: 0.5rem;
+    }
+
+    &__top-navigation-item-link {
+    }
+
+    &__navigation-items {
+      width: 100%;
+
+      flex-direction: column;
+      gap: 0;
+
+      @include colour.colour-background("page-background");
+    }
+
+    &__navigation-item {
+      margin: 0;
+
+      display: block;
+
+      @include colour.colour-border("keyline", 1px, solid, bottom);
+    }
+
+    &__navigation-item-link {
+      padding-right: gridVars.$gutter-width-tiny;
+      padding-left: gridVars.$gutter-width-tiny + 0.5rem;
+
+      display: block;
+
+      position: relative;
+
+      line-height: #{math.div(1, 1.125) * 2};
+
+      &::after {
+        width: 0;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        @include colour.colour-background("font-dark");
+
+        content: "";
+      }
+
+      &:hover {
+        &::after {
+          width: 0.25rem;
+        }
+      }
+
+      &--selected {
+        &::after,
+        &:hover::after {
+          width: 0.5rem;
+        }
+      }
+    }
+  }
+
+  @include media.on-small {
+    &__logo {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width;
+        padding-left: gridVars.$gutter-width;
+      }
+    }
+
+    &__navigation-toggle {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width;
+      }
+    }
+  }
+
+  @include media.on-tiny {
+    &__logo {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width-tiny;
+        padding-left: gridVars.$gutter-width-tiny;
+      }
+    }
+
+    .tna-logo {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1;
+    }
+
+    &__navigation-toggle {
+      &.tna-column {
+        padding-right: gridVars.$gutter-width-tiny;
+      }
+    }
+  }
+
+  @include colour.on-high-contrast {
+    &::after {
+      @include colour.colour-border("keyline-dark");
+    }
+
+    @include media.on-larger-than-mobile {
+      &__navigation-item-link {
+        &:hover,
+        &--selected {
+          &,
+          &:link,
+          &:visited {
+            @include colour.colour-border("keyline-dark");
+          }
+        }
+      }
+    }
+  }
+}

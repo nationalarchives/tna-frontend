@@ -262,7 +262,6 @@
 
     position: relative;
 
-    // @include typography.heading-font;
     text-decoration: none;
     line-height: 2;
 
@@ -286,6 +285,8 @@
     }
 
     &--selected {
+      @include typography.main-font-weight-bold;
+
       &,
       &:hover {
         &::after {
@@ -330,8 +331,6 @@
     }
 
     &__navigation {
-      @include typography.relative-font-size(20);
-
       align-items: stretch;
       flex-direction: column;
 

@@ -1,4 +1,10 @@
-# The National Archives Cookie Banner
+<img src="../../assets/images/tna-square-logo.svg" alt="The National Archives logo" title="The National Archives" width="100" />
+
+# TNA Frontend Cookie Banner
+
+[![Latest release](https://img.shields.io/github/v/release/nationalarchives/tna-frontend?style=flat-square&logo=github&logoColor=white&sort=semver)](https://github.com/nationalarchives/tna-frontend/releases)
+[![NPM version](https://img.shields.io/npm/v/@nationalarchives/frontend-cookie-banner?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/package/@nationalarchives/frontend-cookie-banner)
+[![Licence](https://img.shields.io/github/license/nationalarchives/tna-frontend?style=flat-square)](https://github.com/nationalarchives/tna-frontend/blob/main/LICENCE)
 
 Use the cookie banner from TNA Frontend in your service.
 

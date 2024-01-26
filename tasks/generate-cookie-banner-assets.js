@@ -22,7 +22,8 @@ const html = nunjucks
       allowInsecure: false,
     },
   })
-  .trim();
+  .trim()
+  .replace(/ " /g, '" ');
 
 fs.readFile(
   "src/nationalarchives/components/cookie-banner/README.md",

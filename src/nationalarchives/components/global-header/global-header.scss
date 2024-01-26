@@ -182,7 +182,7 @@
     cursor: pointer;
 
     &--opened {
-      .tna-header__hamburger {
+      .tna-global-header__hamburger {
         height: 0;
 
         &::before,
@@ -313,7 +313,7 @@
   }
 
   @include media.on-larger-than-mobile {
-    .tna-header__navigation-toggle {
+    .tna-global-header__navigation-toggle {
       display: none;
     }
 

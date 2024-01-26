@@ -84,7 +84,7 @@ Standard.args = {
       href: "#/gamma",
     },
   ],
-  classes: "tna-header--demo",
+  classes: "tna-global-header--demo",
 };
 
 export const Desktop = Template.bind({});
@@ -112,16 +112,16 @@ Desktop.args = {
       href: "#/gamma",
     },
   ],
-  classes: "tna-header--demo",
+  classes: "tna-global-header--demo",
 };
 Desktop.play = async ({ canvasElement }) => {
   await new Promise((r) => setTimeout(r, 100));
 
   const $navigationItems = canvasElement.querySelector(
-    `.tna-header__navigation-items`,
+    `.tna-global-header__navigation-items`,
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-toggle-button`,
+    `.tna-global-header__navigation-toggle-button`,
   );
 
   await expect($navigationItems).toBeVisible();
@@ -153,7 +153,7 @@ Mobile.args = {
       href: "#/gamma",
     },
   ],
-  classes: "tna-header--demo",
+  classes: "tna-global-header--demo",
 };
 Mobile.play = async ({ args, canvasElement, step }) => {
   await new Promise((r) => setTimeout(r, 100));
@@ -161,13 +161,13 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   const canvas = within(canvasElement);
 
   const $navigationItems = canvasElement.querySelector(
-    `.tna-header__navigation-items`,
+    `.tna-global-header__navigation-items`,
   );
   const [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
     canvas.getByText(navigationItem.text),
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-toggle-button`,
+    `.tna-global-header__navigation-toggle-button`,
   );
 
   await step("Initial load", async () => {

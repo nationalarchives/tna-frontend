@@ -5,7 +5,6 @@ import Card from "../../../components/card/template.njk";
 import Checkboxes from "../../../components/checkboxes/template.njk";
 import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
-import CookieBanner from "../../../components/cookie-banner/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
 import Header from "../../../components/header/template.njk";
 import Hero from "../../../components/hero/template.njk";
@@ -92,13 +91,6 @@ const Template = ({ theme, accent }) => {
               : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
-    <!--
-    ${CookieBanner({
-      params: {
-        cookiesUrl: "#",
-      },
-    })}
-    -->
     ${SkipLink({
       params: {
         href: "main-content",

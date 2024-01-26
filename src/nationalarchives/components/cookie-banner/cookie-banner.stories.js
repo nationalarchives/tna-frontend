@@ -1,7 +1,6 @@
 import CookieBanner from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { within, userEvent, expect } from "@storybook/test";
 import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {

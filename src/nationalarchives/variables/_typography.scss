@@ -10,7 +10,8 @@ $body-line-height: #{math.div($relative-1rem-px, $body-font-size-px) * 2} !defau
 
 $interactive-text-decoration-thickness: 3.5px !default;
 
-$main-font-family: "Open Sans", sans-serif !default;
+$main-font: "Open Sans" !default;
+$main-font-family: $main-font, sans-serif !default;
 $main-font-weight: 400 !default;
 $main-font-weight-bold: 700 !default;
 

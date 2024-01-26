@@ -118,6 +118,8 @@
   }
 
   &--horizontal {
+    aspect-ratio: auto 3/1;
+
     position: relative;
 
     @include media.on-larger-than-mobile {
@@ -128,6 +130,7 @@
 
       .tna-card__image-container {
         height: auto;
+        min-height: 50%;
         margin-bottom: 0;
         padding-bottom: 0;
 

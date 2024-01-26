@@ -155,10 +155,6 @@
   max-width: 480px;
 }
 
-.tna-picture--demo {
-  // max-width: 480px;
-}
-
 .tna-spacing-demo {
   p {
     padding-right: 0.5rem;
@@ -257,6 +253,12 @@
 
     gap: 0.5rem;
     flex-wrap: nowrap;
+  }
+
+  .tna-form__group-contents,
+  .tna-form__heading {
+    font-size: 0;
+    line-height: 0;
   }
 
   .tna-pagination {

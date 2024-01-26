@@ -150,16 +150,36 @@
   fill: var(--#{$colour}) if($important, !important, null);
 }
 
+%light {
+  @include colour-css-vars;
+
+  @media (prefers-contrast: more) {
+    @include colour-css-vars-high-contrast;
+  }
+}
+
+@mixin light {
+  @extend %light;
+}
+
+%dark {
+  @include colour-css-vars-dark;
+
+  @media (prefers-contrast: more) {
+    @include colour-css-vars-high-contrast-dark;
+  }
+}
+
+@mixin dark {
+  @extend %dark;
+}
+
 %plain {
   .tna-template--system-theme & {
-    @include colour-css-vars;
+    @extend %light;
 
     @media (prefers-color-scheme: dark) {
       @include colour-css-vars-dark;
-    }
-
-    @media (prefers-contrast: more) {
-      @include colour-css-vars-high-contrast;
     }
 
     @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
@@ -188,22 +208,6 @@
 
 @mixin plain {
   @extend %plain;
-}
-
-@mixin light {
-  @include colour-css-vars;
-
-  @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast;
-  }
-}
-
-@mixin dark {
-  @include colour-css-vars-dark;
-
-  @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast-dark;
-  }
 }
 
 %contrast {

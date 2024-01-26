@@ -1068,7 +1068,6 @@ const Template = ({ theme, accent }) => {
                   headingSize: "l",
                   id: "search1",
                   name: "q",
-                  formGroupClasses: "tna-search-field--no-border",
                 },
               })}
               ${TextInput({

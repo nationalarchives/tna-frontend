@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 
+- Tab elements in high contrast mode have an extra keyline to help with visibility
+- The header element no longer uses background tint in high contrast mode
 - The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
 - The card style of `boxed` has been changed to `contrast` in line with other components
 - The background tint colour on the light theme is slightly darker for better contrast with the page background
@@ -24,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed option for `tna-search-field--no-border` - borders are dictated by the background colours and page theme
 
 ### Fixed
+
+- Picture elements in high contrast mode have improved borders with no gaps
+
 ### Security
 
 ## [0.1.35](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...v0.1.35) - 2024-01-16

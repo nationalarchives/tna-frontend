@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added more space between the text and chevron in a heading link
 - Split out Font Awesome into a separate CSS file
 - Change the default `htmlLang` from `en-GB` to `en`
+- Changed the aspect ratio of the hero image to be closer to a 3:1
 
 ### Deprecated
 ### Removed

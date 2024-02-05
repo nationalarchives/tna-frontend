@@ -63,6 +63,7 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   classes: "tna-cookie-banner--demo",
 };
 
@@ -106,6 +107,8 @@ Accept.play = async ({ canvasElement }) => {
   // await userEvent.click(closeButton);
 
   // await expect(closeButton).not.toBeVisible();
+
+  await cookies.deleteAll();
 };
 
 export const Reject = Template.bind({});
@@ -221,6 +224,7 @@ Existing.play = async ({ canvasElement }) => {
 // EventHandling.args = {
 //   serviceName: "My service",
 //   cookiesUrl: "#",
+//   cookiesPath: "/tna-frontend/",
 //   policies: "custom",
 //   classes: "tna-cookie-banner--demo",
 // };

@@ -5,14 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...HEAD)
 
 ### Added
 ### Changed
+
+- Tab elements in high contrast mode have an extra keyline to help with visibility
+- The header element no longer uses background tint in high contrast mode
+- The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
+- The card style of `boxed` has been changed to `contrast` in line with other components
+- The background tint colour on the light theme is slightly darker for better contrast with the page background
+- Set smaller minimum width for search field inputs
+- Added more space between the text and chevron in a heading link
+- Split out Font Awesome into a separate CSS file
+- Change the default `htmlLang` from `en-GB` to `en`
+
 ### Deprecated
 ### Removed
+
+- Removed option for `tna-search-field--no-border` - borders are dictated by the background colours and page theme
+
 ### Fixed
+
+- Picture elements in high contrast mode have improved borders with no gaps
+
 ### Security
+
+## [0.1.35](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...v0.1.35) - 2024-01-16
+
+### Added
+
+- More icon sizes added
+
+### Changed
+
+- Images on horizontal cards are now at least a 3:2 aspect ratio
+- Icon assets have been renamed from `apple-touch-icon-xxx.png` to `icon-xxx.png`
 
 ## [0.1.34](https://github.com/nationalarchives/tna-frontend/compare/v0.1.33...v0.1.34) - 2024-01-10
 

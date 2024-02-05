@@ -41,6 +41,12 @@ const checkExists = [
   "nationalarchives/all.js.map",
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
+  "nationalarchives/font-awesome.css",
+  "nationalarchives/font-awesome.css.map",
+  "nationalarchives/font-awesome.scss",
+  "nationalarchives/prototype-kit.css",
+  "nationalarchives/prototype-kit.css.map",
+  "nationalarchives/prototype-kit.scss",
   // Assets
   "nationalarchives/assets/fonts/fa-brands-400.ttf",
   "nationalarchives/assets/fonts/fa-brands-400.woff2",
@@ -50,10 +56,18 @@ const checkExists = [
   "nationalarchives/assets/fonts/OpenSans-Regular.ttf",
   "nationalarchives/assets/fonts/RobotoMono-Medium.ttf",
   "nationalarchives/assets/fonts/RobotoMono-Regular.ttf",
-  "nationalarchives/assets/images/apple-touch-icon-152x152.png",
-  "nationalarchives/assets/images/apple-touch-icon-167x167.png",
-  "nationalarchives/assets/images/apple-touch-icon-180x180.png",
-  "nationalarchives/assets/images/apple-touch-icon.png",
+  "nationalarchives/assets/images/icon-48x48.png",
+  "nationalarchives/assets/images/icon-72x72.png",
+  "nationalarchives/assets/images/icon-96x96.png",
+  "nationalarchives/assets/images/icon-120x120.png",
+  "nationalarchives/assets/images/icon-144x144.png",
+  "nationalarchives/assets/images/icon-152x152.png",
+  "nationalarchives/assets/images/icon-167x167.png",
+  "nationalarchives/assets/images/icon-180x180.png",
+  "nationalarchives/assets/images/icon-192x192.png",
+  "nationalarchives/assets/images/icon-256x256.png",
+  "nationalarchives/assets/images/icon-512x512.png",
+  "nationalarchives/assets/images/icon-1024x1024.png",
   "nationalarchives/assets/images/favicon.ico",
   "nationalarchives/assets/images/mask-icon.svg",
   "nationalarchives/assets/images/mstile-150x150.png",
@@ -233,4 +247,23 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
 
 console.log("\n");
 
-// TODO: Test CSS for contents
+console.log(`Testing compiled CSS files`);
+const cssAllPackage = fs
+  .readFileSync("package/nationalarchives/all.css")
+  .toString();
+const checkForClasses = ["tna-template", "tna-template__body"];
+checkForClasses.forEach((cssClass) => {
+  const escapedClass = cssClass.replace("-", "\\-");
+  const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}\{`, "g"));
+  if (regExp) {
+    pass(
+      `${cssClass.replace(/`{$/, "")} selector occurs ${regExp.length} time${
+        regExp.length === 1 ? "" : "s"
+      } in compiled CSS`,
+    );
+  } else {
+    fail(`${cssClass.replace(/`{$/, "")} selector missing from compiled CSS`);
+    process.exitCode = 1;
+    throw new Error("CSS test failed");
+  }
+});

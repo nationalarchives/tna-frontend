@@ -8,7 +8,7 @@
   @include colour.contrast-on-mobile;
 
   &__figure {
-    min-height: min(35vw, 480px);
+    min-height: clamp(12rem, calc(33vw - 12rem), 50vh);
     margin: 0;
     padding-top: 8rem;
     padding-bottom: 4rem;
@@ -194,6 +194,7 @@
 
   @include media.on-mobile {
     &__figure {
+      min-height: auto;
       padding: 0;
 
       flex-direction: column;

@@ -407,7 +407,7 @@ small {
     }
   }
 
-  @include media.on-mobile {
+  @include media.on-tiny {
     padding: 0.5rem 0.5rem 0.5rem 1rem;
   }
 }

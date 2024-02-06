@@ -20,9 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Split out Font Awesome into a separate CSS file
 - Change the default `htmlLang` from `en-GB` to `en`
 - Changed the aspect ratio of the hero image to be closer to a 3:1
-- Update large heading size to not be smaller than medium headings on smaller devices
+- Update large heading size to not be smaller than medium headings on medium devices
 - Remove italicised text from picture element captions and blockquotes, update font sizes
 - Reduce padding between checkboxes, radios and their labels when small
+- Reduce padding on blockquotes on mobile
 
 ### Deprecated
 ### Removed

@@ -395,7 +395,6 @@ small {
   }
 
   &__author {
-    font-style: italic;
     @include typography.relative-font-size(16);
 
     .tna-blockquote & {

@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.36...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.36](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...v0.1.36) - 2024-02-06
+
 ### Changed
 
 - Tab elements in high contrast mode have an extra keyline to help with visibility
@@ -25,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reduce padding between checkboxes, radios and their labels when small
 - Reduce padding on blockquotes on mobile
 
-### Deprecated
 ### Removed
 
 - Removed option for `tna-search-field--no-border` - borders are dictated by the background colours and page theme
@@ -33,8 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Picture elements in high contrast mode have improved borders with no gaps
-
-### Security
 
 ## [0.1.35](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...v0.1.35) - 2024-01-16
 

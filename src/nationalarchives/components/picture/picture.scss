@@ -51,7 +51,6 @@
     padding: 1rem;
 
     @include typography.relative-font-size(16);
-    font-style: italic;
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
@@ -79,6 +78,8 @@
     &__caption {
       margin-right: 0;
       margin-left: 0;
+
+      @include typography.relative-font-size(14);
     }
 
     @if grid.$gutter-width-tiny != 1.5rem {

@@ -9,7 +9,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get and validate version number
         id: get-version
         run: |
@@ -26,7 +26,7 @@ jobs:
     needs:
       - check
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Lint
         uses: ./.github/actions/lint
       
@@ -35,7 +35,7 @@ jobs:
     needs:
       - check
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Tests
         uses: ./.github/actions/tests
 
@@ -44,7 +44,7 @@ jobs:
     needs:
       - check
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Test build package
         uses: ./.github/actions/test-package
 
@@ -53,7 +53,7 @@ jobs:
     needs:
       - test-package
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: GOV.UK prototype kit test
         uses: ./.github/actions/prototype-kit-test
         
@@ -67,8 +67,8 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           registry-url: https://registry.npmjs.org/
@@ -101,8 +101,8 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           registry-url: https://registry.npmjs.org/
@@ -131,7 +131,7 @@ jobs:
       - publish-npm
       - publish-npm-cookie-banner
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get release notes
         id: get-release-notes
         run: ./tasks/get-release-notes.sh "${{ needs.check.outputs.version }}" > RELEASE_NOTES.txt

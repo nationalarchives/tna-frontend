@@ -36,7 +36,7 @@ class EventTracker {
    * Add an event listener.
    * @param {String|HTMLElement} scope - The element to which the listener is scoped.
    * @param {String} areaName - The name of the component to pass on to the tracker.
-   * @param {{eventName: String, targetElement: String|undefined, onEvent: String, data: {value: Function|String|undefined, state: Function|String|undefined, [String]: any}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
+   * @param {{eventName: String, targetElement: String|undefined, on: String, data: {value: Function|String|undefined, state: Function|String|undefined, [String]: any}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
    */
   addListener(scope, areaName, events) {
     let scopeArray;
@@ -50,7 +50,7 @@ class EventTracker {
     }
     scopeArray.forEach(($scope) => {
       events.forEach((componentTracking) => {
-        if (!componentTracking.onEvent) {
+        if (!componentTracking.on) {
           return;
         }
         if (componentTracking.targetElement) {
@@ -59,19 +59,21 @@ class EventTracker {
           ).forEach(($el) =>
             this.attachListener(
               $el,
-              componentTracking.onEvent,
+              componentTracking.on,
               $scope,
               this.generateEventName(areaName, componentTracking),
               componentTracking.data,
+              componentTracking.targetElement,
             ),
           );
         } else {
           this.attachListener(
             $scope,
-            componentTracking.onEvent,
+            componentTracking.on,
             $scope,
             this.generateEventName(areaName, componentTracking),
             componentTracking.data,
+            componentTracking.targetElement,
           );
         }
       });
@@ -79,13 +81,18 @@ class EventTracker {
   }
 
   generateEventName(areaName, componentTracking) {
-    return `${areaName}.${
-      componentTracking.eventName || componentTracking.onEvent
-    }`;
+    return `${areaName}.${componentTracking.eventName || componentTracking.on}`;
   }
 
   /** @protected */
-  attachListener($el, eventTrigger, $scope, eventName, eventDataInit) {
+  attachListener(
+    $el,
+    eventTrigger,
+    $scope,
+    eventName,
+    eventDataInit,
+    targetElement,
+  ) {
     if (!$el) {
       return;
     }
@@ -100,6 +107,8 @@ class EventTracker {
           typeof eventDataInit.state === "function"
             ? eventDataInit.state.call(this, $el, $scope, event)
             : eventDataInit.state || null,
+        scope: getXPathTo($scope),
+        targetElement: targetElement,
         timestamp: new Date().toISOString(),
         uri: window.location.pathname,
         timeSincePageLoad: new Date() - this.start,
@@ -192,21 +201,23 @@ class GA4 extends EventTracker {
  * ==========================================
  */
 const analytics = new GA4("test");
+
 analytics.addListener(".etna-article__sidebar", "sidebar", [
   {
     eventName: "scection_jump",
     targetElement: ".etna-article__sidebar-item",
-    onEvent: "click",
+    on: "click",
     data: {
       value: valueGetters.text,
     },
   },
 ]);
+
 analytics.addListener(".etna-article", "article", [
   {
-    eventName: "scection_toggle",
+    eventName: "toggle_section",
     targetElement: ".etna-article__section-button",
-    onEvent: "click",
+    on: "click",
     data: {
       // eslint-disable-next-line no-unused-vars
       state: ($el, $scope, event) => {
@@ -214,16 +225,17 @@ analytics.addListener(".etna-article", "article", [
         if (expanded === null) {
           return null;
         }
-        return expanded.toString() === "true" ? "expanded" : "closed";
+        return expanded.toString() === "true" ? "opened" : "closed";
       },
       value: valueGetters.text,
     },
   },
 ]);
+
 analytics.addListener(document.documentElement, "doc", [
   {
     eventName: "double_click",
-    onEvent: "dblclick",
+    on: "dblclick",
     data: {
       state: ($el, $scope, event) => getXPathTo(event.target),
       value: ($el, $scope, event) => event.target.innerHTML,
@@ -233,7 +245,7 @@ analytics.addListener(document.documentElement, "doc", [
 analytics.addListener(document.getElementById("tna-form__search"), "search", [
   {
     eventName: "search_term_blur",
-    onEvent: "blur",
+    on: "blur",
     data: {
       value: valueGetters.value,
     },

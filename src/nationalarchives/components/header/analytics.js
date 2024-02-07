@@ -6,7 +6,7 @@ export default [
       {
         eventName: "toggle",
         targetElement: ".tna-header__navigation-toggle-button",
-        onEvent: "click",
+        on: "click",
         data: {
           // eslint-disable-next-line no-unused-vars
           state: ($el, $scope, event) => {
@@ -14,7 +14,7 @@ export default [
             if (expanded === null) {
               return null;
             }
-            return expanded.toString() === "true" ? "expanded" : "closed";
+            return expanded.toString() === "true" ? "opened" : "closed";
           },
         },
       },

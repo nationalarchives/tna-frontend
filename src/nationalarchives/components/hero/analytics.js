@@ -4,9 +4,9 @@ export default [
     areaName: "hero",
     events: [
       {
-        eventName: "toggle",
+        eventName: "toggle_caption",
         targetElement: ".tna-hero__details-summary",
-        onEvent: "click",
+        on: "click",
         data: {
           // eslint-disable-next-line no-unused-vars
           state: ($el, $scope, event) => {
@@ -14,7 +14,7 @@ export default [
               $scope
                 .querySelector(".tna-hero__details")
                 ?.hasAttribute("open") ?? false;
-            return wasExpanded ? "closed" : "expanded";
+            return wasExpanded ? "closed" : "opened";
           },
           // eslint-disable-next-line no-unused-vars
           value: ($el, $scope, event) =>

@@ -9,7 +9,7 @@ export default [
         eventName: "click",
         targetElement:
           ".tna-breadcrumbs__item--expandable button.tna-breadcrumbs__link",
-        onEvent: "click",
+        on: "click",
         data: { state: "expand", value: valueGetters.html },
       },
     ],

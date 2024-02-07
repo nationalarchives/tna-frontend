@@ -1,3 +1,5 @@
+import { getClosestHeading } from "../../lib/analytics-helpers.mjs";
+
 export default [
   {
     scope: ".tna-picture",
@@ -18,31 +20,7 @@ export default [
           },
           // eslint-disable-next-line no-unused-vars
           value: ($el, $scope, event) => {
-            const includesAny = (arr, values) =>
-              values.some((v) => arr.includes(v));
-            let heading = "";
-            let $search = $scope;
-            do {
-              while ($search.previousElementSibling) {
-                $search = $search.previousElementSibling;
-                if (
-                  ["h1", "h2", "h3", "h4", "h5", "h6"].includes(
-                    $search.tagName,
-                  ) ||
-                  ($search.classList.length &&
-                    includesAny(Array.from($search.classList), [
-                      "tna-heading-xl",
-                      "tna-heading-l",
-                      "tna-heading-m",
-                      "tna-heading-s",
-                    ]))
-                ) {
-                  heading = $search.innerText;
-                  break;
-                }
-              }
-              $search = $search.parentElement;
-            } while ($search.parentElement && !heading);
+            const heading = getClosestHeading($scope);
             const image = $scope.querySelector(".tna-picture__image");
             const imageSrc = image.getAttribute("src");
             const imageAlt = image.getAttribute("alt");

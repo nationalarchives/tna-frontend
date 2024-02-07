@@ -11,4 +11,4 @@ build-storybook.log
 chromatic.config.json
 chromatic.log
 RELEASE_NOTES.txt
-temp
+fixtures-html

@@ -10,7 +10,7 @@
     "lint:fix": "prettier --write '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
     "package:sass": "sass --style=compressed --embed-sources src/nationalarchives:package/nationalarchives",
     "package:scripts": "webpack",
-    "validatehtml": "node tasks/generate-fixture-html.js && html-validate temp"
+    "validatehtml": "node tasks/generate-fixture-html.js && html-validate fixtures-html"
   },
   "repository": {
     "type": "git",

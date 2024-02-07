@@ -6,6 +6,11 @@ const { renderNunjucks } = require("./lib/nunjucks");
 
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
+const fixturesOutputDirectory = "fixtures-html";
+
+if (!fs.existsSync(fixturesOutputDirectory)) {
+  fs.mkdirSync(fixturesOutputDirectory);
+}
 
 const components = globSync(
   `${componentsDirectory}*${componentFixturesFile}`,
@@ -25,7 +30,7 @@ components.forEach((component) => {
   componentFixtures.fixtures.forEach((fixture) => {
     const result = renderNunjucks(componentNunjucks, fixture.options);
     fs.writeFile(
-      `temp/${component}-${fixture.name
+      `${fixturesOutputDirectory}/${component}-${fixture.name
         .replace(/[^0-9a-z]/gi, "-")
         .toLowerCase()}.html`,
       result,

@@ -1175,7 +1175,7 @@ const Template = ({ theme, accent }) => {
     </main>
     ${Footer({
       params: {
-        meta: "<p>Open today<br />09:00&mdash;19:00</p>",
+        meta: "<p>Open today<br>09:00&mdash;19:00</p>",
         social: [
           {
             text: "Twitter",

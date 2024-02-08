@@ -242,6 +242,7 @@ analytics.addListener(document.documentElement, "doc", [
     },
   },
 ]);
+
 analytics.addListener(document.getElementById("tna-form__search"), "search", [
   {
     eventName: "search_term_blur",

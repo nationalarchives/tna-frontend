@@ -120,6 +120,25 @@ class EventTracker {
   recordEvent(eventName, data) {
     this.events.push({ event: eventName, data });
   }
+
+  getTnaMetaTags() {
+    // return Object.fromEntries(
+    //   Array.from(
+    //     document.head.querySelectorAll("meta[name^='tna:'][content]"),
+    //   ).map(($metaEl) => [
+    //     metaData[$metaEl.getAttribute("name").replace(/^tna:/, "")],
+    //     $metaEl.getAttribute("content"),
+    //   ]),
+    // );
+    const metaData = {};
+    Array.from(
+      document.head.querySelectorAll("meta[name^='tna:'][content]"),
+    ).forEach(($metaEl) => {
+      metaData[$metaEl.getAttribute("name").replace(/^tna:/, "")] =
+        $metaEl.getAttribute("content");
+    });
+    return metaData;
+  }
 }
 
 /**
@@ -180,6 +199,7 @@ class GA4 extends EventTracker {
         // document.head.appendChild(script);
         this.gtag("js", new Date());
         this.trackingCodeAdded = true;
+        window.dataLayer.push(this.getTnaMetaTags());
       }
       this.gtag("set", { allow_ad_personalization_signals: false });
     }

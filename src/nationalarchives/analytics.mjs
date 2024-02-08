@@ -121,23 +121,16 @@ class EventTracker {
     this.events.push({ event: eventName, data });
   }
 
+  /** @protected */
   getTnaMetaTags() {
-    // return Object.fromEntries(
-    //   Array.from(
-    //     document.head.querySelectorAll("meta[name^='tna:'][content]"),
-    //   ).map(($metaEl) => [
-    //     metaData[$metaEl.getAttribute("name").replace(/^tna:/, "")],
-    //     $metaEl.getAttribute("content"),
-    //   ]),
-    // );
-    const metaData = {};
-    Array.from(
-      document.head.querySelectorAll("meta[name^='tna:'][content]"),
-    ).forEach(($metaEl) => {
-      metaData[$metaEl.getAttribute("name").replace(/^tna:/, "")] =
-        $metaEl.getAttribute("content");
-    });
-    return metaData;
+    return Object.fromEntries(
+      Array.from(
+        document.head.querySelectorAll("meta[name^='tna:'][content]"),
+      ).map(($metaEl) => [
+        $metaEl.getAttribute("name").replace(/^tna:/, ""),
+        $metaEl.getAttribute("content"),
+      ]),
+    );
   }
 }
 

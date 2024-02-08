@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Changed the aspect ratio of the hero image to be 5:2
+
 ### Deprecated
 ### Removed
 ### Fixed

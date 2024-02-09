@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Changed the aspect ratio of the hero image to be 5:2
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Allowed taller images in picture elements on tiny devices
+
 ### Security
 
 ## [0.1.36](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...v0.1.36) - 2024-02-06

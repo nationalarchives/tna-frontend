@@ -250,7 +250,6 @@
     }
 
     &__logo-strapline {
-      @include typography.relative-font-size(15);
       line-height: math.div(5rem, 3);
     }
 
@@ -271,17 +270,7 @@
     }
 
     &__logo {
-      gap: 0.625rem;
-    }
-
-    .tna-logo {
-      width: 4rem;
-      height: 4rem;
-    }
-
-    &__logo-strapline {
-      @include typography.relative-font-size(15);
-      line-height: math.div(4rem, 3);
+      gap: 0.75rem;
     }
 
     &__navigation-button-wrapper {
@@ -332,6 +321,15 @@
   }
 
   @include media.on-small {
+    .tna-logo {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1.25rem;
+    }
+
     &__navigation {
       width: calc(100% + #{gridVars.$gutter-width * 2});
 
@@ -344,6 +342,15 @@
   }
 
   @include media.on-tiny {
+    .tna-logo {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1;
+    }
+
     &__navigation {
       width: calc(100% + #{gridVars.$gutter-width-tiny * 2});
 

@@ -53,7 +53,7 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   logo: {
-    strapline: "Beta",
+    strapline: "Design System",
     href: "#/",
   },
   topNavigation: [
@@ -118,6 +118,26 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+      icon: "phone",
+    },
+    {
+      text: "Top item 3",
+      href: "#/top-3",
+      brandIcon: "github",
+    },
+  ],
   navigation: [
     {
       text: "Alpha",
@@ -133,6 +153,11 @@ Mobile.args = {
       href: "#/gamma",
     },
   ],
+  exit: {
+    text: "Go to the current National Archives website",
+    href: "#",
+    target: "_blank",
+  },
   classes: "tna-header--demo",
 };
 Mobile.play = async ({ args, canvasElement, step }) => {

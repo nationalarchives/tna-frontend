@@ -8,15 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.36...HEAD)
 
 ### Added
+
+- New global header component
+
 ### Changed
 
 - Changed the aspect ratio of the hero image to be 5:2
+- Selected state of header component changed
+- Phase banner font size reduced
 
 ### Deprecated
 ### Removed
 ### Fixed
 
 - Allowed taller images in picture elements on tiny devices
+- Fixed focus styles for always-light components (e.g. text inputs) on high contrast themes
 
 ### Security
 

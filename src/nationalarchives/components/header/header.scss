@@ -8,13 +8,28 @@
 @use "../grid";
 
 .tna-header {
-  @include colour.dark;
   @include colour.contrast;
 
   position: relative;
 
-  &:not(&--accent) {
-    background-color: colour.brand-colour("black");
+  background-color: colour.brand-colour("black");
+
+  .tna-template--light-theme & {
+    background: linear-gradient(
+      0deg,
+      rgb(34 34 34 / 100%) 0%,
+      rgb(0 0 0 / 100%) 100%
+    );
+  }
+
+  .tna-template--system-theme {
+    @media (prefers-color-scheme: light) {
+      background: linear-gradient(
+        0deg,
+        rgb(34 34 34 / 100%) 0%,
+        rgb(0 0 0 / 100%) 100%
+      );
+    }
   }
 
   &__exit {
@@ -78,8 +93,8 @@
   }
 
   .tna-logo {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 6rem;
+    height: 6rem;
 
     display: inline-block;
 
@@ -98,6 +113,8 @@
     display: inline-block;
 
     line-height: 2rem;
+    @include typography.heading-font;
+    @include typography.relative-font-size(20);
     text-transform: uppercase;
   }
 
@@ -300,26 +317,28 @@
     @include colour.accent;
   }
 
-  @include media.on-mobile {
-    &__contents {
-      &.tna-container {
-        padding-right: 0;
-        padding-left: 0;
-      }
+  @include media.on-medium {
+    .tna-logo {
+      width: 5rem;
+      height: 5rem;
     }
 
+    &__logo-strapline {
+      line-height: 1.625rem;
+    }
+  }
+
+  @include media.on-mobile {
     &__logo {
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
 
-    .tna-logo {
-      width: 4.5rem;
-      height: 4.5rem;
-    }
-
-    &__logo-strapline {
-      line-height: 1.5;
+    &__contents {
+      &.tna-container {
+        padding-right: 0;
+        padding-left: 0;
+      }
     }
 
     &__navigation-toggle {
@@ -364,6 +383,15 @@
     }
 
     &__top-navigation-item-link {
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("font-light");
+      }
+
+      &:hover {
+        @include colour.colour-font("font-dark");
+      }
     }
 
     &__navigation-items {
@@ -411,6 +439,15 @@
   }
 
   @include media.on-small {
+    .tna-logo {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1.25rem;
+    }
+
     &__logo.tna-column,
     &__navigation-item-link,
     &__navigation-toggle.tna-column {

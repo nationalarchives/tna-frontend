@@ -10,11 +10,23 @@
 
   @include colour.contrast;
 
-  background: linear-gradient(
-    0deg,
-    rgb(34 34 34 / 100%) 0%,
-    rgb(0 0 0 / 100%) 100%
-  );
+  .tna-template--light-theme & {
+    background: linear-gradient(
+      0deg,
+      rgb(34 34 34 / 100%) 0%,
+      rgb(0 0 0 / 100%) 100%
+    );
+  }
+
+  .tna-template--system-theme {
+    @media (prefers-color-scheme: light) {
+      background: linear-gradient(
+        0deg,
+        rgb(34 34 34 / 100%) 0%,
+        rgb(0 0 0 / 100%) 100%
+      );
+    }
+  }
 
   &__main {
     padding-bottom: 1.5rem;
@@ -55,6 +67,8 @@
   }
 
   &__logo-strapline {
+    padding-right: 0.625rem;
+
     @include typography.heading-font;
     @include typography.relative-font-size(20);
     text-transform: uppercase;
@@ -73,8 +87,6 @@
 
     @include colour.colour-background("font-dark");
 
-    // transition: height 1ms 100ms;
-
     &::before,
     &::after {
       height: 0.25rem;
@@ -86,11 +98,6 @@
       left: 0;
 
       background-color: inherit;
-
-      // transition:
-      //   top 100ms 100ms,
-      //   bottom 100ms 100ms,
-      //   transform 100ms;
 
       content: "";
     }
@@ -154,13 +161,11 @@
   }
 
   &__navigation-item {
-    // display: flex;
-    // align-items: center;
-
     break-inside: avoid;
   }
 
   &__navigation-item-link {
+    min-width: 20vw;
     height: math.div(6.75rem, 3);
 
     display: block;
@@ -257,7 +262,6 @@
   @include media.on-mobile {
     &__main {
       padding-bottom: 0;
-      // padding-bottom: 0;
     }
 
     &__logo-wrapper,
@@ -291,7 +295,7 @@
 
       columns: 1;
 
-      background-color: rgb(255 255 255/5%);
+      background-color: rgb(255 255 255 / 10%);
 
       @include colour.colour-border("keyline-dark", 3px, solid, top);
       @include colour.colour-border("keyline-dark", 3px, solid, bottom);
@@ -300,14 +304,14 @@
     &__navigation-item {
       flex-direction: column;
       align-items: flex-start;
-
-      &:last-child {
-        border-bottom: none;
-      }
     }
 
     &__navigation-item-link {
       line-height: 1.75rem;
+    }
+
+    &__navigation-item:last-child &__navigation-item-link {
+      border-bottom: none;
     }
 
     &__navigation-item-contents {
@@ -348,6 +352,22 @@
 
     &__navigation-item-link {
       padding: 0.5rem gridVars.$gutter-width-tiny;
+    }
+  }
+
+  @include colour.on-high-contrast {
+    &__logo {
+      &:hover {
+        .tna-logo {
+          &__background {
+            fill: #fff;
+          }
+
+          &__foreground {
+            fill: #000;
+          }
+        }
+      }
     }
   }
 }

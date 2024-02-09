@@ -156,6 +156,10 @@
   @media (prefers-contrast: more) {
     @include colour-css-vars-high-contrast;
   }
+
+  .tna-template--high-contrast-theme & {
+    @include colour-css-vars-high-contrast;
+  }
 }
 
 @mixin light {
@@ -166,6 +170,10 @@
   @include colour-css-vars-dark;
 
   @media (prefers-contrast: more) {
+    @include colour-css-vars-high-contrast-dark;
+  }
+
+  .tna-template--high-contrast-theme & {
     @include colour-css-vars-high-contrast-dark;
   }
 }

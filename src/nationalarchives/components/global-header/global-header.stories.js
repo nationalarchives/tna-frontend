@@ -45,49 +45,122 @@ Standard.args = {
   topNavigation: [
     {
       text: "Search",
-      href: "#/top-1",
+      href: "#/search",
       icon: "search",
     },
     {
       text: "Shop",
-      href: "#/top-2",
+      href: "#/shop",
       icon: "bag-shopping",
     },
     {
       text: "Sign in",
-      href: "#/top-3",
+      href: "#/sign-in",
       icon: "user",
     },
   ],
   navigation: [
     {
       text: "Visit",
-      href: "#",
+      href: "#/visit",
     },
     {
       text: "What's on",
-      href: "#",
+      href: "#/whats-on",
     },
     {
       text: "Explore the collection",
-      href: "#",
+      href: "#/explore-the-collection",
     },
     {
       text: "Using the archives",
-      href: "#",
+      href: "#/using-the-archives",
     },
     {
       text: "Learn",
-      href: "#",
+      href: "#/learn",
     },
     {
       text: "Professional guidance & services",
-      href: "#",
+      href: "#/professional-guidance-and-services",
     },
   ],
   classes: "tna-global-header--demo",
 };
 Standard.play = async ({ canvasElement }) => {
+  await new Promise((r) => setTimeout(r, 100));
+
+  const $navigationItems = canvasElement.querySelector(
+    `.tna-global-header__navigation`,
+  );
+  const $navigationToggle = canvasElement.querySelector(
+    `.tna-global-header__navigation-button`,
+  );
+
+  await expect($navigationItems).toBeVisible();
+  await expect($navigationToggle).not.toBeVisible();
+};
+
+export const Medium = Template.bind({});
+Medium.parameters = {
+  viewport: {
+    defaultViewport: "medium",
+  },
+  chromatic: {
+    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
+  },
+};
+Medium.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Search",
+      href: "#/search",
+      icon: "search",
+    },
+    {
+      text: "Shop",
+      href: "#/shop",
+      icon: "bag-shopping",
+    },
+    {
+      text: "Sign in",
+      href: "#/sign-in",
+      icon: "user",
+    },
+  ],
+  navigation: [
+    {
+      text: "Visit",
+      href: "#/visit",
+    },
+    {
+      text: "What's on",
+      href: "#/whats-on",
+    },
+    {
+      text: "Explore the collection",
+      href: "#/explore-the-collection",
+    },
+    {
+      text: "Using the archives",
+      href: "#/using-the-archives",
+    },
+    {
+      text: "Learn",
+      href: "#/learn",
+    },
+    {
+      text: "Professional guidance & services",
+      href: "#/professional-guidance-and-services",
+    },
+  ],
+  classes: "tna-global-header--demo",
+};
+Medium.play = async ({ canvasElement }) => {
   await new Promise((r) => setTimeout(r, 100));
 
   const $navigationItems = canvasElement.querySelector(
@@ -111,19 +184,51 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Search",
+      href: "#/search",
+      icon: "search",
+    },
+    {
+      text: "Shop",
+      href: "#/shop",
+      icon: "bag-shopping",
+    },
+    {
+      text: "Sign in",
+      href: "#/sign-in",
+      icon: "user",
+    },
+  ],
   navigation: [
     {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
+      text: "Visit",
+      href: "#/visit",
     },
     {
-      text: "Beta",
-      href: "#/beta",
+      text: "What's on",
+      href: "#/whats-on",
     },
     {
-      text: "Gamma",
-      href: "#/gamma",
+      text: "Explore the collection",
+      href: "#/explore-the-collection",
+    },
+    {
+      text: "Using the archives",
+      href: "#/using-the-archives",
+    },
+    {
+      text: "Learn",
+      href: "#/learn",
+    },
+    {
+      text: "Professional guidance & services",
+      href: "#/professional-guidance-and-services",
     },
   ],
   classes: "tna-global-header--demo",

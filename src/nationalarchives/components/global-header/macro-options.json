@@ -48,12 +48,6 @@
         "type": "string",
         "required": false,
         "description": ""
-      },
-      {
-        "name": "selected",
-        "type": "boolean",
-        "required": false,
-        "description": ""
       }
     ]
   },
@@ -96,21 +90,15 @@
     ]
   },
   {
-    "name": "accent",
-    "type": "boolean",
-    "required": false,
-    "description": ""
-  },
-  {
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the header."
+    "description": "Classes to add to the global header."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the header."
+    "description": "HTML attributes (for example data attributes) to add to the global header."
   }
 ]

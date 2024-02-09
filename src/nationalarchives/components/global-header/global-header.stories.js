@@ -7,9 +7,6 @@ const argTypes = {
   logo: { control: "object" },
   topNavigation: { control: "object" },
   navigation: { control: "object" },
-  accent: {
-    control: "boolean",
-  },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -28,20 +25,12 @@ export default {
   },
 };
 
-const Template = ({
-  logo,
-  topNavigation,
-  navigation,
-  accent,
-  classes,
-  attributes,
-}) =>
+const Template = ({ logo, topNavigation, navigation, classes, attributes }) =>
   Header({
     params: {
       logo,
       topNavigation,
       navigation,
-      accent,
       classes,
       attributes,
     },
@@ -50,78 +39,62 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   logo: {
-    strapline: "Beta",
+    strapline: "Design System",
     href: "#/",
   },
   topNavigation: [
     {
-      text: "Top item 1",
+      text: "Search",
       href: "#/top-1",
+      icon: "search",
     },
     {
-      text: "Top item 2",
+      text: "Shop",
       href: "#/top-2",
-      icon: "phone",
+      icon: "bag-shopping",
     },
     {
-      text: "Top item 3",
+      text: "Sign in",
       href: "#/top-3",
-      brandIcon: "github",
+      icon: "user",
     },
   ],
   navigation: [
     {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
+      text: "Visit",
+      href: "#",
     },
     {
-      text: "Beta",
-      href: "#/beta",
+      text: "What's on",
+      href: "#",
     },
     {
-      text: "Gamma",
-      href: "#/gamma",
+      text: "Explore the collection",
+      href: "#",
+    },
+    {
+      text: "Using the archives",
+      href: "#",
+    },
+    {
+      text: "Learn",
+      href: "#",
+    },
+    {
+      text: "Professional guidance & services",
+      href: "#",
     },
   ],
   classes: "tna-global-header--demo",
 };
-
-export const Desktop = Template.bind({});
-Desktop.parameters = {
-  viewport: {
-    defaultViewport: "medium",
-  },
-  chromatic: {
-    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
-  },
-};
-Desktop.args = {
-  navigation: [
-    {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
-    },
-    {
-      text: "Beta",
-      href: "#/beta",
-    },
-    {
-      text: "Gamma",
-      href: "#/gamma",
-    },
-  ],
-  classes: "tna-global-header--demo",
-};
-Desktop.play = async ({ canvasElement }) => {
+Standard.play = async ({ canvasElement }) => {
   await new Promise((r) => setTimeout(r, 100));
 
   const $navigationItems = canvasElement.querySelector(
-    `.tna-global-header__navigation-items`,
+    `.tna-global-header__navigation`,
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-global-header__navigation-toggle-button`,
+    `.tna-global-header__navigation-button`,
   );
 
   await expect($navigationItems).toBeVisible();
@@ -161,13 +134,13 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   const canvas = within(canvasElement);
 
   const $navigationItems = canvasElement.querySelector(
-    `.tna-global-header__navigation-items`,
+    `.tna-global-header__navigation`,
   );
   const [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
     canvas.getByText(navigationItem.text),
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-global-header__navigation-toggle-button`,
+    `.tna-global-header__navigation-button`,
   );
 
   await step("Initial load", async () => {

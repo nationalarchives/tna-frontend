@@ -8,7 +8,7 @@
   @include colour.contrast-on-mobile;
 
   &__figure {
-    min-height: clamp(12rem, calc(33vw - 12rem), 63rem);
+    min-height: clamp(12rem, calc(40vw - 12rem), 63rem);
     margin: 0;
     padding-top: 8rem;
     padding-bottom: 4rem;

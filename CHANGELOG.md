@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the aspect ratio of the hero image to be 5:2
 - Selected state of header component changed
 - Phase banner font size reduced
+- Header component tweaked to more closely align to the global header
+- Header and footer SVG logos changed to use `currentColor` as the foreground colour with a transparent background
+- Removed "link" icons from external links in the footer
 
 ### Deprecated
 ### Removed
@@ -23,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Allowed taller images in picture elements on tiny devices
 - Fixed focus styles for always-light components (e.g. text inputs) on high contrast themes
+- Added link to mailing list in footer
 
 ### Security
 

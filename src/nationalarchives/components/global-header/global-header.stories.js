@@ -39,7 +39,7 @@ const Template = ({ logo, topNavigation, navigation, classes, attributes }) =>
 export const Standard = Template.bind({});
 Standard.args = {
   logo: {
-    strapline: "Design System",
+    // strapline: "Design System",
     href: "#/",
   },
   topNavigation: [

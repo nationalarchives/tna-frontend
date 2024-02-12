@@ -216,46 +216,50 @@
     }
   }
 
-  @include media.on-smaller-than-large {
-    &__navigation,
-    &__navigation-item,
-    &__navigation-item-link {
-      height: auto;
-    }
-
-    &__navigation-item-link {
-      padding-top: 0.375rem;
-      padding-bottom: 0.375rem;
-
-      line-height: inherit;
-    }
-  }
-
   @include media.on-medium {
-    &__main {
+    &__navigation-item-link {
+      @include typography.relative-font-size(16);
+    }
+
+    &--collapse-on-medium &__navigation-wrapper {
+      width: 100%;
+    }
+
+    &--collapse-on-medium &__top-navigation-wrapper {
+      flex: 1;
+      order: 2;
+    }
+
+    &--collapse-on-medium &__main {
       padding-bottom: 1rem;
     }
 
-    &__logo {
+    &--collapse-on-medium &__logo {
       gap: 0.75rem;
     }
 
-    &__logo-wrapper {
+    &--collapse-on-medium &__logo-wrapper {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
 
-    .tna-logo {
+    &--collapse-on-medium .tna-logo {
       width: 5rem;
       height: 5rem;
     }
 
-    // &__logo-strapline {
+    // &--collapse-on-medium &__logo-strapline {
     //   line-height: math.div(5rem, 3);
     // }
 
-    &__navigation {
+    &--collapse-on-medium &__navigation {
       margin-bottom: 0.5rem;
+    }
+
+    &--collapse-on-medium &__navigation,
+    &--collapse-on-medium &__navigation-item,
+    &--collapse-on-medium &__navigation-item-link {
+      height: auto;
     }
   }
 
@@ -279,8 +283,13 @@
       align-items: center;
     }
 
-    &__navigation {
+    &__navigation,
+    &__navigation-item,
+    &__navigation-item-link {
       height: auto;
+    }
+
+    &__navigation {
       margin-top: 0;
 
       columns: 1;

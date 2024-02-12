@@ -7,6 +7,7 @@ const argTypes = {
   logo: { control: "object" },
   topNavigation: { control: "object" },
   navigation: { control: "object" },
+  collapseOnMedium: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -25,12 +26,20 @@ export default {
   },
 };
 
-const Template = ({ logo, topNavigation, navigation, classes, attributes }) =>
+const Template = ({
+  logo,
+  topNavigation,
+  navigation,
+  collapseOnMedium,
+  classes,
+  attributes,
+}) =>
   Header({
     params: {
       logo,
       topNavigation,
       navigation,
+      collapseOnMedium,
       classes,
       attributes,
     },
@@ -172,6 +181,67 @@ Medium.play = async ({ canvasElement }) => {
 
   await expect($navigationItems).toBeVisible();
   await expect($navigationToggle).not.toBeVisible();
+};
+
+export const MediumCollapsed = Template.bind({});
+MediumCollapsed.parameters = {
+  viewport: {
+    defaultViewport: "medium",
+  },
+  chromatic: {
+    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
+  },
+};
+MediumCollapsed.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Search",
+      href: "#/search",
+      icon: "search",
+    },
+    {
+      text: "Shop",
+      href: "#/shop",
+      icon: "bag-shopping",
+    },
+    {
+      text: "Sign in",
+      href: "#/sign-in",
+      icon: "user",
+    },
+  ],
+  navigation: [
+    {
+      text: "Visit",
+      href: "#/visit",
+    },
+    {
+      text: "What's on",
+      href: "#/whats-on",
+    },
+    {
+      text: "Explore the collection",
+      href: "#/explore-the-collection",
+    },
+    {
+      text: "Using the archives",
+      href: "#/using-the-archives",
+    },
+    {
+      text: "Learn",
+      href: "#/learn",
+    },
+    {
+      text: "Professional guidance & services",
+      href: "#/professional-guidance-and-services",
+    },
+  ],
+  collapseOnMedium: true,
+  classes: "tna-global-header--demo",
 };
 
 export const Mobile = Template.bind({});

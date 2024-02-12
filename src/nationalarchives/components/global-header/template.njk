@@ -1,4 +1,7 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.collapseOnMedium -%}
+  {%- set containerClasses = containerClasses.concat('tna-global-header--collapse-on-medium') -%}
+{%- endif -%}
 <header class="tna-global-header {{ containerClasses | join(' ') }}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-container tna-global-header__main">
     <div class="tna-column tna-column--flex-1 tna-column--order-2">
@@ -30,7 +33,7 @@
       <!-- BUTTON ADDED BY JAVASCRIPT -->
     </div>
     {%- if params.navigation %}
-    <nav class="tna-column tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-3 tna-global-header__navigation-wrapper" aria-label="Main site navigation">
+    <nav class="tna-column tna-column--full-small tna-column--full-tiny tna-column--order-3 tna-global-header__navigation-wrapper" aria-label="Main site navigation">
       <ul class="tna-global-header__navigation">
         {%- for item in params.navigation %}
         <li class="tna-global-header__navigation-item">
@@ -41,7 +44,7 @@
     </nav>
     {%- endif %}
     {%- if params.topNavigation %}
-    <nav class="tna-column tna-column--full tna-column--order-1 tna-column--flex-1-medium tna-column--order-2-medium tna-column--order-4-small tna-column--order-4-tiny tna-global-header__top-navigation-wrapper" aria-label="Secondary site navigation">
+    <nav class="tna-column tna-column--full tna-column--order-1 tna-column--order-4-small tna-column--order-4-tiny tna-global-header__top-navigation-wrapper" aria-label="Secondary site navigation">
       <ul class="tna-global-header__top-navigation">
         {%- for item in params.topNavigation %}
         <li class="tna-global-header__top-navigation-item">

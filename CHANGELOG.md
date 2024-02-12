@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allowed taller images in picture elements on tiny devices
 - Fixed focus styles for always-light components (e.g. text inputs) on high contrast themes
 - Added link to mailing list in footer
+- Added `<title>` to inline SVGs in header and footers
 
 ### Security
 

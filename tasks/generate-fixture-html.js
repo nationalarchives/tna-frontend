@@ -7,6 +7,10 @@ const { renderNunjucks } = require("./lib/nunjucks");
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
+if (!fs.existsSync("temp")) {
+  fs.mkdirSync("temp");
+}
+
 const components = globSync(
   `${componentsDirectory}*${componentFixturesFile}`,
 ).map((componentFixtureFile) =>

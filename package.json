@@ -50,7 +50,7 @@
     "@storybook/html-webpack5": "^7.6.15",
     "@storybook/test": "^7.6.15",
     "@storybook/test-runner": "^0.16.0",
-    "axe-playwright": "^1.2.3",
+    "axe-playwright": "^2.0.1",
     "babel-jest": "^29.7.0",
     "babel-loader": "^9.0.1",
     "chromatic": "^10.1.0",

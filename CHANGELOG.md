@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.36...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.37...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.37](https://github.com/nationalarchives/tna-frontend/compare/v0.1.36...v0.1.37) - 2024-02-13
 
 ### Added
 
@@ -20,8 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header and footer SVG logos changed to use `currentColor` as the foreground colour with a transparent background
 - Removed "link" icons from external links in the footer
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Allowed taller images in picture elements on tiny devices
@@ -29,8 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added link to the National Archives mailing list in footer
 - Added `<title>` to inline SVGs in header and footers
 - Added `aria-hidden="true"` to all Font Awesome icons
-
-### Security
 
 ## [0.1.36](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...v0.1.36) - 2024-02-06
 

@@ -26,11 +26,11 @@ const globalHeaderHTML = nunjucks
           href: "#/shop",
           icon: "bag-shopping",
         },
-        {
-          text: "Sign in",
-          href: "#/sign-in",
-          icon: "user",
-        },
+        // {
+        //   text: "Sign in",
+        //   href: "#/sign-in",
+        //   icon: "user",
+        // },
       ],
       navigation: [
         {

@@ -389,17 +389,17 @@ const Template = ({ theme, accent }) => {
           </h3>
           <dl class="tna-dl tna-dl--icon-padding ">
             <dt>
-              <i class="fa-solid fa-landmark"></i>
+              <i class="fa-solid fa-landmark" aria-hidden="true"></i>
               Held by
             </dt>
             <dd>The National Archives, Kew</dd>
             <dt>
-              <i class="fa-solid fa-calendar"></i>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
               Date
             </dt>
             <dd>1972–1979</dd>
             <dt>
-              <i class="fa-solid fa-database"></i>
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
               Reference
             </dt>
             <dd>LC 4</dd>
@@ -413,7 +413,7 @@ const Template = ({ theme, accent }) => {
             </li>
             <li class="tna-chip-list__item">
               <a href="#" class="tna-chip">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
                 Chip 2
               </a>
             </li>
@@ -422,7 +422,7 @@ const Template = ({ theme, accent }) => {
             </li>
             <li class="tna-chip-list__item">
               <a href="#" class="tna-chip tna-chip--plain">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
                 Chip 4
               </a>
             </li>

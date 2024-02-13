@@ -57,24 +57,16 @@
   .tna-logo {
     width: 6.75rem;
     height: 6.75rem;
-
-    // &__background {
-    //   fill: transparent;
-    // }
-
-    // &__foreground {
-    //   fill: currentColor;
-    // }
   }
 
-  // &__logo-strapline {
-  //   padding-right: 0.625rem;
+  &__logo-strapline {
+    padding-right: 0.625rem;
 
-  //   @include typography.heading-font;
-  //   @include typography.relative-font-size(20);
-  //   text-transform: uppercase;
-  //   line-height: math.div(6.75rem, 3);
-  // }
+    @include typography.heading-font;
+    @include typography.relative-font-size(20);
+    text-transform: uppercase;
+    line-height: math.div(6.75rem, 3);
+  }
 
   &__navigation-button-wrapper {
     display: none;
@@ -248,9 +240,9 @@
       height: 5rem;
     }
 
-    // &--collapse-on-medium &__logo-strapline {
-    //   line-height: math.div(5rem, 3);
-    // }
+    &--collapse-on-medium &__logo-strapline {
+      line-height: math.div(5rem, 3);
+    }
 
     &--collapse-on-medium &__navigation {
       margin-bottom: 0.5rem;
@@ -336,9 +328,9 @@
       height: 4rem;
     }
 
-    // &__logo-strapline {
-    //   line-height: 1.25rem;
-    // }
+    &__logo-strapline {
+      line-height: 1.25rem;
+    }
 
     &__navigation {
       width: calc(100% + #{gridVars.$gutter-width * 2});
@@ -357,9 +349,9 @@
       height: 3.5rem;
     }
 
-    // &__logo-strapline {
-    //   line-height: 1;
-    // }
+    &__logo-strapline {
+      line-height: 1;
+    }
 
     &__navigation {
       width: calc(100% + #{gridVars.$gutter-width-tiny * 2});
@@ -371,20 +363,4 @@
       padding: 0.5rem gridVars.$gutter-width-tiny;
     }
   }
-
-  // @include colour.on-high-contrast {
-  //   &__logo {
-  //     &:hover {
-  //       .tna-logo {
-  //         &__background {
-  //           fill: #fff;
-  //         }
-
-  //         &__foreground {
-  //           fill: #000;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }

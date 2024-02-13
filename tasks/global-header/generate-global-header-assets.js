@@ -23,7 +23,7 @@ const globalHeaderHTML = nunjucks
         },
         {
           text: "Shop",
-          href: "#/shop",
+          href: "https://shop.nationalarchives.gov.uk/",
           icon: "bag-shopping",
         },
         // {
@@ -35,15 +35,15 @@ const globalHeaderHTML = nunjucks
       navigation: [
         {
           text: "Visit",
-          href: "#/visit",
+          href: "https://www.nationalarchives.gov.uk/about/visit-us/",
         },
         {
           text: "What's on",
-          href: "#/whats-on",
+          href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
         },
         {
           text: "Explore the collection",
-          href: "#/explore-the-collection",
+          href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
         },
         {
           text: "Using the archives",
@@ -68,7 +68,6 @@ const footerComponentNunjucks = require("../../src/nationalarchives/components/f
 const footerHTML = nunjucks
   .renderString(footerComponentNunjucks, {
     params: {
-      meta: "<p>Open today<br />09:00&mdash;19:00</p>",
       social: [
         {
           text: "Twitter",
@@ -107,43 +106,31 @@ const footerHTML = nunjucks
           items: [
             {
               text: "Our role",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/our-role/",
             },
             {
               text: "Our history",
-              href: "#",
-            },
-            {
-              text: "Our collection",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/our-role/what-we-do/our-history/",
             },
             {
               text: "Our people",
-              href: "#",
-            },
-            {
-              text: "How we are run",
-              href: "#",
-            },
-            {
-              text: "Our research and academic collaboration",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/jobs/staff-profiles/",
             },
             {
               text: "News",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/news/",
             },
             {
               text: "Contact us",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/contact-us/",
             },
             {
               text: "Jobs & careers",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/jobs/",
             },
             {
               text: "Get involved",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/get-involved/",
             },
           ],
         },
@@ -152,22 +139,22 @@ const footerHTML = nunjucks
           items: [
             {
               text: "UK Government Web Archive",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/webarchive/",
               newTab: true,
             },
             {
               text: "Legislation.gov.uk",
-              href: "#",
+              href: "https://www.legislation.gov.uk/",
               newTab: true,
             },
             {
               text: "Find case law",
-              href: "#",
+              href: "https://caselaw.nationalarchives.gov.uk/",
               newTab: true,
             },
             {
               text: "The Gazette",
-              href: "#",
+              href: "https://www.thegazette.co.uk/",
               newTab: true,
             },
           ],
@@ -177,11 +164,11 @@ const footerHTML = nunjucks
           items: [
             {
               text: "Press room",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/press-room/",
             },
             {
               text: "Venue hire",
-              href: "#",
+              href: "https://www.nationalarchives.gov.uk/about/visit-us/venue-hire/",
             },
           ],
         },

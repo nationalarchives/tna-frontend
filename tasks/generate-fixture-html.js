@@ -12,10 +12,6 @@ if (!fs.existsSync(fixturesOutputDirectory)) {
   fs.mkdirSync(fixturesOutputDirectory);
 }
 
-if (!fs.existsSync("temp")) {
-  fs.mkdirSync("temp");
-}
-
 const components = globSync(
   `${componentsDirectory}*${componentFixturesFile}`,
 ).map((componentFixtureFile) =>

@@ -170,7 +170,7 @@ class GA4 extends EventTracker {
 
   /** @protected */
   recordEvent(eventName, data) {
-    const ga4Data = { event: eventName, "tna.data": data };
+    const ga4Data = { event: eventName, "tna.event": data };
     this.pushToDataLayer(ga4Data);
   }
 

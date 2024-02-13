@@ -38,7 +38,6 @@
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
-    "@chromaui/addon-visual-tests": "^0.0.2",
     "@mdx-js/react": "^3.0.0",
     "@storybook/addon-a11y": "^7.6.15",
     "@storybook/addon-docs": "^7.6.15",

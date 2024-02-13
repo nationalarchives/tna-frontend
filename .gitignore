@@ -4,6 +4,7 @@ __snapshots__
 node_modules
 package
 package-cookie-banner
+package-global-header
 storybook
 *.zip
 *.tgz

@@ -53,7 +53,7 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   logo: {
-    strapline: "Beta",
+    strapline: "Design System",
     href: "#/",
   },
   topNavigation: [
@@ -94,35 +94,7 @@ Standard.args = {
   },
   classes: "tna-header--demo",
 };
-
-export const Desktop = Template.bind({});
-Desktop.parameters = {
-  viewport: {
-    defaultViewport: "medium",
-  },
-  chromatic: {
-    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
-  },
-};
-Desktop.args = {
-  navigation: [
-    {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
-    },
-    {
-      text: "Beta",
-      href: "#/beta",
-    },
-    {
-      text: "Gamma",
-      href: "#/gamma",
-    },
-  ],
-  classes: "tna-header--demo",
-};
-Desktop.play = async ({ canvasElement }) => {
+Standard.play = async ({ canvasElement }) => {
   await new Promise((r) => setTimeout(r, 100));
 
   const $navigationItems = canvasElement.querySelector(
@@ -146,6 +118,26 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+      icon: "phone",
+    },
+    {
+      text: "Top item 3",
+      href: "#/top-3",
+      brandIcon: "github",
+    },
+  ],
   navigation: [
     {
       text: "Alpha",
@@ -161,6 +153,11 @@ Mobile.args = {
       href: "#/gamma",
     },
   ],
+  exit: {
+    text: "Go to the current National Archives website",
+    href: "#",
+    target: "_blank",
+  },
   classes: "tna-header--demo",
 };
 Mobile.play = async ({ args, canvasElement, step }) => {

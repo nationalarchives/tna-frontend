@@ -10,11 +10,9 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 
-  border-bottom: 1px transparent solid;
+  @include typography.relative-font-size(16);
 
-  @include media.on-mobile {
-    @include typography.relative-font-size(16);
-  }
+  border-bottom: 1px transparent solid;
 
   .tna-container {
     align-items: center;

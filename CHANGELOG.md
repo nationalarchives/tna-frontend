@@ -8,15 +8,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.36...HEAD)
 
 ### Added
+
+- New global header component
+
 ### Changed
 
 - Changed the aspect ratio of the hero image to be 5:2
+- Selected state of header component changed
+- Phase banner font size reduced
+- Header component spacing and sizing tweaked to more closely align to the global header
+- Header and footer SVG logos changed to use `currentColor` as the foreground colour with a transparent background
+- Removed "link" icons from external links in the footer
 
 ### Deprecated
 ### Removed
 ### Fixed
 
 - Allowed taller images in picture elements on tiny devices
+- Fixed focus styles for always-light components (e.g. text inputs) on high contrast themes
+- Added link to the National Archives mailing list in footer
+- Added `<title>` to inline SVGs in header and footers
+- Added `aria-hidden="true"` to all Font Awesome icons
 
 ### Security
 

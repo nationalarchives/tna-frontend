@@ -1,0 +1,366 @@
+@use "sass:math";
+@use "../../variables/grid" as gridVars;
+@use "../../tools/colour";
+@use "../../tools/typography";
+@use "../../tools/media";
+@use "../../utilities";
+@use "../grid";
+
+.tna-global-header {
+  padding-top: 1rem;
+
+  @include colour.contrast;
+
+  .tna-template--light-theme & {
+    background: linear-gradient(
+      0deg,
+      rgb(34 34 34 / 100%) 0%,
+      rgb(0 0 0 / 100%) 100%
+    );
+  }
+
+  .tna-template--system-theme {
+    @media (prefers-color-scheme: light) {
+      background: linear-gradient(
+        0deg,
+        rgb(34 34 34 / 100%) 0%,
+        rgb(0 0 0 / 100%) 100%
+      );
+    }
+  }
+
+  &__main {
+    padding-bottom: 1.5rem;
+  }
+
+  &__logo-wrapper {
+    margin-top: 0.5rem;
+
+    display: flex;
+  }
+
+  &__logo {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+
+      @include colour.colour-outline("font-dark", 0.3125rem, solid);
+      outline-offset: 1px;
+    }
+  }
+
+  .tna-logo {
+    width: 6.75rem;
+    height: 6.75rem;
+  }
+
+  &__logo-strapline {
+    padding-right: 0.625rem;
+
+    @include typography.heading-font;
+    @include typography.relative-font-size(20);
+    text-transform: uppercase;
+    line-height: math.div(6.75rem, 3);
+  }
+
+  &__navigation-button-wrapper {
+    display: none;
+  }
+
+  &__hamburger {
+    width: 2rem;
+    height: 0.25rem;
+
+    display: block;
+
+    @include colour.colour-background("font-dark");
+
+    &::before,
+    &::after {
+      height: 0.25rem;
+
+      display: block;
+
+      position: absolute;
+      right: 0;
+      left: 0;
+
+      background-color: inherit;
+
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__navigation-button {
+    height: 2rem;
+    padding: 0;
+
+    display: block;
+
+    position: relative;
+
+    appearance: none;
+
+    font-size: 0;
+
+    background: none;
+
+    border: 0 transparent solid;
+    border-width: 0.25rem 0;
+
+    cursor: pointer;
+
+    &--opened {
+      .tna-global-header__hamburger {
+        height: 0;
+
+        &::before {
+          top: 0.625rem;
+
+          transform: rotate(-135deg);
+        }
+
+        &::after {
+          bottom: 0.625rem;
+
+          transform: rotate(135deg);
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    margin: 0.5rem 0 0;
+    height: 100%;
+
+    position: relative;
+
+    columns: 2;
+    column-gap: 2rem;
+    list-style: none;
+  }
+
+  &__navigation-item {
+    break-inside: avoid;
+  }
+
+  &__navigation-item-link {
+    min-width: 15rem;
+    height: math.div(6.75rem, 3);
+
+    display: block;
+    box-sizing: border-box;
+
+    @include typography.relative-font-size(17);
+    text-decoration: none;
+    line-height: math.div(6.75rem, 3);
+
+    @include colour.colour-border("keyline", 0.5px, solid, bottom);
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
+  &__top-navigation {
+    padding: 0 0 0.5rem;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+
+    @include typography.relative-font-size(15);
+    list-style: none;
+  }
+
+  &__top-navigation-item {
+  }
+
+  &__top-navigation-link {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    text-decoration: none;
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-light");
+    }
+
+    &:hover {
+      @include colour.colour-font("font-base");
+      @include typography.interacted-text-decoration;
+    }
+  }
+
+  @include media.on-medium {
+    &__navigation-item-link {
+      @include typography.relative-font-size(16);
+    }
+
+    &--collapse-on-medium &__navigation-wrapper {
+      width: 100%;
+    }
+
+    &--collapse-on-medium &__top-navigation-wrapper {
+      flex: 1;
+      order: 2;
+    }
+
+    &--collapse-on-medium &__main {
+      padding-bottom: 1rem;
+    }
+
+    &--collapse-on-medium &__logo {
+      gap: 0.75rem;
+    }
+
+    &--collapse-on-medium &__logo-wrapper {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &--collapse-on-medium .tna-logo {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &--collapse-on-medium &__logo-strapline {
+      line-height: math.div(5rem, 3);
+    }
+
+    &--collapse-on-medium &__navigation {
+      margin-bottom: 0.5rem;
+    }
+
+    &--collapse-on-medium &__navigation,
+    &--collapse-on-medium &__navigation-item,
+    &--collapse-on-medium &__navigation-item-link {
+      height: auto;
+    }
+  }
+
+  @include media.on-mobile {
+    &__main {
+      padding-bottom: 0;
+    }
+
+    &__logo-wrapper,
+    &__navigation-button-wrapper {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    &__logo {
+      gap: 0.75rem;
+    }
+
+    &__navigation-button-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__navigation,
+    &__navigation-item,
+    &__navigation-item-link {
+      height: auto;
+    }
+
+    &__navigation {
+      margin-top: 0;
+
+      columns: 1;
+
+      background-color: rgb(255 255 255 / 10%);
+
+      @include colour.colour-border("keyline-dark", 3px, solid, top);
+      @include colour.colour-border("keyline-dark", 3px, solid, bottom);
+    }
+
+    &__navigation-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__navigation-item-link {
+      line-height: 1.75rem;
+    }
+
+    &__navigation-item:last-child &__navigation-item-link {
+      border-bottom: none;
+    }
+
+    &__navigation-item-contents {
+      display: block;
+    }
+
+    &__navigation-item-children {
+      margin-bottom: 1rem;
+      margin-left: 1.5rem;
+    }
+
+    &__top-navigation {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+
+      justify-content: flex-start;
+    }
+  }
+
+  @include media.on-small {
+    .tna-logo {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1.25rem;
+    }
+
+    &__navigation {
+      width: calc(100% + #{gridVars.$gutter-width * 2});
+
+      left: -#{gridVars.$gutter-width};
+    }
+
+    &__navigation-item-link {
+      padding: 0.5rem gridVars.$gutter-width;
+    }
+  }
+
+  @include media.on-tiny {
+    .tna-logo {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+
+    &__logo-strapline {
+      line-height: 1;
+    }
+
+    &__navigation {
+      width: calc(100% + #{gridVars.$gutter-width-tiny * 2});
+
+      left: -#{gridVars.$gutter-width-tiny};
+    }
+
+    &__navigation-item-link {
+      padding: 0.5rem gridVars.$gutter-width-tiny;
+    }
+  }
+}

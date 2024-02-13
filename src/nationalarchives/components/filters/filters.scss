@@ -12,15 +12,6 @@
   &__item {
   }
 
-  &__item--selected #{&}__link {
-    &,
-    &:link,
-    &:visited,
-    &:hover {
-      @include colour.accent;
-    }
-  }
-
   &__link {
     padding: 0.125rem 0.75rem;
 
@@ -38,6 +29,15 @@
 
     &:hover {
       @include colour.accent-light;
+    }
+  }
+
+  &__item--selected &__link {
+    &,
+    &:link,
+    &:visited,
+    &:hover {
+      @include colour.accent;
     }
   }
 }

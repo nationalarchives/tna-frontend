@@ -7,60 +7,29 @@
 @use "../../utilities";
 @use "../grid";
 
-// TODO: Only for the header component at the moment - remove on redesign
-@mixin uninvert {
-  @include colour.colour-css-vars;
-
-  .tna-template--system-theme & {
-    @include colour.colour-css-vars;
-
-    @media (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-dark;
-    }
-
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast;
-    }
-
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
-  }
-
-  .tna-template--light-theme & {
-    @include colour.colour-css-vars;
-  }
-
-  .tna-template--dark-theme & {
-    @include colour.colour-css-vars-dark;
-  }
-
-  .tna-template--high-contrast-theme & {
-    @include colour.colour-css-vars-high-contrast;
-  }
-
-  .tna-template--high-contrast-theme.tna-template--dark-theme & {
-    @include colour.colour-css-vars-high-contrast-dark;
-  }
-}
-
 .tna-header {
   @include colour.contrast;
 
   position: relative;
 
-  &::after {
-    position: absolute;
-    inset: auto 0 0;
-    z-index: 1;
+  background-color: colour.brand-colour("black");
 
-    border-bottom: 1px transparent solid;
-
-    content: "";
+  .tna-template--light-theme & {
+    background: linear-gradient(
+      0deg,
+      rgb(34 34 34 / 100%) 0%,
+      rgb(0 0 0 / 100%) 100%
+    );
   }
 
-  &:not(&--accent) {
-    background-color: colour.brand-colour("black");
+  .tna-template--system-theme {
+    @media (prefers-color-scheme: light) {
+      background: linear-gradient(
+        0deg,
+        rgb(34 34 34 / 100%) 0%,
+        rgb(0 0 0 / 100%) 100%
+      );
+    }
   }
 
   &__exit {
@@ -115,10 +84,10 @@
       color: inherit;
     }
 
-    &:hover {
+    &:hover:not(:focus) {
       text-decoration: none;
 
-      @include colour.colour-outline("font-dark", 0.375rem, solid);
+      @include colour.colour-outline("font-dark", 0.3125rem, solid);
       outline-offset: 1px;
     }
   }
@@ -128,14 +97,14 @@
     height: 6rem;
 
     display: inline-block;
-  }
 
-  .tna-logo__foreground {
-    @include colour.colour-fill("font-dark");
-  }
+    // &__foreground {
+    //   @include colour.colour-fill("font-dark");
+    // }
 
-  .tna-logo__background {
-    fill: none;
+    // &__background {
+    //   fill: none;
+    // }
   }
 
   &__logo-strapline {
@@ -144,10 +113,14 @@
     display: inline-block;
 
     line-height: 2rem;
+    @include typography.heading-font;
+    @include typography.relative-font-size(20);
     text-transform: uppercase;
   }
 
   &__navigation-toggle {
+    display: none;
+
     align-self: center;
   }
 
@@ -212,14 +185,6 @@
     &--opened {
       .tna-header__hamburger {
         height: 0;
-
-        &::before,
-        &::after {
-          // transition:
-          //   top 100ms,
-          //   bottom 100ms,
-          //   transform 100ms 100ms;
-        }
 
         &::before {
           top: 0.625rem;
@@ -312,9 +277,23 @@
 
     display: inline-block;
 
-    @include typography.heading-font;
+    position: relative;
+
     text-decoration: none;
     line-height: 2;
+
+    &::after {
+      height: 0;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      @include colour.colour-background("font-dark");
+
+      content: "";
+    }
 
     &,
     &:link,
@@ -322,16 +301,14 @@
       color: inherit;
     }
 
-    &:hover,
     &--selected {
-      text-decoration: none;
+      @include typography.main-font-weight-bold;
 
       &,
-      &:link,
-      &:visited {
-        @include uninvert;
-        @include colour.colour-font("font-dark");
-        @include colour.colour-background("page-background");
+      &:hover {
+        &::after {
+          height: 0.375rem;
+        }
       }
     }
   }
@@ -340,18 +317,23 @@
     @include colour.accent;
   }
 
-  @include media.on-larger-than-mobile {
-    .tna-header__navigation-toggle {
-      display: none;
+  @include media.on-medium {
+    .tna-logo {
+      width: 5rem;
+      height: 5rem;
     }
 
-    &__navigation-item-link {
-      border: 1px transparent solid;
-      border-bottom: none;
+    &__logo-strapline {
+      line-height: 1.625rem;
     }
   }
 
   @include media.on-mobile {
+    &__logo {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
     &__contents {
       &.tna-container {
         padding-right: 0;
@@ -359,31 +341,15 @@
       }
     }
 
-    &__logo {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .tna-logo {
-      width: 4.5rem;
-      height: 4.5rem;
-    }
-
-    &__logo-strapline {
-      line-height: 1.5;
-    }
-
     &__navigation-toggle {
+      display: block;
+
       &.tna-column {
         padding-left: 0;
       }
     }
 
     &__navigation {
-      @include uninvert;
-      @include colour.colour-font("font-base");
-      @include typography.relative-font-size(20);
-
       align-items: stretch;
       flex-direction: column;
 
@@ -406,7 +372,7 @@
 
       justify-content: flex-start;
 
-      @include colour.colour-background("page-background");
+      // @include colour.colour-background("page-background");
 
       @include colour.colour-border("keyline", 1px, solid, bottom);
     }
@@ -417,6 +383,15 @@
     }
 
     &__top-navigation-item-link {
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("font-light");
+      }
+
+      &:hover {
+        @include colour.colour-font("font-dark");
+      }
     }
 
     &__navigation-items {
@@ -425,7 +400,10 @@
       flex-direction: column;
       gap: 0;
 
-      @include colour.colour-background("page-background");
+      background-color: rgb(255 255 255 / 10%);
+
+      @include colour.colour-border("keyline-dark", 3px, solid, top);
+      @include colour.colour-border("keyline-dark", 3px, solid, bottom);
     }
 
     &__navigation-item {
@@ -433,68 +411,73 @@
 
       display: block;
 
-      @include colour.colour-border("keyline", 1px, solid, bottom);
+      @include colour.colour-border("keyline", 1px, solid, top);
+
+      &:first-child {
+        border-top: none;
+      }
     }
 
     &__navigation-item-link {
-      padding-right: gridVars.$gutter-width-tiny;
-      padding-left: gridVars.$gutter-width-tiny + 0.5rem;
-
       display: block;
 
-      position: relative;
-
-      line-height: #{math.div(1, 1.125) * 2};
+      line-height: 1.75rem;
 
       &::after {
+        height: auto;
         width: 0;
 
-        position: absolute;
         top: 0;
-        bottom: 0;
-        left: 0;
-
-        @include colour.colour-background("font-dark");
-
-        content: "";
-      }
-
-      &:hover {
-        &::after {
-          width: 0.25rem;
-        }
+        right: auto;
       }
 
       &--selected {
-        &::after,
-        &:hover::after {
-          width: 0.5rem;
+        &,
+        &:hover {
+          &::after {
+            height: auto;
+            width: 0.5rem;
+          }
         }
       }
     }
   }
 
   @include media.on-small {
-    &__logo {
-      &.tna-column {
-        padding-right: gridVars.$gutter-width;
-        padding-left: gridVars.$gutter-width;
-      }
+    .tna-logo {
+      width: 4rem;
+      height: 4rem;
     }
 
-    &__navigation-toggle {
-      &.tna-column {
-        padding-right: gridVars.$gutter-width;
-      }
+    &__logo-strapline {
+      line-height: 1.25rem;
+    }
+
+    &__logo.tna-column,
+    &__navigation-item-link,
+    &__navigation-toggle.tna-column {
+      padding-right: gridVars.$gutter-width;
+    }
+
+    &__logo.tna-column,
+    &__navigation-item-link {
+      padding-left: gridVars.$gutter-width;
+    }
+
+    &__top-navigation-items {
+      padding-right: gridVars.$gutter-width - 0.5rem;
+      padding-left: gridVars.$gutter-width - 0.5rem;
     }
   }
 
   @include media.on-tiny {
-    &__logo {
-      &.tna-column {
-        padding-right: gridVars.$gutter-width-tiny;
-        padding-left: gridVars.$gutter-width-tiny;
-      }
+    &__navigation-toggle.tna-column,
+    &__logo.tna-column {
+      padding-right: gridVars.$gutter-width-tiny;
+    }
+
+    &__logo.tna-column {
+      padding-left: gridVars.$gutter-width-tiny;
     }
 
     .tna-logo {
@@ -506,10 +489,13 @@
       line-height: 1;
     }
 
-    &__navigation-toggle {
-      &.tna-column {
-        padding-right: gridVars.$gutter-width-tiny;
-      }
+    &__top-navigation-items {
+      gap: 0.5rem;
+    }
+
+    &__navigation-item-link {
+      padding-right: gridVars.$gutter-width-tiny;
+      padding-left: gridVars.$gutter-width-tiny + 0.5rem;
     }
   }
 

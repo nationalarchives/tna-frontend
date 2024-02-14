@@ -12,7 +12,7 @@
   gap: 1rem;
   align-items: flex-start;
 
-  color: colour.brand-colour("black");
+  @include colour.accent-light;
 
   background-color: colour.brand-colour("cream");
 
@@ -36,6 +36,7 @@
 
     @include colour.colour-font("font-dark");
     @include typography.relative-font-size(24);
+    @include typography.main-font-weight-bold;
     text-transform: lowercase;
     text-align: center;
     line-height: 2rem;

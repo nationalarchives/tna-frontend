@@ -57,6 +57,8 @@
   .tna-logo {
     width: 6.75rem;
     height: 6.75rem;
+
+    flex-shrink: 0;
   }
 
   &__logo-strapline {

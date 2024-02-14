@@ -5,12 +5,14 @@ import {
   valueGetters,
 } from "./lib/analytics-helpers.mjs";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
+import GlobalHeaderAnalytics from "./components/global-header/analytics.js";
 import HeaderAnalytics from "./components/header/analytics.js";
 import HeroAnalytics from "./components/hero/analytics.js";
 import PictureAnalytics from "./components/picture/analytics.js";
 
 const componentAnalytics = [
   ...BreadcrumbAnalytics,
+  ...GlobalHeaderAnalytics,
   ...HeaderAnalytics,
   ...HeroAnalytics,
   ...PictureAnalytics,

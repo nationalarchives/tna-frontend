@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Changed spacing between navigation items in header
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Stopped logo from shrinking with longer straplines in headers
+
 ### Security
 
 ## [0.1.38](https://github.com/nationalarchives/tna-frontend/compare/v0.1.37...v0.1.38) - 2024-02-13

@@ -98,13 +98,7 @@
 
     display: inline-block;
 
-    // &__foreground {
-    //   @include colour.colour-fill("font-dark");
-    // }
-
-    // &__background {
-    //   fill: none;
-    // }
+    flex-shrink: 0;
   }
 
   &__logo-strapline {
@@ -132,8 +126,6 @@
 
     @include colour.colour-background("font-dark");
 
-    // transition: height 1ms 100ms;
-
     &::before,
     &::after {
       height: 0.25rem;
@@ -145,11 +137,6 @@
       left: 0;
 
       background-color: inherit;
-
-      // transition:
-      //   top 100ms 100ms,
-      //   bottom 100ms 100ms,
-      //   transform 100ms;
 
       content: "";
     }
@@ -262,7 +249,7 @@
 
     display: flex;
     flex-wrap: nowrap;
-    gap: 0.75rem;
+    gap: 2rem;
 
     list-style: none;
 
@@ -273,7 +260,7 @@
   }
 
   &__navigation-item-link {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
 
     display: inline-block;
 
@@ -371,8 +358,6 @@
       padding: 0.5rem 1rem;
 
       justify-content: flex-start;
-
-      // @include colour.colour-background("page-background");
 
       @include colour.colour-border("keyline", 1px, solid, bottom);
     }

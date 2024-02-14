@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Stopped logo from shrinking with longer straplines in headers
+- The message component has a header rather than an icon which provides a better page landmark
 
 ### Security
 

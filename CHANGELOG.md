@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.38...HEAD)
 
 ### Added
+
+- Automated AXE checks now include WCAG 2.2
+
 ### Changed
 
 - Changed spacing between navigation items in header
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Stopped logo from shrinking with longer straplines in headers
+- The message component has a header rather than an icon which provides a better page landmark
 
 ### Security
 

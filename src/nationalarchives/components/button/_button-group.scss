@@ -7,10 +7,14 @@
   align-items: center;
   gap: 1rem;
 
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   @include media.on-tiny {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  &--small {
+    gap: 0.5rem;
   }
 }

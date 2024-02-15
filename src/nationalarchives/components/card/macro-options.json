@@ -28,13 +28,25 @@
     "name": "href",
     "type": "string",
     "required": false,
-    "description": "A URL to use as a link in the card's heading and image (if one is declared)."
+    "description": "A URL to use as a link in the card's heading and image."
+  },
+  {
+    "name": "hrefClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the elements of the card that use `href`."
+  },
+  {
+    "name": "hrefAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the elements of the card that use `href`."
   },
   {
     "name": "imageSrc",
     "type": "string",
     "required": false,
-    "description": "A JPG file to use as the card's image."
+    "description": "The location of the card's image."
   },
   {
     "name": "imageAlt",
@@ -55,40 +67,46 @@
     "description": "The height of the image in pixels."
   },
   {
+    "name": "imageType",
+    "type": "string",
+    "required": false,
+    "description": "The mime type of the image. Defaults to `image/jpeg`. Only required when using `imageSources`."
+  },
+  {
     "name": "imageSources",
     "type": "array",
-    "required": true,
-    "description": "Alternative sources of the image which can include WebP files.",
+    "required": false,
+    "description": "Alternative sources of the image.",
     "params": [
       {
         "name": "src",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The location of the image."
       },
       {
         "name": "type",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The mime type of the image."
       },
       {
         "name": "media",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "A media condition for the image."
       },
       {
         "name": "width",
         "type": "number",
         "required": false,
-        "description": ""
+        "description": "The width of the image in pixels."
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
-        "description": ""
+        "description": "The height of the image in pixels."
       }
     ]
   },
@@ -114,14 +132,14 @@
         "name": "icon",
         "type": "string",
         "required": false,
-        "description": "The name of a font-awesome icon, without the prefixed `fa-`."
+        "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
       }
     ]
   },
   {
     "name": "body",
     "type": "string",
-    "required": true,
+    "required": false,
     "description": "The HTML for the main body of the card. Not displayed if `text` is set."
   },
   {
@@ -140,31 +158,43 @@
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text for the action."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the action."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title for the action."
       },
       {
         "name": "icon",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
       },
       {
         "name": "brandIcon",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The name of a Font Awesome brand icon, without the prefixed `fa-`."
+      },
+      {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the card action."
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the card action."
       }
     ]
   },
@@ -178,7 +208,13 @@
     "name": "style",
     "type": "text",
     "required": false,
-    "description": "The style of card to use which can be either `boxed` for an inverted card or `accent` for a card that matches the page's accent colour."
+    "description": "The style of card to use which can be either `contrast` for an inverted card or `accent` for a card that matches the page's accent colour."
+  },
+  {
+    "name": "plainSupertitle",
+    "type": "boolean",
+    "required": false,
+    "description": "Use a plain supertitle, removing the accented background colour."
   },
   {
     "name": "htmlElement",

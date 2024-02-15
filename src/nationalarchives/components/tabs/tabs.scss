@@ -5,7 +5,7 @@
 @use "../../utilities";
 
 .tna-tabs {
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__list {
     margin: 0 0 1rem;
@@ -33,7 +33,6 @@
     @include typography.relative-font-size(20);
     @include typography.heading-font;
     text-decoration: none;
-    // line-height: 1.5;
     text-align: center;
 
     background: transparent;
@@ -136,13 +135,19 @@
   }
 
   @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
+    &__list {
+      @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+    }
+  }
+
+  @include colour.on-forced-colours {
     &__list-item-link {
-      padding-right: 1rem;
-      padding-left: 1rem;
+      &--selected {
+        padding-bottom: 0.125rem;
 
-      overflow: hidden;
-
-      @include colour.colour-border("keyline-dark", 1px);
+        border-bottom-width: 0.375rem;
+      }
     }
   }
 

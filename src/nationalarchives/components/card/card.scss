@@ -7,7 +7,7 @@
 @use "../button";
 
 .tna-card {
-  @include spacing.space-below;
+  @include spacing.space-above;
 
   &__inner {
     display: flex;
@@ -27,7 +27,6 @@
   &__image-container {
     height: 0;
     margin-bottom: 1rem;
-    // padding-bottom: #{math.div(9, 16) * 100%};
     padding-bottom: #{math.div(2, 3) * 100%};
 
     position: relative;
@@ -55,13 +54,12 @@
   }
 
   &__body {
+    padding-top: 1rem;
+
     order: 3;
   }
 
   &__meta {
-    margin-bottom: 1rem;
-    padding: 0;
-
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem 1.5rem;
@@ -70,17 +68,8 @@
 
     list-style: none;
 
-    &-item {
-      display: flex;
-      align-items: center;
-
-      @include typography.detail-font-small;
-
-      .fa-solid {
-        margin-right: 0.75rem;
-
-        @include colour.colour-font("icon-light");
-      }
+    + p {
+      margin-top: 1rem;
     }
   }
 
@@ -114,20 +103,22 @@
   }
 
   &--contrast {
-    @include colour.invert;
+    @include colour.contrast;
   }
 
   &--accent {
     @include colour.accent;
 
-    .tna-hgroup__supertitle {
-      @include colour.invert;
+    .tna-hgroup__supertitle:not(.tna-hgroup__supertitle--plain) {
+      @include colour.contrast;
 
       @include colour.colour-border("contrast-background");
     }
   }
 
   &--horizontal {
+    aspect-ratio: auto 3/1;
+
     position: relative;
 
     @include media.on-larger-than-mobile {
@@ -138,6 +129,7 @@
 
       .tna-card__image-container {
         height: auto;
+        min-height: 50%;
         margin-bottom: 0;
         padding-bottom: 0;
 
@@ -176,8 +168,10 @@
     }
   }
 
-  &:not(#{&}--horizontal) {
-    @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
+    @include colour.colour-border("keyline-dark", 1px);
+
+    &:not(#{&}--horizontal) {
       .tna-card__inner {
         padding-bottom: 1rem;
       }
@@ -193,24 +187,5 @@
 
   @include colour.on-high-contrast {
     @include colour.colour-border("keyline-dark", 1px);
-
-    &__meta {
-      &-item {
-        padding-right: 0.5rem;
-
-        @include colour.colour-border("keyline-dark", 1px, solid);
-
-        .fa-solid {
-          margin-right: 0.5rem;
-          padding: 0.5rem;
-
-          @include colour.colour-font("contrast-font-base");
-
-          @include colour.colour-background("contrast-background");
-
-          @include colour.colour-border("keyline-dark", 1px, solid, right);
-        }
-      }
-    }
   }
 }

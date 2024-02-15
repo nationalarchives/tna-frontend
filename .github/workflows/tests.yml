@@ -5,40 +5,37 @@ on:
     branches:
       - '**'
 
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Lint
         uses: ./.github/actions/lint
 
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Tests
         uses: ./.github/actions/tests
 
-  test-build:
+  test-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Test build Storybook
-        uses: ./.github/actions/test-build
-
-  test-build-package:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Test build package
-        uses: ./.github/actions/test-build-package
+        uses: ./.github/actions/test-package
 
   prototype-kit:
     runs-on: ubuntu-latest
     needs:
-      - test-build-package
+      - test-package
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: GOV.UK prototype kit test
         uses: ./.github/actions/prototype-kit-test

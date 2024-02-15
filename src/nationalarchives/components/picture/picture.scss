@@ -1,23 +1,27 @@
 @use "../../tools/colour";
+@use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
+@use "../../variables/grid";
 @use "../../utilities";
 @use "../button";
 
 .tna-picture {
-  margin: 0;
+  @include spacing.space-above;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
   padding: 0;
 
-  @include spacing.space-below;
-
   &__image-wrapper {
-    // padding: 1rem 0;
+    padding: 1.5rem;
 
     position: relative;
-
-    background-color: #f4f4f4;
   }
 
   &__image {
+    width: auto;
+    max-height: 40rem;
     height: auto;
     margin: 0 auto;
   }
@@ -29,11 +33,9 @@
   }
 
   &__transcript {
-    @include colour.invert;
+    @include colour.contrast;
 
     padding: 1rem 1.5rem;
-
-    // @include colour.colour-font("font-base");
 
     .tna-template--clicked &:focus {
       outline: none;
@@ -45,21 +47,55 @@
   }
 
   &__caption {
-    padding: 1rem 0;
+    margin: 0 1rem;
+    padding: 1rem;
 
-    // position: relative;
-
-    // text-align: center;
+    @include typography.relative-font-size(16);
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
-  @include colour.on-high-contrast {
-    @include colour.colour-border("keyline-dark", 1px);
-    border-bottom-width: 0;
+  @include media.on-mobile {
+    &__image-wrapper {
+      padding: 0;
+    }
+  }
+
+  @include media.on-tiny {
+    .tna-column & {
+      width: calc(100% + #{grid.$gutter-width-tiny * 2});
+
+      position: relative;
+      left: -#{grid.$gutter-width-tiny};
+    }
+
+    &__image {
+      max-height: 60rem;
+    }
 
     &__caption {
-      padding: 1rem;
+      margin-right: 0;
+      margin-left: 0;
+
+      @include typography.relative-font-size(14);
+    }
+
+    @if grid.$gutter-width-tiny != 1.5rem {
+      &__caption,
+      &__transcript {
+        padding-right: grid.$gutter-width-tiny;
+        padding-left: grid.$gutter-width-tiny;
+      }
+    }
+  }
+
+  @include colour.on-high-contrast-and-forced-colours {
+    @include colour.colour-border("keyline-dark", 1px);
+
+    &__caption {
+      margin: 0;
+
+      border: none;
     }
   }
 }

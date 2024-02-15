@@ -1,35 +1,40 @@
 [
   {
-    "name": "heading",
-    "type": "object",
+    "name": "title",
+    "type": "string",
     "required": true,
-    "description": "",
-    "params": [
-      {
-        "name": "title",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "level",
-        "type": "number",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "size",
-        "type": "text",
-        "required": false,
-        "description": ""
-      },
-      {
-        "name": "href",
-        "type": "text",
-        "required": false,
-        "description": ""
-      }
-    ]
+    "description": "The main title of the index grid."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "default": "m",
+    "description": "The physical size of the index grid title."
+  },
+  {
+    "name": "headingHref",
+    "type": "string",
+    "required": false,
+    "description": "A URL to use as a link in the grid's heading."
+  },
+  {
+    "name": "body",
+    "type": "string",
+    "required": false,
+    "description": "The HTML for the main body of the index grid. Not displayed if `text` is set."
+  },
+  {
+    "name": "text",
+    "type": "string",
+    "required": false,
+    "description": "The text for the index grid which will be inserted into a `<p>` element. Overwrites `body` if it is set."
   },
   {
     "name": "items",

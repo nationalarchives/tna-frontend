@@ -6,19 +6,31 @@ on:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
       run: npm ci
       shell: bash
+    - name: Validate HTML
+      run: mkdir temp && npm run validatehtml
+      shell: bash
     - name: Build Storybook
-      run: npm run build
+      run: npm run build --test
       shell: bash
     - name: Start Storybook
       run: npm start &
       shell: bash
+    - name: Install Platwright
+      run: npx playwright install
+      shell: bash
+    - uses: nev7n/wait_for_response@v1
+      with:
+        url: "http://localhost:6006"
+        responseCode: 200
+        timeout: 30000
+        interval: 500
     - name: Run tests
       run: npm run test
       shell: bash

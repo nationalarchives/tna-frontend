@@ -6,7 +6,7 @@
 @use "../grid";
 
 .tna-gallery {
-  @include colour.invert;
+  @include colour.contrast;
 
   padding-bottom: 2rem;
 
@@ -16,12 +16,11 @@
 
   &__items {
     width: 100%;
-    // padding-top: 2rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: spacing.spacing("l");
+    gap: spacing.space("l");
 
     &:focus {
       outline: none !important;
@@ -106,23 +105,13 @@
 
   @include colour.on-high-contrast {
     &__items {
-      // padding-top: 2rem;
     }
 
     &__item {
-      // padding-bottom: 2rem;
-
-      // @include colour.colour-border("keyline-dark", 1px);
-
       &-index {
-        // padding-top: 0.5rem;
       }
 
       &-description {
-        // margin-bottom: 2rem;
-        // padding: 0 1rem 1rem;
-
-        // border: none;
       }
     }
   }

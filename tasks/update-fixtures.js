@@ -6,6 +6,8 @@ require.extensions[".njk"] = function (module, filename) {
   module.exports = fs.readFileSync(filename, "utf8");
 };
 
+nunjucks.configure(__dirname + "/../src");
+
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 

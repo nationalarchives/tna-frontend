@@ -1,0 +1,8 @@
+@use "variables/assets" with (
+  $tna-font-path:
+    "/plugin-assets/%40nationalarchives%2Ffrontend/nationalarchives/assets/fonts",
+  $fa-font-path:
+    "/plugin-assets/%40nationalarchives%2Ffrontend/nationalarchives/assets/fonts"
+);
+
+@use "all";

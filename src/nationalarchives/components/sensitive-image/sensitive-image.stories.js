@@ -1,7 +1,6 @@
 import SensitiveImage from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { within, userEvent, expect } from "@storybook/test";
 
 const argTypes = {
   src: { control: "text" },
@@ -51,6 +50,9 @@ Standard.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   image: {
     src: "https://picsum.photos/id/237/800/600",

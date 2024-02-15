@@ -103,7 +103,7 @@ Standard.args = {
           href: "#",
         },
         {
-          text: "Our research amd academic collaboration",
+          text: "Our research and academic collaboration",
           href: "#",
         },
         {
@@ -174,7 +174,7 @@ Standard.args = {
       href: "#",
     },
     {
-      text: "Terms and condidtions",
+      text: "Terms and conditions",
       href: "#",
     },
     {

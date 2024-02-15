@@ -1,11 +1,5 @@
 [
   {
-    "name": "title",
-    "type": "string",
-    "required": true,
-    "description": ""
-  },
-  {
     "name": "items",
     "type": "array",
     "required": true,

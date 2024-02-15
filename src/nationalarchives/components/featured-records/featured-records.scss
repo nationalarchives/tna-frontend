@@ -1,0 +1,95 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+@use "../../variables/typography" as typographyVars;
+@use "../../utilities";
+
+.tna-featured-records {
+  @include spacing.space-above;
+  margin-bottom: 0;
+  padding: 0;
+
+  list-style: none;
+
+  @include colour.colour-border("accent-background", 0.375rem, solid, top);
+
+  &__item {
+    padding: 2rem;
+
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include colour.colour-border("keyline", 1px);
+    border-top-width: 0;
+  }
+
+  &__image {
+    width: 7rem;
+    height: auto;
+  }
+
+  &__details {
+    margin: 0;
+
+    flex: 1;
+  }
+
+  &__title-label,
+  &__date-label {
+    display: none;
+  }
+
+  &__collection-description,
+  &__title-description,
+  &__date-description {
+    width: 100%;
+    margin: 0;
+  }
+
+  &__collection-label,
+  &__collection-description {
+    display: inline-block;
+  }
+
+  &__collection-label {
+    &::after {
+      content: ":";
+    }
+  }
+
+  &__collection-description {
+  }
+
+  &__title-label {
+  }
+
+  &__title-description {
+    padding-bottom: 0.25rem;
+
+    @include typography.detail-font;
+    @include typography.detail-font-weight-bold;
+  }
+
+  &__date-label {
+  }
+
+  &__date-description {
+    @include colour.colour-font("font-light");
+    @include typography.relative-font-size(
+      typographyVars.$body-font-size-px * 0.85
+    );
+  }
+
+  @include media.on-tiny {
+    &__item {
+      padding: 1rem;
+
+      gap: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

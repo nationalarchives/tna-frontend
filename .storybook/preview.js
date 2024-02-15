@@ -1,11 +1,13 @@
 import "../src/nationalarchives/all.scss";
+import "../src/nationalarchives/font-awesome.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
-// import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
+import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 
 document.documentElement.classList.add(
   "tna-template",
-  // "tna-template--system-theme",
+  "tna-template--light-theme",
+  "tna-template--yellow-accent",
 );
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");
@@ -13,15 +15,12 @@ if (window.self !== window.top) {
 document.body.classList.add("tna-template__body");
 
 export const parameters = {
-  actions: {
-    disable: true,
-  },
+  actions: {},
   viewport: { viewports: customViewports },
   options: { showPanel: true },
   a11y: {
     config: a11yConfig,
   },
-  // backgrounds: { disable: true },
   backgrounds: {
     values: [],
     grid: {
@@ -33,3 +32,15 @@ export const parameters = {
     expanded: true,
   },
 };
+
+export const decorators = [
+  (Story, ctx) => {
+    window.dataLayer = [];
+    window.TNAFrontend = {
+      Cookies,
+    };
+    const cookies = new Cookies();
+    cookies.deleteAll();
+    return Story();
+  },
+];

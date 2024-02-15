@@ -6,6 +6,12 @@
     "description": ""
   },
   {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

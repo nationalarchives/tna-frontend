@@ -1,5 +1,11 @@
 [
   {
+    "name": "serviceName",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
     "name": "cookiesUrl",
     "type": "string",
     "required": true,
@@ -18,10 +24,28 @@
     "description": ""
   },
   {
-    "name": "loadScriptsOnAccept",
+    "name": "cookiesDomain",
     "type": "string",
     "required": false,
     "description": ""
+  },
+  {
+    "name": "cookiesPath",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "allowInsecure",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "style",
+    "type": "text",
+    "required": false,
+    "description": "The style of banner to use which can be either `contrast` for an inverted style, `accent` for a banner that matches the page's accent colour or `tint` for a subtle, tinted banner."
   },
   {
     "name": "classes",

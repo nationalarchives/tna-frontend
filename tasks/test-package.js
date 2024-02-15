@@ -1,6 +1,7 @@
 const fs = require("fs");
 const packageJson = require("../package.json");
 const jsdom = require("jsdom");
+const { pass, fail } = require("./lib/passfail");
 require("node-self");
 
 const componentsWithJavaScript = {};
@@ -40,25 +41,52 @@ const checkExists = [
   "nationalarchives/all.js.map",
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
+  "nationalarchives/font-awesome.css",
+  "nationalarchives/font-awesome.css.map",
+  "nationalarchives/font-awesome.scss",
+  "nationalarchives/prototype-kit.css",
+  "nationalarchives/prototype-kit.css.map",
+  "nationalarchives/prototype-kit.scss",
   // Assets
-  "nationalarchives/assets/images/apple-touch-icon-152x152.png",
-  "nationalarchives/assets/images/apple-touch-icon-167x167.png",
-  "nationalarchives/assets/images/apple-touch-icon-180x180.png",
-  "nationalarchives/assets/images/apple-touch-icon.png",
+  "nationalarchives/assets/fonts/fa-brands-400.ttf",
+  "nationalarchives/assets/fonts/fa-brands-400.woff2",
+  "nationalarchives/assets/fonts/fa-solid-900.ttf",
+  "nationalarchives/assets/fonts/fa-solid-900.woff2",
+  "nationalarchives/assets/fonts/OpenSans-Bold.ttf",
+  "nationalarchives/assets/fonts/OpenSans-Regular.ttf",
+  "nationalarchives/assets/fonts/RobotoMono-Medium.ttf",
+  "nationalarchives/assets/fonts/RobotoMono-Regular.ttf",
+  "nationalarchives/assets/images/icon-48x48.png",
+  "nationalarchives/assets/images/icon-72x72.png",
+  "nationalarchives/assets/images/icon-96x96.png",
+  "nationalarchives/assets/images/icon-120x120.png",
+  "nationalarchives/assets/images/icon-144x144.png",
+  "nationalarchives/assets/images/icon-152x152.png",
+  "nationalarchives/assets/images/icon-167x167.png",
+  "nationalarchives/assets/images/icon-180x180.png",
+  "nationalarchives/assets/images/icon-192x192.png",
+  "nationalarchives/assets/images/icon-256x256.png",
+  "nationalarchives/assets/images/icon-512x512.png",
+  "nationalarchives/assets/images/icon-1024x1024.png",
   "nationalarchives/assets/images/favicon.ico",
   "nationalarchives/assets/images/mask-icon.svg",
+  "nationalarchives/assets/images/mstile-150x150.png",
   "nationalarchives/assets/images/nationalarchives-opengraph-image.png",
-  "nationalarchives/assets/images/tna-horizontal-logo-inverted.svg",
-  "nationalarchives/assets/images/tna-horizontal-logo.svg",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
   ...componentFiles("button"),
   ...componentFiles("card"),
+  ...componentFiles("checkboxes"),
+  ...componentFiles("compound-filters"),
   ...componentFiles("cookie-banner", "CookieBanner"),
+  ...componentFiles("date-input"),
+  ...componentFiles("date-search"),
+  ...componentFiles("featured-records"),
   ...componentFiles("filters"),
   ...componentFiles("footer"),
   ...componentFiles("gallery", "Gallery"),
+  ...componentFiles("global-header", "GlobalHeader"),
   ...componentFiles("grid"),
   ...componentFiles("header", "Header"),
   ...componentFiles("hero"),
@@ -67,10 +95,14 @@ const checkExists = [
   ...componentFiles("pagination"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
-  ...componentFiles("profile"),
+  ...componentFiles("radios"),
   ...componentFiles("sensitive-image", "SensitiveImage"),
-  ...componentFiles("skip-link"),
+  ...componentFiles("search-field"),
+  ...componentFiles("select"),
+  ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
+  ...componentFiles("text-input"),
+  ...componentFiles("textarea"),
   // Tools
   "nationalarchives/tools/_index.scss",
   "nationalarchives/tools/_grid.scss",
@@ -97,14 +129,15 @@ checkExists.forEach((checkFile) => {
   const checkFilePath = `${packageDirectory}/${checkFile}`;
   try {
     fs.accessSync(checkFilePath);
-    console.log(
-      `  🟢 [PASS] ${
+    pass(
+      `${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
       } exists: ${checkFilePath.replace(/\/$/, "")}`,
     );
   } catch (err) {
-    console.error(`  🔴 [FAIL] ${err}`);
-    process.exit();
+    fail(err);
+    process.exitCode = 1;
+    throw new Error("File structure test failed");
   }
 });
 
@@ -113,14 +146,13 @@ console.log("\n");
 console.log(`Testing package version`);
 const compiledPackageJson = require("../package/package.json");
 if (packageJson.version === compiledPackageJson.version) {
-  console.log(
-    `  🟢 [PASS] Version ${packageJson.version} is set in the package`,
-  );
+  pass(`Version ${packageJson.version} is set in the package`);
 } else {
-  console.error(
-    `  🔴 [FAIL] The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
+  fail(
+    `The package version should be ${packageJson.version} but is ${compiledPackageJson.version}`,
   );
-  process.exit();
+  process.exitCode = 1;
+  throw new Error("Package version test failed");
 }
 
 console.log("\n");
@@ -130,7 +162,7 @@ const expectedPrototypeKitConfigProperties = [
   "nunjucksPaths",
   "scripts",
   "assets",
-  "sass",
+  "stylesheets",
   "templates",
 ];
 const prototypeKitConfig = require(
@@ -143,14 +175,15 @@ expectedPrototypeKitConfigProperties.forEach(
         expectedPrototypeKitConfigProperty,
       )
     ) {
-      console.log(
-        `  🟢 [PASS] Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
+      pass(
+        `Prototype kit config contains: ${expectedPrototypeKitConfigProperty}`,
       );
     } else {
-      console.error(
-        `  🔴 [FAIL] Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
+      fail(
+        `Prototype kit config is missing: ${expectedPrototypeKitConfigProperty}`,
       );
-      process.exit();
+      process.exitCode = 1;
+      throw new Error("Prototype kit config test failed");
     }
   },
 );
@@ -167,19 +200,21 @@ if (
   Object.keys(jsAllPackage).includes("initAll") &&
   typeof jsAllPackage.initAll === "function"
 ) {
-  console.log(`  🟢 [PASS] all.js function exists: initAll()`);
+  pass(`all.js function exists: initAll()`);
 } else {
-  console.error(`  🔴 [FAIL] all.js function missing: initAll()`);
-  process.exit();
+  fail(`all.js function missing: initAll()`);
+  process.exitCode = 1;
+  throw new Error("JavaScript test failed");
 }
 if (
   Object.keys(jsAllPackage).includes("Cookies") &&
   typeof jsAllPackage.Cookies === "function"
 ) {
-  console.log(`  🟢 [PASS] all.js class exists: Cookies`);
+  pass(`all.js class exists: Cookies`);
 } else {
-  console.error(`  🔴 [FAIL] all.js class missing: Cookies`);
-  process.exit();
+  fail(`all.js class missing: Cookies`);
+  process.exitCode = 1;
+  throw new Error("JavaScript module test failed");
 }
 Object.keys(componentsWithJavaScript).forEach((component) => {
   const componentClass = componentsWithJavaScript[component];
@@ -187,10 +222,11 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     Object.keys(jsAllPackage).includes(componentClass) &&
     typeof jsAllPackage[componentClass] === "function"
   ) {
-    console.log(`  🟢 [PASS] all.js function exists: ${componentClass}()`);
+    pass(`all.js function exists: ${componentClass}()`);
   } else {
-    console.error(`  🔴 [FAIL] all.js function missing: ${componentClass}()`);
-    process.exit();
+    fail(`all.js function missing: ${componentClass}()`);
+    process.exitCode = 1;
+    throw new Error("Component JavaScript test failed");
   }
 });
 Object.keys(componentsWithJavaScript).forEach((component) => {
@@ -202,17 +238,33 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
     Object.keys(jsComponentPackage).includes(componentClass) &&
     typeof jsComponentPackage[componentClass] === "function"
   ) {
-    console.log(
-      `  🟢 [PASS] ${component}.js function exists: ${componentClass}()`,
-    );
+    pass(`${component}.js function exists: ${componentClass}()`);
   } else {
-    console.error(
-      `  🔴 [FAIL] ${component}.js function missing: ${componentClass}()`,
-    );
-    process.exit();
+    fail(`${component}.js function missing: ${componentClass}()`);
+    process.exitCode = 1;
+    throw new Error("Standalone component JavaScript test failed");
   }
 });
 
 console.log("\n");
 
-// TODO: Test CSS for contents
+console.log(`Testing compiled CSS files`);
+const cssAllPackage = fs
+  .readFileSync("package/nationalarchives/all.css")
+  .toString();
+const checkForClasses = ["tna-template", "tna-template__body"];
+checkForClasses.forEach((cssClass) => {
+  const escapedClass = cssClass.replace("-", "\\-");
+  const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}\{`, "g"));
+  if (regExp) {
+    pass(
+      `${cssClass.replace(/`{$/, "")} selector occurs ${regExp.length} time${
+        regExp.length === 1 ? "" : "s"
+      } in compiled CSS`,
+    );
+  } else {
+    fail(`${cssClass.replace(/`{$/, "")} selector missing from compiled CSS`);
+    process.exitCode = 1;
+    throw new Error("CSS test failed");
+  }
+});

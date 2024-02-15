@@ -1,16 +1,14 @@
 import Header from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { within, userEvent, expect } from "@storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   logo: { control: "object" },
   topNavigation: { control: "object" },
   navigation: { control: "object" },
-  colour: {
-    control: "radio",
-    options: ["black", "yellow", "pink", "orange", "green", "blue"],
+  accent: {
+    control: "boolean",
   },
   exit: { control: "object" },
   classes: { control: "text" },
@@ -35,7 +33,7 @@ const Template = ({
   logo,
   topNavigation,
   navigation,
-  colour,
+  accent,
   exit,
   classes,
   attributes,
@@ -45,7 +43,7 @@ const Template = ({
       logo,
       topNavigation,
       navigation,
-      colour,
+      accent,
       exit,
       classes,
       attributes,
@@ -55,7 +53,7 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   logo: {
-    strapline: "Beta",
+    strapline: "Design System",
     href: "#/",
   },
   topNavigation: [
@@ -66,10 +64,12 @@ Standard.args = {
     {
       text: "Top item 2",
       href: "#/top-2",
+      icon: "phone",
     },
     {
       text: "Top item 3",
       href: "#/top-3",
+      brandIcon: "github",
     },
   ],
   navigation: [
@@ -87,7 +87,6 @@ Standard.args = {
       href: "#/gamma",
     },
   ],
-  colour: "yellow",
   exit: {
     text: "Go to the current National Archives website",
     href: "#",
@@ -95,35 +94,7 @@ Standard.args = {
   },
   classes: "tna-header--demo",
 };
-
-export const Desktop = Template.bind({});
-Desktop.parameters = {
-  viewport: {
-    defaultViewport: "medium",
-  },
-  chromatic: {
-    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
-  },
-};
-Desktop.args = {
-  navigation: [
-    {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
-    },
-    {
-      text: "Beta",
-      href: "#/beta",
-    },
-    {
-      text: "Gamma",
-      href: "#/gamma",
-    },
-  ],
-  classes: "tna-header--demo",
-};
-Desktop.play = async ({ canvasElement }) => {
+Standard.play = async ({ canvasElement }) => {
   await new Promise((r) => setTimeout(r, 100));
 
   const $navigationItems = canvasElement.querySelector(
@@ -147,6 +118,26 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+      icon: "phone",
+    },
+    {
+      text: "Top item 3",
+      href: "#/top-3",
+      brandIcon: "github",
+    },
+  ],
   navigation: [
     {
       text: "Alpha",
@@ -162,6 +153,11 @@ Mobile.args = {
       href: "#/gamma",
     },
   ],
+  exit: {
+    text: "Go to the current National Archives website",
+    href: "#",
+    target: "_blank",
+  },
   classes: "tna-header--demo",
 };
 Mobile.play = async ({ args, canvasElement, step }) => {
@@ -210,44 +206,3 @@ Mobile.play = async ({ args, canvasElement, step }) => {
 
   $navigationToggle.blur();
 };
-
-// export const NoJavascript = Template.bind({});
-// NoJavascript.args = {
-//   navigation: [
-//     {
-//       text: "Alpha",
-//       href: "#/alpha",
-//       selected: true,
-//     },
-//     {
-//       text: "Beta",
-//       href: "#/beta",
-//     },
-//     {
-//       text: "Gamma",
-//       href: "#/gamma",
-//     },
-//   ],
-//   classes: "tna-header--demo",
-// };
-// NoJavascript.play = async ({ args, canvasElement, step }) => {
-//   document.documentElement.classList.remove("tna-template--js-enabled");
-//   canvasElement.innerHTML = canvasElement.innerHTML;
-//   const $navigationToggleWrapper = canvasElement.querySelector(
-//     `.tna-header__navigation-toggle`,
-//   );
-//   $navigationToggleWrapper.innerHTML = "";
-
-//   const canvas = within(canvasElement);
-
-//   // const $navigationItems = canvasElement.querySelector(
-//   //   `.tna-header__navigation-items`,
-//   // );
-//   // const [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
-//   //   canvas.getByText(navigationItem.text),
-//   // );
-//   // await expect($navigationItems).toBeVisible();
-//   // await expect($linkA).toBeVisible();
-//   // await expect($linkB).toBeVisible();
-//   // await expect($linkC).toBeVisible();
-// };

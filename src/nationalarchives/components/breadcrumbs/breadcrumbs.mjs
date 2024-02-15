@@ -3,26 +3,16 @@ import uuidv4 from "../../lib/uuid.mjs";
 export class Breadcrumbs {
   constructor($module) {
     this.$module = $module;
-    this.$breadcrumbsListWrapper =
-      $module && $module.querySelector(".tna-breadcrumbs__wrapper");
     this.$breadcrumbsList =
-      $module &&
-      this.$breadcrumbsListWrapper &&
-      $module.querySelector(".tna-breadcrumbs__list");
+      $module && $module.querySelector(".tna-breadcrumbs__list");
     this.$breadcrumbs =
       $module &&
-      this.$breadcrumbsListWrapper &&
       this.$breadcrumbsList &&
       $module.querySelectorAll(".tna-breadcrumbs__item");
   }
 
   init() {
-    if (
-      !this.$module ||
-      !this.$breadcrumbsListWrapper ||
-      !this.$breadcrumbsList ||
-      !this.$breadcrumbs
-    ) {
+    if (!this.$module || !this.$breadcrumbsList || !this.$breadcrumbs) {
       return;
     }
 
@@ -42,15 +32,15 @@ export class Breadcrumbs {
       const $expandButton = document.createElement("button");
       $expandButton.classList.add("tna-breadcrumbs__link");
       $expandButton.innerHTML =
-        "<span class='tna-visually-hidden'>Expand breadcrumbs</span>&hellip;";
+        "<span class='tna-!--visually-hidden'>Expand breadcrumbs</span>&hellip;";
       $expandButton.setAttribute("aria-expanded", "false");
       $expandButton.setAttribute("aria-controls", uniqueId);
       $expandButton.addEventListener("click", () => {
         this.$module.classList.remove("tna-breadcrumbs--collapsed");
         $expandable.remove();
-        this.$breadcrumbsListWrapper.setAttribute("tabindex", "0");
-        this.$breadcrumbsListWrapper.focus();
-        this.$breadcrumbsListWrapper.setAttribute("tabindex", "-1");
+        this.$module.setAttribute("tabindex", "0");
+        this.$module.focus();
+        this.$module.setAttribute("tabindex", "-1");
       });
 
       $expandable.appendChild($expandButton);

@@ -1,22 +1,18 @@
 const { globSync } = require("glob");
-const fs = require("fs");
 const Diff = require("diff");
-const nunjucks = require("nunjucks");
-
-require.extensions[".njk"] = function (module, filename) {
-  module.exports = fs.readFileSync(filename, "utf8");
-};
+const { pass, fail } = require("./lib/passfail");
+const { renderNunjucks } = require("./lib/nunjucks");
 
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
 
-const components = globSync(
-  `${componentsDirectory}*${componentFixturesFile}`,
-).map((componentFixtureFile) =>
-  componentFixtureFile
-    .replace(new RegExp(`^${componentsDirectory}`), "")
-    .replace(new RegExp(`${componentFixturesFile}$`), ""),
-);
+const components = globSync(`${componentsDirectory}*${componentFixturesFile}`)
+  .map((componentFixtureFile) =>
+    componentFixtureFile
+      .replace(new RegExp(`^${componentsDirectory}`), "")
+      .replace(new RegExp(`${componentFixturesFile}$`), ""),
+  )
+  .reverse();
 
 const failedComponents = components.filter((component) => {
   console.log(`\nComponent: ${component}`);
@@ -27,16 +23,11 @@ const failedComponents = components.filter((component) => {
     `../${componentsDirectory}${component}/template.njk`,
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
-    const result = nunjucks
-      .renderString(componentNunjucks, {
-        params: fixture.options,
-      })
-      .trim()
-      .replace(/>\n\s*/g, ">")
-      .replace(/\n\s*</g, "<");
+    const result = renderNunjucks(componentNunjucks, fixture.options, true);
     const mismatch = result !== fixture.html;
     if (mismatch) {
-      console.error(`  🔴 [FAIL] ${fixture.name}\n`);
+      fail(`${fixture.name} (${componentsDirectory}${component}/template.njk)`);
+      console.log("\n");
       const diff = Diff.diffChars(fixture.html, result)
         .map(
           (part) =>
@@ -45,26 +36,27 @@ const failedComponents = components.filter((component) => {
             }${part.value}`,
         )
         .join("");
-      console.log(diff);
+      console.log(diff.replace(/></g, ">\n<"));
       console.log("\n");
-    } else {
-      console.log(`  🟢 [PASS] ${fixture.name}`);
+      return true;
     }
-    return mismatch;
+    pass(fixture.name);
+    return false;
   });
   return failedFixtures.length;
 });
 console.log("\n------------------------------------------");
 if (failedComponents.length) {
-  console.error(
-    `🔴 [FAIL] ${failedComponents.length} out of ${
-      components.length
-    } component${components.length === 1 ? "" : "s"} failed`,
+  fail(
+    `${failedComponents.length} out of ${components.length} component${
+      components.length === 1 ? "" : "s"
+    } failed`,
   );
-  process.exit(1);
+  process.exitCode = 1;
+  throw new Error("Fixtures tests failed");
 } else {
-  console.log(
-    `🟢 [PASS] ${components.length} component${
+  pass(
+    `${components.length} component${
       components.length === 1 ? "" : "s"
     } passed successfully`,
   );

@@ -88,15 +88,27 @@
     "description": ""
   },
   {
+    "name": "formGroupClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the radios form group."
+  },
+  {
+    "name": "formGroupAttributes",
+    "type": "string",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the radios form group."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the radios."
+    "description": "Classes to add to the radio elements."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the radios."
+    "description": "HTML attributes (for example data attributes) to add to the radio elements."
   }
 ]

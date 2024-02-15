@@ -1,6 +1,7 @@
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 @use "../../utilities";
 
 .tna-message {
@@ -8,22 +9,49 @@
   padding: 1rem;
 
   display: flex;
-  align-items: center;
+  gap: 1rem;
+  align-items: flex-start;
 
-  color: colour.brand-colour("black");
+  @include colour.accent-light;
 
   background-color: colour.brand-colour("cream");
 
   @include colour.colour-border("keyline-dark", 0.5rem, solid, left);
   border-left-color: colour.brand-colour("yellow");
 
-  &__icon {
-    margin-right: 1rem;
+  @include media.on-tiny {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    flex: 0 0 2.5rem;
+  &__heading {
+    font-size: 0;
+  }
+
+  &__heading-icon {
+    width: 2rem;
+    height: 2rem;
+
+    display: block;
+
+    @include colour.colour-font("font-dark");
+    @include typography.relative-font-size(24);
+    @include typography.main-font-weight-bold;
+    text-transform: lowercase;
+    text-align: center;
+    line-height: 2rem;
+
+    @include colour.colour-border("font-dark", 0.1875rem);
+    border-radius: 100%;
 
     @include media.on-mobile {
-      flex: 0 0 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      @include typography.relative-font-size(19);
+      line-height: 1.5rem;
+
+      @include colour.colour-border("font-dark", 0.125rem);
     }
   }
 

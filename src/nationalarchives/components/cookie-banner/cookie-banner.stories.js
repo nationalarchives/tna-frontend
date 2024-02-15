@@ -1,7 +1,6 @@
 import CookieBanner from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { within, userEvent, expect } from "@storybook/test";
 import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {
@@ -64,6 +63,7 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   cookiesUrl: "#",
+  cookiesPath: "/tna-frontend/",
   classes: "tna-cookie-banner--demo",
 };
 
@@ -107,6 +107,8 @@ Accept.play = async ({ canvasElement }) => {
   // await userEvent.click(closeButton);
 
   // await expect(closeButton).not.toBeVisible();
+
+  await cookies.deleteAll();
 };
 
 export const Reject = Template.bind({});
@@ -222,6 +224,7 @@ Existing.play = async ({ canvasElement }) => {
 // EventHandling.args = {
 //   serviceName: "My service",
 //   cookiesUrl: "#",
+//   cookiesPath: "/tna-frontend/",
 //   policies: "custom",
 //   classes: "tna-cookie-banner--demo",
 // };

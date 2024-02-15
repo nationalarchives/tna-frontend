@@ -1,0 +1,46 @@
+{
+  "component": "compound-filters",
+  "fixtures": [
+    {
+      "name": "plain compound filters",
+      "options": {
+        "items": [
+          {
+            "label": "Medieval (974—1485)",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Early Modern (1485—1714)",
+            "href": "#?filter=beta"
+          },
+          {
+            "label": "Georgians (1714—1837)",
+            "href": "#?filter=gamma"
+          },
+          {
+            "label": "Victorians (1837—1901)",
+            "href": "#?filter=delta"
+          },
+          {
+            "label": "Early 20th century (1901—1918)",
+            "href": "#?filter=epsilon"
+          },
+          {
+            "label": "Interwar (1918—1939)",
+            "href": "#?filter=zeta"
+          },
+          {
+            "label": "Second World War (1939—1945)",
+            "href": "#?filter=eta"
+          },
+          {
+            "label": "Postwar (1945—2000)",
+            "href": "#?filter=theta"
+          }
+        ]
+      },
+      "html": "<ul class=\"tna-compound-filters tna-ul tna-ul--plain \"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Medieval (974—1485)</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Early Modern (1485—1714)</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Georgians (1714—1837)</span><a href=\"#?filter=gamma\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Victorians (1837—1901)</span><a href=\"#?filter=delta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Early 20th century (1901—1918)</span><a href=\"#?filter=epsilon\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Interwar (1918—1939)</span><a href=\"#?filter=zeta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Second World War (1939—1945)</span><a href=\"#?filter=eta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Postwar (1945—2000)</span><a href=\"#?filter=theta\" class=\"tna-compound-filters__link\">Remove filter</a></li></ul>",
+      "hidden": false
+    }
+  ]
+}

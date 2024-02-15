@@ -5,18 +5,122 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.32...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.38...HEAD)
 
 ### Added
+
+- Automated AXE checks now include WCAG 2.2
+
 ### Changed
 
-- The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
-- The card style of `boxed` has been changed to `contrast` in line with other components
+- Changed spacing between navigation items in header
 
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Stopped logo from shrinking with longer straplines in headers
+- The message component has a header rather than an icon which provides a better page landmark
+
 ### Security
+
+## [0.1.38](https://github.com/nationalarchives/tna-frontend/compare/v0.1.37...v0.1.38) - 2024-02-13
+
+### Security
+
+- Updated dependencies
+
+## [0.1.37](https://github.com/nationalarchives/tna-frontend/compare/v0.1.36...v0.1.37) - 2024-02-13
+
+### Added
+
+- New global header component
+
+### Changed
+
+- Changed the aspect ratio of the hero image to be 5:2
+- Selected state of header component changed
+- Phase banner font size reduced
+- Header component spacing and sizing tweaked to more closely align to the global header
+- Header and footer SVG logos changed to use `currentColor` as the foreground colour with a transparent background
+- Removed "link" icons from external links in the footer
+
+### Fixed
+
+- Allowed taller images in picture elements on tiny devices
+- Fixed focus styles for always-light components (e.g. text inputs) on high contrast themes
+- Added link to the National Archives mailing list in footer
+- Added `<title>` to inline SVGs in header and footers
+- Added `aria-hidden="true"` to all Font Awesome icons
+
+## [0.1.36](https://github.com/nationalarchives/tna-frontend/compare/v0.1.35...v0.1.36) - 2024-02-06
+
+### Changed
+
+- Tab elements in high contrast mode have an extra keyline to help with visibility
+- The header element no longer uses background tint in high contrast mode
+- The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
+- The card style of `boxed` has been changed to `contrast` in line with other components
+- The background tint colour on the light theme is slightly darker for better contrast with the page background
+- Set smaller minimum width for search field inputs
+- Added more space between the text and chevron in a heading link
+- Split out Font Awesome into a separate CSS file
+- Change the default `htmlLang` from `en-GB` to `en`
+- Changed the aspect ratio of the hero image to be closer to a 3:1
+- Update large heading size to not be smaller than medium headings on medium devices
+- Remove italicised text from picture element captions and blockquotes, update font sizes
+- Reduce padding between checkboxes, radios and their labels when small
+- Reduce padding on blockquotes on mobile
+
+### Removed
+
+- Removed option for `tna-search-field--no-border` - borders are dictated by the background colours and page theme
+
+### Fixed
+
+- Picture elements in high contrast mode have improved borders with no gaps
+
+## [0.1.35](https://github.com/nationalarchives/tna-frontend/compare/v0.1.34...v0.1.35) - 2024-01-16
+
+### Added
+
+- More icon sizes added
+
+### Changed
+
+- Images on horizontal cards are now at least a 3:2 aspect ratio
+- Icon assets have been renamed from `apple-touch-icon-xxx.png` to `icon-xxx.png`
+
+## [0.1.34](https://github.com/nationalarchives/tna-frontend/compare/v0.1.33...v0.1.34) - 2024-01-10
+
+### Added
+
+- Base template can now accept `htmlAttributes`
+- Compound filters can be used to show currently selected search filters
+
+### Changed
+
+- Changed `attributes` to `formGroupAttributes` and `classes` to `formClasses` on checkboxes and radios - `attributes` and `classes` now get applied to each checkbox and radio element
+
+### Fixed
+
+- Fixed `href` property of pagination `previous` and `next` links
+
+## [0.1.33](https://github.com/nationalarchives/tna-frontend/compare/v0.1.32...v0.1.33) - 2023-12-29
+
+### Added
+
+- Added italic version of Open Sans
+
+### Changed
+
+- The default cookie banner colour is dark on light but can be changed with a `style` attribute or classes such as `tna-cookie-banner--contrast`
+- The card style of `boxed` has been changed to `contrast` in line with other components
+- Changed `tna-select--plain` to `tna-select--styled`
+- Updated button styles - icon sizes, padding and gaps on small and icon-only buttons
+- Removed slash on void elements (updating `<hr />` to `<hr>`)
+- Italicise picture element captions to distinguish from regular text
+- Use `text-wrap: pretty;` for headings
 
 ## [0.1.32](https://github.com/nationalarchives/tna-frontend/compare/v0.1.31...v0.1.32) - 2023-12-18
 

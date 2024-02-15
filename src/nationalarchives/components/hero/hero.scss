@@ -8,7 +8,7 @@
   @include colour.contrast-on-mobile;
 
   &__figure {
-    min-height: min(35vw, 480px);
+    min-height: clamp(12rem, calc(40vw - 12rem), 63rem);
     margin: 0;
     padding-top: 8rem;
     padding-bottom: 4rem;
@@ -162,9 +162,6 @@
   }
 
   &--tint .tna-hero__figure {
-    // @include colour.colour-border("keyline-dark", 1px, solid, top);
-    // @include colour.colour-border("keyline-dark", 1px, solid, bottom);
-
     &::before,
     &::after {
       position: absolute;
@@ -193,18 +190,11 @@
     .tna-hero__image {
       filter: grayscale(1) contrast(1.75) brightness(1.2);
     }
-
-    .tna-hero__content-inner {
-      // @include colour.colour-border("keyline-dark", 1px);
-
-      @include media.on-mobile {
-        // border: none;
-      }
-    }
   }
 
   @include media.on-mobile {
     &__figure {
+      min-height: auto;
       padding: 0;
 
       flex-direction: column;

@@ -5,9 +5,9 @@ require.extensions[".njk"] = function (module, filename) {
   module.exports = fs.readFileSync(filename, "utf8");
 };
 
-nunjucks.configure(__dirname + "/../src");
+nunjucks.configure(__dirname + "/../../src");
 
-const componentNunjucks = require("../src/nationalarchives/components/cookie-banner/template.njk");
+const componentNunjucks = require("../../src/nationalarchives/components/cookie-banner/template.njk");
 
 const html = nunjucks
   .renderString(componentNunjucks, {
@@ -22,7 +22,8 @@ const html = nunjucks
       allowInsecure: false,
     },
   })
-  .trim();
+  .trim()
+  .replace(/ " /g, '" ');
 
 fs.readFile(
   "src/nationalarchives/components/cookie-banner/README.md",

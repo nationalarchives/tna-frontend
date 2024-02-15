@@ -5,9 +5,8 @@ import Card from "../../../components/card/template.njk";
 import Checkboxes from "../../../components/checkboxes/template.njk";
 import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
-import CookieBanner from "../../../components/cookie-banner/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
-import Header from "../../../components/header/template.njk";
+import GlobalHeader from "../../../components/global-header/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
 import Message from "../../../components/message/template.njk";
@@ -44,6 +43,12 @@ export default {
 };
 
 const Template = ({ theme, accent }) => {
+  document.documentElement.classList.remove(
+    "tna-template",
+    "tna-template--light-theme",
+    "tna-template--yellow-accent",
+  );
+
   const cardDefaultOptions = {
     supertitle: "Card supertitle",
     title: "Card title",
@@ -92,13 +97,6 @@ const Template = ({ theme, accent }) => {
               : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
-    <!--
-    ${CookieBanner({
-      params: {
-        cookiesUrl: "#",
-      },
-    })}
-    -->
     ${SkipLink({
       params: {
         href: "main-content",
@@ -112,25 +110,53 @@ const Template = ({ theme, accent }) => {
         accent: true,
       },
     })}
-    ${Header({
+    ${GlobalHeader({
       params: {
         logo: {
           strapline: "Colours",
           href: "#/",
         },
+        topNavigation: [
+          {
+            text: "Search",
+            href: "#/search",
+            icon: "search",
+          },
+          {
+            text: "Shop",
+            href: "#/shop",
+            icon: "bag-shopping",
+          },
+          {
+            text: "Sign in",
+            href: "#/sign-in",
+            icon: "user",
+          },
+        ],
         navigation: [
           {
-            text: "Alpha",
-            href: "#/alpha",
-            selected: true,
+            text: "Visit",
+            href: "#/visit",
           },
           {
-            text: "Beta",
-            href: "#/beta",
+            text: "What's on",
+            href: "#/whats-on",
           },
           {
-            text: "Gamma",
-            href: "#/gamma",
+            text: "Explore the collection",
+            href: "#/explore-the-collection",
+          },
+          {
+            text: "Using the archives",
+            href: "#/using-the-archives",
+          },
+          {
+            text: "Learn",
+            href: "#/learn",
+          },
+          {
+            text: "Professional guidance & services",
+            href: "#/professional-guidance-and-services",
           },
         ],
       },
@@ -363,17 +389,17 @@ const Template = ({ theme, accent }) => {
           </h3>
           <dl class="tna-dl tna-dl--icon-padding ">
             <dt>
-              <i class="fa-solid fa-landmark"></i>
+              <i class="fa-solid fa-landmark" aria-hidden="true"></i>
               Held by
             </dt>
             <dd>The National Archives, Kew</dd>
             <dt>
-              <i class="fa-solid fa-calendar"></i>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
               Date
             </dt>
             <dd>1972–1979</dd>
             <dt>
-              <i class="fa-solid fa-database"></i>
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
               Reference
             </dt>
             <dd>LC 4</dd>
@@ -387,7 +413,7 @@ const Template = ({ theme, accent }) => {
             </li>
             <li class="tna-chip-list__item">
               <a href="#" class="tna-chip">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
                 Chip 2
               </a>
             </li>
@@ -396,7 +422,7 @@ const Template = ({ theme, accent }) => {
             </li>
             <li class="tna-chip-list__item">
               <a href="#" class="tna-chip tna-chip--plain">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
                 Chip 4
               </a>
             </li>
@@ -1096,7 +1122,6 @@ const Template = ({ theme, accent }) => {
                   headingSize: "l",
                   id: "search1",
                   name: "q",
-                  formGroupClasses: "tna-search-field--no-border",
                 },
               })}
               ${TextInput({

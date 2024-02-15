@@ -17,6 +17,14 @@
     // font-display: swap;
   }
 
+  // @font-face {
+  //   font-family: "Open Sans";
+  //   src: url("#{assets.$tna-font-path}/OpenSans-Italic.ttf");
+  //   font-weight: typographyVars.$main-font-weight;
+  //   font-style: italic;
+  //   // font-display: swap;
+  // }
+
   @font-face {
     font-family: "Open Sans";
     src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
@@ -41,7 +49,7 @@
     // font-display: swap;
   }
 } @else {
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@#{typographyVars.$main-font-weight};#{typographyVars.$main-font-weight-bold}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,#{typographyVars.$main-font-weight};0,#{typographyVars.$main-font-weight-bold};1,#{typographyVars.$main-font-weight}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
 }
 
 .tna-template {
@@ -79,9 +87,16 @@ strong {
 p {
   @include spacing.space-above;
 
-  + p {
+  + p/*,
+  + .tna-ul,
+  + .tna-ol,
+  + .tna-blockquote*/ {
     margin-top: 1rem;
   }
+
+  // + :is(p, .tna-ul, .tna-ol, .tna-blockquote) {
+  //   margin-top: 1rem;
+  // }
 }
 
 a {
@@ -208,15 +223,14 @@ small {
 
 %heading {
   @include colour.colour-font("font-dark");
+  text-wrap: pretty;
 
   &:not(.tna-heading--no-link-arrow) {
     a {
       display: inline-block;
 
-      // text-wrap: balance;
-
       &::after {
-        padding-left: 0.25rem;
+        padding-left: 0.5rem;
 
         display: inline-block;
 
@@ -225,11 +239,11 @@ small {
         content: "\203A";
       }
 
-      // &:hover {
-      //   &::after {
-      //     padding-left: 0.5rem;
-      //   }
-      // }
+      &:hover {
+        &::after {
+          padding-left: 0.75rem;
+        }
+      }
     }
   }
 }
@@ -258,7 +272,7 @@ small {
   line-height: 1.3;
 
   @include media.on-medium {
-    @include typography.relative-font-size(26);
+    @include typography.relative-font-size(30);
   }
 
   @include media.on-mobile {
@@ -381,7 +395,7 @@ small {
   }
 
   &__author {
-    font-style: italic;
+    @include typography.relative-font-size(16);
 
     .tna-blockquote & {
       margin: 1rem 0 0;
@@ -390,6 +404,10 @@ small {
     &::before {
       content: "\2014" " ";
     }
+  }
+
+  @include media.on-tiny {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
   }
 }
 

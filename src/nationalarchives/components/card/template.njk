@@ -1,5 +1,3 @@
-{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
-
 {%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.layout == "horizontal" -%}
@@ -72,7 +70,7 @@
         <li class="tna-chip-list__item">
           <div class="tna-chip tna-chip--plain">
             {%- if item.icon %}
-            <i class="fa-solid fa-fw fa-{{ item.icon }}"></i>
+            <i class="fa-solid fa-fw fa-{{ item.icon }}" aria-hidden="true"></i>
             {%- endif %}
             {{ item.text }}
           </div>
@@ -89,7 +87,14 @@
   {%- if params.actions %}
     <div class="tna-card__actions tna-button-group">
     {%- for item in params.actions %}
-      {{ tnaButton(item) }}
+      <a href="{{ item.href }}" class="tna-card__action{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- if item.title %} title="{{ item.title }}"{% endif %} {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+        {%- if item.brandIcon %}
+        <i class="fa-brands fa-{{ item.brandIcon }}" aria-hidden="true"></i>
+        {%- elseif item.icon %}
+        <i class="fa-solid fa-{{ item.icon }}" aria-hidden="true"></i>
+        {%- endif %}
+        {{ item.text }}
+      </a>
     {%- endfor %}
     </div>
   {%- endif %}

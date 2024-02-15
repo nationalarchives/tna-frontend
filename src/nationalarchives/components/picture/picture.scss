@@ -47,7 +47,7 @@
   }
 
   &__caption {
-    margin: 0 2rem;
+    margin: 0 1rem;
     padding: 1rem;
 
     @include typography.relative-font-size(16);
@@ -70,23 +70,32 @@
     }
 
     &__image {
-      width: 100%;
-      max-height: none;
-      height: auto;
+      max-height: 60rem;
     }
 
     &__caption {
       margin-right: 0;
       margin-left: 0;
+
+      @include typography.relative-font-size(14);
+    }
+
+    @if grid.$gutter-width-tiny != 1.5rem {
+      &__caption,
+      &__transcript {
+        padding-right: grid.$gutter-width-tiny;
+        padding-left: grid.$gutter-width-tiny;
+      }
     }
   }
 
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px);
-    border-bottom-width: 0;
 
     &__caption {
-      padding: 1rem;
+      margin: 0;
+
+      border: none;
     }
   }
 }

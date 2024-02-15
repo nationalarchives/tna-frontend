@@ -45,7 +45,11 @@ const DescriptionListTemplate = ({ items, plain, classes }) =>
   } ${classes}">${items.reduce(
     (list, item) => `${list}
     <dt>
-      ${item.icon ? `<i class="fa-solid fa-${item.icon}"></i>` : ""}
+      ${
+        item.icon
+          ? `<i class="fa-solid fa-${item.icon}" aria-hidden="true"></i>`
+          : ""
+      }
       ${item.title}
     </dt>
     ${

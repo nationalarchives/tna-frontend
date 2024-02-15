@@ -88,15 +88,27 @@
     "description": ""
   },
   {
+    "name": "formGroupClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the checkboxes form group."
+  },
+  {
+    "name": "formGroupAttributes",
+    "type": "string",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the checkboxes form group."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the checkboxes."
+    "description": "Classes to add to the checkbox elements."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the checkboxes."
+    "description": "HTML attributes (for example data attributes) to add to the checkbox elements."
   }
 ]

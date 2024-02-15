@@ -306,7 +306,7 @@ Hero.args = {
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   layout: "hero",
   htmlElement: "header",
-}
+};
 
 export const HorizontalMinimal = Template.bind({});
 HorizontalMinimal.args = {

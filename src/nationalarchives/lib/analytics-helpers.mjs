@@ -56,6 +56,8 @@ const valueGetters = {
   html: ($el, $scope, event) => $el.innerHTML,
   // eslint-disable-next-line no-unused-vars
   value: ($el, $scope, event) => $el.value,
+  // eslint-disable-next-line no-unused-vars
+  checked: ($el, $scope, event) => ($el.checked ? "checked" : "unchecked"),
 };
 
 export { getXPathTo, getClosestHeading, valueGetters };

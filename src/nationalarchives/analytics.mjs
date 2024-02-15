@@ -5,17 +5,27 @@ import {
   valueGetters,
 } from "./lib/analytics-helpers.mjs";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
+import CheckboxesAnalytics from "./components/checkboxes/analytics.js";
 import GlobalHeaderAnalytics from "./components/global-header/analytics.js";
 import HeaderAnalytics from "./components/header/analytics.js";
 import HeroAnalytics from "./components/hero/analytics.js";
 import PictureAnalytics from "./components/picture/analytics.js";
+import RadiosAnalytics from "./components/radios/analytics.js";
+import SearchFieldAnalytics from "./components/search-field/analytics.js";
+import TextInputAnalytics from "./components/text-input/analytics.js";
+import TextareaAnalytics from "./components/textarea/analytics.js";
 
 const componentAnalytics = [
   ...BreadcrumbAnalytics,
+  ...CheckboxesAnalytics,
   ...GlobalHeaderAnalytics,
   ...HeaderAnalytics,
   ...HeroAnalytics,
   ...PictureAnalytics,
+  ...RadiosAnalytics,
+  ...SearchFieldAnalytics,
+  ...TextInputAnalytics,
+  ...TextareaAnalytics,
 ];
 
 class EventTracker {
@@ -113,6 +123,10 @@ class EventTracker {
           typeof eventDataInit.state === "function"
             ? eventDataInit.state.call(this, $el, $scope, event)
             : eventDataInit.state || null,
+        group:
+          typeof eventDataInit.group === "function"
+            ? eventDataInit.group.call(this, $el, $scope, event)
+            : eventDataInit.group || null,
         scope: getXPathTo($scope),
         targetElement: targetElement,
         timestamp: new Date().toISOString(),

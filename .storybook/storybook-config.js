@@ -9,14 +9,16 @@ const enableRulesByTag = (tags = []) => {
   );
 };
 
-const checkWCAG21AAA = false;
+const checkAAA = false;
 export const a11yConfig = {
   rules: enableRulesByTag([
     "wcag2a",
     "wcag21a",
+    "wcag22a",
     "wcag2aa",
     "wcag21aa",
-    ...(checkWCAG21AAA ? ["wcag2aaa", "wcag21aaa"] : []),
+    "wcag22aa",
+    ...(checkAAA ? ["wcag2aaa", "wcag21aaa", "wcag22aaa"] : []),
     "best-practice",
   ]),
   axeOptions: {

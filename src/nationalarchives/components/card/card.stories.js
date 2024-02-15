@@ -295,33 +295,17 @@ HorizontalAccent.args = {
 
 export const Hero = Template.bind({});
 Hero.args = {
-  supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
   headingSize: "l",
-  // href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
   imageWidth: 1996,
   imageHeight: 1331,
-  label: "New",
-  meta: [
-    { text: "24th September 2023", icon: "calendar" },
-    { text: "From £16", icon: "ticket" },
-    { text: "Online", icon: "location-dot" },
-  ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Book now",
-      href: "#",
-      title: "Go and do the action",
-    },
-  ],
   layout: "hero",
-  htmlElement: "article",
-  // classes: "tna-card--demo",
+  htmlElement: "header",
 }
 
 export const HorizontalMinimal = Template.bind({});

@@ -64,7 +64,7 @@ const BlockquoteTemplate = ({
   <div class="tna-blockquote__quote">
     ${html}
   </div>
-  <p class="tna-blockquote__author">${author}</p>
+  <p class="tna-blockquote__citation">${author}</p>
 </blockquote>`;
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.args = {

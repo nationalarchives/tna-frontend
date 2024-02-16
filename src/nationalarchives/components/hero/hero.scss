@@ -161,37 +161,6 @@
   &__body {
   }
 
-  &--tint .tna-hero__figure {
-    &::before,
-    &::after {
-      position: absolute;
-      inset: 0;
-
-      content: "";
-    }
-
-    &::before {
-      z-index: 2;
-
-      background-color: colour.brand-colour("maroon");
-      @include colour.colour-background("accent-background");
-
-      mix-blend-mode: screen;
-    }
-
-    &::after {
-      z-index: 3;
-
-      background-color: colour.brand-colour("cream");
-
-      mix-blend-mode: multiply;
-    }
-
-    .tna-hero__image {
-      filter: grayscale(1) contrast(1.75) brightness(1.2);
-    }
-  }
-
   @include media.on-mobile {
     &__figure {
       min-height: auto;

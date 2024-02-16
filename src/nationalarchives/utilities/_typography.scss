@@ -41,8 +41,7 @@
     // font-display: swap;
   }
 } @else {
-  // @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,#{typographyVars.$main-font-weight};0,#{typographyVars.$main-font-weight-bold};1,#{typographyVars.$main-font-weight}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto+Mono:wght@100..700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto+Mono:wght@100..700&display=swap"); /* stylelint-disable-line */
 }
 
 .tna-template {

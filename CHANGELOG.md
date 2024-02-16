@@ -10,13 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Automated AXE checks now include WCAG 2.2
+- Lazy loading for images in picture component
 
 ### Changed
 
 - Changed spacing between navigation items in header
+- `tna-blockquote__author` changed to `tna-blockquote__citation`
 
 ### Deprecated
 ### Removed
+
+- Ability to tint hero images
+
 ### Fixed
 
 - Stopped logo from shrinking with longer straplines in headers

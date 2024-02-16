@@ -17,14 +17,6 @@
     // font-display: swap;
   }
 
-  // @font-face {
-  //   font-family: "Open Sans";
-  //   src: url("#{assets.$tna-font-path}/OpenSans-Italic.ttf");
-  //   font-weight: typographyVars.$main-font-weight;
-  //   font-style: italic;
-  //   // font-display: swap;
-  // }
-
   @font-face {
     font-family: "Open Sans";
     src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
@@ -49,7 +41,7 @@
     // font-display: swap;
   }
 } @else {
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,#{typographyVars.$main-font-weight};0,#{typographyVars.$main-font-weight-bold};1,#{typographyVars.$main-font-weight}&family=Roboto+Mono:wght@#{typographyVars.$detail-font-weight};#{typographyVars.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto+Mono:wght@100..700&display=swap"); /* stylelint-disable-line */
 }
 
 .tna-template {
@@ -394,7 +386,7 @@ small {
     font-weight: 700;
   }
 
-  &__author {
+  &__citation {
     @include typography.relative-font-size(16);
 
     .tna-blockquote & {

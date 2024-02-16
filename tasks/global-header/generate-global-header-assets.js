@@ -47,15 +47,15 @@ const globalHeaderHTML = nunjucks
         },
         {
           text: "Using the archives",
-          href: "#/using-the-archives",
+          href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
         },
         {
           text: "Learn",
-          href: "#/learn",
+          href: "https://www.nationalarchives.gov.uk/education/",
         },
         {
           text: "Professional guidance & services",
-          href: "#/professional-guidance-and-services",
+          href: "https://www.nationalarchives.gov.uk/information-management/",
         },
       ],
     },

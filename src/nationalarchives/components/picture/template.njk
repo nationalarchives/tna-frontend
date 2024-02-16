@@ -7,7 +7,7 @@
     {%- for source in params.sources -%}
       <source class="tna-picture__image" media="{{ source.media }}" srcset="{{ source.src }}" width="{{ source.width }}" height="{{ source.height }}">
     {%- endfor -%}
-      <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}">
+      <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}" loading="lazy">
     </picture>
   </div>
 {%- if params.information -%}

@@ -28,8 +28,9 @@
   "main": "nationalarchives/all.js",
   "exports": {
     ".": {
-      "sass": "./nationalarchives/all.scss",
-      "require": "./nationalarchives/all.js"
+      "css": "./nationalarchives/all.css",
+      "require": "./nationalarchives/all.js",
+      "sass": "./nationalarchives/all.scss"
     },
     "./nationalarchives/": "./nationalarchives/"
   },

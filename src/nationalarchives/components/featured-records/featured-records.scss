@@ -57,6 +57,7 @@
   &__collection-label {
     &::after {
       content: ":";
+      content: ":" / "";
     }
   }
 

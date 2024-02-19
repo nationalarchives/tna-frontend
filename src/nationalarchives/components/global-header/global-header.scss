@@ -19,6 +19,10 @@
     );
   }
 
+  .tna-template--dark-theme & {
+    background: #000;
+  }
+
   .tna-template--system-theme {
     @media (prefers-color-scheme: light) {
       background: linear-gradient(
@@ -26,6 +30,10 @@
         rgb(34 34 34 / 100%) 0%,
         rgb(0 0 0 / 100%) 100%
       );
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: #000;
     }
   }
 

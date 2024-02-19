@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changed spacing between navigation items in header
 - `tna-blockquote__author` changed to `tna-blockquote__citation`
+- Added default CSS export in `package.json`
+- Set global header background to pure black (`#000`) on dark themes
 
 ### Deprecated
 ### Removed
@@ -26,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Stopped logo from shrinking with longer straplines in headers
 - The message component has a header rather than an icon which provides a better page landmark
+- Hid some CSS pseudo elements from screen readers
 
 ### Security
 

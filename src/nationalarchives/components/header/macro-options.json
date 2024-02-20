@@ -86,12 +86,6 @@
         "type": "string",
         "required": false,
         "description": ""
-      },
-      {
-        "name": "brandIcon",
-        "type": "string",
-        "required": false,
-        "description": ""
       }
     ]
   },

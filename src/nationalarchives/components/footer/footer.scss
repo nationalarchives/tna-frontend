@@ -51,7 +51,8 @@
 
     &-item {
       &-link {
-        min-width: calc(2rem + 4px);
+        width: calc(2rem + 8px);
+        height: 2rem;
         padding: 4px;
 
         display: block;
@@ -62,9 +63,15 @@
         border: 0 transparent solid;
         border-width: 4px 0;
 
-        .fa-solid,
-        .fa-brands {
-          font-size: 2rem;
+        svg {
+          // width: 2rem;
+          height: 2rem;
+
+          display: inline-block;
+
+          path {
+            fill: currentColor;
+          }
         }
 
         &-text {

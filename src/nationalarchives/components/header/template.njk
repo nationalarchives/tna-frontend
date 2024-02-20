@@ -54,9 +54,7 @@
         {%- for item in params.topNavigation %}
         <li class="tna-header__top-navigation-item">
           <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
-            {%- if item.brandIcon %}
-            <i class="fa-brands fa-{{ item.brandIcon }}" aria-hidden="true"></i>
-            {%- elseif item.icon %}
+            {%- if item.icon %}
             <i class="fa-solid fa-{{ item.icon }}" aria-hidden="true"></i>
             {%- endif %}
             {{ item.text }}

@@ -243,21 +243,6 @@ const Template = ({ theme, accent }) => {
             })}
             ${Button({
               params: {
-                text: "Tweet us",
-                href: "#",
-                brandIcon: "twitter",
-              },
-            })}
-            ${Button({
-              params: {
-                text: "Tweet us",
-                href: "#",
-                accent: true,
-                brandIcon: "twitter",
-              },
-            })}
-            ${Button({
-              params: {
                 text: "Plain button",
                 plain: true,
               },
@@ -1212,34 +1197,34 @@ const Template = ({ theme, accent }) => {
         meta: "<p>Open today<br />09:00&mdash;19:00</p>",
         social: [
           {
-            text: "Twitter",
-            href: "#",
-            brandIcon: "twitter",
+            href: "#/twitter",
+            icon: "twitter",
+            title: "Visit us on Twitter",
           },
           {
-            text: "YouTube",
-            href: "#",
-            brandIcon: "youtube",
+            href: "#/youtube",
+            icon: "youtube",
+            title: "Watch us on YouTube",
           },
           {
-            text: "Facebook",
-            href: "#",
-            brandIcon: "facebook",
+            href: "#/facebook",
+            icon: "facebook",
+            title: "See us on Facebook",
           },
           {
-            text: "Flickr",
-            href: "#",
-            brandIcon: "flickr",
+            href: "#/flickr",
+            icon: "flickr",
+            title: "See our Flickr feed",
           },
           {
-            text: "Instagram",
-            href: "#",
-            brandIcon: "instagram",
+            href: "#/instagram",
+            icon: "instagram",
+            title: "See us on Instagram",
           },
           {
-            text: "RSS",
-            href: "#",
+            href: "#/rss",
             icon: "rss",
+            title: "Read our RSS feed",
           },
         ],
         navigation: [

@@ -171,8 +171,7 @@ small {
     @extend %chip-accent;
   }
 
-  .fa-solid,
-  .fa-brand {
+  .fa-solid {
     @include colour.colour-font("icon-light");
 
     @include colour.on-high-contrast {
@@ -191,8 +190,7 @@ small {
       @include typography.interacted-text-decoration;
     }
 
-    .fa-solid,
-    .fa-brand {
+    .fa-solid {
       color: inherit;
     }
   }

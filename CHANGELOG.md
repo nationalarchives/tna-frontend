@@ -9,8 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Footer social links structure and HTML changed
+
 ### Deprecated
 ### Removed
+
+- Removed option for brand icons on buttons, card actions and headers
+
 ### Fixed
 ### Security
 

@@ -64,12 +64,7 @@ Standard.args = {
     {
       text: "Top item 2",
       href: "#/top-2",
-      icon: "phone",
-    },
-    {
-      text: "Top item 3",
-      href: "#/top-3",
-      brandIcon: "github",
+      icon: "heart",
     },
   ],
   navigation: [
@@ -130,12 +125,7 @@ Mobile.args = {
     {
       text: "Top item 2",
       href: "#/top-2",
-      icon: "phone",
-    },
-    {
-      text: "Top item 3",
-      href: "#/top-3",
-      brandIcon: "github",
+      icon: "heart",
     },
   ],
   navigation: [

@@ -82,8 +82,7 @@
   &__action {
     @include typography.main-font-weight-bold;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       margin-right: 0.5rem;
     }
   }

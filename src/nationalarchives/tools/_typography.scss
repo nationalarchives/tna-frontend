@@ -6,11 +6,6 @@
   font-size: #{math.div($fontSizePx, typography.$relative-1rem-px)}rem;
 }
 
-@mixin interacted-text-decoration {
-  text-decoration: underline;
-  text-decoration-thickness: typography.$interactive-text-decoration-thickness;
-}
-
 @mixin main-font-weight {
   font-weight: typography.$main-font-weight;
 }
@@ -19,9 +14,16 @@
   font-weight: typography.$main-font-weight-bold;
 }
 
-@mixin main-font {
+@mixin main-font($bold: false) {
   font-family: typography.$main-font-family;
-  @include main-font-weight;
+  @if $bold {
+    @include main-font-weight-bold;
+  } @else {
+    @include main-font-weight;
+  }
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 @mixin heading-font {
@@ -29,17 +31,15 @@
   font-weight: typography.$heading-font-weight;
 }
 
-@mixin detail-font-weight {
-  font-weight: typography.$detail-font-weight;
-}
-
-@mixin detail-font-weight-bold {
-  font-weight: typography.$detail-font-weight-bold;
-}
-
-@mixin detail-font {
+@mixin detail-font($bold: false) {
   font-family: typography.$detail-font-family;
-  @include detail-font-weight;
+  @if $bold {
+    font-weight: typography.$detail-font-weight-bold;
+  } @else {
+    font-weight: typography.$detail-font-weight;
+  }
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 @mixin detail-font-small {
@@ -47,4 +47,9 @@
   @include relative-font-size(14);
   text-transform: uppercase;
   line-height: #{math.div(typography.$relative-1rem-px, 14)};
+}
+
+@mixin interacted-text-decoration {
+  text-decoration: underline;
+  text-decoration-thickness: typography.$interactive-text-decoration-thickness;
 }

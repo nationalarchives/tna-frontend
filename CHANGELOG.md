@@ -5,24 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.38...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.39...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.39](https://github.com/nationalarchives/tna-frontend/compare/v0.1.38...v0.1.39) - 2024-02-19
 
 ### Added
 
 - Automated AXE checks now include WCAG 2.2
+- Lazy loading for images in picture component
 
 ### Changed
 
 - Changed spacing between navigation items in header
+- `tna-blockquote__author` changed to `tna-blockquote__citation`
+- Added default CSS export in `package.json`
+- Set global header background to pure black (`#000`) on dark themes
 
-### Deprecated
 ### Removed
+
+- Ability to tint hero images
+
 ### Fixed
 
 - Stopped logo from shrinking with longer straplines in headers
 - The message component has a header rather than an icon which provides a better page landmark
-
-### Security
+- Hid some CSS pseudo elements from screen readers
 
 ## [0.1.38](https://github.com/nationalarchives/tna-frontend/compare/v0.1.37...v0.1.38) - 2024-02-13
 

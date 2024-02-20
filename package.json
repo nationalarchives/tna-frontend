@@ -1,6 +1,6 @@
 {
   "name": "@nationalarchives/frontend",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "The National Archives frontend styles",
   "scripts": {
     "start": "storybook dev -p 6006",
@@ -28,8 +28,9 @@
   "main": "nationalarchives/all.js",
   "exports": {
     ".": {
-      "sass": "./nationalarchives/all.scss",
-      "require": "./nationalarchives/all.js"
+      "css": "./nationalarchives/all.css",
+      "require": "./nationalarchives/all.js",
+      "sass": "./nationalarchives/all.scss"
     },
     "./nationalarchives/": "./nationalarchives/"
   },

@@ -57,6 +57,7 @@
   &__collection-label {
     &::after {
       content: ":";
+      content: ":" / "";
     }
   }
 
@@ -69,8 +70,7 @@
   &__title-description {
     padding-bottom: 0.25rem;
 
-    @include typography.detail-font;
-    @include typography.detail-font-weight-bold;
+    @include typography.detail-font(true);
   }
 
   &__date-label {

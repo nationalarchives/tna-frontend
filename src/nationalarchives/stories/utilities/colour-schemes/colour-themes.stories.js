@@ -343,7 +343,7 @@ const Template = ({ theme, accent }) => {
             <div class="tna-blockquote__quote">
               <p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>
             </div>
-            <p class="tna-blockquote__author">Douglas Adams, Mostly Harmless</p>
+            <p class="tna-blockquote__citation">Douglas Adams, Mostly Harmless</p>
           </blockquote>
           <h2 class="tna-heading-m">
             <a href="#">Researching with The National Archives</a>

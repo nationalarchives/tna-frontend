@@ -8,9 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.39...HEAD)
 
 ### Added
+
+- Error summary component
+
 ### Changed
 ### Deprecated
 ### Removed
+
+- Removed the `tna-form__` prefix from form field IDs
+
 ### Fixed
 ### Security
 

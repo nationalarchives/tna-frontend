@@ -1,0 +1,14 @@
+{
+  "component": "error-summary",
+  "fixtures": [
+    {
+      "name": "default",
+      "options": {
+        "headingLevel": 2,
+        "message": "Please note this page references hunger strikes and force feeding, which some people may find upsetting."
+      },
+      "html": "<div class=\"tna-error-summary \" data-module=\"tna-error-summary\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\"></h2><ul class=\"tna-error-summary__list\"></ul></div></div>",
+      "hidden": false
+    }
+  ]
+}

@@ -116,6 +116,7 @@ $colour-palette-dark: map.merge(
     "input-foreground": brand-colour("white"),
     "input-background": brand-colour("black"),
     "input-border": brand-colour("white"),
+    "form-error": #ff3d3d,
     "button-text": brand-colour("black"),
     "button-background": brand-colour("white"),
     "button-hover-text": brand-colour("white"),
@@ -171,6 +172,7 @@ $colour-palette-high-contrast-dark: map.merge(
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.75),
     "keyline": brand-colour("white"),
+    "form-error": #ff6161,
     "contrast-background": brand-colour("black"),
   )
 ) !default;

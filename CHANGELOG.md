@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Footer social links structure and HTML changed
+- Crown logo in footer changed from St Edward's Crown to Tudor Crown
 
 ### Deprecated
 ### Removed

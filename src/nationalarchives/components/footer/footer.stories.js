@@ -81,6 +81,7 @@ Standard.args = {
   navigation: [
     {
       title: "About us",
+      hideTitle: true,
       items: [
         {
           text: "Our role",

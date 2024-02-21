@@ -265,6 +265,7 @@
 
     position: relative;
 
+    @include typography.main-font-weight-bold;
     text-decoration: none;
     line-height: 2;
 
@@ -288,8 +289,6 @@
     }
 
     &--selected {
-      @include typography.main-font-weight-bold;
-
       &,
       &:hover {
         &::after {

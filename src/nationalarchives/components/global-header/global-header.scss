@@ -309,6 +309,7 @@
 
     &__navigation-item-link {
       line-height: 1.75rem;
+      @include typography.main-font-weight-bold;
     }
 
     &__navigation-item:last-child &__navigation-item-link {

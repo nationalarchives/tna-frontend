@@ -3,8 +3,8 @@ import uuidv4 from "../../lib/uuid.mjs";
 export class Header {
   constructor($module) {
     this.$module = $module;
-    this.$toggleButtonWrapper =
-      $module && $module.querySelector(".tna-header__navigation-toggle");
+    this.$toggleButton =
+      $module && $module.querySelector(".tna-header__navigation-toggle-button");
     this.$navigation =
       $module && $module.querySelector(".tna-header__navigation");
     this.$links =
@@ -16,24 +16,15 @@ export class Header {
   }
 
   init() {
-    if (!this.$module || !this.$toggleButtonWrapper || !this.$navigation) {
+    if (!this.$module || !this.$toggleButton || !this.$navigation) {
       return;
     }
 
     const uniqueId = `tna-menu-content-${uuidv4()}`;
     this.$navigation.setAttribute("id", uniqueId);
 
-    this.$toggleButton = document.createElement("button");
-    this.$toggleButton.innerText = "Menu";
+    this.$toggleButton.removeAttribute("hidden");
     this.$toggleButton.setAttribute("aria-controls", uniqueId);
-    this.$toggleButton.setAttribute("aria-haspopup", "true");
-    this.$toggleButton.classList.add("tna-header__navigation-toggle-button");
-
-    this.$hamburger = document.createElement("div");
-    this.$hamburger.classList.add("tna-header__hamburger");
-
-    this.$toggleButton.appendChild(this.$hamburger);
-    this.$toggleButtonWrapper.appendChild(this.$toggleButton);
 
     this.syncState();
 

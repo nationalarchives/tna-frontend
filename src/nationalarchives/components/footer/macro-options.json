@@ -58,6 +58,12 @@
         "description": ""
       },
       {
+        "name": "hideTitle",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      {
         "name": "items",
         "type": "array",
         "required": true,

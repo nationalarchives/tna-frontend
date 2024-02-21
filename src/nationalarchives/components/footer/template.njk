@@ -57,9 +57,11 @@
     <div class="tna-footer__navigation tna-column {% if params.showNewsletter %}tna-column--width-1-2{% else %}tna-column--width-2-3{% endif %} tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-2 tna-column--order-4-medium tna-columns tna-columns--2 tna-columns--1-tiny">
       {%- for group in params.navigation %}
       <nav class="tna-footer__navigation-block tna-columns__block" role="navigation" aria-label="{{ group.title }}">
+        {%- if not group.hideTitle %}
         <h3 class="tna-footer__navigation-block-heading tna-heading-m">
           {{ group.title }}
         </h3>
+        {%- endif %}
         <ul class="tna-footer__navigation-block-items tna-ul tna-ul--plain">
         {%- for item in group.items %}
           <li class="tna-footer__navigation-block-item">

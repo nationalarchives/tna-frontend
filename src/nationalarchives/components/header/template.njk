@@ -35,7 +35,10 @@
     </div>
     {%- if params.navigation or params.topNavigation %}
     <div class="tna-column tna-header__navigation-toggle">
-      <!-- BUTTON ADDED BY JAVASCRIPT -->
+      <button class="tna-header__navigation-toggle-button" hidden>
+        Menu
+        <div class="tna-header__hamburger"></div>
+      </button>
     </div>
     <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" aria-label="Main site navigation">
       {%- if params.navigation %}

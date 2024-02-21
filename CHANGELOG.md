@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Footer social links structure and HTML changed
 - Crown logo in footer changed from St Edward's Crown to Tudor Crown
+- Added navigation toggle button to HTML of both headers
+- Allow navigation groups in footer to have hidden titles
 
 ### Deprecated
 ### Removed

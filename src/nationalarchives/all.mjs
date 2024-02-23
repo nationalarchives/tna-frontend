@@ -103,6 +103,7 @@ export {
   Cookies,
   Breadcrumbs,
   CookieBanner,
+  ErrorSummary,
   Gallery,
   GlobalHeader,
   Header,

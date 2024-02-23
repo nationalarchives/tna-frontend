@@ -206,6 +206,7 @@
     justify-content: flex-end;
     gap: 0.5rem 1.5rem;
 
+    @include typography.relative-font-size(15);
     list-style: none;
 
     line-height: 1;
@@ -220,12 +221,11 @@
     align-items: center;
 
     text-decoration: none;
-    @include typography.relative-font-size(16);
 
     &,
     &:link,
     &:visited {
-      color: inherit;
+      @include colour.colour-font("font-light");
     }
 
     &:hover,

@@ -1,0 +1,29 @@
+@use "../tools/colour";
+
+img,
+svg,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+video,
+canvas {
+  width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+hr {
+  margin: 0;
+
+  border-width: 1px 0 0;
+  @include colour.colour-border("keyline");
+  border-style: solid;
+}

@@ -14,11 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Crown logo in footer changed from St Edward's Crown to Tudor Crown
 - Added navigation toggle button to HTML of both headers
 - Allow navigation groups in footer to have hidden titles
+- `utilities/_global.scss` split into other files `_reset.scss` and `_areas.scss`
 
 ### Deprecated
 ### Removed
 
 - Removed option for brand icons on buttons, card actions and headers
+- No `init` method for component JavaScript - components are now initialised on instantiation (`new Header($header).init()` -> `new Header($header)`)
 
 ### Fixed
 ### Security

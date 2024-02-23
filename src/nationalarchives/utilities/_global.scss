@@ -1,8 +1,3 @@
-@use "../tools/colour";
-@use "../tools/media";
-@use "../tools/spacing";
-@use "../variables/typography";
-
 .tna-template {
   min-width: 320px;
   width: 100%;
@@ -17,8 +12,6 @@
    * ------------------------------------------
    */
   -webkit-overflow-scrolling: touch;
-
-  font-size: #{typography.$relative-1rem-px}px;
 }
 
 .tna-template__body {
@@ -33,61 +26,5 @@
     #main-content {
       flex: 1;
     }
-  }
-}
-
-img,
-svg,
-picture,
-video,
-canvas {
-  max-width: 100%;
-  height: auto;
-
-  display: block;
-}
-
-video,
-canvas {
-  width: 100%;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-hr {
-  margin: 0;
-
-  border-width: 1px 0 0;
-  @include colour.colour-border("keyline");
-  border-style: solid;
-}
-
-.tna-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
-  @include media.on-mobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-}
-
-.tna-aside {
-  padding: 2rem;
-
-  @include spacing.space-above;
-
-  @include media.on-mobile {
-    padding: 1rem;
-  }
-
-  @include colour.on-high-contrast {
-    @include colour.colour-border("keyline-dark", 1px);
-  }
-
-  &--tight {
-    padding: 1rem;
   }
 }

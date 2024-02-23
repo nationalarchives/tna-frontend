@@ -13,9 +13,7 @@ export class Header {
       this.$navigation.querySelectorAll("[tabindex='0']");
     this.menuOpened = false;
     this.mql = window.matchMedia("(max-width: 768px)");
-  }
 
-  init() {
     if (!this.$module || !this.$toggleButton || !this.$navigation) {
       return;
     }

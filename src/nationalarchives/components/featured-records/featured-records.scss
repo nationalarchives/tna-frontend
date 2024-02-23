@@ -3,7 +3,7 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 @use "../../variables/typography" as typographyVars;
-@use "../../utilities";
+// @use "../../utilities";
 
 .tna-featured-records {
   @include spacing.space-above;

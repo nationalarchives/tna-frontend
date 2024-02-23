@@ -31,7 +31,7 @@ const $globalHeader = document.querySelector(
 );
 
 if ($globalHeader) {
-  new TNAFrontend.GlobalHeader($globalHeader).init();
+  new TNAFrontend.GlobalHeader($globalHeader);
 }
 ```
 

@@ -47,6 +47,7 @@
 .tna-template {
   @include colour.colour-font("font-base");
   @include typography.main-font;
+  font-size: #{typographyVars.$relative-1rem-px}px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

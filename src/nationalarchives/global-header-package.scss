@@ -46,6 +46,10 @@
       background: none;
     }
 
+    &:focus {
+      background: none;
+    }
+
     &.tna-link--no-visited-state {
       &:visited {
         @include colour.colour-font("link");
@@ -56,6 +60,10 @@
 
 .tna-global-header {
   padding-bottom: 0;
+
+  &__logo:link {
+    display: flex;
+  }
 
   &__navigation {
     padding: 0;

@@ -3,8 +3,6 @@
 @use "../../tools/typography";
 @use "../../tools/media";
 @use "../../tools/spacing";
-// @use "../../utilities";
-@use "../button";
 
 .tna-card {
   @include spacing.space-above;

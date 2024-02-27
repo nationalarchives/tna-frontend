@@ -2,7 +2,6 @@
 @use "../../variables/grid";
 @use "../../tools/media";
 @use "../../tools/grid" as gridTools;
-// @use "../../utilities";
 
 .tna-container {
   max-width: grid.$largest-container-width;

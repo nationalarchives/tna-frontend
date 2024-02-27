@@ -1,9 +1,6 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
-// @use "../../utilities";
-@use "../button";
-@use "../grid";
 
 .tna-footer {
   @include colour.contrast;

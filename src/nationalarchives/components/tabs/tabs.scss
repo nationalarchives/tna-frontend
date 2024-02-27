@@ -2,7 +2,6 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-// @use "../../utilities";
 
 .tna-tabs {
   @include spacing.space-above;

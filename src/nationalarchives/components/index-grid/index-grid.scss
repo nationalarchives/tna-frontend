@@ -3,8 +3,6 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-// @use "../../utilities";
-@use "../grid";
 
 .tna-index-grid {
   @include spacing.space-above;

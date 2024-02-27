@@ -13,7 +13,7 @@ const globalHeaderHTML = nunjucks
   .renderString(globalHeaderComponentNunjucks, {
     params: {
       logo: {
-        href: "#/",
+        href: "https://nationalarchives.gov.uk/",
       },
       topNavigation: [
         {
@@ -24,7 +24,7 @@ const globalHeaderHTML = nunjucks
         {
           text: "Shop",
           href: "https://shop.nationalarchives.gov.uk/",
-          icon: "bag-shopping",
+          icon: "shop",
         },
         // {
         //   text: "Sign in",
@@ -70,34 +70,34 @@ const footerHTML = nunjucks
     params: {
       social: [
         {
-          text: "Twitter",
           href: "https://twitter.com/UKNatArchives",
-          brandIcon: "twitter",
+          icon: "twitter",
+          title: "Visit us on Twitter",
         },
         {
-          text: "YouTube",
           href: "https://www.youtube.com/c/TheNationalArchivesUK",
-          brandIcon: "youtube",
+          icon: "youtube",
+          title: "Watch us on YouTube",
         },
         {
-          text: "Facebook",
           href: "https://www.facebook.com/TheNationalArchives",
-          brandIcon: "facebook",
+          icon: "facebook",
+          title: "See us on Facebook",
         },
         {
-          text: "Flickr",
           href: "https://www.flickr.com/photos/nationalarchives",
-          brandIcon: "flickr",
+          icon: "flickr",
+          title: "See our Flickr feed",
         },
         {
-          text: "Instagram",
           href: "https://www.instagram.com/nationalarchivesuk/",
-          brandIcon: "instagram",
+          icon: "instagram",
+          title: "See us on Instagram",
         },
         {
-          text: "RSS",
           href: "https://www.nationalarchives.gov.uk/rss/",
           icon: "rss",
+          title: "Read our RSS feed",
         },
       ],
       navigation: [

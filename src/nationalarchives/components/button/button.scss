@@ -2,7 +2,6 @@
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/typography";
-@use "../../utilities";
 @use "button-group";
 
 .tna-button {
@@ -39,8 +38,7 @@
     background: transparent;
   }
 
-  .fa-solid,
-  .fa-brands {
+  .fa-solid {
     display: block;
 
     font-size: 0.9em;
@@ -92,8 +90,7 @@
     @include typography.relative-font-size(14);
     line-height: 1.5rem;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       line-height: 2rem;
     }
   }
@@ -107,8 +104,7 @@
     font-size: 0;
     line-height: 0;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       width: 2.5rem;
 
       @include typography.relative-font-size(18);
@@ -119,8 +115,7 @@
     padding-right: 0;
     padding-left: 0;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       width: 2rem;
 
       @include typography.relative-font-size(18 * 0.9);

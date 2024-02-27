@@ -45,42 +45,43 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  meta: "<p>Open today<br />09:00&mdash;19:00</p>",
+  meta: "<p>Open today<br>09:00&mdash;19:00</p>",
   social: [
     {
-      text: "Twitter",
-      href: "#",
-      brandIcon: "twitter",
+      href: "https://twitter.com/UKNatArchives",
+      icon: "twitter",
+      title: "Visit us on Twitter",
     },
     {
-      text: "YouTube",
-      href: "#",
-      brandIcon: "youtube",
+      href: "https://www.youtube.com/c/TheNationalArchivesUK",
+      icon: "youtube",
+      title: "Watch us on YouTube",
     },
     {
-      text: "Facebook",
-      href: "#",
-      brandIcon: "facebook",
+      href: "https://www.facebook.com/TheNationalArchives",
+      icon: "facebook",
+      title: "See us on Facebook",
     },
     {
-      text: "Flickr",
-      href: "#",
-      brandIcon: "flickr",
+      href: "https://www.flickr.com/photos/nationalarchives",
+      icon: "flickr",
+      title: "See our Flickr feed",
     },
     {
-      text: "Instagram",
-      href: "#",
-      brandIcon: "instagram",
+      href: "https://www.instagram.com/nationalarchivesuk/",
+      icon: "instagram",
+      title: "See us on Instagram",
     },
     {
-      text: "RSS",
-      href: "#",
+      href: "https://www.nationalarchives.gov.uk/rss/",
       icon: "rss",
+      title: "Read our RSS feed",
     },
   ],
   navigation: [
     {
       title: "About us",
+      hideTitle: true,
       items: [
         {
           text: "Our role",

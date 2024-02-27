@@ -47,6 +47,7 @@
 .tna-template {
   @include colour.colour-font("font-base");
   @include typography.main-font;
+  font-size: #{typographyVars.$relative-1rem-px}px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -171,8 +172,7 @@ small {
     @extend %chip-accent;
   }
 
-  .fa-solid,
-  .fa-brand {
+  .fa-solid {
     @include colour.colour-font("icon-light");
 
     @include colour.on-high-contrast {
@@ -191,8 +191,7 @@ small {
       @include typography.interacted-text-decoration;
     }
 
-    .fa-solid,
-    .fa-brand {
+    .fa-solid {
       color: inherit;
     }
   }

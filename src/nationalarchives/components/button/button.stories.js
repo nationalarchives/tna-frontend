@@ -6,7 +6,6 @@ const argTypes = {
   href: { control: "text" },
   title: { control: "text" },
   icon: { control: "text" },
-  brandIcon: { control: "text" },
   accent: { control: "boolean" },
   small: { control: "boolean" },
   plain: { control: "boolean" },
@@ -35,7 +34,6 @@ const Template = ({
   href,
   title,
   icon,
-  brandIcon,
   accent,
   small,
   plain,
@@ -53,7 +51,6 @@ const Template = ({
       href,
       title,
       icon,
-      brandIcon,
       accent,
       small,
       plain,
@@ -96,14 +93,6 @@ RightAlignedIcon.args = {
   href: "#",
   icon: "chevron-right",
   rightAlignIcon: true,
-  classes: "tna-button--demo",
-};
-
-export const BrandIcon = Template.bind({});
-BrandIcon.args = {
-  text: "Twitter",
-  href: "#",
-  brandIcon: "twitter",
   classes: "tna-button--demo",
 };
 

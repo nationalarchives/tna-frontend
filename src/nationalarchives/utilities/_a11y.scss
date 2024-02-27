@@ -1,4 +1,4 @@
-@use "../tools/colour";
+@use "../tools/a11y";
 
 .tna-visually-hidden,
 .tna-\!--visually-hidden {
@@ -26,15 +26,10 @@
   }
 }
 
-@mixin focus-outline {
-  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
-  outline-offset: 0.125rem;
-}
-
 *:focus {
   z-index: 9;
 
-  @include focus-outline;
+  @include a11y.focus-outline;
 }
 
 .tna-\!--no-focus-style {

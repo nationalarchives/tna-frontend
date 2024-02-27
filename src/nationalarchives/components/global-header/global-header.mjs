@@ -3,9 +3,8 @@ import uuidv4 from "../../lib/uuid.mjs";
 export class GlobalHeader {
   constructor($module) {
     this.$module = $module;
-    this.$toggleButtonWrapper =
-      $module &&
-      $module.querySelector(".tna-global-header__navigation-button-wrapper");
+    this.$toggleButton =
+      $module && $module.querySelector(".tna-global-header__navigation-button");
     this.$navigation =
       $module &&
       $module.querySelector(".tna-global-header__navigation-wrapper");
@@ -20,12 +19,10 @@ export class GlobalHeader {
           this.$topNavigation.querySelectorAll("[tabindex='0']")));
     this.menuOpened = false;
     this.mql = window.matchMedia("(max-width: 768px)");
-  }
 
-  init() {
     if (
       !this.$module ||
-      !this.$toggleButtonWrapper ||
+      !this.$toggleButton ||
       (!this.$navigation && !this.$topNavigation)
     ) {
       return;
@@ -40,20 +37,11 @@ export class GlobalHeader {
       this.$topNavigation.setAttribute("id", uniqueIdTop);
     }
 
-    this.$toggleButton = document.createElement("button");
-    this.$toggleButton.innerText = "Menu";
+    this.$toggleButton.removeAttribute("hidden");
     this.$toggleButton.setAttribute(
       "aria-controls",
       [uniqueId, uniqueIdTop].join(" "),
     );
-    this.$toggleButton.setAttribute("aria-haspopup", "true");
-    this.$toggleButton.classList.add("tna-global-header__navigation-button");
-
-    this.$hamburger = document.createElement("div");
-    this.$hamburger.classList.add("tna-global-header__hamburger");
-
-    this.$toggleButton.appendChild(this.$hamburger);
-    this.$toggleButtonWrapper.appendChild(this.$toggleButton);
 
     this.syncState();
 

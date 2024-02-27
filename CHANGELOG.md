@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.39...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.40...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.40](https://github.com/nationalarchives/tna-frontend/compare/v0.1.39...v0.1.40) - 2024-02-27
+
 ### Changed
 
 - Footer social links structure and HTML changed
@@ -17,15 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allow navigation groups in footer to have hidden titles
 - `utilities/_global.scss` split into other files `_reset.scss` and `_areas.scss`
 
-### Deprecated
 ### Removed
 
 - Removed option for brand icons on buttons, card actions and headers
 - Removed Font Awesome icon selection for header and footers
 - No `init` method for component JavaScript - components are now initialised on instantiation (`new Header($header).init()` -> `new Header($header)`)
-
-### Fixed
-### Security
 
 ## [0.1.39](https://github.com/nationalarchives/tna-frontend/compare/v0.1.38...v0.1.39) - 2024-02-19
 

@@ -33,29 +33,23 @@ const globalHeaderHTML = nunjucks
         // },
       ],
       navigation: [
-        {
-          text: "Visit",
-          href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-        },
+        { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
         {
           text: "What's on",
-          href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+          href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
         },
         {
           text: "Explore the collection",
           href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
         },
         {
-          text: "Using the archives",
-          href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
+          text: "Using the archive",
+          href: "www.nationalarchives.gov.uk/help-with-your-research/",
         },
+        { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
         {
-          text: "Learn",
-          href: "https://www.nationalarchives.gov.uk/education/",
-        },
-        {
-          text: "Professional guidance & services",
-          href: "https://www.nationalarchives.gov.uk/information-management/",
+          text: "Professional guidance and services",
+          href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
         },
       ],
     },

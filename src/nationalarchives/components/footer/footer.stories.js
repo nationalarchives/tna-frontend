@@ -84,43 +84,43 @@ Standard.args = {
       items: [
         {
           text: "About us",
-          href: "https://www.nationalarchives.gov.uk/about/)",
+          href: "https://www.nationalarchives.gov.uk/about/",
         },
         {
           text: "Contact us",
-          href: "https://www.nationalarchives.gov.uk/contact-us/)",
+          href: "https://www.nationalarchives.gov.uk/contact-us/",
         },
         {
           text: "News",
-          href: "https://www.nationalarchives.gov.uk/about/news/)",
+          href: "https://www.nationalarchives.gov.uk/about/news/",
         },
         {
           text: "Blog",
-          href: "https://blog.nationalarchives.gov.uk/)",
+          href: "https://blog.nationalarchives.gov.uk/",
         },
         {
           text: "Podcasts and videos",
-          href: "https://media.nationalarchives.gov.uk/)",
+          href: "https://media.nationalarchives.gov.uk/",
         },
         {
           text: "Image library",
-          href: "https://images.nationalarchives.gov.uk/)",
+          href: "https://images.nationalarchives.gov.uk/",
         },
         {
           text: "Press room",
-          href: "https://www.nationalarchives.gov.uk/about/press-room/)",
+          href: "https://www.nationalarchives.gov.uk/about/press-room/",
         },
         {
           text: "Jobs and careers",
-          href: "https://www.nationalarchives.gov.uk/about/jobs/)",
+          href: "https://www.nationalarchives.gov.uk/about/jobs/",
         },
         {
           text: "British citizenship services",
-          href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/)",
+          href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
         },
         {
           text: "Historical Manuscripts Commission",
-          href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/)",
+          href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
         },
       ],
     },

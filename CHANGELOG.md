@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
+## [0.1.41](https://github.com/nationalarchives/tna-frontend/compare/v0.1.39...v0.1.40) - 2024-02-27
+
+### Fixed
+
+- Footer link URLs
+
 ## [0.1.40](https://github.com/nationalarchives/tna-frontend/compare/v0.1.39...v0.1.40) - 2024-02-27
 
 ### Changed

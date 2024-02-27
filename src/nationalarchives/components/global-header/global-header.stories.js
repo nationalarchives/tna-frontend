@@ -60,7 +60,7 @@ Standard.args = {
     {
       text: "Shop",
       href: "#/shop",
-      icon: "bag-shopping",
+      icon: "shop",
     },
     {
       text: "Sign in",
@@ -133,7 +133,7 @@ Medium.args = {
     {
       text: "Shop",
       href: "#/shop",
-      icon: "bag-shopping",
+      icon: "shop",
     },
     {
       text: "Sign in",
@@ -206,7 +206,7 @@ MediumCollapsed.args = {
     {
       text: "Shop",
       href: "#/shop",
-      icon: "bag-shopping",
+      icon: "shop",
     },
     {
       text: "Sign in",
@@ -267,7 +267,7 @@ Mobile.args = {
     {
       text: "Shop",
       href: "#/shop",
-      icon: "bag-shopping",
+      icon: "shop",
     },
     {
       text: "Sign in",

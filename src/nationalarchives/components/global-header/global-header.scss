@@ -219,6 +219,16 @@
       @include colour.colour-font("font-base");
       @include typography.interacted-text-decoration;
     }
+
+    svg {
+      height: 1em;
+
+      display: inline-block;
+
+      path {
+        fill: currentColor;
+      }
+    }
   }
 
   @include media.on-medium {

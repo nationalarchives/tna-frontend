@@ -13,7 +13,7 @@ const globalHeaderHTML = nunjucks
   .renderString(globalHeaderComponentNunjucks, {
     params: {
       logo: {
-        href: "#/",
+        href: "https://nationalarchives.gov.uk/",
       },
       topNavigation: [
         {
@@ -24,7 +24,7 @@ const globalHeaderHTML = nunjucks
         {
           text: "Shop",
           href: "https://shop.nationalarchives.gov.uk/",
-          icon: "bag-shopping",
+          icon: "shop",
         },
         // {
         //   text: "Sign in",

@@ -52,7 +52,7 @@ Standard.args = {
       id: "refine1",
       name: "refine1",
       // open: true,
-      hint: "Filter the current results further",
+      hint: "Search within the current results",
     },
     // {
     //   type: "single",

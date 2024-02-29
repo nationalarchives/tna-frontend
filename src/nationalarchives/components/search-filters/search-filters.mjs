@@ -15,17 +15,17 @@ export class SearchFilters {
       const $toggle = $fieldset.querySelector(
         ".tna-search-filters__item-toggle",
       );
-      const $heading = $fieldset.querySelector(
-        ".tna-search-filters__item-toggle ~ .tna-heading-s",
+      const $headingInner = $fieldset.querySelector(
+        ".tna-search-filters__heading-inner",
       );
       const $item = $fieldset.querySelector(".tna-search-filters__item");
 
-      if (!$toggle || !$heading || !$item) {
+      if (!$toggle || !$headingInner || !$item) {
         return;
       }
 
       $toggle.removeAttribute("hidden");
-      $heading.remove();
+      $headingInner.remove();
 
       this.syncItem($toggle, $item);
 

@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 
-- Removed the `tna-form__` prefix from form field IDs
+- Removed the automatic `tna-form__` prefix from form field IDs
 
 ### Fixed
 ### Security

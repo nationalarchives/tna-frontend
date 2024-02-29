@@ -22,8 +22,6 @@
           </label>
           {% endif %}
         </div>
-
-
         <button class="tna-search-filters__item-toggle" aria-controls="{{ filter.id }}-wrapper" aria-expanded="{{ filter.open or false }}" hidden>
           {% if filter.type == 'single' or filter.type == 'multiple' or filter.type == 'daterange' %}
           <span class="tna-search-filters__item-toggle-label">
@@ -35,11 +33,11 @@
           </label>
           {% endif %}
           {% if filter.count %}
-          <span class="tna-search-filters__item-toggle-count">({{ filter.count }} selected)</span>
+          <span class="tna-search-filters__item-toggle-info">({{ filter.count }} selected)</span>
+          {% else %}
+          <span class="tna-search-filters__item-toggle-info"></span>
           {% endif %}
         </button>
-
-
       </h{{ params.rootHeadingLevel + 1 }}>
     </legend>
     <div id="{{ filter.id }}-wrapper" class="tna-search-filters__item">
@@ -106,7 +104,4 @@
       }) }}
     </div>
   </div>
-
-
-
 </div>

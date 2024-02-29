@@ -48,7 +48,7 @@ Standard.args = {
   items: [
     {
       type: "text",
-      label: "Refine your search",
+      label: "Refine",
       id: "refine1",
       name: "refine1",
       // open: true,
@@ -79,14 +79,14 @@ Standard.args = {
     // },
     {
       type: "multiple",
-      label: "Categories",
+      label: "Category",
       id: "categories1",
       name: "categories1",
       small: true,
       // open: true,
-      hint: "What people call you by",
+      hint: "The category of the record",
       // count: 2,
-      // seeMoreText: 'See more',
+      seeMoreText: "See all 29 categories",
       seeMoreUrl: "#",
       items: [
         {

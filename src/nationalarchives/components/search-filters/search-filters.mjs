@@ -35,7 +35,7 @@ export class SearchFilters {
 
       // if (type === "multiple") {
       //   const $count = $toggle.querySelector(
-      //     ".tna-search-filters__item-toggle-count",
+      //     ".tna-search-filters__item-toggle-info",
       //   );
       //   if ($count) {
       //     $item.addEventListener("change", () => {

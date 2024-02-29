@@ -91,7 +91,7 @@
   &__item-toggle-label {
   }
 
-  &__item-toggle-count {
+  &__item-toggle-info {
     display: block;
 
     @include typography.main-font-weight;
@@ -146,5 +146,11 @@
 
   &--js-enabled &__update-item {
     display: none;
+  }
+
+  &__fieldset[data-type="multiple"] &__item {
+    max-height: 15rem;
+
+    overflow: auto;
   }
 }

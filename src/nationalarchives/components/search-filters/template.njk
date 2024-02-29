@@ -1,0 +1,108 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+{% from "nationalarchives/components/checkboxes/checkboxes.njk" import tnaCheckboxesElement %}
+{% from "nationalarchives/components/date-search/date-search.njk" import tnaDateSearchElement %}
+{% from "nationalarchives/components/radios/radios.njk" import tnaRadiosElement %}
+{% from "nationalarchives/components/text-input/text-input.njk" import tnaTextInputElement %}
+
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+<div class="tna-search-filters {{ containerClasses | join(' ') }}" data-module="tna-search-filters"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+
+  <h{{ params.rootHeadingLevel }} class="tna-heading-m">
+    {{ params.title }}
+  </h{{ params.rootHeadingLevel }}>
+
+  {# <div class="tna-search-filters__header">
+    <button class="tna-search-filters__update tna-button tna-button--small">Update</button>
+  </div> #}
+
+
+
+
+
+
+  {%- for filter in params.items %}
+
+  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint %} aria-describedby="tna-form__{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
+    <legend class="tna-search-filters__legend">
+      <button class="tna-search-filters__item-toggle" aria-controls="tna-search-filters-{{ filter.id }}" aria-expanded="{{ filter.open or false }}" hidden>
+        {% if filter.type == 'single' or filter.type == 'multiple' or filter.type == 'daterange' %}
+        <span class="tna-search-filters__item-toggle-label">
+          {{ filter.label }}
+        </span>
+        {% else %}
+        <label class="tna-search-filters__item-toggle-label" for="{{ filter.id }}">
+          {{ filter.label }}
+        </label>
+        {% endif %}
+        {% if filter.count %}
+        <span class="tna-search-filters__item-toggle-count">({{ filter.count }} selected)</span>
+        {% endif %}
+      </button>
+      <h{{ params.rootHeadingLevel + 1 }} class="tna-heading-s">
+        <label for="{{ filter.id }}">
+          {{ filter.label }}
+        </label>
+      </h{{ params.rootHeadingLevel + 1 }}>
+    </legend>
+    <div id="tna-search-filters-{{ filter.id }}" class="tna-search-filters__item">
+      {%- if filter.hint %}
+      <p id="tna-search-filters-{{ filter.id }}-hint" class="tna-search-filters__hint">
+        {{ filter.hint }}
+      </p>
+      {%- endif %}
+      {% if filter.type == 'single' %}
+      {{ tnaRadiosElement(filter) }}
+      {% elif filter.type == 'multiple' %}
+      {{ tnaCheckboxesElement(filter) }}
+      <div class="tna-button-group tna-button-group--small tna-!--margin-top-xs">
+        {{ tnaButton({
+          text: 'See more',
+          href: '#' + filter.slug,
+          plain: true
+        }) }}
+      </div>
+      {% elif filter.type == 'text' %}
+      {{ tnaTextInputElement(filter) }}
+      {% elif filter.type == 'date' %}
+      {{ tnaDateSearchElement(filter) }}
+      {% elif filter.type == 'daterange' %}
+      <label class="tna-search-filters__label" for="{{ filter.from.id }}">{{ filter.from.label }}</label>
+      {{ tnaDateSearchElement(filter.from) }}
+      <label class="tna-search-filters__label" for="{{ filter.to.id }}">{{ filter.to.label }}</label>
+      {{ tnaDateSearchElement(filter.to) }}
+      {% endif %}
+      <div class="tna-button-group tna-button-group--small tna-search-filters__update-item tna-!--margin-top-s">
+        {{ tnaButton({
+          text: 'Update',
+          buttonElement: true,
+          buttonType: 'submit',
+          attributes: {
+            form: 'search-form'
+          }
+        }) }}
+      </div>
+    </div>
+  </fieldset>
+  {%- endfor %}
+  <div class="tna-search-filters__footer">
+    <div class="tna-button-group tna-button-group--small">
+      {{ tnaButton({
+        text: 'Update',
+        buttonElement: true,
+        buttonType: 'submit',
+        classes: 'tna-search-filters__update',
+        attributes: {
+          form: 'search-form'
+        }
+      }) }}
+      {{ tnaButton({
+        text: 'Clear all filters',
+        href: '#',
+        plain: true
+      }) }}
+    </div>
+  </div>
+
+
+
+</div>

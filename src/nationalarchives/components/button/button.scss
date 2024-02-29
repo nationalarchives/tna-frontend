@@ -22,6 +22,7 @@
   @include colour.colour-background("button-background");
 
   @include colour.colour-border("button-background", 0.25rem);
+  // border-radius: 0.1px;
 
   cursor: pointer;
 

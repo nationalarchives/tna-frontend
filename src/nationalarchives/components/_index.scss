@@ -7,7 +7,6 @@
 @use "date-input";
 @use "date-search";
 @use "featured-records";
-@use "filters";
 @use "footer";
 @use "gallery";
 @use "global-header";
@@ -19,9 +18,11 @@
 @use "pagination";
 @use "phase-banner";
 @use "picture";
+@use "quick-filters";
 @use "radios";
 @use "sensitive-image";
 @use "search-field";
+@use "search-filters";
 @use "select";
 @use "skip-link";
 @use "tabs";

@@ -1,3 +1,5 @@
+{% from "nationalarchives/components/checkboxes/checkboxes.njk" import tnaCheckboxesElement %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.inline -%}
   {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
@@ -19,7 +21,8 @@
       <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
     </p>
     {%- endif %}
-    <div class="tna-checkboxes{% if params.small or params.inline %} tna-checkboxes--small{% endif %}{% if params.inline %} tna-checkboxes--inline{% endif %}">
+    {{ tnaCheckboxesElement(params) }}
+    {# <div class="tna-checkboxes{% if params.small or params.inline %} tna-checkboxes--small{% endif %}{% if params.inline %} tna-checkboxes--inline{% endif %}">
       {%- for item in params.items %}
       <div class="tna-checkboxes__item">
         <input type="checkbox" id="tna-form__{{ params.id }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}{% if item.checked %} checked{% endif %}>
@@ -28,6 +31,6 @@
         </label>
       </div>
       {%- endfor %}
-    </div>
+    </div> #}
   </fieldset>
 </div>

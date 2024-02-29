@@ -1,0 +1,9 @@
+{% macro tnaTextInputElement(params) %}
+  {%- set inputClasses = [params.classes] if params.classes else [] -%}
+  <input type="text" id="tna-form__{{ params.id }}" class="tna-text-input{% if params.size %} tna-text-input--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}"
+  {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}tna-form__{{ params.id }}-hint{%- endif %} {% if params.error -%}tna-form__{{ params.id }}-error{%- endif -%}"{%- endif %}
+  {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
+  {%- if params.autofill %} autofill="{{ params.autofill }}"{% endif %}
+  {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
+  {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{% endmacro %}

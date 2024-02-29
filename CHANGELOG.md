@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- `filters` are now `quick-filters` (and the Nunjucks has changed from `tnaFilters` to `tnaQuickFilters`)
+
 ### Deprecated
 ### Removed
 ### Fixed

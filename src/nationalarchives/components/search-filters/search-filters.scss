@@ -1,0 +1,146 @@
+@use "sass:math";
+
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-search-filters {
+  @include spacing.space-above;
+
+  &__header,
+  &__footer {
+    padding: 0.75rem;
+
+    display: none;
+
+    @include colour.colour-border("keyline", 1px);
+  }
+
+  &__header {
+  }
+
+  &__footer {
+  }
+
+  &__update {
+    display: block;
+  }
+
+  .tna-heading-s {
+    margin: 1rem 0 0;
+    padding: 0.5rem 0.75rem;
+
+    @include colour.colour-border("keyline", 1px);
+    border-bottom-width: 0;
+  }
+
+  &__fieldset {
+    border: none;
+
+    &:first-of-type {
+      margin-top: 1rem;
+    }
+  }
+
+  &__legend {
+    width: 100%;
+  }
+
+  &__item-toggle {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+
+    display: block;
+
+    position: relative;
+
+    @include colour.colour-font("font-dark");
+    @include typography.main-font(true);
+    @include typography.relative-font-size(18);
+    line-height: 1.6;
+    text-align: left;
+
+    background: none;
+
+    @include colour.colour-border("keyline");
+    border-width: 1px 1px 0;
+    border-style: solid;
+
+    cursor: pointer;
+
+    &::before {
+      width: 0;
+      height: 0;
+
+      position: absolute;
+      right: 0.5rem;
+      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
+
+      @include colour.colour-border(
+        "font-base",
+        #{math.div(math.sqrt(3), 2)}rem
+      );
+      border-right: 0.5rem transparent solid;
+      border-bottom-width: 0;
+      border-left: 0.5rem transparent solid;
+
+      content: "";
+    }
+
+    &[aria-expanded="true"] {
+      &::before {
+        border-top-width: 0;
+        border-bottom-width: #{math.div(math.sqrt(3), 2)}rem;
+      }
+    }
+  }
+
+  &__item-toggle-label {
+  }
+
+  &__item-toggle-count {
+    display: block;
+
+    @include typography.main-font-weight;
+    @include typography.relative-font-size(14);
+  }
+
+  &__item {
+    padding: 0.75rem;
+
+    @include colour.colour-background("background-tint");
+
+    @include colour.colour-border("keyline", 1px);
+    border-width: 0 1px 1px;
+  }
+
+  &__hint {
+    margin-bottom: 0.5rem;
+
+    @include typography.relative-font-size(16);
+    @include colour.colour-font("font-light");
+  }
+
+  &__label {
+    display: block;
+
+    input + & {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &--js-enabled &__header,
+  &--js-enabled &__footer {
+    display: block;
+  }
+
+  &--js-enabled &__item {
+    border-bottom: none;
+  }
+
+  &--js-enabled &__update-item {
+    display: none;
+  }
+}

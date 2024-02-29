@@ -1,0 +1,6 @@
+{% macro tnaDateSearchElement(params) %}
+  {%- set inputClasses = [params.classes] if params.classes else [] -%}
+  <input type="date" id="tna-form__{{ params.id }}" class="tna-date-search{% if params.maxWidth %} tna-date-search--max-width{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}"
+  {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}tna-form__{{ params.id }}-hint{%- endif %} {% if params.error -%}tna-form__{{ params.id }}-error{%- endif -%}"{%- endif %}
+  {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{% endmacro %}

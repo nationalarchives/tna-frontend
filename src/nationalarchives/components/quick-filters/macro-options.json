@@ -41,12 +41,12 @@
     "name": "classes",
     "type": "string",
     "required": false,
-    "description": "Classes to add to the filters."
+    "description": "Classes to add to the quick filters."
   },
   {
     "name": "attributes",
     "type": "object",
     "required": false,
-    "description": "HTML attributes (for example data attributes) to add to the filters."
+    "description": "HTML attributes (for example data attributes) to add to the quick filters."
   }
 ]

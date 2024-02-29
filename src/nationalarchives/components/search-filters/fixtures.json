@@ -1,0 +1,11 @@
+{
+  "component": "search-filters",
+  "fixtures": [
+    {
+      "name": "plain search filters",
+      "options": {},
+      "html": "<div class=\"tna-search-filters \" data-module=\"tna-search-filters\"><h class=\"tna-heading-m\"></h><div class=\"tna-search-filters__footer\"><div class=\"tna-button-group tna-button-group--small\"><button class=\"tna-button tna-search-filters__update\" type=\"submit\" form=\"search-form\">Update</button><a href=\"#\" class=\"tna-button tna-button--plain\">Clear all filters</a></div></div></div>",
+      "hidden": false
+    }
+  ]
+}

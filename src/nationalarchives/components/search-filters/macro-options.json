@@ -1,0 +1,52 @@
+[
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "stack",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the search filters."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the search filters."
+  }
+]

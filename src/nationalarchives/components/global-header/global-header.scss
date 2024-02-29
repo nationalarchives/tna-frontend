@@ -3,7 +3,9 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
-@use "../../utilities";
+@use "../../utilities/colour" as colourUtils;
+@use "../../utilities/global";
+// @use "../../utilities/typography" as typographyUtils;
 @use "../grid";
 
 .tna-global-header {
@@ -216,6 +218,16 @@
       @include colour.colour-font("font-base");
       @include typography.interacted-text-decoration;
     }
+
+    svg {
+      height: 1em;
+
+      display: inline-block;
+
+      path {
+        fill: currentColor;
+      }
+    }
   }
 
   @include media.on-medium {
@@ -309,6 +321,7 @@
 
     &__navigation-item-link {
       line-height: 1.75rem;
+      @include typography.main-font-weight-bold;
     }
 
     &__navigation-item:last-child &__navigation-item-link {

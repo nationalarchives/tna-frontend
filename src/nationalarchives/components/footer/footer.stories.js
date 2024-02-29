@@ -45,120 +45,105 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  meta: "<p>Open today<br />09:00&mdash;19:00</p>",
+  meta: "<p>Open today<br>09:00&mdash;19:00</p>",
   social: [
     {
-      text: "Twitter",
-      href: "#",
-      brandIcon: "twitter",
+      href: "https://twitter.com/UKNatArchives",
+      icon: "twitter",
+      title: "Visit us on Twitter",
     },
     {
-      text: "YouTube",
-      href: "#",
-      brandIcon: "youtube",
+      href: "https://www.youtube.com/c/TheNationalArchivesUK",
+      icon: "youtube",
+      title: "Watch us on YouTube",
     },
     {
-      text: "Facebook",
-      href: "#",
-      brandIcon: "facebook",
+      href: "https://www.facebook.com/TheNationalArchives",
+      icon: "facebook",
+      title: "See us on Facebook",
     },
     {
-      text: "Flickr",
-      href: "#",
-      brandIcon: "flickr",
+      href: "https://www.flickr.com/photos/nationalarchives",
+      icon: "flickr",
+      title: "See our Flickr feed",
     },
     {
-      text: "Instagram",
-      href: "#",
-      brandIcon: "instagram",
+      href: "https://www.instagram.com/nationalarchivesuk/",
+      icon: "instagram",
+      title: "See us on Instagram",
     },
     {
-      text: "RSS",
-      href: "#",
+      href: "https://www.nationalarchives.gov.uk/rss/",
       icon: "rss",
+      title: "Read our RSS feed",
     },
   ],
   navigation: [
     {
-      title: "About us",
-      items: [
-        {
-          text: "Our role",
-          href: "#",
-        },
-        {
-          text: "Our history",
-          href: "#",
-        },
-        {
-          text: "Our collection",
-          href: "#",
-        },
-        {
-          text: "Our people",
-          href: "#",
-        },
-        {
-          text: "How we are run",
-          href: "#",
-        },
-        {
-          text: "Our research and academic collaboration",
-          href: "#",
-        },
-        {
-          text: "News",
-          href: "#",
-        },
-        {
-          text: "Contact us",
-          href: "#",
-        },
-        {
-          text: "Jobs & careers",
-          href: "#",
-        },
-        {
-          text: "Get involved",
-          href: "#",
-        },
-      ],
-    },
-    {
-      title: "Our websites help",
-      items: [
-        {
-          text: "UK Government Web Archive",
-          href: "#",
-          newTab: true,
-        },
-        {
-          text: "Legislation.gov.uk",
-          href: "#",
-          newTab: true,
-        },
-        {
-          text: "Find case law",
-          href: "#",
-          newTab: true,
-        },
-        {
-          text: "The Gazette",
-          href: "#",
-          newTab: true,
-        },
-      ],
-    },
-    {
       title: "Quick links",
       items: [
         {
-          text: "Press room",
-          href: "#",
+          text: "About us",
+          href: "https://www.nationalarchives.gov.uk/about/",
         },
         {
-          text: "Venue hire",
-          href: "#",
+          text: "Contact us",
+          href: "https://www.nationalarchives.gov.uk/contact-us/",
+        },
+        {
+          text: "News",
+          href: "https://www.nationalarchives.gov.uk/about/news/",
+        },
+        {
+          text: "Blog",
+          href: "https://blog.nationalarchives.gov.uk/",
+        },
+        {
+          text: "Podcasts and videos",
+          href: "https://media.nationalarchives.gov.uk/",
+        },
+        {
+          text: "Image library",
+          href: "https://images.nationalarchives.gov.uk/",
+        },
+        {
+          text: "Press room",
+          href: "https://www.nationalarchives.gov.uk/about/press-room/",
+        },
+        {
+          text: "Jobs and careers",
+          href: "https://www.nationalarchives.gov.uk/about/jobs/",
+        },
+        {
+          text: "British citizenship services",
+          href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
+        },
+        {
+          text: "Historical Manuscripts Commission",
+          href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
+        },
+      ],
+    },
+    {
+      title: "Our other websites",
+      items: [
+        {
+          text: "UK Government Web Archive",
+          href: "https://www.nationalarchives.gov.uk/webarchive/",
+        },
+        { text: "Legislation.gov.uk", href: "https://www.legislation.gov.uk/" },
+        {
+          text: "Find case law",
+          href: "https://caselaw.nationalarchives.gov.uk/",
+        },
+        {
+          text: "The Gazette",
+          href: "https://www.thegazette.co.uk/",
+          newTab: true,
+        },
+        {
+          text: "The National Archives Trust",
+          href: "https://www.nationalarchives.gov.uk/about/the-national-archives-trust/",
         },
       ],
     },
@@ -167,23 +152,23 @@ Standard.args = {
   legal: [
     {
       text: "Accessibility statement",
-      href: "#",
+      href: "#/accessibility",
     },
     {
       text: "Freedom of information",
-      href: "#",
+      href: "#/freedom-of-information",
     },
     {
       text: "Terms and conditions",
-      href: "#",
+      href: "#/terms-and-conditions",
     },
     {
       text: "Privacy policy",
-      href: "#",
+      href: "#/privacy",
     },
     {
       text: "Cookies",
-      href: "#",
+      href: "#/cookies",
     },
   ],
   classes: "tna-footer--demo",

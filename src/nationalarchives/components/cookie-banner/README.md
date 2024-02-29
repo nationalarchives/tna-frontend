@@ -37,7 +37,7 @@ const $cookieBanner = document.querySelector(
 );
 
 if ($cookieBanner) {
-  new TNAFrontend.CookieBanner($cookieBanner).init();
+  new TNAFrontend.CookieBanner($cookieBanner);
 }
 ```
 

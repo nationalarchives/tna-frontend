@@ -1,8 +1,7 @@
 @use "../../variables/forms";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
-@use "../../utilities/a11y";
-@use "../../utilities";
 
 .tna-checkboxes {
   display: flex;

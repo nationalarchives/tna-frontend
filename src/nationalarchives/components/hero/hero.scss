@@ -1,8 +1,6 @@
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/typography";
-@use "../../utilities";
-@use "../grid";
 
 .tna-hero {
   @include colour.contrast-on-mobile;

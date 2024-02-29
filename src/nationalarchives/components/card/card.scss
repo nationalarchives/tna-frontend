@@ -3,8 +3,6 @@
 @use "../../tools/typography";
 @use "../../tools/media";
 @use "../../tools/spacing";
-@use "../../utilities";
-@use "../button";
 
 .tna-card {
   @include spacing.space-above;
@@ -82,8 +80,7 @@
   &__action {
     @include typography.main-font-weight-bold;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       margin-right: 0.5rem;
     }
   }

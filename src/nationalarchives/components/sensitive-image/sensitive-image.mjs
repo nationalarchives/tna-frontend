@@ -6,9 +6,7 @@ export class SensitiveImage {
     this.$image =
       $module && $module.querySelector(".tna-sensitive-image__image");
     this.imageIsVisible = false;
-  }
 
-  init() {
     if (!this.$module || !this.$imageDetails || !this.$image) {
       return;
     }

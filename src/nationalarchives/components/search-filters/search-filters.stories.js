@@ -4,6 +4,7 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   title: { control: "text" },
   rootHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
+  formId: { control: "text" },
   items: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -20,11 +21,19 @@ export default {
   argTypes,
 };
 
-const Template = ({ title, rootHeadingLevel, items, classes, attributes }) =>
+const Template = ({
+  title,
+  rootHeadingLevel,
+  formId,
+  items,
+  classes,
+  attributes,
+}) =>
   Filters({
     params: {
       title,
       rootHeadingLevel,
+      formId,
       items,
       classes,
       attributes,
@@ -35,6 +44,7 @@ export const Standard = Template.bind({});
 Standard.args = {
   title: "Filters",
   rootHeadingLevel: 2,
+  formId: "test-form",
   items: [
     {
       type: "text",
@@ -86,7 +96,7 @@ Standard.args = {
         {
           text: "Beta",
           value: "beta",
-          checked: true,
+          // checked: true,
         },
         {
           text: "Gamma",

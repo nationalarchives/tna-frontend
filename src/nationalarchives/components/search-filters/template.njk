@@ -6,23 +6,11 @@
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 <div class="tna-search-filters {{ containerClasses | join(' ') }}" data-module="tna-search-filters"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-
   <h{{ params.rootHeadingLevel }} class="tna-heading-m">
     {{ params.title }}
   </h{{ params.rootHeadingLevel }}>
-
-  {# <div class="tna-search-filters__header">
-    <button class="tna-search-filters__update tna-button tna-button--small">Update</button>
-  </div> #}
-
-
-
-
-
-
   {%- for filter in params.items %}
-
-  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint %} aria-describedby="{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
+  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint %} aria-describedby="tna-search-filters-{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
     <legend class="tna-search-filters__legend">
       <button class="tna-search-filters__item-toggle" aria-controls="tna-search-filters-{{ filter.id }}" aria-expanded="{{ filter.open or false }}" hidden>
         {% if filter.type == 'single' or filter.type == 'multiple' or filter.type == 'daterange' %}
@@ -51,9 +39,9 @@
       </p>
       {%- endif %}
       {% if filter.type == 'single' %}
-      {{ tnaRadiosElement(filter) }}
+      {{ tnaRadiosElement(filter, { form: params.formId }) }}
       {% elif filter.type == 'multiple' %}
-      {{ tnaCheckboxesElement(filter) }}
+      {{ tnaCheckboxesElement(filter, { form: params.formId }) }}
       <div class="tna-button-group tna-button-group--small tna-!--margin-top-xs">
         {{ tnaButton({
           text: 'See more',
@@ -62,14 +50,14 @@
         }) }}
       </div>
       {% elif filter.type == 'text' %}
-      {{ tnaTextInputElement(filter) }}
+      {{ tnaTextInputElement(filter, { form: params.formId }) }}
       {% elif filter.type == 'date' %}
-      {{ tnaDateSearchElement(filter) }}
+      {{ tnaDateSearchElement(filter, { form: params.formId }) }}
       {% elif filter.type == 'daterange' %}
       <label class="tna-search-filters__label" for="{{ filter.from.id }}">{{ filter.from.label }}</label>
-      {{ tnaDateSearchElement(filter.from) }}
+      {{ tnaDateSearchElement(filter.from, { form: params.formId }) }}
       <label class="tna-search-filters__label" for="{{ filter.to.id }}">{{ filter.to.label }}</label>
-      {{ tnaDateSearchElement(filter.to) }}
+      {{ tnaDateSearchElement(filter.to, { form: params.formId }) }}
       {% endif %}
       <div class="tna-button-group tna-button-group--small tna-search-filters__update-item tna-!--margin-top-s">
         {{ tnaButton({
@@ -77,7 +65,7 @@
           buttonElement: true,
           buttonType: 'submit',
           attributes: {
-            form: 'search-form'
+            form: params.formId
           }
         }) }}
       </div>
@@ -92,7 +80,7 @@
         buttonType: 'submit',
         classes: 'tna-search-filters__update',
         attributes: {
-          form: 'search-form'
+          form: params.formId
         }
       }) }}
       {{ tnaButton({

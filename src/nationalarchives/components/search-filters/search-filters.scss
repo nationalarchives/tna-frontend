@@ -8,21 +8,6 @@
 .tna-search-filters {
   @include spacing.space-above;
 
-  &__header,
-  &__footer {
-    padding: 0.75rem;
-
-    display: none;
-
-    @include colour.colour-border("keyline", 1px);
-  }
-
-  &__header {
-  }
-
-  &__footer {
-  }
-
   &__update {
     display: block;
   }
@@ -131,7 +116,14 @@
     }
   }
 
-  &--js-enabled &__header,
+  &__footer {
+    padding: 0.75rem;
+
+    display: none;
+
+    @include colour.colour-border("keyline", 1px);
+  }
+
   &--js-enabled &__footer {
     display: block;
   }

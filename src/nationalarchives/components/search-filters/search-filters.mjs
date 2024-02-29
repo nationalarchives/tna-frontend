@@ -2,7 +2,7 @@ export class SearchFilters {
   constructor($module) {
     this.$module = $module;
 
-    if (!this.$module || !true) {
+    if (!this.$module) {
       return;
     }
 

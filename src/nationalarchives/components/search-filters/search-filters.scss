@@ -80,6 +80,13 @@
       content: "";
     }
 
+    &:hover,
+    &:active {
+      @include typography.interacted-text-decoration;
+
+      background: none;
+    }
+
     &[aria-expanded="true"] {
       &::before {
         border-top-width: 0;

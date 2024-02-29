@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<ul class="tna-compound-filters tna-ul tna-ul--plain {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<ul class="tna-compound-filters {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- for item in params.items -%}
   <li class="tna-compound-filters__item">
     <span class="tna-compound-filters__label">{{ item.label }}</span>

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `filters` are now `quick-filters` (and the Nunjucks has changed from `tnaFilters` to `tnaQuickFilters`)
 - Borders size around inputs has been increased
+- Removed `tna-ul tna-ul--plain` classes from compound filters
 
 ### Deprecated
 ### Removed

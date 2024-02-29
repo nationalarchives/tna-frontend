@@ -34,5 +34,5 @@ Standard.args = {
   message:
     "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
   headingLevel: 2,
-  classes: "tna-messaage--demo",
+  classes: "tna-phase-banner--demo",
 };

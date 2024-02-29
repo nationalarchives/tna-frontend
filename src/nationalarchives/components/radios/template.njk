@@ -5,19 +5,19 @@
   {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
 {%- endif -%}
 <div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.formGroupAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <fieldset class="tna-form__fieldset"{%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}tna-form__{{ params.id }}-hint{%- endif %} {% if params.error -%}tna-form__{{ params.id }}-error{%- endif -%}"{%- endif %}>
+  <fieldset class="tna-form__fieldset"{%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}>
     <legend class="tna-form__legend">
       <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
         {{ params.label }}
       </h{{ params.headingLevel }}>
     </legend>
     {%- if params.hint %}
-    <p id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
+    <p id="{{ params.id }}-hint" class="tna-form__hint">
       {{ params.hint }}
     </p>
     {%- endif %}
     {%- if params.error %}
-    <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
+    <p id="{{ params.id }}-error" class="tna-form__error-message">
       <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
     </p>
     {%- endif %}

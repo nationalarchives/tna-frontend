@@ -1,7 +1,10 @@
 @use "../../variables/forms";
 @use "../../tools/colour";
+@use "../../tools/spacing";
 
 .tna-search-field {
+  @include spacing.space-above;
+
   &__fields {
     display: flex;
     align-self: stretch;
@@ -24,10 +27,12 @@
     @include colour.colour-border("input-border");
     border-width: forms.$form-field-border-width 0
       forms.$form-field-border-width forms.$form-field-border-width;
+    border-style: solid;
     border-radius: 0.1px;
 
     .tna-template--dark-theme &,
-    .tna-background-contrast & {
+    .tna-background-contrast &/*,
+    .tna-background-accent &*/ {
       margin-right: forms.$form-field-border-width;
 
       border-width: 0;

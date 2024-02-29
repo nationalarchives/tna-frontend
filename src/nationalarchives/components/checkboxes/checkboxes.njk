@@ -2,8 +2,8 @@
   <div class="tna-checkboxes{% if params.small or params.inline %} tna-checkboxes--small{% endif %}{% if params.inline %} tna-checkboxes--inline{% endif %}">
     {%- for item in params.items %}
     <div class="tna-checkboxes__item">
-      <input type="checkbox" id="tna-form__{{ params.id }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}{% if item.checked %} checked{% endif %}>
-      <label for="tna-form__{{ params.id }}-{{ item.value }}" class="tna-checkboxes__item-label">
+      <input type="checkbox" id="{{ params.id }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}{% if item.checked %} checked{% endif %}>
+      <label for="{{ params.id }}-{{ item.value }}" class="tna-checkboxes__item-label">
         {{ item.text }}
       </label>
     </div>

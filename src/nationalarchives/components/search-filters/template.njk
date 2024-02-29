@@ -22,7 +22,7 @@
 
   {%- for filter in params.items %}
 
-  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint %} aria-describedby="tna-form__{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
+  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint %} aria-describedby="{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
     <legend class="tna-search-filters__legend">
       <button class="tna-search-filters__item-toggle" aria-controls="tna-search-filters-{{ filter.id }}" aria-expanded="{{ filter.open or false }}" hidden>
         {% if filter.type == 'single' or filter.type == 'multiple' or filter.type == 'daterange' %}

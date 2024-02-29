@@ -6,22 +6,22 @@
 <div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}" {%- for attribute, value in params.formGroupAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-form__group-contents">
     <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
-      <label class="tna-form__label" for="tna-form__{{ params.id }}">
+      <label class="tna-form__label" for="{{ params.id }}">
         {{ params.label }}
       </label>
     </h{{ params.headingLevel }}>
     {%- if params.hint %}
-    <p id="tna-form__{{ params.id }}-hint" class="tna-form__hint">
+    <p id="{{ params.id }}-hint" class="tna-form__hint">
       {{ params.hint }}
     </p>
     {%- endif %}
     {%- if params.error %}
-    <p id="tna-form__{{ params.id }}-error" class="tna-form__error-message">
+    <p id="{{ params.id }}-error" class="tna-form__error-message">
       <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
     </p>
     {%- endif %}
   </div>
-  <select class="tna-select{% if params.size %} tna-select--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" id="tna-form__{{ params.id }}"{% if params.hint %} aria-describedby="tna-form__{{ params.id }}-hint"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <select class="tna-select{% if params.size %} tna-select--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" id="{{ params.id }}"{% if params.hint %} aria-describedby="tna-form__{{ params.id }}-hint"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
     {%- for item in params.items %}
     <option value="{{ item.value }}"{% if item.value === params.selected %} selected{% endif %}>{{ item.text }}</option>
     {%- endfor %}

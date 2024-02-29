@@ -1,0 +1,39 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+@use "../../utilities";
+
+.tna-error-summary {
+  @include spacing.space-above;
+  padding: 1rem;
+
+  @include colour.plain;
+
+  @include colour.colour-background("page-background");
+
+  @include colour.colour-border("form-error", 0.25rem, solid);
+
+  &:focus {
+    outline: none;
+  }
+
+  &__list {
+    margin: 0.5rem 0 0;
+
+    list-style: none;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    @include typography.main-font-weight-bold;
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("form-error");
+    }
+  }
+}

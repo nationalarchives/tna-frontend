@@ -14,7 +14,7 @@
 
   @include typography.relative-font-size(18);
   @include typography.main-font-weight-bold;
-  line-height: #{math.div(16, 18) * 2};
+  line-height: 2rem;
   text-decoration: none;
   text-align: center;
   text-wrap: balance;

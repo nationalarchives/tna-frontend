@@ -3,6 +3,7 @@ import Breadcrumbs from "../../../components/breadcrumbs/template.njk";
 import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
 import Checkboxes from "../../../components/checkboxes/template.njk";
+import ErrorSummary from "../../../components/error-summary/template.njk";
 import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
@@ -1065,6 +1066,21 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
       </div>
+      <div class="tna-section tna-background-contrast">
+        <div class="tna-container">
+          <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
+            ${SearchField({
+              params: {
+                label: "Catalogue search results",
+                headingLevel: 3,
+                headingSize: "l",
+                id: "search1",
+                name: "q",
+              },
+            })}
+          </div>
+        </div>
+      </div>
       <div class="tna-section">
         <div class="tna-container">
           <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
@@ -1072,13 +1088,16 @@ const Template = ({ theme, accent }) => {
               <h2 class="tna-heading tna-heading--l">
                 Forms
               </h2>
-              ${SearchField({
+              ${ErrorSummary({
                 params: {
-                  label: "Catalogue search results",
-                  headingLevel: 3,
-                  headingSize: "l",
-                  id: "search1",
-                  name: "q",
+                  title: "There is a problem",
+                  headingLevel: 2,
+                  items: [
+                    {
+                      text: "Enter a valid email address",
+                      href: "#email",
+                    },
+                  ],
                 },
               })}
               ${TextInput({
@@ -1099,6 +1118,9 @@ const Template = ({ theme, accent }) => {
                   id: "email",
                   name: "email",
                   autofill: "email",
+                  error: {
+                    text: "Enter a valid email address",
+                  },
                 },
               })}
               ${Select({

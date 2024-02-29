@@ -49,34 +49,34 @@ Standard.args = {
     {
       type: "text",
       label: "Refine your search",
-      id: "firstname1",
-      name: "firstname1",
+      id: "refine1",
+      name: "refine1",
       // open: true,
       hint: "Filter the current results further",
     },
-    {
-      type: "single",
-      label: "Type",
-      id: "type1",
-      name: "type1",
-      small: true,
-      // open: true,
-      hint: "You can only select one.",
-      items: [
-        {
-          text: "Audio",
-          value: "audio",
-        },
-        {
-          text: "Image",
-          value: "image",
-        },
-        {
-          text: "Video",
-          value: "video",
-        },
-      ],
-    },
+    // {
+    //   type: "single",
+    //   label: "Type",
+    //   id: "type1",
+    //   name: "type1",
+    //   small: true,
+    //   // open: true,
+    //   hint: "You can only select one.",
+    //   items: [
+    //     {
+    //       text: "Audio",
+    //       value: "audio",
+    //     },
+    //     {
+    //       text: "Image",
+    //       value: "image",
+    //     },
+    //     {
+    //       text: "Video",
+    //       value: "video",
+    //     },
+    //   ],
+    // },
     {
       type: "multiple",
       label: "Categories",
@@ -116,7 +116,7 @@ Standard.args = {
       label: "Covering date",
       id: "dates",
       hint: "The earliest and/or latest covering date of the record",
-      open: true,
+      // open: true,
       from: {
         label: "From",
         id: "date2",

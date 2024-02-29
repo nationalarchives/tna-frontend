@@ -10,9 +10,9 @@
     {{ params.title }}
   </h{{ params.rootHeadingLevel }}>
   {%- for filter in params.items %}
-  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint %} aria-describedby="tna-search-filters-{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
+  <fieldset class="tna-search-filters__fieldset" {%- if filter.hint and (filter.type == 'single' or filter.type == 'multiple' or filter.type == 'daterange') %} aria-describedby="{{ filter.id }}-hint"{% endif %} data-type="{{ filter.type }}">
     <legend class="tna-search-filters__legend">
-      <button class="tna-search-filters__item-toggle" aria-controls="tna-search-filters-{{ filter.id }}" aria-expanded="{{ filter.open or false }}" hidden>
+      <button class="tna-search-filters__item-toggle" aria-controls="{{ filter.id }}-wrapper" aria-expanded="{{ filter.open or false }}" hidden>
         {% if filter.type == 'single' or filter.type == 'multiple' or filter.type == 'daterange' %}
         <span class="tna-search-filters__item-toggle-label">
           {{ filter.label }}
@@ -32,9 +32,9 @@
         </label>
       </h{{ params.rootHeadingLevel + 1 }}>
     </legend>
-    <div id="tna-search-filters-{{ filter.id }}" class="tna-search-filters__item">
+    <div id="{{ filter.id }}-wrapper" class="tna-search-filters__item">
       {%- if filter.hint %}
-      <p id="tna-search-filters-{{ filter.id }}-hint" class="tna-search-filters__hint">
+      <p id="{{ filter.id }}-hint" class="tna-search-filters__hint">
         {{ filter.hint }}
       </p>
       {%- endif %}

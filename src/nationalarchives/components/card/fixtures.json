@@ -8,8 +8,7 @@
         "headingLevel": 3,
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with supertitle",
@@ -19,8 +18,7 @@
         "headingLevel": 3,
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><hgroup class=\"tna-hgroup-s tna-card__heading\"><h3 class=\"tna-hgroup__title\"><span class=\"tna-hgroup__supertitle\">Card supertitle</span>Card title</h3></hgroup><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><hgroup class=\"tna-hgroup-s tna-card__heading\"><h3 class=\"tna-hgroup__title\"><span class=\"tna-hgroup__supertitle\">Card supertitle</span>Card title</h3></hgroup><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "heading size",
@@ -30,8 +28,7 @@
         "headingSize": "xl",
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-xl tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-xl tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "heading level",
@@ -40,8 +37,7 @@
         "headingLevel": 1,
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h1 class=\" tna-heading-s tna-card__heading\">Card title</h1><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h1 class=\" tna-heading-s tna-card__heading\">Card title</h1><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with link",
@@ -51,8 +47,7 @@
         "href": "#",
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with meta",
@@ -75,8 +70,7 @@
         ],
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><ul class=\"tna-card__meta tna-chip-list\"><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-calendar\" aria-hidden=\"true\"></i>24th September 2023</div></li><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-ticket\" aria-hidden=\"true\"></i>From £16</div></li><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-location-dot\" aria-hidden=\"true\"></i>Online</div></li></ul><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><ul class=\"tna-card__meta tna-chip-list\"><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-calendar\" aria-hidden=\"true\"></i>24th September 2023</div></li><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-ticket\" aria-hidden=\"true\"></i>From £16</div></li><li class=\"tna-chip-list__item\"><div class=\"tna-chip tna-chip--plain\"><i class=\"fa-solid fa-fw fa-location-dot\" aria-hidden=\"true\"></i>Online</div></li></ul><p>Card body</p></div></div></div>"
     },
     {
       "name": "with text",
@@ -85,8 +79,7 @@
         "headingLevel": 3,
         "text": "Card body"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with image",
@@ -99,8 +92,7 @@
         "imageHeight": 360,
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with image and alternative sources",
@@ -119,8 +111,7 @@
         ],
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"640\" height=\"360\"><source srcset=\"https://loremflickr.com/640/360\" type=\"image/jpeg\" width=\"640\" height=\"360\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"640\" height=\"360\"><source srcset=\"https://loremflickr.com/640/360\" type=\"image/jpeg\" width=\"640\" height=\"360\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with link and image",
@@ -134,8 +125,7 @@
         "href": "#",
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><a href=\"#\" class=\"tna-card__image-container\" tabindex=\"-1\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></a><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><a href=\"#\" class=\"tna-card__image-container\" tabindex=\"-1\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></a><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with actions",
@@ -151,8 +141,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the action\">Card action</a></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the action\">Card action</a></div></div></div>"
     },
     {
       "name": "with a label",
@@ -162,8 +151,7 @@
         "label": "New",
         "body": "<p>Card body</p>"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with a contrast style",
@@ -173,8 +161,7 @@
         "body": "<p>Card body</p>",
         "style": "contrast"
       },
-      "html": "<div class=\"tna-card tna-card--contrast\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card tna-card--contrast\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with a accent style",
@@ -184,8 +171,7 @@
         "body": "<p>Card body</p>",
         "style": "accent"
       },
-      "html": "<div class=\"tna-card tna-card--accent\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card tna-card--accent\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with an unknown style",
@@ -195,8 +181,7 @@
         "body": "<p>Card body</p>",
         "style": "foobar"
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with classes",
@@ -206,8 +191,7 @@
         "body": "<p>Card body</p>",
         "classes": "card__test-class"
       },
-      "html": "<div class=\"tna-card card__test-class\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card card__test-class\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with attributes",
@@ -219,8 +203,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-card\" data-testattribute=\"foobar\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-card\" data-testattribute=\"foobar\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     }
   ]
 }

@@ -1,0 +1,163 @@
+@use "sass:math";
+
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-search-filters {
+  @include spacing.space-above;
+
+  &__title {
+  }
+
+  &__update {
+    display: block;
+  }
+
+  .tna-heading-s {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__fieldset {
+    border: none;
+  }
+
+  &__legend {
+    width: 100%;
+  }
+
+  &__heading-inner,
+  &__item-toggle {
+    padding: 0.5rem 0.75rem;
+
+    @include colour.colour-border("keyline", 1px, solid);
+    border-bottom-width: 0;
+  }
+
+  &__heading-inner {
+    margin-top: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  &__item-toggle {
+    width: 100%;
+    margin: 0;
+    padding-right: 2.5rem;
+
+    display: block;
+
+    position: relative;
+
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: inherit;
+
+    background: none;
+
+    cursor: pointer;
+
+    &::before {
+      width: 0;
+      height: 0;
+
+      position: absolute;
+      right: 0.5rem;
+      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
+
+      @include colour.colour-border(
+        "font-base",
+        #{math.div(math.sqrt(3), 2)}rem
+      );
+      border-right: 0.5rem transparent solid;
+      border-bottom-width: 0;
+      border-left: 0.5rem transparent solid;
+
+      content: "";
+    }
+
+    &:hover,
+    &:active {
+      @include typography.interacted-text-decoration;
+
+      background: none;
+    }
+
+    &[aria-expanded="true"] {
+      &::before {
+        border-top-width: 0;
+        border-bottom-width: #{math.div(math.sqrt(3), 2)}rem;
+      }
+    }
+  }
+
+  &__item-toggle-label {
+  }
+
+  &__item-toggle-info {
+    display: block;
+
+    @include typography.main-font-weight;
+    @include typography.relative-font-size(14);
+  }
+
+  &__item {
+    padding: 0.75rem;
+
+    @include colour.colour-background("background-tint");
+
+    @include colour.colour-border("keyline", 1px);
+    border-width: 0 1px 1px;
+  }
+
+  &__hint {
+    margin-bottom: 0.5rem;
+
+    @include typography.relative-font-size(16);
+    @include colour.colour-font("font-light");
+  }
+
+  &__inline-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__footer {
+    padding: 0.75rem;
+
+    display: none;
+
+    @include colour.colour-border("keyline", 1px);
+  }
+
+  &--js-enabled &__title {
+    margin-bottom: 1rem;
+  }
+
+  &--js-enabled &__footer {
+    display: block;
+  }
+
+  &--js-enabled &__item {
+    border-bottom: none;
+  }
+
+  &--js-enabled &__update-item {
+    display: none;
+  }
+
+  &__fieldset[data-type="multiple"] &__item {
+    max-height: 15rem;
+
+    overflow: auto;
+  }
+}

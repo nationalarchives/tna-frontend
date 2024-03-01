@@ -1,6 +1,6 @@
 @use "colour";
 
 @mixin focus-outline {
-  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
-  outline-offset: 0.125rem;
+  @include colour.colour-outline("focus-outline", 5px, solid);
+  outline-offset: 2px;
 }

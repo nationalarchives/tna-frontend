@@ -21,7 +21,7 @@
     </p>
     {%- endif %}
   </div>
-  <select class="tna-select{% if params.size %} tna-select--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" id="{{ params.id }}"{% if params.hint %} aria-describedby="tna-form__{{ params.id }}-hint"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <select class="tna-select{% if params.size %} tna-select--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" id="{{ params.id }}"{% if params.hint %} aria-describedby="{{ params.id }}-hint"{% endif %} {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
     {%- for item in params.items %}
     <option value="{{ item.value }}"{% if item.value === params.selected %} selected{% endif %}>{{ item.text }}</option>
     {%- endfor %}

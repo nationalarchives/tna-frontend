@@ -3,33 +3,39 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "The items within breadcrumbs.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "Text to use within the breadcrumbs item."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "Link for the breadcrumbs item."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "Optional title for the breadcrumb item used in the title attribute."
       }
     ]
   },
   {
     "name": "noCollapse",
-    "type": "string",
+    "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "When true, the breadcrumbs will not collapse to the first and last item only on smaller devices."
+  },
+  {
+    "name": "structuredData",
+    "type": "boolean",
+    "required": false,
+    "description": "When true, structured data markup is added to the breadcrumbs."
   },
   {
     "name": "classes",

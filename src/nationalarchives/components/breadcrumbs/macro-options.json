@@ -27,7 +27,7 @@
   },
   {
     "name": "noCollapse",
-    "type": "string",
+    "type": "boolean",
     "required": false,
     "description": "When true, the breadcrumbs will not collapse to the first and last item only on smaller devices."
   },

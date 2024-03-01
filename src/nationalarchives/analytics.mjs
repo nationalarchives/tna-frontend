@@ -96,6 +96,7 @@ class EventTracker {
     });
   }
 
+  /** @protected */
   generateEventName(areaName, componentTracking) {
     return `${areaName}.${componentTracking.eventName || componentTracking.on}`;
   }
@@ -195,6 +196,7 @@ class GA4 extends EventTracker {
     this.pushToDataLayer(arguments);
   }
 
+  /** @protected */
   pushToDataLayer(data) {
     window.dataLayer.push(data);
   }

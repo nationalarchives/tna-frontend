@@ -13,7 +13,7 @@ const globalHeaderHTML = nunjucks
   .renderString(globalHeaderComponentNunjucks, {
     params: {
       logo: {
-        href: "https://nationalarchives.gov.uk/",
+        href: "https://www.nationalarchives.gov.uk/",
       },
       topNavigation: [
         {
@@ -33,10 +33,13 @@ const globalHeaderHTML = nunjucks
         // },
       ],
       navigation: [
-        { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
+        {
+          text: "Visit",
+          href: "https://www.nationalarchives.gov.uk/about/visit-us/",
+        },
         {
           text: "What's on",
-          href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+          href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
         },
         {
           text: "Explore the collection",
@@ -44,12 +47,15 @@ const globalHeaderHTML = nunjucks
         },
         {
           text: "Using the archive",
-          href: "www.nationalarchives.gov.uk/help-with-your-research/",
+          href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
         },
-        { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
+        {
+          text: "Learn",
+          href: "https://www.nationalarchives.gov.uk/education/",
+        },
         {
           text: "Professional guidance and services",
-          href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
+          href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
         },
       ],
     },

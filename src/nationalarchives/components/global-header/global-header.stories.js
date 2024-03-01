@@ -69,10 +69,13 @@ Standard.args = {
     },
   ],
   navigation: [
-    { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
+    {
+      text: "Visit",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
+    },
     {
       text: "What's on",
-      href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
       text: "Explore the collection",
@@ -80,12 +83,12 @@ Standard.args = {
     },
     {
       text: "Using the archive",
-      href: "www.nationalarchives.gov.uk/help-with-your-research/",
+      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
+    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
     {
       text: "Professional guidance and services",
-      href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
+      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
     },
   ],
   classes: "tna-global-header--demo",
@@ -136,10 +139,13 @@ Medium.args = {
     },
   ],
   navigation: [
-    { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
+    {
+      text: "Visit",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
+    },
     {
       text: "What's on",
-      href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
       text: "Explore the collection",
@@ -147,12 +153,12 @@ Medium.args = {
     },
     {
       text: "Using the archive",
-      href: "www.nationalarchives.gov.uk/help-with-your-research/",
+      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
+    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
     {
       text: "Professional guidance and services",
-      href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
+      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
     },
   ],
   classes: "tna-global-header--demo",
@@ -203,10 +209,13 @@ MediumCollapsed.args = {
     },
   ],
   navigation: [
-    { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
+    {
+      text: "Visit",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
+    },
     {
       text: "What's on",
-      href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
       text: "Explore the collection",
@@ -214,12 +223,12 @@ MediumCollapsed.args = {
     },
     {
       text: "Using the archive",
-      href: "www.nationalarchives.gov.uk/help-with-your-research/",
+      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
+    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
     {
       text: "Professional guidance and services",
-      href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
+      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
     },
   ],
   collapseOnMedium: true,
@@ -258,10 +267,13 @@ Mobile.args = {
     },
   ],
   navigation: [
-    { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
+    {
+      text: "Visit",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
+    },
     {
       text: "What's on",
-      href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
       text: "Explore the collection",
@@ -269,12 +281,12 @@ Mobile.args = {
     },
     {
       text: "Using the archive",
-      href: "www.nationalarchives.gov.uk/help-with-your-research/",
+      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
+    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
     {
       text: "Professional guidance and services",
-      href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
+      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
     },
   ],
   classes: "tna-global-header--demo",

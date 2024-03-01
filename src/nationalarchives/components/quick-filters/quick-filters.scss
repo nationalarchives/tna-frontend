@@ -1,12 +1,18 @@
 @use "../../tools/colour";
 @use "../../tools/spacing";
 
-.tna-filters {
+.tna-quick-filters {
   @include spacing.space-above;
 
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
+
+  list-style: none;
+
+  &--stacked {
+    flex-direction: column;
+  }
 
   &__item {
   }
@@ -15,19 +21,15 @@
     padding: 0.125rem 0.75rem;
 
     text-decoration: none;
+    line-height: 1.75;
 
-    @include colour.tint;
+    @include colour.colour-border("keyline", 1px);
+    border-radius: 1rem;
 
     &,
     &:link,
     &:visited {
       @include colour.colour-font("font-base");
-    }
-
-    border-radius: 99rem;
-
-    &:hover {
-      @include colour.accent-light;
     }
   }
 

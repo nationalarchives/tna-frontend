@@ -76,7 +76,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"sort\">Sort by</label></h4><p id=\"sort-hint\" class=\"tna-form__hint\">Select a field to sort by.</p></div><select class=\"tna-select \" name=\"sort\" id=\"sort\" aria-describedby=\"tna-form__sort-hint\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"sort\">Sort by</label></h4><p id=\"sort-hint\" class=\"tna-form__hint\">Select a field to sort by.</p></div><select class=\"tna-select \" name=\"sort\" id=\"sort\" aria-describedby=\"sort-hint\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
     },
     {
       "name": "select with an error",

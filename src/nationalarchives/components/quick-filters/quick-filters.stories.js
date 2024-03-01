@@ -15,7 +15,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Filters",
+  title: "Components/Quick filters",
   argTypes,
 };
 
@@ -70,5 +70,5 @@ Standard.args = {
       href: "#?filter=theta",
     },
   ],
-  classes: "tna-filters--demo",
+  classes: "tna-quick-filters--demo",
 };

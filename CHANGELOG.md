@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Error summary component
+- Initial release of analytics library
 - Initial idea for search filters
 - Allow structured data in breadcrumbs with `structuredData`
 

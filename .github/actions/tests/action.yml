@@ -14,7 +14,7 @@ runs:
       run: npm ci
       shell: bash
     - name: Validate HTML
-      run: mkdir temp && npm run validatehtml
+      run: npm run validatehtml
       shell: bash
     - name: Build Storybook
       run: npm run build --test

@@ -2,7 +2,7 @@
 {%- if params.noCollapse -%}
   {%- set containerClasses = containerClasses.concat('tna-breadcrumbs--no-collapse') -%}
 {%- endif -%}
-<nav class="tna-breadcrumbs {{ containerClasses | join(' ') }}" data-module="tna-breadcrumbs" aria-label="Breadcrumb"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<nav class="tna-breadcrumbs{{ ' ' + ( containerClasses | join(' ') ) if containerClasses.length else '' }}" data-module="tna-breadcrumbs" aria-label="Breadcrumb"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <ol class="tna-breadcrumbs__list" {%- if params.structuredData %} itemscope itemtype="https://schema.org/BreadcrumbList"{% endif %}>
   {%- for item in params.items -%}
     <li class="tna-breadcrumbs__item" {%- if params.structuredData %} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"{% endif %}>

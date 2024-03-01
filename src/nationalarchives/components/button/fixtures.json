@@ -7,8 +7,7 @@
         "text": "Log in",
         "href": "#"
       },
-      "html": "<a href=\"#\" class=\"tna-button \">Log in</a>",
-      "hidden": false
+      "html": "<a href=\"#\" class=\"tna-button \">Log in</a>"
     },
     {
       "name": "with title",
@@ -17,8 +16,7 @@
         "href": "#",
         "title": "Log in to the service"
       },
-      "html": "<a href=\"#\" class=\"tna-button \" title=\"Log in to the service\">Log in</a>",
-      "hidden": false
+      "html": "<a href=\"#\" class=\"tna-button \" title=\"Log in to the service\">Log in</a>"
     },
     {
       "name": "accent",
@@ -27,8 +25,7 @@
         "href": "#",
         "accent": true
       },
-      "html": "<a href=\"#\" class=\"tna-button tna-button--accent\">Log in</a>",
-      "hidden": false
+      "html": "<a href=\"#\" class=\"tna-button tna-button--accent\">Log in</a>"
     },
     {
       "name": "with classes",
@@ -37,8 +34,7 @@
         "href": "#",
         "classes": "button__test-class"
       },
-      "html": "<a href=\"#\" class=\"tna-button button__test-class\">Log in</a>",
-      "hidden": false
+      "html": "<a href=\"#\" class=\"tna-button button__test-class\">Log in</a>"
     },
     {
       "name": "with attributes",
@@ -49,8 +45,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<a href=\"#\" class=\"tna-button \" data-testattribute=\"foobar\">Log in</a>",
-      "hidden": false
+      "html": "<a href=\"#\" class=\"tna-button \" data-testattribute=\"foobar\">Log in</a>"
     }
   ]
 }

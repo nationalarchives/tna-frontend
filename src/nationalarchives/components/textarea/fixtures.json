@@ -10,8 +10,7 @@
         "id": "feedback",
         "name": "name"
       },
-      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" rows=\"5\"></textarea></div>",
-      "hidden": false
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "textarea with a preselected value",
@@ -23,8 +22,7 @@
         "name": "feedback",
         "value": "I like this 👍🏼"
       },
-      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\">I like this 👍🏼</textarea></div>",
-      "hidden": false
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\">I like this 👍🏼</textarea></div>"
     },
     {
       "name": "textarea with a hint",
@@ -36,8 +34,7 @@
         "name": "feedback",
         "hint": "What did you think?"
       },
-      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4><p id=\"feedback-hint\" class=\"tna-form__hint\">What did you think?</p></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\" aria-describedby=\"tna-form__feedback-hint \"></textarea></div>",
-      "hidden": false
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4><p id=\"feedback-hint\" class=\"tna-form__hint\">What did you think?</p></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\" aria-describedby=\"tna-form__feedback-hint \"></textarea></div>"
     },
     {
       "name": "textarea with an error",
@@ -51,8 +48,7 @@
           "text": "Enter some feedback"
         }
       },
-      "html": "<div class=\"tna-form__group tna-form__group--error \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4><p id=\"feedback-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter some feedback</p></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\" aria-describedby=\" tna-form__feedback-error\"></textarea></div>",
-      "hidden": false
+      "html": "<div class=\"tna-form__group tna-form__group--error \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4><p id=\"feedback-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter some feedback</p></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\" aria-describedby=\" tna-form__feedback-error\"></textarea></div>"
     },
     {
       "name": "inline textarea",
@@ -64,8 +60,7 @@
         "name": "feedback",
         "inline": true
       },
-      "html": "<div class=\"tna-form__group tna-form__group--inline\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\"></textarea></div>",
-      "hidden": false
+      "html": "<div class=\"tna-form__group tna-form__group--inline\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "textarea size",
@@ -77,8 +72,7 @@
         "name": "feedback",
         "size": "m"
       },
-      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea tna-textarea--m \" name=\"feedback\" spellcheck=\"false\" rows=\"5\"></textarea></div>",
-      "hidden": false
+      "html": "<div class=\"tna-form__group \"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea tna-textarea--m \" name=\"feedback\" spellcheck=\"false\" rows=\"5\"></textarea></div>"
     }
   ]
 }

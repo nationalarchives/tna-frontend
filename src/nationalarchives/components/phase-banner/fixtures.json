@@ -7,8 +7,7 @@
         "phase": "beta",
         "message": "This is a new service – <a href=\"#\">give us your feedback</a> to help improve it."
       },
-      "html": "<div class=\"tna-phase-banner \"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">This is a new service – <a href=\"#\">give us your feedback</a> to help improve it.</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-phase-banner \"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">This is a new service – <a href=\"#\">give us your feedback</a> to help improve it.</p></div></div></div>"
     },
     {
       "name": "capital letters",
@@ -16,8 +15,7 @@
         "phase": "BETA",
         "message": "Message"
       },
-      "html": "<div class=\"tna-phase-banner \"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-phase-banner \"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Beta</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>"
     },
     {
       "name": "with classes",
@@ -26,8 +24,7 @@
         "message": "Message",
         "classes": "tna-phase-banner--fixture"
       },
-      "html": "<div class=\"tna-phase-banner tna-phase-banner--fixture\"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-phase-banner tna-phase-banner--fixture\"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>"
     },
     {
       "name": "with attributes",
@@ -38,8 +35,7 @@
           "data-fixturetest": "pass"
         }
       },
-      "html": "<div class=\"tna-phase-banner \" data-fixturetest=\"pass\"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-phase-banner \" data-fixturetest=\"pass\"><div class=\"tna-container\"><div class=\"tna-column tna-column--full-tiny\"><span class=\"tna-phase-banner__phase\">Live</span></div><div class=\"tna-column tna-column--flex-1 tna-column--full-tiny\"><p class=\"tna-phase-banner__message\">Message</p></div></div></div>"
     }
   ]
 }

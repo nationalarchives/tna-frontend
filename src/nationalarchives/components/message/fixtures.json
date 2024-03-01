@@ -7,8 +7,7 @@
         "headingLevel": 2,
         "message": "Please note this page references hunger strikes and force feeding, which some people may find upsetting."
       },
-      "html": "<div class=\"tna-message \"><h2 class=\"tna-message__heading\"><span class=\"tna-message__heading-icon\">I</span>mportant information</h2><div class=\"tna-message__message\">Please note this page references hunger strikes and force feeding, which some people may find upsetting.</div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-message \"><h2 class=\"tna-message__heading\"><span class=\"tna-message__heading-icon\">I</span>mportant information</h2><div class=\"tna-message__message\">Please note this page references hunger strikes and force feeding, which some people may find upsetting.</div></div>"
     }
   ]
 }

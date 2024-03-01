@@ -2,13 +2,20 @@
 {%- if params.noCollapse -%}
   {%- set containerClasses = containerClasses.concat('tna-breadcrumbs--no-collapse') -%}
 {%- endif -%}
-<nav class="tna-breadcrumbs {{ containerClasses | join(' ') }}" data-module="tna-breadcrumbs" aria-label="Breadcrumb"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <ol class="tna-breadcrumbs__list">
+<nav class="tna-breadcrumbs{{ ' ' + ( containerClasses | join(' ') ) if containerClasses.length else '' }}" data-module="tna-breadcrumbs" aria-label="Breadcrumb"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <ol class="tna-breadcrumbs__list" {%- if params.structuredData %} itemscope itemtype="https://schema.org/BreadcrumbList"{% endif %}>
   {%- for item in params.items -%}
-    <li class="tna-breadcrumbs__item">
-      <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+    <li class="tna-breadcrumbs__item" {%- if params.structuredData %} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"{% endif %}>
+      <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} title="{{ item.title }}"{% endif %}{%- if params.structuredData %} itemprop="item"{% endif %}>
+        {%- if params.structuredData %}
+        <span itemprop="name">{{ item.text }}</span>
+        {%- else %}
         {{ item.text }}
+        {%- endif %}
       </a>
+      {%- if params.structuredData -%}
+      <meta itemprop="position" content="{{ loop.index }}">
+      {%- endif %}
     </li>
   {%- endfor -%}
   </ol>

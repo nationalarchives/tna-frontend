@@ -4,8 +4,7 @@
     {
       "name": "container only",
       "options": {},
-      "html": "<div class=\"tna-container \"></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"></div>"
     },
     {
       "name": "container max width",
@@ -18,8 +17,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container tna-container--max\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container tna-container--max\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
     },
     {
       "name": "container no padding",
@@ -32,8 +30,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container tna-container--no-padding\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container tna-container--no-padding\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
     },
     {
       "name": "container element",
@@ -46,8 +43,7 @@
           }
         ]
       },
-      "html": "<article class=\"tna-container \"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></article>",
-      "hidden": false
+      "html": "<article class=\"tna-container \"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></article>"
     },
     {
       "name": "container classes",
@@ -60,8 +56,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container container__test-class\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container container__test-class\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
     },
     {
       "name": "container attributes",
@@ -76,8 +71,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \" data-testattribute=\"foobar\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \" data-testattribute=\"foobar\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
     },
     {
       "name": "different columns",
@@ -177,8 +171,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--full\"><p>Full width</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-2-3\"><p>Two thirds</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-2-3\"><p>Two thirds</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--full\"><p>Full width</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-2-3\"><p>Two thirds</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-2-3\"><p>Two thirds</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div></div>"
     },
     {
       "name": "column widths",
@@ -193,8 +186,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--full tna-column--full-medium tna-column--full-small tna-column--full-tiny\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--full tna-column--full-medium tna-column--full-small tna-column--full-tiny\"><p>Full width</p></div></div>"
     },
     {
       "name": "responsive column widths",
@@ -209,8 +201,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--width-1-5 tna-column--width-1-4-medium tna-column--width-1-3-small tna-column--width-1-2-tiny\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--width-1-5 tna-column--width-1-4-medium tna-column--width-1-3-small tna-column--width-1-2-tiny\"><p>Full width</p></div></div>"
     },
     {
       "name": "flexible column widths",
@@ -225,8 +216,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--flex-4 tna-column--flex-3-medium tna-column--flex-2-small tna-column--flex-1-tiny\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column tna-column--flex-4 tna-column--flex-3-medium tna-column--flex-2-small tna-column--flex-1-tiny\"><p>Full width</p></div></div>"
     },
     {
       "name": "column element",
@@ -238,8 +228,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column \"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column \"><p>Full width</p></div></div>"
     },
     {
       "name": "column classes",
@@ -251,8 +240,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column column--test-class\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column column--test-class\"><p>Full width</p></div></div>"
     },
     {
       "name": "column attributes",
@@ -266,8 +254,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-container \"><div class=\"tna-column \" data-testattribute=\"foobar\"><p>Full width</p></div></div>",
-      "hidden": false
+      "html": "<div class=\"tna-container \"><div class=\"tna-column \" data-testattribute=\"foobar\"><p>Full width</p></div></div>"
     }
   ]
 }

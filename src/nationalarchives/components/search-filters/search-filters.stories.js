@@ -131,3 +131,77 @@ Standard.args = {
   ],
   classes: "tna-search-filters--demo",
 };
+
+export const OpenedAndPrepopulated = Template.bind({});
+OpenedAndPrepopulated.args = {
+  title: "Filters",
+  rootHeadingLevel: 2,
+  formId: "test-form",
+  items: [
+    {
+      type: "text",
+      label: "Refine",
+      id: "refine1",
+      name: "refine1",
+      open: true,
+      hint: "Search within the current results",
+      value: "iceberg",
+    },
+    {
+      type: "multiple",
+      label: "Category",
+      id: "categories1",
+      name: "categories1",
+      small: true,
+      open: true,
+      hint: "The category of the record",
+      seeMoreText: "See all 29 categories",
+      seeMoreUrl: "#",
+      items: [
+        {
+          text: "Alpha",
+          value: "alpha",
+        },
+        {
+          text: "Beta",
+          value: "beta",
+          checked: true,
+        },
+        {
+          text: "Gamma",
+          value: "gamma",
+          checked: true,
+        },
+      ],
+    },
+    {
+      type: "date",
+      label: "Opening date",
+      id: "date1",
+      name: "date1",
+      hint: "The earliest opening date of the record",
+      open: true,
+      value: "1969-07-16",
+    },
+    {
+      type: "daterange",
+      label: "Covering date",
+      id: "dates",
+      hint: "The earliest and/or latest covering date of the record",
+      open: true,
+      from: {
+        label: "From",
+        id: "date2",
+        name: "date2",
+        value: "1912-04-14",
+      },
+      to: {
+        label: "To",
+        id: "date3",
+        name: "date3",
+        value: "1912-04-15",
+      },
+    },
+  ],
+  classes: "tna-search-filters--demo",
+};

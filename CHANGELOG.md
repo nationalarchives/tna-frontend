@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.41...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.42...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.42](https://github.com/nationalarchives/tna-frontend/compare/v0.1.41...v0.1.42) - 2024-03-01
 
 ### Added
 
@@ -17,16 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `filters` are now `quick-filters` (and the Nunjucks has changed from `tnaFilters` to `tnaQuickFilters`)
-- Borders size around inputs has been increased
+- Border widths around inputs have been increased
 - Removed `tna-ul tna-ul--plain` classes from compound filters
 
-### Deprecated
 ### Removed
 
 - Removed the automatic `tna-form__` prefix from form field IDs
-
-### Fixed
-### Security
 
 ## [0.1.41](https://github.com/nationalarchives/tna-frontend/compare/v0.1.40...v0.1.41) - 2024-02-27
 

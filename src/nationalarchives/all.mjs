@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
+import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
 import { Gallery } from "./components/gallery/gallery.mjs";
 import { GlobalHeader } from "./components/global-header/global-header.mjs";
 import { Header } from "./components/header/header.mjs";
@@ -40,53 +41,60 @@ const initAll = (options) => {
 
   const $breadcrumbs = $scope.querySelector('[data-module="tna-breadcrumbs"]');
   if ($breadcrumbs) {
-    new Breadcrumbs($breadcrumbs).init();
+    new Breadcrumbs($breadcrumbs);
   }
 
   const $cookieBanner = $scope.querySelector(
     '[data-module="tna-cookie-banner"]',
   );
   if ($cookieBanner) {
-    new CookieBanner($cookieBanner).init();
+    new CookieBanner($cookieBanner);
+  }
+
+  const $errorSummary = $scope.querySelector(
+    '[data-module="tna-error-summary"]',
+  );
+  if ($errorSummary) {
+    new ErrorSummary($errorSummary).init();
   }
 
   const $galleries = $scope.querySelectorAll('[data-module="tna-gallery"]');
   $galleries.forEach(($gallery) => {
-    new Gallery($gallery).init();
+    new Gallery($gallery);
   });
 
   const $globalHeader = $scope.querySelector(
     '[data-module="tna-global-header"]',
   );
   if ($globalHeader) {
-    new GlobalHeader($globalHeader).init();
+    new GlobalHeader($globalHeader);
   }
 
   const $header = $scope.querySelector('[data-module="tna-header"]');
   if ($header) {
-    new Header($header).init();
+    new Header($header);
   }
 
   const $pictures = $scope.querySelectorAll('[data-module="tna-picture"]');
   $pictures.forEach(($picture) => {
-    new Picture($picture).init();
+    new Picture($picture);
   });
 
   const $sensitiveImages = $scope.querySelectorAll(
     '[data-module="tna-sensitive-image"]',
   );
   $sensitiveImages.forEach(($sensitiveImage) => {
-    new SensitiveImage($sensitiveImage).init();
+    new SensitiveImage($sensitiveImage);
   });
 
   const $skipLinks = $scope.querySelectorAll('[data-module="tna-skip-link"]');
   $skipLinks.forEach(($skipLink) => {
-    new SkipLink($skipLink).init();
+    new SkipLink($skipLink);
   });
 
   const $tabs = $scope.querySelectorAll('[data-module="tna-tabs"]');
   $tabs.forEach(($tabModule) => {
-    new Tabs($tabModule).init();
+    new Tabs($tabModule);
   });
 };
 
@@ -95,6 +103,7 @@ export {
   Cookies,
   Breadcrumbs,
   CookieBanner,
+  ErrorSummary,
   Gallery,
   GlobalHeader,
   Header,

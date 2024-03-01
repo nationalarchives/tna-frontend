@@ -1,9 +1,101 @@
-@use "variables/assets";
+// @use "variables/assets";
+@use "variables/grid" with (
+  $largest-container-width: 1270px,
+  $gutter-width: 30px,
+  $gutter-width-tiny: 15px
+);
+@use "variables/typography" as typographyVars;
+
+@use "tools/colour";
+@use "tools/typography";
 
 @use "components/global-header";
 @use "components/footer";
 
-$fa-font-path: assets.$fa-font-path;
-@import "lib/font-awesome/fontawesome";
-@import "lib/font-awesome/solid";
-@import "lib/font-awesome/brands";
+.tna-template {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  direction: ltr;
+  font-size: #{typographyVars.$relative-1rem-px}px;
+}
+
+.tna-global-header,
+.tna-footer {
+  color: inherit;
+
+  a {
+    text-decoration: none;
+    text-decoration-thickness: 1.5px;
+
+    &,
+    &:link {
+      @include colour.colour-font("link");
+    }
+
+    &:visited {
+      @include colour.colour-font("link-visited");
+    }
+
+    &:hover,
+    &:active {
+      @include typography.interacted-text-decoration;
+
+      background: none;
+    }
+
+    &:focus {
+      background: none;
+    }
+
+    &.tna-link--no-visited-state {
+      &:visited {
+        @include colour.colour-font("link");
+      }
+    }
+  }
+}
+
+.tna-global-header {
+  padding-bottom: 0;
+
+  &__logo:link {
+    display: flex;
+  }
+
+  &__navigation {
+    padding: 0;
+
+    &-item {
+      margin-left: 0;
+      margin-bottom: 0;
+
+      &-link {
+        &:hover {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &__top-navigation {
+    margin-bottom: 0;
+
+    &-item {
+      margin-left: 0;
+    }
+
+    &-link {
+      &:hover {
+        outline: none;
+      }
+    }
+  }
+}
+
+// $fa-font-path: assets.$fa-font-path;
+// @import "lib/font-awesome/fontawesome";
+// @import "lib/font-awesome/solid";
+// @import "lib/font-awesome/brands";

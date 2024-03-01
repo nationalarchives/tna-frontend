@@ -7,9 +7,7 @@ export class Tabs {
       this.$tabList &&
       $module.querySelectorAll(".tna-tabs__list-item-link");
     this.$tabItems = $module && $module.querySelectorAll(".tna-tabs__item");
-  }
 
-  init() {
     if (
       !this.$module ||
       !this.$tabList ||

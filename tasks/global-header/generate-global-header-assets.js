@@ -13,7 +13,7 @@ const globalHeaderHTML = nunjucks
   .renderString(globalHeaderComponentNunjucks, {
     params: {
       logo: {
-        href: "#/",
+        href: "https://nationalarchives.gov.uk/",
       },
       topNavigation: [
         {
@@ -24,7 +24,7 @@ const globalHeaderHTML = nunjucks
         {
           text: "Shop",
           href: "https://shop.nationalarchives.gov.uk/",
-          icon: "bag-shopping",
+          icon: "shop",
         },
         // {
         //   text: "Sign in",
@@ -33,29 +33,23 @@ const globalHeaderHTML = nunjucks
         // },
       ],
       navigation: [
-        {
-          text: "Visit",
-          href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-        },
+        { text: "Visit", href: "www.nationalarchives.gov.uk/about/visit-us/" },
         {
           text: "What's on",
-          href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+          href: "www.nationalarchives.gov.uk/about/visit-us/whats-on/",
         },
         {
           text: "Explore the collection",
           href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
         },
         {
-          text: "Using the archives",
-          href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
+          text: "Using the archive",
+          href: "www.nationalarchives.gov.uk/help-with-your-research/",
         },
+        { text: "Learn", href: "www.nationalarchives.gov.uk/education/" },
         {
-          text: "Learn",
-          href: "https://www.nationalarchives.gov.uk/education/",
-        },
-        {
-          text: "Professional guidance & services",
-          href: "https://www.nationalarchives.gov.uk/information-management/",
+          text: "Professional guidance and services",
+          href: "www.nationalarchives.gov.uk/professional-guidance-and-services/",
         },
       ],
     },
@@ -70,105 +64,105 @@ const footerHTML = nunjucks
     params: {
       social: [
         {
-          text: "Twitter",
           href: "https://twitter.com/UKNatArchives",
-          brandIcon: "twitter",
+          icon: "twitter",
+          title: "Visit us on Twitter",
         },
         {
-          text: "YouTube",
           href: "https://www.youtube.com/c/TheNationalArchivesUK",
-          brandIcon: "youtube",
+          icon: "youtube",
+          title: "Watch us on YouTube",
         },
         {
-          text: "Facebook",
           href: "https://www.facebook.com/TheNationalArchives",
-          brandIcon: "facebook",
+          icon: "facebook",
+          title: "See us on Facebook",
         },
         {
-          text: "Flickr",
           href: "https://www.flickr.com/photos/nationalarchives",
-          brandIcon: "flickr",
+          icon: "flickr",
+          title: "See our Flickr feed",
         },
         {
-          text: "Instagram",
           href: "https://www.instagram.com/nationalarchivesuk/",
-          brandIcon: "instagram",
+          icon: "instagram",
+          title: "See us on Instagram",
         },
         {
-          text: "RSS",
           href: "https://www.nationalarchives.gov.uk/rss/",
           icon: "rss",
+          title: "Read our RSS feed",
         },
       ],
       navigation: [
         {
-          title: "About us",
+          title: "Quick links",
           items: [
             {
-              text: "Our role",
-              href: "https://www.nationalarchives.gov.uk/about/our-role/",
-            },
-            {
-              text: "Our history",
-              href: "https://www.nationalarchives.gov.uk/about/our-role/what-we-do/our-history/",
-            },
-            {
-              text: "Our people",
-              href: "https://www.nationalarchives.gov.uk/about/jobs/staff-profiles/",
-            },
-            {
-              text: "News",
-              href: "https://www.nationalarchives.gov.uk/about/news/",
+              text: "About us",
+              href: "https://www.nationalarchives.gov.uk/about/",
             },
             {
               text: "Contact us",
               href: "https://www.nationalarchives.gov.uk/contact-us/",
             },
             {
-              text: "Jobs & careers",
+              text: "News",
+              href: "https://www.nationalarchives.gov.uk/about/news/",
+            },
+            {
+              text: "Blog",
+              href: "https://blog.nationalarchives.gov.uk/",
+            },
+            {
+              text: "Podcasts and videos",
+              href: "https://media.nationalarchives.gov.uk/",
+            },
+            {
+              text: "Image library",
+              href: "https://images.nationalarchives.gov.uk/",
+            },
+            {
+              text: "Press room",
+              href: "https://www.nationalarchives.gov.uk/about/press-room/",
+            },
+            {
+              text: "Jobs and careers",
               href: "https://www.nationalarchives.gov.uk/about/jobs/",
             },
             {
-              text: "Get involved",
-              href: "https://www.nationalarchives.gov.uk/about/get-involved/",
+              text: "British citizenship services",
+              href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
+            },
+            {
+              text: "Historical Manuscripts Commission",
+              href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
             },
           ],
         },
         {
-          title: "Our websites help",
+          title: "Our other websites",
           items: [
             {
               text: "UK Government Web Archive",
               href: "https://www.nationalarchives.gov.uk/webarchive/",
-              newTab: true,
             },
             {
               text: "Legislation.gov.uk",
               href: "https://www.legislation.gov.uk/",
-              newTab: true,
             },
             {
               text: "Find case law",
               href: "https://caselaw.nationalarchives.gov.uk/",
-              newTab: true,
             },
             {
               text: "The Gazette",
               href: "https://www.thegazette.co.uk/",
               newTab: true,
             },
-          ],
-        },
-        {
-          title: "Quick links",
-          items: [
             {
-              text: "Press room",
-              href: "https://www.nationalarchives.gov.uk/about/press-room/",
-            },
-            {
-              text: "Venue hire",
-              href: "https://www.nationalarchives.gov.uk/about/visit-us/venue-hire/",
+              text: "The National Archives Trust",
+              href: "https://www.nationalarchives.gov.uk/about/the-national-archives-trust/",
             },
           ],
         },
@@ -177,23 +171,23 @@ const footerHTML = nunjucks
       legal: [
         {
           text: "Accessibility statement",
-          href: "#",
+          href: "#/accessibility",
         },
         {
           text: "Freedom of information",
-          href: "#",
+          href: "#/freedom-of-information",
         },
         {
           text: "Terms and conditions",
-          href: "#",
+          href: "#/terms-and-conditions",
         },
         {
           text: "Privacy policy",
-          href: "#",
+          href: "#/privacy",
         },
         {
           text: "Cookies",
-          href: "#",
+          href: "#/cookies",
         },
       ],
     },

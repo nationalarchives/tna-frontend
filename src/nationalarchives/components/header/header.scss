@@ -4,8 +4,6 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
-@use "../../utilities";
-@use "../grid";
 
 .tna-header {
   @include colour.contrast;
@@ -206,6 +204,7 @@
     justify-content: flex-end;
     gap: 0.5rem 1.5rem;
 
+    @include typography.relative-font-size(15);
     list-style: none;
 
     line-height: 1;
@@ -220,12 +219,11 @@
     align-items: center;
 
     text-decoration: none;
-    @include typography.relative-font-size(16);
 
     &,
     &:link,
     &:visited {
-      color: inherit;
+      @include colour.colour-font("font-light");
     }
 
     &:hover,
@@ -237,8 +235,7 @@
       }
     }
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       margin-right: 0.375rem;
     }
   }
@@ -266,6 +263,7 @@
 
     position: relative;
 
+    @include typography.main-font-weight-bold;
     text-decoration: none;
     line-height: 2;
 
@@ -289,8 +287,6 @@
     }
 
     &--selected {
-      @include typography.main-font-weight-bold;
-
       &,
       &:hover {
         &::after {

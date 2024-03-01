@@ -82,6 +82,7 @@ const checkExists = [
   ...componentFiles("cookie-banner", "CookieBanner"),
   ...componentFiles("date-input"),
   ...componentFiles("date-search"),
+  ...componentFiles("error-summary", "ErrorSummary"),
   ...componentFiles("featured-records"),
   ...componentFiles("filters"),
   ...componentFiles("footer"),

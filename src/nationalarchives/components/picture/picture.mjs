@@ -8,9 +8,7 @@ export class Picture {
     this.$transcript =
       $module && $module.querySelector(".tna-picture__transcript");
     this.transcriptOpened = false;
-  }
 
-  init() {
     if (!this.$module || !this.$imageWrapper || !this.$transcript) {
       return;
     }

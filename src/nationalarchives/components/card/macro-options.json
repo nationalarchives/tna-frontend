@@ -179,12 +179,6 @@
         "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
       },
       {
-        "name": "brandIcon",
-        "type": "string",
-        "required": false,
-        "description": "The name of a Font Awesome brand icon, without the prefixed `fa-`."
-      },
-      {
         "name": "classes",
         "type": "string",
         "required": false,

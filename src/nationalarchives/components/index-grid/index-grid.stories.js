@@ -114,4 +114,3 @@ Basic.args = {
   columnsTiny: 1,
   classes: "tna-index-grid--demo",
 };
-console.log(JSON.stringify(Basic.args));

@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:list";
 @use "../variables/colour";
 @use "../tools/media";
 
@@ -6,27 +7,35 @@
   @return colour.brand-colour($colour, $opacity);
 }
 
-@mixin colour-css-vars() {
+@mixin colour-css-vars($excludes...) {
   @each $name, $value in colour.$colour-palette-default {
-    --#{$name}: #{$value};
+    @if not list.index($excludes, $name) {
+      --#{$name}: #{$value};
+    }
   }
 }
 
-@mixin colour-css-vars-dark() {
+@mixin colour-css-vars-dark($excludes...) {
   @each $name, $value in colour.$colour-palette-dark {
-    --#{$name}: #{$value};
+    @if not list.index($excludes, $name) {
+      --#{$name}: #{$value};
+    }
   }
 }
 
-@mixin colour-css-vars-high-contrast() {
+@mixin colour-css-vars-high-contrast($excludes...) {
   @each $name, $value in colour.$colour-palette-high-contrast {
-    --#{$name}: #{$value};
+    @if not list.index($excludes, $name) {
+      --#{$name}: #{$value};
+    }
   }
 }
 
-@mixin colour-css-vars-high-contrast-dark() {
+@mixin colour-css-vars-high-contrast-dark($excludes...) {
   @each $name, $value in colour.$colour-palette-high-contrast-dark {
-    --#{$name}: #{$value};
+    @if not list.index($excludes, $name) {
+      --#{$name}: #{$value};
+    }
   }
 }
 
@@ -151,14 +160,14 @@
 }
 
 %light {
-  @include colour-css-vars;
+  @include colour-css-vars("form-error");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast;
+    @include colour-css-vars-high-contrast("form-error");
   }
 
   .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast;
+    @include colour-css-vars-high-contrast("form-error");
   }
 }
 
@@ -167,14 +176,14 @@
 }
 
 %dark {
-  @include colour-css-vars-dark;
+  @include colour-css-vars-dark("form-error");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast-dark;
+    @include colour-css-vars-high-contrast-dark("form-error");
   }
 
   .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast-dark;
+    @include colour-css-vars-high-contrast-dark("form-error");
   }
 }
 

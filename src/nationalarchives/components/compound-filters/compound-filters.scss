@@ -1,7 +1,6 @@
 @use "../../tools/colour";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
 
 .tna-compound-filters {
   @include spacing.space-above;

@@ -5,9 +5,7 @@ export class Gallery {
     this.$module = $module;
     this.$items = $module && $module.querySelector(".tna-gallery__items");
     this.opened = false;
-  }
 
-  init() {
     if (!this.$module || !this.$items) {
       return;
     }

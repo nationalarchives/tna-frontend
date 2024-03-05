@@ -3,10 +3,6 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 @use "../../tools/media";
-@use "../../utilities/colour" as colourUtils;
-@use "../../utilities/global";
-// @use "../../utilities/typography" as typographyUtils;
-@use "../grid";
 
 .tna-global-header {
   padding-top: 1rem;

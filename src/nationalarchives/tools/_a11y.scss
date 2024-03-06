@@ -1,6 +1,15 @@
+@use "../variables/a11y";
 @use "colour";
 
 @mixin focus-outline {
-  @include colour.colour-outline("focus-outline", 5px, solid);
-  outline-offset: 2px;
+  @include colour.colour-outline(
+    "focus-outline",
+    a11y.$focus-outline-width,
+    solid
+  );
+  outline-offset: a11y.$focus-outline-offset;
+}
+
+@mixin active-outline {
+  outline-offset: a11y.$focus-outline-offset * 2;
 }

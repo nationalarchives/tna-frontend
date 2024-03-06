@@ -1,4 +1,7 @@
-import { getClosestHeading } from "../../lib/analytics-helpers.mjs";
+import {
+  getClosestHeading,
+  valueGetters,
+} from "../../lib/analytics-helpers.mjs";
 
 export default [
   {
@@ -10,14 +13,7 @@ export default [
         targetElement: ".tna-picture__toggle-transcript",
         on: "click",
         data: {
-          // eslint-disable-next-line no-unused-vars
-          state: ($el, $scope, event) => {
-            const expanded = $el.getAttribute("aria-expanded");
-            if (expanded === null) {
-              return null;
-            }
-            return expanded.toString() === "true" ? "opened" : "closed";
-          },
+          state: valueGetters.expanded,
           // eslint-disable-next-line no-unused-vars
           value: ($el, $scope, event) => {
             const heading = getClosestHeading($scope);

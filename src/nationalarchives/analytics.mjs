@@ -6,6 +6,7 @@ import {
 } from "./lib/analytics-helpers.mjs";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
 import CheckboxesAnalytics from "./components/checkboxes/analytics.js";
+import FooterAnalytics from "./components/footer/analytics.js";
 import GlobalHeaderAnalytics from "./components/global-header/analytics.js";
 import HeaderAnalytics from "./components/header/analytics.js";
 import HeroAnalytics from "./components/hero/analytics.js";
@@ -18,6 +19,7 @@ import TextareaAnalytics from "./components/textarea/analytics.js";
 const componentAnalytics = [
   ...BreadcrumbAnalytics,
   ...CheckboxesAnalytics,
+  ...FooterAnalytics,
   ...GlobalHeaderAnalytics,
   ...HeaderAnalytics,
   ...HeroAnalytics,
@@ -38,7 +40,19 @@ class EventTracker {
   /** @protected */
   start = new Date();
 
-  constructor() {
+  /** @protected */
+  prefix = "tna";
+
+  constructor(prefix) {
+    if (prefix) {
+      this.prefix = prefix;
+    }
+  }
+
+  /**
+   * Initialise all TNA Frontend component analytics.
+   */
+  initAll() {
     componentAnalytics.forEach((componentConfig) => {
       this.addListener(
         componentConfig.scope,
@@ -65,31 +79,33 @@ class EventTracker {
       return;
     }
     scopeArray.forEach(($scope) => {
-      events.forEach((componentTracking) => {
-        if (!componentTracking.on) {
+      events.forEach((eventConfig) => {
+        if (!eventConfig.on) {
           return;
         }
-        if (componentTracking.targetElement) {
+        if (eventConfig.targetElement) {
           Array.from(
-            $scope.querySelectorAll(componentTracking.targetElement),
-          ).forEach(($el) =>
+            $scope.querySelectorAll(eventConfig.targetElement),
+          ).forEach(($el, index) =>
             this.attachListener(
               $el,
-              componentTracking.on,
               $scope,
-              this.generateEventName(areaName, componentTracking),
-              componentTracking.data,
-              componentTracking.targetElement,
+              this.generateEventName(areaName, eventConfig),
+              eventConfig,
+              scope,
+              areaName,
+              index + 1,
             ),
           );
         } else {
           this.attachListener(
             $scope,
-            componentTracking.on,
             $scope,
-            this.generateEventName(areaName, componentTracking),
-            componentTracking.data,
-            componentTracking.targetElement,
+            this.generateEventName(areaName, eventConfig),
+            eventConfig,
+            scope,
+            areaName,
+            1,
           );
         }
       });
@@ -97,56 +113,63 @@ class EventTracker {
   }
 
   /** @protected */
-  generateEventName(areaName, componentTracking) {
-    return `${areaName}.${componentTracking.eventName || componentTracking.on}`;
+  generateEventName(areaName, eventConfig) {
+    return `${this.prefix}.${areaName}.${eventConfig.eventName || eventConfig.on}`;
   }
 
   /** @protected */
-  attachListener(
-    $el,
-    eventTrigger,
-    $scope,
-    eventName,
-    eventDataInit,
-    targetElement,
-  ) {
-    if (!$el) {
-      return;
-    }
-    $el.addEventListener(eventTrigger, (event) =>
-      this.recordEvent(eventName, {
-        ...eventDataInit,
-        value:
-          typeof eventDataInit.value === "function"
-            ? eventDataInit.value.call(this, $el, $scope, event)
-            : eventDataInit.value || null,
-        state:
-          typeof eventDataInit.state === "function"
-            ? eventDataInit.state.call(this, $el, $scope, event)
-            : eventDataInit.state || null,
-        group:
-          typeof eventDataInit.group === "function"
-            ? eventDataInit.group.call(this, $el, $scope, event)
-            : eventDataInit.group || null,
-        scope: getXPathTo($scope),
-        targetElement: targetElement,
-        timestamp: new Date().toISOString(),
-        uri: window.location.pathname,
-        timeSincePageLoad: new Date() - this.start,
-      }),
+  attachListener($el, $scope, eventName, eventConfig, scope, areaName, index) {
+    const { on, data, targetElement, rootData = {} } = eventConfig;
+    $el.addEventListener(on, (event) =>
+      this.recordEvent(
+        eventName,
+        {
+          ...data,
+          value: this.computedValue(data.value, $el, $scope, event, index),
+          state: this.computedValue(data.state, $el, $scope, event, index),
+          group: this.computedValue(data.group, $el, $scope, event, index),
+          xPath: getXPathTo($scope),
+          targetElement: targetElement,
+          // timestamp: new Date().toISOString(),
+          // uri: window.location.pathname,
+          timeSincePageLoad: new Date() - this.start,
+          index,
+          scope,
+          areaName,
+        },
+        Object.fromEntries(
+          Object.entries(rootData).map(([key, value]) => [
+            key,
+            this.computedValue(value, $el, $scope, event, index),
+          ]),
+        ),
+      ),
     );
   }
 
   /** @protected */
-  recordEvent(eventName, data) {
-    this.events.push({ event: eventName, "tna.data": data });
+  computedValue(value, $el, $scope, event, index) {
+    return typeof value === "function"
+      ? value.call(this, $el, $scope, event, index)
+      : value || null;
+  }
+
+  /** @protected */
+  recordEvent(eventName, data, rootData = {}) {
+    this.events.push({
+      event: eventName,
+      [`${this.prefix}.event`]: data,
+      ...rootData,
+    });
   }
 
   /** @protected */
   getTnaMetaTags() {
     return Object.fromEntries(
       Array.from(
-        document.head.querySelectorAll("meta[name^='tna.'][content]"),
+        document.head.querySelectorAll(
+          `meta[name^='${this.prefix}.'][content]`,
+        ),
       ).map(($metaEl) => [
         $metaEl.getAttribute("name"),
         $metaEl.getAttribute("content"),
@@ -167,8 +190,16 @@ class GA4 extends EventTracker {
   trackingEnabled = false;
   gTagId;
 
-  constructor(id) {
-    super();
+  constructor(id = null, options = {}) {
+    if (GA4._instance) {
+      return GA4._instance;
+    }
+    if (!id) {
+      throw Error("ID was not specified");
+    }
+    const { prefix = null, initAll = true } = options;
+    super(prefix);
+    GA4._instance = this;
     this.gTagId = id;
     window.dataLayer = window.dataLayer || [];
     if (this.cookies.isPolicyAccepted("usage")) {
@@ -183,11 +214,23 @@ class GA4 extends EventTracker {
         }
       }
     });
+    if (initAll) {
+      this.initAll();
+    }
   }
 
   /** @protected */
-  recordEvent(eventName, data) {
-    const ga4Data = { event: eventName, "tna.event": data };
+  recordEvent(eventName, data, rootData = {}) {
+    const ga4Data = {
+      event: eventName,
+      ...Object.fromEntries(
+        Object.entries(data).map(([key, value]) => [
+          `${this.prefix}.event.${key}`,
+          value,
+        ]),
+      ),
+      ...rootData,
+    };
     this.pushToDataLayer(ga4Data);
   }
 

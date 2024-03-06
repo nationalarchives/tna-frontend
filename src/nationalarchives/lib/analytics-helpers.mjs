@@ -50,14 +50,19 @@ const getClosestHeading = ($element) => {
 };
 
 const valueGetters = {
-  // eslint-disable-next-line no-unused-vars
-  text: ($el, $scope, event) => $el.innerText,
-  // eslint-disable-next-line no-unused-vars
-  html: ($el, $scope, event) => $el.innerHTML,
-  // eslint-disable-next-line no-unused-vars
-  value: ($el, $scope, event) => $el.value,
-  // eslint-disable-next-line no-unused-vars
-  checked: ($el, $scope, event) => ($el.checked ? "checked" : "unchecked"),
+  text: ($el) => $el.innerText,
+  html: ($el) => $el.innerHTML,
+  value: ($el) => $el.value,
+  index: ($el, $scope, event, index) => index,
+  checked: ($el) => ($el.checked ? "checked" : "unchecked"),
+  expanded: ($el) => {
+    const expanded = $el.getAttribute("aria-expanded");
+    if (expanded === null) {
+      return null;
+    }
+    return expanded.toString() === "true" ? "opened" : "closed";
+  },
+  closestHeading: ($el) => getClosestHeading($el),
 };
 
 export { getXPathTo, getClosestHeading, valueGetters };

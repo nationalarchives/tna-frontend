@@ -7,7 +7,7 @@
         "text": "Log in",
         "href": "#"
       },
-      "html": "<a href=\"#\" class=\"tna-button \">Log in</a>"
+      "html": "<a href=\"#\" class=\"tna-button\">Log in</a>"
     },
     {
       "name": "with title",
@@ -16,7 +16,7 @@
         "href": "#",
         "title": "Log in to the service"
       },
-      "html": "<a href=\"#\" class=\"tna-button \" title=\"Log in to the service\">Log in</a>"
+      "html": "<a href=\"#\" class=\"tna-button\" title=\"Log in to the service\">Log in</a>"
     },
     {
       "name": "accent",
@@ -45,7 +45,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<a href=\"#\" class=\"tna-button \" data-testattribute=\"foobar\">Log in</a>"
+      "html": "<a href=\"#\" class=\"tna-button\" data-testattribute=\"foobar\">Log in</a>"
     }
   ]
 }

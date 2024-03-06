@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- The default pagination style is plain buttons but can be changed with the `solid` option
+
 ### Deprecated
 ### Removed
 ### Fixed

@@ -68,11 +68,6 @@
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 strong {
   @include typography.main-font-weight-bold;
 }
@@ -80,16 +75,9 @@ strong {
 p {
   @include spacing.space-above;
 
-  + p/*,
-  + .tna-ul,
-  + .tna-ol,
-  + .tna-blockquote*/ {
+  + p {
     margin-top: 1rem;
   }
-
-  // + :is(p, .tna-ul, .tna-ol, .tna-blockquote) {
-  //   margin-top: 1rem;
-  // }
 }
 
 a {
@@ -116,12 +104,6 @@ a {
       @include colour.colour-font("link");
     }
   }
-
-  // &[target="_blank"]:not([title*="opens in a new"]) {
-  //   &::after {
-  //     content: "" / " (opens in a new window)"
-  //   }
-  // }
 }
 
 small {

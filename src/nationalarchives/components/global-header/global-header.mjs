@@ -26,24 +26,11 @@ export class GlobalHeader {
       return;
     }
 
-    const id = "tna-global-menu-content";
-    const idTop = `${id}-top`;
-    if (this.$navigation) {
-      this.$navigation.setAttribute("id", id);
-    }
-    if (this.$topNavigation) {
-      this.$topNavigation.setAttribute("id", idTop);
-    }
-
     this.$toggleButton.removeAttribute("hidden");
-    this.$toggleButton.setAttribute("aria-controls", [id, idTop].join(" "));
-
     this.syncState();
-
     this.$toggleButton.addEventListener("click", () =>
       this.handleToggleNavigation(),
     );
-
     if ("addEventListener" in this.mql) {
       this.mql.addEventListener("change", () => this.syncState());
     } else {

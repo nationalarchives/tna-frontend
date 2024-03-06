@@ -84,6 +84,18 @@
     ]
   },
   {
+    "name": "navigationId",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "topNavigationId",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

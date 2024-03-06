@@ -6,6 +6,7 @@ const argTypes = {
   items: { control: "object" },
   next: { control: "object" },
   currentItemText: { control: "text" },
+  solid: { control: "boolean" },
   spaced: { control: "boolean" },
   landmarkLabel: { control: "text" },
   classes: { control: "text" },
@@ -28,6 +29,7 @@ const Template = ({
   items,
   next,
   currentItemText,
+  solid,
   spaced,
   landmarkLabel,
   classes,
@@ -39,6 +41,7 @@ const Template = ({
       items,
       next,
       currentItemText,
+      solid,
       spaced,
       landmarkLabel,
       classes,
@@ -467,6 +470,47 @@ Last.args = {
       href: "#",
     },
   ],
+  classes: "tna-pagination--demo",
+};
+
+export const Solid = Template.bind({});
+Solid.args = {
+  previous: {
+    href: "#",
+  },
+  items: [
+    {
+      number: 1,
+      href: "#",
+    },
+    {
+      ellipsis: true,
+    },
+    {
+      number: 6,
+      href: "#",
+    },
+    {
+      number: 7,
+      current: true,
+      href: "#",
+    },
+    {
+      number: 8,
+      href: "#",
+    },
+    {
+      ellipsis: true,
+    },
+    {
+      number: 42,
+      href: "#",
+    },
+  ],
+  next: {
+    href: "#",
+  },
+  solid: true,
   classes: "tna-pagination--demo",
 };
 

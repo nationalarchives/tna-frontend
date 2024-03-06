@@ -30,13 +30,13 @@
       </span>
     </div>
     <div class="tna-column tna-column--order-2 tna-global-header__navigation-button-wrapper">
-      <button class="tna-global-header__navigation-button" type="button" hidden>
+      <button class="tna-global-header__navigation-button" type="button" aria-controls="{{ 'tna-header__navigation' or params.navigationId }} {{ 'tna-header__top-navigation' or params.topNavigationId }}" hidden>
         Menu
         <span class="tna-global-header__hamburger"></span>
       </button>
     </div>
     {%- if params.navigation %}
-    <nav class="tna-column tna-column--full-small tna-column--full-tiny tna-column--order-3 tna-global-header__navigation-wrapper" aria-label="Main site navigation">
+    <nav class="tna-column tna-column--full-small tna-column--full-tiny tna-column--order-3 tna-global-header__navigation-wrapper" id="{{ 'tna-header__navigation' or params.navigationId }}" aria-label="Main site navigation">
       <ul class="tna-global-header__navigation">
         {%- for item in params.navigation %}
         <li class="tna-global-header__navigation-item">
@@ -47,7 +47,7 @@
     </nav>
     {%- endif %}
     {%- if params.topNavigation %}
-    <nav class="tna-column tna-column--full tna-column--order-1 tna-column--order-4-small tna-column--order-4-tiny tna-global-header__top-navigation-wrapper" aria-label="Secondary site navigation">
+    <nav class="tna-column tna-column--full tna-column--order-1 tna-column--order-4-small tna-column--order-4-tiny tna-global-header__top-navigation-wrapper" id="{{ 'tna-header__top-navigation' or params.topNavigationId }}" aria-label="Secondary site navigation">
       <ul class="tna-global-header__top-navigation">
         {%- for item in params.topNavigation %}
         <li class="tna-global-header__top-navigation-item">

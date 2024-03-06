@@ -32,6 +32,10 @@
   @include a11y.focus-outline;
 }
 
+*:active {
+  @include a11y.active-outline;
+}
+
 .tna-\!--no-focus-style {
   &:focus {
     outline: none;

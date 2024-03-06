@@ -35,12 +35,12 @@
     </div>
     {%- if params.navigation or params.topNavigation %}
     <div class="tna-column tna-header__navigation-toggle">
-      <button class="tna-header__navigation-toggle-button" type="button" hidden>
+      <button class="tna-header__navigation-toggle-button" type="button" aria-controls="{{ 'tna-header__navigation' or params.navigationId }}" hidden>
         Menu
         <span class="tna-header__hamburger"></span>
       </button>
     </div>
-    <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" aria-label="Main site navigation">
+    <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" id="{{ 'tna-header__navigation' or params.navigationId }}" aria-label="Main site navigation">
       {%- if params.navigation %}
       <ul class="tna-header__navigation-items">
         {%- for item in params.navigation %}

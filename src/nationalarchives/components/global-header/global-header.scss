@@ -154,6 +154,9 @@
     }
   }
 
+  &__navigation-wrapper {
+  }
+
   &__navigation {
     margin: 0.5rem 0 0;
     height: 100%;
@@ -231,6 +234,10 @@
   }
 
   @include media.on-medium {
+    &__navigation {
+      column-gap: 1rem;
+    }
+
     &__navigation-item-link {
       @include typography.relative-font-size(16);
     }

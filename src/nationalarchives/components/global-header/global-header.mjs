@@ -1,5 +1,3 @@
-import uuidv4 from "../../lib/uuid.mjs";
-
 export class GlobalHeader {
   constructor($module) {
     this.$module = $module;
@@ -28,20 +26,17 @@ export class GlobalHeader {
       return;
     }
 
-    const uniqueId = `tna-menu-content-${uuidv4()}`;
-    const uniqueIdTop = `${uniqueId}-top`;
+    const id = "tna-global-menu-content";
+    const idTop = `${id}-top`;
     if (this.$navigation) {
-      this.$navigation.setAttribute("id", uniqueId);
+      this.$navigation.setAttribute("id", id);
     }
     if (this.$topNavigation) {
-      this.$topNavigation.setAttribute("id", uniqueIdTop);
+      this.$topNavigation.setAttribute("id", idTop);
     }
 
     this.$toggleButton.removeAttribute("hidden");
-    this.$toggleButton.setAttribute(
-      "aria-controls",
-      [uniqueId, uniqueIdTop].join(" "),
-    );
+    this.$toggleButton.setAttribute("aria-controls", [id, idTop].join(" "));
 
     this.syncState();
 
@@ -64,71 +59,50 @@ export class GlobalHeader {
   syncState() {
     if (this.mql.matches) {
       if (this.menuOpened) {
-        if (this.$navigation) {
-          this.$navigation.classList.add("tna-global-header__navigation--open");
-          this.$navigation.hidden = false;
-          this.$navigation.setAttribute("aria-hidden", "false");
-        }
-        if (this.$topNavigation) {
-          this.$topNavigation.classList.add(
-            "tna-global-header__top-navigation--open",
-          );
-          this.$topNavigation.hidden = false;
-          this.$topNavigation.setAttribute("aria-hidden", "false");
-        }
-        this.$toggleButton.setAttribute("aria-expanded", "true");
-        this.$toggleButton.setAttribute("title", "Close menu");
-        this.$toggleButton.classList.add(
-          "tna-global-header__navigation-button--opened",
-        );
-
-        for (let i = 0; i < this.$links.length; i++) {
-          this.$links[i].setAttribute("tabindex", "0");
-        }
+        this.show();
       } else {
-        if (this.$navigation) {
-          this.$navigation.classList.remove(
-            "tna-global-header__navigation--open",
-          );
-          this.$navigation.hidden = true;
-          this.$navigation.setAttribute("aria-hidden", "true");
-        }
-        if (this.$topNavigation) {
-          this.$topNavigation.classList.remove(
-            "tna-global-header__top-navigation--open",
-          );
-          this.$topNavigation.hidden = true;
-          this.$topNavigation.setAttribute("aria-hidden", "true");
-        }
-        this.$toggleButton.setAttribute("aria-expanded", "false");
-        this.$toggleButton.setAttribute("title", "Open menu");
-        this.$toggleButton.classList.remove(
-          "tna-global-header__navigation-button--opened",
-        );
-
-        for (let i = 0; i < this.$links.length; i++) {
-          this.$links[i].setAttribute("tabindex", "-1");
-        }
+        this.hide();
       }
     } else {
-      if (this.$navigation) {
-        this.$navigation.classList.add("tna-global-header__navigation--open");
-        this.$navigation.hidden = false;
-        this.$navigation.setAttribute("aria-hidden", "false");
-      }
-      if (this.$topNavigation) {
-        this.$topNavigation.classList.add(
-          "tna-global-header__top-navigation--open",
-        );
-        this.$topNavigation.hidden = false;
-        this.$topNavigation.setAttribute("aria-hidden", "false");
-      }
-      this.$toggleButton.setAttribute("aria-expanded", "true");
-      this.$toggleButton.setAttribute("title", "Close menu");
+      this.show();
+    }
+  }
 
-      for (let i = 0; i < this.$links.length; i++) {
-        this.$links[i].setAttribute("tabindex", "0");
-      }
+  hide() {
+    if (this.$navigation) {
+      this.$navigation.hidden = true;
+      this.$navigation.setAttribute("aria-hidden", "true");
+    }
+    if (this.$topNavigation) {
+      this.$topNavigation.hidden = true;
+      this.$topNavigation.setAttribute("aria-hidden", "true");
+    }
+    this.$toggleButton.setAttribute("aria-expanded", "false");
+    this.$toggleButton.setAttribute("title", "Open menu");
+    this.$toggleButton.classList.remove(
+      "tna-global-header__navigation-button--opened",
+    );
+    for (let i = 0; i < this.$links.length; i++) {
+      this.$links[i].setAttribute("tabindex", "-1");
+    }
+  }
+
+  show() {
+    if (this.$navigation) {
+      this.$navigation.hidden = false;
+      this.$navigation.setAttribute("aria-hidden", "false");
+    }
+    if (this.$topNavigation) {
+      this.$topNavigation.hidden = false;
+      this.$topNavigation.setAttribute("aria-hidden", "false");
+    }
+    this.$toggleButton.setAttribute("aria-expanded", "true");
+    this.$toggleButton.setAttribute("title", "Close menu");
+    this.$toggleButton.classList.add(
+      "tna-global-header__navigation-button--opened",
+    );
+    for (let i = 0; i < this.$links.length; i++) {
+      this.$links[i].setAttribute("tabindex", "0");
     }
   }
 }

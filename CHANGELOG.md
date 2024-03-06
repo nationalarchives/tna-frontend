@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - The default pagination style is plain buttons but can be changed with the `solid` option
+- Added some attributes to the HTML of the headers to reduce reliance on the JavaScript
 
 ### Deprecated
 ### Removed

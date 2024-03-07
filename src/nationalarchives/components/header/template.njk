@@ -42,7 +42,7 @@
     </div>
     <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" id="{{ 'tna-header__navigation' or params.navigationId }}" aria-label="Main site navigation">
       {%- if params.navigation %}
-      <ul class="tna-header__navigation-items">
+      <menu class="tna-header__navigation-items">
         {%- for item in params.navigation %}
         <li class="tna-header__navigation-item">
           <a href="{{ item.href }}" class="tna-header__navigation-item-link{%- if item.selected %} tna-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="true"{% endif %} {%- if item.title %} title="{{ item.title }}"{% endif %}>
@@ -50,10 +50,10 @@
           </a>
         </li>
         {%- endfor %}
-      </ul>
+      </menu>
       {%- endif %}
       {%- if params.topNavigation %}
-      <ul class="tna-header__top-navigation-items">
+      <menu class="tna-header__top-navigation-items">
         {%- for item in params.topNavigation %}
         <li class="tna-header__top-navigation-item">
           <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
@@ -64,7 +64,7 @@
           </a>
         </li>
         {%- endfor %}
-      </ul>
+      </menu>
       {%- endif %}
     </nav>
     {%- endif %}

@@ -50,7 +50,7 @@
 
     @include colour.accent;
 
-    @include colour.colour-border("background", 0.25rem);
+    @include colour.colour-border("background", 4px);
     border-radius: 100%;
 
     cursor: pointer;

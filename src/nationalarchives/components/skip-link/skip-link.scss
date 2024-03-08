@@ -28,7 +28,7 @@
   &:focus {
     @include colour.colour-background("button-background", $important: true);
 
-    @include colour.colour-border("focus-outline", 0.3125rem, $important: true);
+    @include colour.colour-border("focus-outline", 5px, $important: true);
 
     outline: none !important;
   }

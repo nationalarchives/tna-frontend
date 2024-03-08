@@ -56,7 +56,7 @@
   }
 
   &__head &__header {
-    @include colour.colour-border("keyline-dark", 0.25rem, solid, bottom);
+    @include colour.colour-border("keyline-dark", 4px, solid, bottom);
   }
 
   p {

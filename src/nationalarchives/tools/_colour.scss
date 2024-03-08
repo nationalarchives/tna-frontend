@@ -97,6 +97,10 @@
   background-color: var(--#{$colour}) if($important, !important, null);
 }
 
+@mixin colour-background-brand($brandColour, $important: false) {
+  background-color: #{brand-colour($brandColour)} if($important, !important, null);
+}
+
 @mixin colour-border(
   $colour,
   $width: "",
@@ -157,6 +161,26 @@
   fill: map.get(colour.$colour-palette-default, $colour)
     if($important, !important, null);
   fill: var(--#{$colour}) if($important, !important, null);
+}
+
+@mixin thick-keyline($direction) {
+  @include colour-border("keyline", 5px, solid, $direction);
+}
+
+@mixin thick-keyline-dark($direction) {
+  @include colour-border("keyline-dark", 5px, solid, $direction);
+}
+
+@mixin thick-keyline-accent($direction) {
+  @include colour-border("accent-background", 5px, solid, $direction);
+}
+
+@mixin thick-keyline-error($direction) {
+  @include colour-border("form-error", 5px, solid, $direction);
+}
+
+@mixin thick-keyline-brand($direction, $brandColour) {
+  border-#{$direction}: 5px #{brand-colour($brandColour)} solid;
 }
 
 %light {

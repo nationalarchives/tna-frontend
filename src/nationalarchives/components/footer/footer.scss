@@ -200,7 +200,7 @@
     &__navigation {
       &-block {
         &-items {
-          @include colour.colour-border("keyline-dark", 0.25rem, solid, top);
+          @include colour.colour-border("keyline-dark", 4px, solid, top);
         }
       }
     }

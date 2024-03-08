@@ -209,6 +209,17 @@ Accent.args = {
   classes: "tna-card--demo",
 };
 
+export const NoImage = Template.bind({});
+NoImage.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "s",
+  href: "#",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   supertitle: "Card supertitle",

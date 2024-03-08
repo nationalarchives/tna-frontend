@@ -1,23 +1,24 @@
-{%- set buttonClasses = [params.classes] if params.classes else [] -%}
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.accent -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-button--accent') -%}
 {%- endif -%}
 {%- if params.small -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--small') -%}
+  {%- set containerClasses = containerClasses.concat('tna-button--small') -%}
 {%- endif -%}
 {%- if params.plain -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--plain') -%}
+  {%- set containerClasses = containerClasses.concat('tna-button--plain') -%}
 {%- endif -%}
 {%- if params.iconOnly -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--icon-only') -%}
+  {%- set containerClasses = containerClasses.concat('tna-button--icon-only') -%}
 {%- endif -%}
 {%- if params.iconOnlyOnMobile -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--icon-only-mobile') -%}
+  {%- set containerClasses = containerClasses.concat('tna-button--icon-only-mobile') -%}
 {%- endif -%}
 {%- if params.rightAlignIcon -%}
-  {%- set buttonClasses = buttonClasses.concat('tna-button--icon-right') -%}
+  {%- set containerClasses = containerClasses.concat('tna-button--icon-right') -%}
 {%- endif -%}
-<{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button {{ buttonClasses | join(' ') }}"{%- if params.buttonElement %} type="{{ params.buttonType or 'button' }}"{% endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button{% if classes %} {{ classes }}{% endif %}"{%- if params.buttonElement %} type="{{ params.buttonType or 'button' }}"{% endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {% if params.icon -%}
   <i class="fa-solid fa-{{ params.icon }}" aria-hidden="true"></i>
   {% endif -%}

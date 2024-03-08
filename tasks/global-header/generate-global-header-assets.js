@@ -72,32 +72,27 @@ const footerHTML = nunjucks
         {
           href: "https://twitter.com/UKNatArchives",
           icon: "twitter",
-          title: "Visit us on Twitter",
+          title: "The National Archives X feed (formally known as Twitter)",
         },
         {
           href: "https://www.youtube.com/c/TheNationalArchivesUK",
           icon: "youtube",
-          title: "Watch us on YouTube",
+          title: "The National Archives YouTube channel",
         },
         {
           href: "https://www.facebook.com/TheNationalArchives",
           icon: "facebook",
-          title: "See us on Facebook",
+          title: "The National Archives Facebook page",
         },
         {
           href: "https://www.flickr.com/photos/nationalarchives",
           icon: "flickr",
-          title: "See our Flickr feed",
+          title: "The National Archives Flickr feed",
         },
         {
           href: "https://www.instagram.com/nationalarchivesuk/",
           icon: "instagram",
-          title: "See us on Instagram",
-        },
-        {
-          href: "https://www.nationalarchives.gov.uk/rss/",
-          icon: "rss",
-          title: "Read our RSS feed",
+          title: "The National Archives Instagram feed",
         },
       ],
       navigation: [

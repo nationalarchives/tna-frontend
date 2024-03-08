@@ -1,5 +1,5 @@
 // @use "variables/assets";
-@use "variables/grid" with (
+@use "variables/grid" as gridVars with (
   $largest-container-width: 1270px,
   $gutter-width: 30px,
   $gutter-width-tiny: 15px
@@ -9,7 +9,10 @@
 @use "tools/colour";
 @use "tools/typography";
 
+@use "utilities/colour" as colourUtils;
+
 @use "components/global-header";
+@use "components/grid";
 @use "components/footer";
 
 .tna-template {
@@ -94,8 +97,3 @@
     }
   }
 }
-
-// $fa-font-path: assets.$fa-font-path;
-// @import "lib/font-awesome/fontawesome";
-// @import "lib/font-awesome/solid";
-// @import "lib/font-awesome/brands";

@@ -1098,6 +1098,7 @@ const Template = ({ theme, accent }) => {
                       href: "#email",
                     },
                   ],
+                  disableAutoFocus: true,
                 },
               })}
               ${TextInput({

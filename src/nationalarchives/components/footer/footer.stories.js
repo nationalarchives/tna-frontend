@@ -45,7 +45,6 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  meta: "<p>Open today<br>09:00&ndash;19:00</p>",
   social: [
     {
       href: "https://twitter.com/UKNatArchives",

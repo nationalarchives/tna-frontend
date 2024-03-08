@@ -12,7 +12,7 @@
 
   @include colour.colour-background("page-background");
 
-  @include colour.colour-border("form-error", 0.25rem, solid);
+  @include colour.colour-border("form-error", 0.3125rem, solid);
 
   &:focus {
     outline: none;

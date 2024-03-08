@@ -384,8 +384,8 @@
 
       background-color: rgb(255 255 255 / 10%);
 
-      @include colour.colour-border("keyline-dark", 3px, solid, top);
-      @include colour.colour-border("keyline-dark", 3px, solid, bottom);
+      @include colour.colour-border("keyline-dark", 2px, solid, top);
+      @include colour.colour-border("keyline-dark", 2px, solid, bottom);
     }
 
     &__navigation-item {

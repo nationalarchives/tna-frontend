@@ -17,7 +17,7 @@ select {
     &--error {
       padding-left: 1rem;
 
-      @include colour.colour-border("form-error", 0.25rem, solid, left);
+      @include colour.thick-keyline-error(left);
     }
   }
 

@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The default pagination style is plain buttons but can be changed with the `solid` option
 - Updated the HTML of the headers, adding some attributes to the HTML to reduce reliance on JavaScript
 - Switched from using `<ul>` to `<menu>` in the headers and footer
+- Added some attributes to the HTML of the headers to reduce reliance on the JavaScript
+- Cards without images now get a top border
 
 ### Deprecated
 ### Removed

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.42...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.43...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.43](https://github.com/nationalarchives/tna-frontend/compare/v0.1.42...v0.1.43) - 2024-03-11
 
 ### Added
 
@@ -19,13 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added some attributes to the HTML of the headers to reduce reliance on the JavaScript
 - Cards without images now get a top border
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Fixed style of icon-only buttons in a small button group
-
-### Security
 
 ## [0.1.42](https://github.com/nationalarchives/tna-frontend/compare/v0.1.41...v0.1.42) - 2024-03-01
 

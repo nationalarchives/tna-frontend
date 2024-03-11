@@ -4,42 +4,44 @@ export default {
 
 const TableTemplate = () =>
   `<table class="tna-table">
-  <caption class="tna-table__caption tna-heading-m tna-visually-hidden">Primary options</caption>
+  <caption class="tna-table__caption">
+    Records added and removed between 2020 and 2022
+  </caption>
   <thead class="tna-table__head">
     <tr class="tna-table__row">
-      <th class="tna-table__header" scope="col">Name</th>
-      <th class="tna-table__header" scope="col">Type</th>
-      <th class="tna-table__header" scope="col">Description</th>
+      <th class="tna-table__header" scope="col">Year</th>
+      <th class="tna-table__header" scope="col">Chinese zodiac sign</th>
+      <th class="tna-table__header tna-table__header--numeric" scope="col">Records added</th>
+      <th class="tna-table__header tna-table__header--numeric" scope="col">Size (megabytes)</th>
     </tr>
   </thead>
   <tbody class="tna-table__body">
-    <tr class="tna-table__row">
-      <th class="tna-table__header" scope="row">items</th>
-      <td class="tna-table__cell">array</td>
-      <td class="tna-table__cell">
-        <p><strong>Required.</strong></p>
-        <p>See items.</p>
-      </td>
+    <tr>
+      <th class="tna-table__header" scope="row">2020</th>
+      <td class="tna-table__cell">Rat</td>
+      <td class="tna-table__cell tna-table__cell--numeric">123,456</td>
+      <td class="tna-table__cell tna-table__cell--numeric">789</td>
     </tr>
-    <tr class="tna-table__row">
-      <th class="tna-table__header" scope="row">noCollapse</th>
-      <td class="tna-table__cell">string</td>
-      <td class="tna-table__cell"></td>
+    <tr>
+      <th class="tna-table__header" scope="row">2021</th>
+      <td class="tna-table__cell">Ox</td>
+      <td class="tna-table__cell tna-table__cell--numeric">456,789</td>
+      <td class="tna-table__cell tna-table__cell--numeric">123</td>
     </tr>
-    <tr class="tna-table__row">
-      <th class="tna-table__header" scope="row">classes</th>
-      <td class="tna-table__cell">string</td>
-      <td class="tna-table__cell">
-        <p>Classes to add to the breadcrumbs.</p>
-      </td>
-    </tr>
-    <tr class="tna-table__row">
-      <th class="tna-table__header" scope="row">attributes</th>
-      <td class="tna-table__cell">object</td>
-      <td class="tna-table__cell">
-        <p>HTML attributes (for example data attributes) to add to the breadcrumbs.</p>
-      </td>
+    <tr>
+      <th class="tna-table__header" scope="row">2022</th>
+      <td class="tna-table__cell">Tiger</td>
+      <td class="tna-table__cell tna-table__cell--numeric">42,424</td>
+      <td class="tna-table__cell tna-table__cell--numeric">1,337</td>
     </tr>
   </tbody>
+  <tfoot class="tna-table__foot">
+    <tr>
+      <th class="tna-table__header" scope="row">Totals</th>
+      <td class="tna-table__cell"></td>
+      <td class="tna-table__cell tna-table__cell--numeric">622,669</td>
+      <td class="tna-table__cell tna-table__cell--numeric">2,249</td>
+    </tr>
+  </tfoot>
 </table>`;
 export const Table = TableTemplate.bind({});

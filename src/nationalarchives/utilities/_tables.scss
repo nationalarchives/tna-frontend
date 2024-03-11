@@ -4,7 +4,6 @@
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
-@use "../variables/assets";
 @use "../variables/grid";
 
 .tna-table {
@@ -20,21 +19,30 @@
   }
 
   &__caption {
-    text-align: left;
+    padding: 1rem 0;
 
-    @include typography.main-font-weight-bold;
+    caption-side: bottom;
+
+    @include typography.relative-font-size(16);
   }
 
   &__head {
-  }
-
-  &__header {
+    vertical-align: bottom;
   }
 
   &__body {
+    vertical-align: top;
+  }
+
+  &__foot {
+    @include typography.main-font-weight-bold;
+    vertical-align: top;
   }
 
   &__row {
+  }
+
+  &__header {
   }
 
   &__cell {
@@ -53,10 +61,19 @@
     &:last-child {
       padding-right: 0;
     }
+
+    &--numeric {
+      text-align: right;
+    }
   }
 
   &__head &__header {
     @include colour.colour-border("keyline-dark", 4px, solid, bottom);
+  }
+
+  &__foot &__header,
+  &__foot &__cell {
+    @include colour.colour-border("keyline-dark", 4px, solid, top);
   }
 
   p {

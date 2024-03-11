@@ -89,10 +89,6 @@
 
     @include typography.relative-font-size(14);
     line-height: 1.5rem;
-
-    .fa-solid {
-      line-height: 2rem;
-    }
   }
 
   @mixin icon-only {
@@ -101,8 +97,8 @@
 
     gap: 0;
 
-    font-size: 0;
-    line-height: 0;
+    font-size: 0 !important;
+    line-height: 0 !important;
 
     .fa-solid {
       width: 2.5rem;
@@ -119,6 +115,7 @@
       width: 2rem;
 
       @include typography.relative-font-size(18 * 0.9);
+      line-height: 2rem;
     }
   }
 

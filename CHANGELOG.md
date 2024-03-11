@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed style of icon-only buttons in a small button group
+
 ### Security
 
 ## [0.1.42](https://github.com/nationalarchives/tna-frontend/compare/v0.1.41...v0.1.42) - 2024-03-01

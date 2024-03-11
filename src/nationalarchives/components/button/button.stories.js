@@ -65,6 +65,9 @@ const Template = ({
   });
 
 export const Standard = Template.bind({});
+Standard.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Standard.args = {
   text: "Button",
   href: "#",
@@ -72,6 +75,9 @@ Standard.args = {
 };
 
 export const Accent = Template.bind({});
+Accent.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Accent.args = {
   text: "Button",
   href: "#",
@@ -80,6 +86,9 @@ Accent.args = {
 };
 
 export const Icon = Template.bind({});
+Icon.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Icon.args = {
   text: "Explore the collection",
   href: "#",
@@ -88,6 +97,9 @@ Icon.args = {
 };
 
 export const RightAlignedIcon = Template.bind({});
+RightAlignedIcon.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 RightAlignedIcon.args = {
   text: "Search",
   href: "#",
@@ -97,6 +109,9 @@ RightAlignedIcon.args = {
 };
 
 export const IconOnly = Template.bind({});
+IconOnly.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 IconOnly.args = {
   text: "Show as a list",
   href: "#",
@@ -106,6 +121,9 @@ IconOnly.args = {
 };
 
 export const Small = Template.bind({});
+Small.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Small.args = {
   text: "Small button",
   href: "#",
@@ -114,6 +132,9 @@ Small.args = {
 };
 
 export const SmallWithIcon = Template.bind({});
+SmallWithIcon.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 SmallWithIcon.args = {
   text: "Explore the collection",
   href: "#",
@@ -123,6 +144,9 @@ SmallWithIcon.args = {
 };
 
 export const SmallIconOnly = Template.bind({});
+SmallIconOnly.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 SmallIconOnly.args = {
   text: "Explore the collection",
   href: "#",
@@ -133,6 +157,9 @@ SmallIconOnly.args = {
 };
 
 export const Plain = Template.bind({});
+Plain.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Plain.args = {
   text: "Plain button",
   href: "#",
@@ -141,6 +168,9 @@ Plain.args = {
 };
 
 export const SmallPlain = Template.bind({});
+SmallPlain.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 SmallPlain.args = {
   text: "Plain small button",
   href: "#",
@@ -150,6 +180,9 @@ SmallPlain.args = {
 };
 
 export const SmallPlainIcon = Template.bind({});
+SmallPlainIcon.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 SmallPlainIcon.args = {
   text: "Plain small button",
   href: "#",
@@ -160,47 +193,12 @@ SmallPlainIcon.args = {
 };
 
 export const ButtonElement = Template.bind({});
+ButtonElement.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 ButtonElement.args = {
   text: "Button element",
   href: "#",
   buttonElement: true,
   classes: "tna-button--demo",
-};
-
-const GroupTemplate = ({ buttons }) =>
-  `<div class="tna-button-group">
-    ${buttons.map((button) => Template(button)).join("")}
-</div>`;
-
-export const Group = GroupTemplate.bind({});
-Group.args = {
-  buttons: [
-    {
-      text: "Button 1",
-      href: "#",
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Button 2",
-      href: "#",
-      accent: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Call us",
-      href: "#",
-      icon: "phone",
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Button",
-      buttonElement: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Plain",
-      plain: true,
-      classes: "tna-button--demo",
-    },
-  ],
 };

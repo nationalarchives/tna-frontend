@@ -1,7 +1,7 @@
 import { describe, expect, test, beforeEach } from "@jest/globals";
-import { EventTracker, GA4 } from "../analytics.mjs";
+import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { addCookiesToDocument } from "./cookies.test";
-import { valueGetters } from "../lib/analytics-helpers.mjs";
+import { valueGetters } from "../src/nationalarchives/lib/analytics-helpers.mjs";
 
 addCookiesToDocument(document);
 

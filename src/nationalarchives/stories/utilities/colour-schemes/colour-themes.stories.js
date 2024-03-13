@@ -1244,6 +1244,11 @@ const Template = ({ theme, accent }) => {
             icon: "instagram",
             title: "The National Archives Instagram feed",
           },
+          {
+            href: "https://www.tiktok.com/@uknatarchives",
+            icon: "tiktok",
+            title: "The National Archives TikTok feed",
+          },
         ],
         navigation: [
           {

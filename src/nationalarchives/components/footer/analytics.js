@@ -4,6 +4,7 @@ export default [
   {
     scope: ".tna-footer",
     areaName: "footer",
+    rootEventName: "footer",
     events: [
       {
         eventName: "link.click",
@@ -16,7 +17,6 @@ export default [
           data_component_name: "Footer",
           data_link_type: "Link",
           data_section: valueGetters.closestHeading,
-          data_position: valueGetters.index,
           data_link: valueGetters.text,
         },
       },
@@ -31,7 +31,6 @@ export default [
           data_component_name: "Footer",
           data_link_type: "Icon",
           data_section: "Social media",
-          data_position: valueGetters.index,
           data_link: ($el) => $el.getAttribute("data-name"),
         },
       },
@@ -46,7 +45,6 @@ export default [
           data_component_name: "Footer",
           data_link_type: "Link",
           data_section: "Legal information",
-          data_position: valueGetters.index,
           data_link: valueGetters.text,
         },
       },

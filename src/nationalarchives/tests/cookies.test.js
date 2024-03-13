@@ -34,6 +34,8 @@ const addCookiesToDocument = (document) => {
   };
 };
 
+export { addCookiesToDocument };
+
 addCookiesToDocument(document);
 
 describe("No existing cookies", () => {

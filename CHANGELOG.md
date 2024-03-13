@@ -8,7 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.43...HEAD)
 
 ### Added
+
+- TikTok is available as a social icon in the footer
+- Visually hidden brackets added to index grid item subtitles
+
 ### Changed
+
+- Default maximum container width changed from `75.25rem` (`1204px`) to `80rem` (`1280px`)
+- GA4 analytics implementation updated
+
 ### Deprecated
 ### Removed
 ### Fixed

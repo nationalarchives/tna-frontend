@@ -116,7 +116,7 @@ runs:
         interval: 500
     - name: Run prototype
       run: >
-        curl http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
-        curl http://localhost:3000 | grep '<a href="#" class="tna-button">' &&
-        curl http://localhost:3000 | grep '<div class="tna-card'
+        curl -s http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
+        curl -s http://localhost:3000 | grep '<a href="#" class="tna-button' &&
+        curl -s http://localhost:3000 | grep '<div class="tna-card'
       shell: bash

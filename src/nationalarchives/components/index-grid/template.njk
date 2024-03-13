@@ -3,11 +3,11 @@
   <div class="tna-container">
     <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
       <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'l' }} tna-index-grid__heading">
-        {%- if params.headingHref -%}
+        {%- if params.headingHref %}
         <a href="{{ params.headingHref }}">{{ params.title }}</a>
-        {%- else -%}
+        {%- else %}
         {{ params.title }}
-        {%- endif -%}
+        {%- endif %}
       </h{{ params.headingLevel }}>
       {%- if params.text %}
         <p>{{ params.text }}</p>
@@ -17,49 +17,50 @@
     </div>
   </div>
   <ul class="tna-index-grid__items tna-container">
-    {%- set itemClasses = ['tna-index-grid__item-wrapper', 'tna-column'] -%}
-    {%- if params.columns == 1 -%}
-      {%- set itemClasses = itemClasses.concat('tna-column--full') -%}
-    {%- else -%}
-      {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columns) -%}
-    {%- endif -%}
-    {%- if params.columnsMedium -%}
-      {%- if params.columnsMedium == 1 -%}
-        {%- set itemClasses = itemClasses.concat('tna-column--full-medium') -%}
-      {%- else -%}
-        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsMedium + '-medium') -%}
-      {%- endif -%}
-    {%- endif -%}
-    {%- if params.columnsSmall -%}
-      {%- if params.columnsSmall == 1 -%}
-        {%- set itemClasses = itemClasses.concat('tna-column--full-small') -%}
-      {%- else -%}
-        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsSmall + '-small') -%}
-      {%- endif -%}
-    {%- endif -%}
-    {%- if params.columnsTiny -%}
-      {%- if params.columnsTiny == 1 -%}
-        {%- set itemClasses = itemClasses.concat('tna-column--full-tiny') -%}
-      {%- else -%}
-        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsTiny + '-tiny') -%}
-      {%- endif -%}
-    {%- endif -%}
-    {%- for item in params.items -%}
+    {%- set itemClasses = ['tna-index-grid__item-wrapper', 'tna-column'] %}
+    {%- if params.columns == 1 %}
+      {%- set itemClasses = itemClasses.concat('tna-column--full') %}
+    {%- else %}
+      {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columns) %}
+    {%- endif %}
+    {%- if params.columnsMedium %}
+      {%- if params.columnsMedium == 1 %}
+        {%- set itemClasses = itemClasses.concat('tna-column--full-medium') %}
+      {%- else %}
+        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsMedium + '-medium') %}
+      {%- endif %}
+    {%- endif %}
+    {%- if params.columnsSmall %}
+      {%- if params.columnsSmall == 1 %}
+        {%- set itemClasses = itemClasses.concat('tna-column--full-small') %}
+      {%- else %}
+        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsSmall + '-small') %}
+      {%- endif %}
+    {%- endif %}
+    {%- if params.columnsTiny %}
+      {%- if params.columnsTiny == 1 %}
+        {%- set itemClasses = itemClasses.concat('tna-column--full-tiny') %}
+      {%- else %}
+        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsTiny + '-tiny') %}
+      {%- endif %}
+    {%- endif %}
+    {%- for item in params.items %}
     <li class="{{ itemClasses | join(' ') }}">
       <a href="{{ item.href }}" class="tna-index-grid__item" title="{{ item.title }}">
-        <img src="{{ item.src }}" class="tna-index-grid__item-image" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" />
+        <img src="{{ item.src }}" class="tna-index-grid__item-image" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}">
         <span class="tna-index-grid__item-content">
           <span class="tna-index-grid__item-title">{{ item.title }}</span>
-          {%- if item.label -%}
+          {%- if item.label %}
           <span class="tna-chip tna-index-grid__item-label">{{ item.label }}<span class="tna-!--visually-hidden">:</span></span>
-          {%- endif -%}
-          {%- if item.subtitle -%}
+          {%- endif %}
+          {%- if item.subtitle %}
           <br>
-          <span class="tna-index-grid__item-subtitle">{{ item.subtitle }}</span>
-          {%- endif -%}
+          <span class="tna-index-grid__item-subtitle">
+            <span class="tna-visually-hidden">(</span>{{ item.subtitle }}<span class="tna-visually-hidden">)</span></span>
+          {%- endif %}
         </span>
       </a>
     </li>
-    {%- endfor -%}
+    {%- endfor %}
   </ul>
 </nav>

@@ -1,4 +1,4 @@
-<img src="../../assets/images/tna-square-logo.svg" alt="The National Archives logo" title="The National Archives" width="100" />
+<img src="../../assets/images/tna-square-logo.svg" alt="The National Archives logo" title="The National Archives" width="100">
 
 # TNA Frontend Global Header and Footer
 

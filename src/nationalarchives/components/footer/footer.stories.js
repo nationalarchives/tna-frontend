@@ -144,6 +144,10 @@ Standard.args = {
           text: "The National Archives Trust",
           href: "https://www.nationalarchives.gov.uk/about/the-national-archives-trust/",
         },
+        {
+          text: "Friends of The National Archives",
+          href: "https://www.nationalarchives.gov.uk/about/get-involved/friends-of-the-national-archives/",
+        },
       ],
     },
   ],

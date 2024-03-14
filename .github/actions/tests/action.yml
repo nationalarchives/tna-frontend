@@ -16,21 +16,9 @@ runs:
     - name: Validate HTML
       run: npm run validatehtml
       shell: bash
-    - name: Build Storybook
-      run: npm run build --test
+    - name: Run fixture tests
+      run: npm run test:fixtures
       shell: bash
-    - name: Start Storybook
-      run: npm start &
-      shell: bash
-    - name: Install Platwright
-      run: npx playwright install
-      shell: bash
-    - uses: nev7n/wait_for_response@v1
-      with:
-        url: "http://localhost:6006"
-        responseCode: 200
-        timeout: 30000
-        interval: 500
-    - name: Run tests
-      run: npm run test
+    - name: Run unit tests
+      run: npm run test:unit
       shell: bash

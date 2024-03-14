@@ -26,6 +26,13 @@ jobs:
       - name: Tests
         uses: ./.github/actions/tests
 
+  storybook-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        uses: ./.github/actions/storybook-tests
+
   test-package:
     runs-on: ubuntu-latest
     steps:

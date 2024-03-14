@@ -25,7 +25,7 @@ const Template = ({ text, href, classes, attributes }) =>
   ${SkipLink({
     params: { text, href, classes, attributes },
   })}
-  <main id="main-content" role="main">
+  <main class="tna-main" id="main-content">
     <h1>Main content</h1>
   </main>`;
 

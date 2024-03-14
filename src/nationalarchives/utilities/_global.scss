@@ -19,14 +19,13 @@
   margin: 0;
   padding: 0;
 
-  &:has(:is(.tna-global-header, .tna-header)):has(
-      #main-content[role="main"]
-    ):has(.tna-footer) {
+  &:has(:is(.tna-global-header, .tna-header)):has(.tna-main):has(.tna-footer) {
     display: flex;
     flex-direction: column;
-
-    #main-content {
-      flex: 1;
-    }
   }
 }
+
+.tna-main {
+  flex: 1;
+}
+

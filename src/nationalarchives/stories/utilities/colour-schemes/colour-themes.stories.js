@@ -192,7 +192,7 @@ const Template = ({ theme, accent }) => {
         })}
       </div>
     </div>
-    <main id="main-content" role="main">
+    <main id="main-content">
       ${Hero({
         params: {
           heading: "Title",

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - TikTok is available as a social icon in the footer
 - Visually hidden brackets added to index grid item subtitles
+- `<main>` element can be styled with a `tna-main` class
 
 ### Changed
 
@@ -22,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Card actions can no longer have icons
+- Removed explicit `role="navigation"` on pagination component
+- Removed explicit `role="main"` on `<main>` elements
 
 ### Fixed
 

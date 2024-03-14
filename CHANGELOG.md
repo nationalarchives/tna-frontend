@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Default maximum container width changed from `75.25rem` (`1204px`) to `80rem` (`1280px`)
 - GA4 analytics implementation updated
+- Updated `aria-label` attributes on navigation elements
 
 ### Deprecated
 ### Removed

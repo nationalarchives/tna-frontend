@@ -113,7 +113,6 @@
           display: inline-block;
 
           text-decoration: none;
-          text-wrap: balance;
 
           &:hover {
             @include typography.interacted-text-decoration;

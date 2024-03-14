@@ -220,10 +220,37 @@ NoImage.args = {
   classes: "tna-card--demo",
 };
 
+export const Actions = Template.bind({});
+Actions.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "m",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  actions: [
+    {
+      text: "Card action 1",
+      href: "#",
+    },
+    {
+      text: "Card action 2",
+      href: "#",
+      title: "Go and do the action",
+    },
+  ],
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   supertitle: "Card supertitle",
   title: "Card title",
+  href: "#",
   headingLevel: 3,
   headingSize: "l",
   imageSrc:
@@ -233,14 +260,6 @@ Horizontal.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-      icon: "calendar",
-    },
-  ],
   horizontal: true,
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -250,6 +269,7 @@ export const HorizontalContrast = Template.bind({});
 HorizontalContrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
+  href: "#",
   headingLevel: 3,
   headingSize: "l",
   imageSrc:
@@ -259,14 +279,6 @@ HorizontalContrast.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-      icon: "calendar",
-    },
-  ],
   horizontal: true,
   style: "contrast",
   htmlElement: "article",
@@ -277,6 +289,7 @@ export const HorizontalAccent = Template.bind({});
 HorizontalAccent.args = {
   supertitle: "Card supertitle",
   title: "Card title",
+  href: "#",
   headingLevel: 3,
   headingSize: "l",
   imageSrc:
@@ -286,14 +299,6 @@ HorizontalAccent.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-      icon: "calendar",
-    },
-  ],
   horizontal: true,
   style: "accent",
   htmlElement: "article",

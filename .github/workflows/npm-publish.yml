@@ -6,7 +6,7 @@ on:
       - published
 
 jobs:
-  check:
+  version-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     needs:
-      - check
+      - version-check
     steps:
       - uses: actions/checkout@v4
       - name: Lint
@@ -33,16 +33,25 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     needs:
-      - check
+      - version-check
     steps:
       - uses: actions/checkout@v4
       - name: Tests
         uses: ./.github/actions/tests
+      
+  storybook-tests:
+    runs-on: ubuntu-latest
+    needs:
+      - version-check
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        uses: ./.github/actions/storybook-tests
 
   test-package:
     runs-on: ubuntu-latest
     needs:
-      - check
+      - version-check
     steps:
       - uses: actions/checkout@v4
       - name: Test build package
@@ -60,9 +69,10 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     needs:
-      - check
+      - version-check
       - lint
       - tests
+      - storybook-tests
       - prototype-kit
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -93,10 +103,6 @@ jobs:
   publish-npm-cookie-banner:
     runs-on: ubuntu-latest
     needs:
-      - check
-      - lint
-      - tests
-      - prototype-kit
       - publish-npm
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -127,10 +133,6 @@ jobs:
   publish-npm-global-header:
     runs-on: ubuntu-latest
     needs:
-      - check
-      - lint
-      - tests
-      - prototype-kit
       - publish-npm
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -161,7 +163,6 @@ jobs:
   notify-slack:
     runs-on: ubuntu-latest
     needs:
-      - check
       - publish-npm
       - publish-npm-cookie-banner
       - publish-npm-global-header

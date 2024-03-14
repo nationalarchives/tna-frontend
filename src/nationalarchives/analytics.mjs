@@ -38,16 +38,44 @@ class EventTracker {
   events = [];
 
   /** @protected */
-  start = new Date();
+  startTime = new Date();
 
   /** @protected */
   prefix = "tna";
 
-  constructor(prefix) {
+  constructor(options = {}) {
+    const { prefix = null } = options;
     if (prefix) {
       this.prefix = prefix;
     }
   }
+
+  start(initAll) {
+    if (!navigator.doNotTrack || navigator.doNotTrack !== 1) {
+      if (this.cookies.isPolicyAccepted("usage")) {
+        this.enableTracking();
+      } else {
+        window[this.ga4Disable] = true;
+        this.cookies.set(this.ga4Disable, "true");
+      }
+      this.cookies.on("changePolicy", (policies) => {
+        if (Object.hasOwn(policies, "usage")) {
+          if (policies["usage"]) {
+            this.enableTracking();
+          } else {
+            this.disableTracking();
+          }
+        }
+      });
+      if (initAll) {
+        this.initAll();
+      }
+    }
+  }
+
+  enableTracking() {}
+
+  disableTracking() {}
 
   /**
    * Initialise all TNA Frontend component analytics.
@@ -58,6 +86,7 @@ class EventTracker {
         componentConfig.scope,
         componentConfig.areaName,
         componentConfig.events,
+        componentConfig.rootEventName || "",
       );
     });
   }
@@ -66,9 +95,10 @@ class EventTracker {
    * Add an event listener.
    * @param {String|HTMLElement} scope - The element to which the listener is scoped.
    * @param {String} areaName - The name of the component to pass on to the tracker.
-   * @param {{eventName: String, targetElement: String|undefined, on: String, data: {value: Function|String|undefined, state: Function|String|undefined, [String]: any}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
+   * @param {{eventName: String, targetElement: String|undefined, on: String, data: {value: Function|String|undefined, state: Function|String|undefined, group: Function|String|undefined, [String]: String|Integer}, rootData:{[String]: Function|String}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
+   * @param {String} rootEventName - The event name to use if specified (prefix).
    */
-  addListener(scope, areaName, events) {
+  addListener(scope, areaName, events, rootEventName = "") {
     let scopeArray;
     if (typeof scope === "string") {
       scopeArray = Array.from(document.querySelectorAll(scope));
@@ -90,7 +120,7 @@ class EventTracker {
             this.attachListener(
               $el,
               $scope,
-              this.generateEventName(areaName, eventConfig),
+              rootEventName,
               eventConfig,
               scope,
               areaName,
@@ -101,7 +131,7 @@ class EventTracker {
           this.attachListener(
             $scope,
             $scope,
-            this.generateEventName(areaName, eventConfig),
+            rootEventName,
             eventConfig,
             scope,
             areaName,
@@ -118,21 +148,36 @@ class EventTracker {
   }
 
   /** @protected */
-  attachListener($el, $scope, eventName, eventConfig, scope, areaName, index) {
+  attachListener(
+    $el,
+    $scope,
+    rootEventName,
+    eventConfig,
+    scope,
+    areaName,
+    index,
+  ) {
     const { on, data, targetElement, rootData = {} } = eventConfig;
     $el.addEventListener(on, (event) =>
       this.recordEvent(
-        eventName,
+        rootEventName
+          ? `${this.prefix}.${rootEventName}`
+          : this.generateEventName(areaName, eventConfig),
         {
           ...data,
-          value: this.computedValue(data.value, $el, $scope, event, index),
-          state: this.computedValue(data.state, $el, $scope, event, index),
-          group: this.computedValue(data.group, $el, $scope, event, index),
-          xPath: getXPathTo($scope),
+          name: this.generateEventName(areaName, eventConfig),
+          value: data?.value
+            ? this.computedValue(data.value, $el, $scope, event, index)
+            : null,
+          state: data?.state
+            ? this.computedValue(data.state, $el, $scope, event, index)
+            : null,
+          group: data?.group
+            ? this.computedValue(data.group, $el, $scope, event, index)
+            : null,
+          xPath: getXPathTo($el),
           targetElement: targetElement,
-          // timestamp: new Date().toISOString(),
-          // uri: window.location.pathname,
-          timeSincePageLoad: new Date() - this.start,
+          timeSincePageLoad: new Date() - this.startTime,
           index,
           scope,
           areaName,
@@ -151,7 +196,7 @@ class EventTracker {
   computedValue(value, $el, $scope, event, index) {
     return typeof value === "function"
       ? value.call(this, $el, $scope, event, index)
-      : value || null;
+      : value ?? null;
   }
 
   /** @protected */
@@ -186,37 +231,33 @@ class EventTracker {
  * @public
  */
 class GA4 extends EventTracker {
+  /** @protected */
   trackingCodeAdded = false;
+
+  /** @protected */
   trackingEnabled = false;
+
+  /** @protected */
   gTagId;
 
-  constructor(id = null, options = {}) {
+  constructor(options = {}) {
     if (GA4._instance) {
       return GA4._instance;
     }
+    const { id = null, prefix = null, initAll = true } = options;
     if (!id) {
       throw Error("ID was not specified");
     }
-    const { prefix = null, initAll = true } = options;
-    super(prefix);
+    super({ prefix });
     GA4._instance = this;
     this.gTagId = id;
+    this.ga4Disable = `ga-disable-${this.gTagId}`;
     window.dataLayer = window.dataLayer || [];
-    if (this.cookies.isPolicyAccepted("usage")) {
-      this.enableTracking();
-    }
-    this.cookies.on("changePolicy", (policies) => {
-      if (Object.hasOwn(policies, "usage")) {
-        if (policies["usage"]) {
-          this.enableTracking();
-        } else {
-          this.disableTracking();
-        }
-      }
-    });
-    if (initAll) {
-      this.initAll();
-    }
+    this.start(initAll);
+  }
+
+  destroy() {
+    GA4._instance = null;
   }
 
   /** @protected */
@@ -247,8 +288,8 @@ class GA4 extends EventTracker {
   /** @protected */
   enableTracking() {
     if (!this.trackingEnabled) {
-      window["ga-disable-GA_MEASUREMENT_ID"] = false;
-      this.trackingEnabled = true;
+      window[this.ga4Disable] = false;
+      this.cookies.set(this.ga4Disable, "false");
       if (!this.trackingCodeAdded) {
         this.pushToDataLayer({
           "gtm.start": new Date().getTime(),
@@ -258,20 +299,31 @@ class GA4 extends EventTracker {
         const script = document.createElement("script");
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtm.js?id=${this.gTagId}&l=dataLayer`;
-        firstScript.parentNode.insertBefore(script, firstScript);
+        if (firstScript) {
+          firstScript.parentNode.insertBefore(script, firstScript);
+        } else {
+          document.head.appendChild(script);
+        }
         this.trackingCodeAdded = true;
-        this.pushToDataLayer(this.getTnaMetaTags());
+        const tnaMetaTags = this.getTnaMetaTags();
+        if (Object.keys(tnaMetaTags).length) {
+          this.pushToDataLayer(tnaMetaTags);
+        }
       }
-      this.gtag("set", { allow_google_signals: true });
+      this.trackingEnabled = true;
     }
   }
 
   /** @protected */
   disableTracking() {
     if (this.trackingEnabled) {
-      window["ga-disable-GA_MEASUREMENT_ID"] = true;
-      this.gtag("set", { allow_google_signals: false });
+      window[this.ga4Disable] = true;
+      this.cookies.set(this.ga4Disable, "true");
+      this.cookies.delete("_ga");
+      // this.cookies.delete("_gat_gtag_UA_43169816_3");
+      // this.cookies.delete("_gid");
       this.trackingEnabled = false;
+      window.location.reload();
     }
   }
 }

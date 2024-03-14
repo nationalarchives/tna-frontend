@@ -103,6 +103,12 @@ runs:
         echo "{{ tnaTextarea({}) }}" >> prototype/app/views/index.html &&
         echo "{% endblock %}" >> prototype/app/views/index.html
       shell: bash
+    - name: Copy page templates
+      run: >
+        cp package/nationalarchives/templates/plain.njk prototype/app/views/template-plain.html &&
+        cp package/nationalarchives/templates/list.njk prototype/app/views/template-list.html &&
+        cp package/nationalarchives/templates/index-grid.njk prototype/app/views/template-index-grid.html
+      shell: bash
     - name: Run prototype
       run: >
         cd prototype &&
@@ -114,3 +120,15 @@ runs:
         responseCode: 200
         timeout: 30000
         interval: 500
+    - name: Test prototype components
+      run: >
+        curl --silent http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
+        curl --silent http://localhost:3000 | grep '<a href="#" class="tna-button' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-card'
+      shell: bash
+    - name: Test templates
+      run: >
+        curl --silent --fail http://localhost:3000/template-plain > /dev/null &&
+        curl --silent --fail http://localhost:3000/template-list > /dev/null &&
+        curl --silent --fail http://localhost:3000/template-index-grid > /dev/null
+      shell: bash

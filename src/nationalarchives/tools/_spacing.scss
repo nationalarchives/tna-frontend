@@ -10,8 +10,20 @@
   }
 }
 
-@mixin space-above {
-  @extend %space-above;
+%space-only-above {
+  margin: 2rem 0 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin space-above($zero-other-margins: false) {
+  @if $zero-other-margins {
+    @extend %space-only-above;
+  } @else {
+    @extend %space-above;
+  }
 }
 
 @function space($size) {

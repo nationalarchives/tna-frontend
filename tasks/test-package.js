@@ -106,24 +106,44 @@ const checkExists = [
   ...componentFiles("text-input"),
   ...componentFiles("textarea"),
   // Tools
-  "nationalarchives/tools/_index.scss",
+  "nationalarchives/tools/_a11y.scss",
+  "nationalarchives/tools/_colour.scss",
   "nationalarchives/tools/_grid.scss",
+  "nationalarchives/tools/_index.scss",
   "nationalarchives/tools/_media.scss",
+  "nationalarchives/tools/_spacing.scss",
   "nationalarchives/tools/_typography.scss",
   // Utilities
-  "nationalarchives/utilities/_index.scss",
+  "nationalarchives/utilities/_a11y.scss",
+  "nationalarchives/utilities/_areas.scss",
+  "nationalarchives/utilities/_colour.scss",
+  "nationalarchives/utilities/_columns.scss",
+  "nationalarchives/utilities/_debug.scss",
+  "nationalarchives/utilities/_forms.scss",
   "nationalarchives/utilities/_global.scss",
+  "nationalarchives/utilities/_index.scss",
+  "nationalarchives/utilities/_lists.scss",
+  "nationalarchives/utilities/_overrides.scss",
+  "nationalarchives/utilities/_reset.scss",
+  "nationalarchives/utilities/_tables.scss",
   "nationalarchives/utilities/_typography.scss",
   // Variables
-  "nationalarchives/variables/_index.scss",
+  "nationalarchives/variables/_a11y.scss",
+  "nationalarchives/variables/_assets.scss",
   "nationalarchives/variables/_colour.scss",
+  "nationalarchives/variables/_features.scss",
+  "nationalarchives/variables/_forms.scss",
   "nationalarchives/variables/_grid.scss",
+  "nationalarchives/variables/_index.scss",
   "nationalarchives/variables/_media.scss",
+  "nationalarchives/variables/_spacing.scss",
   "nationalarchives/variables/_typography.scss",
   // Templates
-  "nationalarchives/templates/homepage.njk",
-  "nationalarchives/templates/search-results.njk",
   "nationalarchives/templates/layouts/_generic.njk",
+  "nationalarchives/templates/layouts/_prototype-kit.njk",
+  "nationalarchives/templates/index-grid.njk",
+  "nationalarchives/templates/list.njk",
+  "nationalarchives/templates/plain.njk",
 ];
 
 console.log(`Testing package file structure`);
@@ -147,6 +167,7 @@ console.log("\n");
 
 console.log(`Testing package version`);
 const compiledPackageJson = require("../package/package.json");
+const compiledPackageLockJson = require("../package/package-lock.json");
 if (packageJson.version === compiledPackageJson.version) {
   pass(`Version ${packageJson.version} is set in the package`);
 } else {
@@ -155,6 +176,15 @@ if (packageJson.version === compiledPackageJson.version) {
   );
   process.exitCode = 1;
   throw new Error("Package version test failed");
+}
+if (compiledPackageLockJson.version === compiledPackageJson.version) {
+  pass("The version in package-lock.json matches the version in package.json");
+} else {
+  fail(
+    `The version in package-lock.json should be ${packageJson.version} but is ${compiledPackageLockJson.version}`,
+  );
+  process.exitCode = 1;
+  throw new Error("Package lock version test failed");
 }
 
 console.log("\n");

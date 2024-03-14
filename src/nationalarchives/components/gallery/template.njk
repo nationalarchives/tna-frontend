@@ -18,7 +18,7 @@
         <p class="tna-gallery__item-index">Image {{ loop.index }} of {{ params.items|length }}</p>
       </div>
       <figure class="tna-gallery__item-figure tna-column {{ 'tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny' if item.tabs else 'tna-column--full' }}">
-        <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}" />
+        <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}">
         {%- if item.description -%}
         <figcaption class="tna-gallery__item-description">
           <p>{{ item.description }}</p>

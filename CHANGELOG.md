@@ -8,10 +8,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.43...HEAD)
 
 ### Added
+
+- TikTok is available as a social icon in the footer
+- Visually hidden brackets added to index grid item subtitles
+- `<main>` element can be styled with a `tna-main` class
+- Index grid headings can be hidden by setting `headingLevel` to `0`
+- Template fixtures are now included
+
 ### Changed
+
+- Default maximum container width changed from `75.25rem` (`1204px`) to `80rem` (`1280px`)
+- GA4 analytics implementation updated
+- Updated `aria-label` attributes on navigation elements
+
 ### Deprecated
+
+- Removed `tnaFrontendCssPath` and `tnaFrontendJsPath` variables from `_generic.njk` template
+
 ### Removed
+
+- Card actions can no longer have icons
+- Removed explicit `role="navigation"` on pagination component and `role="main"` on `<main>` elements
+- Removed defaults from `stylesheets` and `bodyEnd` of `_generic.njk` template
+
 ### Fixed
+
+- Card action classes and attributes fixed
+
 ### Security
 
 ## [0.1.43](https://github.com/nationalarchives/tna-frontend/compare/v0.1.42...v0.1.43) - 2024-03-11

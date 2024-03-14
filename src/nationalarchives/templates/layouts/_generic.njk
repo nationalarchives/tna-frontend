@@ -1,18 +1,17 @@
 {# Based on https://github.com/alphagov/govuk-frontend/blob/8b6bf304b9fc891f64459c25a08f3d623f3fea72/packages/govuk-frontend/src/govuk/template.njk #}
 
-{% from "nationalarchives/components/cookie-banner/macro.njk" import tnaCookieBanner -%}
-{% from "nationalarchives/components/footer/macro.njk" import tnaFooter -%}
-{% from "nationalarchives/components/header/macro.njk" import tnaHeader -%}
-{% from "nationalarchives/components/skip-link/macro.njk" import tnaSkipLink -%}
+{% from 'nationalarchives/components/cookie-banner/macro.njk' import tnaCookieBanner -%}
+{% from 'nationalarchives/components/footer/macro.njk' import tnaFooter -%}
+{% from 'nationalarchives/components/header/macro.njk' import tnaHeader -%}
+{% from 'nationalarchives/components/skip-link/macro.njk' import tnaSkipLink -%}
 
-{% set siteTitle = 'The National Archives' %}
-{% set pageTitle = '' %}
+{% set defaultSiteTitle = 'The National Archives' %}
 
 <!DOCTYPE html>
 <html lang="{{ htmlLang | default('en') }}" class="tna-template tna-template--{{ theme | default('system') }}-theme tna-template--{{ themeAccent | default('black') }}-accent {{ htmlClasses }}"{% for attribute, value in htmlAttributes %} {{attribute}}="{{value}}"{% endfor %}>
   <head>
     <meta charset="utf-8">
-    <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle }}{% else %}{{ siteTitle }}{% endif %}{% endblock %}</title>
+    <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle or defaultSiteTitle }}{% else %}{{ siteTitle or defaultSiteTitle }}{% endif %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#000000') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,17 +35,13 @@
 
     {% block head %}{% endblock %}
 
-    {% block stylesheets %}
-      <link rel="stylesheet" type="text/css" href="{{ tnaFrontendCssPath | default('/static/tna-frontend') }}/all.css">
-      <link rel="stylesheet" type="text/css" href="https://use.typekit.net/hkj3kuz.css">
-    {% endblock %}
+    {% block stylesheets %}{% endblock %}
   </head>
-    <body class="tna-template__body {{ bodyClasses }}"{% for attribute, value in bodyAttributes %} {{attribute}}="{{value}}"{% endfor %}>
+    <body class="tna-template__body {{ bodyClasses }}"{% for attribute, value in bodyAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
     {% block bodyStart %}
       {% block cookies %}
         {{ tnaCookieBanner({
-          cookiesUrl: '#',
-          cookiesPath: "/tna-frontend/"
+          cookiesUrl: '#/cookies'
         }) }}
       {% endblock %}
       
@@ -64,7 +59,7 @@
 
     {% block main %}
       {% block beforeContent %}{% endblock %}
-      <main class="tna-main-wrapper {{ mainClasses }}" id="main-content" role="main">
+      <main class="tna-main {{ mainClasses }}" id="main-content">
         {% block content %}{% endblock %}
       </main>
       {% block afterContent %}{% endblock %}
@@ -74,15 +69,6 @@
       {{ tnaFooter({}) }}
     {% endblock %}
 
-    {% block bodyEnd %}
-      <script src="{{ tnaFrontendJsPath | default('/static/tna-frontend') }}/all.js"></script>
-      <script>
-        if (window.TNAFrontend && window.TNAFrontend.initAll) {
-          document.addEventListener("DOMContentLoaded", function() {
-            window.TNAFrontend.initAll();
-          });
-        }
-      </script>
-    {% endblock %}
+    {% block bodyEnd %}{% endblock %}
   </body>
 </html>

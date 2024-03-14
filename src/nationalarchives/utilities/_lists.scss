@@ -70,7 +70,7 @@
 }
 
 .tna-dl {
-  margin: 1rem 0 0;
+  @include spacing.space-above(true);
 
   display: flex;
   flex-wrap: wrap;

@@ -4,6 +4,7 @@ export default [
   {
     scope: ".tna-global-header",
     areaName: "header",
+    rootEventName: "global_navigation",
     events: [
       {
         eventName: "toggle",
@@ -11,6 +12,18 @@ export default [
         on: "click",
         data: {
           state: valueGetters.expanded,
+        },
+        rootData: {
+          data_component_name: "Header",
+          data_link_type: "Mobile menu",
+          data_link: ($el) => {
+            const expanded = $el.getAttribute("aria-expanded");
+            if (expanded === null) {
+              return null;
+            }
+            return expanded.toString() === "true" ? "Open menu" : "Close menu";
+          },
+          data_section: "Burger menu",
         },
       },
       {
@@ -34,7 +47,7 @@ export default [
           data_component_name: "Header",
           data_link_type: "Menu",
           data_section: valueGetters.text,
-          data_position: valueGetters.index,
+          data_position: 1,
           data_link: valueGetters.text,
         },
       },
@@ -48,7 +61,6 @@ export default [
         rootData: {
           data_component_name: "Header",
           data_link_type: "Icon",
-          data_position: valueGetters.index,
           data_link: valueGetters.text,
         },
       },

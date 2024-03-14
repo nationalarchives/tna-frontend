@@ -72,17 +72,16 @@
   }
 
   &__actions {
-    margin-top: 2rem;
+    margin-top: 1rem;
+
+    display: flex;
+    gap: 1rem 2rem;
 
     order: 4;
   }
 
   &__action {
     @include typography.main-font-weight-bold;
-
-    .fa-solid {
-      margin-right: 0.5rem;
-    }
   }
 
   &--contrast,

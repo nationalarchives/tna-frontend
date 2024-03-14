@@ -71,6 +71,11 @@ Standard.args = {
       icon: "instagram",
       title: "The National Archives Instagram feed",
     },
+    {
+      href: "https://www.tiktok.com/@uknatarchives",
+      icon: "tiktok",
+      title: "The National Archives TikTok feed",
+    },
   ],
   navigation: [
     {
@@ -138,6 +143,10 @@ Standard.args = {
         {
           text: "The National Archives Trust",
           href: "https://www.nationalarchives.gov.uk/about/the-national-archives-trust/",
+        },
+        {
+          text: "Friends of The National Archives",
+          href: "https://www.nationalarchives.gov.uk/about/get-involved/friends-of-the-national-archives/",
         },
       ],
     },

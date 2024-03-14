@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import uuidv4 from "../lib/uuid.mjs";
+import uuidv4 from "../src/nationalarchives/lib/uuid.mjs";
 
 describe("UUID", () => {
   test("Initialisation", async () => {

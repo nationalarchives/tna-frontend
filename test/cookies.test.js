@@ -7,7 +7,7 @@ import {
   afterEach,
 } from "@jest/globals";
 import { TextEncoder, TextDecoder, store, options } from "util";
-import Cookies from "../lib/cookies.mjs";
+import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
@@ -33,6 +33,8 @@ const addCookiesToDocument = (document) => {
     _cookies = {};
   };
 };
+
+export { addCookiesToDocument };
 
 addCookiesToDocument(document);
 

@@ -10,7 +10,6 @@ nunjucks.configure(__dirname + "/../src");
 
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
-
 const components = globSync(
   `${componentsDirectory}*${componentFixturesFile}`,
 ).map((componentFixtureFile) =>
@@ -18,7 +17,6 @@ const components = globSync(
     .replace(new RegExp(`^${componentsDirectory}`), "")
     .replace(new RegExp(`${componentFixturesFile}$`), ""),
 );
-
 components.forEach((component) => {
   const componentFixtures = require(
     `../${componentsDirectory}${component}${componentFixturesFile}`,
@@ -26,10 +24,9 @@ components.forEach((component) => {
   const componentNunjucks = require(
     `../${componentsDirectory}${component}/template.njk`,
   );
-
   const newComponentFixtures = {
     ...componentFixtures,
-    fixtures: [...componentFixtures.fixtures].map((fixture) => ({
+    fixtures: componentFixtures.fixtures.map((fixture) => ({
       ...fixture,
       html: nunjucks
         .renderString(componentNunjucks, {
@@ -40,7 +37,6 @@ components.forEach((component) => {
         .replace(/\n\s*</g, "<"),
     })),
   };
-
   fs.writeFile(
     `${componentsDirectory}${component}${componentFixturesFile}`,
     `${JSON.stringify(newComponentFixtures, null, 2).trim()}\n`,
@@ -52,3 +48,30 @@ components.forEach((component) => {
     },
   );
 });
+
+const templatesDirectory = "src/nationalarchives/templates/";
+const templateFixturesFile = `${templatesDirectory}fixtures.json`;
+const templateFixtures = require(`../${templateFixturesFile}`);
+const newTemplateFixtures = {
+  ...templateFixtures,
+  fixtures: templateFixtures.fixtures.map((fixture) => ({
+    ...fixture,
+    html: nunjucks
+      .renderString(require(`../${templatesDirectory}${fixture.template}`), {
+        params: fixture.options,
+      })
+      .trim()
+      .replace(/>\n\s*/g, ">")
+      .replace(/\n\s*</g, "<"),
+  })),
+};
+fs.writeFile(
+  templateFixturesFile,
+  `${JSON.stringify(newTemplateFixtures, null, 2).trim()}\n`,
+  (err) => {
+    if (err) throw err;
+    console.log(
+      `All ${templateFixtures.fixtures.length} template fixture(s) updated successfully`,
+    );
+  },
+);

@@ -1,11 +1,11 @@
 {# Based on https://github.com/alphagov/govuk-frontend/blob/8b6bf304b9fc891f64459c25a08f3d623f3fea72/packages/govuk-frontend/src/govuk/template.njk #}
 
-{% from 'nationalarchives/components/cookie-banner/macro.njk' import tnaCookieBanner -%}
-{% from 'nationalarchives/components/footer/macro.njk' import tnaFooter -%}
-{% from 'nationalarchives/components/header/macro.njk' import tnaHeader -%}
-{% from 'nationalarchives/components/skip-link/macro.njk' import tnaSkipLink -%}
+{%- from 'nationalarchives/components/cookie-banner/macro.njk' import tnaCookieBanner -%}
+{%- from 'nationalarchives/components/footer/macro.njk' import tnaFooter -%}
+{%- from 'nationalarchives/components/header/macro.njk' import tnaHeader -%}
+{%- from 'nationalarchives/components/skip-link/macro.njk' import tnaSkipLink -%}
 
-{% set defaultSiteTitle = 'The National Archives' %}
+{%- set defaultSiteTitle = 'The National Archives' -%}
 
 <!DOCTYPE html>
 <html lang="{{ htmlLang | default('en') }}" class="tna-template tna-template--{{ theme | default('system') }}-theme tna-template--{{ themeAccent | default('black') }}-accent {{ htmlClasses }}"{% for attribute, value in htmlAttributes %} {{attribute}}="{{value}}"{% endfor %}>

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TikTok is available as a social icon in the footer
 - Visually hidden brackets added to index grid item subtitles
 - `<main>` element can be styled with a `tna-main` class
+- Index grid headings can be hidden by setting `headingLevel` to `0`
 
 ### Changed
 
@@ -20,11 +21,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `aria-label` attributes on navigation elements
 
 ### Deprecated
+
+- Removed `tnaFrontendCssPath` and `tnaFrontendJsPath` variables from `_generic.njk` template
+
 ### Removed
 
 - Card actions can no longer have icons
 - Removed explicit `role="navigation"` on pagination component
 - Removed explicit `role="main"` on `<main>` elements
+- Removed defaults from `stylesheets` and `bodyEnd` of `_generic.njk` template
 
 ### Fixed
 

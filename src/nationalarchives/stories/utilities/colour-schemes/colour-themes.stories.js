@@ -192,7 +192,7 @@ const Template = ({ theme, accent }) => {
         })}
       </div>
     </div>
-    <main id="main-content">
+    <main class="tna-main" id="main-content">
       ${Hero({
         params: {
           heading: "Title",

@@ -2,21 +2,24 @@
   "nunjucksPaths": ["/"],
   "scripts": ["/nationalarchives/all.js"],
   "assets": ["/nationalarchives/assets"],
-  "stylesheets": ["/nationalarchives/prototype-kit.css"],
+  "stylesheets": [
+    "/nationalarchives/prototype-kit.css",
+    "/nationalarchives/font-awesome.css"
+  ],
   "templates": [
     {
-      "name": "Homepage",
-      "path": "/nationalarchives/templates/homepage.njk",
+      "name": "Plain text",
+      "path": "/nationalarchives/templates/plain.njk",
       "type": "nunjucks"
     },
     {
-      "name": "Search results",
-      "path": "/nationalarchives/templates/search-results.njk",
+      "name": "Listing page",
+      "path": "/nationalarchives/templates/list.njk",
       "type": "nunjucks"
     },
     {
-      "name": "Topics",
-      "path": "/nationalarchives/templates/topics.njk",
+      "name": "Index grid page",
+      "path": "/nationalarchives/templates/index-grid.njk",
       "type": "nunjucks"
     }
   ]

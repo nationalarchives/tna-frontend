@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Visually hidden brackets added to index grid item subtitles
 - `<main>` element can be styled with a `tna-main` class
 - Index grid headings can be hidden by setting `headingLevel` to `0`
+- Template fixtures are now included
 
 ### Changed
 
@@ -27,8 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Card actions can no longer have icons
-- Removed explicit `role="navigation"` on pagination component
-- Removed explicit `role="main"` on `<main>` elements
+- Removed explicit `role="navigation"` on pagination component and `role="main"` on `<main>` elements
 - Removed defaults from `stylesheets` and `bodyEnd` of `_generic.njk` template
 
 ### Fixed

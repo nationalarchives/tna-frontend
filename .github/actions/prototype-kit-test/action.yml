@@ -128,7 +128,7 @@ runs:
       shell: bash
     - name: Test templates
       run: >
-        curl --fail http://localhost:3000/template-plain > /dev/null &&
-        curl --fail http://localhost:3000/template-list > /dev/null &&
-        curl --fail http://localhost:3000/template-index-grid > /dev/null
+        curl --silent --fail http://localhost:3000/template-plain > /dev/null &&
+        curl --silent --fail http://localhost:3000/template-list > /dev/null &&
+        curl --silent --fail http://localhost:3000/template-index-grid > /dev/null
       shell: bash

@@ -122,9 +122,9 @@ runs:
         interval: 500
     - name: Test prototype components
       run: >
-        curl -s http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
-        curl -s http://localhost:3000 | grep '<a href="#" class="tna-button' &&
-        curl -s http://localhost:3000 | grep '<div class="tna-card'
+        curl --silent http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
+        curl --silent http://localhost:3000 | grep '<a href="#" class="tna-button' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-card'
       shell: bash
     - name: Test templates
       run: >

@@ -20,7 +20,7 @@ describe("Initialisation", () => {
 
     expect(window.dataLayer).toEqual(undefined);
 
-    const id = "example-id";
+    const id = "example";
     const ga4 = new GA4({ id });
 
     expect(ga4.gTagId).toEqual(id);
@@ -223,61 +223,101 @@ describe("With consent", () => {
     );
   });
 
-  // test("Add a listener with root data", async () => {
-  //   expect(false).toBeTruthy();
-  // })
+  test("Add a listener with a root event name", async () => {
+    const prefix = ga4.prefix;
+    const area = "test";
+    const eventName = "button.click";
+    const rootEventName = "root_event";
+    const scope = ".target-el-1";
 
-  // test("Add a listener with a root event name", async () => {
-  //   expect(false).toBeTruthy();
-  // })
+    ga4.addListener(scope, area, [{ eventName, on: "click" }], rootEventName);
+
+    $targetEl1.click();
+
+    const lastEvent = window.dataLayer[window.dataLayer.length - 1];
+    expect(lastEvent).toHaveProperty("event", `${prefix}.${rootEventName}`);
+    expect(lastEvent).toHaveProperty(
+      [`${prefix}.event.name`],
+      `${prefix}.${area}.${eventName}`,
+    );
+  });
+
+  test("Add a listener with root data", async () => {
+    const prefix = ga4.prefix;
+    const area = "test";
+    const eventName = "button.click";
+    const rootEventName = "root_event";
+    const scope = ".target-el-1";
+
+    ga4.addListener(
+      scope,
+      area,
+      [{ eventName, on: "click", rootData: { foo: "bar" } }],
+      rootEventName,
+    );
+
+    $targetEl1.click();
+
+    const lastEvent = window.dataLayer[window.dataLayer.length - 1];
+    expect(lastEvent).toHaveProperty("event", `${prefix}.${rootEventName}`);
+    expect(lastEvent).toHaveProperty(
+      [`${prefix}.event.name`],
+      `${prefix}.${area}.${eventName}`,
+    );
+    expect(lastEvent).toHaveProperty("foo", "bar");
+  });
+
+  test("Add a listener with a custom prefix", async () => {
+    ga4.destroy();
+    const prefix = "custom";
+    const ga4_custom = new GA4({ id: "example", prefix });
+    const area = "test";
+    const eventName = "button.click";
+    const rootEventName = "root_event";
+    const scope = ".target-el-1";
+
+    ga4_custom.addListener(
+      scope,
+      area,
+      [{ eventName, on: "click", rootData: { foo: "bar" } }],
+      rootEventName,
+    );
+
+    $targetEl1.click();
+
+    const lastEvent = window.dataLayer[window.dataLayer.length - 1];
+    expect(lastEvent).toHaveProperty("event", `${prefix}.${rootEventName}`);
+    expect(lastEvent).toHaveProperty(
+      [`${prefix}.event.name`],
+      `${prefix}.${area}.${eventName}`,
+    );
+  });
+
+  test("Init all", async () => {
+    // TODO
+  });
+
+  test("Don't init all", async () => {
+    // TODO
+  });
 });
 
+// TODO
 // describe("Without consent", () => {
-//   beforeEach(() => {
-//     window.dataLayer = undefined;
-//     document.clearAllCookies();
-//     document.cookie =
-//       "cookies_policy=%7B%22usage%22%3Afalse%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
-//   });
-
-//   afterEach(() => {
-//     GA4._instance = null
-//   });
-
 //   test("Script element not added", async () => {
 //     expect(false).toBeTruthy();
 //   })
 // })
 
+// TODO
 // describe("Accepting cookies", () => {
-//   beforeEach(() => {
-//     window.dataLayer = undefined;
-//     document.clearAllCookies();
-//     document.cookie =
-//       "cookies_policy=%7B%22usage%22%3Afalse%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
-//   });
-
-//   afterEach(() => {
-//     GA4._instance = null
-//   });
-
 //   test("Tracking enabled", async () => {
 //     expect(false).toBeTruthy();
 //   })
 // })
 
+// TODO
 // describe("Rejecting cookies", () => {
-//   beforeEach(() => {
-//     window.dataLayer = undefined;
-//     document.clearAllCookies();
-//     document.cookie =
-//       "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
-//   });
-
-//   afterEach(() => {
-//     GA4._instance = null
-//   });
-
 //   test("Tracking disabled", async () => {
 //     expect(false).toBeTruthy();
 //   })

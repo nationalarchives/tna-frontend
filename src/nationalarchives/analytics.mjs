@@ -256,6 +256,10 @@ class GA4 extends EventTracker {
     this.start(initAll);
   }
 
+  destroy() {
+    GA4._instance = null;
+  }
+
   /** @protected */
   recordEvent(eventName, data, rootData = {}) {
     const ga4Data = {

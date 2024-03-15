@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated footer links
+- Removed inline styles for logos in footer and headers
+- Reduced maximum height of the hero component
 
 ### Deprecated
 ### Removed

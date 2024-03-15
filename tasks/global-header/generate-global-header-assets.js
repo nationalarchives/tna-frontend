@@ -121,8 +121,8 @@ const footerHTML = nunjucks
               href: "https://blog.nationalarchives.gov.uk/",
             },
             {
-              text: "Podcasts and videos",
-              href: "https://media.nationalarchives.gov.uk/",
+              text: "Podcasts",
+              href: "https://media.nationalarchives.gov.uk/index.php/category/podcasts-2/",
             },
             {
               text: "Image library",

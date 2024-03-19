@@ -69,7 +69,6 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     needs:
-      - version-check
       - lint
       - tests
       - storybook-tests
@@ -92,11 +91,11 @@ jobs:
       - name: Publish to npm
         run: cd package && npm publish
       - name: Rename package directory
-        run: mv package "tna-frontend-${{ needs.version-check.outputs.version }}"
+        run: mv package "tna-frontend-${{ steps.version-check.outputs.version }}"
       - name: Compress package
-        run: zip -r "tna-frontend-${{ needs.version-check.outputs.version }}.zip" "tna-frontend-${{ needs.version-check.outputs.version }}"
+        run: zip -r "tna-frontend-${{ steps.version-check.outputs.version }}.zip" "tna-frontend-${{ steps.version-check.outputs.version }}"
       - name: Upload the package to the GitHub release
-        run: gh release upload "v${{ needs.version-check.outputs.version }}" "tna-frontend-${{ needs.version-check.outputs.version }}.zip"
+        run: gh release upload "v${{ steps.version-check.outputs.version }}" "tna-frontend-${{ steps.version-check.outputs.version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -122,11 +121,11 @@ jobs:
       - name: Publish to npm
         run: cd package-cookie-banner && npm publish
       - name: Rename package directory
-        run: mv package-cookie-banner "tna-frontend-cookie-banner-${{ needs.version-check.outputs.version }}"
+        run: mv package-cookie-banner "tna-frontend-cookie-banner-${{ steps.version-check.outputs.version }}"
       - name: Compress package
-        run: zip -r "tna-frontend-cookie-banner-${{ needs.version-check.outputs.version }}.zip" "tna-frontend-cookie-banner-${{ needs.version-check.outputs.version }}"
+        run: zip -r "tna-frontend-cookie-banner-${{ steps.version-check.outputs.version }}.zip" "tna-frontend-cookie-banner-${{ steps.version-check.outputs.version }}"
       - name: Upload the package to the GitHub release
-        run: gh release upload "v${{ needs.version-check.outputs.version }}" "tna-frontend-cookie-banner-${{ needs.version-check.outputs.version }}.zip"
+        run: gh release upload "v${{ steps.version-check.outputs.version }}" "tna-frontend-cookie-banner-${{ steps.version-check.outputs.version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -152,27 +151,26 @@ jobs:
       - name: Publish to npm
         run: cd package-global-header && npm publish
       - name: Rename package directory
-        run: mv package-global-header "tna-frontend-global-header-${{ needs.version-check.outputs.version }}"
+        run: mv package-global-header "tna-frontend-global-header-${{ steps.version-check.outputs.version }}"
       - name: Compress package
-        run: zip -r "tna-frontend-global-header-${{ needs.version-check.outputs.version }}.zip" "tna-frontend-global-header-${{ needs.version-check.outputs.version }}"
+        run: zip -r "tna-frontend-global-header-${{ steps.version-check.outputs.version }}.zip" "tna-frontend-global-header-${{ steps.version-check.outputs.version }}"
       - name: Upload the package to the GitHub release
-        run: gh release upload "v${{ needs.version-check.outputs.version }}" "tna-frontend-global-header-${{ needs.version-check.outputs.version }}.zip"
+        run: gh release upload "v${{ steps.version-check.outputs.version }}" "tna-frontend-global-header-${{ steps.version-check.outputs.version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   notify-slack:
     runs-on: ubuntu-latest
     needs:
-      - publish-npm
       - publish-npm-cookie-banner
       - publish-npm-global-header
     steps:
       - uses: actions/checkout@v4
       - name: Get release notes
         id: get-release-notes
-        run: ./tasks/get-release-notes.sh "${{ needs.version-check.outputs.version }}" > RELEASE_NOTES.txt
+        run: ./tasks/get-release-notes.sh "${{ steps.version-check.outputs.version }}" > RELEASE_NOTES.txt
       - uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_TITLE: "`v${{ needs.version-check.outputs.version }}` of `tna-frontend` has just been published"
+          SLACK_TITLE: "`v${{ steps.version-check.outputs.version }}` of `tna-frontend` has just been published"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"

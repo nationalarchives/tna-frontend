@@ -1314,17 +1314,14 @@ const Template = ({ theme, accent }) => {
               {
                 text: "The Gazette",
                 href: "https://www.thegazette.co.uk/",
-                newTab: true,
               },
               {
                 text: "The National Archives Trust",
                 href: "https://www.nationalarchivestrust.org.uk/",
-                newTab: true,
               },
               {
                 text: "Friends of The National Archives",
                 href: "https://ftna.org.uk/",
-                newTab: true,
               },
             ],
           },

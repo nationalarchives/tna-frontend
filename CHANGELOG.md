@@ -5,19 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.44...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.45...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.45](https://github.com/nationalarchives/tna-frontend/compare/v0.1.44...v0.1.45) - 2024-03-19
+
 ### Changed
 
 - Updated footer links
 - Removed inline styles for logos in footer and headers
 - Reduced maximum height of the hero component
-
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## [0.1.44](https://github.com/nationalarchives/tna-frontend/compare/v0.1.43...v0.1.44) - 2024-03-14
 

@@ -147,7 +147,7 @@ const footerHTML = nunjucks
           ],
         },
         {
-          title: "Our other websites",
+          title: "Other websites",
           items: [
             {
               text: "UK Government Web Archive",
@@ -164,15 +164,14 @@ const footerHTML = nunjucks
             {
               text: "The Gazette",
               href: "https://www.thegazette.co.uk/",
-              newTab: true,
             },
             {
               text: "The National Archives Trust",
-              href: "https://www.nationalarchives.gov.uk/about/the-national-archives-trust/",
+              href: "https://www.nationalarchivestrust.org.uk/",
             },
             {
               text: "Friends of The National Archives",
-              href: "https://www.nationalarchives.gov.uk/about/get-involved/friends-of-the-national-archives/",
+              href: "https://ftna.org.uk/",
             },
           ],
         },

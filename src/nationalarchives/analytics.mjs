@@ -43,20 +43,21 @@ class EventTracker {
   /** @protected */
   prefix = "tna";
 
+  /** @protected */
+  addTrackingCode = true;
+
   constructor(options = {}) {
-    const { prefix = null } = options;
+    const { prefix = null, addTrackingCode = true } = options;
     if (prefix) {
       this.prefix = prefix;
     }
+    this.addTrackingCode = addTrackingCode;
   }
 
   start(initAll) {
     if (!navigator.doNotTrack || navigator.doNotTrack !== 1) {
       if (this.cookies.isPolicyAccepted("usage")) {
         this.enableTracking();
-      } else {
-        window[this.ga4Disable] = true;
-        this.cookies.set(this.ga4Disable, "true");
       }
       this.cookies.on("changePolicy", (policies) => {
         if (Object.hasOwn(policies, "usage")) {
@@ -82,7 +83,7 @@ class EventTracker {
    */
   initAll() {
     componentAnalytics.forEach((componentConfig) => {
-      this.addListener(
+      this.addListeners(
         componentConfig.scope,
         componentConfig.areaName,
         componentConfig.events,
@@ -98,7 +99,7 @@ class EventTracker {
    * @param {{eventName: String, targetElement: String|undefined, on: String, data: {value: Function|String|undefined, state: Function|String|undefined, group: Function|String|undefined, [String]: String|Integer}, rootData:{[String]: Function|String}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
    * @param {String} rootEventName - The event name to use if specified (prefix).
    */
-  addListener(scope, areaName, events, rootEventName = "") {
+  addListeners(scope, areaName, events, rootEventName = "") {
     let scopeArray;
     if (typeof scope === "string") {
       scopeArray = Array.from(document.querySelectorAll(scope));
@@ -244,15 +245,24 @@ class GA4 extends EventTracker {
     if (GA4._instance) {
       return GA4._instance;
     }
-    const { id = null, prefix = null, initAll = true } = options;
+    const {
+      id = null,
+      prefix = null,
+      initAll = true,
+      addTrackingCode = true,
+    } = options;
     if (!id) {
       throw Error("ID was not specified");
     }
-    super({ prefix });
+    super({ prefix, addTrackingCode });
     GA4._instance = this;
     this.gTagId = id;
     this.ga4Disable = `ga-disable-${this.gTagId}`;
     window.dataLayer = window.dataLayer || [];
+    if (!this.cookies.isPolicyAccepted("usage")) {
+      window[this.ga4Disable] = true;
+      this.cookies.set(this.ga4Disable, "true");
+    }
     this.start(initAll);
   }
 
@@ -290,7 +300,7 @@ class GA4 extends EventTracker {
     if (!this.trackingEnabled) {
       window[this.ga4Disable] = false;
       this.cookies.set(this.ga4Disable, "false");
-      if (!this.trackingCodeAdded) {
+      if (!this.trackingCodeAdded && this.addTrackingCode) {
         this.pushToDataLayer({
           "gtm.start": new Date().getTime(),
           event: "gtm.js",
@@ -319,9 +329,11 @@ class GA4 extends EventTracker {
     if (this.trackingEnabled) {
       window[this.ga4Disable] = true;
       this.cookies.set(this.ga4Disable, "true");
-      this.cookies.delete("_ga");
-      // this.cookies.delete("_gat_gtag_UA_43169816_3");
-      // this.cookies.delete("_gid");
+      this.cookies.all.forEach((key) => {
+        if (key.startsWith("_ga")) {
+          this.cookies.delete(key);
+        }
+      });
       this.trackingEnabled = false;
       window.location.reload();
     }

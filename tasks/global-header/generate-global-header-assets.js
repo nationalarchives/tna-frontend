@@ -18,7 +18,7 @@ const globalHeaderHTML = nunjucks
       topNavigation: [
         {
           text: "Search",
-          href: "#/search",
+          href: "https://www.nationalarchives.gov.uk/search/",
           icon: "search",
         },
         {

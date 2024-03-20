@@ -8,7 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.47...HEAD)
 
 ### Added
+
+- Navigation dropdowns in headers can be closed using the `Escape` key
+
 ### Changed
+
+- Changed the `aria-current` attribute of the current header menu item from `true` to `page`
+- Switched back from `<menu role="list">` to `<ul>` elements
+- Changed the line height of `tna-heading-xl`
+
 ### Deprecated
 ### Removed
 ### Fixed

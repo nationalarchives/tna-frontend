@@ -228,7 +228,7 @@ small {
 
   @include typography.heading-font;
   @include typography.relative-font-size(64);
-  line-height: 1.2;
+  line-height: 1.1;
 
   @include media.on-medium {
     @include typography.relative-font-size(42);

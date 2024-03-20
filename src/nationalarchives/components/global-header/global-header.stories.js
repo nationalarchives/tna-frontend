@@ -54,7 +54,7 @@ Standard.args = {
   topNavigation: [
     {
       text: "Search",
-      href: "#/search",
+      href: "https://www.nationalarchives.gov.uk/search/",
       icon: "search",
     },
     {
@@ -124,7 +124,7 @@ Medium.args = {
   topNavigation: [
     {
       text: "Search",
-      href: "#/search",
+      href: "https://www.nationalarchives.gov.uk/search/",
       icon: "search",
     },
     {
@@ -194,7 +194,7 @@ MediumCollapsed.args = {
   topNavigation: [
     {
       text: "Search",
-      href: "#/search",
+      href: "https://www.nationalarchives.gov.uk/search/",
       icon: "search",
     },
     {
@@ -252,7 +252,7 @@ Mobile.args = {
   topNavigation: [
     {
       text: "Search",
-      href: "#/search",
+      href: "https://www.nationalarchives.gov.uk/search/",
       icon: "search",
     },
     {
@@ -334,6 +334,20 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     await expect($linkB).not.toBeVisible();
     await expect($linkC).not.toBeVisible();
   });
+
+  // await step("Open the menu", async () => {
+  //   await userEvent.click($navigationToggle);
+  // });
+
+  // await step("Press the escape key", async () => {
+  //   // TODO
+  //   await expect($navigationItems).not.toBeVisible();
+  //   await expect($navigationToggle).toBeVisible();
+  //   await expect($navigationToggle).toHaveAttribute("aria-expanded", "false");
+  //   await expect($linkA).not.toBeVisible();
+  //   await expect($linkB).not.toBeVisible();
+  //   await expect($linkC).not.toBeVisible();
+  // });
 
   $navigationToggle.blur();
 };

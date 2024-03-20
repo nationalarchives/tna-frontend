@@ -21,6 +21,6 @@
       <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
     </p>
     {%- endif %}
-    {{ tnaRadiosElement(params) }}
+    {{ tnaRadiosElement(params) | indent(4) }}
   </fieldset>
 </div>

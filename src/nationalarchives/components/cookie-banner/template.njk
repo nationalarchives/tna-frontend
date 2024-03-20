@@ -21,7 +21,7 @@
           attributes: {
             value: "accept"
           }
-        }) }}
+        }) | indent(8) }}
         {{ tnaButton({
           text: "Reject cookies",
           buttonElement: true,
@@ -29,12 +29,12 @@
           attributes: {
             value: "reject"
           }
-        }) }}
+        }) | indent(8) }}
         {{ tnaButton({
           text: "Set cookie preferences",
           href: params.cookiesUrl,
           plain: true
-        }) }}
+        }) | indent(8) }}
       </div>
     </div>
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--accepted" tabindex="0" hidden>
@@ -48,7 +48,7 @@
           attributes: {
             value: "close"
           }
-        }) }}
+        }) | indent(8) }}
       </div>
     </div>
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--rejected" tabindex="0" hidden>
@@ -62,7 +62,7 @@
           attributes: {
             value: "close"
           }
-        }) }}
+        }) | indent(8) }}
       </div>
     </div>
   </div>

@@ -34,6 +34,7 @@ export default [
           data_component_name: "Header",
           data_link_type: "Logo",
           data_link: "The National Archives",
+          data_section: "Top navigation and logo",
         },
       },
       {
@@ -62,6 +63,7 @@ export default [
           data_component_name: "Header",
           data_link_type: "Icon",
           data_link: valueGetters.text,
+          data_section: "Top navigation and logo",
         },
       },
     ],

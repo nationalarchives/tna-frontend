@@ -6,6 +6,11 @@ import { valueGetters } from "../src/nationalarchives/lib/analytics-helpers.mjs"
 addCookiesToDocument(document);
 
 describe("Initialisation", () => {
+  beforeEach(() => {
+    GA4._instance = null;
+    document.head.innerHTML = "";
+  });
+
   test("EventTracker", async () => {
     const eventTracker = new EventTracker();
 
@@ -29,7 +34,31 @@ describe("Initialisation", () => {
     expect(window.dataLayer[0]).toHaveProperty("event", "gtm.js");
     expect(window.dataLayer[0]).toHaveProperty(["gtm.start"]);
     expect(window.dataLayer[0]["gtm.start"]).toBeTruthy();
+    const scripts = document.querySelectorAll("script");
+    expect(scripts).toHaveLength(1);
+    expect(scripts[0].getAttribute("src")).toEqual(
+      `https://www.googletagmanager.com/gtm.js?id=${ga4.gTagId}&l=dataLayer`,
+    );
   });
+
+  test("GA4 without adding tracking code", async () => {
+    document.cookie =
+      "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
+
+    const id = "example";
+    const ga4 = new GA4({ id, addTrackingCode: false });
+
+    const scripts = document.querySelectorAll("script");
+    expect(scripts).toHaveLength(0);
+  });
+
+  // TODO
+  // test("Init all", async () => {
+  // });
+
+  // TODO
+  // test("Don't init all", async () => {
+  // });
 });
 
 describe("With consent", () => {
@@ -45,6 +74,7 @@ describe("With consent", () => {
     document.cookie =
       "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
     GA4._instance = null;
+    document.head.innerHTML = "";
     document.body.innerHTML = "";
 
     ga4 = new GA4({ id: "example" });
@@ -80,7 +110,7 @@ describe("With consent", () => {
     const eventName = "button.click";
     const scope = ".target-el-1";
 
-    ga4.addListener(scope, area, [{ eventName, on: "click" }]);
+    ga4.addListeners(scope, area, [{ eventName, on: "click" }]);
 
     expect(window.dataLayer.length).toEqual(1);
 
@@ -115,7 +145,7 @@ describe("With consent", () => {
     const area = "test";
     const eventName = "button.click";
 
-    ga4.addListener($targetEl1, area, [{ eventName, on: "click" }]);
+    ga4.addListeners($targetEl1, area, [{ eventName, on: "click" }]);
 
     expect(window.dataLayer.length).toEqual(1);
 
@@ -151,7 +181,7 @@ describe("With consent", () => {
     const eventName = "button.click";
     const targetElement = ".target-el-1";
 
-    ga4.addListener($container, area, [
+    ga4.addListeners($container, area, [
       { eventName, on: "click", targetElement },
     ]);
 
@@ -189,7 +219,7 @@ describe("With consent", () => {
     const eventName = "button.click";
     const targetElement = "button";
 
-    ga4.addListener($container, area, [
+    ga4.addListeners($container, area, [
       {
         eventName,
         on: "click",
@@ -230,7 +260,7 @@ describe("With consent", () => {
     const rootEventName = "root_event";
     const scope = ".target-el-1";
 
-    ga4.addListener(scope, area, [{ eventName, on: "click" }], rootEventName);
+    ga4.addListeners(scope, area, [{ eventName, on: "click" }], rootEventName);
 
     $targetEl1.click();
 
@@ -249,7 +279,7 @@ describe("With consent", () => {
     const rootEventName = "root_event";
     const scope = ".target-el-1";
 
-    ga4.addListener(
+    ga4.addListeners(
       scope,
       area,
       [{ eventName, on: "click", rootData: { foo: "bar" } }],
@@ -276,7 +306,7 @@ describe("With consent", () => {
     const rootEventName = "root_event";
     const scope = ".target-el-1";
 
-    ga4_custom.addListener(
+    ga4_custom.addListeners(
       scope,
       area,
       [{ eventName, on: "click", rootData: { foo: "bar" } }],
@@ -291,14 +321,6 @@ describe("With consent", () => {
       [`${prefix}.event.name`],
       `${prefix}.${area}.${eventName}`,
     );
-  });
-
-  test("Init all", async () => {
-    // TODO
-  });
-
-  test("Don't init all", async () => {
-    // TODO
   });
 });
 

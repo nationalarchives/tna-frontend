@@ -4,7 +4,7 @@ export default [
   {
     scope: ".tna-footer",
     areaName: "footer",
-    rootEventName: "footer",
+    rootEventName: "global_navigation",
     events: [
       {
         eventName: "link.click",

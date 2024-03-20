@@ -5,7 +5,7 @@
 {%- set classes = containerClasses | join(' ') -%}
 <nav class="tna-breadcrumbs{% if classes %} {{ classes }}{% endif %}" data-module="tna-breadcrumbs" aria-label="Breadcrumb"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <ol class="tna-breadcrumbs__list" {%- if params.structuredData %} itemscope itemtype="https://schema.org/BreadcrumbList"{% endif %}>
-  {%- for item in params.items -%}
+  {%- for item in params.items %}
     <li class="tna-breadcrumbs__item" {%- if params.structuredData %} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"{% endif %}>
       <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} title="{{ item.title }}"{% endif %}{%- if params.structuredData %} itemprop="item"{% endif %}>
         {%- if params.structuredData %}
@@ -14,10 +14,10 @@
         {{ item.text }}
         {%- endif %}
       </a>
-      {%- if params.structuredData -%}
+      {%- if params.structuredData %}
       <meta itemprop="position" content="{{ loop.index }}">
       {%- endif %}
     </li>
-  {%- endfor -%}
+  {%- endfor %}
   </ol>
 </nav>

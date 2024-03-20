@@ -471,7 +471,7 @@ const Template = ({ theme, accent }) => {
         },
       })}
       <div class="tna-section tna-!--padding-bottom-s">
-        <ul class="tna-ul tna-ul--plain tna-container" role="list">
+        <ul class="tna-ul tna-ul--plain tna-container">
           <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
             ${Card({
               params: {
@@ -502,7 +502,7 @@ const Template = ({ theme, accent }) => {
       </div>
       <hr>
       <div class="tna-section">
-        <ul class="tna-ul tna-ul--plain tna-container" role="list">
+        <ul class="tna-ul tna-ul--plain tna-container">
           <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
             ${Card({
               params: {

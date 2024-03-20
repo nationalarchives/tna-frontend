@@ -37,18 +37,18 @@
     </div>
     {%- if params.navigation %}
     <nav class="tna-column tna-column--full-small tna-column--full-tiny tna-column--order-3 tna-global-header__navigation-wrapper" id="{{ 'tna-header__navigation' or params.navigationId }}" aria-label="Primary">
-      <menu class="tna-global-header__navigation" role="list">
+      <ul class="tna-global-header__navigation">
         {%- for item in params.navigation %}
         <li class="tna-global-header__navigation-item">
           <a href="{{ item.href }}" class="tna-global-header__navigation-item-link" {%- if item.title %} title="{{ item.title }}"{% endif %} tabindex="0">{{ item.text }}</a>
         </li>
         {%- endfor %}
-      </menu>
+      </ul>
     </nav>
     {%- endif %}
     {%- if params.topNavigation %}
     <nav class="tna-column tna-column--full tna-column--order-1 tna-column--order-4-small tna-column--order-4-tiny tna-global-header__top-navigation-wrapper" id="{{ 'tna-header__top-navigation' or params.topNavigationId }}" aria-label="Secondary">
-      <menu class="tna-global-header__top-navigation" role="list">
+      <ul class="tna-global-header__top-navigation">
         {%- for item in params.topNavigation %}
         <li class="tna-global-header__top-navigation-item">
           <a href="{{ item.href }}" class="tna-global-header__top-navigation-link" {%- if item.title %} title="{{ item.title }}"{% endif %} tabindex="0">
@@ -63,7 +63,7 @@
           </a>
         </li>
         {%- endfor %}
-      </menu>
+      </ul>
     </nav>
     {%- endif %}
   </div>

@@ -4,26 +4,26 @@
 <figure class="tna-picture {{ containerClasses | join(' ') }}" data-module="tna-picture"{% if params.informationLabelOpen %} data-informationlabelopen="{{ params.informationLabelOpen }}"{% endif %}{% if params.informationLabelClose %} data-informationlabelclose="{{ params.informationLabelClose }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-picture__image-wrapper tna-background-tint">
     <picture>
-    {%- for source in params.sources -%}
+    {%- for source in params.sources %}
       <source class="tna-picture__image" media="{{ source.media }}" srcset="{{ source.src }}" width="{{ source.width }}" height="{{ source.height }}">
-    {%- endfor -%}
+    {%- endfor %}
       <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}" loading="lazy">
     </picture>
   </div>
-{%- if params.information -%}
+{%- if params.information %}
   <div class="tna-picture__transcript">
-  {%- if params.information | length > 1 -%}
+  {%- if params.information | length > 1 %}
     {{ tnaTabs({
       items: params.information
     }) }}
-  {%- else -%}
+  {%- else %}
     {{ params.information[0]['body'] | safe }}
-  {%- endif -%}
+  {%- endif %}
   </div>
-{%- endif -%}
-{%- if params.caption -%}
+{%- endif %}
+{%- if params.caption %}
   <figcaption class="tna-picture__caption">
       {{ params.caption | safe }}
   </figcaption>
-{%- endif -%}
+{%- endif %}
 </figure>

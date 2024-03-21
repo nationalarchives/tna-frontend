@@ -221,6 +221,10 @@ small {
       }
     }
   }
+
+  strong {
+    font-weight: inherit;
+  }
 }
 
 %heading-xl {
@@ -231,7 +235,7 @@ small {
   line-height: 1.1;
 
   @include media.on-medium {
-    @include typography.relative-font-size(42);
+    @include typography.relative-font-size(48);
   }
 
   @include media.on-mobile {
@@ -243,15 +247,19 @@ small {
   @extend %heading;
 
   @include typography.heading-font;
-  @include typography.relative-font-size(32);
+  @include typography.relative-font-size(36);
   line-height: 1.3;
 
   @include media.on-medium {
     @include typography.relative-font-size(30);
   }
 
-  @include media.on-mobile {
-    @include typography.relative-font-size(24);
+  @include media.on-small {
+    @include typography.relative-font-size(28);
+  }
+
+  @include media.on-tiny {
+    @include typography.relative-font-size(25);
   }
 }
 
@@ -262,8 +270,16 @@ small {
   @include typography.relative-font-size(22);
   line-height: 1.6;
 
-  @include media.on-mobile {
+  @include media.on-medium {
+    @include typography.relative-font-size(21);
+  }
+
+  @include media.on-small {
     @include typography.relative-font-size(20);
+  }
+
+  @include media.on-tiny {
+    @include typography.relative-font-size(19);
   }
 }
 

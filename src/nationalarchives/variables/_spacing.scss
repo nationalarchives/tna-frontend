@@ -1,22 +1,22 @@
 @use "sass:map";
 
 $spacing: (
-  "xs": 0.5rem,
-  "s": 1rem,
-  "m": 2rem,
-  "l": 3rem,
-  "xl": 5rem,
-  "xxl": 8rem,
+  "xs": 0.5,
+  "s": 1,
+  "m": 2,
+  "l": 3,
+  "xl": 5,
+  "xxl": 8,
 ) !default;
 
 $spacing-mobile: map.merge(
   $spacing,
   (
-    "xs": 0.5rem,
-    "s": 0.75rem,
-    "m": 1.5rem,
-    "l": 2rem,
-    "xl": 3rem,
-    "xxl": 5rem,
+    "xs": 0.5,
+    "s": 0.75,
+    "m": 1.5,
+    "l": 2,
+    "xl": 3,
+    "xxl": 5,
   )
 ) !default;

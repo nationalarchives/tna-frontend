@@ -447,8 +447,8 @@
     }
 
     &__top-navigation-items {
-      padding-right: gridVars.$gutter-width - 0.5rem;
-      padding-left: gridVars.$gutter-width - 0.5rem;
+      padding-right: calc(#{gridVars.$gutter-width} - 0.5rem);
+      padding-left: calc(#{gridVars.$gutter-width} - 0.5rem);
     }
   }
 
@@ -477,7 +477,7 @@
 
     &__navigation-item-link {
       padding-right: gridVars.$gutter-width-tiny;
-      padding-left: gridVars.$gutter-width-tiny + 0.5rem;
+      padding-left: calc(#{gridVars.$gutter-width-tiny} + 0.5rem);
     }
   }
 

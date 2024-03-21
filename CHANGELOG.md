@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the `aria-current` attribute of the current header menu item from `true` to `page`
 - Switched back from `<menu role="list">` to `<ul>` elements
 - Changed the line height of `tna-heading-xl`
+- Updated heading sizes for better consistency across devices
 
 ### Deprecated
 ### Removed

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.47...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.48...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.48](https://github.com/nationalarchives/tna-frontend/compare/v0.1.47...v0.1.48) - 2024-03-21
 
 ### Added
 
@@ -17,11 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Switched back from `<menu role="list">` to `<ul>` elements
 - Changed the line height of `tna-heading-xl`
 - Updated heading sizes for better consistency across devices
-
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## [0.1.47](https://github.com/nationalarchives/tna-frontend/compare/v0.1.46...v0.1.47) - 2024-03-19
 

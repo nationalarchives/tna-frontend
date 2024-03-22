@@ -199,11 +199,11 @@
 
   &__top-navigation-items {
     margin: 0;
-    padding: #{spacing.space(1.25)} 0;
+    padding: spacing.space(1.25) 0;
 
     display: flex;
     justify-content: flex-end;
-    gap: #{spacing.space(0.5)} #{spacing.space(1.5)};
+    gap: spacing.space(0.5) spacing.space(1.5);
 
     @include typography.relative-font-size(15);
     list-style: none;
@@ -259,7 +259,7 @@
   }
 
   &__navigation-item-link {
-    padding: #{spacing.space(0.5)} 0;
+    padding: spacing.space(0.5) 0;
 
     display: inline-block;
 
@@ -353,7 +353,7 @@
     }
 
     &__top-navigation-items {
-      padding: #{spacing.space(0.5)} #{spacing.space(1)};
+      padding: spacing.space(0.5) spacing.space(1);
 
       justify-content: flex-start;
 

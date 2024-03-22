@@ -6,7 +6,7 @@
 @use "button-group";
 
 .tna-button {
-  padding: #{spacing.space(0.25)} #{spacing.space(1)};
+  padding: spacing.space(0.25) spacing.space(1);
 
   display: inline-flex;
   align-items: baseline;
@@ -86,7 +86,7 @@
 
   &--small,
   &-group--small & {
-    padding: 0 #{spacing.space(0.5)};
+    padding: 0 spacing.space(0.5);
 
     @include typography.relative-font-size(14);
     line-height: 1.5rem;

@@ -5,8 +5,8 @@
 
 .tna-ul,
 .tna-ol {
-  margin: #{spacing.space(1)} 0 0;
-  padding: 0 0 0 #{spacing.space(2)};
+  margin: spacing.space(1) 0 0;
+  padding: 0 0 0 spacing.space(2);
 
   &:first-child {
     margin-top: 0;
@@ -82,7 +82,7 @@
   dt,
   dd {
     margin: 0;
-    padding: #{spacing.space(0.5)} #{spacing.space(1)};
+    padding: spacing.space(0.5) spacing.space(1);
 
     position: relative;
 

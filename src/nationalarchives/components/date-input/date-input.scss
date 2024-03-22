@@ -16,7 +16,7 @@
 
     &-input {
       width: 3rem;
-      padding: 0 #{spacing.space(0.375)};
+      padding: 0 spacing.space(0.375);
 
       display: block;
       box-sizing: border-box;

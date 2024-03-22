@@ -19,7 +19,7 @@
   }
 
   &__list {
-    margin: #{spacing.space(0.5)} 0 0;
+    margin: spacing.space(0.5) 0 0;
 
     list-style: none;
   }

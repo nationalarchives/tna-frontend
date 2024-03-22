@@ -33,7 +33,7 @@
   &__transcript {
     @include colour.contrast;
 
-    padding: #{spacing.space(1)} #{spacing.space(1.5)};
+    padding: spacing.space(1) spacing.space(1.5);
 
     .tna-template--clicked &:focus {
       outline: none;
@@ -45,7 +45,7 @@
   }
 
   &__caption {
-    margin: 0 #{spacing.space(1)};
+    margin: 0 spacing.space(1);
     padding: spacing.space(1);
 
     @include typography.relative-font-size(16);

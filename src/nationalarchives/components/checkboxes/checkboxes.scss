@@ -114,7 +114,7 @@
   &--inline {
     flex-flow: row wrap;
     align-items: center;
-    gap: #{spacing.space(1)} #{spacing.space(2)};
+    gap: spacing.space(1) spacing.space(2);
 
     @include media.on-tiny {
       flex-direction: column;

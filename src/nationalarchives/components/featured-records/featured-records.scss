@@ -14,10 +14,10 @@
   @include colour.thick-keyline-accent(top);
 
   &__item {
-    padding: #{spacing.space(2)};
+    padding: spacing.space(2);
 
     display: flex;
-    gap: #{spacing.space(2)};
+    gap: spacing.space(2);
     justify-content: flex-start;
     align-items: center;
 

@@ -19,7 +19,7 @@
   }
 
   &__caption {
-    padding: #{spacing.space(1)} 0;
+    padding: spacing.space(1) 0;
 
     caption-side: bottom;
 
@@ -50,7 +50,7 @@
 
   &__header,
   &__cell {
-    padding: #{spacing.space(0.25)} #{spacing.space(1)};
+    padding: spacing.space(0.25) spacing.space(1);
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
 

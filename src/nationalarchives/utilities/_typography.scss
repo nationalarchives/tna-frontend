@@ -112,7 +112,7 @@ small {
 
 %chip-base {
   max-width: max-content;
-  padding: #{spacing.space(0.125)} #{spacing.space(0.25)};
+  padding: spacing.space(0.125) spacing.space(0.25);
 
   display: flex;
   align-items: center;
@@ -184,7 +184,7 @@ small {
 
   display: flex;
   flex-wrap: wrap;
-  gap: #{spacing.space(0.5)} #{spacing.space(1.5)};
+  gap: spacing.space(0.5) spacing.space(1.5);
 
   list-style: none;
 
@@ -292,14 +292,14 @@ small {
 %headings-and-heading-groups {
   @include spacing.space-above;
   margin-bottom: 0;
-  padding: #{spacing.space(1)} 0 0;
+  padding: spacing.space(1) 0 0;
 
   &:first-child {
     padding-top: 0;
   }
 
   + p {
-    margin-top: #{spacing.space(1)};
+    margin-top: spacing.space(1);
   }
 }
 
@@ -334,7 +334,7 @@ small {
   }
 
   &__supertitle {
-    margin: 0 0 #{spacing.space(0.25)};
+    margin: 0 0 spacing.space(0.25);
 
     @extend %chip-base;
 
@@ -375,9 +375,7 @@ small {
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  padding: #{spacing.space(1)} #{spacing.space(1)} #{spacing.space(1)} #{spacing.space(
-      2
-    )};
+  padding: spacing.space(1) spacing.space(1) spacing.space(1) spacing.space(2);
 
   @include colour.thick-keyline-accent(left);
 
@@ -389,7 +387,7 @@ small {
     @include typography.relative-font-size(16);
 
     .tna-blockquote & {
-      margin: #{spacing.space(1)} 0 0;
+      margin: spacing.space(1) 0 0;
     }
 
     &::before {
@@ -399,7 +397,7 @@ small {
   }
 
   @include media.on-tiny {
-    padding: #{spacing.space(0.5)} #{spacing.space(0.5)} #{spacing.space(0.5)} #{spacing.space(
+    padding: spacing.space(0.5) spacing.space(0.5) spacing.space(0.5) #{spacing.space(
         1
       )};
   }

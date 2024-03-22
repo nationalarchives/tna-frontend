@@ -8,12 +8,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: #{spacing.space(0.75)} #{spacing.space(1)};
+  gap: spacing.space(0.75) spacing.space(1);
 
   list-style: none;
 
   &__item {
-    padding: 0 #{spacing.space(0.125)} 0 spacing.space(0.75);
+    padding: 0 spacing.space(0.125) 0 spacing.space(0.75);
 
     display: flex;
     gap: spacing.space(0.5);

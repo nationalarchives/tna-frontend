@@ -185,7 +185,7 @@
     }
 
     &-logotype-crown {
-      margin: 0 auto #{spacing.space(0.125)};
+      margin: 0 auto spacing.space(0.125);
 
       display: block;
     }

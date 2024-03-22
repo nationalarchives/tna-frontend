@@ -157,7 +157,7 @@
 
   &__navigation {
     height: 100%;
-    margin: #{spacing.space(0.5)} 0 0;
+    margin: spacing.space(0.5) 0 0;
 
     position: relative;
 
@@ -189,7 +189,7 @@
   }
 
   &__top-navigation {
-    padding: 0 0 #{spacing.space(0.5)};
+    padding: 0 0 spacing.space(0.5);
 
     display: flex;
     justify-content: flex-end;

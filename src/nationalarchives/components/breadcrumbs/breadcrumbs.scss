@@ -26,7 +26,7 @@
 
     + .tna-breadcrumbs__item {
       &::before {
-        margin: 0 #{spacing.space(0.75)};
+        margin: 0 spacing.space(0.75);
 
         display: inline-block;
 

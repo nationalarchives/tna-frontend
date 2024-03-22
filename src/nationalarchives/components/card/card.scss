@@ -60,7 +60,7 @@
   &__meta {
     display: flex;
     flex-wrap: wrap;
-    gap: #{spacing.space(0.5)} #{spacing.space(1.5)};
+    gap: spacing.space(0.5) spacing.space(1.5);
 
     line-height: 1.3;
 
@@ -75,7 +75,7 @@
     margin-top: spacing.space(1);
 
     display: flex;
-    gap: #{spacing.space(1)} #{spacing.space(2)};
+    gap: spacing.space(1) spacing.space(2);
 
     order: 4;
   }
@@ -148,11 +148,11 @@
   &--horizontal#{&}--accent {
     @include media.on-mobile {
       .tna-card__inner {
-        padding: 0 0 #{spacing.space(1)};
+        padding: 0 0 spacing.space(1);
       }
 
       .tna-card__image-container {
-        margin-bottom: #{spacing.space(1)};
+        margin-bottom: spacing.space(1);
       }
 
       .tna-card__heading,

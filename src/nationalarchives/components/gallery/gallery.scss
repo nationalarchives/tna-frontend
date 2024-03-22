@@ -43,7 +43,7 @@
 
     &-description {
       margin-top: spacing.space(1);
-      padding: #{spacing.space(0.5)} 0 #{spacing.space(0.5)} #{spacing.space(1)};
+      padding: spacing.space(0.5) 0 spacing.space(0.5) spacing.space(1);
 
       @include colour.colour-border("keyline-dark", 4px, solid, left);
     }

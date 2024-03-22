@@ -36,7 +36,8 @@
   @include a11y.active-outline;
 }
 
-.tna-\!--no-focus-style {
+.tna-\!--no-focus-style,
+*[tabindex="-1"]:focus {
   &:focus {
     outline: none;
   }

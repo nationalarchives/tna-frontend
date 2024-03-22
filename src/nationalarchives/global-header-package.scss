@@ -1,8 +1,11 @@
+/* stylelint-disable */
+
+@use "sass:math";
 // @use "variables/assets";
 @use "variables/grid" as gridVars with (
   $largest-container-width: 1300px,
-  $gutter-width: 30px,
-  $gutter-width-tiny: 15px
+  $gutter-width: math.div(30, 16),
+  $gutter-width-tiny: math.div(15, 16)
 );
 @use "variables/typography" as typographyVars;
 
@@ -163,11 +166,89 @@ hr {
   }
 }
 
+.tna-global-header {
+  padding-bottom: 0;
+
+  &__logo:link {
+    display: flex;
+  }
+
+  &__navigation {
+    padding: 0;
+
+    &-item {
+      margin-left: 0;
+      margin-bottom: 0;
+
+      &-link {
+        &,
+        &:link,
+        &:visited {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__top-navigation {
+    margin-bottom: 0;
+
+    &-item {
+      margin-left: 0;
+    }
+
+    &-link {
+      @include colour.colour-font("font-light", true);
+
+      &:hover {
+        @include colour.colour-font("font-base", true);
+      }
+    }
+  }
+}
+
+.tna-footer {
+  --button-accent-background: #fff;
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__address {
+    margin-bottom: 0;
+  }
+
+  .tna-heading-m {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &__social-item,
+  &__navigation-block-item,
+  &__legal-item {
+    margin-left: 0;
+  }
+
+  &__licence p {
+    margin-bottom: 0;
+  }
+
+  &__legal-item-link,
+  &__licence p a {
+    text-decoration: underline !important;
+
+    &:hover,
+    &:active {
+      text-decoration-thickness: 3.5px !important;
+    }
+  }
+}
+
 .tna-global-header,
 .tna-footer {
-  // * {
-  //   color: inherit;
-  // }
+  * {
+    color: inherit;
+  }
 
   a:not(.tna-button) {
     text-decoration: none;
@@ -200,54 +281,5 @@ hr {
         @include colour.colour-font("link");
       }
     }
-  }
-}
-
-.tna-global-header {
-  padding-bottom: 0;
-
-  &__logo:link {
-    display: flex;
-  }
-
-  &__navigation {
-    padding: 0;
-
-    &-item {
-      margin-left: 0;
-      margin-bottom: 0;
-
-      &-link {
-        &,
-        &:link,
-        &:visited {
-          display: block;
-        }
-      }
-    }
-  }
-
-  &__top-navigation {
-    margin-bottom: 0;
-
-    &-item {
-      margin-left: 0;
-    }
-  }
-}
-
-.tna-footer {
-  &__title {
-    margin-top: 0;
-  }
-
-  &__address {
-    margin-bottom: 0;
-  }
-
-  &__social-item,
-  &__navigation-block-item,
-  &__legal-item {
-    margin-left: 0;
   }
 }

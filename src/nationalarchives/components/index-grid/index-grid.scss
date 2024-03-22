@@ -16,7 +16,7 @@
     margin-bottom: 0;
 
     display: flex;
-    gap: 2rem 0;
+    gap: spacing.space(2) 0;
 
     list-style: none;
   }
@@ -48,15 +48,15 @@
   }
 
   &__item-content {
-    padding: 1rem;
+    padding: spacing.space(1);
 
     flex: 1;
   }
 
   &__item-label {
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: spacing.space(0.5);
+    left: spacing.space(0.5);
   }
 
   &__item-title {

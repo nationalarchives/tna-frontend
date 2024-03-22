@@ -4,8 +4,8 @@
 @use "../../tools/typography";
 
 .tna-cookie-banner {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: spacing.space(2);
+  padding-bottom: spacing.space(2);
 
   &--contrast {
     @include colour.contrast;

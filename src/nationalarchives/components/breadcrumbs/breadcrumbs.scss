@@ -1,10 +1,11 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 
 .tna-breadcrumbs {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: spacing.space(1);
+  padding-bottom: spacing.space(1);
 
   &:focus {
     outline: none !important;
@@ -25,7 +26,7 @@
 
     + .tna-breadcrumbs__item {
       &::before {
-        margin: 0 0.75rem;
+        margin: 0 spacing.space(0.75);
 
         display: inline-block;
 
@@ -59,8 +60,8 @@
     }
 
     @include colour.on-high-contrast-and-forced-colours {
-      padding-right: 0.75rem;
-      padding-left: 0.75rem;
+      padding-right: spacing.space(0.75);
+      padding-left: spacing.space(0.75);
 
       text-decoration: none;
 

@@ -1,19 +1,34 @@
 // @use "variables/assets";
 @use "variables/grid" as gridVars with (
-  $largest-container-width: 1270px,
+  $largest-container-width: 1300px,
   $gutter-width: 30px,
   $gutter-width-tiny: 15px
 );
 @use "variables/typography" as typographyVars;
 
 @use "tools/colour";
+@use "tools/media";
+@use "tools/spacing";
 @use "tools/typography";
 
+@use "utilities/a11y" as a11yUtils;
+// @use "utilities/areas" as areasUtils;
 @use "utilities/colour" as colourUtils;
+@use "utilities/columns" as columnsUtils;
+// @use "utilities/debug" as debugUtils;
+// @use "utilities/forms" as formsUtils;
+@use "utilities/global" as globalUtils;
+@use "utilities/lists" as listsUtils;
+@use "utilities/overrides" as overridesUtils;
+// @use "utilities/reset" as resetUtils;
+// @use "utilities/tables" as tablesUtils;
+// @use "utilities/typography" as typographyUtils;
 
+@use "components/button";
+@use "components/footer";
 @use "components/global-header";
 @use "components/grid";
-@use "components/footer";
+@use "components/skip-link";
 
 .tna-template {
   -moz-osx-font-smoothing: grayscale;
@@ -22,14 +37,139 @@
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   direction: ltr;
-  font-size: #{typographyVars.$relative-1rem-px}px;
+
+  --page-background: #fff;
+}
+
+hr {
+  border-width: 1px 0 0;
+  @include colour.colour-border("keyline");
+  border-style: solid;
+}
+
+%heading {
+  @include colour.colour-font("font-dark");
+
+  strong {
+    font-weight: inherit;
+  }
+}
+
+%heading-xl {
+  @extend %heading;
+
+  @include typography.heading-font;
+  @include typography.relative-font-size(64);
+  line-height: 1.1;
+
+  @include media.on-medium {
+    @include typography.relative-font-size(48);
+  }
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(36);
+  }
+}
+
+%heading-l {
+  @extend %heading;
+
+  @include typography.heading-font;
+  @include typography.relative-font-size(36);
+  line-height: 1.3;
+
+  @include media.on-medium {
+    @include typography.relative-font-size(30);
+  }
+
+  @include media.on-small {
+    @include typography.relative-font-size(28);
+  }
+
+  @include media.on-tiny {
+    @include typography.relative-font-size(25);
+  }
+}
+
+%heading-m {
+  @extend %heading;
+
+  @include typography.main-font-weight-bold;
+  @include typography.relative-font-size(22);
+  line-height: 1.6;
+
+  @include media.on-medium {
+    @include typography.relative-font-size(21);
+  }
+
+  @include media.on-small {
+    @include typography.relative-font-size(20);
+  }
+
+  @include media.on-tiny {
+    @include typography.relative-font-size(19);
+  }
+}
+
+%heading-s {
+  @extend %heading;
+
+  @include typography.main-font-weight-bold;
+  @include typography.relative-font-size(18);
+  line-height: 1.6;
+}
+
+%headings-and-heading-groups {
+  margin: spacing.space(2) 0 0;
+  padding: spacing.space(1) 0 0;
+
+  &:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  + p {
+    margin-top: spacing.space(1);
+  }
+}
+
+.tna-heading {
+  &-xl {
+    @extend %heading-xl;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-l {
+    @extend %heading-l;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-m {
+    @extend %heading-m;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-s {
+    @extend %heading-s;
+    @extend %headings-and-heading-groups;
+  }
+}
+
+.tna-button {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
 }
 
 .tna-global-header,
 .tna-footer {
-  color: inherit;
+  // * {
+  //   color: inherit;
+  // }
 
-  a {
+  a:not(.tna-button) {
     text-decoration: none;
     text-decoration-thickness: 1.5px;
 
@@ -47,6 +187,8 @@
       @include typography.interacted-text-decoration;
 
       background: none;
+
+      outline: none;
     }
 
     &:focus {
@@ -76,8 +218,10 @@
       margin-bottom: 0;
 
       &-link {
-        &:hover {
-          outline: none;
+        &,
+        &:link,
+        &:visited {
+          display: block;
         }
       }
     }
@@ -89,11 +233,21 @@
     &-item {
       margin-left: 0;
     }
+  }
+}
 
-    &-link {
-      &:hover {
-        outline: none;
-      }
-    }
+.tna-footer {
+  &__title {
+    margin-top: 0;
+  }
+
+  &__address {
+    margin-bottom: 0;
+  }
+
+  &__social-item,
+  &__navigation-block-item,
+  &__legal-item {
+    margin-left: 0;
   }
 }

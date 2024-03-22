@@ -1,15 +1,20 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 
 .tna-hero {
   @include colour.contrast-on-mobile;
 
   &__figure {
-    min-height: clamp(12rem, calc(40vw - 12rem), 50rem);
+    min-height: clamp(
+      #{spacing.space(12)},
+      calc(40vw - #{spacing.space(12)}),
+      50rem
+    );
     margin: 0;
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    padding-top: spacing.space(8);
+    padding-bottom: spacing.space(4);
 
     display: flex;
     align-items: flex-end;
@@ -39,8 +44,8 @@
     height: 1.5rem;
 
     position: absolute;
-    right: 0.5rem;
-    bottom: 0.5rem;
+    right: spacing.space(0.5);
+    bottom: spacing.space(0.5);
     z-index: 2;
 
     font-size: 0;
@@ -72,7 +77,8 @@
   &__information {
     width: 45rem;
     max-width: 75vw;
-    padding: 0.625rem 3.25rem 0.625rem 1rem;
+    padding: spacing.space(0.625) spacing.space(0.325) spacing.space(0.625)
+      spacing.space(1);
 
     position: absolute;
     right: 0;
@@ -148,7 +154,7 @@
   }
 
   &__content-inner {
-    padding: 2rem;
+    padding: spacing.space(2);
 
     @include colour.colour-background("page-background");
   }
@@ -212,7 +218,7 @@
     }
 
     &__content-inner {
-      padding: 2rem 0;
+      padding: spacing.space(2) 0;
 
       background-color: transparent;
     }
@@ -221,7 +227,7 @@
     }
 
     &__body {
-      margin-top: 1rem;
+      margin-top: spacing.space(1);
     }
   }
 

@@ -1,3 +1,4 @@
+@use "../../tools/spacing";
 @use "../../tools/typography";
 
 .tna-sensitive-image {
@@ -42,7 +43,7 @@
     cursor: pointer;
 
     &::after {
-      padding: 0.5rem 2rem;
+      padding: spacing.space(0.5) spacing.space(2);
 
       @include typography.relative-font-size(16);
       background-color: #ff0;

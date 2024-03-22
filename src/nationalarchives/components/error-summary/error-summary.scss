@@ -6,7 +6,7 @@
 
 .tna-error-summary {
   @include spacing.space-above;
-  padding: 1rem;
+  padding: spacing.space(1);
 
   @include colour.plain;
 
@@ -19,7 +19,7 @@
   }
 
   &__list {
-    margin: 0.5rem 0 0;
+    margin: spacing.space(0.5) 0 0;
 
     list-style: none;
   }

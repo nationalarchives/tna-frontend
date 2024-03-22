@@ -3,22 +3,22 @@
 @use "../tools/spacing";
 
 .tna-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: spacing.space(3);
+  padding-bottom: spacing.space(3);
 
   @include media.on-mobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: spacing.space(2);
+    padding-bottom: spacing.space(2);
   }
 }
 
 .tna-aside {
-  padding: 2rem;
+  padding: spacing.space(2);
 
   @include spacing.space-above;
 
   @include media.on-mobile {
-    padding: 1rem;
+    padding: spacing.space(1);
   }
 
   @include colour.on-high-contrast {
@@ -26,6 +26,6 @@
   }
 
   &--tight {
-    padding: 1rem;
+    padding: spacing.space(1);
   }
 }

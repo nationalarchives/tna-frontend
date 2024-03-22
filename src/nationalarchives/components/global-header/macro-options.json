@@ -16,12 +16,6 @@
         "type": "string",
         "required": false,
         "description": ""
-      },
-      {
-        "name": "strapline",
-        "type": "string",
-        "required": false,
-        "description": ""
       }
     ]
   },

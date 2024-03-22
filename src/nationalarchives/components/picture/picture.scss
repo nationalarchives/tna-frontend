@@ -1,8 +1,8 @@
 @use "../../tools/colour";
+@use "../../tools/grid";
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../variables/grid";
 
 .tna-picture {
   @include spacing.space-above;
@@ -12,7 +12,7 @@
   padding: 0;
 
   &__image-wrapper {
-    padding: 1.5rem;
+    padding: spacing.space(1.5);
 
     position: relative;
   }
@@ -26,27 +26,27 @@
 
   &__toggle-transcript {
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: spacing.space(1);
+    bottom: spacing.space(1);
   }
 
   &__transcript {
     @include colour.contrast;
 
-    padding: 1rem 1.5rem;
+    padding: spacing.space(1) spacing.space(1.5);
 
     .tna-template--clicked &:focus {
       outline: none;
     }
 
     .tna-tabs {
-      margin-bottom: 0.5rem;
+      margin-bottom: spacing.space(0.5);
     }
   }
 
   &__caption {
-    margin: 0 1rem;
-    padding: 1rem;
+    margin: 0 spacing.space(1);
+    padding: spacing.space(1);
 
     @include typography.relative-font-size(16);
 
@@ -61,10 +61,10 @@
 
   @include media.on-tiny {
     .tna-column & {
-      width: calc(100% + #{grid.$gutter-width-tiny * 2});
+      width: calc(100% + #{grid.gutter-width-tiny(2)});
 
       position: relative;
-      left: -#{grid.$gutter-width-tiny};
+      left: -#{grid.gutter-width-tiny()};
     }
 
     &__image {
@@ -78,13 +78,14 @@
       @include typography.relative-font-size(14);
     }
 
-    @if grid.$gutter-width-tiny != 1.5rem {
-      &__caption,
-      &__transcript {
-        padding-right: grid.$gutter-width-tiny;
-        padding-left: grid.$gutter-width-tiny;
-      }
-    }
+    // TODO
+    // @if grid.$gutter-width-tiny != 1.5rem {
+    //   &__caption,
+    //   &__transcript {
+    //     padding-right: grid.$gutter-width-tiny;
+    //     padding-left: grid.$gutter-width-tiny;
+    //   }
+    // }
   }
 
   @include colour.on-high-contrast-and-forced-colours {

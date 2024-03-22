@@ -16,7 +16,7 @@ export class GlobalHeader {
         (this.$topNavigation &&
           this.$topNavigation.querySelectorAll("[tabindex='0']")));
     this.menuOpened = false;
-    this.mql = window.matchMedia("(max-width: 768px)");
+    this.mql = window.matchMedia("(max-width: 48em)");
 
     if (
       !this.$module ||

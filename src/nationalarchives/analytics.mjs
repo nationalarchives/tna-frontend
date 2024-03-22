@@ -246,14 +246,11 @@ class GA4 extends EventTracker {
       return GA4._instance;
     }
     const {
-      id = null,
+      id = "",
       prefix = null,
       initAll = true,
       addTrackingCode = true,
     } = options;
-    if (!id) {
-      throw Error("ID was not specified");
-    }
     super({ prefix, addTrackingCode });
     GA4._instance = this;
     this.gTagId = id;
@@ -301,6 +298,9 @@ class GA4 extends EventTracker {
       window[this.ga4Disable] = false;
       this.cookies.set(this.ga4Disable, "false");
       if (!this.trackingCodeAdded && this.addTrackingCode) {
+        if (!this.gTagId) {
+          throw Error("ID was not specified");
+        }
         this.pushToDataLayer({
           "gtm.start": new Date().getTime(),
           event: "gtm.js",

@@ -15,7 +15,7 @@ select {
     @include spacing.space-above;
 
     &--error {
-      padding-left: 1rem;
+      padding-left: spacing.space(1);
 
       @include colour.thick-keyline-error(left);
     }
@@ -32,7 +32,7 @@ select {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
   }
 
   &__group--inline,
@@ -50,7 +50,7 @@ select {
   }
 
   &__legend {
-    margin-bottom: 0.5rem;
+    margin-bottom: spacing.space(0.5);
   }
 
   &__heading {

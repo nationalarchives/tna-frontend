@@ -30,21 +30,21 @@
 
   &__heading-inner,
   &__item-toggle {
-    padding: 0.5rem 0.75rem;
+    padding: spacing.space(0.5) spacing.space(0.75);
 
     @include colour.colour-border("keyline", 1px, solid);
     border-bottom-width: 0;
   }
 
   &__heading-inner {
-    margin-top: 1rem;
-    padding: 0.5rem 0.75rem;
+    margin-top: spacing.space(1);
+    padding: spacing.space(0.5) spacing.space(0.75);
   }
 
   &__item-toggle {
     width: 100%;
     margin: 0;
-    padding-right: 2.5rem;
+    padding-right: spacing.space(2.5);
 
     display: block;
 
@@ -66,7 +66,7 @@
       height: 0;
 
       position: absolute;
-      right: 0.5rem;
+      right: spacing.space(0.5);
       top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
 
       @include colour.colour-border(
@@ -106,7 +106,7 @@
   }
 
   &__item {
-    padding: 0.75rem;
+    padding: spacing.space(0.75);
 
     @include colour.colour-background("background-tint");
 
@@ -115,7 +115,7 @@
   }
 
   &__hint {
-    margin-bottom: 0.5rem;
+    margin-bottom: spacing.space(0.75);
 
     @include typography.relative-font-size(16);
     @include colour.colour-font("font-light");
@@ -124,7 +124,7 @@
   &__inline-fields {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 2rem;
+    gap: spacing.space(0.5) spacing.space(2);
   }
 
   &__label {
@@ -132,7 +132,7 @@
   }
 
   &__footer {
-    padding: 0.75rem;
+    padding: spacing.space(0.75);
 
     display: none;
 
@@ -140,7 +140,7 @@
   }
 
   &--js-enabled &__title {
-    margin-bottom: 1rem;
+    margin-bottom: spacing.space(1);
   }
 
   &--js-enabled &__footer {

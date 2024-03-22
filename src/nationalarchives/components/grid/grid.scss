@@ -1,15 +1,15 @@
 @use "sass:math";
-@use "../../variables/grid";
+@use "../../variables/grid" as gridVars;
 @use "../../tools/media";
-@use "../../tools/grid" as gridTools;
+@use "../../tools/grid";
 
 .tna-container {
-  max-width: grid.$largest-container-width;
+  max-width: gridVars.$largest-container-width;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: math.div(grid.$gutter-width, 2);
-  padding-left: math.div(grid.$gutter-width, 2);
+  padding-right: grid.gutter-width(0.5);
+  padding-left: grid.gutter-width(0.5);
 
   box-sizing: border-box;
 
@@ -20,7 +20,7 @@
 
   &--no-padding,
   &--no-padding-all {
-    max-width: grid.$largest-container-width - (grid.$gutter-width * 2);
+    max-width: gridVars.$largest-container-width - grid.gutter-width(2);
   }
 
   &--max {
@@ -33,8 +33,8 @@
 }
 
 .tna-column {
-  padding-right: math.div(grid.$gutter-width, 2);
-  padding-left: math.div(grid.$gutter-width, 2);
+  padding-right: grid.gutter-width(0.5);
+  padding-left: grid.gutter-width(0.5);
 
   box-sizing: border-box;
 
@@ -58,30 +58,30 @@
   }
 }
 
-@include gridTools.columns-generator(grid.$column-count);
+@include grid.columns-generator(gridVars.$column-count);
 
 @include media.on-medium {
-  @include gridTools.columns-generator(grid.$column-count-medium, "medium");
+  @include grid.columns-generator(gridVars.$column-count-medium, "medium");
 }
 
 @include media.on-tiny {
   .tna-container {
-    padding-right: math.div(grid.$gutter-width-tiny, 2);
-    padding-left: math.div(grid.$gutter-width-tiny, 2);
+    padding-right: grid.gutter-width-tiny(0.5);
+    padding-left: grid.gutter-width-tiny(0.5);
   }
 
   .tna-column {
-    padding-right: math.div(grid.$gutter-width-tiny, 2);
-    padding-left: math.div(grid.$gutter-width-tiny, 2);
+    padding-right: grid.gutter-width-tiny(0.5);
+    padding-left: grid.gutter-width-tiny(0.5);
   }
 }
 
 @include media.on-small {
-  @include gridTools.columns-generator(grid.$column-count-small, "small");
+  @include grid.columns-generator(gridVars.$column-count-small, "small");
 }
 
 @include media.on-tiny {
-  @include gridTools.columns-generator(grid.$column-count-tiny, "tiny");
+  @include grid.columns-generator(gridVars.$column-count-tiny, "tiny");
 }
 
 .tna-container--no-padding,

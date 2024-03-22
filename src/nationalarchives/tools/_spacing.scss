@@ -1,9 +1,14 @@
 @use "sass:map";
 @use "../variables/spacing";
+@use "../variables/typography";
 @use "../tools/media";
 
+@function space($size, $multiple: 1) {
+  @return #{$size * typography.$relative-1rem-px * $multiple}px;
+}
+
 %space-above {
-  margin-top: 2rem;
+  margin-top: space(2);
 
   &:first-child {
     margin-top: 0;
@@ -11,7 +16,7 @@
 }
 
 %space-only-above {
-  margin: 2rem 0 0;
+  margin: #{space(2)} 0 0;
 
   &:first-child {
     margin-top: 0;
@@ -24,14 +29,6 @@
   } @else {
     @extend %space-above;
   }
-}
-
-@function space($size) {
-  @return map.get(spacing.$spacing, $size);
-}
-
-@function space-mobile($size) {
-  @return map.get(spacing.$spacing-mobile, $size);
 }
 
 @mixin no-spacing-generator($suffix: "") {
@@ -66,7 +63,7 @@
       @each $size, $amount in spacing.$spacing {
         @if $direction == all {
           .tna-\!--#{$property}-#{$size} {
-            #{$property}: #{$amount} !important;
+            #{$property}: #{space($amount)} !important;
           }
         } @else {
           $combined-direction: "";
@@ -78,11 +75,11 @@
           @if $combined-direction {
             .tna-\!--#{$property}-#{$direction}-#{$size},
             .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
-              #{$property}-#{$direction}: #{$amount} !important;
+              #{$property}-#{$direction}: #{space($amount)} !important;
             }
           } @else {
             .tna-\!--#{$property}-#{$direction}-#{$size} {
-              #{$property}-#{$direction}: #{$amount} !important;
+              #{$property}-#{$direction}: #{space($amount)} !important;
             }
           }
         }
@@ -96,7 +93,7 @@
         @each $size, $amount in spacing.$spacing-mobile {
           @if $direction == all {
             .tna-\!--#{$property}-#{$size} {
-              #{$property}: #{$amount} !important;
+              #{$property}: #{space($amount)} !important;
             }
           } @else {
             $combined-direction: "";
@@ -108,11 +105,11 @@
             @if $combined-direction {
               .tna-\!--#{$property}-#{$direction}-#{$size},
               .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
-                #{$property}-#{$direction}: #{$amount} !important;
+                #{$property}-#{$direction}: #{space($amount)} !important;
               }
             } @else {
               .tna-\!--#{$property}-#{$direction}-#{$size} {
-                #{$property}-#{$direction}: #{$amount} !important;
+                #{$property}-#{$direction}: #{space($amount)} !important;
               }
             }
           }

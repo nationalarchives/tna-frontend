@@ -2,12 +2,13 @@
 @use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 
 .tna-checkboxes {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: spacing.space(1);
 
   &__item {
     position: relative;
@@ -26,7 +27,7 @@
     }
 
     &-label {
-      padding-left: 3rem;
+      padding-left: spacing.space(3);
 
       display: block;
 
@@ -85,12 +86,12 @@
   }
 
   &--small {
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
   }
 
   &--small &__item {
     &-label {
-      padding-left: 2.25rem;
+      padding-left: spacing.space(2.25);
 
       line-height: 1.5rem;
 
@@ -113,7 +114,7 @@
   &--inline {
     flex-flow: row wrap;
     align-items: center;
-    gap: 1rem 2rem;
+    gap: spacing.space(1) spacing.space(2);
 
     @include media.on-tiny {
       flex-direction: column;

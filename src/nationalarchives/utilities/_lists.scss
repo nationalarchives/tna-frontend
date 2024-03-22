@@ -5,8 +5,8 @@
 
 .tna-ul,
 .tna-ol {
-  margin: 1rem 0 0;
-  padding: 0 0 0 2rem;
+  margin: spacing.space(1) 0 0;
+  padding: 0 0 0 spacing.space(2);
 
   &:first-child {
     margin-top: 0;
@@ -37,7 +37,7 @@
   }
 
   dd {
-    padding-left: 1rem;
+    padding-left: spacing.space(1);
   }
 
   &.tna-dl--plain {
@@ -82,7 +82,7 @@
   dt,
   dd {
     margin: 0;
-    padding: 0.5rem 1rem;
+    padding: spacing.space(0.5) spacing.space(1);
 
     position: relative;
 
@@ -128,7 +128,7 @@
 
         position: absolute;
         top: 50%;
-        left: 1rem;
+        left: spacing.space(1);
 
         @include colour.colour-font("icon-light");
         text-align: left;
@@ -140,17 +140,17 @@
 
   &--icon-padding#{&}--plain {
     dt {
-      padding-left: 2rem !important;
+      padding-left: spacing.space(2) !important;
 
       .fa-solid {
-        margin-top: -0.25rem;
+        margin-top: -#{spacing.space(0.25)};
 
         left: 0;
       }
     }
 
     dd {
-      padding-left: 2rem;
+      padding-left: spacing.space(2);
     }
   }
 

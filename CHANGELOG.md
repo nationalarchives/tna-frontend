@@ -8,10 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.48...HEAD)
 
 ### Added
+
+- Spacing can now be defined in relative terms (e.g. `1`, `3`, `0.25`) which is converted to absolute values
+
 ### Changed
+
+- Changed grid dimensions (max width, gutters etc.) from `rem` units to `px`
+- Changed all spacing (margin, padding and gap) to use `spacing.space()` tool for relative sizes
+
 ### Deprecated
 ### Removed
+
+- Removed strapline option for global header
+
 ### Fixed
+
+- Removed explicit font size on `tna-template` allowing browser-defined font sizes
+
 ### Security
 
 ## [0.1.48](https://github.com/nationalarchives/tna-frontend/compare/v0.1.47...v0.1.48) - 2024-03-21

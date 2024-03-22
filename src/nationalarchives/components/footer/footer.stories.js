@@ -110,7 +110,7 @@ Standard.args = {
           href: "https://www.nationalarchives.gov.uk/about/press-room/",
         },
         {
-          text: "Jobs and careers",
+          text: "Jobs",
           href: "https://www.nationalarchives.gov.uk/about/jobs/",
         },
         {

@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed explicit font size on `tna-template` allowing browser-defined font sizes
+- Removed focus from elements with a `tabindex` of `-1`
 
 ### Security
 

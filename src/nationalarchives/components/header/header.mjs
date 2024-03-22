@@ -10,7 +10,7 @@ export class Header {
       this.$navigation &&
       this.$navigation.querySelectorAll("[tabindex='0']");
     this.menuOpened = false;
-    this.mql = window.matchMedia("(max-width: 768px)");
+    this.mql = window.matchMedia("(max-width: 48em)");
 
     if (!this.$module || !this.$toggleButton || !this.$navigation) {
       return;

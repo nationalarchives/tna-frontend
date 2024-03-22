@@ -1,12 +1,11 @@
 @use "sass:math";
 @use "sass:selector";
+@use "../variables/assets";
+@use "../variables/typography" as typographyVars;
 @use "../tools/colour";
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
-@use "../variables/assets";
-@use "../variables/grid";
-@use "../variables/typography" as typographyVars;
 
 @if typographyVars.$use-local-fonts {
   @font-face {
@@ -14,7 +13,7 @@
     src: url("#{assets.$tna-font-path}/OpenSans-Regular.ttf");
     font-weight: typographyVars.$main-font-weight;
     font-style: normal;
-    // font-display: swap;
+    font-display: swap;
   }
 
   @font-face {
@@ -22,7 +21,7 @@
     src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
     font-weight: typographyVars.$main-font-weight-bold;
     font-style: normal;
-    // font-display: swap;
+    font-display: swap;
   }
 
   @font-face {
@@ -30,7 +29,7 @@
     src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
     font-weight: typographyVars.$detail-font-weight;
     font-style: normal;
-    // font-display: swap;
+    font-display: swap;
   }
 
   @font-face {
@@ -38,7 +37,7 @@
     src: url("#{assets.$tna-font-path}/RobotoMono-Medium.ttf");
     font-weight: typographyVars.$detail-font-weight-bold;
     font-style: normal;
-    // font-display: swap;
+    font-display: swap;
   }
 } @else {
   @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto+Mono:wght@100..700&display=swap"); /* stylelint-disable-line */
@@ -75,7 +74,7 @@ p {
   @include spacing.space-above;
 
   + p {
-    margin-top: 1rem;
+    margin-top: spacing.space(1);
   }
 }
 
@@ -113,11 +112,11 @@ small {
 
 %chip-base {
   max-width: max-content;
-  padding: 0.125em 0.25rem;
+  padding: #{spacing.space(0.125)} #{spacing.space(0.25)};
 
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: spacing.space(0.5);
 
   @include colour.colour-font("font-base");
   @include typography.detail-font-small;
@@ -159,7 +158,7 @@ small {
     @include colour.colour-font("icon-light");
 
     @include colour.on-high-contrast {
-      padding-right: 0.5rem;
+      padding-right: spacing.space(0.5);
 
       color: inherit;
 
@@ -185,7 +184,7 @@ small {
 
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  gap: #{spacing.space(0.5)} #{spacing.space(1.5)};
 
   list-style: none;
 
@@ -204,7 +203,7 @@ small {
       display: inline-block;
 
       &::after {
-        padding-left: 0.5rem;
+        padding-left: spacing.space(0.5);
 
         display: inline-block;
 
@@ -215,7 +214,7 @@ small {
 
       &:hover {
         &::after {
-          padding-left: 0.75rem;
+          padding-left: spacing.space(0.75);
         }
       }
     }
@@ -293,14 +292,14 @@ small {
 %headings-and-heading-groups {
   @include spacing.space-above;
   margin-bottom: 0;
-  padding: 1rem 0 0;
+  padding: #{spacing.space(1)} 0 0;
 
   &:first-child {
     padding-top: 0;
   }
 
   + p {
-    margin-top: 1rem;
+    margin-top: #{spacing.space(1)};
   }
 }
 
@@ -335,7 +334,7 @@ small {
   }
 
   &__supertitle {
-    margin: 0 0 0.25rem;
+    margin: 0 0 #{spacing.space(0.25)};
 
     @extend %chip-base;
 
@@ -376,7 +375,9 @@ small {
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: #{spacing.space(1)} #{spacing.space(1)} #{spacing.space(1)} #{spacing.space(
+      2
+    )};
 
   @include colour.thick-keyline-accent(left);
 
@@ -388,7 +389,7 @@ small {
     @include typography.relative-font-size(16);
 
     .tna-blockquote & {
-      margin: 1rem 0 0;
+      margin: #{spacing.space(1)} 0 0;
     }
 
     &::before {
@@ -398,7 +399,9 @@ small {
   }
 
   @include media.on-tiny {
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: #{spacing.space(0.5)} #{spacing.space(0.5)} #{spacing.space(0.5)} #{spacing.space(
+        1
+      )};
   }
 }
 

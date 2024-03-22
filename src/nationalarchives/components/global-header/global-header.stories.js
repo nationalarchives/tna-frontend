@@ -48,7 +48,6 @@ const Template = ({
 export const Standard = Template.bind({});
 Standard.args = {
   logo: {
-    // strapline: "Design System",
     href: "#/",
   },
   topNavigation: [

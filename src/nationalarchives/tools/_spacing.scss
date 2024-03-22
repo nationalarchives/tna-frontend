@@ -3,12 +3,12 @@
 @use "../variables/typography";
 @use "../tools/media";
 
-@function space($size) {
-  @return #{$size * typography.$relative-1rem-px}px;
+@function space($size, $multiple: 1) {
+  @return #{$size * typography.$relative-1rem-px * $multiple}px;
 }
 
 %space-above {
-  margin-top: #{space(2)};
+  margin-top: space(2);
 
   &:first-child {
     margin-top: 0;

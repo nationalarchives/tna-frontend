@@ -8,15 +8,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1rem;
+  gap: #{spacing.space(0.75)} #{spacing.space(1)};
 
   list-style: none;
 
   &__item {
-    padding: 0 0.125rem 0 0.75rem;
+    padding: 0 #{spacing.space(0.125)} 0 spacing.space(0.75);
 
     display: flex;
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
     align-items: center;
 
     @include typography.relative-font-size(16);

@@ -1,9 +1,10 @@
 @use "sass:math";
 @use "../../variables/colour" as colourVars; // TODO
-@use "../../variables/grid" as gridVars;
 @use "../../tools/colour";
-@use "../../tools/typography";
+@use "../../tools/grid";
 @use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-header {
   @include colour.contrast;
@@ -31,8 +32,8 @@
   }
 
   &__exit {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: spacing.space(0.5);
+    padding-bottom: spacing.space(0.5);
 
     text-align: right;
 
@@ -54,7 +55,7 @@
     }
 
     .fa-solid {
-      margin-left: 0.5rem;
+      margin-left: spacing.space(0.5);
     }
   }
 
@@ -65,8 +66,8 @@
   }
 
   &__logo {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: spacing.space(1.5);
+    padding-bottom: spacing.space(1.5);
   }
 
   &__logo-link {
@@ -100,7 +101,7 @@
   }
 
   &__logo-strapline {
-    margin: 0 0.75rem;
+    margin: 0 spacing.space(0.75);
 
     display: inline-block;
 
@@ -198,11 +199,11 @@
 
   &__top-navigation-items {
     margin: 0;
-    padding: 1.25rem 0;
+    padding: #{spacing.space(1.25)} 0;
 
     display: flex;
     justify-content: flex-end;
-    gap: 0.5rem 1.5rem;
+    gap: #{spacing.space(0.5)} #{spacing.space(1.5)};
 
     @include typography.relative-font-size(15);
     list-style: none;
@@ -237,7 +238,7 @@
     }
 
     .fa-solid {
-      margin-right: 0.375rem;
+      margin-right: spacing.space(0.375);
     }
   }
 
@@ -247,7 +248,7 @@
 
     display: flex;
     flex-wrap: nowrap;
-    gap: 2rem;
+    gap: spacing.space(2);
 
     list-style: none;
 
@@ -258,7 +259,7 @@
   }
 
   &__navigation-item-link {
-    padding: 0.5rem 0;
+    padding: #{spacing.space(0.5)} 0;
 
     display: inline-block;
 
@@ -314,8 +315,8 @@
 
   @include media.on-mobile {
     &__logo {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding-top: spacing.space(1);
+      padding-bottom: spacing.space(1);
     }
 
     &__contents {
@@ -352,7 +353,7 @@
     }
 
     &__top-navigation-items {
-      padding: 0.5rem 1rem;
+      padding: #{spacing.space(0.5)} #{spacing.space(1)};
 
       justify-content: flex-start;
 
@@ -361,7 +362,7 @@
 
     &__top-navigation-item {
       margin: 0;
-      padding: 0.5rem;
+      padding: spacing.space(0.5);
     }
 
     &__top-navigation-item-link {
@@ -438,28 +439,28 @@
     &__logo.tna-column,
     &__navigation-item-link,
     &__navigation-toggle.tna-column {
-      padding-right: gridVars.$gutter-width;
+      padding-right: grid.gutter-width();
     }
 
     &__logo.tna-column,
     &__navigation-item-link {
-      padding-left: gridVars.$gutter-width;
+      padding-left: grid.gutter-width();
     }
 
     &__top-navigation-items {
-      padding-right: calc(#{gridVars.$gutter-width} - 0.5rem);
-      padding-left: calc(#{gridVars.$gutter-width} - 0.5rem);
+      padding-right: calc(#{grid.gutter-width()} - 0.5rem);
+      padding-left: calc(#{grid.gutter-width()} - 0.5rem);
     }
   }
 
   @include media.on-tiny {
     &__navigation-toggle.tna-column,
     &__logo.tna-column {
-      padding-right: gridVars.$gutter-width-tiny;
+      padding-right: grid.gutter-width-tiny();
     }
 
     &__logo.tna-column {
-      padding-left: gridVars.$gutter-width-tiny;
+      padding-left: grid.gutter-width-tiny();
     }
 
     .tna-logo {
@@ -476,8 +477,8 @@
     }
 
     &__navigation-item-link {
-      padding-right: gridVars.$gutter-width-tiny;
-      padding-left: calc(#{gridVars.$gutter-width-tiny} + 0.5rem);
+      padding-right: grid.gutter-width-tiny();
+      padding-left: calc(#{grid.gutter-width-tiny()} + 0.5rem);
     }
   }
 

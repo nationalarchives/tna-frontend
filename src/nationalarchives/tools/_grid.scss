@@ -1,5 +1,14 @@
 @use "sass:math";
 @use "../variables/grid";
+@use "spacing";
+
+@function gutter-width($multiple: 1) {
+  @return spacing.space(grid.$gutter-width, $multiple);
+}
+
+@function gutter-width-tiny($multiple: 1) {
+  @return spacing.space(grid.$gutter-width-tiny, $multiple);
+}
 
 @mixin columns-generator($count, $suffix: "") {
   @if $suffix != "" {

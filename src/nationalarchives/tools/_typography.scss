@@ -1,6 +1,6 @@
 @use "sass:math";
-@use "colour";
 @use "../variables/typography";
+@use "colour";
 
 @mixin relative-font-size($fontSizePx) {
   font-size: #{math.div($fontSizePx, typography.$relative-1rem-px)}rem;
@@ -46,7 +46,7 @@
   @include detail-font;
   @include relative-font-size(14);
   text-transform: uppercase;
-  line-height: #{math.div(typography.$relative-1rem-px, 14)};
+  line-height: 1.1;
 }
 
 @mixin interacted-text-decoration {

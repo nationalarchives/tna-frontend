@@ -8,6 +8,7 @@
 
 @use "tools/colour";
 @use "tools/media";
+@use "tools/spacing";
 @use "tools/typography";
 
 @use "utilities/a11y" as a11yUtils;
@@ -119,8 +120,8 @@ hr {
 }
 
 %headings-and-heading-groups {
-  margin: 2rem 0 0;
-  padding: 1rem 0 0;
+  margin: spacing.space(2) 0 0;
+  padding: spacing.space(1) 0 0;
 
   &:first-child {
     margin-top: 0;
@@ -128,7 +129,7 @@ hr {
   }
 
   + p {
-    margin-top: 1rem;
+    margin-top: spacing.space(1);
   }
 }
 

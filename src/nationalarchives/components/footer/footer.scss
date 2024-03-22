@@ -1,15 +1,16 @@
 @use "../../tools/colour";
-@use "../../tools/typography";
 @use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-footer {
   @include colour.contrast;
 
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-top: spacing.space(1);
+  padding-bottom: spacing.space(3);
 
   .tna-logo {
-    margin-top: 2rem;
+    margin-top: spacing.space(2);
 
     &__background {
       fill: transparent;
@@ -21,7 +22,7 @@
   }
 
   &__title {
-    margin-top: 1rem;
+    margin-top: spacing.space(1);
     margin-bottom: 0;
     padding-top: 0;
   }
@@ -31,18 +32,18 @@
   }
 
   &__meta {
-    margin-top: 1rem;
+    margin-top: spacing.space(1);
 
     @include typography.relative-font-size(16);
   }
 
   &__social {
-    margin-top: 2rem;
+    margin-top: spacing.space(2);
 
     &-items {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.3125rem;
+      gap: spacing.space(0.3125);
       align-items: flex-start;
     }
 
@@ -81,8 +82,8 @@
   }
 
   &__mailing-list {
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: spacing.space(2);
+    padding: spacing.space(1);
 
     @include typography.relative-font-size(16);
 
@@ -93,7 +94,7 @@
 
   &__navigation {
     &-block {
-      padding-top: 2rem;
+      padding-top: spacing.space(2);
 
       &-heading {
       }
@@ -102,8 +103,8 @@
       }
 
       &-item {
-        padding-top: 0.375rem;
-        padding-bottom: 0.375rem;
+        padding-top: spacing.space(0.375);
+        padding-bottom: spacing.space(0.375);
 
         @include typography.relative-font-size(16);
 
@@ -119,7 +120,7 @@
           }
 
           .fa-solid {
-            margin-left: 0.75rem;
+            margin-left: spacing.space(0.75);
           }
         }
       }
@@ -127,7 +128,7 @@
   }
 
   &__legal {
-    padding-top: 3rem;
+    padding-top: spacing.space(3);
 
     @include typography.relative-font-size(16);
 
@@ -142,7 +143,7 @@
     }
 
     &-item {
-      padding: 0.5rem;
+      padding: spacing.space(0.5);
 
       display: inline-block;
 
@@ -156,8 +157,8 @@
   }
 
   hr {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: spacing.space(1.5);
+    margin-bottom: spacing.space(0.5);
   }
 
   &__licence {
@@ -168,7 +169,7 @@
     }
 
     .tna-column {
-      margin-top: 1rem;
+      margin-top: spacing.space(1);
     }
   }
 
@@ -184,7 +185,7 @@
     }
 
     &-logotype-crown {
-      margin: 0 auto 0.125rem;
+      margin: 0 auto #{spacing.space(0.125)};
 
       display: block;
     }
@@ -192,7 +193,7 @@
 
   @include media.on-mobile {
     padding-top: 0;
-    padding-bottom: 2rem;
+    padding-bottom: spacing.space(2);
   }
 
   @include colour.on-high-contrast-and-forced-colours {

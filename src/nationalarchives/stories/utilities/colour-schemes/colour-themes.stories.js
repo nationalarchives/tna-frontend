@@ -114,7 +114,6 @@ const Template = ({ theme, accent }) => {
     ${GlobalHeader({
       params: {
         logo: {
-          strapline: "Colours",
           href: "#/",
         },
         topNavigation: [

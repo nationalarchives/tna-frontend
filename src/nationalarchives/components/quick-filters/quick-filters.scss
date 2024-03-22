@@ -6,7 +6,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1rem;
+  gap: spacing.space(0.75) spacing.space(1);
 
   list-style: none;
 
@@ -18,7 +18,7 @@
   }
 
   &__link {
-    padding: 0.125rem 0.75rem;
+    padding: spacing.space(0.125) spacing.space(0.75);
 
     text-decoration: none;
     line-height: 1.75;

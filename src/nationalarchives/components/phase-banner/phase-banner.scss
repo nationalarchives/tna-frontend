@@ -1,12 +1,13 @@
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 
 .tna-phase-banner {
   @include colour.contrast;
 
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: spacing.space(0.5);
+  padding-bottom: spacing.space(0.5);
 
   @include typography.relative-font-size(16);
 

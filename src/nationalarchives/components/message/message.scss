@@ -5,10 +5,10 @@
 
 .tna-message {
   @include spacing.space-above;
-  padding: 1rem;
+  padding: spacing.space(1);
 
   display: flex;
-  gap: 1rem;
+  gap: spacing.space(1);
   align-items: flex-start;
 
   @include colour.accent-light;
@@ -19,7 +19,7 @@
 
   @include media.on-tiny {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
   }
 
   &__heading {

@@ -14,10 +14,10 @@
   @include colour.thick-keyline-accent(top);
 
   &__item {
-    padding: 2rem;
+    padding: #{spacing.space(2)};
 
     display: flex;
-    gap: 2rem;
+    gap: #{spacing.space(2)};
     justify-content: flex-start;
     align-items: center;
 
@@ -67,7 +67,7 @@
   }
 
   &__title-description {
-    padding-bottom: 0.25rem;
+    padding-bottom: spacing.space(0.25);
 
     @include typography.detail-font(true);
   }
@@ -84,9 +84,9 @@
 
   @include media.on-tiny {
     &__item {
-      padding: 1rem;
+      padding: spacing.space(1);
 
-      gap: 1rem;
+      gap: spacing.space(1);
       flex-direction: column;
       align-items: flex-start;
     }

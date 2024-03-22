@@ -1,10 +1,11 @@
 @use "../../variables/forms";
 @use "../../tools/colour";
+@use "../../tools/spacing";
 
 .tna-select {
   max-width: 100%;
   height: calc(2rem + 6px);
-  padding: 0 1rem 0 0.5rem;
+  padding: 0 spacing.space(1) 0 spacing.space(0.5);
 
   display: block;
 
@@ -19,7 +20,7 @@
   border-radius: 0.1px;
 
   &--styled {
-    padding: 0 2.5rem 0 0.75rem;
+    padding: 0 spacing.space(2.5) 0 spacing.space(0.75);
 
     appearance: none;
 

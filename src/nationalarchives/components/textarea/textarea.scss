@@ -1,16 +1,17 @@
 @use "../../variables/forms";
 @use "../../tools/colour";
+@use "../../tools/spacing";
 
 $textarea-minimum-lines-visible: 5.5 !default;
 $textarea-line-height: 1.5rem !default;
-$textarea-vertical-padding: 0.25rem !default;
+$textarea-vertical-padding: 0.25 !default;
 
 .tna-textarea {
   width: 100%;
   min-height: #{($textarea-line-height * $textarea-minimum-lines-visible) + (
-      2 * $textarea-vertical-padding
+      spacing.space($textarea-vertical-padding, 2)
     )};
-  padding: $textarea-vertical-padding 0.5rem;
+  padding: spacing.space($textarea-vertical-padding) spacing.space(0.5);
 
   display: block;
   box-sizing: border-box;

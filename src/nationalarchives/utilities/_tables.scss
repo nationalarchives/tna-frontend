@@ -1,10 +1,10 @@
 @use "sass:math";
 @use "sass:selector";
 @use "../tools/colour";
+@use "../tools/grid";
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
-@use "../variables/grid";
 
 .tna-table {
   width: 100%;
@@ -19,7 +19,7 @@
   }
 
   &__caption {
-    padding: 1rem 0;
+    padding: #{spacing.space(1)} 0;
 
     caption-side: bottom;
 
@@ -50,7 +50,7 @@
 
   &__header,
   &__cell {
-    padding: 0.25rem 1rem;
+    padding: #{spacing.space(0.25)} #{spacing.space(1)};
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
 
@@ -78,7 +78,7 @@
 
   p {
     + p {
-      margin-top: 0.25rem;
+      margin-top: spacing.space(0.25);
     }
   }
 }
@@ -86,18 +86,18 @@
 .tna-table-wrapper {
   width: 100%;
   @include spacing.space-above;
-  padding-left: grid.$gutter-width;
-  padding-right: grid.$gutter-width;
+  padding-left: grid.gutter-width();
+  padding-right: grid.gutter-width();
 
   position: relative;
-  left: -#{grid.$gutter-width};
+  left: -#{grid.gutter-width()};
 
   overflow: auto;
 
   @include media.on-tiny {
-    padding-left: grid.$gutter-width-tiny;
-    padding-right: grid.$gutter-width-tiny;
+    padding-left: grid.gutter-width-tiny();
+    padding-right: grid.gutter-width-tiny();
 
-    left: -#{grid.$gutter-width-tiny};
+    left: -#{grid.gutter-width-tiny()};
   }
 }

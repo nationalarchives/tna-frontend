@@ -1,4 +1,5 @@
 @use "../../tools/colour";
+@use "../../tools/spacing";
 
 .tna-skip-link {
   width: 1px !important;
@@ -38,7 +39,7 @@
     width: auto !important;
     height: auto !important;
     margin: inherit !important;
-    padding: 1rem !important;
+    padding: spacing.space(1) !important;
 
     position: static !important;
 

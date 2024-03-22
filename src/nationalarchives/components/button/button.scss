@@ -1,16 +1,17 @@
 @use "sass:math";
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 @use "button-group";
 
 .tna-button {
-  padding: 0.25rem 1rem;
+  padding: #{spacing.space(0.25)} #{spacing.space(1)};
 
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.75rem;
+  gap: spacing.space(0.75);
 
   @include typography.relative-font-size(18);
   @include typography.main-font-weight-bold;
@@ -85,7 +86,7 @@
 
   &--small,
   &-group--small & {
-    padding: 0 0.5rem;
+    padding: 0 #{spacing.space(0.5)};
 
     @include typography.relative-font-size(14);
     line-height: 1.5rem;

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.48...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.49...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.49](https://github.com/nationalarchives/tna-frontend/compare/v0.1.48...v0.1.49) - 2024-03-26
 
 ### Added
 
@@ -19,7 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed all spacing (margin, padding and gap) to use `spacing.space()` tool for relative sizes
 - Tweaked some of the dark and contrasting colours
 
-### Deprecated
 ### Removed
 
 - Removed strapline option for global header
@@ -30,8 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed explicit font size on `tna-template` allowing browser-defined font sizes
 - Removed focus from elements with a `tabindex` of `-1`
 - Fixed background colour of headers on system themes
-
-### Security
 
 ## [0.1.48](https://github.com/nationalarchives/tna-frontend/compare/v0.1.47...v0.1.48) - 2024-03-21
 

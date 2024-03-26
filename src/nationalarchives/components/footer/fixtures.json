@@ -9,7 +9,7 @@
     {
       "name": "items",
       "options": {
-        "meta": "<p>Open today<br />09:00&ndash;19:00</p>",
+        "meta": "<p>Open today<br>09:00&ndash;19:00</p>",
         "social": [
           {
             "href": "https://twitter.com/UKNatArchives",

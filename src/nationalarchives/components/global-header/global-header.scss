@@ -361,7 +361,7 @@
     }
 
     &__navigation {
-      width: calc(100% + #{grid.gutter-width(2)});
+      width: calc(100% + #{grid.gutter-width-double()});
 
       left: -#{grid.gutter-width()};
     }
@@ -382,7 +382,7 @@
     }
 
     &__navigation {
-      width: calc(100% + #{grid.gutter-width-tiny(2)});
+      width: calc(100% + #{grid.gutter-width-tiny-double()});
 
       left: -#{grid.gutter-width-tiny()};
     }

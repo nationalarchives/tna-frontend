@@ -37,7 +37,7 @@ $colour-palette-brand: (
   @return hex-to-rgb(map.get($colour-palette-brand, $colour), $opacity);
 }
 
-$dark-grey: #26262a;
+$dark-grey: #26262a !default;
 $base-font: #343338 !default;
 $link-colour: #0062a8 !default;
 $link-colour-visited: #4c2c92 !default;

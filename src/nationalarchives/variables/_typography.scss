@@ -1,8 +1,6 @@
-@use "sass:math";
+$relative-1rem-px: 16; // 16px = 1rem
 
 $use-local-fonts: false !default;
-
-$relative-1rem-px: 16; // 16px is 1rem by default
 
 $body-font-size-px: 18 !default;
 $body-font-size-px-mobile: 17 !default;
@@ -21,3 +19,39 @@ $heading-font-weight: 500 !default;
 $detail-font-family: "Roboto Mono", monospace !default;
 $detail-font-weight: 400 !default;
 $detail-font-weight-bold: 500 !default;
+
+$heading-xl-font-size-default: 64 !default;
+$heading-xl-line-height-default: 1.1 !default;
+$heading-xl-font-size-medium: 48 !default;
+$heading-xl-line-height-medium: $heading-xl-line-height-default !default;
+$heading-xl-font-size-small: 36 !default;
+$heading-xl-line-height-small: $heading-xl-line-height-default !default;
+$heading-xl-font-size-tiny: $heading-xl-font-size-small !default;
+$heading-xl-line-height-tiny: $heading-xl-line-height-default !default;
+
+$heading-l-font-size-default: 36 !default;
+$heading-l-line-height-default: 1.3 !default;
+$heading-l-font-size-medium: 30 !default;
+$heading-l-line-height-medium: $heading-l-line-height-default !default;
+$heading-l-font-size-small: 28 !default;
+$heading-l-line-height-small: $heading-l-line-height-default !default;
+$heading-l-font-size-tiny: 25 !default;
+$heading-l-line-height-tiny: $heading-l-line-height-default !default;
+
+$heading-m-font-size-default: 22 !default;
+$heading-m-line-height-default: 1.6 !default;
+$heading-m-font-size-medium: 21 !default;
+$heading-m-line-height-medium: $heading-m-line-height-default !default;
+$heading-m-font-size-small: 20 !default;
+$heading-m-line-height-small: $heading-m-line-height-default !default;
+$heading-m-font-size-tiny: 19 !default;
+$heading-m-line-height-tiny: $heading-m-line-height-default !default;
+
+$heading-s-font-size-default: 18 !default;
+$heading-s-line-height-default: 1.6 !default;
+$heading-s-font-size-medium: $heading-s-font-size-default !default;
+$heading-s-line-height-medium: $heading-s-line-height-default !default;
+$heading-s-font-size-small: $heading-s-font-size-default !default;
+$heading-s-line-height-small: $heading-s-line-height-default !default;
+$heading-s-font-size-tiny: $heading-s-font-size-default !default;
+$heading-s-line-height-tiny: $heading-s-line-height-default !default;

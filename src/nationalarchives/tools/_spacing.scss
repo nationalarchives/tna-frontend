@@ -1,10 +1,11 @@
 @use "sass:map";
+@use "sass:math";
 @use "../variables/spacing";
 @use "../variables/typography";
 @use "../tools/media";
 
-@function space($size, $multiple: 1) {
-  @return #{$size * typography.$relative-1rem-px * $multiple}px;
+@function space($size) {
+  @return #{$size * spacing.$spacing-unit-px}px;
 }
 
 %space-above {

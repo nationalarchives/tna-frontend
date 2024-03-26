@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Spacing can now be defined in relative terms (e.g. `1`, `3`, `0.25`) which is converted to absolute values
+- Added a `$spacing-unit-px` variable to allow the setting of the base unit for all spacing
 
 ### Changed
 
@@ -20,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed strapline option for global header
+- Removed all redundant `role` attributes in line with GOV.UK Frontend v5.3.0
 
 ### Fixed
 

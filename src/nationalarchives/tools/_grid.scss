@@ -2,12 +2,28 @@
 @use "../variables/grid";
 @use "spacing";
 
-@function gutter-width($multiple: 1) {
-  @return spacing.space(grid.$gutter-width, $multiple);
+@function gutter-width() {
+  @return spacing.space(grid.$gutter-width);
 }
 
-@function gutter-width-tiny($multiple: 1) {
-  @return spacing.space(grid.$gutter-width-tiny, $multiple);
+@function gutter-width-half() {
+  @return spacing.space(math.div(grid.$gutter-width, 2));
+}
+
+@function gutter-width-double() {
+  @return spacing.space(grid.$gutter-width * 2);
+}
+
+@function gutter-width-tiny() {
+  @return spacing.space(grid.$gutter-width-tiny);
+}
+
+@function gutter-width-tiny-half() {
+  @return spacing.space(math.div(grid.$gutter-width-tiny, 2));
+}
+
+@function gutter-width-tiny-double() {
+  @return spacing.space(grid.$gutter-width-tiny * 2);
 }
 
 @mixin columns-generator($count, $suffix: "") {

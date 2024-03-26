@@ -195,9 +195,11 @@ hr {
 
     &-item {
       margin-left: 0;
+      margin-bottom: 0;
     }
 
     &-link {
+      display: flex !important;
       @include colour.colour-font("font-light", true);
 
       &:hover {
@@ -221,12 +223,28 @@ hr {
   .tna-heading-m {
     font-weight: 400;
     line-height: 1.5;
+    letter-spacing: -0.025em;
   }
 
   &__social-item,
   &__navigation-block-item,
   &__legal-item {
     margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  &__social-item-link {
+    box-sizing: content-box;
+  }
+
+  address {
+    line-height: inherit;
+  }
+
+  hr {
+    height: 0 !important;
+    @include colour.colour-border("keyline", 1px, solid, top);
+    border-bottom: none !important;
   }
 
   &__licence p {

@@ -2,8 +2,8 @@
 @use "../variables/typography";
 @use "colour";
 
-@mixin relative-font-size($fontSizePx) {
-  font-size: #{math.div($fontSizePx, typography.$relative-1rem-px)}rem;
+@mixin relative-font-size($font-size-px) {
+  font-size: #{math.div($font-size-px, typography.$relative-1rem-px)}rem;
 }
 
 @mixin main-font-weight {

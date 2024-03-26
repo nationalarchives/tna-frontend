@@ -1,63 +1,86 @@
+@use "sass:math";
 @use "../variables/media";
+@use "../variables/typography";
 
-//   0 ======= 320 = 480 ===== 768 == 1024 ========================== min-width/max-width (px)
-//   |         .     |         |      |
-//   |-TINY----------|-SMALL---|-MED--|-LARGE------------------------
-//   |         .     |         |      |
-//   |<------------->|         |      |            on-tiny
-//   |<----------------------->|      |            on-mobile
-//   |<------------------------------>|            on-smaller-than-large
-//   |         .     |<------->|      |            on-small
-//   |         .     |<-------------------------   on-larger-than-tiny
-//   |         .     |         |<---->|            on-medium
-//   |         .     |         |<---------------   on-larger-than-mobile
-//   |         .     |         |      |<--------   on-large
-//   |<------->.     |         |      |            Smallest device
+$smallest-large-device-em: #{math.div(
+    media.$largest-medium-device-px + 1,
+    typography.$relative-1rem-px
+  )}em;
+$largest-medium-device-em: #{math.div(
+    media.$largest-medium-device-px,
+    typography.$relative-1rem-px
+  )}em;
+$smallest-medium-device-em: #{math.div(
+    media.$largest-small-device-px + 1,
+    typography.$relative-1rem-px
+  )}em;
+$largest-small-device-em: #{math.div(
+    media.$largest-small-device-px,
+    typography.$relative-1rem-px
+  )}em;
+$smallest-small-device-em: #{math.div(
+    media.$largest-tiny-device-px + 1,
+    typography.$relative-1rem-px
+  )}em;
+$largest-tiny-device-em: #{math.div(
+    media.$largest-tiny-device-px,
+    typography.$relative-1rem-px
+  )}em;
 
+$media-large: "(min-width: #{$smallest-large-device-em})";
+$media-lt-large: "(max-width: #{$largest-medium-device-em})";
+$media-medium: "(min-width: #{$smallest-medium-device-em}) and (max-width: #{$largest-medium-device-em})";
+$media-gt-mobile: "(min-width: #{$smallest-medium-device-em})";
+$media-mobile: "(max-width: #{$largest-small-device-em})";
+$media-small: "(min-width: #{$smallest-small-device-em}) and (max-width: #{$largest-small-device-em})";
+$media-gt-tiny: "(min-width: #{$smallest-small-device-em})";
+$media-tiny: "(max-width: #{$largest-tiny-device-em})";
+
+// https://nationalarchives.github.io/design-system/styles/media/#media-queries
 @mixin on-large() {
-  @media #{media.$media-large} {
+  @media #{$media-large} {
     @content;
   }
 }
 
 @mixin on-medium() {
-  @media #{media.$media-medium} {
+  @media #{$media-medium} {
     @content;
   }
 }
 
 @mixin on-small() {
-  @media #{media.$media-small} {
+  @media #{$media-small} {
     @content;
   }
 }
 
 @mixin on-tiny() {
-  @media #{media.$media-tiny} {
+  @media #{$media-tiny} {
     @content;
   }
 }
 
 @mixin on-larger-than-mobile() {
-  @media #{media.$media-gt-mobile} {
+  @media #{$media-gt-mobile} {
     @content;
   }
 }
 
 @mixin on-larger-than-tiny() {
-  @media #{media.$media-gt-tiny} {
+  @media #{$media-gt-tiny} {
     @content;
   }
 }
 
 @mixin on-smaller-than-large() {
-  @media #{media.$media-lt-large} {
+  @media #{$media-lt-large} {
     @content;
   }
 }
 
 @mixin on-mobile() {
-  @media #{media.$media-mobile} {
+  @media #{$media-mobile} {
     @content;
   }
 }

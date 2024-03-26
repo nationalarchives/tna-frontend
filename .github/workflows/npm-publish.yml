@@ -177,7 +177,7 @@ jobs:
             echo 'RELEASE_NOTES<<EOF'
             ./tasks/get-release-notes.sh ${{ needs.version-check.outputs.version }}
             echo EOF
-          } >> "$GITHUB_ENV"
+          } >> "$GITHUB_OUTPUT"
       - uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_TITLE: "`v${{ needs.version-check.outputs.version }}` of `tna-frontend` has just been published"

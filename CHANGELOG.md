@@ -11,11 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Spacing can now be defined in relative terms (e.g. `1`, `3`, `0.25`) which is converted to absolute values
 - Added a `$spacing-unit-px` variable to allow the setting of the base unit for all spacing
+- Heading sizes and line heights are now customisable
 
 ### Changed
 
 - Changed grid dimensions (max width, gutters etc.) from `rem` units to `px`
 - Changed all spacing (margin, padding and gap) to use `spacing.space()` tool for relative sizes
+- Tweaked some of the dark and contrasting colours
 
 ### Deprecated
 ### Removed
@@ -27,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed explicit font size on `tna-template` allowing browser-defined font sizes
 - Removed focus from elements with a `tabindex` of `-1`
+- Fixed background colour of headers on system themes
 
 ### Security
 

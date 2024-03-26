@@ -1,7 +1,7 @@
 @use "sass:map";
 
 $colour-palette-brand: (
-  "black": #000,
+  "black": #010101,
   "grey": #8c9694,
   "light-grey": #d9d9d6,
   "white": #fff,
@@ -80,7 +80,7 @@ $colour-palette-default: (
   "contrast-button-background": brand-colour("white"),
   "contrast-button-hover-text": brand-colour("white"),
   "contrast-button-hover-background": brand-colour("black"),
-  "accent-background": #111,
+  "accent-background": #101112,
   "accent-background-light": #ededed,
   "accent-font-base": brand-colour("white"),
   "accent-font-dark": brand-colour("white"),
@@ -102,8 +102,8 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #222,
-    "background-tint": #333,
+    "page-background": #212223,
+    "background-tint": #323334,
     "font-base": brand-colour("white", 0.95),
     "font-dark": brand-colour("white"),
     "font-light": brand-colour("white", 0.51),
@@ -121,7 +121,7 @@ $colour-palette-dark: map.merge(
     "button-background": brand-colour("white"),
     "button-hover-text": brand-colour("white"),
     "button-hover-background": brand-colour("black"),
-    "contrast-background": #111,
+    "contrast-background": #101112,
     "contrast-link-visited":
       map.get($colour-palette-default, "contrast-link-visited"),
   )

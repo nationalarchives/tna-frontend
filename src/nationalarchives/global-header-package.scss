@@ -3,7 +3,7 @@
 @use "sass:math";
 // @use "variables/assets";
 @use "variables/grid" as gridVars with (
-  $largest-container-width: 1300px,
+  $largest-container-width: 1270px,
   $gutter-width: math.div(30, 16),
   $gutter-width-tiny: math.div(15, 16)
 );
@@ -292,6 +292,12 @@ hr {
 
     &:focus {
       background: none;
+    }
+
+    &:hover:focus {
+      color: unset !important;
+
+      background: unset !important;
     }
 
     &.tna-link--no-visited-state {

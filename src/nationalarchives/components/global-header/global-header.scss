@@ -10,6 +10,7 @@
   padding-top: spacing.space(1);
 
   @include colour.contrast;
+  background: #000;
 
   .tna-template--light-theme & {
     background: linear-gradient(
@@ -19,11 +20,7 @@
     );
   }
 
-  .tna-template--dark-theme & {
-    background: #000;
-  }
-
-  .tna-template--system-theme {
+  .tna-template--system-theme & {
     @media (prefers-color-scheme: light) {
       background: linear-gradient(
         0deg,
@@ -389,6 +386,12 @@
 
     &__navigation-item-link {
       padding: spacing.space(0.5) grid.gutter-width-tiny();
+    }
+  }
+
+  @include colour.on-high-contrast {
+    &__top-navigation-link {
+      @include colour.colour-font("link");
     }
   }
 }

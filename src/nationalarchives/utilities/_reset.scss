@@ -3,6 +3,11 @@
 * {
   margin: 0;
   padding: 0;
+
+  @media (prefers-reduced-motion) {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 img,

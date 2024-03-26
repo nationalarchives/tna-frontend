@@ -26,7 +26,7 @@
         <h3 class="tna-!--visually-hidden">
           Follow us
         </h3>
-        <nav class="tna-footer__social" role="navigation" aria-label="Social">
+        <nav class="tna-footer__social" aria-label="Social">
           <ul class="tna-ul tna-ul--plain tna-footer__social-items">
           {%- for item in params.social %}
             <li class="tna-footer__social-item">
@@ -61,7 +61,7 @@
     {%- if params.navigation %}
     <div class="tna-footer__navigation tna-column {% if params.showNewsletter %}tna-column--width-1-2{% else %}tna-column--width-2-3{% endif %} tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-2 tna-column--order-4-medium tna-columns tna-columns--2 tna-columns--1-tiny">
       {%- for group in params.navigation %}
-      <nav class="tna-footer__navigation-block tna-columns__block" role="navigation" aria-label="{{ group.title }}">
+      <nav class="tna-footer__navigation-block tna-columns__block" aria-label="{{ group.title }}">
         {%- if not group.hideTitle %}
         <h3 class="tna-footer__navigation-block-heading tna-heading-m">
           {{ group.title }}
@@ -102,7 +102,7 @@
   </div>
   <div class="tna-container">
     {%- if params.legal %}
-    <nav class="tna-footer__legal tna-column tna-column--full" role="navigation" aria-label="Legal">
+    <nav class="tna-footer__legal tna-column tna-column--full" aria-label="Legal">
       <ul class="tna-footer__legal-items tna-ul tna-ul--plain">
         {%- for item in params.legal %}
         <li class="tna-footer__legal-item">

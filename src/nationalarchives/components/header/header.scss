@@ -21,7 +21,7 @@
     );
   }
 
-  .tna-template--system-theme {
+  .tna-template--system-theme & {
     @media (prefers-color-scheme: light) {
       background: linear-gradient(
         0deg,
@@ -482,22 +482,22 @@
     }
   }
 
-  @include colour.on-high-contrast {
-    &::after {
-      @include colour.colour-border("keyline-dark");
-    }
+  // @include colour.on-high-contrast {
+  //   &::after {
+  //     @include colour.colour-border("keyline-dark");
+  //   }
 
-    @include media.on-larger-than-mobile {
-      &__navigation-item-link {
-        &:hover,
-        &--selected {
-          &,
-          &:link,
-          &:visited {
-            @include colour.colour-border("keyline-dark");
-          }
-        }
-      }
-    }
-  }
+  //   @include media.on-larger-than-mobile {
+  //     &__navigation-item-link {
+  //       &:hover,
+  //       &--selected {
+  //         &,
+  //         &:link,
+  //         &:visited {
+  //           @include colour.colour-border("keyline-dark");
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }

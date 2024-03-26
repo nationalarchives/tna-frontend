@@ -170,11 +170,19 @@ jobs:
       - publish-npm-global-header
     steps:
       - uses: actions/checkout@v4
-      - name: Get release notes
-        id: get-release-notes
-        run: ./tasks/get-release-notes.sh "${{ needs.version-check.outputs.version }}" > RELEASE_NOTES.txt
+      - name: Get the release notes
+        id: release-notes
+        run: |
+          {
+            echo 'RELEASE_NOTES<<EOF'
+            ./tasks/get-release-notes.sh ${{ needs.version-check.outputs.version }}
+            echo EOF
+          } >> "$GITHUB_ENV"
       - uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_TITLE: "`v${{ needs.version-check.outputs.version }}` of `tna-frontend` has just been published"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
+          MSG_MINIMAL: true
+          SLACKIFY_MARKDOWN: true
+          SLACK_MESSAGE: ${{ steps.release-notes.outputs.RELEASE_NOTES }}

@@ -1,9 +1,10 @@
 @use "sass:math";
 @use "../variables/typography";
 @use "colour";
+@use "media";
 
-@mixin relative-font-size($fontSizePx) {
-  font-size: #{math.div($fontSizePx, typography.$relative-1rem-px)}rem;
+@mixin relative-font-size($font-size-px) {
+  font-size: #{math.div($font-size-px, typography.$relative-1rem-px)}rem;
 }
 
 @mixin main-font-weight {
@@ -52,4 +53,47 @@
 @mixin interacted-text-decoration {
   text-decoration: underline;
   text-decoration-thickness: typography.$interactive-text-decoration-thickness;
+}
+
+@mixin heading-generator(
+  $font-size-default,
+  $font-size-medium,
+  $font-size-small,
+  $font-size-tiny,
+  $line-height
+) {
+  @include relative-font-size($font-size-default);
+  line-height: $line-height;
+
+  $small-and-tiny-identical: $font-size-small == $font-size-tiny;
+  $medium-small-and-tiny-identical: $font-size-medium == $font-size-small and
+    $small-and-tiny-identical;
+  $all-identical: $font-size-default == $font-size-medium and
+    $medium-small-and-tiny-identical and $small-and-tiny-identical;
+
+  @if $all-identical != true {
+    @if $medium-small-and-tiny-identical != true {
+      @include media.on-medium {
+        @include relative-font-size($font-size-medium);
+      }
+
+      @if $small-and-tiny-identical != true {
+        @include media.on-small {
+          @include relative-font-size($font-size-small);
+        }
+
+        @include media.on-tiny {
+          @include relative-font-size($font-size-tiny);
+        }
+      } @else {
+        @include media.on-mobile {
+          @include relative-font-size($font-size-small);
+        }
+      }
+    } @else {
+      @include media.on-smaller-than-large {
+        @include relative-font-size($font-size-medium);
+      }
+    }
+  }
 }

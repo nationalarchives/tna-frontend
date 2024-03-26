@@ -61,7 +61,7 @@
 
   @include media.on-tiny {
     .tna-column & {
-      width: calc(100% + #{grid.gutter-width-tiny(2)});
+      width: calc(100% + #{grid.gutter-width-tiny-double()});
 
       position: relative;
       left: -#{grid.gutter-width-tiny()};

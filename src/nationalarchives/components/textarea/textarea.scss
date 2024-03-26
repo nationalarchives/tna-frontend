@@ -9,7 +9,7 @@ $textarea-vertical-padding: 0.25 !default;
 .tna-textarea {
   width: 100%;
   min-height: #{($textarea-line-height * $textarea-minimum-lines-visible) + (
-      spacing.space($textarea-vertical-padding, 2)
+      spacing.space($textarea-vertical-padding * 2)
     )};
   padding: spacing.space($textarea-vertical-padding) spacing.space(0.5);
 

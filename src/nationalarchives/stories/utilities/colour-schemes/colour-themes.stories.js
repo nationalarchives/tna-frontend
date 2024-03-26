@@ -722,9 +722,9 @@ const Template = ({ theme, accent }) => {
               },
             })}
             <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
         </div>
@@ -806,9 +806,9 @@ const Template = ({ theme, accent }) => {
               },
             })}
             <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
         </div>
@@ -890,9 +890,9 @@ const Template = ({ theme, accent }) => {
               },
             })}
             <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
         </div>
@@ -974,9 +974,9 @@ const Template = ({ theme, accent }) => {
               },
             })}
             <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
         </div>
@@ -1058,9 +1058,9 @@ const Template = ({ theme, accent }) => {
               },
             })}
             <div class="tna-button-group">
-              <a href="#" class="tna-button" role="button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent" role="button">Accent button</a>
-              <a href="" class="tna-button tna-button--plain" role="button">Plain button</a>
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
         </div>

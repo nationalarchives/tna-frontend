@@ -10,12 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Tinted cards are now an option
+- Blockquotes have quotemarks added with CSS
+- New "medium" (600) Open Sans font weight added
 
 ### Changed
 
 - Changed all `#000` colours to `#010101`
 - The newsletter subscribe button in the footer is no longer accented
 - Added `role="group"` to date input component `<fieldset>`
+- Colours changed for black theme accent blocks
 
 ### Deprecated
 ### Removed

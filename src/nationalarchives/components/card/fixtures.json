@@ -136,16 +136,61 @@
         "actions": [
           {
             "text": "Card action",
+            "href": "#"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\">Card action</a></div></div></div>"
+    },
+    {
+      "name": "with actions with titles",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "actions": [
+          {
+            "text": "Card action",
             "href": "#",
-            "title": "Go and do the action",
-            "classes": "card__test-class",
+            "title": "Go and do the action"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the action\">Card action</a></div></div></div>"
+    },
+    {
+      "name": "with actions with classes",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "actions": [
+          {
+            "text": "Card action",
+            "href": "#",
+            "classes": "card__test-class"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action card__test-class\">Card action</a></div></div></div>"
+    },
+    {
+      "name": "with actions with attributes",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "actions": [
+          {
+            "text": "Card action",
+            "href": "#",
             "attributes": {
               "data-testattribute": "foobar"
             }
           }
         ]
       },
-      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action card__test-class\" title=\"Go and do the action\" data-testattribute=\"foobar\">Card action</a></div></div></div>"
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" data-testattribute=\"foobar\">Card action</a></div></div></div>"
     },
     {
       "name": "with a label",

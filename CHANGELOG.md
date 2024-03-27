@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Changed all `#000` colours to `#010101`
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed collapsed padding on details dropdown of hero component
+
 ### Security
 
 ## [0.1.49](https://github.com/nationalarchives/tna-frontend/compare/v0.1.48...v0.1.49) - 2024-03-26

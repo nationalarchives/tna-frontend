@@ -13,12 +13,12 @@
     <meta charset="utf-8">
     <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle or defaultSiteTitle }}{% else %}{{ siteTitle or defaultSiteTitle }}{% endif %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="{{ themeColor | default('#000000') }}">
+    <meta name="theme-color" content="{{ themeColor | default('#010101') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {% block headIcons %}
     <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ assetPath | default('/assets') }}/images/favicon.ico" type="image/x-icon">
-    <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/mask-icon.svg" color="{{ themeColor | default('#000000') }}">
+    <link rel="mask-icon" href="{{ assetPath | default('/assets') }}/images/mask-icon.svg" color="{{ themeColor | default('#010101') }}">
     <link rel="apple-touch-icon" sizes="48x48" href="{{ assetPath | default('/assets') }}/images/icon-48x48.png">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ assetPath | default('/assets') }}/images/icon-72x72.png">
     <link rel="apple-touch-icon" sizes="96x96" href="{{ assetPath | default('/assets') }}/images/icon-96x96.png">

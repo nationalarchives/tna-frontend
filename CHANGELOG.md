@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Changed all `#000` colours to `#010101`
+- The newsletter subscribe button in the footer is no longer accented
 
 ### Deprecated
 ### Removed

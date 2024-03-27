@@ -12,27 +12,26 @@ Use the cookie banner from TNA Frontend in your service.
 
 ### HTML
 
-1. Add the class `tna-template` to your `<html>` element
-1. Add the class `tna-template--light-theme`, `tna-template--light-theme` or `tna-template--system-theme` to your `<html>` element based on what [colour theme](https://nationalarchives.github.io/design-system/styles/colours/#theme-colours) you need (`tna-template--light-theme` suggested)
+1. Add the classes `tna-template` and `tna-template--light-theme` to your `<html>` element
 1. Add the class `tna-template__body` to your `<body>` element
 1. Add the HTML for the header and footer to the appropriate part of your page (HTML found below)
-1. Modify the HTML as necessary
+1. Change the `#main-content` in the `href` of the skip link to the ID of your `<main>` element
 
-### Assets
+### JavaScript and CSS
 
 1. Include the `global-header-package.css` file in your page using a `<link>` element
-1. Ensure the Font Awesome assets can be loaded - if they are not served from the same relative location as the `global-header-package.css` then you need to edit the include paths in the CSS or build the SCSS yourself
-1. Include the `global-header.js` file in your page using a `<script>` element (ensure you add the JavaScript file AFTER the header and footer HTML - this should add a `TNAFrontend` object to your `window`)
-1. Initialise the header JavaScript:
+1. Include the `all.js` and `analytics.js` files in your page using a `<script>` element (ensure you add the JavaScript file AFTER the header and footer HTML - this should add a `TNAFrontend` and `TNAFrontendAnalytics` object to your `window`)
+1. Initialise the header JavaScript and analytics AFTER the JavaScript files you just included:
 
-```js
-const $globalHeader = document.querySelector(
-  '[data-module="tna-global-header"]',
-);
-
-if ($globalHeader) {
-  new TNAFrontend.GlobalHeader($globalHeader);
-}
+```html
+<script>
+    if(window.TNAFrontend && window.TNAFrontend.initAll) {
+        window.TNAFrontend.initAll()
+    }
+    if(window.TNAFrontendAnalytics && window.TNAFrontendAnalytics.GA4) {
+        new TNAFrontendAnalytics.GA4({ addTrackingCode: false })
+    }
+</script>
 ```
 
 ## Example HTML
@@ -42,6 +41,7 @@ Feel free to add or remove items as necessary. The recommended HTML is shown bel
 ### Header
 
 ```html
+<!-- SKIPLINKHTML -->
 <!-- GLOBALHEADERHTML -->
 ```
 

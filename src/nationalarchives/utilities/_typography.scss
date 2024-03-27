@@ -376,7 +376,7 @@ small {
       content: open-quote;
     }
 
-    :last-child:after {
+    :last-child::after {
       content: close-quote;
     }
   }

@@ -191,6 +191,7 @@ hr {
   }
 
   &__top-navigation {
+    margin-top: 0;
     margin-bottom: 0;
 
     &-item {
@@ -248,6 +249,7 @@ hr {
   }
 
   &__licence p {
+    margin-top: 0;
     margin-bottom: 0;
   }
 
@@ -285,7 +287,7 @@ hr {
     &:active {
       @include typography.interacted-text-decoration;
 
-      background: none;
+      background: none !important;
 
       outline: none;
     }

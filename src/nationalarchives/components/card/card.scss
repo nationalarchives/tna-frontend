@@ -85,6 +85,7 @@
   }
 
   &--contrast,
+  &--tint,
   &--accent {
     .tna-card__inner {
       padding-bottom: spacing.space(1);
@@ -100,6 +101,10 @@
 
   &--contrast {
     @include colour.contrast;
+  }
+
+  &--tint {
+    @include colour.tint;
   }
 
   &--accent {
@@ -145,6 +150,7 @@
   }
 
   &--horizontal#{&}--contrast,
+  &--horizontal#{&}--tint,
   &--horizontal#{&}--accent {
     @include media.on-mobile {
       .tna-card__inner {

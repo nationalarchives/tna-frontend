@@ -5,6 +5,8 @@
 {%- endif -%}
 {%- if params.style == "contrast" -%}
   {%- set containerClasses = containerClasses.concat('tna-card--contrast') -%}
+{%- elseif params.style == "tint" -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--tint') -%}
 {%- elseif params.style == "accent" -%}
   {%- set containerClasses = containerClasses.concat('tna-card--accent') -%}
 {%- endif -%}

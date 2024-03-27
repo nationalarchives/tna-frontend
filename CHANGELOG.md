@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tinted cards are now an option
 - Blockquotes have quotemarks added with CSS
 - New "medium" (600) Open Sans font weight added
+- Ability to remove margins from left and right of columns
 
 ### Changed
 

@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - "Thick" and button border widths are customisable
 
 ### Changed
+
+- Improved markup of warning component
+
 ### Deprecated
 ### Removed
 ### Fixed

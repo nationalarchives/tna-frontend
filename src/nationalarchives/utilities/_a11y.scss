@@ -20,10 +20,10 @@
 
   background-color: transparent !important;
 
-  &::before,
-  &::after {
-    content: "\00a0";
-  }
+  // &::before,
+  // &::after {
+  //   content: "\00a0";
+  // }
 }
 
 *:focus {

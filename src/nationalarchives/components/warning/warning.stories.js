@@ -1,9 +1,10 @@
-import Message from "./template.njk";
+import Warning from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  message: { control: "text" },
+  heading: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
+  body: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -15,15 +16,16 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Message",
+  title: "Components/Warning",
   argTypes,
 };
 
-const Template = ({ message, headingLevel, classes, attributes }) =>
-  Message({
+const Template = ({ heading, headingLevel, body, classes, attributes }) =>
+  Warning({
     params: {
-      message,
+      heading,
       headingLevel,
+      body,
       classes,
       attributes,
     },
@@ -31,8 +33,7 @@ const Template = ({ message, headingLevel, classes, attributes }) =>
 
 export const Standard = Template.bind({});
 Standard.args = {
-  message:
-    "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
   headingLevel: 2,
-  classes: "tna-phase-banner--demo",
+  body: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+  classes: "tna-warning--demo",
 };

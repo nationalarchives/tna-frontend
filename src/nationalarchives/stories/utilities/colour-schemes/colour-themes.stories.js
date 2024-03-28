@@ -10,7 +10,6 @@ import Gallery from "../../../components/gallery/template.njk";
 import GlobalHeader from "../../../components/global-header/template.njk";
 import Hero from "../../../components/hero/template.njk";
 import IndexGrid from "../../../components/index-grid/template.njk";
-import Message from "../../../components/message/template.njk";
 import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
@@ -20,6 +19,7 @@ import Select from "../../../components/select/template.njk";
 import Tabs from "../../../components/tabs/template.njk";
 import TextInput from "../../../components/text-input/template.njk";
 import Textarea from "../../../components/textarea/template.njk";
+import Warning from "../../../components/warning/template.njk";
 
 const argTypes = {
   theme: {
@@ -412,7 +412,7 @@ const Template = ({ theme, accent }) => {
               </a>
             </li>
           </ul>
-          ${Message({
+          ${Warning({
             params: {
               message:
                 "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",

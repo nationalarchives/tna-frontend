@@ -3,7 +3,7 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.tna-message {
+.tna-warning {
   @include spacing.space-above;
   padding: spacing.space(1);
 
@@ -23,7 +23,6 @@
   }
 
   &__heading {
-    font-size: 0;
   }
 
   &__heading-icon {
@@ -53,9 +52,10 @@
     }
   }
 
-  &__message {
+  &__body {
     margin-top: 0;
 
     flex: 1;
+    align-self: center;
   }
 }

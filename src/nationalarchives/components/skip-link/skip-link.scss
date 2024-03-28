@@ -1,5 +1,8 @@
+@use "../../variables/a11y" as a11yVars;
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-skip-link {
   width: 1px !important;
@@ -29,8 +32,11 @@
   &:focus {
     @include colour.colour-background("button-background", $important: true);
 
-    @include colour.colour-border("focus-outline", 5px, $important: true);
-
+    @include colour.colour-border(
+      "focus-outline",
+      a11yVars.$focus-outline-width,
+      $important: true
+    );
     outline: none !important;
   }
 

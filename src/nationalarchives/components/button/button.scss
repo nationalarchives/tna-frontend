@@ -5,6 +5,8 @@
 @use "../../tools/typography";
 @use "button-group";
 
+$button-border-width: 4px !default;
+
 .tna-button {
   padding: spacing.space(0.25) spacing.space(1);
 
@@ -22,7 +24,7 @@
 
   @include colour.colour-background("button-background");
 
-  @include colour.colour-border("button-background", 4px);
+  @include colour.colour-border("button-background", $button-border-width);
 
   cursor: pointer;
 

@@ -130,6 +130,7 @@ const checkExists = [
   // Variables
   "nationalarchives/variables/_a11y.scss",
   "nationalarchives/variables/_assets.scss",
+  "nationalarchives/variables/_borders.scss",
   "nationalarchives/variables/_colour.scss",
   "nationalarchives/variables/_features.scss",
   "nationalarchives/variables/_forms.scss",

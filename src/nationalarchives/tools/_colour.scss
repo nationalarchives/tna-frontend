@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "sass:list";
+@use "../variables/borders";
 @use "../variables/colour";
 @use "../tools/media";
 
@@ -121,23 +122,44 @@
 }
 
 @mixin thick-keyline($direction) {
-  @include colour-border("keyline", 5px, solid, $direction);
+  @include colour-border(
+    "keyline",
+    borders.$thick-border-width,
+    solid,
+    $direction
+  );
 }
 
 @mixin thick-keyline-dark($direction) {
-  @include colour-border("keyline-dark", 5px, solid, $direction);
+  @include colour-border(
+    "keyline-dark",
+    borders.$thick-border-width,
+    solid,
+    $direction
+  );
 }
 
 @mixin thick-keyline-accent($direction) {
-  @include colour-border("accent-background", 5px, solid, $direction);
+  @include colour-border(
+    "accent-background",
+    borders.$thick-border-width,
+    solid,
+    $direction
+  );
 }
 
 @mixin thick-keyline-error($direction) {
-  @include colour-border("form-error", 5px, solid, $direction);
+  @include colour-border(
+    "form-error",
+    borders.$thick-border-width,
+    solid,
+    $direction
+  );
 }
 
 @mixin thick-keyline-brand($direction, $brandColour) {
-  border-#{$direction}: 5px #{brand-colour($brandColour)} solid;
+  border-#{$direction}: borders.$thick-border-width #{brand-colour($brandColour)}
+    solid;
 }
 
 %light {

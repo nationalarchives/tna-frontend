@@ -3,73 +3,73 @@
     "name": "text",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The text of the button."
   },
   {
     "name": "href",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "A URL to use as a link for the button."
   },
   {
     "name": "title",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "A title attribute for the button."
   },
   {
     "name": "icon",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
   },
   {
     "name": "accent",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, set the colour of the button to the page's accent colour."
   },
   {
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, make the button smaller."
   },
   {
     "name": "plain",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, remove the background colour of the button and make it look more like a link."
   },
   {
     "name": "iconOnly",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, don't show the text of the button."
   },
   {
     "name": "iconOnlyOnMobile",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, show both the text and icon on larger devices but only show the icon on smaller devices."
   },
   {
     "name": "rightAlignIcon",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, align the icon to the right hand side of the button."
   },
   {
     "name": "buttonElement",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, use a `<button>` element for the button. This makes the `href` attribute redundant."
   },
   {
     "name": "buttonType",
     "type": "text",
     "required": false,
-    "description": ""
+    "description": "Set the type of button element if `buttonElement` is true."
   },
   {
     "name": "classes",

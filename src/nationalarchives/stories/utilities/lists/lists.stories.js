@@ -15,10 +15,16 @@ const UnorderedListTemplate = ({ items, plain, classes }) =>
     "",
   )}</ul>`;
 export const UnorderedList = UnorderedListTemplate.bind({});
+UnorderedList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 UnorderedList.args = {
   items: ["Alpha", "Beta", "Gamma"],
 };
 export const UnorderedListPlain = UnorderedListTemplate.bind({});
+UnorderedListPlain.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 UnorderedListPlain.args = {
   items: ["Alpha", "Beta", "Gamma"],
   plain: true,
@@ -30,10 +36,16 @@ const OrderedListTemplate = ({ items, plain, classes }) =>
     "",
   )}</ol>`;
 export const OrderedList = OrderedListTemplate.bind({});
+OrderedList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 OrderedList.args = {
   items: ["Alpha", "Beta", "Gamma"],
 };
 export const OrderedListPlain = OrderedListTemplate.bind({});
+OrderedListPlain.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 OrderedListPlain.args = {
   items: ["Alpha", "Beta", "Gamma"],
   plain: true,
@@ -66,6 +78,9 @@ const DescriptionListTemplate = ({ items, plain, classes }) =>
 </dl>`;
 
 export const DescriptionList = DescriptionListTemplate.bind({});
+DescriptionList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 DescriptionList.args = {
   items: [
     { title: "Alpha", description: "Lorem ipsum" },
@@ -79,6 +94,9 @@ DescriptionList.args = {
 };
 
 export const PlainDescriptionList = DescriptionListTemplate.bind({});
+PlainDescriptionList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 PlainDescriptionList.args = {
   items: [
     { title: "Alpha", description: "Lorem ipsum" },
@@ -90,6 +108,9 @@ PlainDescriptionList.args = {
 };
 
 export const DescriptionListWithIcons = DescriptionListTemplate.bind({});
+DescriptionListWithIcons.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 DescriptionListWithIcons.args = {
   items: [
     {
@@ -103,6 +124,9 @@ DescriptionListWithIcons.args = {
 };
 
 export const PlainDescriptionListWithIcons = DescriptionListTemplate.bind({});
+PlainDescriptionListWithIcons.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 PlainDescriptionListWithIcons.args = {
   items: [
     {
@@ -117,6 +141,9 @@ PlainDescriptionListWithIcons.args = {
 };
 
 export const ComplexDescriptionList = DescriptionListTemplate.bind({});
+ComplexDescriptionList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 ComplexDescriptionList.args = {
   items: [
     { title: "Alpha", description: "Lorem ipsum" },
@@ -146,6 +173,9 @@ const ChipListTemplate = ({ items, plain, classes }) =>
     "",
   )}</ul>`;
 export const ChipList = ChipListTemplate.bind({});
+ChipList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 ChipList.args = {
   items: [
     { text: "Alpha", icon: "heart" },

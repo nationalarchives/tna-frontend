@@ -425,10 +425,9 @@ const Template = ({ theme, accent }) => {
             params: {
               items: [
                 {
-                  imageSrc:
-                    "https://beta.nationalarchives.gov.uk/media/images/wedderburn-trial.max-832x591.format-webp_i3c9pUH.webp",
-                  imageWidth: 576,
-                  imageHeight: 591,
+                  imageSrc: "https://picsum.photos/id/237/400/600",
+                  imageWidth: 400,
+                  imageHeight: 600,
                   collection: "TS 11/45/167",
                   title: "Court records relating to Robert Wedderburn's trial",
                   href: "#",

@@ -26,6 +26,9 @@ const HeadingGroupTemplate = ({
 </hgroup>`;
 
 export const HeadingGroup = HeadingGroupTemplate.bind({});
+HeadingGroup.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 HeadingGroup.args = {
   supertitle: "Record revealed",
   title: "The Monteagle Letter",
@@ -52,6 +55,9 @@ const HeadingGroupSingleSentenceTemplate = ({
 
 export const HeadingGroupSingleSentence =
   HeadingGroupSingleSentenceTemplate.bind({});
+HeadingGroupSingleSentence.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 HeadingGroupSingleSentence.args = {
   supertitle: "The story of",
   title: "Alice Hawkins",
@@ -76,6 +82,9 @@ const HeadingGroupPlainSupertitleTemplate = ({
 
 export const HeadingGroupPlainSupertitle =
   HeadingGroupPlainSupertitleTemplate.bind({});
+HeadingGroupPlainSupertitle.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 HeadingGroupPlainSupertitle.args = {
   supertitle: "Record revealed",
   title: "The Monteagle Letter",

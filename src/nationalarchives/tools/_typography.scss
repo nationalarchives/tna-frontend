@@ -11,6 +11,10 @@
   font-weight: typography.$main-font-weight;
 }
 
+@mixin main-font-weight-medium {
+  font-weight: typography.$main-font-weight-medium;
+}
+
 @mixin main-font-weight-bold {
   font-weight: typography.$main-font-weight-bold;
 }

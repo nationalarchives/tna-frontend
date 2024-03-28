@@ -25,6 +25,9 @@ const HeadingsTemplate = ({ text }) =>
   )}`;
 
 export const Headings = HeadingsTemplate.bind({});
+Headings.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Headings.args = {
   text: "This is a heading",
 };

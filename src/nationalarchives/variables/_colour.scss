@@ -39,7 +39,7 @@ $colour-palette-brand: (
 
 $dark-grey: #26262a !default;
 $base-font: #343338 !default;
-$link-colour: #0062a8 !default;
+$link-colour: #005fa3 !default;
 $link-colour-visited: #4c2c92 !default;
 
 /*
@@ -49,7 +49,7 @@ LIGHT THEME (DEFAULT)
 */
 $colour-palette-default: (
   "page-background": #f4f4f4,
-  "background-tint": #e4e4e4,
+  "background-tint": brand-colour("light-grey"),
   "font-base": $base-font,
   "font-dark": brand-colour("black"),
   "font-light": brand-colour("black", 0.58),
@@ -80,16 +80,16 @@ $colour-palette-default: (
   "contrast-button-background": brand-colour("white"),
   "contrast-button-hover-text": brand-colour("white"),
   "contrast-button-hover-background": brand-colour("black"),
-  "accent-background": #101112,
+  "accent-background": brand-colour("grey"),
   "accent-background-light": #ededed,
-  "accent-font-base": brand-colour("white"),
-  "accent-font-dark": brand-colour("white"),
-  "accent-font-light": brand-colour("white", 0.7),
-  "accent-icon-light": brand-colour("white", 0.45),
-  "accent-link": brand-colour("white"),
-  "accent-link-visited": #b9f,
-  "accent-keyline": brand-colour("white", 0.5),
-  "accent-keyline-dark": brand-colour("white", 0.8),
+  "accent-font-base": brand-colour("black"),
+  "accent-font-dark": brand-colour("black"),
+  "accent-font-light": brand-colour("black", 0.7),
+  "accent-icon-light": brand-colour("black", 0.45),
+  "accent-link": brand-colour("black"),
+  "accent-link-visited": brand-colour("black"),
+  "accent-keyline": brand-colour("black", 0.5),
+  "accent-keyline-dark": brand-colour("black", 0.8),
   "button-accent-text": brand-colour("black"),
   "button-accent-background": brand-colour("grey"),
 ) !default;

@@ -1,9 +1,5 @@
 @use "../tools/colour";
 
-// :root {
-//   @include colour.colour-css-vars;
-// }
-
 .tna-template {
   @include colour.colour-background("page-background");
 
@@ -52,23 +48,56 @@
   }
 
   &--yellow-accent {
-    @include colour.accent-css-vars("yellow");
+    --accent-background: #{colour.brand-colour("yellow")} !important;
+    --accent-background-light: #{colour.brand-colour("cream")} !important;
+    // --accent-font-base: #{colour.brand-colour("black")} !important;
+    // --accent-font-dark: #{colour.brand-colour("black")} !important;
+    // --accent-font-light: #{colour.brand-colour("black", 0.7)} !important;
+    // --accent-icon-light: #{colour.brand-colour("black", 0.45)} !important;
+    // --accent-link: #{colour.brand-colour("black")} !important;
+    // --accent-link-visited: #{colour.brand-colour("black")} !important;
+    // --accent-keyline: #{colour.brand-colour("black", 0.5)} !important;
+    // --accent-keyline-dark: #{colour.brand-colour("black", 0.8)} !important;
+    --button-accent-background: #{colour.brand-colour("yellow")} !important;
+  }
+
+  &--pink-accent,
+  &--orange-accent,
+  &--green-accent,
+  &--blue-accent {
+    --accent-font-base: #{colour.brand-colour("white")} !important;
+    --accent-font-dark: #{colour.brand-colour("white")} !important;
+    --accent-font-light: #{colour.brand-colour("white", 0.7)} !important;
+    --accent-icon-light: #{colour.brand-colour("white", 0.45)} !important;
+    --accent-link: #{colour.brand-colour("white")} !important;
+    --accent-link-visited: #{colour.brand-colour("white")} !important;
+    --accent-keyline: #{colour.brand-colour("white", 0.5)} !important;
+    --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
+    --button-accent-text: #{colour.brand-colour("white")} !important;
   }
 
   &--pink-accent {
-    @include colour.accent-css-vars("pink");
+    --accent-background: #{colour.brand-colour("maroon")} !important;
+    --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
+    --button-accent-background: #{colour.brand-colour("maroon")} !important;
   }
 
   &--orange-accent {
-    @include colour.accent-css-vars("orange");
+    --accent-background: #{colour.brand-colour("chestnut")} !important;
+    --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
+    --button-accent-background: #{colour.brand-colour("chestnut")} !important;
   }
 
   &--green-accent {
-    @include colour.accent-css-vars("green");
+    --accent-background: #{colour.brand-colour("forest")} !important;
+    --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
+    --button-accent-background: #{colour.brand-colour("forest")} !important;
   }
 
   &--blue-accent {
-    @include colour.accent-css-vars("blue");
+    --accent-background: #{colour.brand-colour("navy")} !important;
+    --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
+    --button-accent-background: #{colour.brand-colour("navy")} !important;
   }
 }
 

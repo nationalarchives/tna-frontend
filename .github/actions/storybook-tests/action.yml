@@ -14,7 +14,7 @@ runs:
       run: npm ci
       shell: bash
     - name: Build Storybook
-      run: npm run build --test
+      run: npm run build:storybook --test
       shell: bash
     - name: Start Storybook
       run: npm start &
@@ -28,6 +28,6 @@ runs:
         responseCode: 200
         timeout: 30000
         interval: 500
-    - name: Run tests
+    - name: Run Storybook tests
       run: npm run test:storybook
       shell: bash

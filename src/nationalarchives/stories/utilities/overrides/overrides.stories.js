@@ -21,9 +21,15 @@ const Template = () => {
 };
 
 export const Margin = Template.bind({});
+Margin.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Margin.args = {};
 
 export const MarginMobile = Template.bind({});
+MarginMobile.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 MarginMobile.parameters = {
   viewport: {
     defaultViewport: "small",

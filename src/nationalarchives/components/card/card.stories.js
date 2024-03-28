@@ -22,7 +22,10 @@ const argTypes = {
   text: { control: "text" },
   actions: { control: "object" },
   horizontal: { control: "boolean" },
-  style: { control: "inline-radio", options: ["none", "contrast", "accent"] },
+  style: {
+    control: "inline-radio",
+    options: ["none", "contrast", "tint", "accent"],
+  },
   plainSupertitle: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },

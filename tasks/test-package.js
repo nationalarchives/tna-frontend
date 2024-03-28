@@ -91,7 +91,6 @@ const checkExists = [
   ...componentFiles("header", "Header"),
   ...componentFiles("hero"),
   ...componentFiles("index-grid"),
-  ...componentFiles("message"),
   ...componentFiles("pagination"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
@@ -105,6 +104,7 @@ const checkExists = [
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input"),
   ...componentFiles("textarea"),
+  ...componentFiles("warning"),
   // Tools
   "nationalarchives/tools/_a11y.scss",
   "nationalarchives/tools/_colour.scss",

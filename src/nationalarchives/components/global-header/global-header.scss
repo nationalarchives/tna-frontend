@@ -10,7 +10,7 @@
   padding-top: spacing.space(1);
 
   @include colour.contrast;
-  background: #000;
+  background: #010101;
 
   .tna-template--light-theme & {
     background: linear-gradient(
@@ -30,7 +30,7 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      background: #000;
+      background: #010101;
     }
   }
 
@@ -323,7 +323,7 @@
 
     &__navigation-item-link {
       line-height: 1.75rem;
-      @include typography.main-font-weight-bold;
+      @include typography.main-font-weight-medium;
     }
 
     &__navigation-item:last-child &__navigation-item-link {

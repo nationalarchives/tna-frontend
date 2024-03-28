@@ -15,7 +15,7 @@ runs:
       shell: bash
     - name: Build package
       run: >
-        ./tasks/build-package.sh &&
+        npm run build:package &&
         cd package &&
         npm pack --pack-destination .
       shell: bash
@@ -52,7 +52,6 @@ runs:
         echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/hero/macro.njk\" import tnaHero %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/index-grid/macro.njk\" import tnaIndexGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/message/macro.njk\" import tnaMessage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/pagination/macro.njk\" import tnaPagination %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -65,7 +64,8 @@ runs:
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/warning/macro.njk\" import tnaWarning %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       shell: bash
     - name: Add components to template
       run: >
@@ -87,7 +87,6 @@ runs:
         echo "{{ tnaHeader({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaHero({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaIndexGrid({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaMessage({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPagination({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPhaseBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
@@ -101,6 +100,7 @@ runs:
         echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextarea({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaWarning({}) }}" >> prototype/app/views/index.html &&
         echo "{% endblock %}" >> prototype/app/views/index.html
       shell: bash
     - name: Copy page templates

@@ -368,15 +368,23 @@ small {
   @include colour.thick-keyline-accent(left);
 
   &__quote {
-    font-weight: 700;
+    @include typography.main-font-weight-medium;
+    quotes: auto;
+    quotes: "‘" "’";
+
+    :first-child::before {
+      content: open-quote;
+    }
+
+    :last-child::after {
+      content: close-quote;
+    }
   }
 
   &__citation {
-    @include typography.relative-font-size(16);
+    margin-top: spacing.space(1);
 
-    .tna-blockquote & {
-      margin: spacing.space(1) 0 0;
-    }
+    @include typography.relative-font-size(16);
 
     &::before {
       content: "\2014" " ";

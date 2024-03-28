@@ -7,8 +7,15 @@ require.extensions[".njk"] = function (module, filename) {
 
 nunjucks.configure(__dirname + "/../../src");
 
-const globalHeaderComponentNunjucks = require("../../src/nationalarchives/components/global-header/template.njk");
+const skipLinkComponentNunjucks = require("../../src/nationalarchives/components/skip-link/template.njk");
+const skipLinkHTML = nunjucks
+  .renderString(skipLinkComponentNunjucks, {
+    params: {},
+  })
+  .trim()
+  .replace(/ " /g, '" ');
 
+const globalHeaderComponentNunjucks = require("../../src/nationalarchives/components/global-header/template.njk");
 const globalHeaderHTML = nunjucks
   .renderString(globalHeaderComponentNunjucks, {
     params: {
@@ -64,7 +71,6 @@ const globalHeaderHTML = nunjucks
   .replace(/ " /g, '" ');
 
 const footerComponentNunjucks = require("../../src/nationalarchives/components/footer/template.njk");
-
 const footerHTML = nunjucks
   .renderString(footerComponentNunjucks, {
     params: {
@@ -210,6 +216,7 @@ fs.readFile(
   (err, data) => {
     if (err) throw err;
     const newReadme = data
+      .replace("<!-- SKIPLINKHTML -->", skipLinkHTML)
       .replace("<!-- GLOBALHEADERHTML -->", globalHeaderHTML)
       .replace("<!-- FOOTERHTML -->", footerHTML);
     fs.writeFile("package-global-header/README.md", newReadme, (err) => {

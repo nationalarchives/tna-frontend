@@ -293,7 +293,7 @@ hr {
     }
 
     &:focus {
-      background: none;
+      background: none !important;
     }
 
     &:hover:focus {

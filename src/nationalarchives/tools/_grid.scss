@@ -75,12 +75,14 @@
           margin-left: math.div(100%, $count) * $i;
         }
       }
+    }
 
-      &--no-margin-right-#{$suffix} {
+    @if $suffix != "" {
+      &--no-margin-right#{$suffix} {
         margin-right: 0;
       }
 
-      &--no-margin-left-#{$suffix} {
+      &--no-margin-left#{$suffix} {
         margin-left: 0;
       }
     }

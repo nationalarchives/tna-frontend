@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed column margin removal classes
+
 ### Security
 
 ## [0.1.50](https://github.com/nationalarchives/tna-frontend/compare/v0.1.49...v0.1.50) - 2024-03-28

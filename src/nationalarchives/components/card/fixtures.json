@@ -253,6 +253,30 @@
       "html": "<div class=\"tna-card tna-card--horizontal\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
+      "name": "with classes for href items",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "href": "#",
+        "body": "<p>Card body</p>",
+        "hrefClasses": "card__test-class"
+      },
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link card__test-class\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
+    },
+    {
+      "name": "with attributes for href items",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "href": "#",
+        "body": "<p>Card body</p>",
+        "hrefAttributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\" tna-heading-s tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\" data-testattribute=\"foobar\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
+    },
+    {
       "name": "with classes",
       "options": {
         "title": "Card title",

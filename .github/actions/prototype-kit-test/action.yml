@@ -64,8 +64,8 @@ runs:
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
-        echo -e "{% from \"nationalarchives/components/warning/macro.njk\" import tnaWarning %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/warning/macro.njk\" import tnaWarning %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       shell: bash
     - name: Add components to template
       run: >

@@ -1,5 +1,5 @@
 {%- macro tnaRadiosElement(params, extraAttributes) -%}
-<div class="tna-radios{% if params.small or params.inline %} tna-radios--small{% endif %}{% if params.inline %} tna-radios--inline{% endif %}">
+<div class="tna-radios{% if params.small or params.inline %} tna-radios--small{% endif %}{% if params.inline %} tna-radios--inline{% endif %}" id="{{ params.id }}">
   {%- for item in params.items %}
   <div class="tna-radios__item">
     <input type="radio" id="{{ params.id }}-{{ item.value }}" value="{{ item.value }}" name="{{ params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}{% for attribute, value in extraAttributes %} {{ attribute }}="{{ value }}"{% endfor %}{% if params.selected and item.value === params.selected %} checked{% endif %}>

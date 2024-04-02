@@ -19,7 +19,7 @@
       <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
     </p>
     {%- endif %}
-    <div class="tna-date-input{% if params.inline %} tna-date-input--inline{% endif %}">
+    <div class="tna-date-input{% if params.inline %} tna-date-input--inline{% endif %}" id="{{ params.id }}">
       <div class="tna-date-input__item">
         <label for="{{ params.id }}-day" class="tna-date-input__item-label">
           Day

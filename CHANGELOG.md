@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed column margin removal classes
+- Added missing IDs to some form elements so they can be linked top from the error summary
 
 ### Security
 

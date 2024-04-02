@@ -146,7 +146,7 @@ $button-border-width: 4px !default;
     &:not(.tna-button--plain):hover {
       @include colour.colour-font("font-dark");
 
-      @include colour.colour-background("page-background");
+      @include colour.colour-background("background");
     }
   }
 
@@ -159,9 +159,9 @@ $button-border-width: 4px !default;
   .tna-background-accent &--accent {
     @include colour.plain;
 
-    @include colour.colour-background("page-background");
+    @include colour.colour-background("background");
 
-    @include colour.colour-border("page-background");
+    @include colour.colour-border("background");
 
     &,
     &:link,
@@ -170,7 +170,7 @@ $button-border-width: 4px !default;
     }
 
     &:hover {
-      @include colour.colour-font("page-background");
+      @include colour.colour-font("background");
 
       @include colour.colour-background("font-dark");
     }

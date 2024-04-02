@@ -1,26 +1,27 @@
 @use "../tools/colour";
 
 .tna-template {
-  @include colour.colour-background("page-background");
+  @include colour.colour-background("background");
 
   &--system-theme,
   &--light-theme {
     @include colour.colour-css-vars;
-    // @include colour.light;
+
+    @media (prefers-contrast: more) {
+      @include colour.colour-css-vars-high-contrast;
+    }
   }
 
   &--system-theme {
+    // @include colour.colour-css-vars;
+
     @media (prefers-color-scheme: dark) {
       @include colour.colour-css-vars-dark;
     }
 
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast;
-
-      * {
-        background-image: none !important;
-      }
-    }
+    // @media (prefers-contrast: more) {
+    //   @include colour.colour-css-vars-high-contrast;
+    // }
 
     @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
       @include colour.colour-css-vars-high-contrast-dark;
@@ -29,35 +30,35 @@
 
   // &--light-theme {
   //   @include colour.colour-css-vars;
+
+  //   @media (prefers-contrast: more) {
+  //     @include colour.colour-css-vars-high-contrast;
+  //   }
   // }
 
   &--dark-theme {
     @include colour.colour-css-vars-dark;
-  }
 
-  &--high-contrast-theme {
-    @include colour.colour-css-vars-high-contrast;
-
-    * {
-      background-image: none !important;
-    }
-
-    &.tna-template--dark-theme {
+    @media (prefers-contrast: more) {
       @include colour.colour-css-vars-high-contrast-dark;
     }
   }
 
+  // &--high-contrast-theme {
+  //   @include colour.colour-css-vars-high-contrast;
+
+  //   * {
+  //     background-image: none !important;
+  //   }
+
+  //   &.tna-template--dark-theme {
+  //     @include colour.colour-css-vars-high-contrast-dark;
+  //   }
+  // }
+
   &--yellow-accent {
     --accent-background: #{colour.brand-colour("yellow")} !important;
     --accent-background-light: #{colour.brand-colour("cream")} !important;
-    // --accent-font-base: #{colour.brand-colour("black")} !important;
-    // --accent-font-dark: #{colour.brand-colour("black")} !important;
-    // --accent-font-light: #{colour.brand-colour("black", 0.7)} !important;
-    // --accent-icon-light: #{colour.brand-colour("black", 0.45)} !important;
-    // --accent-link: #{colour.brand-colour("black")} !important;
-    // --accent-link-visited: #{colour.brand-colour("black")} !important;
-    // --accent-keyline: #{colour.brand-colour("black", 0.5)} !important;
-    // --accent-keyline-dark: #{colour.brand-colour("black", 0.8)} !important;
     --button-accent-background: #{colour.brand-colour("yellow")} !important;
   }
 

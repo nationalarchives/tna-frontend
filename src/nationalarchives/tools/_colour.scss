@@ -40,19 +40,17 @@
   }
 }
 
-@mixin colour-font(
-  $colour,
-  $important: false,
-  $default-palette: colour.$colour-palette-default
-) {
-  color: map.get($default-palette, $colour) if($important, !important, null);
-  color: var(--#{$colour}) if($important, !important, null);
+@mixin colour-font($colour, $important: false) {
+  color: var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
+    if($important, !important, null);
 }
 
 @mixin colour-background($colour, $important: false) {
-  background-color: map.get(colour.$colour-palette-default, $colour)
+  background-color: var(
+      --#{$colour},
+      #{map.get(colour.$colour-palette-default, $colour)}
+    )
     if($important, !important, null);
-  background-color: var(--#{$colour}) if($important, !important, null);
 }
 
 @mixin colour-background-brand($brandColour, $important: false) {
@@ -68,35 +66,29 @@
 ) {
   @if $direction != "" {
     @if $width != "" {
-      $property: border-#{$direction};
       border-#{$direction}: $width
-        map.get(colour.$colour-palette-default, $colour)
-        $style
-        if($important, !important, null);
-      border-#{$direction}: $width
-        var(--#{$colour})
+        var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
         $style
         if($important, !important, null);
     } @else {
-      border-#{$direction}-color: map.get(
-          colour.$colour-palette-default,
-          $colour
+      border-#{$direction}-color: var(
+          --#{$colour},
+          #{map.get(colour.$colour-palette-default, $colour)}
         )
-        if($important, !important, null);
-      border-#{$direction}-color: var(--#{$colour})
         if($important, !important, null);
     }
   } @else {
     @if $width != "" {
       border: $width
-        map.get(colour.$colour-palette-default, $colour)
+        var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
         $style
         if($important, !important, null);
-      border: $width var(--#{$colour}) $style if($important, !important, null);
     } @else {
-      border-color: map.get(colour.$colour-palette-default, $colour)
+      border-color: var(
+          --#{$colour},
+          #{map.get(colour.$colour-palette-default, $colour)}
+        )
         if($important, !important, null);
-      border-color: var(--#{$colour}) if($important, !important, null);
     }
   }
 }
@@ -104,21 +96,21 @@
 @mixin colour-outline($colour, $width: "", $style: solid, $important: false) {
   @if $width != "" {
     outline: $width
-      map.get(colour.$colour-palette-default, $colour)
+      var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
       $style
       if($important, !important, null);
-    outline: $width var(--#{$colour}) $style if($important, !important, null);
   } @else {
-    outline-color: map.get(colour.$colour-palette-default, $colour)
+    outline-color: var(
+        --#{$colour},
+        #{map.get(colour.$colour-palette-default, $colour)}
+      )
       if($important, !important, null);
-    outline-color: var(--#{$colour}) if($important, !important, null);
   }
 }
 
 @mixin colour-fill($colour, $important: false) {
-  fill: map.get(colour.$colour-palette-default, $colour)
+  fill: var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
     if($important, !important, null);
-  fill: var(--#{$colour}) if($important, !important, null);
 }
 
 @mixin thick-keyline($direction) {
@@ -223,7 +215,7 @@
     @include colour-css-vars-high-contrast-dark;
   }
 
-  --background: var(--page-background);
+  @include colour-background("background");
 }
 
 @mixin plain {
@@ -247,7 +239,7 @@
 
   @include colour-background("background");
 
-  @include colour-font("font-base", false, colour.$colour-palette-dark);
+  @include colour-font("font-base");
 }
 
 @mixin contrast {
@@ -272,7 +264,7 @@
 
     @include colour-background("background");
 
-    @include colour-font("font-base", false, colour.$colour-palette-dark);
+    @include colour-font("font-base");
   }
 }
 
@@ -293,7 +285,7 @@
 
   @include colour-background("background");
 
-  @include colour-font("font-base", false, colour.$colour-palette-dark);
+  @include colour-font("font-base");
 }
 
 @mixin accent {

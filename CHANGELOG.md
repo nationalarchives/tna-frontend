@@ -14,9 +14,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Improved markup of warning component
+- `--page-background` is now `--background`
 
 ### Deprecated
+
+- Deprecated support for the `tna-template--high-contrast-theme` class - high contrast themes can be used by setting a preference for higher contrast in the operating system
+- `colour-font()` no longer has the ability to define the default palette
+
 ### Removed
+
+- Fallbacks for custom CSS properties are defined in the `var()` function rather than in a separate property - this removes any colouring support for browsers without custom CSS properties
+
 ### Fixed
 
 - Fixed column margin removal classes

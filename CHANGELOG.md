@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- "Thick" and button border widths are customisable
+- "Thick" and button border widths are both customisable
+- The colour of a card label can be changed
+- Accent colours can be set on blocks with `tna-accent-pink`, `tna-accent-orange`, `tna-accent-yellow`, `tna-accent-blue` and `tna-accent-green`
 
 ### Changed
 

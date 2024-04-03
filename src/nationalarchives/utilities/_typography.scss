@@ -150,6 +150,30 @@ small {
     @extend %chip-plain;
   }
 
+  &--black {
+    @include colour.black-accent;
+  }
+
+  &--pink {
+    @include colour.pink-accent;
+  }
+
+  &--orange {
+    @include colour.orange-accent;
+  }
+
+  &--yellow {
+    @include colour.yellow-accent;
+  }
+
+  &--green {
+    @include colour.green-accent;
+  }
+
+  &--blue {
+    @include colour.blue-accent;
+  }
+
   &:not(#{&}--plain) {
     @extend %chip-accent;
   }

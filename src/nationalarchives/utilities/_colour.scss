@@ -56,49 +56,28 @@
   //   }
   // }
 
-  &--yellow-accent {
-    --accent-background: #{colour.brand-colour("yellow")} !important;
-    --accent-background-light: #{colour.brand-colour("cream")} !important;
-    --button-accent-background: #{colour.brand-colour("yellow")} !important;
-  }
-
-  &--pink-accent,
-  &--orange-accent,
-  &--green-accent,
-  &--blue-accent {
-    --accent-font-base: #{colour.brand-colour("white")} !important;
-    --accent-font-dark: #{colour.brand-colour("white")} !important;
-    --accent-font-light: #{colour.brand-colour("white", 0.7)} !important;
-    --accent-icon-light: #{colour.brand-colour("white", 0.45)} !important;
-    --accent-link: #{colour.brand-colour("white")} !important;
-    --accent-link-visited: #{colour.brand-colour("white")} !important;
-    --accent-keyline: #{colour.brand-colour("white", 0.5)} !important;
-    --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
-    --button-accent-text: #{colour.brand-colour("white")} !important;
+  &--black--accent {
+    @include colour.black-accent;
   }
 
   &--pink-accent {
-    --accent-background: #{colour.brand-colour("maroon")} !important;
-    --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
-    --button-accent-background: #{colour.brand-colour("maroon")} !important;
+    @include colour.pink-accent;
   }
 
   &--orange-accent {
-    --accent-background: #{colour.brand-colour("chestnut")} !important;
-    --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
-    --button-accent-background: #{colour.brand-colour("chestnut")} !important;
+    @include colour.orange-accent;
+  }
+
+  &--yellow-accent {
+    @include colour.yellow-accent;
   }
 
   &--green-accent {
-    --accent-background: #{colour.brand-colour("forest")} !important;
-    --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
-    --button-accent-background: #{colour.brand-colour("forest")} !important;
+    @include colour.green-accent;
   }
 
   &--blue-accent {
-    --accent-background: #{colour.brand-colour("navy")} !important;
-    --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
-    --button-accent-background: #{colour.brand-colour("navy")} !important;
+    @include colour.blue-accent;
   }
 }
 
@@ -127,5 +106,31 @@
 
   &-keyline-dark {
     @include colour.colour-border("keyline-dark", 1px);
+  }
+}
+
+.tna-accent {
+  &-black {
+    @include colour.black-accent;
+  }
+
+  &-pink {
+    @include colour.pink-accent;
+  }
+
+  &-orange {
+    @include colour.orange-accent;
+  }
+
+  &-yellow {
+    @include colour.yellow-accent;
+  }
+
+  &-green {
+    @include colour.green-accent;
+  }
+
+  &-blue {
+    @include colour.blue-accent;
   }
 }

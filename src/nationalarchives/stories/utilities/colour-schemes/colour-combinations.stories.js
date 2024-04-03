@@ -21,12 +21,12 @@ const Template = () => {
 
   const accents = [
     "",
-    // "tna-template--black-accent",
-    "tna-template--yellow-accent",
-    "tna-template--pink-accent",
-    "tna-template--orange-accent",
-    "tna-template--green-accent",
-    "tna-template--blue-accent",
+    "tna-accent-black",
+    "tna-accent-yellow",
+    "tna-accent-pink",
+    "tna-accent-orange",
+    "tna-accent-green",
+    "tna-accent-blue",
   ];
 
   const blocks = [
@@ -63,8 +63,7 @@ const Template = () => {
         .replace(/tna-template--/g, "")
         .replace(/-theme/g, "")}</strong></p>
       <p>Accent: <strong>${
-        accent.replace(/tna-template--/g, "").replace(/-accent/g, "") ||
-        "[none]"
+        accent.replace(/tna-accent-/g, "") || "[none]"
       }</strong></p>
     </div>
     ${blocks.reduce(

@@ -8,6 +8,10 @@
     solid
   );
   outline-offset: a11y.$focus-outline-offset;
+
+  transition:
+    outline 100ms,
+    outline-offset 100ms;
 }
 
 @mixin active-outline {

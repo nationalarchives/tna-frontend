@@ -49,7 +49,7 @@
         <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
       </picture>
       {%- if params.label %}
-      <div class="tna-chip tna-card__image-label">
+      <div class="tna-chip{% if params.labelColour %} tna-chip--{{ params.labelColour }}{% endif %} tna-card__image-label">
         {{ params.label }}
       </div>
       {%- endif %}

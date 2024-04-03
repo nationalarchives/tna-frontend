@@ -353,6 +353,93 @@
   @extend %accent-light;
 }
 
+%yellow-accent {
+  --accent-background: #{colour.brand-colour("yellow")} !important;
+  --accent-background-light: #{colour.brand-colour("cream")} !important;
+  --accent-font-base: #{colour.brand-colour("black")} !important;
+  --accent-font-dark: #{colour.brand-colour("black")} !important;
+  --accent-font-light: #{colour.brand-colour("black", 0.7)} !important;
+  --accent-icon-light: #{colour.brand-colour("black", 0.45)} !important;
+  --accent-link: #{colour.brand-colour("black")} !important;
+  --accent-link-visited: #{colour.brand-colour("black")} !important;
+  --accent-keyline: #{colour.brand-colour("black", 0.5)} !important;
+  --accent-keyline-dark: #{colour.brand-colour("black", 0.8)} !important;
+  --button-accent-text: #{colour.brand-colour("black")} !important;
+  --button-accent-background: #{colour.brand-colour("yellow")} !important;
+}
+
+@mixin yellow-accent {
+  @extend %yellow-accent;
+}
+
+%accent-lighter-text {
+  --accent-font-base: #{colour.brand-colour("white")} !important;
+  --accent-font-dark: #{colour.brand-colour("white")} !important;
+  --accent-font-light: #{colour.brand-colour("white", 0.7)} !important;
+  --accent-icon-light: #{colour.brand-colour("white", 0.45)} !important;
+  --accent-link: #{colour.brand-colour("white")} !important;
+  --accent-link-visited: #{colour.brand-colour("white")} !important;
+  --accent-keyline: #{colour.brand-colour("white", 0.5)} !important;
+  --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
+  --button-accent-text: #{colour.brand-colour("white")} !important;
+}
+
+%black-accent {
+  --accent-background: #{colour.brand-colour("black")} !important;
+  --accent-background-light: #{colour.brand-colour("light-grey")} !important;
+  --button-accent-text: #{colour.brand-colour("black")} !important;
+  --button-accent-background: #{colour.brand-colour("grey")} !important;
+}
+
+@mixin black-accent {
+  @extend %black-accent;
+  @extend %accent-lighter-text;
+}
+
+%pink-accent {
+  --accent-background: #{colour.brand-colour("maroon")} !important;
+  --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
+  --button-accent-background: #{colour.brand-colour("maroon")} !important;
+}
+
+@mixin pink-accent {
+  @extend %pink-accent;
+  @extend %accent-lighter-text;
+}
+
+%orange-accent {
+  --accent-background: #{colour.brand-colour("chestnut")} !important;
+  --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
+  --button-accent-background: #{colour.brand-colour("chestnut")} !important;
+}
+
+@mixin orange-accent {
+  @extend %orange-accent;
+  @extend %accent-lighter-text;
+}
+
+%green-accent {
+  --accent-background: #{colour.brand-colour("forest")} !important;
+  --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
+  --button-accent-background: #{colour.brand-colour("forest")} !important;
+}
+
+@mixin green-accent {
+  @extend %green-accent;
+  @extend %accent-lighter-text;
+}
+
+%blue-accent {
+  --accent-background: #{colour.brand-colour("navy")} !important;
+  --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
+  --button-accent-background: #{colour.brand-colour("navy")} !important;
+}
+
+@mixin blue-accent {
+  @extend %blue-accent;
+  @extend %accent-lighter-text;
+}
+
 @mixin on-high-contrast {
   .tna-template--high-contrast-theme & {
     @content;

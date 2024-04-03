@@ -113,6 +113,13 @@
     }
   }
 
+  &__item-label:active {
+    &::before {
+      @include a11y.focus-outline;
+      @include a11y.active-outline;
+    }
+  }
+
   input:focus + &__item-label {
     &::before {
       @include a11y.focus-outline;

@@ -53,7 +53,7 @@
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
-  @include media.on-mobile {
+  @include media.on-tiny {
     &__image-wrapper {
       padding: 0;
     }

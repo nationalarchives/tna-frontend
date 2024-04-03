@@ -114,7 +114,13 @@
     "name": "label",
     "type": "string",
     "required": false,
-    "description": "A label which will appear over the top left of the card's image. If there is no imagem, the label is not displayed."
+    "description": "A label which will appear over the top left of the card's image. If there is no image, the label is not displayed."
+  },
+  {
+    "name": "labelColour",
+    "type": "string",
+    "required": false,
+    "description": "The colour to use for the label. Can be set to `black`, `pink`, `orange`, `yellow`, `green` or `blue`. If not set, the default is the current accent colour."
   },
   {
     "name": "meta",

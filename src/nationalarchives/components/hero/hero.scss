@@ -156,7 +156,7 @@
   &__content-inner {
     padding: spacing.space(2);
 
-    @include colour.colour-background("page-background");
+    @include colour.colour-background("background");
   }
 
   &__heading {

@@ -48,7 +48,7 @@ LIGHT THEME (DEFAULT)
 =========================================
 */
 $colour-palette-default: (
-  "page-background": #f4f4f4,
+  "background": #f4f4f4,
   "background-tint": brand-colour("light-grey"),
   "font-base": $base-font,
   "font-dark": brand-colour("black"),
@@ -102,7 +102,7 @@ DARK THEME
 $colour-palette-dark: map.merge(
   $colour-palette-default,
   (
-    "page-background": #212223,
+    "background": #212223,
     "background-tint": #323334,
     "font-base": brand-colour("white", 0.95),
     "font-dark": brand-colour("white"),
@@ -135,7 +135,7 @@ LIGHT, HIGH_CONTRAST THEME
 $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
-    "page-background": brand-colour("white"),
+    "background": brand-colour("white"),
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
     "icon-light": brand-colour("black", 0.75),
@@ -167,7 +167,7 @@ DARK, HIGH_CONTRAST THEME
 $colour-palette-high-contrast-dark: map.merge(
   $colour-palette-dark,
   (
-    "page-background": #111,
+    "background": #111,
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.75),

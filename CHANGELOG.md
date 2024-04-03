@@ -8,10 +8,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.50...HEAD)
 
 ### Added
+
+- "Thick" and button border widths are customisable
+
 ### Changed
+
+- Improved markup of warning component
+- `--page-background` is now `--background`
+
 ### Deprecated
+
+- Deprecated support for the `tna-template--high-contrast-theme` class - high contrast themes can be used by setting a preference for higher contrast in the operating system
+- `colour-font()` no longer has the ability to define the default palette
+
 ### Removed
+
+- Fallbacks for custom CSS properties are defined in the `var()` function rather than in a separate property - this removes any colouring support for browsers without custom CSS properties
+
 ### Fixed
+
+- Fixed column margin removal classes
+- Added missing IDs to some form elements so they can be linked top from the error summary
+
 ### Security
 
 ## [0.1.50](https://github.com/nationalarchives/tna-frontend/compare/v0.1.49...v0.1.50) - 2024-03-28

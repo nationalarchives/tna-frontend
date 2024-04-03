@@ -2,7 +2,6 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../variables/typography" as typographyVars;
 
 .tna-featured-records {
   @include spacing.space-above;
@@ -77,9 +76,7 @@
 
   &__date-description {
     @include colour.colour-font("font-light");
-    @include typography.relative-font-size(
-      typographyVars.$body-font-size-px * 0.85
-    );
+    @include typography.relative-font-size(16);
   }
 
   @include media.on-tiny {

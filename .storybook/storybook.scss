@@ -64,12 +64,26 @@
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
-  @include colour.colour-background("page-background");
+  @include colour.colour-background("background");
 }
 
-.tna-template--padded {
-  > .tna-template__body {
-    padding: 16px;
+.tna-template {
+  &--high-contrast-theme {
+    @include colour.colour-css-vars-high-contrast;
+
+    * {
+      background-image: none !important;
+    }
+
+    &.tna-template--dark-theme {
+      @include colour.colour-css-vars-high-contrast-dark;
+    }
+  }
+
+  &--padded {
+    > .tna-template__body {
+      padding: 16px;
+    }
   }
 }
 

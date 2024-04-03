@@ -79,7 +79,7 @@
     "style-loader": "^3.3.1",
     "stylelint": "^16.0.2",
     "stylelint-config-standard-scss": "^13.0.0",
-    "stylelint-selector-bem-pattern": "^3.0.0",
+    "stylelint-selector-bem-pattern": "^4.0.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }

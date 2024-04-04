@@ -14,7 +14,7 @@ runs:
       run: npm ci
       shell: bash
     - name: Build Storybook
-      run: npm run build:storybook --test
+      run: npm run build:storybook:tests
       shell: bash
     - name: Start Storybook
       run: npm start &

@@ -160,10 +160,6 @@
   @media (prefers-contrast: more) {
     @include colour-css-vars-high-contrast("form-error");
   }
-
-  .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast("form-error");
-  }
 }
 
 @mixin light {
@@ -174,10 +170,6 @@
   @include colour-css-vars-dark("form-error");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast-dark("form-error");
-  }
-
-  .tna-template--high-contrast-theme & {
     @include colour-css-vars-high-contrast-dark("form-error");
   }
 }
@@ -201,18 +193,18 @@
 
   .tna-template--light-theme & {
     @include colour-css-vars;
+
+    @media (prefers-contrast: more) {
+      @include colour-css-vars-high-contrast;
+    }
   }
 
   .tna-template--dark-theme & {
     @include colour-css-vars-dark;
-  }
 
-  .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast;
-  }
-
-  .tna-template--high-contrast-theme.tna-template--dark-theme & {
-    @include colour-css-vars-high-contrast-dark;
+    @media (prefers-contrast: more) {
+      @include colour-css-vars-high-contrast-dark;
+    }
   }
 
   @include colour-background("background");
@@ -444,14 +436,8 @@
 }
 
 @mixin on-high-contrast {
-  .tna-template--high-contrast-theme & {
+  @media (prefers-contrast: more) {
     @content;
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-contrast: more) {
-      @content;
-    }
   }
 }
 

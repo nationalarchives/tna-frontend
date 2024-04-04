@@ -39,13 +39,18 @@
     }
 
     .tna-template--dark-theme .tna-background-accent &,
-    .tna-template--dark-theme .tna-background-accent-light &,
-    .tna-template--light-theme.tna-template--high-contrast-theme
-      .tna-background-contrast
-      & {
+    .tna-template--dark-theme .tna-background-accent-light & {
       margin-right: 0;
 
       border-width: forms.$form-field-border-width;
+    }
+
+    @include colour.on-high-contrast {
+      .tna-template--light-theme .tna-background-contrast & {
+        margin-right: 0;
+
+        border-width: forms.$form-field-border-width;
+      }
     }
   }
 

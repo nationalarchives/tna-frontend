@@ -388,9 +388,11 @@
     }
   }
 
-  @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
     &__top-navigation-link {
-      @include colour.colour-font("link");
+      @include colour.colour-font("link", true);
     }
   }
 }

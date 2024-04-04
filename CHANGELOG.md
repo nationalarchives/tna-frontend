@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix incorrect `tna-template--black-accent` class
+- Removed all redundant high contrast classes
 
 ### Security
 

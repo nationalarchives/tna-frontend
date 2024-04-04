@@ -1,40 +1,19 @@
 @use "../tools/colour";
 
 .tna-template {
+  @include colour.light;
+
   @include colour.colour-background("background");
 
-  &--system-theme,
-  &--light-theme {
-    @include colour.colour-css-vars;
-
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast;
-    }
-  }
-
   &--system-theme {
-    // @include colour.colour-css-vars;
-
     @media (prefers-color-scheme: dark) {
       @include colour.colour-css-vars-dark;
     }
-
-    // @media (prefers-contrast: more) {
-    //   @include colour.colour-css-vars-high-contrast;
-    // }
 
     @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
       @include colour.colour-css-vars-high-contrast-dark;
     }
   }
-
-  // &--light-theme {
-  //   @include colour.colour-css-vars;
-
-  //   @media (prefers-contrast: more) {
-  //     @include colour.colour-css-vars-high-contrast;
-  //   }
-  // }
 
   &--dark-theme {
     @include colour.colour-css-vars-dark;
@@ -44,19 +23,7 @@
     }
   }
 
-  // &--high-contrast-theme {
-  //   @include colour.colour-css-vars-high-contrast;
-
-  //   * {
-  //     background-image: none !important;
-  //   }
-
-  //   &.tna-template--dark-theme {
-  //     @include colour.colour-css-vars-high-contrast-dark;
-  //   }
-  // }
-
-  &--black--accent {
+  &--black-accent {
     @include colour.black-accent;
   }
 

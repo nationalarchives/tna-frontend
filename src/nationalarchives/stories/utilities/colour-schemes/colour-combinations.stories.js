@@ -1,5 +1,6 @@
 import Button from "../../../components/button/template.njk";
 import Checkboxes from "../../../components/checkboxes/template.njk";
+import ErrorSummary from "../../../components/error-summary/template.njk";
 import Radios from "../../../components/radios/template.njk";
 import Select from "../../../components/select/template.njk";
 import TextInput from "../../../components/text-input/template.njk";
@@ -11,13 +12,8 @@ export default {
   argTypes,
 };
 
-const Template = () => {
-  const themes = [
-    "tna-template--light-theme",
-    "tna-template--light-theme tna-template--high-contrast-theme",
-    "tna-template--dark-theme",
-    "tna-template--dark-theme tna-template--high-contrast-theme",
-  ];
+const Template = ({ theme }) => {
+  const themeSlug = theme.replace(" ", "-").toLowerCase();
 
   const accents = [
     "",
@@ -51,17 +47,12 @@ const Template = () => {
     )}
   </div>
   <div class="tna-colour-contrast-demo__examples">
-  ${themes.reduce(
-    (themeOutput, theme) =>
-      `${themeOutput}${accents.reduce(
-        (
-          accentOutput,
-          accent,
-        ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
+  ${accents.reduce(
+    (
+      accentOutput,
+      accent,
+    ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
     <div class="tna-colour-contrast-demo__example">
-      <p>Theme: <strong>${theme
-        .replace(/tna-template--/g, "")
-        .replace(/-theme/g, "")}</strong></p>
       <p>Accent: <strong>${
         accent.replace(/tna-accent-/g, "") || "[none]"
       }</strong></p>
@@ -71,7 +62,7 @@ const Template = () => {
         `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
-          <h6 class="tna-heading-s">Heading</h6>
+          <h1 class="tna-heading-s">Heading</h1>
           <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
           <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
           <ul class="tna-chip-list">
@@ -85,18 +76,42 @@ const Template = () => {
               <span class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart" aria-hidden="true"></i>Chip</span>
             </li>
           </ul>
+          ${ErrorSummary({
+            params: {
+              title: "Error",
+              headingLevel: 2,
+              items: [
+                {
+                  text: "Error",
+                  href: `name-${themeSlug}-${block}-${accent}-2`,
+                },
+              ],
+              disableAutoFocus: true,
+            },
+          })}
           ${TextInput({
             params: {
               label: "Input",
-              id: `name-${theme}-${block}-${accent}`,
-              name: `name-${theme}-${block}-${accent}`,
+              id: `name-${themeSlug}-${block}-${accent}`,
+              name: `name-${themeSlug}-${block}-${accent}`,
               value: `Lorem ipsum`,
+            },
+          })}
+          ${TextInput({
+            params: {
+              label: "Input",
+              id: `name-${themeSlug}-${block}-${accent}-2`,
+              name: `name-${themeSlug}-${block}-${accent}-2`,
+              value: `Lorem ipsum`,
+              error: {
+                text: "Error",
+              },
             },
           })}
           ${Checkboxes({
             params: {
-              id: `categories-${theme}-${block}-${accent}`,
-              name: `categories-${theme}-${block}-${accent}`,
+              id: `categories-${themeSlug}-${block}-${accent}`,
+              name: `categories-${themeSlug}-${block}-${accent}`,
               items: [
                 {
                   text: "Alpha",
@@ -114,8 +129,8 @@ const Template = () => {
           })}
           ${Radios({
             params: {
-              id: `type-${theme}-${block}-${accent}`,
-              name: `type-${theme}-${block}-${accent}`,
+              id: `type-${themeSlug}-${block}-${accent}`,
+              name: `type-${themeSlug}-${block}-${accent}`,
               items: [
                 {
                   text: "Alpha",
@@ -134,8 +149,8 @@ const Template = () => {
           ${Select({
             params: {
               label: "Select",
-              id: `sort-${theme}-${block}-${accent}`,
-              name: `sort-${theme}-${block}-${accent}`,
+              id: `sort-${themeSlug}-${block}-${accent}`,
+              name: `sort-${themeSlug}-${block}-${accent}`,
               items: [
                 {
                   text: "Relevance",
@@ -180,18 +195,48 @@ const Template = () => {
       "",
     )}
   </div>`,
-        "",
-      )}`,
     "",
   )}
   </div>
 </div>`;
 };
 
-export const Combinations = Template.bind({});
-Combinations.parameters = {
+export const Light = Template.bind({});
+Light.parameters = {
   a11y: {
-    disable: true,
+    // disable: true,
   },
 };
-Combinations.args = {};
+Light.args = {
+  theme: "",
+};
+
+export const Dark = Template.bind({});
+Dark.parameters = {
+  a11y: {
+    // disable: true,
+  },
+};
+Dark.args = {
+  theme: "tna-template--dark-theme",
+};
+
+export const HighContrast = Template.bind({});
+HighContrast.parameters = {
+  a11y: {
+    // disable: true,
+  },
+};
+HighContrast.args = {
+  theme: "tna-template--high-contrast-theme",
+};
+
+export const DarkHighContrast = Template.bind({});
+DarkHighContrast.parameters = {
+  a11y: {
+    // disable: true,
+  },
+};
+DarkHighContrast.args = {
+  theme: "tna-template--dark-theme tna-template--high-contrast-theme",
+};

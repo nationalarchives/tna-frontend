@@ -244,7 +244,8 @@ $shift-units: 5 !default;
     }
 
     &__content-inner {
-      padding: spacing.space(2) 0;
+      padding-right: 0;
+      padding-left: 0;
     }
 
     &--shifted &__content-inner {

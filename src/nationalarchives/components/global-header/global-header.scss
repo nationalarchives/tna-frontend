@@ -9,27 +9,19 @@
   padding-top: spacing.space(1);
 
   @include colour.contrast;
-  background: #010101;
+  background: linear-gradient(
+    0deg,
+    rgb(34 34 34 / 100%) 0%,
+    rgb(0 0 0 / 100%) 100%
+  );
 
-  .tna-template--light-theme & {
-    background: linear-gradient(
-      0deg,
-      rgb(34 34 34 / 100%) 0%,
-      rgb(0 0 0 / 100%) 100%
-    );
+  .tna-template--dark-theme & {
+    background: colour.brand-colour("black");
   }
 
   .tna-template--system-theme & {
-    @media (prefers-color-scheme: light) {
-      background: linear-gradient(
-        0deg,
-        rgb(34 34 34 / 100%) 0%,
-        rgb(0 0 0 / 100%) 100%
-      );
-    }
-
     @media (prefers-color-scheme: dark) {
-      background: #010101;
+      background: colour.brand-colour("black");
     }
   }
 
@@ -388,9 +380,11 @@
     }
   }
 
-  @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
     &__top-navigation-link {
-      @include colour.colour-font("link");
+      @include colour.colour-font("link", true);
     }
   }
 }

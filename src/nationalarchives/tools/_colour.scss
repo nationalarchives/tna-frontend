@@ -154,14 +154,11 @@
     solid;
 }
 
+// Use light theme colours (except for "form-error")
 %light {
   @include colour-css-vars("form-error");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast("form-error");
-  }
-
-  .tna-template--high-contrast-theme & {
     @include colour-css-vars-high-contrast("form-error");
   }
 }
@@ -170,49 +167,30 @@
   @extend %light;
 }
 
-%dark {
-  @include colour-css-vars-dark("form-error");
+// Remove accent and contrast values (except for "form-error")
+%plain {
+  @include colour-css-vars("form-error");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast-dark("form-error");
+    @include colour-css-vars-high-contrast("form-error");
   }
 
-  .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast-dark("form-error");
-  }
-}
-
-@mixin dark {
-  @extend %dark;
-}
-
-%plain {
   .tna-template--system-theme & {
-    @extend %light;
-
     @media (prefers-color-scheme: dark) {
-      @include colour-css-vars-dark;
+      @include colour-css-vars-dark("form-error");
     }
 
     @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour-css-vars-high-contrast-dark;
+      @include colour-css-vars-high-contrast-dark("form-error");
     }
   }
 
-  .tna-template--light-theme & {
-    @include colour-css-vars;
-  }
-
   .tna-template--dark-theme & {
-    @include colour-css-vars-dark;
-  }
+    @include colour-css-vars-dark("form-error");
 
-  .tna-template--high-contrast-theme & {
-    @include colour-css-vars-high-contrast;
-  }
-
-  .tna-template--high-contrast-theme.tna-template--dark-theme & {
-    @include colour-css-vars-high-contrast-dark;
+    @media (prefers-contrast: more) {
+      @include colour-css-vars-high-contrast-dark("form-error");
+    }
   }
 
   @include colour-background("background");
@@ -272,6 +250,18 @@
   @extend %contrast-on-mobile;
 }
 
+%tint {
+  --background: var(--background-tint);
+
+  @include colour-background("background");
+
+  @include colour-font("font-base");
+}
+
+@mixin tint {
+  @extend %tint;
+}
+
 %accent {
   --background: var(--accent-background);
   --font-base: var(--accent-font-base);
@@ -292,34 +282,12 @@
   @extend %accent;
 }
 
-%tint {
-  --background: var(--background-tint);
-
-  @include colour-background("background");
-
-  @include colour-font("font-base");
-}
-
-@mixin tint {
-  @extend %tint;
-}
-
-%accent-background {
-  @include colour-background("accent-background");
-}
-
-@mixin accent-background {
-  @extend %accent-background;
-}
-
 %accent-light {
   --background: var(--accent-background-light);
   --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
   --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
   --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
   --icon-light: #{map.get(colour.$colour-palette-default, "icon-light")};
-  // --link: #{map.get(colour.$colour-palette-default, "link")};
-  // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
   --keyline: #{map.get(colour.$colour-palette-default, "keyline")};
   --keyline-dark: #{map.get(colour.$colour-palette-default, "keyline-dark")};
   --button-text: #{map.get(colour.$colour-palette-default, "button-text")};
@@ -336,9 +304,6 @@
       "button-hover-background"
     )};
 
-  @include colour-background("background");
-  @include colour-font("font-base");
-
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
       --link: #{map.get(colour.$colour-palette-default, "link")};
@@ -350,6 +315,9 @@
     --link: #{map.get(colour.$colour-palette-default, "link")};
     --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
   }
+
+  @include colour-background("background");
+  @include colour-font("font-base");
 }
 
 @mixin accent-light {
@@ -444,14 +412,8 @@
 }
 
 @mixin on-high-contrast {
-  .tna-template--high-contrast-theme & {
+  @media (prefers-contrast: more) {
     @content;
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-contrast: more) {
-      @content;
-    }
   }
 }
 

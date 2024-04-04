@@ -1,18 +1,6 @@
 [
   {
-    "name": "heading",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
-    "name": "body",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
-    "name": "text",
+    "name": "content",
     "type": "string",
     "required": false,
     "description": ""
@@ -88,6 +76,18 @@
   {
     "name": "imageCaption",
     "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "style",
+    "type": "string",
+    "required": false,
+    "description": "The style of hero to use. This can be `contrast`, `tint` or `accent`."
+  },
+  {
+    "name": "shifted",
+    "type": "boolean",
     "required": false,
     "description": ""
   },

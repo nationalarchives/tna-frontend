@@ -428,6 +428,10 @@ small {
 
   @include typography.relative-font-size(22);
   @include colour.colour-font("font-dark");
+
+  @include media.on-mobile {
+    @include typography.relative-font-size(20);
+  }
 }
 
 .tna-scene-setter {

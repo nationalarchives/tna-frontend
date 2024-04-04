@@ -4,9 +4,7 @@ import { within, userEvent, expect } from "@storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
-  heading: { control: "text" },
-  body: { control: "text" },
-  text: { control: "text" },
+  content: { control: "text" },
   imageSrc: { control: { type: "file", accept: ".jpg" } },
   imageAlt: { control: "text" },
   imageWidth: { control: { type: "number", min: 1 } },
@@ -14,6 +12,11 @@ const argTypes = {
   imageType: { control: "text" },
   imageSources: { control: "object" },
   imageCaption: { control: "text" },
+  style: {
+    control: "inline-radio",
+    options: ["none", "contrast", "tint", "accent"],
+  },
+  shifted: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -30,9 +33,7 @@ export default {
 };
 
 const Template = ({
-  heading,
-  body,
-  text,
+  content,
   imageSrc,
   imageAlt,
   imageWidth,
@@ -40,14 +41,14 @@ const Template = ({
   imageType,
   imageSources,
   imageCaption,
+  style,
+  shifted,
   classes,
   attributes,
 }) =>
   Hero({
     params: {
-      heading,
-      body,
-      text,
+      content,
       imageSrc,
       imageAlt,
       imageWidth,
@@ -55,6 +56,8 @@ const Template = ({
       imageType,
       imageSources,
       imageCaption,
+      style,
+      shifted,
       classes,
       attributes,
     },
@@ -62,15 +65,13 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  heading: "Title",
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+  content: `<h1 class="tna-heading-xl">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
   imageWidth: 499,
   imageHeight: 333,
   imageCaption: "An interesting photo by a famous photographer ©2023",
-  classes: "tna-hero--demo",
 };
 
 Standard.play = async ({ args, canvasElement, step }) => {
@@ -78,13 +79,13 @@ Standard.play = async ({ args, canvasElement, step }) => {
 
   const canvas = within(canvasElement);
   const image = canvas.getByAltText(args.imageAlt);
-  const title = canvas.getByText(args.heading);
+  const content = canvasElement.querySelector(".tna-hero__content");
   const summary = canvasElement.querySelector(".tna-hero__details-summary");
   const information = canvas.getByText(args.imageCaption);
 
   await step("Initial load", async () => {
     await expect(image).toBeVisible();
-    await expect(title).toBeVisible();
+    await expect(content).toBeVisible();
     await expect(summary).toBeVisible();
     await expect(information).not.toBeVisible();
   });
@@ -100,15 +101,93 @@ Standard.play = async ({ args, canvasElement, step }) => {
   });
 };
 
-export const HeadingOnly = Template.bind({});
-HeadingOnly.args = {
-  heading: "Title",
+export const LargeContent = Template.bind({});
+LargeContent.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+LargeContent.args = {
+  content: `<hgroup class="tna-hgroup-xl">
+  <p class="tna-hgroup__supertitle">Focus on</p>
+  <h1 class="tna-hgroup__title">‘Not acceptable’: Gay Switchboard’s attempts to become a charity</h1>
+</hgroup>
+<p class="tna-large-paragraph">Switchboard LGBT+ Helpline is one of the oldest telephone help services for lesbian, gay, bisexual, transgender and queer people in the UK. Despite high demand for its support, prejudice and laws meant Switchboard’s journey to register as a charity was not easy.</p>`,
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
   imageWidth: 499,
   imageHeight: 333,
-  classes: "tna-hero--demo",
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "accent",
+};
+
+export const Accent = Template.bind({});
+Accent.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+Accent.args = {
+  content: `<hgroup class="tna-hgroup-xl">
+  <p class="tna-hgroup__supertitle">Supertitle</p>
+  <h1 class="tna-hgroup__title">Title</h1>
+</hgroup>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "accent",
+};
+
+export const Contrast = Template.bind({});
+Contrast.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+Contrast.args = {
+  content: `<hgroup class="tna-hgroup-xl">
+  <p class="tna-hgroup__supertitle">Supertitle</p>
+  <h1 class="tna-hgroup__title">Title</h1>
+</hgroup>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "contrast",
+};
+
+export const Tint = Template.bind({});
+Tint.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+Tint.args = {
+  content: `<hgroup class="tna-hgroup-xl">
+  <p class="tna-hgroup__supertitle">Supertitle</p>
+  <h1 class="tna-hgroup__title">Title</h1>
+</hgroup>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "tint",
+};
+
+export const Shifted = Template.bind({});
+Shifted.args = {
+  content: `<h1 class="tna-heading-xl">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "accent",
+  shifted: true,
 };
 
 export const CaptionWithNoHeading = Template.bind({});
@@ -122,7 +201,6 @@ CaptionWithNoHeading.args = {
   imageWidth: 499,
   imageHeight: 333,
   imageCaption: "An interesting photo by a famous photographer ©2023",
-  classes: "tna-hero--demo",
 };
 
 export const Sources = Template.bind({});
@@ -130,8 +208,7 @@ Sources.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Sources.args = {
-  heading: "Title",
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+  content: `<h1 class="tna-heading-xl">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
@@ -146,7 +223,6 @@ Sources.args = {
       height: 404,
     },
   ],
-  classes: "tna-hero--demo",
 };
 
 export const Mobile = Template.bind({});
@@ -159,13 +235,11 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  heading: "Title",
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+  content: `<h1 class="tna-heading-xl">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
   imageWidth: 499,
   imageHeight: 333,
   imageCaption: "An interesting photo by a famous photographer ©2023",
-  classes: "tna-hero--demo",
 };

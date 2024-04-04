@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - "Thick" and button border widths are both customisable
 - The colour of a card label can be changed
 - Accent colours can be set on blocks with `tna-accent-pink`, `tna-accent-orange`, `tna-accent-yellow`, `tna-accent-blue` and `tna-accent-green`
+- Hero components can now have a "shifted" style option and can have contrasting, tinted and accent backgrounds
 
 ### Changed
 
@@ -26,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Fallbacks for custom CSS properties are defined in the `var()` function rather than in a separate property - this removes any colouring support for browsers without custom CSS properties
+- Hero components no longer have `heading`, `body` or `text` properties - these have been replaced with a `content` property
 
 ### Fixed
 

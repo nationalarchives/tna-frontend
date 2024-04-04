@@ -202,7 +202,6 @@ const Template = ({ theme, accent }) => {
           imageWidth: 499,
           imageHeight: 333,
           imageCaption: "An interesting photo by a famous photographer ©2023",
-          classes: "tna-hero--demo",
         },
       })}
       <div class="tna-container tna-section">
@@ -465,7 +464,6 @@ const Template = ({ theme, accent }) => {
           imageWidth: 499,
           imageHeight: 333,
           imageCaption: "An interesting photo by a famous photographer ©2023",
-          classes: "tna-hero--demo",
         },
       })}
       <div class="tna-section tna-!--padding-bottom-s">

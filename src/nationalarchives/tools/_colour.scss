@@ -293,7 +293,10 @@
 }
 
 %tint {
-  @include colour-background("background-tint");
+  --background: var(--background-tint);
+
+  @include colour-background("background");
+
   @include colour-font("font-base");
 }
 

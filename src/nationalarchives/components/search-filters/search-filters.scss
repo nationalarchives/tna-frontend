@@ -108,7 +108,7 @@
   &__item {
     padding: spacing.space(0.75);
 
-    @include colour.colour-background("background-tint");
+    @include colour.tint;
 
     @include colour.colour-border("keyline", 1px);
     border-width: 0 1px 1px;

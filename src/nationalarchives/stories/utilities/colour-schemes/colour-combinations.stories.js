@@ -12,13 +12,8 @@ export default {
   argTypes,
 };
 
-const Template = () => {
-  const themes = [
-    "",
-    "tna-template--high-contrast-theme",
-    "tna-template--dark-theme",
-    "tna-template--dark-theme tna-template--high-contrast-theme",
-  ];
+const Template = ({ theme }) => {
+  const themeSlug = theme.replace(" ", "-").toLowerCase();
 
   const accents = [
     "",
@@ -52,17 +47,12 @@ const Template = () => {
     )}
   </div>
   <div class="tna-colour-contrast-demo__examples">
-  ${themes.reduce(
-    (themeOutput, theme) =>
-      `${themeOutput}${accents.reduce(
-        (
-          accentOutput,
-          accent,
-        ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
+  ${accents.reduce(
+    (
+      accentOutput,
+      accent,
+    ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
     <div class="tna-colour-contrast-demo__example">
-      <p>Theme: <strong>${
-        theme.replace(/tna-template--/g, "").replace(/-theme/g, "") || "light"
-      }</strong></p>
       <p>Accent: <strong>${
         accent.replace(/tna-accent-/g, "") || "[none]"
       }</strong></p>
@@ -93,7 +83,7 @@ const Template = () => {
               items: [
                 {
                   text: "Error",
-                  href: `name-${theme}-${block}-${accent}-2`,
+                  href: `name-${themeSlug}-${block}-${accent}-2`,
                 },
               ],
               disableAutoFocus: true,
@@ -102,16 +92,16 @@ const Template = () => {
           ${TextInput({
             params: {
               label: "Input",
-              id: `name-${theme}-${block}-${accent}`,
-              name: `name-${theme}-${block}-${accent}`,
+              id: `name-${themeSlug}-${block}-${accent}`,
+              name: `name-${themeSlug}-${block}-${accent}`,
               value: `Lorem ipsum`,
             },
           })}
           ${TextInput({
             params: {
               label: "Input",
-              id: `name-${theme}-${block}-${accent}-2`,
-              name: `name-${theme}-${block}-${accent}-2`,
+              id: `name-${themeSlug}-${block}-${accent}-2`,
+              name: `name-${themeSlug}-${block}-${accent}-2`,
               value: `Lorem ipsum`,
               error: {
                 text: "Error",
@@ -120,8 +110,8 @@ const Template = () => {
           })}
           ${Checkboxes({
             params: {
-              id: `categories-${theme}-${block}-${accent}`,
-              name: `categories-${theme}-${block}-${accent}`,
+              id: `categories-${themeSlug}-${block}-${accent}`,
+              name: `categories-${themeSlug}-${block}-${accent}`,
               items: [
                 {
                   text: "Alpha",
@@ -139,8 +129,8 @@ const Template = () => {
           })}
           ${Radios({
             params: {
-              id: `type-${theme}-${block}-${accent}`,
-              name: `type-${theme}-${block}-${accent}`,
+              id: `type-${themeSlug}-${block}-${accent}`,
+              name: `type-${themeSlug}-${block}-${accent}`,
               items: [
                 {
                   text: "Alpha",
@@ -159,8 +149,8 @@ const Template = () => {
           ${Select({
             params: {
               label: "Select",
-              id: `sort-${theme}-${block}-${accent}`,
-              name: `sort-${theme}-${block}-${accent}`,
+              id: `sort-${themeSlug}-${block}-${accent}`,
+              name: `sort-${themeSlug}-${block}-${accent}`,
               items: [
                 {
                   text: "Relevance",
@@ -205,18 +195,48 @@ const Template = () => {
       "",
     )}
   </div>`,
-        "",
-      )}`,
     "",
   )}
   </div>
 </div>`;
 };
 
-export const Combinations = Template.bind({});
-Combinations.parameters = {
+export const Light = Template.bind({});
+Light.parameters = {
   a11y: {
-    disable: true,
+    // disable: true,
   },
 };
-Combinations.args = {};
+Light.args = {
+  theme: "",
+};
+
+export const Dark = Template.bind({});
+Dark.parameters = {
+  a11y: {
+    // disable: true,
+  },
+};
+Dark.args = {
+  theme: "tna-template--dark-theme",
+};
+
+export const HighContrast = Template.bind({});
+HighContrast.parameters = {
+  a11y: {
+    // disable: true,
+  },
+};
+HighContrast.args = {
+  theme: "tna-template--high-contrast-theme",
+};
+
+export const DarkHighContrast = Template.bind({});
+DarkHighContrast.parameters = {
+  a11y: {
+    // disable: true,
+  },
+};
+DarkHighContrast.args = {
+  theme: "tna-template--dark-theme tna-template--high-contrast-theme",
+};

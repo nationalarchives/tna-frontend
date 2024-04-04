@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.50...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.51...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.51](https://github.com/nationalarchives/tna-frontend/compare/v0.1.50...v0.1.51) - 2024-04-04
 
 ### Added
 
@@ -34,8 +43,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed column margin removal classes
 - Added missing IDs to some form elements so they can be linked top from the error summary
 - Active states of checkboxes and radios fixed
-
-### Security
 
 ## [0.1.50](https://github.com/nationalarchives/tna-frontend/compare/v0.1.49...v0.1.50) - 2024-03-28
 

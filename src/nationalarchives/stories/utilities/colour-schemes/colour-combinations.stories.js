@@ -72,7 +72,7 @@ const Template = () => {
         `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
-          <h6 class="tna-heading-s">Heading</h6>
+          <h1 class="tna-heading-s">Heading</h1>
           <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
           <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
           <ul class="tna-chip-list">

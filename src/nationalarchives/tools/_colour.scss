@@ -154,11 +154,12 @@
     solid;
 }
 
+// Use light theme colours (except for "form-error")
 %light {
-  @include colour-css-vars;
+  @include colour-css-vars("form-error");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast;
+    @include colour-css-vars-high-contrast("form-error");
   }
 }
 

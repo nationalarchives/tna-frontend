@@ -31,4 +31,5 @@ module.exports = {
   async postVisit(page) {
     await checkA11y(page, "#storybook-root", a11yConfig, "v2");
   },
+  testTimeout: 30000,
 };

@@ -21,7 +21,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build Storybook
         run: npm run build:storybook:tests
       - uses: chromaui/action@v1

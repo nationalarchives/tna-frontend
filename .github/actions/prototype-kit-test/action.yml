@@ -11,7 +11,7 @@ runs:
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
-      run: npm install
+      run: npm ci
       shell: bash
     - name: Build package
       run: >

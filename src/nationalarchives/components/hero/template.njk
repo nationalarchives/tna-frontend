@@ -1,10 +1,20 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<{{ 'header' if params.heading else 'div' }} class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- if params.style == "contrast" -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--contrast') -%}
+{%- elseif params.style == "tint" -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--tint') -%}
+{%- elseif params.style == "accent" -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--accent') -%}
+{%- endif -%}
+{%- if params.shifted -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--shifted') -%}
+{%- endif -%}
+<{{ 'header' if params.content else 'div' }} class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <figure class="tna-hero__figure">
     {%- if params.imageCaption %}
     <figcaption class="tna-hero__caption">
       <details class="tna-hero__details">
-        <summary class="tna-hero__details-summary">
+        <summary class="tna-hero__details-summary" title="About this image">
           About this <span class="tna-hero__details-summary-icon">i</span>mage
         </summary>
         <div class="tna-hero__information">{{ params.imageCaption | safe }}</div>
@@ -20,23 +30,14 @@
       {%- endif %}
       <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
     </picture>
-    {%- if params.heading %}
+    {%- if params.content %}
     <div class="tna-container tna-hero__inner">
       <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content">
         <div class="tna-hero__content-inner">
-        {%- if params.heading %}
-          <h1 class="tna-heading-xl tna-hero__heading">
-            {{ params.heading }}
-          </h1>
-        {%- endif %}
-        {%- if params.text %}
-          <p>{{ params.text }}</p>
-        {%- elseif params.body %}
-          {{ params.body | safe }}
-        {%- endif %}
+          {{ params.content | safe }}
         </div>
       </div>
     </div>
     {%- endif %}
   </figure>
-</{{ 'header' if params.heading else 'div' }}>
+</{{ 'header' if params.content else 'div' }}>

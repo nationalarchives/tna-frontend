@@ -10,23 +10,19 @@
 
   position: relative;
 
-  background-color: colour.brand-colour("black");
+  background: linear-gradient(
+    0deg,
+    rgb(34 34 34 / 100%) 0%,
+    rgb(0 0 0 / 100%) 100%
+  );
 
-  .tna-template--light-theme & {
-    background: linear-gradient(
-      0deg,
-      rgb(34 34 34 / 100%) 0%,
-      rgb(0 0 0 / 100%) 100%
-    );
+  .tna-template--dark-theme & {
+    background: colour.brand-colour("black");
   }
 
   .tna-template--system-theme & {
-    @media (prefers-color-scheme: light) {
-      background: linear-gradient(
-        0deg,
-        rgb(34 34 34 / 100%) 0%,
-        rgb(0 0 0 / 100%) 100%
-      );
+    @media (prefers-color-scheme: dark) {
+      background: colour.brand-colour("black");
     }
   }
 

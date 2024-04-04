@@ -31,22 +31,34 @@
     border-radius: 0.1px;
 
     .tna-template--dark-theme &,
-    .tna-background-contrast &/*,
-    .tna-background-accent &*/ {
+    .tna-background-contrast & {
       margin-right: forms.$form-field-border-width;
 
       border-width: 0;
     }
 
-    .tna-template--dark-theme .tna-background-accent &,
     .tna-template--dark-theme .tna-background-accent-light & {
       margin-right: 0;
 
       border-width: forms.$form-field-border-width;
     }
 
+    @media (prefers-color-scheme: dark) {
+      .tna-template--system-theme & {
+        margin-right: forms.$form-field-border-width;
+
+        border-width: 0;
+      }
+
+      .tna-background-accent-light & {
+        margin-right: 0;
+
+        border-width: forms.$form-field-border-width;
+      }
+    }
+
     @include colour.on-high-contrast {
-      .tna-template--light-theme .tna-background-contrast & {
+      .tna-background-contrast & {
         margin-right: 0;
 
         border-width: forms.$form-field-border-width;

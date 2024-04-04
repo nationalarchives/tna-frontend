@@ -46,7 +46,6 @@ export default {
 const Template = ({ theme, accent }) => {
   document.documentElement.classList.remove(
     "tna-template",
-    "tna-template--light-theme",
     "tna-template--yellow-accent",
   );
 
@@ -75,15 +74,13 @@ const Template = ({ theme, accent }) => {
   return `<div class="tna-template ${
     theme === "system"
       ? "tna-template--system-theme"
-      : theme === "light"
-        ? "tna-template--light-theme"
-        : theme === "dark"
-          ? "tna-template--dark-theme"
-          : theme === "light high-contrast"
-            ? "tna-template--light-theme tna-template--high-contrast-theme"
-            : theme === "dark high-contrast"
-              ? "tna-template--dark-theme tna-template--high-contrast-theme"
-              : ""
+      : theme === "dark"
+        ? "tna-template--dark-theme"
+        : theme === "high-contrast"
+          ? "tna-template--high-contrast-theme"
+          : theme === "dark high-contrast"
+            ? "tna-template--dark-theme tna-template--high-contrast-theme"
+            : ""
   } ${
     accent === "yellow"
       ? "tna-template--yellow-accent"
@@ -717,9 +714,19 @@ const Template = ({ theme, accent }) => {
                 classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
+            ${SearchField({
+              params: {
+                label: "Catalogue search results",
+                headingLevel: 3,
+                headingSize: "l",
+                id: "search1",
+                name: "q",
+              },
+            })}
             <div class="tna-button-group">
               <a href="#" class="tna-button">Primary button</a>
               <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--solid-hover">Solid hover button</a>
               <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
@@ -801,9 +808,19 @@ const Template = ({ theme, accent }) => {
                 classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
+            ${SearchField({
+              params: {
+                label: "Catalogue search results",
+                headingLevel: 3,
+                headingSize: "l",
+                id: "search2",
+                name: "q",
+              },
+            })}
             <div class="tna-button-group">
               <a href="#" class="tna-button">Primary button</a>
               <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--solid-hover">Solid hover button</a>
               <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
@@ -885,9 +902,19 @@ const Template = ({ theme, accent }) => {
                 classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
+            ${SearchField({
+              params: {
+                label: "Catalogue search results",
+                headingLevel: 3,
+                headingSize: "l",
+                id: "search3",
+                name: "q",
+              },
+            })}
             <div class="tna-button-group">
               <a href="#" class="tna-button">Primary button</a>
               <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--solid-hover">Solid hover button</a>
               <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
@@ -969,9 +996,19 @@ const Template = ({ theme, accent }) => {
                 classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
+            ${SearchField({
+              params: {
+                label: "Catalogue search results",
+                headingLevel: 3,
+                headingSize: "l",
+                id: "search4",
+                name: "q",
+              },
+            })}
             <div class="tna-button-group">
               <a href="#" class="tna-button">Primary button</a>
               <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--solid-hover">Solid hover button</a>
               <a href="" class="tna-button tna-button--plain">Plain button</a>
             </div>
           </div>
@@ -1053,26 +1090,21 @@ const Template = ({ theme, accent }) => {
                 classes: "tna-pagination--demo tna-!--margin-top-m",
               },
             })}
-            <div class="tna-button-group">
-              <a href="#" class="tna-button">Primary button</a>
-              <a href="#" class="tna-button tna-button--accent">Accent button</a>
-              <a href="" class="tna-button tna-button--plain">Plain button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tna-section tna-background-contrast">
-        <div class="tna-container">
-          <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
             ${SearchField({
               params: {
                 label: "Catalogue search results",
                 headingLevel: 3,
                 headingSize: "l",
-                id: "search1",
+                id: "search5",
                 name: "q",
               },
             })}
+            <div class="tna-button-group">
+              <a href="#" class="tna-button">Primary button</a>
+              <a href="#" class="tna-button tna-button--accent">Accent button</a>
+              <a href="" class="tna-button tna-button--solid-hover">Solid hover button</a>
+              <a href="" class="tna-button tna-button--plain">Plain button</a>
+            </div>
           </div>
         </div>
       </div>

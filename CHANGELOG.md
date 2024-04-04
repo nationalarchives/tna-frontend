@@ -9,7 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Better support for colour themes and high contrast options
+
 ### Deprecated
+
+- Removed `tna-template--light-theme` option - `tna-template` is light by default
+- Removed `accent-background` and `dark` mixins from colour tools
+
 ### Removed
 ### Fixed
 

@@ -1,5 +1,6 @@
 import Button from "../../../components/button/template.njk";
 import Checkboxes from "../../../components/checkboxes/template.njk";
+import ErrorSummary from "../../../components/error-summary/template.njk";
 import Radios from "../../../components/radios/template.njk";
 import Select from "../../../components/select/template.njk";
 import TextInput from "../../../components/text-input/template.njk";
@@ -13,8 +14,8 @@ export default {
 
 const Template = () => {
   const themes = [
-    "tna-template--light-theme",
-    "tna-template--light-theme tna-template--high-contrast-theme",
+    "",
+    "tna-template--high-contrast-theme",
     "tna-template--dark-theme",
     "tna-template--dark-theme tna-template--high-contrast-theme",
   ];
@@ -59,9 +60,9 @@ const Template = () => {
           accent,
         ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
     <div class="tna-colour-contrast-demo__example">
-      <p>Theme: <strong>${theme
-        .replace(/tna-template--/g, "")
-        .replace(/-theme/g, "")}</strong></p>
+      <p>Theme: <strong>${
+        theme.replace(/tna-template--/g, "").replace(/-theme/g, "") || "light"
+      }</strong></p>
       <p>Accent: <strong>${
         accent.replace(/tna-accent-/g, "") || "[none]"
       }</strong></p>
@@ -85,12 +86,36 @@ const Template = () => {
               <span class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart" aria-hidden="true"></i>Chip</span>
             </li>
           </ul>
+          ${ErrorSummary({
+            params: {
+              title: "Error",
+              headingLevel: 2,
+              items: [
+                {
+                  text: "Error",
+                  href: `name-${theme}-${block}-${accent}-2`,
+                },
+              ],
+              disableAutoFocus: true,
+            },
+          })}
           ${TextInput({
             params: {
               label: "Input",
               id: `name-${theme}-${block}-${accent}`,
               name: `name-${theme}-${block}-${accent}`,
               value: `Lorem ipsum`,
+            },
+          })}
+          ${TextInput({
+            params: {
+              label: "Input",
+              id: `name-${theme}-${block}-${accent}-2`,
+              name: `name-${theme}-${block}-${accent}-2`,
+              value: `Lorem ipsum`,
+              error: {
+                text: "Error",
+              },
             },
           })}
           ${Checkboxes({

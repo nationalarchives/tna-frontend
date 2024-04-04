@@ -12,7 +12,7 @@ Use the cookie banner from TNA Frontend in your service.
 
 ### HTML
 
-1. Add the classes `tna-template` and `tna-template--light-theme` to your `<html>` element
+1. Add the classes `tna-template` to your `<html>` element
 1. Add the class `tna-template__body` to your `<body>` element
 1. Add the HTML for the header and footer to the appropriate part of your page (HTML found below)
 1. Change the `#main-content` in the `href` of the skip link to the ID of your `<main>` element

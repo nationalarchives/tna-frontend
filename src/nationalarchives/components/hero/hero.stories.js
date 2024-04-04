@@ -71,6 +71,7 @@ Standard.args = {
   imageAlt: "The National Archives office",
   imageWidth: 499,
   imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
 };
 
 Standard.play = async ({ args, canvasElement, step }) => {

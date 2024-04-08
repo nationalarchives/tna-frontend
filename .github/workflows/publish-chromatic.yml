@@ -1,4 +1,4 @@
-name: Publish to GitHub pages
+name: Publish to Chromatic
 
 on:
   push:
@@ -7,14 +7,6 @@ on:
     paths:
       - '.storybook/**'
       - 'src/**'
-      - '.babelrc.json'
-      - '.eslintrc.js'
-      - '.nvmrc'
-      - '.stylelintrc'
-      - 'govuk-prototype-kit.config.json'
-      - 'package-lock.json'
-      - 'package.json'
-      - 'webpack.config.js'
     tags-ignore:
       - '**'
 
@@ -24,15 +16,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: chromatic
   cancel-in-progress: true
 
 jobs:
-  github-pages:
+  chromatic:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,9 +33,9 @@ jobs:
         run: npm ci
       - name: Build Storybook
         run: npm run build:storybook
-      - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v3
+      - uses: chromaui/action@v1
         with:
-          path: storybook
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook
+          exitZeroOnChanges: true
+          autoAcceptChanges: true

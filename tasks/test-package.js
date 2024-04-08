@@ -84,7 +84,7 @@ const checkExists = [
   ...componentFiles("date-search"),
   ...componentFiles("error-summary", "ErrorSummary"),
   ...componentFiles("featured-records"),
-  ...componentFiles("footer"),
+  ...componentFiles("footer", "Footer"),
   ...componentFiles("gallery", "Gallery"),
   ...componentFiles("global-header", "GlobalHeader"),
   ...componentFiles("grid"),

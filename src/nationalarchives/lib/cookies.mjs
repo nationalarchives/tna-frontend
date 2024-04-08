@@ -1,12 +1,15 @@
+window.TNAFrontendCookies = window.TNAFrontendCookies || null;
+window.TNAFrontendCookieEvents = window.TNAFrontendCookieEvents || null;
+
 export class CookieEventHandler {
   events = {};
   oneTimeEvents = {};
 
   constructor() {
-    if (CookieEventHandler._instance) {
-      return CookieEventHandler._instance;
+    if (window.TNAFrontendCookieEvents) {
+      return window.TNAFrontendCookieEvents;
     }
-    CookieEventHandler._instance = this;
+    window.TNAFrontendCookieEvents = this;
   }
 
   /**
@@ -71,7 +74,8 @@ export default class Cookies {
    * @param {String} [options.domain=""] - The domain to register the cookie with.
    * @param {String} [options.path=""] - The domain to register the cookie with.
    * @param {String} [options.secure=true] - Only set cookie in HTTPS environments.
-   * @param {String} [options.policiesKey=cookies_policy] - The name of the cookie.
+   * @param {String} [options.policiesKey="cookies_policy"] - The name of the cookie.
+   * @param {String} [options.newInstance=false] - Create a fresh instance of the cookie class.
    */
   constructor(options = {}) {
     const {
@@ -80,7 +84,13 @@ export default class Cookies {
       path = "/",
       secure = true,
       policiesKey = "cookies_policy",
+      newInstance = false,
     } = options;
+    if (newInstance) {
+      this.destroyInstance();
+    } else if (window.TNAFrontendCookies) {
+      return window.TNAFrontendCookies;
+    }
     this.extraPolicies = extraPolicies;
     this.domain = domain;
     this.path = path;
@@ -88,6 +98,7 @@ export default class Cookies {
     this.policiesKey = policiesKey;
     this.events = new CookieEventHandler();
     this.init();
+    window.TNAFrontendCookies = this;
   }
 
   /** @protected */
@@ -103,6 +114,11 @@ export default class Cookies {
     });
   }
 
+  destroyInstance() {
+    window.TNAFrontendCookies = null;
+  }
+
+  /** @protected */
   get all() {
     const deserialised = {};
     document.cookie
@@ -117,6 +133,7 @@ export default class Cookies {
     return deserialised;
   }
 
+  /** @protected */
   get policies() {
     try {
       return JSON.parse(this.get(this.policiesKey) || "{}");

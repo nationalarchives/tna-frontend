@@ -4,10 +4,21 @@
 @use "../../tools/typography";
 
 .tna-footer {
-  @include colour.contrast;
+  &__inner {
+    @include colour.contrast;
 
-  padding-top: spacing.space(1);
-  padding-bottom: spacing.space(3);
+    padding-top: spacing.space(1);
+    padding-bottom: spacing.space(3);
+  }
+
+  &__theme-selector {
+    .tna-button-group {
+      justify-content: flex-end;
+    }
+  }
+
+  &__theme-selector-button {
+  }
 
   .tna-logo {
     margin-top: spacing.space(2);
@@ -192,12 +203,16 @@
   }
 
   @include media.on-mobile {
-    padding-top: 0;
-    padding-bottom: spacing.space(2);
+    &__inner {
+      padding-top: 0;
+      padding-bottom: spacing.space(2);
+    }
   }
 
   @include colour.on-high-contrast-and-forced-colours {
-    @include colour.colour-border("keyline", 1px, solid, top);
+    &__inner {
+      @include colour.colour-border("keyline", 1px, solid, top);
+    }
 
     &__navigation {
       &-block {

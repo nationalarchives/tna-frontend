@@ -35,9 +35,6 @@ export const parameters = {
 export const decorators = [
   (Story, ctx) => {
     window.dataLayer = [];
-    window.TNAFrontend = {
-      Cookies,
-    };
     const cookies = new Cookies();
     cookies.deleteAll();
     return Story();

@@ -136,6 +136,7 @@ $colour-palette-high-contrast: map.merge(
   $colour-palette-default,
   (
     "background": brand-colour("white"),
+    "background-tint": #f4f4f4,
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
     "icon-light": brand-colour("black", 0.75),
@@ -148,6 +149,7 @@ $colour-palette-high-contrast: map.merge(
     "contrast-font-base": brand-colour("black"),
     "contrast-font-dark": brand-colour("black"),
     "contrast-font-light": brand-colour("black"),
+    "contrast-icon-light": brand-colour("black", 0.45),
     "contrast-link": #34d,
     "contrast-link-visited": #848,
     "contrast-keyline": brand-colour("black"),

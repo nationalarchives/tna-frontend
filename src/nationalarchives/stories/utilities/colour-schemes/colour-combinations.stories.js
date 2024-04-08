@@ -27,8 +27,8 @@ const Template = ({ theme }) => {
 
   const blocks = [
     "",
-    "tna-background-accent-light",
     "tna-background-tint",
+    "tna-background-accent-light",
     "tna-background-accent",
     "tna-background-contrast",
   ];

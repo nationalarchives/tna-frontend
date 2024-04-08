@@ -41,6 +41,7 @@ addCookiesToDocument(document);
 describe("No existing cookies", () => {
   afterEach(() => {
     document.clearAllCookies();
+    new Cookies().destroyInstance();
   });
 
   test("Initialisation", async () => {
@@ -454,6 +455,7 @@ describe("Existing empty cookie policies", () => {
   beforeEach(() => {
     document.clearAllCookies();
     document.cookie = "cookies_policy=%7B%7D";
+    new Cookies().destroyInstance();
   });
 
   test("Initialisation", async () => {
@@ -473,6 +475,7 @@ describe("Existing malformed cookie policies", () => {
   beforeEach(() => {
     document.clearAllCookies();
     document.cookie = "cookies_policy=foobar";
+    new Cookies().destroyInstance();
   });
 
   test("Initialisation", async () => {

@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
 import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
+import { Footer } from "./components/footer/footer.mjs";
 import { Gallery } from "./components/gallery/gallery.mjs";
 import { GlobalHeader } from "./components/global-header/global-header.mjs";
 import { Header } from "./components/header/header.mjs";
@@ -59,6 +60,11 @@ const initAll = (options) => {
     new ErrorSummary($errorSummary).init();
   }
 
+  const $footer = $scope.querySelector('[data-module="tna-footer"]');
+  if ($footer) {
+    new Footer($footer);
+  }
+
   const $galleries = $scope.querySelectorAll('[data-module="tna-gallery"]');
   $galleries.forEach(($gallery) => {
     new Gallery($gallery);
@@ -112,6 +118,7 @@ export {
   Breadcrumbs,
   CookieBanner,
   ErrorSummary,
+  Footer,
   Gallery,
   GlobalHeader,
   Header,

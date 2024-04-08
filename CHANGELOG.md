@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The Cookie library is now a singleton
 
 ### Changed
+
+- Removed single `content` property in hero components in favour of separate fields (i.e. `title`, `text`/`body`)
+
 ### Deprecated
 ### Removed
 ### Fixed

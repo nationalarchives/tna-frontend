@@ -9,7 +9,8 @@
 {%- if params.shifted -%}
   {%- set containerClasses = containerClasses.concat('tna-hero--shifted') -%}
 {%- endif -%}
-<{{ 'header' if params.content else 'div' }} class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{% set hasContent = params.title or params.body or params.text %}
+<{{ 'header' if hasContent else 'div' }} class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <figure class="tna-hero__figure">
     {%- if params.imageCaption %}
     <figcaption class="tna-hero__caption">
@@ -30,14 +31,32 @@
       {%- endif %}
       <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
     </picture>
-    {%- if params.content %}
+    {%- if hasContent %}
     <div class="tna-container tna-hero__inner">
       <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-hero__content">
         <div class="tna-hero__content-inner">
-          {{ params.content | safe }}
+          {%- if params.title %}
+          {%- if params.supertitle %}
+          <hgroup class="tna-hgroup-{{ params.headingSize or 'xl' }} tna-hero__heading">
+            <h{{ params.headingLevel or "1" }} class="tna-hgroup__title">
+              <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
+              {{ params.title }}
+            </h{{ params.headingLevel or "1" }}>
+          </hgroup>
+          {%- else %}
+          <h{{ params.headingLevel or "1" }} class=" tna-heading-{{ params.headingSize or 'xl' }} tna-hero__heading">
+            {{ params.title }}
+          </h{{ params.headingLevel or "1" }}>
+          {%- endif %}
+          {%- endif %}
+          {%- if params.text %}
+            <p>{{ params.text }}</p>
+          {%- else %}
+            {{ params.body | safe }}
+          {%- endif %}
         </div>
       </div>
     </div>
     {%- endif %}
   </figure>
-</{{ 'header' if params.content else 'div' }}>
+</{{ 'header' if hasContent else 'div' }}>

@@ -90,6 +90,14 @@ export default [
           data_link: valueGetters.text,
         },
       },
+      {
+        eventName: "theme.change",
+        targetElement: ".tna-footer__theme-selector-button",
+        on: "click",
+        data: {
+          value: valueGetters.value,
+        },
+      },
     ],
   },
 ];

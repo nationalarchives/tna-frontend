@@ -28,6 +28,82 @@
       "html": "<a href=\"#\" class=\"tna-button tna-button--accent\">Log in</a>"
     },
     {
+      "name": "with icon",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "icon": "heart"
+      },
+      "html": "<a href=\"#\" class=\"tna-button\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
+      "name": "with right aligned icon",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "icon": "heart",
+        "rightAlignIcon": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-right\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
+      "name": "icon only",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "icon": "heart",
+        "iconOnly": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
+      "name": "icon only on mobile",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "icon": "heart",
+        "iconOnlyOnMobile": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only-mobile\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
+      "name": "small",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "small": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--small\">Log in</a>"
+    },
+    {
+      "name": "plain",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "plain": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--plain\">Log in</a>"
+    },
+    {
+      "name": "button element",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "buttonElement": true
+      },
+      "html": "<button class=\"tna-button\" type=\"button\">Log in</button>"
+    },
+    {
+      "name": "button element with type",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "buttonElement": true,
+        "buttonType": "submit"
+      },
+      "html": "<button class=\"tna-button\" type=\"submit\">Log in</button>"
+    },
+    {
       "name": "with classes",
       "options": {
         "text": "Log in",

@@ -16,7 +16,7 @@
     "type": "string",
     "required": false,
     "default": "m",
-    "description": "The physical size of the index grid title."
+    "description": "The physical size of the index grid title (`xl`, `l`, `m` or `s`)."
   },
   {
     "name": "headingHref",

@@ -15,6 +15,10 @@
     .tna-button-group {
       justify-content: flex-end;
     }
+
+    .tna-button {
+      @include typography.main-font-weight-bold;
+    }
   }
 
   &__theme-selector-button {

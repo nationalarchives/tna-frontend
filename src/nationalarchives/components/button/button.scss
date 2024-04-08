@@ -68,7 +68,7 @@ $button-border-width: 4px !default;
 
   &--small#{&}--plain,
   &-group--small &--plain {
-    @include typography.main-font-weight-bold;
+    // @include typography.main-font-weight-bold;
   }
 
   &--accent {

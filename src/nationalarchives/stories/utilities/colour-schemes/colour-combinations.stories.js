@@ -65,7 +65,10 @@ const Template = ({ theme }) => {
           <h1 class="tna-heading-s">Heading</h1>
           <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
           <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
-          <ul class="tna-chip-list">
+          <ul class="tna-ul">
+            <li>Alpha</li>
+          </ul>
+          <ul class="tna-chip-list tna-!--margin-top-xs">
             <li class="tna-chip-list__item">
               <span class="tna-chip">Chip</span>
             </li>
@@ -87,6 +90,7 @@ const Template = ({ theme }) => {
                 },
               ],
               disableAutoFocus: true,
+              classes: "tna-!--margin-top-s",
             },
           })}
           ${TextInput({

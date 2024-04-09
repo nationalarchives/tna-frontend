@@ -6,8 +6,10 @@
 {%- elseif params.style == "accent" -%}
   {%- set containerClasses = containerClasses.concat('tna-hero--accent') -%}
 {%- endif -%}
-{%- if params.shifted -%}
-  {%- set containerClasses = containerClasses.concat('tna-hero--shifted') -%}
+{%- if params.layout == "shift" -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--shift') -%}
+{%- elseif params.layout == "split" -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--split') -%}
 {%- endif -%}
 {% set hasContent = params.title or params.body or params.text %}
 <{{ 'header' if hasContent else 'div' }} class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>

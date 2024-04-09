@@ -21,7 +21,10 @@ const argTypes = {
     control: "inline-radio",
     options: ["none", "contrast", "tint", "accent"],
   },
-  shifted: { control: "boolean" },
+  layout: {
+    control: "inline-radio",
+    options: ["plain", "shift", "split"],
+  },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -52,7 +55,7 @@ const Template = ({
   imageSources,
   imageCaption,
   style,
-  shifted,
+  layout,
   classes,
   attributes,
 }) =>
@@ -72,7 +75,7 @@ const Template = ({
       imageSources,
       imageCaption,
       style,
-      shifted,
+      layout,
       classes,
       attributes,
     },
@@ -195,7 +198,21 @@ Shifted.args = {
   imageHeight: 333,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
-  shifted: true,
+  layout: "shift",
+};
+
+export const Split = Template.bind({});
+Split.args = {
+  title: "Title",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "accent",
+  layout: "split",
 };
 
 export const CaptionWithNoHeading = Template.bind({});

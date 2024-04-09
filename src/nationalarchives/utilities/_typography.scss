@@ -121,6 +121,7 @@ small {
   @include colour.colour-font("font-base");
   @include typography.detail-font-small;
   line-height: 1;
+  text-align: center;
 }
 
 %chip-plain {

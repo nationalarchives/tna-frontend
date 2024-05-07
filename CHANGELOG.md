@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Date search component text updated to use the defined detail font
+
 ### Security
 
 ## [0.1.52](https://github.com/nationalarchives/tna-frontend/compare/v0.1.51...v0.1.52) - 2024-04-04

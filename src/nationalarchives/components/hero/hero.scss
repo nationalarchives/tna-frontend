@@ -1,4 +1,7 @@
+@use "sass:math";
+
 @use "../../tools/colour";
+@use "../../tools/grid";
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
@@ -111,9 +114,6 @@ $shift-units: 5 !default;
   }
 
   &__image {
-    width: 100%;
-    height: 100%;
-
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -189,13 +189,53 @@ $shift-units: 5 !default;
   &__body {
   }
 
-  &--shifted {
+  &--shift {
     margin-bottom: spacing.space($shift-units - $padding-units-bottom);
   }
 
-  &--shifted &__content-inner {
+  &--shift &__content-inner {
     position: relative;
     top: spacing.space($shift-units);
+  }
+
+  &--shift:not(#{&}--accent):not(#{&}--tint) &__content-inner {
+    @include colour.contrast;
+  }
+
+  &--split {
+  }
+
+  &--split:not(#{&}--accent):not(#{&}--tint) {
+    @include colour.contrast;
+  }
+
+  &--split &__figure {
+    min-height: clamp(15rem, #{math.div(100vw, 3)}, 50rem);
+    padding-top: spacing.space(2);
+    padding-bottom: spacing.space(2);
+
+    box-sizing: border-box;
+
+    align-items: center;
+  }
+
+  &--split &__information {
+    max-width: 50%;
+
+    box-sizing: border-box;
+  }
+
+  &--split &__image {
+    left: 50%;
+  }
+
+  &--split &__content {
+    width: 50%;
+    padding-right: grid.gutter-width();
+  }
+
+  &--split &__content-inner {
+    padding: 0;
   }
 
   @include media.on-mobile {
@@ -219,7 +259,8 @@ $shift-units: 5 !default;
     &__details-summary-icon {
     }
 
-    &__information {
+    &__information,
+    &--split &__information {
       width: auto;
       max-width: none;
 
@@ -248,15 +289,31 @@ $shift-units: 5 !default;
       padding-left: 0;
     }
 
-    &--shifted &__content-inner {
-      position: static;
-    }
-
     &__heading {
     }
 
     &__body {
       margin-top: spacing.space(1);
+    }
+
+    &--shift &__content-inner {
+      position: static;
+    }
+
+    &--split &__figure {
+      min-height: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--split &__content {
+      width: 100%;
+      padding-right: grid.gutter-width-half();
+    }
+
+    &--split &__content-inner {
+      padding-top: spacing.space(2);
+      padding-bottom: spacing.space(2);
     }
   }
 

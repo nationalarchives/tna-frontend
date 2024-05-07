@@ -1,6 +1,7 @@
 @use "../../variables/forms";
 @use "../../tools/colour";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-date-search {
   max-width: 100%;
@@ -11,6 +12,7 @@
 
   @include colour.light;
   @include colour.colour-font("input-foreground");
+  @include typography.detail-font;
   font-size: inherit;
   line-height: 2rem;
 

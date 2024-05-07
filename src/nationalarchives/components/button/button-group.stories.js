@@ -105,14 +105,6 @@ Group.args = {
   ],
 };
 
-const GroupOfSmallTemplate = ({ buttons }) =>
-  `<div class="tna-button-group">
-    ${buttons.map((button) => Template({ ...button, text: `Small ${button.text}`, small: true })).join("")}
-</div>`;
-
-export const GroupOfSmall = GroupOfSmallTemplate.bind({});
-GroupOfSmall.args = Group.args;
-
 const SmallGroupTemplate = ({ buttons }) =>
   `<div class="tna-button-group tna-button-group--small">
     ${buttons.map((button) => Template({ ...button, text: `Small ${button.text}` })).join("")}

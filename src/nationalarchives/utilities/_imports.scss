@@ -1,0 +1,57 @@
+@use "../variables/assets";
+@use "../variables/typography";
+@use "../lib/functions";
+
+@if typography.$use-local-fonts {
+  @font-face {
+    font-family: typography.$main-font-family-name;
+    src: url("#{assets.$tna-font-path}/#{typography.$main-font-file}");
+    font-weight: typography.$main-font-weight;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: typography.$main-font-family-name;
+    src: url("#{assets.$tna-font-path}/#{typography.$main-font-file-medium}");
+    font-weight: typography.$main-font-weight-medium;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: typography.$main-font-family-name;
+    src: url("#{assets.$tna-font-path}/#{typography.$main-font-file-bold}");
+    font-weight: typography.$main-font-weight-bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: typography.$detail-font-family-name;
+    src: url("#{assets.$tna-font-path}/#{typography.$detail-font-file}");
+    font-weight: typography.$detail-font-weight;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: typography.$detail-font-family-name;
+    src: url("#{assets.$tna-font-path}/#{typography.$detail-font-file-bold}");
+    font-weight: typography.$detail-font-weight-bold;
+    font-style: normal;
+    font-display: swap;
+  }
+} @else {
+  $main-font-family-name: functions.str-replace(
+    typography.$main-font-family-name,
+    " ",
+    "+"
+  );
+  $detail-font-family-name: functions.str-replace(
+    typography.$detail-font-family-name,
+    " ",
+    "+"
+  );
+  @import url("https://fonts.googleapis.com/css2?family=#{$main-font-family-name}:wght@#{typography.$main-font-weight}..#{typography.$main-font-weight-bold}&family=#{$detail-font-family-name}:wght@#{typography.$detail-font-weight}..#{typography.$detail-font-weight-bold}&display=swap"); /* stylelint-disable-line */
+}

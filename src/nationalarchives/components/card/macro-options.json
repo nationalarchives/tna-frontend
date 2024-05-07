@@ -22,7 +22,7 @@
     "type": "string",
     "required": false,
     "default": "m",
-    "description": "The physical size of the card title."
+    "description": "The physical size of the card title (`xl`, `l`, `m` or `s`)."
   },
   {
     "name": "href",

@@ -72,7 +72,6 @@ Accept.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   allowInsecure: true,
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 Accept.play = async ({ canvasElement }) => {
@@ -115,7 +114,6 @@ export const Reject = Template.bind({});
 Reject.args = {
   serviceName: "My service",
   cookiesUrl: "#",
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 Reject.play = async ({ canvasElement }) => {
@@ -153,7 +151,6 @@ CustomPolicies.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   policies: "custom",
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 CustomPolicies.parameters = {
@@ -192,7 +189,6 @@ Existing.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   allowInsecure: true,
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 Existing.decorators = [

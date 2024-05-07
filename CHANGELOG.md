@@ -10,12 +10,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Footer component can now contain an optional theme selector which requires the component to have JavaScript initialised
-- The Cookie library is now a singleton
+- Hero components have a new split layout option
 
 ### Changed
+
+- Removed single `content` property in hero components in favour of separate fields (i.e. `title`, `text`/`body`)
+- Nested unordered lists use the same marker
+- The Cookie library is now a singleton
+- Improved typeface definitions and includes
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Date search component text updated to use the defined detail font
+
 ### Security
 
 ## [0.1.52](https://github.com/nationalarchives/tna-frontend/compare/v0.1.51...v0.1.52) - 2024-04-04

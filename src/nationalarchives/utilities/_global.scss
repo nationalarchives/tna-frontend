@@ -1,4 +1,12 @@
 .tna-template {
+  /*
+   * ------------------------------------------
+   * A minimum page width of 320px is needed in
+   * order to meet the WCAG AA success criteria
+   * for 1.4.10 (Reflow)
+   * https://www.w3.org/WAI/WCAG21/Understanding/reflow.html
+   * ------------------------------------------
+   */
   min-width: 320px;
   width: 100%;
   height: 100%;

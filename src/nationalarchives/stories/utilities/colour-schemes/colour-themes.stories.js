@@ -192,7 +192,7 @@ const Template = ({ theme, accent }) => {
       ${Hero({
         params: {
           title: "Title",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           imageSrc:
             "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
           imageAlt: "The National Archives office",

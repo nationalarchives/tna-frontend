@@ -12,10 +12,10 @@
 
   display: block !important;
 
+  overflow: hidden !important;
+
   position: absolute !important;
   left: -100vw;
-
-  overflow: hidden !important;
 
   white-space: nowrap !important;
 
@@ -47,9 +47,9 @@
     margin: inherit !important;
     padding: spacing.space(1) !important;
 
-    position: static !important;
-
     overflow: visible !important;
+
+    position: static !important;
 
     white-space: inherit !important;
 

@@ -21,14 +21,14 @@
 
 @mixin main-font($bold: false) {
   font-family: typography.$main-font-family;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
   @if $bold {
     @include main-font-weight-bold;
   } @else {
     @include main-font-weight;
   }
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 @mixin heading-font {
@@ -38,20 +38,20 @@
 
 @mixin detail-font($bold: false) {
   font-family: typography.$detail-font-family;
+  font-style: normal;
+  font-optical-sizing: auto;
   @if $bold {
     font-weight: typography.$detail-font-weight-bold;
   } @else {
     font-weight: typography.$detail-font-weight;
   }
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
 @mixin detail-font-small {
   @include detail-font;
   @include relative-font-size(14);
-  text-transform: uppercase;
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 @mixin interacted-text-decoration {
@@ -66,14 +66,14 @@
   $font-size-tiny,
   $line-height
 ) {
-  @include relative-font-size($font-size-default);
-  line-height: $line-height;
 
   $small-and-tiny-identical: $font-size-small == $font-size-tiny;
   $medium-small-and-tiny-identical: $font-size-medium == $font-size-small and
     $small-and-tiny-identical;
   $all-identical: $font-size-default == $font-size-medium and
     $medium-small-and-tiny-identical and $small-and-tiny-identical;
+  line-height: $line-height;
+  @include relative-font-size($font-size-default);
 
   @if $all-identical != true {
     @if $medium-small-and-tiny-identical != true {

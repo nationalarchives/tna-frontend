@@ -20,11 +20,13 @@
   &__link {
     padding: spacing.space(0.125) spacing.space(0.75);
 
-    text-decoration: none;
     line-height: 1.75;
 
-    @include colour.colour-border("keyline", 1px);
+    text-decoration: none;
+
     border-radius: 1rem;
+
+    @include colour.colour-border("keyline", 1px);
 
     &,
     &:link,

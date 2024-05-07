@@ -6,10 +6,10 @@
 
 .tna-pagination {
   display: flex;
-  gap: spacing.space(1);
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  gap: spacing.space(1);
 
   @include spacing.space-above;
 

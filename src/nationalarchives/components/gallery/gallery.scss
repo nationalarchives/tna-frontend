@@ -37,8 +37,8 @@
     }
 
     &-image {
-      margin: 0 auto;
       height: auto;
+      margin: 0 auto;
     }
 
     &-description {
@@ -70,6 +70,7 @@
   &--touchable {
     .tna-gallery__items {
       flex-flow: row nowrap;
+
       gap: spacing.space(6);
 
       overflow-x: scroll;

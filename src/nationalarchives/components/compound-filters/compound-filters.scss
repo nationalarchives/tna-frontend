@@ -16,20 +16,23 @@
     padding: 0 spacing.space(0.125) 0 spacing.space(0.75);
 
     display: flex;
-    gap: spacing.space(0.5);
     align-items: center;
+    gap: spacing.space(0.5);
 
-    @include typography.relative-font-size(16);
     line-height: 1.75;
 
-    @include colour.colour-border("keyline", 1px);
     border-radius: 1rem;
+
+    @include typography.relative-font-size(16);
+
+    @include colour.colour-border("keyline", 1px);
 
     &--remove {
       padding-right: 0;
       padding-left: 0;
 
       background: none;
+
       border: none;
       border-radius: 0;
     }
@@ -41,14 +44,17 @@
 
     position: relative;
 
-    text-decoration: none;
     font-size: 0;
     line-height: 0;
+
+    text-decoration: none;
 
     border-radius: 100%;
 
     &::before,
     &::after {
+      content: "";
+
       width: 2px;
       height: 1rem;
       margin-left: -1px;
@@ -60,8 +66,6 @@
       left: 50%;
 
       @include colour.colour-background("font-base");
-
-      content: "";
     }
 
     &::before {

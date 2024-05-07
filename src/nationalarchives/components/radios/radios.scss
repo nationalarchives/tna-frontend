@@ -37,6 +37,8 @@
 
       &::before,
       &::after {
+        content: "";
+
         position: absolute;
         top: 0;
         left: 0;
@@ -44,8 +46,6 @@
         border-radius: 100%;
 
         @include colour.light;
-
-        content: "";
       }
 
       &::before {
@@ -104,6 +104,7 @@
 
   &--inline {
     flex-flow: row wrap;
+
     align-items: center;
     gap: spacing.space(1) spacing.space(2);
 

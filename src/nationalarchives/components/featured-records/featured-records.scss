@@ -16,12 +16,13 @@
     padding: spacing.space(1) spacing.space(1.5);
 
     display: flex;
-    gap: spacing.space(2);
     justify-content: flex-start;
     align-items: center;
+    gap: spacing.space(2);
+
+    border-top-width: 0;
 
     @include colour.colour-border("keyline", 1px);
-    border-top-width: 0;
   }
 
   &__image {
@@ -83,9 +84,10 @@
     &__item {
       padding: spacing.space(1);
 
-      gap: spacing.space(1);
       flex-direction: column;
       align-items: flex-start;
+
+      gap: spacing.space(1);
     }
   }
 }

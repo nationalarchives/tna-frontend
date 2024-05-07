@@ -7,18 +7,18 @@
   margin: 0 !important;
   padding: 0 !important;
 
+  overflow: hidden !important;
+
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
   z-index: -1 !important;
 
-  overflow: hidden !important;
-
-  clip: rect(0, 0, 0, 0) !important;
+  background-color: transparent !important;
 
   border: 0 !important;
 
-  background-color: transparent !important;
+  clip: rect(0, 0, 0, 0) !important;
 
   // &::before,
   // &::after {

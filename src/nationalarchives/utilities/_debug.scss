@@ -19,6 +19,8 @@
       0 0 0.5rem #f0a !important;
 
     &::after {
+      content: "";
+
       width: 20px;
       height: 20px;
 
@@ -34,13 +36,11 @@
       outline: 2px #0f3 solid;
       outline-offset: 10px;
 
+      transform: translateX(-50%) translateY(-50%);
+
       box-shadow:
         0 0 0 2px #0f3,
         0 0 0.5rem #0f3 !important;
-
-      transform: translateX(-50%) translateY(-50%);
-
-      content: "";
     }
 
     &:not(.tna-checkboxes__item-label, .tna-radios__item-label) {

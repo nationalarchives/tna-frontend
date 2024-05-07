@@ -15,18 +15,21 @@ $textarea-vertical-padding: 0.25 !default;
 
   display: block;
   box-sizing: border-box;
-  resize: vertical;
 
-  @include colour.light;
-  @include colour.colour-font("input-foreground");
   font-family: inherit;
   font-size: inherit;
   line-height: 1.5rem;
 
+  border-radius: 0.1px;
+
+  resize: vertical;
+
+  @include colour.light;
+  @include colour.colour-font("input-foreground");
+
   @include colour.colour-background("input-background");
 
   @include colour.colour-border("input-border", forms.$form-field-border-width);
-  border-radius: 0.1px;
 
   .tna-form__group--error & {
     @include colour.colour-border("form-error");

@@ -58,8 +58,8 @@
     &-items {
       display: flex;
       flex-wrap: wrap;
-      gap: spacing.space(0.3125);
       align-items: flex-start;
+      gap: spacing.space(0.3125);
     }
 
     &-item {
@@ -70,8 +70,9 @@
 
         display: block;
 
-        text-align: center;
         line-height: 1;
+
+        text-align: center;
 
         border: 0 transparent solid;
         border-width: 4px 0;

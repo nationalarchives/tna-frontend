@@ -9,12 +9,12 @@
 .tna-template {
   @include colour.colour-font("font-base");
   @include typography.main-font;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  direction: ltr;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  direction: ltr;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .tna-template__body {
@@ -191,13 +191,13 @@ small {
       display: inline-block;
 
       &::after {
+        content: "\203A";
+
         padding-left: spacing.space(0.5);
 
         display: inline-block;
 
         font-weight: 700;
-
-        content: "\203A";
       }
 
       &:hover {

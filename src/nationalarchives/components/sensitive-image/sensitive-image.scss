@@ -9,6 +9,8 @@
     position: relative;
 
     &::after {
+      content: "";
+
       width: 100%;
       padding-bottom: calc(
         100% * var(--sensitive-image-height) / var(--sensitive-image-width)
@@ -20,19 +22,17 @@
       z-index: -1;
 
       background-image: var(--sensitive-image);
-      background-clip: padding-box;
       background-size: contain;
+      background-clip: padding-box;
 
       filter: blur(20px) saturate(0);
-
-      content: "";
     }
   }
 
   &__show {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     position: absolute;
     inset: 0;
@@ -43,12 +43,13 @@
     cursor: pointer;
 
     &::after {
+      content: attr(data-action);
+
       padding: spacing.space(0.5) spacing.space(2);
 
-      @include typography.relative-font-size(16);
       background-color: #ff0;
 
-      content: attr(data-action);
+      @include typography.relative-font-size(16);
     }
 
     &:hover {

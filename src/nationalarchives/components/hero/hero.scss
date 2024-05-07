@@ -48,12 +48,12 @@ $shift-units: 5 !default;
   &__caption {
     width: 100%;
 
+    overflow: visible;
+
     position: absolute;
     top: 0;
     right: 0;
     z-index: 5;
-
-    overflow: visible;
   }
 
   &__details {
@@ -72,16 +72,18 @@ $shift-units: 5 !default;
     z-index: 2;
 
     font-size: 0;
-    text-align: center;
     line-height: 1.5rem;
+    text-align: center;
+
     list-style: none;
+
+    border-radius: 100%;
+
+    cursor: pointer;
 
     @include colour.accent;
 
     @include colour.colour-border("background", 4px);
-    border-radius: 100%;
-
-    cursor: pointer;
 
     &:hover {
       @include colour.colour-font("background");
@@ -92,8 +94,8 @@ $shift-units: 5 !default;
 
   &__details-summary-icon {
     font-size: 1.25rem;
-    font-style: normal;
     font-weight: 700;
+    font-style: normal;
     text-transform: lowercase;
   }
 
@@ -131,6 +133,8 @@ $shift-units: 5 !default;
 
     &::before,
     &::after {
+      content: "";
+
       width: 1.5rem;
       height: 0.125rem;
 
@@ -141,8 +145,6 @@ $shift-units: 5 !default;
       left: 50%;
 
       @include colour.colour-background("font-dark");
-
-      content: "";
     }
 
     &::before {
@@ -214,9 +216,9 @@ $shift-units: 5 !default;
     padding-top: spacing.space(2);
     padding-bottom: spacing.space(2);
 
-    box-sizing: border-box;
-
     align-items: center;
+
+    box-sizing: border-box;
   }
 
   &--split &__information {

@@ -11,22 +11,23 @@ $button-border-width: 4px !default;
   padding: spacing.space(0.25) spacing.space(1);
 
   display: inline-flex;
-  align-items: baseline;
   justify-content: center;
+  align-items: baseline;
   gap: spacing.space(0.75);
+
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: balance;
+
+  cursor: pointer;
 
   @include typography.relative-font-size(18);
   @include typography.main-font-weight-bold;
-  line-height: 2rem;
-  text-decoration: none;
-  text-align: center;
-  text-wrap: balance;
 
   @include colour.colour-background("button-background");
 
   @include colour.colour-border("button-background", $button-border-width);
-
-  cursor: pointer;
 
   &,
   &:link,

@@ -15,10 +15,10 @@
     margin: 0;
     padding: 0;
 
-    list-style: none;
-
     display: flex;
     flex-wrap: wrap;
+
+    list-style: none;
   }
 
   &__item {
@@ -26,14 +26,14 @@
 
     + .tna-breadcrumbs__item {
       &::before {
+        content: "\203A";
+        content: "\203A" / "";
+
         margin: 0 spacing.space(0.75);
 
         display: inline-block;
 
         vertical-align: baseline;
-
-        content: "\203A";
-        content: "\203A" / "";
       }
     }
 
@@ -78,19 +78,20 @@
   }
 
   button#{&}__link {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
+
+    appearance: none;
 
     font-size: inherit;
-    line-height: inherit;
     font-weight: inherit;
+    line-height: inherit;
 
     background-color: transparent;
 
     border: none;
 
-    appearance: none;
     cursor: pointer;
 
     &:hover {

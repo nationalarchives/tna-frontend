@@ -11,9 +11,9 @@
     padding: 0;
 
     display: flex;
+    flex-wrap: nowrap;
     align-items: stretch;
     gap: spacing.space(1);
-    flex-wrap: nowrap;
 
     list-style: none;
   }
@@ -27,18 +27,20 @@
     display: flex;
 
     align-items: center;
+
     position: relative;
 
-    @include typography.relative-font-size(20);
-    @include typography.heading-font;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
 
     background: transparent;
 
     border: none;
 
     cursor: pointer;
+
+    @include typography.relative-font-size(20);
+    @include typography.heading-font;
 
     &,
     &:link,
@@ -47,12 +49,12 @@
     }
 
     &::after {
+      content: "";
+
       position: absolute;
       right: 0;
       bottom: 0;
       left: 0;
-
-      content: "";
     }
 
     &:hover,

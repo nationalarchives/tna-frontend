@@ -8,11 +8,11 @@
 
 .tna-table {
   width: 100%;
-  @include spacing.space-above;
-
-  border-collapse: collapse;
 
   text-align: left;
+
+  border-collapse: collapse;
+  @include spacing.space-above;
 
   &:first-child {
     margin-top: 0;
@@ -85,18 +85,18 @@
 
 .tna-table-wrapper {
   width: 100%;
-  @include spacing.space-above;
-  padding-left: grid.gutter-width();
   padding-right: grid.gutter-width();
-
-  position: relative;
-  left: -#{grid.gutter-width()};
+  padding-left: grid.gutter-width();
 
   overflow: auto;
 
+  position: relative;
+  left: -#{grid.gutter-width()};
+  @include spacing.space-above;
+
   @include media.on-tiny {
-    padding-left: grid.gutter-width-tiny();
     padding-right: grid.gutter-width-tiny();
+    padding-left: grid.gutter-width-tiny();
 
     left: -#{grid.gutter-width-tiny()};
   }

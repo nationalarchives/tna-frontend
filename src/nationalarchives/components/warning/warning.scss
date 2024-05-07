@@ -8,8 +8,8 @@
   padding: spacing.space(1);
 
   display: flex;
-  gap: spacing.space(1);
   align-items: flex-start;
+  gap: spacing.space(1);
 
   @include colour.accent-light;
 
@@ -31,15 +31,17 @@
 
     display: block;
 
+    line-height: 2rem;
+    text-align: center;
+    text-transform: lowercase;
+
+    border-radius: 100%;
+
     @include colour.colour-font("font-dark");
     @include typography.relative-font-size(24);
     @include typography.main-font-weight-bold;
-    text-transform: lowercase;
-    text-align: center;
-    line-height: 2rem;
 
     @include colour.colour-border("font-dark", 0.1875rem);
-    border-radius: 100%;
 
     @include media.on-mobile {
       width: 1.5rem;

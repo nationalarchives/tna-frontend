@@ -81,9 +81,9 @@
     }
 
     dd {
-      background: transparent !important;
-
       margin-left: 0;
+
+      background: transparent !important;
     }
   }
 }
@@ -103,9 +103,9 @@
     margin: 0;
     padding: spacing.space(0.5) spacing.space(1);
 
-    position: relative;
-
     box-sizing: border-box;
+
+    position: relative;
 
     word-wrap: break-word;
   }

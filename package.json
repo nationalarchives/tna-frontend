@@ -9,7 +9,7 @@
     "build:package": "./tasks/build-package.sh",
     "compile:sass": "sass --style=compressed --embed-sources src/nationalarchives:package/nationalarchives",
     "compile:scripts": "webpack",
-    "lint:fix": "prettier --write '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
+    "lint:fix": "prettier --write '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html,stylelintrc}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
     "test:all": "npm run test:lint && npm run test:unit && npm run test:html && npm run test:fixtures && npm run test:storybook && npm run build:package && npm run test:package",
     "test:fixtures": "node tasks/test-fixtures.js",
     "test:html": "node tasks/generate-fixture-html.js && html-validate fixtures-html",
@@ -80,6 +80,7 @@
     "style-loader": "^3.3.1",
     "stylelint": "^16.0.2",
     "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.4",
     "stylelint-selector-bem-pattern": "^4.0.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"

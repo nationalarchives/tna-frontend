@@ -4,19 +4,19 @@
 @use "../../tools/grid";
 
 .tna-container {
-  max-width: gridVars.$largest-container-width;
   width: 100%;
+  max-width: gridVars.$largest-container-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: grid.gutter-width-half();
   padding-left: grid.gutter-width-half();
 
-  box-sizing: border-box;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
+
+  box-sizing: border-box;
 
   &--no-padding,
   &--no-padding-all {

@@ -37,8 +37,8 @@
 
   &__logo {
     display: flex;
-    gap: spacing.space(1);
     align-items: flex-end;
+    gap: spacing.space(1);
 
     text-decoration: none;
 
@@ -60,10 +60,11 @@
   &__logo-strapline {
     padding-right: spacing.space(0.625);
 
+    line-height: math.div(6.75rem, 3);
+    text-transform: uppercase;
+
     @include typography.heading-font;
     @include typography.relative-font-size(20);
-    text-transform: uppercase;
-    line-height: math.div(6.75rem, 3);
   }
 
   &__navigation-button-wrapper {
@@ -80,6 +81,8 @@
 
     &::before,
     &::after {
+      content: "";
+
       height: 0.25rem;
 
       display: block;
@@ -89,8 +92,6 @@
       left: 0;
 
       background-color: inherit;
-
-      content: "";
     }
 
     &::before {
@@ -106,11 +107,11 @@
     height: 2rem;
     padding: 0;
 
+    appearance: none;
+
     display: block;
 
     position: relative;
-
-    appearance: none;
 
     font-size: 0;
 
@@ -151,6 +152,7 @@
 
     columns: 2;
     column-gap: spacing.space(2);
+
     list-style: none;
   }
 
@@ -165,9 +167,10 @@
     display: block;
     box-sizing: border-box;
 
-    @include typography.relative-font-size(17);
-    text-decoration: none;
     line-height: math.div(6.75rem, 3);
+    text-decoration: none;
+
+    @include typography.relative-font-size(17);
 
     @include colour.colour-border("keyline", 0.5px, solid, bottom);
 
@@ -192,8 +195,8 @@
 
   &__top-navigation-link {
     display: flex;
-    gap: spacing.space(0.5);
     align-items: center;
+    gap: spacing.space(0.5);
 
     text-decoration: none;
 

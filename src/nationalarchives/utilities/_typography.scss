@@ -1,47 +1,10 @@
 @use "sass:math";
 @use "sass:selector";
-@use "../variables/assets";
 @use "../variables/typography" as typographyVars;
 @use "../tools/colour";
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
-
-@if typographyVars.$use-local-fonts {
-  @font-face {
-    font-family: "Open Sans";
-    src: url("#{assets.$tna-font-path}/OpenSans-Regular.ttf");
-    font-weight: typographyVars.$main-font-weight;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Open Sans";
-    src: url("#{assets.$tna-font-path}/OpenSans-Bold.ttf");
-    font-weight: typographyVars.$main-font-weight-bold;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Roboto Mono";
-    src: url("#{assets.$tna-font-path}/RobotoMono-Regular.ttf");
-    font-weight: typographyVars.$detail-font-weight;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Roboto Mono";
-    src: url("#{assets.$tna-font-path}/RobotoMono-Medium.ttf");
-    font-weight: typographyVars.$detail-font-weight-bold;
-    font-style: normal;
-    font-display: swap;
-  }
-} @else {
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Roboto+Mono:wght@100..700&display=swap"); /* stylelint-disable-line */
-}
 
 .tna-template {
   @include colour.colour-font("font-base");

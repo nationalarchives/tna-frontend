@@ -1,5 +1,24 @@
+/*
+ * ------------------------------------------
+ * The typefaces, sizes and spacings that are
+ * defined in this file have been selected to
+ * ensure 100% match with the latest National
+ * Archives brand guidelines - avoid changing
+ * or overwriting any of these values without
+ * signing off with the Digital Services team
+ * first
+ * ------------------------------------------
+ */
+
 $relative-1rem-px: 16; // 16px = 1rem
 
+/*
+ * ------------------------------------------
+ * When true, use the included font files for
+ * Open Sans and Roboto Mono, rather than the
+ * versions hosted by Google Fonts
+ * ------------------------------------------
+ */
 $use-local-fonts: false !default;
 
 $body-font-size-px: 18 !default;
@@ -8,18 +27,50 @@ $body-line-height: 1.75 !default;
 
 $interactive-text-decoration-thickness: 3.5px !default;
 
-$main-font: "Open Sans" !default;
-$main-font-family: $main-font, sans-serif !default;
+$main-font-family-name: "Open Sans" !default;
+$main-font-family:
+  #{$main-font-family-name},
+  sans-serif;
 $main-font-weight: 400 !default;
 $main-font-weight-medium: 600 !default;
 $main-font-weight-bold: 700 !default;
+$main-font-file: "OpenSans-Regular.ttf" !default;
+$main-font-file-medium: "OpenSans-SemiBold.ttf" !default;
+$main-font-file-bold: "OpenSans-Bold.ttf" !default;
 
-$heading-font-family: supria-sans-condensed, "Arial Narrow", sans-serif !default;
+/*
+ * ------------------------------------------
+ * To use Supria Sans Condensed (which is the
+ * approved heading typeface for The National
+ * Archives), you need to obtain a licence to
+ * properly embed the CSS files with the font
+ * definitions in your service - check with a
+ * member of the Digital Services team on how
+ * to get a licence
+ * ------------------------------------------
+ */
+$heading-font-family-name: "supria-sans-condensed" !default;
+$heading-font-family:
+  #{$heading-font-family-name},
+  "Arial Narrow",
+  sans-serif;
 $heading-font-weight: 500 !default;
 
-$detail-font-family: "Roboto Mono", monospace !default;
+/*
+ * ------------------------------------------
+ * The detail font should be a monospace font
+ * and is used for chips, supertitles as well
+ * as the date search component
+ * ------------------------------------------
+ */
+$detail-font-family-name: "Roboto Mono" !default;
+$detail-font-family:
+  #{$detail-font-family-name},
+  monospace;
 $detail-font-weight: 400 !default;
 $detail-font-weight-bold: 500 !default;
+$detail-font-file: "RobotoMono-Regular.ttf" !default;
+$detail-font-file-bold: "RobotoMono-Medium.ttf" !default;
 
 $heading-xl-font-size-default: 64 !default;
 $heading-xl-font-size-medium: 48 !default;

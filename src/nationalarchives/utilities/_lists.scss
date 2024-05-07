@@ -21,6 +21,16 @@
     margin: spacing.space(1) 0 0;
     padding: 0 0 0 spacing.space(2);
 
+    &--plain {
+      padding-left: 0;
+
+      &,
+      & ul,
+      & ol {
+        list-style: none;
+      }
+    }
+
     &:first-child {
       margin-top: 0;
     }
@@ -31,16 +41,6 @@
 
       .tna-background-accent & {
         @include colour.colour-font("font-dark");
-      }
-    }
-
-    &--plain {
-      padding-left: 0;
-
-      &,
-      & ul,
-      & ol {
-        list-style: none;
       }
     }
   }

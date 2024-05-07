@@ -181,6 +181,10 @@ module.exports = {
         },
         {
           emptyLineBefore: "always",
+          properties: ["box-shadow"],
+        },
+        {
+          emptyLineBefore: "always",
           properties: ["transform"],
         },
         {

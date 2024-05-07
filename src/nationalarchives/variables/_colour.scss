@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 
 $colour-palette-brand: (
@@ -27,9 +28,11 @@ $colour-palette-brand: (
 
 @function hex-to-rgb($hex, $opacity: 1) {
   @if $opacity == 1 {
-    @return rgb(red($hex) green($hex) blue($hex));
+    @return rgb(color.red($hex) color.green($hex) color.blue($hex));
   } @else {
-    @return rgb(red($hex) green($hex) blue($hex) / #{$opacity});
+    @return rgb(
+      color.red($hex) color.green($hex) color.blue($hex) / #{$opacity}
+    );
   }
 }
 

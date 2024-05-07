@@ -73,7 +73,7 @@ describe("With consent", () => {
     document.clearAllCookies();
     document.cookie =
       "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
-    GA4._instance = null;
+    window.TNAFrontendAnalytics = null;
     document.head.innerHTML = "";
     document.body.innerHTML = "";
 

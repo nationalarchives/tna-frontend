@@ -16,7 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed single `content` property in hero components in favour of separate fields (i.e. `title`, `text`/`body`)
 - Nested unordered lists use the same marker
-- The Cookie library is now a singleton
+- The cookie library is now a singleton
+- The analytics library instance is saved to the window object
 - Improved typeface definitions and includes
 
 ### Deprecated

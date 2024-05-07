@@ -242,8 +242,8 @@ class GA4 extends EventTracker {
   gTagId;
 
   constructor(options = {}) {
-    if (GA4._instance) {
-      return GA4._instance;
+    if (window.TNAFrontendAnalytics) {
+      return window.TNAFrontendAnalytics;
     }
     const {
       id = "",
@@ -252,7 +252,7 @@ class GA4 extends EventTracker {
       addTrackingCode = true,
     } = options;
     super({ prefix, addTrackingCode });
-    GA4._instance = this;
+    window.TNAFrontendAnalytics = this;
     this.gTagId = id;
     this.ga4Disable = `ga-disable-${this.gTagId}`;
     window.dataLayer = window.dataLayer || [];
@@ -264,7 +264,7 @@ class GA4 extends EventTracker {
   }
 
   destroy() {
-    GA4._instance = null;
+    window.TNAFrontendAnalytics = null;
   }
 
   /** @protected */

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Footer component can now contain an optional theme selector which requires the component to have JavaScript initialised
+- Footer component can now contain an optional theme selector which requires the component to have the TNA cookies library initialised
 - Hero components have a new split layout option
 
 ### Changed

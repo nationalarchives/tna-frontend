@@ -191,7 +191,8 @@ const Template = ({ theme, accent }) => {
     <main class="tna-main" id="main-content">
       ${Hero({
         params: {
-          content: `<h1 class="tna-heading-xl">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>`,
+          title: "Title",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
           imageSrc:
             "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
           imageAlt: "The National Archives office",

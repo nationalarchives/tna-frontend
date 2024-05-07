@@ -1,8 +1,8 @@
-{
-  "extends": ["stylelint-config-standard-scss"],
-  "plugins": ["stylelint-selector-bem-pattern", "stylelint-order"],
-  "ignoreFiles": ["src/nationalarchives/lib/font-awesome/**/*.scss"],
-  "rules": {
+module.exports = {
+  extends: ["stylelint-config-standard-scss"],
+  plugins: ["stylelint-selector-bem-pattern", "stylelint-order"],
+  ignoreFiles: ["src/nationalarchives/lib/font-awesome/**/*.scss"],
+  rules: {
     "at-rule-empty-line-before": null,
     "block-no-empty": null,
     "declaration-empty-line-before": null,
@@ -13,25 +13,25 @@
     "selector-class-pattern": null,
     "no-invalid-position-at-import-rule": null,
     "plugin/selector-bem-pattern": {
-      "preset": "bem"
+      preset: "bem",
     },
     "color-function-notation": [
       "modern",
       {
-        "ignore": ["with-var-inside"]
-      }
+        ignore: ["with-var-inside"],
+      },
     ],
     "scss/operator-no-newline-after": null,
     "order/order": ["dollar-variables", "custom-properties", "declarations"],
     "order/properties-order": [
       [
         {
-          "emptyLineBefore": "always",
-          "properties": ["content"]
+          emptyLineBefore: "always",
+          properties: ["content"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": [
+          emptyLineBefore: "always",
+          properties: [
             "min-width",
             "width",
             "max-width",
@@ -47,12 +47,12 @@
             "padding-top",
             "padding-right",
             "padding-bottom",
-            "padding-left"
-          ]
+            "padding-left",
+          ],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": [
+          emptyLineBefore: "always",
+          properties: [
             "appearance",
             "display",
             "flex-wrap",
@@ -65,28 +65,28 @@
             "overflow",
             "overflow-x",
             "overflow-y",
-            "resize"
-          ]
+            "resize",
+          ],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["float", "clear"]
+          emptyLineBefore: "always",
+          properties: ["float", "clear"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": [
+          emptyLineBefore: "always",
+          properties: [
             "position",
             "inset",
             "top",
             "right",
             "bottom",
             "left",
-            "z-index"
-          ]
+            "z-index",
+          ],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": [
+          emptyLineBefore: "always",
+          properties: [
             "color",
             "font-family",
             "src",
@@ -121,35 +121,35 @@
             "text-emphasis",
             "white-space",
             "word-spacing",
-            "hyphens"
-          ]
+            "hyphens",
+          ],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["columns", "column-gap"]
+          emptyLineBefore: "always",
+          properties: ["columns", "column-gap"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["list-style"]
+          emptyLineBefore: "always",
+          properties: ["list-style"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["fill"]
+          emptyLineBefore: "always",
+          properties: ["fill"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": [
+          emptyLineBefore: "always",
+          properties: [
             "background",
             "background-color",
             "background-image",
             "background-size",
             "background-repeat",
-            "background-clip"
-          ]
+            "background-clip",
+          ],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": [
+          emptyLineBefore: "always",
+          properties: [
             "border",
             "border-width",
             "border-color",
@@ -176,30 +176,30 @@
             "outline-width",
             "outline-color",
             "outline-style",
-            "outline-offset"
-          ]
+            "outline-offset",
+          ],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["transform"]
+          emptyLineBefore: "always",
+          properties: ["transform"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["translate"]
+          emptyLineBefore: "always",
+          properties: ["translate"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["opacity"]
+          emptyLineBefore: "always",
+          properties: ["opacity"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["cursor"]
+          emptyLineBefore: "always",
+          properties: ["cursor"],
         },
         {
-          "emptyLineBefore": "always",
-          "properties": ["clip", "clip-path", "zoom", "resize"]
-        }
-      ]
-    ]
-  }
-}
+          emptyLineBefore: "always",
+          properties: ["clip", "clip-path", "zoom", "resize"],
+        },
+      ],
+    ],
+  },
+};

@@ -25,7 +25,7 @@
       </h{{ params.headingLevel }}>
     </hgroup>
   {%- else %}
-    <h{{ params.headingLevel }} class=" tna-heading-{{ params.headingSize or 's' }} tna-card__heading">
+    <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 's' }} tna-card__heading">
       {%- if params.href %}
       <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.title }}</a>
       {%- else %}

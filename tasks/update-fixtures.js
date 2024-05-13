@@ -57,9 +57,10 @@ const newTemplateFixtures = {
   fixtures: templateFixtures.fixtures.map((fixture) => ({
     ...fixture,
     html: nunjucks
-      .renderString(require(`../${templatesDirectory}${fixture.template}`), {
-        params: fixture.options,
-      })
+      .renderString(
+        require(`../${templatesDirectory}${fixture.template}`),
+        fixture.options,
+      )
       .trim()
       .replace(/>\n\s*/g, ">")
       .replace(/\n\s*</g, "<"),

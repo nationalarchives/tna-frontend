@@ -28,7 +28,9 @@ components.forEach((component) => {
     `../${componentsDirectory}${component}/template.njk`,
   );
   componentFixtures.fixtures.forEach((fixture) => {
-    const result = renderNunjucks(componentNunjucks, fixture.options);
+    const result = renderNunjucks(componentNunjucks, {
+      params: fixture.options,
+    });
     fs.writeFile(
       `${fixturesOutputDirectory}/${component}-${fixture.name
         .replace(/[^0-9a-z]/gi, "-")

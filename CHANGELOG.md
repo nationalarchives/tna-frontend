@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed issues with some templates, particularly around the theme selection
+
 ### Security
 
 ## [0.1.53](https://github.com/nationalarchives/tna-frontend/compare/v0.1.52...v0.1.53) - 2024-05-13

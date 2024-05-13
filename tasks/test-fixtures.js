@@ -23,7 +23,11 @@ const failedComponents = components.filter((component) => {
     `../${componentsDirectory}${component}/template.njk`,
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
-    const result = renderNunjucks(componentNunjucks, fixture.options, true);
+    const result = renderNunjucks(
+      componentNunjucks,
+      { params: fixture.options },
+      true,
+    );
     const mismatch = result !== fixture.html;
     if (mismatch) {
       fail(`${fixture.name} (${componentsDirectory}${component}/template.njk)`);

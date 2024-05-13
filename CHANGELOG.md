@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The cookie library is now a singleton
 - The analytics library instance is saved to the window object
 - Improved typeface definitions and includes
+- Yellow buttons are now brown to meet [WCAG Success Criterion 1.4.11 (Non-text Contrast - Level AA)](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast)
+- Box shadow added to picture components
 
 ### Deprecated
 ### Removed

@@ -4,5 +4,6 @@ export class Accordion {
     if (!this.$module) {
       return;
     }
+    // TODO: Polyfill details[name] for Firefox
   }
 }

@@ -121,6 +121,7 @@ const initAll = (options) => {
 export {
   initAll,
   Cookies,
+  Accordion,
   Breadcrumbs,
   CookieBanner,
   ErrorSummary,

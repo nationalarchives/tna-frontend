@@ -14,10 +14,6 @@
   border-collapse: collapse;
   @include spacing.space-above;
 
-  &:first-child {
-    margin-top: 0;
-  }
-
   &__caption {
     padding: spacing.space(1) 0 0;
 

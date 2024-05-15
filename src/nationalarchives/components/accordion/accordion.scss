@@ -1,0 +1,94 @@
+@use "sass:math";
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-accordion {
+  @include spacing.space-above;
+  //   @include colour.colour-border("keyline", 1px, solid, top);
+  //   @include colour.thick-keyline-dark(top);
+  @include colour.thick-keyline-accent(top);
+
+  &__details {
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+  }
+
+  &__summary {
+    padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
+      spacing.space(2.75);
+
+    position: relative;
+    z-index: 1;
+
+    @include typography.main-font-weight-bold;
+    list-style: none;
+
+    cursor: pointer;
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+
+      @include colour.tint;
+    }
+
+    &::before {
+      content: "";
+
+      width: 0;
+      height: 0;
+
+      position: absolute;
+      top: calc(50% - 0.5rem);
+      left: 1rem;
+
+      border-width: 0.5rem 0 0.5rem #{math.div(math.sqrt(3), 2)}rem;
+      border-color: transparent transparent transparent
+        colour.colour-var("font-base");
+      border-style: solid;
+    }
+  }
+
+  &__details[open] &__summary {
+    &::before {
+      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
+
+      border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
+      border-top-color: colour.colour-var("font-base");
+      border-left-color: transparent;
+    }
+  }
+
+  &__content {
+    padding: spacing.space(1) spacing.space(1) spacing.space(1)
+      spacing.space(2.75);
+
+    &:has(.tna-table-wrapper):has(.tna-table) {
+      padding-right: 0;
+      padding-left: 0;
+
+      .tna-table {
+        &__caption {
+          padding-top: 0;
+          padding-bottom: spacing.space(1);
+
+          font-size: inherit;
+          line-height: inherit;
+          text-align: left;
+          caption-side: top;
+        }
+      }
+
+      .tna-table-wrapper {
+        padding-right: 0;
+        padding-left: 0;
+
+        left: 0;
+
+        .tna-table {
+          width: calc(100% - #{spacing.space(2.75)});
+          margin-left: spacing.space(2.75);
+        }
+      }
+    }
+  }
+}

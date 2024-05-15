@@ -124,6 +124,12 @@
     ]
   },
   {
+    "name": "themeSelector",
+    "type": "boolean",
+    "required": false,
+    "description": "Enable the theme selector (once settings cookies have been accepted)."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

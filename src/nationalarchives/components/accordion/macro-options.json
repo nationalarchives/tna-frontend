@@ -1,0 +1,21 @@
+[
+  {
+    "name": "items",
+    "type": "array",
+    "required": false,
+    "description": "",
+    "items": []
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the accordion."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the accordion."
+  }
+]

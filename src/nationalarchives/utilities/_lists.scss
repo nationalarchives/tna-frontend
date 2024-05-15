@@ -4,38 +4,34 @@
 @use "../tools/typography";
 
 .tna-ul,
-.tna-ul ul {
+.tna-ul > li > ul {
   list-style-type: disc;
 }
 
 .tna-ul,
 .tna-ol {
-  ul,
-  ol {
+  margin: spacing.space(1) 0 0;
+
+  > li > ul,
+  > li > ol {
     margin-top: 0;
   }
 
   &,
-  & ul,
-  & ol {
-    margin: spacing.space(1) 0 0;
+  & > li > ul,
+  & > li > ol {
     padding: 0 0 0 spacing.space(2);
 
     &--plain {
       padding-left: 0;
 
       &,
-      & ul,
-      & ol {
+      & > li > ul {
         list-style: none;
       }
     }
 
-    &:first-child {
-      margin-top: 0;
-    }
-
-    li::marker {
+    > li::marker {
       @include colour.colour-font("accent-background");
       font-weight: 700;
 
@@ -43,6 +39,10 @@
         @include colour.colour-font("font-dark");
       }
     }
+  }
+
+  &:first-child {
+    margin-top: 0;
   }
 }
 

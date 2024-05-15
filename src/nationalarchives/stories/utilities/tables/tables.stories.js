@@ -5,7 +5,7 @@ export default {
 const TableTemplate = () =>
   `<table class="tna-table">
   <caption class="tna-table__caption">
-    Records added and removed between 2020 and 2022
+    Records added and removed between 2020 and 2022.
   </caption>
   <thead class="tna-table__head">
     <tr class="tna-table__row">

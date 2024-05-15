@@ -1,0 +1,10 @@
+{
+  "component": "accordion",
+  "fixtures": [
+    {
+      "name": "minimal",
+      "options": {},
+      "html": "<a href=\"#main-content\" class=\"tna-skip-link \" data-module=\"tna-skip-link\">Skip to main content</a>"
+    }
+  ]
+}

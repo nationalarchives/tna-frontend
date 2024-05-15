@@ -47,13 +47,13 @@
         colour.colour-var("font-light");
       border-style: solid;
     }
-  }
 
-  &:hover {
-    @include typography.interacted-text-decoration;
+    &:hover {
+      @include typography.interacted-text-decoration;
 
-    &::before {
-      border-left-color: colour.colour-var("font-dark");
+      &::before {
+        border-left-color: colour.colour-var("font-dark");
+      }
     }
   }
 

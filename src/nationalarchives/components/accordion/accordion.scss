@@ -32,6 +32,10 @@
 
     cursor: pointer;
 
+    &::-webkit-details-marker {
+        display: none;
+    }
+
     &::before {
       content: "";
 

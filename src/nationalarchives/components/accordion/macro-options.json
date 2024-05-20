@@ -1,0 +1,46 @@
+[
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "items": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "required": false,
+        "description": "The HTML for the main body of the accordion item. Not displayed if `text` is set."
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "required": false,
+        "description": "The text for the accordion item which will be inserted into a `<p>` element. Overwrites `body` if it is set."
+      }
+    ]
+  },
+  {
+    "name": "group",
+    "type": "string",
+    "required": false,
+    "description": "The name of the accordion group. If set, only one item in the named group can be opened at a time."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the accordion."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the accordion."
+  }
+]

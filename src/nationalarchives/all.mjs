@@ -1,3 +1,4 @@
+import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
 import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
@@ -40,6 +41,11 @@ const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};
   const $scope =
     options.scope instanceof HTMLElement ? options.scope : document;
+
+  const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
+  $accordions.forEach(($accordion) => {
+    new Accordion($accordion);
+  });
 
   const $breadcrumbs = $scope.querySelector('[data-module="tna-breadcrumbs"]');
   if ($breadcrumbs) {
@@ -115,6 +121,7 @@ const initAll = (options) => {
 export {
   initAll,
   Cookies,
+  Accordion,
   Breadcrumbs,
   CookieBanner,
   ErrorSummary,

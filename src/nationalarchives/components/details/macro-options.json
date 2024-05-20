@@ -1,0 +1,32 @@
+[
+  {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "body",
+    "type": "string",
+    "required": false,
+    "description": "The HTML for the main body of the details. Not displayed if `text` is set."
+  },
+  {
+    "name": "text",
+    "type": "string",
+    "required": false,
+    "description": "The text for the details which will be inserted into a `<p>` element. Overwrites `body` if it is set."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the details."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the details."
+  }
+]

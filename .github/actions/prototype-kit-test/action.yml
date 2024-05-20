@@ -35,6 +35,7 @@ runs:
       shell: bash
     - name: Add imports to template
       run: >
+        echo -e "{% from \"nationalarchives/components/accordion/macro.njk\" import tnaAccordion %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/breadcrumbs/macro.njk\" import tnaBreadcrumbs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -43,6 +44,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/date-input/macro.njk\" import tnaDateInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/date-search/macro.njk\" import tnaDateSearch %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/details/macro.njk\" import tnaDetails %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/error-summary/macro.njk\" import tnaErrorSummary %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/featured-records/macro.njk\" import tnaFeaturedRecords %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -70,6 +72,7 @@ runs:
     - name: Add components to template
       run: >
         echo "\n{% block bodyEnd %}" >> prototype/app/views/index.html &&
+        echo "{{ tnaAccordion({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaBreadcrumbs({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaButton({text:\"I am a button\",url:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
@@ -78,6 +81,7 @@ runs:
         echo "{{ tnaCookieBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaDateInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaDateSearch({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaDetails({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaErrorSummary({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFeaturedRecords({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFooter({}) }}" >> prototype/app/views/index.html &&

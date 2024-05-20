@@ -1,0 +1,14 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- set classes = containerClasses | join(' ') -%}
+<div class="tna-details{% if classes %} {{ classes }}{% endif %}"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <details class="tna-details__details">
+    <summary class="tna-details__summary">{{ params.title }}</summary>
+    <div class="tna-details__content">
+      {%- if params.text %}
+        <p>{{ params.text }}</p>
+      {%- else %}
+        {{ params.body | safe }}
+      {%- endif %}
+    </div>
+  </details>
+</div>

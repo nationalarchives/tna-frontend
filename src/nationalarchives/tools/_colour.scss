@@ -40,17 +40,19 @@
   }
 }
 
+@function colour-var($colour) {
+  @return var(
+    --#{$colour},
+    #{map.get(colour.$colour-palette-default, $colour)}
+  );
+}
+
 @mixin colour-font($colour, $important: false) {
-  color: var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
-    if($important, !important, null);
+  color: colour-var($colour) if($important, !important, null);
 }
 
 @mixin colour-background($colour, $important: false) {
-  background-color: var(
-      --#{$colour},
-      #{map.get(colour.$colour-palette-default, $colour)}
-    )
-    if($important, !important, null);
+  background-color: colour-var($colour) if($important, !important, null);
 }
 
 @mixin colour-background-brand($brandColour, $important: false) {
@@ -67,20 +69,17 @@
   @if $direction != "" {
     @if $width != "" {
       border-#{$direction}: $width
-        var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
+        colour-var($colour)
         $style
         if($important, !important, null);
     } @else {
-      border-#{$direction}-color: var(
-          --#{$colour},
-          #{map.get(colour.$colour-palette-default, $colour)}
-        )
+      border-#{$direction}-color: colour-var($colour)
         if($important, !important, null);
     }
   } @else {
     @if $width != "" {
       border: $width
-        var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
+        colour-var($colour)
         $style
         if($important, !important, null);
     } @else {
@@ -95,22 +94,14 @@
 
 @mixin colour-outline($colour, $width: "", $style: solid, $important: false) {
   @if $width != "" {
-    outline: $width
-      var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
-      $style
-      if($important, !important, null);
+    outline: $width colour-var($colour) $style if($important, !important, null);
   } @else {
-    outline-color: var(
-        --#{$colour},
-        #{map.get(colour.$colour-palette-default, $colour)}
-      )
-      if($important, !important, null);
+    outline-color: colour-var($colour) if($important, !important, null);
   }
 }
 
 @mixin colour-fill($colour, $important: false) {
-  fill: var(--#{$colour}, #{map.get(colour.$colour-palette-default, $colour)})
-    if($important, !important, null);
+  fill: colour-var($colour) if($important, !important, null);
 }
 
 @mixin thick-keyline($direction) {

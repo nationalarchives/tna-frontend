@@ -14,12 +14,8 @@
   border-collapse: collapse;
   @include spacing.space-above;
 
-  &:first-child {
-    margin-top: 0;
-  }
-
   &__caption {
-    padding: spacing.space(1) 0;
+    padding: spacing.space(1) 0 0;
 
     caption-side: bottom;
 
@@ -68,12 +64,12 @@
   }
 
   &__head &__header {
-    @include colour.colour-border("keyline-dark", 4px, solid, bottom);
+    @include colour.thick-keyline-dark(bottom);
   }
 
   &__foot &__header,
   &__foot &__cell {
-    @include colour.colour-border("keyline-dark", 4px, solid, top);
+    @include colour.thick-keyline-dark(top);
   }
 
   p {

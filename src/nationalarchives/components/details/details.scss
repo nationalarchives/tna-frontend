@@ -1,0 +1,113 @@
+@use "sass:math";
+@use "../../variables/borders";
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-details {
+  @include spacing.space-above;
+
+  &__details {
+  }
+
+  &__summary {
+    padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
+      spacing.space(2.75);
+
+    position: relative;
+    z-index: 1;
+
+    @include colour.colour-font("link");
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+
+    list-style: none;
+
+    border-radius: 0.1px;
+
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+
+      width: 0;
+      height: 0;
+
+      position: absolute;
+      top: calc(50% - 0.5rem);
+      left: 1rem;
+
+      border-width: 0.5rem 0 0.5rem #{math.div(math.sqrt(3), 2)}rem;
+      border-color: transparent transparent transparent
+        colour.colour-var("link");
+      border-style: solid;
+    }
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
+  &__content {
+    padding: 0 0 0 spacing.space(2.75);
+
+    &:has(.tna-table-wrapper):has(.tna-table) {
+      padding-right: 0;
+      padding-left: 0;
+
+      .tna-table {
+        &__caption {
+          padding-top: 0;
+          padding-bottom: spacing.space(1);
+
+          font-size: inherit;
+          line-height: inherit;
+          text-align: left;
+          caption-side: top;
+        }
+      }
+
+      .tna-table-wrapper {
+        padding-right: 0;
+        padding-left: 0;
+
+        left: 0;
+
+        .tna-table {
+          width: calc(100% - #{spacing.space(3.75)});
+          margin-right: spacing.space(1);
+          margin-left: spacing.space(2.75);
+        }
+      }
+    }
+  }
+
+  &__details[open] &__summary {
+    &::before {
+      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
+
+      border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
+      border-color: colour.colour-var("link") transparent transparent
+        transparent;
+    }
+  }
+
+  &__details[open] &__content {
+    position: relative;
+
+    &::before {
+      content: "";
+
+      display: block;
+
+      position: absolute;
+      inset: 0 auto 0 calc(1.5rem - #{math.div(borders.$thick-border-width, 2)});
+
+      @include colour.thick-keyline(left);
+    }
+  }
+}

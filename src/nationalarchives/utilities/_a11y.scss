@@ -32,12 +32,26 @@
   @include a11y.focus-outline;
 }
 
+// *:focus-visible {
+//   z-index: 9;
+
+//   @include a11y.focus-outline;
+// }
+
+// @supports not selector(:focus-visible) {
+//   *:focus {
+//     z-index: 9;
+
+//     @include a11y.focus-outline;
+//   }
+// }
+
 *:active {
   @include a11y.active-outline;
 }
 
 .tna-\!--no-focus-style,
-*[tabindex="-1"]:focus {
+*[tabindex="-1"] {
   &:focus {
     outline: none;
   }

@@ -49,8 +49,7 @@
       right: 0.75rem;
 
       border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
-      border-color: colour.colour-var("font-light") transparent transparent
-        transparent;
+      border-color: colour.colour-var("font-light") transparent;
       border-style: solid;
     }
 
@@ -59,7 +58,7 @@
       @include colour.colour-background("background-tint");
 
       &::before {
-        border-top-color: colour.colour-var("font-dark");
+        border-color: colour.colour-var("font-dark") transparent;
       }
     }
   }
@@ -103,14 +102,6 @@
       top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
 
       border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
-      border-color: transparent transparent colour.colour-var("font-light")
-        transparent;
-    }
-
-    &:hover {
-      &::before {
-        border-bottom-color: colour.colour-var("font-dark");
-      }
     }
   }
 }

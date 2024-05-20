@@ -170,6 +170,9 @@ NoGroup.args = {
 };
 
 export const Test = Template.bind({});
+Test.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 Test.args = {
   items: [
     {

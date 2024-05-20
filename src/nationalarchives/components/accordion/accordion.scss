@@ -12,6 +12,13 @@
 
   &__details {
     @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    position: relative;
+    z-index: 1;
+  }
+
+  &__details:has(&__summary:focus) {
+    z-index: 2;
   }
 
   &__summary {
@@ -19,10 +26,11 @@
       spacing.space(1);
 
     position: relative;
-    z-index: 1;
 
     @include typography.main-font-weight-bold;
     list-style: none;
+
+    border-radius: 0.1px;
 
     cursor: pointer;
 

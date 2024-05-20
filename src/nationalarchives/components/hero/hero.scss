@@ -270,6 +270,8 @@ $shift-units: 5 !default;
     }
 
     &__image {
+      width: 100%;
+
       position: static;
 
       order: 1;
@@ -296,6 +298,10 @@ $shift-units: 5 !default;
 
     &__body {
       margin-top: spacing.space(1);
+    }
+
+    &--shift {
+      margin-bottom: 0;
     }
 
     &--shift &__content-inner {

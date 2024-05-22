@@ -46,7 +46,7 @@
         {%- endfor %}
         <source srcset="{{ params.imageSrc }}" type="{{ params.imageType if params.imageType else 'image/jpeg' }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
         {%- endif %}
-        <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}">
+        <img src="{{ params.imageSrc }}" alt="{{ params.imageAlt }}" width="{{ params.imageWidth }}" height="{{ params.imageHeight }}"{%- if params.lazyImage %} loading="lazy"{% endif %}>
       </picture>
       {%- if params.label %}
       <div class="tna-chip{% if params.labelColour %} tna-chip--{{ params.labelColour }}{% endif %} tna-card__image-label">

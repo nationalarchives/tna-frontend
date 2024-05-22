@@ -16,6 +16,7 @@ const argTypes = {
   imageHeight: { control: { type: "number", min: 1 } },
   imageType: { control: "text" },
   imageSources: { control: "object" },
+  lazyImage: { control: "boolean" },
   label: { control: "text" },
   labelColour: {
     control: "inline-radio",
@@ -63,6 +64,7 @@ const Template = ({
   imageHeight,
   imageType,
   imageSources,
+  lazyImage,
   label,
   labelColour,
   meta,
@@ -91,6 +93,7 @@ const Template = ({
       imageHeight,
       imageType,
       imageSources,
+      lazyImage,
       label,
       labelColour,
       meta,

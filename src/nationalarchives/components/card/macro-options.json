@@ -111,6 +111,12 @@
     ]
   },
   {
+    "name": "lazyImage",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, make the image a lazily-loaded image."
+  },
+  {
     "name": "label",
     "type": "string",
     "required": false,

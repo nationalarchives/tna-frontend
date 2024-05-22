@@ -95,6 +95,20 @@
       "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
+      "name": "with lazily loaded image",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "imageSrc": "https://loremflickr.com/640/360",
+        "imageAlt": "A placeholder image",
+        "imageWidth": 640,
+        "imageHeight": 360,
+        "lazyImage": true,
+        "body": "<p>Card body</p>"
+      },
+      "html": "<div class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\" loading=\"lazy\"></picture></div><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
+    },
+    {
       "name": "with image and alternative sources",
       "options": {
         "title": "Card title",

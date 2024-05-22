@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
+- Fixed spacing in nested lists
 - Small images in hero components on smaller devices now fill the width of the component
 
 ### Security

@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Small images in hero components on smaller devices now fill the width of the component
+
 ### Security
 
 ## [0.1.54](https://github.com/nationalarchives/tna-frontend/compare/v0.1.53...v0.1.54) - 2024-05-13

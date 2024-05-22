@@ -22,7 +22,7 @@
   }
 
   &__summary {
-    padding: spacing.space(0.5) spacing.space(2.5) spacing.space(0.5)
+    padding: spacing.space(0.5) spacing.space(3) spacing.space(0.5)
       spacing.space(1);
 
     position: relative;
@@ -45,7 +45,7 @@
       height: 0;
 
       position: absolute;
-      top: calc(50% - 0.5rem);
+      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
       right: 0.75rem;
 
       border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
@@ -99,8 +99,6 @@
 
   &__details[open] &__summary {
     &::before {
-      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
-
       border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
     }
   }

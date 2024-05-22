@@ -39,7 +39,7 @@
 
       position: absolute;
       top: calc(50% - 0.5rem);
-      left: 1rem;
+      left: 0.75rem;
 
       border-width: 0.5rem 0 0.5rem #{math.div(math.sqrt(3), 2)}rem;
       border-color: transparent transparent transparent

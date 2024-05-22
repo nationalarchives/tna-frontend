@@ -3,7 +3,7 @@
     "name": "title",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "Text to use within the summaryu element (the visible part of the details element)."
   },
   {
     "name": "body",
@@ -16,6 +16,12 @@
     "type": "string",
     "required": false,
     "description": "The text for the details which will be inserted into a `<p>` element. Overwrites `body` if it is set."
+  },
+  {
+    "name": "open",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, open the details component."
   },
   {
     "name": "classes",

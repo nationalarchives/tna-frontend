@@ -35,7 +35,7 @@ Standard.args = {
       imageWidth: 400,
       imageHeight: 600,
       collection: "TS 11/45/167",
-      title: "Court records relating to Robert Wedderburn's trial",
+      title: "Court records relating to Robert Wedderburn’s trial",
       href: "#",
       date: "1819–1820",
     },

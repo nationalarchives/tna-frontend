@@ -27,7 +27,7 @@
     "name": "accent",
     "type": "boolean",
     "required": false,
-    "description": "If true, set the colour of the button to the page's accent colour."
+    "description": "If true, set the colour of the button to the page’s accent colour."
   },
   {
     "name": "small",
@@ -45,7 +45,7 @@
     "name": "iconOnly",
     "type": "boolean",
     "required": false,
-    "description": "If true, don't show the text of the button."
+    "description": "If true, don’t show the text of the button."
   },
   {
     "name": "iconOnlyOnMobile",

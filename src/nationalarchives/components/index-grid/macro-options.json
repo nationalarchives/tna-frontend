@@ -22,7 +22,7 @@
     "name": "headingHref",
     "type": "string",
     "required": false,
-    "description": "A URL to use as a link in the grid's heading."
+    "description": "A URL to use as a link in the grid’s heading."
   },
   {
     "name": "body",

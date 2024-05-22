@@ -45,7 +45,7 @@ const globalHeaderHTML = nunjucks
           href: "https://www.nationalarchives.gov.uk/about/visit-us/",
         },
         {
-          text: "What's on",
+          text: "What’s on",
           href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
         },
         {
@@ -53,11 +53,11 @@ const globalHeaderHTML = nunjucks
           href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
         },
         {
-          text: "Using the archive",
+          text: "Help using the archive",
           href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
         },
         {
-          text: "Learn",
+          text: "Education",
           href: "https://www.nationalarchives.gov.uk/education/",
         },
         {

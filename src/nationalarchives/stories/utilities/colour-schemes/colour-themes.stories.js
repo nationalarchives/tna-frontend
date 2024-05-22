@@ -137,7 +137,7 @@ const Template = ({ theme, accent }) => {
             href: "#/visit",
           },
           {
-            text: "What's on",
+            text: "What’s on",
             href: "#/whats-on",
           },
           {
@@ -145,12 +145,12 @@ const Template = ({ theme, accent }) => {
             href: "#/explore-the-collection",
           },
           {
-            text: "Using the archives",
+            text: "Help using the archive",
             href: "#/using-the-archives",
           },
           {
-            text: "Learn",
-            href: "#/learn",
+            text: "Education",
+            href: "#/education",
           },
           {
             text: "Professional guidance and services",
@@ -425,7 +425,7 @@ const Template = ({ theme, accent }) => {
                   imageWidth: 400,
                   imageHeight: 600,
                   collection: "TS 11/45/167",
-                  title: "Court records relating to Robert Wedderburn's trial",
+                  title: "Court records relating to Robert Wedderburn’s trial",
                   href: "#",
                   date: "1819–1820",
                 },

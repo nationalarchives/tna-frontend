@@ -28,7 +28,7 @@
     "name": "href",
     "type": "string",
     "required": false,
-    "description": "A URL to use as a link in the card's heading and image."
+    "description": "A URL to use as a link in the card’s heading and image."
   },
   {
     "name": "hrefClasses",
@@ -46,13 +46,13 @@
     "name": "imageSrc",
     "type": "string",
     "required": false,
-    "description": "The location of the card's image."
+    "description": "The location of the card’s image."
   },
   {
     "name": "imageAlt",
     "type": "string",
     "required": false,
-    "description": "Alternative text for the image in the event that it can't be displayed."
+    "description": "Alternative text for the image in the event that it can’t be displayed."
   },
   {
     "name": "imageWidth",
@@ -114,7 +114,7 @@
     "name": "label",
     "type": "string",
     "required": false,
-    "description": "A label which will appear over the top left of the card's image. If there is no image, the label is not displayed."
+    "description": "A label which will appear over the top left of the card’s image. If there is no image, the label is not displayed."
   },
   {
     "name": "labelColour",
@@ -202,7 +202,7 @@
     "name": "style",
     "type": "text",
     "required": false,
-    "description": "The style of card to use which can be either `contrast` for an inverted card, `tint` for a tinted one or `accent` for a card that matches the page's accent colour."
+    "description": "The style of card to use which can be either `contrast` for an inverted card, `tint` for a tinted one or `accent` for a card that matches the page’s accent colour."
   },
   {
     "name": "plainSupertitle",

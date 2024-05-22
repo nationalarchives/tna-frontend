@@ -73,7 +73,7 @@ Standard.args = {
       href: "https://www.nationalarchives.gov.uk/about/visit-us/",
     },
     {
-      text: "What's on",
+      text: "What’s on",
       href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
@@ -81,10 +81,13 @@ Standard.args = {
       href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
-      text: "Using the archive",
+      text: "Help using the archive",
       href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
+    {
+      text: "Education",
+      href: "https://www.nationalarchives.gov.uk/education/",
+    },
     {
       text: "Professional guidance and services",
       href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
@@ -143,7 +146,7 @@ Medium.args = {
       href: "https://www.nationalarchives.gov.uk/about/visit-us/",
     },
     {
-      text: "What's on",
+      text: "What’s on",
       href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
@@ -151,10 +154,13 @@ Medium.args = {
       href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
-      text: "Using the archive",
+      text: "Help using the archive",
       href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
+    {
+      text: "Education",
+      href: "https://www.nationalarchives.gov.uk/education/",
+    },
     {
       text: "Professional guidance and services",
       href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
@@ -213,7 +219,7 @@ MediumCollapsed.args = {
       href: "https://www.nationalarchives.gov.uk/about/visit-us/",
     },
     {
-      text: "What's on",
+      text: "What’s on",
       href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
@@ -221,10 +227,13 @@ MediumCollapsed.args = {
       href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
-      text: "Using the archive",
+      text: "Help using the archive",
       href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
+    {
+      text: "Education",
+      href: "https://www.nationalarchives.gov.uk/education/",
+    },
     {
       text: "Professional guidance and services",
       href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
@@ -271,7 +280,7 @@ Mobile.args = {
       href: "https://www.nationalarchives.gov.uk/about/visit-us/",
     },
     {
-      text: "What's on",
+      text: "What’s on",
       href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
     },
     {
@@ -279,10 +288,13 @@ Mobile.args = {
       href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
-      text: "Using the archive",
+      text: "Help using the archive",
       href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
     },
-    { text: "Learn", href: "https://www.nationalarchives.gov.uk/education/" },
+    {
+      text: "Education",
+      href: "https://www.nationalarchives.gov.uk/education/",
+    },
     {
       text: "Professional guidance and services",
       href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",

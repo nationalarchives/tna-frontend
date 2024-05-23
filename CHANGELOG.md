@@ -13,12 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Card images can be loaded lazily with `lazyImage`
 
 ### Changed
+
+- Standard `application.css` file will be included when using the prototype kit
+
 ### Deprecated
 ### Removed
 ### Fixed
 
 - Fixed spacing in nested lists
 - Small images in hero components on smaller devices now fill the width of the component
+- Prototype kit asset paths fixed
 
 ### Security
 

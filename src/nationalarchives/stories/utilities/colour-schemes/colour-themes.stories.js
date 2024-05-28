@@ -717,7 +717,7 @@ const Template = ({ theme, accent }) => {
           params: {
             title: "My dogs 1",
             headingLevel: 3,
-            headingHref: "#",
+            href: "#",
             items: Array(4)
               .fill({
                 ...{
@@ -811,7 +811,7 @@ const Template = ({ theme, accent }) => {
           params: {
             title: "My dogs 2",
             headingLevel: 3,
-            headingHref: "#",
+            href: "#",
             items: Array(4)
               .fill({
                 ...{
@@ -905,7 +905,7 @@ const Template = ({ theme, accent }) => {
           params: {
             title: "My dogs 3",
             headingLevel: 3,
-            headingHref: "#",
+            href: "#",
             items: Array(4)
               .fill({
                 ...{
@@ -999,7 +999,7 @@ const Template = ({ theme, accent }) => {
           params: {
             title: "My dogs 4",
             headingLevel: 3,
-            headingHref: "#",
+            href: "#",
             items: Array(4)
               .fill({
                 ...{
@@ -1093,7 +1093,7 @@ const Template = ({ theme, accent }) => {
           params: {
             title: "My dogs 5",
             headingLevel: 3,
-            headingHref: "#",
+            href: "#",
             items: Array(4)
               .fill({
                 ...{

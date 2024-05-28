@@ -25,10 +25,22 @@
     "description": "The physical size of the index grid title (`xl`, `l`, `m` or `s`)."
   },
   {
-    "name": "headingHref",
+    "name": "href",
     "type": "string",
     "required": false,
-    "description": "A URL to use as a link in the grid’s heading."
+    "description": "A URL to use as a link in the grids heading."
+  },
+  {
+    "name": "hrefClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the elements of the index grid that use `href`."
+  },
+  {
+    "name": "hrefAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the elements of the index grid that use `href`."
   },
   {
     "name": "body",
@@ -121,6 +133,12 @@
     "type": "string",
     "required": false,
     "description": ""
+  },
+  {
+    "name": "plainSupertitle",
+    "type": "boolean",
+    "required": false,
+    "description": "Use a plain supertitle, removing the accented background colour."
   },
   {
     "name": "classes",

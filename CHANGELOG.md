@@ -9,11 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Index grids can now have supertitles
+- Index grids can now have supertitles, `hrefClasses` and `hrefAttributes`
 
 ### Changed
 
 - Detail summaries no longer stretch the full width of the container
+- Index grid `headingHref` changed to `href`
 
 ### Deprecated
 ### Removed

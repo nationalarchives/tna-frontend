@@ -47,6 +47,7 @@
         "headingLevel": 2,
         "headingSize": "xl",
         "headingHref": "#",
+        "hrefClasses": "test",
         "items": [
           {
             "href": "#/category-0",

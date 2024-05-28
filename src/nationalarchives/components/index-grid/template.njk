@@ -3,13 +3,26 @@
   {%- if params.headingLevel > 0 %}
   <div class="tna-container">
     <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+    {%- if params.supertitle %}
+      <hgroup class="tna-hgroup-{{ params.headingSize or 'l' }} tna-index-grid__heading">
+        <h{{ params.headingLevel }} class="tna-hgroup__title">
+          <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
+          {%- if params.href %}
+          <a href="{{ params.href }}" class="tna-index-grid__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.title }}</a>
+          {%- else %}
+          {{ params.title }}
+          {%- endif %}
+        </h{{ params.headingLevel }}>
+      </hgroup>
+    {%- else %}
       <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'l' }} tna-index-grid__heading">
-        {%- if params.headingHref %}
-        <a href="{{ params.headingHref }}">{{ params.title }}</a>
+        {%- if params.href %}
+        <a href="{{ params.href }}" class="tna-index-grid__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.title }}</a>
         {%- else %}
         {{ params.title }}
         {%- endif %}
       </h{{ params.headingLevel }}>
+    {%- endif %}
       {%- if params.text %}
         <p>{{ params.text }}</p>
       {%- else %}

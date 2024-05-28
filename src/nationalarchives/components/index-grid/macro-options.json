@@ -1,5 +1,11 @@
 [
   {
+    "name": "supertitle",
+    "type": "string",
+    "required": false,
+    "description": "The smaller title to display above the main index grid title."
+  },
+  {
     "name": "title",
     "type": "string",
     "required": true,

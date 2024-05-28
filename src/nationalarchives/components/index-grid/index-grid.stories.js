@@ -2,6 +2,7 @@ import IndexGrid from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
+  supertitle: { control: "text" },
   title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
@@ -29,6 +30,7 @@ export default {
 };
 
 const Template = ({
+  supertitle,
   title,
   headingLevel,
   headingSize,
@@ -45,6 +47,7 @@ const Template = ({
 }) =>
   IndexGrid({
     params: {
+      supertitle,
       title,
       headingLevel,
       headingSize,

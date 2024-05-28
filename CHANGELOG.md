@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.56](https://github.com/nationalarchives/tna-frontend/compare/v0.1.55...v0.1.56) - 2024-05-28
 
 ### Fixed
+
 - `application.css` file no longer included when using the prototype kit
 
 ## [0.1.55](https://github.com/nationalarchives/tna-frontend/compare/v0.1.54...v0.1.55) - 2024-05-28

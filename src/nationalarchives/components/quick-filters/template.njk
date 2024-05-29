@@ -1,5 +1,5 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<ul class="tna-quick-filters{% if params.stack %} tna-quick-filters--stacked{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<ul class="tna-quick-filters{% if params.stack %} tna-quick-filters--stacked{% endif %} {% if params.fill %} tna-quick-filters--filled{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- for item in params.items %}
   <li class="tna-quick-filters__item{%- if item.selected %} tna-quick-filters__item--selected{% endif %}">
     <a href="{{ item.href }}" {%- if item.title %} title="{{ item.title }}"{% endif %} class="tna-quick-filters__link">{{ item.label }}</a>

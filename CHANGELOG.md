@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Index grids can now have supertitles, `hrefClasses` and `hrefAttributes`
+- Quick filters component styling has changed and has a new `fill` option
 
 ### Changed
 

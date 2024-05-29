@@ -5,7 +5,7 @@
   <div class="tna-picture__image-wrapper tna-background-tint">
     <picture>
     {%- for source in params.sources %}
-      <source class="tna-picture__image" media="{{ source.media }}" srcset="{{ source.src }}" width="{{ source.width }}" height="{{ source.height }}">
+      <source class="tna-picture__image" srcset="{{ source.src }}" type="{{ source.type }}" width="{{ source.width if source.width else params.width }}" height="{{ source.height if source.height else params.height }}"{%- if source.media %} media="{{ source.media }}"{% endif %}>
     {%- endfor %}
       <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}" loading="lazy">
     </picture>

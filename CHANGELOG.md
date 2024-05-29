@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Index grids can now have supertitles, `hrefClasses` and `hrefAttributes`
 - Quick filters component styling has changed and has a new `fill` option
+- Picture components can now have alternative sources
 
 ### Changed
 
@@ -18,10 +19,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Index grid `headingHref` changed to `href`
 
 ### Deprecated
+
+- Removed unused `imageType` attribute from hero components
+
 ### Removed
 ### Fixed
 
 - The theme stored in a cookie is now reflected in pages using the prototype kit
+- Removed duplicated source from hero image `<picture>` elements
 
 ### Security
 

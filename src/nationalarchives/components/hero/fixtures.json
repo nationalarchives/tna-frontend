@@ -196,18 +196,6 @@
       "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
     },
     {
-      "name": "image with different type",
-      "options": {
-        "imageSrc": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Gov.uk_logo.svg/250px-Gov.uk_logo.svg.png",
-        "imageAlt": "The National Archives office",
-        "imageWidth": 499,
-        "imageHeight": 333,
-        "imageType": "image/png",
-        "imageCaption": "An interesting photo by a famous photographer ©2023"
-      },
-      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><img src=\"https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Gov.uk_logo.svg/250px-Gov.uk_logo.svg.png\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
-    },
-    {
       "name": "with alternative image sources",
       "options": {
         "imageSrc": "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -222,7 +210,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"499\" height=\"333\"><source srcset=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" type=\"image/jpeg\" width=\"499\" height=\"333\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
+      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"499\" height=\"333\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
     },
     {
       "name": "with alternative image sources with media queries",
@@ -240,7 +228,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"499\" height=\"333\" media=\"(max-width: 48em)\"><source srcset=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" type=\"image/jpeg\" width=\"499\" height=\"333\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
+      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"499\" height=\"333\" media=\"(max-width: 48em)\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
     },
     {
       "name": "with alternative image sources with different width/heights",
@@ -259,7 +247,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"550\" height=\"404\"><source srcset=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" type=\"image/jpeg\" width=\"499\" height=\"333\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
+      "html": "<div class=\"tna-hero \"><figure class=\"tna-hero__figure\"><figcaption class=\"tna-hero__caption\"><details class=\"tna-hero__details\"><summary class=\"tna-hero__details-summary\" title=\"About this image\">About this <span class=\"tna-hero__details-summary-icon\">i</span>mage</summary><div class=\"tna-hero__information\">An interesting photo by a famous photographer ©2023</div></details></figcaption><picture class=\"tna-hero__image\"><source srcset=\"https://www.gstatic.com/webp/gallery/2.webp\" type=\"image/webp\" width=\"550\" height=\"404\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></div>"
     },
     {
       "name": "with classes",

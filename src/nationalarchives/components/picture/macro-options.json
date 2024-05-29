@@ -30,15 +30,21 @@
     "description": "",
     "params": [
       {
-        "name": "media",
+        "name": "src",
         "type": "text",
         "required": true,
         "description": ""
       },
       {
-        "name": "src",
-        "type": "text",
+        "name": "type",
+        "type": "string",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "media",
+        "type": "text",
+        "required": false,
         "description": ""
       },
       {

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.56...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.57...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.57](https://github.com/nationalarchives/tna-frontend/compare/v0.1.56...v0.1.57) - 2024-05-30
 
 ### Added
 
@@ -24,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed unused `imageType` attribute from hero components
 
-### Removed
 ### Fixed
 
 - The theme stored in a cookie is now reflected in pages using the prototype kit
@@ -33,8 +41,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove duplicated `<main>` element on index-grid and list prototype kit templates
 - Accented header component colour fixed
 - Removed hover state for header logos with no link
-
-### Security
 
 ## [0.1.56](https://github.com/nationalarchives/tna-frontend/compare/v0.1.55...v0.1.56) - 2024-05-28
 

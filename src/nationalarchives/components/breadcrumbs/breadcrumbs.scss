@@ -58,23 +58,6 @@
     &:hover {
       @include colour.colour-font("font-dark");
     }
-
-    @include colour.on-high-contrast-and-forced-colours {
-      padding-right: spacing.space(0.75);
-      padding-left: spacing.space(0.75);
-
-      text-decoration: none;
-
-      @include colour.colour-border("keyline-dark", 1px);
-
-      &:hover {
-        text-decoration: underline;
-
-        @include colour.colour-font("contrast-background");
-
-        @include colour.colour-background("contrast-font-base");
-      }
-    }
   }
 
   button#{&}__link {

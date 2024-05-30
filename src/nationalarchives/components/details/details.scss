@@ -112,4 +112,29 @@
       @include colour.thick-keyline(left);
     }
   }
+
+  @include colour.on-forced-colours {
+    &__summary {
+      &::before {
+        content: "\2192";
+
+        width: auto;
+        height: auto;
+
+        top: calc(50% - 0.5rem);
+
+        line-height: 1rem;
+
+        border: none;
+      }
+    }
+
+    &__details[open] &__summary {
+      &::before {
+        content: "\2193";
+
+        border: none;
+      }
+    }
+  }
 }

@@ -190,6 +190,8 @@ small {
     a {
       display: inline-block;
 
+      vertical-align: top;
+
       &::after {
         content: "\203A";
 

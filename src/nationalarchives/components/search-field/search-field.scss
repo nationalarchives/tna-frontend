@@ -68,4 +68,10 @@
 
   &__button {
   }
+
+  @include colour.on-forced-colours {
+    &__input {
+      border-width: forms.$form-field-border-width !important;
+    }
+  }
 }

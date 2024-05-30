@@ -20,9 +20,8 @@
     align-items: center;
     gap: spacing.space(2);
 
-    border-top-width: 0;
-
     @include colour.colour-border("keyline", 1px);
+    border-top-width: 0;
   }
 
   &__image {

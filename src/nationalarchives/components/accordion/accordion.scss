@@ -102,4 +102,29 @@
       border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
     }
   }
+
+  @include colour.on-forced-colours {
+    &__summary {
+      &::before {
+        content: "\2193";
+
+        width: auto;
+        height: auto;
+
+        top: calc(50% - 0.5rem);
+
+        line-height: 1rem;
+
+        border: none;
+      }
+    }
+
+    &__details[open] &__summary {
+      &::before {
+        content: "\2191";
+
+        border: none;
+      }
+    }
+  }
 }

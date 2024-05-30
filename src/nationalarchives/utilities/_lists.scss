@@ -32,12 +32,8 @@
     }
 
     > li::marker {
-      @include colour.colour-font("accent-background");
+      @include colour.colour-font("accent-border");
       font-weight: 700;
-
-      .tna-background-accent & {
-        @include colour.colour-font("font-dark");
-      }
     }
   }
 

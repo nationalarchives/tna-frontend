@@ -66,8 +66,6 @@
       }
 
       &::after {
-        width: 1rem;
-        height: 1rem;
         margin: 0.5rem;
 
         display: none;
@@ -75,6 +73,8 @@
         z-index: 2;
 
         @include colour.colour-background("input-foreground");
+
+        @include colour.colour-border("input-foreground", 0.5rem);
       }
     }
   }
@@ -95,9 +95,9 @@
       }
 
       &::after {
-        width: 0.875rem;
-        height: 0.875rem;
         margin: 0.3125rem;
+
+        @include colour.colour-border("input-foreground", 0.4375rem);
       }
     }
   }

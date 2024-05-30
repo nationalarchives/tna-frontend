@@ -7,7 +7,7 @@
     <div class="tna-column tna-column--flex-1 tna-column--order-2">
       <span class="tna-global-header__logo-wrapper">
         {% if params.logo.href -%}
-        <a href="{{ params.logo.href }}" class="tna-global-header__logo" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}">
+        <a href="{{ params.logo.href }}" class="tna-global-header__logo tna-global-header__logo--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}">
         {%- else %}
         <span class="tna-global-header__logo">
         {%- endif %}

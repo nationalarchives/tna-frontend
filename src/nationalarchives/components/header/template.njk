@@ -19,7 +19,7 @@
   {%- endif -%}
   <div class="tna-container tna-header__contents">
     <div class="tna-column tna-header__logo">
-      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-link tna-header__logo-link--href" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-link"{%- endif -%}>
+      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-contents tna-header__logo-contents--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-contents"{%- endif -%}>
         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" viewBox="0 0 160 160" width="96" height="96">
           <title>The National Archives</title>
           <path fill="transparent" d="M0 0h160v160H0z" class="tna-logo__background"/>

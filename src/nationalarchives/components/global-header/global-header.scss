@@ -44,11 +44,13 @@
 
     text-decoration: none;
 
-    &:hover {
-      text-decoration: none;
+    &--link {
+      &:hover {
+        text-decoration: none;
 
-      @include colour.colour-outline("font-dark", 0.3125rem, solid);
-      outline-offset: 1px;
+        @include colour.colour-outline("font-dark", 0.3125rem, solid);
+        outline-offset: 1px;
+      }
     }
   }
 

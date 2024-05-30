@@ -31,6 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed duplicated source from hero image `<picture>` elements
 - Better support for forced colors mode on several components
 - Remove duplicated `<main>` element on index-grid and list prototype kit templates
+- Accented header component colour fixed
+- Removed hover state for header logos with no link
 
 ### Security
 

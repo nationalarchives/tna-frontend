@@ -67,24 +67,26 @@
     padding-bottom: spacing.space(1.5);
   }
 
-  &__logo-link {
+  &__logo-contents {
     display: flex;
     align-items: flex-end;
 
     color: inherit;
     text-decoration: none;
 
-    &,
-    &:link,
-    &:visited {
-      color: inherit;
-    }
+    &--link {
+      &,
+      &:link,
+      &:visited {
+        color: inherit;
+      }
 
-    &:hover:not(:focus) {
-      text-decoration: none;
+      &:hover:not(:focus) {
+        text-decoration: none;
 
-      @include colour.colour-outline("font-dark", 0.3125rem, solid);
-      outline-offset: 1px;
+        @include colour.colour-outline("font-dark", 0.3125rem, solid);
+        outline-offset: 1px;
+      }
     }
   }
 
@@ -299,6 +301,11 @@
 
   &--accent {
     @include colour.accent;
+    background: colour.colour-var("background");
+  }
+
+  &--accent &__navigation {
+    @include colour.contrast-on-mobile;
   }
 
   @include media.on-medium {

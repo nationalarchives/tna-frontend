@@ -350,6 +350,7 @@
 %black-accent {
   --accent-background: #{colour.brand-colour("black")} !important;
   --accent-background-light: #{colour.brand-colour("light-grey")} !important;
+  --accent-border: #{colour.brand-colour("black")} !important;
   --button-accent-text: #{colour.brand-colour("black")} !important;
   --button-accent-background: #{colour.brand-colour("grey")} !important;
 }

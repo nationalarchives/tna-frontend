@@ -400,9 +400,10 @@
       height: auto;
 
       line-height: 2;
+      @include typography.relative-font-size(18);
+      @include typography.main-font-weight-bold;
 
       border: none;
-      @include typography.relative-font-size(18);
     }
 
     &__hamburger {

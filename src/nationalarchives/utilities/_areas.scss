@@ -21,7 +21,7 @@
     padding: spacing.space(1);
   }
 
-  @include colour.on-high-contrast {
+  @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px);
   }
 

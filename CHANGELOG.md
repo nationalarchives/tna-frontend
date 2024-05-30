@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Detail summaries no longer stretch the full width of the container
 - Index grid `headingHref` changed to `href`
+- Common page elements such as headers and footers are hidden when using print styles
+- Accented keylines now use the more saturated variant of their colour for increased contrast with other accented elements
 
 ### Deprecated
 
@@ -27,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The theme stored in a cookie is now reflected in pages using the prototype kit
 - Removed duplicated source from hero image `<picture>` elements
+- Better support for forced colors mode on several components
+- Remove duplicated `<main>` element on index-grid and list prototype kit templates
 
 ### Security
 

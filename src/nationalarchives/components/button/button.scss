@@ -181,4 +181,10 @@ $button-border-width: 4px !default;
       @include colour.colour-background("font-dark");
     }
   }
+
+  @include colour.on-forced-colours {
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
 }

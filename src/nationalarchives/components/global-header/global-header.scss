@@ -15,6 +15,8 @@
     rgb(0 0 0 / 100%) 100%
   );
 
+  @include media.hide-on-print;
+
   .tna-template--dark-theme & {
     background: colour.brand-colour("black");
   }
@@ -388,6 +390,21 @@
 
     &__top-navigation-link {
       @include colour.colour-font("link", true);
+    }
+  }
+
+  @include colour.on-forced-colours {
+    &__navigation-button {
+      height: auto;
+
+      line-height: 2;
+
+      border: none;
+      @include typography.relative-font-size(18);
+    }
+
+    &__hamburger {
+      display: none;
     }
   }
 }

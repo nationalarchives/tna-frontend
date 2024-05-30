@@ -13,6 +13,8 @@
 
   border-bottom: 1px transparent solid;
 
+  @include media.hide-on-print;
+
   .tna-container {
     align-items: center;
   }

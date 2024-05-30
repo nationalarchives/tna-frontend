@@ -170,4 +170,29 @@
 
     overflow: auto;
   }
+
+  @include colour.on-forced-colours {
+    &__item-toggle {
+      &::before {
+        content: "\2193";
+
+        width: auto;
+        height: auto;
+
+        top: calc(50% - 0.5rem);
+
+        line-height: 1rem;
+
+        border: none;
+      }
+
+      &[aria-expanded="true"] {
+        &::before {
+          content: "\2191";
+
+          border: none;
+        }
+      }
+    }
+  }
 }

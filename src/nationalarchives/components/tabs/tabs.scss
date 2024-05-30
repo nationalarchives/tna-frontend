@@ -16,6 +16,8 @@
     gap: spacing.space(1);
 
     list-style: none;
+
+    @include media.hide-on-print;
   }
 
   &__list-item {
@@ -140,10 +142,6 @@
   // }
 
   @include media.on-print {
-    &__list {
-      display: none;
-    }
-
     &__item {
       display: block !important;
 

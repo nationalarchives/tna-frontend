@@ -55,7 +55,6 @@
     &::after {
       content: "";
 
-      width: 2px;
       height: 1rem;
       margin-left: -1px;
 
@@ -65,7 +64,7 @@
       top: 0.25rem;
       left: 50%;
 
-      @include colour.colour-background("font-base");
+      @include colour.colour-border("font-base", 2px, solid, left);
     }
 
     &::before {

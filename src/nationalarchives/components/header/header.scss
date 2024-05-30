@@ -424,8 +424,7 @@
         &,
         &:hover {
           &::after {
-            width: 0.5rem;
-            height: auto;
+            @include colour.colour-border("keyline", 0.5rem, solid, left);
           }
         }
       }
@@ -490,5 +489,21 @@
 
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline", 1px, solid, bottom);
+  }
+
+  @include colour.on-forced-colours {
+    &__navigation-toggle-button {
+      height: auto;
+
+      line-height: 2;
+      @include typography.relative-font-size(18);
+      @include typography.main-font-weight-bold;
+
+      border: none;
+    }
+
+    &__hamburger {
+      display: none;
+    }
   }
 }

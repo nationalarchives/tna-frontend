@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Theme selector is hidden when forced colors mode is enabled
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed styling for compound filters in forced colors mode
+
 ### Security
 
 ## [0.1.57](https://github.com/nationalarchives/tna-frontend/compare/v0.1.56...v0.1.57) - 2024-05-30

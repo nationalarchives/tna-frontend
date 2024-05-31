@@ -158,39 +158,6 @@
   @extend %light;
 }
 
-// Remove accent and contrast values (except for "form-error")
-%plain {
-  @include colour-css-vars("form-error");
-
-  @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast("form-error");
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
-      @include colour-css-vars-dark("form-error");
-    }
-
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour-css-vars-high-contrast-dark("form-error");
-    }
-  }
-
-  .tna-template--dark-theme & {
-    @include colour-css-vars-dark("form-error");
-
-    @media (prefers-contrast: more) {
-      @include colour-css-vars-high-contrast-dark("form-error");
-    }
-  }
-
-  @include colour-background("background");
-}
-
-@mixin plain {
-  @extend %plain;
-}
-
 %contrast {
   --background: var(--contrast-background);
   --font-base: var(--contrast-font-base);
@@ -313,6 +280,39 @@
 
 @mixin accent-light {
   @extend %accent-light;
+}
+
+// Remove accent and contrast values (except for "form-error")
+%plain {
+  @include colour-css-vars("form-error");
+
+  @media (prefers-contrast: more) {
+    @include colour-css-vars-high-contrast("form-error");
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      @include colour-css-vars-dark("form-error");
+    }
+
+    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+      @include colour-css-vars-high-contrast-dark("form-error");
+    }
+  }
+
+  .tna-template--dark-theme & {
+    @include colour-css-vars-dark("form-error");
+
+    @media (prefers-contrast: more) {
+      @include colour-css-vars-high-contrast-dark("form-error");
+    }
+  }
+
+  @include colour-background("background");
+}
+
+@mixin plain {
+  @extend %plain;
 }
 
 %yellow-accent {

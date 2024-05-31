@@ -1,5 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<div class="tna-sensitive-image {{ containerClasses | join(' ') }}" data-module="tna-sensitive-image" style="--sensitive-image: url('{{ params.image.src }}'); --sensitive-image-width: {{ params.image.width }}; --sensitive-image-height: {{ params.image.height }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<div class="tna-sensitive-image{% if classes %} {{ classes }}{% endif %}" data-module="tna-sensitive-image" style="--sensitive-image: url('{{ params.image.src }}'); --sensitive-image-width: {{ params.image.width }}; --sensitive-image-height: {{ params.image.height }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <p class="tna-sensitive-image__warning">{{ params.warning }}</p>
   <details class="tna-sensitive-image__details">
     <summary class="tna-sensitive-image__show" data-action="{{ params.action }}">{{ params.action }}</summary>

@@ -15,8 +15,8 @@
   <div class="tna-card__inner">
   {%- if params.supertitle %}
     <hgroup class="tna-hgroup-{{ params.headingSize or 's' }} tna-card__heading">
+      <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
       <h{{ params.headingLevel }} class="tna-hgroup__title">
-        <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
         {%- if params.href %}
         <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.title }}</a>
         {%- else %}
@@ -61,18 +61,19 @@
   {%- endif %}
     <div class="tna-card__body">
     {%- if params.meta %}
-      <ul class="tna-card__meta tna-chip-list">
+      <dl class="tna-card__meta tna-dl-chips tna-dl-chips--plain">
         {%- for item in params.meta %}
-        <li class="tna-chip-list__item">
-          <div class="tna-chip tna-chip--plain">
+        <dt>{{ item.title }}</dt>
+        <dd class="tna-dl-chips__item">
+          <span class="tna-chip tna-chip--plain">
             {%- if item.icon %}
             <i class="fa-solid fa-fw fa-{{ item.icon }}" aria-hidden="true"></i>
             {%- endif %}
             {{ item.text }}
-          </div>
-        </li>
+          </span>
+        </dd>
         {%- endfor %}
-      </ul>
+      </dl>
     {%- endif %}
     {%- if params.text %}
       <p>{{ params.text }}</p>

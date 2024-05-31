@@ -1,7 +1,8 @@
 {% from "nationalarchives/components/tabs/macro.njk" import tnaTabs %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<figure class="tna-picture {{ containerClasses | join(' ') }}" data-module="tna-picture"{% if params.informationLabelOpen %} data-informationlabelopen="{{ params.informationLabelOpen }}"{% endif %}{% if params.informationLabelClose %} data-informationlabelclose="{{ params.informationLabelClose }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<figure class="tna-picture{% if classes %} {{ classes }}{% endif %}" data-module="tna-picture"{% if params.informationLabelOpen %} data-informationlabelopen="{{ params.informationLabelOpen }}"{% endif %}{% if params.informationLabelClose %} data-informationlabelclose="{{ params.informationLabelClose }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-picture__image-wrapper tna-background-tint">
     <picture>
     {%- for source in params.sources %}

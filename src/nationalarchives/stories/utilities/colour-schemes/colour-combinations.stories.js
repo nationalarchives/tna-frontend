@@ -73,20 +73,20 @@ const Template = ({ theme }) => {
             <dd>
               <span class="tna-dl-chips__item">
                 <i class="fa-solid fa-calendar"></i>
-                Saturday 28 June 2014
+                2014
               </span>
             </dd>
             <dt>Author</dt>
             <dd>
               <a class="tna-dl-chips__item">
                 <i class="fa-solid fa-user"></i>
-                James Cronan
+                James
               </a>
             </dd>
             <dt>Category</dt>
             <dd>
               <a class="tna-dl-chips__item">
-                Records and research
+                Research
               </a>
             </dd>
             <dt>Comments</dt>

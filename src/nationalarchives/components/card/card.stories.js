@@ -157,9 +157,9 @@ Meta.args = {
   label: "New",
   labelColour: "green",
   meta: [
-    { text: "24th September 2023", icon: "calendar" },
-    { text: "From £16", icon: "ticket" },
-    { text: "Online", icon: "location-dot" },
+    { title: "Event date", text: "24th September 2023", icon: "calendar" },
+    { title: "Cost", text: "From £16", icon: "ticket" },
+    { title: "Location", text: "Online", icon: "location-dot" },
   ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",

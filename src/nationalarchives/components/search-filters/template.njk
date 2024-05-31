@@ -5,7 +5,8 @@
 {% from "nationalarchives/components/text-input/text-input.njk" import tnaTextInputElement %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<div class="tna-search-filters {{ containerClasses | join(' ') }}" data-module="tna-search-filters"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<div class="tna-search-filters{% if classes %} {{ classes }}{% endif %}" data-module="tna-search-filters"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <h{{ params.rootHeadingLevel }} class="tna-heading-m tna-search-filters__title">
     {{ params.title }}
   </h{{ params.rootHeadingLevel }}>

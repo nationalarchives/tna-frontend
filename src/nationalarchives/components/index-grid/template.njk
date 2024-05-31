@@ -1,12 +1,13 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-<nav class="tna-index-grid {{ containerClasses | join(' ') }}" aria-label="{{ params.title }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<nav class="tna-index-grid{% if classes %} {{ classes }}{% endif %}" aria-label="{{ params.title }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- if params.headingLevel > 0 %}
   <div class="tna-container">
     <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
     {%- if params.supertitle %}
       <hgroup class="tna-hgroup-{{ params.headingSize or 'l' }} tna-index-grid__heading">
+        <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
         <h{{ params.headingLevel }} class="tna-hgroup__title">
-          <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
           {%- if params.href %}
           <a href="{{ params.href }}" class="tna-index-grid__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.title }}</a>
           {%- else %}

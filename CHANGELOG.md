@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Theme selector is hidden when forced colors mode is enabled
+- The markup for a chip list has been updated
 
 ### Deprecated
 ### Removed

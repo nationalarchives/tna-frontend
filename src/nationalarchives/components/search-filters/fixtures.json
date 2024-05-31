@@ -9,7 +9,7 @@
         "formId": "test-form",
         "items": []
       },
-      "html": "<div class=\"tna-search-filters \" data-module=\"tna-search-filters\"><h2 class=\"tna-heading-m tna-search-filters__title\">Filters</h2><div class=\"tna-search-filters__footer\"><div class=\"tna-button-group tna-button-group--small\"><button class=\"tna-button tna-search-filters__update\" type=\"submit\" form=\"test-form\">Update</button><a href=\"#\" class=\"tna-button tna-button--plain\">Clear all filters</a></div></div></div>",
+      "html": "<div class=\"tna-search-filters\" data-module=\"tna-search-filters\"><h2 class=\"tna-heading-m tna-search-filters__title\">Filters</h2><div class=\"tna-search-filters__footer\"><div class=\"tna-button-group tna-button-group--small\"><button class=\"tna-button tna-search-filters__update\" type=\"submit\" form=\"test-form\">Update</button><a href=\"#\" class=\"tna-button tna-button--plain\">Clear all filters</a></div></div></div>",
       "hidden": false
     }
   ]

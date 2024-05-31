@@ -2,7 +2,8 @@
 {%- if params.inline -%}
   {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
 {%- endif -%}
-<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %} {{ containerClasses | join(' ') }}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %}{% if classes %} {{ classes }}{% endif %}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <fieldset class="tna-form__fieldset"{%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %} role="group">
     <legend class="tna-form__legend">
       <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">

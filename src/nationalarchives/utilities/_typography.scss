@@ -73,7 +73,7 @@ small {
   );
 }
 
-%chip-base {
+%chip {
   max-width: max-content;
   padding: spacing.space(0.125) spacing.space(0.25);
 
@@ -85,6 +85,26 @@ small {
   @include typography.detail-font-small;
   line-height: 1;
   text-align: center;
+
+  @at-root #{selector.unify("a", &)} {
+    text-decoration: underline;
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+
+      .fa-solid {
+        color: inherit;
+      }
+    }
+  }
+
+  .fa-solid {
+    @include colour.colour-font("icon-light");
+
+    @include colour.on-high-contrast {
+      @include colour.colour-font("icon");
+    }
+  }
 }
 
 %chip-plain {
@@ -93,6 +113,12 @@ small {
   background-color: transparent;
 
   border: none;
+
+  @at-root #{selector.unify("a", &)} {
+    .fa-solid {
+      color: inherit;
+    }
+  }
 }
 
 %chip-accent {
@@ -108,7 +134,7 @@ small {
 }
 
 .tna-chip {
-  @extend %chip-base;
+  @extend %chip;
 
   &--plain {
     @extend %chip-plain;
@@ -140,30 +166,6 @@ small {
 
   &:not(#{&}--plain) {
     @extend %chip-accent;
-  }
-
-  .fa-solid {
-    @include colour.colour-font("icon-light");
-
-    @include colour.on-high-contrast {
-      padding-right: spacing.space(0.5);
-
-      color: inherit;
-
-      @include colour.colour-border("keyline-dark", 1px, solid, right);
-    }
-  }
-
-  @at-root #{selector.unify("a", &)} {
-    text-decoration: none;
-
-    &:hover {
-      @include typography.interacted-text-decoration;
-    }
-
-    .fa-solid {
-      color: inherit;
-    }
   }
 }
 
@@ -314,7 +316,7 @@ small {
   &__supertitle {
     margin: 0 0 spacing.space(0.25);
 
-    @extend %chip-base;
+    @extend %chip;
 
     &--plain {
       @extend %chip-plain;

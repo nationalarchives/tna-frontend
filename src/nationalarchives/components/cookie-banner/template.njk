@@ -8,7 +8,8 @@
 {%- elseif params.style == "tint" -%}
   {%- set containerClasses = containerClasses.concat('tna-cookie-banner--tint') -%}
 {%- endif -%}
-<section class="tna-cookie-banner {{ containerClasses | join(' ') }}" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies }}" data-preferenceskey="{{ params.preferencesSetKey if params.preferencesSetKey }}" data-policieskey="{{ params.policiesKey if params.policiesKey }}" data-domain="{{ params.cookiesDomain if params.cookiesDomain }}" data-path="{{ params.cookiesPath if params.cookiesPath }}" data-insecure="{{ true if params.allowInsecure else 'false' }}" aria-label="Cookies on {{ params.serviceName }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
+{%- set classes = containerClasses | join(' ') -%}
+<section class="tna-cookie-banner{% if classes %} {{ classes }}{% endif %}" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies }}" data-preferenceskey="{{ params.preferencesSetKey if params.preferencesSetKey }}" data-policieskey="{{ params.policiesKey if params.policiesKey }}" data-domain="{{ params.cookiesDomain if params.cookiesDomain }}" data-path="{{ params.cookiesPath if params.cookiesPath }}" data-insecure="{{ true if params.allowInsecure else 'false' }}" aria-label="Cookies on {{ params.serviceName }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
   <div class="tna-container">
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--prompt">
       <h2 class="tna-heading-m">This website uses cookies</h2>

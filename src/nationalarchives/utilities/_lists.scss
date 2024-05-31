@@ -2,6 +2,7 @@
 @use "../tools/media";
 @use "../tools/spacing";
 @use "../tools/typography";
+@use "../utilities/typography" as typographyUtils;
 
 .tna-ul,
 .tna-ul > li > ul {
@@ -39,6 +40,45 @@
 
   &:first-child {
     margin-top: 0;
+  }
+}
+
+.tna-dl-chips {
+  @include spacing.space-above(true);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacing.space(0.75) spacing.space(1.5);
+
+  @extend %chip-plain;
+
+  dt {
+    position: absolute;
+
+    font-size: 0;
+  }
+
+  &__item {
+    @extend %chip;
+  }
+
+  a#{&}__item {
+    cursor: pointer;
+  }
+
+  &:not(#{&}--plain) {
+    gap: spacing.space(0.5) spacing.space(1);
+  }
+
+  &--plain &__item {
+    @extend %chip-plain;
+  }
+  &:not(#{&}--plain) &__item {
+    @extend %chip-accent;
+  }
+
+  &--plain a#{&}__item {
+    @include colour.colour-font("link");
   }
 }
 

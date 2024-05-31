@@ -12,7 +12,8 @@
   {%- set containerClasses = containerClasses.concat('tna-hero--split') -%}
 {%- endif -%}
 {% set hasContent = params.title or params.body or params.text %}
-<{{ 'header' if hasContent else 'div' }} class="tna-hero {{ containerClasses | join(' ') }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<{{ 'header' if hasContent else 'div' }} class="tna-hero{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <figure class="tna-hero__figure">
     {%- if params.imageCaption %}
     <figcaption class="tna-hero__caption">
@@ -39,8 +40,8 @@
           {%- if params.title %}
           {%- if params.supertitle %}
           <hgroup class="tna-hgroup-{{ params.headingSize or 'xl' }} tna-hero__heading">
+            <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
             <h{{ params.headingLevel or "1" }} class="tna-hgroup__title">
-              <span class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</span>
               {{ params.title }}
             </h{{ params.headingLevel or "1" }}>
           </hgroup>

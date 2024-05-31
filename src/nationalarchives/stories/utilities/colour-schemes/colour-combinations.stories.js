@@ -68,17 +68,62 @@ const Template = ({ theme }) => {
           <ul class="tna-ul">
             <li>Alpha</li>
           </ul>
-          <ul class="tna-chip-list tna-!--margin-top-xs">
-            <li class="tna-chip-list__item">
-              <span class="tna-chip">Chip</span>
-            </li>
-            <li class="tna-chip-list__item">
-              <span class="tna-chip"><i class="fa-solid fa-heart" aria-hidden="true"></i>Chip</span>
-            </li>
-            <li class="tna-chip-list__item">
-              <span class="tna-chip tna-chip--plain"><i class="fa-solid fa-heart" aria-hidden="true"></i>Chip</span>
-            </li>
-          </ul>
+          <dl class="tna-dl-chips">
+            <dt>Published</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                <i class="fa-solid fa-calendar"></i>
+                2014
+              </span>
+            </dd>
+            <dt>Author</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                <i class="fa-solid fa-user"></i>
+                James
+              </a>
+            </dd>
+            <dt>Category</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                Research
+              </a>
+            </dd>
+            <dt>Comments</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                3 comments
+              </span>
+            </dd>
+          </dl>
+          <dl class="tna-dl-chips tna-dl-chips--plain">
+            <dt>Published</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                <i class="fa-solid fa-calendar"></i>
+                2014
+              </span>
+            </dd>
+            <dt>Author</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                <i class="fa-solid fa-user"></i>
+                James
+              </a>
+            </dd>
+            <dt>Category</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                Research
+              </a>
+            </dd>
+            <dt>Comments</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                3 comments
+              </span>
+            </dd>
+          </dl>
           ${ErrorSummary({
             params: {
               title: "Error",

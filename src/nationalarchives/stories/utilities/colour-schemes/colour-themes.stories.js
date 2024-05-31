@@ -389,26 +389,62 @@ const Template = ({ theme, accent }) => {
           <h2 class="tna-heading-l">
             Categories
           </h2>
-          <ul class="tna-chip-list">
-            <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip">Chip 1</a>
-            </li>
-            <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip">
-                <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                Chip 2
+          <dl class="tna-dl-chips">
+            <dt>Published</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                <i class="fa-solid fa-calendar"></i>
+                2014
+              </span>
+            </dd>
+            <dt>Author</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                <i class="fa-solid fa-user"></i>
+                James
               </a>
-            </li>
-            <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip tna-chip--plain">Chip 3</a>
-            </li>
-            <li class="tna-chip-list__item">
-              <a href="#" class="tna-chip tna-chip--plain">
-                <i class="fa-solid fa-heart" aria-hidden="true"></i>
-                Chip 4
+            </dd>
+            <dt>Category</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                Research
               </a>
-            </li>
-          </ul>
+            </dd>
+            <dt>Comments</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                3 comments
+              </span>
+            </dd>
+          </dl>
+          <dl class="tna-dl-chips tna-dl-chips--plain">
+            <dt>Published</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                <i class="fa-solid fa-calendar"></i>
+                2014
+              </span>
+            </dd>
+            <dt>Author</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                <i class="fa-solid fa-user"></i>
+                James
+              </a>
+            </dd>
+            <dt>Category</dt>
+            <dd>
+              <a class="tna-dl-chips__item">
+                Research
+              </a>
+            </dd>
+            <dt>Comments</dt>
+            <dd>
+              <span class="tna-dl-chips__item">
+                3 comments
+              </span>
+            </dd>
+          </dl>
           ${Warning({
             params: {
               body: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",

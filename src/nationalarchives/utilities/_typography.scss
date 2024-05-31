@@ -113,6 +113,12 @@ small {
   background-color: transparent;
 
   border: none;
+
+  @at-root #{selector.unify("a", &)} {
+    .fa-solid {
+      color: inherit;
+    }
+  }
 }
 
 %chip-accent {

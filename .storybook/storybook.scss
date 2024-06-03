@@ -2,6 +2,7 @@
 
 @use "../src/nationalarchives/tools/colour";
 @use "../src/nationalarchives/tools/media";
+@use "../src/nationalarchives/tools/spacing";
 @use "../src/nationalarchives/tools/typography";
 
 @import "https://use.typekit.net/kaq6qqh.css";
@@ -216,6 +217,12 @@
 
     border-right: rgb(0 0 0/0.25) 1px solid;
     border-bottom: rgb(0 0 0/0.25) 1px solid;
+
+    .accent-border-example {
+      padding-left: spacing.space(1);
+
+      @include colour.thick-keyline-accent(left);
+    }
 
     &:first-child {
       min-width: 7rem;

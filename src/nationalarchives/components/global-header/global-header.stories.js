@@ -350,8 +350,8 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   //   await userEvent.click($navigationToggle);
   // });
 
+  // TODO
   // await step("Press the escape key", async () => {
-  //   // TODO
   //   await expect($navigationItems).not.toBeVisible();
   //   await expect($navigationToggle).toBeVisible();
   //   await expect($navigationToggle).toHaveAttribute("aria-expanded", "false");

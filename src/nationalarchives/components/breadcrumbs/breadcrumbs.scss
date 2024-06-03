@@ -91,6 +91,16 @@
     }
   }
 
+  @include colour.on-high-contrast {
+    &__link {
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("link");
+      }
+    }
+  }
+
   @include media.on-print {
     &__item {
       display: flex !important;

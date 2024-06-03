@@ -15,6 +15,8 @@
     rgb(0 0 0 / 100%) 100%
   );
 
+  @include colour.colour-font("font-base");
+
   @include media.hide-on-print;
 
   .tna-template--dark-theme & {
@@ -45,6 +47,12 @@
     text-decoration: none;
 
     &--link {
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("font-base");
+      }
+
       &:hover {
         text-decoration: none;
 
@@ -177,6 +185,12 @@
     @include typography.relative-font-size(17);
 
     @include colour.colour-border("keyline", 0.5px, solid, bottom);
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-base");
+    }
 
     &:hover {
       @include typography.interacted-text-decoration;
@@ -389,10 +403,6 @@
 
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline", 1px, solid, bottom);
-
-    &__top-navigation-link {
-      @include colour.colour-font("link", true);
-    }
   }
 
   @include colour.on-forced-colours {

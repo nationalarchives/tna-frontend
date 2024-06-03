@@ -8,11 +8,8 @@
   <div class="tna-header__exit">
     <div class="tna-container">
       <div class="tna-column tna-column--full">
-        <a href="{{ params.exit.href }}" class="tna-header__exit-link"{%- if params.exit.target %} target="{{ params.exit.target }}"{% endif %}>
+        <a href="{{ params.exit.href }}" class="tna-header__exit-link"{%- if params.exit.target %} target="{{ params.exit.target }}" title="{{ params.exit.text }} (opens in new tab)"{% endif %}>
           {{ params.exit.text }}
-          {%- if params.exit.target == "_blank" -%}
-          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          {%- endif -%}
         </a>
       </div>
     </div>

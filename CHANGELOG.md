@@ -12,12 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Theme selector is hidden when forced colors mode is enabled
 - The markup for a chip list has been updated
+- Better colours and contrasts for coloured elements within contrast and accent blocks
 
 ### Deprecated
 ### Removed
+
+- Removed external icon from header exit link
+
 ### Fixed
 
 - Fixed styling for compound filters in forced colors mode
+- Fixed colour for header exit link in light high contrast mode
 
 ### Security
 

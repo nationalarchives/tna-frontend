@@ -62,12 +62,14 @@ const Template = ({ theme }) => {
         `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme} ${accent}">
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
-          <h1 class="tna-heading-s">Heading</h1>
-          <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
-          <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
-          <ul class="tna-ul">
-            <li>Alpha</li>
-          </ul>
+          <div class="accent-border-example">
+            <h1 class="tna-heading-s">Heading</h1>
+            <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
+            <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
+            <ul class="tna-ul">
+              <li>Alpha</li>
+            </ul>
+          </div>
           <dl class="tna-dl-chips">
             <dt>Published</dt>
             <dd>

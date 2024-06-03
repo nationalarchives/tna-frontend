@@ -33,7 +33,7 @@
     }
 
     > li::marker {
-      @include colour.colour-font("accent-border");
+      @include colour.colour-font("accent-list-marker");
       font-weight: 700;
     }
   }

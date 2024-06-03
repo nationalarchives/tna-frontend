@@ -81,15 +81,6 @@
 
       @include typography.relative-font-size(14);
     }
-
-    // TODO
-    // @if grid.$gutter-width-tiny != 1.5rem {
-    //   &__caption,
-    //   &__transcript {
-    //     padding-right: grid.$gutter-width-tiny;
-    //     padding-left: grid.$gutter-width-tiny;
-    //   }
-    // }
   }
 
   @include colour.on-high-contrast-and-forced-colours {

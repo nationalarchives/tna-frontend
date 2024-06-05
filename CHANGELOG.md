@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.57...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.58...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.58](https://github.com/nationalarchives/tna-frontend/compare/v0.1.57...v0.1.58) - 2024-06-05
 
 ### Added
 
@@ -19,7 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Better colours and contrasts for coloured elements within contrast and accent blocks
 - Switched from using specific `--accent` modifier classes to the generic `tna-background-accent` classes for card, cookie banner, header, hero and phase banner components
 
-### Deprecated
 ### Removed
 
 - Removed external icon from header exit link
@@ -28,10 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed styling for compound filters in forced colors mode
 - Fixed colour for header exit link in light high contrast mode
-- Added title attribute to social links in the footer to help with navigation
-- Added title attributes to the theme selector buttons
-
-### Security
+- Added title attribute to social links in the footer to help with navigation as well as to the theme selector buttons
 
 ## [0.1.57](https://github.com/nationalarchives/tna-frontend/compare/v0.1.56...v0.1.57) - 2024-05-30
 

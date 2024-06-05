@@ -183,8 +183,7 @@ $shift-units: 5 !default;
     top: spacing.space($shift-units);
   }
 
-  &--shift:not(.tna-background-accent, .tna-background-tint)
-    &__content-inner {
+  &--shift:not(.tna-background-accent, .tna-background-tint) &__content-inner {
     @include colour.contrast;
   }
 

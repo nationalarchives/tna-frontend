@@ -2,11 +2,11 @@
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.style == "contrast" -%}
-  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--contrast') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-contrast') -%}
 {%- elseif params.style == "accent" -%}
-  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
 {%- elseif params.style == "tint" -%}
-  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--tint') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-tint') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <section class="tna-cookie-banner{% if classes %} {{ classes }}{% endif %}" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies }}" data-preferenceskey="{{ params.preferencesSetKey if params.preferencesSetKey }}" data-policieskey="{{ params.policiesKey if params.policiesKey }}" data-domain="{{ params.cookiesDomain if params.cookiesDomain }}" data-path="{{ params.cookiesPath if params.cookiesPath }}" data-insecure="{{ true if params.allowInsecure else 'false' }}" aria-label="Cookies on {{ params.serviceName }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>

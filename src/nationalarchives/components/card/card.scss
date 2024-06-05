@@ -10,6 +10,12 @@
   &__inner {
     display: flex;
     flex-direction: column;
+    
+    .tna-background-contrast &,
+    .tna-background-tint &,
+    .tna-background-accent & {
+      padding-bottom: spacing.space(1);
+    }
   }
 
   &__heading {
@@ -84,36 +90,14 @@
     @include typography.main-font-weight-bold;
   }
 
-  &--contrast,
-  &--tint,
-  &--accent {
-    .tna-card__inner {
-      padding-bottom: spacing.space(1);
-    }
-
-    .tna-card__heading,
-    .tna-card__body,
-    .tna-card__actions {
+  &__heading,
+  &__body,
+  &__actions {
+    .tna-background-contrast &,
+    .tna-background-tint &,
+    .tna-background-accent & {
       margin-right: spacing.space(1);
       margin-left: spacing.space(1);
-    }
-  }
-
-  &--contrast {
-    @include colour.contrast;
-  }
-
-  &--tint {
-    @include colour.tint;
-  }
-
-  &--accent {
-    @include colour.accent;
-
-    .tna-hgroup__supertitle:not(.tna-hgroup__supertitle--plain) {
-      @include colour.contrast;
-
-      @include colour.colour-border("contrast-background");
     }
   }
 
@@ -149,9 +133,9 @@
     }
   }
 
-  &--horizontal#{&}--contrast,
-  &--horizontal#{&}--tint,
-  &--horizontal#{&}--accent {
+  &--horizontal.tna-background-contrast,
+  &--horizontal.tna-background-tint,
+  &--horizontal.tna-background-accent {
     @include media.on-mobile {
       .tna-card__inner {
         padding: 0 0 spacing.space(1);

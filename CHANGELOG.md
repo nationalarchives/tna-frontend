@@ -8,11 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.57...HEAD)
 
 ### Added
+
+- Hero component can now have actions
+- Hero component has a new `narrow` option for shorter headers
+
 ### Changed
 
 - Theme selector is hidden when forced colors mode is enabled
 - The markup for a chip list has been updated
 - Better colours and contrasts for coloured elements within contrast and accent blocks
+- Switched from using specific `--accent` modifier classes to the generic `tna-background-accent` classes for card, cookie banner, header, hero and phase banner components
 
 ### Deprecated
 ### Removed
@@ -23,6 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed styling for compound filters in forced colors mode
 - Fixed colour for header exit link in light high contrast mode
+- Added title attribute to social links in the footer to help with navigation
+- Added title attributes to the theme selector buttons
 
 ### Security
 

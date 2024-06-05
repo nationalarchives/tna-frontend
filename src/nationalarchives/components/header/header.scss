@@ -299,12 +299,11 @@
     }
   }
 
-  &--accent {
-    @include colour.accent;
+  &.tna-background-accent {
     background: colour.colour-var("background");
   }
 
-  &--accent &__navigation {
+  &.tna-background-accent &__navigation {
     @include colour.contrast-on-mobile;
   }
 

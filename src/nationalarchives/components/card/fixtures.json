@@ -243,7 +243,7 @@
         "body": "<p>Card body</p>",
         "style": "contrast"
       },
-      "html": "<div class=\"tna-card tna-card--contrast\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
+      "html": "<div class=\"tna-card tna-background-contrast\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with a tint style",
@@ -253,7 +253,7 @@
         "body": "<p>Card body</p>",
         "style": "tint"
       },
-      "html": "<div class=\"tna-card tna-card--tint\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
+      "html": "<div class=\"tna-card tna-background-tint\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with a accent style",
@@ -263,7 +263,7 @@
         "body": "<p>Card body</p>",
         "style": "accent"
       },
-      "html": "<div class=\"tna-card tna-card--accent\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
+      "html": "<div class=\"tna-card tna-background-accent\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-s tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></div>"
     },
     {
       "name": "with an unknown style",

@@ -9,18 +9,6 @@
 
   @include media.hide-on-print;
 
-  &--contrast {
-    @include colour.contrast;
-  }
-
-  &--accent {
-    @include colour.accent;
-  }
-
-  &--tint {
-    @include colour.tint;
-  }
-
   @include media.on-tiny {
     padding-top: 1rem;
     padding-bottom: 1rem;

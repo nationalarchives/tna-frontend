@@ -8,27 +8,10 @@
 
 $padding-units-top: 10 !default;
 $padding-units-bottom: 2 !default;
+$padding-units-narrow: 3 !default;
 $shift-units: 5 !default;
 
 .tna-hero {
-  &--contrast {
-    @include colour.contrast;
-  }
-
-  &--tint {
-    @include colour.tint;
-  }
-
-  &--accent {
-    @include colour.accent;
-
-    .tna-hgroup__supertitle:not(.tna-hgroup__supertitle--plain) {
-      @include colour.contrast;
-
-      @include colour.colour-border("contrast-background");
-    }
-  }
-
   &__figure {
     min-height: clamp(
       #{spacing.space($padding-units-top + $padding-units-bottom)},
@@ -172,7 +155,7 @@ $shift-units: 5 !default;
     z-index: 4;
   }
 
-  &:not(#{&}--accent):not(#{&}--tint) &__inner {
+  &:not(.tna-background-accent, .tna-background-tint) &__inner {
     @include colour.contrast-on-mobile;
   }
 
@@ -191,23 +174,10 @@ $shift-units: 5 !default;
   &__body {
   }
 
-  &--shift {
-    margin-bottom: spacing.space($shift-units - $padding-units-bottom);
-  }
-
-  &--shift &__content-inner {
-    position: relative;
-    top: spacing.space($shift-units);
-  }
-
-  &--shift:not(#{&}--accent):not(#{&}--tint) &__content-inner {
-    @include colour.contrast;
-  }
-
   &--split {
   }
 
-  &--split:not(#{&}--accent):not(#{&}--tint) {
+  &--split:not(.tna-background-accent, .tna-background-tint) {
     @include colour.contrast;
   }
 
@@ -240,8 +210,30 @@ $shift-units: 5 !default;
     padding: 0;
   }
 
+  &--shift {
+    margin-bottom: spacing.space($shift-units - $padding-units-bottom);
+  }
+
+  &--shift &__content-inner {
+    position: relative;
+    top: spacing.space($shift-units);
+  }
+
+  &--shift:not(.tna-background-accent, .tna-background-tint) &__content-inner {
+    @include colour.contrast;
+  }
+
+  &--narrow {
+  }
+
+  &--narrow &__figure {
+    min-height: max(#{spacing.space($padding-units-narrow * 2)}, 20rem);
+    padding-top: spacing.space($padding-units-narrow);
+    padding-bottom: spacing.space($padding-units-narrow);
+  }
+
   @include media.on-mobile {
-    &__figure {
+    & &__figure {
       min-height: auto;
       padding: 0;
 

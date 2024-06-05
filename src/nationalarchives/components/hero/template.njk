@@ -1,15 +1,20 @@
+{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.style == "contrast" -%}
-  {%- set containerClasses = containerClasses.concat('tna-hero--contrast') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-contrast') -%}
 {%- elseif params.style == "tint" -%}
-  {%- set containerClasses = containerClasses.concat('tna-hero--tint') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-tint') -%}
 {%- elseif params.style == "accent" -%}
-  {%- set containerClasses = containerClasses.concat('tna-hero--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
 {%- endif -%}
 {%- if params.layout == "shift" -%}
   {%- set containerClasses = containerClasses.concat('tna-hero--shift') -%}
 {%- elseif params.layout == "split" -%}
   {%- set containerClasses = containerClasses.concat('tna-hero--split') -%}
+{%- endif -%}
+{%- if params.narrow -%}
+  {%- set containerClasses = containerClasses.concat('tna-hero--narrow') -%}
 {%- endif -%}
 {% set hasContent = params.title or params.body or params.text %}
 {%- set classes = containerClasses | join(' ') -%}
@@ -55,6 +60,21 @@
             <p>{{ params.text }}</p>
           {%- else %}
             {{ params.body | safe }}
+          {%- endif %}
+          {%- if params.actions %}
+          <div class="tna-button-group tna-hero__actions">
+            {%- for item in params.actions %}
+            {{ tnaButton({
+              text: item.text,
+              href: item.href,
+              title: item.title,
+              icon: item.icon,
+              rightAlignIcon: item.rightAlignIcon,
+              classes: item.classes,
+              attributes: item.attributes
+            }) }}
+            {%- endfor %}
+          </div>
           {%- endif %}
         </div>
       </div>

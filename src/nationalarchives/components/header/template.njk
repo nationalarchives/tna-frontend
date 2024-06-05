@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.accent -%}
-  {%- set containerClasses = containerClasses.concat('tna-header--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <header class="tna-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>

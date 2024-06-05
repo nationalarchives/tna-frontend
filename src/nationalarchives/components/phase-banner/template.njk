@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.accent -%}
-  {%- set containerClasses = containerClasses.concat('tna-phase-banner--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <div class="tna-phase-banner{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>

@@ -17,6 +17,7 @@ const argTypes = {
   imageType: { control: "text" },
   imageSources: { control: "object" },
   imageCaption: { control: "text" },
+  actions: { control: "object" },
   style: {
     control: "inline-radio",
     options: ["none", "contrast", "tint", "accent"],
@@ -25,6 +26,7 @@ const argTypes = {
     control: "inline-radio",
     options: ["plain", "shift", "split"],
   },
+  narrow: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -54,8 +56,10 @@ const Template = ({
   imageType,
   imageSources,
   imageCaption,
+  actions,
   style,
   layout,
+  narrow,
   classes,
   attributes,
 }) =>
@@ -74,8 +78,10 @@ const Template = ({
       imageType,
       imageSources,
       imageCaption,
+      actions,
       style,
       layout,
+      narrow,
       classes,
       attributes,
     },
@@ -213,6 +219,53 @@ Split.args = {
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
   layout: "split",
+};
+
+export const Narrow = Template.bind({});
+Narrow.args = {
+  title: "Title",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "accent",
+  // layout: "split",
+  narrow: true,
+};
+
+export const Actions = Template.bind({});
+Actions.args = {
+  supertitle: "Supertitle",
+  title: "Title",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  actions: [
+    {
+      text: "Action 1",
+      href: "#",
+    },
+    {
+      text: "Action 2",
+      href: "#",
+      icon: "globe",
+    },
+    {
+      text: "Action 3",
+      href: "#",
+      title: "Go and do the action",
+      icon: "chevron-right",
+      rightAlignIcon: true,
+    },
+  ],
+  style: "accent",
 };
 
 export const CaptionWithNoHeading = Template.bind({});

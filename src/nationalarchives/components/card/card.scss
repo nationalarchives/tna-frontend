@@ -55,6 +55,12 @@
     position: absolute;
     top: spacing.space(0.5);
     left: spacing.space(0.5);
+
+    .tna-background-accent &:not(.tna-chip--plain) {
+      @include colour.accent;
+
+      @include colour.colour-border("accent-background");
+    }
   }
 
   &__body {

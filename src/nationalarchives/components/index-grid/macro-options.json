@@ -111,6 +111,12 @@
     ]
   },
   {
+    "name": "lazyImages",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, make the images a lazily-loaded."
+  },
+  {
     "name": "columns",
     "type": "string",
     "required": true,

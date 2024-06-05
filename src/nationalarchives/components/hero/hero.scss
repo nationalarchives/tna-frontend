@@ -174,19 +174,6 @@ $shift-units: 5 !default;
   &__body {
   }
 
-  &--shift {
-    margin-bottom: spacing.space($shift-units - $padding-units-bottom);
-  }
-
-  &--shift &__content-inner {
-    position: relative;
-    top: spacing.space($shift-units);
-  }
-
-  &--shift:not(.tna-background-accent, .tna-background-tint) &__content-inner {
-    @include colour.contrast;
-  }
-
   &--split {
   }
 
@@ -221,6 +208,19 @@ $shift-units: 5 !default;
 
   &--split &__content-inner {
     padding: 0;
+  }
+
+  &--shift {
+    margin-bottom: spacing.space($shift-units - $padding-units-bottom);
+  }
+
+  &--shift &__content-inner {
+    position: relative;
+    top: spacing.space($shift-units);
+  }
+
+  &--shift:not(.tna-background-accent, .tna-background-tint) &__content-inner {
+    @include colour.contrast;
   }
 
   &--narrow {

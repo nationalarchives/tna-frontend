@@ -173,6 +173,7 @@
   --button-hover-text: var(--contrast-button-hover-text);
   --button-hover-background: var(--contrast-button-hover-background);
   --accent-list-marker: var(--accent-border);
+  // --accent-list-marker: var(--font-base);
 
   @include colour-background("background");
 
@@ -199,6 +200,7 @@
     --button-hover-text: var(--contrast-button-hover-text);
     --button-hover-background: var(--contrast-button-hover-background);
     --accent-list-marker: var(--accent-border);
+    // --accent-list-marker: var(--font-base);
 
     @include colour-background("background");
 
@@ -359,6 +361,8 @@
   --accent-background-light: #{colour.brand-colour("light-grey")} !important;
   --accent-border: #{colour.brand-colour("black")} !important;
   --accent-list-marker: #{colour.brand-colour("black")} !important;
+  --button-background: #{colour.brand-colour("light-grey")} !important;
+  --button-text: #{colour.brand-colour("black")} !important;
   --button-accent-text: #{colour.brand-colour("black")} !important;
   --button-accent-background: #{colour.brand-colour("grey")} !important;
 }

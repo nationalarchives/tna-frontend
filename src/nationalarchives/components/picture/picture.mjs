@@ -42,16 +42,12 @@ export class Picture {
   }
 
   handleToggleTranscript() {
-    const transcriptToggleOpenedClass =
-      "tna-picture__toggle-transcript--opened";
     this.transcriptOpened = !this.transcriptOpened;
     if (this.transcriptOpened) {
-      this.$transcriptToggle.classList.add(transcriptToggleOpenedClass);
       this.$transcriptToggle.setAttribute("aria-expanded", true);
       this.$transcriptToggle.innerText = this.closeLabel;
       this.$transcript.removeAttribute("hidden");
     } else {
-      this.$transcriptToggle.classList.remove(transcriptToggleOpenedClass);
       this.$transcriptToggle.setAttribute("aria-expanded", false);
       this.$transcriptToggle.innerText = this.openLabel;
       this.$transcript.setAttribute("hidden", true);

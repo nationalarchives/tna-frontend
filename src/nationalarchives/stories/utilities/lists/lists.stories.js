@@ -9,8 +9,8 @@ export default {
   argTypes,
 };
 
-const UnorderedListTemplate = ({ items, plain, classes }) =>
-  `<ul class="tna-ul${plain ? " tna-ul--plain" : ""} ${classes}">${items.reduce(
+const UnorderedListTemplate = ({ items, style, classes = "" }) =>
+  `<ul class="tna-ul${style ? ` tna-ul--${style}` : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
     "",
   )}</ul>`;
@@ -27,11 +27,19 @@ UnorderedListPlain.parameters = {
 };
 UnorderedListPlain.args = {
   items: ["Alpha", "Beta", "Gamma"],
-  plain: true,
+  style: "plain",
+};
+export const UnorderedListDashed = UnorderedListTemplate.bind({});
+UnorderedListDashed.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+UnorderedListDashed.args = {
+  items: ["Alpha", "Beta", "Gamma"],
+  style: "dashed",
 };
 
-const OrderedListTemplate = ({ items, plain, classes }) =>
-  `<ol class="tna-ol${plain ? " tna-ol--plain" : ""} ${classes}">${items.reduce(
+const OrderedListTemplate = ({ items, style, classes = "" }) =>
+  `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
     "",
   )}</ol>`;
@@ -48,10 +56,26 @@ OrderedListPlain.parameters = {
 };
 OrderedListPlain.args = {
   items: ["Alpha", "Beta", "Gamma"],
-  plain: true,
+  style: "plain",
+};
+export const OrderedListDashed = OrderedListTemplate.bind({});
+OrderedListDashed.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+OrderedListDashed.args = {
+  items: ["Alpha", "Beta", "Gamma"],
+  style: "dashed",
+};
+export const OrderedListNested = OrderedListTemplate.bind({});
+OrderedListNested.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+OrderedListNested.args = {
+  items: ["Alpha", "Beta", "Gamma", "Delta"],
+  style: "dashed",
 };
 
-const DescriptionListTemplate = ({ items, plain, classes }) =>
+const DescriptionListTemplate = ({ items, plain, classes = "" }) =>
   `<dl class="tna-dl${plain ? " tna-dl--plain" : ""}${
     items.some((item) => item.icon) ? " tna-dl--icon-padding" : ""
   } ${classes}">${items.reduce(

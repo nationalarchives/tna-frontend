@@ -17,20 +17,20 @@ const Template = ({ theme }) => {
 
   const accents = [
     "",
-    "tna-accent-black",
-    "tna-accent-yellow",
     "tna-accent-pink",
     "tna-accent-orange",
+    "tna-accent-yellow",
     "tna-accent-green",
     "tna-accent-blue",
+    "tna-accent-black",
   ];
 
   const blocks = [
     "",
     "tna-background-tint",
-    "tna-background-accent-light",
-    "tna-background-accent",
     "tna-background-contrast",
+    "tna-background-accent",
+    "tna-background-accent-light",
   ];
 
   return `<div class="tna-colour-contrast-demo">

@@ -127,8 +127,6 @@ $colour-palette-dark: map.merge(
     "button-hover-text": brand-colour("white"),
     "button-hover-background": brand-colour("black"),
     "contrast-background": #101112,
-    "contrast-link-visited":
-      map.get($colour-palette-default, "contrast-link-visited"),
     "accent-border": brand-colour("white"),
     "accent-list-marker": brand-colour("white", 0.51),
   )

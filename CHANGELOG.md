@@ -10,8 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Allow `lazyImages` attribute for lazy loading of index grid images
+- Dashed lists open with `.tna-ul--dashed` and `.tna-ol--dashed` replace the markers with dashes
 
 ### Changed
+
+- The transcript button on picture components no longer gets a `tna-picture__toggle-transcript--opened` class when opened
+
 ### Deprecated
 ### Removed
 ### Fixed

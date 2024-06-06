@@ -4,8 +4,7 @@
 @use "../tools/typography";
 @use "../utilities/typography" as typographyUtils;
 
-.tna-ul,
-.tna-ul > li > ul {
+.tna-ul {
   list-style-type: disc;
 }
 
@@ -13,33 +12,35 @@
 .tna-ol {
   margin: spacing.space(1) 0 0;
 
-  > li > ul,
-  > li > ol {
-    margin-top: 0;
-  }
-
-  &,
-  & > li > ul,
-  & > li > ol {
-    padding: 0 0 0 spacing.space(2);
-
-    &--plain {
-      padding-left: 0;
-
-      &,
-      & > li > ul {
-        list-style: none;
-      }
-    }
-
-    > li::marker {
-      @include colour.colour-font("accent-list-marker");
-      font-weight: 700;
-    }
-  }
+  padding: 0 0 0 spacing.space(2);
 
   &:first-child {
     margin-top: 0;
+  }
+
+  &--plain {
+    padding-left: 0;
+
+    list-style: none;
+  }
+
+  & > li > & {
+    padding-left: spacing.space(1);
+  }
+
+  > li {
+    &::marker {
+      @include colour.colour-font("accent-list-marker");
+      @include typography.main-font-weight-bold;
+    }
+  }
+
+  &--dashed {
+    > li::marker {
+      content: "—  ";
+      @include colour.colour-font("font-light");
+      @include typography.main-font-weight;
+    }
   }
 }
 

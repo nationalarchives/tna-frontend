@@ -329,7 +329,7 @@ class GA4 extends EventTracker {
     if (this.trackingEnabled) {
       window[this.ga4Disable] = true;
       this.cookies.set(this.ga4Disable, "true");
-      this.cookies.all.forEach((key) => {
+      Object.keys(this.cookies.all).forEach((key) => {
         if (key.startsWith("_ga")) {
           this.cookies.delete(key);
         }

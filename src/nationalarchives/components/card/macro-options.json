@@ -135,6 +135,12 @@
     "description": "Small pieces of additional information akin to subtitles, displayed between the title and the body.",
     "params": [
       {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "The title of the meta data which is visually hidden."
+      },
+      {
         "name": "text",
         "type": "string",
         "required": true,

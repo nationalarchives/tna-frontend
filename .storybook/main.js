@@ -63,7 +63,5 @@ module.exports = {
     ];
     return config;
   },
-  docs: {
-    autodocs: false,
-  },
+  docs: {},
 };

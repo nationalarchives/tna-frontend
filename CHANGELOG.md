@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed bug with standard cards (not tinted, contrasted or accented) having extra padding when in a tinted, contrasted or accented ancestor block
+
 ### Security
 
 ## [0.1.59](https://github.com/nationalarchives/tna-frontend/compare/v0.1.58...v0.1.59) - 2024-06-13

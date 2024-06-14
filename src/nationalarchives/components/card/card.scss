@@ -10,12 +10,12 @@
   &__inner {
     display: flex;
     flex-direction: column;
+  }
 
-    .tna-background-contrast &,
-    .tna-background-tint &,
-    .tna-background-accent & {
-      padding-bottom: spacing.space(1);
-    }
+  &.tna-background-contrast &__inner,
+  &.tna-background-tint &__inner,
+  &.tna-background-accent &__inner {
+    padding-bottom: spacing.space(1);
   }
 
   &__heading {
@@ -99,9 +99,9 @@
   &__heading,
   &__body,
   &__actions {
-    .tna-background-contrast &,
-    .tna-background-tint &,
-    .tna-background-accent & {
+    .tna-card.tna-background-contrast &,
+    .tna-card.tna-background-tint &,
+    .tna-card.tna-background-accent & {
       margin-right: spacing.space(1);
       margin-left: spacing.space(1);
     }

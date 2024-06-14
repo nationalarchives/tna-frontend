@@ -335,7 +335,7 @@ class GA4 extends EventTracker {
         }
       });
       this.trackingEnabled = false;
-      window.location.reload();
+      // window.location.reload();
     }
   }
 }

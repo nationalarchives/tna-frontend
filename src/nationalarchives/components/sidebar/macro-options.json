@@ -1,0 +1,33 @@
+[
+  {
+    "name": "heading",
+    "type": "text",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "items",
+    "type": "string",
+    "required": true,
+    "description": "",
+    "params": []
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the sidebar."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the sidebar."
+  }
+]

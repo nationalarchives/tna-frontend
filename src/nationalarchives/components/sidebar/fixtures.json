@@ -1,0 +1,12 @@
+{
+  "component": "sidebar",
+  "fixtures": [
+    {
+      "name": "default",
+      "options": {
+        "headingLevel": 2
+      },
+      "html": "<div class=\"tna-sidebar\"><h2 class=\"tna-sidebar__heading\">On this page</h2><div class=\"tna-sidebar__items\"><p>TODO</p></div></div>"
+    }
+  ]
+}

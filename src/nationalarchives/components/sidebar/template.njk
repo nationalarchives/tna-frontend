@@ -1,10 +1,33 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.type == "headings" -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--headings') -%}
+{%- elseif params.type == "top-headings" -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--top-headings') -%}
+{%- elseif params.type == "pages" -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--pages') -%}
+{%- endif -%}
+{%- if params.sticky -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--sticky') -%}
+{%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
-<div class="tna-sidebar{% if classes %} {{ classes }}{% endif %}"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <h{{ params.headingLevel }} class="tna-sidebar__heading">
+<nav class="tna-sidebar{% if classes %} {{ classes }}{% endif %}" aria-label="Sidebar"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <h{{ params.headingLevel }} class="tna-sidebar__heading tna-heading-m">
     {{ params.heading or 'On this page' }}
   </h{{ params.headingLevel }}>
-  <div class="tna-sidebar__items">
-    <p>TODO</p>
-  </div>
-</div>
+  <ul class="tna-sidebar__items">
+    {%- for item in params.items %}
+    <li class="tna-sidebar__item{% if item.current %} tna-sidebar__item--current{% endif %}">
+      <a href="{{ item.href }}" class="tna-sidebar__link">{{ item.text }}</a>
+      {%- if item.children and params.type !== "top-headings" %}
+      <ul class="tna-sidebar__item-children">
+        {%- for child in item.children %}
+        <li class="tna-sidebar__item-child">
+          <a href="{{ child.href }}" class="tna-sidebar__link">{{ child.text }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>

@@ -1,7 +1,113 @@
+@use "../../variables/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
 .tna-sidebar {
+  &__items,
+  &__item-children {
+    list-style: none;
+  }
+
+  &__items {
+    margin-bottom: spacing.space(0.25);
+    padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
+  }
+
+  &__item {
+    &--current {
+    }
+  }
+
+  &__item-children {
+    // margin-top: spacing.space(0.25);
+    // margin-bottom: spacing.space(0.25);
+  }
+
+  &__item-child {
+  }
+
+  &__link {
+  }
+
+  &--headings {
+  }
+
+  &--headings &__item-children {
+    @include colour.thick-keyline("left");
+  }
+
+  &--top-headings {
+  }
+
+  &--top-headings &__item {
+    &--current {
+      @include colour.accent;
+    }
+  }
+
+  &--top-headings &__link {
+    padding: spacing.space(0.125) spacing.space(0.5);
+
+    display: block;
+  }
+
+  &--pages {
+  }
+
+  &--pages &__items {
+  }
+
+  &--pages &__item--current {
+    // margin-top: spacing.space(0.25);
+    // margin-bottom: spacing.space(0.25);
+    padding-left: spacing.space(0.75);
+
+    @include colour.thick-keyline-accent("left");
+  }
+
+  &--pages &__item--current > &__link {
+    @include typography.main-font-weight-bold;
+  }
+
+  &--headings &__item,
+  &--headings &__item-child,
+  &--pages &__item-child {
+    display: flex;
+    align-items: baseline;
+
+    &::before {
+      content: "—";
+
+      margin-right: spacing.space(0.5);
+
+      display: inline-block;
+    }
+  }
+
+  &--sticky {
+    max-height: 100vh;
+    max-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 0;
+  }
+
+  &--sticky &__items {
+    width: 100%;
+    margin: 0;
+    padding: a11y.$focus-outline-padding;
+
+    box-sizing: content-box;
+    overflow-y: auto;
+
+    position: relative;
+    left: -#{a11y.$focus-outline-padding};
+    flex: 1;
+  }
 }

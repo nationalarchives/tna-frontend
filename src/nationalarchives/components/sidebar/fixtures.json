@@ -6,7 +6,7 @@
       "options": {
         "headingLevel": 2
       },
-      "html": "<div class=\"tna-sidebar\"><h2 class=\"tna-sidebar__heading\">On this page</h2><div class=\"tna-sidebar__items\"><p>TODO</p></div></div>"
+      "html": "<nav class=\"tna-sidebar\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">On this page</h2><ul class=\"tna-sidebar__items\"></ul></nav>"
     }
   ]
 }

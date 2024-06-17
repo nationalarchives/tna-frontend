@@ -11,12 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Don't reload the window when disableTracking is called in the analytics library
+- Added warning when using `typography.relative-font-size` to move to `typography.font-size`
 
 ### Deprecated
 ### Removed
 ### Fixed
 
 - Fixed bug with standard cards (not tinted, contrasted or accented) having extra padding when in a tinted, contrasted or accented ancestor block
+- Updated macro options with `type: text` to `type: string`
 
 ### Security
 

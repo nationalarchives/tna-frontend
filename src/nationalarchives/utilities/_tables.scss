@@ -19,7 +19,7 @@
 
     caption-side: bottom;
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 
   &__head {

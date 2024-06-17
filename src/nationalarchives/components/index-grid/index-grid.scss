@@ -73,6 +73,6 @@
 
   &__item-subtitle {
     @include colour.colour-font("font-light");
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 }

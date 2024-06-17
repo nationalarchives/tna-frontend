@@ -1,0 +1,84 @@
+[
+  {
+    "name": "heading",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "current",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "children",
+        "type": "array",
+        "required": false,
+        "description": "",
+        "params": [
+          {
+            "name": "text",
+            "type": "string",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "href",
+            "type": "string",
+            "required": true,
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "type",
+    "type": "string",
+    "required": true,
+    "description": "The type of sidebar style to use. Can be `contents`, `sections` or  `pages`."
+  },
+  {
+    "name": "sticky",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the sidebar."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the sidebar."
+  }
+]

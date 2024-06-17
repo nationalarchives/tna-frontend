@@ -86,7 +86,7 @@ select {
   &__hint {
     margin-top: 0;
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
     @include colour.colour-font("font-light");
   }
 

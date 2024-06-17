@@ -62,15 +62,15 @@ hr {
   @extend %heading;
 
   @include typography.heading-font;
-  @include typography.relative-font-size(64);
+  @include typography.font-size(64);
   line-height: 1.1;
 
   @include media.on-medium {
-    @include typography.relative-font-size(48);
+    @include typography.font-size(48);
   }
 
   @include media.on-mobile {
-    @include typography.relative-font-size(36);
+    @include typography.font-size(36);
   }
 }
 
@@ -78,19 +78,19 @@ hr {
   @extend %heading;
 
   @include typography.heading-font;
-  @include typography.relative-font-size(36);
+  @include typography.font-size(36);
   line-height: 1.3;
 
   @include media.on-medium {
-    @include typography.relative-font-size(30);
+    @include typography.font-size(30);
   }
 
   @include media.on-small {
-    @include typography.relative-font-size(28);
+    @include typography.font-size(28);
   }
 
   @include media.on-tiny {
-    @include typography.relative-font-size(25);
+    @include typography.font-size(25);
   }
 }
 
@@ -98,19 +98,19 @@ hr {
   @extend %heading;
 
   @include typography.main-font-weight-bold;
-  @include typography.relative-font-size(22);
+  @include typography.font-size(22);
   line-height: 1.6;
 
   @include media.on-medium {
-    @include typography.relative-font-size(21);
+    @include typography.font-size(21);
   }
 
   @include media.on-small {
-    @include typography.relative-font-size(20);
+    @include typography.font-size(20);
   }
 
   @include media.on-tiny {
-    @include typography.relative-font-size(19);
+    @include typography.font-size(19);
   }
 }
 
@@ -118,7 +118,7 @@ hr {
   @extend %heading;
 
   @include typography.main-font-weight-bold;
-  @include typography.relative-font-size(18);
+  @include typography.font-size(18);
   line-height: 1.6;
 }
 

@@ -95,7 +95,7 @@ $shift-units: 5 !default;
 
     @include colour.contrast;
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 
   &__image {

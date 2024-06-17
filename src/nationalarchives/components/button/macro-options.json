@@ -67,7 +67,7 @@
   },
   {
     "name": "buttonType",
-    "type": "text",
+    "type": "string",
     "required": false,
     "description": "Set the type of button element if `buttonElement` is true."
   },

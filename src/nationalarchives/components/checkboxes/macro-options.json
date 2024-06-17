@@ -1,7 +1,7 @@
 [
   {
     "name": "label",
-    "type": "text",
+    "type": "string",
     "required": true,
     "description": ""
   },
@@ -13,25 +13,25 @@
   },
   {
     "name": "headingSize",
-    "type": "text",
+    "type": "string",
     "required": false,
     "description": ""
   },
   {
     "name": "id",
-    "type": "text",
+    "type": "string",
     "required": true,
     "description": ""
   },
   {
     "name": "name",
-    "type": "text",
+    "type": "string",
     "required": true,
     "description": ""
   },
   {
     "name": "hint",
-    "type": "text",
+    "type": "string",
     "required": false,
     "description": ""
   },
@@ -43,7 +43,7 @@
     "params": [
       {
         "name": "text",
-        "type": "text",
+        "type": "string",
         "required": true,
         "description": ""
       }
@@ -57,13 +57,13 @@
     "params": [
       {
         "name": "text",
-        "type": "text",
+        "type": "string",
         "required": true,
         "description": ""
       },
       {
         "name": "value",
-        "type": "text",
+        "type": "string",
         "required": true,
         "description": ""
       },

@@ -102,6 +102,7 @@ const checkExists = [
   ...componentFiles("search-field"),
   ...componentFiles("search-filters", "SearchFilters"),
   ...componentFiles("select"),
+  ...componentFiles("sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input"),

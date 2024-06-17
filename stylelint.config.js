@@ -130,7 +130,7 @@ module.exports = {
         },
         {
           emptyLineBefore: "always",
-          properties: ["list-style"],
+          properties: ["list-style", "list-style-position"],
         },
         {
           emptyLineBefore: "always",

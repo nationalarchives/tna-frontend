@@ -52,7 +52,7 @@
     margin: 0 spacing.space(1);
     padding: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
@@ -79,7 +79,7 @@
       margin-right: 0;
       margin-left: 0;
 
-      @include typography.relative-font-size(14);
+      @include typography.font-size(14);
     }
   }
 

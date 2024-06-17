@@ -55,7 +55,7 @@
   &__meta {
     margin-top: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 
   &__social {
@@ -107,7 +107,7 @@
     margin-top: spacing.space(2);
     padding: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     @include colour.colour-border("keyline-dark", 1px, dashed);
 
@@ -128,7 +128,7 @@
         padding-top: spacing.space(0.375);
         padding-bottom: spacing.space(0.375);
 
-        @include typography.relative-font-size(16);
+        @include typography.font-size(16);
 
         @include colour.colour-border("keyline", 1px, solid, bottom);
 
@@ -152,7 +152,7 @@
   &__legal {
     padding-top: spacing.space(3);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     &-items {
       margin-bottom: 0;
@@ -184,7 +184,7 @@
   }
 
   &__licence {
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     &.tna-container {
       align-items: center;

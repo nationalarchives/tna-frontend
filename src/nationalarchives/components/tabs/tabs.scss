@@ -41,7 +41,7 @@
 
     cursor: pointer;
 
-    @include typography.relative-font-size(20);
+    @include typography.font-size(20);
     @include typography.heading-font;
 
     &,

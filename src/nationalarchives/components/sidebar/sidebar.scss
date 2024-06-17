@@ -1,0 +1,132 @@
+@use "../../variables/a11y";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-sidebar {
+  width: 100%;
+
+  @include typography.font-size(16);
+
+  &__items {
+    padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
+  }
+
+  &__item {
+  }
+
+  &__items,
+  &__item-children {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.space(0.25);
+
+    list-style: none;
+  }
+
+  &__item-children {
+  }
+
+  &__item-child {
+  }
+
+  &__link {
+  }
+
+  /*
+   * ------------------------------------------
+   * Contents
+   * ------------------------------------------
+   */
+  &--contents &__item-children {
+    margin-top: spacing.space(0.25);
+    padding-left: spacing.space(2);
+
+    @include colour.thick-keyline("left");
+  }
+
+  /*
+   * ------------------------------------------
+   * Sections
+   * ------------------------------------------
+   */
+  &--sections &__link {
+    padding: spacing.space(0.125) spacing.space(0.5);
+
+    display: block;
+  }
+
+  &--sections &__item--current &__link {
+    @include colour.accent;
+  }
+
+  /*
+   * ------------------------------------------
+   * Pages
+   * ------------------------------------------
+   */
+  &--pages &__item--current {
+    padding-left: spacing.space(0.75);
+
+    @include colour.thick-keyline-accent("left");
+  }
+
+  &--pages &__item--current > &__link {
+    @include typography.main-font-weight-bold;
+  }
+
+  &--pages &__item-children {
+    gap: 0;
+  }
+
+  /*
+   * ------------------------------------------
+   * Dashed items
+   * ------------------------------------------
+   */
+  &--contents &__items,
+  &--pages &__item-children {
+    padding-left: spacing.space(1.5);
+  }
+
+  &--contents &__item,
+  &--contents &__item-child,
+  &--pages &__item-child {
+    list-style: "—  " outside;
+
+    &::marker {
+      @include colour.colour-font("font-light");
+    }
+  }
+
+  /*
+   * ------------------------------------------
+   * Sticky
+   * ------------------------------------------
+   */
+  &--sticky {
+    max-height: 100vh;
+    max-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 0;
+  }
+
+  &--sticky &__items {
+    width: 100%;
+    margin: 0;
+    padding: a11y.$focus-outline-padding;
+
+    box-sizing: content-box;
+    overflow-y: auto;
+
+    position: relative;
+    left: -#{a11y.$focus-outline-padding};
+    flex: 1;
+  }
+}

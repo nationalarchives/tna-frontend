@@ -39,7 +39,7 @@
 
   &__exit-link {
     text-decoration: none;
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     &,
     &:link,
@@ -106,7 +106,7 @@
 
     line-height: 2rem;
     @include typography.heading-font;
-    @include typography.relative-font-size(20);
+    @include typography.font-size(20);
     text-transform: uppercase;
   }
 
@@ -208,7 +208,7 @@
 
     list-style: none;
 
-    @include typography.relative-font-size(15);
+    @include typography.font-size(15);
   }
 
   &__top-navigation-item {
@@ -498,7 +498,7 @@
       height: auto;
 
       line-height: 2;
-      @include typography.relative-font-size(18);
+      @include typography.font-size(18);
       @include typography.main-font-weight-bold;
 
       border: none;

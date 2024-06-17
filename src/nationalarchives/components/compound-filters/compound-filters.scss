@@ -23,7 +23,7 @@
 
     border-radius: 1rem;
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     @include colour.colour-border("keyline", 1px);
 

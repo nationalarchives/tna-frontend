@@ -38,7 +38,7 @@
     border-radius: 100%;
 
     @include colour.colour-font("font-dark");
-    @include typography.relative-font-size(24);
+    @include typography.font-size(24);
     @include typography.main-font-weight-bold;
 
     @include colour.colour-border("font-dark", 0.1875rem);
@@ -47,7 +47,7 @@
       width: 1.5rem;
       height: 1.5rem;
 
-      @include typography.relative-font-size(19);
+      @include typography.font-size(19);
       line-height: 1.5rem;
 
       @include colour.colour-border("font-dark", 0.125rem);

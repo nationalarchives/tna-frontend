@@ -1,7 +1,7 @@
 [
   {
     "name": "heading",
-    "type": "text",
+    "type": "string",
     "required": false,
     "description": ""
   },

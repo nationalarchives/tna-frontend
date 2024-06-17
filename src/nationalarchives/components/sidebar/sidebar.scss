@@ -94,6 +94,10 @@
   &--contents &__item-child,
   &--pages &__item-child {
     list-style: "—  " outside;
+
+    &::marker {
+      @include colour.colour-font("font-light");
+    }
   }
 
   /*

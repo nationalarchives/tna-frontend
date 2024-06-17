@@ -5,7 +5,7 @@ const argTypes = {
   heading: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   items: { control: "object" },
-  type: { control: "radio", options: ["headings", "top-headings", "pages"] },
+  type: { control: "radio", options: ["contents", "sections", "pages"] },
   sticky: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -43,168 +43,179 @@ const Template = ({
     },
   });
 
-export const Headings = Template.bind({});
-Headings.args = {
+export const Contents = Template.bind({});
+Contents.args = {
   headingLevel: 2,
+  heading: "Contents",
   items: [
     {
-      text: "Alpha",
+      text: "Accessibility statement",
       href: "#",
     },
     {
-      text: "Beta",
-      href: "#",
-      current: true,
-    },
-    {
-      text: "Gamma",
+      text: "Feedback and contact information",
       href: "#",
     },
     {
-      text: "Delta",
+      text: "Enforcement procedure",
+      href: "#",
+    },
+    {
+      text: "Compliance status",
+      href: "#",
+    },
+    {
+      text: "Non-accessible content",
       href: "#",
       children: [
         {
-          text: "Alpha",
+          text: "Non-compliance with the accessibility regulations",
           href: "#",
         },
         {
-          text: "Beta",
+          text: "Disproportionate burden",
           href: "#",
         },
         {
-          text: "Gamma",
+          text: "Content that’s not within the scope of the accessibility regulations",
           href: "#",
         },
       ],
     },
     {
-      text: "Epsilon",
+      text: "Other identified and tracked accessibility concerns",
       href: "#",
     },
     {
-      text: "Zeta",
+      text: "Testing our products for accessibility",
       href: "#",
     },
     {
-      text: "Eta",
+      text: "How the National Archives Design System team makes their websites accessible",
       href: "#",
     },
     {
-      text: "Theta",
+      text: "Preparation of this accessibility statement",
       href: "#",
     },
   ],
-  type: "headings",
+  type: "contents",
   classes: "tna-sidebar--demo",
 };
 
-export const TopHeadings = Template.bind({});
-TopHeadings.args = {
+export const Sections = Template.bind({});
+Sections.args = {
+  heading: "On this page",
   headingLevel: 2,
   items: [
     {
-      text: "Alpha",
+      text: "A band of guerrillas",
       href: "#",
       current: true,
     },
     {
-      text: "Beta",
+      text: "War begins",
       href: "#",
     },
     {
-      text: "Gamma",
+      text: "Forming the ERC",
       href: "#",
     },
     {
-      text: "Delta",
-      href: "#",
-      children: [
-        {
-          text: "Alpha",
-          href: "#",
-        },
-        {
-          text: "Beta",
-          href: "#",
-        },
-        {
-          text: "Gamma",
-          href: "#",
-        },
-      ],
-    },
-    {
-      text: "Epsilon",
+      text: "The fall of Hong Kong",
       href: "#",
     },
     {
-      text: "Zeta",
+      text: "The ERC's guerrilla activities",
       href: "#",
     },
     {
-      text: "Eta",
+      text: "Chan Chak’s escape",
       href: "#",
     },
     {
-      text: "Theta",
+      text: "Francis Lee and Lieutenant Colonel Ride",
+      href: "#",
+    },
+    {
+      text: "Raymond Wong's recommendation",
+      href: "#",
+    },
+    {
+      text: "Co-operation between the ERC and BAAG",
+      href: "#",
+    },
+    {
+      text: "The ERC's legacy",
+      href: "#",
+    },
+    {
+      text: "Exhibition",
       href: "#",
     },
   ],
-  type: "top-headings",
+  type: "sections",
   classes: "tna-sidebar--demo",
 };
 
 export const Pages = Template.bind({});
 Pages.args = {
-  heading: "Related pages",
+  heading: "Components",
   headingLevel: 2,
   items: [
     {
-      text: "Alpha",
+      text: "Accordion",
       href: "#",
     },
     {
-      text: "Beta",
+      text: "Breadcrumbs",
       href: "#",
     },
     {
-      text: "Gamma",
-      href: "#",
-    },
-    {
-      text: "Delta",
+      text: "Button",
       href: "#",
       current: true,
       children: [
         {
-          text: "Alpha",
+          text: "Status",
           href: "#",
         },
         {
-          text: "Beta",
+          text: "Icons",
           href: "#",
         },
         {
-          text: "Gamma",
+          text: "Button groups",
           href: "#",
         },
       ],
     },
     {
-      text: "Epsilon",
+      text: "Card",
       href: "#",
     },
     {
-      text: "Zeta",
+      text: "Checkboxes",
       href: "#",
     },
     {
-      text: "Eta",
+      text: "Compound filters",
       href: "#",
     },
     {
-      text: "Theta",
+      text: "Cookie banner",
+      href: "#",
+    },
+    {
+      text: "Date input",
+      href: "#",
+    },
+    {
+      text: "Date search",
+      href: "#",
+    },
+    {
+      text: "Details",
       href: "#",
     },
   ],

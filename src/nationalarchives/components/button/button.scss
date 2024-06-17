@@ -22,7 +22,7 @@ $button-border-width: 4px !default;
 
   cursor: pointer;
 
-  @include typography.relative-font-size(18);
+  @include typography.font-size(18);
   @include typography.main-font-weight-bold;
 
   @include colour.colour-background("button-background");
@@ -96,7 +96,7 @@ $button-border-width: 4px !default;
   &-group--small & {
     padding: 0 spacing.space(0.5);
 
-    @include typography.relative-font-size(14);
+    @include typography.font-size(14);
     line-height: 1.5rem;
   }
 
@@ -112,7 +112,7 @@ $button-border-width: 4px !default;
     .fa-solid {
       width: 2.5rem;
 
-      @include typography.relative-font-size(18);
+      @include typography.font-size(18);
     }
   }
 
@@ -123,7 +123,7 @@ $button-border-width: 4px !default;
     .fa-solid {
       width: 2rem;
 
-      @include typography.relative-font-size(18 * 0.9);
+      @include typography.font-size(18 * 0.9);
       line-height: 2rem;
     }
   }

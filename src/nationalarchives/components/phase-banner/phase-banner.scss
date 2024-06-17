@@ -9,7 +9,7 @@
   padding-top: spacing.space(0.5);
   padding-bottom: spacing.space(0.5);
 
-  @include typography.relative-font-size(16);
+  @include typography.font-size(16);
 
   border-bottom: 1px transparent solid;
 

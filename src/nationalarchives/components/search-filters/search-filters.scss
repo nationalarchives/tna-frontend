@@ -112,7 +112,7 @@
     display: block;
 
     @include typography.main-font-weight;
-    @include typography.relative-font-size(14);
+    @include typography.font-size(14);
   }
 
   &__item {
@@ -127,7 +127,7 @@
   &__hint {
     margin-bottom: spacing.space(0.75);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
     @include colour.colour-font("font-light");
   }
 

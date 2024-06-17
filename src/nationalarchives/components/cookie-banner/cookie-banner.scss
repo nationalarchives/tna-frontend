@@ -13,7 +13,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 
   &__message {

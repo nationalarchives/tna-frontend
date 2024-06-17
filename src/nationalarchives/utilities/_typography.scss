@@ -19,13 +19,11 @@
 
 .tna-template__body {
   color: inherit;
-  @include typography.relative-font-size(typographyVars.$body-font-size-px);
+  @include typography.font-size(typographyVars.$body-font-size-px);
   line-height: typographyVars.$body-line-height;
 
   @include media.on-mobile {
-    @include typography.relative-font-size(
-      typographyVars.$body-font-size-px-mobile
-    );
+    @include typography.font-size(typographyVars.$body-font-size-px-mobile);
   }
 }
 
@@ -68,9 +66,7 @@ a {
 }
 
 small {
-  @include typography.relative-font-size(
-    typographyVars.$body-font-size-px * 0.85
-  );
+  @include typography.font-size(typographyVars.$body-font-size-px * 0.85);
 }
 
 %chip {
@@ -376,7 +372,7 @@ small {
   &__citation {
     margin-top: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     &::before {
       content: "\2014" " ";
@@ -394,11 +390,11 @@ small {
 .tna-large-paragraph {
   @include spacing.space-above;
 
-  @include typography.relative-font-size(22);
+  @include typography.font-size(22);
   @include colour.colour-font("font-dark");
 
   @include media.on-mobile {
-    @include typography.relative-font-size(20);
+    @include typography.font-size(20);
   }
 }
 
@@ -407,11 +403,11 @@ small {
 
   @include typography.detail-font;
   @include colour.colour-font("font-dark");
-  @include typography.relative-font-size(30);
+  @include typography.font-size(30);
   line-height: math.div(50, 30);
 
   @include media.on-mobile {
-    @include typography.relative-font-size(24);
+    @include typography.font-size(24);
     line-height: 2;
   }
 
@@ -425,6 +421,6 @@ small {
   }
 
   &--small {
-    @include typography.relative-font-size(24);
+    @include typography.font-size(24);
   }
 }

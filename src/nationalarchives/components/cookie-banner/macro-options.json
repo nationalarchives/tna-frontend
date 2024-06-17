@@ -43,7 +43,7 @@
   },
   {
     "name": "style",
-    "type": "text",
+    "type": "string",
     "required": false,
     "description": "The style of banner to use which can be either `contrast` for an inverted style, `accent` for a banner that matches the page’s accent colour or `tint` for a subtle, tinted banner."
   },

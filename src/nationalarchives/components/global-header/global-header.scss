@@ -76,7 +76,7 @@
     text-transform: uppercase;
 
     @include typography.heading-font;
-    @include typography.relative-font-size(20);
+    @include typography.font-size(20);
   }
 
   &__navigation-button-wrapper {
@@ -182,7 +182,7 @@
     line-height: math.div(6.75rem, 3);
     text-decoration: none;
 
-    @include typography.relative-font-size(17);
+    @include typography.font-size(17);
 
     @include colour.colour-border("keyline", 0.5px, solid, bottom);
 
@@ -204,7 +204,7 @@
     justify-content: flex-end;
     gap: spacing.space(1.5);
 
-    @include typography.relative-font-size(15);
+    @include typography.font-size(15);
     list-style: none;
   }
 
@@ -246,7 +246,7 @@
     }
 
     &__navigation-item-link {
-      @include typography.relative-font-size(16);
+      @include typography.font-size(16);
     }
 
     &--collapse-on-medium &__navigation-wrapper {
@@ -410,7 +410,7 @@
       height: auto;
 
       line-height: 2;
-      @include typography.relative-font-size(18);
+      @include typography.font-size(18);
       @include typography.main-font-weight-bold;
 
       border: none;

@@ -228,7 +228,7 @@
       min-width: 7rem;
       padding: 1rem;
 
-      @include typography.relative-font-size(14);
+      @include typography.font-size(14);
     }
 
     &-content {

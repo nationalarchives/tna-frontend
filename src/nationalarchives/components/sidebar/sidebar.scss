@@ -5,24 +5,27 @@
 @use "../../tools/typography";
 
 .tna-sidebar {
-  &__items,
-  &__item-children {
-    list-style: none;
-  }
+  width: 100%;
+
+  @include typography.font-size(16);
 
   &__items {
-    margin-bottom: spacing.space(0.25);
     padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
   }
 
   &__item {
-    &--current {
-    }
+  }
+
+  &__items,
+  &__item-children {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.space(0.25);
+
+    list-style: none;
   }
 
   &__item-children {
-    // margin-top: spacing.space(0.25);
-    // margin-bottom: spacing.space(0.25);
   }
 
   &__item-child {
@@ -31,37 +34,39 @@
   &__link {
   }
 
-  &--headings {
-  }
+  /*
+   * ------------------------------------------
+   * Contents
+   * ------------------------------------------
+   */
+  &--contents &__item-children {
+    margin-top: spacing.space(0.25);
+    padding-left: spacing.space(2);
 
-  &--headings &__item-children {
     @include colour.thick-keyline("left");
   }
 
-  &--top-headings {
-  }
-
-  &--top-headings &__item {
-    &--current {
-      @include colour.accent;
-    }
-  }
-
-  &--top-headings &__link {
+  /*
+   * ------------------------------------------
+   * Sections
+   * ------------------------------------------
+   */
+  &--sections &__link {
     padding: spacing.space(0.125) spacing.space(0.5);
 
     display: block;
   }
 
-  &--pages {
+  &--sections &__item--current &__link {
+    @include colour.accent;
   }
 
-  &--pages &__items {
-  }
-
+  /*
+   * ------------------------------------------
+   * Pages
+   * ------------------------------------------
+   */
   &--pages &__item--current {
-    // margin-top: spacing.space(0.25);
-    // margin-bottom: spacing.space(0.25);
     padding-left: spacing.space(0.75);
 
     @include colour.thick-keyline-accent("left");
@@ -71,21 +76,31 @@
     @include typography.main-font-weight-bold;
   }
 
-  &--headings &__item,
-  &--headings &__item-child,
-  &--pages &__item-child {
-    display: flex;
-    align-items: baseline;
-
-    &::before {
-      content: "—";
-
-      margin-right: spacing.space(0.5);
-
-      display: inline-block;
-    }
+  &--pages &__item-children {
+    gap: 0;
   }
 
+  /*
+   * ------------------------------------------
+   * Dashed items
+   * ------------------------------------------
+   */
+  &--contents &__items,
+  &--pages &__item-children {
+    padding-left: spacing.space(1.5);
+  }
+
+  &--contents &__item,
+  &--contents &__item-child,
+  &--pages &__item-child {
+    list-style: "—  " outside;
+  }
+
+  /*
+   * ------------------------------------------
+   * Sticky
+   * ------------------------------------------
+   */
   &--sticky {
     max-height: 100vh;
     max-height: 100dvh;

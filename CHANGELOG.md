@@ -13,8 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Don't reload the window when disableTracking is called in the analytics library
-- Added warning when using `typography.relative-font-size` to move to `typography.font-size`
+- Don't reload the window when `disableTracking()` is called in the analytics library
+- Added warning when using `typography.relative-font-size()` to move to `typography.font-size()` (`relative-font-size` will be removed in a future release)
 
 ### Deprecated
 ### Removed

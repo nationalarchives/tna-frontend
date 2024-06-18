@@ -84,7 +84,7 @@ $colour-palette-default: (
   "contrast-button-hover-text": brand-colour("white"),
   "contrast-button-hover-background": brand-colour("black"),
   "accent-background": #afb6b5,
-  "accent-background-light": #ededed,
+  "accent-background-light": brand-colour("light-grey"),
   "accent-border": brand-colour("grey"),
   "accent-list-marker": brand-colour("black", 0.58),
   "accent-font-base": brand-colour("black"),

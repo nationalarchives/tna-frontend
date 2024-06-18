@@ -353,6 +353,8 @@
   --accent-link-visited: #{colour.brand-colour("white")} !important;
   --accent-keyline: #{colour.brand-colour("white", 0.5)} !important;
   --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
+  --button-background: #{colour.brand-colour("black")} !important;
+  --button-text: #{colour.brand-colour("white")} !important;
   --button-accent-text: #{colour.brand-colour("white")} !important;
 }
 
@@ -361,8 +363,6 @@
   --accent-background-light: #{colour.brand-colour("light-grey")} !important;
   --accent-border: #{colour.brand-colour("black")} !important;
   --accent-list-marker: #{colour.brand-colour("black")} !important;
-  --button-background: #{colour.brand-colour("light-grey")} !important;
-  --button-text: #{colour.brand-colour("black")} !important;
   --button-accent-text: #{colour.brand-colour("black")} !important;
   --button-accent-background: #{colour.brand-colour("grey")} !important;
 }

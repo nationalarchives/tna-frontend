@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.59...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.60...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.60](https://github.com/nationalarchives/tna-frontend/compare/v0.1.59...v0.1.60) - 2024-06-18
 
 ### Added
 
@@ -16,15 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Don't reload the window when `disableTracking()` is called in the analytics library
 - Added warning when using `typography.relative-font-size()` to move to `typography.font-size()` (`relative-font-size` will be removed in a future release)
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Fixed bug with standard cards (not tinted, contrasted or accented) having extra padding when in a tinted, contrasted or accented ancestor block
 - Fixed standard button colours
 - Changed order of index grid items HTML to make more sense
-
-### Security
 
 ## [0.1.59](https://github.com/nationalarchives/tna-frontend/compare/v0.1.58...v0.1.59) - 2024-06-13
 

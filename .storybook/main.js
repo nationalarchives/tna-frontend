@@ -63,5 +63,4 @@ module.exports = {
     ];
     return config;
   },
-  docs: {},
 };

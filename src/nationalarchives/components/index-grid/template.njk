@@ -65,10 +65,10 @@
       <a href="{{ item.href }}" class="tna-index-grid__item" title="{{ item.title }}">
         <img src="{{ item.src }}" class="tna-index-grid__item-image" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}"{%- if params.lazyImages %} loading="lazy"{% endif %}>
         <span class="tna-index-grid__item-content">
-          <span class="tna-index-grid__item-title">{{ item.title }}</span>
           {%- if item.label %}
           <span class="tna-chip tna-index-grid__item-label">{{ item.label }}<span class="tna-!--visually-hidden">:</span></span>
           {%- endif %}
+          <span class="tna-index-grid__item-title">{{ item.title }}</span>
           {%- if item.subtitle %}
           <br>
           <span class="tna-index-grid__item-subtitle">

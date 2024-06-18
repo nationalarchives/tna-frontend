@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed bug with standard cards (not tinted, contrasted or accented) having extra padding when in a tinted, contrasted or accented ancestor block
+- Fixed standard button colours
+- Changed order of index grid items HTML to make more sense
 
 ### Security
 

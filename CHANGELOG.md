@@ -5,17 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.60...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.61...HEAD)
 
 ### Added
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
+### Security
+
+## [0.1.61](https://github.com/nationalarchives/tna-frontend/compare/v0.1.60...v0.1.61) - 2024-06-18
+
+### Fixed
 
 - Fixed some colours combinations
-
-### Security
 
 ## [0.1.60](https://github.com/nationalarchives/tna-frontend/compare/v0.1.59...v0.1.60) - 2024-06-18
 

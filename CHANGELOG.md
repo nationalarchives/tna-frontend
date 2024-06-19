@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Removed extra spaces from templates
+
 ### Security
 
 ## [0.1.61](https://github.com/nationalarchives/tna-frontend/compare/v0.1.60...v0.1.61) - 2024-06-18

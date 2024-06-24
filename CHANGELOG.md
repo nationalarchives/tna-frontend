@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.61...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.62...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.1.62](https://github.com/nationalarchives/tna-frontend/compare/v0.1.61...v0.1.62) - 2024-06-24
+
 ### Changed
 
 - The default `headingSize` for cards has changed from `s` to `m`
@@ -17,13 +25,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The small scene setter style has been removed
 
-### Removed
 ### Fixed
 
 - Removed extra spaces from template classes and attributes
 - Fix horizontal card inner padding
-
-### Security
 
 ## [0.1.61](https://github.com/nationalarchives/tna-frontend/compare/v0.1.60...v0.1.61) - 2024-06-18
 

@@ -18,6 +18,13 @@
     padding-bottom: spacing.space(1);
   }
 
+  &--horizontal.tna-background-contrast &__inner,
+  &--horizontal.tna-background-tint &__inner,
+  &--horizontal.tna-background-accent &__inner {
+    padding-right: spacing.space(1);
+    padding-left: spacing.space(1);
+  }
+
   &__heading {
     order: 2;
   }

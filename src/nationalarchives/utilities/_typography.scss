@@ -206,16 +206,6 @@ small {
     }
   }
 
-  /* stylelint-disable scss/percent-placeholder-pattern */
-  &--no-link-arrow {
-    a {
-      &::after {
-        display: none;
-      }
-    }
-  }
-  /* stylelint-enable scss/percent-placeholder-pattern */
-
   strong {
     font-weight: inherit;
   }
@@ -306,6 +296,14 @@ small {
   &-s {
     @extend %heading-s;
     @extend %headings-and-heading-groups;
+  }
+
+  &--no-link-arrow {
+    a {
+      &::after {
+        display: none;
+      }
+    }
   }
 }
 

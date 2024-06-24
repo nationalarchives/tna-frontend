@@ -184,26 +184,32 @@ small {
   @include colour.colour-font("font-dark");
   text-wrap: pretty;
 
-  &:not(.tna-heading--no-link-arrow) {
-    a {
+  a {
+    display: inline-block;
+
+    vertical-align: top;
+
+    &::after {
+      content: "\203A";
+
+      padding-left: spacing.space(0.5);
+
       display: inline-block;
 
-      vertical-align: top;
+      font-weight: 700;
+    }
 
+    &:hover {
       &::after {
-        content: "\203A";
-
-        padding-left: spacing.space(0.5);
-
-        display: inline-block;
-
-        font-weight: 700;
+        padding-left: spacing.space(0.75);
       }
+    }
+  }
 
-      &:hover {
-        &::after {
-          padding-left: spacing.space(0.75);
-        }
+  .tna-heading--no-link-arrow {
+    a {
+      &::after {
+        display: none;
       }
     }
   }
@@ -403,24 +409,18 @@ small {
 
   @include typography.detail-font;
   @include colour.colour-font("font-dark");
-  @include typography.font-size(30);
-  line-height: math.div(50, 30);
+  @include typography.font-size(22);
+  line-height: 1.7;
 
   @include media.on-mobile {
-    @include typography.font-size(24);
-    line-height: 2;
+    @include typography.font-size(20);
   }
 
   a {
-    color: inherit;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1.5px;
 
     &:hover {
-      text-decoration-thickness: 4.5px;
+      @include typography.interacted-text-decoration;
     }
-  }
-
-  &--small {
-    @include typography.font-size(24);
   }
 }

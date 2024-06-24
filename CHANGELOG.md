@@ -9,11 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- The default `headingSize` for cards has changed from `s` to `m`
+- The font size of the scene setter has been reduced
+
 ### Deprecated
+
+- The small scene setter style has been removed
+
 ### Removed
 ### Fixed
 
-- Removed extra spaces from templates
+- Removed extra spaces from template classes and attributes
+- Fix horizontal card inner padding
 
 ### Security
 

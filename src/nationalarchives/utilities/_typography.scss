@@ -206,13 +206,15 @@ small {
     }
   }
 
-  .tna-heading--no-link-arrow {
+  /* stylelint-disable scss/percent-placeholder-pattern */
+  &--no-link-arrow {
     a {
       &::after {
         display: none;
       }
     }
   }
+  /* stylelint-enable scss/percent-placeholder-pattern */
 
   strong {
     font-weight: inherit;

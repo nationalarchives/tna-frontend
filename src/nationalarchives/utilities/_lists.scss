@@ -74,6 +74,7 @@
   &--plain &__item {
     @extend %chip-plain;
   }
+
   &:not(#{&}--plain) &__item {
     @extend %chip-accent;
   }

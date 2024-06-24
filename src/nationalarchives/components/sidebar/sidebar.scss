@@ -9,6 +9,9 @@
 
   @include typography.font-size(16);
 
+  &__heading {
+  }
+
   &__items {
     padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
   }
@@ -106,21 +109,23 @@
    * ------------------------------------------
    */
   &--sticky {
-    max-height: 100vh;
-    max-height: 100dvh;
+    max-height: calc(100vh - spacing.space(0.5));
+    max-height: calc(100dvh - spacing.space(0.5));
 
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
 
     position: sticky;
-    top: 0;
+    top: spacing.space(0.5);
   }
 
   &--sticky &__items {
     width: 100%;
     margin: 0;
-    padding: a11y.$focus-outline-padding;
+    padding-right: a11y.$focus-outline-padding;
+    padding-bottom: a11y.$focus-outline-padding;
+    padding-left: a11y.$focus-outline-padding;
 
     box-sizing: content-box;
     overflow-y: auto;

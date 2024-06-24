@@ -114,7 +114,7 @@ Standard.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -131,7 +131,7 @@ export const Simple = Template.bind({});
 Simple.args = {
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
@@ -147,7 +147,7 @@ Meta.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -171,7 +171,7 @@ PlainSupertitle.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -189,7 +189,7 @@ Contrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -208,7 +208,7 @@ Accent.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -226,7 +226,7 @@ export const NoImage = Template.bind({});
 NoImage.args = {
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
@@ -356,12 +356,36 @@ HorizontalMobile.args = {
   classes: "tna-card--demo",
 };
 
+export const HorizontalContrastMobile = Template.bind({});
+HorizontalContrastMobile.parameters = {
+  viewport: {
+    defaultViewport: "small",
+  },
+  chromatic: {
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  },
+};
+HorizontalContrastMobile.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  horizontal: true,
+  style: "contrast",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Sources = Template.bind({});
 Sources.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   imageSrc: "https://www.gstatic.com/webp/gallery/2.jpg",
   imageAlt: "A man in a canoe paddling through white water",
   imageWidth: 550,

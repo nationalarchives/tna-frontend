@@ -14,7 +14,7 @@
 <{{ htmlElement }} class="tna-card{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   <div class="tna-card__inner">
   {%- if params.supertitle %}
-    <hgroup class="tna-hgroup-{{ params.headingSize or 's' }} tna-card__heading">
+    <hgroup class="tna-hgroup-{{ params.headingSize or 'm' }} tna-card__heading">
       <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
       <h{{ params.headingLevel }} class="tna-hgroup__title">
         {%- if params.href %}
@@ -25,7 +25,7 @@
       </h{{ params.headingLevel }}>
     </hgroup>
   {%- else %}
-    <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 's' }} tna-card__heading">
+    <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'm' }} tna-card__heading">
       {%- if params.href %}
       <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>{{ params.title }}</a>
       {%- else %}

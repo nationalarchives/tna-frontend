@@ -27,7 +27,7 @@ export class Accordion {
     $item.classList.remove("tna-accordion__item");
     const id = $item.getAttribute("id");
 
-    $heading.classList.remove("tna-accordion__heading");
+    $heading.removeAttribute("class");
 
     $content.classList.add("tna-accordion__content");
     $content.classList.remove("tna-accordion__body");

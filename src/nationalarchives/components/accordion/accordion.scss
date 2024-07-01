@@ -48,9 +48,7 @@
 
     position: relative;
 
-    @include colour.colour-font("font-dark");
-    @include typography.main-font;
-    @include typography.main-font-weight-bold;
+    line-height: inherit;
     text-align: left;
 
     list-style: none;
@@ -62,8 +60,12 @@
 
     cursor: pointer;
 
+    @include colour.colour-font("font-dark");
+    @include typography.font-size(18);
+    @include typography.main-font(true);
+
     * {
-      color: inherit;
+      font-size: inherit;
     }
 
     &::before {

@@ -1,16 +1,18 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
-<div class="tna-accordion{% if classes %} {{ classes }}{% endif %}" data-module="tna-accordion"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-accordion{% if classes %} {{ classes }}{% endif %}" data-multipleitems="{{ params.openMultipleItems or 'false' }}" data-module="tna-accordion"{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
   {%- for item in params.items %}
-  <details class="tna-accordion__details"{%- if params.group %} name="{{ params.group }}"{% endif %}{%- if item.open %} open{% endif %}>
-    <summary class="tna-accordion__summary">{{ item.title }}</summary>
-    <div class="tna-accordion__content">
+  <div class="tna-accordion__item" data-isopen="{{ item.open or 'false' }}">
+    <h{{ params.itemHeadingLevel }} class="tna-accordion__heading tna-heading-s">
+      {{ item.title }}
+    </h{{ params.itemHeadingLevel }}>
+    <div class="tna-accordion__body tna-!--no-focus-style" id="{{ params.id }}-content-{{ loop.index }}">
       {%- if item.text %}
         <p>{{ item.text }}</p>
       {%- else %}
         {{ item.body | safe }}
       {%- endif %}
     </div>
-  </details>
+  </div>
   {%- endfor %}
 </div>

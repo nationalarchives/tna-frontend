@@ -3,33 +3,102 @@ export class Accordion {
 
   constructor($module) {
     this.$module = $module;
-    this.$firstDetailsElement =
-      $module && $module.querySelector(".tna-accordion__details[name]");
-    this.$detailsElements =
-      $module &&
-      this.$firstDetailsElement &&
-      document.querySelectorAll(
-        `.tna-accordion__details[name="${this.$firstDetailsElement.getAttribute("name")}"]`,
-      );
-    if (!this.$module || !this.$detailsElements) {
+    this.$items = $module && $module.querySelectorAll(".tna-accordion__item");
+    if (!this.$module || !this.$items) {
       return;
     }
 
-    Array.from(this.$detailsElements).forEach(($detailsElement) => {
-      $detailsElement.addEventListener("toggle", (e) => {
-        const $thisDetailsElement = e.target;
-        if ($thisDetailsElement.hasAttribute("open")) {
-          Array.from(this.$detailsElements)
-            .filter(
-              ($eachDetailsElement) =>
-                $eachDetailsElement !== $thisDetailsElement &&
-                $eachDetailsElement.hasAttribute("open"),
-            )
-            .forEach(($eachDetailsElement) =>
-              $eachDetailsElement.removeAttribute("open"),
-            );
-        }
-      });
+    this.allowMultipleItemsOpen =
+      this.$module.dataset["multipleitems"] === "true";
+
+    this.$items.forEach(($item) => this.initItem($item));
+    this.initState();
+  }
+
+  initItem($item) {
+    const $heading = $item.querySelector(".tna-accordion__heading");
+    const $content = $item.querySelector(".tna-accordion__body");
+
+    if (!$heading || !$content) {
+      return;
+    }
+
+    $item.classList.add("tna-accordion__details");
+    $item.classList.remove("tna-accordion__item");
+    const id = $item.getAttribute("id");
+
+    $heading.classList.remove("tna-accordion__heading");
+
+    $content.classList.add("tna-accordion__content");
+    $content.classList.remove("tna-accordion__body");
+    $content.setAttribute("hidden", "until-found");
+    $content.addEventListener("blur", () => {
+      $content.removeAttribute("tabindex");
     });
+
+    const $headingButton = document.createElement("button");
+    $headingButton.classList.add("tna-accordion__summary");
+    $headingButton.setAttribute("aria-controls", id);
+    $heading.parentNode.insertBefore($headingButton, $heading.nextSibling);
+    $headingButton.appendChild($heading);
+
+    $headingButton.addEventListener("click", () => {
+      const isOpen = $headingButton.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        this.closeItem($item);
+      } else {
+        this.openItem($item);
+      }
+    });
+  }
+
+  initState() {
+    this.$items.forEach(($item) => {
+      if ($item.dataset["isopen"] === "true") {
+        this.openItem($item);
+      } else {
+        this.closeItem($item);
+      }
+      $item.removeAttribute("data-isopen");
+    });
+  }
+
+  openItem($item) {
+    if (!this.allowMultipleItemsOpen) {
+      this.closeAllItemsExcept($item);
+    }
+    const $headingButton = $item.querySelector(".tna-accordion__summary");
+    const $content = $item.querySelector(".tna-accordion__content");
+    $headingButton.setAttribute("aria-expanded", "true");
+    $headingButton.setAttribute(
+      "aria-label",
+      `${$headingButton.innerText}, Hide this section`,
+    );
+    $content.removeAttribute("hidden");
+    $content.setAttribute("tabindex", "0");
+    $content.focus();
+  }
+
+  closeItem($item) {
+    const $headingButton = $item.querySelector(".tna-accordion__summary");
+    const $content = $item.querySelector(".tna-accordion__content");
+    $headingButton.setAttribute("aria-expanded", "false");
+    $headingButton.setAttribute(
+      "aria-label",
+      `${$headingButton.innerText}, Show this section`,
+    );
+    $content.setAttribute("hidden", "until-found");
+  }
+
+  closeAllItemsExcept($excludeItem) {
+    Array.from(this.$items)
+      .filter(
+        ($item) =>
+          $item.querySelector(".tna-accordion__summary") !== $excludeItem &&
+          $item
+            .querySelector(".tna-accordion__summary")
+            .getAttribute("aria-expanded") === "true",
+      )
+      .forEach(($item) => this.closeItem($item));
   }
 }

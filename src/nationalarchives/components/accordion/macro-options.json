@@ -1,5 +1,11 @@
 [
   {
+    "name": "itemHeadingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the accordion items."
+  },
+  {
     "name": "items",
     "type": "array",
     "required": true,
@@ -32,10 +38,16 @@
     ]
   },
   {
-    "name": "group",
+    "name": "id",
     "type": "string",
+    "required": true,
+    "description": "A unique ID for the accordion group."
+  },
+  {
+    "name": "openMultipleItems",
+    "type": "boolean",
     "required": false,
-    "description": "The name of the accordion group. If set, only one item in the named group can be opened at a time."
+    "description": "If true, multiple accordion items can be opened."
   },
   {
     "name": "classes",

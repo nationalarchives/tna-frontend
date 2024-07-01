@@ -6,36 +6,66 @@
 .tna-accordion {
   @include spacing.space-above;
 
-  @include colour.colour-border("keyline", 1px, solid, top);
-  // @include colour.thick-keyline-dark(top);
-  // @include colour.thick-keyline-accent(top);
+  // NON INTERACTIVE
+  &__item {
+    @include spacing.space-above;
+  }
 
+  &__heading {
+    padding-top: spacing.space(1);
+  }
+
+  &__body {
+    padding-top: spacing.space(1);
+  }
+
+  // INTERACTIVE
   &__details {
     @include colour.colour-border("keyline", 1px, solid, bottom);
 
     position: relative;
     z-index: 1;
+
+    &:first-child {
+      @include colour.colour-border("keyline", 1px, solid, top);
+      // @include colour.thick-keyline-dark(top);
+      // @include colour.thick-keyline-accent(top);
+    }
   }
 
-  &__details:has(&__summary:focus) {
+  &__details:has(&__summary:focus),
+  &__details:has(&__content:focus) {
     z-index: 2;
   }
 
   &__summary {
+    width: 100%;
+    margin: 0;
     padding: spacing.space(0.5) spacing.space(3) spacing.space(0.5)
       spacing.space(1);
 
+    display: block;
+
     position: relative;
 
-    @include typography.main-font-weight-bold;
+    line-height: inherit;
+    text-align: left;
+
     list-style: none;
 
+    background: transparent;
+
+    border: none;
     border-radius: 0.1px;
 
     cursor: pointer;
 
-    &::-webkit-details-marker {
-      display: none;
+    @include colour.colour-font("font-dark");
+    @include typography.font-size(18);
+    @include typography.main-font(true);
+
+    * {
+      font-size: inherit;
     }
 
     &::before {
@@ -61,10 +91,24 @@
         border-color: colour.colour-var("font-dark") transparent;
       }
     }
+
+    &[aria-expanded="true"] {
+      &::before {
+        border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
+      }
+    }
   }
 
   &__content {
     padding: spacing.space(1);
+
+    position: relative;
+
+    border-radius: 0.1px;
+
+    &:focus {
+      z-index: 2;
+    }
 
     &:has(.tna-table-wrapper):has(.tna-table) {
       padding-right: 0;
@@ -95,12 +139,6 @@
     }
   }
 
-  &__details[open] &__summary {
-    &::before {
-      border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
-    }
-  }
-
   @include colour.on-forced-colours {
     &__summary {
       &::before {
@@ -115,13 +153,13 @@
 
         border: none;
       }
-    }
 
-    &__details[open] &__summary {
-      &::before {
-        content: "\2191";
+      &[aria-expanded="true"] {
+        &::before {
+          content: "\2191";
 
-        border: none;
+          border: none;
+        }
       }
     }
   }

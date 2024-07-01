@@ -3,8 +3,10 @@ import macroOptions from "./macro-options.json";
 import { fireEvent, expect } from "@storybook/test";
 
 const argTypes = {
+  itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
   items: { control: "object" },
-  group: { control: "text" },
+  id: { control: "text" },
+  openMultipleItems: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -20,13 +22,28 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, group, classes, attributes }) =>
+const Template = ({
+  itemHeadingLevel,
+  items,
+  id,
+  openMultipleItems,
+  classes,
+  attributes,
+}) =>
   Accordion({
-    params: { items, group, classes, attributes },
+    params: {
+      itemHeadingLevel,
+      items,
+      id,
+      openMultipleItems,
+      classes,
+      attributes,
+    },
   });
 
 export const Standard = Template.bind({});
 Standard.args = {
+  itemHeadingLevel: 2,
   items: [
     {
       title: "Alpha",
@@ -92,7 +109,7 @@ Standard.args = {
 </div>`,
     },
   ],
-  group: "group-1",
+  id: "accordion-example-Standard",
   classes: "tna-accordion--demo",
 };
 
@@ -101,6 +118,7 @@ OpenItems.parameters = {
   chromatic: { disableSnapshot: true },
 };
 OpenItems.args = {
+  itemHeadingLevel: 2,
   items: [
     {
       title: "Alpha",
@@ -167,15 +185,16 @@ OpenItems.args = {
 </div>`,
     },
   ],
-  group: "group-2",
+  id: "accordion-example-OpenItems",
   classes: "tna-accordion--demo",
 };
 
-export const NoGroup = Template.bind({});
-NoGroup.parameters = {
+export const NotExclusive = Template.bind({});
+NotExclusive.parameters = {
   chromatic: { disableSnapshot: true },
 };
-NoGroup.args = {
+NotExclusive.args = {
+  itemHeadingLevel: 2,
   items: [
     {
       title: "Alpha",
@@ -241,6 +260,8 @@ NoGroup.args = {
 </div>`,
     },
   ],
+  id: "accordion-example-NotExclusive",
+  openMultipleItems: true,
   classes: "tna-accordion--demo",
 };
 
@@ -249,6 +270,7 @@ Test.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Test.args = {
+  itemHeadingLevel: 2,
   items: [
     {
       title: "Alpha",
@@ -314,7 +336,7 @@ Test.args = {
 </div>`,
     },
   ],
-  group: "group-1",
+  id: "accordion-example-Test",
   classes: "tna-accordion--demo",
 };
 Test.play = async ({ step }) => {

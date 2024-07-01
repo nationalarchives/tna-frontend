@@ -6,7 +6,7 @@
     <h{{ params.itemHeadingLevel }} class="tna-accordion__heading tna-heading-s">
       {{ item.title }}
     </h{{ params.itemHeadingLevel }}>
-    <div class="tna-accordion__body tna-!--no-focus-style" id="{{ params.id }}-content-{{ loop.index }}">
+    <div class="tna-accordion__body" id="{{ params.id }}-content-{{ loop.index }}">
       {%- if item.text %}
         <p>{{ item.text }}</p>
       {%- else %}

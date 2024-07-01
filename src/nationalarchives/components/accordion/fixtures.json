@@ -4,22 +4,7 @@
     {
       "name": "minimal",
       "options": {
-        "items": [
-          {
-            "title": "Alpha",
-            "text": "Content"
-          },
-          {
-            "title": "Beta",
-            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p>"
-          }
-        ]
-      },
-      "html": "<div class=\"tna-accordion\" data-multipleitems=\"false\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Alpha</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Beta</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
-    },
-    {
-      "name": "with group",
-      "options": {
+        "itemHeadingLevel": 2,
         "items": [
           {
             "title": "Alpha",
@@ -30,13 +15,52 @@
             "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p>"
           }
         ],
-        "group": "group-1"
+        "id": "test"
       },
-      "html": "<div class=\"tna-accordion\" data-multipleitems=\"false\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Alpha</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Beta</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
+      "html": "<div class=\"tna-accordion\" data-multipleitems=\"false\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
+    },
+    {
+      "name": "with open items",
+      "options": {
+        "itemHeadingLevel": 2,
+        "items": [
+          {
+            "title": "Alpha",
+            "text": "Content",
+            "open": true
+          },
+          {
+            "title": "Beta",
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p>"
+          }
+        ],
+        "id": "test"
+      },
+      "html": "<div class=\"tna-accordion\" data-multipleitems=\"false\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"true\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
+    },
+    {
+      "name": "allowing multiple items",
+      "options": {
+        "itemHeadingLevel": 2,
+        "items": [
+          {
+            "title": "Alpha",
+            "text": "Content"
+          },
+          {
+            "title": "Beta",
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p>"
+          }
+        ],
+        "id": "test",
+        "openMultipleItems": true
+      },
+      "html": "<div class=\"tna-accordion\" data-multipleitems=\"true\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
     },
     {
       "name": "with classes",
       "options": {
+        "itemHeadingLevel": 2,
         "items": [
           {
             "title": "Alpha",
@@ -47,13 +71,15 @@
             "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p>"
           }
         ],
+        "id": "test",
         "classes": "accordion__test-class"
       },
-      "html": "<div class=\"tna-accordion accordion__test-class\" data-multipleitems=\"false\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Alpha</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Beta</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
+      "html": "<div class=\"tna-accordion accordion__test-class\" data-multipleitems=\"false\" data-module=\"tna-accordion\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
     },
     {
       "name": "with attributes",
       "options": {
+        "itemHeadingLevel": 2,
         "items": [
           {
             "title": "Alpha",
@@ -64,11 +90,12 @@
             "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p>"
           }
         ],
+        "id": "test",
         "attributes": {
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-accordion\" data-multipleitems=\"false\" data-module=\"tna-accordion\" data-testattribute=\"foobar\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Alpha</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h class=\"tna-accordion__heading tna-heading-s\">Beta</h><div class=\"tna-accordion__body tna-!--no-focus-style\" id=\"-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
+      "html": "<div class=\"tna-accordion\" data-multipleitems=\"false\" data-module=\"tna-accordion\" data-testattribute=\"foobar\"><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p><p>Quisque hendrerit condimentum nisl, non volutpat ex eleifend at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id suscipit felis, sed tincidunt arcu. Etiam vel blandit diam, vitae commodo mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi vel rhoncus aliquam.</p><p>Pellentesque ultrices bibendum nibh, sit amet ornare turpis efficitur id. Aenean ullamcorper neque eget justo sagittis, rutrum ultrices urna varius. Mauris sodales a lorem at sodales.</p></div></div></div>"
     }
   ]
 }

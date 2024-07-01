@@ -8,7 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.64...HEAD)
 
 ### Added
+
+- New files list component
+
 ### Changed
+
+- Allow the size of the heading in the sidebar component to be changed
+
 ### Deprecated
 ### Removed
 ### Fixed

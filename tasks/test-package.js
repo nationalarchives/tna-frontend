@@ -86,6 +86,7 @@ const checkExists = [
   ...componentFiles("details"),
   ...componentFiles("error-summary", "ErrorSummary"),
   ...componentFiles("featured-records"),
+  ...componentFiles("files"),
   ...componentFiles("footer", "Footer"),
   ...componentFiles("gallery", "Gallery"),
   ...componentFiles("global-header", "GlobalHeader"),

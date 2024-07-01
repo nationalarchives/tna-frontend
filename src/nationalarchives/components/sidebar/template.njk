@@ -11,7 +11,7 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <nav class="tna-sidebar{% if classes %} {{ classes }}{% endif %}" aria-label="Sidebar"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <h{{ params.headingLevel }} class="tna-sidebar__heading tna-heading-m">
+  <h{{ params.headingLevel }} class="tna-sidebar__heading tna-heading-{{ params.headingSize or 'm' }}">
     {{ params.heading }}
   </h{{ params.headingLevel }}>
   <ul class="tna-sidebar__items">

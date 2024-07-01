@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New files list component
 
 ### Changed
+
+- Allow the size of the heading in the sidebar component to be changed
+
 ### Deprecated
 ### Removed
 ### Fixed

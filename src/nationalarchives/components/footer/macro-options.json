@@ -12,12 +12,6 @@
     "description": "",
     "params": [
       {
-        "name": "assetsPath",
-        "type": "string",
-        "required": false,
-        "description": ""
-      },
-      {
         "name": "items",
         "type": "array",
         "required": false,

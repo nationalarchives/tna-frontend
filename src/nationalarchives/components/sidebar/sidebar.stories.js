@@ -4,6 +4,7 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   heading: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
   items: { control: "object" },
   type: { control: "radio", options: ["contents", "sections", "pages"] },
   sticky: { control: "boolean" },
@@ -25,6 +26,7 @@ export default {
 const Template = ({
   heading,
   headingLevel,
+  headingSize,
   items,
   type,
   sticky,
@@ -35,6 +37,7 @@ const Template = ({
     params: {
       heading,
       headingLevel,
+      headingSize,
       items,
       type,
       sticky,

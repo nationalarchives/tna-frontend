@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactored accordion component for better accessibility
 - Picture transcripts are hidden with `until-found`
 - Open all accordion items and details elements when printing
+- Changed `heading` property of sidebar components to `title`
 
 ### Deprecated
 ### Removed
@@ -26,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed all print styles from `all.css`
 
 ### Fixed
+
+- Fixed `aria-controls` property of accordion buttons
+
 ### Security
 
 ## [0.1.64](https://github.com/nationalarchives/tna-frontend/compare/v0.1.63...v0.1.64) - 2024-06-24

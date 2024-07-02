@@ -2,8 +2,13 @@ import Gallery from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  heading: { control: "object" },
+  title: { control: "text" },
+  headingLevel: { control: { type: "number", min: 1, max: 6 } },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
+  body: { control: "text" },
+  text: { control: "text" },
   items: { control: "object" },
+  id: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -19,11 +24,26 @@ export default {
   argTypes,
 };
 
-const Template = ({ heading, items, classes, attributes }) =>
+const Template = ({
+  title,
+  headingLevel,
+  headingSize,
+  body,
+  text,
+  items,
+  id,
+  classes,
+  attributes,
+}) =>
   Gallery({
     params: {
-      heading,
+      title,
+      headingLevel,
+      headingSize,
+      body,
+      text,
       items,
+      id,
       classes,
       attributes,
     },
@@ -31,7 +51,9 @@ const Template = ({ heading, items, classes, attributes }) =>
 
 export const Standard = Template.bind({});
 Standard.args = {
-  heading: { title: "My gallery", level: 3 },
+  title: "My gallery",
+  headingLevel: 3,
+  text: "Lorem ipsum",
   items: Array(6)
     .fill({
       alt: "",
@@ -45,30 +67,7 @@ Standard.args = {
       }`,
       alt: `Photo ${index + 1}`,
       description: `Photo #${index + 1}`,
-      tabs:
-        index === 0
-          ? [
-              {
-                id: "tab-1",
-                title: "Transcript",
-                body: "<p>TEST TRANSCRIPT</p>",
-              },
-              {
-                id: "tab-2",
-                title: "Translation",
-                body: "<p>TEST TRANSLATION</p>",
-              },
-            ]
-          : index === 1
-            ? [
-                {
-                  id: "tab-1",
-                  title: "Transcript",
-                  body: "<p>TEST TRANSCRIPT</p>",
-                },
-              ]
-            : null,
     })),
-
+  id: "test",
   classes: "tna-gallery--demo",
 };

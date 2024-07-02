@@ -1,116 +1,83 @@
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-gallery {
-  @include colour.contrast;
+  padding: spacing.space(1);
 
-  padding-bottom: spacing.space(2);
-
-  &__header {
-    padding-top: spacing.space(2);
-  }
+  @include colour.tint;
 
   &__items {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: spacing.space(3);
-
-    &:focus {
-      outline: none !important;
-    }
   }
 
   &__item {
-    margin: 0;
+    margin-top: spacing.space(2);
 
-    &-index {
-      padding-bottom: spacing.space(1);
+    &-header {
+      margin-bottom: spacing.space(1);
 
-      text-align: center;
+      @include typography.main-font-weight-bold;
     }
 
     &-figure {
     }
 
     &-image {
-      height: auto;
-      margin: 0 auto;
     }
 
     &-description {
       margin-top: spacing.space(1);
-      padding: spacing.space(0.5) 0 spacing.space(0.5) spacing.space(1);
+      padding: spacing.space(0.5);
 
-      @include colour.colour-border("keyline-dark", 4px, solid, left);
-    }
-
-    &-tabs {
-      @include media.on-smaller-than-large {
-        padding-top: spacing.space(2);
-      }
+      @include colour.thick-keyline(left);
     }
   }
 
-  &__item + &__item {
-    @include colour.colour-border("keyline", 1px, solid, top);
-  }
-
-  &__toggle-wrapper {
-    text-align: center;
-  }
-
-  &__toggle {
+  &__navigation {
     margin-top: spacing.space(2);
+
+    display: flex;
+    // gap: spacing.space(1);
+    flex-wrap: wrap;
   }
 
-  &--touchable {
-    .tna-gallery__items {
-      flex-flow: row nowrap;
+  &__navigation-item {
+    width: 25%;
 
-      gap: spacing.space(6);
+    display: block;
 
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-    }
+    position: relative;
 
-    .tna-gallery__item {
-      width: 100%;
+    border: none;
 
-      scroll-snap-align: center;
-      flex: none;
-    }
+    @include colour.contrast;
 
-    &.tna-gallery--collapsed {
-      .tna-gallery__items {
-        overflow: auto;
-      }
+    img {
     }
   }
 
-  &--collapsed &__item + &__item,
-  &--collapsed &__item:first-child &__item-description,
-  &--collapsed &__item:first-child &__item-tabs {
-    display: none;
+  &__navigation-item-label {
+    padding: spacing.space(0.5);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    color: transparent;
+
+    @include colour.colour-background("background");
+
+    font-size: 0;
+    line-height: 0;
   }
 
-  &--collapsed &__item-figure {
-    width: 100%;
-  }
-
-  @include colour.on-high-contrast {
-    &__items {
-    }
-
-    &__item {
-      &-index {
-      }
-
-      &-description {
-      }
-    }
+  &__navigation-item-number {
+    @include colour.colour-font("font-dark");
+    line-height: 1;
+    @include typography.font-size(16);
+    @include typography.main-font-weight-bold;
+    text-transform: capitalize;
   }
 }

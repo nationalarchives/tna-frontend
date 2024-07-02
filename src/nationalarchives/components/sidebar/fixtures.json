@@ -4,7 +4,7 @@
     {
       "name": "contents",
       "options": {
-        "heading": "Heading",
+        "title": "Heading",
         "headingLevel": 2,
         "items": [
           {
@@ -37,7 +37,7 @@
     {
       "name": "sections",
       "options": {
-        "heading": "Heading",
+        "title": "Heading",
         "headingLevel": 2,
         "items": [
           {
@@ -70,7 +70,7 @@
     {
       "name": "pages",
       "options": {
-        "heading": "Heading",
+        "title": "Heading",
         "headingLevel": 2,
         "items": [
           {
@@ -103,7 +103,7 @@
     {
       "name": "sticky",
       "options": {
-        "heading": "Heading",
+        "title": "Heading",
         "headingLevel": 2,
         "items": [
           {
@@ -137,7 +137,7 @@
     {
       "name": "with classes",
       "options": {
-        "heading": "Heading",
+        "title": "Heading",
         "headingLevel": 2,
         "items": [
           {
@@ -171,7 +171,7 @@
     {
       "name": "with attributes",
       "options": {
-        "heading": "Heading",
+        "title": "Heading",
         "headingLevel": 2,
         "items": [
           {

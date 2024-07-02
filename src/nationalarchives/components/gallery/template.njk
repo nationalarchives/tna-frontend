@@ -1,46 +1,35 @@
-{% from "nationalarchives/components/tabs/macro.njk" import tnaTabs %}
-
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
-<{{ 'section' if params.heading else 'div' }} class="tna-gallery{% if classes %} {{ classes }}{% endif %}" data-module="tna-gallery"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  {%- if params.heading -%}
-  <div class="tna-container">
-    <div class="tna-column tna-column--full tna-gallery__header">
-      <h{{ params.heading.level }} class="tna-heading-{{ params.heading.size or 'l' }}">
-        {{ params.heading.title }}
-      </h{{ params.heading.level }}>
-    </div>
-  </div>
-  {%- endif -%}
+<section class="tna-gallery{% if classes %} {{ classes }}{% endif %}" data-module="tna-gallery"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'm' }}">
+    {{ params.title }}
+  </h{{ params.headingLevel }}>
+  {%- if params.text %}
+    <p>{{ params.text }}</p>
+  {%- else %}
+    {{ params.body | safe }}
+  {%- endif %}
   <div class="tna-gallery__items">
-    {%- for item in params.items -%}
-    <div class="tna-gallery__item tna-container">
-      <div class="tna-column tna-column--full tna-gallery__header">
-        <p class="tna-gallery__item-index">Image {{ loop.index }} of {{ params.items|length }}</p>
-      </div>
-      <figure class="tna-gallery__item-figure tna-column {{ 'tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny' if item.tabs else 'tna-column--full' }}">
+    {%- for item in params.items %}
+    <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}">
+      <p class="tna-gallery__item-header">Image {{ loop.index }} of {{ params.items | length }}</p>
+      <figure class="tna-gallery__item-figure">
         <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}">
-        {%- if item.description -%}
+        {%- if item.description %}
         <figcaption class="tna-gallery__item-description">
           <p>{{ item.description }}</p>
         </figcaption>
-        {%- endif -%}
+        {%- endif %}
       </figure>
-      {%- if item.tabs -%}
-      <div class="tna-gallery__item-tabs tna-column tna-column--width-1-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-        {%- if item.tabs|length > 1 -%}
-        {{ tnaTabs({
-          items: item.tabs
-        }) }}
-        {%- else -%}
-        <h{{ params.heading.level + 1 }} class="tna-heading-m">
-          {{ item.tabs[0].title }}
-        </h{{ params.heading.level + 1 }}>
-        {{ item.tabs[0].body|safe }}
-        {%- endif -%}
-      </div>
-      {%- endif -%}
     </div>
+    {%- endfor %}
+  </div>
+  <div class="tna-gallery__navigation" hidden>
+    {%- for item in params.items -%}
+    <button class="tna-gallery__navigation-item" aria-controls="{{ params.id }}-item-{{ loop.index }}" aria-label="Show photo {{ loop.index }}">
+      <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}" aria-hidden>
+      <span class="tna-gallery__navigation-item-label">Show <span class="tna-gallery__navigation-item-number">photo #{{ loop.index }}</span></span>
+    </button>
     {%- endfor -%}
   </div>
-</{{ 'section' if params.heading else 'div' }}>
+</section>

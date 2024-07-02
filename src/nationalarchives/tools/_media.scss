@@ -84,3 +84,9 @@ $media-tiny: "(max-width: #{$largest-tiny-device-em})";
     @content;
   }
 }
+
+@mixin on-print() {
+  @media print {
+    @content;
+  }
+}

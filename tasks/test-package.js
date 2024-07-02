@@ -235,6 +235,19 @@ console.log("\n");
 console.log(`Testing compiled JavaScript files`);
 const { JSDOM } = jsdom;
 const { window } = new JSDOM(``);
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  value: (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  }),
+});
 global.window = window;
 global.document = window.document;
 const jsAllPackage = require("../package/nationalarchives/all.js");

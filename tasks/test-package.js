@@ -41,9 +41,14 @@ const checkExists = [
   "nationalarchives/all.js.map",
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
+  "nationalarchives/analytics.js",
+  "nationalarchives/analytics.js.map",
+  "nationalarchives/analytics.mjs",
   "nationalarchives/font-awesome.css",
   "nationalarchives/font-awesome.css.map",
   "nationalarchives/font-awesome.scss",
+  "nationalarchives/print.css",
+  "nationalarchives/print.css.map",
   "nationalarchives/prototype-kit.css",
   "nationalarchives/prototype-kit.css.map",
   "nationalarchives/prototype-kit.scss",
@@ -230,6 +235,19 @@ console.log("\n");
 console.log(`Testing compiled JavaScript files`);
 const { JSDOM } = jsdom;
 const { window } = new JSDOM(``);
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  value: (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  }),
+});
 global.window = window;
 global.document = window.document;
 const jsAllPackage = require("../package/nationalarchives/all.js");

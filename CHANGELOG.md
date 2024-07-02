@@ -11,14 +11,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - New files list component
 - `.tna-!--hide-on-print` class added for hiding elements when printing
+- Separate print stylesheet
 
 ### Changed
 
 - Allow the size of the heading in the sidebar component to be changed
 - Refactored accordion component for better accessibility
+- Picture transcripts are hidden with `until-found`
+- Open all accordion items and details elements when printing
 
 ### Deprecated
 ### Removed
+
+- Removed all print styles from `all.css`
+
 ### Fixed
 ### Security
 

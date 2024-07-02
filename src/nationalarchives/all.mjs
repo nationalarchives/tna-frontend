@@ -118,6 +118,40 @@ const initAll = (options) => {
   });
 };
 
+window.matchMedia("print").addEventListener("change", (evt) => {
+  if (evt.matches) {
+    document
+      .querySelectorAll(".tna-details__details:not([open])")
+      .forEach((e) => {
+        e.setAttribute("open", "");
+        e.dataset.wasclosed = "";
+      });
+    document
+      .querySelectorAll(
+        '.tna-accordion__content[hidden="until-found"], .tna-picture__transcript[hidden="until-found"]',
+      )
+      .forEach((e) => {
+        e.removeAttribute("hidden");
+        e.dataset.wasclosed = "";
+      });
+  } else {
+    document
+      .querySelectorAll(".tna-details__details[data-wasclosed]")
+      .forEach((e) => {
+        e.removeAttribute("open");
+        delete e.dataset.wasclosed;
+      });
+    document
+      .querySelectorAll(
+        ".tna-accordion__content[data-wasclosed], .tna-picture__transcript[data-wasclosed]",
+      )
+      .forEach((e) => {
+        e.setAttribute("hidden", "until-closed");
+        e.dataset.wasclosed = "";
+      });
+  }
+});
+
 export {
   initAll,
   Cookies,

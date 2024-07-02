@@ -38,7 +38,7 @@ export class Picture {
     this.$imageWrapper.appendChild(this.$transcriptToggle);
 
     this.$transcript.setAttribute("id", uniqueId);
-    this.$transcript.setAttribute("hidden", true);
+    this.$transcript.setAttribute("hidden", "until-found");
   }
 
   handleToggleTranscript() {
@@ -50,7 +50,7 @@ export class Picture {
     } else {
       this.$transcriptToggle.setAttribute("aria-expanded", false);
       this.$transcriptToggle.innerText = this.openLabel;
-      this.$transcript.setAttribute("hidden", true);
+      this.$transcript.setAttribute("hidden", "until-found");
     }
   }
 }

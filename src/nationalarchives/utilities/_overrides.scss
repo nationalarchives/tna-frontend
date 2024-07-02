@@ -30,3 +30,7 @@
   @include spacing.no-spacing-generator("tiny");
   @include hide-on("tiny");
 }
+
+.tna-\!--hide-on-print {
+  @include media.hide-on-print;
+}

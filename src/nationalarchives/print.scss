@@ -1,0 +1,44 @@
+/*!
+ * ------------------------------------------
+ * TNA Frontend print styles
+ * github.com/nationalarchives/tna-frontend
+ * ------------------------------------------
+ */
+
+@use "tools/colour";
+@use "tools/media";
+
+.tna-template,
+.tna-background-accent,
+.tna-background-contrast,
+.tna-hero:not(.tna-background-accent, .tna-background-tint) .tna-hero__inner {
+  @include colour.colour-css-vars;
+}
+
+.tna-breadcrumbs,
+.tna-cookie-banner,
+.tna-footer,
+.tna-global-header,
+.tna-header,
+.tna-hero__caption,
+.tna-phase-banner,
+.tna-picture__toggle-transcript,
+.tna-skip-link,
+.tna_tabs__list {
+  display: none !important;
+}
+
+.tna-dl {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.tna_tabs {
+  &__item {
+    display: block !important;
+
+    & + & {
+      margin-top: 2rem;
+    }
+  }
+}

@@ -29,6 +29,9 @@ $button-border-width: 4px !default;
 
   @include colour.colour-border("button-background", $button-border-width);
 
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
   &,
   &:link,
   &:visited {

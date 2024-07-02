@@ -16,8 +16,6 @@
     rgb(0 0 0 / 100%) 100%
   );
 
-  @include media.hide-on-print;
-
   .tna-template--dark-theme & {
     background: colour.brand-colour("black");
   }

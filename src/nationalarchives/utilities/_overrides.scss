@@ -32,5 +32,7 @@
 }
 
 .tna-\!--hide-on-print {
-  @include media.hide-on-print;
+  @media print {
+    display: none;
+  }
 }

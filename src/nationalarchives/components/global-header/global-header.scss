@@ -17,8 +17,6 @@
 
   @include colour.colour-font("font-base");
 
-  @include media.hide-on-print;
-
   .tna-template--dark-theme & {
     background: colour.brand-colour("black");
   }

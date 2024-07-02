@@ -4,8 +4,6 @@
 @use "../../tools/typography";
 
 .tna-footer {
-  @include media.hide-on-print;
-
   &__inner {
     @include colour.contrast;
 

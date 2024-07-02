@@ -24,8 +24,6 @@
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
 
-  @include media.hide-on-print;
-
   &,
   &:link,
   &:visited {

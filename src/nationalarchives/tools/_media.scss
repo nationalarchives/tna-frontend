@@ -84,19 +84,3 @@ $media-tiny: "(max-width: #{$largest-tiny-device-em})";
     @content;
   }
 }
-
-@mixin on-print() {
-  @media print {
-    @content;
-  }
-}
-
-%hide-on-print {
-  @media print {
-    display: none;
-  }
-}
-
-@mixin hide-on-print() {
-  @extend %hide-on-print;
-}

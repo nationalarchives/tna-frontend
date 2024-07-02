@@ -122,6 +122,9 @@ small {
 
   @include colour.colour-border("accent-background", 2px);
 
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
   .tna-background-accent & {
     @include colour.contrast;
 

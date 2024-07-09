@@ -104,45 +104,66 @@
   fill: colour-var($colour) if($important, !important, null);
 }
 
-@mixin thick-keyline($direction) {
-  @include colour-border(
-    "keyline",
-    borders.$thick-border-width,
-    solid,
-    $direction
-  );
+@mixin thick-keyline($direction: "") {
+  @if $direction != "" {
+    @include colour-border(
+      "keyline",
+      borders.$thick-border-width,
+      solid,
+      $direction
+    );
+  } @else {
+    @include colour-border("keyline", borders.$thick-border-width, solid);
+  }
 }
 
-@mixin thick-keyline-dark($direction) {
-  @include colour-border(
-    "keyline-dark",
-    borders.$thick-border-width,
-    solid,
-    $direction
-  );
+@mixin thick-keyline-dark($direction: "") {
+  @if $direction != "" {
+    @include colour-border(
+      "keyline-dark",
+      borders.$thick-border-width,
+      solid,
+      $direction
+    );
+  } @else {
+    @include colour-border("keyline-dark", borders.$thick-border-width, solid);
+  }
 }
 
-@mixin thick-keyline-accent($direction) {
-  @include colour-border(
-    "accent-border",
-    borders.$thick-border-width,
-    solid,
-    $direction
-  );
+@mixin thick-keyline-accent($direction: "") {
+  @if $direction != "" {
+    @include colour-border(
+      "accent-border",
+      borders.$thick-border-width,
+      solid,
+      $direction
+    );
+  } @else {
+    @include colour-border("accent-border", borders.$thick-border-width, solid);
+  }
 }
 
-@mixin thick-keyline-error($direction) {
-  @include colour-border(
-    "form-error",
-    borders.$thick-border-width,
-    solid,
-    $direction
-  );
+@mixin thick-keyline-error($direction: "") {
+  @if $direction != "" {
+    @include colour-border(
+      "form-error",
+      borders.$thick-border-width,
+      solid,
+      $direction
+    );
+  } @else {
+    @include colour-border("form-error", borders.$thick-border-width, solid);
+  }
 }
 
-@mixin thick-keyline-brand($direction, $brandColour) {
-  border-#{$direction}: borders.$thick-border-width #{brand-colour($brandColour)}
-    solid;
+@mixin thick-keyline-brand($direction: "", $brandColour) {
+  @if $direction != "" {
+    border-#{$direction}: borders.$thick-border-width
+      #{brand-colour($brandColour)}
+      solid;
+  } @else {
+    border: borders.$thick-border-width #{brand-colour($brandColour)} solid;
+  }
 }
 
 // Use light theme colours (except for "form-error")

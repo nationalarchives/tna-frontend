@@ -1,19 +1,21 @@
 export class Gallery {
   constructor($module) {
     this.$module = $module;
-    this.$items = $module && $module.querySelectorAll(".tna-gallery__item");
+    this.$itemsContainer =
+      $module && $module.querySelector(".tna-gallery__items");
+    this.$items =
+      this.$itemsContainer &&
+      this.$itemsContainer.querySelectorAll(".tna-gallery__item");
     this.$navigation =
       $module && $module.querySelector(".tna-gallery__navigation");
-    this.$items = $module && $module.querySelectorAll(".tna-gallery__item");
     this.$navigationItems =
       this.$navigation &&
       $module.querySelectorAll(".tna-gallery__navigation-item");
     this.$options = $module && $module.querySelector(".tna-gallery__options");
 
-    // return
-
     if (
       !this.$module ||
+      !this.$itemsContainer ||
       !this.$items ||
       !this.$navigation ||
       !this.$navigationItems ||
@@ -22,6 +24,7 @@ export class Gallery {
       return;
     }
 
+    this.$showIndex = this.$options.querySelector('button[value="show-index"]');
     this.$enterFullscreen = this.$options.querySelector(
       'button[value="enter-fullscreen"]',
     );
@@ -30,13 +33,19 @@ export class Gallery {
     );
 
     this.setup();
-    this.currentId = this.$items[0].id;
-    this.showItem(this.currentId);
+    this.allowIndex = false;
+    if (this.allowIndex) {
+      this.showIndex();
+    } else {
+      this.currentId = this.$items[0].id;
+      this.showItem(this.currentId);
+    }
   }
 
   setup() {
     this.$items.forEach(($item) => {
       $item.setAttribute("hidden", "until-found");
+      $item.setAttribute("role", "tabpanel");
     });
     this.$navigation.removeAttribute("hidden");
     this.$navigationItems.forEach(($item) => {
@@ -47,9 +56,11 @@ export class Gallery {
     this.$module.addEventListener("keydown", (e) => {
       switch (e.key) {
         case "ArrowLeft":
+        case "ArrowUp":
           this.showPreviousItem();
           break;
         case "ArrowRight":
+        case "ArrowDown":
           this.showNextItem();
           break;
         case "Home":
@@ -74,29 +85,45 @@ export class Gallery {
       );
       this.$enterFullscreen?.removeAttribute("hidden");
     }
+    this.$showIndex?.addEventListener("click", () => this.showIndex());
+  }
+
+  showIndex() {
+    this.showItem("");
+    this.$itemsContainer.setAttribute("tabindex", "-1");
+    this.$showIndex?.setAttribute("hidden", true);
   }
 
   showItem(id) {
     this.$items.forEach(($item) => {
-      if ($item.id !== id) {
+      if (id && $item.id === id) {
+        $item.removeAttribute("hidden");
+        $item.removeAttribute("tabindex");
+      } else {
         $item.setAttribute("hidden", "until-found");
         $item.setAttribute("tabindex", "-1");
-      } else {
-        $item.removeAttribute("hidden");
-        $item.setAttribute("tabindex", "0");
       }
     });
-    this.$navigationItems.forEach(($item) => {
-      if ($item.getAttribute("aria-controls") !== id) {
-        $item.setAttribute("aria-expanded", "false");
-        $item.setAttribute("tabindex", "-1");
+    this.$navigationItems.forEach(($item, index) => {
+      if (id) {
+        if ($item.getAttribute("aria-controls") === id) {
+          $item.setAttribute("aria-selected", "true");
+          $item.setAttribute("tabindex", "0");
+          $item.focus();
+        } else {
+          $item.setAttribute("aria-selected", "false");
+          $item.setAttribute("tabindex", "-1");
+        }
       } else {
-        $item.setAttribute("aria-expanded", "true");
-        $item.setAttribute("tabindex", "0");
-        $item.focus();
+        $item.setAttribute("aria-selected", "false");
+        $item.setAttribute("tabindex", index === 0 ? "0" : "-1");
       }
     });
+    if (this.allowIndex) {
+      this.$showIndex?.removeAttribute("hidden");
+    }
     this.currentId = id;
+    this.$itemsContainer.setAttribute("tabindex", "0");
   }
 
   getCurrentItemIndex() {
@@ -111,6 +138,7 @@ export class Gallery {
       nextIndexToShow = this.$items.length - 1;
     }
     this.showItem(this.$items[nextIndexToShow].id);
+    this.$itemsContainer.focus();
   }
 
   showNextItem() {
@@ -119,14 +147,17 @@ export class Gallery {
       nextIndexToShow = 0;
     }
     this.showItem(this.$items[nextIndexToShow].id);
+    this.$itemsContainer.focus();
   }
 
   showFirstItem() {
     this.showItem(this.$items[0].id);
+    this.$itemsContainer.focus();
   }
 
   showLastItem() {
     this.showItem(this.$items[this.$items.length - 1].id);
+    this.$itemsContainer.focus();
   }
 
   toggleFullScreen() {

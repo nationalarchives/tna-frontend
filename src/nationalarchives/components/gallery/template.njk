@@ -16,10 +16,17 @@
     </div>
     <div class="tna-gallery__options tna-button-group tna-button-group--small" hidden>
       {{ tnaButton({
+        text: "See all images",
+        buttonElement: true,
+        attributes: {
+          hidden: true,
+          value: "show-index"
+        }
+      }) | indent(6) }}
+      {{ tnaButton({
         text: "Full screen",
         iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>',
         buttonElement: true,
-        classes: "tna-gallery__option",
         attributes: {
           hidden: true,
           value: "enter-fullscreen"
@@ -29,7 +36,6 @@
         text: "Exit full screen",
         iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V64zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32H96v64c0 17.7 14.3 32 32 32s32-14.3 32-32V352c0-17.7-14.3-32-32-32H32zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V64zM320 320c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H320z"/></svg>',
         buttonElement: true,
-        classes: "tna-gallery__option",
         attributes: {
           hidden: true,
           value: "exit-fullscreen"
@@ -39,7 +45,7 @@
   </div>
   <div class="tna-gallery__items">
     {%- for item in params.items %}
-    <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}">
+    <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}" aria-labeledby="{{ params.id }}-item-{{ loop.index }}-tab">
       <p class="tna-gallery__item-header">Image {{ loop.index }} of {{ params.items | length }}</p>
       <figure class="tna-gallery__item-figure">
         <div class="tna-gallery__item-figure-inner">
@@ -54,11 +60,11 @@
     </div>
     {%- endfor %}
   </div>
-  <div class="tna-gallery__navigation" hidden>
+  <div class="tna-gallery__navigation" role="tablist" hidden>
     {%- for item in params.items -%}
-    <button class="tna-gallery__navigation-item" aria-controls="{{ params.id }}-item-{{ loop.index }}" aria-label="Show photo {{ loop.index }}">
-      <img src="{{ item.src }}" class="tna-gallery__navigation-item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}" aria-hidden>
-      <span class="tna-gallery__navigation-item-label">Show photo #<span class="tna-gallery__navigation-item-number">{{ loop.index }}</span></span>
+    <button class="tna-gallery__navigation-item" role="tab" id="{{ params.id }}-item-{{ loop.index }}-tab" aria-controls="{{ params.id }}-item-{{ loop.index }}">
+      <img src="{{ item.src }}" class="tna-gallery__navigation-item-image" alt="" width="{{ item.width }}" height="{{ item.height }}" aria-hidden>
+      <span class="tna-gallery__navigation-item-label">Photo <span class="tna-gallery__navigation-item-number">{{ loop.index }}</span> of {{ params.items | length }}</span>
     </button>
     {%- endfor -%}
   </div>

@@ -57,7 +57,7 @@ Standard.args = {
   title: "My gallery",
   headingLevel: 3,
   text: "Lorem ipsum",
-  items: Array(5)
+  items: Array(12)
     .fill({
       alt: "",
       width: "",
@@ -65,7 +65,7 @@ Standard.args = {
     })
     .map((item, index) => ({
       ...item,
-      src: `https://picsum.photos/id/${index + 200}/${
+      src: `https://picsum.photos/id/${index + 50}/${
         index % 3 === 0
           ? `${exampleWidth}/${exampleHeight}`
           : index % 3 === 1
@@ -80,7 +80,7 @@ Standard.args = {
             ? exampleHeight
             : exampleWidth,
       alt: `Photo ${index + 1}`,
-      description: index % 4 === 1 ? "" : `This is photo number ${index + 1}`,
+      description: `This is photo number ${index + 1}`,
     })),
   id: "test",
   classes: "tna-gallery--demo",

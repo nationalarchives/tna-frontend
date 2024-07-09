@@ -72,8 +72,6 @@
   }
 
   &__item-figure-inner {
-    aspect-ratio: 3 / 2;
-
     max-height: 50dvh;
 
     position: relative;
@@ -82,12 +80,7 @@
   }
 
   &__item-image {
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    inset: 0;
-    object-fit: contain;
+    margin: 0 auto;
   }
 
   &__item-description {
@@ -127,20 +120,32 @@
 
     cursor: pointer;
 
-    &[aria-selected="true"] {
-      @include colour.accent;
-
-      &::before {
+    &:hover {
+      &::after {
         content: "";
 
         position: absolute;
         inset: 0;
-        z-index: 1;
+        z-index: 2;
 
-        @include colour.accent;
-
-        opacity: 0.5;
+        @include colour.thick-keyline-accent;
       }
+    }
+
+    &[aria-selected="true"] {
+      @include colour.accent;
+
+      // &::before {
+      //   content: "";
+
+      //   position: absolute;
+      //   inset: 0;
+      //   z-index: 1;
+
+      //   @include colour.accent;
+
+      //   opacity: 0.5;
+      // }
 
       &::after {
         content: "";
@@ -162,13 +167,13 @@
     inset: 0;
     object-fit: cover;
 
-    // opacity: 0.5;
+    // opacity: 0.75;
   }
 
-  &__navigation-item:hover &__navigation-item-image,
-  &__navigation-item[aria-selected="true"] &__navigation-item-image {
-    opacity: 1;
-  }
+  // &__navigation-item:hover &__navigation-item-image,
+  // &__navigation-item[aria-selected="true"] &__navigation-item-image {
+  //   opacity: 1;
+  // }
 
   &__navigation-item-label {
     position: relative;
@@ -193,6 +198,19 @@
     @include colour.colour-background("background");
   }
 
+  &--js &__item-figure-inner {
+    aspect-ratio: 3 / 2;
+  }
+
+  &--js &__item-image {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+    object-fit: contain;
+  }
+
   @include media.on-medium {
     &__navigation {
       grid-template-columns: repeat(4, 1fr);
@@ -210,7 +228,7 @@
       justify-content: flex-start;
     }
 
-    &__item-figure-inner {
+    &--js &__item-figure-inner {
       aspect-ratio: 1;
     }
 

@@ -24,6 +24,8 @@ export class Gallery {
       return;
     }
 
+    this.$module.classList.add("tna-gallery--js");
+
     this.$showIndex = this.$options.querySelector('button[value="show-index"]');
     this.$enterFullscreen = this.$options.querySelector(
       'button[value="enter-fullscreen"]',
@@ -50,7 +52,7 @@ export class Gallery {
     this.$navigation.removeAttribute("hidden");
     this.$navigationItems.forEach(($item) => {
       $item.addEventListener("click", () =>
-        this.showItem($item.getAttribute("aria-controls")),
+        this.showItem($item.getAttribute("aria-controls"), true),
       );
     });
     this.$module.addEventListener("keydown", (e) => {
@@ -94,7 +96,7 @@ export class Gallery {
     this.$showIndex?.setAttribute("hidden", true);
   }
 
-  showItem(id) {
+  showItem(id, focusItem = false) {
     this.$items.forEach(($item) => {
       if (id && $item.id === id) {
         $item.removeAttribute("hidden");
@@ -124,6 +126,9 @@ export class Gallery {
     }
     this.currentId = id;
     this.$itemsContainer.setAttribute("tabindex", "0");
+    if (focusItem) {
+      this.$itemsContainer.focus();
+    }
   }
 
   getCurrentItemIndex() {
@@ -137,8 +142,7 @@ export class Gallery {
     if (nextIndexToShow < 0) {
       nextIndexToShow = this.$items.length - 1;
     }
-    this.showItem(this.$items[nextIndexToShow].id);
-    this.$itemsContainer.focus();
+    this.showItem(this.$items[nextIndexToShow].id, true);
   }
 
   showNextItem() {
@@ -146,18 +150,15 @@ export class Gallery {
     if (nextIndexToShow >= this.$items.length) {
       nextIndexToShow = 0;
     }
-    this.showItem(this.$items[nextIndexToShow].id);
-    this.$itemsContainer.focus();
+    this.showItem(this.$items[nextIndexToShow].id, true);
   }
 
   showFirstItem() {
-    this.showItem(this.$items[0].id);
-    this.$itemsContainer.focus();
+    this.showItem(this.$items[0].id, true);
   }
 
   showLastItem() {
-    this.showItem(this.$items[this.$items.length - 1].id);
-    this.$itemsContainer.focus();
+    this.showItem(this.$items[this.$items.length - 1].id, true);
   }
 
   toggleFullScreen() {

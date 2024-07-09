@@ -49,12 +49,15 @@ const Template = ({
     },
   });
 
+const exampleWidth = 600;
+const exampleHeight = 400;
+
 export const Standard = Template.bind({});
 Standard.args = {
   title: "My gallery",
   headingLevel: 3,
   text: "Lorem ipsum",
-  items: Array(6)
+  items: Array(5)
     .fill({
       alt: "",
       width: "",
@@ -62,11 +65,22 @@ Standard.args = {
     })
     .map((item, index) => ({
       ...item,
-      src: `https://picsum.photos/id/${index + 1}/${
-        index % 3 === 0 ? "800/600" : index % 3 === 1 ? "600/600" : "600/800"
+      src: `https://picsum.photos/id/${index + 200}/${
+        index % 3 === 0
+          ? `${exampleWidth}/${exampleHeight}`
+          : index % 3 === 1
+            ? `${exampleWidth}/${exampleWidth}`
+            : `${exampleHeight}/${exampleWidth}`
       }`,
+      width: index % 3 === 0 ? exampleWidth : exampleHeight,
+      height:
+        index % 3 === 0
+          ? exampleHeight
+          : index % 3 === 1
+            ? exampleHeight
+            : exampleWidth,
       alt: `Photo ${index + 1}`,
-      description: `Photo #${index + 1}`,
+      description: index % 4 === 1 ? "" : `This is photo number ${index + 1}`,
     })),
   id: "test",
   classes: "tna-gallery--demo",

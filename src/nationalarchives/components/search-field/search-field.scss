@@ -6,8 +6,9 @@
   @include spacing.space-above;
 
   &__fields {
-    display: flex;
     align-self: stretch;
+
+    display: flex;
   }
 
   &__input {

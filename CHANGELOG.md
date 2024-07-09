@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New files list component
 - `.tna-!--hide-on-print` class added for hiding elements when printing
 - Separate print stylesheet
+- Buttons can now include an SVG icon
 
 ### Changed
 

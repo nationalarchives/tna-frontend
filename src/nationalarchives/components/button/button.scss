@@ -11,8 +11,8 @@ $button-border-width: 4px !default;
   padding: spacing.space(0.25) spacing.space(1);
 
   display: inline-flex;
-  justify-content: center;
   align-items: baseline;
+  justify-content: center;
   gap: spacing.space(0.75);
 
   line-height: 2rem;
@@ -50,6 +50,15 @@ $button-border-width: 4px !default;
 
     font-size: 0.9em;
     line-height: #{math.div(16, 18) * 2};
+  }
+
+  svg {
+    height: 0.9em;
+    flex-shrink: 0;
+
+    align-self: center;
+
+    fill: currentColor;
   }
 
   &--plain {
@@ -117,6 +126,10 @@ $button-border-width: 4px !default;
 
       @include typography.font-size(18);
     }
+
+    svg {
+      width: 2.5rem;
+    }
   }
 
   @mixin icon-only-small {
@@ -128,6 +141,10 @@ $button-border-width: 4px !default;
 
       @include typography.font-size(18 * 0.9);
       line-height: 2rem;
+    }
+
+    svg {
+      width: 2rem;
     }
   }
 

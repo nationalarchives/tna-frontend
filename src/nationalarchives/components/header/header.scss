@@ -109,9 +109,9 @@
   }
 
   &__navigation-toggle {
-    display: none;
-
     align-self: center;
+
+    display: none;
   }
 
   &__hamburger {
@@ -187,8 +187,8 @@
   &__navigation {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
 
     position: relative;
     z-index: 2;

@@ -9,27 +9,32 @@
   {%- else %}
     {{ params.body | safe }}
   {%- endif %}
-  <div class="tna-gallery__items">
-    {%- for item in params.items %}
-    <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}">
-      <p class="tna-gallery__item-header">Image {{ loop.index }} of {{ params.items | length }}</p>
-      <figure class="tna-gallery__item-figure">
-        <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}">
-        {%- if item.description %}
-        <figcaption class="tna-gallery__item-description">
-          <p>{{ item.description }}</p>
-        </figcaption>
-        {%- endif %}
-      </figure>
-    </div>
-    {%- endfor %}
+  <div class="tna-gallery__options" hidden>
+    <button value="fullscreen">Full screen</button>
   </div>
-  <div class="tna-gallery__navigation" hidden>
-    {%- for item in params.items -%}
-    <button class="tna-gallery__navigation-item" aria-controls="{{ params.id }}-item-{{ loop.index }}" aria-label="Show photo {{ loop.index }}">
-      <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}" aria-hidden>
-      <span class="tna-gallery__navigation-item-label">Show <span class="tna-gallery__navigation-item-number">photo #{{ loop.index }}</span></span>
-    </button>
-    {%- endfor -%}
+  <div class="tna-gallery__content">
+    <div class="tna-gallery__items">
+      {%- for item in params.items %}
+      <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}">
+        <p class="tna-gallery__item-header">Image {{ loop.index }} of {{ params.items | length }}</p>
+        <figure class="tna-gallery__item-figure">
+          <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}">
+          {%- if item.description %}
+          <figcaption class="tna-gallery__item-description">
+            <p>{{ item.description }}</p>
+          </figcaption>
+          {%- endif %}
+        </figure>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="tna-gallery__navigation" hidden>
+      {%- for item in params.items -%}
+      <button class="tna-gallery__navigation-item" aria-controls="{{ params.id }}-item-{{ loop.index }}" aria-label="Show photo {{ loop.index }}">
+        <img src="{{ item.src }}" class="tna-gallery__item-image" alt="{{ item.alt }}" width="{{ item.width }}" height="{{ item.height }}" aria-hidden>
+        <span class="tna-gallery__navigation-item-label">Show <span class="tna-gallery__navigation-item-number">photo #{{ loop.index }}</span></span>
+      </button>
+      {%- endfor -%}
+    </div>
   </div>
 </section>

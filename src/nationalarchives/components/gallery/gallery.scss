@@ -6,9 +6,21 @@
 .tna-gallery {
   padding: spacing.space(1);
 
+  display: flex;
+  flex-direction: column;
+
   @include colour.tint;
 
+  &__content {
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    gap: spacing.space(2);
+  }
+
   &__items {
+    flex: 1;
   }
 
   &__item {
@@ -21,9 +33,20 @@
     }
 
     &-figure {
+      padding: spacing.space(1);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      aspect-ratio: 1/1;
+
+      @include colour.contrast;
     }
 
     &-image {
+      flex: 1;
     }
 
     &-description {
@@ -35,8 +58,6 @@
   }
 
   &__navigation {
-    margin-top: spacing.space(2);
-
     display: flex;
     // gap: spacing.space(1);
     flex-wrap: wrap;
@@ -79,5 +100,21 @@
     @include typography.font-size(16);
     @include typography.main-font-weight-bold;
     text-transform: capitalize;
+  }
+
+  @media (display-mode: fullscreen) and (aspect-ratio >= 1/1) {
+    &__content {
+      flex-direction: row;
+
+      background-color: #f0a;
+    }
+
+    &__items {
+      aspect-ratio: 1/1;
+    }
+
+    &__navigation {
+      flex: 1 1 25%;
+    }
   }
 }

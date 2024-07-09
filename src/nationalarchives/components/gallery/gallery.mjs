@@ -4,15 +4,18 @@ export class Gallery {
     this.$items = $module && $module.querySelectorAll(".tna-gallery__item");
     this.$navigation =
       $module && $module.querySelector(".tna-gallery__navigation");
+    this.$items = $module && $module.querySelectorAll(".tna-gallery__item");
     this.$navigationItems =
       this.$navigation &&
       $module.querySelectorAll(".tna-gallery__navigation-item");
+    this.$options = $module && $module.querySelector(".tna-gallery__options");
 
     if (
       !this.$module ||
       !this.$items ||
       !this.$navigation ||
-      !this.$navigationItems
+      !this.$navigationItems ||
+      !this.$options
     ) {
       return;
     }
@@ -42,6 +45,10 @@ export class Gallery {
           break;
       }
     });
+    this.$options.removeAttribute("hidden");
+    this.$options
+      .querySelector('button[value="fullscreen"]')
+      ?.addEventListener("click", () => this.toggleFullScreen());
   }
 
   showItem(id) {
@@ -82,5 +89,13 @@ export class Gallery {
       nextIndexToShow = 0;
     }
     this.showItem(this.$items[nextIndexToShow].id);
+  }
+
+  toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      this.$module.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
   }
 }

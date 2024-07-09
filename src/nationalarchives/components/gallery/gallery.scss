@@ -140,7 +140,7 @@
 
       //   position: absolute;
       //   inset: 0;
-      //   z-index: 1;
+      //   z-index: 2;
 
       //   @include colour.accent;
 
@@ -152,9 +152,9 @@
 
         position: absolute;
         inset: 0;
-        z-index: 2;
+        z-index: 3;
 
-        @include colour.thick-keyline-dark;
+        @include colour.thick-keyline-brand("", "black");
       }
     }
   }
@@ -177,7 +177,7 @@
 
   &__navigation-item-label {
     position: relative;
-    z-index: 3;
+    z-index: 4;
 
     color: transparent;
     font-size: 0;
@@ -208,6 +208,7 @@
 
     position: absolute;
     inset: 0;
+    z-index: 1;
     object-fit: contain;
   }
 

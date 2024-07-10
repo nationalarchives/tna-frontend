@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed `aria-controls` property of accordion buttons
+- All component attributes can now have blank values
 
 ### Security
 

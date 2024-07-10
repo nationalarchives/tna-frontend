@@ -3,7 +3,7 @@
   {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
-<div class="tna-phase-banner{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-phase-banner{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--full-tiny">
       <span class="tna-phase-banner__phase">

@@ -2,7 +2,7 @@
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
-<figure class="tna-picture{% if classes %} {{ classes }}{% endif %}" data-module="tna-picture"{% if params.informationLabelOpen %} data-informationlabelopen="{{ params.informationLabelOpen }}"{% endif %}{% if params.informationLabelClose %} data-informationlabelclose="{{ params.informationLabelClose }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<figure class="tna-picture{% if classes %} {{ classes }}{% endif %}" data-module="tna-picture"{% if params.informationLabelOpen %} data-informationlabelopen="{{ params.informationLabelOpen }}"{% endif %}{% if params.informationLabelClose %} data-informationlabelclose="{{ params.informationLabelClose }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-picture__image-wrapper tna-background-tint">
     <picture>
     {%- for source in params.sources %}

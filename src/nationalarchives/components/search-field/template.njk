@@ -1,7 +1,7 @@
 {%- set containerClasses = [params.formGroupClasses] if params.formGroupClasses else [] -%}
 {%- set inputClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
-<div class="tna-search-field{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<div class="tna-search-field{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %}">
     <div class="tna-form__group-contents">
       <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
@@ -21,7 +21,7 @@
       {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
       {%- if params.autofill %} autofill="{{ params.autofill }}"{% endif %}
       {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
-      {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+      {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
       <button type="submit" class="tna-button tna-search-field__button">
         Search
         <i class="fa-solid fa-fw fa-arrow-right tna-!--hide-on-tiny" aria-hidden="true"></i>

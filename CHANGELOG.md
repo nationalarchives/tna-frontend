@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Refactored gallery component
 - Allow the size of the heading in the sidebar component to be changed
 - Refactored accordion component for better accessibility
 - Picture transcripts are hidden with `until-found`

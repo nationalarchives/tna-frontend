@@ -57,7 +57,7 @@ Standard.args = {
   title: "My gallery",
   headingLevel: 3,
   text: "Lorem ipsum",
-  items: Array(12)
+  items: Array(24)
     .fill({
       alt: "",
       width: "",

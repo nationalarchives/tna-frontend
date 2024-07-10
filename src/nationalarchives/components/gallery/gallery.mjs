@@ -12,6 +12,8 @@ export class Gallery {
       this.$navigation &&
       $module.querySelectorAll(".tna-gallery__navigation-item");
     this.$options = $module && $module.querySelector(".tna-gallery__options");
+    this.$navigationButtons =
+      $module && $module.querySelector(".tna-gallery__navigation-buttons");
 
     if (
       !this.$module ||
@@ -19,7 +21,8 @@ export class Gallery {
       !this.$items ||
       !this.$navigation ||
       !this.$navigationItems ||
-      !this.$options
+      !this.$options ||
+      !this.$navigationButtons
     ) {
       return;
     }
@@ -32,6 +35,17 @@ export class Gallery {
     );
     this.$exitFullscreen = this.$options.querySelector(
       'button[value="exit-fullscreen"]',
+    );
+
+    this.$navigationButtonPrev = this.$navigationButtons.querySelector(
+      ".tna-gallery__navigation-prev",
+    );
+    this.$navigationButtonNext = this.$navigationButtons.querySelector(
+      ".tna-gallery__navigation-next",
+    );
+
+    this.$module.addEventListener("fullscreenchange", () =>
+      this.syncFullScreen(),
     );
 
     this.setup();
@@ -55,6 +69,7 @@ export class Gallery {
         this.showItem($item.getAttribute("aria-controls"), true),
       );
     });
+    this.$module.setAttribute("tabindex", "0");
     this.$module.addEventListener("keydown", (e) => {
       switch (e.key) {
         case "ArrowLeft":
@@ -88,6 +103,13 @@ export class Gallery {
       this.$enterFullscreen?.removeAttribute("hidden");
     }
     this.$showIndex?.addEventListener("click", () => this.showIndex());
+    this.$navigationButtons?.removeAttribute("hidden");
+    this.$navigationButtonPrev?.addEventListener("click", () =>
+      this.showPreviousItem(),
+    );
+    this.$navigationButtonNext?.addEventListener("click", () =>
+      this.showNextItem(),
+    );
   }
 
   showIndex() {
@@ -111,7 +133,9 @@ export class Gallery {
         if ($item.getAttribute("aria-controls") === id) {
           $item.setAttribute("aria-selected", "true");
           $item.setAttribute("tabindex", "0");
-          $item.focus();
+          // if (focusItem) {
+          //   $item.focus();
+          // }
         } else {
           $item.setAttribute("aria-selected", "false");
           $item.setAttribute("tabindex", "-1");
@@ -171,13 +195,23 @@ export class Gallery {
 
   enterFullScreen() {
     this.$module.requestFullscreen();
-    this.$enterFullscreen.setAttribute("hidden", true);
-    this.$exitFullscreen.removeAttribute("hidden");
+    this.syncFullScreen();
   }
 
   exitFullScreen() {
     document.exitFullscreen();
-    this.$exitFullscreen.setAttribute("hidden", true);
-    this.$enterFullscreen.removeAttribute("hidden");
+    this.syncFullScreen();
+  }
+
+  syncFullScreen() {
+    if (document.fullscreenElement) {
+      this.$enterFullscreen.setAttribute("hidden", true);
+      this.$exitFullscreen.removeAttribute("hidden");
+      this.$module.classList.add("tna-gallery--fullscreen");
+    } else {
+      this.$exitFullscreen.setAttribute("hidden", true);
+      this.$enterFullscreen.removeAttribute("hidden");
+      this.$module.classList.remove("tna-gallery--fullscreen");
+    }
   }
 }

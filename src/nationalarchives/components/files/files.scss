@@ -4,6 +4,7 @@
 @use "../../tools/typography";
 
 .tna-files {
+  @include spacing.space-above;
   padding: spacing.space(1);
 
   display: flex;

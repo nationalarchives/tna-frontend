@@ -690,38 +690,42 @@ const Template = ({ theme, accent }) => {
           })}
         </div>
       </div>
-      ${Gallery({
-        params: {
-          title: "My gallery",
-          headingLevel: 2,
-          text: "Lorem ipsum",
-          items: [
-            {
-              alt: "Photo 1",
-              width: 600,
-              height: 400,
-              src: "https://picsum.photos/id/50/600/400",
-              description: "This is photo number 1",
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
+          ${Gallery({
+            params: {
+              title: "My gallery",
+              headingLevel: 2,
+              text: "Lorem ipsum",
+              items: [
+                {
+                  alt: "Photo 1",
+                  width: 600,
+                  height: 400,
+                  src: "https://picsum.photos/id/50/600/400",
+                  description: "This is photo number 1",
+                },
+                {
+                  alt: "Photo 2",
+                  width: 400,
+                  height: 400,
+                  src: "https://picsum.photos/id/51/600/600",
+                  description: "This is photo number 2",
+                },
+                {
+                  alt: "Photo 3",
+                  width: 400,
+                  height: 600,
+                  src: "https://picsum.photos/id/52/400/600",
+                  description: "This is photo number 3",
+                },
+              ],
+              id: "test-gallery",
+              classes: "tna-gallery--demo",
             },
-            {
-              alt: "Photo 2",
-              width: 400,
-              height: 400,
-              src: "https://picsum.photos/id/51/600/600",
-              description: "This is photo number 2",
-            },
-            {
-              alt: "Photo 3",
-              width: 400,
-              height: 600,
-              src: "https://picsum.photos/id/52/400/600",
-              description: "This is photo number 3",
-            },
-          ],
-          id: "test-gallery",
-          classes: "tna-gallery--demo",
-        },
-      })}
+          })}
+        </div>
+      </div>
       <div class="tna-section">
         ${IndexGrid({
           params: {

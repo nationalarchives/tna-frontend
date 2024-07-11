@@ -37,24 +37,24 @@
 
     {% block stylesheets %}{% endblock %}
   </head>
-    <body class="tna-template__body{% if bodyClasses %} {{ bodyClasses }}{% endif %}"{% for attribute, value in bodyAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <body class="tna-template__body{% if bodyClasses %} {{ bodyClasses }}{% endif %}"{% for attribute, value in bodyAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
     {% block bodyStart %}
       {% block cookies %}
         {{ tnaCookieBanner({
           cookiesUrl: '#/cookies'
-        }) }}
+        }) | indent(6) }}
       {% endblock %}
       
       {% block skipLink %}
       {{ tnaSkipLink({
         href: 'main-content',
         text: 'Skip to main content'
-      }) }}
+      }) | indent(6) }}
       {% endblock %}
     {% endblock %}
 
     {% block header %}
-      {{ tnaHeader({}) }}
+      {{ tnaHeader({}) | indent(4) }}
     {% endblock %}
 
     {% block main %}
@@ -66,7 +66,7 @@
     {% endblock %}
 
     {% block footer %}
-      {{ tnaFooter({}) }}
+      {{ tnaFooter({}) | indent(4) }}
     {% endblock %}
 
     {% block bodyEnd %}{% endblock %}

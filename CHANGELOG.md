@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.tna-!--hide-on-print` class added for hiding elements when printing
 - Separate print stylesheet
 - Buttons can now include an SVG icon
+- Package now includes config files for Babel, ESLint, HTML-validate and Stylelint
 
 ### Changed
 

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added missing space above files list
+- Fixed alignment of warning text when a short body is used
 
 ### Security
 

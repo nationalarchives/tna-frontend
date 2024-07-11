@@ -12,13 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New files list component
 - `.tna-!--hide-on-print` class added for hiding elements when printing
 - Separate print stylesheet
+- Buttons can now include an SVG icon
+- Package now includes config files for Babel, ESLint, HTML-validate and Stylelint
 
 ### Changed
 
+- Refactored gallery component
 - Allow the size of the heading in the sidebar component to be changed
 - Refactored accordion component for better accessibility
 - Picture transcripts are hidden with `until-found`
 - Open all accordion items and details elements when printing
+- Changed `heading` property of sidebar components to `title`
 
 ### Deprecated
 ### Removed
@@ -26,6 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed all print styles from `all.css`
 
 ### Fixed
+
+- Fixed `aria-controls` property of accordion buttons
+- All component attributes can now have blank values
+
 ### Security
 
 ## [0.1.64](https://github.com/nationalarchives/tna-frontend/compare/v0.1.63...v0.1.64) - 2024-06-24

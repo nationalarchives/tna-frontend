@@ -2,8 +2,13 @@ import Gallery from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  heading: { control: "object" },
+  title: { control: "text" },
+  headingLevel: { control: { type: "number", min: 1, max: 6 } },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
+  body: { control: "text" },
+  text: { control: "text" },
   items: { control: "object" },
+  id: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -19,20 +24,40 @@ export default {
   argTypes,
 };
 
-const Template = ({ heading, items, classes, attributes }) =>
+const Template = ({
+  title,
+  headingLevel,
+  headingSize,
+  body,
+  text,
+  items,
+  id,
+  classes,
+  attributes,
+}) =>
   Gallery({
     params: {
-      heading,
+      title,
+      headingLevel,
+      headingSize,
+      body,
+      text,
       items,
+      id,
       classes,
       attributes,
     },
   });
 
+const exampleWidth = 600;
+const exampleHeight = 400;
+
 export const Standard = Template.bind({});
 Standard.args = {
-  heading: { title: "My gallery", level: 3 },
-  items: Array(6)
+  title: "My gallery",
+  headingLevel: 3,
+  text: "Lorem ipsum",
+  items: Array(24)
     .fill({
       alt: "",
       width: "",
@@ -40,35 +65,23 @@ Standard.args = {
     })
     .map((item, index) => ({
       ...item,
-      src: `https://picsum.photos/id/${index + 1}/${
-        index % 3 === 0 ? "800/600" : index % 3 === 1 ? "600/600" : "600/800"
+      src: `https://picsum.photos/id/${index + 50}/${
+        index % 3 === 0
+          ? `${exampleWidth}/${exampleHeight}`
+          : index % 3 === 1
+            ? `${exampleWidth}/${exampleWidth}`
+            : `${exampleHeight}/${exampleWidth}`
       }`,
+      width: index % 3 === 0 ? exampleWidth : exampleHeight,
+      height:
+        index % 3 === 0
+          ? exampleHeight
+          : index % 3 === 1
+            ? exampleHeight
+            : exampleWidth,
       alt: `Photo ${index + 1}`,
-      description: `Photo #${index + 1}`,
-      tabs:
-        index === 0
-          ? [
-              {
-                id: "tab-1",
-                title: "Transcript",
-                body: "<p>TEST TRANSCRIPT</p>",
-              },
-              {
-                id: "tab-2",
-                title: "Translation",
-                body: "<p>TEST TRANSLATION</p>",
-              },
-            ]
-          : index === 1
-            ? [
-                {
-                  id: "tab-1",
-                  title: "Transcript",
-                  body: "<p>TEST TRANSCRIPT</p>",
-                },
-              ]
-            : null,
+      description: `This is photo number ${index + 1}`,
     })),
-
+  id: "test",
   classes: "tna-gallery--demo",
 };

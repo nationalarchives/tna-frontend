@@ -8,7 +8,7 @@
 {%- set defaultSiteTitle = 'The National Archives' -%}
 
 <!DOCTYPE html>
-<html lang="{{ htmlLang | default('en') }}" class="tna-template{% if theme and theme != 'light' %} tna-template--{{ theme }}-theme{% endif %}{% if themeAccent %} tna-template--{{ themeAccent }}-accent{% endif %}{% if htmlClasses %} {{ htmlClasses }}{% endif %}"{% for attribute, value in htmlAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<html lang="{{ htmlLang | default('en') }}" class="tna-template{% if theme and theme != 'light' %} tna-template--{{ theme }}-theme{% endif %}{% if themeAccent %} tna-template--{{ themeAccent }}-accent{% endif %}{% if htmlClasses %} {{ htmlClasses }}{% endif %}"{% for attribute, value in htmlAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <head>
     <meta charset="utf-8">
     <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle or defaultSiteTitle }}{% else %}{{ siteTitle or defaultSiteTitle }}{% endif %}{% endblock %}</title>
@@ -37,24 +37,24 @@
 
     {% block stylesheets %}{% endblock %}
   </head>
-    <body class="tna-template__body{% if bodyClasses %} {{ bodyClasses }}{% endif %}"{% for attribute, value in bodyAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  <body class="tna-template__body{% if bodyClasses %} {{ bodyClasses }}{% endif %}"{% for attribute, value in bodyAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
     {% block bodyStart %}
       {% block cookies %}
         {{ tnaCookieBanner({
           cookiesUrl: '#/cookies'
-        }) }}
+        }) | indent(6) }}
       {% endblock %}
       
       {% block skipLink %}
       {{ tnaSkipLink({
         href: 'main-content',
         text: 'Skip to main content'
-      }) }}
+      }) | indent(6) }}
       {% endblock %}
     {% endblock %}
 
     {% block header %}
-      {{ tnaHeader({}) }}
+      {{ tnaHeader({}) | indent(4) }}
     {% endblock %}
 
     {% block main %}
@@ -66,7 +66,7 @@
     {% endblock %}
 
     {% block footer %}
-      {{ tnaFooter({}) }}
+      {{ tnaFooter({}) | indent(4) }}
     {% endblock %}
 
     {% block bodyEnd %}{% endblock %}

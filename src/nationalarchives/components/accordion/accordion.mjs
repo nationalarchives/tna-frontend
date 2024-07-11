@@ -25,7 +25,6 @@ export class Accordion {
 
     $item.classList.add("tna-accordion__details");
     $item.classList.remove("tna-accordion__item");
-    const id = $item.getAttribute("id");
 
     $heading.removeAttribute("class");
 
@@ -38,7 +37,7 @@ export class Accordion {
 
     const $headingButton = document.createElement("button");
     $headingButton.classList.add("tna-accordion__summary");
-    $headingButton.setAttribute("aria-controls", id);
+    $headingButton.setAttribute("aria-controls", $content.id);
     $heading.parentNode.insertBefore($headingButton, $heading.nextSibling);
     $headingButton.appendChild($heading);
 

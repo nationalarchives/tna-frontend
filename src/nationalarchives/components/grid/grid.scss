@@ -13,8 +13,8 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: stretch;
+  justify-content: flex-start;
 
   box-sizing: border-box;
 
@@ -41,8 +41,8 @@
   &--container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: stretch;
     align-items: stretch;
+    justify-content: stretch;
   }
 
   &--align-top {

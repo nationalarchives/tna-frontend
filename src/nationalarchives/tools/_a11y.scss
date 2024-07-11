@@ -13,3 +13,7 @@
 @mixin active-outline {
   outline-offset: 0;
 }
+
+@mixin no-active-outline {
+  outline-offset: a11y.$focus-outline-offset;
+}

@@ -16,8 +16,8 @@
     padding: spacing.space(1) spacing.space(1.5);
 
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     gap: spacing.space(2);
 
     @include colour.colour-border("keyline", 1px);

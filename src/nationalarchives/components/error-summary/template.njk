@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
-<div class="tna-error-summary{% if classes %} {{ classes }}{% endif %}" data-module="tna-error-summary"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}{%- if params.disableAutoFocus !== undefined %} data-disableautofocus="{{ params.disableAutoFocus }}"{% endif %}>
+<div class="tna-error-summary{% if classes %} {{ classes }}{% endif %}" data-module="tna-error-summary"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}{%- if params.disableAutoFocus !== undefined %} data-disableautofocus="{{ params.disableAutoFocus }}"{% endif %}>
   <div role="alert">
     <h{{ params.headingLevel }} class="tna-error-summary__heading tna-heading-m">
       {{ params.title }}

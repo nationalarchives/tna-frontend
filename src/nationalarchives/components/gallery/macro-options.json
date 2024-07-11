@@ -1,29 +1,34 @@
 [
   {
-    "name": "heading",
-    "type": "object",
+    "name": "title",
+    "type": "string",
     "required": true,
-    "description": "",
-    "params": [
-      {
-        "name": "title",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "level",
-        "type": "number",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "size",
-        "type": "string",
-        "required": false,
-        "description": ""
-      }
-    ]
+    "description": "The main title of the gallery."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "default": "m",
+    "description": "The physical size of the gallery title (`xl`, `l`, `m` or `s`)."
+  },
+  {
+    "name": "body",
+    "type": "string",
+    "required": false,
+    "description": "The HTML for the main body of the gallery. Not displayed if `text` is set."
+  },
+  {
+    "name": "text",
+    "type": "string",
+    "required": false,
+    "description": "The text for the gallery which will be inserted into a `<p>` element. Overwrites `body` if it is set."
   },
   {
     "name": "items",
@@ -60,34 +65,14 @@
         "type": "string",
         "required": false,
         "description": ""
-      },
-      {
-        "name": "tabs",
-        "type": "array",
-        "required": true,
-        "description": "",
-        "params": [
-          {
-            "name": "id",
-            "type": "string",
-            "required": true,
-            "description": ""
-          },
-          {
-            "name": "title",
-            "type": "string",
-            "required": true,
-            "description": ""
-          },
-          {
-            "name": "body",
-            "type": "string",
-            "required": true,
-            "description": ""
-          }
-        ]
       }
     ]
+  },
+  {
+    "name": "id",
+    "type": "string",
+    "required": true,
+    "description": "A unique ID for the gallery."
   },
   {
     "name": "classes",

@@ -2,6 +2,6 @@
   {%- set inputClasses = [params.classes] if params.classes else [] -%}
   <input type="date" id="{{ params.id }}" class="tna-date-search{% if params.maxWidth %} tna-date-search--max-width{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}"
   {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}
-  {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
-  {%- for attribute, value in extraAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+  {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}
+  {%- for attribute, value in extraAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
 {%- endmacro -%}

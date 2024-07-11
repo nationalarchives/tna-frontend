@@ -690,64 +690,42 @@ const Template = ({ theme, accent }) => {
           })}
         </div>
       </div>
-      ${Gallery({
-        params: {
-          heading: { title: "My gallery", level: 3 },
-          items: [
-            {
-              src: "https://picsum.photos/id/1/800/600",
-              alt: "",
-              width: 800,
-              height: 600,
-            },
-            {
-              src: "https://picsum.photos/id/2/600/800",
-              alt: "",
-              width: 600,
-              height: 800,
-              description: "Image description",
-            },
-            {
-              src: "https://picsum.photos/id/3/800/800",
-              alt: "",
-              width: 800,
-              height: 800,
-              tabs: [
+      <div class="tna-container">
+        <div class="tna-column tna-column--full">
+          ${Gallery({
+            params: {
+              title: "My gallery",
+              headingLevel: 2,
+              text: "Lorem ipsum",
+              items: [
                 {
-                  id: "gallery-tabs-3-1",
-                  title: "Transcript",
-                  body: "<p>TEST TRANSCRIPT</p>",
+                  alt: "Photo 1",
+                  width: 600,
+                  height: 400,
+                  src: "https://picsum.photos/id/50/600/400",
+                  description: "This is photo number 1",
                 },
                 {
-                  id: "gallery-tabs-3-2",
-                  title: "Translation",
-                  body: "<p>TEST TRANSLATION</p>",
+                  alt: "Photo 2",
+                  width: 400,
+                  height: 400,
+                  src: "https://picsum.photos/id/51/600/600",
+                  description: "This is photo number 2",
+                },
+                {
+                  alt: "Photo 3",
+                  width: 400,
+                  height: 600,
+                  src: "https://picsum.photos/id/52/400/600",
+                  description: "This is photo number 3",
                 },
               ],
+              id: "test-gallery",
+              classes: "tna-gallery--demo",
             },
-            {
-              src: "https://picsum.photos/id/4/800/600",
-              alt: "",
-              width: 800,
-              height: 600,
-              description: "Image description",
-              tabs: [
-                {
-                  id: "gallery-tabs-4-1",
-                  title: "Transcript",
-                  body: "<p>TEST TRANSCRIPT</p>",
-                },
-                {
-                  id: "gallery-tabs-4-2",
-                  title: "Translation",
-                  body: "<p>TEST TRANSLATION</p>",
-                },
-              ],
-            },
-          ],
-          classes: "tna-gallery--demo",
-        },
-      })}
+          })}
+        </div>
+      </div>
       <div class="tna-section">
         ${IndexGrid({
           params: {

@@ -18,9 +18,11 @@
   {%- set containerClasses = containerClasses.concat('tna-button--icon-right') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
-<{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button{% if classes %} {{ classes }}{% endif %}"{%- if params.buttonElement %} type="{{ params.buttonType or 'button' }}"{% endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<{{ 'button' if params.buttonElement else 'a' }}{%- if not params.buttonElement %} href="{{ params.href }}"{%- endif %} class="tna-button{% if classes %} {{ classes }}{% endif %}"{%- if params.buttonElement %} type="{{ params.buttonType or 'button' }}"{% endif -%}{%- if params.title %} title="{{ params.title }}"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {% if params.icon -%}
   <i class="fa-solid fa-{{ params.icon }}" aria-hidden="true"></i>
+  {% elif params.iconSvg -%}
+  {{ params.iconSvg | safe }}
   {% endif -%}
   {{ params.text }}
 </{{ 'button' if params.buttonElement else 'a' }}>

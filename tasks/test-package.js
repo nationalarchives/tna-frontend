@@ -154,6 +154,11 @@ const checkExists = [
   "nationalarchives/templates/index-grid.njk",
   "nationalarchives/templates/list.njk",
   "nationalarchives/templates/plain.njk",
+  // Config
+  "config/.babelrc.json",
+  "config/.eslintrc.js",
+  "config/.htmlvalidate.json",
+  "config/stylelint.config.js",
 ];
 
 console.log(`Testing package file structure`);

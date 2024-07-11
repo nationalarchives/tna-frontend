@@ -5,6 +5,6 @@
 {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
 {%- if params.autofill %} autofill="{{ params.autofill }}"{% endif %}
 {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
-{%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}
-{%- for attribute, value in extraAttributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}
+{%- for attribute, value in extraAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
 {%- endmacro %}

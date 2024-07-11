@@ -1,6 +1,6 @@
 [
   {
-    "name": "heading",
+    "name": "title",
     "type": "string",
     "required": true,
     "description": ""

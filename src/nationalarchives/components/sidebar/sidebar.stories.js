@@ -2,7 +2,7 @@ import Sidebar from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
-  heading: { control: "text" },
+  title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
   items: { control: "object" },
@@ -24,7 +24,7 @@ export default {
 };
 
 const Template = ({
-  heading,
+  title,
   headingLevel,
   headingSize,
   items,
@@ -35,7 +35,7 @@ const Template = ({
 }) =>
   Sidebar({
     params: {
-      heading,
+      title,
       headingLevel,
       headingSize,
       items,
@@ -48,8 +48,8 @@ const Template = ({
 
 export const Contents = Template.bind({});
 Contents.args = {
+  title: "Contents",
   headingLevel: 2,
-  heading: "Contents",
   items: [
     {
       text: "Accessibility statement",
@@ -108,7 +108,7 @@ Contents.args = {
 
 export const Sections = Template.bind({});
 Sections.args = {
-  heading: "On this page",
+  title: "On this page",
   headingLevel: 2,
   items: [
     {
@@ -163,7 +163,7 @@ Sections.args = {
 
 export const Pages = Template.bind({});
 Pages.args = {
-  heading: "Components",
+  title: "Components",
   headingLevel: 2,
   items: [
     {

@@ -1,116 +1,378 @@
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-gallery {
-  @include colour.contrast;
+  min-height: 100dvh;
+  max-height: 200dvh;
 
-  padding-bottom: spacing.space(2);
+  display: grid;
+  grid-template: min-content min-content 1fr / 2fr 1fr;
+  gap: 0 spacing.space(1);
+
+  @include colour.tint;
+
+  border-radius: 0.1px;
+
+  &:active {
+    @include a11y.no-active-outline;
+  }
 
   &__header {
-    padding-top: spacing.space(2);
+    padding: spacing.space(1);
+
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    display: flex;
+    gap: spacing.space(2);
+  }
+
+  &__header-inner {
+    flex: 1;
+  }
+
+  &__options {
+    margin-top: 0;
+
+    align-items: flex-start;
+
+    justify-content: flex-end;
+
+    flex: 1;
+
+    .tna-button {
+      white-space: nowrap;
+    }
+  }
+
+  &__items,
+  &__navigation-buttons {
+    grid-column: 1 / 3;
+    grid-row: 2;
   }
 
   &__items {
-    width: 100%;
+    position: relative;
+    z-index: 1;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: spacing.space(3);
+    border-radius: 0.1px;
 
-    &:focus {
-      outline: none !important;
+    .tna-template--clicked &:focus {
+      outline: none;
     }
   }
 
   &__item {
-    margin: 0;
-
-    &-index {
-      padding-bottom: spacing.space(1);
-
-      text-align: center;
-    }
-
-    &-figure {
-    }
-
-    &-image {
-      height: auto;
-      margin: 0 auto;
-    }
-
-    &-description {
-      margin-top: spacing.space(1);
-      padding: spacing.space(0.5) 0 spacing.space(0.5) spacing.space(1);
-
-      @include colour.colour-border("keyline-dark", 4px, solid, left);
-    }
-
-    &-tabs {
-      @include media.on-smaller-than-large {
-        padding-top: spacing.space(2);
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
   }
 
-  &__item + &__item {
-    @include colour.colour-border("keyline", 1px, solid, top);
-  }
+  &__item-header {
+    padding: spacing.space(1);
 
-  &__toggle-wrapper {
+    line-height: 1;
     text-align: center;
+
+    @include typography.main-font-weight-bold;
+    @include typography.font-size(16);
   }
 
-  &__toggle {
-    margin-top: spacing.space(2);
+  &__item-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: spacing.space(1);
   }
 
-  &--touchable {
-    .tna-gallery__items {
-      flex-flow: row nowrap;
+  &__item-figure-inner {
+    width: 100%;
+    max-height: 50vh;
 
-      gap: spacing.space(6);
+    position: relative;
 
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
+    @include colour.contrast;
+  }
+
+  &__item-image {
+    margin: 0 auto;
+  }
+
+  &__item-description {
+    margin: 0 spacing.space(1) spacing.space(1);
+    padding: spacing.space(0.5) spacing.space(1);
+
+    align-self: flex-start;
+
+    @include colour.thick-keyline-dark(left);
+  }
+
+  &__navigation-buttons {
+    width: 100%;
+    max-height: 50vh;
+
+    position: relative;
+    top: 3rem;
+    z-index: 2;
+
+    aspect-ratio: 3 / 2;
+
+    pointer-events: none;
+
+    .tna-template--touched & {
+      display: none;
+    }
+  }
+
+  &__navigation-button {
+    width: 25%;
+    padding: 0;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    border: none;
+
+    opacity: 0;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    @include colour.colour-font("base-dark");
+
+    @include colour.tint;
+
+    svg {
+      height: 5vw;
+      margin: 0 auto;
+
+      display: block;
+
+      fill: currentColor;
     }
 
-    .tna-gallery__item {
-      width: 100%;
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
 
-      scroll-snap-align: center;
-      flex: none;
+  &__navigation-prev {
+    padding-right: 10%;
+
+    left: 0;
+
+    background: linear-gradient(
+      90deg,
+      var(--background) 15%,
+      rgb(0 0 0 / 0%) 100%
+    );
+  }
+
+  &__navigation-next {
+    padding-left: 10%;
+
+    right: 0;
+
+    background: linear-gradient(
+      270deg,
+      var(--background) 15%,
+      rgb(0 0 0 / 0%) 100%
+    );
+  }
+
+  &__navigation {
+    padding: spacing.space(1);
+
+    grid-column: 1 / 3;
+    grid-row: 3;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: min-content;
+    gap: spacing.space(1);
+
+    overflow: auto;
+  }
+
+  &__navigation-item {
+    aspect-ratio: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    position: relative;
+
+    border: none;
+
+    @include colour.contrast;
+
+    cursor: pointer;
+
+    &:hover {
+      &::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+
+        @include colour.thick-keyline-accent;
+      }
     }
 
-    &.tna-gallery--collapsed {
-      .tna-gallery__items {
-        overflow: auto;
+    &[aria-selected="true"] {
+      @include colour.accent;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+
+        @include colour.thick-keyline-brand("", "black");
       }
     }
   }
 
-  &--collapsed &__item + &__item,
-  &--collapsed &__item:first-child &__item-description,
-  &--collapsed &__item:first-child &__item-tabs {
+  &__navigation-item-image {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+  }
+
+  &__navigation-item-label {
+    padding: spacing.space(0.25) spacing.space(0.75);
+
+    display: inline-block;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+
+    @include colour.colour-font("font-dark");
+    @include typography.font-size(36);
+    @include typography.main-font-weight-bold;
+    text-transform: capitalize;
+
+    @include colour.colour-background("background");
+  }
+
+  &--js &__item-figure-inner {
+    aspect-ratio: 3 / 2;
+  }
+
+  &--js &__item-image {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    object-fit: contain;
+  }
+
+  @include media.on-medium {
+    &__navigation {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__navigation-item-label {
+      @include typography.font-size(30);
+    }
+  }
+
+  @include media.on-mobile {
+    &__navigation {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @include media.on-tiny {
+    &__options {
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
+    &__navigation-item-label {
+      @include typography.font-size(24);
+    }
+  }
+
+  &--fullscreen {
+    max-height: 100dvh;
+  }
+
+  &--fullscreen &__header-inner {
     display: none;
   }
 
-  &--collapsed &__item-figure {
-    width: 100%;
+  &--fullscreen &__item-description {
+    max-height: 4.5rem;
+
+    overflow: auto;
   }
 
-  @include colour.on-high-contrast {
-    &__items {
+  // @media (display-mode: fullscreen) and (aspect-ratio >= 1/1), (display-mode: fullscreen) and (orientation: landscape) {
+  @media (aspect-ratio >= 1/1) {
+    &--fullscreen &__header {
+      grid-column: 2 / 3;
+      // padding-bottom: spacing.space(0.5);
     }
 
-    &__item {
-      &-index {
+    &--fullscreen &__options {
+      .tna-button[value="show-index"] {
+        display: none;
       }
+    }
 
-      &-description {
-      }
+    &--fullscreen &__items,
+    &--fullscreen &__navigation-buttons {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+    }
+
+    &--fullscreen &__item {
+      height: 100%;
+    }
+
+    &--fullscreen &__item-header {
+      // padding-top: spacing.space(0.5);
+      // padding-bottom: spacing.space(0.5);
+    }
+
+    &--fullscreen &__item-figure {
+      flex: 1;
+    }
+
+    &--fullscreen &__item-figure-inner,
+    &--fullscreen &__navigation-buttons {
+      max-height: none;
+      flex: 1;
+      aspect-ratio: auto;
+    }
+
+    &--fullscreen &__navigation {
+      // padding-top: spacing.space(0.5);
+      padding-top: 0;
+      padding-left: 0;
+
+      grid-column: 2 / 3;
+      grid-row: 2 / 4;
+
+      // grid-template-columns: repeat(3, minmax(8rem, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      gap: spacing.space(0.5);
     }
   }
 }

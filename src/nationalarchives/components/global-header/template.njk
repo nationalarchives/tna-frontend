@@ -3,7 +3,7 @@
   {%- set containerClasses = containerClasses.concat('tna-global-header--collapse-on-medium') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
-<header class="tna-global-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+<header class="tna-global-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-container tna-global-header__main">
     <div class="tna-column tna-column--flex-1 tna-column--order-2">
       <span class="tna-global-header__logo-wrapper">

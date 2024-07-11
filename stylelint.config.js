@@ -38,6 +38,7 @@ module.exports = {
             "min-height",
             "height",
             "max-height",
+            "aspect-ratio",
             "margin",
             "margin-top",
             "margin-right",

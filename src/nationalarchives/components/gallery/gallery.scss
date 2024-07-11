@@ -114,12 +114,11 @@
   &__navigation-buttons {
     width: 100%;
     max-height: 50vh;
+    aspect-ratio: 3 / 2;
 
     position: relative;
     top: 3rem;
     z-index: 2;
-
-    aspect-ratio: 3 / 2;
 
     pointer-events: none;
 
@@ -201,18 +200,17 @@
   }
 
   &__navigation-item {
-    aspect-ratio: 1;
-
     min-width: 0;
     min-height: 0;
+    aspect-ratio: 1;
 
     position: relative;
 
     border: none;
 
-    @include colour.contrast;
-
     cursor: pointer;
+
+    @include colour.contrast;
 
     &:hover {
       &::after {
@@ -359,6 +357,7 @@
     &--fullscreen &__navigation-buttons {
       max-height: none;
       flex: 1;
+
       aspect-ratio: auto;
     }
 

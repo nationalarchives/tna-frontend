@@ -14,7 +14,7 @@ runs:
       run: npm ci
       shell: bash
     - name: Build package
-      run: npm run build:package
+      run: sh ./tasks/build-package.sh
       shell: bash
     - name: Test built package
       run: npm run test:package || exit 1

@@ -86,7 +86,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build package
-        run: npm run build:package
+        run: sh ./tasks/build-package.sh
       - name: Check npm credentials
         run: npm whoami
       - name: Publish to npm

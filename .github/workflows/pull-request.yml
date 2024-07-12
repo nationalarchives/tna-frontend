@@ -41,7 +41,7 @@ jobs:
           externals: |
             - (.storybook|src)/**
       - uses: chromaui/action@v1
-        if: ${{ inputs.onlyChanged == 'false' }}
+        if: ${{ inputs.onlyChanged != 'true' }}
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook

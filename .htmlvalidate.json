@@ -1,10 +1,17 @@
 {
-  "extends": ["html-validate:recommended"],
+  "extends": [
+    "html-validate:recommended",
+    "html-validate:standard",
+    "html-validate:a11y"
+  ],
   "rules": {
-    "close-order": "error",
-    "form-dup-name": 0,
-    "no-inline-style": 0,
-    "no-redundant-role": 0,
+    "form-dup-name": [
+      0,
+      {
+        "allowArrayBrackets": true,
+        "shared": ["radio", "checkbox"]
+      }
+    ],
     "no-trailing-whitespace": 0
   }
 }

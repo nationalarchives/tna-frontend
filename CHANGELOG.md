@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Increased maximum depth of contents sidebar to three levels
 - Removed the redundant `role` attribute from `<fieldset>` of the date input component
+- Allow each item in a checkboxes component to have a `name` attribute that will override the main `name`
 
 ### Deprecated
 ### Removed

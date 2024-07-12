@@ -74,7 +74,7 @@ runs:
         echo "\n{% block bodyEnd %}" >> prototype/app/views/index.html &&
         echo "{{ tnaAccordion({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaBreadcrumbs({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaButton({text:\"I am a button\",url:\"#\"}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaButton({text:\"I am a button\",href:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCheckboxes({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCompoundFilters({}) }}" >> prototype/app/views/index.html &&

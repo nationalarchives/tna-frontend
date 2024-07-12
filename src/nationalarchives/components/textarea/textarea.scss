@@ -32,7 +32,7 @@ $textarea-vertical-padding: 0.25 !default;
   @include colour.colour-border("input-border", forms.$form-field-border-width);
 
   .tna-form__group--error & {
-    @include colour.colour-border("form-error");
+    @include colour.colour-border("form-error-border");
   }
 
   &--m {

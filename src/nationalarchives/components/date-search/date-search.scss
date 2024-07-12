@@ -22,7 +22,7 @@
   border-radius: 0;
 
   .tna-form__group--error & {
-    @include colour.colour-border("form-error");
+    @include colour.colour-border("form-error-border");
   }
 
   &--max-width {

@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - SCSS mixin `colour.light` changed to `colour.always-light`
 - Index grid items within contrast blocks are now accented
 - Colour variables `--button-accent-text` and `--button-accent-background` have changed to `--button-accented-text` and `--button-accented-background`
+- Colour variable `form-error` split into `form-error-border` and `form-error-text`
 
 ### Deprecated
 

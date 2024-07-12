@@ -13,9 +13,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Increased maximum depth of contents sidebar to three levels
 - Removed the redundant `role` attribute from `<fieldset>` of the date input component
 - Allow each item in a checkboxes component to have a `name` attribute that will override the main `name`
+- Renamed "files" component to "files list" (`files` -> `files-list`, `tnaFiles()` -> `tnaFilesList()`)
+- Renamed "featured records" component to "records list" (`featured-records` -> `records-list`, `tnaFeaturedRecords()` -> `tnaRecordsList()`)
 
 ### Deprecated
 ### Removed
+
+- Removed search filters component
+- Removed sensitive image component
+
 ### Fixed
 
 - Added missing space above files list

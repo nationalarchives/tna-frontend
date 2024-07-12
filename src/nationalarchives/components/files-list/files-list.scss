@@ -3,7 +3,7 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.tna-files {
+.tna-files-list {
   @include spacing.space-above;
   padding: spacing.space(1);
 

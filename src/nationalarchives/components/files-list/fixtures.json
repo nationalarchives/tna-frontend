@@ -1,5 +1,5 @@
 {
-  "component": "files",
+  "component": "files list",
   "fixtures": [
     {
       "name": "default",

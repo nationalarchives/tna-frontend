@@ -1,4 +1,4 @@
-import FeaturedRecords from "./template.njk";
+import RecordsList from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
@@ -14,12 +14,12 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Featured records",
+  title: "Components/Records list",
   argTypes,
 };
 
 const Template = ({ items, classes, attributes }) =>
-  FeaturedRecords({
+  RecordsList({
     params: {
       items,
       classes,
@@ -46,5 +46,5 @@ Standard.args = {
       date: "1819",
     },
   ],
-  classes: "tna-featured-records--demo",
+  classes: "tna-records-list--demo",
 };

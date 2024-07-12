@@ -1,8 +1,8 @@
 {
-  "component": "featured-records",
+  "component": "records list",
   "fixtures": [
     {
-      "name": "basic featured records",
+      "name": "basic records list",
       "options": {
         "items": [
           {
@@ -22,7 +22,7 @@
       "html": "<ul class=\"tna-featured-records\"><li class=\"tna-featured-records__item\"><dl class=\"tna-featured-records__details\"><dt class=\"tna-featured-records__collection-label tna-chip tna-chip--plain\">From our collection</dt><dd class=\"tna-featured-records__collection-description tna-chip tna-chip--plain\">TS 11/45/167</dd><dt class=\"tna-featured-records__title-label\">Title</dt><dd class=\"tna-featured-records__title-description\"><a href=\"#\">Court records relating to Robert Wedderburn&#39;s trial</a></dd><dt class=\"tna-featured-records__date-label\">Date</dt><dd class=\"tna-featured-records__date-description\">1819–1820</dd></dl></li><li class=\"tna-featured-records__item\"><dl class=\"tna-featured-records__details\"><dt class=\"tna-featured-records__collection-label tna-chip tna-chip--plain\">From our collection</dt><dd class=\"tna-featured-records__collection-description tna-chip tna-chip--plain\">HO 42/191</dd><dt class=\"tna-featured-records__title-label\">Title</dt><dd class=\"tna-featured-records__title-description\"><a href=\"#\">Home office letters</a></dd><dt class=\"tna-featured-records__date-label\">Date</dt><dd class=\"tna-featured-records__date-description\">1819</dd></dl></li></ul>"
     },
     {
-      "name": "featured records with images",
+      "name": "records list with images",
       "options": {
         "items": [
           {

@@ -4,7 +4,6 @@ import Button from "../../../components/button/template.njk";
 import Card from "../../../components/card/template.njk";
 import Checkboxes from "../../../components/checkboxes/template.njk";
 import ErrorSummary from "../../../components/error-summary/template.njk";
-import FeaturedRecords from "../../../components/featured-records/template.njk";
 import Footer from "../../../components/footer/template.njk";
 import Gallery from "../../../components/gallery/template.njk";
 import GlobalHeader from "../../../components/global-header/template.njk";
@@ -14,6 +13,7 @@ import Pagination from "../../../components/pagination/template.njk";
 import PhaseBanner from "../../../components/phase-banner/template.njk";
 import Picture from "../../../components/picture/template.njk";
 import Radios from "../../../components/radios/template.njk";
+import RecordsList from "../../../components/records-list/template.njk";
 import SearchField from "../../../components/search-field/template.njk";
 import Select from "../../../components/select/template.njk";
 import SkipLink from "../../../components/skip-link/template.njk";
@@ -453,7 +453,7 @@ const Template = ({ theme, accent }) => {
           <h2 class="tna-heading-l">
             Featured records
           </h2>
-          ${FeaturedRecords({
+          ${RecordsList({
             params: {
               items: [
                 {
@@ -472,7 +472,7 @@ const Template = ({ theme, accent }) => {
                   date: "1819",
                 },
               ],
-              classes: "tna-featured-records--demo",
+              classes: "tna-records-list--demo",
             },
           })}
           <h2 class="tna-heading-l">

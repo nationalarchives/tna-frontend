@@ -9,8 +9,7 @@
 @use "date-search";
 @use "details";
 @use "error-summary";
-@use "featured-records";
-@use "files";
+@use "files-list";
 @use "footer";
 @use "gallery";
 @use "global-header";
@@ -23,9 +22,8 @@
 @use "picture";
 @use "quick-filters";
 @use "radios";
-@use "sensitive-image";
+@use "records-list";
 @use "search-field";
-@use "search-filters";
 @use "select";
 @use "sidebar";
 @use "skip-link";

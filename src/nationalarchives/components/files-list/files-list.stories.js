@@ -14,7 +14,7 @@ Object.keys(argTypes).forEach((argType) => {
 });
 
 export default {
-  title: "Components/Files",
+  title: "Components/Files list",
   argTypes,
 };
 
@@ -55,5 +55,5 @@ Default.args = {
       fileExtent: "200 pages",
     },
   ],
-  classes: "tna-files--demo",
+  classes: "tna-files-list--demo",
 };

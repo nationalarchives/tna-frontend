@@ -17,16 +17,16 @@
         <dd>
           <span class="tna-dl-chips__item">{{ item.fileSize }}</span>
         </dd>
-        {% if item.fileExtent %}
+        {%- if item.fileExtent %}
         <dt>Extent</dt>
         <dd>
           <span class="tna-dl-chips__item">{{ item.fileExtent }}</span>
         </dd>
-        {% endif %}
+        {%- endif %}
       </dl>
-      {% if item.description %}
+      {%- if item.description %}
       <p class="tna-files__item-description">{{ item.description }}</p>
-      {% endif %}
+      {%- endif %}
     </li>
     {%- endfor %}
   </ul>

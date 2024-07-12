@@ -32,10 +32,18 @@ jobs:
       - name: Build Storybook
         run: npm run build:storybook:tests
       - uses: chromaui/action@v1
+        if: inputs.onlyChanged
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook
           exitZeroOnChanges: true
-          onlyChanged: ${{ inputs.onlyChanged }}
+          onlyChanged: true
           externals: |
             - (.storybook|src)/**
+      - uses: chromaui/action@v1
+        if: !inputs.onlyChanged
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook
+          exitZeroOnChanges: true
+          onlyChanged: false

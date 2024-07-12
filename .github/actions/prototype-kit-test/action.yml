@@ -15,7 +15,7 @@ runs:
       shell: bash
     - name: Build package
       run: >
-        sh ./tasks/build-package.sh &&
+        npm run build:package &&
         cd package &&
         npm pack --pack-destination .
       shell: bash

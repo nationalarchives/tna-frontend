@@ -85,14 +85,14 @@ $button-border-width: 4px !default;
   }
 
   &--accent {
-    @include colour.colour-background("button-accent-background");
+    @include colour.colour-background("button-accented-background");
 
-    @include colour.colour-border("button-accent-background");
+    @include colour.colour-border("button-accented-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("button-accent-text");
+      @include colour.colour-font("button-accented-text");
     }
 
     &:hover {
@@ -185,22 +185,22 @@ $button-border-width: 4px !default;
   }
 
   .tna-background-accent &--accent {
-    @include colour.plain;
+    @include colour.always-light;
 
-    @include colour.colour-background("background");
+    @include colour.colour-background("button-background");
 
-    @include colour.colour-border("background");
+    @include colour.colour-border("button-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("font-dark");
+      @include colour.colour-font("button-text");
     }
 
     &:hover {
-      @include colour.colour-font("background");
+      @include colour.colour-font("font-dark");
 
-      @include colour.colour-background("font-dark");
+      @include colour.colour-background("background");
     }
   }
 

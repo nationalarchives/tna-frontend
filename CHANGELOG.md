@@ -15,8 +15,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allow each item in a checkboxes component to have a `name` attribute that will override the main `name`
 - Renamed "files" component to "files list" (`files` -> `files-list`, `tnaFiles()` -> `tnaFilesList()`)
 - Renamed "featured records" component to "records list" (`featured-records` -> `records-list`, `tnaFeaturedRecords()` -> `tnaRecordsList()`)
+- SCSS mixin `colour.light` changed to `colour.always-light`
+- Index grid items within contrast blocks are now accented
+- Colour variables `--button-accent-text` and `--button-accent-background` have changed to `--button-accented-text` and `--button-accented-background`
+
 
 ### Deprecated
+
+- Removed `colour.plain` SCSS mixin
+
 ### Removed
 
 - Removed search filters component

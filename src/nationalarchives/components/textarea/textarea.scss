@@ -24,7 +24,7 @@ $textarea-vertical-padding: 0.25 !default;
 
   resize: vertical;
 
-  @include colour.light;
+  @include colour.always-light;
   @include colour.colour-font("input-foreground");
 
   @include colour.colour-background("input-background");

@@ -1,7 +1,7 @@
 @use "../tools/colour";
 
 .tna-template {
-  @include colour.light;
+  @include colour.always-light;
 
   @include colour.colour-background("background");
 

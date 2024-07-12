@@ -78,6 +78,12 @@ Contents.args = {
         {
           text: "Disproportionate burden",
           href: "#",
+          children: [
+            {
+              text: "Disproportionate burden explained",
+              href: "#",
+            },
+          ],
         },
         {
           text: "Content that’s not within the scope of the accessibility regulations",

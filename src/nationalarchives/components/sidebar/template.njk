@@ -23,6 +23,15 @@
         {%- for child in item.children %}
         <li class="tna-sidebar__item-child">
           <a href="{{ child.href }}" class="tna-sidebar__link">{{ child.text }}</a>
+          {%- if child.children and params.type == "contents" %}
+          <ul class="tna-sidebar__item-children">
+            {%- for grandchild in child.children %}
+            <li class="tna-sidebar__item-child">
+              <a href="{{ grandchild.href }}" class="tna-sidebar__link">{{ grandchild.text }}</a>
+            </li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
         </li>
         {%- endfor %}
       </ul>

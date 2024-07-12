@@ -25,11 +25,7 @@ import Warning from "../../../components/warning/template.njk";
 const argTypes = {
   theme: {
     control: "radio",
-    options: [
-      "system",
-      "light",
-      "dark",
-    ],
+    options: ["system", "light", "dark"],
   },
   accent: {
     control: "radio",

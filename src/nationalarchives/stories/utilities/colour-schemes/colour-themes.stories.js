@@ -29,8 +29,6 @@ const argTypes = {
       "system",
       "light",
       "dark",
-      // "light high-contrast",
-      // "dark high-contrast",
     ],
   },
   accent: {
@@ -1486,28 +1484,7 @@ Light.args = {
 };
 
 export const Dark = Template.bind({});
-Dark.parameters = {
-  chromatic: { disableSnapshot: true },
-};
 Dark.args = {
   theme: "dark",
   accent: "pink",
 };
-
-// export const LightHighContrast = Template.bind({});
-// LightHighContrast.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// LightHighContrast.args = {
-//   theme: "light high-contrast",
-//   accent: "pink",
-// };
-
-// export const DarkHighContrast = Template.bind({});
-// DarkHighContrast.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// DarkHighContrast.args = {
-//   theme: "dark high-contrast",
-//   accent: "pink",
-// };

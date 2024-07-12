@@ -5,6 +5,13 @@ on:
     types:
       - opened
       - synchronize
+  workflow_dispatch:
+    inputs:
+      onlyChanged:
+        type: boolean
+        description: Test all stories on Chromatic
+        required: false
+        default: false
 
 concurrency:
   group: pull-request-${{ github.ref }}
@@ -29,6 +36,6 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           storybookBuildDir: storybook
           exitZeroOnChanges: true
-          onlyChanged: true
+          onlyChanged: ${{ inputs.onlyChanged }}
           externals: |
             - (.storybook|src)/**

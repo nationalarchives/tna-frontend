@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added missing space above files list
 - Fixed alignment of warning text when a short body is used
 - Incorrect `aria-labeledby` attribute changed to `aria-labelledby` in gallery items
+- Add better labels for buttons in gallery component
 
 ### Security
 

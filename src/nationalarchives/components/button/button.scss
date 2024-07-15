@@ -185,7 +185,7 @@ $button-border-width: 4px !default;
   }
 
   .tna-background-accent &--accent {
-    @include colour.always-light;
+    @include colour.contrast;
 
     @include colour.colour-background("button-background");
 

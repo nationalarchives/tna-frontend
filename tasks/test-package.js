@@ -129,7 +129,6 @@ const checkExists = [
   "nationalarchives/utilities/_global.scss",
   "nationalarchives/utilities/grid/_index.scss",
   "nationalarchives/utilities/grid/fixtures.json",
-  "nationalarchives/utilities/grid/grid.stories.js",
   "nationalarchives/utilities/grid/macro-options.json",
   "nationalarchives/utilities/grid/macro.njk",
   "nationalarchives/utilities/grid/template.njk",

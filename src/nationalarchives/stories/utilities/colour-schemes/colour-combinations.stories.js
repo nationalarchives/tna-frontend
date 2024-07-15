@@ -12,27 +12,25 @@ export default {
   argTypes,
 };
 
+const accents = [
+  "",
+  "tna-accent-pink",
+  "tna-accent-orange",
+  "tna-accent-yellow",
+  "tna-accent-green",
+  "tna-accent-blue",
+  "tna-accent-black",
+];
+
+const blocks = [
+  "",
+  "tna-background-tint",
+  "tna-background-contrast",
+  "tna-background-accent",
+  "tna-background-accent-light",
+];
+
 const Template = ({ theme }) => {
-  const themeSlug = theme.replace(" ", "-").toLowerCase();
-
-  const accents = [
-    "",
-    "tna-accent-pink",
-    "tna-accent-orange",
-    "tna-accent-yellow",
-    "tna-accent-green",
-    "tna-accent-blue",
-    "tna-accent-black",
-  ];
-
-  const blocks = [
-    "",
-    "tna-background-tint",
-    "tna-background-contrast",
-    "tna-background-accent",
-    "tna-background-accent-light",
-  ];
-
   return `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
     <div class="tna-colour-contrast-demo__block">
@@ -126,98 +124,6 @@ const Template = ({ theme }) => {
               </span>
             </dd>
           </dl>
-          ${ErrorSummary({
-            params: {
-              title: "Error",
-              headingLevel: 2,
-              items: [
-                {
-                  text: "Error",
-                  href: `name-${themeSlug}-${block}-${accent}-2`,
-                },
-              ],
-              disableAutoFocus: true,
-              classes: "tna-!--margin-top-s",
-            },
-          })}
-          ${TextInput({
-            params: {
-              label: "Input",
-              id: `name-${themeSlug}-${block}-${accent}`,
-              name: `name-${themeSlug}-${block}-${accent}`,
-              value: `Lorem ipsum`,
-            },
-          })}
-          ${TextInput({
-            params: {
-              label: "Input",
-              id: `name-${themeSlug}-${block}-${accent}-2`,
-              name: `name-${themeSlug}-${block}-${accent}-2`,
-              value: `Lorem ipsum`,
-              error: {
-                text: "Error",
-              },
-            },
-          })}
-          ${Checkboxes({
-            params: {
-              id: `categories-${themeSlug}-${block}-${accent}`,
-              name: `categories-${themeSlug}-${block}-${accent}`,
-              items: [
-                {
-                  text: "Alpha",
-                  value: "alpha",
-                },
-                {
-                  text: "Beta",
-                  value: "beta",
-                  checked: true,
-                },
-              ],
-              small: true,
-              inline: true,
-            },
-          })}
-          ${Radios({
-            params: {
-              id: `type-${themeSlug}-${block}-${accent}`,
-              name: `type-${themeSlug}-${block}-${accent}`,
-              items: [
-                {
-                  text: "Alpha",
-                  value: "alpha",
-                },
-                {
-                  text: "Beta",
-                  value: "beta",
-                },
-              ],
-              selected: "beta",
-              small: true,
-              inline: true,
-            },
-          })}
-          ${Select({
-            params: {
-              label: "Select",
-              id: `sort-${themeSlug}-${block}-${accent}`,
-              name: `sort-${themeSlug}-${block}-${accent}`,
-              items: [
-                {
-                  text: "Relevance",
-                  value: "relevance",
-                },
-                {
-                  text: "Date",
-                  value: "date",
-                },
-                {
-                  text: "Title",
-                  value: "title",
-                },
-              ],
-            },
-          })}
           <div class="tna-button-group">
             ${Button({
               params: {
@@ -252,42 +158,185 @@ const Template = ({ theme }) => {
 </div>`;
 };
 
-export const Light = Template.bind({});
-Light.parameters = {
-  a11y: {
-    // disable: true,
-  },
+const FormsTemplate = ({ theme }) => {
+  const themeSlug = theme.replace(" ", "-").toLowerCase();
+
+  const formBlocks = blocks.filter(
+    (block) =>
+      block !== "tna-background-contrast" &&
+      block !== "tna-background-accent" &&
+      block !== "tna-background-accent-light",
+  );
+  console.log(formBlocks);
+
+  return `<div class="tna-colour-contrast-demo">
+  <div class="tna-colour-contrast-demo__header">
+    <div class="tna-colour-contrast-demo__block">
+      Blocks
+    </div>
+    ${formBlocks.reduce(
+      (blockOutput, block) =>
+        `${blockOutput}<div class="tna-colour-contrast-demo__block">
+      ${block.replace(/^tna-background-/, "") || "Base"}
+    </div>`,
+      "",
+    )}
+  </div>
+  <div class="tna-colour-contrast-demo__examples">
+    <div class="tna-colour-contrast-demo__theme-accent">
+      <div class="tna-colour-contrast-demo__example">
+        <p>Accent: <strong>Any</strong></p>
+      </div>
+      ${formBlocks.reduce(
+        (
+          blockOutput,
+          block,
+        ) => `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme}">
+        <div class="tna-template__body">
+          <div class="tna-colour-contrast-demo__example-content ${block}">
+            ${ErrorSummary({
+              params: {
+                title: "Error",
+                headingLevel: 2,
+                headingSize: "s",
+                items: [
+                  {
+                    text: "Error",
+                    href: `name-${themeSlug}-${block}-2`,
+                  },
+                ],
+                disableAutoFocus: true,
+                classes: "tna-!--margin-top-s",
+              },
+            })}
+            ${TextInput({
+              params: {
+                headingLevel: 3,
+                headingSize: "s",
+                label: "Input",
+                id: `name-${themeSlug}-${block}`,
+                name: `name-${themeSlug}-${block}`,
+                value: `Lorem ipsum`,
+              },
+            })}
+            ${TextInput({
+              params: {
+                label: "Input",
+                headingLevel: 3,
+                headingSize: "s",
+                id: `name-${themeSlug}-${block}-2`,
+                name: `name-${themeSlug}-${block}-2`,
+                value: `Lorem ipsum`,
+                error: {
+                  text: "Error",
+                },
+              },
+            })}
+            ${Checkboxes({
+              params: {
+                id: `categories-${themeSlug}-${block}`,
+                name: `categories-${themeSlug}-${block}`,
+                items: [
+                  {
+                    text: "Alpha",
+                    value: "alpha",
+                  },
+                  {
+                    text: "Beta",
+                    value: "beta",
+                    checked: true,
+                  },
+                ],
+                small: true,
+                inline: true,
+              },
+            })}
+            ${Radios({
+              params: {
+                id: `type-${themeSlug}-${block}`,
+                name: `type-${themeSlug}-${block}`,
+                items: [
+                  {
+                    text: "Alpha",
+                    value: "alpha",
+                  },
+                  {
+                    text: "Beta",
+                    value: "beta",
+                  },
+                ],
+                selected: "beta",
+                small: true,
+                inline: true,
+              },
+            })}
+            ${Select({
+              params: {
+                label: "Select",
+                id: `sort-${themeSlug}-${block}`,
+                name: `sort-${themeSlug}-${block}`,
+                items: [
+                  {
+                    text: "Relevance",
+                    value: "relevance",
+                  },
+                  {
+                    text: "Date",
+                    value: "date",
+                  },
+                  {
+                    text: "Title",
+                    value: "title",
+                  },
+                ],
+              },
+            })}
+          </div>
+        </div>
+      </div>`,
+        "",
+      )}
+    </div>
+  </div>
+</div>`;
 };
+
+export const Light = Template.bind({});
 Light.args = {
   theme: "",
 };
 
 export const Dark = Template.bind({});
-Dark.parameters = {
-  a11y: {
-    // disable: true,
-  },
-};
 Dark.args = {
   theme: "tna-template--dark-theme",
 };
 
 export const HighContrast = Template.bind({});
-HighContrast.parameters = {
-  a11y: {
-    // disable: true,
-  },
-};
 HighContrast.args = {
   theme: "tna-template--high-contrast-theme",
 };
 
 export const DarkHighContrast = Template.bind({});
-DarkHighContrast.parameters = {
-  a11y: {
-    // disable: true,
-  },
-};
 DarkHighContrast.args = {
+  theme: "tna-template--dark-theme tna-template--high-contrast-theme",
+};
+
+export const LightForms = FormsTemplate.bind({});
+LightForms.args = {
+  theme: "",
+};
+
+export const DarkForms = FormsTemplate.bind({});
+DarkForms.args = {
+  theme: "tna-template--dark-theme",
+};
+
+export const HighContrastForms = FormsTemplate.bind({});
+HighContrastForms.args = {
+  theme: "tna-template--high-contrast-theme",
+};
+
+export const DarkHighContrastForms = FormsTemplate.bind({});
+DarkHighContrastForms.args = {
   theme: "tna-template--dark-theme tna-template--high-contrast-theme",
 };

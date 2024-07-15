@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed search filters component
 - Removed sensitive image component
+- Removed `width: 100%;` from reset of `<video>` and `<canvas>` elements
 
 ### Fixed
 

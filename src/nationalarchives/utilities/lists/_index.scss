@@ -20,7 +20,10 @@
 
   &--plain {
     padding-left: 0;
+  }
 
+  &--plain,
+  &--no-list-style {
     list-style: none;
   }
 

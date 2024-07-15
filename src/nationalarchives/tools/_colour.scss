@@ -146,13 +146,17 @@
 @mixin thick-keyline-error($direction: "") {
   @if $direction != "" {
     @include colour-border(
-      "form-error",
+      "form-error-border",
       borders.$thick-border-width,
       solid,
       $direction
     );
   } @else {
-    @include colour-border("form-error", borders.$thick-border-width, solid);
+    @include colour-border(
+      "form-error-border",
+      borders.$thick-border-width,
+      solid
+    );
   }
 }
 
@@ -166,17 +170,17 @@
   }
 }
 
-// Use light theme colours (except for "form-error")
-%light {
-  @include colour-css-vars("form-error");
+// Use light theme colours (except for "form-error-border")
+%always-light {
+  @include colour-css-vars("form-error-border");
 
   @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast("form-error");
+    @include colour-css-vars-high-contrast("form-error-border");
   }
 }
 
-@mixin light {
-  @extend %light;
+@mixin always-light {
+  @extend %always-light;
 }
 
 %contrast {
@@ -257,6 +261,10 @@
   --keyline-dark: var(--accent-keyline-dark);
   --accent-list-marker: var(--accent-font-base);
   --accent-border: var(--accent-font-dark);
+  --button-text: var(--accent-button-text);
+  --button-background: var(--accent-button-background);
+  --button-hover-text: var(--accent-button-hover-text);
+  --button-hover-background: var(--accent-button-hover-background);
 
   @include colour-background("background");
 
@@ -311,39 +319,6 @@
   @extend %accent-light;
 }
 
-// Remove accent and contrast values (except for "form-error")
-%plain {
-  @include colour-css-vars("form-error");
-
-  @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast("form-error");
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
-      @include colour-css-vars-dark("form-error");
-    }
-
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour-css-vars-high-contrast-dark("form-error");
-    }
-  }
-
-  .tna-template--dark-theme & {
-    @include colour-css-vars-dark("form-error");
-
-    @media (prefers-contrast: more) {
-      @include colour-css-vars-high-contrast-dark("form-error");
-    }
-  }
-
-  @include colour-background("background");
-}
-
-@mixin plain {
-  @extend %plain;
-}
-
 %yellow-accent {
   --accent-background: #{colour.brand-colour("yellow")} !important;
   --accent-background-light: #{colour.brand-colour("cream")} !important;
@@ -357,8 +332,8 @@
   --accent-link-visited: #{colour.brand-colour("black")} !important;
   --accent-keyline: #{colour.brand-colour("black", 0.5)} !important;
   --accent-keyline-dark: #{colour.brand-colour("black", 0.8)} !important;
-  --button-accent-text: #{colour.brand-colour("white")} !important;
-  --button-accent-background: #{colour.brand-colour("brown")} !important;
+  --button-accented-text: #{colour.brand-colour("white")} !important;
+  --button-accented-background: #{colour.brand-colour("brown")} !important;
 }
 
 @mixin yellow-accent {
@@ -374,7 +349,7 @@
   --accent-link-visited: #{colour.brand-colour("white")} !important;
   --accent-keyline: #{colour.brand-colour("white", 0.5)} !important;
   --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
-  --button-accent-text: #{colour.brand-colour("white")} !important;
+  --button-accented-text: #{colour.brand-colour("white")} !important;
 }
 
 %black-accent {
@@ -382,8 +357,8 @@
   --accent-background-light: #{colour.brand-colour("light-grey")} !important;
   --accent-border: #{colour.brand-colour("black")} !important;
   --accent-list-marker: #{colour.brand-colour("grey")} !important;
-  --button-accent-text: #{colour.brand-colour("black")} !important;
-  --button-accent-background: #{colour.brand-colour("grey")} !important;
+  --button-accented-text: #{colour.brand-colour("black")} !important;
+  --button-accented-background: #{colour.brand-colour("grey")} !important;
 }
 
 @mixin black-accent {
@@ -396,7 +371,7 @@
   --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
   --accent-border: #{colour.brand-colour("pink")} !important;
   --accent-list-marker: #{colour.brand-colour("pink")} !important;
-  --button-accent-background: #{colour.brand-colour("maroon")} !important;
+  --button-accented-background: #{colour.brand-colour("maroon")} !important;
 }
 
 @mixin pink-accent {
@@ -409,7 +384,7 @@
   --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
   --accent-border: #{colour.brand-colour("orange")} !important;
   --accent-list-marker: #{colour.brand-colour("orange")} !important;
-  --button-accent-background: #{colour.brand-colour("chestnut")} !important;
+  --button-accented-background: #{colour.brand-colour("chestnut")} !important;
 }
 
 @mixin orange-accent {
@@ -422,7 +397,7 @@
   --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
   --accent-border: #{colour.brand-colour("green")} !important;
   --accent-list-marker: #{colour.brand-colour("green")} !important;
-  --button-accent-background: #{colour.brand-colour("forest")} !important;
+  --button-accented-background: #{colour.brand-colour("forest")} !important;
 }
 
 @mixin green-accent {
@@ -435,7 +410,7 @@
   --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
   --accent-border: #{colour.brand-colour("blue")} !important;
   --accent-list-marker: #{colour.brand-colour("blue")} !important;
-  --button-accent-background: #{colour.brand-colour("navy")} !important;
+  --button-accented-background: #{colour.brand-colour("navy")} !important;
 }
 
 @mixin blue-accent {

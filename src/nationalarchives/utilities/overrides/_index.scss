@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../../tools/media";
+@use "../../tools/spacing";
+
+@mixin hide-on($suffix) {
+  .tna-\!--hide-on-#{$suffix} {
+    display: none !important;
+  }
+}
+
+@include spacing.no-spacing-generator;
+@include spacing.spacing-generator;
+
+@include media.on-large {
+  @include spacing.no-spacing-generator("large");
+  @include hide-on("large");
+}
+
+@include media.on-medium {
+  @include spacing.no-spacing-generator("medium");
+  @include hide-on("medium");
+}
+
+@include media.on-small {
+  @include spacing.no-spacing-generator("small");
+  @include hide-on("small");
+}
+
+@include media.on-tiny {
+  @include spacing.no-spacing-generator("tiny");
+  @include hide-on("tiny");
+}
+
+.tna-\!--hide-on-print {
+  @media print {
+    display: none;
+  }
+}

@@ -2,17 +2,16 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
 
 .tna-error-summary {
   @include spacing.space-above;
   padding: spacing.space(1);
 
-  @include colour.plain;
+  @include colour.always-light;
 
   @include colour.colour-background("background");
 
-  @include colour.colour-border("form-error", 0.3125rem, solid);
+  @include colour.colour-border("form-error-border", 0.3125rem, solid);
 
   &:focus {
     outline: none;
@@ -33,7 +32,7 @@
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("form-error");
+      @include colour.colour-font("form-error-text");
     }
   }
 }

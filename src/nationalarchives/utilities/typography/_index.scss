@@ -1,0 +1,429 @@
+@use "sass:math";
+@use "sass:selector";
+@use "../../variables/typography" as typographyVars;
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-template {
+  @include colour.colour-font("font-base");
+  @include typography.main-font;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tna-template__body {
+  color: inherit;
+  @include typography.font-size(typographyVars.$body-font-size-px);
+  line-height: typographyVars.$body-line-height;
+
+  @include media.on-mobile {
+    @include typography.font-size(typographyVars.$body-font-size-px-mobile);
+  }
+}
+
+strong {
+  @include typography.main-font-weight-bold;
+}
+
+p {
+  @include spacing.space-above;
+
+  + p {
+    margin-top: spacing.space(1);
+  }
+}
+
+a {
+  text-decoration-thickness: 1.5px;
+
+  border-radius: 0.1px;
+
+  &,
+  &:link {
+    @include colour.colour-font("link");
+  }
+
+  &:visited {
+    @include colour.colour-font("link-visited");
+  }
+
+  &:hover,
+  &:active {
+    @include typography.interacted-text-decoration;
+  }
+
+  &.tna-link--no-visited-state {
+    &:visited {
+      @include colour.colour-font("link");
+    }
+  }
+}
+
+small {
+  @include typography.font-size(typographyVars.$body-font-size-px * 0.85);
+}
+
+%chip {
+  max-width: max-content;
+  padding: spacing.space(0.125) spacing.space(0.25);
+
+  display: flex;
+  align-items: center;
+  gap: spacing.space(0.5);
+
+  @include colour.colour-font("font-base");
+  @include typography.detail-font-small;
+  line-height: 1;
+  text-align: center;
+
+  @at-root #{selector.unify("a", &)} {
+    text-decoration: underline;
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+
+      .fa-solid {
+        color: inherit;
+      }
+    }
+  }
+
+  .fa-solid {
+    @include colour.colour-font("icon-light");
+
+    @include colour.on-high-contrast {
+      @include colour.colour-font("icon");
+    }
+  }
+}
+
+%chip-plain {
+  padding: 0;
+
+  background-color: transparent;
+
+  border: none;
+
+  @at-root #{selector.unify("a", &)} {
+    .fa-solid {
+      color: inherit;
+    }
+  }
+}
+
+%chip-accent {
+  @include colour.accent;
+
+  @include colour.colour-border("accent-background", 2px);
+
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+  .tna-background-accent & {
+    @include colour.contrast;
+
+    @include colour.colour-border("contrast-background");
+  }
+}
+
+.tna-chip {
+  @extend %chip;
+
+  &--plain {
+    @extend %chip-plain;
+  }
+
+  &--black {
+    @include colour.black-accent;
+  }
+
+  &--pink {
+    @include colour.pink-accent;
+  }
+
+  &--orange {
+    @include colour.orange-accent;
+  }
+
+  &--yellow {
+    @include colour.yellow-accent;
+  }
+
+  &--green {
+    @include colour.green-accent;
+  }
+
+  &--blue {
+    @include colour.blue-accent;
+  }
+
+  &:not(#{&}--plain) {
+    @extend %chip-accent;
+  }
+}
+
+.tna-chip-list {
+  @include spacing.space-above;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacing.space(0.5) spacing.space(1.5);
+
+  list-style: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+%heading {
+  @include colour.colour-font("font-dark");
+  text-wrap: pretty;
+
+  a {
+    display: inline-block;
+
+    vertical-align: top;
+
+    &::after {
+      content: "\203A";
+
+      padding-left: spacing.space(0.5);
+
+      display: inline-block;
+
+      font-weight: 700;
+    }
+
+    &:hover {
+      &::after {
+        padding-left: spacing.space(0.75);
+      }
+    }
+  }
+
+  strong {
+    font-weight: inherit;
+  }
+}
+
+%heading-xl {
+  @extend %heading;
+
+  @include typography.heading-font;
+  @include typography.heading-generator(
+    typographyVars.$heading-xl-font-size-default,
+    typographyVars.$heading-xl-font-size-medium,
+    typographyVars.$heading-xl-font-size-small,
+    typographyVars.$heading-xl-font-size-tiny,
+    typographyVars.$heading-xl-line-height
+  );
+}
+
+%heading-l {
+  @extend %heading;
+
+  @include typography.heading-font;
+  @include typography.heading-generator(
+    typographyVars.$heading-l-font-size-default,
+    typographyVars.$heading-l-font-size-medium,
+    typographyVars.$heading-l-font-size-small,
+    typographyVars.$heading-l-font-size-tiny,
+    typographyVars.$heading-l-line-height
+  );
+}
+
+%heading-m {
+  @extend %heading;
+
+  @include typography.main-font-weight-bold;
+  @include typography.heading-generator(
+    typographyVars.$heading-m-font-size-default,
+    typographyVars.$heading-m-font-size-medium,
+    typographyVars.$heading-m-font-size-small,
+    typographyVars.$heading-m-font-size-tiny,
+    typographyVars.$heading-m-line-height
+  );
+}
+
+%heading-s {
+  @extend %heading;
+
+  @include typography.main-font-weight-bold;
+  @include typography.heading-generator(
+    typographyVars.$heading-s-font-size-default,
+    typographyVars.$heading-s-font-size-medium,
+    typographyVars.$heading-s-font-size-small,
+    typographyVars.$heading-s-font-size-tiny,
+    typographyVars.$heading-s-line-height
+  );
+}
+
+%headings-and-heading-groups {
+  @include spacing.space-above;
+  margin-bottom: 0;
+  padding: spacing.space(1) 0 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  + p {
+    margin-top: spacing.space(1);
+  }
+}
+
+.tna-heading {
+  &-xl {
+    @extend %heading-xl;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-l {
+    @extend %heading-l;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-m {
+    @extend %heading-m;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-s {
+    @extend %heading-s;
+    @extend %headings-and-heading-groups;
+  }
+
+  &--no-link-arrow {
+    a {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.tna-hgroup {
+  &-xl,
+  &-l,
+  &-m,
+  &-s {
+    @extend %headings-and-heading-groups;
+  }
+
+  &__supertitle {
+    margin: 0 0 spacing.space(0.25);
+
+    @extend %chip;
+
+    &--plain {
+      @extend %chip-plain;
+    }
+
+    &:not(#{&}--plain) {
+      @extend %chip-accent;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    display: block;
+  }
+
+  &-xl &__title {
+    @extend %heading-xl;
+  }
+
+  &-l &__title {
+    @extend %heading-l;
+  }
+
+  &-m &__title {
+    @extend %heading-m;
+  }
+
+  &-s &__title {
+    @extend %heading-s;
+  }
+}
+
+.tna-blockquote {
+  @include spacing.space-above;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: spacing.space(1) spacing.space(1) spacing.space(1) spacing.space(2);
+
+  @include colour.thick-keyline-accent(left);
+
+  &__quote {
+    @include typography.main-font-weight-medium;
+    quotes: auto;
+    quotes: "‘" "’";
+
+    :first-child::before {
+      content: open-quote;
+    }
+
+    :last-child::after {
+      content: close-quote;
+    }
+  }
+
+  &__citation {
+    margin-top: spacing.space(1);
+
+    @include typography.font-size(16);
+
+    &::before {
+      content: "\2014" " ";
+      content: "\2014" " " / "";
+    }
+  }
+
+  @include media.on-tiny {
+    padding: spacing.space(0.5) spacing.space(0.5) spacing.space(0.5) #{spacing.space(
+        1
+      )};
+  }
+}
+
+.tna-large-paragraph {
+  @include spacing.space-above;
+
+  @include typography.font-size(22);
+  @include colour.colour-font("font-dark");
+
+  @include media.on-mobile {
+    @include typography.font-size(20);
+  }
+}
+
+.tna-scene-setter {
+  @include spacing.space-above;
+
+  @include typography.detail-font;
+  @include colour.colour-font("font-dark");
+  @include typography.font-size(22);
+  line-height: 1.7;
+
+  @include media.on-mobile {
+    @include typography.font-size(20);
+  }
+
+  a {
+    text-decoration-thickness: 1.5px;
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+}

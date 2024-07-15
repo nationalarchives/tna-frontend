@@ -25,17 +25,11 @@ canvas {
   display: block;
 }
 
-video,
-canvas {
-  width: 100%;
-}
-
 [hidden] {
   display: none !important;
 }
 
 hr {
-  border-width: 1px 0 0;
-  @include colour.colour-border("keyline");
-  border-style: solid;
+  @include colour.colour-border("keyline", 0, solid);
+  border-top-width: 1px;
 }

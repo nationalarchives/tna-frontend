@@ -1,0 +1,99 @@
+@use "sass:math";
+@use "sass:selector";
+@use "../../tools/colour";
+@use "../../tools/grid";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-table {
+  width: 100%;
+
+  text-align: left;
+
+  border-collapse: collapse;
+  @include spacing.space-above;
+
+  &__caption {
+    padding: spacing.space(1) 0 0;
+
+    caption-side: bottom;
+
+    @include typography.font-size(16);
+  }
+
+  &__head {
+    vertical-align: bottom;
+  }
+
+  &__body {
+    vertical-align: top;
+  }
+
+  &__foot {
+    @include typography.main-font-weight-bold;
+    vertical-align: top;
+  }
+
+  &__row {
+  }
+
+  &__header {
+  }
+
+  &__cell {
+  }
+
+  &__header,
+  &__cell {
+    padding: spacing.space(0.25) spacing.space(1);
+
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &--numeric {
+      text-align: right;
+    }
+  }
+
+  &__head &__header {
+    @include colour.thick-keyline-dark(bottom);
+  }
+
+  &__foot &__header,
+  &__foot &__cell {
+    @include colour.thick-keyline-dark(top);
+  }
+
+  p {
+    + p {
+      margin-top: spacing.space(0.25);
+    }
+  }
+}
+
+.tna-table-wrapper {
+  width: 100%;
+  padding-right: grid.gutter-width();
+  padding-left: grid.gutter-width();
+
+  overflow: auto;
+
+  position: relative;
+  left: -#{grid.gutter-width()};
+  @include spacing.space-above;
+
+  @include media.on-tiny {
+    padding-right: grid.gutter-width-tiny();
+    padding-left: grid.gutter-width-tiny();
+
+    left: -#{grid.gutter-width-tiny()};
+  }
+}

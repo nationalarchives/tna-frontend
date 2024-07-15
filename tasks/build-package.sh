@@ -12,3 +12,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   sed -i -e 's/, "plugin:storybook\/recommended"//g' package/config/.eslintrc.js
 fi
+find package -name "*.mdx" -type f -delete
+find package -name "*.stories.js" -type f -delete

@@ -7,8 +7,6 @@ import { Gallery } from "./components/gallery/gallery.mjs";
 import { GlobalHeader } from "./components/global-header/global-header.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
-import { SearchFilters } from "./components/search-filters/search-filters.mjs";
-import { SensitiveImage } from "./components/sensitive-image/sensitive-image.mjs";
 import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
 import Cookies from "./lib/cookies.mjs";
@@ -93,20 +91,6 @@ const initAll = (options) => {
     new Picture($picture);
   });
 
-  const $searchFilters = $scope.querySelectorAll(
-    '[data-module="tna-search-filters"]',
-  );
-  $searchFilters.forEach(($searchFilter) => {
-    new SearchFilters($searchFilter);
-  });
-
-  const $sensitiveImages = $scope.querySelectorAll(
-    '[data-module="tna-sensitive-image"]',
-  );
-  $sensitiveImages.forEach(($sensitiveImage) => {
-    new SensitiveImage($sensitiveImage);
-  });
-
   const $skipLinks = $scope.querySelectorAll('[data-module="tna-skip-link"]');
   $skipLinks.forEach(($skipLink) => {
     new SkipLink($skipLink);
@@ -164,8 +148,6 @@ export {
   GlobalHeader,
   Header,
   Picture,
-  SearchFilters,
-  SensitiveImage,
   SkipLink,
   Tabs,
 };

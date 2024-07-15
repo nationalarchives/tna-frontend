@@ -21,6 +21,7 @@
 // @use "utilities/debug" as debugUtils;
 // @use "utilities/forms" as formsUtils;
 @use "utilities/global" as globalUtils;
+@use "utilities/grid" as gridUtils;
 @use "utilities/lists" as listsUtils;
 @use "utilities/overrides" as overridesUtils;
 // @use "utilities/reset" as resetUtils;
@@ -30,7 +31,6 @@
 @use "components/button";
 @use "components/footer";
 @use "components/global-header";
-@use "components/grid";
 @use "components/skip-link";
 
 .tna-template {

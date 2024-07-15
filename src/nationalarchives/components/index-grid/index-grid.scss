@@ -34,7 +34,7 @@
     text-decoration: none;
 
     .tna-background-contrast & {
-      @include colour.plain;
+      @include colour.accent;
     }
 
     @include colour.on-high-contrast-and-forced-colours {

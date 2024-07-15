@@ -9,7 +9,7 @@
   display: block;
   box-sizing: border-box;
 
-  @include colour.light;
+  @include colour.always-light;
   @include colour.colour-font("input-foreground");
   font-size: inherit;
   line-height: 2rem;
@@ -20,7 +20,7 @@
   border-radius: 0.1px;
 
   .tna-form__group--error & {
-    @include colour.colour-border("form-error");
+    @include colour.colour-border("form-error-border");
   }
 
   &--xs {

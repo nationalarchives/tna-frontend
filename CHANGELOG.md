@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.1.65...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.0...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.0](https://github.com/nationalarchives/tna-frontend/compare/v0.1.65...v0.2.0) - 2024-07-15
+
 ### Changed
 
 - Increased maximum depth of contents sidebar to three levels
@@ -29,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed search filters component
 - Removed sensitive image component
-- Removed `width: 100%;` from reset of `<video>` and `<canvas>` elements
+- Removed `width: 100%;` reset of `<video>` and `<canvas>` elements
 
 ### Fixed
 
@@ -37,8 +45,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed alignment of warning text when a short body is used
 - Incorrect `aria-labeledby` attribute changed to `aria-labelledby` in gallery items
 - Add better labels for buttons in gallery component
-
-### Security
 
 ## [0.1.65](https://github.com/nationalarchives/tna-frontend/compare/v0.1.64...v0.1.65) - 2024-07-11
 

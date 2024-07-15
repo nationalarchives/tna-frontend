@@ -1,4 +1,4 @@
-@use "../tools/colour";
+@use "../../tools/colour";
 
 .tna-template {
   @include colour.always-light;

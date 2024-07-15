@@ -1,4 +1,4 @@
-import { customViewports } from "../../../../../.storybook/viewports";
+import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {};
 

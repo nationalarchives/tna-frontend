@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Index grid items within contrast blocks are now accented
 - Colour variables `--button-accent-text` and `--button-accent-background` have changed to `--button-accented-text` and `--button-accented-background`
 - Colour variable `form-error` split into `form-error-border` and `form-error-text`
+- Moved the grid component to utilities
 
 ### Deprecated
 
@@ -33,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added missing space above files list
 - Fixed alignment of warning text when a short body is used
+- Incorrect `aria-labeledby` attribute changed to `aria-labelledby` in gallery items
 
 ### Security
 

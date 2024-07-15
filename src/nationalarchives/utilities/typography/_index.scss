@@ -1,10 +1,10 @@
 @use "sass:math";
 @use "sass:selector";
-@use "../variables/typography" as typographyVars;
-@use "../tools/colour";
-@use "../tools/media";
-@use "../tools/spacing";
-@use "../tools/typography";
+@use "../../variables/typography" as typographyVars;
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-template {
   @include colour.colour-font("font-base");

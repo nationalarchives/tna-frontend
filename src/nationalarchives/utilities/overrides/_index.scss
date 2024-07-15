@@ -1,6 +1,6 @@
 @use "sass:map";
-@use "../tools/media";
-@use "../tools/spacing";
+@use "../../tools/media";
+@use "../../tools/spacing";
 
 @mixin hide-on($suffix) {
   .tna-\!--hide-on-#{$suffix} {

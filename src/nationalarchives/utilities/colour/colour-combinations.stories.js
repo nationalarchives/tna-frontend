@@ -1,9 +1,9 @@
-import Button from "../../../components/button/template.njk";
-import Checkboxes from "../../../components/checkboxes/template.njk";
-import ErrorSummary from "../../../components/error-summary/template.njk";
-import Radios from "../../../components/radios/template.njk";
-import Select from "../../../components/select/template.njk";
-import TextInput from "../../../components/text-input/template.njk";
+import Button from "../../components/button/template.njk";
+import Checkboxes from "../../components/checkboxes/template.njk";
+import ErrorSummary from "../../components/error-summary/template.njk";
+import Radios from "../../components/radios/template.njk";
+import Select from "../../components/select/template.njk";
+import TextInput from "../../components/text-input/template.njk";
 
 const argTypes = {};
 

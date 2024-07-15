@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../../variables/grid" as gridVars;
-@use "../../tools/media";
 @use "../../tools/grid";
+@use "../../tools/media";
 
 .tna-container {
   width: 100%;

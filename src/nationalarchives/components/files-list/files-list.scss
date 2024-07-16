@@ -36,18 +36,12 @@
   }
 
   &__item {
-    // width: 100%;
-
-    // @include media.on-large {
-    //   width: calc(50% - spacing.space(1.5));
-    // }
   }
 
   &__link {
   }
 
   &__item-title {
-    @include typography.main-font-weight-bold;
   }
 
   &__item-meta {

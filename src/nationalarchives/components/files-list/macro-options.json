@@ -1,5 +1,11 @@
 [
   {
+    "name": "itemHeadingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the file item titles."
+  },
+  {
     "name": "items",
     "type": "array",
     "required": true,

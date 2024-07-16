@@ -5,9 +5,9 @@
   <ul class="tna-files-list__items">
     {%- for item in params.items %}
     <li class="tna-files-list__item">
-      <p class="tna-files-list__item-title">
+      <h{{ params.itemHeadingLevel }} class="tna-files-list__item-title tna-heading-s">
         <a href="{{ item.href }}" class="tna-files-list__link">{{ item.text }}</a>
-      </p>
+      </h{{ params.itemHeadingLevel }}>
       <dl class="tna-dl-chips tna-dl-chips--plain tna-files-list__item-meta">
         <dt>File type</dt>
         <dd>

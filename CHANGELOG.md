@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.0...HEAD)
 
 ### Added
+
+- Added `itemHeadingLevel` to file list component and changed file titles to headings
+
 ### Changed
 
 - Tables are no longer automatically 100% width but can be made to be with `.tna-table--full`

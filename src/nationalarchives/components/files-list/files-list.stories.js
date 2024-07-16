@@ -2,6 +2,7 @@ import Files from "./template.njk";
 import macroOptions from "./macro-options.json";
 
 const argTypes = {
+  itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
   items: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -18,13 +19,9 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, classes, attributes }) =>
+const Template = ({ itemHeadingLevel, items, classes, attributes }) =>
   Files({
-    params: {
-      items,
-      classes,
-      attributes,
-    },
+    params: { itemHeadingLevel, items, classes, attributes },
   });
 
 export const Default = Template.bind({});

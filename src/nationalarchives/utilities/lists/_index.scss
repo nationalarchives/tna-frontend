@@ -17,7 +17,6 @@ ol {
 .tna-ul,
 .tna-ol {
   margin-top: spacing.space(1);
-
   padding-left: spacing.space(2);
 
   &:first-child {
@@ -34,7 +33,8 @@ ol {
   }
 
   & > li > & {
-    padding-left: spacing.space(1);
+    margin-top: 0;
+    padding-left: spacing.space(1.25);
   }
 
   > li {
@@ -42,6 +42,15 @@ ol {
       @include colour.colour-font("accent-list-marker");
       @include typography.main-font-weight-bold;
     }
+  }
+
+  &--spaced > li + li {
+    margin-top: spacing.space(0.5);
+  }
+
+  &--spaced > li > & {
+    margin-top: spacing.space(1);
+    margin-bottom: spacing.space(1);
   }
 
   &--dashed {

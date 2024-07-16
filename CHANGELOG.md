@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `itemHeadingLevel` to file list component and changed file titles to headings
+- The contents of the details element can be [called in Nunjucks](https://mozilla.github.io/nunjucks/templating.html#call)
 
 ### Changed
 

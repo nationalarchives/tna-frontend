@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `itemHeadingLevel` to file list component and changed file titles to headings
+- Ordered and unordered lists can be spaced out with `.tna-ul--spaced` and `.tna-ol--spaced`
 - The contents of the details element can be [called in Nunjucks](https://mozilla.github.io/nunjucks/templating.html#call)
 
 ### Changed
@@ -21,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed spacing in nested lists
+
 ### Security
 
 ## [0.2.0](https://github.com/nationalarchives/tna-frontend/compare/v0.1.65...v0.2.0) - 2024-07-15

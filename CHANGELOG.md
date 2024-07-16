@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Tables are no longer automatically 100% width but can be made to be with `.tna-table--full`
+
 ### Deprecated
 ### Removed
 ### Fixed

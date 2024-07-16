@@ -7,12 +7,16 @@
 @use "../../tools/typography";
 
 .tna-table {
-  width: 100%;
+  max-width: 100%;
 
   text-align: left;
 
   border-collapse: collapse;
   @include spacing.space-above;
+
+  &--full {
+    width: 100%;
+  }
 
   &__caption {
     padding: spacing.space(1) 0 0;

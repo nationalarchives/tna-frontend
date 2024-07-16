@@ -1,4 +1,4 @@
-{%- set htmlElement = params.htmlElement if params.htmlElement else 'div' -%}
+{%- set htmlElement = params.htmlElement if params.htmlElement else 'article' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.horizontal -%}
   {%- set containerClasses = containerClasses.concat('tna-card--horizontal') -%}

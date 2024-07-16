@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:selector";
 @use "../../variables/grid" as gridVars;
 @use "../../tools/grid";
 @use "../../tools/media";
@@ -29,6 +30,10 @@
 
   &--centred {
     justify-content: center;
+  }
+
+  @at-root #{selector.unify("ul", &)} {
+    list-style: none;
   }
 }
 

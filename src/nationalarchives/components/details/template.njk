@@ -4,7 +4,9 @@
   <details class="tna-details__details"{%- if params.open %} open{% endif %}>
     <summary class="tna-details__summary">{{ params.title }}</summary>
     <div class="tna-details__content">
-      {%- if params.text %}
+      {%- if caller %}
+        {{ caller() }}
+      {%- elif params.text %}
         <p>{{ params.text }}</p>
       {%- else %}
         {{ params.body | safe }}

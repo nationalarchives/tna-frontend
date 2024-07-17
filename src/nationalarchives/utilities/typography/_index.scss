@@ -193,19 +193,20 @@ small {
     vertical-align: top;
 
     &::after {
-      content: "\203A";
+      content: "";
 
-      padding-left: spacing.space(0.5);
+      width: 0.3125em;
+      height: 0.3125em;
+      margin-left: 0.375em;
 
       display: inline-block;
 
-      font-weight: 700;
-    }
+      vertical-align: middle;
 
-    &:hover {
-      &::after {
-        padding-left: spacing.space(0.75);
-      }
+      @include colour.colour-border("link", 0.125em, solid, top);
+      @include colour.colour-border("link", 0.125em, solid, right);
+
+      transform: rotate(45deg);
     }
   }
 
@@ -238,6 +239,17 @@ small {
     typographyVars.$heading-l-font-size-tiny,
     typographyVars.$heading-l-line-height
   );
+
+  a {
+    &::after {
+      width: 0.275em;
+      height: 0.275em;
+      margin-left: 0.25em;
+
+      border-top-width: 0.1em;
+      border-right-width: 0.1em;
+    }
+  }
 }
 
 %heading-m {

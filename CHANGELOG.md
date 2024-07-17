@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tables are no longer automatically 100% width but can be made to be with `.tna-table--full`
 - `<ul>` elements with the class `.tna-container` have their `list-style` removed
 - The default `htmlElement` option for the card component is now `<article>`
+- Updated the heading link arrow style
 
 ### Deprecated
 ### Removed

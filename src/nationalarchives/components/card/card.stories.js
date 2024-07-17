@@ -26,12 +26,12 @@ const argTypes = {
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
+  fullAreaClick: { control: "boolean" },
   horizontal: { control: "boolean" },
   style: {
     control: "inline-radio",
     options: ["none", "contrast", "tint", "accent"],
   },
-  plainSupertitle: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -71,9 +71,9 @@ const Template = ({
   body,
   text,
   actions,
+  fullAreaClick,
   horizontal,
   style,
-  plainSupertitle,
   htmlElement,
   classes,
   attributes,
@@ -100,9 +100,9 @@ const Template = ({
       body,
       text,
       actions,
+      fullAreaClick,
       horizontal,
       style,
-      plainSupertitle,
       htmlElement,
       classes,
       attributes,
@@ -163,24 +163,6 @@ Meta.args = {
   ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
-  classes: "tna-card--demo",
-};
-
-export const PlainSupertitle = Template.bind({});
-PlainSupertitle.args = {
-  supertitle: "Card supertitle",
-  title: "Card title",
-  headingLevel: 3,
-  headingSize: "m",
-  href: "#",
-  imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-  imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  htmlElement: "article",
-  plainSupertitle: true,
   classes: "tna-card--demo",
 };
 

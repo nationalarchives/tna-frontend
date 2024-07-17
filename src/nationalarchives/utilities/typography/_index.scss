@@ -197,16 +197,23 @@ small {
 
       width: 0.3125em;
       height: 0.3125em;
+      margin-bottom: 0.1em;
       margin-left: 0.375em;
 
       display: inline-block;
 
       vertical-align: middle;
 
+      transform: rotate(45deg);
+
       @include colour.colour-border("link", 0.125em, solid, top);
       @include colour.colour-border("link", 0.125em, solid, right);
+    }
 
-      transform: rotate(45deg);
+    &:visited {
+      &::after {
+        @include colour.colour-border("link-visited");
+      }
     }
   }
 
@@ -244,6 +251,7 @@ small {
     &::after {
       width: 0.275em;
       height: 0.275em;
+      margin-bottom: 0;
       margin-left: 0.25em;
 
       border-top-width: 0.1em;

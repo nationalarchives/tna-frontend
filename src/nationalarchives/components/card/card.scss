@@ -7,6 +7,8 @@
 .tna-card {
   @include spacing.space-above;
 
+  position: relative;
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -31,7 +33,17 @@
 
   &__heading-link {
     &::after {
-      display: none !important;
+      display: none;
+    }
+  }
+
+  &--full-click &__heading-link {
+    &::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+      z-index: 3;
     }
   }
 
@@ -47,6 +59,7 @@
   &__image {
     position: absolute;
     inset: 0;
+    z-index: 1;
 
     img {
       width: 100%;
@@ -62,6 +75,7 @@
     position: absolute;
     top: spacing.space(0.5);
     left: spacing.space(0.5);
+    z-index: 2;
 
     .tna-background-accent &:not(.tna-chip--plain) {
       @include colour.accent;
@@ -135,6 +149,7 @@
 
         position: absolute;
         inset: 0 50% 0 0;
+        z-index: 1;
       }
 
       .tna-card__heading,

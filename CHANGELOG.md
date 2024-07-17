@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `itemHeadingLevel` to file list component and changed file titles to headings
 - Ordered and unordered lists can be spaced out with `.tna-ul--spaced` and `.tna-ol--spaced`
 - The contents of the details element can be [called in Nunjucks](https://mozilla.github.io/nunjucks/templating.html#call)
+- Cards can be made entirely clickable using the `fullAreaClick` property
 
 ### Changed
 
@@ -23,6 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Cards can no longer have plain supertitles
+
 ### Fixed
 
 - Fixed spacing in nested lists

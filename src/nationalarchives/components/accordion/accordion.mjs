@@ -31,9 +31,6 @@ export class Accordion {
     $content.classList.add("tna-accordion__content");
     $content.classList.remove("tna-accordion__body");
     $content.setAttribute("hidden", "until-found");
-    $content.addEventListener("blur", () => {
-      $content.removeAttribute("tabindex");
-    });
 
     const $headingButton = document.createElement("button");
     $headingButton.classList.add("tna-accordion__summary");
@@ -75,7 +72,6 @@ export class Accordion {
     );
     $content.removeAttribute("hidden");
     $content.setAttribute("tabindex", "0");
-    $content.focus();
   }
 
   closeItem($item) {
@@ -87,6 +83,7 @@ export class Accordion {
       `${$headingButton.innerText}, Show this section`,
     );
     $content.setAttribute("hidden", "until-found");
+    $content.setAttribute("tabindex", "-1");
   }
 
   closeAllItemsExcept($excludeItem) {

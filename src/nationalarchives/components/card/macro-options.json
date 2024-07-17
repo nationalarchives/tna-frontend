@@ -205,22 +205,22 @@
     ]
   },
   {
+    "name": "fullAreaClick",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, `href` is set and there are no actions, allow users to click anywhere on the card to follow the link."
+  },
+  {
     "name": "horizontal",
     "type": "boolean",
     "required": false,
-    "description": "Change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices."
+    "description": "If true, change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices."
   },
   {
     "name": "style",
     "type": "string",
     "required": false,
     "description": "The style of card to use which can be either `contrast` for an inverted card, `tint` for a tinted one or `accent` for a card that matches the page’s accent colour."
-  },
-  {
-    "name": "plainSupertitle",
-    "type": "boolean",
-    "required": false,
-    "description": "Use a plain supertitle, removing the accented background colour."
   },
   {
     "name": "htmlElement",

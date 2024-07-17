@@ -1,5 +1,8 @@
 {%- set htmlElement = params.htmlElement if params.htmlElement else 'article' -%}
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.fullAreaClick and params.href and not params.actions -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--full-click') -%}
+{%- endif -%}
 {%- if params.horizontal -%}
   {%- set containerClasses = containerClasses.concat('tna-card--horizontal') -%}
 {%- endif -%}
@@ -15,7 +18,7 @@
   <div class="tna-card__inner">
   {%- if params.supertitle %}
     <hgroup class="tna-hgroup-{{ params.headingSize or 'm' }} tna-card__heading">
-      <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
+      <p class="tna-hgroup__supertitle">{{ params.supertitle }}</p>
       <h{{ params.headingLevel }} class="tna-hgroup__title">
         {%- if params.href %}
         <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.title }}</a>
@@ -34,7 +37,7 @@
     </h{{ params.headingLevel }}>
   {%- endif %}
   {%- if params.imageSrc %}
-    {%- if params.href %}
+    {%- if params.href and (not params.fullAreaClick or params.actions) %}
     <a href="{{ params.href }}" class="tna-card__image-container{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" tabindex="-1" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
     {%- else %}
     <div class="tna-card__image-container">
@@ -53,7 +56,7 @@
         {{ params.label }}
       </div>
       {%- endif %}
-    {%- if params.href %}
+    {%- if params.href and (not params.fullAreaClick or params.actions) %}
     </a>
     {%- else %}
     </div>

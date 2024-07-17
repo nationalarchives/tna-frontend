@@ -286,6 +286,44 @@
       "html": "<article class=\"tna-card tna-card--horizontal\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></article>"
     },
     {
+      "name": "fully clickable",
+      "options": {
+        "title": "Card title",
+        "href": "#",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "fullAreaClick": true
+      },
+      "html": "<article class=\"tna-card tna-card--full-click\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-m tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div></div></article>"
+    },
+    {
+      "name": "fully clickable without href",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "fullAreaClick": true
+      },
+      "html": "<article class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></div></article>"
+    },
+    {
+      "name": "fully clickable with actions",
+      "options": {
+        "title": "Card title",
+        "href": "#",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "fullAreaClick": true,
+        "actions": [
+          {
+            "text": "Card action",
+            "href": "#"
+          }
+        ]
+      },
+      "html": "<article class=\"tna-card\"><div class=\"tna-card__inner\"><h3 class=\"tna-heading-m tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\">Card action</a></div></div></article>"
+    },
+    {
       "name": "with a different element",
       "options": {
         "title": "Card title",

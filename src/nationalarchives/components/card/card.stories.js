@@ -368,7 +368,7 @@ FullClick.args = {
   title: "Card title",
   href: "#",
   headingLevel: 3,
-  headingSize: "l",
+  headingSize: "m",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",

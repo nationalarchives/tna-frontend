@@ -5,7 +5,7 @@
 @use "../../tools/typography";
 
 .tna-gallery {
-  min-height: 100dvh;
+  // min-height: 100dvh;
   max-height: 200dvh;
 
   display: grid;
@@ -308,7 +308,7 @@
   }
 
   &--fullscreen {
-    max-height: 100dvh;
+    // max-height: 100dvh;
   }
 
   &--fullscreen &__header-inner {

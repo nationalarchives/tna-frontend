@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `<ul>` elements with the class `.tna-container` have their `list-style` removed
 - The default `htmlElement` option for the card component is now `<article>`
 - Gallery item captions are no longer wrapped in a `<p>` element
+- Updated the heading link arrow style
 
 ### Deprecated
 ### Removed

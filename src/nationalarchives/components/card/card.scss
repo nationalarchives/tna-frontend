@@ -33,7 +33,7 @@
 
   &__heading-link {
     &::after {
-      display: none;
+      display: none !important;
     }
   }
 

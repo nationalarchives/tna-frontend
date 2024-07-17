@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed spacing in nested lists
+- Set icon size for file list component for better viewing without CSS
 
 ### Security
 

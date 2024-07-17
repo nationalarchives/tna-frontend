@@ -12,7 +12,6 @@
   text-align: left;
 
   border-collapse: collapse;
-  @include spacing.space-above;
 
   &--full {
     width: 100%;
@@ -92,12 +91,21 @@
 
   position: relative;
   left: -#{grid.gutter-width()};
-  @include spacing.space-above;
 
   @include media.on-tiny {
     padding-right: grid.gutter-width-tiny();
     padding-left: grid.gutter-width-tiny();
 
     left: -#{grid.gutter-width-tiny()};
+  }
+}
+
+.tna-table,
+.tna-table-wrapper {
+  @include spacing.space-above;
+  margin-bottom: spacing.space(4);
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }

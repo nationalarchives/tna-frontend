@@ -362,6 +362,25 @@ HorizontalContrastMobile.args = {
   classes: "tna-card--demo",
 };
 
+export const FullClick = Template.bind({});
+FullClick.args = {
+  supertitle: "Card supertitle",
+  title: "Card title",
+  href: "#",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  label: "New",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  fullAreaClick: true,
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Sources = Template.bind({});
 Sources.args = {
   supertitle: "Card supertitle",

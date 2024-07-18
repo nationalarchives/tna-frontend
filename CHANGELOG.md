@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the heading link arrow style
 - Added more space below table elements
 - Removed focus shift on accordion items upon opening
+- Changed the arrows on gallery buttons from Font Awesome SVGs to sharp CSS arrows
 
 ### Deprecated
 ### Removed

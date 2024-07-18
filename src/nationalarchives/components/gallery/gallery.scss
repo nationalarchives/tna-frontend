@@ -6,7 +6,7 @@
 
 .tna-gallery {
   // min-height: 100dvh;
-  max-height: 200dvh;
+  max-height: 175dvh;
 
   display: grid;
   grid-template: min-content min-content 1fr / 2fr 1fr;
@@ -142,18 +142,7 @@
     cursor: pointer;
     pointer-events: auto;
 
-    @include colour.colour-font("base-dark");
-
     @include colour.tint;
-
-    svg {
-      height: 5vw;
-      margin: 0 auto;
-
-      display: block;
-
-      fill: currentColor;
-    }
 
     &:hover,
     &:focus {
@@ -183,6 +172,28 @@
       var(--background) 15%,
       rgb(0 0 0 / 0%) 100%
     );
+  }
+
+  &__navigation-button-label {
+    width: 1rem;
+    height: 1rem;
+
+    display: inline-block;
+
+    font-size: 0;
+
+    @include colour.colour-border("font-dark", 4px, solid, top);
+    @include colour.colour-border("font-dark", 4px, solid, right);
+
+    transform-origin: 50% 50%;
+  }
+
+  &__navigation-prev &__navigation-button-label {
+    transform: rotate(-135deg);
+  }
+
+  &__navigation-next &__navigation-button-label {
+    transform: rotate(45deg);
   }
 
   &__navigation {
@@ -254,14 +265,15 @@
     display: inline-block;
 
     position: absolute;
-    right: 0;
-    bottom: 0;
+    top: 0;
+    left: 0;
     z-index: 4;
 
-    @include colour.colour-font("font-dark");
-    @include typography.font-size(36);
-    @include typography.main-font-weight-bold;
     text-transform: capitalize;
+
+    @include colour.colour-font("font-dark");
+    @include typography.font-size(24);
+    @include typography.main-font-weight-bold;
 
     @include colour.colour-background("background");
   }
@@ -284,10 +296,6 @@
     &__navigation {
       grid-template-columns: repeat(4, 1fr);
     }
-
-    &__navigation-item-label {
-      @include typography.font-size(30);
-    }
   }
 
   @include media.on-mobile {
@@ -303,7 +311,7 @@
     }
 
     &__navigation-item-label {
-      @include typography.font-size(24);
+      @include typography.font-size(18);
     }
   }
 

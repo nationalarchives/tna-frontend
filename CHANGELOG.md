@@ -9,9 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Allowed the arrows to appear on card heading links
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Arrow colour for visited heading links with the class `tna-link--no-visited-state`
+- Incorrect padding on the bottom of horizontal cards
+- Removed space between heading and exclamation mark on warning components
+
 ### Security
 
 ## [0.2.1](https://github.com/nationalarchives/tna-frontend/compare/v0.2.0...v0.2.1) - 2024-07-19

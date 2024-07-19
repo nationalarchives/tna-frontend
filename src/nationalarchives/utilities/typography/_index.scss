@@ -210,7 +210,7 @@ small {
       @include colour.colour-border("link", 0.125em, solid, right);
     }
 
-    &:visited {
+    &:not(.tna-link--no-visited-state):visited {
       &::after {
         @include colour.colour-border("link-visited");
       }

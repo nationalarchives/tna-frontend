@@ -25,16 +25,11 @@
   &--horizontal.tna-background-accent &__inner {
     padding-right: spacing.space(1);
     padding-left: spacing.space(1);
+    padding-bottom: spacing.space(2);
   }
 
   &__heading {
     order: 2;
-  }
-
-  &__heading-link {
-    &::after {
-      display: none !important;
-    }
   }
 
   &--full-click &__heading-link {

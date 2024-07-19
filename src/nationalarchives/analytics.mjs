@@ -197,7 +197,7 @@ class EventTracker {
   computedValue(value, $el, $scope, event, index) {
     return typeof value === "function"
       ? value.call(this, $el, $scope, event, index)
-      : value ?? null;
+      : (value ?? null);
   }
 
   /** @protected */

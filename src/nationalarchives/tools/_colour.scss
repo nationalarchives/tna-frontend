@@ -299,6 +299,9 @@
   --accent-border: var(--font-base);
   --accent-list-marker: var(--font-base);
 
+  @include colour-background("background");
+  @include colour-font("font-base");
+
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
       --link: #{map.get(colour.$colour-palette-default, "link")};
@@ -310,9 +313,6 @@
     --link: #{map.get(colour.$colour-palette-default, "link")};
     --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
   }
-
-  @include colour-background("background");
-  @include colour-font("font-base");
 }
 
 @mixin accent-light {

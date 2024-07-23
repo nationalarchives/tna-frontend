@@ -345,14 +345,6 @@
         padding-right: 0;
         padding-left: 0;
       }
-
-      .tna-template--js-enabled & {
-        display: none;
-
-        &--open {
-          display: flex;
-        }
-      }
     }
 
     &__top-navigation-items {

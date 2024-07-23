@@ -8,9 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.1...HEAD)
 
 ### Added
+
+- Allowed galleries to not show the first image by default using `showGrid`
+
 ### Changed
 
 - Allowed the arrows to appear on card heading links
+- The header component no longer requires the `tna-template--js-enabled` class on the `<html>` element to show and hide on smaller devices
 
 ### Deprecated
 ### Removed
@@ -19,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Arrow colour for visited heading links with the class `tna-link--no-visited-state`
 - Incorrect padding on the bottom of horizontal cards
 - Removed space between heading and exclamation mark on warning components
+- Fixed gallery component layout when CSS loads but JS fails
 
 ### Security
 

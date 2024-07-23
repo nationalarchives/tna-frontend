@@ -55,7 +55,7 @@ export class Header {
 
   show() {
     this.$navigation.classList.add("tna-header__navigation--open");
-    this.$navigation.hidden = false;
+    this.$navigation.removeAttribute("hidden");
     this.$navigation.setAttribute("aria-hidden", "false");
     this.$toggleButton.setAttribute("aria-expanded", "true");
     this.$toggleButton.setAttribute("title", "Close menu");

@@ -27,7 +27,7 @@ export class Gallery {
       return;
     }
 
-    this.$module.classList.add("tna-gallery--js");
+    this.$module.classList.add("tna-gallery--interactive");
 
     this.$showIndex = this.$options.querySelector('button[value="show-index"]');
     this.$enterFullscreen = this.$options.querySelector(
@@ -49,8 +49,8 @@ export class Gallery {
     );
 
     this.setup();
-    this.allowIndex = false;
-    if (this.allowIndex) {
+    this.allowGridIndex = this.$module.dataset["showgrid"] || false;
+    if (this.allowGridIndex) {
       this.showIndex();
     } else {
       this.currentId = this.$items[0].id;
@@ -145,7 +145,7 @@ export class Gallery {
         $item.setAttribute("tabindex", index === 0 ? "0" : "-1");
       }
     });
-    if (this.allowIndex) {
+    if (this.allowGridIndex) {
       this.$showIndex?.removeAttribute("hidden");
     }
     this.currentId = id;

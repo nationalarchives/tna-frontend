@@ -75,6 +75,12 @@
     "description": "A unique ID for the gallery."
   },
   {
+    "name": "showGrid",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, don't select the first image when the gallery loads and instead show a grid of images."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

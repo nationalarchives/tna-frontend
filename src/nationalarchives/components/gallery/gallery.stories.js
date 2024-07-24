@@ -9,6 +9,7 @@ const argTypes = {
   text: { control: "text" },
   items: { control: "object" },
   id: { control: "text" },
+  showGrid: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -32,6 +33,7 @@ const Template = ({
   text,
   items,
   id,
+  showGrid,
   classes,
   attributes,
 }) =>
@@ -44,6 +46,7 @@ const Template = ({
       text,
       items,
       id,
+      showGrid,
       classes,
       attributes,
     },
@@ -84,4 +87,12 @@ Standard.args = {
     })),
   id: "test",
   classes: "tna-gallery--demo",
+};
+
+export const Grid = Template.bind({});
+Grid.args = {
+  ...Standard.args,
+  ...{
+    showGrid: true,
+  },
 };

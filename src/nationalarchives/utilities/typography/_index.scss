@@ -295,7 +295,8 @@ small {
     padding-top: 0;
   }
 
-  + p {
+  + p,
+  + .tna-large-paragraph {
     margin-top: spacing.space(1);
   }
 }
@@ -421,6 +422,10 @@ small {
 
   @include typography.font-size(22);
   @include colour.colour-font("font-dark");
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   @include media.on-mobile {
     @include typography.font-size(20);

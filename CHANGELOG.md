@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.2...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.2](https://github.com/nationalarchives/tna-frontend/compare/v0.2.1...v0.2.2) - 2024-07-24
 
 ### Added
 
@@ -16,16 +25,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allowed the arrows to appear on card heading links
 - The header component no longer requires the `tna-template--js-enabled` class on the `<html>` element to show and hide on smaller devices
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Arrow colour for visited heading links with the class `tna-link--no-visited-state`
 - Incorrect padding on the bottom of horizontal cards
 - Removed space between heading and exclamation mark on warning components
 - Fixed gallery component layout when CSS loads but JS fails
-
-### Security
 
 ## [0.2.1](https://github.com/nationalarchives/tna-frontend/compare/v0.2.0...v0.2.1) - 2024-07-19
 

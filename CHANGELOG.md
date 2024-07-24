@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Further fixed gallery component layout when CSS loads but JS fails
+
 ### Security
 
 ## [0.2.2](https://github.com/nationalarchives/tna-frontend/compare/v0.2.1...v0.2.2) - 2024-07-24

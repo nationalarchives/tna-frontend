@@ -423,10 +423,6 @@ small {
   @include typography.font-size(22);
   @include colour.colour-font("font-dark");
 
-  &:first-child {
-    margin-top: 0;
-  }
-
   @include media.on-mobile {
     @include typography.font-size(20);
   }

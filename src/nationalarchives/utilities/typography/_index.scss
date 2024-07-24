@@ -295,7 +295,8 @@ small {
     padding-top: 0;
   }
 
-  + p {
+  + p,
+  + .tna-large-paragraph {
     margin-top: spacing.space(1);
   }
 }

@@ -25,6 +25,7 @@
   clip-path: inset(50%) !important;
 
   &,
+  &:link,
   &:visited {
     @include colour.colour-font("button-text", $important: true);
   }

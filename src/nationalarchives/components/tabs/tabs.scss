@@ -43,6 +43,7 @@
     @include typography.heading-font;
 
     &,
+    &:link,
     &:visited {
       @include colour.colour-font("font-dark");
     }

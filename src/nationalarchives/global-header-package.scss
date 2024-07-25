@@ -160,6 +160,7 @@ hr {
 
 .tna-button {
   &,
+  &:link,
   &:visited {
     text-decoration: none;
   }
@@ -181,6 +182,7 @@ hr {
 
       &-link {
         &,
+        &:link,
         &:visited {
           display: block;
         }

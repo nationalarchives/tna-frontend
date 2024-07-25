@@ -50,6 +50,7 @@
     display: inline-block;
 
     &,
+    &:link,
     &:visited {
       @include colour.colour-font("font-base");
     }
@@ -93,6 +94,7 @@
   @include colour.on-high-contrast {
     &__link {
       &,
+      &:link,
       &:visited {
         @include colour.colour-font("link");
       }

@@ -46,7 +46,6 @@
 
     &--link {
       &,
-      &:link,
       &:visited {
         @include colour.colour-font("font-base");
       }
@@ -185,7 +184,6 @@
     @include colour.colour-border("keyline", 0.5px, solid, bottom);
 
     &,
-    &:link,
     &:visited {
       @include colour.colour-font("font-base");
     }
@@ -217,7 +215,6 @@
     text-decoration: none;
 
     &,
-    &:link,
     &:visited {
       @include colour.colour-font("font-light");
     }

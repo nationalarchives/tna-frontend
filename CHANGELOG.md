@@ -14,9 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Removed styling for links with the `:link` pseudo class - all `<a>` elements should posess an `href` attribute by default
+
 ### Fixed
 
 - Further fixed gallery component layout when CSS loads but JS fails
+- Buttons using the `<button>` element now have the correct typeface (they were using the browser default)
 
 ### Security
 

@@ -64,7 +64,6 @@
 
     .tna-index-grid__item:hover & {
       &,
-      &:link,
       &:visited {
         @include typography.interacted-text-decoration;
       }

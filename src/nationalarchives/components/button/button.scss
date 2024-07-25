@@ -23,7 +23,7 @@ $button-border-width: 4px !default;
   cursor: pointer;
 
   @include typography.font-size(18);
-  @include typography.main-font-weight-bold;
+  @include typography.main-font(true);
 
   @include colour.colour-background("button-background");
 
@@ -33,7 +33,6 @@ $button-border-width: 4px !default;
   print-color-adjust: exact;
 
   &,
-  &:link,
   &:visited {
     @include colour.colour-font("button-text");
   }
@@ -69,7 +68,6 @@ $button-border-width: 4px !default;
     border-color: transparent;
 
     &,
-    &:link,
     &:visited {
       @include colour.colour-font("link");
     }
@@ -90,7 +88,6 @@ $button-border-width: 4px !default;
     @include colour.colour-border("button-accented-background");
 
     &,
-    &:link,
     &:visited {
       @include colour.colour-font("button-accented-text");
     }
@@ -192,7 +189,6 @@ $button-border-width: 4px !default;
     @include colour.colour-border("button-background");
 
     &,
-    &:link,
     &:visited {
       @include colour.colour-font("button-text");
     }

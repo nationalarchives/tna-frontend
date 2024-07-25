@@ -46,7 +46,6 @@
     @include colour.colour-border("keyline", 1px);
 
     &,
-    &:link,
     &:visited {
       @include colour.colour-font("font-base");
     }
@@ -58,7 +57,6 @@
 
   &__item--selected &__link {
     &,
-    &:link,
     &:visited,
     &:hover {
       @include colour.accent;

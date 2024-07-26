@@ -4,9 +4,12 @@ import {
   getClosestHeading,
   valueGetters,
 } from "./lib/analytics-helpers.mjs";
+import AccordionAnalytics from "./components/accordion/analytics.js";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
 import CheckboxesAnalytics from "./components/checkboxes/analytics.js";
+import DetailsAnalytics from "./components/details/analytics.js";
 import FooterAnalytics from "./components/footer/analytics.js";
+import GalleryAnalytics from "./components/gallery/analytics.js";
 import GlobalHeaderAnalytics from "./components/global-header/analytics.js";
 import HeaderAnalytics from "./components/header/analytics.js";
 import HeroAnalytics from "./components/hero/analytics.js";
@@ -17,9 +20,12 @@ import TextInputAnalytics from "./components/text-input/analytics.js";
 import TextareaAnalytics from "./components/textarea/analytics.js";
 
 const componentAnalytics = [
+  ...AccordionAnalytics,
   ...BreadcrumbAnalytics,
   ...CheckboxesAnalytics,
+  ...DetailsAnalytics,
   ...FooterAnalytics,
+  ...GalleryAnalytics,
   ...GlobalHeaderAnalytics,
   ...HeaderAnalytics,
   ...HeroAnalytics,

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.2...HEAD)
 
 ### Added
+
+- Analytics added for accordion, detail and gallery components
+
 ### Changed
 
 - Large paragraphs (`.tna-large-paragraph`) that follow headings and heading groups have less top margin

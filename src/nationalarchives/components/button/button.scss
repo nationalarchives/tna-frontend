@@ -23,7 +23,7 @@ $button-border-width: 4px !default;
   cursor: pointer;
 
   @include typography.font-size(18);
-  @include typography.main-font(true);
+  @include typography.main-font-weight-bold;
 
   @include colour.colour-background("button-background");
 

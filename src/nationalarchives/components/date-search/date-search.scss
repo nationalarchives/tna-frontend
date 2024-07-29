@@ -12,8 +12,6 @@
 
   @include colour.always-light;
   @include colour.colour-font("input-foreground");
-  @include typography.detail-font;
-  font-size: inherit;
   line-height: 2rem;
 
   @include colour.colour-background("input-background");

@@ -25,6 +25,14 @@ canvas {
   display: block;
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 [hidden] {
   display: none !important;
 }

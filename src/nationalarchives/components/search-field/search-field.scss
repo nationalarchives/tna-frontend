@@ -13,22 +13,25 @@
 
   &__input {
     min-width: 8rem;
+    width: 0;
     padding: 0 spacing.space(0.375);
 
     display: block;
-    flex: 1;
 
-    @include colour.always-light;
-    @include colour.colour-font("input-foreground");
     line-height: 2rem;
 
-    @include colour.colour-background("input-background");
-
-    @include colour.colour-border("input-border");
     border-width: forms.$form-field-border-width 0
       forms.$form-field-border-width forms.$form-field-border-width;
     border-style: solid;
     border-radius: 0.1px;
+    flex: 1;
+
+    @include colour.always-light;
+    @include colour.colour-font("input-foreground");
+
+    @include colour.colour-background("input-background");
+
+    @include colour.colour-border("input-border");
 
     .tna-template--dark-theme &,
     .tna-background-contrast & {

@@ -264,7 +264,7 @@ class GA4 extends EventTracker {
     window.dataLayer = window.dataLayer || [];
     if (!this.cookies.isPolicyAccepted("usage")) {
       window[this.ga4Disable] = true;
-      this.cookies.set(this.ga4Disable, "true");
+      this.cookies.set(this.ga4Disable, "true", { maxAge: 31536000 });
     }
     this.start(initAll);
   }
@@ -302,7 +302,7 @@ class GA4 extends EventTracker {
   enableTracking() {
     if (!this.trackingEnabled) {
       window[this.ga4Disable] = false;
-      this.cookies.set(this.ga4Disable, "false");
+      this.cookies.set(this.ga4Disable, "false", { maxAge: 31536000 });
       if (!this.trackingCodeAdded && this.addTrackingCode) {
         if (!this.gTagId) {
           throw Error("ID was not specified");
@@ -334,7 +334,7 @@ class GA4 extends EventTracker {
   disableTracking() {
     if (this.trackingEnabled) {
       window[this.ga4Disable] = true;
-      this.cookies.set(this.ga4Disable, "true");
+      this.cookies.set(this.ga4Disable, "true", { maxAge: 31536000 });
       Object.keys(this.cookies.all).forEach((key) => {
         if (key.startsWith("_ga")) {
           this.cookies.delete(key);

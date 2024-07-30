@@ -175,7 +175,7 @@ export default class Cookies {
    * @param {String} key - The cookie name.
    * @param {String|Number|Boolean} value - The cookie value.
    * @param {Object} options
-   * @param {Number} [options.maxAge=31536000] - The maximum age of the cookie in seconds.
+   * @param {Number|null} [options.maxAge=null] - The maximum age of the cookie in seconds.
    * @param {String} [options.path=/] - The path to register the cookie for.
    * @param {String} [options.sameSite=Lax] - The sameSite attribute.
    * @param {String} [options.domain=this.domain] - The domain to register the cookie with.
@@ -184,7 +184,7 @@ export default class Cookies {
    */
   set(key, value, options = {}) {
     const {
-      maxAge = 60 * 60 * 24 * 365,
+      maxAge = null,
       sameSite = "Lax",
       domain = this.domain,
       path = this.path,
@@ -195,7 +195,7 @@ export default class Cookies {
     }
     const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)};${
       domain ? ` domain=${domain}; ` : ""
-    } samesite=${sameSite}; path=${path}; max-age=${maxAge}${
+    } samesite=${sameSite}; path=${path};${maxAge !== null ? ` max-age=${maxAge}` : ""}${
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;

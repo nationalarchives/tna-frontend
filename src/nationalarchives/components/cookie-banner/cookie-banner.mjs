@@ -82,7 +82,7 @@ export class CookieBanner {
   }
 
   complete() {
-    this.cookies.set(this.cookiePreferencesSet, true);
+    this.cookies.set(this.cookiePreferencesSet, true, { maxAge: 31536000 });
     this.$closeButtons.forEach(($closeButton) => {
       $closeButton.addEventListener("click", () => this.close());
     });

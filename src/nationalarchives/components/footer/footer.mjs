@@ -70,7 +70,7 @@ export class Footer {
     } else {
       return;
     }
-    this.cookies.set("theme", theme);
+    this.cookies.set("theme", theme, { maxAge: 31536000 });
   }
 
   selectThemeSelectorButton($selectedButton) {

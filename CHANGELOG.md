@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Allow search field to be smaller than the browser default
 - Reduced space between paragraphs in hero captions
+- Default cookie age changed from `31536000` (1 year) to `null` (session cookie)
 
 ### Deprecated
 ### Removed

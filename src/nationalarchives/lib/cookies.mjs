@@ -67,6 +67,8 @@ export default class Cookies {
   policiesKey = "";
   /** @protected */
   events = null;
+  /** @protected */
+  defaultAge = null;
 
   /**
    * Create a cookie handler.
@@ -76,6 +78,7 @@ export default class Cookies {
    * @param {String} [options.secure=true] - Only set cookie in HTTPS environments.
    * @param {String} [options.policiesKey="cookies_policy"] - The name of the cookie.
    * @param {String} [options.newInstance=false] - Create a fresh instance of the cookie class.
+   * @param {String} [options.defaultAge=31536000] - The default age of non-session cookies.
    */
   constructor(options = {}) {
     const {
@@ -85,6 +88,7 @@ export default class Cookies {
       secure = true,
       policiesKey = "cookies_policy",
       newInstance = false,
+      defaultAge = 31536000, // 365 days
     } = options;
     if (newInstance) {
       this.destroyInstance();
@@ -96,6 +100,7 @@ export default class Cookies {
     this.path = path;
     this.secure = secure;
     this.policiesKey = policiesKey;
+    this.defaultAge = defaultAge;
     this.events = new CookieEventHandler();
     this.init();
     window.TNAFrontendCookies = this;
@@ -175,27 +180,29 @@ export default class Cookies {
    * @param {String} key - The cookie name.
    * @param {String|Number|Boolean} value - The cookie value.
    * @param {Object} options
-   * @param {Number|null} [options.maxAge=null] - The maximum age of the cookie in seconds.
+   * @param {Number} [options.maxAge=this.defaultAge] - The maximum age of the cookie in seconds.
    * @param {String} [options.path=/] - The path to register the cookie for.
    * @param {String} [options.sameSite=Lax] - The sameSite attribute.
    * @param {String} [options.domain=this.domain] - The domain to register the cookie with.
    * @param {String} [options.path=this.path] - The path to register the cookie with.
    * @param {String} [options.secure=this.secure] - Only set cookie in HTTPS environments.
+   * @param {String} [options.session=false] - Set a session cookie.
    */
   set(key, value, options = {}) {
     const {
-      maxAge = null,
+      maxAge = this.defaultAge,
       sameSite = "Lax",
       domain = this.domain,
       path = this.path,
       secure = this.secure,
+      session = false,
     } = options;
     if (!key) {
       return;
     }
     const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)};${
       domain ? ` domain=${domain}; ` : ""
-    } samesite=${sameSite}; path=${path}${maxAge !== null ? `; max-age=${maxAge}` : ""}${
+    } samesite=${sameSite}; path=${path}${!session ? `; max-age=${maxAge}` : ""}${
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;
@@ -207,6 +214,7 @@ export default class Cookies {
       sameSite,
       domain,
       secure,
+      session,
       cookie,
     });
   }
@@ -301,7 +309,9 @@ export default class Cookies {
    * @param {object} policies - The policies to commit.
    */
   savePolicies(policies) {
-    this.set(this.policiesKey, JSON.stringify(policies));
+    this.set(this.policiesKey, JSON.stringify(policies), {
+      maxAge: 60 * 60 * 24 * 365,
+    });
   }
 
   /**

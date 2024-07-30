@@ -269,7 +269,7 @@ describe("No existing cookies", () => {
     const testKey = "foo";
     const testValue = "bar";
 
-    cookies.set(testKey, testValue, { maxAge: 31536000 });
+    cookies.set(testKey, testValue);
 
     expect(mockCallback.mock.calls).toHaveLength(1);
     expect(mockCallback.mock.calls[0][0]).toStrictEqual({
@@ -280,10 +280,11 @@ describe("No existing cookies", () => {
       sameSite: "Lax",
       secure: true,
       maxAge: 31536000,
+      session: false,
       cookie: `${testKey}=${testValue}; samesite=Lax; path=/; max-age=31536000; secure`,
     });
 
-    cookies.set(testKey, testValue);
+    cookies.set(testKey, testValue, { session: true });
 
     expect(mockCallback.mock.calls).toHaveLength(2);
     expect(mockCallback.mock.calls[1][0]).toStrictEqual({
@@ -293,7 +294,8 @@ describe("No existing cookies", () => {
       path: "/",
       sameSite: "Lax",
       secure: true,
-      maxAge: null,
+      maxAge: 31536000,
+      session: true,
       cookie: `${testKey}=${testValue}; samesite=Lax; path=/; secure`,
     });
   });

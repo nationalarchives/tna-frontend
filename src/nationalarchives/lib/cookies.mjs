@@ -195,7 +195,7 @@ export default class Cookies {
     }
     const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)};${
       domain ? ` domain=${domain}; ` : ""
-    } samesite=${sameSite}; path=${path};${maxAge !== null ? ` max-age=${maxAge}` : ""}${
+    } samesite=${sameSite}; path=${path}${maxAge !== null ? `; max-age=${maxAge}` : ""}${
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;

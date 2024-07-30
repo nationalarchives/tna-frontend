@@ -57,6 +57,14 @@
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
+  &--plain &__image-wrapper {
+    padding: 0;
+  }
+
+  &--plain &__image {
+    box-shadow: none;
+  }
+
   @include media.on-tiny {
     &__image-wrapper {
       padding: 0;

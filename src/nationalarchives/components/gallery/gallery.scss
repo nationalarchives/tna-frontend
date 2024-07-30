@@ -5,6 +5,8 @@
 @use "../../tools/typography";
 
 .tna-gallery {
+  @include spacing.space-above;
+
   display: grid;
   grid-template: min-content min-content 1fr / 2fr 1fr;
   gap: 0 spacing.space(1);

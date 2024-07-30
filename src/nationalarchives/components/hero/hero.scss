@@ -96,6 +96,10 @@ $shift-units: 5 !default;
     @include colour.contrast;
 
     @include typography.font-size(16);
+
+    p + p {
+      margin-top: spacing.space(0.5);
+    }
   }
 
   &__image {

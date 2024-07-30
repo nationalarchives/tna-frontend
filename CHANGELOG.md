@@ -8,10 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.3...HEAD)
 
 ### Added
+
+- New style added for plain picture components
+
 ### Changed
+
+- Allow search field to be smaller than the browser default
+- Reduced space between paragraphs in hero captions
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Added missing space above gallery component
+
 ### Security
 
 ## [0.2.3](https://github.com/nationalarchives/tna-frontend/compare/v0.2.2...v0.2.3) - 2024-07-30

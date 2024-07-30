@@ -15,8 +15,7 @@ export default [
       },
       {
         eventName: "click",
-        targetElement:
-          ".tna-gallery__navigation-button tna-gallery__navigation-prev",
+        targetElement: ".tna-gallery__navigation-prev",
         on: "click",
         data: {
           value: ($el, $scope) =>
@@ -27,8 +26,7 @@ export default [
       },
       {
         eventName: "click",
-        targetElement:
-          ".tna-gallery__navigation-button tna-gallery__navigation-next",
+        targetElement: ".tna-gallery__navigation-next",
         on: "click",
         data: {
           value: ($el, $scope) =>
@@ -38,26 +36,24 @@ export default [
         },
       },
       {
-        eventName: "key press",
+        eventName: "keypress",
         on: "keydown",
         data: {
           value: ($el, $scope, event) => event.key,
         },
       },
       {
-        eventName: "click",
+        eventName: "enter-fullscreen",
         targetElement: '.tna-gallery__options button[value="enter-fullscreen"]',
         on: "click",
-        data: { state: "enter" },
       },
       {
-        eventName: "click",
+        eventName: "exit-fullscreen",
         targetElement: '.tna-gallery__options button[value="exit-fullscreen"]',
         on: "click",
-        data: { state: "exit" },
       },
       {
-        eventName: "click",
+        eventName: "index",
         targetElement: '.tna-gallery__options button[value="show-index"]',
         on: "click",
       },

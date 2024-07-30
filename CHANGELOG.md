@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added missing space above gallery component
+- Updated gallery analytics
 
 ### Security
 

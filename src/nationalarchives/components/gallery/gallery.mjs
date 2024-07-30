@@ -207,11 +207,9 @@ export class Gallery {
     if (document.fullscreenElement) {
       this.$enterFullscreen.setAttribute("hidden", true);
       this.$exitFullscreen.removeAttribute("hidden");
-      this.$module.classList.add("tna-gallery--fullscreen");
     } else {
       this.$exitFullscreen.setAttribute("hidden", true);
       this.$enterFullscreen.removeAttribute("hidden");
-      this.$module.classList.remove("tna-gallery--fullscreen");
     }
   }
 }

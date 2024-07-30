@@ -314,21 +314,16 @@
   }
 
   @include media.on-tiny {
-    &__options {
-      // align-items: flex-end;
-      // justify-content: flex-start;
-    }
-
     &__navigation-item-label {
       @include typography.font-size(18);
     }
   }
 
-  &--fullscreen &__header-inner {
+  &:fullscreen &__header-inner {
     display: none;
   }
 
-  &--fullscreen &__options {
+  &:fullscreen &__options {
     flex: 1;
 
     flex-direction: row;
@@ -340,41 +335,40 @@
     }
   }
 
-  &--fullscreen &__item-description {
+  &:fullscreen &__item-description {
     max-height: 4.5rem;
 
     overflow: auto;
   }
 
-  // @media (display-mode: fullscreen) and (aspect-ratio >= 1/1), (display-mode: fullscreen) and (orientation: landscape) {
   @media (aspect-ratio >= 1/1) {
-    &--fullscreen &__header {
+    &:fullscreen &__header {
       grid-column: 2 / 3;
     }
 
-    &--fullscreen &__items,
-    &--fullscreen &__navigation-buttons {
+    &:fullscreen &__items,
+    &:fullscreen &__navigation-buttons {
       grid-column: 1 / 2;
       grid-row: 1 / 4;
     }
 
-    &--fullscreen &__item {
+    &:fullscreen &__item {
       height: 100%;
     }
 
-    &--fullscreen &__item-figure {
+    &:fullscreen &__item-figure {
       flex: 1;
     }
 
-    &--fullscreen &__item-figure-inner,
-    &--fullscreen &__navigation-buttons {
+    &:fullscreen &__item-figure-inner,
+    &:fullscreen &__navigation-buttons {
       max-height: none;
       flex: 1;
 
       aspect-ratio: auto;
     }
 
-    &--fullscreen &__navigation {
+    &:fullscreen &__navigation {
       padding-top: 0;
       padding-left: 0;
 

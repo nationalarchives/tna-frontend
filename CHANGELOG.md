@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Large paragraphs (`.tna-large-paragraph`) that follow headings and heading groups have less top margin
+- Switch `.tna-gallery--fullscreen` class for `.tna-gallery:fullscreen`
 
 ### Deprecated
 ### Removed

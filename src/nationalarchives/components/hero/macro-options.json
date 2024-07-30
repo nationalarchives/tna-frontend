@@ -161,10 +161,10 @@
     "description": "The style of hero to use. This can be `contrast`, `tint` or `accent`."
   },
   {
-    "name": "style",
+    "name": "layout",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An alternative layout of the hero component to use. This can be `shift` or `split`."
   },
   {
     "name": "classes",

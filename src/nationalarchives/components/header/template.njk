@@ -21,8 +21,8 @@
       </{%- if params.logo.href -%}a{%- else -%}span{%- endif -%}>
     </div>
     {%- if params.navigation or params.topNavigation %}
-    <div class="tna-column tna-header__navigation-toggle">
-      <button class="tna-header__navigation-toggle-button" type="button" aria-controls="{{ 'tna-header__navigation' or params.navigationId }}" hidden>
+    <div class="tna-column tna-header__navigation-button-wrapper">
+      <button class="tna-header__navigation-button" type="button" aria-controls="{{ 'tna-header__navigation' or params.navigationId }}" hidden>
         Menu
         <span class="tna-header__hamburger"></span>
       </button>

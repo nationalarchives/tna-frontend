@@ -2,7 +2,7 @@ export class Header {
   constructor($module) {
     this.$module = $module;
     this.$toggleButton =
-      $module && $module.querySelector(".tna-header__navigation-toggle-button");
+      $module && $module.querySelector(".tna-header__navigation-button");
     this.$navigation =
       $module && $module.querySelector(".tna-header__navigation");
     this.$links =
@@ -61,9 +61,7 @@ export class Header {
     this.$navigation.setAttribute("aria-hidden", "false");
     this.$toggleButton.setAttribute("aria-expanded", "true");
     this.$toggleButton.setAttribute("title", "Close menu");
-    this.$toggleButton.classList.add(
-      "tna-header__navigation-toggle-button--opened",
-    );
+    this.$toggleButton.classList.add("tna-header__navigation-button--opened");
 
     for (let i = 0; i < this.$links.length; i++) {
       this.$links[i].setAttribute("tabindex", "0");
@@ -77,7 +75,7 @@ export class Header {
     this.$toggleButton.setAttribute("aria-expanded", "false");
     this.$toggleButton.setAttribute("title", "Open menu");
     this.$toggleButton.classList.remove(
-      "tna-header__navigation-toggle-button--opened",
+      "tna-header__navigation-button--opened",
     );
 
     for (let i = 0; i < this.$links.length; i++) {

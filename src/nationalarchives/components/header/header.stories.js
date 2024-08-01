@@ -88,7 +88,7 @@ Standard.play = async ({ canvasElement }) => {
     `.tna-header__navigation-items`,
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-toggle-button`,
+    `.tna-header__navigation-button`,
   );
 
   await expect($navigationItems).toBeVisible();
@@ -190,7 +190,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     canvas.getByText(navigationItem.text),
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-toggle-button`,
+    `.tna-header__navigation-button`,
   );
 
   await step("Initial load", async () => {

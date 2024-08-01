@@ -71,7 +71,7 @@ export class Accordion {
       `${$headingButton.innerText}, Hide this section`,
     );
     $content.removeAttribute("hidden");
-    $content.setAttribute("tabindex", "0");
+    // $content.setAttribute("tabindex", "0");
   }
 
   closeItem($item) {
@@ -83,7 +83,7 @@ export class Accordion {
       `${$headingButton.innerText}, Show this section`,
     );
     $content.setAttribute("hidden", "until-found");
-    $content.setAttribute("tabindex", "-1");
+    // $content.setAttribute("tabindex", "-1");
   }
 
   closeAllItemsExcept($excludeItem) {

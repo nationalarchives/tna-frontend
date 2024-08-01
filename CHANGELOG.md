@@ -13,7 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the tabindex on open accordion items
 - Theme selector icons in footer changed to SVGs
 - Updated style of gallery next and previous buttons
-- Header menu button now has text
+- Header and global header menu buttons now have text
+- Reduced size of logo in header component
+- Header markup changed to align more closely with global header
 
 ### Deprecated
 ### Removed

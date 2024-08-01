@@ -65,19 +65,20 @@ export class Gallery {
     });
     this.$navigation.removeAttribute("hidden");
     this.$navigationItems.forEach(($item) => {
-      $item.addEventListener("click", () =>
-        this.showItem($item.getAttribute("aria-controls"), true),
-      );
+      $item.addEventListener("click", () => {
+        this.showItem($item.getAttribute("aria-controls"), true);
+        this.$itemsContainer.focus();
+      });
     });
     this.$module.setAttribute("tabindex", "0");
     this.$module.addEventListener("keydown", (e) => {
       switch (e.key) {
         case "ArrowLeft":
-        case "ArrowUp":
+          // case "ArrowUp":
           this.showPreviousItem();
           break;
         case "ArrowRight":
-        case "ArrowDown":
+          // case "ArrowDown":
           this.showNextItem();
           break;
         case "Home":
@@ -104,12 +105,14 @@ export class Gallery {
     }
     this.$showIndex?.addEventListener("click", () => this.showIndex());
     this.$navigationButtons?.removeAttribute("hidden");
-    this.$navigationButtonPrev?.addEventListener("click", () =>
-      this.showPreviousItem(),
-    );
-    this.$navigationButtonNext?.addEventListener("click", () =>
-      this.showNextItem(),
-    );
+    this.$navigationButtonPrev?.addEventListener("click", () => {
+      this.showPreviousItem();
+      this.$itemsContainer.focus();
+    });
+    this.$navigationButtonNext?.addEventListener("click", () => {
+      this.showNextItem();
+      this.$itemsContainer.focus();
+    });
   }
 
   showIndex() {
@@ -118,7 +121,7 @@ export class Gallery {
     this.$showIndex?.setAttribute("hidden", true);
   }
 
-  showItem(id, focusItem = false) {
+  showItem(id) {
     this.$items.forEach(($item) => {
       if (id && $item.id === id) {
         $item.removeAttribute("hidden");
@@ -133,9 +136,6 @@ export class Gallery {
         if ($item.getAttribute("aria-controls") === id) {
           $item.setAttribute("aria-selected", "true");
           $item.setAttribute("tabindex", "0");
-          // if (focusItem) {
-          //   $item.focus();
-          // }
         } else {
           $item.setAttribute("aria-selected", "false");
           $item.setAttribute("tabindex", "-1");
@@ -150,9 +150,6 @@ export class Gallery {
     }
     this.currentId = id;
     this.$itemsContainer.setAttribute("tabindex", "0");
-    if (focusItem) {
-      this.$itemsContainer.focus();
-    }
   }
 
   getCurrentItemIndex() {
@@ -196,6 +193,7 @@ export class Gallery {
   enterFullScreen() {
     this.$module.requestFullscreen();
     this.syncFullScreen();
+    this.$module.focus();
   }
 
   exitFullScreen() {

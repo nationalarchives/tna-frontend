@@ -124,12 +124,16 @@
   }
 
   &__navigation-button {
-    width: 25%;
-    padding: 0;
+    width: 35%;
+
+    display: flex;
+    align-items: center;
 
     position: absolute;
     top: 0;
     bottom: 0;
+
+    background: transparent;
 
     border: none;
 
@@ -137,8 +141,7 @@
 
     cursor: pointer;
     pointer-events: auto;
-
-    @include colour.tint;
+    @include typography.main-font-weight-bold;
 
     &:hover,
     &:focus {
@@ -147,36 +150,39 @@
   }
 
   &__navigation-prev {
-    padding-right: 10%;
+    padding-left: 1rem;
+
+    justify-content: flex-start;
 
     left: 0;
-
-    background: linear-gradient(
-      90deg,
-      var(--background) 15%,
-      rgb(0 0 0 / 0%) 100%
-    );
   }
 
   &__navigation-next {
-    padding-left: 10%;
+    padding-right: 1rem;
+
+    justify-content: flex-end;
 
     right: 0;
-
-    background: linear-gradient(
-      270deg,
-      var(--background) 15%,
-      rgb(0 0 0 / 0%) 100%
-    );
   }
 
   &__navigation-button-label {
+    padding: 0.5rem 0.75rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    @include colour.accent;
+  }
+
+  &__navigation-button-icon {
+    content: "";
+
     width: 1rem;
     height: 1rem;
 
-    display: inline-block;
-
-    font-size: 0;
+    display: block;
+    flex: none;
 
     @include colour.colour-border("font-dark", 4px, solid, top);
     @include colour.colour-border("font-dark", 4px, solid, right);
@@ -184,11 +190,11 @@
     transform-origin: 50% 50%;
   }
 
-  &__navigation-prev &__navigation-button-label {
+  &__navigation-prev &__navigation-button-icon {
     transform: rotate(-135deg);
   }
 
-  &__navigation-next &__navigation-button-label {
+  &__navigation-next &__navigation-button-icon {
     transform: rotate(45deg);
   }
 

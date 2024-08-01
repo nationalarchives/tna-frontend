@@ -90,7 +90,7 @@
     width: 2rem;
     height: 0.25rem;
 
-    display: block;
+    display: inline-block;
 
     @include colour.colour-background("font-dark");
 
@@ -98,13 +98,13 @@
     &::after {
       content: "";
 
+      width: 2rem;
       height: 0.25rem;
 
       display: block;
 
       position: absolute;
       right: 0;
-      left: 0;
 
       background-color: inherit;
     }
@@ -124,11 +124,15 @@
 
     appearance: none;
 
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 
     position: relative;
 
-    font-size: 0;
+    color: inherit;
+    @include typography.main-font-weight-bold;
+    @include typography.font-size(16);
 
     background: none;
 
@@ -136,6 +140,10 @@
     border-width: 0.25rem 0;
 
     cursor: pointer;
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
 
     &--opened {
       .tna-header__hamburger {
@@ -427,6 +435,7 @@
 
     &__logo.tna-column {
       padding-left: grid.gutter-width-tiny();
+      flex: 1;
     }
 
     .tna-logo {

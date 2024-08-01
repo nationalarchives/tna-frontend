@@ -9,9 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Removed the tabindex on open accordion items
+- Theme selector icons in footer changed to SVGs
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Pressing `Escape` whilst focused anywhere on the header or global header components will close the menu if it is open
+
 ### Security
 
 ## [0.2.5](https://github.com/nationalarchives/tna-frontend/compare/v0.2.4...v0.2.5) - 2024-07-30

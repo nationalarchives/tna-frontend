@@ -37,18 +37,13 @@ export class GlobalHeader {
       this.mql.addListener(() => this.syncState());
     }
 
-    this.$navigation.addEventListener("keyup", (e) => {
-      if (e.code === "Escape") {
-        this.menuOpened = false;
-        this.syncState();
-        this.$toggleButton.focus();
-      }
-    });
-    this.$topNavigation.addEventListener("keyup", (e) => {
-      if (e.code === "Escape") {
-        this.menuOpened = false;
-        this.syncState();
-        this.$toggleButton.focus();
+    this.$module.addEventListener("keyup", (e) => {
+      if (e.code === "Escape" && this.mql.matches) {
+        if (this.menuOpened) {
+          this.menuOpened = false;
+          this.syncState();
+          this.$toggleButton.focus();
+        }
       }
     });
   }

@@ -4,9 +4,9 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <header class="tna-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <div class="tna-container tna-header__contents">
-    <div class="tna-column tna-header__logo">
-      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-contents tna-header__logo-contents--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-contents"{%- endif -%}>
+  <div class="tna-container">
+    <div class="tna-column tna-column--full tna-header__contents">
+      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo tna-header__logo--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo"{%- endif -%}>
         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" viewBox="0 0 160 160" width="96" height="96">
           <title>The National Archives</title>
           <path fill="transparent" d="M0 0h160v160H0z" class="tna-logo__background"/>
@@ -19,41 +19,41 @@
         <span class="tna-header__logo-strapline">{{ params.logo.strapline }}</span>
         {%- endif -%}
       </{%- if params.logo.href -%}a{%- else -%}span{%- endif -%}>
-    </div>
-    {%- if params.navigation or params.topNavigation %}
-    <div class="tna-column tna-header__navigation-toggle">
-      <button class="tna-header__navigation-toggle-button" type="button" aria-controls="{{ 'tna-header__navigation' or params.navigationId }}" hidden>
-        Menu
-        <span class="tna-header__hamburger"></span>
-      </button>
-    </div>
-    <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" id="{{ 'tna-header__navigation' or params.navigationId }}" aria-label="Primary">
-      {%- if params.navigation %}
-      <ul class="tna-header__navigation-items">
-        {%- for item in params.navigation %}
-        <li class="tna-header__navigation-item">
-          <a href="{{ item.href }}" class="tna-header__navigation-item-link{%- if item.selected %} tna-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="page"{% endif %} {%- if item.title %} title="{{ item.title }}"{% endif %}>
-            {{ item.text }}
-          </a>
-        </li>
-        {%- endfor %}
-      </ul>
+      {%- if params.navigation or params.topNavigation %}
+      <div class="tna-column tna-header__navigation-toggle">
+        <button class="tna-header__navigation-toggle-button" type="button" aria-controls="{{ 'tna-header__navigation' or params.navigationId }}" hidden>
+          Menu
+          <span class="tna-header__hamburger"></span>
+        </button>
+      </div>
+      {# <nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" id="{{ 'tna-header__navigation' or params.navigationId }}" aria-label="Primary"> #}
+        {%- if params.navigation %}
+        <ul class="tna-header__navigation-items">
+          {%- for item in params.navigation %}
+          <li class="tna-header__navigation-item">
+            <a href="{{ item.href }}" class="tna-header__navigation-item-link{%- if item.selected %} tna-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="page"{% endif %} {%- if item.title %} title="{{ item.title }}"{% endif %}>
+              {{ item.text }}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- if params.topNavigation %}
+        <ul class="tna-header__top-navigation-items">
+          {%- for item in params.topNavigation %}
+          <li class="tna-header__top-navigation-item">
+            <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+              {%- if item.icon %}
+              <i class="fa-solid fa-{{ item.icon }}" aria-hidden="true"></i>
+              {%- endif %}
+              {{ item.text }}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      {# </nav> #}
       {%- endif %}
-      {%- if params.topNavigation %}
-      <ul class="tna-header__top-navigation-items">
-        {%- for item in params.topNavigation %}
-        <li class="tna-header__top-navigation-item">
-          <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
-            {%- if item.icon %}
-            <i class="fa-solid fa-{{ item.icon }}" aria-hidden="true"></i>
-            {%- endif %}
-            {{ item.text }}
-          </a>
-        </li>
-        {%- endfor %}
-      </ul>
-      {%- endif %}
-    </nav>
-    {%- endif %}
+    </div>
   </div>
 </header>

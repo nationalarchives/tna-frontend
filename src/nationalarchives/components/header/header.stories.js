@@ -78,6 +78,22 @@ Standard.args = {
       text: "Gamma",
       href: "#/gamma",
     },
+    {
+      text: "Delta",
+      href: "#/delta",
+    },
+    {
+      text: "Epsilon",
+      href: "#/epsilon",
+    },
+    {
+      text: "Zeta",
+      href: "#/zeta",
+    },
+    {
+      text: "Eta",
+      href: "#/eta",
+    },
   ],
   classes: "tna-header--demo",
 };

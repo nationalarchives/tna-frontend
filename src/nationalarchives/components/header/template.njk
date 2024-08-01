@@ -4,17 +4,6 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <header class="tna-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  {%- if params.exit -%}
-  <div class="tna-header__exit">
-    <div class="tna-container">
-      <div class="tna-column tna-column--full">
-        <a href="{{ params.exit.href }}" class="tna-header__exit-link"{%- if params.exit.target %} target="{{ params.exit.target }}" title="{{ params.exit.text }} (opens in new tab)"{% endif %}>
-          {{ params.exit.text }}
-        </a>
-      </div>
-    </div>
-  </div>
-  {%- endif -%}
   <div class="tna-container tna-header__contents">
     <div class="tna-column tna-header__logo">
       <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-contents tna-header__logo-contents--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-contents"{%- endif -%}>

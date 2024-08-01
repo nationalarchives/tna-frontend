@@ -27,11 +27,13 @@ export class Header {
       this.mql.addListener(() => this.syncState());
     }
 
-    this.$navigation.addEventListener("keyup", (e) => {
+    this.$module.addEventListener("keyup", (e) => {
       if (e.code === "Escape") {
-        this.menuOpened = false;
-        this.syncState();
-        this.$toggleButton.focus();
+        if (this.menuOpened && this.mql.matches) {
+          this.menuOpened = false;
+          this.syncState();
+          this.$toggleButton.focus();
+        }
       }
     });
   }

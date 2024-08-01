@@ -26,34 +26,6 @@
     }
   }
 
-  &__exit {
-    padding-top: spacing.space(0.5);
-    padding-bottom: spacing.space(0.5);
-
-    text-align: right;
-
-    @include colour.contrast;
-  }
-
-  &__exit-link {
-    text-decoration: none;
-    @include typography.font-size(16);
-
-    &,
-    &:link,
-    &:visited {
-      @include colour.colour-font("font-base");
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    .fa-solid {
-      margin-left: spacing.space(0.5);
-    }
-  }
-
   &__contents {
     &.tna-container {
       justify-content: space-between;

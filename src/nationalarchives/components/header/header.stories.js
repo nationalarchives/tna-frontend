@@ -10,7 +10,6 @@ const argTypes = {
   accent: {
     control: "boolean",
   },
-  exit: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -34,7 +33,6 @@ const Template = ({
   topNavigation,
   navigation,
   accent,
-  exit,
   classes,
   attributes,
 }) =>
@@ -44,7 +42,6 @@ const Template = ({
       topNavigation,
       navigation,
       accent,
-      exit,
       classes,
       attributes,
     },
@@ -82,11 +79,6 @@ Standard.args = {
       href: "#/gamma",
     },
   ],
-  exit: {
-    text: "Go to the current National Archives website",
-    href: "#",
-    target: "_blank",
-  },
   classes: "tna-header--demo",
 };
 Standard.play = async ({ canvasElement }) => {
@@ -135,11 +127,6 @@ Accent.args = {
       href: "#/gamma",
     },
   ],
-  exit: {
-    text: "Go to the current National Archives website",
-    href: "#",
-    target: "_blank",
-  },
   accent: true,
   classes: "tna-header--demo",
 };

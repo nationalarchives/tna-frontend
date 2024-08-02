@@ -178,6 +178,13 @@ ol {
     }
   }
 
+  &--plain#{&}--spaced {
+    dt,
+    dd {
+      padding-bottom: spacing.space(1.25);
+    }
+  }
+
   dt {
     width: 30%;
 
@@ -202,13 +209,13 @@ ol {
         overflow: visible;
 
         position: absolute;
-        top: 50%;
+        top: spacing.space(0.5);
         left: spacing.space(1);
 
-        @include colour.colour-font("icon-light");
+        line-height: inherit;
         text-align: left;
 
-        transform: translateY(-50%);
+        @include colour.colour-font("icon-light");
       }
     }
   }
@@ -218,8 +225,7 @@ ol {
       padding-left: spacing.space(2) !important;
 
       .fa-solid {
-        margin-top: -#{spacing.space(0.25)};
-
+        top: 0;
         left: 0;
       }
     }

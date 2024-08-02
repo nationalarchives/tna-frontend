@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...HEAD)
 
 ### Added
+
+- Spaced option for description lists with `.tna-dl--spaced`
+
 ### Changed
 
 - Removed the tabindex on open accordion items
@@ -20,11 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 
-- Up and down arrows no longer change images within a gallery
+- Pressing the up and down keyboard arrows no longer changes images within a gallery
 
 ### Fixed
 
 - Pressing `Escape` whilst focused anywhere on the header or global header components will close the menu if it is open
+- Icon vertical alignment fixed in description lists
 
 ### Security
 

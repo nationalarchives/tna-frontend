@@ -38,6 +38,24 @@ UnorderedListDashed.args = {
   style: "dashed",
 };
 
+const UnorderedListNestedTemplate = ({ items, style, classes = "" }) =>
+  `<ul class="tna-ul${style ? ` tna-ul--${style}` : ""} ${classes}">${items.reduce(
+    (list, item) => `${list}<li>${item}
+      <ul class="tna-ul${style ? ` tna-ul--${style}` : ""} ${classes}">${items.reduce(
+        (list, item) => `${list}<li>${item}</li>`,
+        "",
+      )}</ul>
+    </li>`,
+    "",
+  )}</ul>`;
+export const UnorderedListNested = UnorderedListNestedTemplate.bind({});
+UnorderedListNested.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+UnorderedListNested.args = {
+  items: ["Alpha", "Beta", "Gamma", "Delta"],
+};
+
 const OrderedListTemplate = ({ items, style, classes = "" }) =>
   `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}</li>`,
@@ -66,13 +84,23 @@ OrderedListDashed.args = {
   items: ["Alpha", "Beta", "Gamma"],
   style: "dashed",
 };
-export const OrderedListNested = OrderedListTemplate.bind({});
+
+const OrderedListNestedTemplate = ({ items, style, classes = "" }) =>
+  `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""} ${classes}">${items.reduce(
+    (list, item) => `${list}<li>${item}
+      <ol class="tna-ol${style ? ` tna-ol--${style}` : ""} ${classes}">${items.reduce(
+        (list, item) => `${list}<li>${item}</li>`,
+        "",
+      )}</ol>
+    </li>`,
+    "",
+  )}</ol>`;
+export const OrderedListNested = OrderedListNestedTemplate.bind({});
 OrderedListNested.parameters = {
   chromatic: { disableSnapshot: true },
 };
 OrderedListNested.args = {
   items: ["Alpha", "Beta", "Gamma", "Delta"],
-  style: "dashed",
 };
 
 const DescriptionListTemplate = ({ items, plain, classes = "" }) =>
@@ -209,4 +237,17 @@ ChipList.args = {
     { title: "Category", text: "Records and research", href: "#" },
     { title: "Comments", text: "3 comments" },
   ],
+};
+export const PlainChipList = ChipListTemplate.bind({});
+PlainChipList.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+PlainChipList.args = {
+  items: [
+    { title: "Published", text: "Saturday 28 June 2014", icon: "calendar" },
+    { title: "Author", text: "James Cronan", icon: "user", href: "#" },
+    { title: "Category", text: "Records and research", href: "#" },
+    { title: "Comments", text: "3 comments" },
+  ],
+  plain: true,
 };

@@ -107,9 +107,7 @@
 
     @include typography.font-size(16);
 
-    @include colour.colour-border("keyline-dark", 1px, dashed);
-
-    background-color: rgb(255 255 255 / 10%);
+    background-color: rgb(255 255 255 / 14%);
   }
 
   &__navigation {

@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header and global header menu buttons now have text
 - Reduced size of logo in header component
 - Header markup changed to align more closely with global header
+- Updated the newsletter block style in the footer
 
 ### Deprecated
 ### Removed

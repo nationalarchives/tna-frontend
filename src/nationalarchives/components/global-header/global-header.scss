@@ -357,10 +357,16 @@
     }
 
     &__top-navigation {
-      padding-top: spacing.space(1);
-      padding-bottom: spacing.space(1);
+      padding-top: spacing.space(0.5);
+      padding-bottom: spacing.space(0.5);
 
       justify-content: flex-start;
+
+      gap: spacing.space(1.5);
+    }
+
+    &__top-navigation-link {
+      padding: spacing.space(0.25) 0;
     }
   }
 

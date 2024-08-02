@@ -326,10 +326,11 @@
 
     &__top-navigation-item {
       margin: 0;
-      padding: spacing.space(0.5);
     }
 
     &__top-navigation-item-link {
+      padding: spacing.space(0.5);
+
       &,
       &:link,
       &:visited {
@@ -399,13 +400,13 @@
       line-height: 1.25rem;
     }
 
-    &__logo.tna-column,
+    &__logo,
     &__navigation-item-link,
-    &__navigation-button-wrapper.tna-column {
+    &__navigation-button-wrapper {
       padding-right: grid.gutter-width();
     }
 
-    &__logo.tna-column,
+    &__logo,
     &__navigation-item-link {
       padding-left: grid.gutter-width();
     }
@@ -417,12 +418,12 @@
   }
 
   @include media.on-tiny {
-    &__navigation-button-wrapper.tna-column,
-    &__logo.tna-column {
+    &__navigation-button-wrapper,
+    &__logo {
       padding-right: grid.gutter-width-tiny();
     }
 
-    &__logo.tna-column {
+    &__logo {
       padding-left: grid.gutter-width-tiny();
       flex: 1;
     }

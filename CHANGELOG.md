@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.6](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...v0.2.6) - 2024-08-02
 
 ### Added
 
@@ -21,7 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header markup changed to align more closely with global header
 - Updated the newsletter block style in the footer
 
-### Deprecated
 ### Removed
 
 - Pressing the up and down keyboard arrows no longer changes images within a gallery
@@ -30,8 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Pressing `Escape` whilst focused anywhere on the header or global header components will close the menu if it is open
 - Icon vertical alignment fixed in description lists
-
-### Security
 
 ## [0.2.5](https://github.com/nationalarchives/tna-frontend/compare/v0.2.4...v0.2.5) - 2024-07-30
 

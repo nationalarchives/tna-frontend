@@ -20,6 +20,14 @@
 
   white-space: nowrap !important;
 
+  @include colour.colour-background("button-background", $important: true);
+  @include colour.colour-border(
+    "focus-outline",
+    a11yVars.$focus-outline-width,
+    $important: true
+  );
+  outline: none !important;
+
   clip: rect(0 0 0 0) !important;
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
@@ -28,17 +36,6 @@
   &:link,
   &:visited {
     @include colour.colour-font("button-text", $important: true);
-  }
-
-  &:focus {
-    @include colour.colour-background("button-background", $important: true);
-
-    @include colour.colour-border(
-      "focus-outline",
-      a11yVars.$focus-outline-width,
-      $important: true
-    );
-    outline: none !important;
   }
 
   &:active,

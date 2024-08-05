@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Change skip link colours when hidden to avoid accessibility failures being raised
+
 ### Security
 
 ## [0.2.6](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...v0.2.6) - 2024-08-02

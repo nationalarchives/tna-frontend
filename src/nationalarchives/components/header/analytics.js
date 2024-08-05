@@ -7,7 +7,7 @@ export default [
     events: [
       {
         eventName: "toggle",
-        targetElement: ".tna-header__navigation-toggle-button",
+        targetElement: ".tna-header__navigation-button",
         on: "click",
         data: {
           state: valueGetters.expanded,

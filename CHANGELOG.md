@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Change skip link colours when hidden to avoid accessibility failures being raised
+- Fixed incorrect use of `navigationId` and `topNavigationId` in global header component
 
 ### Security
 

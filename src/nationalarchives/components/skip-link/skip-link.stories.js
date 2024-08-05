@@ -49,8 +49,8 @@ Test.play = async ({ args, canvasElement }) => {
   const $skipLink = canvas.getByText(args.text);
   const $linkedElement = document.getElementById(args.href);
 
-  await expect($skipLink.getBoundingClientRect().width).toBe(1);
-  await expect($skipLink.getBoundingClientRect().height).toBe(1);
+  await expect($skipLink.getBoundingClientRect().width).toBe(11);
+  await expect($skipLink.getBoundingClientRect().height).toBe(11);
   await expect($skipLink.getBoundingClientRect().x).toBeLessThanOrEqual(-1);
   await expect($skipLink).not.toHaveFocus();
   await expect($linkedElement).not.toHaveFocus();
@@ -63,8 +63,8 @@ Test.play = async ({ args, canvasElement }) => {
   await expect($skipLink.getBoundingClientRect().x).toBeGreaterThanOrEqual(0);
 
   await userEvent.click($skipLink);
-  await expect($skipLink.getBoundingClientRect().width).toBe(1);
-  await expect($skipLink.getBoundingClientRect().height).toBe(1);
+  await expect($skipLink.getBoundingClientRect().width).toBe(11);
+  await expect($skipLink.getBoundingClientRect().height).toBe(11);
   await expect($skipLink.getBoundingClientRect().x).toBeLessThanOrEqual(-1);
   await expect($skipLink).not.toHaveFocus();
   await expect($linkedElement).toHaveAttribute("tabindex");

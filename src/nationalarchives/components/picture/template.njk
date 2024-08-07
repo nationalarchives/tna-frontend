@@ -11,13 +11,14 @@
       <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}" loading="lazy">
     </picture>
     {%- if params.information %}
-    <button class="tna-picture__toggle-transcript tna-button tna-button--small tna-button--solid-hover" aria-expanded="false" hidden>Open transcript</button>
+    <button type="button" class="tna-picture__toggle-transcript tna-button tna-button--small tna-button--solid-hover" aria-expanded="false" hidden>Open transcript</button>
     {%- endif %}
   </div>
 {%- if params.information %}
   <div class="tna-picture__transcript">
   {%- if params.information | length > 1 %}
     {{ tnaTabs({
+      itemHeadingLevel: params.informationItemHeadingLevel,
       items: params.information,
       classes: "tna-tabs--plain tna-tabs--small"
     }) }}

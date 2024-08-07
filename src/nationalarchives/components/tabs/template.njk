@@ -7,7 +7,7 @@
   <ul class="tna-tabs__list" role="tablist" hidden>
   {%- for item in params.items %}
     <li class="tna-tabs__list-item">
-      <button class="tna-tabs__button" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab">
+      <button type="button" class="tna-tabs__button" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab">
         <span class="tna-tabs__button-inner">
           {{ item.title }}
         </span>

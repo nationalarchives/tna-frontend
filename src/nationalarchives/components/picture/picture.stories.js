@@ -9,6 +9,7 @@ const argTypes = {
   caption: { control: "text" },
   informationLabelOpen: { control: "object" },
   informationLabelClose: { control: "object" },
+  informationItemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
   information: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -33,6 +34,7 @@ const Template = ({
   caption,
   informationLabelOpen,
   informationLabelClose,
+  informationItemHeadingLevel,
   information,
   classes,
   attributes,
@@ -46,6 +48,7 @@ const Template = ({
       caption,
       informationLabelOpen,
       informationLabelClose,
+      informationItemHeadingLevel,
       information,
       classes,
       attributes,
@@ -59,6 +62,7 @@ Standard.args = {
   width: 499,
   height: 333,
   caption: "<p>This is a pretty image</p>",
+  informationItemHeadingLevel: 3,
   information: [
     {
       id: "transcript",

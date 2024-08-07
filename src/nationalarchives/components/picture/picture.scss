@@ -1,3 +1,4 @@
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/grid";
 @use "../../tools/media";
@@ -39,9 +40,7 @@
 
     padding: spacing.space(1) spacing.space(1.5);
 
-    .tna-template--clicked &:focus {
-      outline: none;
-    }
+    @include a11y.no-focus-outline-on-click;
 
     .tna-tabs {
       margin-bottom: spacing.space(0.5);

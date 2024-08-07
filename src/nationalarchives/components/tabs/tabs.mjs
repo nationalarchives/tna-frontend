@@ -5,7 +5,7 @@ export class Tabs {
     this.$tabListItemLinks =
       $module &&
       this.$tabList &&
-      $module.querySelectorAll(".tna-tabs__list-item-link");
+      this.$tabList.querySelectorAll(".tna-tabs__button");
     this.$tabItems = $module && $module.querySelectorAll(".tna-tabs__item");
 
     if (
@@ -18,197 +18,115 @@ export class Tabs {
       return;
     }
 
-    this.sticky = this.$module.classList.contains("tna-tabs--sticky");
+    this.currentTabIndex = 0;
+    this.init();
+  }
 
-    const startingTarget = window.location.hash.replace(/^#/, "");
-    const doesStartingTargetExist = [...this.$tabItems].some(
-      ($tabItem) => $tabItem.getAttribute("id") === startingTarget,
-    );
-
-    this.$newTabList = document.createElement("div");
-    this.$newTabList.setAttribute("role", "tablist");
-    this.$newTabList.setAttribute("class", this.$tabList.getAttribute("class"));
-
-    this.$tabItems.forEach(($tabItem, index) => {
-      $tabItem.setAttribute("role", "tabpanel");
-      $tabItem.setAttribute(
-        "aria-labelledby",
-        `${$tabItem.getAttribute("id")}-tab`,
-      );
-      $tabItem.setAttribute("tabindex", "0");
-      if (
-        (doesStartingTargetExist &&
-          $tabItem.getAttribute("id") !== startingTarget) ||
-        (!doesStartingTargetExist && index > 0)
-      ) {
-        $tabItem.setAttribute("hidden", true);
-      }
-    });
-
+  init() {
+    this.$module.classList.add("tna-tabs--interactive");
+    this.$tabList.removeAttribute("hidden");
     this.$tabListItemLinks.forEach(($tabListItemLink) => {
-      const $replacementButton = document.createElement("button");
-      $replacementButton.innerText = $tabListItemLink.innerText;
-      $replacementButton.setAttribute(
-        "class",
-        $tabListItemLink.getAttribute("class"),
-      );
-      $replacementButton.setAttribute("role", "tab");
-      $replacementButton.setAttribute(
-        "id",
-        $tabListItemLink.getAttribute("id"),
-      );
-      $replacementButton.setAttribute(
-        "aria-controls",
-        $tabListItemLink.getAttribute("href")?.replace(/^#/, ""),
-      );
-      $replacementButton.setAttribute("tabindex", "-1");
-      this.$newTabList.appendChild($replacementButton);
-    });
-
-    this.$tabList.replaceWith(this.$newTabList);
-
-    this.$tabListItemLinks = this.$module.querySelectorAll(
-      ".tna-tabs__list-item-link",
-    );
-
-    this.$tabListItemLinks.forEach(($tabListItemLink, index) => {
-      if (
-        (startingTarget &&
-          $tabListItemLink.getAttribute("aria-controls") ===
-            `${startingTarget}`) ||
-        (!startingTarget && index === 0)
-      ) {
-        $tabListItemLink.classList.add("tna-tabs__list-item-link--selected");
-        $tabListItemLink.setAttribute("aria-selected", true);
-        $tabListItemLink.setAttribute("tabindex", "0");
-      } else {
-        $tabListItemLink.setAttribute("aria-selected", false);
-      }
-
-      $tabListItemLink.addEventListener(
-        "keydown",
-        (e) => this.handleItemLinkKeyDown(e),
-        true,
-      );
+      const tabPanelID = $tabListItemLink.getAttribute("aria-controls");
+      $tabListItemLink.setAttribute("aria-selected", false);
+      const $tabPanel = document.getElementById(tabPanelID);
+      $tabPanel.setAttribute("aria-labelledby", $tabListItemLink.id);
+      $tabPanel.setAttribute("role", "tabpanel");
       $tabListItemLink.addEventListener(
         "click",
         (e) => this.handleItemLinkClick(e),
         true,
       );
     });
+    this.switchTabByIndex(this.currentTabIndex);
+    this.$module.addEventListener("keydown", (e) =>
+      this.handleItemLinkKeyDown(e),
+    );
   }
 
   handleItemLinkClick(itemLinkClickEvent) {
     itemLinkClickEvent.preventDefault();
     const targetItem =
       itemLinkClickEvent.currentTarget.getAttribute("aria-controls");
-
-    this.switchTab(targetItem);
+    this.switchTabByID(targetItem);
   }
 
   handleItemLinkKeyDown(itemLinkKeyDownEvent) {
-    const targetItem = itemLinkKeyDownEvent.currentTarget;
-    let overwriteKeyAction = false;
-
+    let preventDefaultKeyAction = false;
     switch (itemLinkKeyDownEvent.key) {
       case "ArrowLeft":
       case "ArrowUp":
-        this.setSelectedToPreviousTab(targetItem);
-        overwriteKeyAction = true;
+        this.previousTab();
+        preventDefaultKeyAction = true;
         break;
-
       case "ArrowRight":
       case "ArrowDown":
-        this.setSelectedToNextTab(targetItem);
-        overwriteKeyAction = true;
+        this.nextTab();
+        preventDefaultKeyAction = true;
         break;
-
       case "Home":
-        this.switchTab(this.$tabListItemLinks[0].getAttribute("aria-controls"));
-        overwriteKeyAction = true;
+        this.switchTabByIndex(0, true);
+        preventDefaultKeyAction = true;
         break;
-
       case "End":
-        this.switchTab(
-          this.$tabListItemLinks[
-            this.$tabListItemLinks.length - 1
-          ].getAttribute("aria-controls"),
-        );
-        overwriteKeyAction = true;
+        this.switchTabByIndex(this.$tabListItemLinks.length - 1, true);
+        preventDefaultKeyAction = true;
         break;
-
       default:
         break;
     }
-
-    if (overwriteKeyAction) {
+    if (preventDefaultKeyAction) {
       itemLinkKeyDownEvent.stopPropagation();
       itemLinkKeyDownEvent.preventDefault();
     }
   }
 
-  setSelectedToNextTab(targetItem) {
-    const currentIndex = [...this.$tabListItemLinks].findIndex(
-      ($tabListItemLink) =>
-        $tabListItemLink.getAttribute("id") === targetItem.getAttribute("id"),
-    );
-    let newIndex;
-    if (currentIndex < this.$tabListItemLinks.length - 1) {
-      newIndex = currentIndex + 1;
+  nextTab() {
+    if (this.currentTabIndex < this.$tabListItemLinks.length - 1) {
+      this.switchTabByIndex(this.currentTabIndex + 1, true);
     } else {
-      newIndex = 0;
+      this.switchTabByIndex(0, true);
     }
-    this.switchTab(
-      this.$tabListItemLinks[newIndex].getAttribute("aria-controls"),
-    );
   }
 
-  setSelectedToPreviousTab(targetItem) {
-    const currentIndex = [...this.$tabListItemLinks].findIndex(
-      ($tabListItemLink) =>
-        $tabListItemLink.getAttribute("id") === targetItem.getAttribute("id"),
-    );
-    let newIndex;
-    if (currentIndex >= 1) {
-      newIndex = currentIndex - 1;
+  previousTab() {
+    if (this.currentTabIndex >= 1) {
+      this.switchTabByIndex(this.currentTabIndex - 1, true);
     } else {
-      newIndex = this.$tabListItemLinks.length - 1;
+      this.switchTabByIndex(this.$tabListItemLinks.length - 1, true);
     }
-    this.switchTab(
-      this.$tabListItemLinks[newIndex].getAttribute("aria-controls"),
-    );
   }
 
-  switchTab(targetId) {
-    this.$tabListItemLinks.forEach(($tabListItemLink) => {
-      if ($tabListItemLink.getAttribute("aria-controls") === targetId) {
-        $tabListItemLink.classList.add("tna-tabs__list-item-link--selected");
+  switchTabByIndex(newIndex, switchFocus = false) {
+    this.currentTabIndex = newIndex;
+
+    this.$tabListItemLinks.forEach(($tabListItemLink, index) => {
+      if (index === this.currentTabIndex) {
         $tabListItemLink.setAttribute("aria-selected", true);
         $tabListItemLink.setAttribute("tabindex", "0");
-        $tabListItemLink.focus();
+        if (switchFocus) {
+          $tabListItemLink.focus();
+        }
       } else {
-        $tabListItemLink.classList.remove("tna-tabs__list-item-link--selected");
         $tabListItemLink.setAttribute("aria-selected", false);
         $tabListItemLink.setAttribute("tabindex", "-1");
       }
     });
 
-    this.$tabItems.forEach(($tabItem) => {
-      if ($tabItem.getAttribute("id") === targetId) {
+    this.$tabItems.forEach(($tabItem, index) => {
+      if (index === this.currentTabIndex) {
         $tabItem.removeAttribute("hidden");
         $tabItem.setAttribute("tabindex", "0");
       } else {
-        $tabItem.setAttribute("hidden", true);
+        $tabItem.setAttribute("hidden", "until-found");
         $tabItem.setAttribute("tabindex", "-1");
       }
     });
+  }
 
-    if (this.sticky) {
-      if (history.replaceState) {
-        history.replaceState(null, null, `#${targetId}`);
-      } else {
-        location.hash = `#${targetId}`;
-      }
-    }
+  switchTabByID(targetId) {
+    const index = Array.from(this.$tabItems).findIndex(
+      ($tabItem) => $tabItem.getAttribute("id") === targetId,
+    );
+    this.switchTabByIndex(index);
   }
 }

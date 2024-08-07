@@ -1,3 +1,6 @@
+@use "../../variables/a11y" as a11yVariables;
+@use "../../variables/borders";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -7,13 +10,16 @@
   @include spacing.space-above;
 
   &__list {
-    margin: 0 0 spacing.space(1);
+    margin: 0;
     padding: 0;
 
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
-    gap: spacing.space(1);
+    gap: spacing.space(0.5);
+
+    position: relative;
+    z-index: 2;
 
     list-style: none;
   }
@@ -21,17 +27,12 @@
   &__list-item {
   }
 
-  &__list-item-link {
-    padding: spacing.space(0.5) 0;
-
-    display: flex;
-
-    align-items: center;
+  &__button {
+    padding: borders.$thick-border-width 0;
 
     position: relative;
 
     text-align: center;
-    text-decoration: none;
 
     background: transparent;
 
@@ -39,98 +40,115 @@
 
     cursor: pointer;
 
-    @include typography.font-size(20);
-    @include typography.heading-font;
+    &[aria-selected="true"] {
+      padding-top: 0;
 
-    &,
-    &:link,
-    &:visited {
-      @include colour.colour-font("font-dark");
+      @include colour.tint;
     }
+  }
 
-    &::after {
-      content: "";
+  &__button-inner {
+    padding: spacing.space(0.5) spacing.space(0.75);
 
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
+    display: block;
 
-    &:hover,
-    &--selected,
-    &--selected:hover {
-      text-decoration: none;
+    text-decoration: underline;
 
-      &::after {
-        @include colour.thick-keyline-dark(top);
-      }
-    }
+    @include colour.colour-font("font-dark");
+  }
 
-    .tna-template--js-enabled & {
-      @include colour.colour-font("font-light");
+  &__button:hover &__button-inner {
+    @include typography.interacted-text-decoration;
+  }
 
-      &:hover {
-        &::after {
-          @include colour.thick-keyline(top);
-        }
-      }
-
-      &--selected {
-        @include colour.colour-font("font-dark");
-
-        &::after,
-        &:hover::after {
-          @include colour.thick-keyline-dark(top);
-        }
-      }
-    }
+  &__button[aria-selected="true"] &__button-inner {
+    text-decoration: none;
+    
+    @include colour.thick-keyline-accent(top);
   }
 
   &__items {
-    // &:not(:target-within) {
-    //   .tna-tabs__item:first-child {
-    //     display: block;
-    //   }
-    // }
+    display: flex;
+    flex-direction: column;
+    gap: spacing.space(2);
   }
 
   &__item {
-    display: none;
+    border-radius: 0.1px;
+    @include a11y.no-focus-outline-on-click;
 
-    &:first-child {
-      display: block;
-    }
-
-    &:has(~ :target) {
-      display: none;
-    }
-
-    &:target {
-      display: block;
-    }
-
-    .tna-template--js-enabled & {
-      display: block;
-
-      &[hidden] {
-        display: none;
-      }
-    }
-
-    .tna-template--clicked &:focus {
-      outline: none;
+    &:focus {
+      outline-offset: -#{a11yVariables.$focus-outline-width};
     }
   }
 
-  @include colour.on-high-contrast-and-forced-colours {
-    &__list {
-      @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+  &--interactive &__item {
+    padding: spacing.space(1);
+
+    @include colour.tint;
+  }
+
+  &--plain {
+    overflow-x: hidden;
+  }
+
+  &--plain &__list {
+    padding: a11yVariables.$focus-outline-width +
+      a11yVariables.$focus-outline-offset spacing.space(1) 0;
+  }
+
+  &--plain#{&}--interactive &__button {
+    background: transparent;
+
+    border: 1px transparent solid;
+    border-bottom: none;
+  }
+
+  &--plain#{&}--interactive &__button[aria-selected="true"] {
+    padding-top: 0;
+
+    @include colour.colour-border("keyline");
+
+    &::before,
+    &::after {
+      content: "";
+
+      width: 100vw;
+
+      position: absolute;
+      inset: auto auto 0;
+
+      @include colour.colour-border("keyline", 0);
+    }
+
+    &::before {
+      right: 100%;
+
+      border-width: 0 1px 1px 0;
+    }
+
+    &::after {
+      left: 100%;
+
+      border-width: 0 0 1px 1px;
     }
   }
+
+  &--plain#{&}--interactive &__item {
+    background: none;
+
+    @include colour.colour-border("keyline", 1px, solid);
+    border-top-width: 0;
+  }
+
+  // @include colour.on-high-contrast-and-forced-colours {
+  //   &__list {
+  //     @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+  //   }
+  // }
 
   // @include colour.on-forced-colours {
-  //   &__list-item-link {
+  //   &__button {
   //     &--selected {
   //       padding-bottom: spacing.space(0.125);
 

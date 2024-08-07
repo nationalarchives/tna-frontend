@@ -15,7 +15,8 @@
   <div class="tna-picture__transcript">
   {%- if params.information | length > 1 %}
     {{ tnaTabs({
-      items: params.information
+      items: params.information,
+      classes: "tna-tabs--plain"
     }) }}
   {%- else %}
     {{ params.information[0]['body'] | safe }}
@@ -24,7 +25,7 @@
 {%- endif %}
 {%- if params.caption %}
   <figcaption class="tna-picture__caption">
-      {{ params.caption | safe }}
+    {{ params.caption | safe }}
   </figcaption>
 {%- endif %}
 </figure>

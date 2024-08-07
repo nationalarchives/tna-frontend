@@ -75,6 +75,55 @@ Plain.args = {
   classes: "tna-tabs--plain",
 };
 
+export const Small = Template.bind({});
+Small.args = {
+  itemHeadingLevel: 3,
+  items: [
+    {
+      id: "unique-id-a",
+      title: "Alpha section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-b",
+      title: "Beta section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-c",
+      title: "Gamma section",
+      body: "<p>Lorem ipsum</p>",
+    },
+  ],
+  classes: "tna-tabs--small",
+};
+
+export const SmallPlain = Template.bind({});
+SmallPlain.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+SmallPlain.args = {
+  itemHeadingLevel: 3,
+  items: [
+    {
+      id: "unique-id-a",
+      title: "Alpha section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-b",
+      title: "Beta section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-c",
+      title: "Gamma section",
+      body: "<p>Lorem ipsum</p>",
+    },
+  ],
+  classes: "tna-tabs--small tna-tabs--plain",
+};
+
 export const Test = Template.bind({});
 Test.parameters = {
   chromatic: { disableSnapshot: true },

@@ -179,7 +179,8 @@ $button-border-width: 4px !default;
     }
   }
 
-  .tna-background-accent &--accent {
+  .tna-background-accent &--accent,
+  .tna-template--dark-theme .tna-background-accent-light &--accent {
     @include colour.contrast;
 
     @include colour.colour-background("button-background");

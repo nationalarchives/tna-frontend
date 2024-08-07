@@ -296,22 +296,54 @@
       colour.$colour-palette-default,
       "button-hover-background"
     )};
-  --accent-border: var(--font-base);
   --accent-list-marker: var(--font-base);
+  --accent-border: var(--accent-background);
 
   @include colour-background("background");
   @include colour-font("font-base");
 
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
-      --link: #{map.get(colour.$colour-palette-default, "link")};
-      --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+      // --link: #{map.get(colour.$colour-palette-default, "link")};
+      // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+
+      --background: var(--accent-background);
+      --font-base: var(--accent-font-base);
+      --font-dark: var(--accent-font-dark);
+      --font-light: var(--accent-font-light);
+      --icon-light: var(--accent-icon-light);
+      --link: var(--accent-link);
+      --link-visited: var(--accent-link);
+      --keyline: var(--accent-keyline);
+      --keyline-dark: var(--accent-keyline-dark);
+      --accent-list-marker: var(--accent-font-base);
+      --accent-border: var(--accent-font-dark);
+      --button-text: var(--accent-button-text);
+      --button-background: var(--accent-button-background);
+      --button-hover-text: var(--accent-button-hover-text);
+      --button-hover-background: var(--accent-button-hover-background);
     }
   }
 
   .tna-template--dark-theme & {
-    --link: #{map.get(colour.$colour-palette-default, "link")};
-    --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+    // --link: #{map.get(colour.$colour-palette-default, "link")};
+    // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
+
+    --background: var(--accent-background);
+    --font-base: var(--accent-font-base);
+    --font-dark: var(--accent-font-dark);
+    --font-light: var(--accent-font-light);
+    --icon-light: var(--accent-icon-light);
+    --link: var(--accent-link);
+    --link-visited: var(--accent-link);
+    --keyline: var(--accent-keyline);
+    --keyline-dark: var(--accent-keyline-dark);
+    --accent-list-marker: var(--accent-font-base);
+    --accent-border: var(--accent-font-dark);
+    --button-text: var(--accent-button-text);
+    --button-background: var(--accent-button-background);
+    --button-hover-text: var(--accent-button-hover-text);
+    --button-hover-background: var(--accent-button-hover-background);
   }
 }
 

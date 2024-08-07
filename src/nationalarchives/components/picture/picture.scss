@@ -38,13 +38,9 @@
   &__transcript {
     @include colour.contrast;
 
-    padding: spacing.space(1) spacing.space(1.5);
+    padding: spacing.space(1.5);
 
     @include a11y.no-focus-outline-on-click;
-
-    .tna-tabs {
-      margin-bottom: spacing.space(0.5);
-    }
   }
 
   &__caption {

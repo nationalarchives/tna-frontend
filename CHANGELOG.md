@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...HEAD)
 
 ### Added
+
+- Content in the cookie banner component is now customisable
+
 ### Changed
 ### Deprecated
 ### Removed

@@ -6,6 +6,30 @@
     "description": ""
   },
   {
+    "name": "title",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "body",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "acceptedBody",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "rejectedBody",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "cookiesUrl",
     "type": "string",
     "required": true,

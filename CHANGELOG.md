@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Content in the cookie banner component is now customisable
 
 ### Changed
+
+- Refactored tabs component
+
 ### Deprecated
 ### Removed
 ### Fixed

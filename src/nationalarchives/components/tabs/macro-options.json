@@ -1,5 +1,11 @@
 [
   {
+    "name": "itemHeadingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the tab items."
+  },
+  {
     "name": "items",
     "type": "array",
     "required": true,
@@ -24,12 +30,6 @@
         "description": ""
       }
     ]
-  },
-  {
-    "name": "sticky",
-    "type": "boolean",
-    "required": false,
-    "description": ""
   },
   {
     "name": "classes",

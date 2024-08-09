@@ -109,9 +109,7 @@
     // &:focus {
     //   z-index: 2;
 
-    //   .tna-template--clicked & {
-    //     outline: none;
-    //   }
+    //   @include a11y.no-focus-outline-on-click;
     // }
 
     &:has(.tna-table-wrapper):has(.tna-table) {

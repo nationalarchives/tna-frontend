@@ -3,8 +3,8 @@ import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "@storybook/test";
 
 const argTypes = {
+  itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
   items: { control: "object" },
-  sticky: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -20,11 +20,11 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, sticky, classes, attributes }) =>
+const Template = ({ itemHeadingLevel, items, classes, attributes }) =>
   Tabs({
     params: {
+      itemHeadingLevel,
       items,
-      sticky,
       classes,
       attributes,
     },
@@ -32,24 +32,116 @@ const Template = ({ items, sticky, classes, attributes }) =>
 
 export const Standard = Template.bind({});
 Standard.args = {
+  itemHeadingLevel: 3,
   items: [
     {
       id: "unique-id-a",
       title: "Alpha section",
-      body: '<h2 class="tna-heading-l">Alpha title</h2><p>Lorem ipsum</p>',
+      body: "<p>Lorem ipsum</p>",
     },
     {
       id: "unique-id-b",
       title: "Beta section",
-      body: '<h2 class="tna-heading-l">Beta title</h2><p>Lorem ipsum</p>',
+      body: "<p>Lorem ipsum</p>",
     },
     {
       id: "unique-id-c",
       title: "Gamma section",
-      body: '<h2 class="tna-heading-l">Gamma title</h2><p>Lorem ipsum</p>',
+      body: "<p>Lorem ipsum</p>",
     },
   ],
-  classes: "tna-tabs--demo",
+};
+
+export const Tint = Template.bind({});
+Tint.args = {
+  itemHeadingLevel: 3,
+  items: [
+    {
+      id: "unique-id-a",
+      title: "Alpha section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-b",
+      title: "Beta section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-c",
+      title: "Gamma section",
+      body: "<p>Lorem ipsum</p>",
+    },
+  ],
+  classes: "tna-tabs--tint",
+};
+
+// export const Contrast = Template.bind({});
+// Contrast.args = {
+//   itemHeadingLevel: 3,
+//   items: [
+//     {
+//       id: "unique-id-a",
+//       title: "Alpha section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-b",
+//       title: "Beta section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-c",
+//       title: "Gamma section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//   ],
+//   classes: "tna-tabs--contrast",
+// };
+
+// export const Accent = Template.bind({});
+// Accent.args = {
+//   itemHeadingLevel: 3,
+//   items: [
+//     {
+//       id: "unique-id-a",
+//       title: "Alpha section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-b",
+//       title: "Beta section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-c",
+//       title: "Gamma section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//   ],
+//   classes: "tna-tabs--accent",
+// };
+
+export const Small = Template.bind({});
+Small.args = {
+  itemHeadingLevel: 3,
+  items: [
+    {
+      id: "unique-id-a",
+      title: "Alpha section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-b",
+      title: "Beta section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-c",
+      title: "Gamma section",
+      body: "<p>Lorem ipsum</p>",
+    },
+  ],
+  classes: "tna-tabs--small",
 };
 
 export const Test = Template.bind({});
@@ -57,24 +149,24 @@ Test.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Test.args = {
+  itemHeadingLevel: 3,
   items: [
     {
       id: "unique-id-a",
       title: "Alpha section",
-      body: '<h2 class="tna-heading-l">Alpha title</h2><p>Lorem ipsum</p>',
+      body: "<p>Lorem ipsum</p>",
     },
     {
       id: "unique-id-b",
       title: "Beta section",
-      body: '<h2 class="tna-heading-l">Beta title</h2><p>Lorem ipsum</p>',
+      body: "<p>Lorem ipsum</p>",
     },
     {
       id: "unique-id-c",
       title: "Gamma section",
-      body: '<h2 class="tna-heading-l">Gamma title</h2><p>Lorem ipsum</p>',
+      body: "<p>Lorem ipsum</p>",
     },
   ],
-  classes: "tna-tabs--demo",
 };
 Test.play = async ({ args, canvasElement, step }) => {
   await new Promise((r) => setTimeout(r, 100));
@@ -83,7 +175,7 @@ Test.play = async ({ args, canvasElement, step }) => {
 
   const tablist = canvas.getByRole("tablist");
   const [buttonA, buttonB, buttonC] = args.items.map((item) =>
-    canvas.getByText(item.title),
+    document.getElementById(`${item.id}-tab`),
   );
   const [sectionA, sectionB, sectionC] = args.items.map((item) =>
     canvasElement.querySelector(`#${item.id}`),
@@ -213,7 +305,7 @@ Test.play = async ({ args, canvasElement, step }) => {
         "aria-labelledby",
         `${args.items[1].id}-tab`,
       );
-      await expect(sectionB).toHaveAttribute("tabindex", "0");
+      await expect(sectionB).toHaveAttribute("tabindex", "-1");
 
       await expect(sectionC).not.toBeVisible();
       await expect(sectionC).toHaveAttribute("id", args.items[2].id);
@@ -222,7 +314,7 @@ Test.play = async ({ args, canvasElement, step }) => {
         "aria-labelledby",
         `${args.items[2].id}-tab`,
       );
-      await expect(sectionC).toHaveAttribute("tabindex", "0");
+      await expect(sectionC).toHaveAttribute("tabindex", "-1");
     });
   });
 

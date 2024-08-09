@@ -57,9 +57,7 @@
 
     border-radius: 0.1px;
 
-    .tna-template--clicked &:focus {
-      outline: none;
-    }
+    @include a11y.no-focus-outline-on-click;
   }
 
   &__item {

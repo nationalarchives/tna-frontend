@@ -122,33 +122,30 @@
 
   &--tint#{&}--interactive &__button[aria-selected="true"],
   &--tint#{&}--interactive &__button:hover &__button-inner,
-  // &--tint#{&}--interactive &__button-inner,
   &--tint#{&}--interactive &__items {
     @include colour.tint;
   }
 
-  &--contrast#{&}--interactive &__button[aria-selected="true"],
-  &--contrast#{&}--interactive &__button:hover &__button-inner,
-  // &--contrast#{&}--interactive &__button-inner,
-  &--contrast#{&}--interactive &__items {
-    @include colour.contrast;
-  }
+  // &--contrast#{&}--interactive &__button[aria-selected="true"],
+  // &--contrast#{&}--interactive &__button:hover &__button-inner,
+  // &--contrast#{&}--interactive &__items {
+  //   @include colour.contrast;
+  // }
 
-  &--accent#{&}--interactive &__button[aria-selected="true"],
-  &--accent#{&}--interactive &__button:hover &__button-inner,
-  // &--accent#{&}--interactive &__button-inner,
-  &--accent#{&}--interactive &__items {
-    @include colour.accent;
-  }
+  // &--accent#{&}--interactive &__button[aria-selected="true"],
+  // &--accent#{&}--interactive &__button:hover &__button-inner,
+  // &--accent#{&}--interactive &__items {
+  //   @include colour.accent;
+  // }
 
-  &--contrast &__list,
-  &--contrast &__button,
-  &--contrast &__item,
-  &--accent &__list,
-  &--accent &__button,
-  &--accent &__item {
-    border: none;
-  }
+  // &--contrast &__list,
+  // &--contrast &__button,
+  // &--contrast &__item,
+  // &--accent &__list,
+  // &--accent &__button,
+  // &--accent &__item {
+  //   border: none;
+  // }
 
   @include colour.on-forced-colours {
     // &__button,

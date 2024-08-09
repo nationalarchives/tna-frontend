@@ -75,51 +75,51 @@ Tint.args = {
   classes: "tna-tabs--tint",
 };
 
-export const Contrast = Template.bind({});
-Contrast.args = {
-  itemHeadingLevel: 3,
-  items: [
-    {
-      id: "unique-id-a",
-      title: "Alpha section",
-      body: "<p>Lorem ipsum</p>",
-    },
-    {
-      id: "unique-id-b",
-      title: "Beta section",
-      body: "<p>Lorem ipsum</p>",
-    },
-    {
-      id: "unique-id-c",
-      title: "Gamma section",
-      body: "<p>Lorem ipsum</p>",
-    },
-  ],
-  classes: "tna-tabs--contrast",
-};
+// export const Contrast = Template.bind({});
+// Contrast.args = {
+//   itemHeadingLevel: 3,
+//   items: [
+//     {
+//       id: "unique-id-a",
+//       title: "Alpha section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-b",
+//       title: "Beta section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-c",
+//       title: "Gamma section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//   ],
+//   classes: "tna-tabs--contrast",
+// };
 
-export const Accent = Template.bind({});
-Accent.args = {
-  itemHeadingLevel: 3,
-  items: [
-    {
-      id: "unique-id-a",
-      title: "Alpha section",
-      body: "<p>Lorem ipsum</p>",
-    },
-    {
-      id: "unique-id-b",
-      title: "Beta section",
-      body: "<p>Lorem ipsum</p>",
-    },
-    {
-      id: "unique-id-c",
-      title: "Gamma section",
-      body: "<p>Lorem ipsum</p>",
-    },
-  ],
-  classes: "tna-tabs--accent",
-};
+// export const Accent = Template.bind({});
+// Accent.args = {
+//   itemHeadingLevel: 3,
+//   items: [
+//     {
+//       id: "unique-id-a",
+//       title: "Alpha section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-b",
+//       title: "Beta section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//     {
+//       id: "unique-id-c",
+//       title: "Gamma section",
+//       body: "<p>Lorem ipsum</p>",
+//     },
+//   ],
+//   classes: "tna-tabs--accent",
+// };
 
 export const Small = Template.bind({});
 Small.args = {

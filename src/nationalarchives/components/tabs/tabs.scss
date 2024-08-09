@@ -101,6 +101,9 @@
     display: flex;
     flex-direction: column;
     gap: spacing.space(2);
+
+    position: relative;
+    z-index: 1;
   }
 
   &__item {

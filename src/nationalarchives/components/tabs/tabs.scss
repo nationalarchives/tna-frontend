@@ -45,11 +45,29 @@
     cursor: pointer;
   }
 
-  &:not(&--plain) &__button {
-    &[aria-selected="true"] {
-      padding-top: 0;
+  &--interactive &__button {
+    background: transparent;
 
-      @include colour.tint;
+    border: 1px transparent solid;
+    border-bottom: none;
+  }
+
+  &--interactive &__button[aria-selected="true"] {
+    padding-top: 0;
+
+    @include colour.colour-border("keyline");
+
+    &::after {
+      content: "";
+
+      height: 1px;
+
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+
+      @include colour.colour-background("background");
     }
   }
 
@@ -64,7 +82,7 @@
   }
 
   &--small &__button-inner {
-    padding: spacing.space(0.125) spacing.space(0.5);
+    padding: spacing.space(0.25) spacing.space(0.5) spacing.space(0.125);
 
     @include typography.font-size(16);
   }
@@ -96,57 +114,43 @@
 
   &--interactive &__item {
     padding: spacing.space(1);
+    @include colour.colour-border("keyline", 1px, solid);
+  }
 
+  &--tint#{&}--interactive &__button[aria-selected="true"],
+  &--tint#{&}--interactive &__button:hover &__button-inner,
+  // &--tint#{&}--interactive &__button-inner,
+  &--tint#{&}--interactive &__items {
     @include colour.tint;
   }
 
-  &--plain &__list {
-    @include colour.colour-border("keyline", 1px, solid, bottom);
+  &--contrast#{&}--interactive &__button[aria-selected="true"],
+  &--contrast#{&}--interactive &__button:hover &__button-inner,
+  // &--contrast#{&}--interactive &__button-inner,
+  &--contrast#{&}--interactive &__items {
+    @include colour.contrast;
   }
 
-  &--plain#{&}--interactive &__button {
-    background: transparent;
-
-    border: 1px transparent solid;
-    border-bottom: none;
+  &--accent#{&}--interactive &__button[aria-selected="true"],
+  &--accent#{&}--interactive &__button:hover &__button-inner,
+  // &--accent#{&}--interactive &__button-inner,
+  &--accent#{&}--interactive &__items {
+    @include colour.accent;
   }
 
-  &--plain#{&}--interactive &__button[aria-selected="true"] {
-    padding-top: 0;
-
-    @include colour.colour-border("keyline");
-
-    &::after {
-      content: "";
-
-      height: 1px;
-
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: 0;
-
-      @include colour.colour-background("background");
-    }
+  &--contrast &__list,
+  &--contrast &__button,
+  &--contrast &__item,
+  &--accent &__list,
+  &--accent &__button,
+  &--accent &__item {
+    border: none;
   }
-
-  &--plain#{&}--interactive &__item {
-    background: none;
-
-    @include colour.colour-border("keyline", 1px, solid);
-    border-top-width: 0;
-  }
-
-  // @include colour.on-high-contrast-and-forced-colours {
-  //   &__list {
-  //     @include colour.colour-border("keyline-dark", 1px, solid, bottom);
-  //   }
-  // }
 
   @include colour.on-forced-colours {
-    &__button,
-    &__item {
-      @include colour.colour-border("keyline", 1px, solid);
-    }
+    // &__button,
+    // &__item {
+    //   @include colour.colour-border("keyline", 1px, solid);
+    // }
   }
 }

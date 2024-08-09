@@ -52,8 +52,8 @@ Standard.args = {
   ],
 };
 
-export const Plain = Template.bind({});
-Plain.args = {
+export const Tint = Template.bind({});
+Tint.args = {
   itemHeadingLevel: 3,
   items: [
     {
@@ -72,7 +72,53 @@ Plain.args = {
       body: "<p>Lorem ipsum</p>",
     },
   ],
-  classes: "tna-tabs--plain",
+  classes: "tna-tabs--tint",
+};
+
+export const Contrast = Template.bind({});
+Contrast.args = {
+  itemHeadingLevel: 3,
+  items: [
+    {
+      id: "unique-id-a",
+      title: "Alpha section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-b",
+      title: "Beta section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-c",
+      title: "Gamma section",
+      body: "<p>Lorem ipsum</p>",
+    },
+  ],
+  classes: "tna-tabs--contrast",
+};
+
+export const Accent = Template.bind({});
+Accent.args = {
+  itemHeadingLevel: 3,
+  items: [
+    {
+      id: "unique-id-a",
+      title: "Alpha section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-b",
+      title: "Beta section",
+      body: "<p>Lorem ipsum</p>",
+    },
+    {
+      id: "unique-id-c",
+      title: "Gamma section",
+      body: "<p>Lorem ipsum</p>",
+    },
+  ],
+  classes: "tna-tabs--accent",
 };
 
 export const Small = Template.bind({});
@@ -96,32 +142,6 @@ Small.args = {
     },
   ],
   classes: "tna-tabs--small",
-};
-
-export const SmallPlain = Template.bind({});
-SmallPlain.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-SmallPlain.args = {
-  itemHeadingLevel: 3,
-  items: [
-    {
-      id: "unique-id-a",
-      title: "Alpha section",
-      body: "<p>Lorem ipsum</p>",
-    },
-    {
-      id: "unique-id-b",
-      title: "Beta section",
-      body: "<p>Lorem ipsum</p>",
-    },
-    {
-      id: "unique-id-c",
-      title: "Gamma section",
-      body: "<p>Lorem ipsum</p>",
-    },
-  ],
-  classes: "tna-tabs--small tna-tabs--plain",
 };
 
 export const Test = Template.bind({});

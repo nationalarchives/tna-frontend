@@ -20,7 +20,7 @@
     {{ tnaTabs({
       itemHeadingLevel: params.informationItemHeadingLevel,
       items: params.information,
-      classes: "tna-tabs--plain tna-tabs--small"
+      classes: "tna-tabs--small"
     }) }}
   {%- else %}
     {{ params.information[0]['body'] | safe }}

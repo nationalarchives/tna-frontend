@@ -5,23 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.7...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.7](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...v0.2.7) - 2024-08-12
 
 ### Added
 
 - Content in the cookie banner component is now customisable
 
-### Changed
-### Deprecated
-### Removed
 ### Fixed
 
 - Change skip link colours when hidden to avoid accessibility failures being raised
 - Fixed incorrect use of `navigationId` and `topNavigationId` in global header component
 - Fixed padding of sticky sidebars
 - Fixed header navigation toggle analytics
-
-### Security
 
 ## [0.2.6](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...v0.2.6) - 2024-08-02
 

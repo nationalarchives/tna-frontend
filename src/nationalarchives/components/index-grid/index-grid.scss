@@ -45,6 +45,8 @@
   &__item-image {
     width: 100%;
     height: auto;
+
+    @include colour.image-loader-background;
   }
 
   &__item-content {

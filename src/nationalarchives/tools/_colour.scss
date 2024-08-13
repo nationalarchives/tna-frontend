@@ -2,6 +2,7 @@
 @use "sass:map";
 @use "../variables/borders";
 @use "../variables/colour";
+@use "../variables/features";
 @use "../tools/media";
 
 @function brand-colour($colour, $opacity: 1) {
@@ -437,5 +438,20 @@
 
   @include on-high-contrast {
     @content;
+  }
+}
+
+@mixin image-loader-background {
+  @if not features.$disable-image-loader-animations {
+    background: linear-gradient(
+      -45deg,
+      rgba(0 0 0 / 25%),
+      rgba(255 255 255 / 25%),
+      rgba(0 0 0 / 25%)
+    );
+    background-size: 500% 500%;
+    background-position: 0 50%;
+
+    animation: image-loader-background ease-in-out 1.2s infinite;
   }
 }

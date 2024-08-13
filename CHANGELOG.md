@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.7...HEAD)
 
 ### Added
+
+- New option `accentMeta` to make meta tags on cards accented
+
 ### Changed
 
 - Removed unnecessary `title` attributes from footer, gallery, hero and index grid components

@@ -155,6 +155,12 @@
     ]
   },
   {
+    "name": "accentMeta",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, meta tags adopt an accented style."
+  },
+  {
     "name": "body",
     "type": "string",
     "required": false,

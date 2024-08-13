@@ -62,7 +62,7 @@
     {%- endif %}
     {%- for item in params.items %}
     <li class="{{ itemClasses | join(' ') }}">
-      <a href="{{ item.href }}" class="tna-index-grid__item" title="{{ item.title }}">
+      <a href="{{ item.href }}" class="tna-index-grid__item">
         <img src="{{ item.src }}" class="tna-index-grid__item-image" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}"{%- if params.lazyImages %} loading="lazy"{% endif %}>
         <span class="tna-index-grid__item-content">
           {%- if item.label %}

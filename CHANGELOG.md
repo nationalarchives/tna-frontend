@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed unnecessary `title` attributes from footer, gallery, hero and index grid components
 - Added lazy loading to gallery images
+- The `title` of gallery components is now optional
 
 ### Deprecated
 ### Removed

@@ -129,6 +129,11 @@
     flex: 1;
   }
 
+  &--sticky#{&}--contents &__items,
+  &--sticky#{&}--pages &__items {
+    // More padding right for separation from scrollbar
+  }
+
   &--sticky#{&}--sections &__items,
   &--sticky#{&}--pages &__items {
     width: calc(100% - #{a11y.$focus-outline-padding});

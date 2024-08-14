@@ -2,14 +2,14 @@
   {
     "name": "title",
     "type": "string",
-    "required": true,
+    "required": false,
     "description": "The main title of the gallery."
   },
   {
     "name": "headingLevel",
     "type": "number",
-    "required": true,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "required": false,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Required if `title` is set."
   },
   {
     "name": "headingSize",

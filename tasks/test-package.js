@@ -121,6 +121,7 @@ const checkExists = [
   "nationalarchives/tools/_typography.scss",
   // Utilities
   "nationalarchives/utilities/_a11y.scss",
+  "nationalarchives/utilities/_animations.scss",
   "nationalarchives/utilities/_areas.scss",
   "nationalarchives/utilities/colour/_index.scss",
   "nationalarchives/utilities/_columns.scss",

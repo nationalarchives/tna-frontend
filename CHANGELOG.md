@@ -5,25 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.7...HEAD)
+
+### Added
+
+- New option `accentMeta` to make meta tags on cards accented
+- Added image loader animations to card, hero, index grid, gallery and picture components
+
+### Changed
+
+- Refactored tabs component
+- Removed unnecessary `title` attributes from footer, gallery, hero and index grid components
+- Added lazy loading to gallery images
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.7](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...v0.2.7) - 2024-08-12
 
 ### Added
 
 - Content in the cookie banner component is now customisable
 
-### Changed
-
-- Refactored tabs component
-
-### Deprecated
-### Removed
 ### Fixed
 
 - Change skip link colours when hidden to avoid accessibility failures being raised
 - Fixed incorrect use of `navigationId` and `topNavigationId` in global header component
 - Fixed padding of sticky sidebars
-
-### Security
+- Fixed header navigation toggle analytics
 
 ## [0.2.6](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...v0.2.6) - 2024-08-02
 

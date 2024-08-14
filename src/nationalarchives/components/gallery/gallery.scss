@@ -228,6 +228,8 @@
 
     @include colour.contrast;
 
+    @include colour.image-loader-background;
+
     &:hover {
       &::after {
         content: "";

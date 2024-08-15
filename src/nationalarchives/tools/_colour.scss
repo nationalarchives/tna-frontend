@@ -171,6 +171,14 @@
   }
 }
 
+@mixin thick-keyline-transparent($direction: "") {
+  @if $direction != "" {
+    border-#{$direction}: borders.$thick-border-width transparent solid;
+  } @else {
+    border: borders.$thick-border-width transparent solid;
+  }
+}
+
 // Use light theme colours (except for "form-error-border")
 %always-light {
   @include colour-css-vars("form-error-border");
@@ -243,7 +251,7 @@
 
   @include colour-background("background");
 
-  @include colour-font("font-base");
+  // @include colour-font("font-base");
 }
 
 @mixin tint {

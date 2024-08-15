@@ -5,9 +5,11 @@
 <section class="tna-gallery{% if classes %} {{ classes }}{% endif %}" data-module="tna-gallery"{% if params.showGrid %} data-showgrid="true"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-gallery__header">
     <div class="tna-gallery__header-inner">
+      {%- if params.title %}
       <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'm' }}">
         {{ params.title }}
       </h{{ params.headingLevel }}>
+      {%- endif %}
       {%- if params.text %}
         <p>{{ params.text }}</p>
       {%- else %}

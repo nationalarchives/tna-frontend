@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- New option `accentMeta` to make meta tags on cards accented
+- New option `accentMeta` on card component to make meta tags accented
 - Added image loader animations to card, hero, index grid, gallery and picture components
 
 ### Changed

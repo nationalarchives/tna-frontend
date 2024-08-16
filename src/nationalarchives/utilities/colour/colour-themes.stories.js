@@ -241,7 +241,7 @@ const Template = ({ theme, accent }) => {
           </div>
         </div>
         <div class="tna-column tna-column--no-padding tna-column--width-1-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-          <div class="tna-container tna-container--no-padding">
+          <div class="tna-container tna-container--nested">
             <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large">
               <div class="tna-aside tna-background-contrast">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>

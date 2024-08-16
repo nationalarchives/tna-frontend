@@ -12,6 +12,15 @@
   &__heading {
   }
 
+  &__items,
+  &__item-children {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.space(0.25);
+
+    list-style: none;
+  }
+
   &__items {
     padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
 
@@ -21,15 +30,6 @@
   }
 
   &__item {
-  }
-
-  &__items,
-  &__item-children {
-    display: flex;
-    flex-direction: column;
-    gap: spacing.space(0.25);
-
-    list-style: none;
   }
 
   &__item-children {

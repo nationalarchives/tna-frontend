@@ -5,7 +5,11 @@
 @use "../../tools/typography";
 
 .tna-details {
-  @include spacing.space-above;
+  margin-top: spacing.space(1);
+
+  &:first-child {
+    margin-top: 0;
+  }
 
   &__details {
   }

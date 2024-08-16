@@ -12,13 +12,6 @@
   &__heading {
   }
 
-  &__items {
-    padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
-  }
-
-  &__item {
-  }
-
   &__items,
   &__item-children {
     display: flex;
@@ -26,6 +19,17 @@
     gap: spacing.space(0.25);
 
     list-style: none;
+  }
+
+  &__items {
+    padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__item {
   }
 
   &__item-children {
@@ -120,6 +124,24 @@
     top: 0;
   }
 
+  @include media.on-small {
+    &--static-on-mobile,
+    &--static-on-small {
+      max-height: none;
+
+      position: static;
+    }
+  }
+
+  @include media.on-tiny {
+    &--static-on-mobile,
+    &--static-on-tiny {
+      max-height: none;
+
+      position: static;
+    }
+  }
+
   &--sticky &__items {
     margin: 0;
     padding-bottom: a11y.$focus-outline-padding;
@@ -131,7 +153,7 @@
 
   &--sticky#{&}--contents &__items,
   &--sticky#{&}--pages &__items {
-    // More padding right for separation from scrollbar
+    padding-right: spacing.space(1);
   }
 
   &--sticky#{&}--sections &__items,

@@ -202,6 +202,8 @@
   }
 
   &__navigation {
+    max-height: 40rem;
+    max-height: clamp(15rem, calc(100vh - #{spacing.space(2)}), 40rem);
     padding: spacing.space(1);
 
     grid-column: 1 / 3;
@@ -285,10 +287,6 @@
     @include colour.colour-background("background");
   }
 
-  &--interactive {
-    max-height: 175dvh;
-  }
-
   &--interactive &__item-figure-inner {
     max-height: 50vh;
     aspect-ratio: 3 / 2;
@@ -347,6 +345,10 @@
     max-height: 4.5rem;
 
     overflow: auto;
+  }
+
+  &:fullscreen &__navigation {
+    max-height: none;
   }
 
   @media (aspect-ratio >= 1/1) {

@@ -62,13 +62,25 @@
     box-shadow: none;
   }
 
-  @include media.on-tiny {
-    &__image-wrapper {
-      padding: 0;
+  @include media.on-larger-than-mobile {
+    &--plain {
+      margin-right: spacing.space(2);
+      margin-left: spacing.space(2);
+    }
+  }
+
+  @include media.on-small {
+    &--plain {
+      margin-right: spacing.space(1);
+      margin-left: spacing.space(1);
     }
   }
 
   @include media.on-tiny {
+    &__image-wrapper {
+      padding: 0;
+    }
+
     .tna-column & {
       width: calc(100% + #{grid.gutter-width-tiny-double()});
 

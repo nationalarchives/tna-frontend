@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - New option `accentMeta` on card component to make meta tags accented
 - Added image loader animations to card, hero, index grid, gallery and picture components
+- Containers can be nested with `.tna-container--nested`
+- Sticky sidebars can be "unstuck" on smaller devices with `.tna-sidebar--static-on-mobile`
+- Added classeless styles for `<address>` elements
 
 ### Changed
 
@@ -18,10 +21,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed unnecessary `title` attributes from footer, gallery, hero and index grid components
 - Added lazy loading to gallery images
 - The `title` of gallery components is now optional
+- Reduced space above details components
+- Added side padding to plain picture components
+- Adjusted spacing of `<p>` elements inside `<li>` and `<dd>` elements
 
 ### Deprecated
 ### Removed
+
+- Removed container `--no-padding-all` classes and replaced with `--no-padding` classes for both containers and columns
+
 ### Fixed
+
+- Removed max height for gallery components
+
 ### Security
 
 ## [0.2.7](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...v0.2.7) - 2024-08-12

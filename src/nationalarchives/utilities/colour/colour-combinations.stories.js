@@ -311,6 +311,11 @@ Dark.args = {
   theme: "tna-template--dark-theme",
 };
 
+// export const System = Template.bind({});
+// System.args = {
+//   theme: "tna-template--system-theme",
+// };
+
 export const HighContrast = Template.bind({});
 HighContrast.args = {
   theme: "tna-template--high-contrast-theme",

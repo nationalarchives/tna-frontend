@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Removed `:focus` styles and replaced with `:focus-visible`
+- Light accent blocks appear normal accent colours in dark themes
 
 ### Deprecated
 ### Removed

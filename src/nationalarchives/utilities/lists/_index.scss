@@ -85,7 +85,7 @@ ol {
     cursor: pointer;
   }
 
-  &:not(#{&}--plain) {
+  &:not(&--plain) {
     gap: spacing.space(0.5) spacing.space(1);
   }
 
@@ -93,7 +93,7 @@ ol {
     @extend %chip-plain;
   }
 
-  &:not(#{&}--plain) &__item {
+  &:not(&--plain) &__item {
     @extend %chip-accent;
   }
 

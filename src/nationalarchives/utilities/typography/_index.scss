@@ -125,10 +125,31 @@ small {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 
-  .tna-background-accent & {
-    @include colour.contrast;
+  .tna-background-accent &,
+  .tna-template--dark-theme .tna-background-accent-light & {
+    @include colour.colour-font("contrast-font-base");
+
+    @include colour.colour-background("contrast-background");
 
     @include colour.colour-border("contrast-background");
+
+    .fa-solid {
+      @include colour.colour-font("contrast-icon-light");
+    }
+  }
+
+  .tna-template--system-theme .tna-background-accent-light & {
+    @media (prefers-color-scheme: dark) {
+      @include colour.colour-font("contrast-font-base");
+
+      @include colour.colour-background("contrast-background");
+
+      @include colour.colour-border("contrast-background");
+
+      .fa-solid {
+        @include colour.colour-font("contrast-icon-light");
+      }
+    }
   }
 }
 
@@ -163,7 +184,7 @@ small {
     @include colour.blue-accent;
   }
 
-  &:not(#{&}--plain) {
+  &:not(&--plain) {
     @extend %chip-accent;
   }
 }
@@ -348,7 +369,7 @@ small {
       @extend %chip-plain;
     }
 
-    &:not(#{&}--plain) {
+    &:not(&--plain) {
       @extend %chip-accent;
     }
   }

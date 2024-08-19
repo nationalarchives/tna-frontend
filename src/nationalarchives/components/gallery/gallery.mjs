@@ -70,23 +70,32 @@ export class Gallery {
         this.$itemsContainer.focus();
       });
     });
-    this.$module.setAttribute("tabindex", "0");
+    // this.$module.setAttribute("tabindex", "0");
     this.$module.addEventListener("keydown", (e) => {
+      let preventDefaultKeyAction = false;
       switch (e.key) {
         case "ArrowLeft":
-          // case "ArrowUp":
+        case "ArrowUp":
           this.showPreviousItem();
+          preventDefaultKeyAction = true;
           break;
         case "ArrowRight":
-          // case "ArrowDown":
+        case "ArrowDown":
           this.showNextItem();
+          preventDefaultKeyAction = true;
           break;
         case "Home":
           this.showFirstItem();
+          preventDefaultKeyAction = true;
           break;
         case "End":
           this.showLastItem();
+          preventDefaultKeyAction = true;
           break;
+      }
+      if (preventDefaultKeyAction) {
+        e.stopPropagation();
+        e.preventDefault();
       }
     });
     this.$options.removeAttribute("hidden");

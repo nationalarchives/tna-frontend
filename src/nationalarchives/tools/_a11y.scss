@@ -14,6 +14,8 @@
   outline-offset: 0;
 }
 
-@mixin no-active-outline {
-  outline-offset: a11y.$focus-outline-offset;
+@mixin no-focus-outline-on-click {
+  .tna-template--clicked &:focus {
+    outline: none;
+  }
 }

@@ -80,6 +80,12 @@
     "description": ""
   },
   {
+    "name": "informationItemHeadingLevel",
+    "type": "number",
+    "required": false,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the information items. Required if `information` is set."
+  },
+  {
     "name": "information",
     "type": "array",
     "required": false,

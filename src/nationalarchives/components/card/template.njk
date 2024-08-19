@@ -64,11 +64,11 @@
   {%- endif %}
     <div class="tna-card__body">
     {%- if params.meta %}
-      <dl class="tna-card__meta tna-dl-chips tna-dl-chips--plain">
+      <dl class="tna-card__meta tna-dl-chips{{ '' if params.accentMeta else ' tna-dl-chips--plain' }}">
         {%- for item in params.meta %}
         <dt>{{ item.title }}</dt>
-        <dd class="tna-dl-chips__item">
-          <span class="tna-chip tna-chip--plain">
+        <dd>
+          <span class="tna-dl-chips__item">
             {%- if item.icon %}
             <i class="fa-solid fa-fw fa-{{ item.icon }}" aria-hidden="true"></i>
             {%- endif %}

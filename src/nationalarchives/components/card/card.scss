@@ -49,6 +49,8 @@
 
     position: relative;
     order: 1;
+
+    @include colour.image-loader-background;
   }
 
   &__image {

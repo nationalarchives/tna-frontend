@@ -5,18 +5,58 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.8...HEAD)
 
 ### Added
 ### Changed
+
+- Removed `:focus` styles and replaced with `:focus-visible`
+
 ### Deprecated
 ### Removed
+### Fixed
+### Security
+
+## [0.2.8](https://github.com/nationalarchives/tna-frontend/compare/v0.2.7...v0.2.8) - 2024-08-16
+
+### Added
+
+- New option `accentMeta` on card component to make meta tags accented
+- Added image loader animations to card, hero, index grid, gallery and picture components
+- Containers can be nested with `.tna-container--nested`
+- Sticky sidebars can be "unstuck" on smaller devices with `.tna-sidebar--static-on-mobile`
+- Added classeless styles for `<address>` elements
+
+### Changed
+
+- Refactored tabs component
+- Removed unnecessary `title` attributes from footer, gallery, hero and index grid components
+- Added lazy loading to gallery images
+- The `title` of gallery components is now optional
+- Reduced space above details components
+- Added side padding to plain picture components
+- Adjusted spacing of `<p>` elements inside `<li>` and `<dd>` elements
+
+### Removed
+
+- Removed container `--no-padding-all` classes and replaced with `--no-padding` classes for both containers and columns
+
+### Fixed
+
+- Removed max height for gallery components
+
+## [0.2.7](https://github.com/nationalarchives/tna-frontend/compare/v0.2.6...v0.2.7) - 2024-08-12
+
+### Added
+
+- Content in the cookie banner component is now customisable
+
 ### Fixed
 
 - Change skip link colours when hidden to avoid accessibility failures being raised
 - Fixed incorrect use of `navigationId` and `topNavigationId` in global header component
-
-### Security
+- Fixed padding of sticky sidebars
+- Fixed header navigation toggle analytics
 
 ## [0.2.6](https://github.com/nationalarchives/tna-frontend/compare/v0.2.5...v0.2.6) - 2024-08-02
 

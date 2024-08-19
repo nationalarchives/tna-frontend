@@ -14,7 +14,8 @@
   @include colour.tint;
 
   &__icon {
-    width: 3rem;
+    width: 2.5rem;
+    margin-left: 0.25rem;
 
     @include colour.colour-fill("font-dark");
   }

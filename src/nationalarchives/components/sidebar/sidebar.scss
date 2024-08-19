@@ -12,13 +12,6 @@
   &__heading {
   }
 
-  &__items {
-    padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
-  }
-
-  &__item {
-  }
-
   &__items,
   &__item-children {
     display: flex;
@@ -26,6 +19,17 @@
     gap: spacing.space(0.25);
 
     list-style: none;
+  }
+
+  &__items {
+    padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
+
+    // &:focus {
+    //   outline: none;
+    // }
+  }
+
+  &__item {
   }
 
   &__item-children {
@@ -109,29 +113,58 @@
    * ------------------------------------------
    */
   &--sticky {
-    max-height: calc(100vh - spacing.space(0.5));
-    max-height: calc(100dvh - spacing.space(0.5));
+    max-height: 100vh;
+    max-height: 100dvh;
 
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
 
     position: sticky;
-    top: spacing.space(0.5);
+    top: 0;
+  }
+
+  @include media.on-small {
+    &--static-on-mobile,
+    &--static-on-small {
+      max-height: none;
+
+      position: static;
+    }
+  }
+
+  @include media.on-tiny {
+    &--static-on-mobile,
+    &--static-on-tiny {
+      max-height: none;
+
+      position: static;
+    }
   }
 
   &--sticky &__items {
-    width: 100%;
     margin: 0;
-    padding-right: a11y.$focus-outline-padding;
     padding-bottom: a11y.$focus-outline-padding;
+
+    overflow-y: auto;
+
+    flex: 1;
+  }
+
+  &--sticky#{&}--contents &__items,
+  &--sticky#{&}--pages &__items {
+    padding-right: spacing.space(1);
+  }
+
+  &--sticky#{&}--sections &__items,
+  &--sticky#{&}--pages &__items {
+    width: calc(100% - #{a11y.$focus-outline-padding});
+    padding-right: a11y.$focus-outline-padding;
     padding-left: a11y.$focus-outline-padding;
 
     box-sizing: content-box;
-    overflow-y: auto;
 
     position: relative;
     left: -#{a11y.$focus-outline-padding};
-    flex: 1;
   }
 }

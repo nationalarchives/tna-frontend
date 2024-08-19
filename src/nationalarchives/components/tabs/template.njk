@@ -4,16 +4,23 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <div class="tna-tabs{% if classes %} {{ classes }}{% endif %}" data-module="tna-tabs"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <ul class="tna-tabs__list">
+  <ul class="tna-tabs__list" role="tablist" hidden>
   {%- for item in params.items %}
     <li class="tna-tabs__list-item">
-      <a href="#{{ item.id }}" class="tna-tabs__list-item-link" id="{{ item.id }}-tab">{{ item.title }}</a>
+      <button type="button" class="tna-tabs__button" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab">
+        <span class="tna-tabs__button-inner">
+          {{ item.title }}
+        </span>
+      </button>
     </li>
   {%- endfor %}
   </ul>
   <div class="tna-tabs__items">
   {%- for item in params.items %}
     <section id="{{ item.id }}" class="tna-tabs__item">
+      <h{{ params.itemHeadingLevel }} class="tna-tabs__heading tna-heading-m">
+        {{ item.title }}
+      </h{{ params.itemHeadingLevel }}>
       {{ item.body | safe }}
     </section>
   {%- endfor %}

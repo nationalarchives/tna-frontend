@@ -57,9 +57,6 @@ const exampleHeight = 400;
 
 export const Standard = Template.bind({});
 Standard.args = {
-  title: "My gallery",
-  headingLevel: 3,
-  text: "Lorem ipsum",
   items: Array(24)
     .fill({
       alt: "",
@@ -92,7 +89,8 @@ Standard.args = {
 export const Grid = Template.bind({});
 Grid.args = {
   ...Standard.args,
-  ...{
-    showGrid: true,
-  },
+  title: "My gallery",
+  headingLevel: 3,
+  text: "Lorem ipsum",
+  showGrid: true,
 };

@@ -276,3 +276,14 @@ ol {
     }
   }
 }
+
+li,
+dd {
+  p {
+    margin-top: spacing.space(0.25);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

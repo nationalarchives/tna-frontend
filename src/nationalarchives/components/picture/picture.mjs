@@ -5,11 +5,21 @@ export class Picture {
     this.$module = $module;
     this.$imageWrapper =
       $module && $module.querySelector(".tna-picture__image-wrapper");
+
+    this.$transcriptToggle =
+      this.$imageWrapper &&
+      this.$imageWrapper.querySelector(".tna-picture__toggle-transcript");
+
     this.$transcript =
       $module && $module.querySelector(".tna-picture__transcript");
     this.transcriptOpened = false;
 
-    if (!this.$module || !this.$imageWrapper || !this.$transcript) {
+    if (
+      !this.$module ||
+      !this.$imageWrapper ||
+      !this.$transcriptToggle ||
+      !this.$transcript
+    ) {
       return;
     }
 
@@ -20,28 +30,33 @@ export class Picture {
       this.$module.getAttribute("data-informationlabelclose") ||
       "Close transcript";
 
+    this.init();
+  }
+
+  init() {
     const uniqueId = `tna-picture-${uuidv4()}`;
 
-    this.$transcriptToggle = document.createElement("button");
-    this.$transcriptToggle.classList.add(
-      "tna-picture__toggle-transcript",
-      "tna-button",
-      "tna-button--small",
-      "tna-button--solid-hover",
-    );
+    this.$transcriptToggle.removeAttribute("hidden");
     this.$transcriptToggle.setAttribute("aria-controls", uniqueId);
-    this.$transcriptToggle.setAttribute("aria-expanded", false);
     this.$transcriptToggle.innerText = this.openLabel;
     this.$transcriptToggle.addEventListener("click", () =>
-      this.handleToggleTranscript(),
+      this.toggleTranscript(),
     );
-    this.$imageWrapper.appendChild(this.$transcriptToggle);
 
     this.$transcript.setAttribute("id", uniqueId);
     this.$transcript.setAttribute("hidden", "until-found");
+
+    this.$transcript.addEventListener("keydown", (e) => {
+      switch (e.key) {
+        case "Escape":
+          this.toggleTranscript();
+          this.$transcriptToggle.focus();
+          break;
+      }
+    });
   }
 
-  handleToggleTranscript() {
+  toggleTranscript() {
     this.transcriptOpened = !this.transcriptOpened;
     if (this.transcriptOpened) {
       this.$transcriptToggle.setAttribute("aria-expanded", true);

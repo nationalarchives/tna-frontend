@@ -173,7 +173,8 @@ $button-border-width: 4px !default;
     }
   }
 
-  .tna-background-accent & {
+  .tna-background-accent &,
+  .tna-template--dark-theme .tna-background-accent-light & {
     &:hover {
       @include colour.colour-font("font-dark");
     }
@@ -181,22 +182,55 @@ $button-border-width: 4px !default;
 
   .tna-background-accent &--accent,
   .tna-template--dark-theme .tna-background-accent-light &--accent {
-    @include colour.contrast;
+    // @include colour.contrast;
 
-    @include colour.colour-background("button-background");
+    // @include colour.colour-background("button-background");
+    @include colour.colour-background("contrast-button-background");
 
-    @include colour.colour-border("button-background");
+    // @include colour.colour-border("button-background");
+    @include colour.colour-border("contrast-button-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("button-text");
+      // @include colour.colour-font("button-text");
+      @include colour.colour-font("contrast-button-text");
     }
 
     &:hover {
-      @include colour.colour-font("font-dark");
+      // @include colour.colour-font("font-dark");
+      @include colour.colour-font("contrast-font-dark");
 
-      @include colour.colour-background("background");
+      // @include colour.colour-background("background");
+      @include colour.colour-background("contrast-background");
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tna-template--system-theme .tna-background-accent-light & {
+      &:hover {
+        @include colour.colour-font("font-dark");
+      }
+    }
+
+    .tna-template--system-theme .tna-background-accent-light &--accent {
+      // @include colour.contrast;
+
+      @include colour.colour-background("contrast-button-background");
+
+      @include colour.colour-border("contrast-button-background");
+
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("contrast-button-text");
+      }
+
+      &:hover {
+        @include colour.colour-font("contrast-font-dark");
+
+        @include colour.colour-background("contrast-background");
+      }
     }
   }
 

@@ -70,7 +70,7 @@ export class Gallery {
         this.$itemsContainer.focus();
       });
     });
-    this.$module.setAttribute("tabindex", "0");
+    // this.$module.setAttribute("tabindex", "0");
     this.$module.addEventListener("keydown", (e) => {
       let preventDefaultKeyAction = false;
       switch (e.key) {

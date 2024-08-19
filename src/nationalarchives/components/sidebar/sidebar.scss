@@ -24,9 +24,9 @@
   &__items {
     padding-top: max(spacing.space(0.5), #{a11y.$focus-outline-padding});
 
-    &:focus {
-      outline: none;
-    }
+    // &:focus {
+    //   outline: none;
+    // }
   }
 
   &__item {

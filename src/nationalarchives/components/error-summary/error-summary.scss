@@ -1,3 +1,4 @@
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -12,9 +13,10 @@
   @include colour.colour-background("background");
 
   @include colour.colour-border("form-error-border", 0.3125rem, solid);
+  border-radius: 0.1px;
 
   &:focus {
-    outline: none;
+    @include a11y.focus-outline;
   }
 
   &__list {

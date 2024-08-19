@@ -15,10 +15,6 @@
 
   border-radius: 0.1px;
 
-  &:active {
-    @include a11y.no-active-outline;
-  }
-
   &__header {
     padding: spacing.space(1);
 

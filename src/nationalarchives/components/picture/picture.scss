@@ -42,7 +42,7 @@
 
     padding: spacing.space(1.5);
 
-    @include a11y.no-focus-outline-on-click;
+    // @include a11y.no-focus-outline-on-click;
   }
 
   &__caption {

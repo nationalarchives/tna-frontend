@@ -108,7 +108,7 @@
 
   &__item {
     border-radius: 0.1px;
-    @include a11y.no-focus-outline-on-click;
+    // @include a11y.no-focus-outline-on-click;
 
     &:focus {
       outline-offset: -#{a11yVariables.$focus-outline-width};

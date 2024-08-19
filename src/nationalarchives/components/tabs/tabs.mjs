@@ -98,7 +98,6 @@ export class Tabs {
 
   switchTabByIndex(newIndex, switchFocus = false) {
     this.currentTabIndex = newIndex;
-
     this.$tabListItemLinks.forEach(($tabListItemLink, index) => {
       if (index === this.currentTabIndex) {
         $tabListItemLink.setAttribute("aria-selected", true);
@@ -111,7 +110,6 @@ export class Tabs {
         $tabListItemLink.setAttribute("tabindex", "-1");
       }
     });
-
     this.$tabItems.forEach(($tabItem, index) => {
       if (index === this.currentTabIndex) {
         $tabItem.removeAttribute("hidden");

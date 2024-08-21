@@ -40,6 +40,17 @@
   }
 }
 
+a,
+button,
+input,
+textarea,
+select,
+summary {
+  &:active {
+    @include a11y.focus-outline-without-offset;
+  }
+}
+
 *:active {
   @include a11y.active-outline;
 }

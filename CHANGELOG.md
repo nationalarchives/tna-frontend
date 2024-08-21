@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 
-- Removed `:focus` styles and replaced with `:focus-visible`
+- Removed `:focus` styles and replaced with `:focus-visible` but retained outline on `:active` elements
 - Light accent blocks appear normal accent colours in dark themes
 - Added parsed meta tags to initial `gtm.js` analytics event
 

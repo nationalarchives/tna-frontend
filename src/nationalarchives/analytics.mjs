@@ -307,7 +307,9 @@ class GA4 extends EventTracker {
         if (!this.gTagId) {
           throw Error("ID was not specified");
         }
+        const tnaMetaTags = this.getTnaMetaTags();
         this.pushToDataLayer({
+          ...tnaMetaTags,
           "gtm.start": new Date().getTime(),
           event: "gtm.js",
         });
@@ -321,10 +323,6 @@ class GA4 extends EventTracker {
           document.head.appendChild(script);
         }
         this.trackingCodeAdded = true;
-        const tnaMetaTags = this.getTnaMetaTags();
-        if (Object.keys(tnaMetaTags).length) {
-          this.pushToDataLayer(tnaMetaTags);
-        }
       }
       this.trackingEnabled = true;
     }

@@ -42,17 +42,18 @@
 
     border: none;
 
-    cursor: pointer;
-  }
-
-  &--interactive &__button {
-    background: transparent;
-
     border: 1px transparent solid;
     border-bottom: none;
+
+    cursor: pointer;
+
+    &:active {
+      @include a11y.focus-outline-without-offset;
+      @include a11y.active-outline;
+    }
   }
 
-  &--interactive &__button[aria-selected="true"] {
+  &__button[aria-selected="true"] {
     padding-top: 0;
 
     @include colour.colour-border("keyline");
@@ -124,33 +125,5 @@
   &--tint#{&}--interactive &__button:hover &__button-inner,
   &--tint#{&}--interactive &__items {
     @include colour.tint;
-  }
-
-  // &--contrast#{&}--interactive &__button[aria-selected="true"],
-  // &--contrast#{&}--interactive &__button:hover &__button-inner,
-  // &--contrast#{&}--interactive &__items {
-  //   @include colour.contrast;
-  // }
-
-  // &--accent#{&}--interactive &__button[aria-selected="true"],
-  // &--accent#{&}--interactive &__button:hover &__button-inner,
-  // &--accent#{&}--interactive &__items {
-  //   @include colour.accent;
-  // }
-
-  // &--contrast &__list,
-  // &--contrast &__button,
-  // &--contrast &__item,
-  // &--accent &__list,
-  // &--accent &__button,
-  // &--accent &__item {
-  //   border: none;
-  // }
-
-  @include colour.on-forced-colours {
-    // &__button,
-    // &__item {
-    //   @include colour.colour-border("keyline", 1px, solid);
-    // }
   }
 }

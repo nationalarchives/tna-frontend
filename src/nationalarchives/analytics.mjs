@@ -248,8 +248,8 @@ class GA4 extends EventTracker {
   gTagId;
 
   constructor(options = {}) {
-    if (window.TNAFrontendAnalytics) {
-      return window.TNAFrontendAnalytics;
+    if (window.TNAFrontendAnalyticsGA4) {
+      return window.TNAFrontendAnalyticsGA4;
     }
     const {
       id = "",
@@ -258,7 +258,7 @@ class GA4 extends EventTracker {
       addTrackingCode = true,
     } = options;
     super({ prefix, addTrackingCode });
-    window.TNAFrontendAnalytics = this;
+    window.TNAFrontendAnalyticsGA4 = this;
     this.gTagId = id;
     this.ga4Disable = `ga-disable-${this.gTagId}`;
     window.dataLayer = window.dataLayer || [];
@@ -270,7 +270,7 @@ class GA4 extends EventTracker {
   }
 
   destroy() {
-    window.TNAFrontendAnalytics = null;
+    window.TNAFrontendAnalyticsGA4 = null;
   }
 
   /** @protected */

@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Changed conflicting GA4 window object instance in GA4 class from `TNAFrontendAnalytics` to `TNAFrontendAnalyticsGA4`
+
 ### Security
 
 ## [0.2.9](https://github.com/nationalarchives/tna-frontend/compare/v0.2.8...v0.2.9) - 2024-08-21

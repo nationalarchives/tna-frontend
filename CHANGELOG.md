@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `$import-google-fonts` option (default: `true`) which can disable the inclusion of Google Fonts using an `@import` declaration
 
 ### Changed
+
+- Removed the top and bottom padding of the breadcrumbs component
+
 ### Deprecated
 ### Removed
 ### Fixed

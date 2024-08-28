@@ -4,13 +4,6 @@
 @use "../../tools/typography";
 
 .tna-breadcrumbs {
-  padding-top: spacing.space(1);
-  padding-bottom: spacing.space(1);
-
-  // &:focus {
-  //   outline: none !important;
-  // }
-
   &__list {
     margin: 0;
     padding: 0;

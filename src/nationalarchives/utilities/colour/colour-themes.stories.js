@@ -154,34 +154,33 @@ const Template = ({ theme, accent }) => {
       },
     })}
     <div class="tna-container">
-      <div class="tna-column tna-column--full">
-        ${Breadcrumbs({
-          params: {
-            items: [
-              {
-                text: "Alpha",
-                href: "#/alpha",
-              },
-              {
-                text: "Beta",
-                href: "#/beta",
-              },
-              {
-                text: "Gamma",
-                href: "#/gamma",
-              },
-              {
-                text: "Delta",
-                href: "#/delta",
-              },
-              {
-                text: "Epsilon",
-                href: "#/epsilon",
-              },
-            ],
-          },
-        })}
-      </div>
+      ${Breadcrumbs({
+        params: {
+          items: [
+            {
+              text: "Alpha",
+              href: "#/alpha",
+            },
+            {
+              text: "Beta",
+              href: "#/beta",
+            },
+            {
+              text: "Gamma",
+              href: "#/gamma",
+            },
+            {
+              text: "Delta",
+              href: "#/delta",
+            },
+            {
+              text: "Epsilon",
+              href: "#/epsilon",
+            },
+          ],
+          classes: "tna-column tna-column--full tna-!--padding-vertical-s",
+        },
+      })}
     </div>
     <main class="tna-main" id="main-content">
       ${Hero({

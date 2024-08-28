@@ -220,6 +220,10 @@ $shift-units: 5 !default;
     margin-bottom: spacing.space($shift-units - $padding-units-bottom);
   }
 
+  &--shift#{&}--narrow {
+    margin-bottom: spacing.space($shift-units - $padding-units-narrow);
+  }
+
   &--shift &__content-inner {
     position: relative;
     top: spacing.space($shift-units);

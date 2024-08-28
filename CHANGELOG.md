@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Changed conflicting GA4 window object instance in GA4 class from `TNAFrontendAnalytics` to `TNAFrontendAnalyticsGA4`
+- Adjusted margin bottom of narrow, shifted hero components
 
 ### Security
 

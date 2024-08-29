@@ -267,7 +267,7 @@
         "body": "<p>Card body</p>",
         "style": "contrast"
       },
-      "html": "<article class=\"tna-card tna-background-contrast\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-background-contrast\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with a tint style",
@@ -277,7 +277,7 @@
         "body": "<p>Card body</p>",
         "style": "tint"
       },
-      "html": "<article class=\"tna-card tna-background-tint\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-background-tint\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with a accent style",
@@ -287,7 +287,7 @@
         "body": "<p>Card body</p>",
         "style": "accent"
       },
-      "html": "<article class=\"tna-card tna-background-accent\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-background-accent\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with an unknown style",
@@ -297,7 +297,7 @@
         "body": "<p>Card body</p>",
         "style": "foobar"
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "horizontal card",

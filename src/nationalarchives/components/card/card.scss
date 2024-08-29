@@ -84,27 +84,19 @@
     @include typography.main-font-weight-bold;
   }
 
-  &.tna-background-tint,
-  &.tna-background-contrast,
-  &.tna-background-accent {
+  &--padded {
     padding-bottom: spacing.space(1);
   }
 
-  &.tna-background-tint &__heading,
-  &.tna-background-contrast &__heading,
-  &.tna-background-accent &__heading,
-  &.tna-background-tint &__body,
-  &.tna-background-contrast &__body,
-  &.tna-background-accent &__body,
-  &.tna-background-tint &__actions,
-  &.tna-background-contrast &__actions,
-  &.tna-background-accent &__actions {
+  &--padded &__heading,
+  &--padded &__body,
+  &--padded &__actions {
     padding-right: spacing.space(1);
     padding-left: spacing.space(1);
   }
 
   @include media.on-larger-than-mobile {
-    &#{&}--horizontal {
+    &--horizontal {
       padding-bottom: 0;
 
       display: grid;
@@ -128,18 +120,25 @@
       }
     }
 
-    &#{&}--horizontal &__heading,
-    &#{&}--horizontal &__body,
-    &#{&}--horizontal &__actions {
+    &--horizontal#{&}--flipped {
+      grid-template-areas:
+        "header image"
+        "body image"
+        "footer image";
+    }
+
+    &--horizontal &__heading,
+    &--horizontal &__body,
+    &--horizontal &__actions {
       padding-right: spacing.space(2);
       padding-left: spacing.space(2);
     }
 
-    &#{&}--horizontal &__heading {
+    &--horizontal &__heading {
       grid-area: header;
     }
 
-    &#{&}--horizontal &__image-container {
+    &--horizontal &__image-container {
       width: 100%;
       height: 100%;
       margin: 0;
@@ -148,10 +147,11 @@
       grid-area: image;
     }
 
-    &#{&}--horizontal &__body {
+    &--horizontal &__body {
       grid-area: body;
     }
-    &#{&}--horizontal &__actions {
+
+    &--horizontal &__actions {
       grid-area: footer;
     }
   }

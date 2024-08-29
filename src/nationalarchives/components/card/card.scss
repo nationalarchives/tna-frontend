@@ -14,6 +14,8 @@
   position: relative;
 
   &:not(:has(&__image-container)) {
+    padding-top: spacing.space(0.5);
+
     @include colour.thick-keyline-dark(top);
   }
 

@@ -7,25 +7,14 @@
 .tna-card {
   @include spacing.space-above;
 
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: spacing.space(1);
+
   position: relative;
 
-  &__inner {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &.tna-background-contrast &__inner,
-  &.tna-background-tint &__inner,
-  &.tna-background-accent &__inner {
-    padding-bottom: spacing.space(1);
-  }
-
-  &--horizontal.tna-background-contrast &__inner,
-  &--horizontal.tna-background-tint &__inner,
-  &--horizontal.tna-background-accent &__inner {
-    padding-right: spacing.space(1);
-    padding-bottom: spacing.space(2);
-    padding-left: spacing.space(1);
+  &:not(:has(&__image-container)) {
+    @include colour.thick-keyline-dark(top);
   }
 
   &__heading {
@@ -43,12 +32,11 @@
   }
 
   &__image-container {
-    height: 0;
-    margin-bottom: spacing.space(1);
-    padding-bottom: #{math.div(2, 3) * 100%};
+    aspect-ratio: 3/2;
+
+    order: 1;
 
     position: relative;
-    order: 1;
 
     @include colour.image-loader-background;
   }
@@ -67,42 +55,26 @@
   }
 
   &__image-label {
-    max-width: calc(100% - #{spacing.space(1)});
-
     position: absolute;
     top: spacing.space(0.5);
     left: spacing.space(0.5);
     z-index: 2;
-
-    .tna-background-accent &:not(.tna-chip--plain) {
-      @include colour.accent;
-
-      @include colour.colour-border("accent-background");
-    }
   }
 
   &__body {
-    padding-top: spacing.space(1);
-
     order: 3;
-  }
 
-  &__meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: spacing.space(0.5) spacing.space(1.5);
-
-    line-height: 1.3;
-
-    list-style: none;
-
-    + p {
+    p {
       margin-top: spacing.space(1);
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
 
   &__actions {
-    margin-top: spacing.space(1);
+    // padding-top: spacing.space(1);
 
     display: flex;
     gap: spacing.space(1) spacing.space(2);
@@ -114,93 +86,73 @@
     @include typography.main-font-weight-bold;
   }
 
-  &__heading,
-  &__body,
-  &__actions {
-    .tna-card.tna-background-contrast &,
-    .tna-card.tna-background-tint &,
-    .tna-card.tna-background-accent & {
-      margin-right: spacing.space(1);
-      margin-left: spacing.space(1);
-    }
+  &.tna-background-tint,
+  &.tna-background-contrast,
+  &.tna-background-accent {
+    padding-bottom: spacing.space(1);
   }
 
-  &--horizontal {
-    aspect-ratio: auto 3/1;
-
-    position: relative;
-
-    @include media.on-larger-than-mobile {
-      .tna-card__inner {
-        margin-left: 50%;
-        padding: spacing.space(2);
-      }
-
-      .tna-card__image-container {
-        min-height: 50%;
-        height: auto;
-        margin-bottom: 0;
-        padding-bottom: 0;
-
-        display: block;
-
-        position: absolute;
-        inset: 0 50% 0 0;
-        z-index: 1;
-      }
-
-      .tna-card__heading,
-      .tna-card__body,
-      .tna-card__actions {
-        margin-right: 0;
-        margin-left: 0;
-      }
-    }
+  &.tna-background-tint &__heading,
+  &.tna-background-contrast &__heading,
+  &.tna-background-accent &__heading,
+  &.tna-background-tint &__body,
+  &.tna-background-contrast &__body,
+  &.tna-background-accent &__body,
+  &.tna-background-tint &__actions,
+  &.tna-background-contrast &__actions,
+  &.tna-background-accent &__actions {
+    padding-right: spacing.space(1);
+    padding-left: spacing.space(1);
   }
 
-  &--horizontal.tna-background-contrast,
-  &--horizontal.tna-background-tint,
-  &--horizontal.tna-background-accent {
-    @include media.on-mobile {
-      .tna-card__inner {
-        padding: 0 0 spacing.space(1);
+  @include media.on-larger-than-mobile {
+    &#{&}--horizontal {
+      padding-bottom: 0;
+
+      grid-template: min-content min-content 1fr / 50% 50%;
+      grid-template-areas:
+        "image header"
+        "image body"
+        "image footer";
+      gap: 0;
+
+      > * + * {
+        margin-top: spacing.space(1);
       }
 
-      .tna-card__image-container {
-        margin-bottom: spacing.space(1);
+      > :first-child {
+        padding-top: spacing.space(2);
       }
 
-      .tna-card__heading,
-      .tna-card__body,
-      .tna-card__actions {
-        margin-right: spacing.space(1);
-        margin-left: spacing.space(1);
+      > :last-child {
+        padding-bottom: spacing.space(2);
       }
     }
-  }
 
-  &__inner:has(&__heading + &__body) {
-    padding-top: spacing.space(0.5);
+    &#{&}--horizontal &__heading,
+    &#{&}--horizontal &__body,
+    &#{&}--horizontal &__actions {
+      padding-right: spacing.space(2);
+      padding-left: spacing.space(2);
+    }
 
-    @include colour.thick-keyline-dark(top);
-  }
+    &#{&}--horizontal &__heading {
+      grid-area: header;
+    }
 
-  @include colour.on-high-contrast-and-forced-colours {
-    @include colour.colour-border("keyline-dark", 1px);
-  }
+    &--horizontal &__image-container {
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
 
-  &:not(&--horizontal) {
-    @include colour.on-high-contrast-and-forced-colours {
-      .tna-card__inner {
-        padding-bottom: spacing.space(1);
-      }
+      grid-area: image;
+    }
 
-      .tna-card__heading,
-      .tna-card__body,
-      .tna-card__actions {
-        margin-right: spacing.space(1);
-        margin-left: spacing.space(1);
-      }
+    &#{&}--horizontal &__body {
+      grid-area: body;
+    }
+    &#{&}--horizontal &__actions {
+      grid-area: footer;
     }
   }
 

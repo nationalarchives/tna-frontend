@@ -116,7 +116,7 @@ $colour-palette-dark: map.merge(
     "background-tint": #323334,
     "font-base": brand-colour("white", 0.95),
     "font-dark": brand-colour("white"),
-    "font-light": brand-colour("white", 0.51),
+    "font-light": brand-colour("white", 0.65),
     "icon-light": brand-colour("white", 0.35),
     "link": brand-colour("blue"),
     "link-visited": #a8f,
@@ -150,7 +150,7 @@ $colour-palette-high-contrast: map.merge(
     "background-tint": #ddd,
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
-    "icon-light": brand-colour("black", 0.75),
+    "icon-light": brand-colour("black", 0.8),
     "link": #34d,
     "link-visited": #848,
     "focus-outline": brand-colour("orange"),
@@ -158,7 +158,9 @@ $colour-palette-high-contrast: map.merge(
     "keyline-dark": brand-colour("black"),
     "contrast-background": brand-colour("black"),
     "contrast-link": brand-colour("blue"),
+    "contrast-font-light": brand-colour("white", 0.8),
     "contrast-link-visited": #a8f,
+    "accent-font-light": brand-colour("black", 0.8),
   )
 ) !default;
 
@@ -173,12 +175,14 @@ $colour-palette-high-contrast-dark: map.merge(
     "background": #111,
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
-    "icon-light": brand-colour("white", 0.75),
+    "icon-light": brand-colour("white", 0.8),
     "keyline": brand-colour("white"),
     "form-error-border": #ff6b6b,
     "form-error-text": #ff6b6b,
     "contrast-background": brand-colour("black"),
     "contrast-link": brand-colour("blue"),
+    "contrast-font-light": brand-colour("white", 0.8),
     "contrast-link-visited": #a8f,
+    "accent-font-light": brand-colour("black", 0.8),
   )
 ) !default;

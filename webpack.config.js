@@ -19,6 +19,14 @@ module.exports = {
         type: "umd",
       },
     },
+    "all+analytics": {
+      import: "./src/nationalarchives/all+analytics.mjs",
+      filename: "all+analytics.js",
+      library: {
+        name: "TNAFrontend",
+        type: "umd",
+      },
+    },
     ...glob
       .sync("./src/nationalarchives/components/**/*.mjs")
       .reduce((acc, path) => {

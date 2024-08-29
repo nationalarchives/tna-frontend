@@ -41,6 +41,9 @@ const checkExists = [
   "nationalarchives/all.js.map",
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
+  "nationalarchives/all+analytics.js",
+  "nationalarchives/all+analytics.js.map",
+  "nationalarchives/all+analytics.mjs",
   "nationalarchives/analytics.js",
   "nationalarchives/analytics.js.map",
   "nationalarchives/analytics.mjs",
@@ -258,39 +261,53 @@ Object.defineProperty(window, "matchMedia", {
 });
 global.window = window;
 global.document = window.document;
-const jsAllPackage = require("../package/nationalarchives/all.js");
-if (
-  Object.keys(jsAllPackage).includes("initAll") &&
-  typeof jsAllPackage.initAll === "function"
-) {
-  pass(`all.js function exists: initAll()`);
-} else {
-  fail(`all.js function missing: initAll()`);
-  process.exitCode = 1;
-  throw new Error("JavaScript test failed");
-}
-if (
-  Object.keys(jsAllPackage).includes("Cookies") &&
-  typeof jsAllPackage.Cookies === "function"
-) {
-  pass(`all.js class exists: Cookies`);
-} else {
-  fail(`all.js class missing: Cookies`);
-  process.exitCode = 1;
-  throw new Error("JavaScript module test failed");
-}
-Object.keys(componentsWithJavaScript).forEach((component) => {
-  const componentClass = componentsWithJavaScript[component];
-  if (
-    Object.keys(jsAllPackage).includes(componentClass) &&
-    typeof jsAllPackage[componentClass] === "function"
-  ) {
-    pass(`all.js function exists: ${componentClass}()`);
-  } else {
-    fail(`all.js function missing: ${componentClass}()`);
-    process.exitCode = 1;
-    throw new Error("Component JavaScript test failed");
+["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
+  const jsAllPackage = require(`../package/nationalarchives/${file}`);
+  let exports = [];
+  if (file === "all.js" || file === "all+analytics.js") {
+    exports = [
+      ...exports,
+      { name: "initAll", type: "function" },
+      { name: "Cookies", type: "function" },
+    ];
+    Object.keys(componentsWithJavaScript).forEach((component) => {
+      const componentClass = componentsWithJavaScript[component];
+      if (
+        Object.keys(jsAllPackage).includes(componentClass) &&
+        typeof jsAllPackage[componentClass] === "function"
+      ) {
+        pass(`${file} function exists: ${componentClass}()`);
+      } else {
+        fail(`${file} function missing: ${componentClass}()`);
+        process.exitCode = 1;
+        throw new Error("Component JavaScript test failed");
+      }
+    });
   }
+  if (file === "analytics.js" || file === "all+analytics.js") {
+    exports = [
+      ...exports,
+      { name: "EventTracker", type: "function" },
+      { name: "GA4", type: "function" },
+      { name: "helpers", type: "object" },
+    ];
+  }
+  exports.forEach((eachExport) => {
+    if (
+      Object.keys(jsAllPackage).includes(eachExport.name) &&
+      typeof jsAllPackage[eachExport.name] === eachExport.type
+    ) {
+      pass(
+        `${file} ${eachExport.type} exists: ${eachExport.name}${eachExport.type === "function" ? "()" : ""}`,
+      );
+    } else {
+      fail(
+        `${file} ${eachExport.type} missing: ${eachExport.name}${eachExport.type === "function" ? "()" : ""}`,
+      );
+      process.exitCode = 1;
+      throw new Error("JavaScript test failed");
+    }
+  });
 });
 Object.keys(componentsWithJavaScript).forEach((component) => {
   const componentClass = componentsWithJavaScript[component];

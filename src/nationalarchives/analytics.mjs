@@ -38,7 +38,7 @@ const componentAnalytics = [
 
 class EventTracker {
   /** @protected */
-  cookies = new (window.TNAFrontend?.Cookies || Cookies)();
+  cookies = new Cookies();
 
   /** @protected */
   events = [];
@@ -342,6 +342,11 @@ class GA4 extends EventTracker {
       // window.location.reload();
     }
   }
+}
+
+const ga4Id = document.documentElement.getAttribute("data-ga4");
+if (ga4Id) {
+  new GA4({ id: ga4Id });
 }
 
 const helpers = { getXPathTo, getClosestHeading, valueGetters };

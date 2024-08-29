@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `$import-google-fonts` option (default: `true`) which can disable the inclusion of Google Fonts using an `@import` declaration
+- A new `all+analytics.js` file now exists which can be used as a drop-in replacement for `all.js`
+- Google Analytics 4 can be automatically be instantiated by adding a `data-ga4` property to the `<html>` element
 
 ### Changed
 

@@ -7,8 +7,8 @@
 .tna-card {
   @include spacing.space-above;
 
-  display: grid;
-  grid-auto-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: spacing.space(1);
 
   position: relative;
@@ -74,8 +74,6 @@
   }
 
   &__actions {
-    // padding-top: spacing.space(1);
-
     display: flex;
     gap: spacing.space(1) spacing.space(2);
 
@@ -109,6 +107,7 @@
     &#{&}--horizontal {
       padding-bottom: 0;
 
+      display: grid;
       grid-template: min-content min-content 1fr / 50% 50%;
       grid-template-areas:
         "image header"

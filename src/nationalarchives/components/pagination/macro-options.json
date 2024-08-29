@@ -102,6 +102,12 @@
     "description": ""
   },
   {
+    "name": "solid",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "spaced",
     "type": "boolean",
     "required": false,

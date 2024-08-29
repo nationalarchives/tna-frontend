@@ -7,24 +7,31 @@ require.extensions[".njk"] = function (module, filename) {
 
 nunjucks.configure(__dirname + "/../../src");
 
-const globalHeaderComponentNunjucks = require("../../src/nationalarchives/components/global-header/template.njk");
+const skipLinkComponentNunjucks = require("../../src/nationalarchives/components/skip-link/template.njk");
+const skipLinkHTML = nunjucks
+  .renderString(skipLinkComponentNunjucks, {
+    params: {},
+  })
+  .trim()
+  .replace(/ " /g, '" ');
 
+const globalHeaderComponentNunjucks = require("../../src/nationalarchives/components/global-header/template.njk");
 const globalHeaderHTML = nunjucks
   .renderString(globalHeaderComponentNunjucks, {
     params: {
       logo: {
-        href: "#/",
+        href: "https://www.nationalarchives.gov.uk/",
       },
       topNavigation: [
         {
           text: "Search",
-          href: "#/search",
+          href: "https://www.nationalarchives.gov.uk/search/",
           icon: "search",
         },
         {
           text: "Shop",
           href: "https://shop.nationalarchives.gov.uk/",
-          icon: "bag-shopping",
+          icon: "shop",
         },
         // {
         //   text: "Sign in",
@@ -38,7 +45,7 @@ const globalHeaderHTML = nunjucks
           href: "https://www.nationalarchives.gov.uk/about/visit-us/",
         },
         {
-          text: "What's on",
+          text: "What’s on",
           href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
         },
         {
@@ -46,16 +53,16 @@ const globalHeaderHTML = nunjucks
           href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
         },
         {
-          text: "Using the archives",
-          href: "#/using-the-archives",
+          text: "Help using the archive",
+          href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
         },
         {
-          text: "Learn",
-          href: "#/learn",
+          text: "Education",
+          href: "https://www.nationalarchives.gov.uk/education/",
         },
         {
-          text: "Professional guidance & services",
-          href: "#/professional-guidance-and-services",
+          text: "Professional guidance and services",
+          href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
         },
       ],
     },
@@ -64,111 +71,113 @@ const globalHeaderHTML = nunjucks
   .replace(/ " /g, '" ');
 
 const footerComponentNunjucks = require("../../src/nationalarchives/components/footer/template.njk");
-
 const footerHTML = nunjucks
   .renderString(footerComponentNunjucks, {
     params: {
       social: [
         {
-          text: "Twitter",
           href: "https://twitter.com/UKNatArchives",
-          brandIcon: "twitter",
+          icon: "twitter",
+          title: "The National Archives X feed (formally known as Twitter)",
         },
         {
-          text: "YouTube",
           href: "https://www.youtube.com/c/TheNationalArchivesUK",
-          brandIcon: "youtube",
+          icon: "youtube",
+          title: "The National Archives YouTube channel",
         },
         {
-          text: "Facebook",
           href: "https://www.facebook.com/TheNationalArchives",
-          brandIcon: "facebook",
+          icon: "facebook",
+          title: "The National Archives Facebook page",
         },
         {
-          text: "Flickr",
           href: "https://www.flickr.com/photos/nationalarchives",
-          brandIcon: "flickr",
+          icon: "flickr",
+          title: "The National Archives Flickr feed",
         },
         {
-          text: "Instagram",
           href: "https://www.instagram.com/nationalarchivesuk/",
-          brandIcon: "instagram",
+          icon: "instagram",
+          title: "The National Archives Instagram feed",
         },
         {
-          text: "RSS",
-          href: "https://www.nationalarchives.gov.uk/rss/",
-          icon: "rss",
+          href: "https://www.tiktok.com/@uknatarchives",
+          icon: "tiktok",
+          title: "The National Archives TikTok feed",
         },
       ],
       navigation: [
         {
-          title: "About us",
+          title: "Quick links",
           items: [
             {
-              text: "Our role",
-              href: "https://www.nationalarchives.gov.uk/about/our-role/",
-            },
-            {
-              text: "Our history",
-              href: "https://www.nationalarchives.gov.uk/about/our-role/what-we-do/our-history/",
-            },
-            {
-              text: "Our people",
-              href: "https://www.nationalarchives.gov.uk/about/jobs/staff-profiles/",
-            },
-            {
-              text: "News",
-              href: "https://www.nationalarchives.gov.uk/about/news/",
+              text: "About us",
+              href: "https://www.nationalarchives.gov.uk/about/",
             },
             {
               text: "Contact us",
               href: "https://www.nationalarchives.gov.uk/contact-us/",
             },
             {
-              text: "Jobs & careers",
-              href: "https://www.nationalarchives.gov.uk/about/jobs/",
+              text: "News",
+              href: "https://www.nationalarchives.gov.uk/about/news/",
             },
             {
-              text: "Get involved",
-              href: "https://www.nationalarchives.gov.uk/about/get-involved/",
-            },
-          ],
-        },
-        {
-          title: "Our websites help",
-          items: [
-            {
-              text: "UK Government Web Archive",
-              href: "https://www.nationalarchives.gov.uk/webarchive/",
-              newTab: true,
+              text: "Blog",
+              href: "https://blog.nationalarchives.gov.uk/",
             },
             {
-              text: "Legislation.gov.uk",
-              href: "https://www.legislation.gov.uk/",
-              newTab: true,
+              text: "Podcasts",
+              href: "https://media.nationalarchives.gov.uk/index.php/category/podcasts-2/",
             },
             {
-              text: "Find case law",
-              href: "https://caselaw.nationalarchives.gov.uk/",
-              newTab: true,
+              text: "Image library",
+              href: "https://images.nationalarchives.gov.uk/",
             },
-            {
-              text: "The Gazette",
-              href: "https://www.thegazette.co.uk/",
-              newTab: true,
-            },
-          ],
-        },
-        {
-          title: "Quick links",
-          items: [
             {
               text: "Press room",
               href: "https://www.nationalarchives.gov.uk/about/press-room/",
             },
             {
-              text: "Venue hire",
-              href: "https://www.nationalarchives.gov.uk/about/visit-us/venue-hire/",
+              text: "Jobs",
+              href: "https://www.nationalarchives.gov.uk/about/jobs/",
+            },
+            {
+              text: "British citizenship services",
+              href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
+            },
+            {
+              text: "Historical Manuscripts Commission",
+              href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
+            },
+          ],
+        },
+        {
+          title: "Other websites",
+          items: [
+            {
+              text: "UK Government Web Archive",
+              href: "https://www.nationalarchives.gov.uk/webarchive/",
+            },
+            {
+              text: "Legislation.gov.uk",
+              href: "https://www.legislation.gov.uk/",
+            },
+            {
+              text: "Find case law",
+              href: "https://caselaw.nationalarchives.gov.uk/",
+            },
+            {
+              text: "The Gazette",
+              href: "https://www.thegazette.co.uk/",
+            },
+            {
+              text: "The National Archives Trust",
+              href: "https://www.nationalarchivestrust.org.uk/",
+            },
+            {
+              text: "Friends of The National Archives",
+              href: "https://ftna.org.uk/",
             },
           ],
         },
@@ -177,23 +186,23 @@ const footerHTML = nunjucks
       legal: [
         {
           text: "Accessibility statement",
-          href: "#",
+          href: "#/accessibility",
         },
         {
           text: "Freedom of information",
-          href: "#",
+          href: "#/freedom-of-information",
         },
         {
           text: "Terms and conditions",
-          href: "#",
+          href: "#/terms-and-conditions",
         },
         {
           text: "Privacy policy",
-          href: "#",
+          href: "#/privacy",
         },
         {
           text: "Cookies",
-          href: "#",
+          href: "#/cookies",
         },
       ],
     },
@@ -207,6 +216,7 @@ fs.readFile(
   (err, data) => {
     if (err) throw err;
     const newReadme = data
+      .replace("<!-- SKIPLINKHTML -->", skipLinkHTML)
       .replace("<!-- GLOBALHEADERHTML -->", globalHeaderHTML)
       .replace("<!-- FOOTERHTML -->", footerHTML);
     fs.writeFile("package-global-header/README.md", newReadme, (err) => {

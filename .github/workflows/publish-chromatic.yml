@@ -1,0 +1,41 @@
+name: Publish to Chromatic
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.storybook/**'
+      - 'src/**'
+    tags-ignore:
+      - '**'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: chromatic
+  cancel-in-progress: true
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Storybook
+        run: npm run build:storybook
+      - uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook
+          exitZeroOnChanges: true
+          autoAcceptChanges: true

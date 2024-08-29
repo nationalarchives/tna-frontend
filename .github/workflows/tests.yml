@@ -4,10 +4,16 @@ on:
   push:
     branches:
       - '**'
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - 'LICENCE'
+      - 'README.md'
+    tags-ignore:
+      - '**'
 
 concurrency:
   group: tests-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   lint:
@@ -23,6 +29,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Tests
         uses: ./.github/actions/tests
+
+  storybook-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        uses: ./.github/actions/storybook-tests
 
   test-package:
     runs-on: ubuntu-latest

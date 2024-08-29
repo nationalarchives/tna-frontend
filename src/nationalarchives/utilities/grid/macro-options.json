@@ -1,0 +1,190 @@
+[
+  {
+    "name": "columns",
+    "type": "array",
+    "required": false,
+    "description": "An array of column item objects.",
+    "params": [
+      {
+        "name": "html",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "width",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "widthMedium",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "widthSmall",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "widthTiny",
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "flex",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "flexMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "flexSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "flexTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeft",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeftMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeftSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginLeftTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRight",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRightMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRightSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "marginRightTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "order",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "orderMedium",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "orderSmall",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "orderTiny",
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "noPadding",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the column."
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the navigation item."
+      }
+    ]
+  },
+  {
+    "name": "maxWidth",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "noPadding",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "nested",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "htmlElement",
+    "type": "string",
+    "required": false,
+    "description": "HTML element of the container."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the container."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the container."
+  }
+]

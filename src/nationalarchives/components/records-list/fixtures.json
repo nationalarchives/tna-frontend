@@ -1,0 +1,42 @@
+{
+  "component": "records list",
+  "fixtures": [
+    {
+      "name": "basic records list",
+      "options": {
+        "items": [
+          {
+            "collection": "TS 11/45/167",
+            "title": "Court records relating to Robert Wedderburn's trial",
+            "href": "#",
+            "date": "1819–1820"
+          },
+          {
+            "collection": "HO 42/191",
+            "title": "Home office letters",
+            "href": "#",
+            "date": "1819"
+          }
+        ]
+      },
+      "html": "<ul class=\"tna-records-list\"><li class=\"tna-records-list__item\"><dl class=\"tna-records-list__details\"><dt class=\"tna-records-list__collection-label tna-chip tna-chip--plain\">From our collection</dt><dd class=\"tna-records-list__collection-description tna-chip tna-chip--plain\">TS 11/45/167</dd><dt class=\"tna-records-list__title-label\">Title</dt><dd class=\"tna-records-list__title-description\"><a href=\"#\">Court records relating to Robert Wedderburn&#39;s trial</a></dd><dt class=\"tna-records-list__date-label\">Date</dt><dd class=\"tna-records-list__date-description\">1819–1820</dd></dl></li><li class=\"tna-records-list__item\"><dl class=\"tna-records-list__details\"><dt class=\"tna-records-list__collection-label tna-chip tna-chip--plain\">From our collection</dt><dd class=\"tna-records-list__collection-description tna-chip tna-chip--plain\">HO 42/191</dd><dt class=\"tna-records-list__title-label\">Title</dt><dd class=\"tna-records-list__title-description\"><a href=\"#\">Home office letters</a></dd><dt class=\"tna-records-list__date-label\">Date</dt><dd class=\"tna-records-list__date-description\">1819</dd></dl></li></ul>"
+    },
+    {
+      "name": "records list with images",
+      "options": {
+        "items": [
+          {
+            "imageSrc": "https://beta.nationalarchives.gov.uk/media/images/wedderburn-trial.max-832x591.format-webp_i3c9pUH.webp",
+            "imageWidth": 576,
+            "imageHeight": 591,
+            "collection": "TS 11/45/167",
+            "title": "Court records relating to Robert Wedderburn's trial",
+            "href": "#",
+            "date": "1819–1820"
+          }
+        ]
+      },
+      "html": "<ul class=\"tna-records-list\"><li class=\"tna-records-list__item\"><img src=\"https://beta.nationalarchives.gov.uk/media/images/wedderburn-trial.max-832x591.format-webp_i3c9pUH.webp\" width=\"576\" height=\"591\" class=\"tna-records-list__image\" alt=\"\"><dl class=\"tna-records-list__details\"><dt class=\"tna-records-list__collection-label tna-chip tna-chip--plain\">From our collection</dt><dd class=\"tna-records-list__collection-description tna-chip tna-chip--plain\">TS 11/45/167</dd><dt class=\"tna-records-list__title-label\">Title</dt><dd class=\"tna-records-list__title-description\"><a href=\"#\">Court records relating to Robert Wedderburn&#39;s trial</a></dd><dt class=\"tna-records-list__date-label\">Date</dt><dd class=\"tna-records-list__date-description\">1819–1820</dd></dl></li></ul>"
+    }
+  ]
+}

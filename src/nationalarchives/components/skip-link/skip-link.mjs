@@ -8,9 +8,7 @@ export class SkipLink {
       $module &&
       this.linkedElementId &&
       document.getElementById(this.linkedElementId);
-  }
 
-  init() {
     if (!this.$module || !this.$linkedElement) {
       return;
     }

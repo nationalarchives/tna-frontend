@@ -1,10 +1,9 @@
+@use "../../tools/a11y";
 @use "../../tools/colour";
+@use "../../tools/grid";
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../variables/grid";
-@use "../../utilities";
-@use "../button";
 
 .tna-picture {
   @include spacing.space-above;
@@ -14,59 +13,79 @@
   padding: 0;
 
   &__image-wrapper {
-    padding: 1.5rem;
+    padding: spacing.space(1.5);
 
     position: relative;
   }
 
   &__image {
     width: auto;
-    max-height: 40rem;
     height: auto;
+    max-height: 40rem;
     margin: 0 auto;
+
+    box-shadow:
+      0 0.25rem 1rem -0.25rem rgb(0 0 0 / 25%),
+      0 0.125rem 0.5rem -0.25rem rgb(0 0 0 / 75%);
+
+    @include colour.image-loader-background;
   }
 
   &__toggle-transcript {
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: spacing.space(1);
+    bottom: spacing.space(1);
   }
 
   &__transcript {
     @include colour.contrast;
 
-    padding: 1rem 1.5rem;
+    padding: spacing.space(1.5);
 
-    .tna-template--clicked &:focus {
-      outline: none;
-    }
-
-    .tna-tabs {
-      margin-bottom: 0.5rem;
-    }
+    // @include a11y.no-focus-outline-on-click;
   }
 
   &__caption {
-    margin: 0 1rem;
-    padding: 1rem;
+    margin: 0 spacing.space(1);
+    padding: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
-  @include media.on-mobile {
-    &__image-wrapper {
-      padding: 0;
+  &--plain &__image-wrapper {
+    padding: 0;
+  }
+
+  &--plain &__image {
+    box-shadow: none;
+  }
+
+  @include media.on-larger-than-mobile {
+    &--plain {
+      margin-right: spacing.space(2);
+      margin-left: spacing.space(2);
+    }
+  }
+
+  @include media.on-small {
+    &--plain {
+      margin-right: spacing.space(1);
+      margin-left: spacing.space(1);
     }
   }
 
   @include media.on-tiny {
+    &__image-wrapper {
+      padding: 0;
+    }
+
     .tna-column & {
-      width: calc(100% + #{grid.$gutter-width-tiny * 2});
+      width: calc(100% + #{grid.gutter-width-tiny-double()});
 
       position: relative;
-      left: -#{grid.$gutter-width-tiny};
+      left: -#{grid.gutter-width-tiny()};
     }
 
     &__image {
@@ -77,15 +96,7 @@
       margin-right: 0;
       margin-left: 0;
 
-      @include typography.relative-font-size(14);
-    }
-
-    @if grid.$gutter-width-tiny != 1.5rem {
-      &__caption,
-      &__transcript {
-        padding-right: grid.$gutter-width-tiny;
-        padding-left: grid.$gutter-width-tiny;
-      }
+      @include typography.font-size(14);
     }
   }
 

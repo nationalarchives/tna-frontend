@@ -4,7 +4,8 @@
 {%- if params.spaced -%}
   {%- set containerClasses = containerClasses.concat('tna-pagination--spaced') -%}
 {%- endif -%}
-<nav class="tna-pagination {{ containerClasses | join(' ') }}" role="navigation" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Pagination' }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
+{%- set classes = containerClasses | join(' ') -%}
+<nav class="tna-pagination{% if classes %} {{ classes }}{% endif %}" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Pagination' }}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {% if params.previous -%}
   <div class="tna-pagination__prev">
     {{ tnaButton({
@@ -13,6 +14,7 @@
       title: params.previous.title,
       icon: "arrow-left",
       iconOnlyOnMobile: true,
+      plain: not params.solid,
       attributes: {
         rel: "prev"
       }
@@ -29,7 +31,8 @@
         {{ tnaButton({
           text: item.number,
           href: item.href,
-          accent: item.current,
+          accent: params.solid and item.current,
+          plain: not params.solid and not item.current,
           classes: "tna-pagination__link",
           attributes: {
             "aria-label": item.label
@@ -50,6 +53,7 @@
       title: params.next.title,
       icon: "arrow-right",
       iconOnlyOnMobile: true,
+      plain: not params.solid,
       classes: "tna-button--icon-right",
       attributes: {
         rel: "next"

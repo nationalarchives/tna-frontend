@@ -6,7 +6,6 @@ import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 
 document.documentElement.classList.add(
   "tna-template",
-  "tna-template--light-theme",
   "tna-template--yellow-accent",
 );
 if (window.self !== window.top) {
@@ -36,9 +35,6 @@ export const parameters = {
 export const decorators = [
   (Story, ctx) => {
     window.dataLayer = [];
-    window.TNAFrontend = {
-      Cookies,
-    };
     const cookies = new Cookies();
     cookies.deleteAll();
     return Story();

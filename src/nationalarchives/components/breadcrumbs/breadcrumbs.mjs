@@ -9,9 +9,7 @@ export class Breadcrumbs {
       $module &&
       this.$breadcrumbsList &&
       $module.querySelectorAll(".tna-breadcrumbs__item");
-  }
 
-  init() {
     if (!this.$module || !this.$breadcrumbsList || !this.$breadcrumbs) {
       return;
     }

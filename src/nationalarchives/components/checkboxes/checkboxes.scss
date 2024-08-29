@@ -1,14 +1,14 @@
 @use "../../variables/forms";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
-@use "../../utilities/a11y";
-@use "../../utilities";
+@use "../../tools/spacing";
 
 .tna-checkboxes {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: spacing.space(1);
 
   &__item {
     position: relative;
@@ -27,7 +27,7 @@
     }
 
     &-label {
-      padding-left: 3rem;
+      padding-left: spacing.space(3);
 
       display: block;
 
@@ -37,15 +37,15 @@
 
       &::before,
       &::after {
+        content: "";
+
         width: 2rem;
 
         position: absolute;
         top: 0;
         left: 0;
 
-        @include colour.light;
-
-        content: "";
+        @include colour.always-light;
       }
 
       &::before {
@@ -62,6 +62,7 @@
           "input-border",
           forms.$form-field-border-width
         );
+        border-radius: 0.1px;
       }
 
       &::after {
@@ -85,12 +86,12 @@
   }
 
   &--small {
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
   }
 
   &--small &__item {
     &-label {
-      padding-left: 2.25rem;
+      padding-left: spacing.space(2.25);
 
       line-height: 1.5rem;
 
@@ -112,12 +113,20 @@
 
   &--inline {
     flex-flow: row wrap;
+
     align-items: center;
-    gap: 1rem 2rem;
+    gap: spacing.space(1) spacing.space(2);
 
     @include media.on-tiny {
       flex-direction: column;
       align-items: flex-start;
+    }
+  }
+
+  &__item-label:active {
+    &::before {
+      @include a11y.focus-outline;
+      @include a11y.active-outline;
     }
   }
 
@@ -137,7 +146,7 @@
     }
   }
 
-  &--small &__item:hover &__item-label {
+  &__item:hover &__item-label {
     &::before {
       box-shadow: 0 0 0 0.125rem var(--input-border);
     }

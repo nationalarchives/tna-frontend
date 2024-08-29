@@ -86,12 +86,6 @@
         "type": "string",
         "required": false,
         "description": ""
-      },
-      {
-        "name": "brandIcon",
-        "type": "string",
-        "required": false,
-        "description": ""
       }
     ]
   },
@@ -102,30 +96,10 @@
     "description": ""
   },
   {
-    "name": "exit",
-    "type": "object",
+    "name": "navigationId",
+    "type": "string",
     "required": false,
-    "description": "",
-    "params": [
-      {
-        "name": "text",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "href",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "target",
-        "type": "string",
-        "required": false,
-        "description": ""
-      }
-    ]
+    "description": ""
   },
   {
     "name": "classes",

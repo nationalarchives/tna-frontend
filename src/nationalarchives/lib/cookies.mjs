@@ -1,31 +1,49 @@
+window.TNAFrontendCookies = window.TNAFrontendCookies || null;
+window.TNAFrontendCookieEvents = window.TNAFrontendCookieEvents || null;
+
 export class CookieEventHandler {
   events = {};
+  oneTimeEvents = {};
 
   constructor() {
-    if (CookieEventHandler._instance) {
-      return CookieEventHandler._instance;
+    if (window.TNAFrontendCookieEvents) {
+      return window.TNAFrontendCookieEvents;
     }
-    CookieEventHandler._instance = this;
+    window.TNAFrontendCookieEvents = this;
   }
 
   /**
    * Add an event listener.
-   * @param {string} event - The event to add a listener for.
-   * @param {function} callback - The callback function to call when the event is triggered.
+   * @param {String} event - The event to add a listener for.
+   * @param {Function} callback - The callback function to call when the event is triggered.
    */
   on(event, callback) {
-    if (!Object.prototype.hasOwnProperty.call(this.events, event)) {
+    if (!Object.hasOwn(this.events, event)) {
       this.events[event] = [];
     }
     this.events[event] = [...this.events[event], callback];
   }
 
+  once(event, callback) {
+    if (!Object.hasOwn(this.oneTimeEvents, event)) {
+      this.oneTimeEvents[event] = [];
+    }
+    this.oneTimeEvents[event] = [...this.oneTimeEvents[event], callback];
+  }
+
   /** @protected */
   trigger(event, data = {}) {
-    if (Object.prototype.hasOwnProperty.call(this.events, event)) {
+    if (Object.hasOwn(this.events, event)) {
       this.events[event].forEach((eventToTrigger) =>
         eventToTrigger.call(this, data),
       );
+    }
+    if (Object.hasOwn(this.oneTimeEvents, event)) {
+      for (let i = this.oneTimeEvents[event].length - 1; i >= 0; i--) {
+        const eventToTrigger = this.oneTimeEvents[event][i];
+        eventToTrigger.call(this, data);
+        this.oneTimeEvents[event].splice(i, 1);
+      }
     }
   }
 }
@@ -49,14 +67,18 @@ export default class Cookies {
   policiesKey = "";
   /** @protected */
   events = null;
+  /** @protected */
+  defaultAge = null;
 
   /**
    * Create a cookie handler.
-   * @param {string} [options.extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
-   * @param {string} [options.domain=""] - The domain to register the cookie with.
-   * @param {string} [options.path=""] - The domain to register the cookie with.
-   * @param {string} [options.secure=true] - Only set cookie in HTTPS environments.
-   * @param {string} [options.policiesKey=cookies_policy] - The name of the cookie.
+   * @param {String} [options.extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
+   * @param {String} [options.domain=""] - The domain to register the cookie with.
+   * @param {String} [options.path=""] - The domain to register the cookie with.
+   * @param {String} [options.secure=true] - Only set cookie in HTTPS environments.
+   * @param {String} [options.policiesKey="cookies_policy"] - The name of the cookie.
+   * @param {String} [options.newInstance=false] - Create a fresh instance of the cookie class.
+   * @param {String} [options.defaultAge=31536000] - The default age of non-session cookies.
    */
   constructor(options = {}) {
     const {
@@ -65,14 +87,23 @@ export default class Cookies {
       path = "/",
       secure = true,
       policiesKey = "cookies_policy",
+      newInstance = false,
+      defaultAge = 31536000, // 365 days
     } = options;
+    if (newInstance) {
+      this.destroyInstance();
+    } else if (window.TNAFrontendCookies) {
+      return window.TNAFrontendCookies;
+    }
     this.extraPolicies = extraPolicies;
     this.domain = domain;
     this.path = path;
     this.secure = secure;
     this.policiesKey = policiesKey;
+    this.defaultAge = defaultAge;
     this.events = new CookieEventHandler();
     this.init();
+    window.TNAFrontendCookies = this;
   }
 
   /** @protected */
@@ -88,6 +119,11 @@ export default class Cookies {
     });
   }
 
+  destroyInstance() {
+    window.TNAFrontendCookies = null;
+  }
+
+  /** @protected */
   get all() {
     const deserialised = {};
     document.cookie
@@ -102,6 +138,7 @@ export default class Cookies {
     return deserialised;
   }
 
+  /** @protected */
   get policies() {
     try {
       return JSON.parse(this.get(this.policiesKey) || "{}");
@@ -112,17 +149,17 @@ export default class Cookies {
 
   /**
    * Check to see whether a cookie exists or not.
-   * @param {string} key - The cookie name.
-   * @returns {boolean}
+   * @param {String} key - The cookie name.
+   * @returns {Boolean}
    */
   exists(key) {
-    return Object.prototype.hasOwnProperty.call(this.all, key);
+    return Object.hasOwn(this.all, key);
   }
 
   /**
    * Check to see whether a cookie has a particular value.
-   * @param {string} key - The cookie name.
-   * @param {string|number|boolean} value - The value to check against.
+   * @param {String} key - The cookie name.
+   * @param {String|Number|Boolean} value - The value to check against.
    * @returns
    */
   hasValue(key, value) {
@@ -131,8 +168,8 @@ export default class Cookies {
 
   /**
    * Get a cookie.
-   * @param {string} key - The cookie name.
-   * @returns {string|number|boolean}
+   * @param {String} key - The cookie name.
+   * @returns {String|Number|Boolean}
    */
   get(key) {
     return this.exists(key) ? decodeURIComponent(this.all[key]) : null;
@@ -140,30 +177,32 @@ export default class Cookies {
 
   /**
    * Set a cookie.
-   * @param {string} key - The cookie name.
-   * @param {string|number|boolean} value - The cookie value.
+   * @param {String} key - The cookie name.
+   * @param {String|Number|Boolean} value - The cookie value.
    * @param {Object} options
-   * @param {number} [options.maxAge=31536000] - The maximum age of the cookie in seconds.
-   * @param {string} [options.path=/] - The path to register the cookie for.
-   * @param {string} [options.sameSite=Lax] - The sameSite attribute.
-   * @param {string} [options.domain=this.domain] - The domain to register the cookie with.
-   * @param {string} [options.path=this.path] - The path to register the cookie with.
-   * @param {string} [options.secure=this.secure] - Only set cookie in HTTPS environments.
+   * @param {Number} [options.maxAge=this.defaultAge] - The maximum age of the cookie in seconds.
+   * @param {String} [options.path=/] - The path to register the cookie for.
+   * @param {String} [options.sameSite=Lax] - The sameSite attribute.
+   * @param {String} [options.domain=this.domain] - The domain to register the cookie with.
+   * @param {String} [options.path=this.path] - The path to register the cookie with.
+   * @param {String} [options.secure=this.secure] - Only set cookie in HTTPS environments.
+   * @param {String} [options.session=false] - Set a session cookie.
    */
   set(key, value, options = {}) {
     const {
-      maxAge = 60 * 60 * 24 * 365,
+      maxAge = this.defaultAge,
       sameSite = "Lax",
       domain = this.domain,
       path = this.path,
       secure = this.secure,
+      session = false,
     } = options;
     if (!key) {
       return;
     }
     const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)};${
       domain ? ` domain=${domain}; ` : ""
-    } samesite=${sameSite}; path=${path}; max-age=${maxAge}${
+    } samesite=${sameSite}; path=${path}${!session ? `; max-age=${maxAge}` : ""}${
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;
@@ -175,14 +214,15 @@ export default class Cookies {
       sameSite,
       domain,
       secure,
+      session,
       cookie,
     });
   }
 
   /**
    * Delete a cookie.
-   * @param {string} key - The cookie name.
-   * @param {string} [path=/] - The path to the cookie is registered on.
+   * @param {String} key - The cookie name.
+   * @param {String} [path=/] - The path to the cookie is registered on.
    */
   delete(key, path = "/", domain = null) {
     const options = { maxAge: -1, path, domain: domain || undefined };
@@ -202,7 +242,7 @@ export default class Cookies {
 
   /**
    * Accept a policy.
-   * @param {string} policy - The name of the policy.
+   * @param {String} policy - The name of the policy.
    */
   acceptPolicy(policy) {
     this.setPolicy(policy, true);
@@ -212,7 +252,7 @@ export default class Cookies {
 
   /**
    * Reject a policy.
-   * @param {string} policy - The name of the policy.
+   * @param {String} policy - The name of the policy.
    */
   rejectPolicy(policy) {
     this.setPolicy(policy, false);
@@ -222,8 +262,8 @@ export default class Cookies {
 
   /**
    * Set a policy.
-   * @param {string} policy - The name of the policy.
-   * @param {boolean} accepted - Whether the policy is accepted or not.
+   * @param {String} policy - The name of the policy.
+   * @param {Boolean} accepted - Whether the policy is accepted or not.
    */
   setPolicy(policy, accepted) {
     if (policy === "essential") {
@@ -269,26 +309,37 @@ export default class Cookies {
    * @param {object} policies - The policies to commit.
    */
   savePolicies(policies) {
-    this.set(this.policiesKey, JSON.stringify(policies));
+    this.set(this.policiesKey, JSON.stringify(policies), {
+      maxAge: 60 * 60 * 24 * 365,
+    });
   }
 
   /**
    * Get the acceptance status of a policy.
-   * @param {string} policy - The name of the policy.
-   * @returns {boolean}
+   * @param {String} policy - The name of the policy.
+   * @returns {Boolean}
    */
   isPolicyAccepted(policy) {
-    return Object.prototype.hasOwnProperty.call(this.policies, policy)
+    return Object.hasOwn(this.policies, policy)
       ? this.policies[policy] === true
       : null;
   }
 
   /**
    * Add an event listener.
-   * @param {string} event - The event to add a listener for.
-   * @param {function} callback - The callback function to call when the event is triggered.
+   * @param {String} event - The event to add a listener for.
+   * @param {Function} callback - The callback function to call when the event is triggered.
    */
   on(event, callback) {
     this.events.on(event, callback);
+  }
+
+  /**
+   * Add a one-time event listener.
+   * @param {String} event - The event to add a listener for.
+   * @param {Function} callback - The callback function to call when the event is triggered.
+   */
+  once(event, callback) {
+    this.events.once(event, callback);
   }
 }

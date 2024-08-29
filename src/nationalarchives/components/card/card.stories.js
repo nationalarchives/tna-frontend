@@ -16,17 +16,23 @@ const argTypes = {
   imageHeight: { control: { type: "number", min: 1 } },
   imageType: { control: "text" },
   imageSources: { control: "object" },
+  lazyImage: { control: "boolean" },
   label: { control: "text" },
+  labelColour: {
+    control: "inline-radio",
+    options: ["accent", "black", "pink", "orange", "yellow", "green", "blue"],
+  },
   meta: { control: "object" },
+  accentMeta: { control: "boolean" },
   body: { control: "text" },
   text: { control: "text" },
   actions: { control: "object" },
-  layout: { control: "inline-radio", options: ["none", "horizontal", "hero"] },
+  fullAreaClick: { control: "boolean" },
+  horizontal: { control: "boolean" },
   style: {
     control: "inline-radio",
-    options: ["none", "contrast", "accent", "tint", "accent-light"],
+    options: ["none", "contrast", "tint", "accent"],
   },
-  plainSupertitle: { control: "boolean" },
   htmlElement: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -59,14 +65,17 @@ const Template = ({
   imageHeight,
   imageType,
   imageSources,
+  lazyImage,
   label,
+  labelColour,
   meta,
+  accentMeta,
   body,
   text,
   actions,
-  layout,
+  fullAreaClick,
+  horizontal,
   style,
-  plainSupertitle,
   htmlElement,
   classes,
   attributes,
@@ -86,14 +95,17 @@ const Template = ({
       imageHeight,
       imageType,
       imageSources,
+      lazyImage,
       label,
+      labelColour,
       meta,
+      accentMeta,
       body,
       text,
       actions,
-      layout,
+      fullAreaClick,
+      horizontal,
       style,
-      plainSupertitle,
       htmlElement,
       classes,
       attributes,
@@ -105,7 +117,7 @@ Standard.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -122,7 +134,7 @@ export const Simple = Template.bind({});
 Simple.args = {
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
   imageAlt: "The National Archives office",
@@ -138,7 +150,7 @@ Meta.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -146,31 +158,14 @@ Meta.args = {
   imageWidth: 499,
   imageHeight: 333,
   label: "New",
+  labelColour: "green",
   meta: [
-    { text: "24th September 2023", icon: "calendar" },
-    { text: "From £16", icon: "ticket" },
-    { text: "Online", icon: "location-dot" },
+    { title: "Event date", text: "24th September 2023", icon: "calendar" },
+    { title: "Cost", text: "From £16", icon: "ticket" },
+    { title: "Location", text: "Online", icon: "location-dot" },
   ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
   htmlElement: "article",
-  classes: "tna-card--demo",
-};
-
-export const PlainSupertitle = Template.bind({});
-PlainSupertitle.args = {
-  supertitle: "Card supertitle",
-  title: "Card title",
-  headingLevel: 3,
-  headingSize: "s",
-  href: "#",
-  imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
-  imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
-  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  htmlElement: "article",
-  plainSupertitle: true,
   classes: "tna-card--demo",
 };
 
@@ -179,7 +174,7 @@ Contrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -198,7 +193,7 @@ Accent.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   href: "#",
   imageSrc:
     "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
@@ -212,10 +207,48 @@ Accent.args = {
   classes: "tna-card--demo",
 };
 
+export const NoImage = Template.bind({});
+NoImage.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "m",
+  href: "#",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Actions = Template.bind({});
+Actions.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "m",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  actions: [
+    {
+      text: "Card action 1",
+      href: "#",
+    },
+    {
+      text: "Card action 2",
+      href: "#",
+      title: "Go and do the action",
+    },
+  ],
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   supertitle: "Card supertitle",
   title: "Card title",
+  href: "#",
   headingLevel: 3,
   headingSize: "l",
   imageSrc:
@@ -225,16 +258,7 @@ Horizontal.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-      icon: "calendar",
-      class: "tna-button--plain",
-    },
-  ],
-  layout: "horizontal",
+  horizontal: true,
   htmlElement: "article",
   classes: "tna-card--demo",
 };
@@ -243,6 +267,7 @@ export const HorizontalContrast = Template.bind({});
 HorizontalContrast.args = {
   supertitle: "Card supertitle",
   title: "Card title",
+  href: "#",
   headingLevel: 3,
   headingSize: "l",
   imageSrc:
@@ -252,15 +277,7 @@ HorizontalContrast.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-      icon: "calendar",
-    },
-  ],
-  layout: "horizontal",
+  horizontal: true,
   style: "contrast",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -270,6 +287,7 @@ export const HorizontalAccent = Template.bind({});
 HorizontalAccent.args = {
   supertitle: "Card supertitle",
   title: "Card title",
+  href: "#",
   headingLevel: 3,
   headingSize: "l",
   imageSrc:
@@ -279,15 +297,7 @@ HorizontalAccent.args = {
   imageHeight: 333,
   label: "New",
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
-  actions: [
-    {
-      text: "Card action",
-      href: "#",
-      title: "Go and do the action",
-      icon: "calendar",
-    },
-  ],
-  layout: "horizontal",
+  horizontal: true,
   style: "accent",
   htmlElement: "article",
   classes: "tna-card--demo",
@@ -346,12 +356,55 @@ HorizontalMobile.args = {
   classes: "tna-card--demo",
 };
 
+export const HorizontalContrastMobile = Template.bind({});
+HorizontalContrastMobile.parameters = {
+  viewport: {
+    defaultViewport: "small",
+  },
+  chromatic: {
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  },
+};
+HorizontalContrastMobile.args = {
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "l",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  horizontal: true,
+  style: "contrast",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const FullClick = Template.bind({});
+FullClick.args = {
+  supertitle: "Card supertitle",
+  title: "Card title",
+  href: "#",
+  headingLevel: 3,
+  headingSize: "m",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 499,
+  imageHeight: 333,
+  label: "New",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  fullAreaClick: true,
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
 export const Sources = Template.bind({});
 Sources.args = {
   supertitle: "Card supertitle",
   title: "Card title",
   headingLevel: 3,
-  headingSize: "s",
+  headingSize: "m",
   imageSrc: "https://www.gstatic.com/webp/gallery/2.jpg",
   imageAlt: "A man in a canoe paddling through white water",
   imageWidth: 550,

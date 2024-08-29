@@ -2,18 +2,23 @@
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.style == "contrast" -%}
-  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--contrast') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-contrast') -%}
 {%- elseif params.style == "accent" -%}
-  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
 {%- elseif params.style == "tint" -%}
-  {%- set containerClasses = containerClasses.concat('tna-cookie-banner--tint') -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-tint') -%}
 {%- endif -%}
-<section class="tna-cookie-banner {{ containerClasses | join(' ') }}" data-module="tna-cookie-banner" role="region" data-policies="{{ params.policies if params.policies }}" data-preferenceskey="{{ params.preferencesSetKey if params.preferencesSetKey }}" data-policieskey="{{ params.policiesKey if params.policiesKey }}" data-domain="{{ params.cookiesDomain if params.cookiesDomain }}" data-path="{{ params.cookiesPath if params.cookiesPath }}" data-insecure="{{ true if params.allowInsecure else 'false' }}" aria-label="Cookies on {{ params.serviceName }}" {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %} hidden>
+{%- set classes = containerClasses | join(' ') -%}
+<section class="tna-cookie-banner{% if classes %} {{ classes }}{% endif %}" data-module="tna-cookie-banner" data-policies="{{ params.policies if params.policies }}" data-preferenceskey="{{ params.preferencesSetKey if params.preferencesSetKey }}" data-policieskey="{{ params.policiesKey if params.policiesKey }}" data-domain="{{ params.cookiesDomain if params.cookiesDomain }}" data-path="{{ params.cookiesPath if params.cookiesPath }}" data-insecure="{{ true if params.allowInsecure else 'false' }}" aria-label="Cookies on {{ params.serviceName }}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %} hidden>
   <div class="tna-container">
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--prompt">
-      <h2 class="tna-heading-m">This website uses cookies</h2>
+      <h2 class="tna-heading-m">{{ params.title or "This website uses cookies" }}</h2>
+      {% if params.body %}
+      {{ params.body | safe }}
+      {% else %}
       <p>We use some essential cookies to make this service work.</p>
       <p>We'd also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+      {% endif %}
       <div class="tna-button-group">
         {{ tnaButton({
           text: "Accept cookies",
@@ -21,26 +26,27 @@
           attributes: {
             value: "accept"
           }
-        }) }}
+        }) | indent(8) }}
         {{ tnaButton({
           text: "Reject cookies",
-          buttonElement: true,
           buttonElement: true,
           attributes: {
             value: "reject"
           }
-        }) }}
+        }) | indent(8) }}
         {{ tnaButton({
           text: "Set cookie preferences",
           href: params.cookiesUrl,
           plain: true
-        }) }}
+        }) | indent(8) }}
       </div>
     </div>
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--accepted" tabindex="0" hidden>
-      <p>
-        You have accepted optional cookies. You can change your cookie settings on the <a href="{{ params.cookiesUrl }}">Cookies page</a>.
-      </p>
+      {% if params.acceptedBody %}
+      {{ params.acceptedBody | safe }}
+      {% else %}
+      <p>You have accepted optional cookies. You can change your cookie settings on the <a href="{{ params.cookiesUrl }}">cookies page</a>.</p>
+      {% endif %}
       <div class="tna-button-group">
         {{ tnaButton({
           text: "Close this message",
@@ -48,13 +54,15 @@
           attributes: {
             value: "close"
           }
-        }) }}
+        }) | indent(8) }}
       </div>
     </div>
     <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--rejected" tabindex="0" hidden>
-      <p>
-        You have rejected optional cookies. You can change your cookie settings on the <a href="{{ params.cookiesUrl }}">Cookies page</a>.
-      </p>
+      {% if params.rejectedBody %}
+      {{ params.rejectedBody | safe }}
+      {% else %}
+      <p>You have rejected optional cookies. You can change your cookie settings on the <a href="{{ params.cookiesUrl }}">cookies page</a>.</p>
+      {% endif %}
       <div class="tna-button-group">
         {{ tnaButton({
           text: "Close this message",
@@ -62,7 +70,7 @@
           attributes: {
             value: "close"
           }
-        }) }}
+        }) | indent(8) }}
       </div>
     </div>
   </div>

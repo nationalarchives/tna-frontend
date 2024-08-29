@@ -1,4 +1,4 @@
-@use "../tools/colour";
+@use "../tools/a11y";
 
 .tna-visually-hidden,
 .tna-\!--visually-hidden {
@@ -7,37 +7,56 @@
   margin: 0 !important;
   padding: 0 !important;
 
+  overflow: hidden !important;
+
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
   z-index: -1 !important;
 
-  overflow: hidden !important;
-
-  clip: rect(0, 0, 0, 0) !important;
+  background-color: transparent !important;
 
   border: 0 !important;
 
-  background-color: transparent !important;
+  clip: rect(0, 0, 0, 0) !important;
 
-  &::before,
-  &::after {
-    content: "\00a0";
+  // &::before,
+  // &::after {
+  //   content: "\00a0";
+  // }
+}
+
+*:focus-visible {
+  z-index: 9;
+
+  @include a11y.focus-outline;
+}
+
+@supports not selector(:focus-visible) {
+  *:focus {
+    z-index: 9;
+
+    @include a11y.focus-outline;
   }
 }
 
-@mixin focus-outline {
-  @include colour.colour-outline("focus-outline", 0.3125rem, solid);
-  outline-offset: 0.125rem;
+a,
+button,
+input,
+textarea,
+select,
+summary {
+  &:active {
+    @include a11y.focus-outline-without-offset;
+  }
 }
 
-*:focus {
-  z-index: 9;
-
-  @include focus-outline;
+*:active {
+  @include a11y.active-outline;
 }
 
-.tna-\!--no-focus-style {
+.tna-\!--no-focus-style,
+*[tabindex="-1"] {
   &:focus {
     outline: none;
   }

@@ -1,0 +1,65 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-warning {
+  @include spacing.space-above;
+  padding: spacing.space(1);
+
+  display: flex;
+  align-items: flex-start;
+  gap: spacing.space(1);
+
+  @include colour.accent-light;
+
+  @include colour.colour-background-brand("cream");
+
+  @include colour.thick-keyline-brand(left, "yellow");
+
+  @include media.on-tiny {
+    flex-direction: column;
+    gap: spacing.space(0.5);
+  }
+
+  &__heading {
+  }
+
+  &__heading-icon {
+    width: 2rem;
+    height: 2rem;
+
+    display: block;
+
+    line-height: 2rem;
+    text-align: center;
+    text-transform: lowercase;
+
+    border-radius: 100%;
+
+    @include colour.colour-font("font-dark");
+    @include typography.font-size(24);
+    @include typography.main-font-weight-bold;
+
+    @include colour.colour-border("font-dark", 0.1875rem);
+
+    @include media.on-mobile {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      @include typography.font-size(19);
+      line-height: 1.5rem;
+
+      @include colour.colour-border("font-dark", 0.125rem);
+    }
+  }
+
+  &__body {
+    width: 100%;
+    margin-top: 0;
+
+    flex: 1;
+
+    align-self: center;
+  }
+}

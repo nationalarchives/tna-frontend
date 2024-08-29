@@ -2,9 +2,10 @@
 
 @use "../src/nationalarchives/tools/colour";
 @use "../src/nationalarchives/tools/media";
+@use "../src/nationalarchives/tools/spacing";
 @use "../src/nationalarchives/tools/typography";
 
-@import "https://use.typekit.net/hkj3kuz.css";
+@import "https://use.typekit.net/kaq6qqh.css";
 
 .sb-show-main.sb-main-padded {
   padding: 0;
@@ -64,12 +65,26 @@
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
-  @include colour.colour-background("page-background");
+  @include colour.colour-background("background");
 }
 
-.tna-template--padded {
-  > .tna-template__body {
-    padding: 16px;
+.tna-template {
+  &--high-contrast-theme {
+    @include colour.colour-css-vars-high-contrast;
+
+    * {
+      background-image: none !important;
+    }
+
+    &.tna-template--dark-theme {
+      @include colour.colour-css-vars-high-contrast-dark;
+    }
+  }
+
+  &--padded {
+    > .tna-template__body {
+      padding: 16px;
+    }
   }
 }
 
@@ -203,11 +218,17 @@
     border-right: rgb(0 0 0/0.25) 1px solid;
     border-bottom: rgb(0 0 0/0.25) 1px solid;
 
+    .accent-border-example {
+      padding-left: spacing.space(1);
+
+      @include colour.thick-keyline-accent(left);
+    }
+
     &:first-child {
       min-width: 7rem;
       padding: 1rem;
 
-      @include typography.relative-font-size(14);
+      @include typography.font-size(14);
     }
 
     &-content {
@@ -228,19 +249,21 @@
     p:not(:first-child) {
       margin-top: 0.25rem;
     }
+
+    .tna-ul {
+      margin-top: 0.25rem;
+    }
   }
 
   .tna-form__group {
     margin-top: 0.5rem;
   }
 
-  .tna-chip-list {
+  .tna-dl-chips {
     margin-top: 1rem;
-
-    flex-wrap: nowrap;
   }
 
-  .fa-solid {
+  p .fa-solid {
     // margin-left: 0.5rem;
 
     &.light-icon {
@@ -253,12 +276,6 @@
 
     gap: 0.5rem;
     flex-wrap: nowrap;
-  }
-
-  .tna-form__group-contents,
-  .tna-form__heading {
-    font-size: 0;
-    line-height: 0;
   }
 
   .tna-pagination {

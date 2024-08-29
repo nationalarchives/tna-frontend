@@ -1,6 +1,16 @@
 #!/bin/bash
 
 set -e
+
+if [ -z "$1" ]
+then
+  echo -e "Error: version not specified\n";
+  echo "PARAMETERS"
+  echo "  version              the version you want the release notes for"
+  echo "                       Example: get-release-notes.sh 0.1.48";
+  exit 1
+fi
+
 awk -v ver="$1" '
  /^## \[[0-9]+\.[0-9]+\.[0-9]+/ {
   if (p) { exit };

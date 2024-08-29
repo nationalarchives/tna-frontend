@@ -7,39 +7,35 @@
   },
   {
     "name": "social",
-    "type": "array",
+    "type": "object",
     "required": false,
     "description": "",
     "params": [
       {
-        "name": "text",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "href",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "icon",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "brandIcon",
-        "type": "string",
-        "required": true,
-        "description": ""
-      },
-      {
-        "name": "title",
-        "type": "string",
+        "name": "items",
+        "type": "array",
         "required": false,
-        "description": ""
+        "description": "",
+        "params": [
+          {
+            "name": "href",
+            "type": "string",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "icon",
+            "type": "string",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": ""
+          }
+        ]
       }
     ]
   },
@@ -53,6 +49,12 @@
         "name": "title",
         "type": "string",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "hideTitle",
+        "type": "boolean",
+        "required": false,
         "description": ""
       },
       {
@@ -114,6 +116,12 @@
         "description": ""
       }
     ]
+  },
+  {
+    "name": "themeSelector",
+    "type": "boolean",
+    "required": false,
+    "description": "Enable the theme selector (once settings cookies have been accepted)."
   },
   {
     "name": "classes",

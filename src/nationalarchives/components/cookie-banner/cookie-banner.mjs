@@ -14,9 +14,7 @@ export class CookieBanner {
     this.$rejectedMessage =
       $module && $module.querySelector(".tna-cookie-banner__message--rejected");
     this.$closeButtons = $module && $module.querySelectorAll('[value="close"]');
-  }
 
-  init() {
     if (
       !this.$module ||
       !this.$acceptButton ||
@@ -40,12 +38,13 @@ export class CookieBanner {
     const policiesKey =
       this.$module.getAttribute("data-policieskey") || undefined;
 
-    this.cookies = new (window.TNAFrontend?.Cookies || Cookies)({
+    this.cookies = new Cookies({
       extraPolicies,
       domain,
       path,
       secure,
       policiesKey,
+      newInstance: true,
     });
 
     this.cookiePreferencesSet =

@@ -10,7 +10,6 @@ const argTypes = {
   accent: {
     control: "boolean",
   },
-  exit: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -34,7 +33,6 @@ const Template = ({
   topNavigation,
   navigation,
   accent,
-  exit,
   classes,
   attributes,
 }) =>
@@ -44,7 +42,6 @@ const Template = ({
       topNavigation,
       navigation,
       accent,
-      exit,
       classes,
       attributes,
     },
@@ -64,12 +61,7 @@ Standard.args = {
     {
       text: "Top item 2",
       href: "#/top-2",
-      icon: "phone",
-    },
-    {
-      text: "Top item 3",
-      href: "#/top-3",
-      brandIcon: "github",
+      icon: "heart",
     },
   ],
   navigation: [
@@ -87,11 +79,6 @@ Standard.args = {
       href: "#/gamma",
     },
   ],
-  exit: {
-    text: "Go to the current National Archives website",
-    href: "#",
-    target: "_blank",
-  },
   classes: "tna-header--demo",
 };
 Standard.play = async ({ canvasElement }) => {
@@ -101,11 +88,47 @@ Standard.play = async ({ canvasElement }) => {
     `.tna-header__navigation-items`,
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-toggle-button`,
+    `.tna-header__navigation-button`,
   );
 
   await expect($navigationItems).toBeVisible();
   await expect($navigationToggle).not.toBeVisible();
+};
+
+export const Accent = Template.bind({});
+Accent.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+      icon: "heart",
+    },
+  ],
+  navigation: [
+    {
+      text: "Alpha",
+      href: "#/alpha",
+      selected: true,
+    },
+    {
+      text: "Beta",
+      href: "#/beta",
+    },
+    {
+      text: "Gamma",
+      href: "#/gamma",
+    },
+  ],
+  accent: true,
+  classes: "tna-header--demo",
 };
 
 export const Mobile = Template.bind({});
@@ -130,12 +153,7 @@ Mobile.args = {
     {
       text: "Top item 2",
       href: "#/top-2",
-      icon: "phone",
-    },
-    {
-      text: "Top item 3",
-      href: "#/top-3",
-      brandIcon: "github",
+      icon: "heart",
     },
   ],
   navigation: [
@@ -172,7 +190,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     canvas.getByText(navigationItem.text),
   );
   const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-toggle-button`,
+    `.tna-header__navigation-button`,
   );
 
   await step("Initial load", async () => {

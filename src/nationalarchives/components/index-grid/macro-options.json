@@ -1,5 +1,11 @@
 [
   {
+    "name": "supertitle",
+    "type": "string",
+    "required": false,
+    "description": "The smaller title to display above the main index grid title."
+  },
+  {
     "name": "title",
     "type": "string",
     "required": true,
@@ -9,20 +15,32 @@
     "name": "headingLevel",
     "type": "number",
     "required": true,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Set a `headingLevel` of `0` to visually hide the title."
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
     "default": "m",
-    "description": "The physical size of the index grid title."
+    "description": "The physical size of the index grid title (`xl`, `l`, `m` or `s`)."
   },
   {
-    "name": "headingHref",
+    "name": "href",
     "type": "string",
     "required": false,
-    "description": "A URL to use as a link in the grid's heading."
+    "description": "A URL to use as a link in the grids heading."
+  },
+  {
+    "name": "hrefClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the elements of the index grid that use `href`."
+  },
+  {
+    "name": "hrefAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the elements of the index grid that use `href`."
   },
   {
     "name": "body",
@@ -93,6 +111,12 @@
     ]
   },
   {
+    "name": "lazyImages",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, make the images a lazily-loaded."
+  },
+  {
     "name": "columns",
     "type": "string",
     "required": true,
@@ -115,6 +139,12 @@
     "type": "string",
     "required": false,
     "description": ""
+  },
+  {
+    "name": "plainSupertitle",
+    "type": "boolean",
+    "required": false,
+    "description": "Use a plain supertitle, removing the accented background colour."
   },
   {
     "name": "classes",

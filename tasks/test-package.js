@@ -41,9 +41,17 @@ const checkExists = [
   "nationalarchives/all.js.map",
   "nationalarchives/all.mjs",
   "nationalarchives/all.scss",
+  "nationalarchives/all+analytics.js",
+  "nationalarchives/all+analytics.js.map",
+  "nationalarchives/all+analytics.mjs",
+  "nationalarchives/analytics.js",
+  "nationalarchives/analytics.js.map",
+  "nationalarchives/analytics.mjs",
   "nationalarchives/font-awesome.css",
   "nationalarchives/font-awesome.css.map",
   "nationalarchives/font-awesome.scss",
+  "nationalarchives/print.css",
+  "nationalarchives/print.css.map",
   "nationalarchives/prototype-kit.css",
   "nationalarchives/prototype-kit.css.map",
   "nationalarchives/prototype-kit.scss",
@@ -74,6 +82,7 @@ const checkExists = [
   "nationalarchives/assets/images/nationalarchives-opengraph-image.png",
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
+  ...componentFiles("accordion", "Accordion"),
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
   ...componentFiles("button"),
   ...componentFiles("card"),
@@ -82,46 +91,80 @@ const checkExists = [
   ...componentFiles("cookie-banner", "CookieBanner"),
   ...componentFiles("date-input"),
   ...componentFiles("date-search"),
-  ...componentFiles("featured-records"),
-  ...componentFiles("filters"),
-  ...componentFiles("footer"),
+  ...componentFiles("details"),
+  ...componentFiles("error-summary", "ErrorSummary"),
+  ...componentFiles("files-list"),
+  ...componentFiles("footer", "Footer"),
   ...componentFiles("gallery", "Gallery"),
   ...componentFiles("global-header", "GlobalHeader"),
-  ...componentFiles("grid"),
   ...componentFiles("header", "Header"),
   ...componentFiles("hero"),
   ...componentFiles("index-grid"),
-  ...componentFiles("message"),
   ...componentFiles("pagination"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
+  ...componentFiles("quick-filters"),
   ...componentFiles("radios"),
-  ...componentFiles("sensitive-image", "SensitiveImage"),
+  ...componentFiles("records-list"),
   ...componentFiles("search-field"),
   ...componentFiles("select"),
+  ...componentFiles("sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input"),
   ...componentFiles("textarea"),
+  ...componentFiles("warning"),
   // Tools
-  "nationalarchives/tools/_index.scss",
+  "nationalarchives/tools/_a11y.scss",
+  "nationalarchives/tools/_colour.scss",
   "nationalarchives/tools/_grid.scss",
+  "nationalarchives/tools/_index.scss",
   "nationalarchives/tools/_media.scss",
+  "nationalarchives/tools/_spacing.scss",
   "nationalarchives/tools/_typography.scss",
   // Utilities
-  "nationalarchives/utilities/_index.scss",
+  "nationalarchives/utilities/_a11y.scss",
+  "nationalarchives/utilities/_animations.scss",
+  "nationalarchives/utilities/_areas.scss",
+  "nationalarchives/utilities/colour/_index.scss",
+  "nationalarchives/utilities/_columns.scss",
+  "nationalarchives/utilities/_debug.scss",
+  "nationalarchives/utilities/forms/_index.scss",
   "nationalarchives/utilities/_global.scss",
-  "nationalarchives/utilities/_typography.scss",
+  "nationalarchives/utilities/grid/_index.scss",
+  "nationalarchives/utilities/grid/fixtures.json",
+  "nationalarchives/utilities/grid/macro-options.json",
+  "nationalarchives/utilities/grid/macro.njk",
+  "nationalarchives/utilities/grid/template.njk",
+  "nationalarchives/utilities/_index.scss",
+  "nationalarchives/utilities/lists/_index.scss",
+  "nationalarchives/utilities/overrides/_index.scss",
+  "nationalarchives/utilities/_reset.scss",
+  "nationalarchives/utilities/tables/_index.scss",
+  "nationalarchives/utilities/typography/_index.scss",
   // Variables
-  "nationalarchives/variables/_index.scss",
+  "nationalarchives/variables/_a11y.scss",
+  "nationalarchives/variables/_assets.scss",
+  "nationalarchives/variables/_borders.scss",
   "nationalarchives/variables/_colour.scss",
+  "nationalarchives/variables/_features.scss",
+  "nationalarchives/variables/_forms.scss",
   "nationalarchives/variables/_grid.scss",
+  "nationalarchives/variables/_index.scss",
   "nationalarchives/variables/_media.scss",
+  "nationalarchives/variables/_spacing.scss",
   "nationalarchives/variables/_typography.scss",
   // Templates
-  "nationalarchives/templates/homepage.njk",
-  "nationalarchives/templates/search-results.njk",
   "nationalarchives/templates/layouts/_generic.njk",
+  "nationalarchives/templates/layouts/_prototype-kit.njk",
+  "nationalarchives/templates/index-grid.njk",
+  "nationalarchives/templates/list.njk",
+  "nationalarchives/templates/plain.njk",
+  // Config
+  "config/.babelrc.json",
+  "config/.eslintrc.js",
+  "config/.htmlvalidate.json",
+  "config/stylelint.config.js",
 ];
 
 console.log(`Testing package file structure`);
@@ -145,6 +188,7 @@ console.log("\n");
 
 console.log(`Testing package version`);
 const compiledPackageJson = require("../package/package.json");
+const compiledPackageLockJson = require("../package/package-lock.json");
 if (packageJson.version === compiledPackageJson.version) {
   pass(`Version ${packageJson.version} is set in the package`);
 } else {
@@ -153,6 +197,15 @@ if (packageJson.version === compiledPackageJson.version) {
   );
   process.exitCode = 1;
   throw new Error("Package version test failed");
+}
+if (compiledPackageLockJson.version === compiledPackageJson.version) {
+  pass("The version in package-lock.json matches the version in package.json");
+} else {
+  fail(
+    `The version in package-lock.json should be ${packageJson.version} but is ${compiledPackageLockJson.version}`,
+  );
+  process.exitCode = 1;
+  throw new Error("Package lock version test failed");
 }
 
 console.log("\n");
@@ -193,41 +246,68 @@ console.log("\n");
 console.log(`Testing compiled JavaScript files`);
 const { JSDOM } = jsdom;
 const { window } = new JSDOM(``);
+Object.defineProperty(window, "matchMedia", {
+  writable: true,
+  value: (query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  }),
+});
 global.window = window;
 global.document = window.document;
-const jsAllPackage = require("../package/nationalarchives/all.js");
-if (
-  Object.keys(jsAllPackage).includes("initAll") &&
-  typeof jsAllPackage.initAll === "function"
-) {
-  pass(`all.js function exists: initAll()`);
-} else {
-  fail(`all.js function missing: initAll()`);
-  process.exitCode = 1;
-  throw new Error("JavaScript test failed");
-}
-if (
-  Object.keys(jsAllPackage).includes("Cookies") &&
-  typeof jsAllPackage.Cookies === "function"
-) {
-  pass(`all.js class exists: Cookies`);
-} else {
-  fail(`all.js class missing: Cookies`);
-  process.exitCode = 1;
-  throw new Error("JavaScript module test failed");
-}
-Object.keys(componentsWithJavaScript).forEach((component) => {
-  const componentClass = componentsWithJavaScript[component];
-  if (
-    Object.keys(jsAllPackage).includes(componentClass) &&
-    typeof jsAllPackage[componentClass] === "function"
-  ) {
-    pass(`all.js function exists: ${componentClass}()`);
-  } else {
-    fail(`all.js function missing: ${componentClass}()`);
-    process.exitCode = 1;
-    throw new Error("Component JavaScript test failed");
+["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
+  const jsAllPackage = require(`../package/nationalarchives/${file}`);
+  let exports = [];
+  if (file === "all.js" || file === "all+analytics.js") {
+    exports = [
+      ...exports,
+      { name: "initAll", type: "function" },
+      { name: "Cookies", type: "function" },
+    ];
+    Object.keys(componentsWithJavaScript).forEach((component) => {
+      const componentClass = componentsWithJavaScript[component];
+      if (
+        Object.keys(jsAllPackage).includes(componentClass) &&
+        typeof jsAllPackage[componentClass] === "function"
+      ) {
+        pass(`${file} function exists: ${componentClass}()`);
+      } else {
+        fail(`${file} function missing: ${componentClass}()`);
+        process.exitCode = 1;
+        throw new Error("Component JavaScript test failed");
+      }
+    });
   }
+  if (file === "analytics.js" || file === "all+analytics.js") {
+    exports = [
+      ...exports,
+      { name: "EventTracker", type: "function" },
+      { name: "GA4", type: "function" },
+      { name: "helpers", type: "object" },
+    ];
+  }
+  exports.forEach((eachExport) => {
+    if (
+      Object.keys(jsAllPackage).includes(eachExport.name) &&
+      typeof jsAllPackage[eachExport.name] === eachExport.type
+    ) {
+      pass(
+        `${file} ${eachExport.type} exists: ${eachExport.name}${eachExport.type === "function" ? "()" : ""}`,
+      );
+    } else {
+      fail(
+        `${file} ${eachExport.type} missing: ${eachExport.name}${eachExport.type === "function" ? "()" : ""}`,
+      );
+      process.exitCode = 1;
+      throw new Error("JavaScript test failed");
+    }
+  });
 });
 Object.keys(componentsWithJavaScript).forEach((component) => {
   const componentClass = componentsWithJavaScript[component];

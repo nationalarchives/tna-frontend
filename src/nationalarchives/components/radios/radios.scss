@@ -1,14 +1,14 @@
 @use "../../variables/forms";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
-@use "../../utilities/a11y";
-@use "../../utilities";
+@use "../../tools/spacing";
 
 .tna-radios {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: spacing.space(1);
 
   &__item {
     position: relative;
@@ -27,7 +27,7 @@
     }
 
     &-label {
-      padding-left: 3rem;
+      padding-left: spacing.space(3);
 
       display: block;
 
@@ -37,15 +37,15 @@
 
       &::before,
       &::after {
+        content: "";
+
         position: absolute;
         top: 0;
         left: 0;
 
         border-radius: 100%;
 
-        @include colour.light;
-
-        content: "";
+        @include colour.always-light;
       }
 
       &::before {
@@ -66,8 +66,6 @@
       }
 
       &::after {
-        width: 1rem;
-        height: 1rem;
         margin: 0.5rem;
 
         display: none;
@@ -75,17 +73,19 @@
         z-index: 2;
 
         @include colour.colour-background("input-foreground");
+
+        @include colour.colour-border("input-foreground", 0.5rem);
       }
     }
   }
 
   &--small {
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
   }
 
   &--small &__item {
     &-label {
-      padding-left: 2.25rem;
+      padding-left: spacing.space(2.25);
 
       line-height: 1.5rem;
 
@@ -95,21 +95,29 @@
       }
 
       &::after {
-        width: 0.875rem;
-        height: 0.875rem;
         margin: 0.3125rem;
+
+        @include colour.colour-border("input-foreground", 0.4375rem);
       }
     }
   }
 
   &--inline {
     flex-flow: row wrap;
+
     align-items: center;
-    gap: 1rem 2rem;
+    gap: spacing.space(1) spacing.space(2);
 
     @include media.on-tiny {
       flex-direction: column;
       align-items: flex-start;
+    }
+  }
+
+  &__item-label:active {
+    &::before {
+      @include a11y.focus-outline;
+      @include a11y.active-outline;
     }
   }
 
@@ -125,7 +133,7 @@
     }
   }
 
-  &--small &__item:hover &__item-label {
+  &__item:hover &__item-label {
     &::before {
       box-shadow: 0 0 0 0.125rem var(--input-border);
     }

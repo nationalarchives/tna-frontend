@@ -1,0 +1,93 @@
+{% extends 'nationalarchives/templates/layouts/_prototype-kit.njk' %}
+
+{% from 'nationalarchives/components/breadcrumbs/macro.njk' import tnaBreadcrumbs %}
+
+{% set pageTitle = 'Plain page' %}
+{% set theme = 'light' %}
+{% set themeAccent = 'blue' %}
+
+{% block beforeContent %}
+<div class="tna-container">
+  {{ tnaBreadcrumbs({
+    items: [
+      {
+        text: 'Home',
+        href: '/'
+      }
+    ],
+    classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
+  }) }}
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="tna-section">
+  <div class="tna-container">
+    <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+      <h1 class="tna-heading-xl">
+        {{ pageTitle }}
+      </h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at magna est. Sed vel fermentum arcu. Suspendisse viverra est nec interdum tincidunt. Phasellus dictum, turpis eget iaculis tincidunt, ex metus porttitor turpis, ut pulvinar risus erat quis dui. Nam semper sapien a ipsum congue pharetra.</p>
+      <p>Donec cursus, eros eu egestas aliquam, ipsum ligula suscipit metus, eget maximus turpis nisl vitae ex. Etiam ornare convallis quam a consequat. Etiam sodales aliquet nulla, id rutrum justo accumsan sed.</p>
+      <ul class="tna-ul">
+        <li>Alpha</li>
+        <li>Beta</li>
+        <li>Gamma</li>
+      </ul>
+      <ol class="tna-ol">
+        <li>Alpha</li>
+        <li>Beta</li>
+        <li>Gamma</li>
+      </ol>
+      <dl class="tna-dl">
+        <dt>Alpha</dt>
+        <dd>Lorem ipsum</dd>
+        <dt>Beta</dt>
+        <dd>Lorem ipsum</dd>
+        <dt>Gamma</dt>
+        <dd>Lorem ipsum</dd>
+        <dt>Delta</dt>
+        <dd>Lorem ipsum</dd>
+        <dt>Epsilon</dt>
+        <dd>Lorem ipsum</dd>
+      </dl>
+      <table class="tna-table">
+        <caption class="tna-table__caption">
+          Records added and removed between 2020 and 2022.
+        </caption>
+        <thead class="tna-table__head">
+          <tr class="tna-table__row">
+            <th class="tna-table__header">Year</th>
+            <th class="tna-table__header tna-table__header--numeric">Records added</th>
+            <th class="tna-table__header tna-table__header--numeric">Records removed</th>
+          </tr>
+        </thead>
+        <tbody class="tna-table__body">
+          <tr>
+            <th class="tna-table__header">2020</th>
+            <td class="tna-table__cell tna-table__cell--numeric">123,456</td>
+            <td class="tna-table__cell tna-table__cell--numeric">789</td>
+          </tr>
+          <tr>
+            <th class="tna-table__header">2021</th>
+            <td class="tna-table__cell tna-table__cell--numeric">456,789</td>
+            <td class="tna-table__cell tna-table__cell--numeric">123</td>
+          </tr>
+          <tr>
+            <th class="tna-table__header">2022</th>
+            <td class="tna-table__cell tna-table__cell--numeric">42,424</td>
+            <td class="tna-table__cell tna-table__cell--numeric">1,337</td>
+          </tr>
+        </tbody>
+        <tfoot class="tna-table__foot">
+          <tr>
+            <th class="tna-table__header">Total</th>
+            <td class="tna-table__cell tna-table__cell--numeric">622,669</td>
+            <td class="tna-table__cell tna-table__cell--numeric">2,249</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.type == "contents" -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--contents') -%}
+{%- elseif params.type == "sections" -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--sections') -%}
+{%- elseif params.type == "pages" -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--pages') -%}
+{%- endif -%}
+{%- if params.sticky -%}
+  {%- set containerClasses = containerClasses.concat('tna-sidebar--sticky') -%}
+{%- endif -%}
+{%- set classes = containerClasses | join(' ') -%}
+<nav class="tna-sidebar{% if classes %} {{ classes }}{% endif %}" aria-label="Sidebar"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <h{{ params.headingLevel }} class="tna-sidebar__heading tna-heading-{{ params.headingSize or 'm' }}">
+    {{ params.title }}
+  </h{{ params.headingLevel }}>
+  <ul class="tna-sidebar__items">
+    {%- for item in params.items %}
+    <li class="tna-sidebar__item{% if item.current %} tna-sidebar__item--current{% endif %}">
+      <a href="{{ item.href }}" class="tna-sidebar__link">{{ item.text }}</a>
+      {%- if item.children and params.type !== "sections" %}
+      <ul class="tna-sidebar__item-children">
+        {%- for child in item.children %}
+        <li class="tna-sidebar__item-child">
+          <a href="{{ child.href }}" class="tna-sidebar__link">{{ child.text }}</a>
+          {%- if child.children and params.type == "contents" %}
+          <ul class="tna-sidebar__item-children">
+            {%- for grandchild in child.children %}
+            <li class="tna-sidebar__item-child">
+              <a href="{{ grandchild.href }}" class="tna-sidebar__link">{{ grandchild.text }}</a>
+            </li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>

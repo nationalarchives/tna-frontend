@@ -1,0 +1,260 @@
+{
+  "component": "grid",
+  "fixtures": [
+    {
+      "name": "container only",
+      "options": {},
+      "html": "<div class=\"tna-container\"></div>"
+    },
+    {
+      "name": "container max width",
+      "options": {
+        "maxWidth": true,
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container tna-container--max\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "container no padding",
+      "options": {
+        "noPadding": true,
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container tna-container--no-padding\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "container element",
+      "options": {
+        "htmlElement": "article",
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<article class=\"tna-container\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></article>"
+    },
+    {
+      "name": "container classes",
+      "options": {
+        "classes": "container__test-class",
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container container__test-class\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "container attributes",
+      "options": {
+        "attributes": {
+          "data-testattribute": "foobar"
+        },
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\" data-testattribute=\"foobar\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "different columns",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Two thirds</p>",
+            "width": "2-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Third</p>",
+            "width": "1-3"
+          },
+          {
+            "html": "<p>Two thirds</p>",
+            "width": "2-3"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Quarter</p>",
+            "width": "1-4"
+          },
+          {
+            "html": "<p>Half</p>",
+            "width": "1-2"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column tna-column--full\"><p>Full width</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-2-3\"><p>Two thirds</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-1-3\"><p>Third</p></div><div class=\"tna-column tna-column--width-2-3\"><p>Two thirds</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-4\"><p>Quarter</p></div><div class=\"tna-column tna-column--width-1-2\"><p>Half</p></div></div>"
+    },
+    {
+      "name": "column widths",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "full",
+            "widthMedium": "full",
+            "widthSmall": "full",
+            "widthTiny": "full"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column tna-column--full tna-column--full-medium tna-column--full-small tna-column--full-tiny\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "responsive column widths",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "width": "1-5",
+            "widthMedium": "1-4",
+            "widthSmall": "1-3",
+            "widthTiny": "1-2"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column tna-column--width-1-5 tna-column--width-1-4-medium tna-column--width-1-3-small tna-column--width-1-2-tiny\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "flexible column widths",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "flex": "4",
+            "flexMedium": "3",
+            "flexSmall": "2",
+            "flexTiny": "1"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column tna-column--flex-4 tna-column--flex-3-medium tna-column--flex-2-small tna-column--flex-1-tiny\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "column element",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "element": "section"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column \"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "column classes",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "classes": "column--test-class"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column column--test-class\"><p>Full width</p></div></div>"
+    },
+    {
+      "name": "column attributes",
+      "options": {
+        "columns": [
+          {
+            "html": "<p>Full width</p>",
+            "attributes": {
+              "data-testattribute": "foobar"
+            }
+          }
+        ]
+      },
+      "html": "<div class=\"tna-container\"><div class=\"tna-column \" data-testattribute=\"foobar\"><p>Full width</p></div></div>"
+    }
+  ]
+}

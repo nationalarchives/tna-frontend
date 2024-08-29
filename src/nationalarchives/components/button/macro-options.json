@@ -3,19 +3,19 @@
     "name": "text",
     "type": "string",
     "required": true,
-    "description": "The text for the button."
+    "description": "The text of the button."
   },
   {
     "name": "href",
     "type": "string",
     "required": false,
-    "description": "The URL of the button."
+    "description": "A URL to use as a link for the button."
   },
   {
     "name": "title",
     "type": "string",
     "required": false,
-    "description": "An optional title for the button."
+    "description": "A title attribute for the button."
   },
   {
     "name": "icon",
@@ -24,58 +24,58 @@
     "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
   },
   {
-    "name": "brandIcon",
+    "name": "iconSvg",
     "type": "string",
     "required": false,
-    "description": "The name of a Font Awesome brand icon, without the prefixed `fa-`."
+    "description": "The SVG to use as the icon. Setting this overwrites the `icon` property."
   },
   {
     "name": "accent",
     "type": "boolean",
     "required": false,
-    "description": "Use the accent style for the button."
+    "description": "If true, set the colour of the button to the page’s accent colour."
   },
   {
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "Display a smaller button."
+    "description": "If true, make the button smaller."
   },
   {
     "name": "plain",
     "type": "boolean",
     "required": false,
-    "description": "Display a plain style button."
+    "description": "If true, remove the background colour of the button and make it look more like a link."
   },
   {
     "name": "iconOnly",
     "type": "boolean",
     "required": false,
-    "description": "Don't display the button text, just an icon."
+    "description": "If true, don’t show the text of the button."
   },
   {
     "name": "iconOnlyOnMobile",
     "type": "boolean",
     "required": false,
-    "description": "Hide the button text on mobile and display only the icon."
+    "description": "If true, show both the text and icon on larger devices but only show the icon on smaller devices."
   },
   {
     "name": "rightAlignIcon",
     "type": "boolean",
     "required": false,
-    "description": "Align the icon to the right side of the button."
+    "description": "If true, align the icon to the right hand side of the button."
   },
   {
     "name": "buttonElement",
     "type": "boolean",
     "required": false,
-    "description": "Output a `<button>` element rather than an `<a>` element."
+    "description": "If true, use a `<button>` element for the button. This makes the `href` attribute redundant."
   },
   {
     "name": "buttonType",
-    "type": "text",
+    "type": "string",
     "required": false,
-    "description": "When using `buttonElement`, set the `type` of `<button>` element, defaults to `button`."
+    "description": "Set the type of button element if `buttonElement` is true."
   },
   {
     "name": "classes",

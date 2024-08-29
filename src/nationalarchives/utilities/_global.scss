@@ -1,9 +1,12 @@
-@use "../tools/colour";
-@use "../tools/media";
-@use "../tools/spacing";
-@use "../variables/typography";
-
 .tna-template {
+  /*
+   * ------------------------------------------
+   * A minimum page width of 320px is needed in
+   * order to meet the WCAG AA success criteria
+   * for 1.4.10 (Reflow)
+   * https://www.w3.org/WAI/WCAG21/Understanding/reflow.html
+   * ------------------------------------------
+   */
   min-width: 320px;
   width: 100%;
   height: 100%;
@@ -17,8 +20,6 @@
    * ------------------------------------------
    */
   -webkit-overflow-scrolling: touch;
-
-  font-size: #{typography.$relative-1rem-px}px;
 }
 
 .tna-template__body {
@@ -26,68 +27,12 @@
   margin: 0;
   padding: 0;
 
-  &:has(.tna-header):has(#main-content[role="main"]):has(.tna-footer) {
+  &:has(:is(.tna-global-header, .tna-header)):has(.tna-main):has(.tna-footer) {
     display: flex;
     flex-direction: column;
-
-    #main-content {
-      flex: 1;
-    }
   }
 }
 
-img,
-svg,
-picture,
-video,
-canvas {
-  max-width: 100%;
-  height: auto;
-
-  display: block;
-}
-
-video,
-canvas {
-  width: 100%;
-}
-
-[hidden] {
-  display: none;
-}
-
-hr {
-  margin: 0;
-
-  border-width: 1px 0 0;
-  @include colour.colour-border("keyline");
-  border-style: solid;
-}
-
-.tna-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
-  @include media.on-mobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-}
-
-.tna-aside {
-  padding: 2rem;
-
-  @include spacing.space-above;
-
-  @include media.on-mobile {
-    padding: 1rem;
-  }
-
-  @include colour.on-high-contrast {
-    @include colour.colour-border("keyline-dark", 1px);
-  }
-
-  &--tight {
-    padding: 1rem;
-  }
+.tna-main {
+  flex: 1;
 }

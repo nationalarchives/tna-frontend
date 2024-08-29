@@ -1,18 +1,35 @@
 @use "../../tools/colour";
-@use "../../tools/typography";
 @use "../../tools/media";
-@use "../../utilities";
-@use "../button";
-@use "../grid";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-footer {
-  @include colour.contrast;
+  &__inner {
+    @include colour.contrast;
 
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+    padding-top: spacing.space(1);
+    padding-bottom: spacing.space(3);
+  }
+
+  &__theme-selector {
+    .tna-button-group {
+      justify-content: flex-end;
+    }
+
+    .tna-button {
+      @include typography.main-font-weight-bold;
+    }
+
+    @include colour.on-forced-colours {
+      display: none;
+    }
+  }
+
+  &__theme-selector-button {
+  }
 
   .tna-logo {
-    margin-top: 2rem;
+    margin-top: spacing.space(2);
 
     &__background {
       fill: transparent;
@@ -24,7 +41,7 @@
   }
 
   &__title {
-    margin-top: 1rem;
+    margin-top: spacing.space(1);
     margin-bottom: 0;
     padding-top: 0;
   }
@@ -34,37 +51,44 @@
   }
 
   &__meta {
-    margin-top: 1rem;
+    margin-top: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 
   &__social {
-    margin-top: 2rem;
+    margin-top: spacing.space(2);
 
     &-items {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
       align-items: flex-start;
+      gap: spacing.space(0.3125);
     }
 
     &-item {
       &-link {
-        min-width: calc(2rem + 4px);
+        width: calc(2rem + 8px);
+        height: 2rem;
         padding: 4px;
 
         display: block;
 
-        text-align: center;
         line-height: 1;
+
+        text-align: center;
 
         border: 0 transparent solid;
         border-width: 4px 0;
 
-        .fa-solid,
-        .fa-brands {
-          font-size: 2rem;
+        svg {
+          height: 2rem;
+
+          display: inline-block;
+
+          path {
+            fill: currentColor;
+          }
         }
 
         &-text {
@@ -78,19 +102,17 @@
   }
 
   &__mailing-list {
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: spacing.space(2);
+    padding: spacing.space(1);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
-    @include colour.colour-border("keyline-dark", 1px, dashed);
-
-    background-color: rgb(255 255 255 / 10%);
+    background-color: rgb(255 255 255 / 14%);
   }
 
   &__navigation {
     &-block {
-      padding-top: 2rem;
+      padding-top: spacing.space(2);
 
       &-heading {
       }
@@ -99,8 +121,10 @@
       }
 
       &-item {
-        padding-top: 0.375rem;
-        padding-bottom: 0.375rem;
+        padding-top: spacing.space(0.375);
+        padding-bottom: spacing.space(0.375);
+
+        @include typography.font-size(16);
 
         @include colour.colour-border("keyline", 1px, solid, bottom);
 
@@ -108,14 +132,13 @@
           display: inline-block;
 
           text-decoration: none;
-          text-wrap: balance;
 
           &:hover {
             @include typography.interacted-text-decoration;
           }
 
           .fa-solid {
-            margin-left: 0.75rem;
+            margin-left: spacing.space(0.75);
           }
         }
       }
@@ -123,9 +146,9 @@
   }
 
   &__legal {
-    padding-top: 3rem;
+    padding-top: spacing.space(3);
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     &-items {
       margin-bottom: 0;
@@ -138,7 +161,7 @@
     }
 
     &-item {
-      padding: 0.5rem;
+      padding: spacing.space(0.5);
 
       display: inline-block;
 
@@ -152,19 +175,19 @@
   }
 
   hr {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-top: spacing.space(1.5);
+    margin-bottom: spacing.space(0.5);
   }
 
   &__licence {
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
 
     &.tna-container {
       align-items: center;
     }
 
     .tna-column {
-      margin-top: 0.5rem;
+      margin-top: spacing.space(1);
     }
   }
 
@@ -180,23 +203,32 @@
     }
 
     &-logotype-crown {
-      margin: 0 auto;
+      margin: 0 auto spacing.space(0.125);
+
       display: block;
     }
   }
 
   @include media.on-mobile {
-    padding-top: 0;
-    padding-bottom: 2rem;
+    &__inner {
+      padding-top: 0;
+      padding-bottom: spacing.space(2);
+    }
+  }
+
+  @include colour.on-high-contrast {
+    &__theme-selector {
+      @include colour.colour-border("keyline", 1px, solid, bottom);
+    }
   }
 
   @include colour.on-high-contrast-and-forced-colours {
-    @include colour.colour-border("keyline", 1px, solid, top);
+    @include colour.thick-keyline-dark(top);
 
     &__navigation {
       &-block {
         &-items {
-          @include colour.colour-border("keyline-dark", 0.25rem, solid, top);
+          @include colour.thick-keyline-dark(top);
         }
       }
     }
@@ -204,7 +236,7 @@
     &__mailing-list {
       background-color: transparent;
 
-      @include colour.colour-border("keyline-dark", 1px, solid);
+      @include colour.colour-border("keyline-dark", 1px);
     }
   }
 }

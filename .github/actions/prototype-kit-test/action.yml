@@ -15,7 +15,7 @@ runs:
       shell: bash
     - name: Build package
       run: >
-        ./tasks/build-package.sh &&
+        npm run build:package &&
         cd package &&
         npm pack --pack-destination .
       shell: bash
@@ -35,6 +35,7 @@ runs:
       shell: bash
     - name: Add imports to template
       run: >
+        echo -e "{% from \"nationalarchives/components/accordion/macro.njk\" import tnaAccordion %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/breadcrumbs/macro.njk\" import tnaBreadcrumbs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -43,41 +44,46 @@ runs:
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/date-input/macro.njk\" import tnaDateInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/date-search/macro.njk\" import tnaDateSearch %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/featured-records/macro.njk\" import tnaFeaturedRecords %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/filters/macro.njk\" import tnaFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/details/macro.njk\" import tnaDetails %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/error-summary/macro.njk\" import tnaErrorSummary %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/files-list/macro.njk\" import tnaFilesList %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/footer/macro.njk\" import tnaFooter %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/gallery/macro.njk\" import tnaGallery %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/global-header/macro.njk\" import tnaGlobalHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/grid/macro.njk\" import tnaGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/header/macro.njk\" import tnaHeader %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/hero/macro.njk\" import tnaHero %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/index-grid/macro.njk\" import tnaIndexGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/message/macro.njk\" import tnaMessage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/pagination/macro.njk\" import tnaPagination %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/quick-filters/macro.njk\" import tnaQuickFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/radios/macro.njk\" import tnaRadios %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/sensitive-image/macro.njk\" import tnaSensitiveImage %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/records-list/macro.njk\" import tnaRecordsList %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-field/macro.njk\" import tnaSearchField %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/select/macro.njk\" import tnaSelect %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/sidebar/macro.njk\" import tnaSidebar %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
+        echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/warning/macro.njk\" import tnaWarning %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/utilities/grid/macro.njk\" import tnaGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       shell: bash
     - name: Add components to template
       run: >
         echo "\n{% block bodyEnd %}" >> prototype/app/views/index.html &&
+        echo "{{ tnaAccordion({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaBreadcrumbs({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaButton({text:\"I am a button\",url:\"#\"}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaButton({text:\"I am a button\",href:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCheckboxes({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCompoundFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCookieBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaDateInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaDateSearch({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaFeaturedRecords({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaFilters({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaDetails({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaErrorSummary({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaFilesList({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaFooter({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaGallery({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaGlobalHeader({}) }}" >> prototype/app/views/index.html &&
@@ -85,19 +91,27 @@ runs:
         echo "{{ tnaHeader({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaHero({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaIndexGrid({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaMessage({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPagination({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPhaseBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaQuickFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaRadios({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaSensitiveImage({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaRecordsList({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSearchField({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSelect({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaSidebar({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSkipLink({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextarea({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaWarning({}) }}" >> prototype/app/views/index.html &&
         echo "{% endblock %}" >> prototype/app/views/index.html
+      shell: bash
+    - name: Copy page templates
+      run: >
+        cp package/nationalarchives/templates/plain.njk prototype/app/views/template-plain.html &&
+        cp package/nationalarchives/templates/list.njk prototype/app/views/template-list.html &&
+        cp package/nationalarchives/templates/index-grid.njk prototype/app/views/template-index-grid.html
       shell: bash
     - name: Run prototype
       run: >
@@ -110,3 +124,15 @@ runs:
         responseCode: 200
         timeout: 30000
         interval: 500
+    - name: Test prototype components
+      run: >
+        curl --silent http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
+        curl --silent http://localhost:3000 | grep '<a href="#" class="tna-button' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-card'
+      shell: bash
+    - name: Test templates
+      run: >
+        curl --silent --fail http://localhost:3000/template-plain > /dev/null &&
+        curl --silent --fail http://localhost:3000/template-list > /dev/null &&
+        curl --silent --fail http://localhost:3000/template-index-grid > /dev/null
+      shell: bash

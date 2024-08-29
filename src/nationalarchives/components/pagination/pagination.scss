@@ -3,14 +3,13 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
 
 .tna-pagination {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: spacing.space(1);
 
   @include spacing.space-above;
 
@@ -26,8 +25,8 @@
 
   &__link {
     min-width: 1.5rem;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-right: spacing.space(0.5);
+    padding-left: spacing.space(0.5);
   }
 
   &__icon {
@@ -38,17 +37,17 @@
     }
 
     &--prev {
-      margin-left: 0.5rem;
+      margin-left: spacing.space(0.5);
     }
 
     &--next {
-      margin-right: 0.5rem;
+      margin-right: spacing.space(0.5);
     }
   }
 
   &__link-title {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-right: spacing.space(0.5);
+    padding-left: spacing.space(0.5);
   }
 
   &__list {
@@ -57,7 +56,7 @@
 
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: spacing.space(0.25);
 
     list-style: none;
   }
@@ -65,7 +64,7 @@
   &__item {
     &--ellipses {
       min-width: 2rem;
-      padding: 0.5rem;
+      padding: spacing.space(0.5);
 
       text-align: center;
     }
@@ -81,6 +80,8 @@
 
   &__current-item-text {
     margin-top: 0;
+
+    @include typography.main-font-weight-medium;
   }
 
   @include media.on-mobile {

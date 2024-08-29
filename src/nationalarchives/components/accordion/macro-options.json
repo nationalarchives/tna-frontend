@@ -1,0 +1,64 @@
+[
+  {
+    "name": "itemHeadingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the accordion items."
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "The sections within the accordion.",
+    "params": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "The heading of each accordion section."
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "required": false,
+        "description": "The HTML for the main body of the accordion item. Not displayed if `text` is set."
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "required": false,
+        "description": "The text for the accordion item which will be inserted into a `<p>` element. Overwrites `body` if it is set."
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, open the accordion item. If a `group` is set, only one item in that group can be open."
+      }
+    ]
+  },
+  {
+    "name": "id",
+    "type": "string",
+    "required": true,
+    "description": "A unique ID for the accordion group."
+  },
+  {
+    "name": "openMultipleItems",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, multiple accordion items can be opened."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the accordion."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the accordion."
+  }
+]

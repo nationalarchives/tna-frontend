@@ -22,13 +22,13 @@
     "type": "string",
     "required": false,
     "default": "m",
-    "description": "The physical size of the card title."
+    "description": "The physical size of the card title (`xl`, `l`, `m` or `s`)."
   },
   {
     "name": "href",
     "type": "string",
     "required": false,
-    "description": "A URL to use as a link in the card's heading and image."
+    "description": "A URL to use as a link in the card’s heading and image."
   },
   {
     "name": "hrefClasses",
@@ -46,13 +46,13 @@
     "name": "imageSrc",
     "type": "string",
     "required": false,
-    "description": "The location of the card's image."
+    "description": "The location of the card’s image."
   },
   {
     "name": "imageAlt",
     "type": "string",
     "required": false,
-    "description": "Alternative text for the image in the event that it can't be displayed."
+    "description": "Alternative text for the image in the event that it can’t be displayed."
   },
   {
     "name": "imageWidth",
@@ -111,10 +111,22 @@
     ]
   },
   {
+    "name": "lazyImage",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, make the image a lazily-loaded image."
+  },
+  {
     "name": "label",
     "type": "string",
     "required": false,
-    "description": "A label which will appear over the top left of the card's image. If there is no imagem, the label is not displayed."
+    "description": "A label which will appear over the top left of the card’s image. If there is no image, the label is not displayed."
+  },
+  {
+    "name": "labelColour",
+    "type": "string",
+    "required": false,
+    "description": "The colour to use for the label. Can be set to `black`, `pink`, `orange`, `yellow`, `green` or `blue`. If not set, the default is the current accent colour."
   },
   {
     "name": "meta",
@@ -122,6 +134,12 @@
     "required": false,
     "description": "Small pieces of additional information akin to subtitles, displayed between the title and the body.",
     "params": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "description": "The title of the meta data which is visually hidden."
+      },
       {
         "name": "text",
         "type": "string",
@@ -135,6 +153,12 @@
         "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
       }
     ]
+  },
+  {
+    "name": "accentMeta",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, meta tags adopt an accented style."
   },
   {
     "name": "body",
@@ -174,18 +198,6 @@
         "description": "An optional title for the action."
       },
       {
-        "name": "icon",
-        "type": "string",
-        "required": false,
-        "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
-      },
-      {
-        "name": "brandIcon",
-        "type": "string",
-        "required": false,
-        "description": "The name of a Font Awesome brand icon, without the prefixed `fa-`."
-      },
-      {
         "name": "classes",
         "type": "string",
         "required": false,
@@ -200,22 +212,22 @@
     ]
   },
   {
-    "name": "layout",
-    "type": "string",
+    "name": "fullAreaClick",
+    "type": "boolean",
     "required": false,
-    "description": "Change the card layout to either a horizontal layout, placing the image to the left of the content or a hero layout for use at the top of pages. These layouts could change back to vertical on smaller devices."
+    "description": "If true, `href` is set and there are no actions, allow users to click anywhere on the card to follow the link."
+  },
+  {
+    "name": "horizontal",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices."
   },
   {
     "name": "style",
-    "type": "text",
+    "type": "string",
     "required": false,
-    "description": "The style of card to use which can be either `contrast` for an inverted card or `accent` for a card that matches the page's accent colour."
-  },
-  {
-    "name": "plainSupertitle",
-    "type": "boolean",
-    "required": false,
-    "description": "Use a plain supertitle, removing the accented background colour."
+    "description": "The style of card to use which can be either `contrast` for an inverted card, `tint` for a tinted one or `accent` for a card that matches the page’s accent colour."
   },
   {
     "name": "htmlElement",

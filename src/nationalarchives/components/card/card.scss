@@ -1,44 +1,62 @@
 @use "sass:math";
 @use "../../tools/colour";
-@use "../../tools/typography";
 @use "../../tools/media";
 @use "../../tools/spacing";
-@use "../../utilities";
-@use "../button";
+@use "../../tools/typography";
 
 .tna-card {
   @include spacing.space-above;
 
   position: relative;
-  z-index: 1;
 
   &__inner {
     display: flex;
     flex-direction: column;
   }
 
+  &.tna-background-contrast &__inner,
+  &.tna-background-tint &__inner,
+  &.tna-background-accent &__inner {
+    padding-bottom: spacing.space(1);
+  }
+
+  &--horizontal.tna-background-contrast &__inner,
+  &--horizontal.tna-background-tint &__inner,
+  &--horizontal.tna-background-accent &__inner {
+    padding-right: spacing.space(1);
+    padding-bottom: spacing.space(2);
+    padding-left: spacing.space(1);
+  }
+
   &__heading {
     order: 2;
   }
 
-  &__heading-link {
-    &::after {
-      display: none !important;
+  &--full-click &__heading-link {
+    &::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+      z-index: 3;
     }
   }
 
   &__image-container {
     height: 0;
-    margin-bottom: 1rem;
+    margin-bottom: spacing.space(1);
     padding-bottom: #{math.div(2, 3) * 100%};
 
     position: relative;
     order: 1;
+
+    @include colour.image-loader-background;
   }
 
   &__image {
     position: absolute;
     inset: 0;
+    z-index: 1;
 
     img {
       width: 100%;
@@ -49,15 +67,22 @@
   }
 
   &__image-label {
-    max-width: calc(100% - 1rem);
+    max-width: calc(100% - #{spacing.space(1)});
 
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: spacing.space(0.5);
+    left: spacing.space(0.5);
+    z-index: 2;
+
+    .tna-background-accent &:not(.tna-chip--plain) {
+      @include colour.accent;
+
+      @include colour.colour-border("accent-background");
+    }
   }
 
   &__body {
-    padding-top: 1rem;
+    padding-top: spacing.space(1);
 
     order: 3;
   }
@@ -65,63 +90,38 @@
   &__meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+    gap: spacing.space(0.5) spacing.space(1.5);
 
     line-height: 1.3;
 
     list-style: none;
 
     + p {
-      margin-top: 1rem;
+      margin-top: spacing.space(1);
     }
   }
 
   &__actions {
+    margin-top: spacing.space(1);
+
+    display: flex;
+    gap: spacing.space(1) spacing.space(2);
+
     order: 4;
   }
 
   &__action {
     @include typography.main-font-weight-bold;
-
-    .fa-solid,
-    .fa-brands {
-      margin-right: 0.5rem;
-    }
   }
 
-  &--contrast,
-  &--accent,
-  &--tint,
-  &--accent-light {
-    .tna-card__inner {
-      padding-bottom: 1rem;
-    }
-
-    .tna-card__heading,
-    .tna-card__body,
-    .tna-card__actions {
-      margin-right: 1rem;
-      margin-left: 1rem;
-    }
-  }
-
-  &--contrast,
-  &--contrast#{&}--hero {
-    .tna-card__inner {
-      @include colour.contrast;
-    }
-  }
-
-  &--accent,
-  &--accent#{&}--hero {
-    .tna-card__inner {
-      @include colour.accent;
-    }
-
-    .tna-hgroup__supertitle:not(.tna-hgroup__supertitle--plain) {
-      @include colour.contrast;
-
-      @include colour.colour-border("contrast-background");
+  &__heading,
+  &__body,
+  &__actions {
+    .tna-card.tna-background-contrast &,
+    .tna-card.tna-background-tint &,
+    .tna-card.tna-background-accent & {
+      margin-right: spacing.space(1);
+      margin-left: spacing.space(1);
     }
   }
 
@@ -147,12 +147,12 @@
     @include media.on-larger-than-mobile {
       .tna-card__inner {
         margin-left: 50%;
-        padding: 2rem;
+        padding: spacing.space(2);
       }
 
       .tna-card__image-container {
-        height: auto;
         min-height: 50%;
+        height: auto;
         margin-bottom: 0;
         padding-bottom: 0;
 
@@ -160,6 +160,7 @@
 
         position: absolute;
         inset: 0 50% 0 0;
+        z-index: 1;
       }
 
       .tna-card__heading,
@@ -171,104 +172,48 @@
     }
   }
 
-  &--horizontal#{&}--contrast,
-  &--horizontal#{&}--accent {
+  &--horizontal.tna-background-contrast,
+  &--horizontal.tna-background-tint,
+  &--horizontal.tna-background-accent {
     @include media.on-mobile {
       .tna-card__inner {
-        padding: 0 0 1rem;
+        padding: 0 0 spacing.space(1);
       }
 
       .tna-card__image-container {
-        margin-bottom: 1rem;
+        margin-bottom: spacing.space(1);
       }
 
       .tna-card__heading,
       .tna-card__body,
       .tna-card__actions {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        margin-right: spacing.space(1);
+        margin-left: spacing.space(1);
       }
     }
   }
 
-  &--hero {
-    padding-left: #{math.div(100%, 3)};
+  &__inner:has(&__heading + &__body) {
+    padding-top: spacing.space(0.5);
 
-    position: relative;
-
-    &::before {
-      width: 100%;
-      height: 25vw;
-      max-height: 20rem;
-
-      display: block;
-
-      content: "";
-    }
-
-    .tna-card__inner {
-      padding: 2rem;
-
-      @include colour.colour-background("page-background");
-    }
-
-    .tna-card__image-container {
-      height: auto;
-      margin-bottom: 0;
-      padding-bottom: 0;
-
-      display: block;
-
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-    }
-
-    .tna-card__heading,
-    .tna-card__body,
-    .tna-card__actions {
-      margin-right: 0;
-      margin-left: 0;
-    }
-
-    @include media.on-small {
-      padding-left: 25%;
-    }
-
-    @include media.on-tiny {
-      padding-left: 0;
-
-      &::before {
-        display: none;
-      }
-
-      .tna-card__inner {
-        padding: 0;
-      }
-
-      .tna-card__image-container {
-        margin-bottom: 2rem;
-        padding-bottom: 50%;
-
-        position: relative;
-        z-index: 1;
-      }
-    }
+    @include colour.thick-keyline-dark(top);
   }
 
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px);
+  }
 
-    &:not(#{&}--horizontal) {
+  &:not(&--horizontal) {
+    @include colour.on-high-contrast-and-forced-colours {
       .tna-card__inner {
-        padding-bottom: 1rem;
+        padding-bottom: spacing.space(1);
       }
 
       .tna-card__heading,
       .tna-card__body,
       .tna-card__actions {
-        margin-right: 1rem;
-        margin-left: 1rem;
+        margin-right: spacing.space(1);
+        margin-left: spacing.space(1);
       }
     }
 

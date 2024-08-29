@@ -1,9 +1,28 @@
 [
   {
-    "name": "heading",
+    "name": "supertitle",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The smaller title to display above the main hero title."
+  },
+  {
+    "name": "title",
+    "type": "string",
+    "required": false,
+    "description": "The main title of the hero. If set, then `headingLevel` also needs to be set."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": false,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Default is `1`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "default": "m",
+    "description": "The physical size of the hero title (`xl`, `l`, `m` or `s`). Default is `xl`."
   },
   {
     "name": "body",
@@ -39,12 +58,6 @@
     "name": "imageHeight",
     "type": "number",
     "required": true,
-    "description": ""
-  },
-  {
-    "name": "imageType",
-    "type": "string",
-    "required": false,
     "description": ""
   },
   {
@@ -90,6 +103,68 @@
     "type": "string",
     "required": false,
     "description": ""
+  },
+  {
+    "name": "actions",
+    "type": "array",
+    "required": false,
+    "description": "An array of actions to add at the bottom of the hero component. Each action is displayed as a button.",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": "The text for the action."
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": "The URL of the action."
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "An optional title for the action."
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "required": false,
+        "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
+      },
+      {
+        "name": "rightAlignIcon",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, align the icon to the right hand side of the button."
+      },
+      {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the hero action."
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the hero action."
+      }
+    ]
+  },
+  {
+    "name": "style",
+    "type": "string",
+    "required": false,
+    "description": "The style of hero to use. This can be `contrast`, `tint` or `accent`."
+  },
+  {
+    "name": "layout",
+    "type": "string",
+    "required": false,
+    "description": "An alternative layout of the hero component to use. This can be `shift` or `split`."
   },
   {
     "name": "classes",

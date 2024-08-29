@@ -1,56 +1,62 @@
 @use "sass:math";
-@use "../../variables/grid" as gridVars;
 @use "../../tools/colour";
-@use "../../tools/typography";
+@use "../../tools/grid";
 @use "../../tools/media";
-@use "../../utilities";
-@use "../grid";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-global-header {
-  padding-top: 1rem;
+  padding-top: spacing.space(1);
 
   @include colour.contrast;
+  background: linear-gradient(
+    0deg,
+    rgb(34 34 34 / 100%) 0%,
+    rgb(0 0 0 / 100%) 100%
+  );
 
-  .tna-template--light-theme & {
-    background: linear-gradient(
-      0deg,
-      rgb(34 34 34 / 100%) 0%,
-      rgb(0 0 0 / 100%) 100%
-    );
+  @include colour.colour-font("font-base");
+
+  .tna-template--dark-theme & {
+    background: colour.brand-colour("black");
   }
 
-  .tna-template--system-theme {
-    @media (prefers-color-scheme: light) {
-      background: linear-gradient(
-        0deg,
-        rgb(34 34 34 / 100%) 0%,
-        rgb(0 0 0 / 100%) 100%
-      );
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      background: colour.brand-colour("black");
     }
   }
 
   &__main {
-    padding-bottom: 1.5rem;
+    padding-bottom: spacing.space(1.5);
   }
 
   &__logo-wrapper {
-    margin-top: 0.5rem;
+    margin-top: spacing.space(0.5);
 
     display: flex;
   }
 
   &__logo {
     display: flex;
-    gap: 1rem;
     align-items: flex-end;
+    gap: spacing.space(1);
 
     text-decoration: none;
 
-    &:hover {
-      text-decoration: none;
+    &--link {
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("font-base");
+      }
 
-      @include colour.colour-outline("font-dark", 0.3125rem, solid);
-      outline-offset: 1px;
+      &:hover {
+        text-decoration: none;
+
+        @include colour.colour-outline("font-dark", 0.3125rem, solid);
+        outline-offset: 1px;
+      }
     }
   }
 
@@ -62,12 +68,13 @@
   }
 
   &__logo-strapline {
-    padding-right: 0.625rem;
+    padding-right: spacing.space(0.625);
+
+    line-height: math.div(6.75rem, 3);
+    text-transform: uppercase;
 
     @include typography.heading-font;
-    @include typography.relative-font-size(20);
-    text-transform: uppercase;
-    line-height: math.div(6.75rem, 3);
+    @include typography.font-size(20);
   }
 
   &__navigation-button-wrapper {
@@ -78,23 +85,23 @@
     width: 2rem;
     height: 0.25rem;
 
-    display: block;
+    display: inline-block;
 
     @include colour.colour-background("font-dark");
 
     &::before,
     &::after {
+      content: "";
+
+      width: 2rem;
       height: 0.25rem;
 
       display: block;
 
       position: absolute;
       right: 0;
-      left: 0;
 
       background-color: inherit;
-
-      content: "";
     }
 
     &::before {
@@ -110,13 +117,14 @@
     height: 2rem;
     padding: 0;
 
-    display: block;
+    appearance: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 
     position: relative;
 
-    appearance: none;
-
-    font-size: 0;
+    color: inherit;
 
     background: none;
 
@@ -124,6 +132,12 @@
     border-width: 0.25rem 0;
 
     cursor: pointer;
+    @include typography.main-font-weight-bold;
+    @include typography.font-size(16);
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
 
     &--opened {
       .tna-global-header__hamburger {
@@ -144,14 +158,18 @@
     }
   }
 
+  &__navigation-wrapper {
+  }
+
   &__navigation {
-    margin: 0.5rem 0 0;
     height: 100%;
+    margin: spacing.space(0.5) 0 0;
 
     position: relative;
 
     columns: 2;
-    column-gap: 2rem;
+    column-gap: spacing.space(2);
+
     list-style: none;
   }
 
@@ -166,11 +184,18 @@
     display: block;
     box-sizing: border-box;
 
-    @include typography.relative-font-size(17);
-    text-decoration: none;
     line-height: math.div(6.75rem, 3);
+    text-decoration: none;
+
+    @include typography.font-size(17);
 
     @include colour.colour-border("keyline", 0.5px, solid, bottom);
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("font-base");
+    }
 
     &:hover {
       @include typography.interacted-text-decoration;
@@ -178,13 +203,13 @@
   }
 
   &__top-navigation {
-    padding: 0 0 0.5rem;
+    padding: 0 0 spacing.space(0.5);
 
     display: flex;
     justify-content: flex-end;
-    gap: 1.5rem;
+    gap: spacing.space(1.5);
 
-    @include typography.relative-font-size(15);
+    @include typography.font-size(15);
     list-style: none;
   }
 
@@ -193,8 +218,8 @@
 
   &__top-navigation-link {
     display: flex;
-    gap: 0.5rem;
     align-items: center;
+    gap: spacing.space(0.5);
 
     text-decoration: none;
 
@@ -208,11 +233,25 @@
       @include colour.colour-font("font-base");
       @include typography.interacted-text-decoration;
     }
+
+    svg {
+      height: 1em;
+
+      display: inline-block;
+
+      path {
+        fill: currentColor;
+      }
+    }
   }
 
   @include media.on-medium {
+    &__navigation {
+      column-gap: spacing.space(1);
+    }
+
     &__navigation-item-link {
-      @include typography.relative-font-size(16);
+      @include typography.font-size(16);
     }
 
     &--collapse-on-medium &__navigation-wrapper {
@@ -225,16 +264,16 @@
     }
 
     &--collapse-on-medium &__main {
-      padding-bottom: 1rem;
+      padding-bottom: spacing.space(1);
     }
 
     &--collapse-on-medium &__logo {
-      gap: 0.75rem;
+      gap: spacing.space(0.75);
     }
 
     &--collapse-on-medium &__logo-wrapper {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+      margin-top: spacing.space(0.5);
+      margin-bottom: spacing.space(0.5);
     }
 
     &--collapse-on-medium .tna-logo {
@@ -247,7 +286,7 @@
     }
 
     &--collapse-on-medium &__navigation {
-      margin-bottom: 0.5rem;
+      margin-bottom: spacing.space(0.5);
     }
 
     &--collapse-on-medium &__navigation,
@@ -265,11 +304,11 @@
     &__logo-wrapper,
     &__navigation-button-wrapper {
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: spacing.space(1);
     }
 
     &__logo {
-      gap: 0.75rem;
+      gap: spacing.space(0.75);
     }
 
     &__navigation-button-wrapper {
@@ -290,8 +329,8 @@
 
       background-color: rgb(255 255 255 / 10%);
 
-      @include colour.colour-border("keyline-dark", 3px, solid, top);
-      @include colour.colour-border("keyline-dark", 3px, solid, bottom);
+      @include colour.colour-border("keyline-dark", 2px, solid, top);
+      @include colour.colour-border("keyline-dark", 2px, solid, bottom);
     }
 
     &__navigation-item {
@@ -301,6 +340,7 @@
 
     &__navigation-item-link {
       line-height: 1.75rem;
+      @include typography.main-font-weight-medium;
     }
 
     &__navigation-item:last-child &__navigation-item-link {
@@ -312,15 +352,21 @@
     }
 
     &__navigation-item-children {
-      margin-bottom: 1rem;
-      margin-left: 1.5rem;
+      margin-bottom: spacing.space(1);
+      margin-left: spacing.space(1.5);
     }
 
     &__top-navigation {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding-top: spacing.space(0.5);
+      padding-bottom: spacing.space(0.5);
 
       justify-content: flex-start;
+
+      gap: spacing.space(1.5);
+    }
+
+    &__top-navigation-link {
+      padding: spacing.space(0.25) 0;
     }
   }
 
@@ -335,13 +381,13 @@
     }
 
     &__navigation {
-      width: calc(100% + #{gridVars.$gutter-width * 2});
+      width: calc(100% + #{grid.gutter-width-double()});
 
-      left: -#{gridVars.$gutter-width};
+      left: -#{grid.gutter-width()};
     }
 
     &__navigation-item-link {
-      padding: 0.5rem gridVars.$gutter-width;
+      padding: spacing.space(0.5) grid.gutter-width();
     }
   }
 
@@ -355,14 +401,38 @@
       line-height: 1;
     }
 
-    &__navigation {
-      width: calc(100% + #{gridVars.$gutter-width-tiny * 2});
+    &__navigation-button {
+      @include typography.font-size(14);
+    }
 
-      left: -#{gridVars.$gutter-width-tiny};
+    &__navigation {
+      width: calc(100% + #{grid.gutter-width-tiny-double()});
+
+      left: -#{grid.gutter-width-tiny()};
     }
 
     &__navigation-item-link {
-      padding: 0.5rem gridVars.$gutter-width-tiny;
+      padding: spacing.space(0.5) grid.gutter-width-tiny();
+    }
+  }
+
+  @include colour.on-high-contrast-and-forced-colours {
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+  }
+
+  @include colour.on-forced-colours {
+    &__navigation-button {
+      height: auto;
+
+      line-height: 2;
+      @include typography.font-size(18);
+      @include typography.main-font-weight-bold;
+
+      border: none;
+    }
+
+    &__hamburger {
+      display: none;
     }
   }
 }

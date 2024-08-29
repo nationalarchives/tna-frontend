@@ -2,19 +2,27 @@
 {%- if params.sticky -%}
   {%- set containerClasses = containerClasses.concat('tna-tabs--sticky') -%}
 {%- endif -%}
-<div class="tna-tabs {{ containerClasses | join(' ') }}" data-module="tna-tabs"{% for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-  <ul class="tna-tabs__list">
-  {% for item in params.items %}
+{%- set classes = containerClasses | join(' ') -%}
+<div class="tna-tabs{% if classes %} {{ classes }}{% endif %}" data-module="tna-tabs"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <ul class="tna-tabs__list" role="tablist" hidden>
+  {%- for item in params.items %}
     <li class="tna-tabs__list-item">
-      <a href="#{{ item.id }}" class="tna-tabs__list-item-link" id="{{ item.id }}-tab">{{ item.title }}</a>
+      <button type="button" class="tna-tabs__button" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab">
+        <span class="tna-tabs__button-inner">
+          {{ item.title }}
+        </span>
+      </button>
     </li>
-  {% endfor %}
+  {%- endfor %}
   </ul>
   <div class="tna-tabs__items">
-  {% for item in params.items %}
+  {%- for item in params.items %}
     <section id="{{ item.id }}" class="tna-tabs__item">
+      <h{{ params.itemHeadingLevel }} class="tna-tabs__heading tna-heading-m">
+        {{ item.title }}
+      </h{{ params.itemHeadingLevel }}>
       {{ item.body | safe }}
     </section>
-  {% endfor %}
+  {%- endfor %}
   </div>
 </div>

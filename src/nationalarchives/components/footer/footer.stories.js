@@ -1,5 +1,7 @@
 import Footer from "./template.njk";
 import macroOptions from "./macro-options.json";
+import { within, expect } from "@storybook/test";
+import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {
   meta: { control: "text" },
@@ -7,6 +9,11 @@ const argTypes = {
   navigation: { control: "object" },
   showNewsletter: { control: "boolean" },
   legal: { control: "object" },
+  themeSelector: { control: "boolean" },
+  currentTheme: {
+    control: "inline-radio",
+    options: ["system", "light", "dark", ""],
+  },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -28,6 +35,8 @@ const Template = ({
   navigation,
   showNewsletter,
   legal,
+  themeSelector,
+  currentTheme,
   classes,
   attributes,
 }) =>
@@ -38,6 +47,8 @@ const Template = ({
       navigation,
       showNewsletter,
       legal,
+      themeSelector,
+      currentTheme,
       classes,
       attributes,
     },
@@ -45,120 +56,107 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  meta: "<p>Open today<br />09:00&mdash;19:00</p>",
   social: [
     {
-      text: "Twitter",
-      href: "#",
-      brandIcon: "twitter",
+      href: "https://twitter.com/UKNatArchives",
+      icon: "twitter",
+      title: "The National Archives X feed (formally known as Twitter)",
     },
     {
-      text: "YouTube",
-      href: "#",
-      brandIcon: "youtube",
+      href: "https://www.youtube.com/c/TheNationalArchivesUK",
+      icon: "youtube",
+      title: "The National Archives YouTube channel",
     },
     {
-      text: "Facebook",
-      href: "#",
-      brandIcon: "facebook",
+      href: "https://www.facebook.com/TheNationalArchives",
+      icon: "facebook",
+      title: "The National Archives Facebook page",
     },
     {
-      text: "Flickr",
-      href: "#",
-      brandIcon: "flickr",
+      href: "https://www.flickr.com/photos/nationalarchives",
+      icon: "flickr",
+      title: "The National Archives Flickr feed",
     },
     {
-      text: "Instagram",
-      href: "#",
-      brandIcon: "instagram",
+      href: "https://www.instagram.com/nationalarchivesuk/",
+      icon: "instagram",
+      title: "The National Archives Instagram feed",
     },
     {
-      text: "RSS",
-      href: "#",
-      icon: "rss",
+      href: "https://www.tiktok.com/@uknatarchives",
+      icon: "tiktok",
+      title: "The National Archives TikTok feed",
     },
   ],
   navigation: [
     {
-      title: "About us",
-      items: [
-        {
-          text: "Our role",
-          href: "#",
-        },
-        {
-          text: "Our history",
-          href: "#",
-        },
-        {
-          text: "Our collection",
-          href: "#",
-        },
-        {
-          text: "Our people",
-          href: "#",
-        },
-        {
-          text: "How we are run",
-          href: "#",
-        },
-        {
-          text: "Our research and academic collaboration",
-          href: "#",
-        },
-        {
-          text: "News",
-          href: "#",
-        },
-        {
-          text: "Contact us",
-          href: "#",
-        },
-        {
-          text: "Jobs & careers",
-          href: "#",
-        },
-        {
-          text: "Get involved",
-          href: "#",
-        },
-      ],
-    },
-    {
-      title: "Our websites help",
-      items: [
-        {
-          text: "UK Government Web Archive",
-          href: "#",
-          newTab: true,
-        },
-        {
-          text: "Legislation.gov.uk",
-          href: "#",
-          newTab: true,
-        },
-        {
-          text: "Find case law",
-          href: "#",
-          newTab: true,
-        },
-        {
-          text: "The Gazette",
-          href: "#",
-          newTab: true,
-        },
-      ],
-    },
-    {
       title: "Quick links",
       items: [
         {
-          text: "Press room",
-          href: "#",
+          text: "About us",
+          href: "https://www.nationalarchives.gov.uk/about/",
         },
         {
-          text: "Venue hire",
-          href: "#",
+          text: "Contact us",
+          href: "https://www.nationalarchives.gov.uk/contact-us/",
+        },
+        {
+          text: "News",
+          href: "https://www.nationalarchives.gov.uk/about/news/",
+        },
+        {
+          text: "Blog",
+          href: "https://blog.nationalarchives.gov.uk/",
+        },
+        {
+          text: "Podcasts",
+          href: "https://media.nationalarchives.gov.uk/index.php/category/podcasts-2/",
+        },
+        {
+          text: "Image library",
+          href: "https://images.nationalarchives.gov.uk/",
+        },
+        {
+          text: "Press room",
+          href: "https://www.nationalarchives.gov.uk/about/press-room/",
+        },
+        {
+          text: "Jobs",
+          href: "https://www.nationalarchives.gov.uk/about/jobs/",
+        },
+        {
+          text: "British citizenship services",
+          href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
+        },
+        {
+          text: "Historical Manuscripts Commission",
+          href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
+        },
+      ],
+    },
+    {
+      title: "Other websites",
+      items: [
+        {
+          text: "UK Government Web Archive",
+          href: "https://www.nationalarchives.gov.uk/webarchive/",
+        },
+        { text: "Legislation.gov.uk", href: "https://www.legislation.gov.uk/" },
+        {
+          text: "Find case law",
+          href: "https://caselaw.nationalarchives.gov.uk/",
+        },
+        {
+          text: "The Gazette",
+          href: "https://www.thegazette.co.uk/",
+        },
+        {
+          text: "The National Archives Trust",
+          href: "https://www.nationalarchivestrust.org.uk/",
+        },
+        {
+          text: "Friends of The National Archives",
+          href: "https://ftna.org.uk/",
         },
       ],
     },
@@ -167,29 +165,77 @@ Standard.args = {
   legal: [
     {
       text: "Accessibility statement",
-      href: "#",
+      href: "#/accessibility",
     },
     {
       text: "Freedom of information",
-      href: "#",
+      href: "#/freedom-of-information",
     },
     {
       text: "Terms and conditions",
-      href: "#",
+      href: "#/terms-and-conditions",
     },
     {
       text: "Privacy policy",
-      href: "#",
+      href: "#/privacy",
     },
     {
       text: "Cookies",
-      href: "#",
+      href: "#/cookies",
     },
   ],
-  classes: "tna-footer--demo",
 };
 
 export const Minimal = Template.bind({});
-Minimal.args = {
-  classes: "tna-footer--demo",
+Minimal.args = {};
+
+export const ThemeSelector = Template.bind({});
+ThemeSelector.args = {
+  themeSelector: true,
+  currentTheme: "",
+};
+ThemeSelector.decorators = [
+  (Story) => {
+    const cookies = new Cookies({ newInstance: true });
+    cookies.set("cookie_preferences_set", true);
+    cookies.acceptPolicy("settings");
+    return Story();
+  },
+];
+ThemeSelector.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const systemLightButton = canvas.getByText("System theme");
+  const themeLightButton = canvas.getByText("Light theme");
+  const darkLightButton = canvas.getByText("Dark theme");
+
+  await expect(systemLightButton).toBeVisible();
+  await expect(themeLightButton).toBeVisible();
+  await expect(darkLightButton).toBeVisible();
+};
+
+export const ThemeSelectorWithoutCookies = Template.bind({});
+ThemeSelectorWithoutCookies.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+ThemeSelectorWithoutCookies.args = {
+  themeSelector: true,
+  currentTheme: "",
+};
+ThemeSelectorWithoutCookies.decorators = [
+  (Story) => {
+    const cookies = new Cookies({ newInstance: true });
+    cookies.set("cookie_preferences_set", true);
+    cookies.rejectPolicy("settings");
+    return Story();
+  },
+];
+ThemeSelectorWithoutCookies.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const systemLightButton = canvas.getByText("System theme");
+  const themeLightButton = canvas.getByText("Light theme");
+  const darkLightButton = canvas.getByText("Dark theme");
+
+  await expect(systemLightButton).not.toBeVisible();
+  await expect(themeLightButton).not.toBeVisible();
+  await expect(darkLightButton).not.toBeVisible();
 };

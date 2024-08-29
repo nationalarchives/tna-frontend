@@ -23,7 +23,11 @@ const failedComponents = components.filter((component) => {
     `../${componentsDirectory}${component}/template.njk`,
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
-    const result = renderNunjucks(componentNunjucks, fixture.options, true);
+    const result = renderNunjucks(
+      componentNunjucks,
+      { params: fixture.options },
+      true,
+    );
     const mismatch = result !== fixture.html;
     if (mismatch) {
       fail(`${fixture.name} (${componentsDirectory}${component}/template.njk)`);
@@ -58,6 +62,52 @@ if (failedComponents.length) {
   pass(
     `${components.length} component${
       components.length === 1 ? "" : "s"
+    } passed successfully`,
+  );
+}
+console.log("------------------------------------------");
+
+console.log("Templates");
+const templatesDirectory = "src/nationalarchives/templates/";
+const templateFixturesFile = `${templatesDirectory}fixtures.json`;
+const templateFixtures = require(`../${templateFixturesFile}`);
+const failedTemplates = templateFixtures.fixtures.filter((fixture) => {
+  const templateNunjucks = require(
+    `../${templatesDirectory}${fixture.template}`,
+  );
+  const result = renderNunjucks(templateNunjucks, fixture.options, true);
+  const mismatch = result !== fixture.html;
+  if (mismatch) {
+    fail(`${fixture.name} (${fixture.template})`);
+    console.log("\n");
+    const diff = Diff.diffChars(fixture.html, result)
+      .map(
+        (part) =>
+          `${
+            part.added ? "\x1b[32m" : part.removed ? "\x1b[31m" : "\x1b[0m"
+          }${part.value}`,
+      )
+      .join("");
+    console.log(diff.replace(/></g, ">\n<"));
+    console.log("\n");
+    return true;
+  }
+  pass(fixture.name);
+  return false;
+});
+console.log("\n------------------------------------------");
+if (failedTemplates.length) {
+  fail(
+    `${failedTemplates.length} out of ${templateFixtures.fixtures.length} template${
+      templateFixtures.fixtures.length === 1 ? "" : "s"
+    } failed`,
+  );
+  process.exitCode = 1;
+  throw new Error("Fixtures tests failed");
+} else {
+  pass(
+    `${templateFixtures.fixtures.length} template${
+      templateFixtures.fixtures.length === 1 ? "" : "s"
     } passed successfully`,
   );
 }

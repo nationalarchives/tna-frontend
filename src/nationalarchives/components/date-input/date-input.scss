@@ -1,29 +1,28 @@
 @use "../../variables/forms";
 @use "../../tools/colour";
+@use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
 
 .tna-date-input {
   display: flex;
-  gap: 1rem;
+  gap: spacing.space(1);
 
   &__item {
     &-label {
       display: block;
 
-      @include typography.relative-font-size(16);
+      @include typography.font-size(16);
     }
 
     &-input {
       width: 3rem;
-      padding: 0 0.375rem;
+      padding: 0 spacing.space(0.375);
 
       display: block;
       box-sizing: border-box;
 
-      @include colour.light;
+      @include colour.always-light;
       @include colour.colour-font("input-foreground");
-      font-size: inherit;
       line-height: 2rem;
 
       @include colour.colour-background("input-background");
@@ -39,7 +38,7 @@
       }
 
       .tna-form__group--error & {
-        @include colour.colour-border("form-error");
+        @include colour.colour-border("form-error-border");
       }
     }
   }

@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: spacing.space(1);
 
   @include spacing.space-above;
 
@@ -15,6 +15,6 @@
   }
 
   &--small {
-    gap: 0.5rem;
+    gap: spacing.space(0.5);
   }
 }

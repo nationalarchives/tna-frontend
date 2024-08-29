@@ -1,0 +1,104 @@
+@use "sass:math";
+@use "sass:selector";
+@use "../../variables/grid" as gridVars;
+@use "../../tools/grid";
+@use "../../tools/media";
+
+.tna-container {
+  width: 100%;
+  max-width: gridVars.$largest-container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: grid.gutter-width-half();
+  padding-left: grid.gutter-width-half();
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  box-sizing: border-box;
+
+  & &--no-padding {
+    max-width: gridVars.$largest-container-width - grid.gutter-width-double();
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &--max {
+    max-width: none;
+  }
+
+  &--centred,
+  &--align-centre {
+    justify-content: center;
+  }
+
+  &--align-right {
+    justify-content: flex-end;
+  }
+
+  & &--nested {
+    width: auto;
+    margin-right: -#{grid.gutter-width()};
+    margin-left: -#{grid.gutter-width()};
+  }
+
+  @at-root #{selector.unify("ul", &)} {
+    list-style: none;
+  }
+}
+
+.tna-column {
+  padding-right: grid.gutter-width-half();
+  padding-left: grid.gutter-width-half();
+
+  box-sizing: border-box;
+
+  & &--no-padding {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &--align-top {
+    align-self: flex-start;
+  }
+
+  &--align-centre {
+    align-self: center;
+  }
+
+  &--align-bottom {
+    align-self: flex-end;
+  }
+}
+
+@include grid.columns-generator(gridVars.$column-count);
+
+@include media.on-medium {
+  @include grid.columns-generator(gridVars.$column-count-medium, "medium");
+}
+
+@include media.on-small {
+  @include grid.columns-generator(gridVars.$column-count-small, "small");
+}
+
+@include media.on-tiny {
+  .tna-container {
+    padding-right: grid.gutter-width-tiny-half();
+    padding-left: grid.gutter-width-tiny-half();
+
+    & &--nested {
+      width: auto;
+      margin-right: -#{grid.gutter-width-tiny()};
+      margin-left: -#{grid.gutter-width-tiny()};
+    }
+  }
+
+  .tna-column {
+    padding-right: grid.gutter-width-tiny-half();
+    padding-left: grid.gutter-width-tiny-half();
+  }
+
+  @include grid.columns-generator(gridVars.$column-count-tiny, "tiny");
+}

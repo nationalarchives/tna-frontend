@@ -2,37 +2,22 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
-@use "../button";
-@use "../grid";
 
 .tna-cookie-banner {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-
-  &--contrast {
-    @include colour.contrast;
-  }
-
-  &--accent {
-    @include colour.accent;
-  }
-
-  &--tint {
-    @include colour.tint;
-  }
+  padding-top: spacing.space(2);
+  padding-bottom: spacing.space(2);
 
   @include media.on-tiny {
     padding-top: 1rem;
     padding-bottom: 1rem;
 
-    @include typography.relative-font-size(16);
+    @include typography.font-size(16);
   }
 
   &__message {
-    &:focus {
-      outline: none !important;
-    }
+    // &:focus {
+    //   outline: none !important;
+    // }
 
     &--prompt {
     }
@@ -42,9 +27,5 @@
 
     &--rejected {
     }
-  }
-
-  @include media.on-print {
-    display: none;
   }
 }

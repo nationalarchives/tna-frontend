@@ -1,0 +1,218 @@
+{
+  "component": "sidebar",
+  "fixtures": [
+    {
+      "name": "contents",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#",
+                "children": [
+                  {
+                    "text": "Alpha",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Beta",
+                    "href": "#"
+                  }
+                ]
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "contents"
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--contents\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+    },
+    {
+      "name": "sections",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "sections"
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--sections\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a></li></ul></nav>"
+    },
+    {
+      "name": "pages",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "pages"
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--pages\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+    },
+    {
+      "name": "sticky",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "sections",
+        "sticky": true
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--sections tna-sidebar--sticky\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a></li></ul></nav>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "contents",
+        "classes": "sidebar__test-class"
+      },
+      "html": "<nav class=\"tna-sidebar sidebar__test-class tna-sidebar--contents\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "contents",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--contents\" aria-label=\"Sidebar\" data-testattribute=\"foobar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+    }
+  ]
+}

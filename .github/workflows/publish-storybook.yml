@@ -1,4 +1,4 @@
-name: Publish Storybook
+name: Publish to GitHub pages
 
 on:
   push:
@@ -15,6 +15,8 @@ on:
       - 'package-lock.json'
       - 'package.json'
       - 'webpack.config.js'
+    tags-ignore:
+      - '**'
 
 permissions:
   contents: read
@@ -41,30 +43,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build Storybook
-        run: npm run build
-      - uses: actions/configure-pages@v3
-      - uses: actions/upload-pages-artifact@v1
+        run: npm run build:storybook
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: storybook
       - id: deployment
-        uses: actions/deploy-pages@v2
-
-  chromatic:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-      - name: Install dependencies
-        run: npm ci
-      - name: Build Storybook
-        run: npm run build
-      - uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook
-          exitZeroOnChanges: true
-          autoAcceptChanges: true
+        uses: actions/deploy-pages@v4

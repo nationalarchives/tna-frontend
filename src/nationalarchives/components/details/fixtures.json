@@ -1,0 +1,50 @@
+{
+  "component": "details",
+  "fixtures": [
+    {
+      "name": "minimal",
+      "options": {
+        "title": "Alpha",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p>"
+      },
+      "html": "<div class=\"tna-details\"><details class=\"tna-details__details\"><summary class=\"tna-details__summary\">Alpha</summary><div class=\"tna-details__content\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p></div></details></div>"
+    },
+    {
+      "name": "text",
+      "options": {
+        "title": "Alpha",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae."
+      },
+      "html": "<div class=\"tna-details\"><details class=\"tna-details__details\"><summary class=\"tna-details__summary\">Alpha</summary><div class=\"tna-details__content\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</p></div></details></div>"
+    },
+    {
+      "name": "opened",
+      "options": {
+        "title": "Alpha",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.",
+        "open": true
+      },
+      "html": "<div class=\"tna-details\"><details class=\"tna-details__details\" open><summary class=\"tna-details__summary\">Alpha</summary><div class=\"tna-details__content\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</div></details></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "title": "Alpha",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.",
+        "classes": "details__test-class"
+      },
+      "html": "<div class=\"tna-details details__test-class\"><details class=\"tna-details__details\"><summary class=\"tna-details__summary\">Alpha</summary><div class=\"tna-details__content\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</div></details></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "title": "Alpha",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-details\" data-testattribute=\"foobar\"><details class=\"tna-details__details\"><summary class=\"tna-details__summary\">Alpha</summary><div class=\"tna-details__content\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim vehicula magna, et hendrerit quam iaculis a. Mauris in ultricies enim. Donec bibendum est leo, sed dapibus mauris facilisis vitae.</div></details></div>"
+    }
+  ]
+}

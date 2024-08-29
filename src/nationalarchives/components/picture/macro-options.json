@@ -30,15 +30,21 @@
     "description": "",
     "params": [
       {
-        "name": "media",
-        "type": "text",
+        "name": "src",
+        "type": "string",
         "required": true,
         "description": ""
       },
       {
-        "name": "src",
-        "type": "text",
+        "name": "type",
+        "type": "string",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "media",
+        "type": "string",
+        "required": false,
         "description": ""
       },
       {
@@ -72,6 +78,12 @@
     "type": "string",
     "required": false,
     "description": ""
+  },
+  {
+    "name": "informationItemHeadingLevel",
+    "type": "number",
+    "required": false,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the information items. Required if `information` is set."
   },
   {
     "name": "information",

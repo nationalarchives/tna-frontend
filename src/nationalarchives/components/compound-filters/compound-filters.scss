@@ -1,7 +1,6 @@
 @use "../../tools/colour";
 @use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
 
 .tna-compound-filters {
   @include spacing.space-above;
@@ -9,26 +8,31 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1rem;
+  gap: spacing.space(0.5) spacing.space(0.75);
+
+  list-style: none;
 
   &__item {
-    padding: 0 0.125rem 0 0.75rem;
+    padding: 0 spacing.space(0.125) 0 spacing.space(0.75);
 
     display: flex;
-    gap: 0.5rem;
     align-items: center;
+    gap: spacing.space(0.5);
 
-    @include typography.relative-font-size(16);
     line-height: 1.75;
 
-    @include colour.colour-border("keyline", 1px);
     border-radius: 1rem;
+
+    @include typography.font-size(16);
+
+    @include colour.colour-border("keyline", 1px);
 
     &--remove {
       padding-right: 0;
       padding-left: 0;
 
       background: none;
+
       border: none;
       border-radius: 0;
     }
@@ -40,15 +44,17 @@
 
     position: relative;
 
-    text-decoration: none;
     font-size: 0;
     line-height: 0;
+
+    text-decoration: none;
 
     border-radius: 100%;
 
     &::before,
     &::after {
-      width: 2px;
+      content: "";
+
       height: 1rem;
       margin-left: -1px;
 
@@ -58,9 +64,7 @@
       top: 0.25rem;
       left: 50%;
 
-      @include colour.colour-background("font-base");
-
-      content: "";
+      @include colour.colour-border("font-base", 2px, solid, left);
     }
 
     &::before {

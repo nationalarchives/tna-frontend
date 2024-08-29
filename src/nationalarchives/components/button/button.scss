@@ -1,30 +1,36 @@
 @use "sass:math";
 @use "../../tools/colour";
 @use "../../tools/media";
+@use "../../tools/spacing";
 @use "../../tools/typography";
-@use "../../utilities";
 @use "button-group";
 
+$button-border-width: 4px !default;
+
 .tna-button {
-  padding: 0.25rem 1rem;
+  padding: spacing.space(0.25) spacing.space(1);
 
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.75rem;
+  gap: spacing.space(0.75);
 
-  @include typography.relative-font-size(18);
-  @include typography.main-font-weight-bold;
-  line-height: #{math.div(16, 18) * 2};
-  text-decoration: none;
+  line-height: 2rem;
   text-align: center;
+  text-decoration: none;
   text-wrap: balance;
+
+  cursor: pointer;
+
+  @include typography.font-size(18);
+  @include typography.main-font-weight-bold;
 
   @include colour.colour-background("button-background");
 
-  @include colour.colour-border("button-background", 0.25rem);
+  @include colour.colour-border("button-background", $button-border-width);
 
-  cursor: pointer;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 
   &,
   &:link,
@@ -39,12 +45,20 @@
     background: transparent;
   }
 
-  .fa-solid,
-  .fa-brands {
+  .fa-solid {
     display: block;
 
     font-size: 0.9em;
     line-height: #{math.div(16, 18) * 2};
+  }
+
+  svg {
+    height: 0.9em;
+    flex-shrink: 0;
+
+    align-self: center;
+
+    fill: currentColor;
   }
 
   &--plain {
@@ -66,14 +80,14 @@
   }
 
   &--accent {
-    @include colour.colour-background("button-accent-background");
+    @include colour.colour-background("button-accented-background");
 
-    @include colour.colour-border("button-accent-background");
+    @include colour.colour-border("button-accented-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("button-accent-text");
+      @include colour.colour-font("button-accented-text");
     }
 
     &:hover {
@@ -87,15 +101,10 @@
 
   &--small,
   &-group--small & {
-    padding: 0 0.5rem;
+    padding: 0 spacing.space(0.5);
 
-    @include typography.relative-font-size(14);
+    @include typography.font-size(14);
     line-height: 1.5rem;
-
-    .fa-solid,
-    .fa-brands {
-      line-height: 2rem;
-    }
   }
 
   @mixin icon-only {
@@ -104,14 +113,18 @@
 
     gap: 0;
 
-    font-size: 0;
-    line-height: 0;
+    font-size: 0 !important;
+    line-height: 0 !important;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       width: 2.5rem;
 
-      @include typography.relative-font-size(18);
+      @include typography.font-size(18);
+    }
+
+    svg {
+      height: 1.5rem;
+      margin: 0.5rem;
     }
   }
 
@@ -119,11 +132,16 @@
     padding-right: 0;
     padding-left: 0;
 
-    .fa-solid,
-    .fa-brands {
+    .fa-solid {
       width: 2rem;
 
-      @include typography.relative-font-size(18 * 0.9);
+      @include typography.font-size(18 * 0.9);
+      line-height: 2rem;
+    }
+
+    svg {
+      height: 1rem;
+      margin: 0.5rem;
     }
   }
 
@@ -151,33 +169,74 @@
     &:not(.tna-button--plain):hover {
       @include colour.colour-font("font-dark");
 
-      @include colour.colour-background("page-background");
+      @include colour.colour-background("background");
     }
   }
 
-  .tna-background-accent & {
+  .tna-background-accent &,
+  .tna-template--dark-theme .tna-background-accent-light & {
     &:hover {
       @include colour.colour-font("font-dark");
     }
   }
 
-  .tna-background-accent &--accent {
-    @include colour.plain;
+  .tna-background-accent &--accent,
+  .tna-template--dark-theme .tna-background-accent-light &--accent {
+    // @include colour.contrast;
 
-    @include colour.colour-background("page-background");
+    // @include colour.colour-background("button-background");
+    @include colour.colour-background("contrast-button-background");
 
-    @include colour.colour-border("page-background");
+    // @include colour.colour-border("button-background");
+    @include colour.colour-border("contrast-button-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("font-dark");
+      // @include colour.colour-font("button-text");
+      @include colour.colour-font("contrast-button-text");
     }
 
     &:hover {
-      @include colour.colour-font("page-background");
+      // @include colour.colour-font("font-dark");
+      @include colour.colour-font("contrast-font-dark");
 
-      @include colour.colour-background("font-dark");
+      // @include colour.colour-background("background");
+      @include colour.colour-background("contrast-background");
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tna-template--system-theme .tna-background-accent-light & {
+      &:hover {
+        @include colour.colour-font("font-dark");
+      }
+    }
+
+    .tna-template--system-theme .tna-background-accent-light &--accent {
+      // @include colour.contrast;
+
+      @include colour.colour-background("contrast-button-background");
+
+      @include colour.colour-border("contrast-button-background");
+
+      &,
+      &:link,
+      &:visited {
+        @include colour.colour-font("contrast-button-text");
+      }
+
+      &:hover {
+        @include colour.colour-font("contrast-font-dark");
+
+        @include colour.colour-background("contrast-background");
+      }
+    }
+  }
+
+  @include colour.on-forced-colours {
+    &:hover {
+      @include typography.interacted-text-decoration;
     }
   }
 }

@@ -14,5 +14,5 @@ runs:
       run: npm ci
       shell: bash
     - name: Lint
-      run: npm run lint
+      run: npm run test:lint
       shell: bash

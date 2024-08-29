@@ -1,0 +1,146 @@
+{% extends 'nationalarchives/templates/layouts/_prototype-kit.njk' %}
+
+{% from 'nationalarchives/components/breadcrumbs/macro.njk' import tnaBreadcrumbs %}
+{% from 'nationalarchives/components/card/macro.njk' import tnaCard %}
+{% from 'nationalarchives/components/index-grid/macro.njk' import tnaIndexGrid %}
+
+{% set pageTitle = 'Index list page' %}
+{% set theme = 'light' %}
+{% set themeAccent = 'blue' %}
+
+{% block beforeContent %}
+<div class="tna-background-accent">
+  <div class="tna-container">
+    {{ tnaBreadcrumbs({
+      items: [
+        {
+          text: 'Home',
+          href: '/'
+        }
+      ],
+      classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
+    }) }}
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="tna-background-accent tna-!--padding-vertical-xl">
+  <div class="tna-container">
+    <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+      <h1 class="tna-heading-xl">
+        {{ pageTitle }}
+      </h1>
+      <p class="tna-large-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet luctus libero. Cras nec mauris ex. Fusce nisl erat, efficitur sed auctor ornare, varius fermentum arcu.</p>
+    </div>
+  </div>
+</div>
+<section class="tna-section">
+  {{ tnaIndexGrid({
+    title: 'Topics',
+    headingLevel: 0,
+    items: [
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      },
+      {
+        href: '#',
+        title: 'Topic',
+        src: 'https://fakeimg.pl/600x400/e4e4e4/343338?text=Topic%20image&font=museo&font_size=48',
+        alt: 'Topic image',
+        width: 600,
+        height: 400
+      }
+    ],
+    columns: 4,
+    columnsMedium: 3,
+    columnsSmall: 2,
+    columnsTiny: 1
+  }) }}
+</section>
+{% endblock %}

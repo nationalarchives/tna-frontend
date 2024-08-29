@@ -1,0 +1,33 @@
+{
+  "component": "warning",
+  "fixtures": [
+    {
+      "name": "default",
+      "options": {
+        "headingLevel": 2,
+        "body": "Please note this page references hunger strikes and force feeding, which some people may find upsetting."
+      },
+      "html": "<div class=\"tna-warning\"><h2 class=\"tna-warning__heading\"><span class=\"tna-visually-hidden\">Important information</span><span class=\"tna-warning__heading-icon\" aria-hidden=\"true\">!</span></h2><div class=\"tna-warning__body\">Please note this page references hunger strikes and force feeding, which some people may find upsetting.</div></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "headingLevel": 2,
+        "body": "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+        "classes": "warning__test-class"
+      },
+      "html": "<div class=\"tna-warning warning__test-class\"><h2 class=\"tna-warning__heading\"><span class=\"tna-visually-hidden\">Important information</span><span class=\"tna-warning__heading-icon\" aria-hidden=\"true\">!</span></h2><div class=\"tna-warning__body\">Please note this page references hunger strikes and force feeding, which some people may find upsetting.</div></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "headingLevel": 2,
+        "body": "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-warning\" data-testattribute=\"foobar\"><h2 class=\"tna-warning__heading\"><span class=\"tna-visually-hidden\">Important information</span><span class=\"tna-warning__heading-icon\" aria-hidden=\"true\">!</span></h2><div class=\"tna-warning__body\">Please note this page references hunger strikes and force feeding, which some people may find upsetting.</div></div>"
+    }
+  ]
+}

@@ -37,14 +37,16 @@ const $cookieBanner = document.querySelector(
 );
 
 if ($cookieBanner) {
-  new TNAFrontend.CookieBanner($cookieBanner).init();
+  new TNAFrontend.CookieBanner($cookieBanner);
 }
 ```
 
 ### Work with cookies using the `Cookies` class
 
 ```js
-const cookies = new TNAFrontend.Cookies();
+import Cookies from "@nationalarchives/frontend/nationalarchives/lib/cookies.mjs";
+
+const cookies = new Cookies();
 
 if (cookies.isPolicyAccepted("usage")) {
   // Add tracking code
@@ -54,7 +56,9 @@ if (cookies.isPolicyAccepted("usage")) {
 #### Use cookie events
 
 ```js
-const cookies = new TNAFrontend.Cookies();
+import Cookies from "@nationalarchives/frontend/nationalarchives/lib/cookies.mjs";
+
+const cookies = new Cookies();
 
 cookies.on("acceptPolicy", function(policy) {
   if (policy === "usage") {

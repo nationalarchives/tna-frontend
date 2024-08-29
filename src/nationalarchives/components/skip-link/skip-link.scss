@@ -1,5 +1,9 @@
+@use "../../variables/a11y" as a11yVars;
+@use "../../tools/a11y";
 @use "../../tools/colour";
-@use "../../utilities";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-skip-link {
   width: 1px !important;
@@ -9,12 +13,20 @@
 
   display: block !important;
 
+  overflow: hidden !important;
+
   position: absolute !important;
   left: -100vw;
 
-  overflow: hidden !important;
-
   white-space: nowrap !important;
+
+  @include colour.colour-background("button-background", $important: true);
+  @include colour.colour-border(
+    "focus-outline",
+    a11yVars.$focus-outline-width,
+    $important: true
+  );
+  outline: none !important;
 
   clip: rect(0 0 0 0) !important;
   -webkit-clip-path: inset(50%) !important;
@@ -26,24 +38,16 @@
     @include colour.colour-font("button-text", $important: true);
   }
 
-  &:focus {
-    @include colour.colour-background("button-background", $important: true);
-
-    @include colour.colour-border("focus-outline", 0.3125rem, $important: true);
-
-    outline: none !important;
-  }
-
   &:active,
   &:focus {
     width: auto !important;
     height: auto !important;
     margin: inherit !important;
-    padding: 1rem !important;
-
-    position: static !important;
+    padding: spacing.space(1) !important;
 
     overflow: visible !important;
+
+    position: static !important;
 
     white-space: inherit !important;
 

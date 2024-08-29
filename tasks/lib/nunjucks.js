@@ -13,12 +13,8 @@ exports.nunjucks = nunjucks;
 exports.renderNunjucks = (string, params, trimWhitespace = false) =>
   trimWhitespace
     ? nunjucks
-        .renderString(string, {
-          params,
-        })
+        .renderString(string, params)
         .trim()
         .replace(/>\n\s*/g, ">")
         .replace(/\n\s*</g, "<")
-    : nunjucks.renderString(string, {
-        params,
-      });
+    : nunjucks.renderString(string, params);

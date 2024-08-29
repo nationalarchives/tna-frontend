@@ -72,11 +72,10 @@ Accept.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   allowInsecure: true,
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 Accept.play = async ({ canvasElement }) => {
-  const cookies = new window.TNAFrontend.Cookies();
+  const cookies = new Cookies({ newInstance: true });
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
@@ -115,11 +114,10 @@ export const Reject = Template.bind({});
 Reject.args = {
   serviceName: "My service",
   cookiesUrl: "#",
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 Reject.play = async ({ canvasElement }) => {
-  const cookies = new Cookies();
+  const cookies = new Cookies({ newInstance: true });
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
@@ -153,14 +151,16 @@ CustomPolicies.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   policies: "custom",
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 CustomPolicies.parameters = {
   chromatic: { disableSnapshot: true },
 };
 CustomPolicies.play = async ({ args, canvasElement }) => {
-  const cookies = new Cookies(args.policies.split(","));
+  const cookies = new Cookies({
+    extraPolicies: args.policies.split(","),
+    newInstance: true,
+  });
   await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
@@ -189,12 +189,11 @@ Existing.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   allowInsecure: true,
-  style: "contrast",
   classes: "tna-cookie-banner--demo",
 };
 Existing.decorators = [
   (Story) => {
-    const cookies = new Cookies();
+    const cookies = new Cookies({ newInstance: true });
     cookies.set("cookie_preferences_set", true);
     return Story();
   },

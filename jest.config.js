@@ -1,5 +1,5 @@
 module.exports = {
-  modulePathIgnorePatterns: ["/package", "/storybook"],
+  modulePathIgnorePatterns: ["/package/", "/storybook/"],
   testEnvironment: "jsdom",
   transform: {
     "\\.m?js$": "babel-jest",

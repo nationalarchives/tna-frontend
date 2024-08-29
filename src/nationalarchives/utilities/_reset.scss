@@ -1,0 +1,43 @@
+@use "../tools/colour";
+
+* {
+  margin: 0;
+  padding: 0;
+
+  @media (prefers-reduced-motion) {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  @media (prefers-contrast: more) {
+    background-image: none;
+  }
+}
+
+img,
+svg,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+hr {
+  @include colour.colour-border("keyline", 0, solid);
+  border-top-width: 1px;
+}

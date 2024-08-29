@@ -6,6 +6,9 @@
 {%- if params.horizontal -%}
   {%- set containerClasses = containerClasses.concat('tna-card--horizontal') -%}
 {%- endif -%}
+{%- if params.style -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--padded') -%}
+{%- endif -%}
 {%- if params.style == "contrast" -%}
   {%- set containerClasses = containerClasses.concat('tna-background-contrast') -%}
 {%- elseif params.style == "tint" -%}
@@ -15,26 +18,25 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <{{ htmlElement }} class="tna-card{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <div class="tna-card__inner">
   {%- if params.supertitle %}
-    <hgroup class="tna-hgroup-{{ params.headingSize or 'm' }} tna-card__heading">
-      <p class="tna-hgroup__supertitle">{{ params.supertitle }}</p>
-      <h{{ params.headingLevel }} class="tna-hgroup__title">
-        {%- if params.href %}
-        <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.title }}</a>
-        {%- else %}
-        {{ params.title }}
-        {%- endif %}
-      </h{{ params.headingLevel }}>
-    </hgroup>
-  {%- else %}
-    <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'm' }} tna-card__heading">
+  <hgroup class="tna-hgroup-{{ params.headingSize or 'm' }} tna-card__heading">
+    <p class="tna-hgroup__supertitle">{{ params.supertitle }}</p>
+    <h{{ params.headingLevel }} class="tna-hgroup__title">
       {%- if params.href %}
       <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.title }}</a>
       {%- else %}
       {{ params.title }}
       {%- endif %}
     </h{{ params.headingLevel }}>
+  </hgroup>
+  {%- else %}
+  <h{{ params.headingLevel }} class="tna-heading-{{ params.headingSize or 'm' }} tna-card__heading">
+    {%- if params.href %}
+    <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.title }}</a>
+    {%- else %}
+    {{ params.title }}
+    {%- endif %}
+  </h{{ params.headingLevel }}>
   {%- endif %}
   {%- if params.imageSrc %}
     {%- if params.href and (not params.fullAreaClick or params.actions) %}
@@ -62,6 +64,7 @@
     </div>
     {%- endif %}
   {%- endif %}
+  {%- if params.meta or params.text or params.body %}
     <div class="tna-card__body">
     {%- if params.meta %}
       <dl class="tna-card__meta tna-dl-chips{{ '' if params.accentMeta else ' tna-dl-chips--plain' }}">
@@ -84,6 +87,7 @@
       {{ params.body | safe }}
     {%- endif %}
     </div>
+  {%- endif %}
   {%- if params.actions %}
     <div class="tna-card__actions">
     {%- for item in params.actions %}
@@ -93,5 +97,4 @@
     {%- endfor %}
     </div>
   {%- endif %}
-  </div>
 </{{ htmlElement }}>

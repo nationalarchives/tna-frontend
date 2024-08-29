@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed the top and bottom padding of the breadcrumbs component
 - Change the order of the HTML in hero components to put the caption below the image
+- Refactored the card component to use CSS grid
 
 ### Deprecated
 ### Removed

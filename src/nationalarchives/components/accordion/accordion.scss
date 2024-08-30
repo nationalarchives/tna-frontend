@@ -97,6 +97,10 @@
         border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
       }
     }
+
+    &:active {
+      z-index: 1;
+    }
   }
 
   &__content {

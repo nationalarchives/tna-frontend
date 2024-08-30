@@ -21,17 +21,6 @@ $relative-1rem-px: 16; // 16px = 1rem
  */
 $use-local-fonts: false !default;
 
-/*
- * ------------------------------------------
- * When the $use-local-fonts var and this are
- * both set to true import the required fonts
- * from Google with an @import; if false then
- * a separate <link> element for the font CSS
- * is required in your app
- * ------------------------------------------
- */
-$import-google-fonts: true !default;
-
 $body-font-size-px: 18 !default;
 $body-font-size-px-mobile: 17 !default;
 $body-line-height: 1.75 !default;

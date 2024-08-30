@@ -6,6 +6,15 @@
 {%- if params.horizontal -%}
   {%- set containerClasses = containerClasses.concat('tna-card--horizontal') -%}
 {%- endif -%}
+{%- if params.horizontalOnSmall -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--horizontal-on-small') -%}
+{%- endif -%}
+{%- if params.horizontalFlipped -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--flipped') -%}
+{%- endif -%}
+{%- if params.horizontalSmallImage -%}
+  {%- set containerClasses = containerClasses.concat('tna-card--horizontal-small-image') -%}
+{%- endif -%}
 {%- if params.style -%}
   {%- set containerClasses = containerClasses.concat('tna-card--padded') -%}
 {%- endif -%}
@@ -20,7 +29,7 @@
 <{{ htmlElement }} class="tna-card{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.supertitle %}
   <hgroup class="tna-hgroup-{{ params.headingSize or 'm' }} tna-card__heading">
-    <p class="tna-hgroup__supertitle">{{ params.supertitle }}</p>
+    <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
     <h{{ params.headingLevel }} class="tna-hgroup__title">
       {%- if params.href %}
       <a href="{{ params.href }}" class="tna-card__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.title }}</a>

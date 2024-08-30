@@ -21,6 +21,17 @@
       "html": "<article class=\"tna-card\"><hgroup class=\"tna-hgroup-m tna-card__heading\"><p class=\"tna-hgroup__supertitle\">Card supertitle</p><h3 class=\"tna-hgroup__title\">Card title</h3></hgroup><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
+      "name": "with plain supertitle",
+      "options": {
+        "supertitle": "Card supertitle",
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "plainSupertitle": true
+      },
+      "html": "<article class=\"tna-card\"><hgroup class=\"tna-hgroup-m tna-card__heading\"><p class=\"tna-hgroup__supertitle tna-hgroup__supertitle--plain\">Card supertitle</p><h3 class=\"tna-hgroup__title\">Card title</h3></hgroup><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+    },
+    {
       "name": "heading size",
       "options": {
         "title": "Card title",
@@ -308,6 +319,19 @@
         "horizontal": true
       },
       "html": "<article class=\"tna-card tna-card--horizontal\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+    },
+    {
+      "name": "horizontal card with other horizontal options",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "horizontal": true,
+        "horizontalOnSmall": true,
+        "horizontalFlipped": true,
+        "horizontalSmallImage": true
+      },
+      "html": "<article class=\"tna-card tna-card--horizontal tna-card--horizontal-on-small tna-card--flipped tna-card--horizontal-small-image\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "fully clickable",

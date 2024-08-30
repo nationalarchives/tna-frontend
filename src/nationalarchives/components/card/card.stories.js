@@ -4,6 +4,7 @@ import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   supertitle: { control: "text" },
+  plainSupertitle: { control: "boolean" },
   title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
   headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
@@ -29,6 +30,9 @@ const argTypes = {
   actions: { control: "object" },
   fullAreaClick: { control: "boolean" },
   horizontal: { control: "boolean" },
+  horizontalOnSmall: { control: "boolean" },
+  horizontalFlipped: { control: "boolean" },
+  horizontalSmallImage: { control: "boolean" },
   style: {
     control: "inline-radio",
     options: ["none", "contrast", "tint", "accent"],
@@ -53,6 +57,7 @@ export default {
 
 const Template = ({
   supertitle,
+  plainSupertitle,
   title,
   headingLevel,
   headingSize,
@@ -75,6 +80,9 @@ const Template = ({
   actions,
   fullAreaClick,
   horizontal,
+  horizontalOnSmall,
+  horizontalFlipped,
+  horizontalSmallImage,
   style,
   htmlElement,
   classes,
@@ -83,6 +91,7 @@ const Template = ({
   Card({
     params: {
       supertitle,
+      plainSupertitle,
       title,
       headingLevel,
       headingSize,
@@ -105,6 +114,9 @@ const Template = ({
       actions,
       fullAreaClick,
       horizontal,
+      horizontalOnSmall,
+      horizontalFlipped,
+      horizontalSmallImage,
       style,
       htmlElement,
       classes,
@@ -321,10 +333,10 @@ HorizontalMinimal.args = {
 export const HorizontalMobile = Template.bind({});
 HorizontalMobile.parameters = {
   viewport: {
-    defaultViewport: "small",
+    defaultViewport: "tiny",
   },
   chromatic: {
-    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+    viewports: [customViewports["tiny"].styles.width.replace(/px$/, "")],
   },
 };
 HorizontalMobile.args = {
@@ -344,10 +356,10 @@ HorizontalMobile.args = {
 export const HorizontalContrastMobile = Template.bind({});
 HorizontalContrastMobile.parameters = {
   viewport: {
-    defaultViewport: "small",
+    defaultViewport: "tiny",
   },
   chromatic: {
-    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+    viewports: [customViewports["tiny"].styles.width.replace(/px$/, "")],
   },
 };
 HorizontalContrastMobile.args = {

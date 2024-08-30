@@ -155,12 +155,6 @@
     ]
   },
   {
-    "name": "accentMeta",
-    "type": "boolean",
-    "required": false,
-    "description": "If true, meta tags adopt an accented style."
-  },
-  {
     "name": "body",
     "type": "string",
     "required": false,
@@ -223,15 +217,46 @@
     "description": "If true, change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices."
   },
   {
+    "name": "horizontalOnSmall",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, use a horizontal layout on small devices."
+  },
+  {
+    "name": "horizontalFlipped",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, place the image on the right when using horizontal layouts."
+  },
+  {
+    "name": "horizontalSmallImage",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, use a smaller image when using horizontal layouts."
+  },
+  {
     "name": "style",
     "type": "string",
     "required": false,
     "description": "The style of card to use which can be either `contrast` for an inverted card, `tint` for a tinted one or `accent` for a card that matches the page’s accent colour."
   },
   {
+    "name": "plainSupertitle",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, remove the accent or contrast colour from the card supertitle."
+  },
+  {
+    "name": "accentMeta",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, meta tags adopt an accented style."
+  },
+  {
     "name": "htmlElement",
     "type": "string",
     "required": false,
+    "default": "article",
     "description": "HTML element of the card."
   },
   {

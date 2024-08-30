@@ -64,7 +64,7 @@
     </div>
     {%- endif %}
   {%- endif %}
-  {%- if params.meta or params.text or params.body %}
+  {%- if params.meta or params.text or params.body or params.actions %}
     <div class="tna-card__body">
     {%- if params.meta %}
       <dl class="tna-card__meta tna-dl-chips{{ '' if params.accentMeta else ' tna-dl-chips--plain' }}">
@@ -86,15 +86,15 @@
     {%- else %}
       {{ params.body | safe }}
     {%- endif %}
-    </div>
-  {%- endif %}
-  {%- if params.actions %}
-    <div class="tna-card__actions">
-    {%- for item in params.actions %}
-      <a href="{{ item.href }}" class="tna-card__action{% if item.classes %} {{ item.classes }}{% endif %}" {%- if item.title %} title="{{ item.title }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-        {{ item.text }}
-      </a>
-    {%- endfor %}
+    {%- if params.actions %}
+      <div class="tna-card__actions">
+      {%- for item in params.actions %}
+        <a href="{{ item.href }}" class="tna-card__action{% if item.classes %} {{ item.classes }}{% endif %}" {%- if item.title %} title="{{ item.title }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+          {{ item.text }}
+        </a>
+      {%- endfor %}
+      </div>
+    {%- endif %}
     </div>
   {%- endif %}
 </{{ htmlElement }}>

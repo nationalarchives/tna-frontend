@@ -178,7 +178,7 @@
           }
         ]
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\">Card action</a></div></article>"
+      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\">Card action</a></div></div></article>"
     },
     {
       "name": "with actions with titles",
@@ -194,7 +194,7 @@
           }
         ]
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the action\">Card action</a></div></article>"
+      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the action\">Card action</a></div></div></article>"
     },
     {
       "name": "with actions with classes",
@@ -210,7 +210,7 @@
           }
         ]
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action card__test-class\">Card action</a></div></article>"
+      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action card__test-class\">Card action</a></div></div></article>"
     },
     {
       "name": "with actions with attributes",
@@ -228,7 +228,7 @@
           }
         ]
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" data-testattribute=\"foobar\">Card action</a></div></article>"
+      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" data-testattribute=\"foobar\">Card action</a></div></div></article>"
     },
     {
       "name": "with a label",
@@ -345,7 +345,7 @@
           }
         ]
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p></div><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\">Card action</a></div></article>"
+      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\"><a href=\"#\" class=\"tna-card__heading-link\">Card title</a></h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\">Card action</a></div></div></article>"
     },
     {
       "name": "with a different element",

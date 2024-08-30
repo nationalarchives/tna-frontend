@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.9...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.10...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.10](https://github.com/nationalarchives/tna-frontend/compare/v0.2.9...v0.2.10) - 2024-08-30
 
 ### Added
 
@@ -21,14 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change the order of the HTML in hero components to put the caption below the image
 - Refactored the card component to use CSS grid
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Changed conflicting GA4 window object instance in GA4 class from `TNAFrontendAnalytics` to `TNAFrontendAnalyticsGA4`
 - Adjusted margin bottom of narrow, shifted hero components
-
-### Security
 
 ## [0.2.9](https://github.com/nationalarchives/tna-frontend/compare/v0.2.8...v0.2.9) - 2024-08-21
 

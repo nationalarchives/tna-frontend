@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Use `aria-multiselectable` attribute for accordions that can have multiple items open
+
 ### Security
 
 ## [0.2.11](https://github.com/nationalarchives/tna-frontend/compare/v0.2.10...v0.2.11) - 2024-08-30

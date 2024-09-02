@@ -54,7 +54,7 @@ a {
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     @include typography.interacted-text-decoration;
   }
@@ -86,7 +86,8 @@ small {
   @at-root #{selector.unify("a", &)} {
     text-decoration: underline;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include typography.interacted-text-decoration;
 
       .fa-solid {
@@ -465,7 +466,8 @@ small {
   a {
     text-decoration-thickness: 1.5px;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include typography.interacted-text-decoration;
     }
   }

@@ -51,7 +51,8 @@
       @include colour.colour-font("font-base");
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include colour.tint;
     }
   }
@@ -60,7 +61,8 @@
     &,
     &:link,
     &:visited,
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include colour.accent;
       @include colour.colour-border("background");
     }

@@ -53,7 +53,8 @@
       border-style: solid;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include typography.interacted-text-decoration;
     }
   }

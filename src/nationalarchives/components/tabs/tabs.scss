@@ -88,7 +88,8 @@
     @include typography.font-size(16);
   }
 
-  &__button:hover &__button-inner {
+  &__button:hover &__button-inner,
+  &__button:focus-visible &__button-inner {
     @include typography.interacted-text-decoration;
   }
 
@@ -123,6 +124,7 @@
 
   &--tint#{&}--interactive &__button[aria-selected="true"],
   &--tint#{&}--interactive &__button:hover &__button-inner,
+  &--tint#{&}--interactive &__button:focus-visible &__button-inner,
   &--tint#{&}--interactive &__items {
     @include colour.tint;
   }

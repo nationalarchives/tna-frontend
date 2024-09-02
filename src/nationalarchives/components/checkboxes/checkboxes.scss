@@ -146,6 +146,7 @@
     }
   }
 
+  input:focus + &__item-label,
   &__item:hover &__item-label {
     &::before {
       box-shadow: 0 0 0 0.125rem var(--input-border);

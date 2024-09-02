@@ -48,7 +48,8 @@
       @include colour.colour-font("font-base");
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include colour.colour-font("font-dark");
     }
   }
@@ -68,7 +69,8 @@
 
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: inherit;
       @include typography.interacted-text-decoration;
 

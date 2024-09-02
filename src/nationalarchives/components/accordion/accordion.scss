@@ -83,7 +83,8 @@
       border-style: solid;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include typography.interacted-text-decoration;
       @include colour.colour-background("background-tint");
 

@@ -203,7 +203,8 @@ hr {
       display: flex !important;
       @include colour.colour-font("font-light", true);
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         @include colour.colour-font("font-base", true);
       }
     }
@@ -256,6 +257,7 @@ hr {
     text-decoration: underline !important;
 
     &:hover,
+    &:focus-visible,
     &:active {
       text-decoration-thickness: 3.5px !important;
     }
@@ -282,6 +284,7 @@ hr {
     }
 
     &:hover,
+    &:focus-visible,
     &:active {
       @include typography.interacted-text-decoration;
 

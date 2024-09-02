@@ -64,7 +64,8 @@
   &__item-title {
     text-decoration: underline;
 
-    .tna-index-grid__item:hover & {
+    .tna-index-grid__item:hover &,
+    .tna-index-grid__item:focus-visible & {
       &,
       &:link,
       &:visited {

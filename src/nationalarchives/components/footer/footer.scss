@@ -94,7 +94,8 @@
         &-text {
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
           @include colour.colour-border("link", 4px, solid, bottom);
         }
       }
@@ -133,7 +134,8 @@
 
           text-decoration: none;
 
-          &:hover {
+          &:hover,
+          &:focus-visible {
             @include typography.interacted-text-decoration;
           }
 

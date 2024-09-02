@@ -68,7 +68,8 @@ $shift-units: 5 !default;
 
     @include colour.colour-border("background", 4px);
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @include colour.colour-font("background");
 
       @include colour.colour-background("font-base");
@@ -144,7 +145,8 @@ $shift-units: 5 !default;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       &::before,
       &::after {
         height: 0.25rem;

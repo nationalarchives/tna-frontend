@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Use `aria-multiselectable` attribute for accordions that can have multiple items open
+- Increase thickness of underline for focused links for when the focus indicator doesn't provide sufficient contrast with the background
 
 ### Security
 

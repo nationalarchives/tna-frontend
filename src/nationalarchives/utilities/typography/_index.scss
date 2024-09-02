@@ -54,6 +54,7 @@ a {
   }
 
   &:hover,
+  &:focus,
   &:active {
     @include typography.interacted-text-decoration;
   }

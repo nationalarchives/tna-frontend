@@ -6,27 +6,29 @@
     {%- for item in params.items %}
     <li class="tna-files-list__item">
       <h{{ params.itemHeadingLevel }} class="tna-files-list__item-title tna-heading-s">
-        <a href="{{ item.href }}" class="tna-files-list__link">{{ item.text }}</a>
+        <a href="{{ item.href }}" class="tna-files-list__link" aria-describedby="{{ item.id }}">{{ item.text }}</a>
       </h{{ params.itemHeadingLevel }}>
-      <dl class="tna-dl-chips tna-dl-chips--plain tna-files-list__item-meta">
-        <dt>File type</dt>
-        <dd>
-          <span class="tna-dl-chips__item">{{ item.fileType }}</span>
-        </dd>
-        <dt>File size</dt>
-        <dd>
-          <span class="tna-dl-chips__item">{{ item.fileSize }}</span>
-        </dd>
-        {%- if item.fileExtent %}
-        <dt>Extent</dt>
-        <dd>
-          <span class="tna-dl-chips__item">{{ item.fileExtent }}</span>
-        </dd>
+      <div class="tna-files-list__item-body" id="{{ item.id }}">
+        <dl class="tna-dl-chips tna-dl-chips--plain tna-files-list__item-meta">
+          <dt>File type</dt>
+          <dd>
+            <span class="tna-dl-chips__item">{{ item.fileType }}</span>
+          </dd>
+          <dt>File size</dt>
+          <dd>
+            <span class="tna-dl-chips__item">{{ item.fileSize }}</span>
+          </dd>
+          {%- if item.fileExtent %}
+          <dt>Extent</dt>
+          <dd>
+            <span class="tna-dl-chips__item">{{ item.fileExtent }}</span>
+          </dd>
+          {%- endif %}
+        </dl>
+        {%- if item.description %}
+        <p class="tna-files-list__item-description">{{ item.description }}</p>
         {%- endif %}
-      </dl>
-      {%- if item.description %}
-      <p class="tna-files-list__item-description">{{ item.description }}</p>
-      {%- endif %}
+      </div>
     </li>
     {%- endfor %}
   </ul>

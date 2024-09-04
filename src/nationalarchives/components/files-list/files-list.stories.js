@@ -28,6 +28,7 @@ export const Default = Template.bind({});
 Default.args = {
   items: [
     {
+      id: "file-1",
       text: "Preservation policy part 1",
       href: "#",
       fileType: "PDF",
@@ -37,6 +38,7 @@ Default.args = {
         "The principles according to which The National Archives will preserve and care for our archival collections.",
     },
     {
+      id: "file-2",
       text: "Preservation policy part 2",
       href: "#",
       fileType: "PDF",
@@ -45,6 +47,7 @@ Default.args = {
         "The principles according to which The National Archives will preserve and care for our archival collections.",
     },
     {
+      id: "file-3",
       text: "Preservation policy part 3",
       href: "#",
       fileType: "PDF",

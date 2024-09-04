@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.11...HEAD)
 
 ### Added
+
+- Items in a file list now require an ID so that an `aria-describedby` attribute can be used to describe the file details
+
 ### Changed
 
 - Updated default text on cookie banner hide buttons

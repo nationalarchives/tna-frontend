@@ -12,6 +12,12 @@
     "description": "",
     "params": [
       {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
         "name": "title",
         "type": "string",
         "required": true,

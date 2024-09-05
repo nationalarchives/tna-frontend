@@ -58,8 +58,12 @@
    * Sections
    * ------------------------------------------
    */
+  &--sections &__items {
+    line-height: 1.35;
+  }
+
   &--sections &__link {
-    padding: spacing.space(0.125) spacing.space(0.5);
+    padding: spacing.space(0.25) spacing.space(0.5);
 
     display: block;
   }

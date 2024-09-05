@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added missing underline to focused buttons using on the `<button>` element
+- Links around card images have been hidden from assistive technologies
 
 ### Security
 

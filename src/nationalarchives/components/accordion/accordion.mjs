@@ -9,7 +9,7 @@ export class Accordion {
     }
 
     this.allowMultipleItemsOpen =
-      this.$module.getAttribute("aria-multiselectable") === "true";
+      this.$module.dataset["multiselectable"] === "true";
 
     this.$items.forEach(($item) => this.initItem($item));
     this.initState();

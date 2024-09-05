@@ -22,12 +22,12 @@
 
   &__items {
     margin: 0;
-    padding: 0 0 spacing.space(1) spacing.space(1);
+    padding: 0 0 0 spacing.space(1);
 
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
-    gap: spacing.space(1) spacing.space(3);
+    gap: spacing.space(1.5) spacing.space(4);
     flex: 1;
 
     list-style: none;
@@ -48,13 +48,16 @@
   &__item-body {
   }
 
+  &__item-meta,
+  &__item-description {
+    margin-top: spacing.space(0.25);
+  }
+
   &__item-meta {
     margin-top: 0;
   }
 
   &__item-description {
-    margin-top: spacing.space(0.25);
-
     @include typography.font-size(16);
   }
 

@@ -5,7 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.11...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.12...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+
+### Security
+
+## [0.2.12](https://github.com/nationalarchives/tna-frontend/compare/v0.2.11...v0.2.12) - 2024-09-05
 
 ### Added
 
@@ -17,15 +27,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pagination arrows are now embedded SVGs rather than requiring the Font Awesome icons CSS
 - "Previous" and "Next" text in pagination buttons is no longer hidden on tiny devices
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Increase thickness of underline for focused elements for when the focus indicator doesn't provide sufficient contrast with the background
 - Don't add a `ga-disable-` variable to the `window` and set a disable cookie without having a GA4 ID
 - Warning text colour on dark themes fixed
-
-### Security
+- Added missing Google Fonts file in prototype kit templates
 
 ## [0.2.11](https://github.com/nationalarchives/tna-frontend/compare/v0.2.10...v0.2.11) - 2024-08-30
 

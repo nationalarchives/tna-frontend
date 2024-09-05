@@ -259,12 +259,14 @@ class GA4 extends EventTracker {
     } = options;
     super({ prefix, addTrackingCode });
     window.TNAFrontendAnalyticsGA4 = this;
-    this.gTagId = id;
-    this.ga4Disable = `ga-disable-${this.gTagId}`;
     window.dataLayer = window.dataLayer || [];
-    if (!this.cookies.isPolicyAccepted("usage")) {
-      window[this.ga4Disable] = true;
-      this.cookies.set(this.ga4Disable, "true");
+    if (id) {
+      this.gTagId = id;
+      this.ga4Disable = `ga-disable-${this.gTagId}`;
+      if (!this.cookies.isPolicyAccepted("usage")) {
+        window[this.ga4Disable] = true;
+        this.cookies.set(this.ga4Disable, "true");
+      }
     }
     this.start(initAll);
   }

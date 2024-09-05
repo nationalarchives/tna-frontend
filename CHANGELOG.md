@@ -21,8 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
-- Use `aria-multiselectable` attribute for accordions that can have multiple items open
 - Increase thickness of underline for focused elements for when the focus indicator doesn't provide sufficient contrast with the background
+- Don't add a `ga-disable-` variable to the `window` and set a disable cookie without having a GA4 ID
+- Warning text colour on dark themes fixed
 
 ### Security
 

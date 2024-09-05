@@ -12,6 +12,7 @@
   gap: spacing.space(1);
 
   @include colour.accent-light;
+  @include colour.always-light;
 
   @include colour.colour-background-brand("cream");
 

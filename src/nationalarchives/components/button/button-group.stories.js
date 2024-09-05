@@ -102,6 +102,12 @@ Group.args = {
       buttonElement: true,
       classes: "tna-button--demo",
     },
+    {
+      text: "Plain button",
+      plain: true,
+      buttonElement: true,
+      classes: "tna-button--demo",
+    },
   ],
 };
 

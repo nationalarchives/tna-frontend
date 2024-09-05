@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
+- Added missing underline to focused buttons using on the `<button>` element
+
 ### Security
 
 ## [0.2.12](https://github.com/nationalarchives/tna-frontend/compare/v0.2.11...v0.2.12) - 2024-09-05

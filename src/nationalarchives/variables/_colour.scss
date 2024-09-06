@@ -3,6 +3,7 @@
 
 $colour-palette-brand: (
   "black": #010101,
+  "dark-grey": #26262a,
   "grey": #8c9694,
   "light-grey": #d9d9d6,
   "white": #fff,
@@ -40,11 +41,6 @@ $colour-palette-brand: (
   @return hex-to-rgb(map.get($colour-palette-brand, $colour), $opacity);
 }
 
-$dark-grey: #26262a !default;
-$base-font: #343338 !default;
-$link-colour: #005fa3 !default;
-$link-colour-visited: #4c2c92 !default;
-
 /*
 =========================================
 LIGHT THEME (DEFAULT)
@@ -53,15 +49,15 @@ LIGHT THEME (DEFAULT)
 $colour-palette-default: (
   "background": #f4f4f4,
   "background-tint": brand-colour("light-grey"),
-  "font-base": $base-font,
+  "font-base": #343338,
   "font-dark": brand-colour("black"),
   "font-light": brand-colour("black", 0.58),
-  "icon-light": hex-to-rgb($base-font, 0.45),
-  "link": $link-colour,
-  "link-visited": $link-colour-visited,
+  "icon-light": hex-to-rgb(#343338, 0.45),
+  "link": #005fa3,
+  "link-visited": #634abb,
   "focus-outline": brand-colour("blue"),
-  "keyline": hex-to-rgb($dark-grey, 0.25),
-  "keyline-dark": $dark-grey,
+  "keyline": brand-colour("dark-grey", 0.25),
+  "keyline-dark": brand-colour("dark-grey"),
   "input-foreground": brand-colour("black"),
   "input-background": brand-colour("white"),
   "input-border": brand-colour("black"),
@@ -151,8 +147,8 @@ $colour-palette-high-contrast: map.merge(
     "font-base": brand-colour("black"),
     "font-light": brand-colour("black"),
     "icon-light": brand-colour("black", 0.8),
-    "link": #34d,
-    "link-visited": #848,
+    "link": #202fbc,
+    "link-visited": #6a286b,
     "focus-outline": brand-colour("orange"),
     "keyline": brand-colour("black", 0.8),
     "keyline-dark": brand-colour("black"),
@@ -161,6 +157,7 @@ $colour-palette-high-contrast: map.merge(
     "contrast-font-light": brand-colour("white", 0.8),
     "contrast-link-visited": #a8f,
     "accent-font-light": brand-colour("black", 0.8),
+    "button-accented-background": #8f9997,
   )
 ) !default;
 
@@ -176,6 +173,8 @@ $colour-palette-high-contrast-dark: map.merge(
     "font-base": brand-colour("white"),
     "font-light": brand-colour("white"),
     "icon-light": brand-colour("white", 0.8),
+    "link": #8fc7ff,
+    "link-visited": #ccb8ff,
     "keyline": brand-colour("white", 0.8),
     "keyline-dark": brand-colour("white"),
     "form-error-border": #ff6b6b,
@@ -185,5 +184,6 @@ $colour-palette-high-contrast-dark: map.merge(
     "contrast-font-light": brand-colour("white", 0.8),
     "contrast-link-visited": #a8f,
     "accent-font-light": brand-colour("black", 0.8),
+    "button-accented-background": #8f9997,
   )
 ) !default;

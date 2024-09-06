@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Removed customisable colour variables `$dark-grey`, `$base-font`, `$link-colour` and `$link-colour-visited`
+
 ### Fixed
 
 - Added missing underline to focused buttons using on the `<button>` element

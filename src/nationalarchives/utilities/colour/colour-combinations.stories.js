@@ -68,6 +68,8 @@ const Template = ({ theme }) => {
               <li>Alpha</li>
             </ul>
           </div>
+          <hr class="tna-!--margin-top-s">
+          <hr class="tna-hr-dark tna-!--margin-top-xs">
           <dl class="tna-dl-chips">
             <dt>Published</dt>
             <dd>

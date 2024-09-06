@@ -40,4 +40,8 @@ textarea {
 hr {
   @include colour.colour-border("keyline", 0, solid);
   border-top-width: 1px;
+
+  &.tna-hr-dark {
+    @include colour.colour-border("keyline-dark");
+  }
 }

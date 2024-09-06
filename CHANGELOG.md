@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.12...HEAD)
 
 ### Added
+
+- Add the option for a darker `<hr>` element with `tna-hr-dark`
+
 ### Changed
 
 - Added an outline to focused cards with the full click option enabled

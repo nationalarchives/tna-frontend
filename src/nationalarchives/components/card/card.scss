@@ -1,4 +1,6 @@
 @use "sass:math";
+@use "../../variables/borders";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -85,6 +87,29 @@
       position: absolute;
       inset: 0;
       z-index: 3;
+
+      border-radius: 0.1px;
+    }
+
+    &:focus-visible,
+    &:active {
+      outline: none;
+
+      &::before {
+        @include a11y.focus-outline;
+      }
+    }
+
+    &:active {
+      &::before {
+        @include a11y.active-outline;
+      }
+    }
+  }
+
+  &--full-click:not(:has(&__image-container)) &__heading-link {
+    &::before {
+      top: -#{borders.$thick-border-width};
     }
   }
 

@@ -53,9 +53,7 @@
     margin-top: spacing.space(0.25);
   }
 
-  &__item-meta {
-    margin-top: 0;
-  }
+  &__item-meta {}
 
   &__item-description {
     @include typography.font-size(16);

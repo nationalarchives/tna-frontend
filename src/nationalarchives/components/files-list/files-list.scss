@@ -48,14 +48,13 @@
   &__item-body {
   }
 
-  &__item-meta,
-  &__item-description {
-    margin-top: spacing.space(0.25);
+  &__item-meta {
+    margin-top: spacing.space(0.5);
   }
 
-  &__item-meta {}
-
   &__item-description {
+    margin-top: spacing.space(0.25);
+
     @include typography.font-size(16);
   }
 

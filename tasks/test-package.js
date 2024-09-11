@@ -351,3 +351,29 @@ checkForClasses.forEach((cssClass) => {
     throw new Error("CSS test failed");
   }
 });
+
+console.log("\n");
+
+console.log(`Testing file sizes`);
+const filesToCheckSize = [
+  "all.css",
+  "font-awesome.css",
+  "ie.css",
+  "print.css",
+  "prototype-kit.css",
+  "all.js",
+  "analytics.js",
+  "all+analytics.js",
+];
+const longestFilenameToCheckSize = filesToCheckSize.reduce(
+  (longest, file) => (file.length > longest ? file.length : longest),
+  0,
+);
+console.log(`${"FILE".padEnd(longestFilenameToCheckSize)}   SIZE`);
+console.log(`${"".padEnd(longestFilenameToCheckSize, "-")}---------`);
+filesToCheckSize.forEach(async (file) => {
+  const fileStats = await fs.promises.stat(`package/nationalarchives/${file}`);
+  console.log(
+    `${file.padEnd(longestFilenameToCheckSize)}   ${Math.round(fileStats.size / 1000)} KB`,
+  );
+});

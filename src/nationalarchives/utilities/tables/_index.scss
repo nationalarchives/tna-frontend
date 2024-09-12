@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:selector";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/grid";
 @use "../../tools/media";
@@ -100,6 +101,14 @@
 
   position: relative;
   left: -#{grid.gutter-width()};
+
+  &[tabindex="0"] {
+    border-radius: 0.1px;
+
+    // &:active {
+    //   @include a11y.focus-outline;
+    // }
+  }
 
   @include media.on-tiny {
     padding-right: grid.gutter-width-tiny();

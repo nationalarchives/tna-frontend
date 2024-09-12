@@ -23,6 +23,15 @@
     caption-side: bottom;
 
     @include typography.font-size(16);
+
+    &--scroll {
+      min-width: calc(320px - #{grid.gutter-width()});
+      max-width: calc(100vw - #{grid.gutter-width()});
+
+      &::after {
+        content: " (scroll to see more)";
+      }
+    }
   }
 
   &__head {

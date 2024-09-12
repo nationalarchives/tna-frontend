@@ -10,10 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add the option for a darker `<hr>` element with `tna-hr-dark`
+- Tables needing horizontal scrolling can be focused on and recieve a "(scroll to see more)" note added to their caption
 
 ### Changed
 
 - Added an outline to focused cards with the full click option enabled
+- `touched`, `tabbed` and `clicked` template modifiers added as part of `initAll()`
+- Print modifiers moved into `initAll()`
 
 ### Deprecated
 ### Removed

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.12...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.13...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.13](https://github.com/nationalarchives/tna-frontend/compare/v0.2.12...v0.2.13) - 2024-09-13
 
 ### Added
 
@@ -18,7 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `touched`, `tabbed` and `clicked` template modifiers added as part of `initAll()`
 - Print modifiers moved into `initAll()`
 
-### Deprecated
 ### Removed
 
 - Removed customisable colour variables `$dark-grey`, `$base-font`, `$link-colour` and `$link-colour-visited`
@@ -28,8 +36,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added missing underline to focused buttons using on the `<button>` element
 - Links around card images have been hidden from assistive technologies
-
-### Security
 
 ## [0.2.12](https://github.com/nationalarchives/tna-frontend/compare/v0.2.11...v0.2.12) - 2024-09-05
 

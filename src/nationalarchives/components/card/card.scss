@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../variables/a11y" as a11yVariables;
 @use "../../variables/borders";
 @use "../../tools/a11y";
 @use "../../tools/colour";
@@ -78,6 +79,20 @@
 
   &__heading {
     order: 2;
+  }
+
+  &--full-click {
+    border-radius: 0.1px;
+
+    &:hover {
+      @include colour.colour-outline("keyline", 1px, solid);
+      outline-offset: a11yVariables.$focus-outline-width - 1px;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
   }
 
   &--full-click &__heading-link {

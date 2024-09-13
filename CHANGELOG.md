@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added the option for a darker `<hr>` element with `tna-hr-dark`
-- Tables needing horizontal scrolling can be focused on and recieve a "(scroll to see more)" note added to their caption
+- Tables needing horizontal scrolling can be focused on and receive a "(scroll to see more)" note added to their caption
 
 ### Changed
 

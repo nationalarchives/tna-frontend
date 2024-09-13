@@ -16,12 +16,6 @@
         "type": "string",
         "required": true,
         "description": ""
-      },
-      {
-        "name": "attributes",
-        "type": "object",
-        "required": false,
-        "description": ""
       }
     ]
   },
@@ -60,12 +54,6 @@
         "type": "boolean",
         "required": false,
         "description": "Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored."
-      },
-      {
-        "name": "attributes",
-        "type": "object",
-        "required": false,
-        "description": ""
       }
     ]
   },
@@ -85,12 +73,6 @@
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
-      },
-      {
-        "name": "attributes",
-        "type": "object",
-        "required": false,
         "description": ""
       }
     ]

@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed customisable colour variables `$dark-grey`, `$base-font`, `$link-colour` and `$link-colour-visited`
+- Removed the ability to add attributes to items, previous buttons and next buttons in pagination components
 
 ### Fixed
 

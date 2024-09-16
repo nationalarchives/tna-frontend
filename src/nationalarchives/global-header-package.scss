@@ -275,12 +275,9 @@ hr {
     text-decoration-thickness: 1.5px;
 
     &,
-    &:link {
-      @include colour.colour-font("link", true);
-    }
-
+    &:link,
     &:visited {
-      @include colour.colour-font("link-visited");
+      @include colour.colour-font("font-base", true);
     }
 
     &:hover,
@@ -305,7 +302,7 @@ hr {
 
     &.tna-link--no-visited-state {
       &:visited {
-        @include colour.colour-font("link");
+        @include colour.colour-font("font-base");
       }
     }
   }

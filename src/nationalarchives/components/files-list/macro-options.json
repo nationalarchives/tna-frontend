@@ -56,6 +56,12 @@
     ]
   },
   {
+    "name": "fullAreaClick",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, allow users to click anywhere on one of the files to follow the link."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

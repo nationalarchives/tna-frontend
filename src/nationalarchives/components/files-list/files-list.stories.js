@@ -4,6 +4,7 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
   items: { control: "object" },
+  fullAreaClick: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -19,13 +20,20 @@ export default {
   argTypes,
 };
 
-const Template = ({ itemHeadingLevel, items, classes, attributes }) =>
+const Template = ({
+  itemHeadingLevel,
+  items,
+  fullAreaClick,
+  classes,
+  attributes,
+}) =>
   Files({
-    params: { itemHeadingLevel, items, classes, attributes },
+    params: { itemHeadingLevel, items, fullAreaClick, classes, attributes },
   });
 
 export const Default = Template.bind({});
 Default.args = {
+  itemHeadingLevel: 3,
   items: [
     {
       id: "file-1",

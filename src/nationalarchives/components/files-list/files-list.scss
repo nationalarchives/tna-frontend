@@ -1,3 +1,4 @@
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -22,12 +23,11 @@
 
   &__items {
     margin: 0;
-    padding: 0 0 0 spacing.space(1);
+    padding: 0;
 
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
-    gap: spacing.space(1.5) spacing.space(4);
+    gap: spacing.space(1);
     flex: 1;
 
     list-style: none;
@@ -37,9 +37,51 @@
   }
 
   &__item {
+    padding: 0 0 0 spacing.space(1);
+
+    position: relative;
   }
 
   &__link {
+  }
+
+  &--full-click {
+    border-radius: 0.1px;
+  }
+
+  &--full-click &__link {
+    &::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+
+      border-radius: 0.1px;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      &::before {
+        @include colour.thick-keyline(left);
+      }
+    }
+
+    &:focus-visible,
+    &:active {
+      outline: none;
+
+      &::before {
+        @include a11y.focus-outline;
+      }
+    }
+
+    &:active {
+      &::before {
+        @include a11y.active-outline;
+      }
+    }
   }
 
   &__item-title {
@@ -67,12 +109,19 @@
     }
 
     &__items {
-      padding-top: spacing.space(1);
+      border-left-width: 0;
+    }
+
+    &__item {
       padding-left: 0;
+    }
 
-      border-left: none;
+    &--full-click &__items {
+      border-left-width: 1px;
+    }
 
-      border-top-width: 1px;
+    &--full-click &__item {
+      padding-left: spacing.space(1);
     }
   }
 }

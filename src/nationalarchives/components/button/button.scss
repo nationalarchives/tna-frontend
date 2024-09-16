@@ -71,7 +71,9 @@ $button-border-width: 4px !default;
 
     &,
     &:link,
-    &:visited {
+    &:visited,
+    &:hover,
+    &:focus {
       @include colour.colour-font("link");
     }
 

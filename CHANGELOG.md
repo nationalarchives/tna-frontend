@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed colour of hovered buttons using the `<button>` element
+
 ### Security
 
 ## [0.2.13](https://github.com/nationalarchives/tna-frontend/compare/v0.2.12...v0.2.13) - 2024-09-13

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated the default `aria-label` on breadcrumbs components from "Breadcrumb" to "Breadcrumbs"
+- Increased width of checkbox and radio components to allow more click area
 
 ### Deprecated
 ### Removed

@@ -49,7 +49,8 @@ fs.readFile("package.json", "utf8", (err, data) => {
     author,
     license,
     bugs,
-    homepage: "https://github.com/nationalarchives/tna-frontend/wiki/Cookies",
+    homepage:
+      "https://nationalarchives.github.io/tna-frontend-docs/get-started/cookies/",
     scripts: {},
   };
   fs.writeFile(

@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed colour of hovered buttons using the `<button>` element
+- Improved cards CSS for IE11
 
 ### Security
 

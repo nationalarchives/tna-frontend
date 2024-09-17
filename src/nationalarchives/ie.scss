@@ -1,5 +1,6 @@
 /* stylelint-disable */
 
+@use "sass:math";
 @use "tools/media";
 
 .tna-global-header__logo--link,
@@ -56,6 +57,52 @@
 
   &__govuk-logotype-crown {
     height: 30px;
+  }
+}
+
+@mixin horizontal-card-layout($modifierClass, $innerPaddingAmount) {
+  &#{$modifierClass} {
+    padding-left: 50%;
+  }
+
+  &#{$modifierClass}#{&}--flipped {
+    padding-right: 50%;
+    padding-left: 0;
+  }
+
+  &#{$modifierClass} &__image-container {
+    width: 50%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.tna-card {
+  &__image-container {
+    margin-bottom: spacing.space(1);
+    padding-bottom: #{math.div(2, 3) * 100%};
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--full-click &__heading-link {
+    &::before {
+      display: none;
+    }
+  }
+
+  @include media.on-larger-than-mobile {
+    @include horizontal-card-layout("--horizontal", 2);
+  }
+
+  @include media.on-small {
+    @include horizontal-card-layout("--horizontal-on-small", 1);
   }
 }
 

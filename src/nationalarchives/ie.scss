@@ -21,6 +21,53 @@ summary {
   }
 }
 
+.tna-checkboxes,
+.tna-radios {
+  &__item {
+    input {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      display: inline-block;
+
+      position: static;
+
+      vertical-align: middle;
+
+      opacity: 1;
+    }
+  }
+
+  &__item-label {
+    display: inline-block;
+  }
+}
+
+.tna-compound-filters {
+  &__link {
+    &::before,
+    &::after {
+      border-left: 2px #000 solid !important;
+    }
+  }
+}
+
+.tna-index-grid {
+  &__item-image {
+    height: 100%;
+  }
+
+  &__item-content {
+    flex: auto;
+  }
+}
+
+.tna-button {
+  svg {
+    display: none;
+  }
+}
+
 .tna-global-header__logo--link,
 .tna-global-header__navigation-item-link,
 .tna-header__logo-contents--link,
@@ -170,8 +217,4 @@ summary {
 
 .tna-chip {
   background: #fff;
-}
-
-.etna-video {
-  padding-bottom: 56.25%;
 }

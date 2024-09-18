@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.13...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.14](https://github.com/nationalarchives/tna-frontend/compare/v0.2.13...v0.2.14) - 2024-09-18
 
 ### Added
 
@@ -16,7 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the default `aria-label` on breadcrumbs components from "Breadcrumb" to "Breadcrumbs"
 - Increased width of checkbox and radio components to allow more click area
 
-### Deprecated
 ### Removed
 
 - Removed the separate [global header package](https://www.npmjs.com/package/@nationalarchives/frontend-global-header)
@@ -25,8 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed colour of hovered buttons using the `<button>` element
 - Improved cards CSS for IE11
-
-### Security
 
 ## [0.2.13](https://github.com/nationalarchives/tna-frontend/compare/v0.2.12...v0.2.13) - 2024-09-13
 

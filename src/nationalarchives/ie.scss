@@ -1,8 +1,24 @@
 /* stylelint-disable */
 
 @use "sass:math";
+@use "variables/a11y" as a11yVariables;
 @use "tools/media";
 @use "tools/spacing";
+
+a,
+button,
+input,
+textarea,
+select,
+summary {
+  &:focus {
+    z-index: 9;
+
+    outline: colour.brand-colour("blue") a11yVariables.$focus-outline-width
+      solid;
+    outline-offset: a11yVariables.$focus-outline-offset;
+  }
+}
 
 .tna-global-header__logo--link,
 .tna-global-header__navigation-item-link,
@@ -92,9 +108,9 @@
     height: 100%;
   }
 
-  &--full-click &__heading-link {
-    &::before {
-      display: none;
+  &__heading-link {
+    &::after {
+      display: none !important;
     }
   }
 

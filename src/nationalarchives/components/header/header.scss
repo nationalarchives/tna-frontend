@@ -332,7 +332,7 @@
     }
 
     &__top-navigation-item-link {
-      padding: spacing.space(0.5);
+      padding: spacing.space(0.5) 0;
 
       &,
       &:link,
@@ -417,8 +417,8 @@
     }
 
     &__top-navigation-items {
-      padding-right: calc(#{grid.gutter-width()} - 0.5rem);
-      padding-left: calc(#{grid.gutter-width()} - 0.5rem);
+      padding-right: grid.gutter-width();
+      padding-left: grid.gutter-width();
     }
   }
 

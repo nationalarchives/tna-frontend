@@ -191,7 +191,7 @@
 
     @include typography.font-size(17);
 
-    @include colour.colour-border("keyline", 0.5px, solid, bottom);
+    @include colour.colour-border("keyline", 1px, solid, bottom);
 
     &,
     &:link,

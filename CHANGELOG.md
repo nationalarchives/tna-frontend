@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Change border widths on global header items from `0.5px` to `1px` to help with sub-pixel rendering
+
 ### Security
 
 ## [0.2.14](https://github.com/nationalarchives/tna-frontend/compare/v0.2.13...v0.2.14) - 2024-09-18

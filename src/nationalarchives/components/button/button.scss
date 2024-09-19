@@ -171,7 +171,8 @@ $button-border-width: 4px !default;
   }
 
   &--solid-hover {
-    &:not(.tna-button--plain):hover {
+    &:not(.tna-button--plain):hover,
+    &:not(.tna-button--plain):focus {
       @include colour.colour-font("font-dark");
 
       @include colour.colour-background("background");

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...HEAD)
 
 ### Added
+
+- Buttons can now have an `html` property that allows HTML to be used in place of the `text` property
+
 ### Changed
 ### Deprecated
 ### Removed

@@ -10,6 +10,14 @@
       "html": "<a href=\"#\" class=\"tna-button\">Log in</a>"
     },
     {
+      "name": "with html",
+      "options": {
+        "html": "<em>Log in</em>",
+        "href": "#"
+      },
+      "html": "<a href=\"#\" class=\"tna-button\"><em>Log in</em></a>"
+    },
+    {
       "name": "with title",
       "options": {
         "text": "Log in",

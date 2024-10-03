@@ -3,6 +3,7 @@ import macroOptions from "./macro-options.json";
 
 const argTypes = {
   text: { control: "text" },
+  html: { control: "text" },
   href: { control: "text" },
   title: { control: "text" },
   icon: { control: "text" },
@@ -32,6 +33,7 @@ export default {
 
 const Template = ({
   text,
+  html,
   href,
   title,
   icon,
@@ -50,6 +52,7 @@ const Template = ({
   Button({
     params: {
       text,
+      html,
       href,
       title,
       icon,

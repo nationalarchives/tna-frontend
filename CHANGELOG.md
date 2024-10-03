@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Missing background colour added for focused buttons with `tna-button--solid-hover`
 - Logo link in header and global header components updated to address image link purpose WCAG failure
 - Added `aria-label` to image caption on hero components
+- Added `title` attributes to social links in footer components
 
 ### Security
 

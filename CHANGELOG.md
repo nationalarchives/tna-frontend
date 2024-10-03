@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Change border widths on global header items from `0.5px` to `1px` to help with sub-pixel rendering
 - Missing background colour added for focused buttons with `tna-button--solid-hover`
+- Logo link in header and global header components updated to address image link purpose WCAG failure
 
 ### Security
 

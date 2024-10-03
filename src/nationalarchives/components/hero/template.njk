@@ -73,7 +73,8 @@
     {%- if params.imageCaption %}
     <figcaption class="tna-hero__caption">
       <details class="tna-hero__details">
-        <summary class="tna-hero__details-summary">
+        <summary class="tna-hero__details-summary" aria-label="Additional information
+about the featured image">
           About this <span class="tna-hero__details-summary-icon">i</span>mage
         </summary>
         <div class="tna-hero__information">{{ params.imageCaption | safe }}</div>

@@ -15,10 +15,11 @@
   }
 
   &__summary {
+    width: fit-content;
     padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
       spacing.space(2.75);
 
-    display: inline-block;
+    display: block;
 
     position: relative;
     z-index: 1;

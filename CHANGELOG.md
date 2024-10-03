@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Logo link in header and global header components updated to address image link purpose WCAG failure
 - Added `aria-label` to image caption on hero components
 - Added `title` attributes to social links in footer components
+- Fix details expanded state not announced on iOS ([issue #5089 on govuk-frontend](https://github.com/alphagov/govuk-frontend/pull/5089))
 
 ### Security
 

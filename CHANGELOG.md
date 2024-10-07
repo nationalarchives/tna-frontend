@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Updated deprecated `color.red()`, `color.green()` and `color.blue()` SASS functions
+
 ### Security
 
 ## [0.2.15](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...v0.2.15) - 2024-10-07

@@ -28,12 +28,13 @@ $colour-palette-brand: (
 );
 
 @function hex-to-rgb($hex, $opacity: 1) {
+  $red: color.channel($hex, "red", $space: rgb);
+  $green: color.channel($hex, "green", $space: rgb);
+  $blue: color.channel($hex, "blue", $space: rgb);
   @if $opacity == 1 {
-    @return rgb(color.red($hex) color.green($hex) color.blue($hex));
+    @return rgb($red $green $blue);
   } @else {
-    @return rgb(
-      color.red($hex) color.green($hex) color.blue($hex) / #{$opacity}
-    );
+    @return rgb($red $green $blue / #{$opacity});
   }
 }
 

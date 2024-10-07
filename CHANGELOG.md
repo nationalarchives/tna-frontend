@@ -5,15 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.15...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.15](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...v0.2.15) - 2024-10-07
 
 ### Added
 
 - Buttons can now have an `html` property that allows HTML to be used in place of the `text` property
 
-### Changed
-### Deprecated
-### Removed
 ### Fixed
 
 - Change border widths on global header items from `0.5px` to `1px` to help with sub-pixel rendering
@@ -24,8 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix details expanded state not announced on iOS ([issue #5089 on govuk-frontend](https://github.com/alphagov/govuk-frontend/pull/5089))
 - Fixed file list accessible link names to include file size and type
 - Accessibility and usability improvements made to the gallery component with regards to HTML and JavaScript
-
-### Security
 
 ## [0.2.14](https://github.com/nationalarchives/tna-frontend/compare/v0.2.13...v0.2.14) - 2024-09-18
 

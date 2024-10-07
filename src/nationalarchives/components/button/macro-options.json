@@ -2,8 +2,14 @@
   {
     "name": "text",
     "type": "string",
-    "required": true,
+    "required": false,
     "description": "The text of the button."
+  },
+  {
+    "name": "html",
+    "type": "string",
+    "required": false,
+    "description": "The HTML to use as the text of the button. Setting this overwrites the `text` property."
   },
   {
     "name": "href",

@@ -6,6 +6,7 @@ export default {
 
 const Template = ({
   text,
+  html,
   href,
   title,
   icon,
@@ -23,6 +24,7 @@ const Template = ({
   Button({
     params: {
       text,
+      html,
       href,
       title,
       icon,
@@ -56,6 +58,11 @@ Group.args = {
       text: "Accent",
       href: "#",
       accent: true,
+      classes: "tna-button--demo",
+    },
+    {
+      html: "<em>HTML</em>",
+      href: "#",
       classes: "tna-button--demo",
     },
     {

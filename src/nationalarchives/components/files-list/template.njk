@@ -9,7 +9,7 @@
     {%- for item in params.items %}
     <li class="tna-files-list__item">
       <h{{ params.itemHeadingLevel }} class="tna-files-list__item-title tna-heading-s">
-        <a href="{{ item.href }}" class="tna-files-list__link" aria-describedby="{{ item.id }}">{{ item.text }}</a>
+        <a href="{{ item.href }}" class="tna-files-list__link"{% if item.fileExtent %} aria-describedby="{{ item.id }}-extent"{% endif %}>{{ item.text }}<span class="tna-visually-hidden"> ({{ item.fileType }}, {{ item.fileSize }})</span></a>
       </h{{ params.itemHeadingLevel }}>
       <div class="tna-files-list__item-body" id="{{ item.id }}">
         <dl class="tna-dl-chips tna-dl-chips--plain tna-files-list__item-meta">
@@ -24,7 +24,7 @@
           {%- if item.fileExtent %}
           <dt>Extent</dt>
           <dd>
-            <span class="tna-dl-chips__item">{{ item.fileExtent }}</span>
+            <span id="{{ item.id }}-extent" class="tna-dl-chips__item">{{ item.fileExtent }}</span>
           </dd>
           {%- endif %}
         </dl>

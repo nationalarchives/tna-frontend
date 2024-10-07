@@ -61,7 +61,7 @@ export class Gallery {
   setup() {
     this.$items.forEach(($item) => {
       $item.setAttribute("hidden", "until-found");
-      $item.setAttribute("role", "tabpanel");
+      $item.setAttribute("aria-hidden", "true");
     });
     this.$navigation.removeAttribute("hidden");
     this.$navigationItems.forEach(($item) => {
@@ -70,7 +70,6 @@ export class Gallery {
         this.$itemsContainer.focus();
       });
     });
-    // this.$module.setAttribute("tabindex", "0");
     this.$module.addEventListener("keydown", (e) => {
       let preventDefaultKeyAction = false;
       switch (e.key) {
@@ -116,49 +115,63 @@ export class Gallery {
     this.$navigationButtons?.removeAttribute("hidden");
     this.$navigationButtonPrev?.addEventListener("click", () => {
       this.showPreviousItem();
-      this.$itemsContainer.focus();
     });
     this.$navigationButtonNext?.addEventListener("click", () => {
       this.showNextItem();
-      this.$itemsContainer.focus();
     });
+
+    this.$liveRegion = document.createElement("div");
+    this.$liveRegion.setAttribute("aria-live", "polite");
+    this.$liveRegion.setAttribute("aria-atomic", "true");
+    this.$liveRegion.setAttribute("class", "tna-gallery__item-header");
+    this.$itemsContainer.prepend(this.$liveRegion);
+    this.$itemsContainer.classList.add("tna-gallery__items--hide-item-titles");
   }
 
   showIndex() {
     this.showItem("");
-    this.$itemsContainer.setAttribute("tabindex", "-1");
+    this.$itemsContainer.classList.add("tna-gallery__items--hide-items");
     this.$showIndex?.setAttribute("hidden", true);
   }
 
-  showItem(id) {
+  showItem(id, focus = false) {
     this.$items.forEach(($item) => {
       if (id && $item.id === id) {
         $item.removeAttribute("hidden");
-        $item.removeAttribute("tabindex");
+        $item.removeAttribute("aria-hidden");
+        if (focus) {
+          $item.setAttribute("tabindex", "0");
+          $item.focus();
+        }
       } else {
         $item.setAttribute("hidden", "until-found");
-        $item.setAttribute("tabindex", "-1");
+        $item.setAttribute("aria-hidden", "true");
       }
+      $item.setAttribute("tabindex", "-1");
     });
-    this.$navigationItems.forEach(($item, index) => {
+    this.$navigationItems.forEach(($item /*, index*/) => {
       if (id) {
         if ($item.getAttribute("aria-controls") === id) {
           $item.setAttribute("aria-selected", "true");
-          $item.setAttribute("tabindex", "0");
+          // $item.setAttribute("tabindex", "0");
+          if (this.isFullScreen()) {
+            $item.scrollIntoView({ block: "nearest" });
+          }
         } else {
           $item.setAttribute("aria-selected", "false");
-          $item.setAttribute("tabindex", "-1");
+          // $item.setAttribute("tabindex", "-1");
         }
       } else {
         $item.setAttribute("aria-selected", "false");
-        $item.setAttribute("tabindex", index === 0 ? "0" : "-1");
+        // $item.setAttribute("tabindex", index === 0 ? "0" : "-1");
       }
     });
     if (this.allowGridIndex) {
       this.$showIndex?.removeAttribute("hidden");
     }
+    this.$itemsContainer.classList.remove("tna-gallery__items--hide-items");
     this.currentId = id;
-    this.$itemsContainer.setAttribute("tabindex", "0");
+    this.$liveRegion.textContent = `Image ${this.getCurrentItemIndex() + 1} of ${this.$items.length}`;
   }
 
   getCurrentItemIndex() {
@@ -172,7 +185,7 @@ export class Gallery {
     if (nextIndexToShow < 0) {
       nextIndexToShow = this.$items.length - 1;
     }
-    this.showItem(this.$items[nextIndexToShow].id, true);
+    this.showItem(this.$items[nextIndexToShow].id);
   }
 
   showNextItem() {
@@ -180,23 +193,19 @@ export class Gallery {
     if (nextIndexToShow >= this.$items.length) {
       nextIndexToShow = 0;
     }
-    this.showItem(this.$items[nextIndexToShow].id, true);
+    this.showItem(this.$items[nextIndexToShow].id);
   }
 
   showFirstItem() {
-    this.showItem(this.$items[0].id, true);
+    this.showItem(this.$items[0].id);
   }
 
   showLastItem() {
-    this.showItem(this.$items[this.$items.length - 1].id, true);
+    this.showItem(this.$items[this.$items.length - 1].id);
   }
 
-  toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      this.enterFullScreen();
-    } else if (document.exitFullscreen) {
-      this.exitFullScreen();
-    }
+  isFullScreen() {
+    return document.fullscreenElement;
   }
 
   enterFullScreen() {
@@ -211,7 +220,7 @@ export class Gallery {
   }
 
   syncFullScreen() {
-    if (document.fullscreenElement) {
+    if (this.isFullScreen()) {
       this.$enterFullscreen.setAttribute("hidden", true);
       this.$exitFullscreen.removeAttribute("hidden");
     } else {

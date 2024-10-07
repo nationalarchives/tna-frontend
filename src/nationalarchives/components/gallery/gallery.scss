@@ -192,8 +192,9 @@
     transform: rotate(45deg);
   }
 
-  &__items[tabindex="-1"],
-  &__items[tabindex="-1"] + &__navigation-buttons {
+  &__items--hide-item-titles &__item &__item-header,
+  &__items--hide-items,
+  &__items--hide-items + &__navigation-buttons {
     display: none;
   }
 

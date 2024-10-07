@@ -6,9 +6,12 @@
 <header class="tna-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-container tna-header__contents">
     <div class="tna-column tna-header__logo">
-      <{%- if params.logo.href -%}a href="{{ params.logo.href }}" class="tna-header__logo-contents tna-header__logo-contents--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}"{%- else -%}span class="tna-header__logo-contents"{%- endif -%}>
-        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" viewBox="0 0 160 160" width="96" height="96">
-          <title>The National Archives</title>
+      {% if params.logo.href -%}
+      <a href="{{ params.logo.href }}" class="tna-header__logo-contents tna-header__logo-contents--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}" aria-label="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- if params.logo.strapline %} - {{ params.logo.strapline }}{%- endif -%}{%- endif -%}">
+      {%- else %}
+      <span class="tna-header__logo-contents">
+      {%- endif %}
+        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" viewBox="0 0 160 160" width="96" height="96" aria-hidden="true">
           <path fill="transparent" d="M0 0h160v160H0z" class="tna-logo__background"/>
           <g class="tna-logo__foreground" fill="currentColor">
             <path d="M1.9 107.2h156.3V158H1.9v-50.8zm0-52.7h156.3v50.8H1.9V54.5zm0-52.6h77.2v50.8H1.9V1.9zm79 0h77.2v50.8H80.9V1.9zm0-1.9H0v160h160V0H80.9z"/>
@@ -18,7 +21,11 @@
         {%- if params.logo.strapline -%}
         <span class="tna-header__logo-strapline">{{ params.logo.strapline }}</span>
         {%- endif -%}
-      </{%- if params.logo.href -%}a{%- else -%}span{%- endif -%}>
+      {%- if params.logo.href %}
+      </a>
+      {%- else %}
+      </span>
+      {%- endif %}
     </div>
     {%- if params.navigation or params.topNavigation %}
     <div class="tna-column tna-header__navigation-button-wrapper">

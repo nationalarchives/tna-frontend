@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...HEAD)
 
 ### Added
+
+- Buttons can now have an `html` property that allows HTML to be used in place of the `text` property
+
 ### Changed
 ### Deprecated
 ### Removed
@@ -15,6 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Change border widths on global header items from `0.5px` to `1px` to help with sub-pixel rendering
 - Missing background colour added for focused buttons with `tna-button--solid-hover`
+- Logo link in header and global header components updated to address image link purpose WCAG failure
+- Added `aria-label` to image caption on hero components
+- Added `title` attributes to social links in footer components
+- Fix details expanded state not announced on iOS ([issue #5089 on govuk-frontend](https://github.com/alphagov/govuk-frontend/pull/5089))
+- Fixed file list accessible link names to include file size and type
+- Accessibility and usability improvements made to the gallery component with regards to HTML and JavaScript
 
 ### Security
 

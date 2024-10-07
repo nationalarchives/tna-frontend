@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `title` attributes to social links in footer components
 - Fix details expanded state not announced on iOS ([issue #5089 on govuk-frontend](https://github.com/alphagov/govuk-frontend/pull/5089))
 - Fixed file list accessible link names to include file size and type
-- Accessibility and usability improvements made to the gallery component
+- Accessibility and usability improvements made to the gallery component with regards to HTML and JavaScript
 
 ### Security
 

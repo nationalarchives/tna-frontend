@@ -194,11 +194,11 @@
     @include horizontal-card-layout("--horizontal", 2);
 
     &--horizontal#{&}--horizontal-small-image {
-      grid-template-columns: min(10rem, 25%) 1fr;
+      grid-template-columns: max(10rem, 25%) 1fr;
     }
 
     &--horizontal#{&}--horizontal-small-image#{&}--flipped {
-      grid-template-columns: 1fr min(10rem, 25%);
+      grid-template-columns: 1fr max(10rem, 25%);
     }
   }
 
@@ -206,11 +206,11 @@
     @include horizontal-card-layout("--horizontal-on-small", 1);
 
     &--horizontal-on-small#{&}--horizontal-small-image {
-      grid-template-columns: min(10rem, 25%) 1fr;
+      grid-template-columns: max(10rem, 25%) 1fr;
     }
 
     &--horizontal-on-small#{&}--horizontal-small-image#{&}--flipped {
-      grid-template-columns: 1fr min(10rem, 25%);
+      grid-template-columns: 1fr max(10rem, 25%);
     }
   }
 

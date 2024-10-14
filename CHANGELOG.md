@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Changed the size of small images in horizontal cards
+
 ### Deprecated
 ### Removed
 ### Fixed

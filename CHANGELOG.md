@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated deprecated `color.red()`, `color.green()` and `color.blue()` SASS functions
 - Fixed layout issues for fullscreen gallery components when viewed in landscape
 - Removed list marker colour on yellow accented blocks
+- Fixed layout of horizontal cards with no images
 
 ### Security
 

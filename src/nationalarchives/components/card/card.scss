@@ -31,11 +31,19 @@
     }
   }
 
+  &#{$modifierClass}:not(:has(&__image-container)) {
+    grid-template-columns: 0 100%;
+  }
+
   &#{$modifierClass}#{&}--flipped {
     grid-template-areas:
       "header image"
       "body image"
       "footer image";
+  }
+
+  &#{$modifierClass}#{&}--flipped:not(:has(&__image-container)) {
+    grid-template-columns: 100% 0;
   }
 
   &#{$modifierClass} &__heading,

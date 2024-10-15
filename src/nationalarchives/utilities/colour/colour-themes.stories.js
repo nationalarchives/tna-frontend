@@ -1416,7 +1416,7 @@ const Template = ({ theme, accent }) => {
                 href: "https://www.legislation.gov.uk/",
               },
               {
-                text: "Find case law",
+                text: "Find Case Law",
                 href: "https://caselaw.nationalarchives.gov.uk/",
               },
               {

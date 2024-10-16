@@ -5,23 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.15...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.16...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.16](https://github.com/nationalarchives/tna-frontend/compare/v0.2.15...v0.2.16) - 2024-10-16
+
 ### Changed
 
 - Changed the size of small images in horizontal cards
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Updated deprecated `color.red()`, `color.green()` and `color.blue()` SASS functions
 - Fixed layout issues for fullscreen gallery components when viewed in landscape
 - Removed list marker colour on yellow accented blocks
 - Fixed layout of horizontal cards with no images
-
-### Security
 
 ## [0.2.15](https://github.com/nationalarchives/tna-frontend/compare/v0.2.14...v0.2.15) - 2024-10-07
 

@@ -5,18 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.16...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.17...HEAD)
 
 ### Added
 ### Changed
-
-- Updated header and global header HTML to allow adornable logos
-- Reduced specicifity of some CSS selectors for card elements
-
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## [0.2.17](https://github.com/nationalarchives/tna-frontend/compare/v0.2.16...v0.2.17) - 2024-10-23
+
+### Changed
+
+- Updated header and global header HTML to allow adornable logos
+- Reduced specicifity of some CSS selectors for card elements
 
 ## [0.2.16](https://github.com/nationalarchives/tna-frontend/compare/v0.2.15...v0.2.16) - 2024-10-16
 

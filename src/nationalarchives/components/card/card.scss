@@ -201,11 +201,11 @@
   @include media.on-larger-than-mobile {
     @include horizontal-card-layout("--horizontal", 2);
 
-    &--horizontal#{&}--horizontal-small-image {
+    &--horizontal-small-image {
       grid-template-columns: max(10rem, 25%) 1fr;
     }
 
-    &--horizontal#{&}--horizontal-small-image#{&}--flipped {
+    &--horizontal-small-image#{&}--flipped {
       grid-template-columns: 1fr max(10rem, 25%);
     }
   }
@@ -213,11 +213,11 @@
   @include media.on-small {
     @include horizontal-card-layout("--horizontal-on-small", 1);
 
-    &--horizontal-on-small#{&}--horizontal-small-image {
+    &--horizontal-small-image {
       grid-template-columns: max(10rem, 25%) 1fr;
     }
 
-    &--horizontal-on-small#{&}--horizontal-small-image#{&}--flipped {
+    &--horizontal-small-image#{&}--flipped {
       grid-template-columns: 1fr max(10rem, 25%);
     }
   }

@@ -18,8 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated header and global header HTML to allow adornable logos
-- Reduced specicifity of some CSS selectors for card elements
+- Updated header and global header HTML to allow adorn-able logos
+- Reduced specificity of some CSS selectors for card elements
 
 ## [0.2.16](https://github.com/nationalarchives/tna-frontend/compare/v0.2.15...v0.2.16) - 2024-10-16
 

@@ -32,12 +32,12 @@
     }
   }
 
-  &__logo {
+  &__logo-wrapper {
     padding-top: spacing.space(1.25);
     padding-bottom: spacing.space(1.25);
   }
 
-  &__logo-contents {
+  &__logo {
     display: flex;
     align-items: flex-end;
 
@@ -58,15 +58,6 @@
         outline-offset: 1px;
       }
     }
-  }
-
-  .tna-logo {
-    width: 5rem;
-    height: 5rem;
-
-    display: inline-block;
-
-    flex-shrink: 0;
   }
 
   &__logo-strapline {
@@ -288,8 +279,22 @@
     @include colour.contrast-on-mobile;
   }
 
+  .tna-logo {
+    width: 5rem;
+    height: 5rem;
+
+    display: inline-block;
+
+    flex-shrink: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   @include media.on-mobile {
-    &__logo {
+    &__logo-wrapper {
       padding-top: spacing.space(1);
       padding-bottom: spacing.space(1);
     }
@@ -405,13 +410,13 @@
       line-height: 1.25rem;
     }
 
-    &__logo,
+    &__logo-wrapper,
     &__navigation-item-link,
     &__navigation-button-wrapper {
       padding-right: grid.gutter-width();
     }
 
-    &__logo,
+    &__logo-wrapper,
     &__navigation-item-link {
       padding-left: grid.gutter-width();
     }
@@ -424,11 +429,11 @@
 
   @include media.on-tiny {
     &__navigation-button-wrapper,
-    &__logo {
+    &__logo-wrapper {
       padding-right: grid.gutter-width-tiny();
     }
 
-    &__logo {
+    &__logo-wrapper {
       padding-left: grid.gutter-width-tiny();
       flex: 1;
     }
@@ -439,7 +444,7 @@
     }
 
     &__logo-strapline {
-      line-height: 1;
+      line-height: 0.9;
     }
 
     &__navigation-button {

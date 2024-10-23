@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Updated header and global header HTML to allow adornable logos
+
 ### Deprecated
 ### Removed
 ### Fixed

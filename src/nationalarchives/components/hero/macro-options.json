@@ -167,6 +167,12 @@
     "description": "An alternative layout of the hero component to use. This can be `shift` or `split`."
   },
   {
+    "name": "narrow",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, use a narrower style hero image."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

@@ -435,7 +435,6 @@
 
     &__logo-wrapper {
       padding-left: grid.gutter-width-tiny();
-      flex: 1;
     }
 
     .tna-logo {
@@ -462,10 +461,7 @@
   }
 
   @include colour.on-high-contrast-and-forced-colours {
-    &,
-    &__exit {
-      @include colour.colour-border("keyline", 1px, solid, bottom);
-    }
+    @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
   @include colour.on-forced-colours {

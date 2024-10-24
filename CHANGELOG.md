@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- The click area for the logo link in a header component on tiny devices no longer stretches to fill the header
+
 ### Security
 
 ## [0.2.17](https://github.com/nationalarchives/tna-frontend/compare/v0.2.16...v0.2.17) - 2024-10-23

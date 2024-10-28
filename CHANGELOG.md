@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The click area for the logo link in a header component on tiny devices no longer stretches to fill the header
+- Top borders on card components displayed on high contrast displays have been fixed
 
 ### Security
 

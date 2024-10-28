@@ -98,7 +98,7 @@
     {%- if params.actions %}
       <div class="tna-card__actions">
       {%- for item in params.actions %}
-        <a href="{{ item.href }}" class="tna-card__action{% if item.classes %} {{ item.classes }}{% endif %}" {%- if item.title %} title="{{ item.title }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+        <a href="{{ item.href }}" class="tna-card__action{% if item.classes %} {{ item.classes }}{% endif %}" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
           {{ item.text }}
         </a>
       {%- endfor %}

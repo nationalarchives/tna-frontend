@@ -41,7 +41,7 @@
       <ul class="tna-header__navigation-items">
         {%- for item in params.navigation %}
         <li class="tna-header__navigation-item">
-          <a href="{{ item.href }}" class="tna-header__navigation-item-link{%- if item.selected %} tna-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="page"{% endif %} {%- if item.title %} title="{{ item.title }}"{% endif %}>
+          <a href="{{ item.href }}" class="tna-header__navigation-item-link{%- if item.selected %} tna-header__navigation-item-link--selected{% endif %}" tabindex="0" {%- if item.selected %} aria-current="page"{% endif %} {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %}>
             {{ item.text }}
           </a>
         </li>
@@ -52,7 +52,7 @@
       <ul class="tna-header__top-navigation-items">
         {%- for item in params.topNavigation %}
         <li class="tna-header__top-navigation-item">
-          <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} title="{{ item.title }}"{% endif %}>
+          <a href="{{ item.href }}" class="tna-header__top-navigation-item-link" tabindex="0" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %}>
             {%- if item.icon %}
             <i class="fa-solid fa-{{ item.icon }}" aria-hidden="true"></i>
             {%- endif %}

@@ -7,7 +7,7 @@
   <ol class="tna-breadcrumbs__list" {%- if params.structuredData %} itemscope itemtype="https://schema.org/BreadcrumbList"{% endif %}>
   {%- for item in params.items %}
     <li class="tna-breadcrumbs__item" {%- if params.structuredData %} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"{% endif %}>
-      <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} title="{{ item.title }}"{% endif %}{%- if params.structuredData %} itemprop="item"{% endif %}>
+      <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %}{%- if params.structuredData %} itemprop="item"{% endif %}>
         {%- if params.structuredData %}
         <span itemprop="name">{{ item.text }}</span>
         {%- else %}

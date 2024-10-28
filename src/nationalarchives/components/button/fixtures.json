@@ -24,7 +24,7 @@
         "href": "#",
         "title": "Log in to the service"
       },
-      "html": "<a href=\"#\" class=\"tna-button\" title=\"Log in to the service\">Log in</a>"
+      "html": "<a href=\"#\" class=\"tna-button\" aria-label=\"Log in to the service\" title=\"Log in to the service\">Log in</a>"
     },
     {
       "name": "accent",

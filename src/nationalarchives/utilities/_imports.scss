@@ -53,8 +53,8 @@
     " ",
     "+"
   );
-  @warn "Remember to import the Google Fonts CSS into your application";
-  @debug '<link rel="preconnect" href="https://fonts.googleapis.com">';
-  @debug '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-  @debug '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=#{$main-font-family-name}:wght@#{typography.$main-font-weight}..#{typography.$main-font-weight-bold}&family=#{$detail-font-family-name}:wght@#{typography.$detail-font-weight}..#{typography.$detail-font-weight-bold}&display=swap">'; /* stylelint-disable-line */
+  // @warn "Remember to import the Google Fonts CSS into your application";
+  // @debug '<link rel="preconnect" href="https://fonts.googleapis.com">';
+  // @debug '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+  // @debug '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=#{$main-font-family-name}:wght@#{typography.$main-font-weight}..#{typography.$main-font-weight-bold}&family=#{$detail-font-family-name}:wght@#{typography.$detail-font-weight}..#{typography.$detail-font-weight-bold}&display=swap">'; /* stylelint-disable-line */
 }

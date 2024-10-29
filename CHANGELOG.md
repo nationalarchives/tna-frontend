@@ -12,11 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added `aria-label` attributes to all elements with custom `title` attributes
 - Added a title for items in pagination components ("Page x")
+- The LTS version of NodeJS used has been upgraded from `iron` (`20.x`) to `jod` (`22.x`)
 
 ### Deprecated
 ### Removed
 
 - Pagination items no longer have a `label` attribute - this is instead defined as `Page x` where `x` is the `number` attribute
+- Removed the warnings about importing Google Fonts
 
 ### Fixed
 

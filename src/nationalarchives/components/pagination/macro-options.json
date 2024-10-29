@@ -32,12 +32,6 @@
         "description": ""
       },
       {
-        "name": "label",
-        "type": "string",
-        "required": false,
-        "description": ""
-      },
-      {
         "name": "href",
         "type": "string",
         "required": true,

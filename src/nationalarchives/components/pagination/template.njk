@@ -33,10 +33,7 @@
           title: "Page " + item.number,
           accent: params.solid and item.current,
           plain: not params.solid and not item.current,
-          classes: "tna-pagination__link",
-          attributes: {
-            "aria-label": item.label
-          }
+          classes: "tna-pagination__link"
         }) }}
       </li>
       {% endif -%}

@@ -36,7 +36,7 @@ Using Frontend will help your service meet [level AA of WCAG 2.2](https://www.go
 
 You should also use:
 
-- [the JavaScript from TNA Frontend](https://nationalarchives.github.io/tna-frontend-docs/get-started/using-tna-frontend/npm/#javascript)
+- [the JavaScript from TNA Frontend](https://nationalarchives.github.io/tna-frontend-docs/get-started/setup/#javascript)
 
 You can also read the [accessibility statement for the National Archives Design System](https://nationalarchives.github.io/design-system/accessibility/).
 

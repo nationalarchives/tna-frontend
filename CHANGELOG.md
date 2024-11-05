@@ -5,16 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.17...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.18...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.2.18](https://github.com/nationalarchives/tna-frontend/compare/v0.2.17...v0.2.18) - 2024-11-05
+
 ### Changed
 
 - Added `aria-label` attributes to all elements with custom `title` attributes
 - Added a title for items in pagination components ("Page x")
 - The LTS version of NodeJS used has been upgraded from `iron` (`20.x`) to `jod` (`22.x`)
 
-### Deprecated
 ### Removed
 
 - Pagination items no longer have a `label` attribute - this is instead defined as `Page x` where `x` is the `number` attribute
@@ -24,8 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The click area for the logo link in a header component on tiny devices no longer stretches to fill the header
 - Top borders on card components displayed on high contrast displays have been fixed
-
-### Security
 
 ## [0.2.17](https://github.com/nationalarchives/tna-frontend/compare/v0.2.16...v0.2.17) - 2024-10-23
 

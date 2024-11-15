@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed the hover and focus outline colour of the log in the global header component
+
 ### Security
 
 ## [0.2.18](https://github.com/nationalarchives/tna-frontend/compare/v0.2.17...v0.2.18) - 2024-11-05

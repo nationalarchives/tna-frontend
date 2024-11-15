@@ -120,7 +120,6 @@ Medium.parameters = {
 };
 Medium.args = {
   logo: {
-    strapline: "Design System",
     href: "#/",
   },
   topNavigation: [
@@ -193,7 +192,6 @@ MediumCollapsed.parameters = {
 };
 MediumCollapsed.args = {
   logo: {
-    strapline: "Design System",
     href: "#/",
   },
   topNavigation: [

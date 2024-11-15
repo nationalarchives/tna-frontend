@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/grid";
 @use "../../tools/media";
@@ -51,12 +52,13 @@
         @include colour.colour-font("font-base");
       }
 
-      &:hover,
-      &:focus-visible {
-        text-decoration: none;
-
+      &:hover {
         @include colour.colour-outline("font-dark", 0.3125rem, solid);
-        outline-offset: 1px;
+        outline-offset: 2px;
+      }
+
+      &:focus-visible {
+        @include a11y.focus-outline;
       }
     }
   }

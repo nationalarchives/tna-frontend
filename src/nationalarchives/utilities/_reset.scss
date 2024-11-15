@@ -14,6 +14,21 @@
   }
 }
 
+/*
+ * ------------------------------------------
+ * If the browser supports -apple-system-body
+ * which at the moment is just iOS then using
+ * the system body font we can respond to the
+ * Dynamic Type setting in iOS
+ * ------------------------------------------
+ */
+@supports (font: -apple-system-body) {
+  html {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font: -apple-system-body;
+  }
+}
+
 img,
 svg,
 picture,

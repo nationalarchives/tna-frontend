@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.18...HEAD)
 
 ### Added
+
+- Added support for the Dynamic Type setting in iOS, allowing users to change the default font size
+
 ### Changed
 ### Deprecated
 ### Removed

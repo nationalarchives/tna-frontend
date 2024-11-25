@@ -83,7 +83,17 @@ $button-border-width: 4px !default;
     }
   }
 
-  &--accent {
+  &--accent,
+  .tna-template--black-accent
+    .tna-background-accent
+    &:not(#{&}--accent):not(#{&}--plain),
+  .tna-template--black-accent
+    .tna-background-accent-light
+    &:not(#{&}--accent):not(#{&}--plain),
+  .tna-accent-black .tna-background-accent &:not(#{&}--accent):not(#{&}--plain),
+  .tna-accent-black
+    .tna-background-accent-light
+    &:not(#{&}--accent):not(#{&}--plain) {
     @include colour.colour-background("button-accented-background");
 
     @include colour.colour-border("button-accented-background");
@@ -97,6 +107,8 @@ $button-border-width: 4px !default;
     &:hover,
     &:focus {
       @include colour.colour-font("font-dark");
+
+      background-color: transparent;
     }
   }
 

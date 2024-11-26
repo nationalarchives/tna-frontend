@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
-- Fixed the hover and focus outline colour of the log in the global header component
+- Fixed the hover and focus outline colour of the logo in the global header component
 - Added `width` and `height` attributes to inline SVGs
 
 ### Security

@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added support for the Dynamic Type setting in iOS, allowing users to change the default font size
 
 ### Changed
+
+- Added an extra heading for the legal links in the footer component and tweaked the heading for the social media links
+
 ### Deprecated
 ### Removed
 ### Fixed

@@ -223,6 +223,6 @@
   }
 
   @include colour.on-high-contrast {
-    @include colour.colour-border("keyline-dark", 1px, solid, "", true);
+    @include colour.colour-border("keyline-dark", 1px, solid);
   }
 }

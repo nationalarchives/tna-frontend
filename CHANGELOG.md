@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed the hover and focus outline colour of the log in the global header component
 - Added `width` and `height` attributes to inline SVGs
+- Top border on cards with no images fixed for high contrast mode
 
 ### Security
 

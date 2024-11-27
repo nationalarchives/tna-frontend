@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Added an extra heading for the legal links in the footer component and tweaked the heading for the social media links
+- Font size of quick filters component reduced
 
 ### Deprecated
 ### Removed

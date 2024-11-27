@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   gap: spacing.space(0.5) spacing.space(0.75);
 
+  @include typography.font-size(16);
   list-style: none;
 
   &--stacked {

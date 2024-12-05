@@ -185,10 +185,6 @@ $shift-units: 5 !default;
   &--split {
   }
 
-  &--split:not(.tna-background-accent, .tna-background-tint) {
-    @include colour.contrast;
-  }
-
   &--split &__figure {
     min-height: clamp(15rem, #{math.div(100vw, 3)}, 50rem);
     padding-top: spacing.space(2);
@@ -229,10 +225,6 @@ $shift-units: 5 !default;
   &--shift &__content-inner {
     position: relative;
     top: spacing.space($shift-units);
-  }
-
-  &--shift:not(.tna-background-accent, .tna-background-tint) &__content-inner {
-    @include colour.contrast;
   }
 
   &--narrow {

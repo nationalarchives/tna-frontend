@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.2.18...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.3.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.3.0](https://github.com/nationalarchives/tna-frontend/compare/v0.2.18...v0.3.0) - 2024-12-05
 
 ### Added
 
@@ -16,15 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added an extra heading for the legal links in the footer component and tweaked the heading for the social media links
 - Font size of quick filters component reduced
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Fixed the hover and focus outline colour of the logo in the global header component
 - Added `width` and `height` attributes to inline SVGs
 - Top border on cards with no images fixed for high contrast mode
-
-### Security
 
 ## [0.2.18](https://github.com/nationalarchives/tna-frontend/compare/v0.2.17...v0.2.18) - 2024-11-05
 

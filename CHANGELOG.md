@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.3.0...HEAD)
 
 ### Added
+
+- The `data-tnacookiesdomain` attribute of the `<html>` element can be used to define the domain for cookies
+
 ### Changed
 
 - Shifted and split hero components no longer assume a contrasted background by default

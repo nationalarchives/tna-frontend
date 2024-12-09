@@ -83,7 +83,7 @@ export default class Cookies {
   constructor(options = {}) {
     const {
       extraPolicies = [],
-      domain = "",
+      domain = null,
       path = "/",
       secure = true,
       policiesKey = "cookies_policy",
@@ -96,7 +96,12 @@ export default class Cookies {
       return window.TNAFrontendCookies;
     }
     this.extraPolicies = extraPolicies;
-    this.domain = domain;
+    if (domain === null) {
+      this.domain =
+        document.documentElement.getAttribute("data-tnacookiesdomain") || "";
+    } else {
+      this.domain = domain;
+    }
     this.path = path;
     this.secure = secure;
     this.policiesKey = policiesKey;

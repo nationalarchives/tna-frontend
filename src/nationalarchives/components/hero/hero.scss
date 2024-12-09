@@ -214,7 +214,7 @@ $shift-units: 5 !default;
     padding: 0;
   }
 
-  @include media.on-larger-than {
+  @include media.on-larger-than-mobile {
     &--shift {
       margin-bottom: spacing.space($shift-units - $padding-units-bottom);
     }

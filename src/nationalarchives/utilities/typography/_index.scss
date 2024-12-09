@@ -444,10 +444,15 @@ small {
   @include spacing.space-above;
 
   @include typography.font-size(22);
-  @include typography.main-font-weight-medium;
+  @include colour.colour-font("font-dark");
 
   @include media.on-mobile {
     @include typography.font-size(20);
+  }
+
+  &--bold {
+    @include colour.colour-font("font-base");
+    @include typography.main-font-weight-medium;
   }
 }
 

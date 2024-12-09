@@ -46,6 +46,10 @@
   &--blue-accent {
     @include colour.blue-accent;
   }
+
+  &--purple-accent {
+    @include colour.purple-accent;
+  }
 }
 
 .tna-background {
@@ -99,5 +103,9 @@
 
   &-blue {
     @include colour.blue-accent;
+  }
+
+  &-purple {
+    @include colour.purple-accent;
   }
 }

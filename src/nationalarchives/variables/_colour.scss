@@ -13,18 +13,21 @@ $colour-palette-brand: (
   "orange": #fd3f03,
   "green": #86bc25,
   "blue": #00b0ff,
+  "purple": #ca26d9,
 
   "brown": #654e37,
   "maroon": #9c193a,
   "chestnut": #8f3415,
   "forest": #00623b,
   "navy": #004c7e,
+  "purpled": #4f1655,
 
-  "cream": #f9f7e2,
   "pastel-pink": #fad3d4,
   "pastel-orange": #f9e1bc,
+  "cream": #f9f7e2,
   "pastel-green": #dde5d5,
   "pastel-blue": #d4e5ef,
+  "pastel-purple": #eed6f0,
 );
 
 @function hex-to-rgb($hex, $opacity: 1) {

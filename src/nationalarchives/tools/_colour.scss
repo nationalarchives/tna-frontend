@@ -462,6 +462,19 @@
   @extend %blue-accent;
 }
 
+%purple-accent {
+  --accent-background: #{colour.brand-colour("purpled")} !important;
+  --accent-background-light: #{colour.brand-colour("pastel-purple")} !important;
+  --accent-border: #{colour.brand-colour("purple")} !important;
+  --accent-list-marker: #{colour.brand-colour("purple")} !important;
+  --button-accented-background: #{colour.brand-colour("purpled")} !important;
+}
+
+@mixin purple-accent {
+  @extend %accent-lighter-text;
+  @extend %purple-accent;
+}
+
 @mixin on-high-contrast {
   @media (prefers-contrast: more) {
     @content;

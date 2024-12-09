@@ -19,6 +19,7 @@ const accents = [
   "tna-accent-yellow",
   "tna-accent-green",
   "tna-accent-blue",
+  "tna-accent-purple",
   "tna-accent-black",
 ];
 

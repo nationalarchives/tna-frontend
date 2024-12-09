@@ -214,12 +214,14 @@ $shift-units: 5 !default;
     padding: 0;
   }
 
-  &--shift {
-    margin-bottom: spacing.space($shift-units - $padding-units-bottom);
-  }
+  @include media.on-larger-than {
+    &--shift {
+      margin-bottom: spacing.space($shift-units - $padding-units-bottom);
+    }
 
-  &--shift#{&}--narrow {
-    margin-bottom: spacing.space($shift-units - $padding-units-narrow);
+    &--shift#{&}--narrow {
+      margin-bottom: spacing.space($shift-units - $padding-units-narrow);
+    }
   }
 
   &--shift &__content-inner {
@@ -297,7 +299,6 @@ $shift-units: 5 !default;
     }
 
     &--shift {
-      margin-bottom: 0;
     }
 
     &--shift &__content-inner {

@@ -15,10 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Shifted and split hero components no longer assume a contrasted background by default
 - `marketing` has been added to the default list of cookie policies
+- Updated the weight of the `tna-large-paragraph` class from the base weight to "medium"
 
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Remove bottom margin of shifted hero components on smaller devices
+
 ### Security
 
 ## [0.3.0](https://github.com/nationalarchives/tna-frontend/compare/v0.2.18...v0.3.0) - 2024-12-05

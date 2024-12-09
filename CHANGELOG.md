@@ -9,11 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- The `data-tnacookiesdomain` attribute of the `<html>` element can be used to define the domain for cookies
+- Optional `data-tnacookiesdomain` and `data-tnacookiespath` attributes on the `<html>` element can be used to define the domain and path for cookies
 
 ### Changed
 
 - Shifted and split hero components no longer assume a contrasted background by default
+- `marketing` has been added to the default list of cookie policies
 
 ### Deprecated
 ### Removed

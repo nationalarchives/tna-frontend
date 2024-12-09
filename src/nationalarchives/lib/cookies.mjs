@@ -72,7 +72,7 @@ export default class Cookies {
 
   /**
    * Create a cookie handler.
-   * @param {String} [options.extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings and usage.
+   * @param {String} [options.extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings, usage and marketing.
    * @param {String} [options.domain=""] - The domain to register the cookie with.
    * @param {String} [options.path=""] - The domain to register the cookie with.
    * @param {String} [options.secure=true] - Only set cookie in HTTPS environments.
@@ -84,7 +84,7 @@ export default class Cookies {
     const {
       extraPolicies = [],
       domain = null,
-      path = "/",
+      path = null,
       secure = true,
       policiesKey = "cookies_policy",
       newInstance = false,
@@ -102,7 +102,12 @@ export default class Cookies {
     } else {
       this.domain = domain;
     }
-    this.path = path;
+    if (path === null) {
+      this.path =
+        document.documentElement.getAttribute("data-tnacookiespath") || "/";
+    } else {
+      this.path = path;
+    }
     this.secure = secure;
     this.policiesKey = policiesKey;
     this.defaultAge = defaultAge;
@@ -119,6 +124,7 @@ export default class Cookies {
       ),
       usage: false,
       settings: false,
+      marketing: false,
       ...this.policies,
       essential: true,
     });

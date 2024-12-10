@@ -10,6 +10,7 @@ const argTypes = {
   items: { control: "object" },
   id: { control: "text" },
   showGrid: { control: "boolean" },
+  bounded: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -34,6 +35,7 @@ const Template = ({
   items,
   id,
   showGrid,
+  bounded,
   classes,
   attributes,
 }) =>
@@ -47,6 +49,7 @@ const Template = ({
       items,
       id,
       showGrid,
+      bounded,
       classes,
       attributes,
     },
@@ -84,6 +87,12 @@ Standard.args = {
     })),
   id: "test",
   classes: "tna-gallery--demo",
+};
+
+export const Bounded = Template.bind({});
+Bounded.args = {
+  ...Standard.args,
+  bounded: true,
 };
 
 export const Grid = Template.bind({});

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Optional `data-tnacookiesdomain` and `data-tnacookiespath` attributes on the `<html>` element can be used to define the domain and path for cookies
 - Analytics added for breadcrumbs and gallery components
 - Allowed the document scope of an `EventTracker` instance to be changed
+- Gallery components are unbounded by default but can have a background with `bounded: true`
 
 ### Changed
 

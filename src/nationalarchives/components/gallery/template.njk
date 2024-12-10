@@ -1,6 +1,9 @@
 {% from "nationalarchives/components/button/macro.njk" import tnaButton %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.bounded -%}
+  {%- set containerClasses = containerClasses.concat('tna-gallery--bounded') -%}
+{%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <section class="tna-gallery{% if classes %} {{ classes }}{% endif %}" data-module="tna-gallery"{% if params.showGrid %} data-showgrid="true"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-gallery__header">

@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Optional `data-tnacookiesdomain` and `data-tnacookiespath` attributes on the `<html>` element can be used to define the domain and path for cookies
+- Analytics added for breadcrumbs and gallery components
+- Allowed the document scope of an `EventTracker` instance to be changed
 
 ### Changed
 
@@ -22,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Remove bottom margin of shifted hero components on smaller devices
+- Fixed `getXPathTo` on analytics helpers if the element has no parent node
+- Changed the incorrect `aria-selected` attribute on gallery items to `aria-current`
 
 ### Security
 

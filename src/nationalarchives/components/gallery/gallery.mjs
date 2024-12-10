@@ -149,21 +149,18 @@ export class Gallery {
       }
       $item.setAttribute("tabindex", "-1");
     });
-    this.$navigationItems.forEach(($item /*, index*/) => {
+    this.$navigationItems.forEach(($item) => {
       if (id) {
         if ($item.getAttribute("aria-controls") === id) {
-          $item.setAttribute("aria-selected", "true");
-          // $item.setAttribute("tabindex", "0");
+          $item.setAttribute("aria-current", "true");
           if (this.isFullScreen()) {
             $item.scrollIntoView({ block: "nearest" });
           }
         } else {
-          $item.setAttribute("aria-selected", "false");
-          // $item.setAttribute("tabindex", "-1");
+          $item.setAttribute("aria-current", "false");
         }
       } else {
-        $item.setAttribute("aria-selected", "false");
-        // $item.setAttribute("tabindex", index === 0 ? "0" : "-1");
+        $item.setAttribute("aria-current", "false");
       }
     });
     if (this.allowGridIndex) {

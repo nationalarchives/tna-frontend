@@ -6,19 +6,23 @@ const getXPathTo = ($element) => {
     return $element.tagName;
   }
   let ix = 0;
-  const siblings = $element.parentNode.childNodes;
-  for (let i = 0; i < siblings.length; i++) {
-    const sibling = siblings[i];
-    if (sibling === $element)
-      return (
-        getXPathTo($element.parentNode) +
-        "/" +
-        $element.tagName +
-        "[" +
-        (ix + 1) +
-        "]"
-      );
-    if (sibling.nodeType === 1 && sibling.tagName === $element.tagName) ix++;
+  if ($element.parentNode) {
+    const siblings = $element.parentNode.childNodes;
+    for (let i = 0; i < siblings.length; i++) {
+      const sibling = siblings[i];
+      if (sibling === $element)
+        return (
+          getXPathTo($element.parentNode) +
+          "/" +
+          $element.tagName +
+          "[" +
+          (ix + 1) +
+          "]"
+        );
+      if (sibling.nodeType === 1 && sibling.tagName === $element.tagName) ix++;
+    }
+  } else {
+    return $element.tagName;
   }
 };
 

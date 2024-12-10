@@ -50,14 +50,16 @@ class EventTracker {
   prefix = "tna";
 
   /** @protected */
-  addTrackingCode = true;
+  document = document;
 
   constructor(options = {}) {
-    const { prefix = null, addTrackingCode = true } = options;
+    const { prefix = null, documentScope = document } = options;
     if (prefix) {
       this.prefix = prefix;
     }
-    this.addTrackingCode = addTrackingCode;
+    if (documentScope) {
+      this.document = documentScope;
+    }
   }
 
   start(initAll) {
@@ -108,7 +110,7 @@ class EventTracker {
   addListeners(scope, areaName, events, rootEventName = "") {
     let scopeArray;
     if (typeof scope === "string") {
-      scopeArray = Array.from(document.querySelectorAll(scope));
+      scopeArray = Array.from(this.document.querySelectorAll(scope));
     } else if (typeof scope === "object") {
       scopeArray = [scope];
     }
@@ -239,6 +241,9 @@ class EventTracker {
  */
 class GA4 extends EventTracker {
   /** @protected */
+  addTrackingCode = true;
+
+  /** @protected */
   trackingCodeAdded = false;
 
   /** @protected */
@@ -257,8 +262,9 @@ class GA4 extends EventTracker {
       initAll = true,
       addTrackingCode = true,
     } = options;
-    super({ prefix, addTrackingCode });
+    super({ prefix });
     window.TNAFrontendAnalyticsGA4 = this;
+    this.addTrackingCode = addTrackingCode;
     window.dataLayer = window.dataLayer || [];
     if (id) {
       this.gTagId = id;

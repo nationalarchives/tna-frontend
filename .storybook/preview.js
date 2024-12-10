@@ -3,6 +3,7 @@ import "../src/nationalarchives/font-awesome.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
+import { GA4 } from "../src/nationalarchives/analytics.mjs";
 
 document.documentElement.classList.add(
   "tna-template",
@@ -32,11 +33,28 @@ export const parameters = {
   },
 };
 
+class MockGA4Tracking extends GA4 {
+  constructor(documentScope) {
+    super({ documentScope });
+  }
+
+  pushToDataLayer(data) {
+    super.pushToDataLayer();
+    console.log(data);
+  }
+}
+
 export const decorators = [
   (Story, ctx) => {
     window.dataLayer = [];
     const cookies = new Cookies();
     cookies.deleteAll();
-    return Story();
+    const story = Story();
+    if (window && ctx.args.disableMockAnalytics !== true) {
+      setTimeout(() => {
+        new MockGA4Tracking(ctx.canvasElement);
+      }, 1);
+    }
+    return story;
   },
 ];

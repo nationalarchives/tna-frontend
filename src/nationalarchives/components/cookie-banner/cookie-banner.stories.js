@@ -65,6 +65,7 @@ Standard.args = {
   cookiesUrl: "#",
   cookiesPath: "/tna-frontend/",
   classes: "tna-cookie-banner--demo",
+  disableMockAnalytics: true,
 };
 
 export const Accept = Template.bind({});
@@ -73,6 +74,7 @@ Accept.args = {
   cookiesUrl: "#",
   allowInsecure: true,
   classes: "tna-cookie-banner--demo",
+  disableMockAnalytics: true,
 };
 Accept.play = async ({ canvasElement }) => {
   const cookies = new Cookies({ newInstance: true });
@@ -115,6 +117,7 @@ Reject.args = {
   serviceName: "My service",
   cookiesUrl: "#",
   classes: "tna-cookie-banner--demo",
+  disableMockAnalytics: true,
 };
 Reject.play = async ({ canvasElement }) => {
   const cookies = new Cookies({ newInstance: true });
@@ -152,6 +155,7 @@ CustomPolicies.args = {
   cookiesUrl: "#",
   policies: "custom",
   classes: "tna-cookie-banner--demo",
+  disableMockAnalytics: true,
 };
 CustomPolicies.parameters = {
   chromatic: { disableSnapshot: true },
@@ -190,6 +194,7 @@ Existing.args = {
   cookiesUrl: "#",
   allowInsecure: true,
   classes: "tna-cookie-banner--demo",
+  disableMockAnalytics: true,
 };
 Existing.decorators = [
   (Story) => {

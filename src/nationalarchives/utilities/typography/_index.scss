@@ -434,9 +434,8 @@ small {
   }
 
   @include media.on-tiny {
-    padding: spacing.space(0.5) spacing.space(0.5) spacing.space(0.5) #{spacing.space(
-        1
-      )};
+    padding: spacing.space(0.5) spacing.space(0.5) spacing.space(0.5)
+      #{spacing.space(1)};
   }
 }
 

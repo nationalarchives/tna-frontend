@@ -57,7 +57,8 @@
 }
 
 @mixin colour-background-brand($brandColour, $important: false) {
-  background-color: #{brand-colour($brandColour)} if($important, !important, null);
+  background-color: #{brand-colour($brandColour)}
+    if($important, !important, null);
 }
 
 @mixin colour-border(

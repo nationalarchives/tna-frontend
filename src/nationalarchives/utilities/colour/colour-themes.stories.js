@@ -51,10 +51,10 @@ const Template = ({ theme, accent }) => {
     headingSize: "s",
     href: "#",
     imageSrc:
-      "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+      "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
     imageAlt: "The National Archives office",
-    imageWidth: 499,
-    imageHeight: 333,
+    imageWidth: 600,
+    imageHeight: 400,
     label: "New",
     body: "<p>Card body</p>",
     actions: [
@@ -188,10 +188,10 @@ const Template = ({ theme, accent }) => {
           title: "Title",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           imageSrc:
-            "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+            "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
           imageAlt: "The National Archives office",
-          imageWidth: 499,
-          imageHeight: 333,
+          imageWidth: 600,
+          imageHeight: 400,
           imageCaption: "An interesting photo by a famous photographer ©2023",
         },
       })}
@@ -558,10 +558,10 @@ const Template = ({ theme, accent }) => {
       ${Hero({
         params: {
           imageSrc:
-            "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+            "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
           imageAlt: "The National Archives office",
-          imageWidth: 499,
-          imageHeight: 333,
+          imageWidth: 600,
+          imageHeight: 400,
           imageCaption: "An interesting photo by a famous photographer ©2023",
         },
       })}
@@ -661,10 +661,10 @@ const Template = ({ theme, accent }) => {
         <div class="tna-column tna-column--full">
           ${Picture({
             params: {
-              src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+              src: "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
               alt: "The National Archives office",
-              width: 499,
-              height: 333,
+              width: 600,
+              height: 400,
               caption: "<p>This is a pretty image</p>",
               information: [
                 {

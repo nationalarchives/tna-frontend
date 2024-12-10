@@ -57,10 +57,10 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  src: "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+  src: "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   alt: "The National Archives office",
-  width: 499,
-  height: 333,
+  width: 600,
+  height: 400,
   caption: "<p>This is a pretty image</p>",
   informationItemHeadingLevel: 3,
   information: [

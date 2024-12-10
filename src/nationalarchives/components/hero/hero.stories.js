@@ -92,10 +92,10 @@ Standard.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
 };
 
@@ -135,10 +135,10 @@ LargeContent.args = {
   title: "‘Not acceptable’: Gay Switchboard’s attempts to become a charity",
   body: `<p class="tna-large-paragraph">Switchboard LGBT+ Helpline is one of the oldest telephone help services for lesbian, gay, bisexual, transgender and queer people in the UK. Despite high demand for its support, prejudice and laws meant Switchboard’s journey to register as a charity was not easy.</p>`,
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
 };
 
@@ -151,10 +151,10 @@ Accent.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
 };
@@ -168,10 +168,10 @@ Contrast.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "contrast",
 };
@@ -185,10 +185,10 @@ Tint.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "tint",
 };
@@ -198,10 +198,10 @@ Shifted.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
   layout: "shift",
@@ -212,10 +212,10 @@ Split.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
   layout: "split",
@@ -226,10 +226,10 @@ Narrow.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
   // layout: "split",
@@ -242,10 +242,10 @@ Actions.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
   actions: [
     {
@@ -274,10 +274,10 @@ CaptionWithNoHeading.parameters = {
 };
 CaptionWithNoHeading.args = {
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
 };
 
@@ -289,10 +289,10 @@ Sources.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageSources: [
     {
       src: "https://www.gstatic.com/webp/gallery/2.webp",
@@ -318,9 +318,9 @@ Mobile.args = {
   title: "Title",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   imageSrc:
-    "https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg",
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
   imageAlt: "The National Archives office",
-  imageWidth: 499,
-  imageHeight: 333,
+  imageWidth: 600,
+  imageHeight: 400,
   imageCaption: "An interesting photo by a famous photographer ©2023",
 };

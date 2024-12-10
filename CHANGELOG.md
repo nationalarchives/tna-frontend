@@ -21,6 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a `tna-large-paragraph--bold` to change the weight and colour `tna-large-paragraph`
 
 ### Deprecated
+
+- Removed the records list component
+
 ### Removed
 ### Fixed
 

@@ -108,7 +108,6 @@ const checkExists = [
   ...componentFiles("picture", "Picture"),
   ...componentFiles("quick-filters"),
   ...componentFiles("radios"),
-  ...componentFiles("records-list"),
   ...componentFiles("search-field"),
   ...componentFiles("select"),
   ...componentFiles("sidebar"),

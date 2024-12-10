@@ -13,7 +13,6 @@ import Pagination from "../../components/pagination/template.njk";
 import PhaseBanner from "../../components/phase-banner/template.njk";
 import Picture from "../../components/picture/template.njk";
 import Radios from "../../components/radios/template.njk";
-import RecordsList from "../../components/records-list/template.njk";
 import SearchField from "../../components/search-field/template.njk";
 import Select from "../../components/select/template.njk";
 import SkipLink from "../../components/skip-link/template.njk";
@@ -441,31 +440,6 @@ const Template = ({ theme, accent }) => {
           ${Warning({
             params: {
               body: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
-            },
-          })}
-          <h2 class="tna-heading-l">
-            Featured records
-          </h2>
-          ${RecordsList({
-            params: {
-              items: [
-                {
-                  imageSrc: "https://picsum.photos/id/237/400/600",
-                  imageWidth: 400,
-                  imageHeight: 600,
-                  collection: "TS 11/45/167",
-                  title: "Court records relating to Robert Wedderburn’s trial",
-                  href: "#",
-                  date: "1819–1820",
-                },
-                {
-                  collection: "HO 42/191",
-                  title: "Home office letters",
-                  href: "#",
-                  date: "1819",
-                },
-              ],
-              classes: "tna-records-list--demo",
             },
           })}
           <h2 class="tna-heading-l">

@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.4.0...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.4.0](https://github.com/nationalarchives/tna-frontend/compare/v0.3.0...v0.4.0) - 2024-12-05
+
+### Added
 
 - Optional `data-tnacookiesdomain` and `data-tnacookiespath` attributes on the `<html>` element can be used to define the domain and path for cookies
 - Analytics added for breadcrumbs and gallery components
@@ -24,19 +33,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed the records list component
 
-### Removed
 ### Fixed
 
 - Remove bottom margin of shifted hero components on smaller devices
 - Fixed `getXPathTo` on analytics helpers if the element has no parent node
 - Changed the incorrect `aria-selected` attribute on gallery items to `aria-current`
-
-### Security
-
-## [0.4.0](https://github.com/nationalarchives/tna-frontend/compare/v0.3.0...v0.4.0) - 2024-12-05
-
-
-
 
 ## [0.3.0](https://github.com/nationalarchives/tna-frontend/compare/v0.2.18...v0.3.0) - 2024-12-05
 

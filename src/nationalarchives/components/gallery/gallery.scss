@@ -238,7 +238,7 @@
       }
     }
 
-    &[aria-selected="true"] {
+    &[aria-current="true"] {
       @include colour.accent;
 
       &::after {

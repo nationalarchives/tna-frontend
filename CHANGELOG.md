@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The `data-preferenceskey` and `data-policieskey` attributes on the cookies component are now `data-preferences-key` and `data-policies-key`
 - The `data-disableautofocus` attribute on the error summary component is now `data-disable-autofocus`
 - The `data-informationlabelopen` and `data-informationlabelclose` attributes on the picture component are now `data-information-label-open` and `data-information-label-close`
+- `$disable-image-loader-animations` (default: `false`) in `variables/features` has changed to `$image-loader-animations` (default: `true`)
 
 ### Deprecated
 ### Removed

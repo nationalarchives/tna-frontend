@@ -486,7 +486,7 @@
 }
 
 @mixin image-loader-background {
-  @if not features.$disable-image-loader-animations {
+  @if features.$image-loader-animations {
     background: linear-gradient(
       -45deg,
       rgba(0 0 0 / 25%),

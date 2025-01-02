@@ -27,16 +27,15 @@ export class CookieBanner {
       return;
     }
 
-    const policies = this.$module.getAttribute("data-policies") || "";
+    const policies = this.$module.dataset.policies || "";
     const extraPolicies = policies
       .split(",")
       .filter((x) => x)
       .map((policy) => policy.trim());
-    const domain = this.$module.getAttribute("data-domain") || undefined;
-    const path = this.$module.getAttribute("data-path") || undefined;
-    const secure = this.$module.getAttribute("data-secure") || undefined;
-    const policiesKey =
-      this.$module.getAttribute("data-policieskey") || undefined;
+    const domain = this.$module.dataset.domain || undefined;
+    const path = this.$module.dataset.path || undefined;
+    const secure = this.$module.dataset.secure || undefined;
+    const policiesKey = this.$module.dataset.policiesKey || undefined;
 
     this.cookies = new Cookies({
       extraPolicies,
@@ -48,8 +47,7 @@ export class CookieBanner {
     });
 
     this.cookiePreferencesSet =
-      this.$module.getAttribute("data-preferenceskey") ||
-      "cookie_preferences_set";
+      this.$module.dataset.preferencesKey || "cookie_preferences_set";
     const cookiePreferencesSet = this.cookies.hasValue(
       this.cookiePreferencesSet,
       "true",

@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - More tracking added to accordions, breadcrumbs, footers, galleries, headers and sidebars
 
 ### Changed
+
+- Optional `data-tnacookiesdomain` and `data-tnacookiespath` attributes on the `<html>` element are now `data-tna-cookies-domain` and `data-tna-cookies-path`
+- The `data-preferenceskey` and `data-policieskey` attributes on the cookies component are now `data-preferences-key` and `data-policies-key`
+- The `data-disableautofocus` attribute on the error summary component is now `data-disable-autofocus`
+- The `data-informationlabelopen` and `data-informationlabelclose` attributes on the picture component are now `data-information-label-open` and `data-information-label-close`
+
 ### Deprecated
 ### Removed
 ### Fixed

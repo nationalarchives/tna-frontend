@@ -9,7 +9,7 @@ export class ErrorSummary {
     }
 
     const disableAutoFocus =
-      this.$module.getAttribute("data-disableautofocus") === "true" || false;
+      this.$module.dataset.disableAutofocus === "true" || false;
 
     if (!disableAutoFocus) {
       this.setFocus(this.$module);

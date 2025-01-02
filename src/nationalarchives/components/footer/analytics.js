@@ -32,7 +32,7 @@ export default [
         rootData: {
           data_link_type: "icon",
           data_section: "Social media",
-          data_link: ($el) => $el.getAttribute("data-name"),
+          data_link: ($el) => $el.dataset.name,
         },
       },
       {

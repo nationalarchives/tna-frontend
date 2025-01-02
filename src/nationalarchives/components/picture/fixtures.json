@@ -81,7 +81,7 @@
           }
         ]
       },
-      "html": "<figure class=\"tna-picture\" data-module=\"tna-picture\" data-informationlabelopen=\"Show information\" data-informationlabelclose=\"Hide information\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" loading=\"lazy\"></picture><button type=\"button\" class=\"tna-picture__toggle-transcript tna-button tna-button--small tna-button--solid-hover\" aria-expanded=\"false\" hidden>Open transcript</button></div><div class=\"tna-picture__transcript\"><p>Lorem ipsum transcript</p></div></figure>"
+      "html": "<figure class=\"tna-picture\" data-module=\"tna-picture\" data-information-label-open=\"Show information\" data-information-label-close=\"Hide information\"><div class=\"tna-picture__image-wrapper tna-background-tint\"><picture><img class=\"tna-picture__image\" width=\"499\" height=\"333\" src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" loading=\"lazy\"></picture><button type=\"button\" class=\"tna-picture__toggle-transcript tna-button tna-button--small tna-button--solid-hover\" aria-expanded=\"false\" hidden>Open transcript</button></div><div class=\"tna-picture__transcript\"><p>Lorem ipsum transcript</p></div></figure>"
     },
     {
       "name": "with alternative image sources",

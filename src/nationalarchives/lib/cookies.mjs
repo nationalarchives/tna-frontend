@@ -97,14 +97,12 @@ export default class Cookies {
     }
     this.extraPolicies = extraPolicies;
     if (domain === null) {
-      this.domain =
-        document.documentElement.getAttribute("data-tnacookiesdomain") || "";
+      this.domain = document.documentElement.dataset.tnaCookiesDomain || "";
     } else {
       this.domain = domain;
     }
     if (path === null) {
-      this.path =
-        document.documentElement.getAttribute("data-tnacookiespath") || "/";
+      this.path = document.documentElement.dataset.tnaCookiesPath || "/";
     } else {
       this.path = path;
     }

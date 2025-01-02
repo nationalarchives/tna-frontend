@@ -129,7 +129,7 @@ const initAll = (options) => {
         .querySelectorAll(".tna-details__details:not([open])")
         .forEach((e) => {
           e.setAttribute("open", "");
-          e.dataset.wasclosed = "";
+          e.dataset.wasClosed = "";
         });
       document
         .querySelectorAll(
@@ -137,22 +137,22 @@ const initAll = (options) => {
         )
         .forEach((e) => {
           e.removeAttribute("hidden");
-          e.dataset.wasclosed = "";
+          e.dataset.wasClosed = "";
         });
     } else {
       document
-        .querySelectorAll(".tna-details__details[data-wasclosed]")
+        .querySelectorAll(".tna-details__details[data-was-closed]")
         .forEach((e) => {
           e.removeAttribute("open");
-          delete e.dataset.wasclosed;
+          delete e.dataset.wasClosed;
         });
       document
         .querySelectorAll(
-          ".tna-accordion__content[data-wasclosed], .tna-picture__transcript[data-wasclosed]",
+          ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )
         .forEach((e) => {
           e.setAttribute("hidden", "until-closed");
-          e.dataset.wasclosed = "";
+          e.dataset.wasClosed = "";
         });
     }
   });

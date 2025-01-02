@@ -24,11 +24,9 @@ export class Picture {
     }
 
     this.openLabel =
-      this.$module.getAttribute("data-informationlabelopen") ||
-      "Open transcript";
+      this.$module.dataset.informationLabelOpen || "Open transcript";
     this.closeLabel =
-      this.$module.getAttribute("data-informationlabelclose") ||
-      "Close transcript";
+      this.$module.dataset.informationLabelClose || "Close transcript";
 
     this.init();
   }

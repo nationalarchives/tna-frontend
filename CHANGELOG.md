@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.4.0...HEAD)
 
 ### Added
+
+- More tracking added to accordions, breadcrumbs, footers, galleries, headers and sidebars
+
 ### Changed
 ### Deprecated
 ### Removed

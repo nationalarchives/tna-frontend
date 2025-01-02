@@ -4,7 +4,10 @@ export default [
   {
     scope: ".tna-gallery",
     areaName: "gallery",
-    rootEventName: "select_feature",
+    rootEventName: "select_media",
+    rootData: {
+      data_component_name: "gallery",
+    },
     events: [
       {
         eventName: "click",
@@ -14,8 +17,7 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Gallery",
-          data_link_type: "Pagination thumbnail",
+          data_link_type: "pagination_thumbnail",
           data_position: valueGetters.index,
         },
       },
@@ -30,8 +32,7 @@ export default [
             ).innerText,
         },
         rootData: {
-          data_component_name: "Gallery",
-          data_link_type: "Navigation button",
+          data_link_type: "navigation_button",
           data_link: valueGetters.text,
         },
       },
@@ -46,8 +47,7 @@ export default [
             ).innerText,
         },
         rootData: {
-          data_component_name: "Gallery",
-          data_link_type: "Navigation button",
+          data_link_type: "navigation_button",
           data_link: valueGetters.text,
         },
       },
@@ -63,8 +63,7 @@ export default [
         targetElement: '.tna-gallery__options button[value="enter-fullscreen"]',
         on: "click",
         rootData: {
-          data_component_name: "Gallery",
-          data_link_type: "Full screen button",
+          data_link_type: "full_screen_button",
           data_link: valueGetters.text,
         },
       },
@@ -73,8 +72,7 @@ export default [
         targetElement: '.tna-gallery__options button[value="exit-fullscreen"]',
         on: "click",
         rootData: {
-          data_component_name: "Gallery",
-          data_link_type: "Full screen button",
+          data_link_type: "full_screen_button",
           data_link: valueGetters.text,
         },
       },

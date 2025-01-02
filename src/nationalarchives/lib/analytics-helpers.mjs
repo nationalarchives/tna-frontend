@@ -54,10 +54,11 @@ const getClosestHeading = ($element) => {
 };
 
 const valueGetters = {
-  text: ($el) => $el.innerText,
+  text: ($el) => $el.innerText.replace(/\n/g, " "),
   html: ($el) => $el.innerHTML,
   value: ($el) => $el.value,
   index: ($el, $scope, event, index) => index,
+  instance: ($el, $scope, event, index, instance) => instance,
   checked: ($el) => ($el.checked ? "checked" : "unchecked"),
   expanded: ($el) => {
     const expanded = $el.getAttribute("aria-expanded");

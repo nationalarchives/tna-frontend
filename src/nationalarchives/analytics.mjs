@@ -16,6 +16,7 @@ import HeroAnalytics from "./components/hero/analytics.js";
 import PictureAnalytics from "./components/picture/analytics.js";
 import RadiosAnalytics from "./components/radios/analytics.js";
 import SearchFieldAnalytics from "./components/search-field/analytics.js";
+import SidebarAnalytics from "./components/sidebar/analytics.js";
 import TextInputAnalytics from "./components/text-input/analytics.js";
 import TextareaAnalytics from "./components/textarea/analytics.js";
 
@@ -32,6 +33,7 @@ const componentAnalytics = [
   ...PictureAnalytics,
   ...RadiosAnalytics,
   ...SearchFieldAnalytics,
+  ...SidebarAnalytics,
   ...TextInputAnalytics,
   ...TextareaAnalytics,
 ];
@@ -96,6 +98,7 @@ class EventTracker {
         componentConfig.areaName,
         componentConfig.events,
         componentConfig.rootEventName || "",
+        componentConfig.rootData || {},
       );
     });
   }
@@ -106,8 +109,15 @@ class EventTracker {
    * @param {String} areaName - The name of the component to pass on to the tracker.
    * @param {{eventName: String, targetElement: String|undefined, on: String, data: {value: Function|String|undefined, state: Function|String|undefined, group: Function|String|undefined, [String]: String|Integer}, rootData:{[String]: Function|String}}[]} events - The configuration of events to track along with their optional value and state which can be computed.
    * @param {String} rootEventName - The event name to use if specified (prefix).
+   * @param {{[String]:String}} rootDefaultData - The default root data to use if specified.
    */
-  addListeners(scope, areaName, events, rootEventName = "") {
+  addListeners(
+    scope,
+    areaName,
+    events,
+    rootEventName = "",
+    rootDefaultData = {},
+  ) {
     let scopeArray;
     if (typeof scope === "string") {
       scopeArray = Array.from(this.document.querySelectorAll(scope));
@@ -117,7 +127,7 @@ class EventTracker {
     if (!scopeArray) {
       return;
     }
-    scopeArray.forEach(($scope) => {
+    scopeArray.forEach(($scope, scopeIndex) => {
       events.forEach((eventConfig) => {
         if (!eventConfig.on) {
           return;
@@ -130,10 +140,12 @@ class EventTracker {
               $el,
               $scope,
               rootEventName,
+              rootDefaultData,
               eventConfig,
               scope,
               areaName,
               index + 1,
+              scopeIndex + 1,
             ),
           );
         } else {
@@ -141,10 +153,12 @@ class EventTracker {
             $scope,
             $scope,
             rootEventName,
+            rootDefaultData,
             eventConfig,
             scope,
             areaName,
             1,
+            scopeIndex + 1,
           );
         }
       });
@@ -161,10 +175,12 @@ class EventTracker {
     $el,
     $scope,
     rootEventName,
+    rootDefaultData,
     eventConfig,
     scope,
     areaName,
     index,
+    instance,
   ) {
     const { on, data, targetElement, rootData = {} } = eventConfig;
     $el.addEventListener(on, (event) =>
@@ -176,35 +192,59 @@ class EventTracker {
           ...data,
           name: this.generateEventName(areaName, eventConfig),
           value: data?.value
-            ? this.computedValue(data.value, $el, $scope, event, index)
+            ? this.computedValue(
+                data.value,
+                $el,
+                $scope,
+                event,
+                index,
+                instance,
+              )
             : null,
           state: data?.state
-            ? this.computedValue(data.state, $el, $scope, event, index)
+            ? this.computedValue(
+                data.state,
+                $el,
+                $scope,
+                event,
+                index,
+                instance,
+              )
             : null,
           group: data?.group
-            ? this.computedValue(data.group, $el, $scope, event, index)
+            ? this.computedValue(
+                data.group,
+                $el,
+                $scope,
+                event,
+                index,
+                instance,
+              )
             : null,
           xPath: getXPathTo($el),
           targetElement: targetElement,
           timeSincePageLoad: new Date() - this.startTime,
           index,
+          instance,
           scope,
           areaName,
         },
         Object.fromEntries(
-          Object.entries(rootData).map(([key, value]) => [
-            key,
-            this.computedValue(value, $el, $scope, event, index),
-          ]),
+          Object.entries({ ...rootDefaultData, ...rootData }).map(
+            ([key, value]) => [
+              key,
+              this.computedValue(value, $el, $scope, event, index, instance),
+            ],
+          ),
         ),
       ),
     );
   }
 
   /** @protected */
-  computedValue(value, $el, $scope, event, index) {
+  computedValue(value, $el, $scope, event, index, instance) {
     return typeof value === "function"
-      ? value.call(this, $el, $scope, event, index)
+      ? value.call(this, $el, $scope, event, index, instance)
       : (value ?? null);
   }
 
@@ -212,7 +252,7 @@ class EventTracker {
   recordEvent(eventName, data, rootData = {}) {
     this.events.push({
       event: eventName,
-      [`${this.prefix}.event`]: data,
+      ...data,
       ...rootData,
     });
   }
@@ -222,7 +262,17 @@ class EventTracker {
     return Object.fromEntries(
       Array.from(
         document.head.querySelectorAll(
-          `meta[name^='${this.prefix}.'][content]`,
+          `meta[name^="${this.prefix}_root:"][content]`,
+        ),
+      ).map(($metaEl) => [
+        $metaEl
+          .getAttribute("name")
+          .replace(new RegExp(`^${this.prefix}_root:`), ""),
+        $metaEl.getAttribute("content"),
+      ]),
+      Array.from(
+        document.head.querySelectorAll(
+          `meta[name^="${this.prefix}."][content]`,
         ),
       ).map(($metaEl) => [
         $metaEl.getAttribute("name"),

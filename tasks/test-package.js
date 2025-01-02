@@ -169,7 +169,7 @@ const checkExists = [
   "config/stylelint.config.js",
 ];
 
-console.log(`Testing package file structure`);
+console.log("Testing package file structure...");
 checkExists.forEach((checkFile) => {
   const checkFilePath = `${packageDirectory}/${checkFile}`;
   try {
@@ -188,7 +188,7 @@ checkExists.forEach((checkFile) => {
 
 console.log("\n");
 
-console.log(`Testing package version`);
+console.log("Testing package version...");
 const compiledPackageJson = require("../package/package.json");
 const compiledPackageLockJson = require("../package/package-lock.json");
 if (packageJson.version === compiledPackageJson.version) {
@@ -212,7 +212,7 @@ if (compiledPackageLockJson.version === compiledPackageJson.version) {
 
 console.log("\n");
 
-console.log(`Testing prototype kit config`);
+console.log("Testing prototype kit config...");
 const expectedPrototypeKitConfigProperties = [
   "nunjucksPaths",
   "scripts",
@@ -245,7 +245,7 @@ expectedPrototypeKitConfigProperties.forEach(
 
 console.log("\n");
 
-console.log(`Testing compiled JavaScript files`);
+console.log("Testing compiled JavaScript files...");
 const { JSDOM } = jsdom;
 const { window } = new JSDOM(``);
 Object.defineProperty(window, "matchMedia", {
@@ -330,7 +330,7 @@ Object.keys(componentsWithJavaScript).forEach((component) => {
 
 console.log("\n");
 
-console.log(`Testing compiled CSS files`);
+console.log("Testing compiled CSS files...");
 const cssAllPackage = fs
   .readFileSync("package/nationalarchives/all.css")
   .toString();
@@ -353,26 +353,38 @@ checkForClasses.forEach((cssClass) => {
 
 console.log("\n");
 
-console.log(`Testing file sizes`);
-const filesToCheckSize = [
+console.log("Testing file sizes...");
+console.log("\n");
+const cssFilesToCheckSize = [
   "all.css",
-  "font-awesome.css",
-  "ie.css",
-  "print.css",
   "prototype-kit.css",
-  "all.js",
-  "analytics.js",
-  "all+analytics.js",
+  "font-awesome.css",
+  "print.css",
+  "ie.css",
 ];
-const longestFilenameToCheckSize = filesToCheckSize.reduce(
-  (longest, file) => (file.length > longest ? file.length : longest),
-  0,
-);
-console.log(`${"FILE".padEnd(longestFilenameToCheckSize)}   SIZE`);
-console.log(`${"".padEnd(longestFilenameToCheckSize, "-")}---------`);
-filesToCheckSize.forEach(async (file) => {
-  const fileStats = await fs.promises.stat(`package/nationalarchives/${file}`);
-  console.log(
-    `${file.padEnd(longestFilenameToCheckSize)}   ${Math.round(fileStats.size / 1000)} KB`,
-  );
-});
+const jsFilesToCheckSize = ["all.js", "analytics.js", "all+analytics.js"];
+const longestFilenameToCheckSize = [
+  ...cssFilesToCheckSize,
+  ...jsFilesToCheckSize,
+].reduce((longest, file) => (file.length > longest ? file.length : longest), 0);
+const testFileSizes = (files) => {
+  files.forEach((file) => {
+    try {
+      const fileStats = fs.statSync(`package/nationalarchives/${file}`);
+      console.log(
+        `  ${file.padEnd(longestFilenameToCheckSize)}     ${Math.round(fileStats.size / 1000)} KB`,
+      );
+    } catch (err) {
+      console.error(err);
+    }
+  });
+};
+console.log(`  ${"CSS FILE".padEnd(longestFilenameToCheckSize)}     SIZE`);
+console.log(`  ${"".padEnd(longestFilenameToCheckSize, "-")}-----------`);
+testFileSizes(cssFilesToCheckSize);
+console.log("\n");
+console.log(`  ${"JS FILE".padEnd(longestFilenameToCheckSize)}     SIZE`);
+console.log(`  ${"".padEnd(longestFilenameToCheckSize, "-")}-----------`);
+testFileSizes(jsFilesToCheckSize);
+
+console.log("\n");

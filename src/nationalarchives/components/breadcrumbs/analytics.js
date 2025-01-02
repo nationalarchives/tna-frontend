@@ -5,6 +5,9 @@ export default [
     scope: ".tna-breadcrumbs",
     areaName: "breadcrumbs",
     rootEventName: "select_navigation",
+    rootData: {
+      data_component_name: "breadcrumbs",
+    },
     events: [
       {
         eventName: "click",
@@ -12,8 +15,7 @@ export default [
         on: "click",
         data: { state: "expand", value: valueGetters.html },
         rootData: {
-          data_component_name: "Breadcrumb",
-          data_link_type: "Breadcrumb link",
+          data_link_type: "breadcrumb_link",
           data_link: valueGetters.text,
         },
       },
@@ -24,8 +26,7 @@ export default [
         on: "click",
         data: { state: "expand", value: valueGetters.html },
         rootData: {
-          data_component_name: "Breadcrumb",
-          data_link_type: "Breadcrumb expand",
+          data_link_type: "breadcrumb_expand",
           data_link: valueGetters.text,
         },
       },

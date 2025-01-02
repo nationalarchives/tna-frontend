@@ -5,6 +5,9 @@ export default [
     scope: ".tna-footer",
     areaName: "footer",
     rootEventName: "global_navigation",
+    rootData: {
+      data_component_name: "footer",
+    },
     events: [
       {
         eventName: "link.click",
@@ -14,8 +17,7 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Footer",
-          data_link_type: "Link",
+          data_link_type: "link",
           data_section: valueGetters.closestHeading,
           data_link: valueGetters.text,
         },
@@ -28,8 +30,7 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Footer",
-          data_link_type: "Icon",
+          data_link_type: "icon",
           data_section: "Social media",
           data_link: ($el) => $el.getAttribute("data-name"),
         },
@@ -42,8 +43,7 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Footer",
-          data_link_type: "Link",
+          data_link_type: "link",
           data_section: "Legal information",
           data_link: valueGetters.text,
         },
@@ -56,8 +56,7 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Footer",
-          data_link_type: "Button",
+          data_link_type: "button",
           data_section: "Mailing list",
           data_link: valueGetters.text,
         },
@@ -70,8 +69,7 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Footer",
-          data_link_type: "Link",
+          data_link_type: "link",
           data_section: "OGL",
           data_link: valueGetters.text,
         },
@@ -84,7 +82,6 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_component_name: "Footer",
           data_link_type: "Logo",
           data_section: "GOV.UK",
           data_link: valueGetters.text,

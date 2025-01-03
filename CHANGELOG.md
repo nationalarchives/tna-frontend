@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - More tracking added to accordions, breadcrumbs, footers, galleries, headers and sidebars
+- Disable [Google Chrome's "Auto dark theme"](https://developer.chrome.com/blog/auto-dark-theme) option
 
 ### Changed
 

@@ -6,7 +6,12 @@ export default [
     areaName: "gallery",
     rootEventName: "select_media",
     rootData: {
-      data_component_name: "gallery",
+      media_type: "gallery",
+      media_duration: ($el, $scope) =>
+        $scope.querySelectorAll(".tna-gallery__navigation-item").length,
+      media_provider: "tna",
+      media_title: ($el, $scope) =>
+        $scope.querySelector(".tna-gallery__header-inner").innerText,
     },
     events: [
       {
@@ -17,7 +22,8 @@ export default [
           value: valueGetters.text,
         },
         rootData: {
-          data_link_type: "pagination_thumbnail",
+          data_link: "image",
+          media_action: "progress",
           data_position: valueGetters.index,
         },
       },
@@ -32,8 +38,15 @@ export default [
             ).innerText,
         },
         rootData: {
-          data_link_type: "navigation_button",
-          data_link: valueGetters.text,
+          data_link: "previous",
+          media_action: "progress",
+          data_position: ($el, $scope) =>
+            (Array.from(
+              $scope.querySelectorAll(".tna-gallery__navigation-item"),
+            ).findIndex(
+              ($itemButton) =>
+                $itemButton.getAttribute("aria-current") === "true",
+            ) || -1) + 1,
         },
       },
       {
@@ -47,8 +60,15 @@ export default [
             ).innerText,
         },
         rootData: {
-          data_link_type: "navigation_button",
-          data_link: valueGetters.text,
+          data_link: "next",
+          media_action: "progress",
+          data_position: ($el, $scope) =>
+            Array.from(
+              $scope.querySelectorAll(".tna-gallery__navigation-item"),
+            ).findIndex(
+              ($itemButton) =>
+                $itemButton.getAttribute("aria-current") === "true",
+            ) + 1,
         },
       },
       {

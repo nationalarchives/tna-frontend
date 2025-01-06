@@ -7,6 +7,8 @@ export default [
     rootEventName: "select_navigation",
     rootData: {
       data_component_name: "sidebar",
+      data_section: ($el, $scope) =>
+        $scope.querySelector(".tna-sidebar__heading").innerText,
     },
     events: [
       {
@@ -16,6 +18,7 @@ export default [
         rootData: {
           data_link_type: "sidebar_link",
           data_link: valueGetters.text,
+          data_position: valueGetters.index,
         },
       },
     ],

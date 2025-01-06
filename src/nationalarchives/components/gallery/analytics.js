@@ -10,8 +10,15 @@ export default [
       media_duration: ($el, $scope) =>
         $scope.querySelectorAll(".tna-gallery__navigation-item").length,
       media_provider: "tna",
-      media_title: ($el, $scope) =>
-        $scope.querySelector(".tna-gallery__header-inner").innerText,
+      media_title: ($el, $scope, event, index, instance) =>
+        $scope.querySelector(".tna-gallery__header-inner")?.innerText ||
+        `gallery_${instance}`,
+      media_progress: ($el, $scope) =>
+        (Array.from(
+          $scope.querySelectorAll(".tna-gallery__navigation-item"),
+        ).findIndex(
+          ($itemButton) => $itemButton.getAttribute("aria-current") === "true",
+        ) || -1) + 1,
     },
     events: [
       {
@@ -24,7 +31,7 @@ export default [
         rootData: {
           data_link: "image",
           media_action: "progress",
-          data_position: valueGetters.index,
+          media_progress: valueGetters.index,
         },
       },
       {
@@ -40,13 +47,6 @@ export default [
         rootData: {
           data_link: "previous",
           media_action: "progress",
-          data_position: ($el, $scope) =>
-            (Array.from(
-              $scope.querySelectorAll(".tna-gallery__navigation-item"),
-            ).findIndex(
-              ($itemButton) =>
-                $itemButton.getAttribute("aria-current") === "true",
-            ) || -1) + 1,
         },
       },
       {
@@ -62,13 +62,6 @@ export default [
         rootData: {
           data_link: "next",
           media_action: "progress",
-          data_position: ($el, $scope) =>
-            Array.from(
-              $scope.querySelectorAll(".tna-gallery__navigation-item"),
-            ).findIndex(
-              ($itemButton) =>
-                $itemButton.getAttribute("aria-current") === "true",
-            ) + 1,
         },
       },
       {
@@ -83,8 +76,7 @@ export default [
         targetElement: '.tna-gallery__options button[value="enter-fullscreen"]',
         on: "click",
         rootData: {
-          data_link_type: "full_screen_button",
-          data_link: valueGetters.text,
+          data_link: "enter_full_screen_button",
         },
       },
       {
@@ -92,8 +84,7 @@ export default [
         targetElement: '.tna-gallery__options button[value="exit-fullscreen"]',
         on: "click",
         rootData: {
-          data_link_type: "full_screen_button",
-          data_link: valueGetters.text,
+          data_link: "exit_full_screen_button",
         },
       },
       {

@@ -145,7 +145,6 @@
   90% {
     transform: scale(1);
   }
-
   45% {
     transform: scale(var(--#{$fa-css-prefix}-beat-scale, 1.25));
   }
@@ -155,7 +154,6 @@
   0% {
     transform: scale(1, 1) translateY(0);
   }
-
   10% {
     transform: scale(
         var(--#{$fa-css-prefix}-bounce-start-scale-x, 1.1),
@@ -163,7 +161,6 @@
       )
       translateY(0);
   }
-
   30% {
     transform: scale(
         var(--#{$fa-css-prefix}-bounce-jump-scale-x, 0.9),
@@ -171,7 +168,6 @@
       )
       translateY(var(--#{$fa-css-prefix}-bounce-height, -0.5em));
   }
-
   50% {
     transform: scale(
         var(--#{$fa-css-prefix}-bounce-land-scale-x, 1.05),
@@ -179,16 +175,13 @@
       )
       translateY(0);
   }
-
   57% {
     transform: scale(1, 1)
       translateY(var(--#{$fa-css-prefix}-bounce-rebound, -0.125em));
   }
-
   64% {
     transform: scale(1, 1) translateY(0);
   }
-
   100% {
     transform: scale(1, 1) translateY(0);
   }
@@ -206,7 +199,6 @@
     opacity: var(--#{$fa-css-prefix}-beat-fade-opacity, 0.4);
     transform: scale(1);
   }
-
   50% {
     opacity: 1;
     transform: scale(var(--#{$fa-css-prefix}-beat-fade-scale, 1.125));
@@ -228,37 +220,29 @@
   0% {
     transform: rotate(-15deg);
   }
-
   4% {
     transform: rotate(15deg);
   }
-
   8%,
   24% {
     transform: rotate(-18deg);
   }
-
   12%,
   28% {
     transform: rotate(18deg);
   }
-
   16% {
     transform: rotate(-22deg);
   }
-
   20% {
     transform: rotate(22deg);
   }
-
   32% {
     transform: rotate(-12deg);
   }
-
   36% {
     transform: rotate(12deg);
   }
-
   40%,
   100% {
     transform: rotate(0deg);
@@ -269,7 +253,6 @@
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }

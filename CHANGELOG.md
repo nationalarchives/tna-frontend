@@ -8,7 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.5.0...HEAD)
 
 ### Added
+
+- More tracking added to galleries and sidebars
+
 ### Changed
+
+- Update Font Awesome from `6.4.2` to `6.7.2`
+
 ### Deprecated
 ### Removed
 ### Fixed

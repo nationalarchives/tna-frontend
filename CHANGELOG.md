@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Set `aria-hidden="true"` and `focusable="false"` on presentational SVGs
+
 ### Security
 
 ## [0.5.0](https://github.com/nationalarchives/tna-frontend/compare/v0.4.0...v0.5.0) - 2025-01-03

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Set `aria-hidden="true"` and `focusable="false"` on presentational SVGs
+- Removed quote marks from blockquotes that contain lists
 
 ### Security
 

@@ -413,11 +413,15 @@ small {
     quotes: auto;
     quotes: "‘" "’";
 
-    :first-child::before {
+    &:has(:is(ul, ol)) {
+      quotes: none;
+    }
+
+    > :first-child::before {
       content: open-quote;
     }
 
-    :last-child::after {
+    > :last-child::after {
       content: close-quote;
     }
   }

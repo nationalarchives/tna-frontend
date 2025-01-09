@@ -68,7 +68,7 @@ export class Accordion {
     $headingButton.setAttribute("aria-expanded", "true");
     $headingButton.setAttribute(
       "aria-label",
-      `${$headingButton.innerText}, Hide this section`,
+      `${$headingButton.innerText.trim()}, Hide this section`,
     );
     $content.removeAttribute("hidden");
     // $content.setAttribute("tabindex", "0");
@@ -80,7 +80,7 @@ export class Accordion {
     $headingButton.setAttribute("aria-expanded", "false");
     $headingButton.setAttribute(
       "aria-label",
-      `${$headingButton.innerText}, Show this section`,
+      `${$headingButton.innerText.trim()}, Show this section`,
     );
     $content.setAttribute("hidden", "until-found");
     // $content.setAttribute("tabindex", "-1");

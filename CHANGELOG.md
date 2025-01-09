@@ -9,12 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Ensure accordion `aria-label` attributes are trimmed
+
 ### Deprecated
 
 - Deprecated the `@nationalarchives/frontend-cookie-banner` package
 
 ### Removed
 ### Fixed
+
+- Trimmed `innerText` when tracking events
+
 ### Security
 
 ## [0.6.0](https://github.com/nationalarchives/tna-frontend/compare/v0.5.0...v0.6.0) - 2025-01-08

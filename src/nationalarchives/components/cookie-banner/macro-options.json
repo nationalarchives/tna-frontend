@@ -42,7 +42,7 @@
     "description": ""
   },
   {
-    "name": "cookiesPreferencesSetKey",
+    "name": "preferencesSetKey",
     "type": "string",
     "required": false,
     "description": ""

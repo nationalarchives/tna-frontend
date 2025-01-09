@@ -11,7 +11,7 @@ export default [
         $scope.querySelectorAll(".tna-gallery__navigation-item").length,
       media_provider: "tna",
       media_title: ($el, $scope, event, index, instance) =>
-        $scope.querySelector(".tna-gallery__header-inner")?.innerText ||
+        $scope.querySelector(".tna-gallery__header-inner")?.innerText?.trim() ||
         `gallery_${instance}`,
       media_progress: ($el, $scope) =>
         (Array.from(
@@ -40,9 +40,11 @@ export default [
         on: "click",
         data: {
           value: ($el, $scope) =>
-            $scope.querySelector(
-              ".tna-gallery__item:not([hidden]) .tna-gallery__item-header",
-            ).innerText,
+            $scope
+              .querySelector(
+                ".tna-gallery__item:not([hidden]) .tna-gallery__item-header",
+              )
+              ?.innerText?.trim(),
         },
         rootData: {
           data_link: "previous",
@@ -55,9 +57,11 @@ export default [
         on: "click",
         data: {
           value: ($el, $scope) =>
-            $scope.querySelector(
-              ".tna-gallery__item:not([hidden]) .tna-gallery__item-header",
-            ).innerText,
+            $scope
+              .querySelector(
+                ".tna-gallery__item:not([hidden]) .tna-gallery__item-header",
+              )
+              ?.innerText?.trim(),
         },
         rootData: {
           data_link: "next",

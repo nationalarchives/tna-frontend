@@ -17,7 +17,8 @@ export default [
           group: ($el, $scope, event) =>
             $scope
               .closest(".tna-form__group")
-              ?.querySelector(".tna-form__heading")?.innerText,
+              ?.querySelector(".tna-form__heading")
+              ?.innerText?.trim(),
         },
       },
     ],

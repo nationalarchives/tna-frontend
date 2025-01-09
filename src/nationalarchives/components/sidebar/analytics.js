@@ -8,7 +8,7 @@ export default [
     rootData: {
       data_component_name: "sidebar",
       data_section: ($el, $scope) =>
-        $scope.querySelector(".tna-sidebar__heading").innerText,
+        $scope.querySelector(".tna-sidebar__heading")?.innerText?.trim(),
     },
     events: [
       {

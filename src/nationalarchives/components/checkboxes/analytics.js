@@ -12,12 +12,13 @@ export default [
         data: {
           state: valueGetters.checked,
           // eslint-disable-next-line no-unused-vars
-          value: ($el, $scope, event) => $el.parentNode.innerText,
+          value: ($el, $scope, event) => $el.parentNode.innerText.trim(),
           // eslint-disable-next-line no-unused-vars
           group: ($el, $scope, event) =>
             $scope
               .closest(".tna-form__group")
-              ?.querySelector(".tna-form__heading")?.innerText,
+              ?.querySelector(".tna-form__heading")
+              ?.innerText?.trim(),
         },
       },
     ],

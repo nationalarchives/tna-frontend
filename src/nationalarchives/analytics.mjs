@@ -182,70 +182,61 @@ class EventTracker {
     index,
     instance,
   ) {
-    const { on, data, targetElement, rootData = {} } = eventConfig;
-    $el.addEventListener(on, (event) =>
-      this.recordEvent(
-        rootEventName
-          ? `${this.prefix}.${rootEventName}`
-          : this.generateEventName(areaName, eventConfig),
-        {
-          ...data,
-          name: this.generateEventName(areaName, eventConfig),
-          value: data?.value
-            ? this.computedValue(
-                data.value,
-                $el,
-                $scope,
-                event,
-                index,
-                instance,
-              )
-            : null,
-          state: data?.state
-            ? this.computedValue(
-                data.state,
-                $el,
-                $scope,
-                event,
-                index,
-                instance,
-              )
-            : null,
-          group: data?.group
-            ? this.computedValue(
-                data.group,
-                $el,
-                $scope,
-                event,
-                index,
-                instance,
-              )
-            : null,
-          xPath: getXPathTo($el),
-          targetElement: targetElement,
-          timeSincePageLoad: new Date() - this.startTime,
-          index,
-          instance,
-          scope,
-          areaName,
-        },
-        Object.fromEntries(
-          Object.entries({ ...rootDefaultData, ...rootData }).map(
-            ([key, value]) => [
-              key,
-              this.computedValue(value, $el, $scope, event, index, instance),
-            ],
+    const {
+      on,
+      data,
+      targetElement,
+      rootData = {},
+      onCondition = null,
+    } = eventConfig;
+    $el.addEventListener(on, (event) => {
+      const computedValueParameters = [$el, $scope, event, index, instance];
+      if (
+        onCondition === null ||
+        this.computedValue(onCondition, ...computedValueParameters)
+      ) {
+        this.recordEvent(
+          rootEventName
+            ? `${this.prefix}.${rootEventName}`
+            : this.generateEventName(areaName, eventConfig),
+          {
+            ...data,
+            name: this.generateEventName(areaName, eventConfig),
+            value: data?.value
+              ? this.computedValue(data.value, ...computedValueParameters)
+              : null,
+            state: data?.state
+              ? this.computedValue(data.state, ...computedValueParameters)
+              : null,
+            group: data?.group
+              ? this.computedValue(data.group, ...computedValueParameters)
+              : null,
+            xPath: getXPathTo($el),
+            targetElement: targetElement,
+            timeSincePageLoad: new Date() - this.startTime,
+            index,
+            instance,
+            scope,
+            areaName,
+          },
+          Object.fromEntries(
+            Object.entries({ ...rootDefaultData, ...rootData }).map(
+              ([key, value]) => [
+                key,
+                this.computedValue(value, ...computedValueParameters),
+              ],
+            ),
           ),
-        ),
-      ),
-    );
+        );
+      }
+    });
   }
 
   /** @protected */
-  computedValue(value, $el, $scope, event, index, instance) {
-    return typeof value === "function"
-      ? value.call(this, $el, $scope, event, index, instance)
-      : (value ?? null);
+  computedValue(valueOrFunction, $el, $scope, event, index, instance) {
+    return typeof valueOrFunction === "function"
+      ? valueOrFunction.call(this, $el, $scope, event, index, instance)
+      : (valueOrFunction ?? null);
   }
 
   /** @protected */

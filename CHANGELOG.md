@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Capture user preferences (such as dark mode, reduced motion etc.) in GA4
 - Text inputs can be turned into password inputs with `password: true`
+- Conditional tracking of events with `onCondition`
 
 ### Changed
 

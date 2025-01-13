@@ -71,8 +71,22 @@ export default [
       {
         eventName: "keypress",
         on: "keydown",
+        onCondition: ($el, $scope, event) =>
+          [
+            "ArrowLeft",
+            "ArrowRight",
+            "ArrowUp",
+            "ArrowDown",
+            "End",
+            "Home",
+            "Escape",
+          ].includes(event.key),
         data: {
           value: ($el, $scope, event) => event.key,
+        },
+        rootData: {
+          data_link: "keypress",
+          media_action: "progress",
         },
       },
       {

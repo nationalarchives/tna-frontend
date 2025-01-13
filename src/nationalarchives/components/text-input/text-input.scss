@@ -3,7 +3,6 @@
 @use "../../tools/spacing";
 
 .tna-text-input {
-  width: 100%;
   padding: 0 spacing.space(0.375);
 
   display: block;
@@ -17,6 +16,11 @@
 
   @include colour.colour-border("input-border", forms.$form-field-border-width);
   border-radius: 0.1px;
+
+  &,
+  &-wrapper {
+    width: 100%;
+  }
 
   .tna-form__group--error & {
     @include colour.colour-border("form-error-border");
@@ -40,5 +44,17 @@
 
   &--xl {
     max-width: 80rem;
+  }
+
+  &-wrapper & {
+    border-right-width: 0;
+  }
+
+  &-wrapper {
+    display: flex;
+
+    .tna-button {
+      white-space: nowrap;
+    }
   }
 }

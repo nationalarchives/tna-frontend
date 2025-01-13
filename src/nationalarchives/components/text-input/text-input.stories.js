@@ -13,6 +13,7 @@ const argTypes = {
   hint: { control: "text" },
   value: { control: "text" },
   error: { control: "object" },
+  password: { control: "boolean" },
   spellcheck: { control: "boolean" },
   inputmode: {
     control: "select",
@@ -97,6 +98,7 @@ const Template = ({
   hint,
   value,
   error,
+  password,
   spellcheck,
   inputmode,
   autofill,
@@ -118,6 +120,7 @@ const Template = ({
       hint,
       value,
       error,
+      password,
       spellcheck,
       inputmode,
       autofill,
@@ -184,5 +187,16 @@ Inline.args = {
   id: "firstname5",
   name: "firstname5",
   inline: true,
+  classes: "tna-text-input--demo",
+};
+
+export const Password = Template.bind({});
+Password.args = {
+  label: "Enter your password",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "password",
+  name: "password",
+  password: true,
   classes: "tna-text-input--demo",
 };

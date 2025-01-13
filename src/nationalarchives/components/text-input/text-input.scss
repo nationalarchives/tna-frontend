@@ -55,6 +55,11 @@
 
     .tna-button {
       white-space: nowrap;
+
+      svg {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

@@ -68,6 +68,7 @@ const valueGetters = {
     return expanded.toString() === "true" ? "opened" : "closed";
   },
   closestHeading: ($el) => getClosestHeading($el),
+  xpath: ($el) => getXPathTo($el.target),
 };
 
 export { getXPathTo, getClosestHeading, valueGetters };

@@ -280,6 +280,29 @@ class EventTracker {
       ]),
     );
   }
+
+  /** @protected */
+  getUserPreferences() {
+    const userPreferences = {};
+    userPreferences[`${this.prefix}.pref.prefers-color-scheme`] =
+      window.matchMedia?.("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    userPreferences[`${this.prefix}.pref.forced-colors`] = window.matchMedia?.(
+      "(forced-colors: active)",
+    ).matches;
+    userPreferences[`${this.prefix}.pref.prefers-contrast`] =
+      window.matchMedia?.("(prefers-contrast: more)").matches
+        ? "more"
+        : window.matchMedia?.("(prefers-contrast: less)").matches
+          ? "less"
+          : "";
+    userPreferences[`${this.prefix}.pref.prefers-reduced-motion`] =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    userPreferences[`${this.prefix}.pref.prefers-reduced-transparency`] =
+      window.matchMedia?.("(prefers-reduced-transparency: reduce)").matches;
+    return userPreferences;
+  }
 }
 
 /**
@@ -365,9 +388,9 @@ class GA4 extends EventTracker {
         if (!this.gTagId) {
           throw Error("ID was not specified");
         }
-        const tnaMetaTags = this.getTnaMetaTags();
         this.pushToDataLayer({
-          ...tnaMetaTags,
+          ...this.getTnaMetaTags(),
+          ...this.getUserPreferences(),
           "gtm.start": new Date().getTime(),
           event: "gtm.js",
         });
@@ -397,7 +420,6 @@ class GA4 extends EventTracker {
         }
       });
       this.trackingEnabled = false;
-      // window.location.reload();
     }
   }
 }

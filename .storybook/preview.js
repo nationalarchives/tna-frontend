@@ -37,6 +37,12 @@ class MockEventTracker extends EventTracker {
   constructor(documentScope) {
     super({ documentScope });
     this.initAll();
+    console.log({
+      ...this.getTnaMetaTags(),
+      ...this.getUserPreferences(),
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js",
+    });
   }
 
   recordEvent(eventName, data, rootData = {}) {

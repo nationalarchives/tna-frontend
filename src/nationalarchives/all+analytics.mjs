@@ -12,6 +12,7 @@ import {
   Picture,
   SkipLink,
   Tabs,
+  TextInput,
 } from "./all.mjs";
 import { EventTracker, GA4, helpers } from "./analytics.mjs";
 
@@ -29,6 +30,7 @@ export {
   Picture,
   SkipLink,
   Tabs,
+  TextInput,
   EventTracker,
   GA4,
   helpers,

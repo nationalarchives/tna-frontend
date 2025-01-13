@@ -113,7 +113,7 @@ const checkExists = [
   ...componentFiles("sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
-  ...componentFiles("text-input"),
+  ...componentFiles("text-input", "TextInput"),
   ...componentFiles("textarea"),
   ...componentFiles("warning"),
   // Tools

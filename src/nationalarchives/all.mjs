@@ -9,6 +9,7 @@ import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
 import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
+import { TextInput } from "./components/text-input/text-input.mjs";
 import Cookies from "./lib/cookies.mjs";
 
 const initAll = (options) => {
@@ -101,6 +102,11 @@ const initAll = (options) => {
     new Tabs($tabModule);
   });
 
+  const $textInputs = $scope.querySelectorAll('[data-module="tna-text-input"]');
+  $textInputs.forEach(($textInput) => {
+    new TextInput($textInput);
+  });
+
   const checkTableForScroll = ($tableWrapper) => {
     const scrollable = $tableWrapper.scrollWidth > $tableWrapper.clientWidth;
     const $tableCaption = $tableWrapper.querySelector(".tna-table__caption");
@@ -172,4 +178,5 @@ export {
   Picture,
   SkipLink,
   Tabs,
+  TextInput,
 };

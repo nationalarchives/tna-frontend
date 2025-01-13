@@ -10,7 +10,7 @@
         "id": "name",
         "name": "name"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input type=\"text\" id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
     },
     {
       "name": "text input with a preselected value",
@@ -22,7 +22,7 @@
         "name": "name",
         "value": "John"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input type=\"text\" id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"John\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"John\" type=\"text\" spellcheck=\"false\"></div>"
     },
     {
       "name": "text input with a hint",
@@ -34,7 +34,7 @@
         "name": "name",
         "hint": "What people call you by."
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4><p id=\"name-hint\" class=\"tna-form__hint\">What people call you by.</p></div><input type=\"text\" id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" spellcheck=\"false\" aria-describedby=\"name-hint \"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4><p id=\"name-hint\" class=\"tna-form__hint\">What people call you by.</p></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" aria-describedby=\"name-hint \" type=\"text\" spellcheck=\"false\"></div>"
     },
     {
       "name": "text input with an error",
@@ -48,7 +48,7 @@
           "text": "Enter a name"
         }
       },
-      "html": "<div class=\"tna-form__group tna-form__group--error\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4><p id=\"name-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter a name</p></div><input type=\"text\" id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" spellcheck=\"false\" aria-describedby=\" name-error\"></div>"
+      "html": "<div class=\"tna-form__group tna-form__group--error\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4><p id=\"name-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter a name</p></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" aria-describedby=\" name-error\" type=\"text\" spellcheck=\"false\"></div>"
     },
     {
       "name": "inline text input",
@@ -60,7 +60,7 @@
         "name": "name",
         "inline": true
       },
-      "html": "<div class=\"tna-form__group tna-form__group--inline\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input type=\"text\" id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form__group tna-form__group--inline\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
     },
     {
       "name": "text input size",
@@ -72,7 +72,19 @@
         "name": "name",
         "size": "m"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input type=\"text\" id=\"name\" class=\"tna-text-input tna-text-input--m \" name=\"name\" value=\"\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input tna-text-input--m \" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
+    },
+    {
+      "name": "password",
+      "options": {
+        "label": "Enter your password",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "password",
+        "name": "password",
+        "size": "m"
+      },
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"password\">Enter your password</label></h4></div><input id=\"password\" class=\"tna-text-input tna-text-input--m \" name=\"password\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
     }
   ]
 }

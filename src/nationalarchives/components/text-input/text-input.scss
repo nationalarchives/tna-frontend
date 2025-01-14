@@ -47,19 +47,21 @@
   }
 
   &-wrapper & {
+    flex: 1;
+
     border-right-width: 0;
   }
 
   &-wrapper {
     display: flex;
+    align-items: stretch;
 
     .tna-button {
       white-space: nowrap;
 
       svg {
-        width: 20px;
-        margin-top: 0;
-        margin-bottom: 0;
+        width: 30px;
+        margin: 0;
       }
     }
   }

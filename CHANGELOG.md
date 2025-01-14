@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
-- Small size difference between show/hide password button width in text input
+- Fixed small size difference between show/hide password button width in text input
+- Added missing `aria-controls` to password show/hide button in text input
 
 ### Security
 

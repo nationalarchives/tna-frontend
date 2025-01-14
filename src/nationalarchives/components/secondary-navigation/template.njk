@@ -1,0 +1,20 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.noBottomBorder -%}
+  {%- set containerClasses = containerClasses.concat('tna-secondary-navigation--no-bottom-border') -%}
+{%- endif -%}
+{%- if params.overflow -%}
+  {%- set containerClasses = containerClasses.concat('tna-secondary-navigation--overflow') -%}
+{%- endif -%}
+{%- set classes = containerClasses | join(' ') -%}
+<nav class="tna-secondary-navigation{% if classes %} {{ classes }}{% endif %}" aria-label="{{ params.title }}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <h{{ params.headingLevel }} class="tna-secondary-navigation__heading tna-heading-s">
+    {{ params.title }}
+  </h{{ params.headingLevel }}>
+  <ul class="tna-secondary-navigation__items">
+    {%- for item in params.items %}
+    <li class="tna-secondary-navigation__item{{ ' tna-secondary-navigation__item--current' if item.current else '' }}">
+      <a href="{{ item.href }}" class="tna-secondary-navigation__link">{{ item.name }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</nav>

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.7.1...HEAD)
 
 ### Added
+
+- Secondary navigation component
+
 ### Changed
 
 - Markers for ordered and unordered lists have changed from the accent colour to the light font colour

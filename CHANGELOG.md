@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Markers for ordered and unordered lists have changed from the accent colour to the light font colour
+
 ### Deprecated
 ### Removed
 ### Fixed

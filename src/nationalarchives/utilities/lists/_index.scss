@@ -39,7 +39,7 @@ ol {
 
   > li {
     &::marker {
-      @include colour.colour-font("accent-list-marker");
+      @include colour.colour-font("font-light");
       @include typography.main-font-weight-bold;
     }
   }

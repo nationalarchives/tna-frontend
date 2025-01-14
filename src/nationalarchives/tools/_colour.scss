@@ -210,8 +210,6 @@
   --button-background: var(--contrast-button-background);
   --button-hover-text: var(--contrast-button-hover-text);
   --button-hover-background: var(--contrast-button-hover-background);
-  --accent-list-marker: var(--accent-border);
-  // --accent-list-marker: var(--font-base);
 
   @include colour-background("background");
 
@@ -237,8 +235,6 @@
     --button-background: var(--contrast-button-background);
     --button-hover-text: var(--contrast-button-hover-text);
     --button-hover-background: var(--contrast-button-hover-background);
-    --accent-list-marker: var(--accent-border);
-    // --accent-list-marker: var(--font-base);
 
     @include colour-background("background");
 
@@ -272,7 +268,6 @@
   --link-visited: var(--accent-link);
   --keyline: var(--accent-keyline);
   --keyline-dark: var(--accent-keyline-dark);
-  --accent-list-marker: var(--accent-font-base);
   --accent-border: var(--accent-font-dark);
   --button-text: var(--accent-button-text);
   --button-background: var(--accent-button-background);
@@ -309,7 +304,6 @@
       colour.$colour-palette-default,
       "button-hover-background"
     )};
-  --accent-list-marker: var(--font-base);
   --accent-border: var(--accent-background);
 
   @include colour-background("background");
@@ -329,7 +323,6 @@
       --link-visited: var(--accent-link);
       --keyline: var(--accent-keyline);
       --keyline-dark: var(--accent-keyline-dark);
-      --accent-list-marker: var(--accent-font-base);
       --accent-border: var(--accent-font-dark);
       --button-text: var(--accent-button-text);
       --button-background: var(--accent-button-background);
@@ -351,7 +344,6 @@
     --link-visited: var(--accent-link);
     --keyline: var(--accent-keyline);
     --keyline-dark: var(--accent-keyline-dark);
-    --accent-list-marker: var(--accent-font-base);
     --accent-border: var(--accent-font-dark);
     --button-text: var(--accent-button-text);
     --button-background: var(--accent-button-background);
@@ -368,7 +360,6 @@
   --accent-background: #{colour.brand-colour("yellow")} !important;
   --accent-background-light: #{colour.brand-colour("cream")} !important;
   --accent-border: #{colour.brand-colour("yellow")} !important;
-  // --accent-list-marker: #{colour.brand-colour("brown")} !important;
   --accent-font-base: #{colour.brand-colour("black")} !important;
   --accent-font-dark: #{colour.brand-colour("black")} !important;
   --accent-font-light: #{colour.brand-colour("black", 0.7)} !important;
@@ -401,7 +392,6 @@
   --accent-background: #{colour.brand-colour("black")} !important;
   --accent-background-light: #{colour.brand-colour("light-grey")} !important;
   --accent-border: #{colour.brand-colour("black")} !important;
-  --accent-list-marker: #{colour.brand-colour("grey")} !important;
   --button-accented-text: #{colour.brand-colour("black")} !important;
   --button-accented-background: #{colour.brand-colour("grey")} !important;
 }
@@ -415,7 +405,6 @@
   --accent-background: #{colour.brand-colour("maroon")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
   --accent-border: #{colour.brand-colour("pink")} !important;
-  --accent-list-marker: #{colour.brand-colour("pink")} !important;
   --button-accented-background: #{colour.brand-colour("maroon")} !important;
 }
 
@@ -428,7 +417,6 @@
   --accent-background: #{colour.brand-colour("chestnut")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
   --accent-border: #{colour.brand-colour("orange")} !important;
-  --accent-list-marker: #{colour.brand-colour("orange")} !important;
   --button-accented-background: #{colour.brand-colour("chestnut")} !important;
 }
 
@@ -441,7 +429,6 @@
   --accent-background: #{colour.brand-colour("forest")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
   --accent-border: #{colour.brand-colour("green")} !important;
-  --accent-list-marker: #{colour.brand-colour("green")} !important;
   --button-accented-background: #{colour.brand-colour("forest")} !important;
 }
 
@@ -454,7 +441,6 @@
   --accent-background: #{colour.brand-colour("navy")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
   --accent-border: #{colour.brand-colour("blue")} !important;
-  --accent-list-marker: #{colour.brand-colour("blue")} !important;
   --button-accented-background: #{colour.brand-colour("navy")} !important;
 }
 

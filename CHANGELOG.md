@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed small size difference between show/hide password button width in text input
 - Added missing `aria-controls` to password show/hide button in text input
+- Captured missing page meta tags in analytics
 
 ### Security
 

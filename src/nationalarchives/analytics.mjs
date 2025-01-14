@@ -250,8 +250,8 @@ class EventTracker {
 
   /** @protected */
   getTnaMetaTags() {
-    return Object.fromEntries(
-      Array.from(
+    return Object.fromEntries([
+      ...Array.from(
         document.head.querySelectorAll(
           `meta[name^="${this.prefix}_root:"][content]`,
         ),
@@ -261,7 +261,7 @@ class EventTracker {
           .replace(new RegExp(`^${this.prefix}_root:`), ""),
         $metaEl.getAttribute("content"),
       ]),
-      Array.from(
+      ...Array.from(
         document.head.querySelectorAll(
           `meta[name^="${this.prefix}."][content]`,
         ),
@@ -269,7 +269,7 @@ class EventTracker {
         $metaEl.getAttribute("name"),
         $metaEl.getAttribute("content"),
       ]),
-    );
+    ]);
   }
 
   /** @protected */

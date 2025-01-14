@@ -287,7 +287,7 @@ class EventTracker {
         ? "more"
         : window.matchMedia?.("(prefers-contrast: less)").matches
           ? "less"
-          : "";
+          : "normal";
     userPreferences[`${this.prefix}.pref.prefers-reduced-motion`] =
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     userPreferences[`${this.prefix}.pref.prefers-reduced-transparency`] =

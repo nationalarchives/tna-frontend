@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Markers for ordered and unordered lists have changed from the accent colour to the light font colour
+- `tna.pref.prefers-contrast` reports `normal` rather than a blank string in the analytics library
 
 ### Deprecated
 ### Removed

@@ -157,7 +157,7 @@ ol {
       }
     }
 
-    &.tna-dl--icon-padding:not(.tna-dl--plain) {
+    &.tna-dl--icon-padding.tna-dl--plain {
       dt {
         .fa-solid {
           margin-top: spacing.space(0.5) !important;

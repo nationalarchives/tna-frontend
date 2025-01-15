@@ -42,7 +42,7 @@ export class Picture {
     );
 
     this.$transcript.setAttribute("id", uniqueId);
-    this.$transcript.setAttribute("hidden", true);
+    this.$transcript.setAttribute("hidden", "");
 
     this.$transcript.addEventListener("keydown", (e) => {
       switch (e.key) {
@@ -63,7 +63,7 @@ export class Picture {
     } else {
       this.$transcriptToggle.setAttribute("aria-expanded", false);
       this.$transcriptToggle.innerText = this.openLabel;
-      this.$transcript.setAttribute("hidden", true);
+      this.$transcript.setAttribute("hidden", "");
     }
   }
 }

@@ -62,7 +62,7 @@ export class CookieBanner {
   }
 
   accept() {
-    this.$prompt.setAttribute("hidden", true);
+    this.$prompt.setAttribute("hidden", "");
     this.complete();
     this.$acceptedMessage.removeAttribute("hidden");
     this.$acceptedMessage.focus();
@@ -71,7 +71,7 @@ export class CookieBanner {
   }
 
   reject() {
-    this.$prompt.setAttribute("hidden", true);
+    this.$prompt.setAttribute("hidden", "");
     this.complete();
     this.$rejectedMessage.removeAttribute("hidden");
     this.$rejectedMessage.focus();
@@ -87,6 +87,6 @@ export class CookieBanner {
   }
 
   close() {
-    this.$module.setAttribute("hidden", true);
+    this.$module.setAttribute("hidden", "");
   }
 }

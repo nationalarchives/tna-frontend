@@ -52,7 +52,7 @@ export class Footer {
   }
 
   hideThemeSelector() {
-    this.$themeSelector.setAttribute("hidden", true);
+    this.$themeSelector.setAttribute("hidden", "");
   }
 
   setTheme(theme) {

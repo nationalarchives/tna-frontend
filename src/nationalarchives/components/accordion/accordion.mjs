@@ -30,7 +30,7 @@ export class Accordion {
 
     $content.classList.add("tna-accordion__content");
     $content.classList.remove("tna-accordion__body");
-    $content.setAttribute("hidden", true);
+    $content.setAttribute("hidden", "");
 
     const $headingButton = document.createElement("button");
     $headingButton.classList.add("tna-accordion__summary");
@@ -82,7 +82,7 @@ export class Accordion {
       "aria-label",
       `${$headingButton.innerText.trim()}, Show this section`,
     );
-    $content.setAttribute("hidden", true);
+    $content.setAttribute("hidden", "");
     // $content.setAttribute("tabindex", "-1");
   }
 

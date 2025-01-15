@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed the alignment of icons in description lists when in high contrast mode
+- Fixed `hidden` attributes with value of `true` (`hidden="true"`) to a blank value (`hidden=""`)
 
 ### Security
 

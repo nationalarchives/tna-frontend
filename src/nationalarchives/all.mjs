@@ -157,7 +157,7 @@ const initAll = (options) => {
           ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )
         .forEach((e) => {
-          e.setAttribute("hidden", true);
+          e.setAttribute("hidden", "");
           e.dataset.wasClosed = "";
         });
     }

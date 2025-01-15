@@ -60,7 +60,7 @@ export class Gallery {
 
   setup() {
     this.$items.forEach(($item) => {
-      $item.setAttribute("hidden", true);
+      $item.setAttribute("hidden", "");
       $item.setAttribute("aria-hidden", "true");
     });
     this.$navigation.removeAttribute("hidden");
@@ -131,7 +131,7 @@ export class Gallery {
   showIndex() {
     this.showItem("");
     this.$itemsContainer.classList.add("tna-gallery__items--hide-items");
-    this.$showIndex?.setAttribute("hidden", true);
+    this.$showIndex?.setAttribute("hidden", "");
   }
 
   showItem(id, focus = false) {
@@ -144,7 +144,7 @@ export class Gallery {
           $item.focus();
         }
       } else {
-        $item.setAttribute("hidden", true);
+        $item.setAttribute("hidden", "");
         $item.setAttribute("aria-hidden", "true");
       }
       $item.setAttribute("tabindex", "-1");
@@ -218,10 +218,10 @@ export class Gallery {
 
   syncFullScreen() {
     if (this.isFullScreen()) {
-      this.$enterFullscreen.setAttribute("hidden", true);
+      this.$enterFullscreen.setAttribute("hidden", "");
       this.$exitFullscreen.removeAttribute("hidden");
     } else {
-      this.$exitFullscreen.setAttribute("hidden", true);
+      this.$exitFullscreen.setAttribute("hidden", "");
       this.$enterFullscreen.removeAttribute("hidden");
     }
   }

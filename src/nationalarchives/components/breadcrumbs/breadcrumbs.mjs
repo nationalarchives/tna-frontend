@@ -31,6 +31,7 @@ export class Breadcrumbs {
       $expandButton.classList.add("tna-breadcrumbs__link");
       $expandButton.innerHTML =
         "<span class='tna-!--visually-hidden'>Expand breadcrumbs</span>&hellip;";
+      $expandButton.setAttribute("type", "button");
       $expandButton.setAttribute("aria-expanded", "false");
       $expandButton.setAttribute("aria-controls", uniqueId);
       $expandButton.addEventListener("click", () => {

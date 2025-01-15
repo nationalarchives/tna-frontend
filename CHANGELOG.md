@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Add missing `type` attribute to the expand button in the breadcrumbs component
+
 ### Security
 
 ## [0.7.1](https://github.com/nationalarchives/tna-frontend/compare/v0.7.0...v0.7.1) - 2025-01-14

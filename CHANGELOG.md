@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed the alignment of icons in description lists when in high contrast mode
+
 ### Security
 
 ## [0.7.2](https://github.com/nationalarchives/tna-frontend/compare/v0.7.1...v0.7.2) - 2025-01-15

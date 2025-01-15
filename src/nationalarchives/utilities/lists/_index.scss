@@ -157,6 +157,14 @@ ol {
       }
     }
 
+    &.tna-dl--icon-padding:not(.tna-dl--plain) {
+      dt {
+        .fa-solid {
+          margin-top: spacing.space(0.5) !important;
+        }
+      }
+    }
+
     &.tna-dl--stacked:not(.tna-dl--plain) {
       dt {
         padding-bottom: 0 !important;

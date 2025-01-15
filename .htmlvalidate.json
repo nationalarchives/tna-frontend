@@ -1,8 +1,6 @@
 {
   "extends": [
-    "html-validate:recommended",
-    "html-validate:standard",
-    "html-validate:a11y"
+    "html-validate:recommended"
   ],
   "rules": {
     "form-dup-name": [

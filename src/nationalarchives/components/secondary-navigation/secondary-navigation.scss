@@ -135,6 +135,10 @@
       }
     }
 
+    &__link {
+      padding: spacing.space(0.5) spacing.space(1);
+    }
+
     &__link,
     &__item--current &__link {
       border-top: none;
@@ -147,23 +151,23 @@
   }
 
   @include media.on-small {
-    &__items {
+    &--unindent &__items {
       margin-right: -#{grid.gutter-width()};
       margin-left: -#{grid.gutter-width()};
     }
 
-    &__link {
+    &--unindent &__link {
       padding: spacing.space(0.5) grid.gutter-width();
     }
   }
 
   @include media.on-tiny {
-    &__items {
+    &--unindent &__items {
       margin-right: -#{grid.gutter-width-tiny()};
       margin-left: -#{grid.gutter-width-tiny()};
     }
 
-    &__link {
+    &--unindent &__link {
       padding: spacing.space(0.5) grid.gutter-width-tiny();
     }
   }

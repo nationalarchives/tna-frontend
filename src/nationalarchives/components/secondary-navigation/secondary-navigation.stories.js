@@ -7,6 +7,7 @@ const argTypes = {
   items: { control: "object" },
   noBottomBorder: { control: "boolean" },
   overflow: { control: "boolean" },
+  noUnindentOnMobile: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -28,6 +29,7 @@ const Template = ({
   items,
   noBottomBorder,
   overflow,
+  noUnindentOnMobile,
   classes,
   attributes,
 }) =>
@@ -39,6 +41,7 @@ const Template = ({
         items,
         noBottomBorder,
         overflow,
+        noUnindentOnMobile,
         classes,
         attributes,
       },

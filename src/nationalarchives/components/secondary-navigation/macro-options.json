@@ -1,5 +1,11 @@
 [
   {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
     "name": "headingLevel",
     "type": "number",
     "required": true,
@@ -30,6 +36,24 @@
         "description": ""
       }
     ]
+  },
+  {
+    "name": "noBottomBorder",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "overflow",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "noUnindentOnMobile",
+    "type": "boolean",
+    "required": false,
+    "description": ""
   },
   {
     "name": "classes",

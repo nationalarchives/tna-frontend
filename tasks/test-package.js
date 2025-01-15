@@ -373,7 +373,7 @@ const testFileSizes = (files) => {
     try {
       const fileStats = fs.statSync(`package/nationalarchives/${file}`);
       console.log(
-        `  ${file.padEnd(longestFilenameToCheckSize)}     ${Math.round(fileStats.size / 1000)} KB`,
+        `  ${file.padEnd(longestFilenameToCheckSize)}     ${Math.round(fileStats.size / 1000)} KB (${fileStats.size} bytes)`,
       );
     } catch (err) {
       console.error(err);

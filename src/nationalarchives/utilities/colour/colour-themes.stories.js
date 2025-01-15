@@ -331,7 +331,7 @@ const Template = ({ theme, accent }) => {
           </hgroup>
           <p>Lorem ipsum <a href="#">link</a></p>
         </div>
-        <div class="tna-column tna-column--width-1-2 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -344,7 +344,7 @@ const Template = ({ theme, accent }) => {
             <dd>Lorem ipsum</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--width-1-2 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -357,7 +357,33 @@ const Template = ({ theme, accent }) => {
             <dd>Lorem ipsum</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--full tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+          <h3 class="tna-heading-m">
+            Descriptions
+          </h3>
+          <dl class="tna-dl tna-dl--stacked">
+            <dt>Alpha</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Beta</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Gamma</dt>
+            <dd>Lorem ipsum</dd>
+          </dl>
+        </div>
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+          <h3 class="tna-heading-m">
+            Descriptions
+          </h3>
+          <dl class="tna-dl tna-dl--stacked tna-dl--plain">
+            <dt>Alpha</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Beta</dt>
+            <dd>Lorem ipsum</dd>
+            <dt>Gamma</dt>
+            <dd>Lorem ipsum</dd>
+          </dl>
+        </div>
+        <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -378,6 +404,8 @@ const Template = ({ theme, accent }) => {
             </dt>
             <dd>LC 4</dd>
           </dl>
+        </div>
+        <div class="tna-column tna-column--full tna-!--margin-top-m">
           <h2 class="tna-heading-l">
             Categories
           </h2>

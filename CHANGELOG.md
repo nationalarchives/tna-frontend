@@ -15,10 +15,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Markers for ordered and unordered lists have changed from the accent colour to the light font colour
 - `tna.pref.prefers-contrast` reports `normal` rather than a blank string in the analytics library when the user has no specific contrast preference
+- Improvements to high contrast support for hero components, cards components and lists
 
 ### Deprecated
 ### Removed
+
+- Changed all experimental `hidden="until-found"` attributes to `hidden`
+
 ### Fixed
+
+- Add missing `type` attribute to the expand button in the breadcrumbs component
+
 ### Security
 
 ## [0.7.1](https://github.com/nationalarchives/tna-frontend/compare/v0.7.0...v0.7.1) - 2025-01-14

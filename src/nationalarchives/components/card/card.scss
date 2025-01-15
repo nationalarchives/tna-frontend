@@ -198,8 +198,18 @@
     padding-left: spacing.space(1);
   }
 
+  @include colour.on-high-contrast-and-forced-colours {
+    padding-bottom: spacing.space(1);
+
+    &__heading,
+    &__body {
+      padding-right: spacing.space(1);
+      padding-left: spacing.space(1);
+    }
+  }
+
   @include media.on-larger-than-mobile {
-    @include horizontal-card-layout("--horizontal", 2);
+    @include horizontal-card-layout("--horizontal", 1.5);
 
     &--horizontal-small-image {
       grid-template-columns: max(10rem, 25%) 1fr;

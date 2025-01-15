@@ -67,6 +67,9 @@ const Template = ({ theme }) => {
             <ul class="tna-ul">
               <li>Alpha</li>
             </ul>
+            <ol class="tna-ol tna-!--no-margin-top">
+              <li>Alpha</li>
+            </ol>
           </div>
           <hr class="tna-!--margin-top-s">
           <hr class="tna-hr-dark tna-!--margin-top-xs">

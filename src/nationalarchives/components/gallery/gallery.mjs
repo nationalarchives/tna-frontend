@@ -60,7 +60,7 @@ export class Gallery {
 
   setup() {
     this.$items.forEach(($item) => {
-      $item.setAttribute("hidden", "until-found");
+      $item.setAttribute("hidden", true);
       $item.setAttribute("aria-hidden", "true");
     });
     this.$navigation.removeAttribute("hidden");
@@ -144,7 +144,7 @@ export class Gallery {
           $item.focus();
         }
       } else {
-        $item.setAttribute("hidden", "until-found");
+        $item.setAttribute("hidden", true);
         $item.setAttribute("aria-hidden", "true");
       }
       $item.setAttribute("tabindex", "-1");

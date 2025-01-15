@@ -40,7 +40,11 @@ ol {
   > li {
     &::marker {
       @include colour.colour-font("font-light");
-      @include typography.main-font-weight-bold;
+      @include typography.main-font-weight-medium;
+
+      @include colour.on-high-contrast {
+        @include colour.colour-font("font-dark");
+      }
     }
   }
 
@@ -56,7 +60,6 @@ ol {
   &--dashed {
     > li::marker {
       content: "—  ";
-      @include colour.colour-font("font-light");
       @include typography.main-font-weight;
     }
   }
@@ -140,6 +143,24 @@ ol {
       margin-left: 0;
 
       background: transparent !important;
+    }
+  }
+
+  @include colour.on-high-contrast-and-forced-colours {
+    dd {
+      border-top: none !important;
+    }
+
+    &.tna-dl--plain {
+      dt {
+        padding-top: spacing.space(0.5) !important;
+      }
+    }
+
+    &.tna-dl--stacked:not(.tna-dl--plain) {
+      dt {
+        padding-bottom: 0 !important;
+      }
     }
   }
 }
@@ -273,6 +294,13 @@ ol {
       background: transparent !important;
 
       @include colour.colour-border("keyline-dark", 1px, solid, top);
+    }
+
+    &--plain {
+      dt,
+      dd {
+        padding-top: spacing.space(0.5);
+      }
     }
   }
 }

@@ -5,11 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.7.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.7.2...HEAD)
 
 ### Added
 
 - Secondary navigation component
+
+### Changed
+### Deprecated
+### Removed
+### Fixed
+
+- Fixed the alignment of icons in description lists when in high contrast mode
+
+### Security
+
+## [0.7.2](https://github.com/nationalarchives/tna-frontend/compare/v0.7.1...v0.7.2) - 2025-01-15
 
 ### Changed
 
@@ -17,7 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `tna.pref.prefers-contrast` reports `normal` rather than a blank string in the analytics library when the user has no specific contrast preference
 - Improvements to high contrast support for hero components, cards components and lists
 
-### Deprecated
 ### Removed
 
 - Changed all experimental `hidden="until-found"` attributes to `hidden`
@@ -25,8 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Add missing `type` attribute to the expand button in the breadcrumbs component
-
-### Security
 
 ## [0.7.1](https://github.com/nationalarchives/tna-frontend/compare/v0.7.0...v0.7.1) - 2025-01-14
 

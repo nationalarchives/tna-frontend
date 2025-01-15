@@ -1,0 +1,70 @@
+[
+  {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": ""
+  },
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": true,
+        "description": ""
+      },
+      {
+        "name": "current",
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "noBottomBorder",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "overflow",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "noUnindentation",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the secondary navigation."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the secondary navigation."
+  }
+]

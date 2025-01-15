@@ -24,7 +24,7 @@
 .tna-phase-banner,
 .tna-picture__toggle-transcript,
 .tna-skip-link,
-.tna_tabs__list {
+.tna-tabs__list {
   display: none !important;
 }
 
@@ -33,7 +33,7 @@
   print-color-adjust: exact;
 }
 
-.tna_tabs {
+.tna-tabs {
   &__item {
     display: block !important;
 

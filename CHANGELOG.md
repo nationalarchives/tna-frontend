@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Markers for ordered and unordered lists have changed from the accent colour to the light font colour
 - `tna.pref.prefers-contrast` reports `normal` rather than a blank string in the analytics library when the user has no specific contrast preference
+- Improvements to high contrast support for hero components, cards components and lists
 
 ### Deprecated
 ### Removed

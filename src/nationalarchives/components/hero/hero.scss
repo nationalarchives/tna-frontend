@@ -321,22 +321,4 @@ $shift-units: 5 !default;
       padding-bottom: spacing.space(2);
     }
   }
-
-  @include colour.on-high-contrast-and-forced-colours {
-    &__information,
-    &__content-inner {
-      @include colour.colour-border("keyline-dark", 1px);
-    }
-
-    @include media.on-mobile {
-      &__inner {
-        @include colour.colour-border("keyline-dark", 1px);
-        border-top: 0;
-      }
-
-      &__content-inner {
-        border: none;
-      }
-    }
-  }
 }

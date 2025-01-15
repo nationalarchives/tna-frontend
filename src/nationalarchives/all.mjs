@@ -139,7 +139,7 @@ const initAll = (options) => {
         });
       document
         .querySelectorAll(
-          '.tna-accordion__content[hidden="until-found"], .tna-picture__transcript[hidden="until-found"]',
+          ".tna-accordion__content[hidden], .tna-picture__transcript[hidden]",
         )
         .forEach((e) => {
           e.removeAttribute("hidden");
@@ -157,7 +157,7 @@ const initAll = (options) => {
           ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )
         .forEach((e) => {
-          e.setAttribute("hidden", "until-closed");
+          e.setAttribute("hidden", true);
           e.dataset.wasClosed = "";
         });
     }

@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Changed all experimental `hidden="until-found"` attributes to `hidden`
+
 ### Fixed
 
 - Add missing `type` attribute to the expand button in the breadcrumbs component

@@ -73,7 +73,7 @@
       "html": "<nav class=\"tna-secondary-navigation tna-secondary-navigation--overflow tna-secondary-navigation--unindent\" aria-label=\"Title\"><h2 class=\"tna-secondary-navigation__heading tna-heading-s\">Title</h2><ul class=\"tna-secondary-navigation__items\"><li class=\"tna-secondary-navigation__item\"><a href=\"#/alpha\" class=\"tna-secondary-navigation__link\">Alpha</a></li><li class=\"tna-secondary-navigation__item tna-secondary-navigation__item--current\"><a href=\"#/beta\" class=\"tna-secondary-navigation__link\">Beta</a></li><li class=\"tna-secondary-navigation__item\"><a href=\"#/gamma\" class=\"tna-secondary-navigation__link\">Gamma</a></li></ul></nav>"
     },
     {
-      "name": "no unindentation on mobile",
+      "name": "no unindentation",
       "options": {
         "title": "Title",
         "headingLevel": 2,
@@ -92,7 +92,7 @@
             "href": "#/gamma"
           }
         ],
-        "noUnindentOnMobile": true
+        "noUnindentation": true
       },
       "html": "<nav class=\"tna-secondary-navigation\" aria-label=\"Title\"><h2 class=\"tna-secondary-navigation__heading tna-heading-s\">Title</h2><ul class=\"tna-secondary-navigation__items\"><li class=\"tna-secondary-navigation__item\"><a href=\"#/alpha\" class=\"tna-secondary-navigation__link\">Alpha</a></li><li class=\"tna-secondary-navigation__item tna-secondary-navigation__item--current\"><a href=\"#/beta\" class=\"tna-secondary-navigation__link\">Beta</a></li><li class=\"tna-secondary-navigation__item\"><a href=\"#/gamma\" class=\"tna-secondary-navigation__link\">Gamma</a></li></ul></nav>"
     },

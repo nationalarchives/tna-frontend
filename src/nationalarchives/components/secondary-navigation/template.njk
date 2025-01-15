@@ -5,7 +5,7 @@
 {%- if params.overflow -%}
   {%- set containerClasses = containerClasses.concat('tna-secondary-navigation--overflow') -%}
 {%- endif -%}
-{%- if not params.noUnindentOnMobile -%}
+{%- if not params.noUnindentation -%}
   {%- set containerClasses = containerClasses.concat('tna-secondary-navigation--unindent') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}

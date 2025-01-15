@@ -1,5 +1,6 @@
 import SecondaryNavigation from "./template.njk";
 import macroOptions from "./macro-options.json";
+import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   title: { control: "text" },
@@ -7,7 +8,7 @@ const argTypes = {
   items: { control: "object" },
   noBottomBorder: { control: "boolean" },
   overflow: { control: "boolean" },
-  noUnindentOnMobile: { control: "boolean" },
+  noUnindentation: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -29,7 +30,7 @@ const Template = ({
   items,
   noBottomBorder,
   overflow,
-  noUnindentOnMobile,
+  noUnindentation,
   classes,
   attributes,
 }) =>
@@ -41,7 +42,7 @@ const Template = ({
         items,
         noBottomBorder,
         overflow,
-        noUnindentOnMobile,
+        noUnindentation,
         classes,
         attributes,
       },
@@ -70,25 +71,27 @@ Default.args = {
       name: "Delta",
       href: "#",
     },
-    // {
-    //   name: "Epsilon",
-    //   href: "#",
-    // },
-    // {
-    //   name: "Zeta",
-    //   href: "#",
-    // },
-    // {
-    //   name: "Eta",
-    //   href: "#",
-    // },
-    // {
-    //   name: "Theto",
-    //   href: "#",
-    // },
-    // {
-    //   name: "Iota",
-    //   href: "#",
-    // },
   ],
 };
+
+export const Medium = Template.bind({});
+Medium.parameters = {
+  viewport: {
+    defaultViewport: "medium",
+  },
+  chromatic: {
+    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
+  },
+};
+Medium.args = { ...Default.args };
+
+export const Mobile = Template.bind({});
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "small",
+  },
+  chromatic: {
+    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  },
+};
+Mobile.args = { ...Default.args };

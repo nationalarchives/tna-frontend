@@ -14,7 +14,7 @@ runs:
       run: npm ci
       shell: bash
     - name: Validate HTML
-      run: npm run test:html
+      run: npm run test:statichtml
       shell: bash
     - name: Run fixture tests
       run: npm run test:fixtures

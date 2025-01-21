@@ -69,6 +69,8 @@ export default class Cookies {
   events = null;
   /** @protected */
   defaultAge = null;
+  /** @protected */
+  validPoliciesOnInit = false;
 
   /**
    * Create a cookie handler.
@@ -110,6 +112,7 @@ export default class Cookies {
     this.policiesKey = policiesKey;
     this.defaultAge = defaultAge;
     this.events = new CookieEventHandler();
+    this.validPoliciesOnInit = Object.keys(this.policies).length > 0;
     this.init();
     window.TNAFrontendCookies = this;
   }
@@ -318,9 +321,7 @@ export default class Cookies {
    * @param {object} policies - The policies to commit.
    */
   savePolicies(policies) {
-    this.set(this.policiesKey, JSON.stringify(policies), {
-      maxAge: 60 * 60 * 24 * 365,
-    });
+    this.set(this.policiesKey, JSON.stringify(policies));
   }
 
   /**

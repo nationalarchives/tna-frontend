@@ -434,6 +434,7 @@ describe("No existing cookies", () => {
   test("Custom policies", async () => {
     const cookies = new Cookies({ extraPolicies: ["custom"] });
 
+    expect(cookies.validPoliciesOnInit).toEqual(false);
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.policies).toHaveProperty("settings");
     expect(cookies.policies).toHaveProperty("usage");
@@ -482,6 +483,7 @@ describe("Existing cookies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
+    expect(cookies.validPoliciesOnInit).toEqual(true);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -516,6 +518,7 @@ describe("Existing empty cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
+    expect(cookies.validPoliciesOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -538,6 +541,7 @@ describe("Existing malformed cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
+    expect(cookies.validPoliciesOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);

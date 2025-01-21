@@ -53,7 +53,7 @@ export class CookieBanner {
       "true",
     );
 
-    if (!cookiePreferencesSet) {
+    if (!cookiePreferencesSet || !this.cookies.validPoliciesOnInit) {
       this.$module.removeAttribute("hidden");
 
       this.$acceptButton.addEventListener("click", () => this.accept());

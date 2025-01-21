@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- If cookie policies are invalid or missing when the cookie class is initiated, the cookie banner is shown regardless of the existance of a `cookie_preferences_set` cookie
+
 ### Security
 
 ## [0.8.1](https://github.com/nationalarchives/tna-frontend/compare/v0.8.0...v0.8.1) - 2025-01-21

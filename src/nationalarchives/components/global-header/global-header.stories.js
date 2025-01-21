@@ -8,6 +8,8 @@ const argTypes = {
   topNavigation: { control: "object" },
   navigation: { control: "object" },
   collapseOnMedium: { control: "boolean" },
+  navigationId: { control: "text" },
+  topNavigationId: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -31,6 +33,8 @@ const Template = ({
   topNavigation,
   navigation,
   collapseOnMedium,
+  navigationId,
+  topNavigationId,
   classes,
   attributes,
 }) =>
@@ -40,6 +44,8 @@ const Template = ({
       topNavigation,
       navigation,
       collapseOnMedium,
+      navigationId,
+      topNavigationId,
       classes,
       attributes,
     },

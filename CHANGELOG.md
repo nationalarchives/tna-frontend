@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added missing `type` attribute on accordion buttons
+- Fixed issue with invalid HTML in accordion JavaScript - headings are not permitted inside `<button>` elements
 
 ### Security
 

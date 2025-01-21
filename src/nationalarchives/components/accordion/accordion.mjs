@@ -1,6 +1,4 @@
 export class Accordion {
-  polyfillRequired = null;
-
   constructor($module) {
     this.$module = $module;
     this.$items = $module && $module.querySelectorAll(".tna-accordion__item");
@@ -36,8 +34,9 @@ export class Accordion {
     $headingButton.classList.add("tna-accordion__summary");
     $headingButton.setAttribute("type", "button");
     $headingButton.setAttribute("aria-controls", $content.id);
-    $heading.parentNode.insertBefore($headingButton, $heading.nextSibling);
-    $headingButton.appendChild($heading);
+    $headingButton.innerText = $heading.innerText;
+    $heading.innerText = "";
+    $heading.appendChild($headingButton);
 
     $headingButton.addEventListener("click", () => {
       const isOpen = $headingButton.getAttribute("aria-expanded") === "true";

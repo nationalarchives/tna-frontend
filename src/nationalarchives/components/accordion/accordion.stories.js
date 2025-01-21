@@ -402,31 +402,31 @@ Test.play = async ({ step }) => {
   });
 
   // TODO: fireEvent doesn't work on Firefox
-  // await step("Open second item", async () => {
-  //   await fireEvent.click(
-  //     $allDetails[1].querySelector(".tna-accordion__summary"),
-  //   );
-  //   await $allDetails.forEach(async ($details, index) => {
-  //     if (index === 1) {
-  //       await expect(
-  //         $details.querySelector(".tna-accordion__content"),
-  //       ).toBeVisible();
-  //     } else {
-  //       await expect(
-  //         $details.querySelector(".tna-accordion__content"),
-  //       ).not.toBeVisible();
-  //     }
-  //   });
-  // });
+  await step("Open second item", async () => {
+    await fireEvent.click(
+      $allDetails[1].querySelector(".tna-accordion__summary"),
+    );
+    await $allDetails.forEach(async ($details, index) => {
+      if (index === 1) {
+        await expect(
+          $details.querySelector(".tna-accordion__content"),
+        ).toBeVisible();
+      } else {
+        await expect(
+          $details.querySelector(".tna-accordion__content"),
+        ).not.toBeVisible();
+      }
+    });
+  });
 
-  // await step("Close second item", async () => {
-  //   await fireEvent.click(
-  //     $allDetails[1].querySelector(".tna-accordion__summary"),
-  //   );
-  //   await $allDetails.forEach(async ($details) => {
-  //     await expect(
-  //       $details.querySelector(".tna-accordion__content"),
-  //     ).not.toBeVisible();
-  //   });
-  // });
+  await step("Close second item", async () => {
+    await fireEvent.click(
+      $allDetails[1].querySelector(".tna-accordion__summary"),
+    );
+    await $allDetails.forEach(async ($details) => {
+      await expect(
+        $details.querySelector(".tna-accordion__content"),
+      ).not.toBeVisible();
+    });
+  });
 };

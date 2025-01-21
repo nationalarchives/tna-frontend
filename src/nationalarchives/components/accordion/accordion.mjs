@@ -34,6 +34,7 @@ export class Accordion {
 
     const $headingButton = document.createElement("button");
     $headingButton.classList.add("tna-accordion__summary");
+    $headingButton.setAttribute("type", "button");
     $headingButton.setAttribute("aria-controls", $content.id);
     $heading.parentNode.insertBefore($headingButton, $heading.nextSibling);
     $headingButton.appendChild($heading);

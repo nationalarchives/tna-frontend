@@ -431,35 +431,6 @@ describe("No existing cookies", () => {
     expect(mockCallback.mock.calls).toHaveLength(1);
   });
 
-  test("Custom policies", async () => {
-    const cookies = new Cookies({ extraPolicies: ["custom"] });
-
-    expect(cookies.validPoliciesOnInit).toEqual(false);
-    expect(cookies.policies).toHaveProperty("essential");
-    expect(cookies.policies).toHaveProperty("settings");
-    expect(cookies.policies).toHaveProperty("usage");
-    expect(cookies.policies).toHaveProperty("marketing");
-    expect(cookies.policies).toHaveProperty("custom");
-    expect(cookies.policies.custom).toEqual(false);
-    expect(cookies.isPolicyAccepted("custom")).toEqual(false);
-
-    cookies.acceptPolicy("custom");
-    expect(cookies.policies.custom).toEqual(true);
-    expect(cookies.isPolicyAccepted("custom")).toEqual(true);
-
-    cookies.rejectPolicy("custom");
-    expect(cookies.policies.custom).toEqual(false);
-    expect(cookies.isPolicyAccepted("custom")).toEqual(false);
-
-    cookies.acceptAllPolicies();
-    expect(cookies.policies.custom).toEqual(true);
-    expect(cookies.isPolicyAccepted("custom")).toEqual(true);
-
-    cookies.rejectAllPolicies();
-    expect(cookies.policies.custom).toEqual(false);
-    expect(cookies.isPolicyAccepted("custom")).toEqual(false);
-  });
-
   test("Custom policy key", async () => {
     const cookies = new Cookies({ policiesKey: ["custom"] });
 
@@ -477,13 +448,13 @@ describe("Existing cookies", () => {
   beforeEach(() => {
     document.clearAllCookies();
     document.cookie =
-      "cookies_policy=%7B%22usage%22%3Afalse%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
+      "cookies_policy=%7B%22usage%22%3Afalse%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%2C%22marketing%22%3Afalse%7D";
   });
 
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.validPoliciesOnInit).toEqual(true);
+    expect(cookies.completePoliciesOnInit).toEqual(true);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -499,12 +470,12 @@ describe("Existing cookies", () => {
     const cookies = new Cookies();
     cookies.acceptPolicy("usage");
     cookies.rejectPolicy("settings");
-    cookies.rejectPolicy("marketing");
+    cookies.acceptPolicy("marketing");
 
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
     expect(cookies.isPolicyAccepted("settings")).toEqual(false);
     expect(cookies.isPolicyAccepted("usage")).toEqual(true);
-    expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    expect(cookies.isPolicyAccepted("marketing")).toEqual(true);
   });
 });
 
@@ -518,7 +489,7 @@ describe("Existing empty cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.validPoliciesOnInit).toEqual(false);
+    expect(cookies.completePoliciesOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -526,6 +497,29 @@ describe("Existing empty cookie policies", () => {
     expect(cookies.isPolicyAccepted("settings")).toEqual(false);
     expect(cookies.policies).toHaveProperty("usage");
     expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+    expect(cookies.policies).toHaveProperty("marketing");
+    expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+  });
+});
+
+describe("Existing partial cookie policies", () => {
+  beforeEach(() => {
+    document.clearAllCookies();
+    document.cookie = "cookies_policy=%7B%22usage%22%3Atrue%7D";
+    new Cookies().destroyInstance();
+  });
+
+  test("Initialisation", async () => {
+    const cookies = new Cookies();
+
+    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.all).toHaveProperty("cookies_policy");
+    expect(cookies.policies).toHaveProperty("essential");
+    expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+    expect(cookies.policies).toHaveProperty("settings");
+    expect(cookies.isPolicyAccepted("settings")).toEqual(false);
+    expect(cookies.policies).toHaveProperty("usage");
+    expect(cookies.isPolicyAccepted("usage")).toEqual(true);
     expect(cookies.policies).toHaveProperty("marketing");
     expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
   });
@@ -541,7 +535,7 @@ describe("Existing malformed cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.validPoliciesOnInit).toEqual(false);
+    expect(cookies.completePoliciesOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);

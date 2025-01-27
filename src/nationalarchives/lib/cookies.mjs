@@ -56,8 +56,6 @@ export class CookieEventHandler {
  */
 export default class Cookies {
   /** @protected */
-  extraPolicies = [];
-  /** @protected */
   domain = "";
   /** @protected */
   path = "";
@@ -70,11 +68,10 @@ export default class Cookies {
   /** @protected */
   defaultAge = null;
   /** @protected */
-  validPoliciesOnInit = false;
+  completePoliciesOnInit = false;
 
   /**
    * Create a cookie handler.
-   * @param {String} [options.extraPolicies=[]] - The extra cookie policies to manage in addition to essential, settings, usage and marketing.
    * @param {String} [options.domain=""] - The domain to register the cookie with.
    * @param {String} [options.path=""] - The domain to register the cookie with.
    * @param {String} [options.secure=true] - Only set cookie in HTTPS environments.
@@ -84,7 +81,6 @@ export default class Cookies {
    */
   constructor(options = {}) {
     const {
-      extraPolicies = [],
       domain = null,
       path = null,
       secure = true,
@@ -97,7 +93,6 @@ export default class Cookies {
     } else if (window.TNAFrontendCookies) {
       return window.TNAFrontendCookies;
     }
-    this.extraPolicies = extraPolicies;
     if (domain === null) {
       this.domain = document.documentElement.dataset.tnaCookiesDomain || "";
     } else {
@@ -112,7 +107,13 @@ export default class Cookies {
     this.policiesKey = policiesKey;
     this.defaultAge = defaultAge;
     this.events = new CookieEventHandler();
-    this.validPoliciesOnInit = Object.keys(this.policies).length > 0;
+    this.completePoliciesOnInit =
+      Object.keys(this.policies).length === 4 &&
+      ["usage", "settings", "marketing", "essential"].every(
+        (policy) =>
+          Object.keys(this.policies).includes(policy) &&
+          typeof this.policies[policy] === "boolean",
+      );
     this.init();
     window.TNAFrontendCookies = this;
   }
@@ -120,9 +121,6 @@ export default class Cookies {
   /** @protected */
   init() {
     this.savePolicies({
-      ...Object.fromEntries(
-        this.extraPolicies.map((k) => [k.toLowerCase(), false]),
-      ),
       usage: false,
       settings: false,
       marketing: false,

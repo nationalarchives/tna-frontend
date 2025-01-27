@@ -36,12 +36,6 @@
     "description": ""
   },
   {
-    "name": "policies",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
     "name": "preferencesSetKey",
     "type": "string",
     "required": false,

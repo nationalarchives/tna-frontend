@@ -27,18 +27,12 @@ export class CookieBanner {
       return;
     }
 
-    const policies = this.$module.dataset.policies || "";
-    const extraPolicies = policies
-      .split(",")
-      .filter((x) => x)
-      .map((policy) => policy.trim());
     const domain = this.$module.dataset.domain || undefined;
     const path = this.$module.dataset.path || undefined;
     const secure = this.$module.dataset.secure || undefined;
     const policiesKey = this.$module.dataset.policiesKey || undefined;
 
     this.cookies = new Cookies({
-      extraPolicies,
       domain,
       path,
       secure,
@@ -46,14 +40,16 @@ export class CookieBanner {
       newInstance: true,
     });
 
-    this.cookiePreferencesSet =
+    this.cookiePreferencesSetKey =
       this.$module.dataset.preferencesKey || "cookie_preferences_set";
-    const cookiePreferencesSet = this.cookies.hasValue(
-      this.cookiePreferencesSet,
-      "true",
-    );
 
-    if (!cookiePreferencesSet || !this.cookies.validPoliciesOnInit) {
+    if (!this.cookies.completePoliciesOnInit) {
+      this.cookies.set(this.cookiePreferencesSetKey, false);
+    } else if (!this.cookies.exists(this.cookiePreferencesSetKey)) {
+      this.cookies.set(this.cookiePreferencesSetKey, true);
+    }
+
+    if (!this.cookies.hasValue(this.cookiePreferencesSetKey, "true")) {
       this.$module.removeAttribute("hidden");
 
       this.$acceptButton.addEventListener("click", () => this.accept());
@@ -80,7 +76,7 @@ export class CookieBanner {
   }
 
   complete() {
-    this.cookies.set(this.cookiePreferencesSet, true);
+    this.cookies.set(this.cookiePreferencesSetKey, true);
     this.$closeButtons.forEach(($closeButton) => {
       $closeButton.addEventListener("click", () => this.close());
     });

@@ -11,7 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Deprecated
 ### Removed
+
+- The cookie library and the cookie banner component can no longer have custom cookie policies; only the four standard (`usage`, `settings`, `marketing` and `essential`)
+
 ### Fixed
+
+- Better support for cookie banners with edge cases when partial or malformed cookie policies already exist
+
 ### Security
 
 ## [0.9.0](https://github.com/nationalarchives/tna-frontend/compare/v0.8.1...v0.9.0) - 2025-01-27

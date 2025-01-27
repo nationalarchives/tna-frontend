@@ -1,4 +1,5 @@
 @use "../tools/colour";
+@use "../tools/typography";
 
 * {
   margin: 0;
@@ -36,6 +37,20 @@
   html {
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font: -apple-system-body;
+  }
+}
+
+/*
+ * ------------------------------------------
+ * Disable Apple's Dynamic Type for non-touch
+ * devices (like Mac OS), because the default
+ * system body size is defined as 13px rather
+ * than 16px like on other devices
+ * ------------------------------------------
+ */
+@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
+  html {
+    @include typography.font-size(16);
   }
 }
 

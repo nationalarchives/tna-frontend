@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Disabled `-apple-system-body` for dynamic type support in non-touch Apple devices due to issues in Mac OS
+
 ### Fixed
 
 - If cookie policies are invalid or missing when the cookie class is initiated, the cookie banner is shown regardless of the existance of a `cookie_preferences_set` cookie

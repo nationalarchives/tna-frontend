@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Better support for cookie banners with edge cases when partial or malformed cookie policies already exist
+- Changed incorrect `aria-title` attribute on password input fields to `aria-label`
 
 ### Security
 

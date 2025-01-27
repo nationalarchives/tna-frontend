@@ -14,12 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Default theme for prototypes changed from "light" to "system"
+- Disabled `-apple-system-body` for dynamic type support in non-touch Apple devices due to issues in Mac OS (https://codepen.io/chrislachance/pen/OJpmgrM)
 
 ### Deprecated
 ### Removed
-
-- Disabled `-apple-system-body` for dynamic type support in non-touch Apple devices due to issues in Mac OS (https://codepen.io/chrislachance/pen/OJpmgrM)
-
 ### Fixed
 
 - If cookie policies are invalid or missing when the cookie class is initiated, the cookie banner is shown regardless of the existance of a `cookie_preferences_set` cookie

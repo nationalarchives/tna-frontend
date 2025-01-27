@@ -1,0 +1,20 @@
+{% extends 'nationalarchives/templates/layouts/_prototype-kit.njk' %}
+
+{% set pageTitle = 'Page not found' %}
+{% set theme = 'light' %}
+{% set themeAccent = 'blue' %}
+
+{% block content %}
+<div class="tna-section">
+  <div class="tna-container">
+    <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+      <h1 class="tna-heading-xl">
+        {{ pageTitle }}
+      </h1>
+      <p>If you typed the web address, check it is correct.</p>
+      <p>If you pasted the web address, check you copied the entire address.</p>
+      <p>If the web address is correct or you selected a link or button, <a href="https://www.nationalarchives.gov.uk/contact-us/">contact us</a> to let us help.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

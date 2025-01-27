@@ -8,7 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.8.1...HEAD)
 
 ### Added
+
+- Page not found error page template added to prototype kit
+
 ### Changed
+
+- Default theme for prototypes changed from "light" to "system"
+
 ### Deprecated
 ### Removed
 ### Fixed

@@ -21,6 +21,11 @@
       "name": "Index grid page",
       "path": "/nationalarchives/templates/index-grid.njk",
       "type": "nunjucks"
+    },
+    {
+      "name": "Page not found error page",
+      "path": "/nationalarchives/templates/error-page-not-found.njk",
+      "type": "nunjucks"
     }
   ]
 }

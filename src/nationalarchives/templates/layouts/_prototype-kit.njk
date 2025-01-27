@@ -15,7 +15,7 @@
       document.addEventListener("DOMContentLoaded", function() {
         window.TNAFrontend.initAll();
         var cookies = new TNAFrontend.Cookies()
-        var theme = cookies.get("theme") || "light"
+        var theme = cookies.get("theme") || "system"
         var $tnaTemplate = document.querySelector(".tna-template");
         if (theme === "light") {
           $tnaTemplate.classList.remove(

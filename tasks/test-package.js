@@ -160,6 +160,7 @@ const checkExists = [
   // Templates
   "nationalarchives/templates/layouts/_generic.njk",
   "nationalarchives/templates/layouts/_prototype-kit.njk",
+  "nationalarchives/templates/error-page-not-found.njk",
   "nationalarchives/templates/index-grid.njk",
   "nationalarchives/templates/list.njk",
   "nationalarchives/templates/plain.njk",

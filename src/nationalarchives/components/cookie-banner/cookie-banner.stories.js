@@ -182,6 +182,56 @@ Existing.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
   await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
+
+  const canvas = within(canvasElement);
+  const acceptButton = canvas.getByText("Accept cookies");
+  const rejectButton = canvas.getByText("Reject cookies");
+  await expect(acceptButton).toBeVisible();
+  await expect(rejectButton).toBeVisible();
+
+  document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    location.hostname
+      .split(".")
+      .reverse()
+      .reduce(
+        (domain) => (
+          (domain = domain.replace(/^\.?[^.]+/, "")),
+          (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
+          domain
+        ),
+        location.hostname,
+      ),
+  );
+};
+
+export const ExistingAndHidden = Template.bind({});
+ExistingAndHidden.args = {
+  serviceName: "My service",
+  cookiesUrl: "#",
+  classes: "tna-cookie-banner--demo",
+  disableMockAnalytics: true,
+};
+ExistingAndHidden.decorators = [
+  (Story) => {
+    const cookies = new Cookies({ secure: false, noInit: true });
+    cookies.init();
+    cookies.acceptPolicy("settings");
+    cookies.acceptPolicy("usage");
+    cookies.set("cookie_preferences_set", "true");
+    return Story();
+  },
+];
+ExistingAndHidden.play = async ({ canvasElement }) => {
+  const cookies = new Cookies({
+    newInstance: true,
+    secure: false,
+    noInit: true,
+  });
+  await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
+  await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
   await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
   await expect(cookies.get("cookie_preferences_set")).toEqual("true");
 
@@ -223,6 +273,7 @@ Partial.decorators = [
         essential: false,
       }),
     );
+    cookies.set("cookie_preferences_set", "true");
     return Story();
   },
 ];
@@ -272,6 +323,7 @@ Malformed.decorators = [
     document.documentElement.setAttribute("data-tna-cookies-insecure", "true");
     const cookies = new Cookies({ secure: false, noInit: true });
     cookies.set("cookies_policy", "foobar");
+    cookies.set("cookie_preferences_set", "true");
     return Story();
   },
 ];

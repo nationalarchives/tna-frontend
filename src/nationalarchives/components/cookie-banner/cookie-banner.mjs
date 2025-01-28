@@ -34,11 +34,12 @@ export class CookieBanner {
 
     if (!this.cookies.completePoliciesOnInit) {
       this.cookies.set(this.cookiePreferencesSetKey, false);
-    } else if (!this.cookies.exists(this.cookiePreferencesSetKey)) {
-      this.cookies.set(this.cookiePreferencesSetKey, true);
     }
 
-    if (!this.cookies.hasValue(this.cookiePreferencesSetKey, "true")) {
+    if (
+      !this.cookies.exists(this.cookiePreferencesSetKey) ||
+      !this.cookies.hasValue(this.cookiePreferencesSetKey, "true")
+    ) {
       this.$module.removeAttribute("hidden");
 
       this.$acceptButton.addEventListener("click", () => this.accept());

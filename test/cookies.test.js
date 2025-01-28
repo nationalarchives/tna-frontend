@@ -540,6 +540,30 @@ describe("Existing partial cookie policies", () => {
   });
 });
 
+describe("Existing unknown cookie policies", () => {
+  beforeEach(() => {
+    document.clearAllCookies();
+    document.cookie = "cookies_policy=%7B%22custom%22%3Atrue%7D";
+    new Cookies().destroyInstance();
+  });
+
+  test("Initialisation", async () => {
+    const cookies = new Cookies();
+
+    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.all).toHaveProperty("cookies_policy");
+    expect(cookies.policies).toHaveProperty("essential");
+    expect(cookies.isPolicyAccepted("essential")).toEqual(true);
+    expect(cookies.policies).toHaveProperty("settings");
+    expect(cookies.isPolicyAccepted("settings")).toEqual(false);
+    expect(cookies.policies).toHaveProperty("usage");
+    expect(cookies.isPolicyAccepted("usage")).toEqual(false);
+    expect(cookies.policies).toHaveProperty("marketing");
+    expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    expect(cookies.policies).not.toHaveProperty("custom");
+  });
+});
+
 describe("Existing malformed cookie policies", () => {
   beforeEach(() => {
     document.clearAllCookies();

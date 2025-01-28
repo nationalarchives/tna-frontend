@@ -48,6 +48,8 @@ export class CookieEventHandler {
   }
 }
 
+const tnaCookiePolicies = ["usage", "settings", "marketing", "essential"];
+
 /**
  * Class to handle cookies.
  * @class Cookies
@@ -126,8 +128,8 @@ export default class Cookies {
     }
     this.events = new CookieEventHandler();
     this.completePoliciesOnInit =
-      Object.keys(this.policies).length === 4 &&
-      ["usage", "settings", "marketing", "essential"].every(
+      Object.keys(this.policies).length === tnaCookiePolicies.length &&
+      tnaCookiePolicies.every(
         (policy) =>
           Object.keys(this.policies).includes(policy) &&
           typeof this.policies[policy] === "boolean",
@@ -140,11 +142,18 @@ export default class Cookies {
 
   /** @protected */
   init() {
+    const existingPolicies = this.policies;
+    const filteredExistingPolicies = Object.fromEntries(
+      Object.keys(existingPolicies)
+        .filter((policy) => tnaCookiePolicies.includes(policy))
+        .map((policy) => [policy, existingPolicies[policy]]),
+    );
+    console.log(existingPolicies, filteredExistingPolicies);
     this.savePolicies({
       usage: false,
       settings: false,
       marketing: false,
-      ...this.policies,
+      ...filteredExistingPolicies,
       essential: true,
     });
   }

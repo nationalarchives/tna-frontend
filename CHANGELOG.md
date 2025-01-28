@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.11.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.11.2...HEAD)
 
 ### Added
 ### Changed
@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 ### Security
+
+## [0.11.2](https://github.com/nationalarchives/tna-frontend/compare/v0.11.1...v0.11.2) - 2025-01-28
+
+### Changed
+
+- All custom cookie policies (other than `usage`, `settings`, `marketing` and `essential`) are filtered out upon initialisation
+- Small font size tweak to the strapline in a header component on tiny devices
 
 ## [0.11.1](https://github.com/nationalarchives/tna-frontend/compare/v0.11.0...v0.11.1) - 2025-01-28
 

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Cookie library settings can now be set at a document level in the `<html>` element rather than at a cookie banner level - in addition to `data-tna-cookies-domain` and `data-tna-cookies-path` parameters, there is now `tna-cookies-policies-key`, `tna-cookies-default-age` and `tna-cookies-insecure`
+- Removed right and left margin from plain picture components
 
 ### Deprecated
 ### Removed

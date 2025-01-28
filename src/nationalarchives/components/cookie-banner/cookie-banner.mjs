@@ -27,18 +27,7 @@ export class CookieBanner {
       return;
     }
 
-    const domain = this.$module.dataset.domain || undefined;
-    const path = this.$module.dataset.path || undefined;
-    const secure = this.$module.dataset.secure || undefined;
-    const policiesKey = this.$module.dataset.policiesKey || undefined;
-
-    this.cookies = new Cookies({
-      domain,
-      path,
-      secure,
-      policiesKey,
-      newInstance: true,
-    });
+    this.cookies = new Cookies({ newInstance: true });
 
     this.cookiePreferencesSetKey =
       this.$module.dataset.preferencesKey || "cookie_preferences_set";

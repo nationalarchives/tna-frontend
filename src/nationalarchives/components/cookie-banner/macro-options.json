@@ -42,24 +42,6 @@
     "description": ""
   },
   {
-    "name": "cookiesDomain",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
-    "name": "cookiesPath",
-    "type": "string",
-    "required": false,
-    "description": ""
-  },
-  {
-    "name": "allowInsecure",
-    "type": "boolean",
-    "required": false,
-    "description": ""
-  },
-  {
     "name": "style",
     "type": "string",
     "required": false,

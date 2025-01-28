@@ -346,6 +346,21 @@ describe("No existing cookies", () => {
       session: true,
       cookie: `${testKey}=${testValue}; samesite=Lax; path=/; secure`,
     });
+
+    cookies.set(testKey, testValue, { secure: false });
+
+    expect(mockCallback.mock.calls).toHaveLength(3);
+    expect(mockCallback.mock.calls[2][0]).toStrictEqual({
+      key: testKey,
+      value: testValue,
+      domain: "",
+      path: "/",
+      sameSite: "Lax",
+      secure: false,
+      maxAge: 31536000,
+      session: false,
+      cookie: `${testKey}=${testValue}; samesite=Lax; path=/; max-age=31536000`,
+    });
   });
 
   test("All events", async () => {
@@ -545,5 +560,18 @@ describe("Existing malformed cookie policies", () => {
     expect(cookies.isPolicyAccepted("usage")).toEqual(false);
     expect(cookies.policies).toHaveProperty("marketing");
     expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+  });
+});
+
+describe("No initialisation", () => {
+  beforeEach(() => {
+    document.clearAllCookies();
+  });
+
+  test("Initialisation", async () => {
+    const cookies = new Cookies({ noInit: true });
+
+    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.all).not.toHaveProperty("cookies_policy");
   });
 });

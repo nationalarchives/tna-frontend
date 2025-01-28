@@ -148,7 +148,6 @@ export default class Cookies {
         .filter((policy) => tnaCookiePolicies.includes(policy))
         .map((policy) => [policy, existingPolicies[policy]]),
     );
-    console.log(existingPolicies, filteredExistingPolicies);
     this.savePolicies({
       usage: false,
       settings: false,

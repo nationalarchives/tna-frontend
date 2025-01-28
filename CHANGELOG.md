@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- When re-displaying the cookie banner, delete the preferences saved cookie rather than setting it to `false` (better compatibility with [ds-cookie-consent](https://github.com/nationalarchives/ds-cookie-consent))
+
 ### Deprecated
 ### Removed
 ### Fixed

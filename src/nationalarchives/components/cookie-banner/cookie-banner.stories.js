@@ -66,8 +66,7 @@ Accept.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
-  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
-  await expect(cookies.get("cookie_preferences_set")).toEqual("false");
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
@@ -119,8 +118,7 @@ Reject.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
-  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
-  await expect(cookies.get("cookie_preferences_set")).toEqual("false");
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
@@ -287,8 +285,7 @@ Partial.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
-  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
-  await expect(cookies.get("cookie_preferences_set")).toEqual("false");
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
@@ -337,8 +334,7 @@ Malformed.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
-  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
-  await expect(cookies.get("cookie_preferences_set")).toEqual("false");
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");
@@ -385,8 +381,7 @@ UnexpectedHidden.play = async ({ canvasElement }) => {
   await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
   await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
   await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
-  await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
-  await expect(cookies.get("cookie_preferences_set")).toEqual("false");
+  await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
   const canvas = within(canvasElement);
   const acceptButton = canvas.getByText("Accept cookies");

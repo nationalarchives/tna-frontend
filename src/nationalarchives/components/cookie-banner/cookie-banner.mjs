@@ -33,7 +33,7 @@ export class CookieBanner {
       this.$module.dataset.preferencesKey || "cookie_preferences_set";
 
     if (!this.cookies.completePoliciesOnInit) {
-      this.cookies.set(this.cookiePreferencesSetKey, false);
+      this.cookies.delete(this.cookiePreferencesSetKey);
     }
 
     if (

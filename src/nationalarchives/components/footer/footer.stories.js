@@ -196,8 +196,7 @@ ThemeSelector.args = {
 };
 ThemeSelector.decorators = [
   (Story) => {
-    const cookies = new Cookies({ newInstance: true });
-    cookies.set("cookie_preferences_set", true);
+    const cookies = new Cookies({ secure: false, noInit: true });
     cookies.acceptPolicy("settings");
     return Story();
   },
@@ -211,6 +210,20 @@ ThemeSelector.play = async ({ canvasElement }) => {
   await expect(systemLightButton).toBeVisible();
   await expect(themeLightButton).toBeVisible();
   await expect(darkLightButton).toBeVisible();
+
+  document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    location.hostname
+      .split(".")
+      .reverse()
+      .reduce(
+        (domain) => (
+          (domain = domain.replace(/^\.?[^.]+/, "")),
+          (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
+          domain
+        ),
+        location.hostname,
+      ),
+  );
 };
 
 export const ThemeSelectorWithoutCookies = Template.bind({});
@@ -223,7 +236,11 @@ ThemeSelectorWithoutCookies.args = {
 };
 ThemeSelectorWithoutCookies.decorators = [
   (Story) => {
-    const cookies = new Cookies({ newInstance: true });
+    const cookies = new Cookies({
+      newInstance: true,
+      secure: false,
+      noInit: true,
+    });
     cookies.set("cookie_preferences_set", true);
     cookies.rejectPolicy("settings");
     return Story();

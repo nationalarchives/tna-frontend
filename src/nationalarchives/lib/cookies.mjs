@@ -56,9 +56,9 @@ export class CookieEventHandler {
  */
 export default class Cookies {
   /** @protected */
-  domain = "";
+  defaultDomain = "";
   /** @protected */
-  path = "";
+  defaultPath = "";
   /** @protected */
   secure = true;
   /** @protected */
@@ -72,40 +72,58 @@ export default class Cookies {
 
   /**
    * Create a cookie handler.
-   * @param {String} [options.domain=""] - The domain to register the cookie with.
-   * @param {String} [options.path=""] - The domain to register the cookie with.
-   * @param {String} [options.secure=true] - Only set cookie in HTTPS environments.
-   * @param {String} [options.policiesKey="cookies_policy"] - The name of the cookie.
+   * @param {String} [options.defaultDomain] - The domain to register the cookie with.
+   * @param {String} [options.path] - The domain to register the cookie with.
+   * @param {Boolean} [options.secure] - Only set cookie in HTTPS environments.
+   * @param {String} [options.policiesKey] - The name of the cookie.
    * @param {String} [options.newInstance=false] - Create a fresh instance of the cookie class.
-   * @param {String} [options.defaultAge=31536000] - The default age of non-session cookies.
+   * @param {Number} [options.defaultAge] - The default age of non-session cookies.
+   * @param {Boolean} [options.noInit=false] - Don't initialise a blank cookie policy.
    */
   constructor(options = {}) {
     const {
-      domain = null,
-      path = null,
-      secure = true,
-      policiesKey = "cookies_policy",
+      defaultDomain,
+      defaultPath,
+      secure,
+      policiesKey,
       newInstance = false,
-      defaultAge = 31536000, // 365 days
+      defaultAge,
+      noInit = false,
     } = options;
-    if (newInstance) {
-      this.destroyInstance();
-    } else if (window.TNAFrontendCookies) {
+    if (!newInstance && window.TNAFrontendCookies) {
       return window.TNAFrontendCookies;
     }
-    if (domain === null) {
-      this.domain = document.documentElement.dataset.tnaCookiesDomain || "";
+    if (defaultDomain === undefined) {
+      this.defaultDomain =
+        document.documentElement.dataset.tnaCookiesDomain || "";
     } else {
-      this.domain = domain;
+      this.defaultDomain = defaultDomain;
     }
-    if (path === null) {
-      this.path = document.documentElement.dataset.tnaCookiesPath || "/";
+    if (defaultPath === undefined) {
+      this.defaultPath = document.documentElement.dataset.tnaCookiesPath || "/";
     } else {
-      this.path = path;
+      this.defaultPath = defaultPath;
     }
-    this.secure = secure;
-    this.policiesKey = policiesKey;
-    this.defaultAge = defaultAge;
+    if (secure === undefined) {
+      this.secure =
+        document.documentElement.dataset.tnaCookiesInsecure !== "true";
+    } else {
+      this.secure = secure;
+    }
+    if (policiesKey === undefined) {
+      this.policiesKey =
+        document.documentElement.dataset.tnaCookiesPoliciesKey ||
+        "cookies_policy";
+    } else {
+      this.policiesKey = policiesKey;
+    }
+    if (defaultAge === undefined) {
+      this.defaultAge =
+        parseInt(document.documentElement.dataset.tnaCookiesDefaultAge) ||
+        31536000; // 365 days;
+    } else {
+      this.defaultAge = defaultAge;
+    }
     this.events = new CookieEventHandler();
     this.completePoliciesOnInit =
       Object.keys(this.policies).length === 4 &&
@@ -114,7 +132,9 @@ export default class Cookies {
           Object.keys(this.policies).includes(policy) &&
           typeof this.policies[policy] === "boolean",
       );
-    this.init();
+    if (!this.completePoliciesOnInit && !noInit) {
+      this.init();
+    }
     window.TNAFrontendCookies = this;
   }
 
@@ -193,8 +213,8 @@ export default class Cookies {
    * @param {Number} [options.maxAge=this.defaultAge] - The maximum age of the cookie in seconds.
    * @param {String} [options.path=/] - The path to register the cookie for.
    * @param {String} [options.sameSite=Lax] - The sameSite attribute.
-   * @param {String} [options.domain=this.domain] - The domain to register the cookie with.
-   * @param {String} [options.path=this.path] - The path to register the cookie with.
+   * @param {String} [options.domain=this.defaultDomain] - The domain to register the cookie with.
+   * @param {String} [options.path=this.defaultPath] - The path to register the cookie with.
    * @param {String} [options.secure=this.secure] - Only set cookie in HTTPS environments.
    * @param {String} [options.session=false] - Set a session cookie.
    */
@@ -202,8 +222,8 @@ export default class Cookies {
     const {
       maxAge = this.defaultAge,
       sameSite = "Lax",
-      domain = this.domain,
-      path = this.path,
+      domain = this.defaultDomain,
+      path = this.defaultPath,
       secure = this.secure,
       session = false,
     } = options;

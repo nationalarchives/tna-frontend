@@ -1,4 +1,5 @@
 import Header from "./template.njk";
+import PhaseBanner from "../phase-banner/template.njk";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "@storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
@@ -10,6 +11,7 @@ const argTypes = {
   collapseOnMedium: { control: "boolean" },
   navigationId: { control: "text" },
   topNavigationId: { control: "text" },
+  preHeaderHtml: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -34,7 +36,7 @@ const Template = ({
   navigation,
   collapseOnMedium,
   navigationId,
-  topNavigationId,
+  topNavigationId,preHeaderHtml,
   classes,
   attributes,
 }) =>
@@ -45,7 +47,7 @@ const Template = ({
       navigation,
       collapseOnMedium,
       navigationId,
-      topNavigationId,
+      topNavigationId,preHeaderHtml,
       classes,
       attributes,
     },
@@ -365,4 +367,65 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   // });
 
   $navigationToggle.blur();
+};
+
+
+
+
+
+export const PreHTML = Template.bind({});
+PreHTML.args = {
+  logo: {
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Search",
+      href: "https://www.nationalarchives.gov.uk/search/",
+      icon: "search",
+    },
+    {
+      text: "Shop",
+      href: "https://shop.nationalarchives.gov.uk/",
+      icon: "shop",
+    },
+    {
+      text: "Sign in",
+      href: "#/sign-in",
+      icon: "user",
+    },
+  ],
+  navigation: [
+    {
+      text: "Visit",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
+    },
+    {
+      text: "What’s on",
+      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
+    },
+    {
+      text: "Explore the collection",
+      href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
+    },
+    {
+      text: "Help using the archive",
+      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
+    },
+    {
+      text: "Education",
+      href: "https://www.nationalarchives.gov.uk/education/",
+    },
+    {
+      text: "Professional guidance and services",
+      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
+    },
+  ],
+    preHeaderHtml: PhaseBanner({
+      params: {
+        phase: "beta",
+        message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+      },
+    }),
+  classes: "tna-global-header--demo",
 };

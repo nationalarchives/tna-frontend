@@ -7,8 +7,6 @@
 @use "../../tools/typography";
 
 .tna-global-header {
-  padding-top: spacing.space(1);
-
   @include colour.contrast;
   background: linear-gradient(
     0deg,
@@ -29,6 +27,7 @@
   }
 
   &__main {
+    padding-top: spacing.space(1);
     padding-bottom: spacing.space(1.5);
   }
 

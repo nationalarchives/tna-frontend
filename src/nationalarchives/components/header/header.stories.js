@@ -1,4 +1,5 @@
 import Header from "./template.njk";
+import PhaseBanner from "../phase-banner/template.njk";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "@storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
@@ -10,6 +11,7 @@ const argTypes = {
   accent: {
     control: "boolean",
   },
+  preHeaderHtml: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -33,6 +35,7 @@ const Template = ({
   topNavigation,
   navigation,
   accent,
+  preHeaderHtml,
   classes,
   attributes,
 }) =>
@@ -42,6 +45,7 @@ const Template = ({
       topNavigation,
       navigation,
       accent,
+      preHeaderHtml,
       classes,
       attributes,
     },
@@ -223,4 +227,45 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   });
 
   $navigationToggle.blur();
+};
+
+export const PreHTML = Template.bind({});
+PreHTML.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+      icon: "heart",
+    },
+  ],
+  navigation: [
+    {
+      text: "Alpha",
+      href: "#/alpha",
+      selected: true,
+    },
+    {
+      text: "Beta",
+      href: "#/beta",
+    },
+    {
+      text: "Gamma",
+      href: "#/gamma",
+    },
+  ],
+  preHeaderHtml: PhaseBanner({
+    params: {
+      phase: "beta",
+      message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+    },
+  }),
+  classes: "tna-header--demo",
 };

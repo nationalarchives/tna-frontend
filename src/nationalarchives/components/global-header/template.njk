@@ -4,6 +4,7 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <header class="tna-global-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  {{ params.preHeaderHtml | safe }}
   <div class="tna-container tna-global-header__main">
     <div class="tna-column tna-column--flex-1 tna-column--order-2">
       <span class="tna-global-header__logo-wrapper">

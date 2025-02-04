@@ -4,6 +4,7 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <header class="tna-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  {{ params.preHeaderHtml | safe }}
   <div class="tna-container tna-header__contents">
     <div class="tna-column tna-header__logo-wrapper">
       {% if params.logo.href -%}

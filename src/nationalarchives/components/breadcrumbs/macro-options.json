@@ -29,13 +29,22 @@
     "name": "noCollapse",
     "type": "boolean",
     "required": false,
+    "default": false,
     "description": "When true, the breadcrumbs will not collapse to the first and last item only on smaller devices."
   },
   {
     "name": "structuredData",
     "type": "boolean",
     "required": false,
+    "default": false,
     "description": "When true, structured data markup is added to the breadcrumbs."
+  },
+  {
+    "name": "labelText",
+    "type": "string",
+    "required": false,
+    "default": "Breadcrumbs",
+    "description": "A custom value to use as the `aria-label`."
   },
   {
     "name": "classes",

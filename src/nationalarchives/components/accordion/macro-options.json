@@ -33,6 +33,7 @@
         "name": "open",
         "type": "boolean",
         "required": false,
+        "default": false,
         "description": "If true, open the accordion item. If a `group` is set, only one item in that group can be open."
       }
     ]
@@ -47,6 +48,7 @@
     "name": "openMultipleItems",
     "type": "boolean",
     "required": false,
+    "default": false,
     "description": "If true, multiple accordion items can be opened."
   },
   {

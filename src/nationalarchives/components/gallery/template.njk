@@ -54,7 +54,7 @@
   </div>
   <div class="tna-gallery__items">
     {%- for item in params.items %}
-    <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}" aria-labelledby="{{ params.id }}-item-{{ loop.index }}-tab">
+    <div class="tna-gallery__item" id="{{ params.id }}-item-{{ loop.index }}">
       <p class="tna-gallery__item-header">Image {{ loop.index }} of {{ params.items | length }}</p>
       <figure class="tna-gallery__item-figure">
         <div class="tna-gallery__item-figure-inner">
@@ -85,7 +85,7 @@
   </div>
   <div class="tna-gallery__navigation" hidden>
     {%- for item in params.items -%}
-    <button type="button" class="tna-gallery__navigation-item" id="{{ params.id }}-item-{{ loop.index }}-tab" aria-label="Image {{ loop.index }} of {{ params.items | length }}" aria-controls="{{ params.id }}-item-{{ loop.index }}">
+    <button type="button" class="tna-gallery__navigation-item" aria-label="Image {{ loop.index }} of {{ params.items | length }}" aria-controls="{{ params.id }}-item-{{ loop.index }}">
       <img src="{{ item.src }}" class="tna-gallery__navigation-item-image" alt="" width="{{ item.width }}" height="{{ item.height }}" loading="lazy">
       <span class="tna-visually-hidden">Image</span>
       <span class="tna-gallery__navigation-item-label">{{ loop.index }}</span>

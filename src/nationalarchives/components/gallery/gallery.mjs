@@ -62,11 +62,15 @@ export class Gallery {
     this.$items.forEach(($item) => {
       $item.setAttribute("hidden", "");
       $item.setAttribute("aria-hidden", "true");
+      $item
+        .querySelector(".tna-gallery__item-header")
+        ?.setAttribute("aria-hidden", "true");
     });
     this.$navigation.removeAttribute("hidden");
     this.$navigationItems.forEach(($item) => {
       $item.addEventListener("click", () => {
-        this.showItem($item.getAttribute("aria-controls"), true);
+        this.showItem($item.getAttribute("aria-controls"));
+        this.$itemsContainer.setAttribute("tabindex", "0");
         this.$itemsContainer.focus();
       });
     });
@@ -126,6 +130,9 @@ export class Gallery {
     this.$liveRegion.setAttribute("class", "tna-gallery__item-header");
     this.$itemsContainer.prepend(this.$liveRegion);
     this.$itemsContainer.classList.add("tna-gallery__items--hide-item-titles");
+    this.$itemsContainer.addEventListener("blur", () =>
+      this.$itemsContainer.removeAttribute("tabindex"),
+    );
   }
 
   showIndex() {
@@ -134,20 +141,15 @@ export class Gallery {
     this.$showIndex?.setAttribute("hidden", "");
   }
 
-  showItem(id, focus = false) {
+  showItem(id) {
     this.$items.forEach(($item) => {
       if (id && $item.id === id) {
         $item.removeAttribute("hidden");
         $item.removeAttribute("aria-hidden");
-        if (focus) {
-          $item.setAttribute("tabindex", "0");
-          $item.focus();
-        }
       } else {
         $item.setAttribute("hidden", "");
         $item.setAttribute("aria-hidden", "true");
       }
-      $item.setAttribute("tabindex", "-1");
     });
     this.$navigationItems.forEach(($item) => {
       if (id) {

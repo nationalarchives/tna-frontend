@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Clicking on a gallery item doesn't break keyboard navigation for the gallery
+- Current gallery items are not announced twice for screen readers
+
 ### Security
 
 ## [0.11.3](https://github.com/nationalarchives/tna-frontend/compare/v0.11.2...v0.11.3) - 2025-01-28

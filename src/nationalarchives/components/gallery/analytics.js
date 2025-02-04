@@ -79,7 +79,7 @@ export default [
             "ArrowDown",
             "End",
             "Home",
-            "Escape",
+            // "Escape",
           ].includes(event.key),
         data: {
           value: ($el, $scope, event) => event.key,

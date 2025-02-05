@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `labelText` option to breadcrumbs to enable custom `aria-label` attributes
+- Phase banners can be added at the top of the header and global header components
 
 ### Changed
 ### Deprecated

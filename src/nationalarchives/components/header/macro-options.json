@@ -102,10 +102,11 @@
     "description": ""
   },
   {
-    "name": "preHeaderHtml",
-    "type": "string",
+    "name": "phaseBanner",
+    "type": "object",
     "required": false,
-    "description": "HTML to add at the top of the header."
+    "description": "",
+    "paramsFrom": "phase-banner"
   },
   {
     "name": "classes",

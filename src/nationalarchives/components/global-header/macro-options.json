@@ -90,10 +90,11 @@
     "description": ""
   },
   {
-    "name": "preHeaderHtml",
-    "type": "string",
+    "name": "phaseBanner",
+    "type": "object",
     "required": false,
-    "description": "HTML to add at the top of the global header."
+    "description": "",
+    "paramsFrom": "phase-banner"
   },
   {
     "name": "classes",

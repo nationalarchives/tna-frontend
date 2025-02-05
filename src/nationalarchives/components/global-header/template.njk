@@ -1,10 +1,14 @@
+{% from "nationalarchives/components/phase-banner/macro.njk" import tnaPhaseBanner %}
+
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.collapseOnMedium -%}
   {%- set containerClasses = containerClasses.concat('tna-global-header--collapse-on-medium') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <header class="tna-global-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  {{ params.preHeaderHtml | safe }}
+  {% if params.phaseBanner -%}
+  {{ tnaPhaseBanner(params.phaseBanner) }}
+  {% endif -%}
   <div class="tna-container tna-global-header__main">
     <div class="tna-column tna-column--flex-1 tna-column--order-2">
       <span class="tna-global-header__logo-wrapper">

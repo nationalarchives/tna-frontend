@@ -1,5 +1,4 @@
 import Header from "./template.njk";
-import PhaseBanner from "../phase-banner/template.njk";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "@storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
@@ -11,7 +10,7 @@ const argTypes = {
   collapseOnMedium: { control: "boolean" },
   navigationId: { control: "text" },
   topNavigationId: { control: "text" },
-  preHeaderHtml: { control: "text" },
+  phaseBanner: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -36,7 +35,8 @@ const Template = ({
   navigation,
   collapseOnMedium,
   navigationId,
-  topNavigationId,preHeaderHtml,
+  topNavigationId,
+  phaseBanner,
   classes,
   attributes,
 }) =>
@@ -47,7 +47,8 @@ const Template = ({
       navigation,
       collapseOnMedium,
       navigationId,
-      topNavigationId,preHeaderHtml,
+      topNavigationId,
+      phaseBanner,
       classes,
       attributes,
     },
@@ -369,12 +370,8 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   $navigationToggle.blur();
 };
 
-
-
-
-
-export const PreHTML = Template.bind({});
-PreHTML.args = {
+export const WithPhaseBanner = Template.bind({});
+WithPhaseBanner.args = {
   logo: {
     href: "#/",
   },
@@ -421,11 +418,9 @@ PreHTML.args = {
       href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
     },
   ],
-    preHeaderHtml: PhaseBanner({
-      params: {
-        phase: "beta",
-        message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
-      },
-    }),
+  phaseBanner: {
+    phase: "beta",
+    message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+  },
   classes: "tna-global-header--demo",
 };

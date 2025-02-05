@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Deprecated
 ### Removed
+
+- Remove `accent` option of the phase banner component
+
 ### Fixed
 
 - Clicking on a gallery item doesn't break keyboard navigation for the gallery

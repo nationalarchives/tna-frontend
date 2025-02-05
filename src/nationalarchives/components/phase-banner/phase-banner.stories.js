@@ -6,7 +6,6 @@ const argTypes = {
     control: "text",
   },
   message: { control: "text" },
-  accent: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };

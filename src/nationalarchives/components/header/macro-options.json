@@ -102,6 +102,13 @@
     "description": ""
   },
   {
+    "name": "phaseBanner",
+    "type": "object",
+    "required": false,
+    "description": "",
+    "paramsFrom": "phase-banner"
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

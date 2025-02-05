@@ -10,6 +10,7 @@ const argTypes = {
   accent: {
     control: "boolean",
   },
+  phaseBanner: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -33,6 +34,7 @@ const Template = ({
   topNavigation,
   navigation,
   accent,
+  phaseBanner,
   classes,
   attributes,
 }) =>
@@ -42,6 +44,7 @@ const Template = ({
       topNavigation,
       navigation,
       accent,
+      phaseBanner,
       classes,
       attributes,
     },
@@ -223,4 +226,43 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   });
 
   $navigationToggle.blur();
+};
+
+export const WithPhaseBanner = Template.bind({});
+WithPhaseBanner.args = {
+  logo: {
+    strapline: "Design System",
+    href: "#/",
+  },
+  topNavigation: [
+    {
+      text: "Top item 1",
+      href: "#/top-1",
+    },
+    {
+      text: "Top item 2",
+      href: "#/top-2",
+      icon: "heart",
+    },
+  ],
+  navigation: [
+    {
+      text: "Alpha",
+      href: "#/alpha",
+      selected: true,
+    },
+    {
+      text: "Beta",
+      href: "#/beta",
+    },
+    {
+      text: "Gamma",
+      href: "#/gamma",
+    },
+  ],
+  phaseBanner: {
+    phase: "beta",
+    message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+  },
+  classes: "tna-header--demo",
 };

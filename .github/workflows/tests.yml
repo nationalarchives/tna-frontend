@@ -10,6 +10,10 @@ on:
       - 'README.md'
     tags-ignore:
       - '**'
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 concurrency:
   group: tests-${{ github.ref }}

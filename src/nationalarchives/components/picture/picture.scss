@@ -40,7 +40,11 @@
   &__transcript {
     @include colour.contrast;
 
+    max-height: 25rem;
+
     padding: spacing.space(1.5);
+
+    overflow: auto;
   }
 
   &__caption {

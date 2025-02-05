@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Phase banners can be added at the top of the header and global header components
 
 ### Changed
+
+- Limited the maximum height of the information dropdown in picture components
+
 ### Deprecated
 ### Removed
 

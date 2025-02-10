@@ -99,7 +99,7 @@ const Template = ({ theme, accent }) => {
         phase: "beta",
         message:
           'This is a new service - <a href="#">give us your feedback</a> to help improve it.',
-        accent: true,
+        classes: "tna-background-accent",
       },
     })}
     ${GlobalHeader({

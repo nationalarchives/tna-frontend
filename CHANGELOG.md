@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.11.3...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.12.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.12.0](https://github.com/nationalarchives/tna-frontend/compare/v0.11.3...v0.12.0) - 2025-02-10
 
 ### Added
 
@@ -16,7 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Limited the maximum height of the information dropdown in picture components
 
-### Deprecated
 ### Removed
 
 - Remove `accent` option of the phase banner component
@@ -25,8 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Clicking on a gallery item doesn't break keyboard navigation for the gallery
 - Current gallery items are not announced twice for screen readers
-
-### Security
 
 ## [0.11.3](https://github.com/nationalarchives/tna-frontend/compare/v0.11.2...v0.11.3) - 2025-01-28
 

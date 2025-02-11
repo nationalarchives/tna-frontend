@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed invalid `max-width` property on `tna-container--no-padding` class
+
 ### Security
 
 ## [0.12.0](https://github.com/nationalarchives/tna-frontend/compare/v0.11.3...v0.12.0) - 2025-02-10

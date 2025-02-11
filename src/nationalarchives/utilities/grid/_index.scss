@@ -20,7 +20,9 @@
   box-sizing: border-box;
 
   & &--no-padding {
-    max-width: gridVars.$largest-container-width - grid.gutter-width-double();
+    max-width: calc(
+      #{gridVars.$largest-container-width} - #{grid.gutter-width-double()}
+    );
     padding-right: 0;
     padding-left: 0;
   }

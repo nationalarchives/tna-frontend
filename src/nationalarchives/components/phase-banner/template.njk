@@ -3,9 +3,10 @@
 <div class="tna-phase-banner{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <div class="tna-container">
     <div class="tna-column tna-column--full-tiny">
-      <span class="tna-phase-banner__phase">
+      <strong class="tna-phase-banner__phase">
+        <span class="tna-visually-hidden">Service phase:</span>
         {{ params.phase | lower | capitalize }}
-      </span>
+      </strong>
     </div>
     <div class="tna-column tna-column--flex-1 tna-column--full-tiny">
       <p class="tna-phase-banner__message">

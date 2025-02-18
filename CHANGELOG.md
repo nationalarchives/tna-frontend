@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated phase banner markup with extra visually hidden text
+- Removed TikTok from default options in the footer
 
 ### Deprecated
 ### Removed

@@ -8,10 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.12.0...HEAD)
 
 ### Added
+
+- Option to set underline offset for links
+
 ### Changed
 
 - Updated phase banner markup with extra visually hidden text
 - Removed TikTok from default options in the footer
+- Standard link underline offset increased slightly to improve readability
 
 ### Deprecated
 ### Removed

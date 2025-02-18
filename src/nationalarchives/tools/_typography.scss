@@ -59,6 +59,12 @@
   text-transform: uppercase;
 }
 
+@mixin interactable-text-decoration {
+  text-underline-offset: typography.$interactable-text-decoration-offset;
+
+  text-decoration-thickness: typography.$interactable-text-decoration-thickness;
+}
+
 @mixin interacted-text-decoration {
   text-decoration: underline;
   text-decoration-thickness: typography.$interactive-text-decoration-thickness;

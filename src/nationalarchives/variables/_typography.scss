@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /*
  * ------------------------------------------
  * The typefaces, sizes and spacings that are
@@ -25,7 +27,9 @@ $body-font-size-px: 18 !default;
 $body-font-size-px-mobile: 17 !default;
 $body-line-height: 1.75 !default;
 
-$interactive-text-decoration-thickness: 3.5px !default;
+$interactable-text-decoration-offset: 0.125em !default;
+$interactable-text-decoration-thickness: #{math.div(1.5, $relative-1rem-px)}rem !default;
+$interactive-text-decoration-thickness: #{math.div(4, $relative-1rem-px)}rem !default;
 
 $main-font-family-name: "Open Sans" !default;
 $main-font-family:

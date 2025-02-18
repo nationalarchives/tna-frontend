@@ -37,16 +37,28 @@ components.forEach((component) => {
         .replace(/\n\s*</g, "<"),
     })),
   };
-  fs.writeFile(
-    `${componentsDirectory}${component}${componentFixturesFile}`,
-    `${JSON.stringify(newComponentFixtures, null, 2).trim()}\n`,
-    (err) => {
-      if (err) throw err;
-      console.log(
-        `All ${componentFixtures.fixtures.length} ${component} fixture(s) updated successfully`,
-      );
-    },
+
+  const allFixtureDifferences = newComponentFixtures.fixtures.reduce(
+    (differences, fixture) =>
+      fixture.html !==
+      componentFixtures.fixtures.find((f) => f.name === fixture.name)?.html
+        ? differences + 1
+        : differences,
+    0,
   );
+
+  if (allFixtureDifferences) {
+    fs.writeFile(
+      `${componentsDirectory}${component}${componentFixturesFile}`,
+      `${JSON.stringify(newComponentFixtures, null, 2).trim()}\n`,
+      (err) => {
+        if (err) throw err;
+        console.log(
+          `${allFixtureDifferences} ${component} fixture(s) updated successfully`,
+        );
+      },
+    );
+  }
 });
 
 const templatesDirectory = "src/nationalarchives/templates/";
@@ -66,13 +78,23 @@ const newTemplateFixtures = {
       .replace(/\n\s*</g, "<"),
   })),
 };
-fs.writeFile(
-  templateFixturesFile,
-  `${JSON.stringify(newTemplateFixtures, null, 2).trim()}\n`,
-  (err) => {
-    if (err) throw err;
-    console.log(
-      `All ${templateFixtures.fixtures.length} template fixture(s) updated successfully`,
-    );
-  },
+const allFixtureDifferences = newTemplateFixtures.fixtures.reduce(
+  (differences, fixture) =>
+    fixture.html !==
+    templateFixtures.fixtures.find((f) => f.name === fixture.name)?.html
+      ? differences + 1
+      : differences,
+  0,
 );
+if (allFixtureDifferences) {
+  fs.writeFile(
+    templateFixturesFile,
+    `${JSON.stringify(newTemplateFixtures, null, 2).trim()}\n`,
+    (err) => {
+      if (err) throw err;
+      console.log(
+        `${allFixtureDifferences} ${templateFixtures.fixtures.length} template fixture(s) updated successfully`,
+      );
+    },
+  );
+}

@@ -1,4 +1,5 @@
 @use "../../variables/a11y";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -70,6 +71,8 @@
 
   &--sections &__item--current &__link {
     @include colour.accent;
+
+    @include borders.rounded-border;
   }
 
   /*

@@ -1,3 +1,4 @@
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
 @use "../../tools/typography";
@@ -43,9 +44,8 @@
 
     text-decoration: none;
 
-    // border-radius: 1rem;
-
     @include colour.colour-border("keyline", 1px);
+    @include borders.rounded-border;
 
     &,
     &:link,

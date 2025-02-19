@@ -1,4 +1,5 @@
 @use "../../variables/forms";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
 @use "../../tools/typography";
@@ -17,7 +18,7 @@
   @include colour.colour-background("input-background");
 
   @include colour.colour-border("input-border", forms.$form-field-border-width);
-  border-radius: 0;
+  @include borders.rounded-border;
 
   .tna-form__group--error & {
     @include colour.colour-border("form-error-border");

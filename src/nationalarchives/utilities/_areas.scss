@@ -1,3 +1,4 @@
+@use "../tools/borders";
 @use "../tools/colour";
 @use "../tools/media";
 @use "../tools/spacing";
@@ -10,6 +11,8 @@
 .tna-aside {
   @include spacing.space-above;
   padding: spacing.space(2);
+
+  @include borders.rounded-border;
 
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px);

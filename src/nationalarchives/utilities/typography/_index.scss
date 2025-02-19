@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "sass:selector";
 @use "../../variables/typography" as typographyVars;
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -82,6 +83,8 @@ small {
   @include typography.detail-font-small;
   line-height: 1;
   text-align: center;
+
+  @include borders.rounded-border;
 
   @at-root #{selector.unify("a", &)} {
     text-decoration: underline;

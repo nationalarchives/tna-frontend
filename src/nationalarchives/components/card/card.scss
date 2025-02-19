@@ -1,7 +1,8 @@
 @use "sass:math";
 @use "../../variables/a11y" as a11yVariables;
-@use "../../variables/borders";
+@use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -77,12 +78,18 @@
   flex-direction: column;
   gap: spacing.space(1);
 
+  overflow: hidden;
+
   position: relative;
+
+  @include borders.rounded-border;
 
   &:not(:has(&__image-container)) {
     padding-top: spacing.space(0.5);
 
     @include colour.thick-keyline-dark(top);
+    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius;
   }
 
   &__heading {
@@ -90,8 +97,6 @@
   }
 
   &--full-click {
-    border-radius: 0.1px;
-
     &:hover {
       @include colour.colour-outline("keyline", 1px, solid);
       outline-offset: a11yVariables.$focus-outline-width - 1px;
@@ -132,7 +137,7 @@
 
   &--full-click:not(:has(&__image-container)) &__heading-link {
     &::before {
-      top: -#{borders.$thick-border-width};
+      top: -#{bordersVars.$thick-border-width};
     }
   }
 
@@ -180,6 +185,8 @@
   }
 
   &__actions {
+    margin-top: spacing.space(0.5);
+
     display: flex;
     gap: spacing.space(1) spacing.space(2);
   }
@@ -196,6 +203,10 @@
   &--padded &__body {
     padding-right: spacing.space(1);
     padding-left: spacing.space(1);
+  }
+
+  &--plain {
+    box-shadow: inset 0 0 0 1px colour.colour-var("keyline");
   }
 
   @include colour.on-high-contrast-and-forced-colours {

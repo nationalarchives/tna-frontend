@@ -1,6 +1,7 @@
 @use "../../variables/a11y" as a11yVariables;
-@use "../../variables/borders";
+@use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -29,7 +30,7 @@
   }
 
   &__button {
-    padding: borders.$thick-border-width 0;
+    padding: bordersVars.$thick-border-width 0;
 
     position: relative;
 
@@ -42,30 +43,33 @@
     border: 1px transparent solid;
     border-bottom: none;
 
+    border-radius: bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius 0 0;
+
     cursor: pointer;
 
     &:active {
       @include a11y.focus-outline-without-offset;
       @include a11y.active-outline;
     }
-  }
 
-  &__button[aria-selected="true"] {
-    padding-top: 0;
+    &[aria-selected="true"] {
+      padding-top: 0;
 
-    @include colour.colour-border("keyline");
+      @include colour.colour-border("keyline");
 
-    &::after {
-      content: "";
+      &::after {
+        content: "";
 
-      height: 1px;
+        height: 1px;
 
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
 
-      @include colour.colour-background("background");
+        @include colour.colour-background("background");
+      }
     }
   }
 
@@ -106,7 +110,8 @@
   }
 
   &__item {
-    border-radius: 0.1px;
+    border-radius: 0 0 bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius;
     // @include a11y.no-focus-outline-on-click;
 
     &:focus {

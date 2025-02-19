@@ -1,3 +1,4 @@
+@use "../../variables/borders" as bordersVars;
 @use "../../variables/forms";
 @use "../../tools/colour";
 @use "../../tools/spacing";
@@ -23,7 +24,9 @@
     border-width: forms.$form-field-border-width 0
       forms.$form-field-border-width forms.$form-field-border-width;
     border-style: solid;
-    border-radius: 0.1px;
+    border-radius: bordersVars.$rounded-border-radius 0.1px 0.1px
+      bordersVars.$rounded-border-radius;
+
     flex: 1;
 
     @include colour.always-light;
@@ -70,6 +73,8 @@
   }
 
   &__button {
+    border-radius: 0.1px bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius 0.1px;
   }
 
   @include colour.on-forced-colours {

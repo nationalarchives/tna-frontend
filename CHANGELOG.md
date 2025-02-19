@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Option to set underline offset for links
+- Customisable border radius added to many components and utilities
+- Plain card option to add border to a card without adding a background colour
+- Options for full-width and centred button groups
 
 ### Changed
 

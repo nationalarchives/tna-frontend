@@ -1,3 +1,4 @@
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -108,6 +109,8 @@
     @include typography.font-size(16);
 
     background-color: rgb(255 255 255 / 14%);
+
+    @include borders.rounded-border;
   }
 
   &__navigation {

@@ -1,3 +1,4 @@
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -17,6 +18,7 @@
   @include colour.colour-background-brand("cream");
 
   @include colour.thick-keyline-brand(left, "yellow");
+  @include borders.rounded-border;
 
   @include media.on-tiny {
     flex-direction: column;

@@ -271,6 +271,16 @@
       "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__image-container\"><picture class=\"tna-card__image\"><img src=\"https://loremflickr.com/640/360\" alt=\"A placeholder image\" width=\"640\" height=\"360\"></picture><div class=\"tna-chip tna-chip--green tna-card__image-label\">New</div></div><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
+      "name": "with a plain style",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "style": "plain"
+      },
+      "html": "<article class=\"tna-card tna-card--padded tna-card--plain\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+    },
+    {
       "name": "with a contrast style",
       "options": {
         "title": "Card title",

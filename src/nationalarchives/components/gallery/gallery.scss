@@ -1,5 +1,5 @@
 @use "../../variables/a11y" as a11yVariables;
-@use "../../variables/borders" as bordersVariables;
+@use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
 @use "../../tools/colour";
@@ -85,6 +85,8 @@
     position: relative;
 
     @include colour.contrast;
+
+    @include borders.rounded-border;
   }
 
   &__item-image {
@@ -286,7 +288,7 @@
     @include colour.colour-background("background");
 
     // @include borders.rounded-border;
-    border-radius: 0 0 bordersVariables.$rounded-border-radius 0;
+    border-radius: 0 0 bordersVars.$rounded-border-radius 0;
   }
 
   &--interactive &__item-figure-inner {
@@ -388,6 +390,11 @@
 
     &:fullscreen &__item-figure {
       flex: 1;
+    }
+
+    &:fullscreen &__item-figure-inner {
+      border-radius: 0 bordersVars.$rounded-border-radius
+        bordersVars.$rounded-border-radius 0;
     }
 
     &:fullscreen &__item-description {

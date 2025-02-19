@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -28,6 +29,7 @@ $button-border-width: 4px !default;
   @include colour.colour-background("button-background");
 
   @include colour.colour-border("button-background", $button-border-width);
+  @include borders.rounded-border;
 
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -68,6 +70,7 @@ $button-border-width: 4px !default;
     background-color: transparent;
 
     border-color: transparent;
+    border-radius: 0.1px;
 
     &,
     &:link,

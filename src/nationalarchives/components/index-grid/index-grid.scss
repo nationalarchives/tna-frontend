@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -32,6 +33,8 @@
     position: relative;
 
     text-decoration: none;
+
+    @include borders.rounded-border;
 
     .tna-background-contrast & {
       @include colour.accent;

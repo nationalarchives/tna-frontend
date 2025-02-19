@@ -1,5 +1,6 @@
 @use "../../variables/forms";
 @use "../../tools/a11y";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -66,6 +67,7 @@
           forms.$form-field-border-width
         );
         border-radius: 0.1px;
+        @include borders.rounded-border;
       }
 
       &::after {

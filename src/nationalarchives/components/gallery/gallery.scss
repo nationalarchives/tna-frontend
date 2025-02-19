@@ -1,5 +1,7 @@
 @use "../../variables/a11y" as a11yVariables;
+@use "../../variables/borders" as bordersVariables;
 @use "../../tools/a11y";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -164,6 +166,8 @@
     gap: 0.5rem;
 
     @include colour.accent;
+
+    @include borders.rounded-border;
   }
 
   &__navigation-button-icon {
@@ -219,6 +223,7 @@
     position: relative;
 
     border: none;
+    @include borders.rounded-border;
 
     cursor: pointer;
 
@@ -279,6 +284,9 @@
     @include typography.main-font-weight-bold;
 
     @include colour.colour-background("background");
+
+    // @include borders.rounded-border;
+    border-radius: 0 0 bordersVariables.$rounded-border-radius 0;
   }
 
   &--interactive &__item-figure-inner {

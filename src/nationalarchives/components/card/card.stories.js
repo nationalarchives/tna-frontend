@@ -35,7 +35,7 @@ const argTypes = {
   horizontalSmallImage: { control: "boolean" },
   style: {
     control: "inline-radio",
-    options: ["none", "contrast", "tint", "accent"],
+    options: ["none", "plain", "contrast", "tint", "accent"],
   },
   htmlElement: { control: "text" },
   classes: { control: "text" },
@@ -117,7 +117,7 @@ const Template = ({
       horizontalOnSmall,
       horizontalFlipped,
       horizontalSmallImage,
-      style,
+      style: style === "none" ? undefined : style,
       htmlElement,
       classes,
       attributes,
@@ -177,6 +177,25 @@ Meta.args = {
     { title: "Location", text: "Online", icon: "location-dot" },
   ],
   body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  htmlElement: "article",
+  classes: "tna-card--demo",
+};
+
+export const Plain = Template.bind({});
+Plain.args = {
+  supertitle: "Card supertitle",
+  title: "Card title",
+  headingLevel: 3,
+  headingSize: "m",
+  href: "#",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 600,
+  imageHeight: 400,
+  label: "New",
+  body: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis.</p>",
+  style: "plain",
   htmlElement: "article",
   classes: "tna-card--demo",
 };

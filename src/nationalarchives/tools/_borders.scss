@@ -1,0 +1,7 @@
+@use "../variables/borders";
+
+@mixin rounded-border {
+  overflow: hidden;
+
+  border-radius: borders.$rounded-border-radius;
+}

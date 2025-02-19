@@ -17,4 +17,24 @@
   &--small {
     gap: spacing.space(0.5);
   }
+
+  &--centred {
+    justify-content: center;
+  }
+
+  &--full {
+    justify-content: stretch;
+
+    @include media.on-mobile {
+      flex-direction: column;
+
+      align-items: stretch;
+    }
+
+    .tna-button {
+      margin: 0;
+
+      flex: 1;
+    }
+  }
 }

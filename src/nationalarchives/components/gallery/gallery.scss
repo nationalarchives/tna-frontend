@@ -355,6 +355,10 @@
     }
   }
 
+  &--bounded &__item-figure-inner {
+    border-radius: 0.1px;
+  }
+
   &--bounded &__item-description,
   &:fullscreen &__item-description {
     margin-right: spacing.space(1);

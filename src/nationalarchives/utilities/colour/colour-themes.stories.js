@@ -1332,7 +1332,7 @@ const Template = ({ theme, accent }) => {
           {
             href: "https://twitter.com/UKNatArchives",
             icon: "twitter",
-            title: "The National Archives X feed (formally known as Twitter)",
+            title: "The National Archives X feed (formerly known as Twitter)",
           },
           {
             href: "https://www.youtube.com/c/TheNationalArchivesUK",

@@ -107,6 +107,10 @@
     .tna-hgroup__supertitle {
       margin-top: spacing.space(0.5);
     }
+
+    &.tna-heading-l {
+      margin-top: spacing.space(0.25);
+    }
   }
 
   &--full-click {

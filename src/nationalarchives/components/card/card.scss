@@ -20,11 +20,11 @@
     gap: 0;
 
     > * + * {
-      margin-top: spacing.space(1);
+      margin-top: spacing.space(0.5);
     }
 
     > :first-child {
-      padding-top: spacing.space($innerPaddingAmount);
+      padding-top: spacing.space($innerPaddingAmount - 0.5);
     }
 
     > :last-child {
@@ -55,6 +55,10 @@
 
   &#{$modifierClass} &__heading {
     grid-area: header;
+
+    // .tna-hgroup__supertitle {
+    //   margin-top: 0;
+    // }
   }
 
   &#{$modifierClass} &__image-container {
@@ -84,7 +88,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: spacing.space(1);
+  gap: spacing.space(0.5);
 
   position: relative;
 
@@ -94,23 +98,36 @@
     padding-top: spacing.space(0.5);
 
     @include colour.thick-keyline-dark(top);
-    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
-      bordersVars.$rounded-border-radius;
+    border-radius: 0.1px;
   }
 
   &__heading {
     order: 2;
+
+    .tna-hgroup__supertitle {
+      margin-top: spacing.space(0.5);
+    }
   }
 
   &--full-click {
     &:hover {
-      @include colour.colour-outline("keyline", 1px, solid);
+      @include colour.colour-outline("base-keyline", 2px, solid);
       outline-offset: a11yVariables.$focus-outline-width - 1px;
     }
 
     &:focus,
     &:active {
       outline: none;
+    }
+  }
+
+  &--full-click#{&}--plain {
+    &:hover {
+      @include colour.colour-outline(
+        "base-keyline",
+        a11yVariables.$focus-outline-offset,
+        solid
+      );
     }
   }
 
@@ -139,6 +156,16 @@
         @include a11y.active-outline;
       }
     }
+  }
+
+  &--full-click#{&}:not(:has(&__image-container)) &__heading-link::before {
+    border-radius: 0.1px;
+  }
+
+  &--full-click#{&}--padded#{&}:not(:has(&__image-container))
+    &__heading-link::before {
+    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius;
   }
 
   &--full-click:not(:has(&__image-container)) &__heading-link {
@@ -183,6 +210,8 @@
   }
 
   &__body {
+    padding-top: spacing.space(0.5);
+
     order: 3;
 
     display: flex;
@@ -210,6 +239,11 @@
     padding-bottom: spacing.space(1);
   }
 
+  &--padded:not(:has(&__image-container)) {
+    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius;
+  }
+
   &--padded &__heading,
   &--padded &__body {
     padding-right: spacing.space(1);
@@ -220,13 +254,34 @@
     box-shadow: inset 0 0 0 1px colour.colour-var("keyline");
   }
 
-  @include colour.on-high-contrast-and-forced-colours {
+  @include colour.on-high-contrast {
     padding-bottom: spacing.space(1);
 
     &__heading,
     &__body {
       padding-right: spacing.space(1);
       padding-left: spacing.space(1);
+    }
+
+    @include colour.colour-border("keyline-dark", 1px, solid);
+
+    &--plain {
+      box-shadow: none;
+    }
+
+    &:not(:has(&__image-container)) {
+      border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+        bordersVars.$rounded-border-radius;
+    }
+
+    &--full-click:not(&--padded) &__heading-link::before {
+      @include borders.rounded-border;
+    }
+
+    &--full-click:not(:has(&__image-container), &--padded)
+      &__heading-link::before {
+      border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+        bordersVars.$rounded-border-radius;
     }
   }
 
@@ -252,9 +307,5 @@
     &--horizontal-small-image#{&}--flipped {
       grid-template-columns: 1fr max(10rem, 25%);
     }
-  }
-
-  @include colour.on-high-contrast {
-    @include colour.colour-border("keyline-dark", 1px, solid);
   }
 }

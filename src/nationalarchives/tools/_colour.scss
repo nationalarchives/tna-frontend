@@ -9,10 +9,18 @@
   @return colour.brand-colour($colour, $opacity);
 }
 
+$base-colours: (
+  "keyline",
+  "keyline-dark" // , "form-error-text", "form-error-border", "focus-outline"
+);
+
 @mixin colour-css-vars($excludes...) {
   @each $name, $value in colour.$colour-palette-default {
     @if not list.index($excludes, $name) {
       --#{$name}: #{$value};
+      @if list.index($base-colours, $name) {
+        --base-#{$name}: #{$value};
+      }
     }
   }
 }
@@ -21,6 +29,9 @@
   @each $name, $value in colour.$colour-palette-dark {
     @if not list.index($excludes, $name) {
       --#{$name}: #{$value};
+      @if list.index($base-colours, $name) {
+        --base-#{$name}: #{$value};
+      }
     }
   }
 }
@@ -29,6 +40,9 @@
   @each $name, $value in colour.$colour-palette-high-contrast {
     @if not list.index($excludes, $name) {
       --#{$name}: #{$value};
+      @if list.index($base-colours, $name) {
+        --base-#{$name}: #{$value};
+      }
     }
   }
 }
@@ -37,6 +51,9 @@
   @each $name, $value in colour.$colour-palette-high-contrast-dark {
     @if not list.index($excludes, $name) {
       --#{$name}: #{$value};
+      @if list.index(("keyline", "keyline-dark"), $name) {
+        --base-#{$name}: #{$value};
+      }
     }
   }
 }

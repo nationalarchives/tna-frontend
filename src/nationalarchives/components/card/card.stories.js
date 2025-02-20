@@ -435,3 +435,157 @@ Sources.args = {
   htmlElement: "article",
   classes: "tna-card--demo",
 };
+
+export const All = () => `
+<div class="tna-container">
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "plain" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "accent" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "tint" })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "contrast" })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true })}
+  </div>
+</div>
+<div class="tna-container">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
+  </div>
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true })}
+  </div>
+</div>`;
+All.parameters = {
+  chromatic: { disableSnapshot: true },
+};

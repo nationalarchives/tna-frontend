@@ -98,6 +98,8 @@
     text-decoration: none;
 
     @include colour.thick-keyline-accent(top);
+    border-radius: #{bordersVars.$rounded-border-radius - 1px}
+      #{bordersVars.$rounded-border-radius - 1px} 0 0;
   }
 
   &__items {

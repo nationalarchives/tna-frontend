@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Small border radius issues fixed with tabs and picture components
+
 ### Security
 
 ## [0.13.2](https://github.com/nationalarchives/tna-frontend/compare/v0.13.1...v0.13.2) - 2025-02-20

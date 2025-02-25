@@ -93,7 +93,7 @@ if (allFixtureDifferences) {
     (err) => {
       if (err) throw err;
       console.log(
-        `${allFixtureDifferences} ${templateFixtures.fixtures.length} template fixture(s) updated successfully`,
+        `${allFixtureDifferences} template fixture(s) updated successfully`,
       );
     },
   );

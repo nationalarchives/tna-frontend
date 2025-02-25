@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.13.2...HEAD)
 
 ### Added
+
+- Added a `<a id="top"></a>` element to the top of the `bodyStart` block to allow for jumping to the top of the page
+
 ### Changed
 
 - Abstracted visually hidden CSS to a11y tools

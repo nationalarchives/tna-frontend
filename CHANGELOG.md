@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Abstracted visually hidden CSS to a11y tools
+
 ### Deprecated
 ### Removed
 ### Fixed

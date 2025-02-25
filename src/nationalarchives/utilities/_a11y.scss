@@ -2,28 +2,7 @@
 
 .tna-visually-hidden,
 .tna-\!--visually-hidden {
-  width: 1px !important;
-  height: 1px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-
-  overflow: hidden !important;
-
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  z-index: -1 !important;
-
-  background-color: transparent !important;
-
-  border: 0 !important;
-
-  clip: rect(0, 0, 0, 0) !important;
-
-  // &::before,
-  // &::after {
-  //   content: "\00a0";
-  // }
+  @include a11y.visually-hidden;
 }
 
 *:focus-visible {

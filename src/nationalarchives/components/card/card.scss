@@ -261,13 +261,13 @@
   @include colour.on-high-contrast {
     padding-bottom: spacing.space(1);
 
+    @include colour.colour-border("keyline-dark", 1px, solid);
+
     &__heading,
     &__body {
       padding-right: spacing.space(1);
       padding-left: spacing.space(1);
     }
-
-    @include colour.colour-border("keyline-dark", 1px, solid);
 
     &--plain {
       box-shadow: none;

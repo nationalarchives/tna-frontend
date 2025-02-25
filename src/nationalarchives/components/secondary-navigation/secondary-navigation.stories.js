@@ -9,6 +9,7 @@ const argTypes = {
   noBottomBorder: { control: "boolean" },
   overflow: { control: "boolean" },
   noUnindentation: { control: "boolean" },
+  visuallyHideHeading: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -31,6 +32,7 @@ const Template = ({
   noBottomBorder,
   overflow,
   noUnindentation,
+  visuallyHideHeading,
   classes,
   attributes,
 }) =>
@@ -43,6 +45,7 @@ const Template = ({
         noBottomBorder,
         overflow,
         noUnindentation,
+        visuallyHideHeading,
         classes,
         attributes,
       },

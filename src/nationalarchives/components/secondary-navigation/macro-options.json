@@ -12,6 +12,13 @@
     "description": ""
   },
   {
+    "name": "visuallyHideHeading",
+    "type": "boolean",
+    "required": false,
+    "description": "",
+    "default": false
+  },
+  {
     "name": "items",
     "type": "array",
     "required": true,

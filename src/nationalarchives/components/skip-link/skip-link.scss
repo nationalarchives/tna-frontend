@@ -21,11 +21,7 @@
   white-space: nowrap !important;
 
   @include colour.colour-background("button-background", $important: true);
-  @include colour.colour-border(
-    "focus-outline",
-    a11yVars.$focus-outline-width,
-    $important: true
-  );
+  @include colour.colour-border("focus-outline", 3px, $important: true);
   outline: none !important;
 
   clip: rect(0 0 0 0) !important;

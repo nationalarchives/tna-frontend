@@ -27,11 +27,7 @@
 }
 
 @mixin focus-outline-without-offset {
-  @include colour.colour-outline(
-    "focus-outline",
-    a11y.$focus-outline-width,
-    solid
-  );
+  outline: a11y.$focus-outline-offset colour.colour-var("focus-outline") auto;
 }
 
 @mixin focus-outline {

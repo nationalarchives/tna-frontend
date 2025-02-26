@@ -14,10 +14,6 @@ select,
 summary {
   &:focus {
     z-index: 9;
-
-    outline: colour.brand-colour("blue") a11yVariables.$focus-outline-width
-      solid;
-    outline-offset: a11yVariables.$focus-outline-offset;
   }
 }
 

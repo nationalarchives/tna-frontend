@@ -114,11 +114,6 @@
   &__item {
     border-radius: 0 0 bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius;
-    // @include a11y.no-focus-outline-on-click;
-
-    &:focus {
-      outline-offset: -#{a11yVariables.$focus-outline-width};
-    }
   }
 
   &--interactive &__item {

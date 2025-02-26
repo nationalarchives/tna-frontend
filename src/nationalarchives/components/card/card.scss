@@ -116,7 +116,7 @@
   &--full-click {
     &:hover {
       @include colour.colour-outline("base-keyline", 2px, solid);
-      outline-offset: a11yVariables.$focus-outline-width - 1px;
+      outline-offset: 2px;
     }
 
     &:focus,

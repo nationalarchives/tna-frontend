@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added a `<a id="top"></a>` element to the top of the `bodyStart` block to allow for jumping to the top of the page
 - Allow the heading of a secondary navigation to be visually hidden with `visuallyHideHeading`
+- Added some colours as "base" CSS colours that are always available with the prefix `--base-`
 
 ### Changed
 

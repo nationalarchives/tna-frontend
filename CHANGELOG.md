@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Small border radius issues fixed with tabs and picture components
 - Improved button aria labels in gallery components
+- Added more descriptive text to the `aria-label` of the subscibe button in the footer
 
 ### Security
 

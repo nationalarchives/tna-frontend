@@ -142,7 +142,10 @@
           <div class="tna-button-group">
             {{ tnaButton({
               text: "Subscribe",
-              href: "https://pages.enews.nationalarchives.gov.uk/pages/subscribe"
+              href: "https://pages.enews.nationalarchives.gov.uk/pages/subscribe",
+              attributes: {
+                "aria-label": "Subscribe to the National Archives newsletter"
+              }
             }) | indent(10) }}
           </div>
         </div>

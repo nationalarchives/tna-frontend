@@ -17,16 +17,13 @@
       justify-content: flex-end;
     }
 
-    .tna-button {
-      @include typography.main-font-weight-bold;
-    }
-
     @include colour.on-forced-colours {
       display: none;
     }
   }
 
   &__theme-selector-button {
+    @include typography.main-font-weight-bold;
   }
 
   .tna-logo {

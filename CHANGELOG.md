@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Abstracted visually hidden CSS to a11y tools
+- Increased contrast of light icons for improved accessibility
 
 ### Deprecated
 ### Removed

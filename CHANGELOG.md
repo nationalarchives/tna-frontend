@@ -17,12 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Abstracted visually hidden CSS to a11y tools
 - Increased contrast of light icons for improved accessibility
+- The fullscreen button in gallery components is hidden on smaller devices in an attempt to avoid reflow issues
 
 ### Deprecated
 ### Removed
 ### Fixed
 
 - Small border radius issues fixed with tabs and picture components
+- Improved button aria labels in gallery components
 
 ### Security
 

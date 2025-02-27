@@ -37,6 +37,12 @@
 
     .tna-button {
       white-space: nowrap;
+
+      &[value="enter-fullscreen"] {
+        @include media.on-mobile {
+          display: none;
+        }
+      }
     }
   }
 

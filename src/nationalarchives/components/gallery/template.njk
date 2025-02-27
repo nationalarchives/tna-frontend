@@ -70,13 +70,13 @@
     {%- endfor %}
   </div>
   <div class="tna-gallery__navigation-buttons" hidden>
-    <button type="button" class="tna-gallery__navigation-button tna-gallery__navigation-prev" aria-label="Previous image">
+    <button type="button" class="tna-gallery__navigation-button tna-gallery__navigation-prev" aria-label="{% if params.title %}Show previous image in '{{ params.title }}' gallery{% else %}Show previous gallery image{% endif %}">
       <span class="tna-gallery__navigation-button-label">
         <span class="tna-gallery__navigation-button-icon"></span>
         Previous
       </span>
     </button>
-    <button type="button" class="tna-gallery__navigation-button tna-gallery__navigation-next" aria-label="Next image">
+    <button type="button" class="tna-gallery__navigation-button tna-gallery__navigation-next" aria-label="{% if params.title %}Show next image in '{{ params.title }}' gallery{% else %}Show next gallery image{% endif %}">
       <span class="tna-gallery__navigation-button-label">
         Next
         <span class="tna-gallery__navigation-button-icon"></span>
@@ -85,7 +85,7 @@
   </div>
   <div class="tna-gallery__navigation" hidden>
     {%- for item in params.items -%}
-    <button type="button" class="tna-gallery__navigation-item" aria-label="Image {{ loop.index }} of {{ params.items | length }}" aria-controls="{{ params.id }}-item-{{ loop.index }}">
+    <button type="button" class="tna-gallery__navigation-item" aria-label="{% if params.title %}Show image {{ loop.index }} of {{ params.items | length }} of '{{ params.title }}' gallery{% else %}Show gallery image {{ loop.index }} of {{ params.items | length }}{% endif %}" aria-controls="{{ params.id }}-item-{{ loop.index }}">
       <img src="{{ item.src }}" class="tna-gallery__navigation-item-image" alt="" width="{{ item.width }}" height="{{ item.height }}" loading="lazy">
       <span class="tna-visually-hidden">Image</span>
       <span class="tna-gallery__navigation-item-label">{{ loop.index }}</span>

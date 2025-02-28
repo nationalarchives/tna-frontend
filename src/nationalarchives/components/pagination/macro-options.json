@@ -16,6 +16,12 @@
         "type": "string",
         "required": true,
         "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": ""
       }
     ]
   },
@@ -67,6 +73,12 @@
         "name": "href",
         "type": "string",
         "required": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
         "description": ""
       }
     ]

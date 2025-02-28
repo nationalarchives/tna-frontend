@@ -12,6 +12,7 @@
           },
           {
             "label": "Medieval (974—1485)",
+            "title": "Medieval",
             "href": "#?filter=alpha"
           },
           {
@@ -44,7 +45,7 @@
           }
         ]
       },
-      "html": "<ul class=\"tna-quick-filters\"><li class=\"tna-quick-filters__item tna-quick-filters__item--selected\"><a href=\"#?filter=all\" class=\"tna-quick-filters__link\">All</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=alpha\" class=\"tna-quick-filters__link\">Medieval (974—1485)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=beta\" class=\"tna-quick-filters__link\">Early Modern (1485—1714)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=gamma\" class=\"tna-quick-filters__link\">Georgians (1714—1837)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=delta\" class=\"tna-quick-filters__link\">Victorians (1837—1901)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=epsilon\" class=\"tna-quick-filters__link\">Early 20th century (1901—1918)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=zeta\" class=\"tna-quick-filters__link\">Interwar (1918—1939)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=eta\" class=\"tna-quick-filters__link\">Second World War (1939—1945)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=theta\" class=\"tna-quick-filters__link\">Postwar (1945—2000)</a></li></ul>",
+      "html": "<ul class=\"tna-quick-filters\"><li class=\"tna-quick-filters__item tna-quick-filters__item--selected\"><a href=\"#?filter=all\" class=\"tna-quick-filters__link\">All</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=alpha\" aria-label=\"Medieval\" title=\"Medieval\" class=\"tna-quick-filters__link\">Medieval (974—1485)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=beta\" class=\"tna-quick-filters__link\">Early Modern (1485—1714)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=gamma\" class=\"tna-quick-filters__link\">Georgians (1714—1837)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=delta\" class=\"tna-quick-filters__link\">Victorians (1837—1901)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=epsilon\" class=\"tna-quick-filters__link\">Early 20th century (1901—1918)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=zeta\" class=\"tna-quick-filters__link\">Interwar (1918—1939)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=eta\" class=\"tna-quick-filters__link\">Second World War (1939—1945)</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=theta\" class=\"tna-quick-filters__link\">Postwar (1945—2000)</a></li></ul>",
       "hidden": false
     },
     {

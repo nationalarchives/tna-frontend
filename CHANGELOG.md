@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a `<a id="top"></a>` element to the top of the `bodyStart` block to allow for jumping to the top of the page
 - Allow the heading of a secondary navigation to be visually hidden with `visuallyHideHeading`
 - Added some colours as "base" CSS colours that are always available with the prefix `--base-`
+- Footer links can be marked as "external" which adds `rel="noreferrer nofollow noopener"`
 
 ### Changed
 
@@ -25,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Small border radius issues fixed with tabs and picture components
 - Improved button aria labels in gallery components
-- Added more descriptive text to the `aria-label` of the subscibe button in the footer
+- Added more descriptive `aria-label` text and added `rel="noreferrer nofollow noopener"` to the subscribe button in the footer
 
 ### Security
 

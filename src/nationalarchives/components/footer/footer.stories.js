@@ -149,14 +149,21 @@ Standard.args = {
         {
           text: "The Gazette",
           href: "https://www.thegazette.co.uk/",
+          external: true,
         },
         {
           text: "The National Archives Trust",
           href: "https://www.nationalarchivestrust.org.uk/",
+          external: true,
         },
         {
           text: "Friends of The National Archives",
           href: "https://ftna.org.uk/",
+          external: true,
+        },
+        {
+          text: "The National Archives Design System",
+          href: "https://design-system.nationalarchives.gov.uk/",
         },
       ],
     },

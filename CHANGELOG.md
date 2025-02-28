@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.13.2...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.14.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.14.0](https://github.com/nationalarchives/tna-frontend/compare/v0.13.2...v0.14.0) - 2025-02-28
 
 ### Added
 
@@ -20,15 +29,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Increased contrast of light icons for improved accessibility
 - The fullscreen button in gallery components is hidden on smaller devices in an attempt to avoid reflow issues
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Small border radius issues fixed with tabs and picture components
 - Improved button aria labels in gallery components
 - Added more descriptive `aria-label` text and added `rel="noreferrer nofollow noopener"` to the subscribe button in the footer
-
-### Security
 
 ## [0.13.2](https://github.com/nationalarchives/tna-frontend/compare/v0.13.1...v0.13.2) - 2025-02-20
 

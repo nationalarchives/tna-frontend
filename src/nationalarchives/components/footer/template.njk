@@ -120,7 +120,7 @@
           <ul class="tna-footer__navigation-block-items tna-ul tna-ul--plain">
           {%- for item in group.items %}
             <li class="tna-footer__navigation-block-item">
-              <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link"{%- if item.title or item.newTab %} aria-label="{{ item.title if item.title else item.text }}{%- if item.newTab %} (opens in new tab){% endif %}" title="{{ item.title if item.title else item.text }}{%- if item.newTab %} (opens in new tab){% endif %}"{% endif %}{%- if item.newTab %} target="_blank"{% endif %}{%- if item.external %} rel="noreferrer noopener"{% endif %}>
+              <a href="{{ item.href }}" class="tna-footer__navigation-block-item-link"{%- if item.title or item.newTab %} aria-label="{{ item.title if item.title else item.text }}{%- if item.newTab %} (opens in new tab){% endif %}" title="{{ item.title if item.title else item.text }}{%- if item.newTab %} (opens in new tab){% endif %}"{% endif %}{%- if item.newTab %} target="_blank"{% endif %}{%- if item.external %} rel="noreferrer nofollow noopener"{% endif %}>
                 {{ item.text }}
               </a>
             </li>

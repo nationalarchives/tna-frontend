@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Add missing `nofollow` to `rel` of footer links
+
 ### Security
 
 ## [0.14.0](https://github.com/nationalarchives/tna-frontend/compare/v0.13.2...v0.14.0) - 2025-02-28

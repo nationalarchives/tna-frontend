@@ -185,12 +185,16 @@
 
     position: relative;
 
-    border-radius: bordersVars.$rounded-border-radius
-      bordersVars.$rounded-border-radius 0 0;
-
     order: 1;
 
+    @include borders.rounded-border;
+
     @include colour.image-loader-background;
+  }
+
+  &--padded &__image-container {
+    border-radius: bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius 0 0;
   }
 
   &__image {

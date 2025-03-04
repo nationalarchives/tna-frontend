@@ -85,6 +85,58 @@
         "size": "m"
       },
       "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"password\">Enter your password</label></h4></div><input id=\"password\" class=\"tna-text-input tna-text-input--m \" name=\"password\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "label": "Enter your first name",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "name",
+        "name": "name",
+        "classes": "test-class"
+      },
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input test-class\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "label": "Enter your first name",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "name",
+        "name": "name",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" data-testattribute=\"foobar\"></div>"
+    },
+    {
+      "name": "with form group classes",
+      "options": {
+        "label": "Enter your first name",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "name",
+        "name": "name",
+        "formGroupClasses": "test-class"
+      },
+      "html": "<div class=\"tna-form__group test-class\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
+    },
+    {
+      "name": "with form group attributes",
+      "options": {
+        "label": "Enter your first name",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "name",
+        "name": "name",
+        "formGroupAttributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\" data-testattribute=\"foobar\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"name\">Enter your first name</label></h4></div><input id=\"name\" class=\"tna-text-input \" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
     }
   ]
 }

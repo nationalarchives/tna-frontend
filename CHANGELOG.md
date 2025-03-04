@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Add missing `nofollow` to `rel` of footer links
+- Fix form group classes and attributes for all form components and add missing fixtures
 
 ### Security
 

@@ -82,6 +82,18 @@
     "description": ""
   },
   {
+    "name": "formGroupClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the date input form group."
+  },
+  {
+    "name": "formGroupAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the date input form group."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

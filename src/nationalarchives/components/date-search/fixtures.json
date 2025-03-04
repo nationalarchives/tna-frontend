@@ -73,6 +73,58 @@
         "maxWidth": true
       },
       "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"date\">Enter a start date</label></h4></div><input type=\"date\" id=\"date\" class=\"tna-date-search tna-date-search--max-width \" name=\"date\" value=\"\"></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "label": "Enter a start date",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "date",
+        "name": "date",
+        "classes": "test-class"
+      },
+      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"date\">Enter a start date</label></h4></div><input type=\"date\" id=\"date\" class=\"tna-date-search test-class\" name=\"date\" value=\"\"></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "label": "Enter a start date",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "date",
+        "name": "date",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"date\">Enter a start date</label></h4></div><input type=\"date\" id=\"date\" class=\"tna-date-search \" name=\"date\" value=\"\" data-testattribute=\"foobar\"></div>"
+    },
+    {
+      "name": "with form group classes",
+      "options": {
+        "label": "Enter a start date",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "date",
+        "name": "date",
+        "formGroupClasses": "test-class"
+      },
+      "html": "<div class=\"tna-form__group test-class\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"date\">Enter a start date</label></h4></div><input type=\"date\" id=\"date\" class=\"tna-date-search \" name=\"date\" value=\"\"></div>"
+    },
+    {
+      "name": "with form group attributes",
+      "options": {
+        "label": "Enter a start date",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "date",
+        "name": "date",
+        "formGroupAttributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-form__group\" data-testattribute=\"foobar\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"date\">Enter a start date</label></h4></div><input type=\"date\" id=\"date\" class=\"tna-date-search \" name=\"date\" value=\"\"></div>"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {% from "nationalarchives/components/checkboxes/checkboxes.njk" import tnaCheckboxesElement %}
 
-{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- set containerClasses = [params.formGroupClasses] if params.formGroupClasses else [] -%}
 {%- if params.inline -%}
   {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
 {%- endif -%}

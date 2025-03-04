@@ -185,6 +185,114 @@
         "inline": true
       },
       "html": "<div class=\"tna-form__group tna-form__group--inline\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--xs\">Categories</h4></legend><div class=\"tna-checkboxes tna-checkboxes--small tna-checkboxes--inline\" id=\"categories\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-beta\" value=\"beta\" name=\"categories\"><label for=\"categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "classes": "checkboxes__test-class"
+      },
+      "html": "<div class=\"tna-form__group\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes\" id=\"categories\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-alpha\" class=\"checkboxes__test-class\" value=\"alpha\" name=\"categories\"><label for=\"categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-beta\" class=\"checkboxes__test-class\" value=\"beta\" name=\"categories\"><label for=\"categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-gamma\" class=\"checkboxes__test-class\" value=\"gamma\" name=\"categories\"><label for=\"categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-form__group\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes\" id=\"categories\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-alpha\" value=\"alpha\" name=\"categories\" data-testattribute=\"foobar\"><label for=\"categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-beta\" value=\"beta\" name=\"categories\" data-testattribute=\"foobar\"><label for=\"categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-gamma\" value=\"gamma\" name=\"categories\" data-testattribute=\"foobar\"><label for=\"categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>"
+    },
+    {
+      "name": "with form group classes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "formGroupClasses": "checkboxes__test-class"
+      },
+      "html": "<div class=\"tna-form__group checkboxes__test-class\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes\" id=\"categories\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-beta\" value=\"beta\" name=\"categories\"><label for=\"categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>"
+    },
+    {
+      "name": "with form group attributes",
+      "options": {
+        "label": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "formGroupAttributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-form__group\" data-testattribute=\"foobar\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--m\">Categories</h4></legend><div class=\"tna-checkboxes\" id=\"categories\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-alpha\" value=\"alpha\" name=\"categories\"><label for=\"categories-alpha\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-beta\" value=\"beta\" name=\"categories\"><label for=\"categories-beta\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"categories-gamma\" value=\"gamma\" name=\"categories\"><label for=\"categories-gamma\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></fieldset></div>"
     }
   ]
 }

@@ -99,6 +99,14 @@ jobs:
         run: gh release upload "v${{ needs.version-check.outputs.version }}" "tna-frontend-${{ needs.version-check.outputs.version }}.zip"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate static error pages
+        run: npm run build:errorpages
+      - name: Compress error pages package
+        run: zip -r "tna-frontend-error-pages-${{ needs.version-check.outputs.version }}.zip" "error-pages"
+      - name: Upload the error pages package to the GitHub release
+        run: gh release upload "v${{ needs.version-check.outputs.version }}" "tna-frontend-error-pages-${{ needs.version-check.outputs.version }}.zip"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   notify-slack:
     runs-on: ubuntu-latest

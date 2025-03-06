@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.15.1...HEAD)
 
 ### Added
+
+- `tna-block-*` classes added as alternatives to `tna-background-*`
+- `tna-block-base` and `tna-background-base` classes and a `colour.base` mixin added to revert block colours
+
 ### Changed
 ### Deprecated
 ### Removed

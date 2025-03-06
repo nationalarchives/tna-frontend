@@ -7,8 +7,25 @@
 
 $base-colours: (
   "background",
+  // "background-tint",
+  "font-base",
+  "font-dark",
+  "font-light",
+  "icon-light",
+  "link",
+  "link-visited",
+  // "focus-outline",
   "keyline",
-  "keyline-dark" // , "form-error-text", "form-error-border", "focus-outline"
+  "keyline-dark",
+  // "input-foreground",
+  // "input-background",
+  // "input-border",
+  // "form-error-border",
+  // "form-error-text",
+  // "button-text",
+  // "button-background",
+  // "button-hover-text",
+   // "button-hover-background",
 );
 
 @function brand-colour($colour, $opacity: 1) {
@@ -264,12 +281,24 @@ $base-colours: (
   @extend %contrast-on-mobile;
 }
 
-%tint {
-  --background: var(--background-tint);
+%base {
+  @each $name, $value in $base-colours {
+    --#{$name}: var(--base-#{$value});
+  }
 
   @include colour-background("background");
 
-  // @include colour-font("font-base");
+  @include colour-font("font-base");
+}
+
+@mixin base {
+  @extend %base;
+}
+
+%tint {
+  --background: var(--background-tint);
+
+  @include base;
 }
 
 @mixin tint {

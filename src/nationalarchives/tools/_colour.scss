@@ -298,7 +298,7 @@ $base-colours: (
 %tint {
   --background: var(--background-tint);
 
-  @include base;
+  @include colour-background("background");
 }
 
 @mixin tint {

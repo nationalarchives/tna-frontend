@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed border-radius on input and button in password style text inputs
+
 ### Security
 
 ## [0.15.1](https://github.com/nationalarchives/tna-frontend/compare/v0.15.0...v0.15.1) - 2025-03-05

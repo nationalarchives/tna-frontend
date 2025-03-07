@@ -60,10 +60,18 @@
     .tna-button {
       white-space: nowrap;
 
+      border-top-left-radius: 0.1px;
+      border-bottom-left-radius: 0.1px;
+
       svg {
-        width: 30px;
+        width: 28px;
         margin: 0;
       }
     }
+  }
+
+  &-wrapper #{&} {
+    border-top-right-radius: 0.1px;
+    border-bottom-right-radius: 0.1px;
   }
 }

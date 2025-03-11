@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed border-radius on input and button in password style text inputs
+- List items (`<li>`, `<dt>` and `<dd>`) are styled only as direct children of their parent lists for easier nesting of different list types
 
 ### Security
 

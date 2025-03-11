@@ -74,7 +74,7 @@ ol {
 
   @extend %chip-plain;
 
-  dt {
+  > dt {
     position: absolute;
 
     font-size: 0;
@@ -106,18 +106,18 @@ ol {
 }
 
 @mixin stacked-dl {
-  dt,
-  dd {
+  > dt,
+  > dd {
     width: 100%;
     margin-left: 0;
   }
 
-  dd {
+  > dd {
     padding-left: spacing.space(1);
   }
 
   &.tna-dl--plain {
-    dt {
+    > dt {
       padding-top: 0;
       padding-bottom: 0;
 
@@ -126,20 +126,20 @@ ol {
       }
     }
 
-    dd {
+    > dd {
       margin-left: 0;
       padding-top: 0;
     }
   }
 
   &:not(.tna-dl--plain) {
-    dt {
+    > dt {
       @include colour.colour-background("background-tint");
 
       @include colour.colour-font("font-base");
     }
 
-    dd {
+    > dd {
       margin-left: 0;
 
       background: transparent !important;
@@ -147,18 +147,18 @@ ol {
   }
 
   @include colour.on-high-contrast-and-forced-colours {
-    dd {
+    > dd {
       border-top: none !important;
     }
 
     &.tna-dl--plain {
-      dt {
+      > dt {
         padding-top: spacing.space(0.5) !important;
       }
     }
 
     &.tna-dl--icon-padding.tna-dl--plain {
-      dt {
+      > dt {
         .fa-solid {
           margin-top: spacing.space(0.5) !important;
         }
@@ -166,7 +166,7 @@ ol {
     }
 
     &.tna-dl--stacked:not(.tna-dl--plain) {
-      dt {
+      > dt {
         padding-bottom: 0 !important;
       }
     }
@@ -183,8 +183,8 @@ ol {
     margin-top: 0;
   }
 
-  dt,
-  dd {
+  > dt,
+  > dd {
     margin: 0;
     padding: spacing.space(0.5) spacing.space(1);
 
@@ -196,31 +196,31 @@ ol {
   }
 
   &--plain {
-    dt {
+    > dt {
       padding-top: 0;
       padding-left: 0;
     }
 
-    dd {
+    > dd {
       padding-top: 0;
       padding-right: 0;
     }
   }
 
   &--plain#{&}--spaced {
-    dt,
-    dd {
+    > dt,
+    > dd {
       padding-bottom: spacing.space(1.25);
     }
   }
 
-  dt {
+  > dt {
     width: 30%;
 
     @include typography.main-font-weight-bold;
   }
 
-  dd {
+  > dd {
     width: 70%;
 
     + dd {
@@ -229,7 +229,7 @@ ol {
   }
 
   &--icon-padding {
-    dt {
+    > dt {
       padding-left: 3rem !important;
 
       position: relative;
@@ -250,7 +250,7 @@ ol {
   }
 
   &--icon-padding#{&}--plain {
-    dt {
+    > dt {
       padding-left: spacing.space(2) !important;
 
       .fa-solid {
@@ -259,25 +259,25 @@ ol {
       }
     }
 
-    dd {
+    > dd {
       padding-left: spacing.space(2);
     }
   }
 
   &:not(&--plain) {
-    dt:first-child,
-    dd:nth-of-type(2n) + dt,
-    dd:nth-of-type(2n + 1) {
+    > dt:first-child,
+    > dd:nth-of-type(2n) + dt,
+    > dd:nth-of-type(2n + 1) {
       @include colour.tint;
     }
   }
 
   @include media.on-small {
-    dt {
+    > dt {
       width: 35%;
     }
 
-    dd {
+    > dd {
       width: 65%;
 
       + dd {
@@ -297,16 +297,16 @@ ol {
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline-dark", 1px, solid, bottom);
 
-    dt,
-    dd {
+    > dt,
+    > dd {
       background: transparent !important;
 
       @include colour.colour-border("keyline-dark", 1px, solid, top);
     }
 
     &--plain {
-      dt,
-      dd {
+      > dt,
+      > dd {
         padding-top: spacing.space(0.5);
       }
     }

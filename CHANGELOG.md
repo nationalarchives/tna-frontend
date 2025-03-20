@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GOV.UK Prototype Kit template extends path changed from relative to absolute
 - Tweaks to spacing and style of chip links
 - Added more properties to the CSS rule order in the Stylelint config
+- Visual changes to quick filters to distinguish them from chips
 
 ### Deprecated
 ### Removed

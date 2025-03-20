@@ -65,8 +65,11 @@
     &:visited,
     &:hover,
     &:focus-visible {
-      @include colour.accent;
-      @include colour.colour-border("background");
+      @include typography.main-font-weight-bold;
+
+      @include colour.colour-border("keyline-dark");
+
+      box-shadow: inset 0 0 0 0.125rem colour.colour-var("keyline-dark");
     }
   }
 }

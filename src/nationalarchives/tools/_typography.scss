@@ -60,14 +60,14 @@
 }
 
 @mixin interactable-text-decoration {
-  text-underline-offset: typography.$interactable-text-decoration-offset;
-
   text-decoration-thickness: typography.$interactable-text-decoration-thickness;
+  text-underline-offset: typography.$interactable-text-decoration-offset;
 }
 
 @mixin interacted-text-decoration {
   text-decoration: underline;
   text-decoration-thickness: typography.$interactive-text-decoration-thickness;
+  text-underline-offset: typography.$interactable-text-decoration-offset;
 }
 
 @mixin heading-generator(

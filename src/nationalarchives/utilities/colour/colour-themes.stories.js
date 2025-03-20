@@ -419,14 +419,14 @@ const Template = ({ theme, accent }) => {
             </dd>
             <dt>Author</dt>
             <dd>
-              <a class="tna-dl-chips__item">
+              <a href="#" class="tna-dl-chips__item">
                 <i class="fa-solid fa-user"></i>
                 James
               </a>
             </dd>
             <dt>Category</dt>
             <dd>
-              <a class="tna-dl-chips__item">
+              <a href="#" class="tna-dl-chips__item">
                 Research
               </a>
             </dd>
@@ -447,14 +447,14 @@ const Template = ({ theme, accent }) => {
             </dd>
             <dt>Author</dt>
             <dd>
-              <a class="tna-dl-chips__item">
+              <a href="#" class="tna-dl-chips__item">
                 <i class="fa-solid fa-user"></i>
                 James
               </a>
             </dd>
             <dt>Category</dt>
             <dd>
-              <a class="tna-dl-chips__item">
+              <a href="#" class="tna-dl-chips__item">
                 Research
               </a>
             </dd>

@@ -91,7 +91,9 @@ small {
 
     &:hover,
     &:focus-visible {
-      @include typography.interacted-text-decoration;
+      text-decoration: underline;
+      text-decoration-thickness: 0.1875em;
+      text-underline-offset: 0.0625em;
 
       .fa-solid {
         color: inherit;
@@ -114,8 +116,14 @@ small {
   background-color: transparent;
 
   border: none;
+  border-radius: 0.1px;
 
   @at-root #{selector.unify("a", &)} {
+    &:hover,
+    &:focus-visible {
+      @include typography.interacted-text-decoration;
+    }
+
     .fa-solid {
       color: inherit;
     }

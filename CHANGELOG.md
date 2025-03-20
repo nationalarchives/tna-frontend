@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `tna-block-*` classes added as alternatives to `tna-background-*`
 - `tna-block-base` and `tna-background-base` classes and a `colour.base` mixin added to revert block colours
+- Optional `classes` and `attributes` options added to quick filter `items`
 
 ### Changed
 
@@ -21,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- `fill` option remove from quick filters
+
 ### Fixed
 
 - Fixed border-radius on input and button in password style text inputs

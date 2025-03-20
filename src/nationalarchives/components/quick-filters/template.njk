@@ -1,9 +1,13 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- if params.stack -%}
+  {%- set containerClasses = containerClasses.concat('tna-quick-filters--stacked') -%}
+{%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
-<ul class="tna-quick-filters{% if params.stack %} tna-quick-filters--stacked{% endif %}{% if params.fill %} tna-quick-filters--filled{% endif %}{% if classes %} {{ classes }}{% endif %}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+<ul class="tna-quick-filters{% if classes %} {{ classes }}{% endif %}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- for item in params.items %}
+  {%- set itemClasses = ([item.classes] if item.classes else []) | join(' ') -%}
   <li class="tna-quick-filters__item{%- if item.selected %} tna-quick-filters__item--selected{% endif %}">
-    <a href="{{ item.href }}" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %} class="tna-quick-filters__link">{{ item.label }}</a>
+    <a href="{{ item.href }}" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %} class="tna-quick-filters__link{% if itemClasses %} {{ itemClasses }}{% endif %}"{% for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ item.label }}</a>
   </li>
   {%- endfor %}
 </ul>

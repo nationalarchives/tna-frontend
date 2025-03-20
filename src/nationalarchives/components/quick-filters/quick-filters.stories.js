@@ -4,7 +4,6 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   items: { control: "object" },
   stack: { control: "boolean" },
-  fill: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -20,12 +19,11 @@ export default {
   argTypes,
 };
 
-const Template = ({ items, stack, fill, classes, attributes }) =>
+const Template = ({ items, stack, classes, attributes }) =>
   Filters({
     params: {
       items,
       stack,
-      fill,
       classes,
       attributes,
     },

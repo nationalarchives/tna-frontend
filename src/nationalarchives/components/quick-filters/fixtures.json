@@ -76,58 +76,55 @@
       "hidden": false
     },
     {
-      "name": "filled",
+      "name": "with classes",
       "options": {
         "items": [
           {
-            "label": "All",
-            "href": "#?filter=all",
+            "label": "Alpha",
+            "href": "?alpha",
             "selected": true
           },
           {
-            "label": "Alpha",
-            "href": "#?filter=alpha"
-          },
-          {
             "label": "Beta",
-            "href": "#?filter=beta"
+            "href": "?beta",
+            "classes": "test-class-2"
           },
           {
             "label": "Gamma",
-            "href": "#?filter=gamma"
+            "href": "?gamma"
           }
         ],
-        "fill": true
+        "classes": "test-class"
       },
-      "html": "<ul class=\"tna-quick-filters tna-quick-filters--filled\"><li class=\"tna-quick-filters__item tna-quick-filters__item--selected\"><a href=\"#?filter=all\" class=\"tna-quick-filters__link\">All</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=alpha\" class=\"tna-quick-filters__link\">Alpha</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=beta\" class=\"tna-quick-filters__link\">Beta</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=gamma\" class=\"tna-quick-filters__link\">Gamma</a></li></ul>",
+      "html": "<ul class=\"tna-quick-filters test-class\"><li class=\"tna-quick-filters__item tna-quick-filters__item--selected\"><a href=\"?alpha\" class=\"tna-quick-filters__link\">Alpha</a></li><li class=\"tna-quick-filters__item\"><a href=\"?beta\" class=\"tna-quick-filters__link test-class-2\">Beta</a></li><li class=\"tna-quick-filters__item\"><a href=\"?gamma\" class=\"tna-quick-filters__link\">Gamma</a></li></ul>",
       "hidden": false
     },
     {
-      "name": "stacked and filled",
+      "name": "with attributes",
       "options": {
         "items": [
           {
-            "label": "All",
-            "href": "#?filter=all",
+            "label": "Alpha",
+            "href": "?alpha",
             "selected": true
           },
           {
-            "label": "Alpha",
-            "href": "#?filter=alpha"
-          },
-          {
             "label": "Beta",
-            "href": "#?filter=beta"
+            "href": "?beta",
+            "attributes": {
+              "data-testattribute2": "foobar2"
+            }
           },
           {
             "label": "Gamma",
-            "href": "#?filter=gamma"
+            "href": "?gamma"
           }
         ],
-        "stack": true,
-        "fill": true
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
       },
-      "html": "<ul class=\"tna-quick-filters tna-quick-filters--stacked tna-quick-filters--filled\"><li class=\"tna-quick-filters__item tna-quick-filters__item--selected\"><a href=\"#?filter=all\" class=\"tna-quick-filters__link\">All</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=alpha\" class=\"tna-quick-filters__link\">Alpha</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=beta\" class=\"tna-quick-filters__link\">Beta</a></li><li class=\"tna-quick-filters__item\"><a href=\"#?filter=gamma\" class=\"tna-quick-filters__link\">Gamma</a></li></ul>",
+      "html": "<ul class=\"tna-quick-filters\" data-testattribute=\"foobar\"><li class=\"tna-quick-filters__item tna-quick-filters__item--selected\"><a href=\"?alpha\" class=\"tna-quick-filters__link\">Alpha</a></li><li class=\"tna-quick-filters__item\"><a href=\"?beta\" class=\"tna-quick-filters__link\" data-testattribute2=\"foobar2\">Beta</a></li><li class=\"tna-quick-filters__item\"><a href=\"?gamma\" class=\"tna-quick-filters__link\">Gamma</a></li></ul>",
       "hidden": false
     }
   ]

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.15.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.16.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.16.0](https://github.com/nationalarchives/tna-frontend/compare/v0.15.1...v0.16.0) - 2025-03-24
 
 ### Added
 
@@ -20,7 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added more properties to the CSS rule order in the Stylelint config
 - Visual changes to quick filters to distinguish them from chips
 
-### Deprecated
 ### Removed
 
 - `fill` option remove from quick filters
@@ -30,8 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed border-radius on input and button in password style text inputs
 - List items (`<li>`, `<dt>` and `<dd>`) are styled only as direct children of their parent lists for easier nesting of different list types
 - List template classes fixed for GOV.UK Prototype Kit
-
-### Security
 
 ## [0.15.1](https://github.com/nationalarchives/tna-frontend/compare/v0.15.0...v0.15.1) - 2025-03-05
 

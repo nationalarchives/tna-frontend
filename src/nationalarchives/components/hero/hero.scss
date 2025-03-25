@@ -1,6 +1,7 @@
 @use "sass:math";
 
 @use "../../variables/borders" as bordersVars;
+@use "../../variables/grid" as gridVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/grid";
@@ -12,6 +13,8 @@ $padding-units-top: 10 !default;
 $padding-units-bottom: 2 !default;
 $padding-units-narrow: 3 !default;
 $shift-units: 5 !default;
+$layer-padding-units: 3 !default;
+$layer-shift-units: 2 !default;
 
 .tna-hero {
   &__figure {
@@ -191,17 +194,31 @@ $shift-units: 5 !default;
   &--split {
   }
 
-  &--split &__figure {
-    min-height: clamp(15rem, #{math.div(100vw, 3)}, 50rem);
-    padding-top: spacing.space(2);
-    padding-bottom: spacing.space(2);
+  &--layer {
+    margin-bottom: spacing.space($layer-shift-units);
+  }
 
+  &--split &__figure,
+  &--layer &__figure {
     align-items: center;
 
     box-sizing: border-box;
   }
 
-  &--split &__information {
+  &--split &__figure {
+    min-height: clamp(15rem, #{math.div(100vw, 3)}, 50rem);
+    padding-top: spacing.space(2);
+    padding-bottom: spacing.space(2);
+  }
+
+  &--layer &__figure {
+    min-height: auto;
+    padding-top: spacing.space($layer-padding-units);
+    padding-bottom: spacing.space($layer-padding-units);
+  }
+
+  &--split &__information,
+  &--layer &__information {
     max-width: 50%;
 
     box-sizing: border-box;
@@ -211,12 +228,26 @@ $shift-units: 5 !default;
     left: 50%;
   }
 
-  &--split &__content {
+  &--layer &__image {
+    max-width: calc(
+      #{math.div(gridVars.$largest-container-width, 2)} - #{grid.gutter-width()}
+    );
+    margin-right: 32px;
+
+    top: spacing.space($layer-shift-units);
+    bottom: spacing.space(-$layer-shift-units);
+
+    left: 50%;
+  }
+
+  &--split &__content,
+  &--layer &__content {
     width: 50%;
     padding-right: grid.gutter-width();
   }
 
-  &--split &__content-inner {
+  &--split &__content-inner,
+  &--layer &__content-inner {
     padding: 0;
   }
 
@@ -266,7 +297,8 @@ $shift-units: 5 !default;
     }
 
     &__information,
-    &--split &__information {
+    &--split &__information,
+    &--layer &__information {
       width: auto;
       max-width: none;
 
@@ -309,22 +341,34 @@ $shift-units: 5 !default;
     &--shift {
     }
 
+    &--layer {
+      margin-bottom: 0;
+    }
+
     &--shift &__content-inner {
       position: static;
     }
 
-    &--split &__figure {
+    &--split &__figure,
+    &--layer &__figure {
       min-height: auto;
       padding-top: 0;
       padding-bottom: 0;
     }
 
-    &--split &__content {
+    &--layer &__image {
+      max-width: none;
+      margin-right: 0;
+    }
+
+    &--split &__content,
+    &--layer &__content {
       width: 100%;
       padding-right: grid.gutter-width-half();
     }
 
-    &--split &__content-inner {
+    &--split &__content-inner,
+    &--layer &__content-inner {
       padding-top: spacing.space(2);
       padding-bottom: spacing.space(2);
     }

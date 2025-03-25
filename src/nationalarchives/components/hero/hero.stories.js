@@ -24,7 +24,7 @@ const argTypes = {
   },
   layout: {
     control: "inline-radio",
-    options: ["plain", "shift", "split"],
+    options: ["plain", "shift", "split", "layer"],
   },
   narrow: { control: "boolean" },
   classes: { control: "text" },
@@ -219,6 +219,20 @@ Split.args = {
   imageCaption: "An interesting photo by a famous photographer ©2023",
   style: "accent",
   layout: "split",
+};
+
+export const Layered = Template.bind({});
+Layered.args = {
+  title: "Title",
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  imageSrc:
+    "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+  imageAlt: "The National Archives office",
+  imageWidth: 600,
+  imageHeight: 400,
+  imageCaption: "An interesting photo by a famous photographer ©2023",
+  style: "accent",
+  layout: "layer",
 };
 
 export const Narrow = Template.bind({});

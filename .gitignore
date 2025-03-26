@@ -1,5 +1,6 @@
 .DS_Store
-.vscode
+.idea/
+.vscode/
 __snapshots__
 node_modules
 package

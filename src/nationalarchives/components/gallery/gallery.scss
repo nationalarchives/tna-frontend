@@ -336,6 +336,10 @@
     }
   }
 
+  &--bounded {
+    @include borders.rounded-border;
+  }
+
   &--bounded,
   &:fullscreen {
     @include colour.tint;

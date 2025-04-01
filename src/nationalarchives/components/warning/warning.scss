@@ -19,6 +19,8 @@
 
   @include colour.thick-keyline-brand(left, "yellow");
   @include borders.rounded-border;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 
   @include media.on-tiny {
     flex-direction: column;

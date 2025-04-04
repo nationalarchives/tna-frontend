@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed double top border issue on plain cards with no images
+
 ### Security
 
 ## [0.16.0](https://github.com/nationalarchives/tna-frontend/compare/v0.15.1...v0.16.0) - 2025-03-24

@@ -259,7 +259,22 @@
   }
 
   &--plain {
-    box-shadow: inset 0 0 0 1px colour.colour-var("keyline");
+    &::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      border-radius: inherit;
+      @include colour.colour-border("keyline", 1px, solid);
+    }
+  }
+
+  &--plain:not(:has(&__image-container)) {
+    &::after {
+      border-top-width: 0;
+    }
   }
 
   @include colour.on-high-contrast {

@@ -23,6 +23,10 @@
   @include typography.font-size(typographyVars.$body-font-size-px);
   line-height: typographyVars.$body-line-height;
 
+  @include media.on-medium {
+    @include typography.font-size(typographyVars.$body-font-size-px-medium);
+  }
+
   @include media.on-mobile {
     @include typography.font-size(typographyVars.$body-font-size-px-mobile);
   }

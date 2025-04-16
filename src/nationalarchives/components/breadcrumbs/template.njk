@@ -4,19 +4,13 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <nav class="tna-breadcrumbs{% if classes %} {{ classes }}{% endif %}" data-module="tna-breadcrumbs" aria-label="{{ params.labelText or 'Breadcrumbs' }}"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <ol class="tna-breadcrumbs__list" {%- if params.structuredData %} itemscope itemtype="https://schema.org/BreadcrumbList"{% endif %}>
+  <ol class="tna-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
   {%- for item in params.items %}
-    <li class="tna-breadcrumbs__item" {%- if params.structuredData %} itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"{% endif %}>
-      <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %}{%- if params.structuredData %} itemprop="item"{% endif %}>
-        {%- if params.structuredData %}
+    <li class="tna-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ item.href }}" class="tna-breadcrumbs__link" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %} itemprop="item">
         <span itemprop="name">{{ item.text }}</span>
-        {%- else %}
-        {{ item.text }}
-        {%- endif %}
       </a>
-      {%- if params.structuredData %}
       <meta itemprop="position" content="{{ loop.index }}">
-      {%- endif %}
     </li>
   {%- endfor %}
   </ol>

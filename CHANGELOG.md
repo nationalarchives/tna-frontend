@@ -10,10 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added new `layer` layout option for hero component
+- Microdata added to the footer for TNA organisation
 
 ### Changed
 ### Deprecated
 ### Removed
+
+- `structuredData` option was removed as an option on breadcrumb components - microdata is now added by default
+
 ### Fixed
 ### Security
 

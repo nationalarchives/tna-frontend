@@ -23,7 +23,8 @@ $relative-1rem-px: 16; // 16px = 1rem
  */
 $use-local-fonts: false !default;
 
-$body-font-size-px: 18 !default;
+$body-font-size-px: 19 !default;
+$body-font-size-px-medium: 18 !default;
 $body-font-size-px-mobile: 17 !default;
 $body-line-height: 1.75 !default;
 
@@ -89,12 +90,12 @@ $heading-l-font-size-tiny: 25 !default;
 $heading-l-line-height: 1.3 !default;
 
 $heading-m-font-size-default: 22 !default;
-$heading-m-font-size-medium: 21 !default;
-$heading-m-font-size-small: 20 !default;
-$heading-m-font-size-tiny: 19 !default;
+$heading-m-font-size-medium: $heading-m-font-size-default !default;
+$heading-m-font-size-small: 21 !default;
+$heading-m-font-size-tiny: $heading-m-font-size-small !default;
 $heading-m-line-height: 1.6 !default;
 
-$heading-s-font-size-default: 18 !default;
+$heading-s-font-size-default: 19 !default;
 $heading-s-font-size-medium: $heading-s-font-size-default !default;
 $heading-s-font-size-small: $heading-s-font-size-default !default;
 $heading-s-font-size-tiny: $heading-s-font-size-default !default;

@@ -19,7 +19,7 @@
           }
         ]
       },
-      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav>"
+      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Alpha</span></a><meta itemprop=\"position\" content=\"1\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Beta</span></a><meta itemprop=\"position\" content=\"2\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Gamma</span></a><meta itemprop=\"position\" content=\"3\"></li></ol></nav>"
     },
     {
       "name": "non-collapsing",
@@ -40,28 +40,7 @@
         ],
         "noCollapse": true
       },
-      "html": "<nav class=\"tna-breadcrumbs tna-breadcrumbs--no-collapse\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav>"
-    },
-    {
-      "name": "Structured data",
-      "options": {
-        "items": [
-          {
-            "text": "Alpha",
-            "href": "#/alpha"
-          },
-          {
-            "text": "Beta",
-            "href": "#/beta"
-          },
-          {
-            "text": "Gamma",
-            "href": "#/gamma"
-          }
-        ],
-        "structuredData": true
-      },
-      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Alpha</span></a><meta itemprop=\"position\" content=\"1\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Beta</span></a><meta itemprop=\"position\" content=\"2\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Gamma</span></a><meta itemprop=\"position\" content=\"3\"></li></ol></nav>"
+      "html": "<nav class=\"tna-breadcrumbs tna-breadcrumbs--no-collapse\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Alpha</span></a><meta itemprop=\"position\" content=\"1\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Beta</span></a><meta itemprop=\"position\" content=\"2\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Gamma</span></a><meta itemprop=\"position\" content=\"3\"></li></ol></nav>"
     },
     {
       "name": "with custom label",
@@ -82,7 +61,7 @@
         ],
         "labelText": "Hirearchy"
       },
-      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Hirearchy\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav>"
+      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Hirearchy\"><ol class=\"tna-breadcrumbs__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Alpha</span></a><meta itemprop=\"position\" content=\"1\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Beta</span></a><meta itemprop=\"position\" content=\"2\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Gamma</span></a><meta itemprop=\"position\" content=\"3\"></li></ol></nav>"
     },
     {
       "name": "with classes",
@@ -103,7 +82,7 @@
         ],
         "classes": "tna-breadcrumbs--test"
       },
-      "html": "<nav class=\"tna-breadcrumbs tna-breadcrumbs--test\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav>"
+      "html": "<nav class=\"tna-breadcrumbs tna-breadcrumbs--test\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\"><ol class=\"tna-breadcrumbs__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Alpha</span></a><meta itemprop=\"position\" content=\"1\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Beta</span></a><meta itemprop=\"position\" content=\"2\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Gamma</span></a><meta itemprop=\"position\" content=\"3\"></li></ol></nav>"
     },
     {
       "name": "with attributes",
@@ -126,7 +105,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\" data-testattribute=\"foobar\"><ol class=\"tna-breadcrumbs__list\"><li class=\"tna-breadcrumbs__item\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\">Alpha</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\">Beta</a></li><li class=\"tna-breadcrumbs__item\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\">Gamma</a></li></ol></nav>"
+      "html": "<nav class=\"tna-breadcrumbs\" data-module=\"tna-breadcrumbs\" aria-label=\"Breadcrumbs\" data-testattribute=\"foobar\"><ol class=\"tna-breadcrumbs__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/alpha\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Alpha</span></a><meta itemprop=\"position\" content=\"1\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/beta\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Beta</span></a><meta itemprop=\"position\" content=\"2\"></li><li class=\"tna-breadcrumbs__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\"><a href=\"#/gamma\" class=\"tna-breadcrumbs__link\" itemprop=\"item\"><span itemprop=\"name\">Gamma</span></a><meta itemprop=\"position\" content=\"3\"></li></ol></nav>"
     }
   ]
 }

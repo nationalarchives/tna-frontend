@@ -6,7 +6,6 @@ import { customViewports } from "../../../../.storybook/viewports";
 const argTypes = {
   items: { control: "object" },
   noCollapse: { control: "boolean" },
-  structuredData: { control: "boolean" },
   labelText: { control: "text" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -23,19 +22,11 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  items,
-  noCollapse,
-  structuredData,
-  labelText,
-  classes,
-  attributes,
-}) =>
+const Template = ({ items, noCollapse, labelText, classes, attributes }) =>
   Breadcrumbs({
     params: {
       items,
       noCollapse,
-      structuredData,
       labelText,
       classes,
       attributes,

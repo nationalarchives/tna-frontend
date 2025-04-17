@@ -1327,7 +1327,6 @@ const Template = ({ theme, accent }) => {
     </main>
     ${Footer({
       params: {
-        meta: "<p>Open today<br>09:00&ndash;19:00</p>",
         social: [
           {
             href: "https://twitter.com/UKNatArchives",
@@ -1354,11 +1353,6 @@ const Template = ({ theme, accent }) => {
             icon: "instagram",
             title: "The National Archives Instagram feed",
           },
-          // {
-          //   href: "https://www.tiktok.com/@uknatarchives",
-          //   icon: "tiktok",
-          //   title: "The National Archives TikTok feed",
-          // },
         ],
         navigation: [
           {

@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added new `layer` layout option for hero component
 - Separate base font size added for medium devices
 - Microdata added to the footer for TNA organisation
 

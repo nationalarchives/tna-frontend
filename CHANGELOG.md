@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Separate base font size added for medium devices
 - Microdata added to the footer for TNA organisation
+- Added option for a thick border on the left of the hero content box
+- Option added for a "very thick" border mixin
 
 ### Changed
 

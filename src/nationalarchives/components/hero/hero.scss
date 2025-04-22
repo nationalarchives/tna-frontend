@@ -185,6 +185,10 @@ $layer-shift-units: 2 !default;
     @include borders.rounded-border;
   }
 
+  &--left-border &__content-inner {
+    @include colour.thick-keyline-accent(left, true);
+  }
+
   &__heading {
   }
 
@@ -221,6 +225,8 @@ $layer-shift-units: 2 !default;
 
   &--split &__content-inner {
     padding: 0;
+
+    border-left: none;
   }
 
   @include media.on-larger-than-mobile {
@@ -300,6 +306,8 @@ $layer-shift-units: 2 !default;
     &__content-inner {
       padding-right: 0;
       padding-left: 0;
+
+      border-left: none;
     }
 
     &__heading {

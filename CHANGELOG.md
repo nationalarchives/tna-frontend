@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated the base font size on large devices
+- Items in a file list component can now have Font Awesome icons (if the FA stylesheet is available)
 
 ### Deprecated
 ### Removed

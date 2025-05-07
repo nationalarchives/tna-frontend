@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.17.1...HEAD)
 
 ### Added
+
+- Chip lists have a stacked option with `tna-dl-chips--stacked`
+- Card meta information can be stacked with `metaStacked`
+
 ### Changed
 ### Deprecated
 ### Removed

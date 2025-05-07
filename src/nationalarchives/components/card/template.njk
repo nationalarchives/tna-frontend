@@ -78,7 +78,7 @@
   {%- if params.meta or params.text or params.body or params.actions %}
     <div class="tna-card__body">
     {%- if params.meta %}
-      <dl class="tna-card__meta tna-dl-chips{{ '' if params.accentMeta else ' tna-dl-chips--plain' }}">
+      <dl class="tna-card__meta tna-dl-chips{{ '' if params.accentMeta else ' tna-dl-chips--plain' }}{{ ' tna-dl-chips--stacked' if params.metaStacked else '' }}">
         {%- for item in params.meta %}
         <dt>{{ item.title }}</dt>
         <dd>

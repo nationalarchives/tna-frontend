@@ -103,6 +103,10 @@ ol {
   &--plain a#{&}__item {
     @include colour.colour-font("link");
   }
+
+  &--stacked {
+    flex-direction: column;
+  }
 }
 
 @mixin stacked-dl {

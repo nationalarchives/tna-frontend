@@ -155,6 +155,18 @@
     ]
   },
   {
+    "name": "metaStacked",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, stack the meta information vertically."
+  },
+  {
+    "name": "accentMeta",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, apply an accented background to the meta items."
+  },
+  {
     "name": "body",
     "type": "string",
     "required": false,

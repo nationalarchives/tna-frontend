@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Card meta information can be stacked with `metaStacked`
 
 ### Changed
+
+- Adjusted heading line heights
+
 ### Deprecated
 ### Removed
 ### Fixed

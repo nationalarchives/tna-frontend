@@ -218,8 +218,6 @@
   }
 
   &__body {
-    padding-top: spacing.space(0.5);
-
     order: 3;
 
     display: flex;
@@ -230,6 +228,10 @@
     > * {
       margin-top: 0;
     }
+  }
+
+  &__meta {
+    padding-top: spacing.space(0.5);
   }
 
   &__actions {

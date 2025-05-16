@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Adjusted heading line heights
+- Adjusted spacing between elements in cards
 
 ### Deprecated
 ### Removed

@@ -150,7 +150,7 @@
         "name": "icon",
         "type": "string",
         "required": false,
-        "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
+        "description": "The name of a Font Awesome icon, without the `fa-` prefix."
       }
     ]
   },
@@ -158,7 +158,7 @@
     "name": "metaStacked",
     "type": "boolean",
     "required": false,
-    "description": "If true, stack the meta information vertically."
+    "description": "If true, stack the list of meta information vertically."
   },
   {
     "name": "accentMeta",

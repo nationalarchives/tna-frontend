@@ -132,7 +132,7 @@
         "name": "icon",
         "type": "string",
         "required": false,
-        "description": "The name of a Font Awesome icon, without the prefixed `fa-`."
+        "description": "The name of a Font Awesome icon, without the `fa-` prefix."
       },
       {
         "name": "rightAlignIcon",
@@ -165,6 +165,12 @@
     "type": "string",
     "required": false,
     "description": "An alternative layout of the hero component to use. This can be `shift` or `split`."
+  },
+  {
+    "name": "leftBorder",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, add a thick border to the left hand side of the content box."
   },
   {
     "name": "narrow",

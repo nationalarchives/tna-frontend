@@ -37,6 +37,12 @@ const compiledCSSIE = fs
     body: `<p>Try again in a few minutes.</p>
 <p>If the web address is correct or you selected a link or button, <a href="https://www.nationalarchives.gov.uk/contact-us/">contact us</a> to let us help.</p>`,
   },
+  {
+    name: "rate-limited",
+    pageTitle: "Too many requests",
+    body: `<p>You have requested too many resources in a set timeframe.</p>
+<p>Try again in a few minutes.</p>`,
+  },
 ].forEach((errorPage) => {
   const { name, ...params } = errorPage;
   const html = renderNunjucks(errorPageNunjucks, {

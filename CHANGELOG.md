@@ -5,25 +5,47 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.16.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.17.1...HEAD)
+
+### Added
+
+- Chip lists have a stacked option with `tna-dl-chips--stacked`
+- Card meta information can be stacked with `metaStacked`
+
+### Changed
+
+- Adjusted heading line heights
+- Adjusted spacing between elements in cards
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.17.1](https://github.com/nationalarchives/tna-frontend/compare/v0.17.0...v0.17.1) - 2025-05-06
+
+### Changed
+
+- Adjusted heading sizes
+
+## [0.17.0](https://github.com/nationalarchives/tna-frontend/compare/v0.16.1...v0.17.0) - 2025-04-22
 
 ### Added
 
 - Added new `layer` layout option for hero component
 - Separate base font size added for medium devices
 - Microdata added to the footer for TNA organisation
+- Added option for a thick border on the left of the hero content box
+- Option added for a "very thick" border mixin
 
 ### Changed
 
 - Updated the base font size on large devices
+- Items in a file list component can now have Font Awesome icons (if the FA stylesheet is available)
 
-### Deprecated
 ### Removed
 
 - `structuredData` option was removed as an option on breadcrumb components - microdata is now added by default
-
-### Fixed
-### Security
 
 ## [0.16.1](https://github.com/nationalarchives/tna-frontend/compare/v0.16.0...v0.16.1) - 2025-04-04
 

@@ -1,4 +1,5 @@
 @use "../../tools/a11y";
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -8,18 +9,9 @@
   @include spacing.space-above;
   padding: spacing.space(1);
 
-  display: flex;
-  align-items: flex-start;
-  gap: spacing.space(1);
-
   @include colour.tint;
 
-  &__icon {
-    width: 2.5rem;
-    margin-left: 0.25rem;
-
-    @include colour.colour-fill("font-dark");
-  }
+  @include borders.rounded-border;
 
   &__items {
     margin: 0;
@@ -37,7 +29,11 @@
   }
 
   &__item {
-    padding: 0 0 0 spacing.space(1);
+    padding: 0 0 0 spacing.space(0.5);
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: spacing.space(0.25) spacing.space(1);
 
     position: relative;
   }
@@ -45,8 +41,35 @@
   &__link {
   }
 
+  &__item-title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  &__item-icon {
+    margin: spacing.space(0.5) 0;
+
+    grid-column: 1;
+    grid-row: 1/3;
+    @include typography.font-size(36);
+  }
+
+  &__item-body {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  &__item-meta {
+    padding-bottom: spacing.space(0.25);
+  }
+
+  &__item-description {
+    margin-top: 0;
+
+    @include typography.font-size(16);
+  }
+
   &--full-click {
-    border-radius: 0.1px;
   }
 
   &--full-click &__link {
@@ -81,47 +104,6 @@
       &::before {
         @include a11y.active-outline;
       }
-    }
-  }
-
-  &__item-title {
-  }
-
-  &__item-body {
-    padding-top: spacing.space(0.25);
-  }
-
-  &__item-meta {
-  }
-
-  &__item-description {
-    margin-top: spacing.space(0.25);
-
-    @include typography.font-size(16);
-  }
-
-  @include media.on-tiny {
-    flex-direction: column;
-    align-items: stretch;
-
-    &__icon {
-      width: 2rem;
-    }
-
-    &__items {
-      border-left-width: 0;
-    }
-
-    &__item {
-      padding-left: 0;
-    }
-
-    &--full-click &__items {
-      border-left-width: 1px;
-    }
-
-    &--full-click &__item {
-      padding-left: spacing.space(1);
     }
   }
 }

@@ -141,77 +141,80 @@ $base-colours: (
   fill: colour-var($colour) if($important, !important, null);
 }
 
-@mixin thick-keyline($direction: "") {
+@mixin thick-keyline($direction: "", $veryThick: false) {
+  $border-width: borders.$thick-border-width;
+  @if $veryThick {
+    $border-width: borders.$very-thick-border-width;
+  }
   @if $direction != "" {
-    @include colour-border(
-      "keyline",
-      borders.$thick-border-width,
-      solid,
-      $direction
-    );
+    @include colour-border("keyline", $border-width, solid, $direction);
   } @else {
-    @include colour-border("keyline", borders.$thick-border-width, solid);
+    @include colour-border("keyline", $border-width, solid);
   }
 }
 
-@mixin thick-keyline-dark($direction: "") {
+@mixin thick-keyline-dark($direction: "", $veryThick: false) {
+  $border-width: borders.$thick-border-width;
+  @if $veryThick {
+    $border-width: borders.$very-thick-border-width;
+  }
   @if $direction != "" {
-    @include colour-border(
-      "keyline-dark",
-      borders.$thick-border-width,
-      solid,
-      $direction
-    );
+    @include colour-border("keyline-dark", $border-width, solid, $direction);
   } @else {
-    @include colour-border("keyline-dark", borders.$thick-border-width, solid);
+    @include colour-border("keyline-dark", $border-width, solid);
   }
 }
 
-@mixin thick-keyline-accent($direction: "") {
+@mixin thick-keyline-accent($direction: "", $veryThick: false) {
+  $border-width: borders.$thick-border-width;
+  @if $veryThick {
+    $border-width: borders.$very-thick-border-width;
+  }
   @if $direction != "" {
-    @include colour-border(
-      "accent-border",
-      borders.$thick-border-width,
-      solid,
-      $direction
-    );
+    @include colour-border("accent-border", $border-width, solid, $direction);
   } @else {
-    @include colour-border("accent-border", borders.$thick-border-width, solid);
+    @include colour-border("accent-border", $border-width, solid);
   }
 }
 
-@mixin thick-keyline-error($direction: "") {
+@mixin thick-keyline-error($direction: "", $veryThick: false) {
+  $border-width: borders.$thick-border-width;
+  @if $veryThick {
+    $border-width: borders.$very-thick-border-width;
+  }
   @if $direction != "" {
-    @include colour-border(
-      "form-error-border",
-      borders.$thick-border-width,
-      solid,
-      $direction
-    );
-  } @else {
     @include colour-border(
       "form-error-border",
-      borders.$thick-border-width,
-      solid
+      $border-width,
+      solid,
+      $direction
     );
+  } @else {
+    @include colour-border("form-error-border", $border-width, solid);
   }
 }
 
-@mixin thick-keyline-brand($direction: "", $brandColour) {
+@mixin thick-keyline-brand($direction: "", $brandColour, $veryThick: false) {
+  $border-width: borders.$thick-border-width;
+  @if $veryThick {
+    $border-width: borders.$very-thick-border-width;
+  }
   @if $direction != "" {
-    border-#{$direction}: borders.$thick-border-width
-      #{brand-colour($brandColour)}
-      solid;
+    border-#{$direction}: $border-width #{brand-colour($brandColour)} solid;
   } @else {
-    border: borders.$thick-border-width #{brand-colour($brandColour)} solid;
+    border: $border-width #{brand-colour($brandColour)} solid;
   }
 }
 
-@mixin thick-keyline-transparent($direction: "") {
+@mixin thick-keyline-transparent($direction: "", $veryThick: false) {
+  $border-width: borders.$thick-border-width;
+  @if $veryThick {
+    $border-width: borders.$very-thick-border-width;
+  }
   @if $direction != "" {
-    border-#{$direction}: borders.$thick-border-width transparent solid;
+    border-#{$direction}: $border-width transparent solid;
   } @else {
-    border: borders.$thick-border-width transparent solid;
+    border: $border-width transparent solid;
   }
 }
 

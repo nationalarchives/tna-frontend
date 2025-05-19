@@ -238,10 +238,17 @@ $layer-shift-units: 2 !default;
     );
     margin-right: 32px;
 
+    overflow: hidden;
+
     top: spacing.space($layer-shift-units);
     bottom: spacing.space(-$layer-shift-units);
-
     left: 50%;
+
+    box-shadow:
+      0 0.25rem 1rem -0.25rem rgb(0 0 0 / 25%),
+      0 0.125rem 0.5rem -0.25rem rgb(0 0 0 / 75%);
+
+    @include borders.rounded-border;
   }
 
   &--split &__content,
@@ -270,6 +277,10 @@ $layer-shift-units: 2 !default;
   &--shift &__content-inner {
     position: relative;
     top: spacing.space($shift-units);
+
+    box-shadow:
+      0 0.25rem 1rem -0.25rem rgb(0 0 0 / 25%),
+      0 0.125rem 0.5rem -0.25rem rgb(0 0 0 / 75%);
   }
 
   &--narrow {

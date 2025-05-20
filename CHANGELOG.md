@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Adjusted heading line heights
 - Adjusted spacing between elements in cards
+- Changed the font weight of index grid item titles to bold
 
 ### Deprecated
 ### Removed

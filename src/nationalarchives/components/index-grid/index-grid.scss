@@ -69,6 +69,7 @@
   }
 
   &__item-title {
+    @include typography.main-font-weight-bold;
     text-decoration: underline;
 
     .tna-index-grid__item:hover &,

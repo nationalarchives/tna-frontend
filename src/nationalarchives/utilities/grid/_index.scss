@@ -46,7 +46,7 @@
     margin-left: -#{grid.gutter-width()};
   }
 
-  @at-root #{selector.unify("ul", &)} {
+  @at-root #{selector.unify("ul, ol", &)} {
     list-style: none;
   }
 }

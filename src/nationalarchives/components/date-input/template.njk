@@ -31,13 +31,11 @@
     <div class="tna-date-input{% if params.inline %} tna-date-input--inline{% endif %}" id="{{ params.id }}">
       {%- if params.progressive %}
         {{ tnaDateInputYearElement(params) | indent(6) }}
-      {%- else %}
-        {{ tnaDateInputDayElement(params) | indent(6) }}
-      {%- endif %}
-      {{ tnaDateInputMonthElement(params) | indent(6) }}
-      {%- if params.progressive %}
+        {{ tnaDateInputMonthElement(params) | indent(6) }}
         {{ tnaDateInputDayElement(params) | indent(6) }}
       {%- else %}
+        {{ tnaDateInputDayElement(params) | indent(6) }}
+        {{ tnaDateInputMonthElement(params) | indent(6) }}
         {{ tnaDateInputYearElement(params) | indent(6) }}
       {%- endif %}
     </div>

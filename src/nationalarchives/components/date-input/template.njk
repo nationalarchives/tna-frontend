@@ -1,3 +1,7 @@
+{% from "nationalarchives/components/date-input/date-input-day.njk" import tnaDateInputDayElement %}
+{% from "nationalarchives/components/date-input/date-input-month.njk" import tnaDateInputMonthElement %}
+{% from "nationalarchives/components/date-input/date-input-year.njk" import tnaDateInputYearElement %}
+
 {%- set containerClasses = [params.formGroupClasses] if params.formGroupClasses else [] -%}
 {%- if params.inline -%}
   {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
@@ -7,7 +11,7 @@
 {%- set inputClassesParams = [params.classes] if params.classes else [] -%}
 {%- set inputClasses = inputClassesParams | join(' ') -%}
 
-<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %}{% if classes %} {{ classes }}{% endif %}"{% for attribute, value in params.formGroupAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %}{% if classes %} {{ classes }}{% endif %}"{% if params.progressive %} data-module="date-input"{% endif %}{% for attribute, value in params.formGroupAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <fieldset class="tna-form__fieldset"{%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}>
     <legend class="tna-form__legend">
       <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
@@ -25,24 +29,17 @@
     </p>
     {%- endif %}
     <div class="tna-date-input{% if params.inline %} tna-date-input--inline{% endif %}" id="{{ params.id }}">
-      <div class="tna-date-input__item">
-        <label for="{{ params.id }}-day" class="tna-date-input__item-label">
-          Day
-        </label>
-        <input type="text" id="{{ params.id }}-day" value="{{ params.value.day if params.value }}" name="{{ params.name }}-day" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %}" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-      </div>
-      <div class="tna-date-input__item">
-        <label for="{{ params.id }}-month" class="tna-date-input__item-label">
-          Month
-        </label>
-        <input type="text" id="{{ params.id }}-month" value="{{ params.value.month if params.value }}" name="{{ params.name }}-month" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %}" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-      </div>
-      <div class="tna-date-input__item">
-        <label for="{{ params.id }}-year" class="tna-date-input__item-label">
-          Year
-        </label>
-        <input type="text" id="{{ params.id }}-year" value="{{ params.value.year if params.value }}" name="{{ params.name }}-year" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %} tna-date-input__item-input--wider" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-      </div>
+      {%- if params.progressive %}
+        {{ tnaDateInputYearElement(params) | indent(6) }}
+      {%- else %}
+        {{ tnaDateInputDayElement(params) | indent(6) }}
+      {%- endif %}
+      {{ tnaDateInputMonthElement(params) | indent(6) }}
+      {%- if params.progressive %}
+        {{ tnaDateInputDayElement(params) | indent(6) }}
+      {%- else %}
+        {{ tnaDateInputYearElement(params) | indent(6) }}
+      {%- endif %}
     </div>
   </fieldset>
 </div>

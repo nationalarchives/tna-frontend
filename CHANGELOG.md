@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.18.0...HEAD)
 
 ### Added
+
+- Date input components now have a `progressive` option which enables a year field followed by an optional month and year depending on which fields are filled out
+
 ### Changed
 
 - Remove markers from ordered list containers (`ol.tna-container`)

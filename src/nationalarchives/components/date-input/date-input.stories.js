@@ -14,6 +14,7 @@ const argTypes = {
   value: { control: "object" },
   error: { control: "object" },
   inline: { control: "boolean" },
+  progressive: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -39,6 +40,7 @@ const Template = ({
   value,
   error,
   inline,
+  progressive,
   classes,
   attributes,
 }) =>
@@ -53,6 +55,7 @@ const Template = ({
       value,
       error,
       inline,
+      progressive,
       classes,
       attributes,
     },
@@ -65,7 +68,7 @@ Standard.args = {
   headingSize: "m",
   id: "date11",
   name: "date11",
-  classes: "tna-date-search--demo",
+  classes: "tna-date-input--demo",
 };
 
 export const Predefined = Template.bind({});
@@ -80,7 +83,21 @@ Predefined.args = {
     month: "09",
     year: "1986",
   },
-  classes: "tna-date-search--demo",
+  classes: "tna-date-input--demo",
+};
+
+export const Progressive = Template.bind({});
+Progressive.args = {
+  label: "Enter a start date",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "date13",
+  name: "date13",
+  value: {
+    year: "1986",
+  },
+  progressive: true,
+  classes: "tna-date-input--demo",
 };
 
 export const WithHint = Template.bind({});
@@ -88,10 +105,10 @@ WithHint.args = {
   label: "Enter a start date",
   headingLevel: 4,
   headingSize: "m",
-  id: "date13",
-  name: "date13",
+  id: "date14",
+  name: "date14",
   hint: "The earliest date of the record",
-  classes: "tna-date-search--demo",
+  classes: "tna-date-input--demo",
 };
 
 export const Error = Template.bind({});
@@ -99,12 +116,12 @@ Error.args = {
   label: "Enter a start date",
   headingLevel: 4,
   headingSize: "m",
-  id: "date14",
-  name: "date14",
+  id: "date15",
+  name: "date15",
   error: {
     text: "Date is not valid",
   },
-  classes: "tna-date-search--demo",
+  classes: "tna-date-input--demo",
 };
 
 export const Inline = Template.bind({});
@@ -112,8 +129,8 @@ Inline.args = {
   label: "Enter a start date",
   headingLevel: 4,
   headingSize: "xs",
-  id: "date15",
-  name: "date15",
+  id: "date16",
+  name: "date16",
   inline: true,
-  classes: "tna-date-search--demo",
+  classes: "tna-date-input--demo",
 };

@@ -1,6 +1,7 @@
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
+import { DateInput } from "./components/date-input/date-input.mjs";
 import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
 import { Footer } from "./components/footer/footer.mjs";
 import { Gallery } from "./components/gallery/gallery.mjs";
@@ -57,6 +58,11 @@ const initAll = (options) => {
   if ($cookieBanner) {
     new CookieBanner($cookieBanner);
   }
+
+  const $dateInputs = $scope.querySelectorAll('[data-module="date-input"]');
+  $dateInputs.forEach(($dateInput) => {
+    new DateInput($dateInput);
+  });
 
   const $errorSummary = $scope.querySelector(
     '[data-module="tna-error-summary"]',
@@ -170,6 +176,7 @@ export {
   Accordion,
   Breadcrumbs,
   CookieBanner,
+  DateInput,
   ErrorSummary,
   Footer,
   Gallery,

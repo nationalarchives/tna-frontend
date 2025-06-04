@@ -82,6 +82,12 @@
     "description": ""
   },
   {
+    "name": "progressive",
+    "type": "boolean",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "formGroupClasses",
     "type": "string",
     "required": false,

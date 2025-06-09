@@ -1371,8 +1371,8 @@ const Template = ({ theme, accent }) => {
                 href: "https://www.nationalarchives.gov.uk/about/news/",
               },
               {
-                text: "Blog",
-                href: "https://blog.nationalarchives.gov.uk/",
+                text: "Blogs",
+                href: "https://www.nationalarchives.gov.uk/blogs/",
               },
               {
                 text: "Podcasts",
@@ -1426,6 +1426,10 @@ const Template = ({ theme, accent }) => {
               {
                 text: "Friends of The National Archives",
                 href: "https://ftna.org.uk/",
+              },
+              {
+                text: "The National Archives Design System",
+                href: "https://design-system.nationalarchives.gov.uk/",
               },
             ],
           },

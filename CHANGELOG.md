@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Remove markers from ordered list containers (`ol.tna-container`)
+- Updated links in footer examples
 
 ### Deprecated
 ### Removed

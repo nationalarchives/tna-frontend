@@ -100,8 +100,8 @@ Standard.args = {
           href: "https://www.nationalarchives.gov.uk/about/news/",
         },
         {
-          text: "Blog",
-          href: "https://blog.nationalarchives.gov.uk/",
+          text: "Blogs",
+          href: "https://www.nationalarchives.gov.uk/blogs/",
         },
         {
           text: "Podcasts",
@@ -155,6 +155,10 @@ Standard.args = {
           text: "Friends of The National Archives",
           href: "https://ftna.org.uk/",
           external: true,
+        },
+        {
+          text: "The National Archives Design System",
+          href: "https://design-system.nationalarchives.gov.uk/",
         },
         {
           text: "The National Archives Design System",

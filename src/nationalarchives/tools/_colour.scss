@@ -525,9 +525,9 @@ $base-colours: (
   @if features.$image-loader-animations {
     background: linear-gradient(
       -45deg,
-      rgba(0 0 0 / 25%),
-      rgba(255 255 255 / 25%),
-      rgba(0 0 0 / 25%)
+      rgb(0 0 0 / 25%),
+      rgb(255 255 255 / 25%),
+      rgb(0 0 0 / 25%)
     );
     background-size: 500% 500%;
     background-position: 0 50%;

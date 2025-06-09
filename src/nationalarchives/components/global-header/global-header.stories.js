@@ -87,7 +87,7 @@ Standard.args = {
     },
     {
       text: "Explore the collection",
-      href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
+      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
       text: "Help using the archive",
@@ -159,7 +159,7 @@ Medium.args = {
     },
     {
       text: "Explore the collection",
-      href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
+      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
       text: "Help using the archive",
@@ -231,7 +231,7 @@ MediumCollapsed.args = {
     },
     {
       text: "Explore the collection",
-      href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
+      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
       text: "Help using the archive",
@@ -292,7 +292,7 @@ Mobile.args = {
     },
     {
       text: "Explore the collection",
-      href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
+      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
       text: "Help using the archive",
@@ -403,7 +403,7 @@ WithPhaseBanner.args = {
     },
     {
       text: "Explore the collection",
-      href: "https://beta.nationalarchives.gov.uk/explore-the-collection/",
+      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
     },
     {
       text: "Help using the archive",

@@ -18,26 +18,24 @@ export class DateInput {
     this.$yearInput =
       this.$yearWrapper && this.$yearWrapper.querySelector("input");
 
-    if (
-      !this.$module ||
-      !this.$dayWrapper ||
-      !this.$dayInput ||
-      !this.$monthWrapper ||
-      !this.$monthInput ||
-      !this.$yearWrapper ||
-      !this.$yearInput
-    ) {
+    if (!this.$module) {
       return;
     }
 
     this.update();
 
-    this.$yearInput.addEventListener("keyup", () => this.update());
-    this.$yearInput.addEventListener("change", () => this.update());
-    this.$monthInput.addEventListener("keyup", () => this.update());
-    this.$monthInput.addEventListener("change", () => this.update());
-    this.$dayInput.addEventListener("keyup", () => this.update());
-    this.$dayInput.addEventListener("change", () => this.update());
+    if (this.$yearInput) {
+      this.$yearInput.addEventListener("keyup", () => this.update());
+      this.$yearInput.addEventListener("change", () => this.update());
+    }
+    if (this.$monthInput) {
+      this.$monthInput.addEventListener("keyup", () => this.update());
+      this.$monthInput.addEventListener("change", () => this.update());
+    }
+    if (this.$dayInput) {
+      this.$dayInput.addEventListener("keyup", () => this.update());
+      this.$dayInput.addEventListener("change", () => this.update());
+    }
   }
 
   update() {
@@ -56,11 +54,17 @@ export class DateInput {
   }
 
   isValidYear() {
+    if (!this.$yearInput) {
+      return true;
+    }
     const yearValue = parseInt(this.$yearInput.value.trim());
     return !isNaN(this.$yearInput.value) && !isNaN(yearValue) && yearValue > 0;
   }
 
   isValidMonth() {
+    if (!this.$monthInput) {
+      return true;
+    }
     const monthValue = parseInt(this.$monthInput.value.trim());
     return (
       !isNaN(this.$monthInput.value) &&
@@ -71,18 +75,26 @@ export class DateInput {
   }
 
   showMonth() {
-    this.$monthWrapper.removeAttribute("hidden");
+    if (this.$monthWrapper) {
+      this.$monthWrapper.removeAttribute("hidden");
+    }
   }
 
   hideMonth() {
-    this.$monthWrapper.setAttribute("hidden", "");
+    if (this.$monthWrapper) {
+      this.$monthWrapper.setAttribute("hidden", "");
+    }
   }
 
   showDay() {
-    this.$dayWrapper.removeAttribute("hidden");
+    if (this.$dayWrapper) {
+      this.$dayWrapper.removeAttribute("hidden");
+    }
   }
 
   hideDay() {
-    this.$dayWrapper.setAttribute("hidden", "");
+    if (this.$dayWrapper) {
+      this.$dayWrapper.setAttribute("hidden", "");
+    }
   }
 }

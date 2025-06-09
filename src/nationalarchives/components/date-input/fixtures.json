@@ -79,6 +79,31 @@
       "html": "<div class=\"tna-form__group\" data-module=\"date-input\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--xs\">Enter a start date</h4></legend><div class=\"tna-date-input\" id=\"date\"><div class=\"tna-date-input__item tna-date-input__item--year\"><label for=\"date-year\" class=\"tna-date-input__item-label\">Year</label><input type=\"text\" id=\"date-year\" value=\"\" name=\"date-year\" class=\"tna-date-input__item-input tna-date-input__item-input--wider\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--month\"><label for=\"date-month\" class=\"tna-date-input__item-label\">Month</label><input type=\"text\" id=\"date-month\" value=\"\" name=\"date-month\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--day\"><label for=\"date-day\" class=\"tna-date-input__item-label\">Day</label><input type=\"text\" id=\"date-day\" value=\"\" name=\"date-day\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div></div></fieldset></div>"
     },
     {
+      "name": "only month and year",
+      "options": {
+        "label": "Enter a start date",
+        "headingLevel": 4,
+        "headingSize": "xs",
+        "id": "date",
+        "name": "date",
+        "fields": ["month", "year"]
+      },
+      "html": "<div class=\"tna-form__group\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--xs\">Enter a start date</h4></legend><div class=\"tna-date-input\" id=\"date\"><div class=\"tna-date-input__item tna-date-input__item--month\"><label for=\"date-month\" class=\"tna-date-input__item-label\">Month</label><input type=\"text\" id=\"date-month\" value=\"\" name=\"date-month\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--year\"><label for=\"date-year\" class=\"tna-date-input__item-label\">Year</label><input type=\"text\" id=\"date-year\" value=\"\" name=\"date-year\" class=\"tna-date-input__item-input tna-date-input__item-input--wider\" inputmode=\"numeric\"></div></div></fieldset></div>"
+    },
+    {
+      "name": "only month and year progressive",
+      "options": {
+        "label": "Enter a start date",
+        "headingLevel": 4,
+        "headingSize": "xs",
+        "id": "date",
+        "name": "date",
+        "fields": ["month", "year"],
+        "progressive": true
+      },
+      "html": "<div class=\"tna-form__group\" data-module=\"date-input\"><fieldset class=\"tna-form__fieldset\"><legend class=\"tna-form__legend\"><h4 class=\"tna-form__heading tna-form__heading--xs\">Enter a start date</h4></legend><div class=\"tna-date-input\" id=\"date\"><div class=\"tna-date-input__item tna-date-input__item--year\"><label for=\"date-year\" class=\"tna-date-input__item-label\">Year</label><input type=\"text\" id=\"date-year\" value=\"\" name=\"date-year\" class=\"tna-date-input__item-input tna-date-input__item-input--wider\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--month\"><label for=\"date-month\" class=\"tna-date-input__item-label\">Month</label><input type=\"text\" id=\"date-month\" value=\"\" name=\"date-month\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div></div></fieldset></div>"
+    },
+    {
       "name": "with classes",
       "options": {
         "label": "Enter a start date",

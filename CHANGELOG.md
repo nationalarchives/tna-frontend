@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Date input components now have a `progressive` option which enables a year field followed by an optional month and year depending on which fields are filled out
+- Date inputs can optionally show only some fields (e.g. month/year, day/month or just year)
 
 ### Changed
 

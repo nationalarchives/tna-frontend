@@ -36,6 +36,12 @@
     "description": ""
   },
   {
+    "name": "fields",
+    "type": "array",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "value",
     "type": "object",
     "required": false,

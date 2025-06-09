@@ -11,6 +11,7 @@ const argTypes = {
   id: { control: "text" },
   name: { control: "text" },
   hint: { control: "text" },
+  fields: { control: "boolean" },
   value: { control: "object" },
   error: { control: "object" },
   inline: { control: "boolean" },
@@ -37,6 +38,7 @@ const Template = ({
   id,
   name,
   hint,
+  fields,
   value,
   error,
   inline,
@@ -52,6 +54,7 @@ const Template = ({
       id,
       name,
       hint,
+      fields,
       value,
       error,
       inline,
@@ -100,13 +103,24 @@ Progressive.args = {
   classes: "tna-date-input--demo",
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
+export const OnlySomeFields = Template.bind({});
+OnlySomeFields.args = {
   label: "Enter a start date",
   headingLevel: 4,
   headingSize: "m",
   id: "date14",
   name: "date14",
+  fields: ["month", "year"],
+  classes: "tna-date-input--demo",
+};
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  label: "Enter a start date",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "date15",
+  name: "date15",
   hint: "The earliest date of the record",
   classes: "tna-date-input--demo",
 };
@@ -116,8 +130,8 @@ Error.args = {
   label: "Enter a start date",
   headingLevel: 4,
   headingSize: "m",
-  id: "date15",
-  name: "date15",
+  id: "date16",
+  name: "date16",
   error: {
     text: "Date is not valid",
   },
@@ -129,8 +143,8 @@ Inline.args = {
   label: "Enter a start date",
   headingLevel: 4,
   headingSize: "xs",
-  id: "date16",
-  name: "date16",
+  id: "date17",
+  name: "date17",
   inline: true,
   classes: "tna-date-input--demo",
 };

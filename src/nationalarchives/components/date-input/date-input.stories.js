@@ -42,7 +42,7 @@ const Template = ({
   value,
   error,
   inline,
-  progressive,
+  progressive,removeFieldNameSuffixes,
   classes,
   attributes,
 }) =>
@@ -58,7 +58,7 @@ const Template = ({
       value,
       error,
       inline,
-      progressive,
+      progressive,removeFieldNameSuffixes,
       classes,
       attributes,
     },

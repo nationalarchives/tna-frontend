@@ -3,6 +3,6 @@
   <label for="{{ params.id }}-day" class="tna-date-input__item-label">
     Day
   </label>
-  <input type="text" id="{{ params.id }}-day" value="{{ params.value.day if params.value }}" name="{{ params.name }}-day" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %}" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <input type="text" id="{{ params.id }}-day" value="{{ params.value.day if params.value }}" name="{{ params.name }}{{ '' if params.removeFieldNameSuffixes else '-day' }}" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %}" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
 </div>
 {%- endmacro %}

@@ -82,9 +82,23 @@
         "headingSize": "m",
         "id": "password",
         "name": "password",
-        "size": "m"
+        "size": "m",
+        "password": true
       },
-      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"password\">Enter your password</label></h4></div><input id=\"password\" class=\"tna-text-input tna-text-input--m \" name=\"password\" value=\"\" type=\"text\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"password\">Enter your password</label></h4></div><input id=\"password\" class=\"tna-text-input tna-text-input--m \" name=\"password\" value=\"\" type=\"password\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\"></div>"
+    },
+    {
+      "name": "type",
+      "options": {
+        "label": "Enter a number",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "number",
+        "name": "number",
+        "size": "m",
+        "type": "number"
+      },
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"number\">Enter a number</label></h4></div><input id=\"number\" class=\"tna-text-input tna-text-input--m \" name=\"number\" value=\"\" type=\"number\" spellcheck=\"false\"></div>"
     },
     {
       "name": "with classes",

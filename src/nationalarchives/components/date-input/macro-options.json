@@ -94,12 +94,6 @@
     "description": ""
   },
   {
-    "name": "removeFieldNameSuffixes",
-    "type": "boolean",
-    "required": false,
-    "description": ""
-  },
-  {
     "name": "formGroupClasses",
     "type": "string",
     "required": false,

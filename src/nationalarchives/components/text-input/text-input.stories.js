@@ -13,6 +13,7 @@ const argTypes = {
   hint: { control: "text" },
   value: { control: "text" },
   error: { control: "object" },
+  type: { control: "string" },
   password: { control: "boolean" },
   spellcheck: { control: "boolean" },
   inputmode: {
@@ -98,6 +99,7 @@ const Template = ({
   hint,
   value,
   error,
+  type,
   password,
   spellcheck,
   inputmode,
@@ -120,6 +122,7 @@ const Template = ({
       hint,
       value,
       error,
+      type,
       password,
       spellcheck,
       inputmode,

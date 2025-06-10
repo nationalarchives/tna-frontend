@@ -56,6 +56,12 @@
     ]
   },
   {
+    "name": "type",
+    "type": "string",
+    "required": false,
+    "description": ""
+  },
+  {
     "name": "password",
     "type": "boolean",
     "required": false,

@@ -29,29 +29,29 @@
     </p>
     {%- endif %}
     <div class="tna-date-input{% if params.inline %} tna-date-input--inline{% endif %}" id="{{ params.id }}">
-      {%- set fields = params.fields if params.fields else ['day', 'month', 'year'] -%}
+      {%- set fields = params.fields if params.fields else ['d', 'm', 'y'] -%}
       {%- if params.progressive %}
         {%- if params.fields %}
           {%- set fields = [] -%}
-          {% if 'year' in params.fields %}
-            {%- set fields = fields.concat('year') -%}
+          {% if 'y' in params.fields %}
+            {%- set fields = fields + ['year'] -%}
           {%- endif %}
-          {% if 'month' in params.fields %}
-            {%- set fields = fields.concat('month') -%}
+          {% if 'm' in params.fields %}
+            {%- set fields = fields + ['month'] -%}
           {%- endif %}
-          {% if 'day' in params.fields %}
-            {%- set fields = fields.concat('day') -%}
+          {% if 'd' in params.fields %}
+            {%- set fields = fields + ['day'] -%}
           {%- endif %}
         {%- else %}
-          {%- set fields = ['year', 'month', 'day'] -%}
+          {%- set fields = ['y', 'm', 'd'] -%}
         {%- endif %}
       {%- endif %}
       {%- for field in fields %}
-        {%- if field == 'day' %}
+        {%- if field == 'd' %}
           {{ tnaDateInputDayElement(params) | indent(6) }}
-        {%- elif field == 'month' %}
+        {%- elif field == 'm' %}
           {{ tnaDateInputMonthElement(params) | indent(6) }}
-        {%- elif field == 'year' %}
+        {%- elif field == 'y' %}
           {{ tnaDateInputYearElement(params) | indent(6) }}
         {%- endif %}
       {%- endfor %}

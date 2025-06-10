@@ -12,8 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Specific text input types can be set with `type`
 
 ### Changed
+
+- Changed `fields` option in text inputs from `day`, `month` and `year` options to `d`, `m` and `y`
+
 ### Deprecated
 ### Removed
+
+- Removed `removeFieldNameSuffixes` option from text input components
+
 ### Fixed
 ### Security
 

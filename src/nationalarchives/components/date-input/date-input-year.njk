@@ -3,6 +3,6 @@
   <label for="{{ params.id }}-year" class="tna-date-input__item-label">
     Year
   </label>
-  <input type="text" id="{{ params.id }}-year" value="{{ params.value.year if params.value }}" name="{{ params.name }}{{ '' if params.removeFieldNameSuffixes else '-year' }}" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %} tna-date-input__item-input--wider" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <input type="text" id="{{ params.id }}-year" value="{{ params.value.year if params.value }}" name="{{ params.name }}-year" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %} tna-date-input__item-input--wider" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
 </div>
 {%- endmacro %}

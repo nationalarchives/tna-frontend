@@ -43,7 +43,6 @@ const Template = ({
   error,
   inline,
   progressive,
-  removeFieldNameSuffixes,
   classes,
   attributes,
 }) =>
@@ -60,7 +59,6 @@ const Template = ({
       error,
       inline,
       progressive,
-      removeFieldNameSuffixes,
       classes,
       attributes,
     },
@@ -112,7 +110,7 @@ OnlySomeFields.args = {
   headingSize: "m",
   id: "date14",
   name: "date14",
-  fields: ["month", "year"],
+  fields: ["m", "y"],
   classes: "tna-date-input--demo",
 };
 

@@ -15,8 +15,8 @@
     "name": "visuallyHideHeading",
     "type": "boolean",
     "required": false,
-    "description": "",
-    "default": false
+    "default": false,
+    "description": ""
   },
   {
     "name": "items",

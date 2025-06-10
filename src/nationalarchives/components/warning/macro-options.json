@@ -3,19 +3,20 @@
     "name": "heading",
     "type": "string",
     "required": false,
-    "description": ""
+    "default": "Important information",
+    "description": "If set, the visually hidden heading for the warning which will be suffixed with an exclamation mark."
   },
   {
     "name": "headingLevel",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The heading level to use for the warning."
   },
   {
     "name": "body",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The body text of the warning."
   },
   {
     "name": "classes",

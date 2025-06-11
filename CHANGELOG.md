@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed `removeFieldNameSuffixes` option from text input components
+- Removed `ticktok` as an option for the social media icons in footer components
 
 ### Fixed
 ### Security

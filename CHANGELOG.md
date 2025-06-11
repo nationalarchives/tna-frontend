@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `ticktok` as an option for the social media icons in footer components
 
 ### Fixed
+
+- Text inputs with `password=true` can now accept `autofill` properties
+
 ### Security
 
 ## [0.19.0](https://github.com/nationalarchives/tna-frontend/compare/v0.18.0...v0.19.0) - 2025-06-09

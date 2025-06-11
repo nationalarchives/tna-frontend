@@ -3,25 +3,25 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of compound filter items.",
     "params": [
       {
         "name": "label",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The label to show for the filter item."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL for the filter item."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title for the filter item."
       }
     ]
   },
@@ -29,13 +29,13 @@
     "name": "removeAllText",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The text to show for the 'Remove all' link."
   },
   {
     "name": "removeAllHref",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The URL for the 'Remove all' link."
   },
   {
     "name": "classes",

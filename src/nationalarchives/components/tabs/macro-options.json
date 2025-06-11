@@ -15,7 +15,7 @@
         "name": "id",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "A unique ID for the tabs item."
       },
       {
         "name": "title",

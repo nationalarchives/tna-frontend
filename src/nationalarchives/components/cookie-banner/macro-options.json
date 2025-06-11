@@ -3,43 +3,47 @@
     "name": "serviceName",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The name of the service that the cookie banner is for."
   },
   {
     "name": "title",
     "type": "string",
     "required": false,
-    "description": ""
+    "default": "This website uses cookies",
+    "description": "The main title of the cookie banner."
   },
   {
     "name": "body",
     "type": "string",
     "required": false,
-    "description": ""
+    "default": "We use some essential cookies to make this service work.\nWe'd also like to use analytics cookies so we can understand how you use the service and make improvements.",
+    "description": "The body text of the cookie banner."
   },
   {
     "name": "acceptedBody",
     "type": "string",
     "required": false,
-    "description": ""
+    "default": "You have accepted optional cookies. You can change your cookie settings on the [cookies page](cookiesUrl)",
+    "description": "The text to show if the user has accepts cookies."
   },
   {
     "name": "rejectedBody",
     "type": "string",
     "required": false,
-    "description": ""
+    "default": "You have rejected optional cookies. You can change your cookie settings on the [cookies page](cookiesUrl)",
+    "description": "The text to show if the user declines cookies."
   },
   {
     "name": "cookiesUrl",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The URL of the cookie preferences page for the service."
   },
   {
     "name": "preferencesSetKey",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "If set, the name of the cookie used to indicate that the user has set their cookie preferences."
   },
   {
     "name": "style",

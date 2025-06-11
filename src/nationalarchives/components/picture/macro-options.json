@@ -95,7 +95,7 @@
         "name": "id",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "A unique ID for the picture information item."
       },
       {
         "name": "title",

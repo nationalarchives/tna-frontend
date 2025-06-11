@@ -72,7 +72,7 @@
     "name": "id",
     "type": "string",
     "required": true,
-    "description": "A unique ID for the gallery."
+    "description": "A unique ID for the gallery component."
   },
   {
     "name": "showGrid",

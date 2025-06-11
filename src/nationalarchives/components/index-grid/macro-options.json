@@ -15,7 +15,7 @@
     "name": "headingLevel",
     "type": "number",
     "required": true,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Set a `headingLevel` of `0` to visually hide the title."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Set to `0` to visually hide the title."
   },
   {
     "name": "headingSize",

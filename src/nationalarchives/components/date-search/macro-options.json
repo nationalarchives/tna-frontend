@@ -3,55 +3,55 @@
     "name": "label",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The label for the date search field."
   },
   {
     "name": "headingLevel",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The physical size of the date search title (`xl`, `l`, `m` or `s`)."
   },
   {
     "name": "id",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "A unique ID for the date search component."
   },
   {
     "name": "name",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The name of the form field."
   },
   {
     "name": "hint",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional hint to display above the form field."
   },
   {
     "name": "value",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The form field value."
   },
   {
     "name": "error",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "If set, the details of any errors.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The error text to display."
       }
     ]
   },
@@ -59,13 +59,13 @@
     "name": "maxWidth",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, make the date search field expand to the full width of the container."
   },
   {
     "name": "inline",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, show the date search inline rather than vertical."
   },
   {
     "name": "formGroupClasses",

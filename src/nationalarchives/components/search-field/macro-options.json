@@ -3,43 +3,43 @@
     "name": "label",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The label for the search field."
   },
   {
     "name": "headingLevel",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The physical size of the search field title (`xl`, `l`, `m` or `s`)."
   },
   {
     "name": "id",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "A unique ID for the search field component."
   },
   {
     "name": "name",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The name of the form field."
   },
   {
     "name": "hint",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional hint to display above the form field."
   },
   {
     "name": "value",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The form field value."
   },
   {
     "name": "formGroupClasses",

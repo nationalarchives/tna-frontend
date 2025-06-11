@@ -10,7 +10,7 @@
     "name": "headingLevel",
     "type": "number",
     "required": true,
-    "description": "The heading level to use for the warning."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
   },
   {
     "name": "body",

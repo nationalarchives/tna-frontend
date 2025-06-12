@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Text inputs with `password=true` can now accept `autofill` properties
+- Removed the unnecessary error state from search field components
 
 ### Security
 

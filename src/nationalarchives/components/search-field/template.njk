@@ -19,7 +19,6 @@
       <input type="search" id="{{ params.id }}" class="tna-search-field__input {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}"
       {%- if params.hint %} aria-describedby="{{ params.id }}-hint"{% endif %}
       {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
-      {%- if params.autofill %} autofill="{{ params.autofill }}"{% endif %}
       {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
       {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
       <button type="submit" class="tna-button tna-search-field__button">

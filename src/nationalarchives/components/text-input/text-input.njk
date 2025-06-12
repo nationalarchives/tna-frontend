@@ -3,8 +3,10 @@
 <input id="{{ params.id }}" class="tna-text-input{% if params.size %} tna-text-input--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}"
 {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}
 {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
-{%- if params.password %} type="password" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false"{%- else %} type="{{ params.type if params.type else 'text' }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}"{%- endif %}
-{%- if params.autofill %} autofill="{{ params.autofill }}"{% endif %}
+{%- if params.password %} type="password" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false"
+{%- else %} type="{{ params.type if params.type else 'text' }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}" autocapitalize="{{ params.autocapitalize if params.autocapitalize else 'off' }}" autocorrect="{{ params.autocorrect if params.autocorrect else 'off' }}"
+    {%- if params.autocomplete %} autocomplete="{{ params.autocomplete }}"{% endif %}
+{%- endif %}
 {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
 {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}
 {%- for attribute, value in extraAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>

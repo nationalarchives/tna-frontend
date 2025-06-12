@@ -1218,7 +1218,7 @@ const Template = ({ theme, accent }) => {
                   headingSize: "m",
                   id: "name",
                   name: "name",
-                  autofill: "name",
+                  autocomplete: "name",
                 },
               })}
               ${TextInput({
@@ -1228,7 +1228,7 @@ const Template = ({ theme, accent }) => {
                   headingSize: "m",
                   id: "email",
                   name: "email",
-                  autofill: "email",
+                  autocomplete: "email",
                   error: {
                     text: "Enter a valid email address",
                   },

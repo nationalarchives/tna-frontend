@@ -68,19 +68,34 @@
     "description": ""
   },
   {
-    "name": "spellcheck",
-    "type": "boolean",
-    "required": false,
-    "description": ""
-  },
-  {
     "name": "inputmode",
     "type": "string",
     "required": false,
     "description": ""
   },
   {
-    "name": "autofill",
+    "name": "spellcheck",
+    "type": "boolean",
+    "required": false,
+    "default": false,
+    "description": ""
+  },
+  {
+    "name": "autocapitalize",
+    "type": "boolean",
+    "required": false,
+    "default": false,
+    "description": ""
+  },
+  {
+    "name": "autocorrect",
+    "type": "boolean",
+    "required": false,
+    "default": "off",
+    "description": ""
+  },
+  {
+    "name": "autocomplete",
     "type": "string",
     "required": false,
     "description": ""

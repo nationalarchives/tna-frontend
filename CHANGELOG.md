@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed text input and textarea fixtures for `spellcheck`, `autocapitalize` and `autocorrect`
+
 ### Security
 
 ## [0.20.0](https://github.com/nationalarchives/tna-frontend/compare/v0.19.0...v0.20.0) - 2025-06-13

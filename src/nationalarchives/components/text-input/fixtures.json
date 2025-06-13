@@ -109,7 +109,7 @@
         "id": "text",
         "name": "text",
         "size": "m",
-        "spellcheck": "true"
+        "spellcheck": true
       },
       "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"text\">Enter some text</label></h4></div><input id=\"text\" class=\"tna-text-input tna-text-input--m \" name=\"text\" value=\"\" type=\"text\" spellcheck=\"true\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
     },
@@ -122,9 +122,9 @@
         "id": "text",
         "name": "text",
         "size": "m",
-        "autocapitalize": "true"
+        "autocapitalize": "on"
       },
-      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"text\">Enter some text</label></h4></div><input id=\"text\" class=\"tna-text-input tna-text-input--m \" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"true\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"text\">Enter some text</label></h4></div><input id=\"text\" class=\"tna-text-input tna-text-input--m \" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"on\" autocorrect=\"off\"></div>"
     },
     {
       "name": "autocorrect",
@@ -135,7 +135,7 @@
         "id": "text",
         "name": "text",
         "size": "m",
-        "autocorrect": "true"
+        "autocorrect": true
       },
       "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"text\">Enter some text</label></h4></div><input id=\"text\" class=\"tna-text-input tna-text-input--m \" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"on\"></div>"
     },

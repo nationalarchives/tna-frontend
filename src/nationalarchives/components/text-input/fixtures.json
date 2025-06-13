@@ -85,7 +85,7 @@
         "size": "m",
         "password": true
       },
-      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"password\">Enter your password</label></h4></div><input id=\"password\" class=\"tna-text-input tna-text-input--m \" name=\"password\" value=\"\" type=\"password\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"password\">Enter your password</label></h4></div><input id=\"password\" class=\"tna-text-input tna-text-input--m \" name=\"password\" value=\"\" type=\"password\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\"></div>"
     },
     {
       "name": "type",
@@ -137,7 +137,7 @@
         "size": "m",
         "autocorrect": "true"
       },
-      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"text\">Enter some text</label></h4></div><input id=\"text\" class=\"tna-text-input tna-text-input--m \" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"true\"></div>"
+      "html": "<div class=\"tna-form__group\" data-module=\"tna-text-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"text\">Enter some text</label></h4></div><input id=\"text\" class=\"tna-text-input tna-text-input--m \" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"on\"></div>"
     },
     {
       "name": "autocomplete",

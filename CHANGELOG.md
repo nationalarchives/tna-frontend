@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Specific text input types can be set with `type`
-- Added `autocapitalize` and `autocorrect` options to text inputs
+- Added `autocapitalize` and `autocorrect` options to text inputs and textareas
 - Added `autofillDateOfBirth` as an option to date input components to autocomplete date of birth
 
 ### Changed

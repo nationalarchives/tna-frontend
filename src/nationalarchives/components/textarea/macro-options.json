@@ -59,6 +59,21 @@
     "name": "spellcheck",
     "type": "boolean",
     "required": false,
+    "default": false,
+    "description": ""
+  },
+  {
+    "name": "autocapitalize",
+    "type": "string",
+    "required": false,
+    "default": "off",
+    "description": ""
+  },
+  {
+    "name": "autocorrect",
+    "type": "boolean",
+    "required": false,
+    "default": "off",
     "description": ""
   },
   {
@@ -71,6 +86,7 @@
     "name": "rows",
     "type": "number",
     "required": false,
+    "default": 5,
     "description": ""
   },
   {

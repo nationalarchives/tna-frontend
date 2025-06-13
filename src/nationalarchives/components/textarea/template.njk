@@ -22,7 +22,7 @@
     </p>
     {%- endif %}
   </div>
-  <textarea id="{{ params.id }}" class="tna-textarea{% if params.size %} tna-textarea--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}" rows="{{ params.rows if params.rows else 5 }}"
+  <textarea id="{{ params.id }}" class="tna-textarea{% if params.size %} tna-textarea--{{ params.size }}{% endif %} {{ inputClasses | join(' ') }}" name="{{ params.name }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}" autocapitalize="{{ params.autocapitalize if params.autocapitalize else 'off' }}" autocorrect="{{ 'on' if params.autocorrect else 'off' }}" rows="{{ params.rows if params.rows else 5 }}"
   {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}
   {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.value }}</textarea>
 </div>

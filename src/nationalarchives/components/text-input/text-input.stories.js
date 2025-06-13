@@ -20,7 +20,10 @@ const argTypes = {
     options: ["text", "decimal", "numeric", "tel", "search", "email", "url"],
   },
   spellcheck: { control: "boolean" },
-  autocapitalize: { control: "boolean" },
+  autocapitalize: {
+    control: "select",
+    options: ["off", "on", "words", "characters"],
+  },
   autocorrect: { control: "boolean" },
   autocomplete: {
     control: "select",

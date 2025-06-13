@@ -68,6 +68,9 @@ jobs:
         
   publish-npm:
     runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/@nationalarchives/frontend
     needs:
       - version-check
       - lint

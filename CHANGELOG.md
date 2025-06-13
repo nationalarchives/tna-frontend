@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.20.0...HEAD)
 
 ### Added
+
+- Clicking on an item in an error summary scrolls down to the top of the form field rather than the input
+
 ### Changed
 ### Deprecated
 ### Removed

@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Changed `fields` option in text inputs from `day`, `month` and `year` options to `d`, `m` and `y`
+- Added some instances of `translate="no"` to elements in the footer component
 
 ### Deprecated
 ### Removed

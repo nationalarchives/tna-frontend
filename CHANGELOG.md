@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed issue with progressive date input components that used set fields
+
 ### Security
 
 ## [0.20.1](https://github.com/nationalarchives/tna-frontend/compare/v0.20.0...v0.20.1) - 2025-06-13

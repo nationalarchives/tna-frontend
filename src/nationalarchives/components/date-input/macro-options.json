@@ -39,7 +39,7 @@
     "name": "fields",
     "type": "array",
     "required": false,
-    "description": ""
+    "description": "An array of fields to display. Can be `d`, `m` or `y`. Order is preserved unless `progressive` is true."
   },
   {
     "name": "value",
@@ -51,19 +51,19 @@
         "name": "day",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The value for the day field."
       },
       {
         "name": "month",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The value for the month field. Usually a number between 1 and 12, a three character month (jan-dec) or the month name (January-December)."
       },
       {
         "name": "year",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The value for the year field."
       }
     ]
   },
@@ -91,7 +91,7 @@
     "name": "progressive",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If true, order the date fields in a year-month-day order and only show the next field when the previous has a valid value."
   },
   {
     "name": "formGroupClasses",

@@ -34,13 +34,13 @@
         {%- if params.fields %}
           {%- set fields = [] -%}
           {% if 'y' in params.fields %}
-            {%- set fields = fields + ['year'] -%}
+            {%- set fields = fields + ['y'] -%}
           {%- endif %}
           {% if 'm' in params.fields %}
-            {%- set fields = fields + ['month'] -%}
+            {%- set fields = fields + ['m'] -%}
           {%- endif %}
           {% if 'd' in params.fields %}
-            {%- set fields = fields + ['day'] -%}
+            {%- set fields = fields + ['d'] -%}
           {%- endif %}
         {%- else %}
           {%- set fields = ['y', 'm', 'd'] -%}

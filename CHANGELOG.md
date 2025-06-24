@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Updated month validation in progressive date input components to accept string representations of months (Jan-Dec and January-December)
+
 ### Deprecated
 ### Removed
 ### Fixed

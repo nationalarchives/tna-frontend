@@ -65,12 +65,39 @@ export class DateInput {
     if (!this.$monthInput) {
       return true;
     }
-    const monthValue = parseInt(this.$monthInput.value.trim());
+    const monthRawValue = this.$monthInput.value.trim();
+    const monthIntValue = parseInt(monthRawValue);
+    const validMonthStrings = [
+      "january",
+      "february",
+      "march",
+      "april",
+      "may",
+      "june",
+      "july",
+      "august",
+      "september",
+      "october",
+      "november",
+      "december",
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "jun",
+      "jul",
+      "aug",
+      "sep",
+      "oct",
+      "nov",
+      "dec",
+    ];
     return (
-      !isNaN(this.$monthInput.value) &&
-      !isNaN(monthValue) &&
-      monthValue > 0 &&
-      monthValue <= 12
+      (!isNaN(this.$monthInput.value) &&
+        !isNaN(monthIntValue) &&
+        monthIntValue > 0 &&
+        monthIntValue <= 12) ||
+      validMonthStrings.includes(monthRawValue.toLowerCase())
     );
   }
 

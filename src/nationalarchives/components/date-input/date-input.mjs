@@ -2,27 +2,28 @@ import Cookies from "../../lib/cookies.mjs";
 
 export { Cookies };
 
-export class DateInput {
+export class DateInputProgressive {
   constructor($module) {
     this.$module = $module;
-    this.$dayWrapper =
-      $module && $module.querySelector(".tna-date-input__item--day");
-    this.$dayInput =
-      this.$dayWrapper && this.$dayWrapper.querySelector("input");
-    this.$monthWrapper =
-      $module && $module.querySelector(".tna-date-input__item--month");
-    this.$monthInput =
-      this.$monthWrapper && this.$monthWrapper.querySelector("input");
     this.$yearWrapper =
       $module && $module.querySelector(".tna-date-input__item--year");
     this.$yearInput =
       this.$yearWrapper && this.$yearWrapper.querySelector("input");
+    this.$monthWrapper =
+      $module && $module.querySelector(".tna-date-input__item--month");
+    this.$monthInput =
+      this.$monthWrapper && this.$monthWrapper.querySelector("input");
+    this.$dayWrapper =
+      $module && $module.querySelector(".tna-date-input__item--day");
+    this.$dayInput =
+      this.$dayWrapper && this.$dayWrapper.querySelector("input");
 
     if (!this.$module) {
       return;
     }
 
     this.update();
+    window.addEventListener("pageshow", () => this.update());
 
     if (this.$yearInput) {
       this.$yearInput.addEventListener("keyup", () => this.update());
@@ -41,7 +42,6 @@ export class DateInput {
   update() {
     if (this.isValidYear()) {
       this.showMonth();
-
       if (this.isValidMonth()) {
         this.showDay();
       } else {

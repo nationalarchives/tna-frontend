@@ -172,7 +172,6 @@ const FormsTemplate = ({ theme }) => {
       block !== "tna-background-accent" &&
       block !== "tna-background-accent-light",
   );
-  console.log(formBlocks);
 
   return `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">

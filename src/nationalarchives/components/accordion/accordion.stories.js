@@ -359,7 +359,6 @@ Test.play = async ({ step }) => {
     await fireEvent.click(
       $allDetails[0].querySelector(".tna-accordion__summary"),
     );
-    console.log($allDetails[0].querySelector(".tna-accordion__summary"));
     await $allDetails.forEach(async ($details, index) => {
       if (index === 0) {
         await expect(

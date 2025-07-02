@@ -15,7 +15,7 @@
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "description": "The physical size of the text input title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the text input title (`xl`, `l`, `m`, `s` or `xs`)."
   },
   {
     "name": "id",

@@ -8,7 +8,11 @@
     <ul class="tna-error-summary__list">
       {%- for item in params.items %}
       <li class="tna-error-summary__item">
+        {%- if item.href %}
         <a href="{{ item.href }}" class="tna-error-summary__link">{{ item.text }}</a>
+        {%- else %}
+        <span class="tna-error-summary__link">{{ item.text }}</span>
+        {%- endif %}
       </li>
       {%- endfor %}
     </ul>

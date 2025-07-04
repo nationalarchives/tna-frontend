@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Unindented width of secondary navigation component on tiny devices fixed to avoid overflow
+
 ### Security
 
 ## [0.21.0](https://github.com/nationalarchives/tna-frontend/compare/v0.20.1...v0.21.0) - 2025-06-30

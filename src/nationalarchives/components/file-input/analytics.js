@@ -1,5 +1,3 @@
-import { valueGetters } from "../../lib/analytics-helpers.mjs";
-
 const getFileDetails = ($el) =>
   JSON.stringify(
     Array.from($el.files).map((file) => ({

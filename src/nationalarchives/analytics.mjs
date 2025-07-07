@@ -8,6 +8,8 @@ import AccordionAnalytics from "./components/accordion/analytics.js";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
 import CheckboxesAnalytics from "./components/checkboxes/analytics.js";
 import DetailsAnalytics from "./components/details/analytics.js";
+import ErrorSummary from "./components/error-summary/analytics.js";
+import FileInput from "./components/file-input/analytics.js";
 import FooterAnalytics from "./components/footer/analytics.js";
 import GalleryAnalytics from "./components/gallery/analytics.js";
 import GlobalHeaderAnalytics from "./components/global-header/analytics.js";
@@ -25,6 +27,8 @@ const componentAnalytics = [
   ...BreadcrumbAnalytics,
   ...CheckboxesAnalytics,
   ...DetailsAnalytics,
+  ...ErrorSummary,
+  ...FileInput,
   ...FooterAnalytics,
   ...GalleryAnalytics,
   ...GlobalHeaderAnalytics,

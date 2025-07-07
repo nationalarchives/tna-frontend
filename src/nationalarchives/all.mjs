@@ -3,6 +3,7 @@ import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
 import { DateInputProgressive } from "./components/date-input/date-input.mjs";
 import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
+import { FileInput } from "./components/file-input/file-input.mjs";
 import { Footer } from "./components/footer/footer.mjs";
 import { Gallery } from "./components/gallery/gallery.mjs";
 import { GlobalHeader } from "./components/global-header/global-header.mjs";
@@ -72,6 +73,11 @@ const initAll = (options) => {
   if ($errorSummary) {
     new ErrorSummary($errorSummary).init();
   }
+
+  const $fileInputs = $scope.querySelectorAll('[data-module="tna-file-input"]');
+  $fileInputs.forEach(($fileInput) => {
+    new FileInput($fileInput);
+  });
 
   const $footer = $scope.querySelector('[data-module="tna-footer"]');
   if ($footer) {
@@ -180,6 +186,7 @@ export {
   CookieBanner,
   DateInputProgressive,
   ErrorSummary,
+  FileInput,
   Footer,
   Gallery,
   GlobalHeader,

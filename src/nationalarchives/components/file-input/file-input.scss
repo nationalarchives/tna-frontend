@@ -1,0 +1,19 @@
+@use "../../tools/spacing";
+
+.tna-file-input {
+  width: 100%;
+
+  display: block;
+
+  box-sizing: border-box;
+
+  border-radius: 0.1px;
+
+  cursor: pointer;
+
+  &::file-selector-button {
+    margin-right: spacing.space(0.5);
+
+    cursor: inherit;
+  }
+}

@@ -19,6 +19,7 @@ export class Gallery {
       !this.$module ||
       !this.$itemsContainer ||
       !this.$items ||
+      this.$items.length < 2 ||
       !this.$navigation ||
       !this.$navigationItems ||
       !this.$options ||

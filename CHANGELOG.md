@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Allow items in an error summary to not have an `href` property
+- Galleries with fewer than two items don't use the JavaScript module
 
 ### Deprecated
 ### Removed

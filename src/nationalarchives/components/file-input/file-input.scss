@@ -88,11 +88,12 @@
       z-index: 2;
 
       pointer-events: none;
+      
+      @include colour.green-accent;
 
+      @include colour.colour-font("accent-font-base");
       @include typography.main-font-weight-bold;
 
-      @include colour.green-accent;
-      @include colour.colour-font("accent-font-base");
       @include colour.colour-background("accent-background");
     }
   }

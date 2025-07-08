@@ -12,6 +12,7 @@ const argTypes = {
   name: { control: "text" },
   hint: { control: "text" },
   multiple: { control: "boolean" },
+  droppable: { control: "boolean" },
   error: { control: "object" },
   formGroupClasses: { control: "text" },
   formGroupAttributes: { control: "object" },
@@ -38,6 +39,7 @@ const Template = ({
   name,
   hint,
   multiple,
+  droppable,
   error,
   formGroupClasses,
   formGroupAttributes,
@@ -53,6 +55,7 @@ const Template = ({
       name,
       hint,
       multiple,
+      droppable,
       error,
       formGroupClasses,
       formGroupAttributes,
@@ -103,5 +106,16 @@ Multiple.args = {
   id: "file4",
   name: "file4",
   multiple: true,
+  classes: "tna-text-input--demo",
+};
+
+export const Dropable = Template.bind({});
+Dropable.args = {
+  label: "Upload a file",
+  headingLevel: 4,
+  headingSize: "m",
+  id: "file4",
+  name: "file4",
+  droppable: true,
   classes: "tna-text-input--demo",
 };

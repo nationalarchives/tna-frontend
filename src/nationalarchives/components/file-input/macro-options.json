@@ -43,6 +43,13 @@
     "default": false
   },
   {
+    "name": "droppable",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, allows drag and drop functionality.",
+    "default": false
+  },
+  {
     "name": "error",
     "type": "object",
     "required": false,

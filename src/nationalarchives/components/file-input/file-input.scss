@@ -25,7 +25,7 @@
 
   &__droppable {
     width: 100%;
-    padding: spacing.space(1);
+    padding: spacing.space(0.5) spacing.space(1) spacing.space(1);
 
     box-sizing: border-box;
 
@@ -71,7 +71,7 @@
     display: block;
     overflow: hidden;
 
-    line-height: 1;
+    line-height: 2;
     text-overflow: ellipsis;
 
     white-space: nowrap;

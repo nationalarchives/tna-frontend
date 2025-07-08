@@ -25,7 +25,7 @@ export class FileInputDroppable {
     $droppableButtons.classList.add(
       "tna-button-group",
       "tna-button-group--small",
-      "tna-!--margin-top-s",
+      "tna-!--margin-top-xs",
       "tna-file-input__droppable-buttons",
     );
     this.$droppableArea.appendChild($droppableButtons);

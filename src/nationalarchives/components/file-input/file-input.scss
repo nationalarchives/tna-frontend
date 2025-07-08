@@ -77,7 +77,7 @@
     @include colour.colour-border("keyline-dark");
 
     &::before {
-      content: "Drop file to upload";
+      content: "Drop file here";
 
       display: flex;
       align-items: center;

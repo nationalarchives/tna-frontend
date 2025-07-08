@@ -2,6 +2,7 @@
 @use "../../tools/a11y";
 @use "../../tools/borders";
 @use "../../tools/colour";
+@use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
@@ -56,6 +57,26 @@
     opacity: 0;
   }
 
+  &__droppable-buttons {
+    @include media.on-tiny {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include typography.font-size(14);
+    line-height: 1.5rem;
+  }
+
+  &__droppable-status {
+    display: block;
+    overflow: hidden;
+
+    line-height: 1;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
   &__droppable &:hover ~ &__droppable-buttons {
     .tna-button {
       &:not(.tna-button--plain) {
@@ -67,17 +88,11 @@
     }
   }
 
-  &__droppable-status {
-    display: block;
-
-    line-height: 1;
-  }
-
   &__droppable--over {
     @include colour.colour-border("keyline-dark");
 
     &::before {
-      content: "Drop file here";
+      content: "Drop files here";
 
       display: flex;
       align-items: center;
@@ -88,7 +103,7 @@
       z-index: 2;
 
       pointer-events: none;
-      
+
       @include colour.green-accent;
 
       @include colour.colour-font("accent-font-base");

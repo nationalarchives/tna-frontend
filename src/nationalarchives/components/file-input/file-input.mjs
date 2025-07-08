@@ -44,8 +44,9 @@ export class FileInputDroppable {
     this.$droppableAreaAriaLabel.setAttribute("aria-live", "assertive");
     this.$droppableArea.appendChild(this.$droppableAreaAriaLabel);
 
-    this.$input.addEventListener("dragenter", (e) => this.onDragEnter(e));
-    this.$input.addEventListener("dragleave", () => this.onDragLeave());
+    this.$input.addEventListener("dragenter", (e) => this.showDropTarget(e));
+    this.$input.addEventListener("dragleave", () => this.hideDropTarget());
+    this.$input.addEventListener("dragend", () => this.hideDropTarget());
     this.$input.addEventListener("change", () => this.onChange());
     this.$input.addEventListener("drop", () => this.onChange());
   }
@@ -56,14 +57,14 @@ export class FileInputDroppable {
     return hasNoTypesInfo || isDraggingFiles;
   }
 
-  onDragEnter(event) {
+  showDropTarget(event) {
     if (event.dataTransfer && this.isContainingFiles(event.dataTransfer)) {
       this.$droppableArea.classList.add("tna-file-input__droppable--over");
       this.$droppableAreaAriaLabel.textContent = "Entered drop zone";
     }
   }
 
-  onDragLeave() {
+  hideDropTarget() {
     this.$droppableArea.classList.remove("tna-file-input__droppable--over");
     this.$droppableAreaAriaLabel.textContent = "Left drop zone";
   }

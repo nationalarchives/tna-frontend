@@ -88,12 +88,11 @@
     }
   }
 
-  &__droppable--over {
+  &__droppable--over,
+  &__droppable--over-multiple {
     @include colour.colour-border("keyline-dark");
 
     &::before {
-      content: "Drop files here";
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -110,6 +109,18 @@
       @include typography.main-font-weight-bold;
 
       @include colour.colour-background("accent-background");
+    }
+  }
+
+  &__droppable--over {
+    &::before {
+      content: "Drop file here";
+    }
+  }
+
+  &__droppable--over-multiple {
+    &::before {
+      content: "Drop files here";
     }
   }
 }

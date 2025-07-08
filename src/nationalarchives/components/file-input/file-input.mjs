@@ -57,16 +57,28 @@ export class FileInputDroppable {
     return hasNoTypesInfo || isDraggingFiles;
   }
 
-  showDropTarget(event) {
+  showDropTarget(event, updateAriaLabel = true) {
     if (event.dataTransfer && this.isContainingFiles(event.dataTransfer)) {
-      this.$droppableArea.classList.add("tna-file-input__droppable--over");
-      this.$droppableAreaAriaLabel.textContent = "Entered drop zone";
+      this.$droppableArea.classList.add(
+        event.dataTransfer.items.length > 1
+          ? "tna-file-input__droppable--over-multiple"
+          : "tna-file-input__droppable--over",
+      );
+
+      if (updateAriaLabel) {
+        this.$droppableAreaAriaLabel.textContent = "Entered drop zone";
+      }
     }
   }
 
-  hideDropTarget() {
-    this.$droppableArea.classList.remove("tna-file-input__droppable--over");
-    this.$droppableAreaAriaLabel.textContent = "Left drop zone";
+  hideDropTarget(updateAriaLabel = true) {
+    this.$droppableArea.classList.remove(
+      "tna-file-input__droppable--over",
+      "tna-file-input__droppable--over-multiple",
+    );
+    if (updateAriaLabel) {
+      this.$droppableAreaAriaLabel.textContent = "Left drop zone";
+    }
   }
 
   onChange() {
@@ -81,6 +93,6 @@ export class FileInputDroppable {
       this.$pseudoSelectFileText.textContent =
         files[0]?.name || `No file chosen`;
     }
-    this.$droppableArea.classList.remove("tna-file-input__droppable--over");
+    this.hideDropTarget(false);
   }
 }

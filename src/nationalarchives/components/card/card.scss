@@ -91,6 +91,7 @@
   gap: spacing.space(0.5);
 
   position: relative;
+  z-index: 1;
 
   @include borders.rounded-border;
 

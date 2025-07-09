@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Unindented width of secondary navigation component on tiny devices fixed to avoid overflow
+- Fixed z-index issue with plain cards on coloured backgrounds
 
 ### Security
 

@@ -15,6 +15,7 @@ export class FileInputDroppable {
     this.$droppableArea.appendChild(this.$input);
 
     this.$pseudoSelectFileText = document.createElement("span");
+    this.$pseudoSelectFileText.setAttribute("aria-live", "polite");
     this.$pseudoSelectFileText.classList.add(
       "tna-file-input__droppable-status",
     );

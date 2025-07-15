@@ -1,0 +1,90 @@
+[
+  {
+    "name": "label",
+    "type": "string",
+    "required": true,
+    "description": "The label for the file input field."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": true,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "description": "The physical size of the file input title (`xl`, `l`, `m`, `s` or `xs`)."
+  },
+  {
+    "name": "id",
+    "type": "string",
+    "required": true,
+    "description": "A unique ID for the file input component."
+  },
+  {
+    "name": "name",
+    "type": "string",
+    "required": true,
+    "description": "The name of the form field."
+  },
+  {
+    "name": "hint",
+    "type": "string",
+    "required": false,
+    "description": "An optional hint to display above the form field."
+  },
+  {
+    "name": "multiple",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, allows multiple files to be selected.",
+    "default": false
+  },
+  {
+    "name": "droppable",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, allows drag and drop functionality.",
+    "default": false
+  },
+  {
+    "name": "error",
+    "type": "object",
+    "required": false,
+    "description": "If set, the details of any errors.",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": "The error text to display."
+      }
+    ]
+  },
+  {
+    "name": "formGroupClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the file input group."
+  },
+  {
+    "name": "formGroupAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the file input form group."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the file input."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the file input."
+  }
+]

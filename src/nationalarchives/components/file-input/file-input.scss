@@ -1,0 +1,127 @@
+@use "../../variables/forms";
+@use "../../tools/a11y";
+@use "../../tools/borders";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-file-input {
+  width: 100%;
+
+  display: block;
+
+  box-sizing: border-box;
+
+  border-radius: 0.1px;
+
+  cursor: pointer;
+
+  &::file-selector-button {
+    margin-right: spacing.space(0.5);
+
+    cursor: inherit;
+  }
+
+  &__droppable {
+    width: 100%;
+    padding: spacing.space(0.5) spacing.space(1) spacing.space(1);
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    @include colour.colour-border(
+      "keyline",
+      forms.$form-field-border-width,
+      dashed
+    );
+    @include borders.rounded-border;
+  }
+
+  &__droppable:has(&:focus-visible) {
+    @include a11y.focus-outline;
+  }
+
+  &__droppable:has(&:active) {
+    @include a11y.focus-outline-without-offset;
+  }
+
+  &__droppable & {
+    padding: spacing.space(1);
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    opacity: 0;
+  }
+
+  &__droppable-buttons {
+    @include media.on-tiny {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include typography.font-size(14);
+    line-height: 1.5rem;
+  }
+
+  &__droppable-status {
+    display: block;
+    overflow: hidden;
+
+    line-height: 2;
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+  &__droppable &:hover ~ &__droppable-buttons,
+  &__droppable &:focus-visible ~ &__droppable-buttons {
+    .tna-button {
+      &:not(.tna-button--plain) {
+        @include colour.colour-font("button-hover-text");
+        text-decoration: none;
+
+        background: transparent;
+      }
+    }
+  }
+
+  &__droppable--over,
+  &__droppable--over-multiple {
+    @include colour.colour-border("keyline-dark");
+
+    &::before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+      inset: spacing.space(0.5);
+      z-index: 2;
+
+      pointer-events: none;
+
+      @include colour.green-accent;
+
+      @include colour.colour-font("accent-font-base");
+      @include typography.main-font-weight-bold;
+
+      @include colour.colour-background("accent-background");
+    }
+  }
+
+  &__droppable--over {
+    &::before {
+      content: "Drop file here";
+    }
+  }
+
+  &__droppable--over-multiple {
+    &::before {
+      content: "Drop files here";
+    }
+  }
+}

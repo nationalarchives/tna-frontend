@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed left align of icons in a description list which created misalignment for fixed width icons
+- Updated the `addressCountry` microdata in the address in the footer component from `UK` to `GB` (ISO 3166-1)
 
 ### Security
 

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.22.0...HEAD)
 
 ### Added
+
+- Shadows tool added (`src/nationalarchives/tools/_shadows.scss`) with mixin of `drop-shadow`
+
 ### Changed
 ### Deprecated
 ### Removed

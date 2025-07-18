@@ -291,10 +291,6 @@
       padding-left: spacing.space(1);
     }
 
-    &--plain {
-      box-shadow: none;
-    }
-
     &:not(:has(&__image-container)) {
       border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
         bordersVars.$rounded-border-radius;

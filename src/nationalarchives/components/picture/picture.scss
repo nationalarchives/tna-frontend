@@ -4,6 +4,7 @@
 @use "../../tools/colour";
 @use "../../tools/grid";
 @use "../../tools/media";
+@use "../../tools/shadows";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
@@ -33,9 +34,7 @@
     max-height: 40rem;
     margin: 0 auto;
 
-    box-shadow:
-      0 0.25rem 1rem -0.25rem rgb(0 0 0 / 25%),
-      0 0.125rem 0.5rem -0.25rem rgb(0 0 0 / 75%);
+    @include shadows.drop-shadow;
 
     @include colour.image-loader-background;
   }

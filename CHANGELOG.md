@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Shadows tool added (`src/nationalarchives/tools/_shadows.scss`) with mixin of `drop-shadow`
 
 ### Changed
+
+- Updated to [Font Awesome 7.0.0](https://github.com/FortAwesome/Font-Awesome/releases/tag/7.0.0)
+
 ### Deprecated
 ### Removed
 ### Fixed

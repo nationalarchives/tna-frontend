@@ -58,13 +58,13 @@
   }
 
   &__droppable-buttons {
+    @include typography.font-size(14);
+    line-height: 1.5rem;
+
     @include media.on-tiny {
       flex-direction: row;
       align-items: center;
     }
-
-    @include typography.font-size(14);
-    line-height: 1.5rem;
   }
 
   &__droppable-status {

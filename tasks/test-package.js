@@ -59,9 +59,7 @@ const checkExists = [
   "nationalarchives/prototype-kit.css.map",
   "nationalarchives/prototype-kit.scss",
   // Assets
-  "nationalarchives/assets/fonts/fa-brands-400.ttf",
   "nationalarchives/assets/fonts/fa-brands-400.woff2",
-  "nationalarchives/assets/fonts/fa-solid-900.ttf",
   "nationalarchives/assets/fonts/fa-solid-900.woff2",
   "nationalarchives/assets/fonts/OpenSans-Bold.ttf",
   "nationalarchives/assets/fonts/OpenSans-Regular.ttf",

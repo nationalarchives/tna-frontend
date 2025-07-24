@@ -32,7 +32,7 @@ export class CookieBanner {
     this.cookiePreferencesSetKey =
       this.$module.dataset.preferencesKey || "cookie_preferences_set";
 
-    if (!this.cookies.completePoliciesOnInit) {
+    if (!this.cookies.policiesCorrectOnInit) {
       this.cookies.delete(this.cookiePreferencesSetKey);
     }
 

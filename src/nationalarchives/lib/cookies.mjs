@@ -4,12 +4,21 @@ window.TNAFrontendCookieEvents = window.TNAFrontendCookieEvents || null;
 export class CookieEventHandler {
   events = {};
   oneTimeEvents = {};
+  debug = false;
 
-  constructor() {
+  constructor(debug = false) {
+    this.debug = debug;
     if (window.TNAFrontendCookieEvents) {
+      this.log("Using existing TNAFrontendCookieEvents instance");
       return window.TNAFrontendCookieEvents;
     }
     window.TNAFrontendCookieEvents = this;
+  }
+
+  log(...args) {
+    if (this.debug) {
+      console.log("[TNA Frontend Cookie Events]", ...args);
+    }
   }
 
   /**
@@ -34,11 +43,13 @@ export class CookieEventHandler {
   /** @protected */
   trigger(event, data = {}) {
     if (Object.hasOwn(this.events, event)) {
+      this.log(`Triggering event: ${event}`, data);
       this.events[event].forEach((eventToTrigger) =>
         eventToTrigger.call(this, data),
       );
     }
     if (Object.hasOwn(this.oneTimeEvents, event)) {
+      this.log(`Triggering one-time event: ${event}`, data);
       for (let i = this.oneTimeEvents[event].length - 1; i >= 0; i--) {
         const eventToTrigger = this.oneTimeEvents[event][i];
         eventToTrigger.call(this, data);
@@ -70,7 +81,9 @@ export default class Cookies {
   /** @protected */
   defaultAge = null;
   /** @protected */
-  completePoliciesOnInit = false;
+  policiesCorrectOnInit = false;
+  /** @protected */
+  debug = document.documentElement.dataset.tnaFrontendDebug === "true";
 
   /**
    * Create a cookie handler.
@@ -78,8 +91,8 @@ export default class Cookies {
    * @param {String} [options.path] - The domain to register the cookie with.
    * @param {Boolean} [options.secure] - Only set cookie in HTTPS environments.
    * @param {String} [options.policiesKey] - The name of the cookie.
-   * @param {String} [options.newInstance=false] - Create a fresh instance of the cookie class.
    * @param {Number} [options.defaultAge] - The default age of non-session cookies.
+   * @param {String} [options.newInstance=false] - Create a fresh instance of the cookie class.
    * @param {Boolean} [options.noInit=false] - Don't initialise a blank cookie policy.
    */
   constructor(options = {}) {
@@ -88,8 +101,8 @@ export default class Cookies {
       defaultPath,
       secure,
       policiesKey,
-      newInstance = false,
       defaultAge,
+      newInstance = false,
       noInit = false,
     } = options;
     if (!newInstance && window.TNAFrontendCookies) {
@@ -97,7 +110,8 @@ export default class Cookies {
     }
     if (defaultDomain === undefined) {
       this.defaultDomain =
-        document.documentElement.dataset.tnaCookiesDomain || "";
+        document.documentElement.dataset.tnaCookiesDomain ||
+        window.location.hostname;
     } else {
       this.defaultDomain = defaultDomain;
     }
@@ -126,28 +140,40 @@ export default class Cookies {
     } else {
       this.defaultAge = defaultAge;
     }
-    this.events = new CookieEventHandler();
-    this.completePoliciesOnInit =
+    this.events = new CookieEventHandler(this.debug);
+    this.policiesCorrectOnInit =
       Object.keys(this.policies).length === tnaCookiePolicies.length &&
       tnaCookiePolicies.every(
         (policy) =>
           Object.keys(this.policies).includes(policy) &&
           typeof this.policies[policy] === "boolean",
       );
-    if (!this.completePoliciesOnInit && !noInit) {
+    if (!this.policiesCorrectOnInit && !noInit) {
       this.init();
     }
-    window.TNAFrontendCookies = this;
+    this.log({
+      defaultDomain: this.defaultDomain,
+      defaultPath: this.defaultPath,
+      secure: this.secure,
+      policiesKey: this.policiesKey,
+      defaultAge: this.defaultAge,
+      policiesCorrectOnInit: this.policiesCorrectOnInit,
+    });
+    if (!window.TNAFrontendCookies) {
+      window.TNAFrontendCookies = this;
+    }
   }
 
   /** @protected */
   init() {
     const existingPolicies = this.policies;
+    this.log("Existing policies on init:", existingPolicies);
     const filteredExistingPolicies = Object.fromEntries(
       Object.keys(existingPolicies)
         .filter((policy) => tnaCookiePolicies.includes(policy))
         .map((policy) => [policy, existingPolicies[policy]]),
     );
+    this.log("Filtered existing policies:", filteredExistingPolicies);
     this.savePolicies({
       usage: false,
       settings: false,
@@ -157,7 +183,14 @@ export default class Cookies {
     });
   }
 
+  log(...args) {
+    if (this.debug) {
+      console.log("[TNA Frontend Cookies]", ...args);
+    }
+  }
+
   destroyInstance() {
+    this.log("Destroying TNAFrontendCookies instance");
     window.TNAFrontendCookies = null;
   }
 
@@ -238,12 +271,21 @@ export default class Cookies {
     if (!key) {
       return;
     }
-    const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)};${
-      domain ? ` domain=${domain}; ` : ""
-    } samesite=${sameSite}; path=${path}${!session ? `; max-age=${maxAge}` : ""}${
+    const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}; domain=${domain}; samesite=${sameSite}; path=${path}${!session ? `; max-age=${maxAge}` : ""}${
       secure ? "; secure" : ""
     }`;
     document.cookie = cookie;
+    this.log("Set cookie:", {
+      key,
+      value,
+      maxAge,
+      path,
+      sameSite,
+      domain,
+      secure,
+      session,
+      cookie,
+    });
     this.events.trigger("setCookie", {
       key,
       value,
@@ -265,6 +307,7 @@ export default class Cookies {
   delete(key, path = "/", domain = null) {
     const options = { maxAge: -1, path, domain: domain || undefined };
     this.set(key, "", options);
+    this.log("Deleted cookie:", { key, path, domain, ...options });
     this.events.trigger("deleteCookie", { key, ...options });
   }
 
@@ -275,6 +318,7 @@ export default class Cookies {
     Object.keys(this.all).forEach((cookie) => {
       this.delete(cookie, path, domain);
     });
+    this.log("Deleted all cookies", { path, domain });
     this.events.trigger("deleteAllCookies", { path, domain });
   }
 
@@ -283,6 +327,7 @@ export default class Cookies {
    * @param {String} policy - The name of the policy.
    */
   acceptPolicy(policy) {
+    this.log("Accepting policy:", policy);
     this.setPolicy(policy, true);
     this.events.trigger("acceptPolicy", policy);
     this.events.trigger("changePolicy", { [policy]: true });
@@ -293,6 +338,7 @@ export default class Cookies {
    * @param {String} policy - The name of the policy.
    */
   rejectPolicy(policy) {
+    this.log("Rejecting policy:", policy);
     this.setPolicy(policy, false);
     this.events.trigger("rejectPolicy", policy);
     this.events.trigger("changePolicy", { [policy]: false });
@@ -305,8 +351,10 @@ export default class Cookies {
    */
   setPolicy(policy, accepted) {
     if (policy === "essential") {
+      this.log("Cannot change essential policy, it is always accepted.");
       return;
     }
+    this.log(`Setting policy ${policy} to ${accepted}`);
     this.savePolicies({
       ...this.policies,
       [policy]: accepted,
@@ -319,6 +367,7 @@ export default class Cookies {
    * Accept all the cookie policies.
    */
   acceptAllPolicies() {
+    this.log("Accepting all policies");
     const allPolicies = Object.fromEntries(
       Object.keys(this.policies).map((k) => [k.toLowerCase(), true]),
     );
@@ -331,6 +380,7 @@ export default class Cookies {
    * Reject all the cookie policies.
    */
   rejectAllPolicies() {
+    this.log("Rejecting all policies");
     const allPolicies = {
       ...Object.fromEntries(
         Object.keys(this.policies).map((k) => [k.toLowerCase(), false]),
@@ -347,6 +397,7 @@ export default class Cookies {
    * @param {object} policies - The policies to commit.
    */
   savePolicies(policies) {
+    this.log("Saving policies:", policies);
     this.set(this.policiesKey, JSON.stringify(policies));
   }
 
@@ -367,6 +418,7 @@ export default class Cookies {
    * @param {Function} callback - The callback function to call when the event is triggered.
    */
   on(event, callback) {
+    this.log(`Adding event listener for: ${event}`);
     this.events.on(event, callback);
   }
 
@@ -376,6 +428,7 @@ export default class Cookies {
    * @param {Function} callback - The callback function to call when the event is triggered.
    */
   once(event, callback) {
+    this.log(`Adding one-time event listener for: ${event}`);
     this.events.once(event, callback);
   }
 }

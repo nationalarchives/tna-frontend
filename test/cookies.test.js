@@ -323,13 +323,13 @@ describe("No existing cookies", () => {
     expect(mockCallback.mock.calls[0][0]).toStrictEqual({
       key: testKey,
       value: testValue,
-      domain: "",
+      domain: "localhost",
       path: "/",
       sameSite: "Lax",
       secure: true,
       maxAge: 31536000,
       session: false,
-      cookie: `${testKey}=${testValue}; samesite=Lax; path=/; max-age=31536000; secure`,
+      cookie: `${testKey}=${testValue}; domain=localhost; samesite=Lax; path=/; max-age=31536000; secure`,
     });
 
     cookies.set(testKey, testValue, { session: true });
@@ -338,13 +338,13 @@ describe("No existing cookies", () => {
     expect(mockCallback.mock.calls[1][0]).toStrictEqual({
       key: testKey,
       value: testValue,
-      domain: "",
+      domain: "localhost",
       path: "/",
       sameSite: "Lax",
       secure: true,
       maxAge: 31536000,
       session: true,
-      cookie: `${testKey}=${testValue}; samesite=Lax; path=/; secure`,
+      cookie: `${testKey}=${testValue}; domain=localhost; samesite=Lax; path=/; secure`,
     });
 
     cookies.set(testKey, testValue, { secure: false });
@@ -353,13 +353,13 @@ describe("No existing cookies", () => {
     expect(mockCallback.mock.calls[2][0]).toStrictEqual({
       key: testKey,
       value: testValue,
-      domain: "",
+      domain: "localhost",
       path: "/",
       sameSite: "Lax",
       secure: false,
       maxAge: 31536000,
       session: false,
-      cookie: `${testKey}=${testValue}; samesite=Lax; path=/; max-age=31536000`,
+      cookie: `${testKey}=${testValue}; domain=localhost; samesite=Lax; path=/; max-age=31536000`,
     });
   });
 
@@ -469,7 +469,7 @@ describe("Existing cookies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.completePoliciesOnInit).toEqual(true);
+    expect(cookies.policiesCorrectOnInit).toEqual(true);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -504,7 +504,7 @@ describe("Existing empty cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.policiesCorrectOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -527,7 +527,7 @@ describe("Existing partial cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.policiesCorrectOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -550,7 +550,7 @@ describe("Existing unknown cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.policiesCorrectOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -574,7 +574,7 @@ describe("Existing malformed cookie policies", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies();
 
-    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.policiesCorrectOnInit).toEqual(false);
     expect(cookies.all).toHaveProperty("cookies_policy");
     expect(cookies.policies).toHaveProperty("essential");
     expect(cookies.isPolicyAccepted("essential")).toEqual(true);
@@ -595,7 +595,7 @@ describe("No initialisation", () => {
   test("Initialisation", async () => {
     const cookies = new Cookies({ noInit: true });
 
-    expect(cookies.completePoliciesOnInit).toEqual(false);
+    expect(cookies.policiesCorrectOnInit).toEqual(false);
     expect(cookies.all).not.toHaveProperty("cookies_policy");
   });
 });

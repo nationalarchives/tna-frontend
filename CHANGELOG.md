@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated to [Font Awesome 7.0.0](https://github.com/FortAwesome/Font-Awesome/releases/tag/7.0.0)
+- Changed cookies property from `Cookies.completePoliciesOnInit` to `Cookies.policiesCorrectOnInit`
 
 ### Deprecated
 ### Removed
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed left align of icons in a description list which created misalignment for fixed width icons
 - Updated the `addressCountry` microdata in the address in the footer component from `UK` to `GB` (ISO 3166-1)
+- If no domain is specified for the cookies, `window.location.hostname` will be used as the default
 
 ### Security
 

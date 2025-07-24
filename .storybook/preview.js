@@ -14,6 +14,8 @@ if (window.self !== window.top) {
 }
 document.body.classList.add("tna-template__body");
 
+document.documentElement.dataset.tnaFrontendDebug = "true";
+
 export const parameters = {
   actions: {},
   viewport: { viewports: customViewports },

@@ -6,6 +6,13 @@
     "description": "The heading level which represents an element from `<h1>` through to `<h6>` for each of the accordion items."
   },
   {
+    "name": "itemHeadingSize",
+    "type": "string",
+    "required": false,
+    "default": "s",
+    "description": "The physical size of the accordion item titles (`xl`, `l`, `m`, `s` or `xs`). This will be ignored if JavaScript is enabled and the items will have a small heading."
+  },
+  {
     "name": "items",
     "type": "array",
     "required": true,

@@ -24,6 +24,7 @@ export default {
 
 const Template = ({
   itemHeadingLevel,
+  itemHeadingSize,
   items,
   id,
   openMultipleItems,
@@ -33,6 +34,7 @@ const Template = ({
   Accordion({
     params: {
       itemHeadingLevel,
+      itemHeadingSize,
       items,
       id,
       openMultipleItems,

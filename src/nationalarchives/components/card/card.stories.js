@@ -7,7 +7,7 @@ const argTypes = {
   plainSupertitle: { control: "boolean" },
   title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
   href: { control: "text" },
   hrefClasses: { control: "text" },
   hrefAttributes: { control: "object" },

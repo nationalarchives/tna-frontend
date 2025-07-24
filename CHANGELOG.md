@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Shadows tool added (`src/nationalarchives/tools/_shadows.scss`) with mixin of `drop-shadow`
+- `itemHeadingSize` added for accordions to set heading size when JavaScript is not available
 
 ### Changed
 

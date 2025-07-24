@@ -4,7 +4,7 @@ import macroOptions from "./macro-options.json";
 const argTypes = {
   title: { control: "text" },
   headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m", "l"] },
+  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
   items: { control: "object" },
   type: { control: "radio", options: ["contents", "sections", "pages"] },
   sticky: { control: "boolean" },

@@ -187,7 +187,7 @@ export default class Cookies {
 
   log(...args) {
     if (this.debug) {
-      console.log("[TNA Frontend Cookies]", ...args);
+      console.log("[TNA Frontend Cookies]", ...args, this.all);
     }
   }
 

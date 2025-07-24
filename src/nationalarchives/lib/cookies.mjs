@@ -159,7 +159,7 @@ export default class Cookies {
       defaultAge: this.defaultAge,
       policiesCorrectOnInit: this.policiesCorrectOnInit,
     });
-    if (!window.TNAFrontendCookies) {
+    if (!newInstance && !window.TNAFrontendCookies) {
       window.TNAFrontendCookies = this;
     }
   }

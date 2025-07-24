@@ -173,7 +173,9 @@ export default class Cookies {
         .filter((policy) => tnaCookiePolicies.includes(policy))
         .map((policy) => [policy, existingPolicies[policy]]),
     );
-    this.log("Filtered existing policies:", filteredExistingPolicies);
+    if (Object.keys(filteredExistingPolicies).length > 0) {
+      this.log("Filtered existing policies:", filteredExistingPolicies);
+    }
     this.savePolicies({
       usage: false,
       settings: false,
@@ -304,7 +306,7 @@ export default class Cookies {
    * @param {String} key - The cookie name.
    * @param {String} [path=/] - The path to the cookie is registered on.
    */
-  delete(key, path = "/", domain = null) {
+  delete(key, path = "/", domain = this.defaultDomain) {
     const options = { maxAge: -1, path, domain: domain || undefined };
     this.set(key, "", options);
     this.log("Deleted cookie:", { key, path, domain, ...options });
@@ -314,7 +316,7 @@ export default class Cookies {
   /**
    * Delete all cookies.
    */
-  deleteAll(path = "/", domain = null) {
+  deleteAll(path = "/", domain = this.defaultDomain) {
     Object.keys(this.all).forEach((cookie) => {
       this.delete(cookie, path, domain);
     });

@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated to [Font Awesome 7.0.0](https://github.com/FortAwesome/Font-Awesome/releases/tag/7.0.0)
 - Changed cookies property from `Cookies.completePoliciesOnInit` to `Cookies.policiesCorrectOnInit`
+- Changed the default behaviour of an accordion to allow multiple open items, removing `openMultipleItems` as an option and replacing it with `singleOpenItem` which defaults to `false`
 
 ### Deprecated
 ### Removed

@@ -7,7 +7,7 @@ export class Accordion {
     }
 
     this.allowMultipleItemsOpen =
-      this.$module.dataset["multiselectable"] === "true";
+      this.$module.dataset.singleOpenItem !== "true";
 
     this.$items.forEach(($item) => this.initItem($item));
     this.initState();

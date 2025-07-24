@@ -6,7 +6,7 @@ const argTypes = {
   itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
   items: { control: "object" },
   id: { control: "text" },
-  openMultipleItems: { control: "boolean" },
+  singleOpenItem: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -27,7 +27,7 @@ const Template = ({
   itemHeadingSize,
   items,
   id,
-  openMultipleItems,
+  singleOpenItem,
   classes,
   attributes,
 }) =>
@@ -37,7 +37,7 @@ const Template = ({
       itemHeadingSize,
       items,
       id,
-      openMultipleItems,
+      singleOpenItem,
       classes,
       attributes,
     },
@@ -191,11 +191,11 @@ OpenItems.args = {
   classes: "tna-accordion--demo",
 };
 
-export const NotExclusive = Template.bind({});
-NotExclusive.parameters = {
+export const SingleOpenItem = Template.bind({});
+SingleOpenItem.parameters = {
   chromatic: { disableSnapshot: true },
 };
-NotExclusive.args = {
+SingleOpenItem.args = {
   itemHeadingLevel: 2,
   items: [
     {
@@ -262,8 +262,8 @@ NotExclusive.args = {
 </div>`,
     },
   ],
-  id: "accordion-example-NotExclusive",
-  openMultipleItems: true,
+  id: "accordion-example-Exclusive",
+  singleOpenItem: true,
   classes: "tna-accordion--demo",
 };
 
@@ -273,6 +273,7 @@ Test.parameters = {
 };
 Test.args = {
   itemHeadingLevel: 2,
+  singleOpenItem: true,
   items: [
     {
       title: "Alpha",

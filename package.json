@@ -10,7 +10,7 @@
     "build:errorpages": "npm run compile:sass && npm run compile:scripts && node tasks/static-error-pages/generate.js",
     "compile:sass": "sass --style=compressed --embed-sources src/nationalarchives:package/nationalarchives",
     "compile:scripts": "webpack",
-    "lint:fix": "prettier --write '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
+    "lint:fix": "prettier --write --list-different '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
     "test:all": "npm run test:lint && npm run test:unit && npm run test:statichtml && npm run test:fixtures && npm run test:storybook && npm run build:package && npm run test:package",
     "test:fixtures": "node tasks/test-fixtures.js",
     "test:statichtml": "node tasks/generate-fixture-html.js && html-validate fixtures-html",

@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed cookies property from `Cookies.completePoliciesOnInit` to `Cookies.policiesCorrectOnInit`
 - Changed the default behaviour of an accordion to allow multiple open items, removing `openMultipleItems` as an option and replacing it with `singleOpenItem` which defaults to `false`
 - Improved spacing of field labels in date input component
+- Update the image caption button in hero components to be more accessible
 
 ### Deprecated
 ### Removed

@@ -10,7 +10,11 @@
 
   &__item {
     &-label {
+      padding-bottom: spacing.space(0.5);
+
       display: block;
+
+      line-height: 1;
 
       @include typography.font-size(16);
     }

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Shadows tool added (`src/nationalarchives/tools/_shadows.scss`) with mixin of `drop-shadow`
 - `itemHeadingSize` added for accordions to set heading size when JavaScript is not available
+- Added full-height option for card components to allow consistent vertical alignment across a row of cards
 
 ### Changed
 

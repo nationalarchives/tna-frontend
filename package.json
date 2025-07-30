@@ -1,6 +1,6 @@
 {
   "name": "@nationalarchives/frontend",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "The National Archives frontend styles",
   "scripts": {
     "start": "storybook dev -p 6006",

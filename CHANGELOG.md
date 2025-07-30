@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.22.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.23.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.23.0](https://github.com/nationalarchives/tna-frontend/compare/v0.22.0...v0.23.0) - 2025-07-30
 
 ### Added
 
@@ -25,15 +34,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allowed `rootEventName` to be added to each analytics event config as well as the area
 - Fullscreen galleries now always have dark backgrounds
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Removed left align of icons in a description list which created misalignment for fixed width icons
 - Updated the `addressCountry` microdata in the address in the footer component from `UK` to `GB` (ISO 3166-1)
 - If no domain is specified for the cookies, `window.location.hostname` will be used as the default
-
-### Security
 
 ## [0.22.0](https://github.com/nationalarchives/tna-frontend/compare/v0.21.0...v0.22.0) - 2025-07-15
 

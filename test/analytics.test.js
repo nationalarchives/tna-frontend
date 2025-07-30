@@ -260,6 +260,25 @@ describe("With consent", () => {
     const rootEventName = "root_event";
     const scope = ".target-el-1";
 
+    ga4.addListeners(scope, area, [{ eventName, on: "click", rootEventName }]);
+
+    $targetEl1.click();
+
+    const lastEvent = window.dataLayer[window.dataLayer.length - 1];
+    expect(lastEvent).toHaveProperty("event", `${prefix}.${rootEventName}`);
+    expect(lastEvent).toHaveProperty(
+      [`${prefix}.event.name`],
+      `${prefix}.${area}.${eventName}`,
+    );
+  });
+
+  test("Add a listener with a global root event name", async () => {
+    const prefix = ga4.prefix;
+    const area = "test";
+    const eventName = "button.click";
+    const rootEventName = "root_event";
+    const scope = ".target-el-1";
+
     ga4.addListeners(scope, area, [{ eventName, on: "click" }], rootEventName);
 
     $targetEl1.click();
@@ -273,27 +292,32 @@ describe("With consent", () => {
   });
 
   test("Add a listener with root data", async () => {
-    const prefix = ga4.prefix;
     const area = "test";
     const eventName = "button.click";
-    const rootEventName = "root_event";
     const scope = ".target-el-1";
 
-    ga4.addListeners(
-      scope,
-      area,
-      [{ eventName, on: "click", rootData: { foo: "bar" } }],
-      rootEventName,
-    );
+    ga4.addListeners(scope, area, [
+      { eventName, on: "click", rootData: { foo: "bar" } },
+    ]);
 
     $targetEl1.click();
 
     const lastEvent = window.dataLayer[window.dataLayer.length - 1];
-    expect(lastEvent).toHaveProperty("event", `${prefix}.${rootEventName}`);
-    expect(lastEvent).toHaveProperty(
-      [`${prefix}.event.name`],
-      `${prefix}.${area}.${eventName}`,
-    );
+    expect(lastEvent).toHaveProperty("foo", "bar");
+  });
+
+  test("Add a listener with default root data", async () => {
+    const area = "test";
+    const eventName = "button.click";
+    const scope = ".target-el-1";
+
+    ga4.addListeners(scope, area, [{ eventName, on: "click" }], null, {
+      foo: "bar",
+    });
+
+    $targetEl1.click();
+
+    const lastEvent = window.dataLayer[window.dataLayer.length - 1];
     expect(lastEvent).toHaveProperty("foo", "bar");
   });
 
@@ -303,20 +327,15 @@ describe("With consent", () => {
     const ga4_custom = new GA4({ id: "example", prefix });
     const area = "test";
     const eventName = "button.click";
-    const rootEventName = "root_event";
     const scope = ".target-el-1";
 
-    ga4_custom.addListeners(
-      scope,
-      area,
-      [{ eventName, on: "click", rootData: { foo: "bar" } }],
-      rootEventName,
-    );
+    ga4_custom.addListeners(scope, area, [
+      { eventName, on: "click", rootData: { foo: "bar" } },
+    ]);
 
     $targetEl1.click();
 
     const lastEvent = window.dataLayer[window.dataLayer.length - 1];
-    expect(lastEvent).toHaveProperty("event", `${prefix}.${rootEventName}`);
     expect(lastEvent).toHaveProperty(
       [`${prefix}.event.name`],
       `${prefix}.${area}.${eventName}`,

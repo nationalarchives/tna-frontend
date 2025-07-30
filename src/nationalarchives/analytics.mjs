@@ -201,9 +201,11 @@ class EventTracker {
         this.computedValue(onCondition, ...computedValueParameters)
       ) {
         this.recordEvent(
-          rootEventName
-            ? `${this.prefix}.${rootEventName}`
-            : this.generateEventName(areaName, eventConfig),
+          eventConfig.rootEventName
+            ? `${this.prefix}.${eventConfig.rootEventName}`
+            : rootEventName
+              ? `${this.prefix}.${rootEventName}`
+              : this.generateEventName(areaName, eventConfig),
           {
             ...data,
             name: this.generateEventName(areaName, eventConfig),

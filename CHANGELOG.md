@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved spacing of field labels in date input component
 - Update the image caption button in hero components to be more accessible
 - The analytics helper `getClosestHeading` searches for all headings but ignores non-heading elements with `tna-heading-x` classes
+- Allowed `rootEventName` to be added to each analytics event config as well as the area
 
 ### Deprecated
 ### Removed

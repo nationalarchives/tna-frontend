@@ -34,6 +34,7 @@ export class Breadcrumbs {
       $expandButton.setAttribute("type", "button");
       $expandButton.setAttribute("aria-expanded", "false");
       $expandButton.setAttribute("aria-controls", uniqueId);
+
       $expandButton.addEventListener("click", () => {
         this.$module.classList.remove("tna-breadcrumbs--collapsed");
         $expandable.remove();

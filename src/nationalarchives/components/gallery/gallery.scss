@@ -338,11 +338,11 @@
 
   &--bounded {
     @include borders.rounded-border;
+    @include colour.tint;
   }
 
-  &--bounded,
   &:fullscreen {
-    @include colour.tint;
+    @include colour.contrast;
   }
 
   &--bounded &__header,

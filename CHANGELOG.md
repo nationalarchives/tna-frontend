@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Shadows tool added (`src/nationalarchives/tools/_shadows.scss`) with mixin of `drop-shadow`
 - `itemHeadingSize` added for accordions to set heading size when JavaScript is not available
 - Added full-height option for card components to allow consistent vertical alignment across a row of cards
+- Analytics helper `getClosestElement` added to allow DOM traversal to find a matching element
 
 ### Changed
 
@@ -20,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the default behaviour of an accordion to allow multiple open items, removing `openMultipleItems` as an option and replacing it with `singleOpenItem` which defaults to `false`
 - Improved spacing of field labels in date input component
 - Update the image caption button in hero components to be more accessible
+- The analytics helper `getClosestHeading` searches for all headings but ignores non-heading elements with `tna-heading-x` classes
 
 ### Deprecated
 ### Removed

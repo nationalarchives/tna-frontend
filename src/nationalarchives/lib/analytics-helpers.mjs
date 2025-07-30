@@ -26,23 +26,16 @@ const getXPathTo = ($element) => {
   }
 };
 
-const includesAny = (arr, values) => values.some((v) => arr.includes(v));
-
-const getClosestHeading = ($element) => {
+const getClosestElement = ($startingElement, matchingElementSelectors) => {
   let heading = "";
-  let $search = $element;
+  let $search = $startingElement;
   do {
     while ($search.previousElementSibling) {
       $search = $search.previousElementSibling;
       if (
-        ["h1", "h2", "h3", "h4", "h5", "h6"].includes($search.tagName) ||
-        ($search.classList.length &&
-          includesAny(Array.from($search.classList), [
-            "tna-heading-xl",
-            "tna-heading-l",
-            "tna-heading-m",
-            "tna-heading-s",
-          ]))
+        matchingElementSelectors.some((matchingElementSelector) =>
+          $search.matches(matchingElementSelector),
+        )
       ) {
         heading = $search.innerText;
         break;
@@ -52,6 +45,9 @@ const getClosestHeading = ($element) => {
   } while ($search.parentElement && !heading);
   return heading;
 };
+
+const getClosestHeading = ($element) =>
+  getClosestElement($element, ["h1", "h2", "h3", "h4", "h5", "h6"]);
 
 const valueGetters = {
   text: ($el) => $el.innerText.replace(/\n/g, " "),
@@ -71,4 +67,4 @@ const valueGetters = {
   xpath: ($el) => getXPathTo($el.target),
 };
 
-export { getXPathTo, getClosestHeading, valueGetters };
+export { getXPathTo, getClosestElement, getClosestHeading, valueGetters };

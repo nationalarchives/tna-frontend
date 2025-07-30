@@ -2,6 +2,7 @@ import Cookies from "./lib/cookies.mjs";
 import {
   getXPathTo,
   getClosestHeading,
+  getClosestElement,
   valueGetters,
 } from "./lib/analytics-helpers.mjs";
 import AccordionAnalytics from "./components/accordion/analytics.js";
@@ -424,6 +425,11 @@ if (ga4Id) {
   new GA4({ id: ga4Id });
 }
 
-const helpers = { getXPathTo, getClosestHeading, valueGetters };
+const helpers = {
+  getXPathTo,
+  getClosestHeading,
+  getClosestElement,
+  valueGetters,
+};
 
 export { EventTracker, GA4, helpers };

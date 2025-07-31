@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed caption button colour in accented hero components
+
 ### Security
 
 ## [0.23.0](https://github.com/nationalarchives/tna-frontend/compare/v0.22.0...v0.23.0) - 2025-07-30

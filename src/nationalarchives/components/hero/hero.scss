@@ -58,9 +58,9 @@ $layer-shift-units: 2 !default;
 
     &:hover,
     &:focus {
-      @include colour.colour-font("base-font-dark");
+      @include colour.colour-font("font-dark", true);
 
-      @include colour.colour-background("base-background");
+      @include colour.colour-background("background", true);
     }
   }
 

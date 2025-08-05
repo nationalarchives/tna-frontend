@@ -61,26 +61,31 @@ Standard.args = {
       href: "https://twitter.com/UKNatArchives",
       icon: "twitter",
       title: "The National Archives X feed (formerly known as Twitter)",
+      shortTitle: "X (formerly Twitter)",
     },
     {
       href: "https://www.youtube.com/c/TheNationalArchivesUK",
       icon: "youtube",
       title: "The National Archives YouTube channel",
+      shortTitle: "YouTube",
     },
     {
       href: "https://www.facebook.com/TheNationalArchives",
       icon: "facebook",
       title: "The National Archives Facebook page",
+      shortTitle: "Facebook",
     },
     {
       href: "https://www.flickr.com/photos/nationalarchives",
       icon: "flickr",
       title: "The National Archives Flickr feed",
+      shortTitle: "Flickr",
     },
     {
       href: "https://www.instagram.com/nationalarchivesuk/",
       icon: "instagram",
       title: "The National Archives Instagram feed",
+      shortTitle: "Instagram",
     },
   ],
   navigation: [

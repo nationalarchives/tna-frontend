@@ -34,6 +34,12 @@
             "type": "string",
             "required": true,
             "description": "A title to use for the social media link."
+          },
+          {
+            "name": "shortTitle",
+            "type": "string",
+            "required": false,
+            "description": "A shorter title to display next to the social media icon. If not specified, the full title will be used."
           }
         ]
       }

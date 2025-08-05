@@ -54,7 +54,7 @@
   {%- endif %}
   <div class="tna-footer__inner">
     <div class="tna-container">
-      <div class="tna-column tna-column--flex-1 tna-column--width-1-2-medium tna-column--full-small tna-column--full-tiny tna-column--order-1" itemscope itemtype="https://schema.org/Organization">
+      <div class="tna-column tna-column--flex-1" itemscope itemtype="https://schema.org/Organization">
         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="tna-logo" viewBox="0 0 160 160" width="96" height="96" aria-hidden="true" focusable="false">
           <path fill="transparent" d="M0 0h160v160H0z" class="tna-logo__background" />
           <g class="tna-logo__foreground" fill="currentColor">
@@ -114,7 +114,7 @@
         {%- endif %}
       </div>
       {%- if params.navigation %}
-      <div class="tna-footer__navigation tna-column {% if params.showNewsletter %}tna-column--width-1-2{% else %}tna-column--width-2-3{% endif %} tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-column--order-2 tna-column--order-4-medium tna-columns tna-columns--2 tna-columns--1-tiny">
+      <div class="tna-footer__navigation tna-column tna-column--flex-2 tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-columns tna-columns--2 tna-columns--1-tiny">
         {%- for group in params.navigation %}
         <nav class="tna-footer__navigation-block tna-columns__block" aria-label="{{ group.title }}">
           {%- if not group.hideTitle %}
@@ -136,7 +136,7 @@
       </div>
       {%- endif %}
       {%- if params.showNewsletter %}
-      <div class="tna-column tna-column--width-1-4 tna-column--width-1-2-medium tna-column--full-small tna-column--full-tiny tna-column--order-3">
+      <div class="tna-column tna-column--flex-1">
         <div class="tna-footer__mailing-list">
           <h3 class="tna-footer__navigation-block-heading tna-heading-m">
             Sign up to our emails

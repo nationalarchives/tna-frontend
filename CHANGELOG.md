@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Footer social links now show the `title` attribute or the new `shortTitle` attribute if it is set
 
 ### Changed
+
+- Updated the position of the newsletter block in the footer component on medium devices to ensure better accessibility with regards to tab order
+
 ### Deprecated
 ### Removed
 ### Fixed

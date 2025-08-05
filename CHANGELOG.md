@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.23.1...HEAD)
 
 ### Added
+
+- Footer social links now show the `title` attribute or the new `shortTitle` attribute if it is set
+
 ### Changed
 ### Deprecated
 ### Removed

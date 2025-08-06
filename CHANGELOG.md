@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Footer social links now show the `title` attribute or the new `shortTitle` attribute if it is set
+- New panel component added for notification of successful transactions
 
 ### Changed
 

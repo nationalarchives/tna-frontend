@@ -1,0 +1,68 @@
+{
+  "component": "panel",
+  "fixtures": [
+    {
+      "name": "simple",
+      "options": {
+        "title": "Application received",
+        "text": "Your application has been received and is being processed."
+      },
+      "html": "<div class=\"tna-panel\"><h1 class=\"tna-heading-xl tna-panel__heading\">Application received</h1><div class=\"tna-panel__content\"><p>Your application has been received and is being processed.</p></div></div>"
+    },
+    {
+      "name": "heading level",
+      "options": {
+        "title": "Application received",
+        "headingLevel": 2,
+        "text": "Your application has been received and is being processed."
+      },
+      "html": "<div class=\"tna-panel\"><h2 class=\"tna-heading-xl tna-panel__heading\">Application received</h2><div class=\"tna-panel__content\"><p>Your application has been received and is being processed.</p></div></div>"
+    },
+    {
+      "name": "heading size",
+      "options": {
+        "title": "Application received",
+        "headingSize": "m",
+        "text": "Your application has been received and is being processed."
+      },
+      "html": "<div class=\"tna-panel\"><h1 class=\"tna-heading-m tna-panel__heading\">Application received</h1><div class=\"tna-panel__content\"><p>Your application has been received and is being processed.</p></div></div>"
+    },
+    {
+      "name": "body",
+      "options": {
+        "title": "Application received",
+        "body": "<p>Your <strong>application</strong> has been received and is being processed.</p>"
+      },
+      "html": "<div class=\"tna-panel\"><h1 class=\"tna-heading-xl tna-panel__heading\">Application received</h1><div class=\"tna-panel__content\"><p>Your <strong>application</strong> has been received and is being processed.</p></div></div>"
+    },
+    {
+      "name": "body and text",
+      "options": {
+        "title": "Application received",
+        "text": "Your application has been received and is being processed.",
+        "body": "<p>Your <strong>application</strong> has been received and is being processed.</p>"
+      },
+      "html": "<div class=\"tna-panel\"><h1 class=\"tna-heading-xl tna-panel__heading\">Application received</h1><div class=\"tna-panel__content\"><p>Your application has been received and is being processed.</p></div></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "title": "Application received",
+        "text": "Your application has been received and is being processed.",
+        "classes": "tna-panel--fixture"
+      },
+      "html": "<div class=\"tna-panel tna-panel--fixture\"><h1 class=\"tna-heading-xl tna-panel__heading\">Application received</h1><div class=\"tna-panel__content\"><p>Your application has been received and is being processed.</p></div></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "title": "Application received",
+        "text": "Your application has been received and is being processed.",
+        "attributes": {
+          "data-fixturetest": "pass"
+        }
+      },
+      "html": "<div class=\"tna-panel\" data-fixturetest=\"pass\"><h1 class=\"tna-heading-xl tna-panel__heading\">Application received</h1><div class=\"tna-panel__content\"><p>Your application has been received and is being processed.</p></div></div>"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "title",
+    "type": "string",
+    "required": true,
+    "description": "The main title of the panel."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": false,
+    "default": 1,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "default": "m",
+    "description": "The physical size of the panel title (`xl`, `l`, `m` or `s`)."
+  },
+  {
+    "name": "body",
+    "type": "string",
+    "required": false,
+    "description": "The HTML for the main body of the panel. Not displayed if `text` is set."
+  },
+  {
+    "name": "text",
+    "type": "string",
+    "required": false,
+    "description": "The text for the panel which will be inserted into a `<p>` element. Overwrites `body` if it is set."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the panel."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the panel."
+  }
+]

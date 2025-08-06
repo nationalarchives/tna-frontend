@@ -55,6 +55,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/hero/macro.njk\" import tnaHero %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/index-grid/macro.njk\" import tnaIndexGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/pagination/macro.njk\" import tnaPagination %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/panel/macro.njk\" import tnaPanel %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/quick-filters/macro.njk\" import tnaQuickFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -94,6 +95,7 @@ runs:
         echo "{{ tnaHero({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaIndexGrid({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPagination({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaPanel({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPhaseBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaQuickFilters({}) }}" >> prototype/app/views/index.html &&

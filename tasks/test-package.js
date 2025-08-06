@@ -103,6 +103,7 @@ const checkExists = [
   ...componentFiles("hero"),
   ...componentFiles("index-grid"),
   ...componentFiles("pagination"),
+  ...componentFiles("panel"),
   ...componentFiles("phase-banner"),
   ...componentFiles("picture", "Picture"),
   ...componentFiles("quick-filters"),

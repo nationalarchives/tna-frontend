@@ -18,7 +18,7 @@
     "test:package": "node tasks/test-package.js",
     "test:storybook": "test-storybook --browsers=chromium",
     "test:unit": "jest --verbose",
-    "update:fixtures": "node tasks/update-fixtures.js && npm run lint:fix"
+    "update:fixtures": "node tasks/update-fixtures.js"
   },
   "repository": {
     "type": "git",

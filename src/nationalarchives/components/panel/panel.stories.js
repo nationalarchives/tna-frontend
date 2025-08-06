@@ -45,7 +45,6 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  headingLevel: 1,
   title: "Application received",
-  text: "Your application has been received and is being processed.",
+  body: "<p>Your application has been received and is being processed.</p><p>Your reference number is <strong>123456</strong>.</p>",
 };

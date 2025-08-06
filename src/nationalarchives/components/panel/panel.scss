@@ -11,7 +11,24 @@
 
   text-align: center;
 
+  &__heading {
+  }
+
+  &__content {
+    margin-top: spacing.space(1);
+
+    @include typography.font-size(22);
+
+    p + p {
+      margin-top: spacing.space(0.5);
+    }
+  }
+
   @include media.on-mobile {
     padding: spacing.space(1);
+
+    &__content {
+      @include typography.font-size(18);
+    }
   }
 }

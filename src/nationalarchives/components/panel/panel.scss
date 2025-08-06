@@ -1,0 +1,17 @@
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-panel {
+  padding: spacing.space(2);
+
+  @include colour.green-accent;
+  @include colour.accent;
+
+  text-align: center;
+
+  @include media.on-mobile {
+    padding: spacing.space(1);
+  }
+}

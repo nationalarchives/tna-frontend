@@ -129,42 +129,41 @@ class EventTracker {
     } else if (typeof scope === "object") {
       scopeArray = [scope];
     }
-    if (!scopeArray) {
+    if (scopeArray.length === 0) {
       return;
     }
     scopeArray.forEach(($scope, scopeIndex) => {
       events.forEach((eventConfig) => {
-        if (!eventConfig.on) {
-          return;
-        }
-        if (eventConfig.targetElement) {
-          Array.from(
-            $scope.querySelectorAll(eventConfig.targetElement),
-          ).forEach(($el, index) =>
+        if (eventConfig.on) {
+          if (eventConfig.targetElement) {
+            Array.from(
+              $scope.querySelectorAll(eventConfig.targetElement),
+            ).forEach(($el, index) =>
+              this.attachListener(
+                $el,
+                $scope,
+                rootEventName,
+                rootDefaultData,
+                eventConfig,
+                scope,
+                areaName,
+                index + 1,
+                scopeIndex + 1,
+              ),
+            );
+          } else {
             this.attachListener(
-              $el,
+              $scope,
               $scope,
               rootEventName,
               rootDefaultData,
               eventConfig,
               scope,
               areaName,
-              index + 1,
+              1,
               scopeIndex + 1,
-            ),
-          );
-        } else {
-          this.attachListener(
-            $scope,
-            $scope,
-            rootEventName,
-            rootDefaultData,
-            eventConfig,
-            scope,
-            areaName,
-            1,
-            scopeIndex + 1,
-          );
+            );
+          }
         }
       });
     });

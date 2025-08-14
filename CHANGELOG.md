@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated the position of the newsletter block in the footer component on medium devices to ensure better accessibility with regards to tab order
 - Fixed the padding between headers and scene setters
+- Fixed text alignment in plain chip list
 
 ### Deprecated
 ### Removed

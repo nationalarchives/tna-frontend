@@ -9,7 +9,7 @@
         "id": "file",
         "name": "file"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "file input with a hint",
@@ -20,7 +20,7 @@
         "name": "file",
         "hint": "This years report as a PDF."
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-hint\" class=\"tna-form-item__hint\">This years report as a PDF.</p></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\"file-hint \"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-hint\" class=\"tna-form-item__hint\">This years report as a PDF.</p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\"file-hint \"></div></div>"
     },
     {
       "name": "file input with an error",
@@ -33,7 +33,7 @@
           "file": "Enter a name"
         }
       },
-      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> </p></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\" file-error\"></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> </p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\" file-error\"></div></div>"
     },
     {
       "name": "multiple",
@@ -44,7 +44,7 @@
         "name": "file",
         "multiple": true
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" multiple></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" multiple></div></div>"
     },
     {
       "name": "drag and drop support",
@@ -55,7 +55,7 @@
         "name": "file",
         "droppable": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-file-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-file-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "multiple drag and drop support",
@@ -67,7 +67,7 @@
         "multiple": true,
         "droppable": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-file-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" multiple></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-file-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" multiple></div></div>"
     },
     {
       "name": "heading level",
@@ -78,7 +78,7 @@
         "id": "file",
         "name": "file"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"file\">Upload a file</label></h4></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"file\">Upload a file</label></h4></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "with classes",
@@ -89,7 +89,7 @@
         "name": "file",
         "classes": "test-class"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input test-class\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input test-class\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "with attributes",
@@ -102,7 +102,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" data-testattribute=\"foobar\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" data-testattribute=\"foobar\"></div></div>"
     },
     {
       "name": "with form group classes",
@@ -113,7 +113,7 @@
         "name": "file",
         "formItemClasses": "test-class"
       },
-      "html": "<div class=\"tna-form-item test-class\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item test-class\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "with form group attributes",
@@ -126,7 +126,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form-item\" data-testattribute=\"foobar\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div></div><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\" data-testattribute=\"foobar\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     }
   ]
 }

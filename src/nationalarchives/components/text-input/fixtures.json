@@ -9,7 +9,7 @@
         "id": "name",
         "name": "name"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "text input with a preselected value",
@@ -20,7 +20,7 @@
         "name": "name",
         "value": "John"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"John\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"John\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "text input with a hint",
@@ -31,7 +31,7 @@
         "name": "name",
         "hint": "What people call you by."
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><p id=\"name-hint\" class=\"tna-form-item__hint\">What people call you by.</p></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" aria-describedby=\"name-hint \" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><p id=\"name-hint\" class=\"tna-form-item__hint\">What people call you by.</p><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" aria-describedby=\"name-hint \" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "text input with an error",
@@ -44,7 +44,7 @@
           "text": "Enter a name"
         }
       },
-      "html": "<div class=\"tna-form-item tna-form-item--error\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><p id=\"name-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter a name</p></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" aria-describedby=\" name-error\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><p id=\"name-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter a name</p><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" aria-describedby=\" name-error\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "inline text input",
@@ -55,7 +55,7 @@
         "name": "name",
         "inline": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "text input size",
@@ -66,7 +66,7 @@
         "name": "name",
         "size": "m"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input tna-text-input--m\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input tna-text-input--m\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "password",
@@ -78,7 +78,7 @@
         "size": "m",
         "password": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"password\">Enter your password</label></div></div><input id=\"password\" class=\"tna-text-input tna-text-input--m\" name=\"password\" value=\"\" type=\"password\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"password\">Enter your password</label></div><div class=\"tna-form-item__body\"><input id=\"password\" class=\"tna-text-input tna-text-input--m\" name=\"password\" value=\"\" type=\"password\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\"></div></div>"
     },
     {
       "name": "type",
@@ -90,7 +90,7 @@
         "size": "m",
         "type": "number"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"number\">Enter a number</label></div></div><input id=\"number\" class=\"tna-text-input tna-text-input--m\" name=\"number\" value=\"\" type=\"number\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"number\">Enter a number</label></div><div class=\"tna-form-item__body\"><input id=\"number\" class=\"tna-text-input tna-text-input--m\" name=\"number\" value=\"\" type=\"number\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "spellcheck",
@@ -102,7 +102,7 @@
         "size": "m",
         "spellcheck": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div></div><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"true\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div><div class=\"tna-form-item__body\"><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"true\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "autocapitalize",
@@ -114,7 +114,7 @@
         "size": "m",
         "autocapitalize": "on"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div></div><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"on\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div><div class=\"tna-form-item__body\"><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"on\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "autocorrect",
@@ -126,7 +126,7 @@
         "size": "m",
         "autocorrect": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div></div><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"on\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div><div class=\"tna-form-item__body\"><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"on\"></div></div>"
     },
     {
       "name": "autocomplete",
@@ -139,7 +139,7 @@
         "type": "email",
         "autocomplete": "email"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"email\">Enter an email address</label></div></div><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" autocomplete=\"email\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"email\">Enter an email address</label></div><div class=\"tna-form-item__body\"><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" autocomplete=\"email\"></div></div>"
     },
     {
       "name": "heading level",
@@ -152,7 +152,7 @@
         "size": "m",
         "type": "email"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"email\">Enter an email address</label></h4></div></div><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"email\">Enter an email address</label></h4></div><div class=\"tna-form-item__body\"><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "with classes",
@@ -163,7 +163,7 @@
         "name": "name",
         "classes": "test-class"
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input test-class\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input test-class\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "with attributes",
@@ -176,7 +176,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" data-testattribute=\"foobar\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" data-testattribute=\"foobar\"></div></div>"
     },
     {
       "name": "with form group classes",
@@ -187,7 +187,7 @@
         "name": "name",
         "formItemClasses": "test-class"
       },
-      "html": "<div class=\"tna-form-item test-class\" data-module=\"tna-text-input\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item test-class\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "with form group attributes",
@@ -200,7 +200,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\" data-testattribute=\"foobar\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div></div><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\" data-testattribute=\"foobar\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     }
   ]
 }

@@ -23,7 +23,7 @@
   }
 
   &__error {
-    margin-top: spacing.space(0.25);
+    margin-top: 0;
 
     @include colour.colour-font("form-error-text");
     @include typography.main-font-weight-bold;

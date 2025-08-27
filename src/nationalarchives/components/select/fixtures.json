@@ -23,7 +23,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "select with a preselected value",
@@ -48,7 +48,7 @@
         ],
         "selected": "date"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\" selected>Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\" selected>Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "select with a hint",
@@ -73,7 +73,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><p id=\"sort-hint\" class=\"tna-form-item__hint\">Select a field to sort by.</p></div><select class=\"tna-select\" name=\"sort\" id=\"sort\" aria-describedby=\"sort-hint\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><p id=\"sort-hint\" class=\"tna-form-item__hint\">Select a field to sort by.</p><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\" aria-describedby=\"sort-hint\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "select with an error",
@@ -100,7 +100,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><p id=\"sort-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a field to sort by</p></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><p id=\"sort-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a field to sort by</p><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "select size",
@@ -125,7 +125,7 @@
         ],
         "size": "xl"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select tna-select--xl\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select tna-select--xl\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "heading level",
@@ -150,7 +150,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"sort\">Sort by</label></h4></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"sort\">Sort by</label></h4></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "with classes",
@@ -175,7 +175,7 @@
         ],
         "classes": "test-class"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select test-class\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select test-class\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "with attributes",
@@ -202,7 +202,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\" data-testattribute=\"foobar\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\" data-testattribute=\"foobar\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "with form group classes",
@@ -227,7 +227,7 @@
         ],
         "formItemClasses": "test-class"
       },
-      "html": "<div class=\"tna-form-item test-class\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item test-class\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
       "name": "with form group attributes",
@@ -254,7 +254,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form-item\" data-testattribute=\"foobar\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
+      "html": "<div class=\"tna-form-item\" data-testattribute=\"foobar\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     }
   ]
 }

@@ -15,8 +15,8 @@ const argTypes = {
   error: { control: "object" },
   maxWidth: { control: "boolean" },
   inline: { control: "boolean" },
-  formGroupClasses: { control: "text" },
-  formGroupAttributes: { control: "object" },
+  formItemClasses: { control: "text" },
+  formItemAttributes: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -43,8 +43,8 @@ const Template = ({
   error,
   maxWidth,
   inline,
-  formGroupClasses,
-  formGroupAttributes,
+  formItemClasses,
+  formItemAttributes,
   classes,
   attributes,
 }) =>
@@ -60,8 +60,8 @@ const Template = ({
       error,
       maxWidth,
       inline,
-      formGroupClasses,
-      formGroupAttributes,
+      formItemClasses,
+      formItemAttributes,
       classes,
       attributes,
     },
@@ -84,7 +84,7 @@ Predefined.args = {
   headingSize: "m",
   id: "date2",
   name: "date2",
-  value: "1986-09-24",
+  value: "2003-02-01",
   classes: "tna-date-search--demo",
 };
 

@@ -326,6 +326,14 @@ small {
   );
 }
 
+%heading-xs {
+  @extend %heading;
+
+  @include typography.main-font-weight-bold;
+
+  font-size: 1em;
+}
+
 %headings-and-heading-groups {
   @include spacing.space-above;
   margin-bottom: 0;
@@ -360,6 +368,11 @@ small {
 
   &-s {
     @extend %heading-s;
+    @extend %headings-and-heading-groups;
+  }
+
+  &-xs {
+    @extend %heading-xs;
     @extend %headings-and-heading-groups;
   }
 

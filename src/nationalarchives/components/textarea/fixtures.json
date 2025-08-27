@@ -5,42 +5,38 @@
       "name": "plain textarea",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "name"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "textarea with a preselected value",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "value": "I like this 👍🏼"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\">I like this 👍🏼</textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\">I like this 👍🏼</textarea></div>"
     },
     {
       "name": "textarea with a hint",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "hint": "What did you think?"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4><p id=\"feedback-hint\" class=\"tna-form__hint\">What did you think?</p></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"feedback-hint \"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-hint\" class=\"tna-form-item__hint\">What did you think?</p></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"feedback-hint \"></textarea></div>"
     },
     {
       "name": "textarea with an error",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
@@ -48,97 +44,100 @@
           "text": "Enter some feedback"
         }
       },
-      "html": "<div class=\"tna-form__group tna-form__group--error\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4><p id=\"feedback-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter some feedback</p></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" feedback-error\"></textarea></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter some feedback</p></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" feedback-error\"></textarea></div>"
     },
     {
       "name": "inline textarea",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "inline": true
       },
-      "html": "<div class=\"tna-form__group tna-form__group--inline\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "textarea size",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "size": "m"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea tna-textarea--m \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea tna-textarea--m\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "rows",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "rows": "10"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"10\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"10\"></textarea></div>"
     },
     {
       "name": "spellcheck",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "spellcheck": true
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"true\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"true\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "autocapitalize",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "autocapitalize": "on"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"on\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"on\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "autocorrect",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "feedback",
         "autocorrect": true
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"on\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"on\" rows=\"5\"></textarea></div>"
     },
     {
-      "name": "with classes",
+      "name": "heading level",
       "options": {
         "label": "Enter your feedback",
         "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
+        "name": "feedback"
+      },
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"feedback\">Enter your feedback</label></h4></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "label": "Enter your feedback",
+        "headingSize": "m",
+        "id": "feedback",
         "name": "name",
         "classes": "test-class"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea test-class\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea test-class\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "with attributes",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "name",
@@ -146,33 +145,31 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" data-testattribute=\"foobar\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" data-testattribute=\"foobar\"></textarea></div>"
     },
     {
       "name": "with form group classes",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "name",
-        "formGroupClasses": "test-class"
+        "formItemClasses": "test-class"
       },
-      "html": "<div class=\"tna-form__group test-class\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item test-class\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     },
     {
       "name": "with form group attributes",
       "options": {
         "label": "Enter your feedback",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "feedback",
         "name": "name",
-        "formGroupAttributes": {
+        "formItemAttributes": {
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form__group\" data-testattribute=\"foobar\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"feedback\">Enter your feedback</label></h4></div><textarea id=\"feedback\" class=\"tna-textarea \" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
+      "html": "<div class=\"tna-form-item\" data-testattribute=\"foobar\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
     }
   ]
 }

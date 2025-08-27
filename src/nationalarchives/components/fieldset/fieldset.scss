@@ -1,0 +1,39 @@
+@use "../../variables/forms";
+@use "../../tools/a11y";
+@use "../../tools/borders";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-fieldset {
+  @include spacing.space-above;
+
+  &__inner {
+    border: none;
+  }
+
+  &__legend {
+  }
+
+  &__heading {
+  }
+
+  &__body {
+    margin-top: spacing.space(0.5);
+
+    display: flex;
+    flex-direction: column;
+    gap: spacing.space(1.5);
+
+    > * {
+      margin-top: 0;
+    }
+  }
+
+  &--error {
+    padding-left: spacing.space(1);
+
+    @include colour.thick-keyline-error(left);
+  }
+}

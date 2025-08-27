@@ -8,14 +8,15 @@
   {
     "name": "headingLevel",
     "type": "number",
-    "required": true,
+    "required": false,
     "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "description": "The physical size of the textarea title (`xl`, `l`, `m`, `s` or `xs`)."
+    "description": "The physical size of the textarea title (`xl`, `l`, `m`, `s` or `xs`).",
+    "default": "m"
   },
   {
     "name": "id",
@@ -96,13 +97,13 @@
     "description": "If true, show the textarea inline rather than vertical."
   },
   {
-    "name": "formGroupClasses",
+    "name": "formItemClasses",
     "type": "string",
     "required": false,
     "description": "Classes to add to the textarea form group."
   },
   {
-    "name": "formGroupAttributes",
+    "name": "formItemAttributes",
     "type": "object",
     "required": false,
     "description": "HTML attributes (for example data attributes) to add to the textarea form group."

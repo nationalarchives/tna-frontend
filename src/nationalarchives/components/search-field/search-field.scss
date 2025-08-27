@@ -4,13 +4,9 @@
 @use "../../tools/spacing";
 
 .tna-search-field {
-  @include spacing.space-above;
+  align-self: stretch;
 
-  &__fields {
-    align-self: stretch;
-
-    display: flex;
-  }
+  display: flex;
 
   &__input {
     min-width: 8rem;

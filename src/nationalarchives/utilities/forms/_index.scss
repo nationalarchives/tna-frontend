@@ -4,75 +4,15 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.tna-form {
-  &__group {
-    @include spacing.space-above;
+.tna-form-item {
+  @include spacing.space-above;
 
-    &--error {
-      padding-left: spacing.space(1);
-
-      @include colour.thick-keyline-error(left);
-    }
+  &__contents {
+    margin-bottom: spacing.space(0.25);
   }
 
-  &__fieldset {
-    align-self: stretch;
-    flex: 1;
-
-    border: none;
-  }
-
-  &__group,
-  &__fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: spacing.space(0.5);
-  }
-
-  &__group--inline,
-  &__group--inline &__fieldset {
-    flex-direction: row;
-    align-items: flex-start;
-
-    @include media.on-mobile {
-      flex-direction: column;
-    }
-  }
-
-  &__group-contents {
-    flex: 0 0 39%;
-  }
-
-  &__legend {
-    margin-bottom: spacing.space(0.5);
-  }
-
-  &__heading {
-    margin: 0;
-
-    @extend %heading;
-
-    &--xl {
-      @extend %heading-xl;
-    }
-
-    &--l {
-      @extend %heading-l;
-    }
-
-    &--m {
-      @extend %heading-m;
-    }
-
-    &--s {
-      @extend %heading-s;
-    }
-
-    &--xs {
-      font-size: 1em;
-      @include typography.main-font;
-    }
+  &__header {
+    margin-bottom: spacing.space(0.25);
   }
 
   &__label {
@@ -85,10 +25,16 @@
     @include colour.colour-font("font-light");
   }
 
-  &__error-message {
+  &__error {
     margin-top: 0;
 
     @include colour.colour-font("form-error-text");
     @include typography.main-font-weight-bold;
+  }
+
+  &--error {
+    padding-left: spacing.space(1);
+
+    @include colour.thick-keyline-error(left);
   }
 }

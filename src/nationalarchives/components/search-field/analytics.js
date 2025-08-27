@@ -14,7 +14,7 @@ export default [
           value: valueGetters.value,
           // eslint-disable-next-line no-unused-vars
           group: ($el, $scope, event) =>
-            $scope.querySelector(".tna-form__heading")?.innerText?.trim(),
+            $scope.querySelector(".tna-form-item__heading")?.innerText?.trim(),
         },
       },
     ],

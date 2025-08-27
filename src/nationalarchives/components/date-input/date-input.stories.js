@@ -15,7 +15,6 @@ const argTypes = {
   value: { control: "object" },
   error: { control: "object" },
   autofillDateOfBirth: { control: "boolean" },
-  inline: { control: "boolean" },
   progressive: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -43,7 +42,6 @@ const Template = ({
   value,
   error,
   autofillDateOfBirth,
-  inline,
   progressive,
   classes,
   attributes,
@@ -60,7 +58,6 @@ const Template = ({
       value,
       error,
       autofillDateOfBirth,
-      inline,
       progressive,
       classes,
       attributes,
@@ -85,9 +82,9 @@ Predefined.args = {
   id: "date12",
   name: "date12",
   value: {
-    day: "24",
-    month: "09",
-    year: "1986",
+    day: "01",
+    month: "02",
+    year: "2003",
   },
   classes: "tna-date-input--demo",
 };
@@ -100,7 +97,7 @@ Progressive.args = {
   id: "date13",
   name: "date13",
   value: {
-    year: "1986",
+    year: "2003",
   },
   progressive: true,
   classes: "tna-date-input--demo",
@@ -138,16 +135,5 @@ Error.args = {
   error: {
     text: "Date is not valid",
   },
-  classes: "tna-date-input--demo",
-};
-
-export const Inline = Template.bind({});
-Inline.args = {
-  label: "Enter a start date",
-  headingLevel: 4,
-  headingSize: "xs",
-  id: "date17",
-  name: "date17",
-  inline: true,
   classes: "tna-date-input--demo",
 };

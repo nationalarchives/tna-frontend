@@ -1,27 +1,18 @@
-{% from "nationalarchives/components/file-input/file-input.njk" import tnaFileInputElement %}
+{% from "nationalarchives/utilities/forms/form-item.njk" import tnaFormItem %}
 
-{%- set containerClasses = [params.formGroupClasses] if params.formGroupClasses else [] -%}
-{%- if params.inline -%}
-  {%- set containerClasses = containerClasses.concat('tna-form__group--inline') -%}
-{%- endif -%}
-{%- set classes = containerClasses | join(' ') -%}
-<div class="tna-form__group{% if params.error %} tna-form__group--error{% endif %}{% if classes %} {{ classes }}{% endif %}" {%- if params.droppable %} data-module="tna-file-input"{% endif %} {%- for attribute, value in params.formGroupAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <div class="tna-form__group-contents">
-    <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
-      <label class="tna-form__label" for="{{ params.id }}">
-        {{ params.label }}
-      </label>
-    </h{{ params.headingLevel }}>
-    {%- if params.hint %}
-    <p id="{{ params.id }}-hint" class="tna-form__hint">
-      {{ params.hint }}
-    </p>
-    {%- endif %}
-    {%- if params.error %}
-    <p id="{{ params.id }}-error" class="tna-form__error-message">
-      <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
-    </p>
-    {%- endif %}
-  </div>
-  {{ tnaFileInputElement(params) | indent(4) }}
-</div>
+{%- call tnaFormItem({
+  headingLevel: params.headingLevel,
+  headingSize: params.headingSize,
+  id: params.id,
+  label: params.label,
+  hint: params.hint,
+  error: params.error,
+  classes: params.formItemClasses,
+  attributes: params.formItemAttributes
+}, 'tna-file-input' if params.droppable else '') %}
+  <input id="{{ params.id }}" class="tna-file-input{% if params.classes %} {{ params.classes }}{% endif %}" name="{{ params.name }}" type="file"
+  {%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}
+  {%- if params.multiple %} multiple{%- endif %}
+  {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}
+  {%- for attribute, value in extraAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+{%- endcall %}

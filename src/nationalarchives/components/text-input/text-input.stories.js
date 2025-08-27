@@ -3,7 +3,7 @@ import macroOptions from "./macro-options.json";
 
 const argTypes = {
   label: { control: "text" },
-  headingLevel: { control: { type: "number", min: 1, max: 6 } },
+  headingLevel: { control: { type: "number", min: 0, max: 6 } },
   headingSize: {
     control: "inline-radio",
     options: ["xs", "s", "m", "l", "xl"],
@@ -77,9 +77,8 @@ const argTypes = {
   },
   size: { control: "inline-radio", options: ["xs", "s", "m", "l", "xl"] },
   maxLength: { control: "number" },
-  inline: { control: "boolean" },
-  formGroupClasses: { control: "text" },
-  formGroupAttributes: { control: "object" },
+  formItemClasses: { control: "text" },
+  formItemAttributes: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -113,9 +112,8 @@ const Template = ({
   autocomplete,
   size,
   maxLength,
-  inline,
-  formGroupClasses,
-  formGroupAttributes,
+  formItemClasses,
+  formItemAttributes,
   classes,
   attributes,
 }) =>
@@ -138,9 +136,8 @@ const Template = ({
       autocomplete,
       size,
       maxLength,
-      inline,
-      formGroupClasses,
-      formGroupAttributes,
+      formItemClasses,
+      formItemAttributes,
       classes,
       attributes,
     },
@@ -188,17 +185,6 @@ Error.args = {
   error: {
     text: "Enter a name",
   },
-  classes: "tna-text-input--demo",
-};
-
-export const Inline = Template.bind({});
-Inline.args = {
-  label: "Enter your first name",
-  headingLevel: 4,
-  headingSize: "xs",
-  id: "firstname5",
-  name: "firstname5",
-  inline: true,
   classes: "tna-text-input--demo",
 };
 

@@ -1,0 +1,298 @@
+{
+  "component": "fieldset",
+  "fixtures": [
+    {
+      "name": "plain checkboxes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "small checkboxes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Admiralty, Navy, Royal Marines, and Coastguard",
+            "value": "ADM"
+          },
+          {
+            "text": "Air Ministry and Royal Air Force records",
+            "value": "AIR"
+          },
+          {
+            "text": "Board of Trade and successors",
+            "value": "BT"
+          },
+          {
+            "text": "Chancery, the Wardrobe, Royal Household, Exchequer and various commissions",
+            "value": "C"
+          },
+          {
+            "text": "Colonial Office, Commonwealth and Foreign and Commonwealth Offices",
+            "value": "CO"
+          },
+          {
+            "text": "Exchequer, Office of First Fruits and Tenths, and the Court of Augmentations",
+            "value": "E"
+          },
+          {
+            "text": "Foreign Office",
+            "value": "FO"
+          },
+          {
+            "text": "Home Office",
+            "value": "HO"
+          },
+          {
+            "text": "Prerogative Court of Canterbury",
+            "value": "PROB"
+          },
+          {
+            "text": "War Office, Armed Forces, Judge Advocate General, and related bodies",
+            "value": "WO"
+          }
+        ],
+        "small": true
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "checkboxes with a preselected value",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta",
+            "checked": true
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "checkboxes with a hint",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "hint": "Select all that apply.",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"categories-hint \"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><p id=\"categories-hint\" class=\"tna-form-item__hint\">Select all that apply.</p><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "checkboxes with an error",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "error": {
+          "text": "You must select a category"
+        },
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset tna-fieldset--error\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\" categories-error\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><p id=\"categories-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a category</p><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "inline checkboxes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "xs",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "inline": true
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-xs\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "classes": "checkboxes__test-class"
+      },
+      "html": "<div class=\"tna-fieldset checkboxes__test-class\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-fieldset\" data-testattribute=\"foobar\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "with form group classes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "formItemClasses": "checkboxes__test-class"
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    },
+    {
+      "name": "with form group attributes",
+      "options": {
+        "legend": "Categories",
+        "headingLevel": 4,
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "formItemAttributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+    }
+  ]
+}

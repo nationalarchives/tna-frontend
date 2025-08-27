@@ -38,24 +38,24 @@ import * as SearchFieldStories from "../../components/search-field/search-field.
 ### Single form elements
 
 ```html
-<div class="tna-form__group"> <!-- Optional: "tna-form__group--error" -->
+<div class="tna-form-item"> <!-- Optional: "tna-form-item--error" -->
 
-  <div class="tna-form__group-contents">
+  <div class="tna-form-item__contents">
 
-    <h4 class="tna-form__heading tna-form__heading--m">
-      <label class="tna-form__label" for="ELEMENT-ID">
+    <h4 class="tna-form-item__heading tna-heading-m">
+      <label class="tna-form-item__label" for="ELEMENT-ID">
         <!-- Field title -->
       </label>
     </h4>
 
     <!-- Optional hint
-    <p id="ELEMENT-ID-hint" class="tna-form__hint">
+    <p id="ELEMENT-ID-hint" class="tna-form-item__hint">
       [Hint text]
     </p>
     -->
 
     <!-- Optional error
-    <p id="ELEMENT-ID-error" class="tna-form__error-message">
+    <p id="ELEMENT-ID-error" class="tna-form-item__error">
       <span class="tna-!--visually-hidden">Error:</span> [Error text]
     </p>
     -->
@@ -77,7 +77,7 @@ import * as SearchFieldStories from "../../components/search-field/search-field.
 ### Fieldset (multiple inputs - e.g. checkboxes and radios)
 
 ```html
-<div class="tna-form__group"> <!-- Optional: "tna-form__group--error" -->
+<div class="tna-form-item"> <!-- Optional: "tna-form-item--error" -->
 
   <fieldset class="tna-form__fieldset"><!-- Fieldset
       If hint:
@@ -88,22 +88,22 @@ import * as SearchFieldStories from "../../components/search-field/search-field.
         aria-describedby="tna-form__ELEMENT-ID-hint tna-form__ELEMENT-ID-error"
     -->
 
-    <div class="tna-form__group-contents">
+    <div class="tna-form-item__contents">
 
       <legend class="tna-form__legend">
-        <h4 class="tna-form__heading tna-form__heading--m">
+        <h4 class="tna-form-item__heading tna-heading-m">
           <!-- Field title -->
         </h4>
       </legend>
 
       <!-- Optional hint
-      <p id="ELEMENT-ID-hint" class="tna-form__hint">
+      <p id="ELEMENT-ID-hint" class="tna-form-item__hint">
         [Hint text]
       </p>
       -->
 
       <!-- Optional error
-      <p id="ELEMENT-ID-error" class="tna-form__error-message">
+      <p id="ELEMENT-ID-error" class="tna-form-item__error">
         <span class="tna-!--visually-hidden">Error:</span> [Error text]
       </p>
       -->

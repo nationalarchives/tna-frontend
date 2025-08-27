@@ -47,17 +47,6 @@
       "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter some feedback</p></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" feedback-error\"></textarea></div>"
     },
     {
-      "name": "inline textarea",
-      "options": {
-        "label": "Enter your feedback",
-        "headingSize": "m",
-        "id": "feedback",
-        "name": "feedback",
-        "inline": true
-      },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div></div><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div>"
-    },
-    {
       "name": "textarea size",
       "options": {
         "label": "Enter your feedback",

@@ -14,7 +14,6 @@ const argTypes = {
   value: { control: "text" },
   error: { control: "object" },
   maxWidth: { control: "boolean" },
-  inline: { control: "boolean" },
   formItemClasses: { control: "text" },
   formItemAttributes: { control: "object" },
   classes: { control: "text" },
@@ -42,7 +41,6 @@ const Template = ({
   value,
   error,
   maxWidth,
-  inline,
   formItemClasses,
   formItemAttributes,
   classes,
@@ -59,7 +57,6 @@ const Template = ({
       value,
       error,
       maxWidth,
-      inline,
       formItemClasses,
       formItemAttributes,
       classes,
@@ -109,16 +106,5 @@ Error.args = {
   error: {
     text: "Date is not valid",
   },
-  classes: "tna-date-search--demo",
-};
-
-export const Inline = Template.bind({});
-Inline.args = {
-  label: "Enter a start date",
-  headingLevel: 4,
-  headingSize: "xs",
-  id: "date5",
-  name: "date5",
-  inline: true,
   classes: "tna-date-search--demo",
 };

@@ -8,12 +8,12 @@
       </h{{ params.headingLevel }}>
     </legend>
     {%- if params.hint %}
-    <p id="{{ params.id }}-hint" class="tna-form-item__hint">
+    <p id="{{ params.id }}-hint" class="tna-fieldset__hint">
       {{ params.hint }}
     </p>
     {%- endif %}
     {%- if params.error %}
-    <p id="{{ params.id }}-error" class="tna-form-item__error">
+    <p id="{{ params.id }}-error" class="tna-fieldset__error">
       <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
     </p>
     {%- endif %}

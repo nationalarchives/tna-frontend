@@ -103,31 +103,6 @@
       "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><p id=\"sort-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a field to sort by</p></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
     },
     {
-      "name": "inline select",
-      "options": {
-        "label": "Sort by",
-        "headingSize": "m",
-        "id": "sort",
-        "name": "sort",
-        "items": [
-          {
-            "text": "Relevance",
-            "value": "relevance"
-          },
-          {
-            "text": "Date",
-            "value": "date"
-          },
-          {
-            "text": "Title",
-            "value": "title"
-          }
-        ],
-        "inline": true
-      },
-      "html": "<div class=\"tna-form-item tna-form-item--inline\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div></div><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div>"
-    },
-    {
       "name": "select size",
       "options": {
         "label": "Sort by",

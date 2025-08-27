@@ -329,9 +329,10 @@ small {
 %heading-xs {
   @extend %heading;
 
-  @include typography.main-font-weight-bold;
+  @include typography.main-font-weight;
 
   font-size: 1em;
+  line-height: typographyVars.$heading-s-line-height;
 }
 
 %headings-and-heading-groups {

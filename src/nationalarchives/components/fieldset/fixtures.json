@@ -130,7 +130,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"categories-hint \"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><p id=\"categories-hint\" class=\"tna-form-item__hint\">Select all that apply.</p><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"categories-hint \"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><p id=\"categories-hint\" class=\"tna-fieldset__hint\">Select all that apply.</p><div class=\"tna-fieldset__body\"></div></fieldset></div>"
     },
     {
       "name": "checkboxes with an error",
@@ -158,7 +158,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-fieldset tna-fieldset--error\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\" categories-error\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><p id=\"categories-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a category</p><div class=\"tna-fieldset__body\"></div></fieldset></div>"
+      "html": "<div class=\"tna-fieldset tna-fieldset--error\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\" categories-error\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Categories</h4></legend><p id=\"categories-error\" class=\"tna-fieldset__error\"><span class=\"tna-!--visually-hidden\">Error:</span> You must select a category</p><div class=\"tna-fieldset__body\"></div></fieldset></div>"
     },
     {
       "name": "inline checkboxes",

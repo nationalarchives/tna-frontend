@@ -47,17 +47,6 @@
       "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"date\">Enter a start date</label></div><p id=\"date-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Date is not valid</p></div><input type=\"date\" id=\"date\" class=\"tna-date-search\" name=\"date\" value=\"\" aria-describedby=\" date-error\"></div>"
     },
     {
-      "name": "inline date search",
-      "options": {
-        "label": "Enter a start date",
-        "headingSize": "xs",
-        "id": "date",
-        "name": "date",
-        "inline": true
-      },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__contents\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-xs\" for=\"date\">Enter a start date</label></div></div><input type=\"date\" id=\"date\" class=\"tna-date-search\" name=\"date\" value=\"\"></div>"
-    },
-    {
       "name": "max width date search",
       "options": {
         "label": "Enter a start date",

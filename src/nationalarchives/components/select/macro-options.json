@@ -83,12 +83,6 @@
     "description": ""
   },
   {
-    "name": "inline",
-    "type": "boolean",
-    "required": false,
-    "description": "If true, show the select inline rather than vertical."
-  },
-  {
     "name": "formItemClasses",
     "type": "string",
     "required": false,

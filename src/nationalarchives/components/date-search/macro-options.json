@@ -63,12 +63,6 @@
     "description": "If true, make the date search field expand to the full width of the container."
   },
   {
-    "name": "inline",
-    "type": "boolean",
-    "required": false,
-    "description": "If true, show the date search inline rather than vertical."
-  },
-  {
     "name": "formItemClasses",
     "type": "string",
     "required": false,

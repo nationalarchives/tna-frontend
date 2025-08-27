@@ -1,8 +1,4 @@
-@use "../../variables/forms";
-@use "../../tools/a11y";
-@use "../../tools/borders";
 @use "../../tools/colour";
-@use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
@@ -14,9 +10,24 @@
   }
 
   &__legend {
+    margin-bottom: spacing.space(0.5);
   }
 
   &__heading {
+  }
+
+  &__hint {
+    margin-top: 0;
+
+    @include typography.font-size(16);
+    @include colour.colour-font("font-light");
+  }
+
+  &__error {
+    margin-top: 0;
+
+    @include colour.colour-font("form-error-text");
+    @include typography.main-font-weight-bold;
   }
 
   &__body {

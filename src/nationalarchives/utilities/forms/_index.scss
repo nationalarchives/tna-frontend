@@ -8,25 +8,24 @@
   @include spacing.space-above;
 
   &__contents {
-    margin-bottom: spacing.space(0.25);
+    margin-bottom: spacing.space(0.5);
   }
 
   &__header {
-    margin-bottom: spacing.space(0.5);
   }
 
   &__label {
   }
 
   &__hint {
-    margin-top: 0;
+    margin-top: spacing.space(0.25);
 
     @include typography.font-size(16);
     @include colour.colour-font("font-light");
   }
 
   &__error {
-    margin-top: 0;
+    margin-top: spacing.space(0.25);
 
     @include colour.colour-font("form-error-text");
     @include typography.main-font-weight-bold;

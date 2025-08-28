@@ -11,14 +11,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Footer social links now show the `title` attribute or the new `shortTitle` attribute if it is set
 - New panel component added for notification of successful transactions
+- New fieldset component added to group form components
 
 ### Changed
 
 - Updated the position of the newsletter block in the footer component on medium devices to ensure better accessibility with regards to tab order
 - Fixed the padding between headers and scene setters
 - Fixed text alignment in plain chip list
+- Markup for all form components updated to align with fieldset styling
+- `headingLevel` is no longer a required field for form components
+- Attributes `formGroupAttributes` and `formGroupClasses` changed to `formItemAttributes` and `formItemClasses`
 
 ### Deprecated
+
+- Inline option removed for date search, select, text input and textarea form components
+
 ### Removed
 ### Fixed
 ### Security

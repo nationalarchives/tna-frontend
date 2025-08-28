@@ -21,9 +21,8 @@ const argTypes = {
   autocorrect: { control: "boolean" },
   size: { control: "inline-radio", options: ["m", "l", "xl"] },
   rows: { control: "number" },
-  inline: { control: "boolean" },
-  formGroupClasses: { control: "text" },
-  formGroupAttributes: { control: "object" },
+  formItemClasses: { control: "text" },
+  formItemAttributes: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
 };
@@ -53,9 +52,8 @@ const Template = ({
   autocorrect,
   size,
   rows,
-  inline,
-  formGroupClasses,
-  formGroupAttributes,
+  formItemClasses,
+  formItemAttributes,
   classes,
   attributes,
 }) =>
@@ -74,9 +72,8 @@ const Template = ({
       autocorrect,
       size,
       rows,
-      inline,
-      formGroupClasses,
-      formGroupAttributes,
+      formItemClasses,
+      formItemAttributes,
       classes,
       attributes,
     },
@@ -124,16 +121,5 @@ Error.args = {
   error: {
     text: "Enter some feedback",
   },
-  classes: "tna-textarea--demo",
-};
-
-export const Inline = Template.bind({});
-Inline.args = {
-  label: "Enter your feedback",
-  headingLevel: 4,
-  headingSize: "xs",
-  id: "feedback5",
-  name: "feedback5",
-  inline: true,
   classes: "tna-textarea--demo",
 };

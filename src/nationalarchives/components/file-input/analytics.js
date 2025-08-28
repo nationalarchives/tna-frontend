@@ -21,8 +21,8 @@ export default [
           // eslint-disable-next-line no-unused-vars
           group: ($el, $scope) =>
             $scope
-              .closest(".tna-form__group")
-              ?.querySelector(".tna-form__heading")
+              .closest(".tna-form-item")
+              ?.querySelector(".tna-form-item__heading")
               ?.innerText?.trim(),
         },
       },
@@ -35,8 +35,8 @@ export default [
           // eslint-disable-next-line no-unused-vars
           group: ($el, $scope) =>
             $scope
-              .closest(".tna-form__group")
-              ?.querySelector(".tna-form__heading")
+              .closest(".tna-form-item")
+              ?.querySelector(".tna-form-item__heading")
               ?.innerText?.trim(),
         },
       },
@@ -49,8 +49,8 @@ export default [
           // eslint-disable-next-line no-unused-vars
           group: ($el, $scope) =>
             $scope
-              .closest(".tna-form__group")
-              ?.querySelector(".tna-form__heading")
+              .closest(".tna-form-item")
+              ?.querySelector(".tna-form-item__heading")
               ?.innerText?.trim(),
         },
       },

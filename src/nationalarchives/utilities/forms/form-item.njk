@@ -1,0 +1,32 @@
+{% macro tnaFormItem(params, module) %}
+  {%- set containerClasses = [params.classes] if params.classes else [] -%}
+  {%- set classes = containerClasses | join(' ') -%}
+  <div class="tna-form-item{% if params.error %} tna-form-item--error{% endif %}{% if classes %} {{ classes }}{% endif %}"{%- if module %} data-module="{{ module }}"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+    <div class="tna-form-item__header">
+      {%- if params.headingLevel %}
+      <h{{ params.headingLevel }} class="tna-form-item__label tna-heading-{{ params.headingSize or 'm' }}">
+        <label for="{{ params.id }}">
+          {{ params.label }}
+        </label>
+      </h{{ params.headingLevel }}>
+      {%- else %}
+      <label class="tna-form-item__label tna-heading-{{ params.headingSize or 'm' }}" for="{{ params.id }}">
+        {{ params.label }}
+      </label>
+      {%- endif %}
+    </div>
+    {%- if params.hint %}
+    <p id="{{ params.id }}-hint" class="tna-form-item__hint">
+      {{ params.hint }}
+    </p>
+    {%- endif %}
+    {%- if params.error %}
+    <p id="{{ params.id }}-error" class="tna-form-item__error">
+      <span class="tna-!--visually-hidden">Error:</span> {{ params.error.text }}
+    </p>
+    {%- endif %}
+    <div class="tna-form-item__body">
+      {{ caller() if caller else (params.html | safe) }}
+    </div>
+  </div>
+{% endmacro %}

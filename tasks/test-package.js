@@ -94,6 +94,7 @@ const checkExists = [
   ...componentFiles("date-search"),
   ...componentFiles("details"),
   ...componentFiles("error-summary", "ErrorSummary"),
+  ...componentFiles("fieldset"),
   ...componentFiles("file-input", "FileInputDroppable"),
   ...componentFiles("files-list"),
   ...componentFiles("footer", "Footer"),

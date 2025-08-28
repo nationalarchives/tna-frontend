@@ -30,7 +30,7 @@
   //   background-repeat: no-repeat;
   // }
 
-  .tna-form__group--error & {
+  .tna-form-item--error & {
     @include colour.colour-border("form-error-border");
   }
 

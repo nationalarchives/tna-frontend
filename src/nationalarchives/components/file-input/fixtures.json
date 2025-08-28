@@ -5,30 +5,27 @@
       "name": "plain file input",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "file input with a hint",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
         "hint": "This years report as a PDF."
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4><p id=\"file-hint\" class=\"tna-form__hint\">This years report as a PDF.</p></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\" aria-describedby=\"file-hint \"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-hint\" class=\"tna-form-item__hint\">This years report as a PDF.</p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\"file-hint \"></div></div>"
     },
     {
       "name": "file input with an error",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
@@ -36,62 +33,68 @@
           "file": "Enter a name"
         }
       },
-      "html": "<div class=\"tna-form__group tna-form__group--error\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4><p id=\"file-error\" class=\"tna-form__error-message\"><span class=\"tna-!--visually-hidden\">Error:</span> </p></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\" aria-describedby=\" file-error\"></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> </p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\" file-error\"></div></div>"
     },
     {
       "name": "multiple",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
         "multiple": true
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\" multiple></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" multiple></div></div>"
     },
     {
       "name": "drag and drop support",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
         "droppable": true
       },
-      "html": "<div class=\"tna-form__group\" data-module=\"tna-file-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-file-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "multiple drag and drop support",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
         "multiple": true,
         "droppable": true
       },
-      "html": "<div class=\"tna-form__group\" data-module=\"tna-file-input\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\" multiple></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-file-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" multiple></div></div>"
     },
     {
-      "name": "with classes",
+      "name": "heading level",
       "options": {
         "label": "Upload a file",
         "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
+        "name": "file"
+      },
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"file\">Upload a file</label></h4></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "label": "Upload a file",
+        "headingSize": "m",
+        "id": "file",
         "name": "file",
         "classes": "test-class"
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input test-class\" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input test-class\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "with attributes",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
@@ -99,33 +102,31 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form__group\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\" data-testattribute=\"foobar\"></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" data-testattribute=\"foobar\"></div></div>"
     },
     {
       "name": "with form group classes",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
-        "formGroupClasses": "test-class"
+        "formItemClasses": "test-class"
       },
-      "html": "<div class=\"tna-form__group test-class\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item test-class\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
       "name": "with form group attributes",
       "options": {
         "label": "Upload a file",
-        "headingLevel": 4,
         "headingSize": "m",
         "id": "file",
         "name": "file",
-        "formGroupAttributes": {
+        "formItemAttributes": {
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-form__group\" data-testattribute=\"foobar\"><div class=\"tna-form__group-contents\"><h4 class=\"tna-form__heading tna-form__heading--m\"><label class=\"tna-form__label\" for=\"file\">Upload a file</label></h4></div><input id=\"file\" class=\"tna-file-input \" name=\"file\" type=\"file\"></div>"
+      "html": "<div class=\"tna-form-item\" data-testattribute=\"foobar\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     }
   ]
 }

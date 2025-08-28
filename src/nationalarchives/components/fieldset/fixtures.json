@@ -1,0 +1,54 @@
+{
+  "component": "fieldset",
+  "fixtures": [
+    {
+      "name": "plain fieldset",
+      "options": {
+        "legend": "Fieldset",
+        "headingSize": "m",
+        "id": "fieldset",
+        "name": "fieldset",
+        "html": "<div>CONTENT</div>"
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+    },
+    {
+      "name": "heading level",
+      "options": {
+        "legend": "Fieldset",
+        "headingSize": "m",
+        "headingLevel": 4,
+        "id": "fieldset",
+        "name": "fieldset",
+        "html": "<div>CONTENT</div>"
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Fieldset</h4></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "legend": "Fieldset",
+        "headingSize": "m",
+        "id": "fieldset",
+        "name": "fieldset",
+        "html": "<div>CONTENT</div>",
+        "classes": "checkboxes__test-class"
+      },
+      "html": "<div class=\"tna-fieldset checkboxes__test-class\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "legend": "Fieldset",
+        "headingSize": "m",
+        "id": "fieldset",
+        "name": "fieldset",
+        "html": "<div>CONTENT</div>",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-fieldset\" data-testattribute=\"foobar\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+    }
+  ]
+}

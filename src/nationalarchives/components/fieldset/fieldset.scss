@@ -2,14 +2,17 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.tna-form-item {
+.tna-fieldset {
   @include spacing.space-above;
 
-  &__header {
+  &__inner {
+    border: none;
   }
 
-  &__label {
-    display: block;
+  &__legend {
+  }
+
+  &__heading {
   }
 
   &__hint {
@@ -28,6 +31,14 @@
 
   &__body {
     margin-top: spacing.space(0.5);
+
+    display: flex;
+    flex-direction: column;
+    gap: spacing.space(1.5);
+
+    > * {
+      margin-top: 0;
+    }
   }
 
   &--error {

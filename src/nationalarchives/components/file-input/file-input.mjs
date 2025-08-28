@@ -1,9 +1,10 @@
 export class FileInputDroppable {
   constructor($module) {
     this.$module = $module;
-    this.$input = $module && $module.querySelector(".tna-file-input");
+    this.$body = $module && $module.querySelector(".tna-form-item__body");
+    this.$input = this.$body && this.$body.querySelector(".tna-file-input");
 
-    if (!this.$module || !this.$input) {
+    if (!this.$module || !this.$body || !this.$input) {
       return;
     }
 
@@ -11,7 +12,7 @@ export class FileInputDroppable {
 
     this.$droppableArea = document.createElement("div");
     this.$droppableArea.classList.add("tna-file-input__droppable");
-    this.$module.insertBefore(this.$droppableArea, this.$input);
+    this.$body.insertBefore(this.$droppableArea, this.$input);
     this.$droppableArea.appendChild(this.$input);
 
     this.$pseudoSelectFileText = document.createElement("span");

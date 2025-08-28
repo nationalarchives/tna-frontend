@@ -1,30 +1,24 @@
-{%- set containerClasses = [params.formGroupClasses] if params.formGroupClasses else [] -%}
-{%- set inputClasses = [params.classes] if params.classes else [] -%}
-{%- set classes = containerClasses | join(' ') -%}
-<div class="tna-search-field{% if classes %} {{ classes }}{% endif %}" {%- for attribute, value in params.formGroupAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <div class="tna-form__group">
-    <div class="tna-form__group-contents">
-      <h{{ params.headingLevel }} class="tna-form__heading tna-form__heading--{{ params.headingSize or 'm' }}">
-        <label class="tna-form__label" for="{{ params.id }}">
-          {{ params.label }}
-        </label>
-      </h{{ params.headingLevel }}>
-      {%- if params.hint %}
-      <p id="{{ params.id }}-hint" class="tna-form__hint">
-        {{ params.hint }}
-      </p>
-      {%- endif %}
-    </div>
-    <div class="tna-search-field__fields">
-      <input type="search" id="{{ params.id }}" class="tna-search-field__input {{ inputClasses | join(' ') }}" name="{{ params.name }}" value="{{ params.value }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}"
-      {%- if params.hint %} aria-describedby="{{ params.id }}-hint"{% endif %}
-      {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
-      {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
-      {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-      <button type="submit" class="tna-button tna-search-field__button">
-        Search
-        <i class="fa-solid fa-fw fa-arrow-right tna-!--hide-on-tiny" aria-hidden="true"></i>
-      </button>
-    </div>
+{% from "nationalarchives/utilities/forms/form-item.njk" import tnaFormItem %}
+
+{%- call tnaFormItem({
+  headingLevel: params.headingLevel,
+  headingSize: params.headingSize,
+  id: params.id,
+  label: params.label,
+  hint: params.hint,
+  error: params.error,
+  classes: params.formItemClasses,
+  attributes: params.formItemAttributes
+}) %}
+  <div class="tna-search-field">
+    <input type="search" id="{{ params.id }}" class="tna-search-field__input{% if params.classes %} {{ params.classes }}{% endif %}" name="{{ params.name }}" value="{{ params.value }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}"
+    {%- if params.hint %} aria-describedby="{{ params.id }}-hint"{% endif %}
+    {%- if params.maxLength %} maxlength="{{ params.maxLength }}"{% endif %}
+    {%- if params.inputmode %} inputmode="{{ params.inputmode }}"{% endif %}
+    {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+    <button type="submit" class="tna-button tna-search-field__button">
+      Search
+      <i class="fa-solid fa-fw fa-arrow-right tna-!--hide-on-tiny" aria-hidden="true"></i>
+    </button>
   </div>
-</div>
+{%- endcall %}

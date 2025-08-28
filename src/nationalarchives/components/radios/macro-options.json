@@ -8,7 +8,7 @@
   {
     "name": "headingLevel",
     "type": "number",
-    "required": true,
+    "required": false,
     "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
   },
   {

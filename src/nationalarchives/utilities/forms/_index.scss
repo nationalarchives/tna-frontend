@@ -1,6 +1,4 @@
-@use "../../utilities/typography" as typographyUtilities;
 @use "../../tools/colour";
-@use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
@@ -15,7 +13,7 @@
   }
 
   &__hint {
-    margin-top: spacing.space(0.25);
+    margin-top: 0;
 
     @include typography.font-size(16);
     @include colour.colour-font("font-light");

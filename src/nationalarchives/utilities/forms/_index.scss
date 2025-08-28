@@ -13,7 +13,7 @@
   }
 
   &__hint {
-    margin-top: 0;
+    margin-top: spacing.space(0.125);
 
     @include typography.font-size(16);
     @include colour.colour-font("font-light");

@@ -1,29 +1,35 @@
-import SearchField from "./template.njk";
+import SearchField from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  label: { control: "text" },
-  headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
-  id: { control: "text" },
-  name: { control: "text" },
-  hint: { control: "text" },
-  value: { control: "text" },
-  formItemClasses: { control: "text" },
-  formItemAttributes: { control: "object" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+const argTypes = Object.fromEntries(
+  Object.entries({
+    label: { control: "text" },
+    headingLevel: { control: { type: "number", min: 1, max: 6 } },
+    headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+    id: { control: "text" },
+    name: { control: "text" },
+    hint: { control: "text" },
+    value: { control: "text" },
+    formItemClasses: { control: "text" },
+    formItemAttributes: { control: "object" },
+    classes: { control: "text" },
+    attributes: { control: "object" },
+  }).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      description: macroOptions.find((option) => option.name === key)?.description,
+    },
+  ])
+);
 
 export default {
   title: "Components/Search field",
   argTypes,
+  render: (params) => {
+    return nunjucks.renderString(SearchField, { params });
+  },
 };
 
 export const Standard = {

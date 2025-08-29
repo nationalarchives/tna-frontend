@@ -1,29 +1,36 @@
-import Picture from "./template.njk";
+import Picture from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
-
-const argTypes = {
-  src: { control: "text" },
-  width: { control: "number" },
-  height: { control: "number" },
-  sources: { control: "object" },
-  caption: { control: "text" },
-  informationLabelOpen: { control: "text" },
-  informationLabelClose: { control: "text" },
-  informationItemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
-  information: { control: "object" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
 
 export default {
   title: "Components/Picture",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      src: { control: "text" },
+      width: { control: "number" },
+      height: { control: "number" },
+      sources: { control: "object" },
+      caption: { control: "text" },
+      informationLabelOpen: { control: "text" },
+      informationLabelClose: { control: "text" },
+      informationItemHeadingLevel: {
+        control: { type: "number", min: 1, max: 6 },
+      },
+      information: { control: "object" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
+  render: (params) => {
+    return nunjucks.renderString(Picture, { params });
+  },
 };
 
 export const Standard = {

@@ -1,6 +1,6 @@
 import Accordion from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { fireEvent, expect } from "@storybook/test";
+import { fireEvent, expect } from "storybook/test";
 
 const argTypes = {
   itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },

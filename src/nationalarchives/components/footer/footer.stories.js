@@ -1,6 +1,6 @@
 import Footer from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { within, expect } from "@storybook/test";
+import { within, expect } from "storybook/test";
 import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {

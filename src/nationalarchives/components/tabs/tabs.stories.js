@@ -1,6 +1,6 @@
 import Tabs from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "@storybook/test";
+import { within, userEvent, expect } from "storybook/test";
 
 const argTypes = {
   itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },

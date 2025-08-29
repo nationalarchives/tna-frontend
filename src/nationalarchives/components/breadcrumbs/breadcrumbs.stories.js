@@ -1,6 +1,6 @@
 import Breadcrumbs from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "@storybook/test";
+import { within, userEvent, expect } from "storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {

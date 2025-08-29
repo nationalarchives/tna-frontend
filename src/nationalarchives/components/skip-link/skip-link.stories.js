@@ -1,6 +1,6 @@
 import SkipLink from "./template.njk";
 import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "@storybook/test";
+import { within, userEvent, expect } from "storybook/test";
 
 const argTypes = {
   text: { control: "text" },

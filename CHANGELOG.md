@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `maxLength` property on text input and search field components (if required, use `attributes` property)
 
 ### Fixed
+
+- Removed inline fixtures and macro options from date input and text input components
+
 ### Security
 
 ## [0.24.0](https://github.com/nationalarchives/tna-frontend/compare/v0.23.1...v0.24.0) - 2025-08-28

@@ -108,12 +108,6 @@
     "description": ""
   },
   {
-    "name": "inline",
-    "type": "boolean",
-    "required": false,
-    "description": "If true, show the text input inline rather than vertical."
-  },
-  {
     "name": "formItemClasses",
     "type": "string",
     "required": false,

@@ -83,12 +83,6 @@
     ]
   },
   {
-    "name": "inline",
-    "type": "boolean",
-    "required": false,
-    "description": "If true, show the date inputs inline rather than vertical."
-  },
-  {
     "name": "progressive",
     "type": "boolean",
     "required": false,

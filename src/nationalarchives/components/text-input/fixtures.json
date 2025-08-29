@@ -47,17 +47,6 @@
       "html": "<div class=\"tna-form-item tna-form-item--error\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><p id=\"name-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Enter a name</p><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" aria-describedby=\" name-error\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
-      "name": "inline text input",
-      "options": {
-        "label": "Enter your first name",
-        "headingSize": "m",
-        "id": "name",
-        "name": "name",
-        "inline": true
-      },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
-    },
-    {
       "name": "text input size",
       "options": {
         "label": "Enter your first name",

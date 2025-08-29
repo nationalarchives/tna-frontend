@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Deprecated
 ### Removed
+
+- Removed `maxLength` property on text input and search field components (if required, use `attributes` property)
+
 ### Fixed
 ### Security
 

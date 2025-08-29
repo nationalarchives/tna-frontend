@@ -1,35 +1,31 @@
-import Files from "./template.njk";
+import Files from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
-  items: { control: "object" },
-  fullAreaClick: { control: "boolean" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+const argTypes = Object.fromEntries(
+  Object.entries({
+    itemHeadingLevel: { control: { type: "number", min: 1, max: 6 } },
+    items: { control: "object" },
+    fullAreaClick: { control: "boolean" },
+    classes: { control: "text" },
+    attributes: { control: "object" },
+  }).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      description: macroOptions.find((option) => option.name === key)
+        ?.description,
+    },
+  ]),
+);
 
 export default {
   title: "Components/Files list",
   argTypes,
+  render: (params) => {
+    return nunjucks.renderString(Files, { params });
+  },
 };
-
-const Template = ({
-  itemHeadingLevel,
-  items,
-  fullAreaClick,
-  classes,
-  attributes,
-}) =>
-  Files({
-    params: { itemHeadingLevel, items, fullAreaClick, classes, attributes },
-  });
 
 export const Default = {
   args: {

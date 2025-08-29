@@ -1,57 +1,39 @@
-import Fieldset from "./template.njk";
+import Fieldset from "./template.njk?raw";
 import TextInput from "../text-input/template.njk";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  legend: { control: "text" },
-  headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: {
-    control: "inline-radio",
-    options: ["xs", "s", "m", "l", "xl"],
-  },
-  html: { control: "text" },
-  id: { control: "text" },
-  hint: { control: "text" },
-  error: { control: "object" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+const argTypes = Object.fromEntries(
+  Object.entries({
+    legend: { control: "text" },
+    headingLevel: { control: { type: "number", min: 1, max: 6 } },
+    headingSize: {
+      control: "inline-radio",
+      options: ["xs", "s", "m", "l", "xl"],
+    },
+    html: { control: "text" },
+    id: { control: "text" },
+    hint: { control: "text" },
+    error: { control: "object" },
+    classes: { control: "text" },
+    attributes: { control: "object" },
+  }).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      description: macroOptions.find((option) => option.name === key)
+        ?.description,
+    },
+  ]),
+);
 
 export default {
   title: "Components/Fieldset",
   argTypes,
+  render: (params) => {
+    return nunjucks.renderString(Fieldset, { params });
+  },
 };
-
-const Template = ({
-  legend,
-  headingLevel,
-  headingSize,
-  html,
-  id,
-  hint,
-  error,
-  classes,
-  attributes,
-}) =>
-  Fieldset({
-    params: {
-      legend,
-      headingLevel,
-      headingSize,
-      html,
-      id,
-      hint,
-      error,
-      classes,
-      attributes,
-    },
-  });
 
 export const Standard = {
   args: {

@@ -2,29 +2,27 @@ import Button from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  text: { control: "text" },
-  html: { control: "text" },
-  href: { control: "text" },
-  title: { control: "text" },
-  icon: { control: "text" },
-  iconSvg: { control: "text" },
-  accent: { control: "boolean" },
-  small: { control: "boolean" },
-  plain: { control: "boolean" },
-  iconOnly: { control: "boolean" },
-  iconOnlyOnMobile: { control: "boolean" },
-  rightAlignIcon: { control: "boolean" },
-  buttonElement: { control: "boolean" },
-  buttonType: { control: "text" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
 export default {
   title: "Components/Button",
   argTypes: Object.fromEntries(
-    Object.entries(argTypes).map(([key, value]) => [
+    Object.entries({
+      text: { control: "text" },
+      html: { control: "text" },
+      href: { control: "text" },
+      title: { control: "text" },
+      icon: { control: "text" },
+      iconSvg: { control: "text" },
+      accent: { control: "boolean" },
+      small: { control: "boolean" },
+      plain: { control: "boolean" },
+      iconOnly: { control: "boolean" },
+      iconOnlyOnMobile: { control: "boolean" },
+      rightAlignIcon: { control: "boolean" },
+      buttonElement: { control: "boolean" },
+      buttonType: { control: "text" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
       key,
       {
         ...value,

@@ -26,35 +26,6 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  src,
-  width,
-  height,
-  sources,
-  caption,
-  informationLabelOpen,
-  informationLabelClose,
-  informationItemHeadingLevel,
-  information,
-  classes,
-  attributes,
-}) =>
-  Picture({
-    params: {
-      src,
-      width,
-      height,
-      sources,
-      caption,
-      informationLabelOpen,
-      informationLabelClose,
-      informationItemHeadingLevel,
-      information,
-      classes,
-      attributes,
-    },
-  });
-
 export const Standard = {
   args: {
     src: "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",

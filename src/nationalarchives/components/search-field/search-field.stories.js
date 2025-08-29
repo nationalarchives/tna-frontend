@@ -26,35 +26,6 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  label,
-  headingLevel,
-  headingSize,
-  id,
-  name,
-  hint,
-  value,
-  formItemClasses,
-  formItemAttributes,
-  classes,
-  attributes,
-}) =>
-  SearchField({
-    params: {
-      label,
-      headingLevel,
-      headingSize,
-      id,
-      name,
-      hint,
-      value,
-      formItemClasses,
-      formItemAttributes,
-      classes,
-      attributes,
-    },
-  });
-
 export const Standard = {
   args: {
     label: "Catalogue search results",

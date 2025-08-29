@@ -1,35 +1,30 @@
-import PhaseBanner from "./template.njk";
+import PhaseBanner from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  phase: {
-    control: "text",
-  },
-  message: { control: "text" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+const argTypes = Object.fromEntries(
+  Object.entries({
+    phase: { control: "text" },
+    message: { control: "text" },
+    classes: { control: "text" },
+    attributes: { control: "object" },
+  }).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      description: macroOptions.find((option) => option.name === key)
+        ?.description,
+    },
+  ]),
+);
 
 export default {
   title: "Components/Phase banner",
   argTypes,
+  render: (params) => {
+    return nunjucks.renderString(PhaseBanner, { params });
+  },
 };
-
-const Template = ({ phase, message, classes, attributes }) =>
-  PhaseBanner({
-    params: {
-      phase,
-      message,
-      classes,
-      attributes,
-    },
-  });
 
 export const Standard = {
   args: {

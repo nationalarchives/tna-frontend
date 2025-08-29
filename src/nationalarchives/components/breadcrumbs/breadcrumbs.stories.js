@@ -1,25 +1,32 @@
-import Breadcrumbs from "./template.njk";
+import Breadcrumbs from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
-const argTypes = {
-  items: { control: "object" },
-  noCollapse: { control: "boolean" },
-  labelText: { control: "text" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+const argTypes = Object.fromEntries(
+  Object.entries({
+    items: { control: "object" },
+    noCollapse: { control: "boolean" },
+    labelText: { control: "text" },
+    classes: { control: "text" },
+    attributes: { control: "object" },
+  }).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      description: macroOptions.find((option) => option.name === key)
+        ?.description,
+    },
+  ]),
+);
 
 export default {
   title: "Components/Breadcrumbs",
   argTypes,
+  render: (params) => {
+    return nunjucks.renderString(Breadcrumbs, { params });
+  },
 };
 
 const Template = ({ items, noCollapse, labelText, classes, attributes }) =>

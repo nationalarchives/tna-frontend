@@ -1,71 +1,41 @@
-import Select from "./template.njk";
+import Select from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
-
-const argTypes = {
-  label: { control: "text" },
-  headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: {
-    control: "inline-radio",
-    options: ["xs", "s", "m", "l", "xl"],
-  },
-  id: { control: "text" },
-  name: { control: "text" },
-  hint: { control: "text" },
-  error: { control: "object" },
-  items: { control: "object" },
-  selected: { control: "text" },
-  size: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
-  formItemClasses: { control: "text" },
-  formItemAttributes: { control: "object" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
 
 export default {
   title: "Components/Select",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      label: { control: "text" },
+      headingLevel: { control: { type: "number", min: 1, max: 6 } },
+      headingSize: {
+        control: "inline-radio",
+        options: ["xs", "s", "m", "l", "xl"],
+      },
+      id: { control: "text" },
+      name: { control: "text" },
+      hint: { control: "text" },
+      error: { control: "object" },
+      items: { control: "object" },
+      selected: { control: "text" },
+      size: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+      formItemClasses: { control: "text" },
+      formItemAttributes: { control: "object" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
+  render: (params) => {
+    return nunjucks.renderString(Select, { params });
+  },
 };
-
-const Template = ({
-  label,
-  headingLevel,
-  headingSize,
-  id,
-  name,
-  hint,
-  error,
-  items,
-  selected,
-  size,
-  formItemClasses,
-  formItemAttributes,
-  classes,
-  attributes,
-}) =>
-  Select({
-    params: {
-      label,
-      headingLevel,
-      headingSize,
-      id,
-      name,
-      hint,
-      error,
-      items,
-      selected,
-      size,
-      formItemClasses,
-      formItemAttributes,
-      classes,
-      attributes,
-    },
-  });
 
 export const Standard = {
   args: {
@@ -118,31 +88,6 @@ export const Preselected = {
   },
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
-  label: "Sort by",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "sort3",
-  name: "sort3",
-  hint: "Select a sort.",
-  items: [
-    {
-      text: "Relevance",
-      value: "relevance",
-    },
-    {
-      text: "Date",
-      value: "date",
-    },
-    {
-      text: "Title",
-      value: "title",
-    },
-  ],
-  classes: "tna-select--demo",
-};
-
 export const WithHint = {
   args: {
     label: "Sort by",
@@ -167,6 +112,4 @@ export const WithHint = {
     ],
     classes: "tna-select--demo",
   },
-};
-  classes: "tna-select--demo",
 };

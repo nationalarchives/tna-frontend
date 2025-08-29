@@ -1,46 +1,53 @@
-import Hero from "./template.njk";
+import Hero from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
-const argTypes = {
-  supertitle: { control: "text" },
-  title: { control: "text" },
-  headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
-  body: { control: "text" },
-  text: { control: "text" },
-  imageSrc: { control: { type: "file", accept: ".jpg" } },
-  imageAlt: { control: "text" },
-  imageWidth: { control: { type: "number", min: 1 } },
-  imageHeight: { control: { type: "number", min: 1 } },
-  imageType: { control: "text" },
-  imageSources: { control: "object" },
-  imageCaption: { control: "text" },
-  actions: { control: "object" },
-  style: {
-    control: "inline-radio",
-    options: ["none", "contrast", "tint", "accent"],
-  },
-  layout: {
-    control: "inline-radio",
-    options: ["plain", "shift", "split", "layer"],
-  },
-  leftBorder: { control: "boolean" },
-  narrow: { control: "boolean" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+const argTypes = Object.fromEntries(
+  Object.entries({
+    supertitle: { control: "text" },
+    title: { control: "text" },
+    headingLevel: { control: { type: "number", min: 1, max: 6 } },
+    headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+    body: { control: "text" },
+    text: { control: "text" },
+    imageSrc: { control: { type: "file", accept: ".jpg" } },
+    imageAlt: { control: "text" },
+    imageWidth: { control: { type: "number", min: 1 } },
+    imageHeight: { control: { type: "number", min: 1 } },
+    imageType: { control: "text" },
+    imageSources: { control: "object" },
+    imageCaption: { control: "text" },
+    actions: { control: "object" },
+    style: {
+      control: "inline-radio",
+      options: ["none", "contrast", "tint", "accent"],
+    },
+    layout: {
+      control: "inline-radio",
+      options: ["plain", "shift", "split", "layer"],
+    },
+    leftBorder: { control: "boolean" },
+    narrow: { control: "boolean" },
+    classes: { control: "text" },
+    attributes: { control: "object" },
+  }).map(([key, value]) => [
+    key,
+    {
+      ...value,
+      description: macroOptions.find((option) => option.name === key)
+        ?.description,
+    },
+  ]),
+);
 
 export default {
   title: "Components/Hero",
   argTypes,
+  render: (params) => {
+    return nunjucks.renderString(Hero, { params });
+  },
 };
 
 const Template = ({

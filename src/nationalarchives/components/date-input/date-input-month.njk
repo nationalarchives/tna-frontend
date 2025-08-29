@@ -3,6 +3,6 @@
   <label for="{{ params.id }}-month" class="tna-date-input__item-label">
     Month
   </label>
-  <input type="text" id="{{ params.id }}-month" value="{{ params.value.month if params.value }}" name="{{ params.name }}-month" class="tna-date-input__item-input{% if inputClasses %} {{ inputClasses }}{% endif %}" inputmode="numeric"{% if params.autofillDateOfBirth %} autocomplete="bday-month"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <input type="text" id="{{ params.id }}-month" value="{{ params.value.month if params.value }}" name="{{ params.name }}-month" class="tna-date-input__item-input{% if params.classes %} {{ params.classes }}{% endif %}" inputmode="numeric"{% if params.autofillDateOfBirth %} autocomplete="bday-month"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
 </div>
 {%- endmacro %}

@@ -13,7 +13,7 @@
   classes: params.formItemClasses,
   attributes: params.formItemAttributes
 }) %}
-  <div class="tna-date-input{% if classes %} {{ params.classes }}{% endif %}" id="{{ params.id }}"{% if params.progressive %} data-module="tna-date-input-progressive"{% endif %}>
+  <div class="tna-date-input" id="{{ params.id }}"{% if params.progressive %} data-module="tna-date-input-progressive"{% endif %}>
     {%- set fields = params.fields if params.fields else ['d', 'm', 'y'] -%}
     {%- if params.progressive %}
       {%- if params.fields %}

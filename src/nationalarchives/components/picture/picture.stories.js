@@ -55,25 +55,26 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  src: "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
-  alt: "The National Archives office",
-  width: 600,
-  height: 400,
-  caption: "<p>This is a pretty image</p>",
-  informationItemHeadingLevel: 3,
-  information: [
-    {
-      id: "transcript",
-      title: "Transcript",
-      body: "<p>Lorem ipsum transcript</p>",
-    },
-    {
-      id: "translation",
-      title: "Translation",
-      body: "<p>Lorem ipsum translation</p>",
-    },
-  ],
-  classes: "tna-picture--demo",
+export const Standard = {
+  args: {
+    src: "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+    alt: "The National Archives office",
+    width: 600,
+    height: 400,
+    caption: "<p>This is a pretty image</p>",
+    informationItemHeadingLevel: 3,
+    information: [
+      {
+        id: "transcript",
+        title: "Transcript",
+        body: "<p>Lorem ipsum transcript</p>",
+      },
+      {
+        id: "translation",
+        title: "Translation",
+        body: "<p>Lorem ipsum translation</p>",
+      },
+    ],
+    classes: "tna-picture--demo",
+  },
 };

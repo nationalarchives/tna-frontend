@@ -37,25 +37,26 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  items: [
-    {
-      label: "AIR - Air Ministry and Royal Air Force records",
-      href: "#",
-      title: "Remove Air Ministry and Royal Air Force records filter",
-    },
-    {
-      label: "Item",
-      href: "#",
-      title: "Remove item filter",
-    },
-    {
-      label: "Closed Or Retained Document, Open Description",
-      href: "#",
-      title: "Remove filter for Closed Or Retained Document, Open Description",
-    },
-  ],
-  removeAllHref: "#",
-  classes: "tna-filters--demo",
+export const Standard = {
+  args: {
+    items: [
+      {
+        label: "AIR - Air Ministry and Royal Air Force records",
+        href: "#",
+        title: "Remove Air Ministry and Royal Air Force records filter",
+      },
+      {
+        label: "Item",
+        href: "#",
+        title: "Remove item filter",
+      },
+      {
+        label: "Closed Or Retained Document, Open Description",
+        href: "#",
+        title: "Remove filter for Closed Or Retained Document, Open Description",
+      },
+    ],
+    removeAllHref: "#",
+    classes: "tna-filters--demo",
+  },
 };

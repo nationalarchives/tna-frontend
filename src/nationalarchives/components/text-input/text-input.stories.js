@@ -140,25 +140,27 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  label: "Enter your first name",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "firstname1",
-  name: "firstname1",
-  classes: "tna-text-input--demo",
+export const Standard = {
+  args: {
+    label: "Enter your first name",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "firstname1",
+    name: "firstname1",
+    classes: "tna-text-input--demo",
+  },
 };
 
-export const Predefined = Template.bind({});
-Predefined.args = {
-  label: "Edit your first name",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "firstname2",
-  name: "firstname2",
-  value: "John",
-  classes: "tna-text-input--demo",
+export const Predefined = {
+  args: {
+    label: "Edit your first name",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "firstname2",
+    name: "firstname2",
+    value: "John",
+    classes: "tna-text-input--demo",
+  },
 };
 
 export const WithHint = Template.bind({});

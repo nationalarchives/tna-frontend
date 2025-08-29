@@ -50,52 +50,51 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  logo: {
-    strapline: "Design System",
-    href: "#/",
+export const Standard = {
+  args: {
+    logo: {
+      strapline: "Design System",
+      href: "#/",
+    },
+    topNavigation: [
+      {
+        text: "Top item 1",
+        href: "#/top-1",
+      },
+      {
+        text: "Top item 2",
+        href: "#/top-2",
+        icon: "heart",
+      },
+    ],
+    navigation: [
+      {
+        text: "Alpha",
+        href: "#/alpha",
+        selected: true,
+      },
+      {
+        text: "Beta",
+        href: "#/beta",
+      },
+      {
+        text: "Gamma",
+        href: "#/gamma",
+      },
+    ],
+    classes: "tna-header--demo",
   },
-  topNavigation: [
-    {
-      text: "Top item 1",
-      href: "#/top-1",
-    },
-    {
-      text: "Top item 2",
-      href: "#/top-2",
-      icon: "heart",
-    },
-  ],
-  navigation: [
-    {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
-    },
-    {
-      text: "Beta",
-      href: "#/beta",
-    },
-    {
-      text: "Gamma",
-      href: "#/gamma",
-    },
-  ],
-  classes: "tna-header--demo",
-};
-Standard.play = async ({ canvasElement }) => {
-  await new Promise((r) => setTimeout(r, 100));
-
-  const $navigationItems = canvasElement.querySelector(
-    `.tna-header__navigation-items`,
-  );
-  const $navigationToggle = canvasElement.querySelector(
-    `.tna-header__navigation-button`,
-  );
-
-  await expect($navigationItems).toBeVisible();
-  await expect($navigationToggle).not.toBeVisible();
+  play: async ({ canvasElement }) => {
+    await new Promise((r) => setTimeout(r, 100));
+    const $navigationItems = canvasElement.querySelector(
+      `.tna-header__navigation-items`,
+    );
+    const $navigationToggle = canvasElement.querySelector(
+      `.tna-header__navigation-button`,
+    );
+    await expect($navigationItems).toBeVisible();
+    await expect($navigationToggle).not.toBeVisible();
+  },
 };
 
 export const Accent = Template.bind({});

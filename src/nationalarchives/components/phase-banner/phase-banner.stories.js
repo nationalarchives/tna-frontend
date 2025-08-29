@@ -31,8 +31,9 @@ const Template = ({ phase, message, classes, attributes }) =>
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  phase: "beta",
-  message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+export const Standard = {
+  args: {
+    phase: "beta",
+    message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+  },
 };

@@ -55,34 +55,37 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  label: "Catalogue search results",
-  headingLevel: 1,
-  headingSize: "l",
-  id: "search1",
-  name: "q",
-  classes: "tna-search-field--demo",
+export const Standard = {
+  args: {
+    label: "Catalogue search results",
+    headingLevel: 1,
+    headingSize: "l",
+    id: "search1",
+    name: "q",
+    classes: "tna-search-field--demo",
+  },
 };
 
-export const Predefined = Template.bind({});
-Predefined.args = {
-  label: "Catalogue search results",
-  headingLevel: 1,
-  headingSize: "l",
-  id: "search2",
-  name: "q",
-  value: "badgers",
-  classes: "tna-search-field--demo",
+export const Predefined = {
+  args: {
+    label: "Catalogue search results",
+    headingLevel: 1,
+    headingSize: "l",
+    id: "search2",
+    name: "q",
+    value: "badgers",
+    classes: "tna-search-field--demo",
+  },
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
-  label: "Catalogue search results",
-  headingLevel: 1,
-  headingSize: "l",
-  id: "search3",
-  name: "q",
-  hint: "Try searching for something interesting",
-  classes: "tna-search-field--demo",
+export const WithHint = {
+  args: {
+    label: "Catalogue search results",
+    headingLevel: 1,
+    headingSize: "l",
+    id: "search3",
+    name: "q",
+    hint: "Try searching for something interesting",
+    classes: "tna-search-field--demo",
+  },
 };

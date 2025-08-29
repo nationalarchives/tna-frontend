@@ -33,31 +33,32 @@ const Template = ({ items, noCollapse, labelText, classes, attributes }) =>
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  items: [
-    {
-      text: "Alpha",
-      href: "#/alpha",
-    },
-    {
-      text: "Beta",
-      href: "#/beta",
-    },
-    {
-      text: "Gamma",
-      href: "#/gamma",
-    },
-    {
-      text: "Delta",
-      href: "#/delta",
-    },
-    {
-      text: "Epsilon",
-      href: "#/epsilon",
-    },
-  ],
-  classes: "tna-breadcrumbs--demo",
+export const Standard = {
+  args: {
+    items: [
+      {
+        text: "Alpha",
+        href: "#/alpha",
+      },
+      {
+        text: "Beta",
+        href: "#/beta",
+      },
+      {
+        text: "Gamma",
+        href: "#/gamma",
+      },
+      {
+        text: "Delta",
+        href: "#/delta",
+      },
+      {
+        text: "Epsilon",
+        href: "#/epsilon",
+      },
+    ],
+    classes: "tna-breadcrumbs--demo",
+  },
 };
 
 export const NoCollapse = Template.bind({});

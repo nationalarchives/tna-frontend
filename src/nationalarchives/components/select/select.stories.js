@@ -67,53 +67,55 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  label: "Sort by",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "sort1",
-  name: "sort1",
-  items: [
-    {
-      text: "Relevance",
-      value: "relevance",
-    },
-    {
-      text: "Date",
-      value: "date",
-    },
-    {
-      text: "Title",
-      value: "title",
-    },
-  ],
-  classes: "tna-select--demo",
+export const Standard = {
+  args: {
+    label: "Sort by",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "sort1",
+    name: "sort1",
+    items: [
+      {
+        text: "Relevance",
+        value: "relevance",
+      },
+      {
+        text: "Date",
+        value: "date",
+      },
+      {
+        text: "Title",
+        value: "title",
+      },
+    ],
+    classes: "tna-select--demo",
+  },
 };
 
-export const Preselected = Template.bind({});
-Preselected.args = {
-  label: "Sort by",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "sort2",
-  name: "sort2",
-  items: [
-    {
-      text: "Relevance",
-      value: "relevance",
-    },
-    {
-      text: "Date",
-      value: "date",
-    },
-    {
-      text: "Title",
-      value: "title",
-    },
-  ],
-  selected: "date",
-  classes: "tna-select--demo",
+export const Preselected = {
+  args: {
+    label: "Sort by",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "sort2",
+    name: "sort2",
+    items: [
+      {
+        text: "Relevance",
+        value: "relevance",
+      },
+      {
+        text: "Date",
+        value: "date",
+      },
+      {
+        text: "Title",
+        value: "title",
+      },
+    ],
+    selected: "date",
+    classes: "tna-select--demo",
+  },
 };
 
 export const WithHint = Template.bind({});
@@ -141,29 +143,30 @@ WithHint.args = {
   classes: "tna-select--demo",
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  label: "Sort by",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "sort4",
-  name: "sort4",
-  error: {
-    text: "You must select a type",
+export const WithHint = {
+  args: {
+    label: "Sort by",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "sort3",
+    name: "sort3",
+    hint: "Sort by something else",
+    items: [
+      {
+        text: "Relevance",
+        value: "relevance",
+      },
+      {
+        text: "Date",
+        value: "date",
+      },
+      {
+        text: "Title",
+        value: "title",
+      },
+    ],
+    classes: "tna-select--demo",
   },
-  items: [
-    {
-      text: "Relevance",
-      value: "relevance",
-    },
-    {
-      text: "Date",
-      value: "date",
-    },
-    {
-      text: "Title",
-      value: "title",
-    },
-  ],
+};
   classes: "tna-select--demo",
 };

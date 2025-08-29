@@ -64,25 +64,27 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  label: "Upload a file",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "file1",
-  name: "file1",
-  classes: "tna-text-input--demo",
+export const Standard = {
+  args: {
+    label: "Upload a file",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "file1",
+    name: "file1",
+    classes: "tna-text-input--demo",
+  },
 };
 
-export const WithHint = Template.bind({});
-WithHint.args = {
-  label: "Upload a file",
-  headingLevel: 4,
-  headingSize: "m",
-  id: "file2",
-  name: "file2",
-  hint: "What people call you by",
-  classes: "tna-text-input--demo",
+export const WithHint = {
+  args: {
+    label: "Upload a file",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "file2",
+    name: "file2",
+    hint: "What people call you by",
+    classes: "tna-text-input--demo",
+  },
 };
 
 export const Error = Template.bind({});

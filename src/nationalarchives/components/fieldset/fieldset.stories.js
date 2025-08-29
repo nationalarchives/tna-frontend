@@ -53,29 +53,30 @@ const Template = ({
     },
   });
 
-export const Standard = Template.bind({});
-Standard.args = {
-  legend: "Fieldset",
-  headingLevel: 1,
-  headingSize: "xl",
-  html: Array(6)
-    .fill("")
-    .reduce(
-      (prev, value, index) =>
-        prev +
-        TextInput({
-          params: {
-            label: "Text input",
-            headingLevel: 2,
-            headingSize: "xs",
-            // hint: index %2 === 0 ? "This is a hint" : null,
-            // error: index % 3 === 0 ? { text: "This is an error" } : null,
-            name: `text-input${index + 1}`,
-            id: `text-input${index + 1}`,
-            size: [null, "xl", "l", "m", "s", "xs"][index] || null,
-          },
-        }),
-      "",
-    ),
-  id: "fieldset-1",
+export const Standard = {
+  args: {
+    legend: "Fieldset",
+    headingLevel: 1,
+    headingSize: "xl",
+    html: Array(6)
+      .fill("")
+      .reduce(
+        (prev, value, index) =>
+          prev +
+          TextInput({
+            params: {
+              label: "Text input",
+              headingLevel: 2,
+              headingSize: "xs",
+              // hint: index %2 === 0 ? "This is a hint" : null,
+              // error: index % 3 === 0 ? { text: "This is an error" } : null,
+              name: `text-input${index + 1}`,
+              id: `text-input${index + 1}`,
+              size: [null, "xl", "l", "m", "s", "xs"][index] || null,
+            },
+          }),
+        "",
+      ),
+    id: "fieldset-1",
+  },
 };

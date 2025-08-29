@@ -61,7 +61,7 @@ const initAll = (options) => {
   }
 
   const $progressiveDateInputs = $scope.querySelectorAll(
-    '[data-module="date-input-progressive"]',
+    '[data-module="tna-date-input-progressive"]',
   );
   $progressiveDateInputs.forEach(($dateInput) => {
     new DateInputProgressive($dateInput);

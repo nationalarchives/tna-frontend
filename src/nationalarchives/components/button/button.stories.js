@@ -49,131 +49,142 @@ export const Standard = {
   },
 };
 
-// export const Accent = Template.bind({});
-// Accent.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// Accent.args = {
-//   text: "Button",
-//   href: "#",
-//   accent: true,
-//   classes: "tna-button--demo",
-// };
+export const Accent = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Button",
+    href: "#",
+    accent: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const Icon = Template.bind({});
-// Icon.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// Icon.args = {
-//   text: "Explore the collection",
-//   href: "#",
-//   icon: "map-location-dot",
-//   classes: "tna-button--demo",
-// };
+export const Icon = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Explore the collection",
+    href: "#",
+    icon: "map-location-dot",
+    classes: "tna-button--demo",
+  },
+};
 
-// export const RightAlignedIcon = Template.bind({});
-// RightAlignedIcon.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// RightAlignedIcon.args = {
-//   text: "Search",
-//   href: "#",
-//   icon: "chevron-right",
-//   rightAlignIcon: true,
-//   classes: "tna-button--demo",
-// };
+export const RightAlignedIcon = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Search",
+    href: "#",
+    icon: "chevron-right",
+    rightAlignIcon: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const IconOnly = Template.bind({});
-// IconOnly.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// IconOnly.args = {
-//   text: "Show as a list",
-//   href: "#",
-//   icon: "list",
-//   iconOnly: true,
-//   classes: "tna-button--demo",
-// };
+export const IconOnly = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Show as a list",
+    href: "#",
+    icon: "list",
+    iconOnly: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const Small = Template.bind({});
-// Small.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// Small.args = {
-//   text: "Small button",
-//   href: "#",
-//   small: true,
-//   classes: "tna-button--demo",
-// };
+export const Small = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Small button",
+    href: "#",
+    small: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const SmallWithIcon = Template.bind({});
-// SmallWithIcon.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// SmallWithIcon.args = {
-//   text: "Explore the collection",
-//   href: "#",
-//   icon: "map-location-dot",
-//   small: true,
-//   classes: "tna-button--demo",
-// };
+export const SmallWithIcon = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Explore the collection",
+    href: "#",
+    icon: "map-location-dot",
+    small: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const SmallIconOnly = Template.bind({});
-// SmallIconOnly.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// SmallIconOnly.args = {
-//   text: "Explore the collection",
-//   href: "#",
-//   icon: "map-location-dot",
-//   small: true,
-//   iconOnly: true,
-//   classes: "tna-button--demo",
-// };
+export const SmallIconOnly = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Explore the collection",
+    href: "#",
+    icon: "map-location-dot",
+    small: true,
+    iconOnly: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const Plain = Template.bind({});
-// Plain.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// Plain.args = {
-//   text: "Plain button",
-//   href: "#",
-//   plain: true,
-//   classes: "tna-button--demo",
-// };
+export const Plain = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Plain button",
+    href: "#",
+    plain: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const SmallPlain = Template.bind({});
-// SmallPlain.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// SmallPlain.args = {
-//   text: "Plain small button",
-//   href: "#",
-//   small: true,
-//   plain: true,
-//   classes: "tna-button--demo",
-// };
+export const SmallPlain = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Plain small button",
+    href: "#",
+    small: true,
+    plain: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const SmallPlainIcon = Template.bind({});
-// SmallPlainIcon.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// SmallPlainIcon.args = {
-//   text: "Plain small button",
-//   href: "#",
-//   icon: "map-location-dot",
-//   small: true,
-//   plain: true,
-//   classes: "tna-button--demo",
-// };
+export const SmallPlainIcon = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Plain small button",
+    href: "#",
+    icon: "map-location-dot",
+    small: true,
+    plain: true,
+    classes: "tna-button--demo",
+  },
+};
 
-// export const ButtonElement = Template.bind({});
-// ButtonElement.parameters = {
-//   chromatic: { disableSnapshot: true },
-// };
-// ButtonElement.args = {
-//   text: "Button element",
-//   href: "#",
-//   buttonElement: true,
-//   classes: "tna-button--demo",
-// };
+export const ButtonElement = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    text: "Button element",
+    href: "#",
+    buttonElement: true,
+    classes: "tna-button--demo",
+  },
+};

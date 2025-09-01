@@ -46,6 +46,7 @@ export default {
   title: "Components/Hero",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Hero, { params });
   },
 };

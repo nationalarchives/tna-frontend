@@ -2,37 +2,36 @@ import Checkboxes from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = Object.fromEntries(
-  Object.entries({
-    label: { control: "text" },
-    headingLevel: { control: { type: "number", min: 1, max: 6 } },
-    headingSize: {
-      control: "inline-radio",
-      options: ["xs", "s", "m", "l", "xl"],
-    },
-    id: { control: "text" },
-    name: { control: "text" },
-    hint: { control: "text" },
-    error: { control: "object" },
-    items: { control: "object" },
-    small: { control: "boolean" },
-    inline: { control: "boolean" },
-    classes: { control: "text" },
-    attributes: { control: "object" },
-  }).map(([key, value]) => [
-    key,
-    {
-      ...value,
-      description: macroOptions.find((option) => option.name === key)
-        ?.description,
-    },
-  ]),
-);
-
 export default {
   title: "Components/Checkboxes",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      label: { control: "text" },
+      headingLevel: { control: { type: "number", min: 1, max: 6 } },
+      headingSize: {
+        control: "inline-radio",
+        options: ["xs", "s", "m", "l", "xl"],
+      },
+      id: { control: "text" },
+      name: { control: "text" },
+      hint: { control: "text" },
+      error: { control: "object" },
+      items: { control: "object" },
+      small: { control: "boolean" },
+      inline: { control: "boolean" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Checkboxes, { params });
   },
 };

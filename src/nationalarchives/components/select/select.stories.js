@@ -33,6 +33,7 @@ export default {
     ]),
   ),
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Select, { params });
   },
 };

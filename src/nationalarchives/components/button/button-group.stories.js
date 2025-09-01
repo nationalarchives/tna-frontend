@@ -1,127 +1,98 @@
-import Button from "./template.njk";
+import nunjucks from "nunjucks";
 
 export default {
   title: "Components/Button group",
+  argTypes: {
+    small: { control: "boolean" },
+  },
+  render: (params) => {
+    nunjucks.configure("src");
+    nunjucks.configure("src");
+    return nunjucks.renderString(
+      `{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+      <div class="tna-button-group{% if params.small %} tna-button-group--small{% endif %}">
+        {% for button in params.buttons %}
+          {{ tnaButton(button) }}
+        {% endfor %}
+      </div>`,
+      { params },
+    );
+  },
 };
 
-const Template = ({
-  text,
-  html,
-  href,
-  title,
-  icon,
-  accent,
-  small,
-  plain,
-  iconOnly,
-  iconOnlyOnMobile,
-  rightAlignIcon,
-  buttonElement,
-  buttonType,
-  classes,
-  attributes,
-}) =>
-  Button({
-    params: {
-      text,
-      html,
-      href,
-      title,
-      icon,
-      accent,
-      small,
-      plain,
-      iconOnly,
-      iconOnlyOnMobile,
-      rightAlignIcon,
-      buttonElement,
-      buttonType,
-      classes,
-      attributes,
-    },
-  });
-
-const GroupTemplate = ({ buttons }) =>
-  `<div class="tna-button-group">
-    ${buttons.map((button) => Template(button)).join("")}
-</div>`;
-
-export const Group = GroupTemplate.bind({});
-Group.args = {
-  buttons: [
-    {
-      text: "Standard",
-      href: "#",
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Accent",
-      href: "#",
-      accent: true,
-      classes: "tna-button--demo",
-    },
-    {
-      html: "<em>HTML</em>",
-      href: "#",
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Icon",
-      href: "#",
-      icon: "phone",
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Right Aligned Icon",
-      href: "#",
-      icon: "chevron-right",
-      rightAlignIcon: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Icon Only",
-      href: "#",
-      icon: "list",
-      iconOnly: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Icon Only On Mobile",
-      href: "#",
-      icon: "list",
-      iconOnlyOnMobile: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Plain",
-      plain: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Plain With Icon",
-      href: "#",
-      icon: "map-location-dot",
-      plain: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Button",
-      buttonElement: true,
-      classes: "tna-button--demo",
-    },
-    {
-      text: "Plain button",
-      plain: true,
-      buttonElement: true,
-      classes: "tna-button--demo",
-    },
-  ],
+export const Group = {
+  args: {
+    buttons: [
+      {
+        text: "Standard",
+        href: "#",
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Accent",
+        href: "#",
+        accent: true,
+        classes: "tna-button--demo",
+      },
+      {
+        html: "<em>HTML</em>",
+        href: "#",
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Icon",
+        href: "#",
+        icon: "phone",
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Right Aligned Icon",
+        href: "#",
+        icon: "chevron-right",
+        rightAlignIcon: true,
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Icon Only",
+        href: "#",
+        icon: "list",
+        iconOnly: true,
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Icon Only On Mobile",
+        href: "#",
+        icon: "list",
+        iconOnlyOnMobile: true,
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Plain",
+        plain: true,
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Plain With Icon",
+        href: "#",
+        icon: "map-location-dot",
+        plain: true,
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Button",
+        buttonElement: true,
+        classes: "tna-button--demo",
+      },
+      {
+        text: "Plain button",
+        plain: true,
+        buttonElement: true,
+        classes: "tna-button--demo",
+      },
+    ],
+  },
 };
 
-const SmallGroupTemplate = ({ buttons }) =>
-  `<div class="tna-button-group tna-button-group--small">
-    ${buttons.map((button) => Template({ ...button, text: `Small ${button.text}` })).join("")}
-</div>`;
-
-export const SmallGroup = SmallGroupTemplate.bind({});
-SmallGroup.args = Group.args;
+export const SmallGroup = {
+  args: { ...Group.args, small: true },
+};

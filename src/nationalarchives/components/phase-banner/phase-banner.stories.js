@@ -22,6 +22,7 @@ export default {
   title: "Components/Phase banner",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(PhaseBanner, { params });
   },
 };

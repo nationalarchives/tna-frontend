@@ -1,5 +1,6 @@
 import "../src/nationalarchives/all.scss";
 import "../src/nationalarchives/font-awesome.scss";
+import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";

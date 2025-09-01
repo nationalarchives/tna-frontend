@@ -23,6 +23,7 @@ export default {
   title: "Components/Files list",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Files, { params });
   },
 };

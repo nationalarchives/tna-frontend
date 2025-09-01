@@ -34,6 +34,7 @@ export default {
   title: "Components/File input",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(FileInput, { params });
   },
 };

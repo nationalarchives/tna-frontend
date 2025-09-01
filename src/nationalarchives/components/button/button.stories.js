@@ -32,6 +32,7 @@ export default {
     ]),
   ),
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Button, { params });
   },
 };

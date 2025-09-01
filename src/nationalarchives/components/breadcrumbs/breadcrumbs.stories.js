@@ -4,41 +4,29 @@ import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
-const argTypes = Object.fromEntries(
-  Object.entries({
-    items: { control: "object" },
-    noCollapse: { control: "boolean" },
-    labelText: { control: "text" },
-    classes: { control: "text" },
-    attributes: { control: "object" },
-  }).map(([key, value]) => [
-    key,
-    {
-      ...value,
-      description: macroOptions.find((option) => option.name === key)
-        ?.description,
-    },
-  ]),
-);
-
 export default {
   title: "Components/Breadcrumbs",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      items: { control: "object" },
+      noCollapse: { control: "boolean" },
+      labelText: { control: "text" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Breadcrumbs, { params });
   },
 };
-
-const Template = ({ items, noCollapse, labelText, classes, attributes }) =>
-  Breadcrumbs({
-    params: {
-      items,
-      noCollapse,
-      labelText,
-      classes,
-      attributes,
-    },
-  });
 
 export const Standard = {
   args: {
@@ -68,69 +56,72 @@ export const Standard = {
   },
 };
 
-export const NoCollapse = Template.bind({});
-NoCollapse.parameters = {
-  viewport: {
-    defaultViewport: "small",
+export const NoCollapse = {
+  parameters: {
+    viewport: {
+      defaultViewport: "small",
+    },
+    chromatic: {
+      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+    },
   },
-  chromatic: {
-    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
-  },
-};
-NoCollapse.args = {
-  ...Standard.args,
-  noCollapse: true,
-};
-
-export const Mobile = Template.bind({});
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: "small",
-  },
-  chromatic: {
-    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  args: {
+    ...Standard.args,
+    noCollapse: true,
   },
 };
-Mobile.args = {
-  ...Standard.args,
-};
 
-export const MobileExpanded = Template.bind({});
-MobileExpanded.parameters = {
-  viewport: {
-    defaultViewport: "small",
+export const Mobile = {
+  parameters: {
+    viewport: {
+      defaultViewport: "small",
+    },
+    chromatic: {
+      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+    },
   },
-  chromatic: {
-    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+  args: {
+    ...Standard.args,
   },
 };
-MobileExpanded.args = {
-  ...Standard.args,
-};
-MobileExpanded.play = async ({ args, canvasElement }) => {
-  const canvas = within(canvasElement);
 
-  const $module = document.querySelector('[data-module="tna-breadcrumbs"]');
-  const $items = args.items.map((item) => canvas.getByText(item.text));
-  const $expandButton = document.querySelector(
-    ".tna-breadcrumbs__item--expandable button",
-  );
+export const MobileExpanded = {
+  parameters: {
+    viewport: {
+      defaultViewport: "small",
+    },
+    chromatic: {
+      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+    },
+  },
+  args: {
+    ...Standard.args,
+  },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
 
-  await expect($items[0]).toBeVisible();
-  await expect($items[1]).not.toBeVisible();
-  await expect($items[2]).not.toBeVisible();
-  await expect($items[3]).not.toBeVisible();
-  await expect($items[4]).toBeVisible();
-  await expect($expandButton).toBeVisible();
+    const $module = document.querySelector('[data-module="tna-breadcrumbs"]');
+    const $items = args.items.map((item) => canvas.getByText(item.text));
+    const $expandButton = document.querySelector(
+      ".tna-breadcrumbs__item--expandable button",
+    );
 
-  await userEvent.click($expandButton);
+    await expect($items[0]).toBeVisible();
+    await expect($items[1]).not.toBeVisible();
+    await expect($items[2]).not.toBeVisible();
+    await expect($items[3]).not.toBeVisible();
+    await expect($items[4]).toBeVisible();
+    await expect($expandButton).toBeVisible();
 
-  await expect($items[0]).toBeVisible();
-  await expect($items[1]).toBeVisible();
-  await expect($items[2]).toBeVisible();
-  await expect($items[3]).toBeVisible();
-  await expect($items[4]).toBeVisible();
-  await expect($expandButton).not.toBeVisible();
+    await userEvent.click($expandButton);
 
-  await expect($module).toHaveFocus();
+    await expect($items[0]).toBeVisible();
+    await expect($items[1]).toBeVisible();
+    await expect($items[2]).toBeVisible();
+    await expect($items[3]).toBeVisible();
+    await expect($items[4]).toBeVisible();
+    await expect($expandButton).not.toBeVisible();
+
+    await expect($module).toHaveFocus();
+  },
 };

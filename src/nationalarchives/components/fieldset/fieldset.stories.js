@@ -31,6 +31,7 @@ export default {
   title: "Components/Fieldset",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Fieldset, { params });
   },
 };

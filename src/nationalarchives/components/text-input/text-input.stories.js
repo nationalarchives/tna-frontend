@@ -96,6 +96,7 @@ export default {
   title: "Components/Text input",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(TextInput, { params });
   },
 };

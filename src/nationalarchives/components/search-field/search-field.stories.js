@@ -19,15 +19,17 @@ const argTypes = Object.fromEntries(
     key,
     {
       ...value,
-      description: macroOptions.find((option) => option.name === key)?.description,
+      description: macroOptions.find((option) => option.name === key)
+        ?.description,
     },
-  ])
+  ]),
 );
 
 export default {
   title: "Components/Search field",
   argTypes,
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(SearchField, { params });
   },
 };

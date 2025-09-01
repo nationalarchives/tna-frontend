@@ -30,6 +30,7 @@ export default {
     chromatic: { delay: 1000 },
   },
   render: (params) => {
+    nunjucks.configure("src");
     return nunjucks.renderString(Header, { params });
   },
 };

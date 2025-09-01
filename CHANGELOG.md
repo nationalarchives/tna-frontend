@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated `data-module` on progressive date inputs from `date-input-progressive` to `tna-date-input-progressive`
 - Moved `classes` on date input components to the inputs rather than the wrapper
 - Reduced gap between fieldset items
+- Allow HTML in hint text for fieldsets and form field components
 
 ### Deprecated
 ### Removed

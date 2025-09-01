@@ -12,7 +12,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-l\" for=\"search1\">Catalogue search results</label></div><div class=\"tna-form-item__body\"><div class=\"tna-search-field\"><input type=\"search\" id=\"search1\" class=\"tna-search-field__input\" name=\"q\" value=\"\" spellcheck=\"false\"><button type=\"submit\" class=\"tna-button tna-search-field__button\">Search<i class=\"fa-solid fa-fw fa-arrow-right tna-!--hide-on-tiny\" aria-hidden=\"true\"></i></button></div></div></div>"
     },
     {
-      "name": "search field with a preselected value",
+      "name": "with a preselected value",
       "options": {
         "label": "Catalogue search results",
         "headingSize": "l",
@@ -23,7 +23,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-l\" for=\"search1\">Catalogue search results</label></div><div class=\"tna-form-item__body\"><div class=\"tna-search-field\"><input type=\"search\" id=\"search1\" class=\"tna-search-field__input\" name=\"q\" value=\"badgers\" spellcheck=\"false\"><button type=\"submit\" class=\"tna-button tna-search-field__button\">Search<i class=\"fa-solid fa-fw fa-arrow-right tna-!--hide-on-tiny\" aria-hidden=\"true\"></i></button></div></div></div>"
     },
     {
-      "name": "search field with a hint",
+      "name": "with a hint",
       "options": {
         "label": "Catalogue search results",
         "headingSize": "l",

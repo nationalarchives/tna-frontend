@@ -12,7 +12,7 @@
       "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Enter a start date</span></legend><div class=\"tna-fieldset__body\"><div class=\"tna-date-input\" id=\"date\"><div class=\"tna-date-input__item tna-date-input__item--day\"><label for=\"date-day\" class=\"tna-date-input__item-label\">Day</label><input type=\"text\" id=\"date-day\" value=\"\" name=\"date-day\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--month\"><label for=\"date-month\" class=\"tna-date-input__item-label\">Month</label><input type=\"text\" id=\"date-month\" value=\"\" name=\"date-month\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--year\"><label for=\"date-year\" class=\"tna-date-input__item-label\">Year</label><input type=\"text\" id=\"date-year\" value=\"\" name=\"date-year\" class=\"tna-date-input__item-input tna-date-input__item-input--wider\" inputmode=\"numeric\"></div></div></div></fieldset></div>"
     },
     {
-      "name": "date input with a preselected value",
+      "name": "with a preselected value",
       "options": {
         "label": "Enter a start date",
         "headingSize": "m",
@@ -27,7 +27,7 @@
       "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Enter a start date</span></legend><div class=\"tna-fieldset__body\"><div class=\"tna-date-input\" id=\"date\"><div class=\"tna-date-input__item tna-date-input__item--day\"><label for=\"date-day\" class=\"tna-date-input__item-label\">Day</label><input type=\"text\" id=\"date-day\" value=\"24\" name=\"date-day\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--month\"><label for=\"date-month\" class=\"tna-date-input__item-label\">Month</label><input type=\"text\" id=\"date-month\" value=\"09\" name=\"date-month\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--year\"><label for=\"date-year\" class=\"tna-date-input__item-label\">Year</label><input type=\"text\" id=\"date-year\" value=\"1986\" name=\"date-year\" class=\"tna-date-input__item-input tna-date-input__item-input--wider\" inputmode=\"numeric\"></div></div></div></fieldset></div>"
     },
     {
-      "name": "date input with a hint",
+      "name": "with a hint",
       "options": {
         "label": "Enter a start date",
         "headingSize": "m",
@@ -38,7 +38,7 @@
       "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"date-hint \"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Enter a start date</span></legend><p id=\"date-hint\" class=\"tna-fieldset__hint\">The earliest date of the record.</p><div class=\"tna-fieldset__body\"><div class=\"tna-date-input\" id=\"date\"><div class=\"tna-date-input__item tna-date-input__item--day\"><label for=\"date-day\" class=\"tna-date-input__item-label\">Day</label><input type=\"text\" id=\"date-day\" value=\"\" name=\"date-day\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--month\"><label for=\"date-month\" class=\"tna-date-input__item-label\">Month</label><input type=\"text\" id=\"date-month\" value=\"\" name=\"date-month\" class=\"tna-date-input__item-input\" inputmode=\"numeric\"></div><div class=\"tna-date-input__item tna-date-input__item--year\"><label for=\"date-year\" class=\"tna-date-input__item-label\">Year</label><input type=\"text\" id=\"date-year\" value=\"\" name=\"date-year\" class=\"tna-date-input__item-input tna-date-input__item-input--wider\" inputmode=\"numeric\"></div></div></div></fieldset></div>"
     },
     {
-      "name": "date input with an error",
+      "name": "with an error",
       "options": {
         "label": "Enter a start date",
         "headingSize": "m",

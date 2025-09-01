@@ -13,7 +13,7 @@
     </legend>
     {%- if params.hint %}
     <p id="{{ params.id }}-hint" class="tna-fieldset__hint">
-      {{ params.hint }}
+      {{ params.hint | safe }}
     </p>
     {%- endif %}
     {%- if params.error %}

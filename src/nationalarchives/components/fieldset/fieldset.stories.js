@@ -68,6 +68,7 @@ Standard.args = {
             label: "Text input",
             headingLevel: 2,
             headingSize: "xs",
+            hint: "This is a hint",
             // hint: index %2 === 0 ? "This is a hint" : null,
             // error: index % 3 === 0 ? { text: "This is an error" } : null,
             name: `text-input${index + 1}`,

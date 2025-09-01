@@ -12,7 +12,7 @@
       "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
-      "name": "text input with a preselected value",
+      "name": "with a preselected value",
       "options": {
         "label": "Enter your first name",
         "headingSize": "m",
@@ -23,7 +23,7 @@
       "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"John\" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
-      "name": "text input with a hint",
+      "name": "with a hint",
       "options": {
         "label": "Enter your first name",
         "headingSize": "m",
@@ -34,7 +34,7 @@
       "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"name\">Enter your first name</label></div><p id=\"name-hint\" class=\"tna-form-item__hint\">What people call you by.</p><div class=\"tna-form-item__body\"><input id=\"name\" class=\"tna-text-input\" name=\"name\" value=\"\" aria-describedby=\"name-hint \" type=\"text\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
     },
     {
-      "name": "text input with an error",
+      "name": "with an error",
       "options": {
         "label": "Enter your first name",
         "headingSize": "m",

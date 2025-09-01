@@ -12,6 +12,7 @@ const argTypes = {
   html: { control: "text" },
   id: { control: "text" },
   hint: { control: "text" },
+  smallerHint: { control: "boolean" },
   error: { control: "object" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -35,6 +36,7 @@ const Template = ({
   html,
   id,
   hint,
+  smallerHint,
   error,
   classes,
   attributes,
@@ -47,6 +49,7 @@ const Template = ({
       html,
       id,
       hint,
+      smallerHint,
       error,
       classes,
       attributes,
@@ -58,6 +61,7 @@ Standard.args = {
   legend: "Fieldset",
   headingLevel: 1,
   headingSize: "xl",
+  hint: "This is a <strong>hint</strong>.",
   html: Array(6)
     .fill("")
     .reduce(
@@ -69,7 +73,6 @@ Standard.args = {
             headingLevel: 2,
             headingSize: "xs",
             hint: "This is a hint",
-            // hint: index %2 === 0 ? "This is a hint" : null,
             // error: index % 3 === 0 ? { text: "This is an error" } : null,
             name: `text-input${index + 1}`,
             id: `text-input${index + 1}`,

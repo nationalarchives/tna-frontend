@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.24.0...HEAD)
 
 ### Added
+
+- Fieldsets now have a `smallerHint` option to match other form field components
+
 ### Changed
 
 - Updated `data-module` on progressive date inputs from `date-input-progressive` to `tna-date-input-progressive`

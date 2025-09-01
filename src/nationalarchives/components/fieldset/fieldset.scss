@@ -44,4 +44,12 @@
 
     @include colour.thick-keyline-error(left);
   }
+
+  &--small-hint &__hint {
+    margin-top: spacing.space(0.125);
+    margin-bottom: 0;
+
+    @include typography.font-size(16);
+    @include colour.colour-font("font-light");
+  }
 }

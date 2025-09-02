@@ -136,6 +136,12 @@ Mobile.parameters = {
 Mobile.args = {
   defaultContent: true,
   defaultContentBaseURL: "#",
+  navigation: [
+    {
+      text: "Visit",
+      href: "#/about/visit-us/",
+    },
+  ],
   classes: "tna-global-header--demo",
 };
 Mobile.play = async ({ args, canvasElement, step }) => {
@@ -146,9 +152,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   const $navigationItems = canvasElement.querySelector(
     `.tna-global-header__navigation`,
   );
-  const [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
-    canvas.getByText(navigationItem.text),
-  );
+  const $firstNavigationLink = canvas.getByText(args.navigation[0].text);
   const $navigationToggle = canvasElement.querySelector(
     `.tna-global-header__navigation-button`,
   );
@@ -157,9 +161,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     await expect($navigationItems).not.toBeVisible();
     await expect($navigationToggle).toBeVisible();
     await expect($navigationToggle).toHaveAttribute("aria-expanded", "false");
-    await expect($linkA).not.toBeVisible();
-    await expect($linkB).not.toBeVisible();
-    await expect($linkC).not.toBeVisible();
+    await expect($firstNavigationLink).not.toBeVisible();
   });
 
   await step("Open the menu", async () => {
@@ -167,9 +169,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     await expect($navigationItems).toBeVisible();
     await expect($navigationToggle).toBeVisible();
     await expect($navigationToggle).toHaveAttribute("aria-expanded", "true");
-    await expect($linkA).toBeVisible();
-    await expect($linkB).toBeVisible();
-    await expect($linkC).toBeVisible();
+    await expect($firstNavigationLink).toBeVisible();
   });
 
   await step("Close the menu", async () => {
@@ -177,9 +177,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
     await expect($navigationItems).not.toBeVisible();
     await expect($navigationToggle).toBeVisible();
     await expect($navigationToggle).toHaveAttribute("aria-expanded", "false");
-    await expect($linkA).not.toBeVisible();
-    await expect($linkB).not.toBeVisible();
-    await expect($linkC).not.toBeVisible();
+    await expect($firstNavigationLink).not.toBeVisible();
   });
 
   // await step("Open the menu", async () => {
@@ -191,9 +189,7 @@ Mobile.play = async ({ args, canvasElement, step }) => {
   //   await expect($navigationItems).not.toBeVisible();
   //   await expect($navigationToggle).toBeVisible();
   //   await expect($navigationToggle).toHaveAttribute("aria-expanded", "false");
-  //   await expect($linkA).not.toBeVisible();
-  //   await expect($linkB).not.toBeVisible();
-  //   await expect($linkC).not.toBeVisible();
+  //   await expect($firstNavigationLink).not.toBeVisible();
   // });
 
   $navigationToggle.blur();

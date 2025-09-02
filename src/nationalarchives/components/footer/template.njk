@@ -2,6 +2,153 @@
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
+
+{%- if params.defaultContent %}
+  {% set social = [
+    {
+      href: "https://twitter.com/UKNatArchives",
+      icon: "twitter",
+      title: "The National Archives X feed (formerly known as Twitter)",
+      shortTitle: "X (formerly Twitter)"
+    },
+    {
+      href: "https://www.youtube.com/c/TheNationalArchivesUK",
+      icon: "youtube",
+      title: "The National Archives YouTube channel",
+      shortTitle: "YouTube"
+    },
+    {
+      href: "https://www.facebook.com/TheNationalArchives",
+      icon: "facebook",
+      title: "The National Archives Facebook page",
+      shortTitle: "Facebook"
+    },
+    {
+      href: "https://www.flickr.com/photos/nationalarchives",
+      icon: "flickr",
+      title: "The National Archives Flickr feed",
+      shortTitle: "Flickr"
+    },
+    {
+      href: "https://www.instagram.com/nationalarchivesuk/",
+      icon: "instagram",
+      title: "The National Archives Instagram feed",
+      shortTitle: "Instagram"
+    }
+  ] %}
+  {% set navigation = [
+    {
+      title: "Quick links",
+      items: [
+        {
+          text: "About us",
+          href: (params.defaultContentBaseURL or "") ~ "/about/"
+        },
+        {
+          text: "Contact us",
+          href: (params.defaultContentBaseURL or "") ~ "/contact-us/"
+        },
+        {
+          text: "News",
+          href: (params.defaultContentBaseURL or "") ~ "/about/news/"
+        },
+        {
+          text: "Blogs",
+          href: (params.defaultContentBaseURL or "") ~ "/blogs/"
+        },
+        {
+          text: "Podcasts",
+          href: "https://media.nationalarchives.gov.uk/index.php/category/podcasts-2/"
+        },
+        {
+          text: "Image library",
+          href: "https://images.nationalarchives.gov.uk/"
+        },
+        {
+          text: "Press room",
+          href: (params.defaultContentBaseURL or "") ~ "/about/press-room/"
+        },
+        {
+          text: "Jobs",
+          href: (params.defaultContentBaseURL or "") ~ "/about/jobs/"
+        },
+        {
+          text: "British citizenship services",
+          href: (params.defaultContentBaseURL or "") ~ "/contact-us/british-citizenship-services/"
+        },
+        {
+          text: "Historical Manuscripts Commission",
+          href: (params.defaultContentBaseURL or "") ~ "/archives-sector/our-archives-sector-role/historical-manuscripts-commission/"
+        }
+      ]
+    },
+    {
+      title: "Other websites",
+      items: [
+        {
+          text: "UK Government Web Archive",
+          href: (params.defaultContentBaseURL or "") ~ "/webarchive/"
+        },
+        {
+          text: "Legislation.gov.uk",
+          href: "https://www.legislation.gov.uk/"
+        },
+        {
+          text: "Find Case Law",
+          href: "https://caselaw.nationalarchives.gov.uk/"
+        },
+        {
+          text: "The Gazette",
+          href: "https://www.thegazette.co.uk/",
+          external: true
+        },
+        {
+          text: "The National Archives Trust",
+          href: "https://www.nationalarchivestrust.org.uk/",
+          external: true
+        },
+        {
+          text: "Friends of The National Archives",
+          href: "https://ftna.org.uk/",
+          external: true
+        },
+        {
+          text: "The National Archives Design System",
+          href: "https://design-system.nationalarchives.gov.uk/"
+        }
+      ]
+    }
+  ] %}
+  {% set legal = [
+    {
+      text: "Accessibility statement",
+      href: (params.defaultContentBaseURL or "") ~ "/help/web-accessibility/"
+    },
+    {
+      text: "Freedom of information",
+      href: (params.defaultContentBaseURL or "") ~ "/about/freedom-of-information/"
+    },
+    {
+      text: "Terms and conditions",
+      href: (params.defaultContentBaseURL or "") ~ "/legal/"
+    },
+    {
+      text: "Privacy policy",
+      href: (params.defaultContentBaseURL or "") ~ "/legal/privacy-policy/"
+    },
+    {
+      text: "Cookies",
+      href: (params.defaultContentBaseURL or "") ~ "/cookies/"
+    }
+  ] %}
+  {% set showNewsletter = true %}
+{%- else %}
+  {% set social = params.social or null %}
+  {% set navigation = params.navigation or null %}
+  {% set legal = params.legal or null %}
+  {% set showNewsletter = params.showNewsletter %}
+{%- endif -%}
+
 <footer class="tna-footer{% if classes %} {{ classes }}{% endif %}" data-module="tna-footer" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.themeSelector %}
   <section class="tna-footer__theme-selector tna-background-tint" hidden>
@@ -79,13 +226,13 @@
           {{ params.meta | safe }}
         </div>
         {%- endif %}
-        {%- if params.social %}
+        {%- if social | length %}
           <h3 class="tna-!--visually-hidden">
             Follow us on social media
           </h3>
           <nav class="tna-footer__social" aria-label="Social">
             <ul class="tna-ul tna-ul--plain tna-footer__social-items">
-            {%- for item in params.social %}
+            {%- for item in social %}
               <li class="tna-footer__social-item">
                 <a href="{{ item.href }}" class="tna-footer__social-item-link"{%- if item.shortTitle %} aria-label="{{ item.title }}" title="{{ item.title }}"{%- endif %} data-name="{{ item.icon }}">
                   {%- if item.icon == 'twitter' %}
@@ -113,9 +260,9 @@
           </nav>
         {%- endif %}
       </div>
-      {%- if params.navigation %}
+      {%- if navigation | length %}
       <div class="tna-footer__navigation tna-column tna-column--flex-2 tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-columns tna-columns--2 tna-columns--1-tiny">
-        {%- for group in params.navigation %}
+        {%- for group in navigation %}
         <nav class="tna-footer__navigation-block tna-columns__block" aria-label="{{ group.title }}">
           {%- if not group.hideTitle %}
           <h3 class="tna-footer__navigation-block-heading tna-heading-m">
@@ -135,7 +282,7 @@
         {%- endfor %}
       </div>
       {%- endif %}
-      {%- if params.showNewsletter %}
+      {%- if showNewsletter %}
       <div class="tna-column tna-column--flex-1">
         <div class="tna-footer__mailing-list">
           <h3 class="tna-footer__navigation-block-heading tna-heading-m">
@@ -159,13 +306,13 @@
       {%- endif %}
     </div>
     <div class="tna-container">
-      {%- if params.legal %}
+      {%- if legal | length %}
       <h3 class="tna-!--visually-hidden">
         Legal information
       </h3>
       <nav class="tna-footer__legal tna-column tna-column--full" aria-label="Legal">
         <ul class="tna-footer__legal-items tna-ul tna-ul--plain">
-          {%- for item in params.legal %}
+          {%- for item in legal %}
           <li class="tna-footer__legal-item">
             <a href="{{ item.href }}" class="tna-footer__legal-item-link" {%- if item.title %} title="{{ item.title }}"{% endif %}>
               {{ item.text }}

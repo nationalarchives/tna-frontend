@@ -5,6 +5,8 @@ import Cookies from "../../lib/cookies.mjs";
 
 const argTypes = {
   meta: { control: "text" },
+  defaultContent: { control: "boolean" },
+  defaultContentBaseURL: { control: "text" },
   social: { control: "object" },
   navigation: { control: "object" },
   showNewsletter: { control: "boolean" },
@@ -30,6 +32,8 @@ export default {
 };
 
 const Template = ({
+  defaultContent,
+  defaultContentBaseURL,
   meta,
   social,
   navigation,
@@ -42,6 +46,8 @@ const Template = ({
 }) =>
   Footer({
     params: {
+      defaultContent,
+      defaultContentBaseURL,
       meta,
       social,
       navigation,
@@ -56,145 +62,8 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  social: [
-    {
-      href: "https://twitter.com/UKNatArchives",
-      icon: "twitter",
-      title: "The National Archives X feed (formerly known as Twitter)",
-      shortTitle: "X (formerly Twitter)",
-    },
-    {
-      href: "https://www.youtube.com/c/TheNationalArchivesUK",
-      icon: "youtube",
-      title: "The National Archives YouTube channel",
-      shortTitle: "YouTube",
-    },
-    {
-      href: "https://www.facebook.com/TheNationalArchives",
-      icon: "facebook",
-      title: "The National Archives Facebook page",
-      shortTitle: "Facebook",
-    },
-    {
-      href: "https://www.flickr.com/photos/nationalarchives",
-      icon: "flickr",
-      title: "The National Archives Flickr feed",
-      shortTitle: "Flickr",
-    },
-    {
-      href: "https://www.instagram.com/nationalarchivesuk/",
-      icon: "instagram",
-      title: "The National Archives Instagram feed",
-      shortTitle: "Instagram",
-    },
-  ],
-  navigation: [
-    {
-      title: "Quick links",
-      items: [
-        {
-          text: "About us",
-          href: "https://www.nationalarchives.gov.uk/about/",
-        },
-        {
-          text: "Contact us",
-          href: "https://www.nationalarchives.gov.uk/contact-us/",
-        },
-        {
-          text: "News",
-          href: "https://www.nationalarchives.gov.uk/about/news/",
-        },
-        {
-          text: "Blogs",
-          href: "https://www.nationalarchives.gov.uk/blogs/",
-        },
-        {
-          text: "Podcasts",
-          href: "https://media.nationalarchives.gov.uk/index.php/category/podcasts-2/",
-        },
-        {
-          text: "Image library",
-          href: "https://images.nationalarchives.gov.uk/",
-        },
-        {
-          text: "Press room",
-          href: "https://www.nationalarchives.gov.uk/about/press-room/",
-        },
-        {
-          text: "Jobs",
-          href: "https://www.nationalarchives.gov.uk/about/jobs/",
-        },
-        {
-          text: "British citizenship services",
-          href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
-        },
-        {
-          text: "Historical Manuscripts Commission",
-          href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
-        },
-      ],
-    },
-    {
-      title: "Other websites",
-      items: [
-        {
-          text: "UK Government Web Archive",
-          href: "https://www.nationalarchives.gov.uk/webarchive/",
-        },
-        { text: "Legislation.gov.uk", href: "https://www.legislation.gov.uk/" },
-        {
-          text: "Find Case Law",
-          href: "https://caselaw.nationalarchives.gov.uk/",
-        },
-        {
-          text: "The Gazette",
-          href: "https://www.thegazette.co.uk/",
-          external: true,
-        },
-        {
-          text: "The National Archives Trust",
-          href: "https://www.nationalarchivestrust.org.uk/",
-          external: true,
-        },
-        {
-          text: "Friends of The National Archives",
-          href: "https://ftna.org.uk/",
-          external: true,
-        },
-        {
-          text: "The National Archives Design System",
-          href: "https://design-system.nationalarchives.gov.uk/",
-        },
-        {
-          text: "The National Archives Design System",
-          href: "https://design-system.nationalarchives.gov.uk/",
-        },
-      ],
-    },
-  ],
-  showNewsletter: true,
-  legal: [
-    {
-      text: "Accessibility statement",
-      href: "#/accessibility",
-    },
-    {
-      text: "Freedom of information",
-      href: "#/freedom-of-information",
-    },
-    {
-      text: "Terms and conditions",
-      href: "#/terms-and-conditions",
-    },
-    {
-      text: "Privacy policy",
-      href: "#/privacy",
-    },
-    {
-      text: "Cookies",
-      href: "#/cookies",
-    },
-  ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
 };
 
 export const Minimal = Template.bind({});

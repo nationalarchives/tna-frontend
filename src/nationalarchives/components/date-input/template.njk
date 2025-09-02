@@ -20,13 +20,13 @@
       {%- if params.fields %}
         {%- set fields = [] -%}
         {% if 'y' in params.fields %}
-          {%- set fields = fields + ['y'] -%}
+          {%- set fields = fields ~ ['y'] -%}
         {%- endif %}
         {% if 'm' in params.fields %}
-          {%- set fields = fields + ['m'] -%}
+          {%- set fields = fields ~ ['m'] -%}
         {%- endif %}
         {% if 'd' in params.fields %}
-          {%- set fields = fields + ['d'] -%}
+          {%- set fields = fields ~ ['d'] -%}
         {%- endif %}
       {%- else %}
         {%- set fields = ['y', 'm', 'd'] -%}

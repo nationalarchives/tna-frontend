@@ -1,5 +1,17 @@
 [
   {
+    "name": "defaultContent",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, use the default content for the global header."
+  },
+  {
+    "name": "defaultContentBaseURL",
+    "type": "string",
+    "required": false,
+    "description": "Set the base URL for the `defaultContent` links."
+  },
+  {
     "name": "logo",
     "type": "object",
     "required": false,

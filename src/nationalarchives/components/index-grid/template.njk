@@ -37,27 +37,27 @@
     {%- if params.columns == 1 %}
       {%- set itemClasses = itemClasses.concat('tna-column--full') %}
     {%- else %}
-      {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columns) %}
+      {%- set itemClasses = itemClasses.concat('tna-column--width-1-' ~ params.columns) %}
     {%- endif %}
     {%- if params.columnsMedium %}
       {%- if params.columnsMedium == 1 %}
         {%- set itemClasses = itemClasses.concat('tna-column--full-medium') %}
       {%- else %}
-        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsMedium + '-medium') %}
+        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' ~ params.columnsMedium ~ '-medium') %}
       {%- endif %}
     {%- endif %}
     {%- if params.columnsSmall %}
       {%- if params.columnsSmall == 1 %}
         {%- set itemClasses = itemClasses.concat('tna-column--full-small') %}
       {%- else %}
-        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsSmall + '-small') %}
+        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' ~ params.columnsSmall ~ '-small') %}
       {%- endif %}
     {%- endif %}
     {%- if params.columnsTiny %}
       {%- if params.columnsTiny == 1 %}
         {%- set itemClasses = itemClasses.concat('tna-column--full-tiny') %}
       {%- else %}
-        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' + params.columnsTiny + '-tiny') %}
+        {%- set itemClasses = itemClasses.concat('tna-column--width-1-' ~ params.columnsTiny ~ '-tiny') %}
       {%- endif %}
     {%- endif %}
     {%- for item in params.items %}

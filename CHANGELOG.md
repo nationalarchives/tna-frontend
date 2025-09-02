@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Fieldsets now have a `smallerHint` option to match other form field components
+- Global header component now has `defaultContent` and `defaultContentBaseURL` options to allow more consistent global content to be used
 
 ### Changed
 
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moved `classes` on date input components to the inputs rather than the wrapper
 - Reduced gap between fieldset items
 - Allow HTML in hint text for fieldsets and form field components
+- Used tilde concatination `~` in templates rather than plus `+`
 
 ### Deprecated
 ### Removed

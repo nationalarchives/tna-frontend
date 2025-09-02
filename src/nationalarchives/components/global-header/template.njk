@@ -5,6 +5,57 @@
   {%- set containerClasses = containerClasses.concat('tna-global-header--collapse-on-medium') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
+
+{%- if params.defaultContent %}
+  {% set logo = {
+    href: (params.defaultContentBaseURL or "") ~ "/",
+    title: "The National Archives"
+  } %}
+
+  {% set navigation = [
+    {
+      text: "Visit",
+      href: (params.defaultContentBaseURL or "") ~ "/about/visit-us/"
+    },
+    {
+      text: "What’s on",
+      href: (params.defaultContentBaseURL or "") ~ "/whats-on/"
+    },
+    {
+      text: "Explore the collection",
+      href: (params.defaultContentBaseURL or "") ~ "/explore-the-collection/"
+    },
+    {
+      text: "Help using the archive",
+      href: (params.defaultContentBaseURL or "") ~ "/help-with-your-research/"
+    },
+    {
+      text: "Education",
+      href: (params.defaultContentBaseURL or "") ~ "/education/"
+    },
+    {
+      text: "Professional guidance and services",
+      href: (params.defaultContentBaseURL or "") ~ "/professional-guidance-and-services/"
+    }
+  ] %}
+
+  {% set topNavigation = [
+    {
+      text: "Search",
+      href: (params.defaultContentBaseURL or "") ~ "/search/",
+      icon: "search"
+    },
+    {
+      text: "Shop",
+      href: "https://shop.nationalarchives.gov.uk/",
+      icon: "shop"
+    }
+  ] %}
+{%- else %}
+  {% set logo = params.logo or null %}
+  {% set navigation = params.navigation or [] %}
+  {% set topNavigation = params.topNavigation or [] %}
+{%- endif -%}
 <header class="tna-global-header{% if classes %} {{ classes }}{% endif %}" data-module="tna-global-header"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {% if params.phaseBanner -%}
   {{ tnaPhaseBanner(params.phaseBanner) }}
@@ -12,8 +63,8 @@
   <div class="tna-container tna-global-header__main">
     <div class="tna-column tna-column--flex-1 tna-column--order-2">
       <span class="tna-global-header__logo-wrapper">
-        {% if params.logo.href -%}
-        <a href="{{ params.logo.href }}" class="tna-global-header__logo tna-global-header__logo--link" title="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- endif -%}" aria-label="{%- if params.logo.title -%}{{ params.logo.title }}{%- else -%}The National Archives{%- endif -%}">
+        {% if logo.href -%}
+        <a href="{{ logo.href }}" class="tna-global-header__logo tna-global-header__logo--link" title="{%- if logo.title -%}{{ logo.title }}{%- else -%}The National Archives{%- endif -%}" aria-label="{%- if logo.title -%}{{ logo.title }}{%- else -%}The National Archives{%- endif -%}">
         {%- else %}
         <span class="tna-global-header__logo">
         {%- endif %}
@@ -26,7 +77,7 @@
               </g>
             </svg>
           </span>
-        {%- if params.logo.href %}
+        {%- if logo.href %}
         </a>
         {%- else %}
         </span>
@@ -39,10 +90,10 @@
         <span class="tna-global-header__hamburger"></span>
       </button>
     </div>
-    {%- if params.navigation %}
+    {%- if navigation | length %}
     <nav class="tna-column tna-column--full-small tna-column--full-tiny tna-column--order-3 tna-global-header__navigation-wrapper" id="{{ params.navigationId or 'tna-header__navigation' }}" aria-label="Primary">
       <ul class="tna-global-header__navigation">
-        {%- for item in params.navigation %}
+        {%- for item in navigation %}
         <li class="tna-global-header__navigation-item">
           <a href="{{ item.href }}" class="tna-global-header__navigation-item-link" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %} tabindex="0">{{ item.text }}</a>
         </li>
@@ -50,10 +101,10 @@
       </ul>
     </nav>
     {%- endif %}
-    {%- if params.topNavigation %}
+    {%- if topNavigation | length %}
     <nav class="tna-column tna-column--full tna-column--order-1 tna-column--order-4-small tna-column--order-4-tiny tna-global-header__top-navigation-wrapper" id="{{ params.topNavigationId or 'tna-header__top-navigation' }}" aria-label="Secondary">
       <ul class="tna-global-header__top-navigation">
-        {%- for item in params.topNavigation %}
+        {%- for item in topNavigation %}
         <li class="tna-global-header__top-navigation-item">
           <a href="{{ item.href }}" class="tna-global-header__top-navigation-link" {%- if item.title %} aria-label="{{ item.title }}" title="{{ item.title }}"{% endif %} tabindex="0">
             {%- if item.icon == 'search' %}

@@ -5,6 +5,8 @@ import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {
   logo: { control: "object" },
+  defaultContent: { control: "boolean" },
+  defaultContentBaseURL: { control: "text" },
   topNavigation: { control: "object" },
   navigation: { control: "object" },
   collapseOnMedium: { control: "boolean" },
@@ -31,6 +33,8 @@ export default {
 
 const Template = ({
   logo,
+  defaultContent,
+  defaultContentBaseURL,
   topNavigation,
   navigation,
   collapseOnMedium,
@@ -43,6 +47,8 @@ const Template = ({
   Header({
     params: {
       logo,
+      defaultContent,
+      defaultContentBaseURL,
       topNavigation,
       navigation,
       collapseOnMedium,
@@ -56,52 +62,8 @@ const Template = ({
 
 export const Standard = Template.bind({});
 Standard.args = {
-  logo: {
-    href: "#/",
-  },
-  topNavigation: [
-    {
-      text: "Search",
-      href: "https://www.nationalarchives.gov.uk/search/",
-      icon: "search",
-    },
-    {
-      text: "Shop",
-      href: "https://shop.nationalarchives.gov.uk/",
-      icon: "shop",
-    },
-    {
-      text: "Sign in",
-      href: "#/sign-in",
-      icon: "user",
-    },
-  ],
-  navigation: [
-    {
-      text: "Visit",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-    },
-    {
-      text: "What’s on",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-    },
-    {
-      text: "Explore the collection",
-      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-    },
-    {
-      text: "Help using the archive",
-      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-    },
-    {
-      text: "Education",
-      href: "https://www.nationalarchives.gov.uk/education/",
-    },
-    {
-      text: "Professional guidance and services",
-      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-    },
-  ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
   classes: "tna-global-header--demo",
 };
 Standard.play = async ({ canvasElement }) => {
@@ -128,52 +90,8 @@ Medium.parameters = {
   },
 };
 Medium.args = {
-  logo: {
-    href: "#/",
-  },
-  topNavigation: [
-    {
-      text: "Search",
-      href: "https://www.nationalarchives.gov.uk/search/",
-      icon: "search",
-    },
-    {
-      text: "Shop",
-      href: "https://shop.nationalarchives.gov.uk/",
-      icon: "shop",
-    },
-    {
-      text: "Sign in",
-      href: "#/sign-in",
-      icon: "user",
-    },
-  ],
-  navigation: [
-    {
-      text: "Visit",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-    },
-    {
-      text: "What’s on",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-    },
-    {
-      text: "Explore the collection",
-      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-    },
-    {
-      text: "Help using the archive",
-      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-    },
-    {
-      text: "Education",
-      href: "https://www.nationalarchives.gov.uk/education/",
-    },
-    {
-      text: "Professional guidance and services",
-      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-    },
-  ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
   classes: "tna-global-header--demo",
 };
 Medium.play = async ({ canvasElement }) => {
@@ -190,65 +108,21 @@ Medium.play = async ({ canvasElement }) => {
   await expect($navigationToggle).not.toBeVisible();
 };
 
-export const MediumCollapsed = Template.bind({});
-MediumCollapsed.parameters = {
-  viewport: {
-    defaultViewport: "medium",
-  },
-  chromatic: {
-    viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
-  },
-};
-MediumCollapsed.args = {
-  logo: {
-    href: "#/",
-  },
-  topNavigation: [
-    {
-      text: "Search",
-      href: "https://www.nationalarchives.gov.uk/search/",
-      icon: "search",
-    },
-    {
-      text: "Shop",
-      href: "https://shop.nationalarchives.gov.uk/",
-      icon: "shop",
-    },
-    {
-      text: "Sign in",
-      href: "#/sign-in",
-      icon: "user",
-    },
-  ],
-  navigation: [
-    {
-      text: "Visit",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-    },
-    {
-      text: "What’s on",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-    },
-    {
-      text: "Explore the collection",
-      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-    },
-    {
-      text: "Help using the archive",
-      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-    },
-    {
-      text: "Education",
-      href: "https://www.nationalarchives.gov.uk/education/",
-    },
-    {
-      text: "Professional guidance and services",
-      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-    },
-  ],
-  collapseOnMedium: true,
-  classes: "tna-global-header--demo",
-};
+// export const MediumCollapsed = Template.bind({});
+// MediumCollapsed.parameters = {
+//   viewport: {
+//     defaultViewport: "medium",
+//   },
+//   chromatic: {
+//     viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
+//   },
+// };
+// MediumCollapsed.args = {
+//   defaultContent: true,
+//   defaultContentBaseURL: "#",
+//   collapseOnMedium: true,
+//   classes: "tna-global-header--demo",
+// };
 
 export const Mobile = Template.bind({});
 Mobile.parameters = {
@@ -260,53 +134,8 @@ Mobile.parameters = {
   },
 };
 Mobile.args = {
-  logo: {
-    strapline: "Design System",
-    href: "#/",
-  },
-  topNavigation: [
-    {
-      text: "Search",
-      href: "https://www.nationalarchives.gov.uk/search/",
-      icon: "search",
-    },
-    {
-      text: "Shop",
-      href: "https://shop.nationalarchives.gov.uk/",
-      icon: "shop",
-    },
-    {
-      text: "Sign in",
-      href: "#/sign-in",
-      icon: "user",
-    },
-  ],
-  navigation: [
-    {
-      text: "Visit",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-    },
-    {
-      text: "What’s on",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-    },
-    {
-      text: "Explore the collection",
-      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-    },
-    {
-      text: "Help using the archive",
-      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-    },
-    {
-      text: "Education",
-      href: "https://www.nationalarchives.gov.uk/education/",
-    },
-    {
-      text: "Professional guidance and services",
-      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-    },
-  ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
   classes: "tna-global-header--demo",
 };
 Mobile.play = async ({ args, canvasElement, step }) => {
@@ -372,52 +201,8 @@ Mobile.play = async ({ args, canvasElement, step }) => {
 
 export const WithPhaseBanner = Template.bind({});
 WithPhaseBanner.args = {
-  logo: {
-    href: "#/",
-  },
-  topNavigation: [
-    {
-      text: "Search",
-      href: "https://www.nationalarchives.gov.uk/search/",
-      icon: "search",
-    },
-    {
-      text: "Shop",
-      href: "https://shop.nationalarchives.gov.uk/",
-      icon: "shop",
-    },
-    {
-      text: "Sign in",
-      href: "#/sign-in",
-      icon: "user",
-    },
-  ],
-  navigation: [
-    {
-      text: "Visit",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-    },
-    {
-      text: "What’s on",
-      href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-    },
-    {
-      text: "Explore the collection",
-      href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-    },
-    {
-      text: "Help using the archive",
-      href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-    },
-    {
-      text: "Education",
-      href: "https://www.nationalarchives.gov.uk/education/",
-    },
-    {
-      text: "Professional guidance and services",
-      href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-    },
-  ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
   phaseBanner: {
     phase: "beta",
     message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,

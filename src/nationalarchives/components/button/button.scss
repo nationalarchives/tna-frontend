@@ -50,13 +50,10 @@ $button-border-width: 4px !default;
 
   .fa-solid {
     display: block;
-
-    font-size: 0.9em;
-    line-height: #{math.div(16, 18) * 2};
   }
 
   svg {
-    height: 0.9em;
+    height: 1.1em;
     flex-shrink: 0;
 
     align-self: center;
@@ -148,7 +145,7 @@ $button-border-width: 4px !default;
     }
 
     svg {
-      height: 1rem;
+      height: 1.2rem;
       margin: 0.5rem;
     }
   }

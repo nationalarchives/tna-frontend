@@ -25,6 +25,14 @@ module.exports = {
             from: "./src/nationalarchives",
             to: "./",
           },
+          {
+            from: "./node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2",
+            to: "./assets/fonts/fa-solid-900.woff2",
+          },
+          {
+            from: "./node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2",
+            to: "./assets/fonts/fa-brands-400.woff2",
+          },
         ],
       }),
     );

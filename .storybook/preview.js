@@ -1,5 +1,4 @@
 import "../src/nationalarchives/all.scss";
-import "../src/nationalarchives/font-awesome.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
@@ -7,7 +6,7 @@ import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 
 document.documentElement.classList.add(
   "tna-template",
-  "tna-template--yellow-accent",
+  "tna-template--blue-accent",
 );
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");

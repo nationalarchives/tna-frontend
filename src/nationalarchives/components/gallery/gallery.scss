@@ -168,15 +168,14 @@
   }
 
   &__navigation-button-label {
-    padding: 0.5rem 0.75rem;
-
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
     @include colour.accent;
 
-    @include borders.rounded-border;
+    &,
+    &:hover {
+      @include colour.colour-font("button-accented-text");
+      @include colour.colour-background("button-accented-background");
+      @include colour.colour-border("button-accented-background");
+    }
   }
 
   &__navigation-button-icon {

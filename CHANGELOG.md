@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reduced gap between fieldset items
 - Allow HTML in hint text for fieldsets and form field components
 - Used tilde concatination `~` in templates rather than plus `+`
+- Change arrow icon in search field to SVG
+- Update all embedded Font Awesome SVG icons
 
 ### Deprecated
 ### Removed

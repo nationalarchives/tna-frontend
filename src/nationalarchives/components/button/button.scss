@@ -124,6 +124,8 @@ $button-border-width: 4px !default;
     .fa-solid {
       width: 2.5rem;
 
+      line-height: 2rem;
+
       @include typography.font-size(18);
     }
 
@@ -138,10 +140,9 @@ $button-border-width: 4px !default;
     padding-left: 0;
 
     .fa-solid {
-      width: 2rem;
+      width: 1.5rem;
 
-      @include typography.font-size(18 * 0.9);
-      line-height: 2rem;
+      line-height: 1.5rem;
     }
 
     svg {

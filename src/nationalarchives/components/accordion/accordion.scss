@@ -20,16 +20,33 @@
   }
 
   // INTERACTIVE
+  &__toggle-all {
+    margin-bottom: spacing.space(1);
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0.1px;
+
+    cursor: pointer;
+
+    @include colour.colour-font("link");
+    @include typography.font-size(16);
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
   &__details {
     @include colour.colour-border("keyline", 1px, solid, bottom);
 
     position: relative;
     z-index: 1;
 
-    &:first-child {
+    &:first-of-type {
       @include colour.colour-border("keyline", 1px, solid, top);
-      // @include colour.thick-keyline-dark(top);
-      // @include colour.thick-keyline-accent(top);
     }
   }
 

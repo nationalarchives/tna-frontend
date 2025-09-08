@@ -11,6 +11,22 @@ export class Accordion {
 
     this.$items.forEach(($item) => this.initItem($item));
     this.initState();
+
+    this.$toggleAllButton = this.$module.querySelector(
+      ".tna-accordion__toggle-all",
+    );
+    if (this.$toggleAllButton) {
+      this.syncToggleAllButton();
+      this.$toggleAllButton.removeAttribute("hidden");
+      this.$toggleAllButton.addEventListener("click", () => {
+        if (this.isAllOpen()) {
+          this.$items.forEach(($item) => this.closeItem($item));
+        } else {
+          this.$items.forEach(($item) => this.openItem($item));
+        }
+        this.syncToggleAllButton();
+      });
+    }
   }
 
   initItem($item) {
@@ -72,6 +88,7 @@ export class Accordion {
     );
     $content.removeAttribute("hidden");
     // $content.setAttribute("tabindex", "0");
+    this.syncToggleAllButton();
   }
 
   closeItem($item) {
@@ -84,6 +101,7 @@ export class Accordion {
     );
     $content.setAttribute("hidden", "");
     // $content.setAttribute("tabindex", "-1");
+    this.syncToggleAllButton();
   }
 
   closeAllItemsExcept($excludeItem) {
@@ -96,5 +114,26 @@ export class Accordion {
             .getAttribute("aria-expanded") === "true",
       )
       .forEach(($item) => this.closeItem($item));
+  }
+
+  isAllOpen() {
+    return Array.from(this.$items).every(
+      ($item) =>
+        $item
+          .querySelector(".tna-accordion__summary")
+          .getAttribute("aria-expanded") === "true",
+    );
+  }
+
+  syncToggleAllButton() {
+    if (this.$toggleAllButton) {
+      if (this.isAllOpen()) {
+        this.$toggleAllButton.innerText =
+          this.$toggleAllButton.dataset.closeAllLabel || "Hide all sections";
+      } else {
+        this.$toggleAllButton.innerText =
+          this.$toggleAllButton.dataset.openAllLabel || "Show all sections";
+      }
+    }
   }
 }

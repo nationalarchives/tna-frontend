@@ -1,0 +1,109 @@
+[
+  {
+    "name": "label",
+    "type": "string",
+    "required": true,
+    "description": "The label for the date input field."
+  },
+  {
+    "name": "headingLevel",
+    "type": "number",
+    "required": false,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+  },
+  {
+    "name": "headingSize",
+    "type": "string",
+    "required": false,
+    "description": "The physical size of the date input title (`xl`, `l`, `m`, `s` or `xs`).",
+    "default": "m"
+  },
+  {
+    "name": "id",
+    "type": "string",
+    "required": true,
+    "description": "A unique ID for the date input component."
+  },
+  {
+    "name": "name",
+    "type": "string",
+    "required": true,
+    "description": "The name of the form field."
+  },
+  {
+    "name": "hint",
+    "type": "string",
+    "required": false,
+    "description": "An optional hint to display above the form field."
+  },
+  {
+    "name": "value",
+    "type": "object",
+    "required": false,
+    "description": "The values of the date fields.",
+    "params": [
+      {
+        "name": "hour",
+        "type": "string",
+        "required": false,
+        "description": "The value for the hour field."
+      },
+      {
+        "name": "minute",
+        "type": "string",
+        "required": false,
+        "description": "The value for the minute field."
+      },
+      {
+        "name": "second",
+        "type": "string",
+        "required": false,
+        "description": "The value for the second field."
+      }
+    ]
+  },
+  {
+    "name": "error",
+    "type": "object",
+    "required": false,
+    "description": "If set, the details of any errors.",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": "The error text to display."
+      }
+    ]
+  },
+  {
+    "name": "progressive",
+    "type": "boolean",
+    "required": false,
+    "description": "If true, order the date fields in a year-month-day order and only show the next field when the previous has a valid value."
+  },
+  {
+    "name": "formItemClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the date input form group."
+  },
+  {
+    "name": "formItemAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the date input form group."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the date input."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the date input."
+  }
+]

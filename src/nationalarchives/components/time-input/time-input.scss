@@ -1,12 +1,46 @@
-@use "../../variables/forms" as formsVars;
+@use "../../variables/forms" as formVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.tna-date-input {
+.tna-time-input {
   display: flex;
-  gap: spacing.space(1);
+  gap: spacing.space(2);
+
+
+  &__wrapper {
+  display: flex;
+  gap: spacing.space(0.25);
+
+  padding: 0;
+
+  // display: block;
+  box-sizing: border-box;
+
+  @include colour.always-light;
+  @include colour.colour-font("input-foreground");
+  line-height: 2rem;
+
+  @include colour.colour-background("input-background");
+
+  @include colour.colour-border(
+    "input-border",
+    formVars.$form-field-border-width
+  );
+  @include borders.rounded-border;
+  }
+
+  input[type="text"] {
+    // appearance: none;
+    width: 3.5rem;
+    text-align: center;
+    padding: 0;
+    border: none;
+    line-height: 1;
+
+    background-color: transparent;
+  }
 
   &__item {
     &-label {
@@ -34,17 +68,15 @@
 
       @include colour.colour-border(
         "input-border",
-        formsVars.$form-field-border-width
+        formVars.$form-field-border-width
       );
       @include borders.rounded-border;
-
-      &--wider {
-        width: 4.5rem;
-      }
 
       .tna-form-item--error & {
         @include colour.colour-border("form-error-border");
       }
     }
   }
+
+  &__separator {}
 }

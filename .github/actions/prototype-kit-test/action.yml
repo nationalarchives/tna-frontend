@@ -69,6 +69,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/time-input/macro.njk\" import tnaTimeInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/warning/macro.njk\" import tnaWarning %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/utilities/grid/macro.njk\" import tnaGrid %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html
       shell: bash
@@ -110,6 +111,7 @@ runs:
         echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextarea({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaTimeInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaWarning({}) }}" >> prototype/app/views/index.html &&
         echo "{% endblock %}" >> prototype/app/views/index.html
       shell: bash

@@ -117,6 +117,7 @@ const checkExists = [
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input", "TextInput"),
   ...componentFiles("textarea"),
+  ...componentFiles("time-input"),
   ...componentFiles("warning"),
   // Tools
   "nationalarchives/tools/_a11y.scss",

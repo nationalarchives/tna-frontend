@@ -1,0 +1,8 @@
+{%- macro tnaTimeInputHourElement(params) -%}
+<div class="tna-time-input__item tna-time-input__item--hour">
+  <label for="{{ params.id }}-hour" class="tna-time-input__item-label">
+    Hours
+  </label>
+  <input type="text" id="{{ params.id }}-hour" value="{{ params.value.hour if params.value }}" name="{{ params.name }}-hour" class="tna-time-input__item-input{% if params.classes %} {{ params.classes }}{% endif %}" inputmode="numeric"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+</div>
+{%- endmacro %}

@@ -239,3 +239,19 @@ Inline.args = {
   inline: true,
   classes: "tna-checkboxes--demo",
 };
+
+export const Single = Template.bind({});
+Single.args = {
+  label: "Terms and conditions",
+  headingLevel: 4,
+  headingSize: "xs",
+  id: "terms",
+  name: "terms",
+  items: [
+    {
+      text: "I agree to the terms and conditions",
+      value: "agree",
+    },
+  ],
+  classes: "tna-checkboxes--demo",
+};

@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fieldsets now have a `smallerHint` option to match other form field components
 - Global header and footer components now have `defaultContent` and `defaultContentBaseURL` options to allow more consistent global content to be used
-- Accordions can have an optional open/close all button with ``
+- Accordions can have an optional open/close all button with `toggleAllButton`
+- Checkboxes with a single item aren't rendered in a `<fieldset>`
 
 ### Changed
 

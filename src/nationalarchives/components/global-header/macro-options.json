@@ -9,7 +9,7 @@
     "name": "defaultContentBaseURL",
     "type": "string",
     "required": false,
-    "description": "Set the base URL for the `defaultContent` links."
+    "description": "Set the base URL for the `defaultContent` links. Do not include a trailing slash."
   },
   {
     "name": "logo",

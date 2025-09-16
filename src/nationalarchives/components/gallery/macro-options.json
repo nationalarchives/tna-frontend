@@ -78,13 +78,13 @@
     "name": "showGrid",
     "type": "boolean",
     "required": false,
-    "description": "If true, don't select the first image when the gallery loads and instead show a grid of images."
+    "description": "If `true`, don't select the first image when the gallery loads and instead show a grid of images."
   },
   {
     "name": "bounded",
     "type": "boolean",
     "required": false,
-    "description": "If true, add a background to the gallery to separate it from surrounding contnet."
+    "description": "If `true`, add a background to the gallery to separate it from surrounding contnet."
   },
   {
     "name": "classes",

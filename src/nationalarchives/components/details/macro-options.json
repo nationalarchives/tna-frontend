@@ -21,7 +21,7 @@
     "name": "open",
     "type": "boolean",
     "required": false,
-    "description": "If true, open the details component."
+    "description": "If `true`, open the details component."
   },
   {
     "name": "classes",

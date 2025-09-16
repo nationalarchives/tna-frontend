@@ -41,7 +41,7 @@
         "type": "boolean",
         "required": false,
         "default": false,
-        "description": "If true, open the accordion item. If a `group` is set, only one item in that group can be open."
+        "description": "If `true`, open the accordion item. If a `group` is set, only one item in that group can be open."
       }
     ]
   },
@@ -56,7 +56,7 @@
     "type": "boolean",
     "required": false,
     "default": false,
-    "description": "If true, only one accordion items can be opened at a time."
+    "description": "If `true`, only one accordion items can be opened at a time."
   },
   {
     "name": "toggleAllButton",
@@ -68,7 +68,7 @@
         "name": "enabled",
         "type": "boolean",
         "required": true,
-        "description": "If true, add a button above the accordion that allows the user to open or close all sections."
+        "description": "If `true`, add a button above the accordion that allows the user to open or close all sections."
       },
       {
         "name": "openAllLabel",

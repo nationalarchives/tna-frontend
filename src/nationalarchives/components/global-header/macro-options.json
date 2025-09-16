@@ -3,7 +3,7 @@
     "name": "defaultContent",
     "type": "boolean",
     "required": false,
-    "description": "If true, use the default content for the global header."
+    "description": "If `true`, use the default content for the global header."
   },
   {
     "name": "defaultContentBaseURL",

@@ -139,7 +139,7 @@
         "name": "rightAlignIcon",
         "type": "boolean",
         "required": false,
-        "description": "If true, align the icon to the right hand side of the button."
+        "description": "If `true`, align the icon to the right hand side of the button."
       },
       {
         "name": "classes",
@@ -171,13 +171,13 @@
     "name": "leftBorder",
     "type": "boolean",
     "required": false,
-    "description": "If true, add a thick border to the left hand side of the content box."
+    "description": "If `true`, add a thick border to the left hand side of the content box."
   },
   {
     "name": "narrow",
     "type": "boolean",
     "required": false,
-    "description": "If true, use a narrower style hero image."
+    "description": "If `true`, use a narrower style hero image."
   },
   {
     "name": "classes",

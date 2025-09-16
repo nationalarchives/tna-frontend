@@ -60,7 +60,7 @@
     "name": "maxWidth",
     "type": "boolean",
     "required": false,
-    "description": "If true, make the date search field expand to the full width of the container."
+    "description": "If `true`, make the date search field expand to the full width of the container."
   },
   {
     "name": "formItemClasses",

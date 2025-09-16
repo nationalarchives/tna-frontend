@@ -3,7 +3,7 @@
     "name": "defaultContent",
     "type": "boolean",
     "required": false,
-    "description": "If true, use the default content for the footer."
+    "description": "If `true`, use the default content for the footer."
   },
   {
     "name": "defaultContentBaseURL",
@@ -73,7 +73,7 @@
         "name": "hideTitle",
         "type": "boolean",
         "required": false,
-        "description": "If true, hide the title of the navigation section."
+        "description": "If `true`, hide the title of the navigation section."
       },
       {
         "name": "items",
@@ -103,7 +103,7 @@
             "name": "newTab",
             "type": "boolean",
             "required": false,
-            "description": "If true, open the link in a new tab."
+            "description": "If `true`, open the link in a new tab."
           }
         ]
       }

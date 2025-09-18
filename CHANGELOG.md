@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Table wrappers now have faded sides when scrolling is active
 
 ### Changed
+
+- Reduced default border radius from `4px` to `2px`
+
 ### Deprecated
 ### Removed
 ### Fixed

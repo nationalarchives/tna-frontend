@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.25.1...HEAD)
 
 ### Added
+
+- Table wrappers now have faded sides when scrolling is active
+
 ### Changed
 ### Deprecated
 ### Removed

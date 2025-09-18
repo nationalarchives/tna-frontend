@@ -7,6 +7,38 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
+@property --left-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --right-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes scrollfade {
+  0% {
+    --left-fade: 0;
+    --right-fade: 2rem;
+  }
+
+  25% {
+    --left-fade: 2rem;
+  }
+
+  75% {
+    --right-fade: 2rem;
+  }
+
+  100% {
+    --right-fade: 0;
+    --left-fade: 2rem;
+  }
+}
+
 .tna-table {
   max-width: 100%;
 
@@ -74,6 +106,34 @@
     &--numeric {
       text-align: right;
     }
+
+    &--align-left {
+      text-align: left;
+    }
+
+    &--align-centre {
+      text-align: center;
+    }
+
+    &--align-right {
+      text-align: right;
+    }
+
+    &--align-justify {
+      text-align: justify;
+    }
+
+    &--align-top {
+      vertical-align: top;
+    }
+
+    &--align-middle {
+      vertical-align: middle;
+    }
+
+    &--align-bottom {
+      vertical-align: bottom;
+    }
   }
 
   &__head &__header {
@@ -101,6 +161,16 @@
 
   position: relative;
   left: -#{grid.gutter-width()};
+
+  mask: linear-gradient(
+    to right,
+    #0000,
+    #ffff var(--left-fade) calc(100% - var(--right-fade)),
+    #0000
+  );
+  animation: scrollfade;
+  animation-timeline: --scrollfade;
+  scroll-timeline: --scrollfade x;
 
   &[tabindex="0"] {
     border-radius: 0.1px;

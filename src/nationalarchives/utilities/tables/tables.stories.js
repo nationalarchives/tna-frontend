@@ -19,19 +19,19 @@ const TableTemplate = () =>
           </tr>
         </thead>
         <tbody class="tna-table__body">
-          <tr>
+          <tr class="tna-table__row">
             <th class="tna-table__header" scope="row">2020</th>
             <td class="tna-table__cell">Rat</td>
             <td class="tna-table__cell tna-table__cell--numeric">123,456</td>
             <td class="tna-table__cell tna-table__cell--numeric">789</td>
           </tr>
-          <tr>
+          <tr class="tna-table__row">
             <th class="tna-table__header" scope="row">2021</th>
             <td class="tna-table__cell">Ox</td>
             <td class="tna-table__cell tna-table__cell--numeric">456,789</td>
             <td class="tna-table__cell tna-table__cell--numeric">123</td>
           </tr>
-          <tr>
+          <tr class="tna-table__row">
             <th class="tna-table__header" scope="row">2022</th>
             <td class="tna-table__cell">Tiger</td>
             <td class="tna-table__cell tna-table__cell--numeric">42,424</td>
@@ -39,7 +39,7 @@ const TableTemplate = () =>
           </tr>
         </tbody>
         <tfoot class="tna-table__foot">
-          <tr>
+          <tr class="tna-table__row">
             <th class="tna-table__header" scope="row">Totals</th>
             <td class="tna-table__cell"></td>
             <td class="tna-table__cell tna-table__cell--numeric">622,669</td>

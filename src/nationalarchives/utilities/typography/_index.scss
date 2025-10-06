@@ -87,6 +87,7 @@ small {
   @include typography.detail-font-small;
   line-height: 1;
   text-align: center;
+  text-wrap-style: balance;
 
   @include borders.rounded-border;
 

@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reduced default border radius from `4px` to `2px`
 - Table captions on scrollable tables now stay within the viewport so are always visible
 - Allow `defaultContent` in global headers and footers to be overwritten
+- Replaced deprecated `clip` properties with `clip-path` and `word-wrap` with `overflow-wrap`
 
 ### Deprecated
 ### Removed

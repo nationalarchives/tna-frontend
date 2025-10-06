@@ -28,7 +28,6 @@
   );
   outline: none !important;
 
-  clip: rect(0 0 0 0) !important;
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
 
@@ -51,7 +50,6 @@
 
     white-space: inherit !important;
 
-    clip: auto !important;
     -webkit-clip-path: none !important;
     clip-path: none !important;
 

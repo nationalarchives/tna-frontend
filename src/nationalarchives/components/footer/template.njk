@@ -3,7 +3,9 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
 
-{%- if params.defaultContent %}
+{% if params.social %}
+  {% set social = params.social %}
+{% elif params.defaultContent %}
   {% set social = [
     {
       href: "https://twitter.com/UKNatArchives",
@@ -36,6 +38,13 @@
       shortTitle: "Instagram"
     }
   ] %}
+{% else %}
+  {% set social = [] %}
+{% endif %}
+
+{% if params.navigation %}
+  {% set navigation = params.navigation %}
+{% elif params.defaultContent %}
   {% set navigation = [
     {
       title: "Quick links",
@@ -119,6 +128,13 @@
       ]
     }
   ] %}
+{% else %}
+  {% set navigation = [] %}
+{% endif %}
+
+{% if params.legal %}
+  {% set legal = params.legal %}
+{% elif params.defaultContent %}
   {% set legal = [
     {
       text: "Accessibility statement",
@@ -141,13 +157,17 @@
       href: (params.defaultContentBaseURL or "") ~ "/cookies/"
     }
   ] %}
+{% else %}
+  {% set legal = [] %}
+{% endif %}
+
+{% if params.showNewsletter !== undefined %}
+  {% set showNewsletter = params.showNewsletter %}
+{% elif params.defaultContent %}
   {% set showNewsletter = true %}
 {%- else %}
-  {% set social = params.social or null %}
-  {% set navigation = params.navigation or null %}
-  {% set legal = params.legal or null %}
-  {% set showNewsletter = params.showNewsletter %}
-{%- endif -%}
+  {% set showNewsletter = false %}
+{%- endif %}
 
 <footer class="tna-footer{% if classes %} {{ classes }}{% endif %}" data-module="tna-footer" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.themeSelector %}

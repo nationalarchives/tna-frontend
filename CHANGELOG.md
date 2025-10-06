@@ -15,10 +15,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Reduced default border radius from `4px` to `2px`
 - Table captions on scrollable tables now stay within the viewport so are always visible
+- Allow `defaultContent` in global headers and footers to be overwritten
 
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Remove unused element IDs from `aria-controls` attribute of hamburger menu in global header
+
 ### Security
 
 ## [0.25.1](https://github.com/nationalarchives/tna-frontend/compare/v0.25.0...v0.25.1) - 2025-09-16

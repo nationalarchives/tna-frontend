@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Reduced default border radius from `4px` to `2px`
+- Table captions on scrollable tables now stay within the viewport so are always visible
 
 ### Deprecated
 ### Removed

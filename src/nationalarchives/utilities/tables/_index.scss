@@ -59,7 +59,7 @@
     @include typography.font-size(16);
 
     &--scroll {
-      width: calc(100vw - #{grid.gutter-width-double()});
+      max-width: calc(100vw - #{grid.gutter-width-double()});
 
       position: sticky;
       left: 0;
@@ -195,7 +195,7 @@
   .tna-table {
     &__caption {
       &--scroll {
-        width: calc(100vw - #{grid.gutter-width-tiny-double()});
+        max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
       }
     }
   }

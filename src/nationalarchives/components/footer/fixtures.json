@@ -170,7 +170,7 @@
       "options": {
         "defaultContent": true,
         "social": [],
-        "navigation": [],
+        "navigation": null,
         "showNewsletter": false,
         "legal": []
       },

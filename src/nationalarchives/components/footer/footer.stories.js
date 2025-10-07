@@ -31,34 +31,7 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  defaultContent,
-  defaultContentBaseURL,
-  meta,
-  social,
-  navigation,
-  showNewsletter,
-  legal,
-  themeSelector,
-  currentTheme,
-  classes,
-  attributes,
-}) =>
-  Footer({
-    params: {
-      defaultContent,
-      defaultContentBaseURL,
-      meta,
-      social,
-      navigation,
-      showNewsletter,
-      legal,
-      themeSelector,
-      currentTheme,
-      classes,
-      attributes,
-    },
-  });
+const Template = (params) => Footer({ params });
 
 export const Standard = Template.bind({});
 Standard.args = {

@@ -3,7 +3,7 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
 
-{% if params.social %}
+{% if "social" in params %}
   {% set social = params.social %}
 {% elif params.defaultContent %}
   {% set social = [
@@ -42,7 +42,7 @@
   {% set social = [] %}
 {% endif %}
 
-{% if params.navigation %}
+{% if "navigation" in params %}
   {% set navigation = params.navigation %}
 {% elif params.defaultContent %}
   {% set navigation = [
@@ -132,7 +132,7 @@
   {% set navigation = [] %}
 {% endif %}
 
-{% if params.legal %}
+{% if "legal" in params %}
   {% set legal = params.legal %}
 {% elif params.defaultContent %}
   {% set legal = [
@@ -161,7 +161,7 @@
   {% set legal = [] %}
 {% endif %}
 
-{% if params.showNewsletter !== undefined %}
+{% if "showNewsletter" in params %}
   {% set showNewsletter = params.showNewsletter %}
 {% elif params.defaultContent %}
   {% set showNewsletter = true %}

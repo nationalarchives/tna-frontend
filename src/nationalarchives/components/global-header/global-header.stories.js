@@ -31,34 +31,7 @@ export default {
   },
 };
 
-const Template = ({
-  logo,
-  defaultContent,
-  defaultContentBaseURL,
-  topNavigation,
-  navigation,
-  collapseOnMedium,
-  navigationId,
-  topNavigationId,
-  phaseBanner,
-  classes,
-  attributes,
-}) =>
-  Header({
-    params: {
-      logo,
-      defaultContent,
-      defaultContentBaseURL,
-      topNavigation,
-      navigation,
-      collapseOnMedium,
-      navigationId,
-      topNavigationId,
-      phaseBanner,
-      classes,
-      attributes,
-    },
-  });
+const Template = (params) => Header({ params });
 
 export const Standard = Template.bind({});
 Standard.args = {

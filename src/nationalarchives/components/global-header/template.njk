@@ -6,7 +6,7 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 
-{% if params.logo %}
+{% if "logo" in params %}
   {% set logo = params.logo %}
 {% elif params.defaultContent %}
   {% set logo = {
@@ -17,7 +17,7 @@
   {% set logo = null %}
 {% endif %}
 
-{% if params.navigation %}
+{% if "navigation" in params %}
   {% set navigation = params.navigation %}
 {% elif params.defaultContent %}
   {% set navigation = [
@@ -50,7 +50,7 @@
   {% set navigation = [] %}
 {% endif %}
 
-{% if params.topNavigation %}
+{% if "topNavigation" in params %}
   {% set topNavigation = params.topNavigation %}
 {% elif params.defaultContent %}
   {% set topNavigation = [

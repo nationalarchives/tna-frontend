@@ -36,12 +36,28 @@
 }
 
 @mixin focus-outline {
-  @include focus-outline-without-offset;
-  outline-offset: a11y.$focus-outline-offset;
+  outline: 3px #000 solid !important;
+  outline-offset: 4px !important;
+
+  box-shadow: 0 0 0 4px #fff !important;
+
+  .tna-template--dark-theme & {
+    outline-color: #fff !important;
+
+    box-shadow: 0 0 0 4px #000 !important;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      outline-color: #fff !important;
+
+      box-shadow: 0 0 0 4px #000 !important;
+    }
+  }
 }
 
 @mixin active-outline {
-  outline-offset: 0;
+  // outline-offset: 0;
 }
 
 @mixin no-focus-outline-on-click {

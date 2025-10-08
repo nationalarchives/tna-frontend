@@ -9,7 +9,7 @@
   @include spacing.space-above;
   padding: spacing.space(1);
 
-  @include colour.always-light;
+  // @include colour.always-light;
 
   @include colour.colour-background("background");
 

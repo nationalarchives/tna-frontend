@@ -25,7 +25,7 @@
 
     flex: 1;
 
-    @include colour.always-light;
+    // @include colour.always-light;
     @include colour.colour-font("input-foreground");
 
     @include colour.colour-background("input-background");

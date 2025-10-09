@@ -48,8 +48,6 @@
         position: absolute;
         top: 0;
         left: 0;
-
-        @include colour.always-light;
       }
 
       &::before {

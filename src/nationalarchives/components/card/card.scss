@@ -1,5 +1,4 @@
 @use "sass:math";
-@use "../../variables/a11y" as a11yVariables;
 @use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
@@ -117,22 +116,7 @@
   &--full-click {
     &:hover {
       @include colour.colour-outline("base-keyline", 2px, solid);
-      outline-offset: a11yVariables.$focus-outline-width - 1px;
-    }
-
-    &:focus,
-    &:active {
-      outline: none;
-    }
-  }
-
-  &--full-click#{&}--plain {
-    &:hover {
-      @include colour.colour-outline(
-        "base-keyline",
-        a11yVariables.$focus-outline-offset,
-        solid
-      );
+      outline-offset: 3px;
     }
   }
 
@@ -149,7 +133,9 @@
 
     &:focus-visible,
     &:active {
-      outline: none;
+      outline: none !important;
+
+      box-shadow: none !important;
 
       &::before {
         @include a11y.focus-outline;

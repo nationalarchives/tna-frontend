@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Focus indicator refactored to be more visible and guarantee contrast with surrounding elements
+
 ### Deprecated
 ### Removed
 

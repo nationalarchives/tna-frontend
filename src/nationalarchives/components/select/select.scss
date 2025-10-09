@@ -10,7 +10,6 @@
 
   display: block;
 
-  @include colour.always-light;
   @include colour.colour-font("input-foreground");
   line-height: 2rem;
 

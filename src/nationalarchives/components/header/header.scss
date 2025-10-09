@@ -133,8 +133,7 @@
 
     cursor: pointer;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
 
@@ -205,8 +204,12 @@
       &:link,
       &:visited {
         @include colour.colour-font("font-base");
-        @include typography.interacted-text-decoration;
       }
+    }
+
+    &:hover,
+    &--selected {
+      @include typography.interacted-text-decoration;
     }
 
     .fa-solid {
@@ -262,12 +265,8 @@
     }
 
     &--selected {
-      &,
-      &:hover,
-      &:focus-visible {
-        &::after {
-          @include colour.thick-keyline-dark(top);
-        }
+      &::after {
+        @include colour.thick-keyline-dark(top);
       }
     }
   }
@@ -390,12 +389,8 @@
       }
 
       &--selected {
-        &,
-        &:hover,
-        &:focus-visible {
-          &::after {
-            @include colour.colour-border("keyline", 0.5rem, solid, left);
-          }
+        &::after {
+          @include colour.colour-border("keyline", 0.5rem, solid, left);
         }
       }
     }

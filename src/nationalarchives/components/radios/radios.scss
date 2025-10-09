@@ -47,8 +47,6 @@
         left: 0;
 
         border-radius: 100%;
-
-        @include colour.always-light;
       }
 
       &::before {

@@ -42,8 +42,11 @@ $button-border-width: 4px !default;
 
   &:hover,
   &:focus {
-    @include colour.colour-font("button-hover-text");
     text-decoration: none;
+  }
+
+  &:hover {
+    @include colour.colour-font("button-hover-text");
 
     background: transparent;
   }
@@ -72,13 +75,11 @@ $button-border-width: 4px !default;
     &,
     &:link,
     &:visited,
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("link");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }
@@ -94,8 +95,7 @@ $button-border-width: 4px !default;
       @include colour.colour-font("button-accented-text");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("font-dark");
     }
   }
@@ -172,8 +172,7 @@ $button-border-width: 4px !default;
   }
 
   &--solid-hover {
-    &:not(.tna-button--plain):hover,
-    &:not(.tna-button--plain):focus {
+    &:not(.tna-button--plain):hover {
       @include colour.colour-font("font-dark");
 
       @include colour.colour-background("background");
@@ -182,8 +181,7 @@ $button-border-width: 4px !default;
 
   .tna-background-accent &,
   .tna-template--dark-theme .tna-background-accent-light & {
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("font-dark");
     }
   }
@@ -200,8 +198,7 @@ $button-border-width: 4px !default;
       @include colour.colour-font("contrast-button-text");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("contrast-font-dark");
 
       @include colour.colour-background("contrast-background");
@@ -210,8 +207,7 @@ $button-border-width: 4px !default;
 
   @media (prefers-color-scheme: dark) {
     .tna-template--system-theme .tna-background-accent-light & {
-      &:hover,
-      &:focus {
+      &:hover {
         @include colour.colour-font("font-dark");
       }
     }
@@ -227,8 +223,7 @@ $button-border-width: 4px !default;
         @include colour.colour-font("contrast-button-text");
       }
 
-      &:hover,
-      &:focus {
+      &:hover {
         @include colour.colour-font("contrast-font-dark");
 
         @include colour.colour-background("contrast-background");
@@ -237,8 +232,7 @@ $button-border-width: 4px !default;
   }
 
   @include colour.on-forced-colours {
-    &:hover,
-    &:focus {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }

@@ -9,7 +9,6 @@ const argTypes = {
   text: { control: "text" },
   items: { control: "object" },
   id: { control: "text" },
-  showGrid: { control: "boolean" },
   bounded: { control: "boolean" },
   classes: { control: "text" },
   attributes: { control: "object" },
@@ -26,33 +25,9 @@ export default {
   argTypes,
 };
 
-const Template = ({
-  title,
-  headingLevel,
-  headingSize,
-  body,
-  text,
-  items,
-  id,
-  showGrid,
-  bounded,
-  classes,
-  attributes,
-}) =>
+const Template = (params) =>
   Gallery({
-    params: {
-      title,
-      headingLevel,
-      headingSize,
-      body,
-      text,
-      items,
-      id,
-      showGrid,
-      bounded,
-      classes,
-      attributes,
-    },
+    params,
   });
 
 const exampleWidth = 600;
@@ -93,13 +68,4 @@ export const Bounded = Template.bind({});
 Bounded.args = {
   ...Standard.args,
   bounded: true,
-};
-
-export const Grid = Template.bind({});
-Grid.args = {
-  ...Standard.args,
-  title: "My gallery",
-  headingLevel: 3,
-  text: "Lorem ipsum",
-  showGrid: true,
 };

@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Deprecated
 ### Removed
+
+- Full screen and index view options in gallery components have been removed
+
 ### Fixed
 ### Security
 

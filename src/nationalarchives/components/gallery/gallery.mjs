@@ -11,7 +11,6 @@ export class Gallery {
     this.$navigationItems =
       this.$navigation &&
       $module.querySelectorAll(".tna-gallery__navigation-item");
-    this.$options = $module && $module.querySelector(".tna-gallery__options");
     this.$navigationButtons =
       $module && $module.querySelector(".tna-gallery__navigation-buttons");
 
@@ -22,21 +21,12 @@ export class Gallery {
       this.$items.length < 2 ||
       !this.$navigation ||
       !this.$navigationItems ||
-      !this.$options ||
       !this.$navigationButtons
     ) {
       return;
     }
 
     this.$module.classList.add("tna-gallery--interactive");
-
-    this.$showIndex = this.$options.querySelector('button[value="show-index"]');
-    this.$enterFullscreen = this.$options.querySelector(
-      'button[value="enter-fullscreen"]',
-    );
-    this.$exitFullscreen = this.$options.querySelector(
-      'button[value="exit-fullscreen"]',
-    );
 
     this.$navigationButtonPrev = this.$navigationButtons.querySelector(
       ".tna-gallery__navigation-prev",
@@ -45,18 +35,9 @@ export class Gallery {
       ".tna-gallery__navigation-next",
     );
 
-    this.$module.addEventListener("fullscreenchange", () =>
-      this.syncFullScreen(),
-    );
-
     this.setup();
-    this.allowGridIndex = this.$module.dataset["showgrid"] || false;
-    if (this.allowGridIndex) {
-      this.showIndex();
-    } else {
-      this.currentId = this.$items[0].id;
-      this.showItem(this.currentId);
-    }
+    this.currentId = this.$items[0].id;
+    this.showItem(this.currentId);
   }
 
   setup() {
@@ -102,21 +83,7 @@ export class Gallery {
         e.preventDefault();
       }
     });
-    this.$options.removeAttribute("hidden");
-    if (
-      document.fullscreenEnabled &&
-      this.$enterFullscreen &&
-      this.$exitFullscreen
-    ) {
-      this.$enterFullscreen?.addEventListener("click", () =>
-        this.enterFullScreen(),
-      );
-      this.$exitFullscreen?.addEventListener("click", () =>
-        this.exitFullScreen(),
-      );
-      this.$enterFullscreen?.removeAttribute("hidden");
-    }
-    this.$showIndex?.addEventListener("click", () => this.showIndex());
+
     this.$navigationButtons?.removeAttribute("hidden");
     this.$navigationButtonPrev?.addEventListener("click", () => {
       this.showPreviousItem();
@@ -136,12 +103,6 @@ export class Gallery {
     );
   }
 
-  showIndex() {
-    this.showItem("");
-    this.$itemsContainer.classList.add("tna-gallery__items--hide-items");
-    this.$showIndex?.setAttribute("hidden", "");
-  }
-
   showItem(id) {
     this.$items.forEach(($item) => {
       if (id && $item.id === id) {
@@ -156,9 +117,6 @@ export class Gallery {
       if (id) {
         if ($item.getAttribute("aria-controls") === id) {
           $item.setAttribute("aria-current", "true");
-          if (this.isFullScreen()) {
-            $item.scrollIntoView({ block: "nearest" });
-          }
         } else {
           $item.setAttribute("aria-current", "false");
         }
@@ -166,10 +124,6 @@ export class Gallery {
         $item.setAttribute("aria-current", "false");
       }
     });
-    if (this.allowGridIndex) {
-      this.$showIndex?.removeAttribute("hidden");
-    }
-    this.$itemsContainer.classList.remove("tna-gallery__items--hide-items");
     this.currentId = id;
     this.$liveRegion.textContent = `Image ${this.getCurrentItemIndex() + 1} of ${this.$items.length}`;
   }
@@ -202,30 +156,5 @@ export class Gallery {
 
   showLastItem() {
     this.showItem(this.$items[this.$items.length - 1].id);
-  }
-
-  isFullScreen() {
-    return document.fullscreenElement;
-  }
-
-  enterFullScreen() {
-    this.$module.requestFullscreen();
-    this.syncFullScreen();
-    this.$module.focus();
-  }
-
-  exitFullScreen() {
-    document.exitFullscreen();
-    this.syncFullScreen();
-  }
-
-  syncFullScreen() {
-    if (this.isFullScreen()) {
-      this.$enterFullscreen.setAttribute("hidden", "");
-      this.$exitFullscreen.removeAttribute("hidden");
-    } else {
-      this.$exitFullscreen.setAttribute("hidden", "");
-      this.$enterFullscreen.removeAttribute("hidden");
-    }
   }
 }

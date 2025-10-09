@@ -1,4 +1,3 @@
-@use "../../variables/a11y" as a11yVariables;
 @use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
@@ -58,7 +57,9 @@
 
     border-radius: 0.1px;
 
-    @include a11y.no-focus-outline-on-click;
+    .tna-template--clicked &:focus {
+      @include a11y.no-focus-outline;
+    }
   }
 
   &__item {

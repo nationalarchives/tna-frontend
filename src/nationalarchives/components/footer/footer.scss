@@ -81,8 +81,7 @@
           }
         }
 
-        &:hover,
-        &:focus-visible {
+        &:hover {
           @include typography.interacted-text-decoration;
         }
 
@@ -126,8 +125,7 @@
 
           text-decoration: none;
 
-          &:hover,
-          &:focus-visible {
+          &:hover {
             @include typography.interacted-text-decoration;
           }
 

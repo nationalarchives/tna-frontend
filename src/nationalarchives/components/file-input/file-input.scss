@@ -43,10 +43,6 @@
     @include a11y.focus-outline;
   }
 
-  &__droppable:has(&:active) {
-    @include a11y.focus-outline-without-offset;
-  }
-
   &__droppable & {
     padding: spacing.space(1);
 

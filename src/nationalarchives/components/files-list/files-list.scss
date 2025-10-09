@@ -84,16 +84,14 @@
     }
 
     &:hover,
-    &:focus-visible,
     &:active {
       &::before {
         @include colour.thick-keyline(left);
       }
     }
 
-    &:focus-visible,
-    &:active {
-      outline: none;
+    &:focus-visible {
+      @include a11y.no-focus-outline;
 
       &::before {
         @include a11y.focus-outline;
@@ -102,6 +100,7 @@
 
     &:active {
       &::before {
+        // TODO: Investigate
         @include a11y.active-outline;
       }
     }

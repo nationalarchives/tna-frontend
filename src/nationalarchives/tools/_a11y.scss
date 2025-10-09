@@ -20,24 +20,11 @@
 
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
-
-  // &::before,
-  // &::after {
-  //   content: "\00a0";
-  // }
 }
 
-@mixin focus-outline-without-offset {
-  @include colour.colour-outline(
-    "focus-outline",
-    a11y.$focus-outline-width,
-    solid
-  );
-}
-
-@mixin focus-outline {
+%focus-outline {
   outline: 3px #000 solid !important;
-  outline-offset: 4px !important;
+  outline-offset: 3px !important;
 
   box-shadow: 0 0 0 4px #fff !important;
 
@@ -56,12 +43,37 @@
   }
 }
 
-@mixin active-outline {
-  // outline-offset: 0;
+@mixin focus-outline {
+  @extend %focus-outline;
 }
 
-@mixin no-focus-outline-on-click {
-  .tna-template--clicked &:focus {
-    outline: none;
+@mixin no-focus-outline {
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+%active-outline {
+  outline: 2px #000 solid !important;
+  outline-offset: 2px !important;
+
+  box-shadow: 0 0 0 3px #fff !important;
+
+  .tna-template--dark-theme & {
+    outline-color: #fff !important;
+
+    box-shadow: 0 0 0 3px #000 !important;
   }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      outline-color: #fff !important;
+
+      box-shadow: 0 0 0 3px #000 !important;
+    }
+  }
+}
+
+@mixin active-outline {
+  @extend %active-outline;
 }

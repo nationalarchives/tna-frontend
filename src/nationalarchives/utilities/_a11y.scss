@@ -26,17 +26,13 @@ textarea,
 select,
 summary {
   &:active {
-    @include a11y.focus-outline-without-offset;
+    @include a11y.active-outline;
   }
-}
-
-*:active {
-  @include a11y.active-outline;
 }
 
 .tna-\!--no-focus-style,
 *[tabindex="-1"] {
   &:focus {
-    outline: none;
+    @include a11y.no-focus-outline;
   }
 }

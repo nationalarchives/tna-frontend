@@ -59,7 +59,6 @@ a {
   }
 
   &:hover,
-  &:focus-visible,
   &:active {
     @include typography.interacted-text-decoration;
   }
@@ -94,8 +93,7 @@ small {
   @at-root #{selector.unify("a", &)} {
     text-decoration: underline;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       text-decoration: underline;
       text-decoration-thickness: 0.1875em;
       text-underline-offset: 0.0625em;
@@ -126,8 +124,7 @@ small {
   border-radius: 0.1px;
 
   @at-root #{selector.unify("a", &)} {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
 

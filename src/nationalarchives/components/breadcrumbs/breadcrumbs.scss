@@ -47,11 +47,6 @@
     &:visited {
       @include colour.colour-font("font-base");
     }
-
-    // &:hover,
-    // &:focus-visible {
-    //   @include colour.colour-font("font-dark");
-    // }
   }
 
   button#{&}__link {

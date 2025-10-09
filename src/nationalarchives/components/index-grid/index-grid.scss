@@ -72,8 +72,7 @@
     @include typography.main-font-weight-bold;
     text-decoration: underline;
 
-    .tna-index-grid__item:hover &,
-    .tna-index-grid__item:focus-visible & {
+    .tna-index-grid__item:hover & {
       &,
       &:link,
       &:visited {

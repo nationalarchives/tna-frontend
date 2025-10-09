@@ -100,8 +100,7 @@
       border-style: solid;
     }
 
-    &:hover/*,
-    &:focus-visible*/ {
+    &:hover {
       @include typography.interacted-text-decoration;
       @include colour.colour-background("background-tint");
 

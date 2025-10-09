@@ -17,6 +17,8 @@
   border-radius: 0.1px;
 
   &__header {
+    padding-bottom: spacing.space(1);
+
     grid-column: 1 / 3;
     grid-row: 1;
 

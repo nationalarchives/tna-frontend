@@ -208,6 +208,20 @@
     {
       "name": "single item",
       "options": {
+        "id": "terms",
+        "name": "terms",
+        "items": [
+          {
+            "text": "I agree to the terms and conditions",
+            "value": "agree"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__body\"><div class=\"tna-checkboxes\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"terms\" value=\"agree\" name=\"terms\"><label for=\"terms\" class=\"tna-checkboxes__item-label\">I agree to the terms and conditions</label></div></div></div></div>"
+    },
+    {
+      "name": "single item with label",
+      "options": {
         "label": "Terms and conditions",
         "headingSize": "xs",
         "id": "terms",

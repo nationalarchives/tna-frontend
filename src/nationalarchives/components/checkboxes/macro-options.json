@@ -2,8 +2,8 @@
   {
     "name": "label",
     "type": "string",
-    "required": true,
-    "description": "The label for the checkboxes field."
+    "required": false,
+    "description": "The label for the checkboxes field. Required if there are multiple checkboxes. Optional for only one checkbox."
   },
   {
     "name": "headingLevel",

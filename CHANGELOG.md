@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Focus indicator refactored to be more visible and guarantee contrast with surrounding elements
+- The label/heading for single checkboxes is now optional
 
 ### Deprecated
 ### Removed

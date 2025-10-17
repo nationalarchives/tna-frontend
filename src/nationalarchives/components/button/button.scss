@@ -23,6 +23,9 @@ $button-border-width: 4px !default;
 
   cursor: pointer;
 
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
   @include typography.font-size(18);
   @include typography.main-font-weight-bold;
 
@@ -30,9 +33,6 @@ $button-border-width: 4px !default;
 
   @include colour.colour-border("button-background", $button-border-width);
   @include borders.rounded-border;
-
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 
   &,
   &:link,
@@ -102,6 +102,11 @@ $button-border-width: 4px !default;
 
   &--icon-right {
     flex-direction: row-reverse;
+
+    &:has(.fa-solid) {
+      align-items: center;
+      // justify-content: space-between;
+    }
   }
 
   &--small,

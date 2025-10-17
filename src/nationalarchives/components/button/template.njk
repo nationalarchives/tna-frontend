@@ -10,11 +10,9 @@
 {%- endif -%}
 {%- if params.iconOnly -%}
   {%- set containerClasses = containerClasses.concat('tna-button--icon-only') -%}
-{%- endif -%}
-{%- if params.iconOnlyOnMobile -%}
+{%- elif params.iconOnlyOnMobile -%}
   {%- set containerClasses = containerClasses.concat('tna-button--icon-only-mobile') -%}
-{%- endif -%}
-{%- if params.rightAlignIcon -%}
+{%- elif params.rightAlignIcon -%}
   {%- set containerClasses = containerClasses.concat('tna-button--icon-right') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}

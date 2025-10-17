@@ -20,6 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Full screen and index view options in gallery components have been removed
 
 ### Fixed
+
+- Fixed vertical alignment of multiline buttons with icons on small devices
+
 ### Security
 
 ## [0.26.2](https://github.com/nationalarchives/tna-frontend/compare/v0.26.1...v0.26.2) - 2025-10-07

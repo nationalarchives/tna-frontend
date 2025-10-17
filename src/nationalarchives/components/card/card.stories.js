@@ -588,6 +588,12 @@ export const All = () => `
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true })}
   </div>
+  <div class="tna-column tna-column--width-2-3 tna-!--margin-top-m">
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, fullAreaClick: true })}
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "plain", fullAreaClick: true })}
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true })}
+    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "contrast", fullAreaClick: true })}
+  </div>
 </div>`;
 All.parameters = {
   chromatic: { disableSnapshot: true },

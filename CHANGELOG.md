@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The label/heading for single checkboxes is now optional
 - Improved styling of higher contrast cards
 - Changed the colour of list item markers from light text to normal
+- Increased indent of ordered and unordered lists
 
 ### Deprecated
 ### Removed

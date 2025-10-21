@@ -39,12 +39,7 @@ ol {
 
   > li {
     &::marker {
-      @include colour.colour-font("font-light");
       @include typography.main-font-weight-medium;
-
-      @include colour.on-high-contrast {
-        @include colour.colour-font("font-dark");
-      }
     }
   }
 

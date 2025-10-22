@@ -171,10 +171,6 @@
     height: 100%;
 
     box-sizing: border-box;
-
-    @include colour.on-high-contrast-and-forced-colours {
-      height: auto;
-    }
   }
 
   &__image-container {

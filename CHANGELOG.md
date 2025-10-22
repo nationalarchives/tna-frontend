@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.26.2...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.27.0...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.27.0](https://github.com/nationalarchives/tna-frontend/compare/v0.26.2...v0.27.0) - 2025-10-22
+
 ### Changed
 
 - Focus indicator refactored to be more visible and guarantee contrast with surrounding elements
@@ -16,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the colour of list item markers from light text to normal
 - Increased indent of ordered and unordered lists
 
-### Deprecated
 ### Removed
 
 - Full screen and index view options in gallery components have been removed
@@ -24,8 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed vertical alignment of multiline buttons with icons on small devices
-
-### Security
 
 ## [0.26.2](https://github.com/nationalarchives/tna-frontend/compare/v0.26.1...v0.26.2) - 2025-10-07
 

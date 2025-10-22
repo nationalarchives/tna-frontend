@@ -304,6 +304,7 @@ ol {
 
     &--plain {
       > dt,
+      > dt .fa-solid,
       > dd {
         padding-top: spacing.space(0.5);
       }

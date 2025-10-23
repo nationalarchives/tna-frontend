@@ -9,8 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Improved colour of skip links
+- Improved colour of focus indicator
+
 ### Deprecated
 ### Removed
+
+- Removed a11y variables `$focus-outline-width` and `$focus-outline-offset` in favour of `$focus-outline-inner-width` and `$focus-outline-outer-width`
+
 ### Fixed
 ### Security
 

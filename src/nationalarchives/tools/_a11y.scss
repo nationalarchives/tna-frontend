@@ -23,22 +23,23 @@
 }
 
 %focus-outline {
-  outline: 3px #000 solid !important;
-  outline-offset: 3px !important;
+  outline: a11y.$focus-outline-outer-width #000 solid !important;
+  outline-offset: a11y.$focus-outline-inner-width !important;
 
-  box-shadow: 0 0 0 4px #fff !important;
+  box-shadow: 0 0 0 (a11y.$focus-outline-inner-width)
+    colour.brand-colour("yellow") !important;
 
   .tna-template--dark-theme & {
-    outline-color: #fff !important;
+    outline-color: colour.brand-colour("yellow") !important;
 
-    box-shadow: 0 0 0 4px #000 !important;
+    box-shadow: 0 0 0 (a11y.$focus-outline-inner-width) #000 !important;
   }
 
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
-      outline-color: #fff !important;
+      outline-color: colour.brand-colour("yellow") !important;
 
-      box-shadow: 0 0 0 4px #000 !important;
+      box-shadow: 0 0 0 (a11y.$focus-outline-inner-width) #000 !important;
     }
   }
 }

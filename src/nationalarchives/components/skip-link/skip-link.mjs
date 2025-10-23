@@ -33,5 +33,6 @@ export class SkipLink {
 
   removeFocusProperties() {
     this.$linkedElement.removeAttribute("tabindex");
+    this.$linkedElement.classList.remove("tna-!--no-focus-style");
   }
 }

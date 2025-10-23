@@ -72,36 +72,12 @@
   &--full-click {
   }
 
+  @include a11y.faux-full-outline("&--full-click &__link");
+
   &--full-click &__link {
-    &::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-
-      border-radius: 0.1px;
-    }
-
-    &:hover,
-    &:active {
+    &:hover {
       &::before {
         @include colour.thick-keyline(left);
-      }
-    }
-
-    &:focus-visible {
-      @include a11y.no-focus-outline;
-
-      &::before {
-        @include a11y.focus-outline;
-      }
-    }
-
-    &:active {
-      &::before {
-        // TODO: Investigate
-        @include a11y.active-outline;
       }
     }
   }

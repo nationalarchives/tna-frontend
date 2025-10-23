@@ -32,6 +32,7 @@ summary {
 
 .tna-\!--no-focus-style,
 *[tabindex="-1"] {
+  *:focus-visible,
   &:focus {
     @include a11y.no-focus-outline;
   }

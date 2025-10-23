@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "../../variables/a11y" as a11yVars;
 @use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
@@ -114,8 +115,12 @@
 
   &--full-click {
     &:hover {
-      @include colour.colour-outline("base-keyline", 2px, solid);
-      outline-offset: 3px;
+      @include colour.colour-outline(
+        "base-keyline",
+        a11yVars.$focus-outline-active-outer-width,
+        solid
+      );
+      outline-offset: a11yVars.$focus-outline-active-inner-width;
     }
   }
 
@@ -128,15 +133,11 @@
       z-index: 3;
 
       @include borders.rounded-border;
-
-      // background-color: #f0a;
     }
 
-    &:focus-visible,
+    &:focus,
     &:active {
-      outline: none !important;
-
-      box-shadow: none !important;
+      @include a11y.no-focus-outline;
 
       &::before {
         @include a11y.focus-outline;

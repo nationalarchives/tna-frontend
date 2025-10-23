@@ -29,6 +29,10 @@
   box-shadow: 0 0 0 a11y.$focus-outline-inner-width
     colour.brand-colour("yellow") !important;
 
+  transition:
+    outline-offset 0.15s,
+    box-shadow 0.15s;
+
   .tna-template--dark-theme & {
     outline-color: colour.brand-colour("yellow") !important;
 
@@ -60,6 +64,8 @@
 
   box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width
     colour.brand-colour("yellow") !important;
+
+  transition: none;
 
   .tna-template--dark-theme & {
     outline-color: colour.brand-colour("yellow") !important;

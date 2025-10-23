@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed focusable items `z-index` issue
+- Removed focus style on droppable file input component button to match other button focus/hover styles
 
 ### Security
 

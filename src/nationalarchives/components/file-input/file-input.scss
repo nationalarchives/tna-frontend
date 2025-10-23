@@ -73,8 +73,7 @@
     white-space: nowrap;
   }
 
-  &__droppable &:hover ~ &__droppable-buttons,
-  &__droppable &:focus-visible ~ &__droppable-buttons {
+  &__droppable &:hover ~ &__droppable-buttons {
     .tna-button {
       &:not(.tna-button--plain) {
         @include colour.colour-font("button-hover-text");

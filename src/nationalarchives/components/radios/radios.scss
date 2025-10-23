@@ -1,4 +1,4 @@
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
 @use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
@@ -62,7 +62,7 @@
 
         @include colour.colour-border(
           "input-border",
-          forms.$form-field-border-width
+          formsVars.$form-field-border-width
         );
       }
 

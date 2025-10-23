@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `faux-full-outline` mixin for full-click cards and other elements that need a larger, pseudo-clickable area
 
 ### Changed
+
+- Added back in the right border to search input textboxes and text input password components and spacing between text input and button
+
 ### Deprecated
 ### Removed
 ### Fixed

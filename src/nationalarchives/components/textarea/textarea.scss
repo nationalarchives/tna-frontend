@@ -1,4 +1,4 @@
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
@@ -24,7 +24,10 @@ $textarea-vertical-padding: 0.25 !default;
 
   @include colour.colour-background("input-background");
 
-  @include colour.colour-border("input-border", forms.$form-field-border-width);
+  @include colour.colour-border(
+    "input-border",
+    formsVars.$form-field-border-width
+  );
   @include borders.rounded-border;
 
   .tna-form-item--error & {

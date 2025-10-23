@@ -26,20 +26,20 @@
   outline: a11y.$focus-outline-outer-width #000 solid !important;
   outline-offset: a11y.$focus-outline-inner-width !important;
 
-  box-shadow: 0 0 0 (a11y.$focus-outline-inner-width)
+  box-shadow: 0 0 0 a11y.$focus-outline-inner-width
     colour.brand-colour("yellow") !important;
 
   .tna-template--dark-theme & {
     outline-color: colour.brand-colour("yellow") !important;
 
-    box-shadow: 0 0 0 (a11y.$focus-outline-inner-width) #000 !important;
+    box-shadow: 0 0 0 a11y.$focus-outline-inner-width #000 !important;
   }
 
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
       outline-color: colour.brand-colour("yellow") !important;
 
-      box-shadow: 0 0 0 (a11y.$focus-outline-inner-width) #000 !important;
+      box-shadow: 0 0 0 a11y.$focus-outline-inner-width #000 !important;
     }
   }
 }
@@ -55,22 +55,23 @@
 }
 
 %active-outline {
-  outline: 2px #000 solid !important;
-  outline-offset: 2px !important;
+  outline: a11y.$focus-outline-active-outer-width #000 solid !important;
+  outline-offset: a11y.$focus-outline-active-inner-width !important;
 
-  box-shadow: 0 0 0 3px #fff !important;
+  box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width
+    colour.brand-colour("yellow") !important;
 
   .tna-template--dark-theme & {
-    outline-color: #fff !important;
+    outline-color: colour.brand-colour("yellow") !important;
 
-    box-shadow: 0 0 0 3px #000 !important;
+    box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width #000 !important;
   }
 
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
-      outline-color: #fff !important;
+      outline-color: colour.brand-colour("yellow") !important;
 
-      box-shadow: 0 0 0 3px #000 !important;
+      box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width #000 !important;
     }
   }
 }

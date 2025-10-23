@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.27.6...HEAD)
 
 ### Added
+
+- Added `faux-full-outline` mixin for full-click cards and other elements that need a larger, pseudo-clickable area
+
 ### Changed
 ### Deprecated
 ### Removed

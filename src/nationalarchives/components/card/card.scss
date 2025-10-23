@@ -124,32 +124,7 @@
     }
   }
 
-  &--full-click &__heading-link {
-    &::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-
-      @include borders.rounded-border;
-    }
-
-    &:focus,
-    &:active {
-      @include a11y.no-focus-outline;
-
-      &::before {
-        @include a11y.focus-outline;
-      }
-    }
-
-    &:active {
-      &::before {
-        @include a11y.active-outline;
-      }
-    }
-  }
+  @include a11y.faux-full-outline("&--full-click &__heading-link");
 
   &--full-click#{&}:not(:has(&__image-container)) &__heading-link::before {
     border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius

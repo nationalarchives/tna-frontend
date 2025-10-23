@@ -1,7 +1,7 @@
 /* stylelint-disable */
 
 @use "sass:math";
-@use "variables/a11y" as a11yVariables;
+@use "tools/a11y";
 @use "tools/colour";
 @use "tools/media";
 @use "tools/spacing";
@@ -15,9 +15,7 @@ summary {
   &:focus {
     z-index: 9;
 
-    outline: colour.brand-colour("blue") a11yVariables.$focus-outline-width
-      solid;
-    outline-offset: a11yVariables.$focus-outline-offset;
+    @include a11y.focus-outline;
   }
 }
 

@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed focusable items `z-index` issue
+
 ### Security
 
 ## [0.27.6](https://github.com/nationalarchives/tna-frontend/compare/v0.27.5...v0.27.6) - 2025-10-23

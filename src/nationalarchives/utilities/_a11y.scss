@@ -5,9 +5,12 @@
   @include a11y.visually-hidden;
 }
 
+*:focus,
 *:focus-visible {
   z-index: 9;
+}
 
+*:focus-visible {
   @include a11y.focus-outline;
 }
 

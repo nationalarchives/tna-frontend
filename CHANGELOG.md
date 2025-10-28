@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Added back in the right border to search input textboxes and text input password components and spacing between text input and button
+- Set header background to black in high contrast mode
+- Simplify focus styles and remove some unrequired code
 
 ### Deprecated
 ### Removed

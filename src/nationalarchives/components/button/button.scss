@@ -40,13 +40,9 @@ $button-border-width: 4px !default;
     @include colour.colour-font("button-text");
   }
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-
   &:hover {
     @include colour.colour-font("button-hover-text");
+    text-decoration: none;
 
     background: transparent;
   }

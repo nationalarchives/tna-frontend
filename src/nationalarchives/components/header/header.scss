@@ -26,6 +26,10 @@
     }
   }
 
+  @include colour.on-high-contrast {
+    background: colour.brand-colour("black");
+  }
+
   &__contents {
     &.tna-container {
       justify-content: space-between;

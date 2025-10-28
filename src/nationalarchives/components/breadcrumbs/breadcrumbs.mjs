@@ -34,15 +34,19 @@ export class Breadcrumbs {
       $expandButton.setAttribute("type", "button");
       $expandButton.setAttribute("aria-expanded", "false");
       $expandButton.setAttribute("aria-controls", uniqueId);
-
       $expandButton.addEventListener("click", () => {
         this.$module.classList.remove("tna-breadcrumbs--collapsed");
         $expandable.remove();
         this.$module.setAttribute("tabindex", "0");
         this.$module.focus();
-        this.$module.setAttribute("tabindex", "-1");
+        this.$module.addEventListener(
+          "blur",
+          () => {
+            this.$module.removeAttribute("tabindex");
+          },
+          { once: true },
+        );
       });
-
       $expandable.appendChild($expandButton);
 
       this.$breadcrumbsList.setAttribute("id", uniqueId);

@@ -50,11 +50,6 @@
     }
   }
 
-  &__details:has(&__summary:focus),
-  &__details:has(&__content:focus) {
-    z-index: 2;
-  }
-
   &__summary {
     width: 100%;
     margin: 0;

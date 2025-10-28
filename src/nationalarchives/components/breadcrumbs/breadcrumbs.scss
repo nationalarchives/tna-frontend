@@ -4,6 +4,8 @@
 @use "../../tools/typography";
 
 .tna-breadcrumbs {
+  border-radius: 0.1px;
+
   &__list {
     margin: 0;
     padding: 0;
@@ -61,11 +63,11 @@
     background-color: transparent;
 
     border: none;
+    border-radius: 0.1px;
 
     cursor: pointer;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       color: inherit;
       @include typography.interacted-text-decoration;
 

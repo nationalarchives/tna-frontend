@@ -26,6 +26,10 @@
     }
   }
 
+  @include colour.on-high-contrast {
+    background: colour.brand-colour("black");
+  }
+
   &__main {
     padding-top: spacing.space(1);
     padding-bottom: spacing.space(1.5);

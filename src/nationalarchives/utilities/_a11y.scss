@@ -6,7 +6,8 @@
 }
 
 *:focus,
-*:focus-visible {
+*:focus-visible,
+*:active {
   z-index: 9;
 }
 

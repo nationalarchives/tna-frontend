@@ -30,6 +30,9 @@ export default {
   ),
   parameters: {
     chromatic: { delay: 1000 },
+    viewport: {
+      options: customViewports,
+    },
   },
   render: (params) => {
     nunjucks.configure("src");
@@ -60,12 +63,12 @@ export const Standard = {
 
 export const Medium = {
   parameters: {
-    viewport: {
-      defaultViewport: "medium",
-    },
     chromatic: {
       viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "medium" },
   },
   args: {
     defaultContent: true,
@@ -89,12 +92,12 @@ export const Medium = {
 
 export const MediumCollapsed = {
   parameters: {
-    viewport: {
-      defaultViewport: "medium",
-    },
     chromatic: {
       viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "medium" },
   },
   args: {
     defaultContent: true,
@@ -106,12 +109,12 @@ export const MediumCollapsed = {
 
 export const Mobile = {
   parameters: {
-    viewport: {
-      defaultViewport: "small",
-    },
     chromatic: {
       viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "small" },
   },
   args: {
     defaultContent: true,
@@ -126,8 +129,8 @@ export const Mobile = {
     const $navigationItems = canvasElement.querySelector(
       `.tna-global-header__navigation`,
     );
-    const [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
-      canvas.getByText(navigationItem.text),
+    const [$linkA, $linkB, $linkC] = ["Visit", "Explore the collection", "Education"].map((navigationItemText) =>
+      canvas.getByText(navigationItemText),
     );
     const $navigationToggle = canvasElement.querySelector(
       `.tna-global-header__navigation-button`,

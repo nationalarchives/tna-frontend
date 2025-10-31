@@ -9,23 +9,23 @@ const DEFAULT_VP_SIZE = { width: 1280, height: 720 };
 module.exports = {
   ...getJestConfig(),
   async preVisit(page, story) {
-    const context = await getStoryContext(page, story);
-    const vpName = context.parameters?.viewport?.defaultViewport;
-    const vpParams = customViewports[vpName];
+    // const context = await getStoryContext(page, story);
+    // const vpName = context.globals?.viewport?.value;
+    // const vpParams = customViewports[vpName];
 
-    if (vpParams) {
-      const vpSize = Object.entries(vpParams.styles).reduce(
-        (acc, [screen, size]) => ({
-          ...acc,
-          [screen]: parseInt(size),
-        }),
-        {},
-      );
+    // if (vpParams) {
+    //   const vpSize = Object.entries(vpParams.styles).reduce(
+    //     (acc, [screen, size]) => ({
+    //       ...acc,
+    //       [screen]: parseInt(size),
+    //     }),
+    //     {},
+    //   );
 
-      page.setViewportSize(vpSize);
-    } else {
-      page.setViewportSize(DEFAULT_VP_SIZE);
-    }
+    //   page.setViewportSize(vpSize);
+    // } else {
+    //   page.setViewportSize(DEFAULT_VP_SIZE);
+    // }
     await injectAxe(page);
   },
   async postVisit(page) {

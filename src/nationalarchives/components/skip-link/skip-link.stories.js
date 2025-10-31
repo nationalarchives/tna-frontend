@@ -73,6 +73,7 @@ export const Test = {
     await expect($skipLink.getBoundingClientRect().x).toBeGreaterThanOrEqual(0);
     await expect($skipLink.getBoundingClientRect().y).toBeGreaterThanOrEqual(0);
 
+    await $skipLink.addEventListener("click", (e) => e.preventDefault());
     await userEvent.click($skipLink);
     await expect($skipLink.getBoundingClientRect().x).toBeLessThanOrEqual(
       -$skipLink.getBoundingClientRect().width,

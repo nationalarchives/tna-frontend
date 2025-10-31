@@ -27,6 +27,9 @@ export default {
   ),
   parameters: {
     chromatic: { delay: 1000 },
+    viewport: {
+      options: customViewports,
+    },
   },
   render: (params) => {
     nunjucks.configure("src");
@@ -89,24 +92,24 @@ export const Default = {
 
 export const Medium = {
   parameters: {
-    viewport: {
-      defaultViewport: "medium",
-    },
     chromatic: {
       viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "medium" },
   },
   args: { ...Default.args },
 };
 
 export const Mobile = {
   parameters: {
-    viewport: {
-      defaultViewport: "small",
-    },
     chromatic: {
       viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "small" },
   },
   args: { ...Default.args },
 };

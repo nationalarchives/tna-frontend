@@ -22,6 +22,11 @@ export default {
       },
     ]),
   ),
+  parameters: {
+    viewport: {
+      options: customViewports,
+    },
+  },
   render: (params) => {
     nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
@@ -58,12 +63,12 @@ export const Standard = {
 
 export const NoCollapse = {
   parameters: {
-    viewport: {
-      defaultViewport: "small",
-    },
     chromatic: {
       viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "small" },
   },
   args: {
     ...Standard.args,
@@ -73,12 +78,12 @@ export const NoCollapse = {
 
 export const Mobile = {
   parameters: {
-    viewport: {
-      defaultViewport: "small",
-    },
     chromatic: {
       viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "small" },
   },
   args: {
     ...Standard.args,
@@ -87,12 +92,12 @@ export const Mobile = {
 
 export const MobileExpanded = {
   parameters: {
-    viewport: {
-      defaultViewport: "small",
-    },
     chromatic: {
       viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "small" },
   },
   args: {
     ...Standard.args,

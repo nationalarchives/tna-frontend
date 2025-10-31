@@ -62,6 +62,11 @@ export default {
       },
     ]),
   ),
+  parameters: {
+    viewport: {
+      options: customViewports,
+    },
+  },
   render: (params) => {
     nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
@@ -307,12 +312,12 @@ export const HorizontalMinimal = {
 
 export const HorizontalMobile = {
   parameters: {
-    viewport: {
-      defaultViewport: "tiny",
-    },
     chromatic: {
       viewports: [customViewports["tiny"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "tiny" },
   },
   args: {
     title: "Card title",
@@ -331,12 +336,12 @@ export const HorizontalMobile = {
 
 export const HorizontalContrastMobile = {
   parameters: {
-    viewport: {
-      defaultViewport: "tiny",
-    },
     chromatic: {
       viewports: [customViewports["tiny"].styles.width.replace(/px$/, "")],
     },
+  },
+  globals: {
+    viewport: { value: "tiny" },
   },
   args: {
     title: "Card title",
@@ -358,157 +363,157 @@ export const HorizontalContrastMobile = {
 export const All = () => `
 <div class="tna-container">
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
-  </div>
-</div>
-<div class="tna-container tna-!--margin-top-m">
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-top-m">
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" })}
-  </div>
-</div>
-<div class="tna-container tna-!--margin-top-m">
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "plain" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "accent" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "tint" })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "contrast" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-top-m">
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-top-m">
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast" } })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true } })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true } })}
   </div>
 </div>
 <div class="tna-container">
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-2-3 tna-!--margin-top-m">
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, fullAreaClick: true })}
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "plain", fullAreaClick: true })}
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true })}
-    ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "contrast", fullAreaClick: true })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, fullAreaClick: true } })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "plain", fullAreaClick: true } })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true } })}
+    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "contrast", fullAreaClick: true } })}
   </div>
 </div>`;
 All.parameters = {
@@ -560,151 +565,151 @@ export const Sources = {
 // export const All = () => `
 // <div class="tna-container">
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
-//   </div>
-// </div>
-// <div class="tna-container tna-!--margin-top-m">
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
 //   </div>
 // </div>
 // <div class="tna-container tna-!--margin-top-m">
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" })}
-//   </div>
-// </div>
-// <div class="tna-container tna-!--margin-top-m">
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "plain" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "accent" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "tint" })}
-//   </div>
-//   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "contrast" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
 //   </div>
 // </div>
 // <div class="tna-container tna-!--margin-top-m">
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" })}
 //   </div>
 // </div>
 // <div class="tna-container tna-!--margin-top-m">
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "plain" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "accent" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "tint" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-6">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "contrast" })}
+//   </div>
+// </div>
+// <div class="tna-container tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true })}
+//   </div>
+// </div>
+// <div class="tna-container tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true })}
+//   </div>
+//   <div class="tna-column tna-column--width-1-6">
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true })}
 //   </div>
 // </div>
 // <div class="tna-container">
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
+//     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
 //   </div>
 //   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
-//     ${Standard({ ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true })}
+//     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true })}
 //   </div>
 // </div>`;
 // All.parameters = {

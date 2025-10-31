@@ -7,7 +7,9 @@ import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
 
-// window.global = window;
+// For cookie banner tests
+window.global = window;
+
 // window.addEventListener("onload", initAll);
 document.addEventListener("DOMContentLoaded", initAll, false);
 

@@ -1,4 +1,4 @@
-import Breadcrumbs from "./template.njk?raw";
+import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
@@ -24,7 +24,7 @@ export default {
   ),
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(Breadcrumbs, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 

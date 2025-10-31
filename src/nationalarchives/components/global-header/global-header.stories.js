@@ -1,4 +1,4 @@
-import Header from "./template.njk?raw";
+import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
@@ -8,6 +8,8 @@ export default {
   title: "Components/Global header",
   argTypes: Object.fromEntries(
     Object.entries({
+      defaultContent: { control: "boolean" },
+      defaultContentBaseURL: { control: "text" },
       logo: { control: "object" },
       topNavigation: { control: "object" },
       navigation: { control: "object" },
@@ -31,7 +33,7 @@ export default {
   },
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(Header, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 

@@ -1,36 +1,37 @@
-import SearchField from "./template.njk?raw";
+import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = Object.fromEntries(
-  Object.entries({
-    label: { control: "text" },
-    headingLevel: { control: { type: "number", min: 1, max: 6 } },
-    headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
-    id: { control: "text" },
-    name: { control: "text" },
-    hint: { control: "text" },
-    value: { control: "text" },
-    formItemClasses: { control: "text" },
-    formItemAttributes: { control: "object" },
-    classes: { control: "text" },
-    attributes: { control: "object" },
-  }).map(([key, value]) => [
-    key,
-    {
-      ...value,
-      description: macroOptions.find((option) => option.name === key)
-        ?.description,
-    },
-  ]),
-);
-
 export default {
   title: "Components/Search field",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      label: { control: "text" },
+      headingLevel: { control: { type: "number", min: 1, max: 6 } },
+      headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
+      id: { control: "text" },
+      name: { control: "text" },
+      hint: { control: "text" },
+      value: { control: "text" },
+      formItemClasses: { control: "text" },
+      formItemAttributes: { control: "object" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(SearchField, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 

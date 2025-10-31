@@ -1,4 +1,4 @@
-import Card from "./template.njk?raw";
+import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { customViewports } from "../../../../.storybook/viewports";
@@ -64,7 +64,7 @@ export default {
   ),
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(Card, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 
@@ -354,6 +354,7 @@ export const HorizontalContrastMobile = {
   },
 };
 
+// TODO
 export const All = () => `
 <div class="tna-container">
   <div class="tna-column tna-column--width-1-6">

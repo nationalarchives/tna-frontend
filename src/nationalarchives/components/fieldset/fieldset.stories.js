@@ -1,39 +1,37 @@
-import Fieldset from "./template.njk?raw";
-import TextInput from "../text-input/template.njk";
+import Template from "./template.njk?raw";
+import TextInput from "../text-input/template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = Object.fromEntries(
-  Object.entries({
-    legend: { control: "text" },
-    headingLevel: { control: { type: "number", min: 1, max: 6 } },
-    headingSize: {
-      control: "inline-radio",
-      options: ["xs", "s", "m", "l", "xl"],
-    },
-    html: { control: "text" },
-    id: { control: "text" },
-    hint: { control: "text" },
-    smallerHint: { control: "boolean" },
-    error: { control: "object" },
-    classes: { control: "text" },
-    attributes: { control: "object" },
-  }).map(([key, value]) => [
-    key,
-    {
-      ...value,
-      description: macroOptions.find((option) => option.name === key)
-        ?.description,
-    },
-  ]),
-);
-
 export default {
   title: "Components/Fieldset",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      legend: { control: "text" },
+      headingLevel: { control: { type: "number", min: 1, max: 6 } },
+      headingSize: {
+        control: "inline-radio",
+        options: ["xs", "s", "m", "l", "xl"],
+      },
+      html: { control: "text" },
+      id: { control: "text" },
+      hint: { control: "text" },
+      smallerHint: { control: "boolean" },
+      error: { control: "object" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(Fieldset, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 
@@ -47,7 +45,7 @@ export const Standard = {
       .reduce(
         (prev, value, index) =>
           prev +
-          TextInput({
+          nunjucks.renderString(TextInput, {
             params: {
               label: "Text input",
               headingLevel: 2,

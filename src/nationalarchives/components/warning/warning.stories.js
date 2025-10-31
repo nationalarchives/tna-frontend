@@ -1,4 +1,4 @@
-import Warning from "./template.njk?raw";
+import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
@@ -22,7 +22,7 @@ export default {
   ),
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(Warning, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 

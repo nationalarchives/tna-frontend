@@ -1,4 +1,4 @@
-import Accordion from "./template.njk?raw";
+import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { fireEvent, expect } from "storybook/test";
@@ -25,7 +25,7 @@ export default {
   ),
   render: (params) => {
     nunjucks.configure("src");
-    return nunjucks.renderString(Accordion, { params });
+    return nunjucks.renderString(Template, { params });
   },
 };
 

@@ -1,9 +1,12 @@
-import Button from "../../components/button/template.njk";
-import Checkboxes from "../../components/checkboxes/template.njk";
-import ErrorSummary from "../../components/error-summary/template.njk";
-import Radios from "../../components/radios/template.njk";
-import Select from "../../components/select/template.njk";
-import TextInput from "../../components/text-input/template.njk";
+import Button from "../../components/button/template.njk?raw";
+import Checkboxes from "../../components/checkboxes/template.njk?raw";
+import ErrorSummary from "../../components/error-summary/template.njk?raw";
+import Radios from "../../components/radios/template.njk?raw";
+import Select from "../../components/select/template.njk?raw";
+import TextInput from "../../components/text-input/template.njk?raw";
+import nunjucks from "nunjucks";
+
+nunjucks.configure("src");
 
 const argTypes = {};
 
@@ -130,20 +133,20 @@ const Template = ({ theme }) => {
             </dd>
           </dl>
           <div class="tna-button-group">
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Button",
                 small: true,
               },
             })}
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Button",
                 small: true,
                 accent: true,
               },
             })}
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Button",
                 small: true,
@@ -198,7 +201,7 @@ const FormsTemplate = ({ theme }) => {
         ) => `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme}">
         <div class="tna-template__body">
           <div class="tna-colour-contrast-demo__example-content ${block}">
-            ${ErrorSummary({
+            ${nunjucks.renderString(ErrorSummary, {
               params: {
                 title: "Error",
                 headingLevel: 2,
@@ -213,7 +216,7 @@ const FormsTemplate = ({ theme }) => {
                 classes: "tna-!--margin-top-s",
               },
             })}
-            ${TextInput({
+            ${nunjucks.renderString(TextInput, {
               params: {
                 headingLevel: 3,
                 headingSize: "s",
@@ -223,7 +226,7 @@ const FormsTemplate = ({ theme }) => {
                 value: `Lorem ipsum`,
               },
             })}
-            ${TextInput({
+            ${nunjucks.renderString(TextInput, {
               params: {
                 label: "Input",
                 headingLevel: 3,
@@ -236,7 +239,7 @@ const FormsTemplate = ({ theme }) => {
                 },
               },
             })}
-            ${Checkboxes({
+            ${nunjucks.renderString(Checkboxes, {
               params: {
                 id: `categories-${themeSlug}-${block}`,
                 name: `categories-${themeSlug}-${block}`,
@@ -255,7 +258,7 @@ const FormsTemplate = ({ theme }) => {
                 inline: true,
               },
             })}
-            ${Radios({
+            ${nunjucks.renderString(Radios, {
               params: {
                 id: `type-${themeSlug}-${block}`,
                 name: `type-${themeSlug}-${block}`,
@@ -274,7 +277,7 @@ const FormsTemplate = ({ theme }) => {
                 inline: true,
               },
             })}
-            ${Select({
+            ${nunjucks.renderString(Select, {
               params: {
                 label: "Select",
                 id: `sort-${themeSlug}-${block}`,

@@ -74,16 +74,14 @@
         text-decoration: none;
 
         svg {
-          width: 1.5rem;
-          height: 1.5rem;
+          height: 1.5em;
 
           path {
             fill: currentColor;
           }
         }
 
-        &:hover,
-        &:focus-visible {
+        &:hover {
           @include typography.interacted-text-decoration;
         }
 
@@ -127,8 +125,7 @@
 
           text-decoration: none;
 
-          &:hover,
-          &:focus-visible {
+          &:hover {
             @include typography.interacted-text-decoration;
           }
 

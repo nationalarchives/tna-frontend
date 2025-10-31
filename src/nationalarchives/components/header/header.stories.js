@@ -97,42 +97,6 @@ export const Standard = {
   },
 };
 
-export const Accent = Template.bind({});
-Accent.args = {
-  logo: {
-    strapline: "Design System",
-    href: "#/",
-  },
-  topNavigation: [
-    {
-      text: "Top item 1",
-      href: "#/top-1",
-    },
-    {
-      text: "Top item 2",
-      href: "#/top-2",
-      icon: "heart",
-    },
-  ],
-  navigation: [
-    {
-      text: "Alpha",
-      href: "#/alpha",
-      selected: true,
-    },
-    {
-      text: "Beta",
-      href: "#/beta",
-    },
-    {
-      text: "Gamma",
-      href: "#/gamma",
-    },
-  ],
-  accent: true,
-  classes: "tna-header--demo",
-};
-
 export const Mobile = Template.bind({});
 Mobile.parameters = {
   viewport: {

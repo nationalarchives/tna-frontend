@@ -8,7 +8,7 @@ import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 
 document.documentElement.classList.add(
   "tna-template",
-  "tna-template--yellow-accent",
+  "tna-template--blue-accent",
 );
 if (window.self !== window.top) {
   document.documentElement.classList.add("tna-template--padded");

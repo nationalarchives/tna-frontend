@@ -1,4 +1,4 @@
-@use "../../variables/forms" as formVars;
+@use "../../variables/forms" as formsVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
@@ -9,7 +9,6 @@
   display: block;
   box-sizing: border-box;
 
-  @include colour.always-light;
   @include colour.colour-font("input-foreground");
   line-height: 2rem;
 
@@ -17,7 +16,7 @@
 
   @include colour.colour-border(
     "input-border",
-    formVars.$form-field-border-width
+    formsVars.$form-field-border-width
   );
   @include borders.rounded-border;
 
@@ -52,29 +51,20 @@
 
   &-wrapper & {
     flex: 1;
-
-    border-right-width: 0;
   }
 
   &-wrapper {
     display: flex;
     align-items: stretch;
+    gap: formsVars.$form-field-border-width;
 
     .tna-button {
       white-space: nowrap;
-
-      border-top-left-radius: 0.1px;
-      border-bottom-left-radius: 0.1px;
 
       svg {
         width: 28px;
         margin: 0;
       }
     }
-  }
-
-  &-wrapper #{&} {
-    border-top-right-radius: 0.1px;
-    border-bottom-right-radius: 0.1px;
   }
 }

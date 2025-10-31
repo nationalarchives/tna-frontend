@@ -20,22 +20,34 @@
   }
 
   // INTERACTIVE
+  &__toggle-all {
+    margin-bottom: spacing.space(1);
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0.1px;
+
+    cursor: pointer;
+
+    @include colour.colour-font("link");
+    @include typography.font-size(16);
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
   &__details {
     @include colour.colour-border("keyline", 1px, solid, bottom);
 
     position: relative;
     z-index: 1;
 
-    &:first-child {
+    &:first-of-type {
       @include colour.colour-border("keyline", 1px, solid, top);
-      // @include colour.thick-keyline-dark(top);
-      // @include colour.thick-keyline-accent(top);
     }
-  }
-
-  &__details:has(&__summary:focus),
-  &__details:has(&__content:focus) {
-    z-index: 2;
   }
 
   &__summary {
@@ -83,8 +95,7 @@
       border-style: solid;
     }
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include typography.interacted-text-decoration;
       @include colour.colour-background("background-tint");
 
@@ -120,12 +131,6 @@
     position: relative;
 
     border-radius: 0.1px;
-
-    // &:focus {
-    //   z-index: 2;
-
-    //   @include a11y.no-focus-outline-on-click;
-    // }
 
     &:has(.tna-table-wrapper):has(.tna-table) {
       padding-right: 0;

@@ -1,3 +1,6 @@
-$focus-outline-width: 5px !default;
-$focus-outline-offset: 2px !default;
-$focus-outline-padding: $focus-outline-width + $focus-outline-offset;
+$focus-outline-inner-width: 3px !default;
+$focus-outline-outer-width: 3px !default;
+$focus-outline-total-width: $focus-outline-inner-width +
+  $focus-outline-outer-width;
+$focus-outline-active-inner-width: $focus-outline-inner-width - 1px !default;
+$focus-outline-active-outer-width: $focus-outline-outer-width - 1px !default;

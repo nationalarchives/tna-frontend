@@ -37,52 +37,8 @@ export default {
 
 export const Standard = {
   args: {
-    logo: {
-      href: "#/",
-    },
-    topNavigation: [
-      {
-        text: "Search",
-        href: "https://www.nationalarchives.gov.uk/search/",
-        icon: "search",
-      },
-      {
-        text: "Shop",
-        href: "https://shop.nationalarchives.gov.uk/",
-        icon: "shop",
-      },
-      {
-        text: "Sign in",
-        href: "#/sign-in",
-        icon: "user",
-      },
-    ],
-    navigation: [
-      {
-        text: "Visit",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-      },
-      {
-        text: "What’s on",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-      },
-      {
-        text: "Explore the collection",
-        href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-      },
-      {
-        text: "Help using the archive",
-        href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-      },
-      {
-        text: "Education",
-        href: "https://www.nationalarchives.gov.uk/education/",
-      },
-      {
-        text: "Professional guidance and services",
-        href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-      },
-    ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
   play: async ({ canvasElement }) => {
@@ -110,52 +66,8 @@ export const Medium = {
     },
   },
   args: {
-    logo: {
-      href: "#/",
-    },
-    topNavigation: [
-      {
-        text: "Search",
-        href: "https://www.nationalarchives.gov.uk/search/",
-        icon: "search",
-      },
-      {
-        text: "Shop",
-        href: "https://shop.nationalarchives.gov.uk/",
-        icon: "shop",
-      },
-      {
-        text: "Sign in",
-        href: "#/sign-in",
-        icon: "user",
-      },
-    ],
-    navigation: [
-      {
-        text: "Visit",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-      },
-      {
-        text: "What’s on",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-      },
-      {
-        text: "Explore the collection",
-        href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-      },
-      {
-        text: "Help using the archive",
-        href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-      },
-      {
-        text: "Education",
-        href: "https://www.nationalarchives.gov.uk/education/",
-      },
-      {
-        text: "Professional guidance and services",
-        href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-      },
-    ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
   play: async ({ canvasElement }) => {
@@ -183,52 +95,8 @@ export const MediumCollapsed = {
     },
   },
   args: {
-    logo: {
-      href: "#/",
-    },
-    topNavigation: [
-      {
-        text: "Search",
-        href: "https://www.nationalarchives.gov.uk/search/",
-        icon: "search",
-      },
-      {
-        text: "Shop",
-        href: "https://shop.nationalarchives.gov.uk/",
-        icon: "shop",
-      },
-      {
-        text: "Sign in",
-        href: "#/sign-in",
-        icon: "user",
-      },
-    ],
-    navigation: [
-      {
-        text: "Visit",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-      },
-      {
-        text: "What’s on",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-      },
-      {
-        text: "Explore the collection",
-        href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-      },
-      {
-        text: "Help using the archive",
-        href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-      },
-      {
-        text: "Education",
-        href: "https://www.nationalarchives.gov.uk/education/",
-      },
-      {
-        text: "Professional guidance and services",
-        href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-      },
-    ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
     collapseOnMedium: true,
     classes: "tna-global-header--demo",
   },
@@ -244,53 +112,8 @@ export const Mobile = {
     },
   },
   args: {
-    logo: {
-      strapline: "Design System",
-      href: "#/",
-    },
-    topNavigation: [
-      {
-        text: "Search",
-        href: "https://www.nationalarchives.gov.uk/search/",
-        icon: "search",
-      },
-      {
-        text: "Shop",
-        href: "https://shop.nationalarchives.gov.uk/",
-        icon: "shop",
-      },
-      {
-        text: "Sign in",
-        href: "#/sign-in",
-        icon: "user",
-      },
-    ],
-    navigation: [
-      {
-        text: "Visit",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/",
-      },
-      {
-        text: "What’s on",
-        href: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/",
-      },
-      {
-        text: "Explore the collection",
-        href: "https://www.nationalarchives.gov.uk/explore-the-collection/",
-      },
-      {
-        text: "Help using the archive",
-        href: "https://www.nationalarchives.gov.uk/help-with-your-research/",
-      },
-      {
-        text: "Education",
-        href: "https://www.nationalarchives.gov.uk/education/",
-      },
-      {
-        text: "Professional guidance and services",
-        href: "https://www.nationalarchives.gov.uk/professional-guidance-and-services/",
-      },
-    ],
+  defaultContent: true,
+  defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
   play: async ({ args, canvasElement, step }) => {

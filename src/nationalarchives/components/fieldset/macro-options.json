@@ -37,6 +37,12 @@
     "description": "An optional hint to display above the form fields in a fieldset."
   },
   {
+    "name": "smallerHint",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, make the fieldset hint smaller to match other form field components."
+  },
+  {
     "name": "error",
     "type": "object",
     "required": false,

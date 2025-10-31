@@ -6,8 +6,12 @@
   padding: 0;
 
   @media (prefers-reduced-motion) {
-    animation: none !important;
-    transition: none !important;
+    &,
+    &::before,
+    &::after {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 
   @media (prefers-contrast: more) {

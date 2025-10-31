@@ -56,8 +56,7 @@ $layer-shift-units: 2 !default;
     right: spacing.space(0.5);
     z-index: 2;
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("font-dark", true);
 
       @include colour.colour-background("background", true);
@@ -141,8 +140,7 @@ $layer-shift-units: 2 !default;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       &::before,
       &::after {
         height: 0.25rem;

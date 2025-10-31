@@ -25,6 +25,18 @@
       "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Fieldset</h4></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
     },
     {
+      "name": "with hint",
+      "options": {
+        "legend": "Fieldset",
+        "headingSize": "m",
+        "hint": "This is a <strong>hint</strong>",
+        "id": "fieldset",
+        "name": "fieldset",
+        "html": "<div>CONTENT</div>"
+      },
+      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"fieldset-hint \"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><p id=\"fieldset-hint\" class=\"tna-fieldset__hint\">This is a <strong>hint</strong></p><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+    },
+    {
       "name": "with classes",
       "options": {
         "legend": "Fieldset",

@@ -7,6 +7,38 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
+@property --left-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --right-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes scrollfade {
+  0% {
+    --left-fade: 0;
+    --right-fade: 1rem;
+  }
+
+  10% {
+    --left-fade: 1rem;
+  }
+
+  90% {
+    --right-fade: 1rem;
+  }
+
+  100% {
+    --right-fade: 0;
+    --left-fade: 1rem;
+  }
+}
+
 .tna-table {
   max-width: 100%;
 
@@ -19,6 +51,7 @@
   }
 
   &__caption {
+    width: 100%;
     padding: spacing.space(1) 0 0;
 
     caption-side: bottom;
@@ -26,8 +59,10 @@
     @include typography.font-size(16);
 
     &--scroll {
-      min-width: calc(320px - #{grid.gutter-width()});
-      max-width: calc(100vw - #{grid.gutter-width()});
+      max-width: calc(100vw - #{grid.gutter-width-double()});
+
+      position: sticky;
+      left: 0;
 
       &::after {
         content: " (scroll to see more)";
@@ -74,6 +109,34 @@
     &--numeric {
       text-align: right;
     }
+
+    &--align-left {
+      text-align: left;
+    }
+
+    &--align-centre {
+      text-align: center;
+    }
+
+    &--align-right {
+      text-align: right;
+    }
+
+    &--align-justify {
+      text-align: justify;
+    }
+
+    &--align-top {
+      vertical-align: top;
+    }
+
+    &--align-middle {
+      vertical-align: middle;
+    }
+
+    &--align-bottom {
+      vertical-align: bottom;
+    }
   }
 
   &__head &__header {
@@ -102,6 +165,16 @@
   position: relative;
   left: -#{grid.gutter-width()};
 
+  mask: linear-gradient(
+    to right,
+    #0000,
+    #ffff var(--left-fade) calc(100% - var(--right-fade)),
+    #0000
+  );
+  animation: scrollfade;
+  animation-timeline: --scrollfade;
+  scroll-timeline: --scrollfade x;
+
   &[tabindex="0"] {
     border-radius: 0.1px;
 
@@ -109,12 +182,22 @@
     //   @include a11y.focus-outline;
     // }
   }
+}
 
-  @include media.on-tiny {
+@include media.on-tiny {
+  .tna-table-wrapper {
     padding-right: grid.gutter-width-tiny();
     padding-left: grid.gutter-width-tiny();
 
     left: -#{grid.gutter-width-tiny()};
+  }
+
+  .tna-table {
+    &__caption {
+      &--scroll {
+        max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+      }
+    }
   }
 }
 

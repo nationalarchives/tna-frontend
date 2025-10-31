@@ -12,7 +12,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"name\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div></div>"
     },
     {
-      "name": "textarea with a preselected value",
+      "name": "with a preselected value",
       "options": {
         "label": "Enter your feedback",
         "headingSize": "m",
@@ -23,7 +23,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\">I like this 👍🏼</textarea></div></div>"
     },
     {
-      "name": "textarea with a hint",
+      "name": "with a hint",
       "options": {
         "label": "Enter your feedback",
         "headingSize": "m",
@@ -34,7 +34,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-hint\" class=\"tna-form-item__hint\">What did you think?</p><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"feedback-hint \"></textarea></div></div>"
     },
     {
-      "name": "textarea with an error",
+      "name": "with an error",
       "options": {
         "label": "Enter your feedback",
         "headingSize": "m",

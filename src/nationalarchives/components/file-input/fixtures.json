@@ -12,7 +12,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\"></div></div>"
     },
     {
-      "name": "file input with a hint",
+      "name": "with a hint",
       "options": {
         "label": "Upload a file",
         "headingSize": "m",
@@ -23,7 +23,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-hint\" class=\"tna-form-item__hint\">This years report as a PDF.</p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\"file-hint \"></div></div>"
     },
     {
-      "name": "file input with an error",
+      "name": "with an error",
       "options": {
         "label": "Upload a file",
         "headingSize": "m",

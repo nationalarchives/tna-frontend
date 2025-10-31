@@ -41,7 +41,7 @@
         "type": "boolean",
         "required": false,
         "default": false,
-        "description": "If true, open the accordion item. If a `group` is set, only one item in that group can be open."
+        "description": "If `true`, open the accordion item. If a `group` is set, only one item in that group can be open."
       }
     ]
   },
@@ -56,7 +56,35 @@
     "type": "boolean",
     "required": false,
     "default": false,
-    "description": "If true, only one accordion items can be opened at a time."
+    "description": "If `true`, only one accordion items can be opened at a time."
+  },
+  {
+    "name": "toggleAllButton",
+    "type": "object",
+    "required": false,
+    "description": "Allows the user to open or close all sections.",
+    "params": [
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "required": true,
+        "description": "If `true`, add a button above the accordion that allows the user to open or close all sections."
+      },
+      {
+        "name": "openAllLabel",
+        "type": "string",
+        "required": false,
+        "default": "Show all sections",
+        "description": "The label for the button when all sections are closed."
+      },
+      {
+        "name": "closeAllLabel",
+        "type": "string",
+        "required": false,
+        "default": "Hide all sections",
+        "description": "The label for the button when all sections are open."
+      }
+    ]
   },
   {
     "name": "classes",

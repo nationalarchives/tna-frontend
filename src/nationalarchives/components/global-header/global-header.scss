@@ -26,6 +26,10 @@
     }
   }
 
+  @include colour.on-high-contrast {
+    background: colour.brand-colour("black");
+  }
+
   &__main {
     padding-top: spacing.space(1);
     padding-bottom: spacing.space(1.5);
@@ -54,10 +58,6 @@
       &:hover {
         @include colour.colour-outline("font-dark", 0.3125rem, solid);
         outline-offset: 2px;
-      }
-
-      &:focus-visible {
-        @include a11y.focus-outline;
       }
     }
   }
@@ -131,8 +131,7 @@
     @include typography.main-font-weight-bold;
     @include typography.font-size(16);
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
 
@@ -194,8 +193,7 @@
       @include colour.colour-font("font-base");
     }
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }
@@ -230,6 +228,9 @@
     &:hover,
     &:focus-visible {
       @include colour.colour-font("font-base");
+    }
+
+    &:hover {
       @include typography.interacted-text-decoration;
     }
 

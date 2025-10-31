@@ -1,4 +1,4 @@
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
@@ -26,7 +26,6 @@
       display: block;
       box-sizing: border-box;
 
-      @include colour.always-light;
       @include colour.colour-font("input-foreground");
       line-height: 2rem;
 
@@ -34,7 +33,7 @@
 
       @include colour.colour-border(
         "input-border",
-        forms.$form-field-border-width
+        formsVars.$form-field-border-width
       );
       @include borders.rounded-border;
 

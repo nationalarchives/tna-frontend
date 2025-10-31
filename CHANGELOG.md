@@ -5,15 +5,156 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.24.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.28.1...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.28.1](https://github.com/nationalarchives/tna-frontend/compare/v0.28.0...v0.28.1) - 2025-10-28
+
+### Fixed
+
+- Fixed active item `z-index` issue
+
+## [0.28.0](https://github.com/nationalarchives/tna-frontend/compare/v0.27.6...v0.28.0) - 2025-10-28
+
+### Added
+
+- Added `faux-full-outline` mixin for full-click cards and other elements that need a larger, pseudo-clickable area
+
+### Changed
+
+- Added back in the right border to search input textboxes and text input password components and spacing between text input and button
+- Set header background to black in high contrast mode
+- Simplify focus styles and remove some unrequired code
+
+### Fixed
+
+- Fixed focusable items `z-index` issue
+- Removed focus style on droppable file input component button to match other button focus/hover styles
+
+## [0.27.6](https://github.com/nationalarchives/tna-frontend/compare/v0.27.5...v0.27.6) - 2025-10-23
+
+### Fixed
+
+- Fixed focus styles after skip link is clicked
+
+## [0.27.5](https://github.com/nationalarchives/tna-frontend/compare/v0.27.4...v0.27.5) - 2025-10-23
+
+### Changed
+
+- Improved focus indicator for cards
+- Added small transition to focus indicators
+
+## [0.27.4](https://github.com/nationalarchives/tna-frontend/compare/v0.27.3...v0.27.4) - 2025-10-23
+
+### Fixed
+
+- Fixed colour of active focus borders
+
+## [0.27.3](https://github.com/nationalarchives/tna-frontend/compare/v0.27.2...v0.27.3) - 2025-10-23
+
+### Fixed
+
+- Improved skip link design in forced color mode
+
+## [0.27.2](https://github.com/nationalarchives/tna-frontend/compare/v0.27.1...v0.27.2) - 2025-10-23
+
+### Changed
+
+- Improved colour of skip links
+- Improved colour of focus indicator
+
+### Removed
+
+- Removed a11y variables `$focus-outline-width` and `$focus-outline-offset` in favour of `$focus-outline-inner-width` and `$focus-outline-outer-width`
+
+## [0.27.1](https://github.com/nationalarchives/tna-frontend/compare/v0.27.0...v0.27.1) - 2025-10-22
+
+### Changed
+
+- Full-height cards remain the same height in high contrast mode
+
+### Fixed
+
+- Fix icon position for plain description lists in high contrast mode
+
+## [0.27.0](https://github.com/nationalarchives/tna-frontend/compare/v0.26.2...v0.27.0) - 2025-10-22
+
+### Changed
+
+- Focus indicator refactored to be more visible and guarantee contrast with surrounding elements
+- The label/heading for single checkboxes is now optional
+- Improved styling of higher contrast cards
+- Changed the colour of list item markers from light text to normal
+- Increased indent of ordered and unordered lists
+
+### Removed
+
+- Full screen and index view options in gallery components have been removed
+
+### Fixed
+
+- Fixed vertical alignment of multiline buttons with icons on small devices
+
+## [0.26.2](https://github.com/nationalarchives/tna-frontend/compare/v0.26.1...v0.26.2) - 2025-10-07
+
+### Fixed
+
+- Fixed issue with scrollable table captions in columns appearing wider than required
+
+## [0.26.1](https://github.com/nationalarchives/tna-frontend/compare/v0.26.0...v0.26.1) - 2025-10-07
+
+### Fixed
+
+- Overwriting default global header and footer content with null values is more robust
+
+## [0.26.0](https://github.com/nationalarchives/tna-frontend/compare/v0.25.1...v0.26.0) - 2025-10-07
+
+### Added
+
+- Table wrappers now have faded sides when scrolling is active
+
+### Changed
+
+- Reduced default border radius from `4px` to `2px`
+- Table captions on scrollable tables now stay within the viewport so are always visible
+- Allow `defaultContent` in global headers and footers to be overwritten
+- Replaced deprecated `clip` properties with `clip-path` and `word-wrap` with `overflow-wrap`
+
+### Fixed
+
+- Remove unused element IDs from `aria-controls` attribute of hamburger menu in global header
+
+## [0.25.1](https://github.com/nationalarchives/tna-frontend/compare/v0.25.0...v0.25.1) - 2025-09-16
+
+### Fixed
+
+- Removed relative paths for Font Awesome imports (`../../node_modules/`)
+
+## [0.25.0](https://github.com/nationalarchives/tna-frontend/compare/v0.24.0...v0.25.0) - 2025-09-15
+
+### Added
+
+- Fieldsets now have a `smallerHint` option to match other form field components
+- Global header and footer components now have `defaultContent` and `defaultContentBaseURL` options to allow more consistent global content to be used
+- Accordions can have an optional open/close all button with `toggleAllButton`
+- Checkboxes with a single item aren't rendered in a `<fieldset>`
+
 ### Changed
 
 - Updated `data-module` on progressive date inputs from `date-input-progressive` to `tna-date-input-progressive`
 - Moved `classes` on date input components to the inputs rather than the wrapper
+- Reduced gap between fieldset items
+- Allow HTML in hint text for fieldsets and form field components
+- Used tilde concatination `~` in templates rather than plus `+`
+- Change arrow icon in search field to SVG
+- Update all embedded Font Awesome SVG icons
 
-### Deprecated
 ### Removed
 
 - Removed `maxLength` property on text input and search field components (if required, use `attributes` property)
@@ -21,8 +162,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed inline fixtures and macro options from date input and text input components
-
-### Security
 
 ## [0.24.0](https://github.com/nationalarchives/tna-frontend/compare/v0.23.1...v0.24.0) - 2025-08-28
 

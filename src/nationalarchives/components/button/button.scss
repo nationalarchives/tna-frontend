@@ -23,6 +23,9 @@ $button-border-width: 4px !default;
 
   cursor: pointer;
 
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
   @include typography.font-size(18);
   @include typography.main-font-weight-bold;
 
@@ -31,17 +34,13 @@ $button-border-width: 4px !default;
   @include colour.colour-border("button-background", $button-border-width);
   @include borders.rounded-border;
 
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-
   &,
   &:link,
   &:visited {
     @include colour.colour-font("button-text");
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     @include colour.colour-font("button-hover-text");
     text-decoration: none;
 
@@ -50,13 +49,10 @@ $button-border-width: 4px !default;
 
   .fa-solid {
     display: block;
-
-    font-size: 0.9em;
-    line-height: #{math.div(16, 18) * 2};
   }
 
   svg {
-    height: 0.9em;
+    height: 1.1em;
     flex-shrink: 0;
 
     align-self: center;
@@ -75,13 +71,11 @@ $button-border-width: 4px !default;
     &,
     &:link,
     &:visited,
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("link");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }
@@ -97,14 +91,18 @@ $button-border-width: 4px !default;
       @include colour.colour-font("button-accented-text");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("font-dark");
     }
   }
 
   &--icon-right {
     flex-direction: row-reverse;
+
+    &:has(.fa-solid) {
+      align-items: center;
+      // justify-content: space-between;
+    }
   }
 
   &--small,
@@ -127,6 +125,8 @@ $button-border-width: 4px !default;
     .fa-solid {
       width: 2.5rem;
 
+      line-height: 2rem;
+
       @include typography.font-size(18);
     }
 
@@ -141,14 +141,13 @@ $button-border-width: 4px !default;
     padding-left: 0;
 
     .fa-solid {
-      width: 2rem;
+      width: 1.5rem;
 
-      @include typography.font-size(18 * 0.9);
-      line-height: 2rem;
+      line-height: 1.5rem;
     }
 
     svg {
-      height: 1rem;
+      height: 1.2rem;
       margin: 0.5rem;
     }
   }
@@ -174,8 +173,7 @@ $button-border-width: 4px !default;
   }
 
   &--solid-hover {
-    &:not(.tna-button--plain):hover,
-    &:not(.tna-button--plain):focus {
+    &:not(.tna-button--plain):hover {
       @include colour.colour-font("font-dark");
 
       @include colour.colour-background("background");
@@ -184,8 +182,7 @@ $button-border-width: 4px !default;
 
   .tna-background-accent &,
   .tna-template--dark-theme .tna-background-accent-light & {
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("font-dark");
     }
   }
@@ -202,8 +199,7 @@ $button-border-width: 4px !default;
       @include colour.colour-font("contrast-button-text");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include colour.colour-font("contrast-font-dark");
 
       @include colour.colour-background("contrast-background");
@@ -212,8 +208,7 @@ $button-border-width: 4px !default;
 
   @media (prefers-color-scheme: dark) {
     .tna-template--system-theme .tna-background-accent-light & {
-      &:hover,
-      &:focus {
+      &:hover {
         @include colour.colour-font("font-dark");
       }
     }
@@ -229,8 +224,7 @@ $button-border-width: 4px !default;
         @include colour.colour-font("contrast-button-text");
       }
 
-      &:hover,
-      &:focus {
+      &:hover {
         @include colour.colour-font("contrast-font-dark");
 
         @include colour.colour-background("contrast-background");
@@ -239,8 +233,7 @@ $button-border-width: 4px !default;
   }
 
   @include colour.on-forced-colours {
-    &:hover,
-    &:focus {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }

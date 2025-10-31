@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../../variables/a11y" as a11yVariables;
+@use "../../variables/a11y" as a11yVars;
 @use "../../variables/borders" as bordersVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
@@ -24,7 +24,7 @@
     }
 
     > :first-child {
-      padding-top: spacing.space($innerPaddingAmount - 0.5);
+      padding-top: spacing.space($innerPaddingAmount - 0.25);
     }
 
     > :last-child {
@@ -55,10 +55,6 @@
 
   &#{$modifierClass} &__heading {
     grid-area: header;
-
-    // .tna-hgroup__supertitle {
-    //   margin-top: 0;
-    // }
   }
 
   &#{$modifierClass} &__image-container {
@@ -99,72 +95,40 @@
     padding-top: spacing.space(0.5);
 
     @include colour.thick-keyline-dark(top);
-    border-radius: 0.1px;
+    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius;
   }
 
   &__heading {
     order: 2;
 
     .tna-hgroup__supertitle {
-      margin-top: spacing.space(0.5);
-    }
-
-    &.tna-heading-l {
       margin-top: spacing.space(0.25);
+    }
+  }
+
+  &:not(:has(&__image-container)) &__heading {
+    .tna-hgroup__supertitle {
+      margin-top: spacing.space(0.5);
     }
   }
 
   &--full-click {
     &:hover {
-      @include colour.colour-outline("base-keyline", 2px, solid);
-      outline-offset: a11yVariables.$focus-outline-width - 1px;
-    }
-
-    &:focus,
-    &:active {
-      outline: none;
-    }
-  }
-
-  &--full-click#{&}--plain {
-    &:hover {
       @include colour.colour-outline(
         "base-keyline",
-        a11yVariables.$focus-outline-offset,
+        a11yVars.$focus-outline-active-outer-width,
         solid
       );
+      outline-offset: a11yVars.$focus-outline-active-inner-width;
     }
   }
 
-  &--full-click &__heading-link {
-    &::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-
-      @include borders.rounded-border;
-    }
-
-    &:focus-visible,
-    &:active {
-      outline: none;
-
-      &::before {
-        @include a11y.focus-outline;
-      }
-    }
-
-    &:active {
-      &::before {
-        @include a11y.active-outline;
-      }
-    }
-  }
+  @include a11y.faux-full-outline("&--full-click &__heading-link");
 
   &--full-click#{&}:not(:has(&__image-container)) &__heading-link::before {
-    border-radius: 0.1px;
+    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius;
   }
 
   &--full-click#{&}--padded#{&}:not(:has(&__image-container))
@@ -183,14 +147,11 @@
     height: 100%;
 
     box-sizing: border-box;
-
-    @include colour.on-high-contrast-and-forced-colours {
-      height: auto;
-    }
   }
 
   &__image-container {
     aspect-ratio: 3/2;
+    margin-bottom: spacing.space(0.25);
 
     overflow: hidden;
 
@@ -198,14 +159,10 @@
 
     order: 1;
 
-    @include borders.rounded-border;
+    border-radius: #{bordersVars.$rounded-border-radius - 1px}
+      #{bordersVars.$rounded-border-radius - 1px} 0 0;
 
     @include colour.image-loader-background;
-  }
-
-  &--padded &__image-container {
-    border-radius: bordersVars.$rounded-border-radius
-      bordersVars.$rounded-border-radius 0 0;
   }
 
   &__image {
@@ -292,13 +249,26 @@
 
   @include colour.on-high-contrast {
     padding-bottom: spacing.space(1);
+    @include borders.rounded-border;
 
-    @include colour.colour-border("keyline-dark", 1px, solid);
+    &:not(&--padded),
+    &--plain {
+      @include colour.colour-border("keyline-dark", 1px, solid);
+    }
+
+    &--full-click:not(:has(&__image-container)) {
+      @include colour.thick-keyline-dark(top);
+    }
 
     &__heading,
     &__body {
       padding-right: spacing.space(1);
       padding-left: spacing.space(1);
+    }
+
+    &__image-container {
+      border-radius: #{bordersVars.$rounded-border-radius - 1px}
+        #{bordersVars.$rounded-border-radius - 1px} 0 0;
     }
 
     &:not(:has(&__image-container)) {
@@ -315,10 +285,34 @@
       border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
         bordersVars.$rounded-border-radius;
     }
+
+    &--padded {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @include colour.on-forced-colours {
+    padding-bottom: spacing.space(1);
+    @include colour.colour-border("keyline-dark", 1px, solid);
+    @include borders.rounded-border;
+
+    &__heading,
+    &__body {
+      padding-right: spacing.space(1);
+      padding-left: spacing.space(1);
+    }
+
+    &--full-click:not(:has(&__image-container)) &__heading-link {
+      &::before {
+        top: -#{bordersVars.$thick-border-width - 1px};
+      }
+    }
   }
 
   @include media.on-larger-than-mobile {
-    @include horizontal-card-layout("--horizontal", 1.5);
+    @include horizontal-card-layout("--horizontal", 1.25);
 
     &--horizontal-small-image {
       grid-template-columns: max(10rem, 25%) 1fr;

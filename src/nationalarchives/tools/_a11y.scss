@@ -1,5 +1,6 @@
 @use "../variables/a11y";
 @use "colour";
+@use "borders";
 
 @mixin visually-hidden {
   width: 1px !important;
@@ -18,33 +19,111 @@
 
   border: 0 !important;
 
-  clip: rect(0, 0, 0, 0) !important;
-
-  // &::before,
-  // &::after {
-  //   content: "\00a0";
-  // }
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
 }
 
-@mixin focus-outline-without-offset {
-  @include colour.colour-outline(
-    "focus-outline",
-    a11y.$focus-outline-width,
-    solid
-  );
+%focus-outline {
+  outline: a11y.$focus-outline-outer-width #000 solid !important;
+  outline-offset: a11y.$focus-outline-inner-width !important;
+
+  box-shadow: 0 0 0 a11y.$focus-outline-inner-width
+    colour.brand-colour("yellow") !important;
+
+  transition:
+    outline-offset 0.1s,
+    box-shadow 0.1s;
+
+  .tna-template--dark-theme & {
+    outline-color: colour.brand-colour("yellow") !important;
+
+    box-shadow: 0 0 0 a11y.$focus-outline-inner-width #000 !important;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      outline-color: colour.brand-colour("yellow") !important;
+
+      box-shadow: 0 0 0 a11y.$focus-outline-inner-width #000 !important;
+    }
+  }
 }
 
 @mixin focus-outline {
-  @include focus-outline-without-offset;
-  outline-offset: a11y.$focus-outline-offset;
+  @extend %focus-outline;
+}
+
+@mixin no-focus-outline {
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+%active-outline {
+  outline: a11y.$focus-outline-active-outer-width #000 solid !important;
+  outline-offset: a11y.$focus-outline-active-inner-width !important;
+
+  box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width
+    colour.brand-colour("yellow") !important;
+
+  transition: none;
+
+  .tna-template--dark-theme & {
+    outline-color: colour.brand-colour("yellow") !important;
+
+    box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width #000 !important;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      outline-color: colour.brand-colour("yellow") !important;
+
+      box-shadow: 0 0 0 a11y.$focus-outline-active-inner-width #000 !important;
+    }
+  }
 }
 
 @mixin active-outline {
-  outline-offset: 0;
+  @extend %active-outline;
 }
 
-@mixin no-focus-outline-on-click {
-  .tna-template--clicked &:focus {
-    outline: none;
+%faux-full-outline {
+  position: relative;
+}
+
+%faux-full-outline-anchor {
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+
+    @include borders.rounded-border;
+  }
+
+  &:focus,
+  &:active {
+    @include no-focus-outline;
+  }
+
+  &:focus {
+    &::before {
+      @include focus-outline;
+    }
+  }
+
+  &:active {
+    &::before {
+      @include active-outline;
+    }
+  }
+}
+
+@mixin faux-full-outline($anchor_selector) {
+  @extend %faux-full-outline;
+
+  #{$anchor_selector} {
+    @extend %faux-full-outline-anchor;
   }
 }

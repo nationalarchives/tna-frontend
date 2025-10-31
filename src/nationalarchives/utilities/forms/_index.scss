@@ -28,6 +28,10 @@
 
   &__body {
     margin-top: spacing.space(0.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   &--error {

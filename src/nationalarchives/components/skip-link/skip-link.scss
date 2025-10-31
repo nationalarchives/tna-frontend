@@ -4,6 +4,7 @@
 @use "../../tools/media";
 @use "../../tools/spacing";
 @use "../../tools/typography";
+@use "../../components/button/button" as button;
 
 .tna-skip-link {
   width: 1px !important;
@@ -16,26 +17,22 @@
   overflow: hidden !important;
 
   position: absolute !important;
-  left: -100vw;
+  top: -100vh !important;
+  left: -100vw !important;
 
   white-space: nowrap !important;
 
-  @include colour.colour-background("button-background", $important: true);
-  @include colour.colour-border(
-    "focus-outline",
-    a11yVars.$focus-outline-width,
-    $important: true
-  );
-  outline: none !important;
+  background-color: colour.brand-colour("yellow");
 
-  clip: rect(0 0 0 0) !important;
+  border: a11yVars.$focus-outline-outer-width #000 solid;
+
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
 
   &,
   &:link,
   &:visited {
-    @include colour.colour-font("button-text", $important: true);
+    color: colour.brand-colour("black");
   }
 
   &:active,
@@ -43,7 +40,7 @@
     width: auto !important;
     height: auto !important;
     margin: inherit !important;
-    padding: spacing.space(1) !important;
+    padding: spacing.space(1) spacing.space(1.5) !important;
 
     overflow: visible !important;
 
@@ -51,17 +48,16 @@
 
     white-space: inherit !important;
 
-    clip: auto !important;
+    outline: none !important;
+
+    box-shadow: inset 0 0 0 a11yVars.$focus-outline-inner-width #fff !important;
+
     -webkit-clip-path: none !important;
     clip-path: none !important;
+  }
 
-    &:hover {
-      @include colour.colour-font("button-hover-text", $important: true);
-
-      @include colour.colour-background(
-        "button-hover-background",
-        $important: true
-      );
-    }
+  &::after {
+    content: "\203A";
+    content: "\203A" / "";
   }
 }

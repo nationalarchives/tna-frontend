@@ -26,7 +26,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
-      "name": "select with a preselected value",
+      "name": "with a preselected value",
       "options": {
         "label": "Sort by",
         "headingSize": "m",
@@ -51,7 +51,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\"><option value=\"relevance\">Relevance</option><option value=\"date\" selected>Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
-      "name": "select with a hint",
+      "name": "with a hint",
       "options": {
         "label": "Sort by",
         "headingSize": "m",
@@ -76,7 +76,7 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"sort\">Sort by</label></div><p id=\"sort-hint\" class=\"tna-form-item__hint\">Select a field to sort by.</p><div class=\"tna-form-item__body\"><select class=\"tna-select\" name=\"sort\" id=\"sort\" aria-describedby=\"sort-hint\"><option value=\"relevance\">Relevance</option><option value=\"date\">Date</option><option value=\"title\">Title</option></select></div></div>"
     },
     {
-      "name": "select with an error",
+      "name": "with an error",
       "options": {
         "label": "Sort by",
         "headingSize": "m",

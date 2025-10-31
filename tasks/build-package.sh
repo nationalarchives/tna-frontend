@@ -14,3 +14,5 @@ else
 fi
 find package -name "*.mdx" -type f -delete
 find package -name "*.stories.js" -type f -delete
+cp node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 package/nationalarchives/assets/fonts
+cp node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 package/nationalarchives/assets/fonts

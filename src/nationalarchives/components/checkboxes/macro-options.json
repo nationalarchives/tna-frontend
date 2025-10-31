@@ -2,8 +2,8 @@
   {
     "name": "label",
     "type": "string",
-    "required": true,
-    "description": "The label for the checkboxes field."
+    "required": false,
+    "description": "The label for the checkboxes field. Required if there are multiple checkboxes. Optional for only one checkbox."
   },
   {
     "name": "headingLevel",
@@ -78,7 +78,7 @@
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "description": "If true, the checkbox will be checked."
+        "description": "If `true`, the checkbox will be checked."
       }
     ]
   },
@@ -86,13 +86,13 @@
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "If true, show smaller checkboxes."
+    "description": "If `true`, show smaller checkboxes."
   },
   {
     "name": "inline",
     "type": "boolean",
     "required": false,
-    "description": "If true, show the checkboxes inline rather than vertical."
+    "description": "If `true`, show the checkboxes inline rather than vertical."
   },
   {
     "name": "formItemClasses",

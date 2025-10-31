@@ -5,9 +5,13 @@
   @include a11y.visually-hidden;
 }
 
-*:focus-visible {
+*:focus,
+*:focus-visible,
+*:active {
   z-index: 9;
+}
 
+*:focus-visible {
   @include a11y.focus-outline;
 }
 
@@ -26,17 +30,14 @@ textarea,
 select,
 summary {
   &:active {
-    @include a11y.focus-outline-without-offset;
+    @include a11y.active-outline;
   }
-}
-
-*:active {
-  @include a11y.active-outline;
 }
 
 .tna-\!--no-focus-style,
 *[tabindex="-1"] {
+  *:focus-visible,
   &:focus {
-    outline: none;
+    @include a11y.no-focus-outline;
   }
 }

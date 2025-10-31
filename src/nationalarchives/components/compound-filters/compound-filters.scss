@@ -78,8 +78,7 @@
       transform: rotate(-45deg);
     }
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include colour.contrast;
     }
   }

@@ -2,6 +2,7 @@
   {%- set containerClasses = [params.classes] if params.classes else [] -%}
   {%- set classes = containerClasses | join(' ') -%}
   <div class="tna-form-item{% if params.error %} tna-form-item--error{% endif %}{% if classes %} {{ classes }}{% endif %}"{%- if module %} data-module="{{ module }}"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+    {%- if params.label %}
     <div class="tna-form-item__header">
       {%- if params.headingLevel %}
       <h{{ params.headingLevel }} class="tna-form-item__label tna-heading-{{ params.headingSize or 'm' }}">
@@ -15,9 +16,10 @@
       </label>
       {%- endif %}
     </div>
+    {%- endif %}
     {%- if params.hint %}
     <p id="{{ params.id }}-hint" class="tna-form-item__hint">
-      {{ params.hint }}
+      {{ params.hint | safe }}
     </p>
     {%- endif %}
     {%- if params.error %}

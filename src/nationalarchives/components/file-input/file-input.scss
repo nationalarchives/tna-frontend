@@ -1,4 +1,4 @@
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
 @use "../../tools/colour";
@@ -33,7 +33,7 @@
 
     @include colour.colour-border(
       "keyline",
-      forms.$form-field-border-width,
+      formsVars.$form-field-border-width,
       dashed
     );
     @include borders.rounded-border;
@@ -41,10 +41,6 @@
 
   &__droppable:has(&:focus-visible) {
     @include a11y.focus-outline;
-  }
-
-  &__droppable:has(&:active) {
-    @include a11y.focus-outline-without-offset;
   }
 
   &__droppable & {
@@ -77,8 +73,7 @@
     white-space: nowrap;
   }
 
-  &__droppable &:hover ~ &__droppable-buttons,
-  &__droppable &:focus-visible ~ &__droppable-buttons {
+  &__droppable &:hover ~ &__droppable-buttons {
     .tna-button {
       &:not(.tna-button--plain) {
         @include colour.colour-font("button-hover-text");

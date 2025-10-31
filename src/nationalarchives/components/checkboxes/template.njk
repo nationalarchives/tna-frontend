@@ -1,23 +1,44 @@
 {% from "nationalarchives/components/fieldset/macro.njk" import tnaFieldset %}
+{% from "nationalarchives/utilities/forms/form-item.njk" import tnaFormItem %}
 
+{% macro checkboxes(params) %}
+  <div class="tna-checkboxes{% if params.small or params.inline %} tna-checkboxes--small{% endif %}{% if params.inline %} tna-checkboxes--inline{% endif %}"{% if (params.items | length != 1) %} id="{{ params.id }}"{% endif %}>
+    {%- for item in params.items %}
+    <div class="tna-checkboxes__item">
+      <input type="checkbox" id="{{ params.id if (params.items | length == 1) else params.id ~ '-' ~ item.value }}"{% if params.classes %} class="{{ params.classes }}"{% endif %} value="{{ item.value }}" name="{{ item.name or params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}{% if item.checked %} checked{% endif %}>
+      <label for="{{ params.id if (params.items | length == 1) else params.id ~ '-' ~ item.value }}" class="tna-checkboxes__item-label">
+        {{ item.text }}
+      </label>
+    </div>
+    {%- endfor %}
+  </div>
+{% endmacro %}
+
+{%- if (params.items | length) == 1 %}
+{%- call tnaFormItem({
+  headingLevel: params.headingLevel,
+  headingSize: params.headingSize,
+  id: params.id,
+  label: params.label,
+  hint: params.hint,
+  error: params.error,
+  classes: params.formItemClasses,
+  attributes: params.formItemAttributes
+}) %}
+  {{ checkboxes(params) }}
+{%- endcall %}
+{%- else %}
 {%- call tnaFieldset({
   headingLevel: params.headingLevel,
   headingSize: params.headingSize,
   id: params.id,
   legend: params.label,
   hint: params.hint,
+  smallerHint: true,
   error: params.error,
   classes: params.formItemClasses,
   attributes: params.formItemAttributes
 }) %}
-  <div class="tna-checkboxes{% if params.small or params.inline %} tna-checkboxes--small{% endif %}{% if params.inline %} tna-checkboxes--inline{% endif %}" id="{{ params.id }}">
-    {%- for item in params.items %}
-    <div class="tna-checkboxes__item">
-      <input type="checkbox" id="{{ params.id }}-{{ item.value }}"{% if params.classes %} class="{{ params.classes }}"{% endif %} value="{{ item.value }}" name="{{ item.name or params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}{% if item.checked %} checked{% endif %}>
-      <label for="{{ params.id }}-{{ item.value }}" class="tna-checkboxes__item-label">
-        {{ item.text }}
-      </label>
-    </div>
-    {%- endfor %}
-  </div>
+  {{ checkboxes(params) }}
 {%- endcall %}
+{%- endif %}

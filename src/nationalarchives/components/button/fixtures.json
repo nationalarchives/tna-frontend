@@ -75,6 +75,17 @@
       "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only-mobile\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
     },
     {
+      "name": "icon only and right aligned (ignore rightAlignIcon)",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "icon": "heart",
+        "iconOnly": true,
+        "rightAlignIcon": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
       "name": "small",
       "options": {
         "text": "Log in",

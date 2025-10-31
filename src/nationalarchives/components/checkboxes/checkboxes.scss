@@ -1,4 +1,4 @@
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
 @use "../../tools/colour";
@@ -48,8 +48,6 @@
         position: absolute;
         top: 0;
         left: 0;
-
-        @include colour.always-light;
       }
 
       &::before {
@@ -64,7 +62,7 @@
 
         @include colour.colour-border(
           "input-border",
-          forms.$form-field-border-width
+          formsVars.$form-field-border-width
         );
         border-radius: 0.1px;
         @include borders.rounded-border;
@@ -82,8 +80,8 @@
         z-index: 2;
 
         @include colour.colour-border("input-background", 0, solid);
-        border-width: 0 0 forms.$checkbox-checkmark-width
-          forms.$checkbox-checkmark-width;
+        border-width: 0 0 formsVars.$checkbox-checkmark-width
+          formsVars.$checkbox-checkmark-width;
 
         transform: translateX(-50%) translateY(-50%) rotate(-45deg);
       }
@@ -130,7 +128,6 @@
 
   &__item-label:active {
     &::before {
-      @include a11y.focus-outline;
       @include a11y.active-outline;
     }
   }

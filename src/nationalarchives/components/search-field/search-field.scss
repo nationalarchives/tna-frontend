@@ -1,5 +1,6 @@
 @use "../../variables/borders" as bordersVars;
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
+@use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
 
@@ -7,6 +8,7 @@
   align-self: stretch;
 
   display: flex;
+  gap: formsVars.$form-field-border-width;
 
   &__input {
     min-width: 8rem;
@@ -17,65 +19,19 @@
 
     line-height: 2rem;
 
-    border-width: forms.$form-field-border-width 0
-      forms.$form-field-border-width forms.$form-field-border-width;
-    border-style: solid;
-    border-radius: bordersVars.$rounded-border-radius 0.1px 0.1px
-      bordersVars.$rounded-border-radius;
-
     flex: 1;
 
-    @include colour.always-light;
     @include colour.colour-font("input-foreground");
 
     @include colour.colour-background("input-background");
 
-    @include colour.colour-border("input-border");
-
-    .tna-template--dark-theme &,
-    .tna-background-contrast & {
-      margin-right: forms.$form-field-border-width;
-
-      border-width: 0;
-    }
-
-    .tna-template--dark-theme .tna-background-accent-light & {
-      margin-right: 0;
-
-      border-width: forms.$form-field-border-width;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .tna-template--system-theme & {
-        margin-right: forms.$form-field-border-width;
-
-        border-width: 0;
-      }
-
-      .tna-background-accent-light & {
-        margin-right: 0;
-
-        border-width: forms.$form-field-border-width;
-      }
-    }
-
-    @include colour.on-high-contrast {
-      .tna-background-contrast & {
-        margin-right: 0;
-
-        border-width: forms.$form-field-border-width;
-      }
-    }
+    @include colour.colour-border(
+      "input-border",
+      formsVars.$form-field-border-width
+    );
+    @include borders.rounded-border;
   }
 
   &__button {
-    border-radius: 0.1px bordersVars.$rounded-border-radius
-      bordersVars.$rounded-border-radius 0.1px;
-  }
-
-  @include colour.on-forced-colours {
-    &__input {
-      border-width: forms.$form-field-border-width !important;
-    }
   }
 }

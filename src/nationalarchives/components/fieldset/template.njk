@@ -1,4 +1,4 @@
-<div class="tna-fieldset{% if params.error %} tna-fieldset--error{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+<div class="tna-fieldset{% if params.smallerHint %} tna-fieldset--small-hint{% endif %}{% if params.error %} tna-fieldset--error{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <fieldset class="tna-fieldset__inner"{%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}>
     <legend class="tna-fieldset__legend">
       {%- if params.headingLevel %}
@@ -13,7 +13,7 @@
     </legend>
     {%- if params.hint %}
     <p id="{{ params.id }}-hint" class="tna-fieldset__hint">
-      {{ params.hint }}
+      {{ params.hint | safe }}
     </p>
     {%- endif %}
     {%- if params.error %}

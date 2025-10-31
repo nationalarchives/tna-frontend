@@ -9,8 +9,6 @@
   @include spacing.space-above;
   padding: spacing.space(1);
 
-  @include colour.always-light;
-
   @include colour.colour-background("background");
 
   @include colour.colour-border("form-error-border", 0.3125rem, solid);

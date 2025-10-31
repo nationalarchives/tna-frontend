@@ -89,27 +89,6 @@ export default [
           media_action: "progress",
         },
       },
-      {
-        eventName: "enter-fullscreen",
-        targetElement: '.tna-gallery__options button[value="enter-fullscreen"]',
-        on: "click",
-        rootData: {
-          data_link: "enter_full_screen_button",
-        },
-      },
-      {
-        eventName: "exit-fullscreen",
-        targetElement: '.tna-gallery__options button[value="exit-fullscreen"]',
-        on: "click",
-        rootData: {
-          data_link: "exit_full_screen_button",
-        },
-      },
-      {
-        eventName: "index",
-        targetElement: '.tna-gallery__options button[value="show-index"]',
-        on: "click",
-      },
     ],
   },
 ];

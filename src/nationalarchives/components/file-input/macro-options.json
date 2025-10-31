@@ -40,14 +40,14 @@
     "name": "multiple",
     "type": "boolean",
     "required": false,
-    "description": "If true, allows multiple files to be selected.",
+    "description": "If `true`, allows multiple files to be selected.",
     "default": false
   },
   {
     "name": "droppable",
     "type": "boolean",
     "required": false,
-    "description": "If true, allows drag and drop functionality.",
+    "description": "If `true`, allows drag and drop functionality.",
     "default": false
   },
   {

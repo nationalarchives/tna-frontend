@@ -1,532 +1,530 @@
-import Pagination from "./template.njk";
+import Template from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  previous: { control: "object" },
-  items: { control: "object" },
-  next: { control: "object" },
-  currentItemText: { control: "text" },
-  solid: { control: "boolean" },
-  spaced: { control: "boolean" },
-  landmarkLabel: { control: "text" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Pagination",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      previous: { control: "object" },
+      items: { control: "object" },
+      next: { control: "object" },
+      currentItemText: { control: "text" },
+      solid: { control: "boolean" },
+      spaced: { control: "boolean" },
+      landmarkLabel: { control: "text" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
+  parameters: {
+    chromatic: { delay: 1000 },
+  },
+  render: (params) => {
+    return nunjucks.renderString(Template, { params });
+  },
 };
 
-const Template = ({
-  previous,
-  items,
-  next,
-  currentItemText,
-  solid,
-  spaced,
-  landmarkLabel,
-  classes,
-  attributes,
-}) =>
-  Pagination({
-    params: {
-      previous,
-      items,
-      next,
-      currentItemText,
-      solid,
-      spaced,
-      landmarkLabel,
-      classes,
-      attributes,
+export const Standard = {
+  args: {
+    previous: {
+      href: "#",
     },
-  });
-
-export const Standard = Template.bind({});
-Standard.args = {
-  previous: {
-    href: "#",
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 6,
+        href: "#",
+      },
+      {
+        number: 7,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 8,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
+      href: "#",
+    },
+    classes: "tna-pagination--demo",
   },
-  items: [
-    {
-      number: 1,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 6,
-      href: "#",
-    },
-    {
-      number: 7,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 8,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
-  },
-  classes: "tna-pagination--demo",
 };
 
-export const First = Template.bind({});
-First.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-First.args = {
-  items: [
-    {
-      number: 1,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 2,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+export const First = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  classes: "tna-pagination--demo",
-};
-
-export const Second = Template.bind({});
-Second.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-Second.args = {
-  previous: {
-    href: "#",
+  args: {
+    items: [
+      {
+        number: 1,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 2,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
+      href: "#",
+    },
+    classes: "tna-pagination--demo",
   },
-  items: [
-    {
-      number: 1,
-      href: "#",
-    },
-    {
-      number: 2,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 3,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
-  },
-  classes: "tna-pagination--demo",
 };
 
-export const Third = Template.bind({});
-Third.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-Third.args = {
-  previous: {
-    href: "#",
+export const Second = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  items: [
-    {
-      number: 1,
+  args: {
+    previous: {
       href: "#",
     },
-    {
-      number: 2,
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        number: 2,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 3,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
       href: "#",
     },
-    {
-      number: 3,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 4,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+    classes: "tna-pagination--demo",
   },
-  classes: "tna-pagination--demo",
 };
 
-export const Forth = Template.bind({});
-Forth.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-Forth.args = {
-  previous: {
-    href: "#",
+export const Third = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  items: [
-    {
-      number: 1,
+  args: {
+    previous: {
       href: "#",
     },
-    {
-      number: 2,
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        number: 2,
+        href: "#",
+      },
+      {
+        number: 3,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 4,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
       href: "#",
     },
-    {
-      number: 3,
-      href: "#",
-    },
-    {
-      number: 4,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 5,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+    classes: "tna-pagination--demo",
   },
-  classes: "tna-pagination--demo",
 };
 
-export const Fifth = Template.bind({});
-Fifth.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-Fifth.args = {
-  previous: {
-    href: "#",
+export const Forth = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  items: [
-    {
-      number: 1,
+  args: {
+    previous: {
       href: "#",
     },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 4,
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        number: 2,
+        href: "#",
+      },
+      {
+        number: 3,
+        href: "#",
+      },
+      {
+        number: 4,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 5,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
       href: "#",
     },
-    {
-      number: 5,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 6,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+    classes: "tna-pagination--demo",
   },
-  classes: "tna-pagination--demo",
-};
-
-export const LastMinus4 = Template.bind({});
-LastMinus4.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-LastMinus4.args = {
-  previous: {
-    href: "#",
-  },
-  items: [
-    {
-      number: 1,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 37,
-      href: "#",
-    },
-    {
-      number: 38,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 39,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
-  },
-  classes: "tna-pagination--demo",
 };
 
-export const LastMinus3 = Template.bind({});
-LastMinus3.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-LastMinus3.args = {
-  previous: {
-    href: "#",
+export const Fifth = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  items: [
-    {
-      number: 1,
+  args: {
+    previous: {
       href: "#",
     },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 38,
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 4,
+        href: "#",
+      },
+      {
+        number: 5,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 6,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
       href: "#",
     },
-    {
-      number: 39,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 40,
-      href: "#",
-    },
-    {
-      number: 41,
-      href: "#",
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+    classes: "tna-pagination--demo",
   },
-  classes: "tna-pagination--demo",
-};
-
-export const LastMinus2 = Template.bind({});
-LastMinus2.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-LastMinus2.args = {
-  previous: {
-    href: "#",
-  },
-  items: [
-    {
-      number: 1,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 39,
-      href: "#",
-    },
-    {
-      number: 40,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 41,
-      href: "#",
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
-  },
-  classes: "tna-pagination--demo",
 };
 
-export const LastMinus1 = Template.bind({});
-LastMinus1.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-LastMinus1.args = {
-  previous: {
-    href: "#",
+export const LastMinus4 = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  items: [
-    {
-      number: 1,
+  args: {
+    previous: {
       href: "#",
     },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 40,
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 37,
+        href: "#",
+      },
+      {
+        number: 38,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 39,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
       href: "#",
     },
-    {
-      number: 41,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+    classes: "tna-pagination--demo",
   },
-  classes: "tna-pagination--demo",
-};
-
-export const Last = Template.bind({});
-Last.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-Last.args = {
-  previous: {
-    href: "#",
-  },
-  items: [
-    {
-      number: 1,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 41,
-      href: "#",
-    },
-    {
-      number: 42,
-      current: true,
-      href: "#",
-    },
-  ],
-  classes: "tna-pagination--demo",
 };
 
-export const Solid = Template.bind({});
-Solid.args = {
-  previous: {
-    href: "#",
+export const LastMinus3 = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  items: [
-    {
-      number: 1,
+  args: {
+    previous: {
       href: "#",
     },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 6,
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 38,
+        href: "#",
+      },
+      {
+        number: 39,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 40,
+        href: "#",
+      },
+      {
+        number: 41,
+        href: "#",
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
       href: "#",
     },
-    {
-      number: 7,
-      current: true,
-      href: "#",
-    },
-    {
-      number: 8,
-      href: "#",
-    },
-    {
-      ellipsis: true,
-    },
-    {
-      number: 42,
-      href: "#",
-    },
-  ],
-  next: {
-    href: "#",
+    classes: "tna-pagination--demo",
   },
-  solid: true,
-  classes: "tna-pagination--demo",
 };
 
-export const NoNumbers = Template.bind({});
-NoNumbers.args = {
-  previous: {
-    href: "#",
-    text: "TS 11/45/166",
-    title: "From the catalogue: TS 11/45/166",
+export const LastMinus2 = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
   },
-  currentItemText: "From the catalogue: TS 11/45/167",
-  next: {
-    href: "#",
-    text: "TS 11/45/168",
-    title: "From the catalogue: TS 11/45/168",
+  args: {
+    previous: {
+      href: "#",
+    },
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 39,
+        href: "#",
+      },
+      {
+        number: 40,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 41,
+        href: "#",
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
+      href: "#",
+    },
+    classes: "tna-pagination--demo",
   },
-  spaced: true,
-  classes: "tna-pagination--demo",
+};
+
+export const LastMinus1 = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    previous: {
+      href: "#",
+    },
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 40,
+        href: "#",
+      },
+      {
+        number: 41,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
+      href: "#",
+    },
+    classes: "tna-pagination--demo",
+  },
+};
+
+export const Last = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    previous: {
+      href: "#",
+    },
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 41,
+        href: "#",
+      },
+      {
+        number: 42,
+        current: true,
+        href: "#",
+      },
+    ],
+    classes: "tna-pagination--demo",
+  },
+};
+
+export const Solid = {
+  args: {
+    previous: {
+      href: "#",
+    },
+    items: [
+      {
+        number: 1,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 6,
+        href: "#",
+      },
+      {
+        number: 7,
+        current: true,
+        href: "#",
+      },
+      {
+        number: 8,
+        href: "#",
+      },
+      {
+        ellipsis: true,
+      },
+      {
+        number: 42,
+        href: "#",
+      },
+    ],
+    next: {
+      href: "#",
+    },
+    solid: true,
+    classes: "tna-pagination--demo",
+  },
+};
+
+export const NoNumbers = {
+  args: {
+    previous: {
+      href: "#",
+      text: "TS 11/45/166",
+      title: "From the catalogue: TS 11/45/166",
+    },
+    currentItemText: "From the catalogue: TS 11/45/167",
+    next: {
+      href: "#",
+      text: "TS 11/45/168",
+      title: "From the catalogue: TS 11/45/168",
+    },
+    spaced: true,
+    classes: "tna-pagination--demo",
+  },
 };

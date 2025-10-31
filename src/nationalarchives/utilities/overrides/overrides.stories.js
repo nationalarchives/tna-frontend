@@ -31,12 +31,12 @@ MarginMobile.parameters = {
   chromatic: { disableSnapshot: true },
 };
 MarginMobile.parameters = {
-  viewport: {
-    defaultViewport: "small",
-  },
   chromatic: {
     viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
     disableSnapshot: true,
   },
+};
+MarginMobile.globals = {
+  viewport: { value: "small" },
 };
 MarginMobile.args = {};

@@ -1,39 +1,36 @@
-import Warning from "./template.njk";
+import Template from "./template.njk?raw";
+import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
-const argTypes = {
-  heading: { control: "text" },
-  headingLevel: { control: { type: "number", min: 1, max: 6 } },
-  body: { control: "text" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Warning",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      heading: { control: "text" },
+      headingLevel: { control: { type: "number", min: 1, max: 6 } },
+      body: { control: "text" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+      },
+    ]),
+  ),
+  render: (params) => {
+    return nunjucks.renderString(Template, { params });
+  },
 };
 
-const Template = ({ heading, headingLevel, body, classes, attributes }) =>
-  Warning({
-    params: {
-      heading,
-      headingLevel,
-      body,
-      classes,
-      attributes,
-    },
-  });
-
-export const Standard = Template.bind({});
-Standard.args = {
-  headingLevel: 2,
-  body: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
-  classes: "tna-warning--demo",
+export const Standard = {
+  args: {
+    headingLevel: 2,
+    body: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
+    classes: "tna-warning--demo",
+  },
 };

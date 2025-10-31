@@ -4,8 +4,7 @@
   "description": "The National Archives frontend styles",
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build:storybook": "storybook build -o storybook --webpack-stats-json",
-    "build:storybook:tests": "storybook build -o storybook --webpack-stats-json --test",
+    "build:storybook": "storybook build -o storybook",
     "build:package": "./tasks/build-package.sh",
     "build:errorpages": "npm run compile:sass && npm run compile:scripts && node tasks/static-error-pages/generate.js",
     "compile:sass": "sass --style=compressed --load-path=node_modules --embed-sources src/nationalarchives:package/nationalarchives",

@@ -118,6 +118,7 @@ export const MobileExpanded = {
     await expect($items[3]).not.toBeVisible();
     await expect($items[4]).toBeVisible();
     await expect($expandButton).toBeVisible();
+    await expect($module).not.toHaveAttribute("tabindex");
 
     await userEvent.click($expandButton);
 
@@ -127,7 +128,17 @@ export const MobileExpanded = {
     await expect($items[3]).toBeVisible();
     await expect($items[4]).toBeVisible();
     await expect($expandButton).not.toBeVisible();
+    await expect($module).toHaveAttribute("tabindex");
+    await expect($module.getAttribute("tabindex")).toEqual("0");
 
     await expect($module).toHaveFocus();
+
+    // await $module.blur();
+    await userEvent.keyboard("{Tab}");
+    await expect($module).not.toHaveFocus();
+    await expect($module).not.toHaveAttribute("tabindex");
+    await expect(
+      canvas.getByRole("link", { name: args.items[0].text }),
+    ).toHaveFocus();
   },
 };

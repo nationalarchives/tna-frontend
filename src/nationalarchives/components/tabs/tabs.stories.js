@@ -353,7 +353,7 @@ export const Test = {
         await expectButtonAndSectionAToBeCurrent();
       });
 
-      buttonA.blur();
+      await buttonA.blur();
     });
   },
 };

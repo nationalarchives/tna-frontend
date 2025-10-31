@@ -35,5 +35,10 @@ export default defineConfig({
         },
       },
     ],
+    coverage: {
+      provider: "v8",
+      include: ["src/**/*.js", "src/**/*.mjs"],
+      exclude: ["**/analytics.js", "**/*.json"],
+    },
   },
 });

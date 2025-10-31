@@ -177,7 +177,7 @@ export const Mobile = {
       await expect($linkC).not.toBeVisible();
     });
 
-    $navigationToggle.blur();
+    await $navigationToggle.blur();
   },
 };
 

@@ -16,7 +16,7 @@
     "test:statichtml": "node tasks/generate-fixture-html.js && html-validate fixtures-html",
     "test:lint": "prettier --check '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.{js,mjs}'",
     "test:package": "node tasks/test-package.js",
-    "test:storybook": "vitest",
+    "test:storybook": "vitest run",
     "test:unit": "jest --verbose",
     "update:fixtures": "node tasks/update-fixtures.js"
   },

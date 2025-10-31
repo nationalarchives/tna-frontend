@@ -14,7 +14,7 @@ const argTypes = Object.fromEntries(
     html: { control: "text" },
     id: { control: "text" },
     hint: { control: "text" },
-  smallerHint: { control: "boolean" },
+    smallerHint: { control: "boolean" },
     error: { control: "object" },
     classes: { control: "text" },
     attributes: { control: "object" },

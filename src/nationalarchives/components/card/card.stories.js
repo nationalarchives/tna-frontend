@@ -352,7 +352,7 @@ export const HorizontalContrastMobile = {
     htmlElement: "article",
     classes: "tna-card--demo",
   },
-}
+};
 
 export const All = () => `
 <div class="tna-container">

@@ -37,8 +37,8 @@ export default {
 
 export const Standard = {
   args: {
-  defaultContent: true,
-  defaultContentBaseURL: "#",
+    defaultContent: true,
+    defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
   play: async ({ canvasElement }) => {
@@ -66,8 +66,8 @@ export const Medium = {
     },
   },
   args: {
-  defaultContent: true,
-  defaultContentBaseURL: "#",
+    defaultContent: true,
+    defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
   play: async ({ canvasElement }) => {
@@ -95,8 +95,8 @@ export const MediumCollapsed = {
     },
   },
   args: {
-  defaultContent: true,
-  defaultContentBaseURL: "#",
+    defaultContent: true,
+    defaultContentBaseURL: "#",
     collapseOnMedium: true,
     classes: "tna-global-header--demo",
   },
@@ -112,8 +112,8 @@ export const Mobile = {
     },
   },
   args: {
-  defaultContent: true,
-  defaultContentBaseURL: "#",
+    defaultContent: true,
+    defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
   play: async ({ args, canvasElement, step }) => {

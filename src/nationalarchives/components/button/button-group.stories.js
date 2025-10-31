@@ -1,6 +1,6 @@
 import nunjucks from "nunjucks";
 
-nunjucks.configure("src");
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Button group",

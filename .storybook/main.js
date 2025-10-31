@@ -1,5 +1,12 @@
-const config = {
+export default {
+  framework: {
+    name: "@storybook/html-vite",
+    options: {},
+  },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx)"],
+  core: {
+    builder: "@storybook/builder-vite",
+  },
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-docs",
@@ -7,15 +14,12 @@ const config = {
     "@storybook/addon-styling-webpack",
     "@storybook/addon-vitest",
   ],
-  framework: {
-    name: "@storybook/html-vite",
-    options: {},
-  },
-  staticDirs: ["../src/nationalarchives/assets"],
+  staticDirs: ["../src/nationalarchives/assets", "../src/"],
+  async viteFinal(config) {
+    const { mergeConfig } = await import("vite");
 
-  viteFinal: async (config, { configType }) => {
-    return { ...config, assetsInclude: ["**/*.njk"] };
+    return mergeConfig(config, {
+      assetsInclude: ["**/*.njk"],
+    });
   },
 };
-
-export default config;

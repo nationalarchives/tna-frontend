@@ -4,7 +4,7 @@ import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
-nunjucks.configure("src");
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Breadcrumbs",

@@ -3,7 +3,7 @@ import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { customViewports } from "../../../../.storybook/viewports";
 
-nunjucks.configure("src");
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Card",

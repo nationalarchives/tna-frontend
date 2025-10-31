@@ -22,7 +22,7 @@ import Textarea from "../../components/textarea/template.njk?raw";
 import Warning from "../../components/warning/template.njk?raw";
 import nunjucks from "nunjucks";
 
-nunjucks.configure("src");
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 const argTypes = {
   theme: {

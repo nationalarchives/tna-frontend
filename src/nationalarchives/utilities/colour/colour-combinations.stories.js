@@ -6,7 +6,7 @@ import Select from "../../components/select/template.njk?raw";
 import TextInput from "../../components/text-input/template.njk?raw";
 import nunjucks from "nunjucks";
 
-nunjucks.configure("src");
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 const argTypes = {};
 

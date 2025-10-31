@@ -360,7 +360,6 @@ export const HorizontalContrastMobile = {
   },
 };
 
-// TODO
 export const All = () => `
 <div class="tna-container">
   <div class="tna-column tna-column--width-1-6">

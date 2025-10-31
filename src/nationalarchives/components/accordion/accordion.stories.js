@@ -3,6 +3,8 @@ import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { fireEvent, expect } from "storybook/test";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Accordion",
   argTypes: Object.fromEntries(
@@ -24,7 +26,6 @@ export default {
     ]),
   ),
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };

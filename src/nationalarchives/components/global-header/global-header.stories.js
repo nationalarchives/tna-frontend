@@ -4,6 +4,8 @@ import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 import { customViewports } from "../../../../.storybook/viewports";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Global header",
   argTypes: Object.fromEntries(
@@ -35,7 +37,6 @@ export default {
     },
   },
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };
@@ -121,7 +122,7 @@ export const Mobile = {
     defaultContentBaseURL: "#",
     classes: "tna-global-header--demo",
   },
-  play: async ({ args, canvasElement, step }) => {
+  play: async ({ canvasElement, step }) => {
     await new Promise((r) => setTimeout(r, 100));
 
     const canvas = within(canvasElement);
@@ -129,9 +130,11 @@ export const Mobile = {
     const $navigationItems = canvasElement.querySelector(
       `.tna-global-header__navigation`,
     );
-    const [$linkA, $linkB, $linkC] = ["Visit", "Explore the collection", "Education"].map((navigationItemText) =>
-      canvas.getByText(navigationItemText),
-    );
+    const [$linkA, $linkB, $linkC] = [
+      "Visit",
+      "Explore the collection",
+      "Education",
+    ].map((navigationItemText) => canvas.getByText(navigationItemText));
     const $navigationToggle = canvasElement.querySelector(
       `.tna-global-header__navigation-button`,
     );

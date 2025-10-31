@@ -3,6 +3,8 @@ import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Skip link",
   argTypes: Object.fromEntries(
@@ -24,7 +26,6 @@ export default {
     chromatic: { delay: 1000 },
   },
   render: (params) => {
-    nunjucks.configure("src");
     return `<p>To view the skip link component tab to this example, or click inside this example and press tab.</p>
   ${nunjucks.renderString(Template, {
     params,

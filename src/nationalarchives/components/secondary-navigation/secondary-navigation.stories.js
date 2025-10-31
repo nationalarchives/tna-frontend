@@ -3,6 +3,8 @@ import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { customViewports } from "../../../../.storybook/viewports";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Secondary navigation",
   argTypes: Object.fromEntries(
@@ -32,7 +34,6 @@ export default {
     },
   },
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };

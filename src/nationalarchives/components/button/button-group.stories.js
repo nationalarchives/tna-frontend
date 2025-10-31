@@ -1,13 +1,13 @@
 import nunjucks from "nunjucks";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Button group",
   argTypes: {
     small: { control: "boolean" },
   },
   render: (params) => {
-    nunjucks.configure("src");
-    nunjucks.configure("src");
     return nunjucks.renderString(
       `{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
       <div class="tna-button-group{% if params.small %} tna-button-group--small{% endif %}">

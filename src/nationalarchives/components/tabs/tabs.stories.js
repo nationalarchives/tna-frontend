@@ -3,6 +3,8 @@ import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 import { within, userEvent, expect } from "storybook/test";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Tabs",
   argTypes: Object.fromEntries(
@@ -24,7 +26,6 @@ export default {
     chromatic: { delay: 1000 },
   },
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };

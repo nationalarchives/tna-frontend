@@ -2,6 +2,8 @@ import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Select",
   argTypes: Object.fromEntries(
@@ -33,7 +35,6 @@ export default {
     ]),
   ),
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };

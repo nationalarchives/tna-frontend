@@ -2,6 +2,8 @@ import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Sidebar",
   argTypes: Object.fromEntries(
@@ -27,7 +29,6 @@ export default {
     chromatic: { delay: 1000 },
   },
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };

@@ -3,6 +3,8 @@ import nunjucks from "nunjucks";
 import TextInput from "../text-input/template.njk?raw";
 import macroOptions from "./macro-options.json";
 
+nunjucks.configure("src");
+
 export default {
   title: "Components/Error summary",
   argTypes: Object.fromEntries(
@@ -23,7 +25,6 @@ export default {
     ]),
   ),
   render: (params) => {
-    nunjucks.configure("src");
     return nunjucks.renderString(Template, { params });
   },
 };

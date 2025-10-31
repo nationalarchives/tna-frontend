@@ -5,7 +5,7 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-styling-webpack",
-    "@storybook/addon-vitest"
+    "@storybook/addon-vitest",
   ],
   framework: {
     name: "@storybook/html-vite",

@@ -34,36 +34,13 @@ export default {
     },
   },
   render: (params) => {
-    return nunjucks.renderString(Template, { params });
+    return `<div class="tna-container">
+  <div class="tna-column tna-column--full">
+    ${nunjucks.renderString(Template, { params })}
+  </div>
+</div>`;
   },
 };
-
-// const Template = ({
-//   title,
-//   headingLevel,
-//   items,
-//   noBottomBorder,
-//   overflow,
-//   noUnindentation,
-//   visuallyHideHeading,
-//   classes,
-//   attributes,
-// }) =>
-//   `<div class="tna-container"><div class="tna-column tna-column--full">${SecondaryNavigation(
-//     {
-//       params: {
-//         title,
-//         headingLevel,
-//         items,
-//         noBottomBorder,
-//         overflow,
-//         noUnindentation,
-//         visuallyHideHeading,
-//         classes,
-//         attributes,
-//       },
-//     },
-//   )}</div></div>`;
 
 export const Default = {
   args: {

@@ -97,7 +97,7 @@ export const WithHint = {
     headingSize: "m",
     id: "sort3",
     name: "sort3",
-    hint: "Sort by something else",
+    hint: "Select a sort.",
     items: [
       {
         text: "Relevance",

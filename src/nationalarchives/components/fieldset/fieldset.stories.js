@@ -51,7 +51,7 @@ export const Standard = {
               label: "Text input",
               headingLevel: 2,
               headingSize: "xs",
-              // hint: index %2 === 0 ? "This is a hint" : null,
+              hint: "This is a hint",
               // error: index % 3 === 0 ? { text: "This is an error" } : null,
               name: `text-input${index + 1}`,
               id: `text-input${index + 1}`,

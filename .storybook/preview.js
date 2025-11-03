@@ -1,8 +1,18 @@
 import "../src/nationalarchives/all.scss";
+import "../src/nationalarchives/font-awesome.scss";
+import "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2";
+import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
+import { initAll } from "../src/nationalarchives/all.mjs";
+
+// For cookie banner tests
+window.global = window;
+
+// window.addEventListener("onload", initAll);
+document.addEventListener("DOMContentLoaded", initAll, false);
 
 document.documentElement.classList.add(
   "tna-template",
@@ -21,6 +31,7 @@ export const parameters = {
   options: { showPanel: true },
   a11y: {
     config: a11yConfig,
+    test: "error",
   },
   backgrounds: {
     values: [],
@@ -34,47 +45,47 @@ export const parameters = {
   },
 };
 
-class MockEventTracker extends EventTracker {
-  constructor(documentScope) {
-    super({ documentScope });
-    this.initAll();
-    console.log({
-      ...this.getTnaMetaTags(),
-      ...this.getUserPreferences(),
-      "gtm.start": new Date().getTime(),
-      event: "gtm.js",
-    });
-  }
+// class MockEventTracker extends EventTracker {
+//   constructor(documentScope) {
+//     super({ documentScope });
+//     this.initAll();
+//     console.log({
+//       ...this.getTnaMetaTags(),
+//       ...this.getUserPreferences(),
+//       "gtm.start": new Date().getTime(),
+//       event: "gtm.js",
+//     });
+//   }
 
-  recordEvent(eventName, data, rootData = {}) {
-    super.recordEvent(eventName, data, rootData);
-    console.log("EventTracker", this.events[this.events.length - 1]);
-  }
-}
+//   recordEvent(eventName, data, rootData = {}) {
+//     super.recordEvent(eventName, data, rootData);
+//     console.log("EventTracker", this.events[this.events.length - 1]);
+//   }
+// }
 
-class MockGA4Tracking extends GA4 {
-  constructor(documentScope) {
-    super({ documentScope });
-  }
+// class MockGA4Tracking extends GA4 {
+//   constructor(documentScope) {
+//     super({ documentScope });
+//   }
 
-  pushToDataLayer(data) {
-    super.pushToDataLayer();
-    console.log("GA4", data);
-  }
-}
+//   pushToDataLayer(data) {
+//     super.pushToDataLayer();
+//     console.log("GA4", data);
+//   }
+// }
 
-export const decorators = [
-  (Story, ctx) => {
-    window.dataLayer = [];
-    const cookies = new Cookies();
-    cookies.deleteAll();
-    const story = Story();
-    if (window && ctx.args.disableMockAnalytics !== true) {
-      setTimeout(() => {
-        new MockEventTracker(ctx.canvasElement);
-        new MockGA4Tracking(ctx.canvasElement);
-      }, 1);
-    }
-    return story;
-  },
-];
+// export const decorators = [
+//   (Story, ctx) => {
+//     window.dataLayer = [];
+//     const cookies = new Cookies();
+//     cookies.deleteAll();
+//     const story = Story();
+//     if (window && ctx.args.disableMockAnalytics !== true) {
+//       setTimeout(() => {
+//         new MockEventTracker(ctx.canvasElement);
+//         new MockGA4Tracking(ctx.canvasElement);
+//       }, 1);
+//     }
+//     return story;
+//   },
+// ];

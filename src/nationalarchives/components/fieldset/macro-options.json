@@ -43,20 +43,6 @@
     "description": "If `true`, make the fieldset hint smaller to match other form field components."
   },
   {
-    "name": "error",
-    "type": "object",
-    "required": false,
-    "description": "If set, the details of any errors.",
-    "params": [
-      {
-        "name": "text",
-        "type": "string",
-        "required": true,
-        "description": "The error text to display."
-      }
-    ]
-  },
-  {
     "name": "classes",
     "type": "string",
     "required": false,

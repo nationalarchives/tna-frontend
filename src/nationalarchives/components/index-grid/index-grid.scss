@@ -52,6 +52,8 @@
 
     @include colour.image-loader-background;
 
+    pointer-events: none;
+
     border-radius: bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius 0 0;
   }

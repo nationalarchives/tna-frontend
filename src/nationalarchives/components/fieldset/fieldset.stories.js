@@ -41,6 +41,7 @@ export const Standard = {
     legend: "Fieldset",
     headingLevel: 1,
     headingSize: "xl",
+    hint: "This is a <strong>hint</strong>.",
     html: Array(6)
       .fill("")
       .reduce(

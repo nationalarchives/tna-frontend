@@ -19,7 +19,6 @@ export default {
       id: { control: "text" },
       hint: { control: "text" },
       smallerHint: { control: "boolean" },
-      error: { control: "object" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [

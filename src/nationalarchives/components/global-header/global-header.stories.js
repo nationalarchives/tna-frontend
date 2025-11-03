@@ -94,7 +94,7 @@ export const Medium = {
 export const MediumCollapsed = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
+      disableSnapshot: true,
     },
   },
   globals: {

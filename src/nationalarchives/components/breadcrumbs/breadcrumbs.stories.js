@@ -137,8 +137,10 @@ export const MobileExpanded = {
     await userEvent.keyboard("{Tab}");
     await expect($module).not.toHaveFocus();
     await expect($module).not.toHaveAttribute("tabindex");
-    await expect(
-      canvas.getByRole("link", { name: args.items[0].text }),
-    ).toHaveFocus();
+    const $firstLink = await canvas.getByRole("link", {
+      name: args.items[0].text,
+    });
+    await expect($firstLink).toHaveFocus();
+    await $firstLink.blur();
   },
 };

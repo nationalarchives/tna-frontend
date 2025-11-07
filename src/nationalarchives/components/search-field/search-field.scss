@@ -21,17 +21,12 @@
 
     flex: 1;
 
-    @include colour.colour-font("input-foreground");
-
-    @include colour.colour-background("input-background");
-
-    @include colour.colour-border(
-      "input-border",
-      formsVars.$form-field-border-width
-    );
+    @include colour.colour-input;
     @include borders.rounded-border;
   }
 
   &__button {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

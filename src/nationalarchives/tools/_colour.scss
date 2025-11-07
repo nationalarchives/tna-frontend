@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "../variables/borders";
+@use "../variables/forms";
 @use "../variables/colour";
 @use "../variables/features";
 @use "../tools/media";
@@ -139,6 +140,16 @@ $base-colours: (
 
 @mixin colour-fill($colour, $important: false) {
   fill: colour-var($colour) if($important, !important, null);
+}
+
+%colour-input {
+  @include colour-font("input-foreground");
+  @include colour-background("input-background");
+  @include colour-border("input-border", forms.$form-field-border-width);
+}
+
+@mixin colour-input() {
+  @extend %colour-input;
 }
 
 @mixin thick-keyline($direction: "", $veryThick: false) {

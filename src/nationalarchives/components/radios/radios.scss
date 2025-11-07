@@ -58,12 +58,7 @@
 
         z-index: 1;
 
-        @include colour.colour-background("input-background");
-
-        @include colour.colour-border(
-          "input-border",
-          formsVars.$form-field-border-width
-        );
+        @include colour.colour-input;
       }
 
       &::after {

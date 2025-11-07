@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Changed icon on search field to magnifying glass
+- Simplify form input element styles with `colour.colour-input()` mixin
 
 ### Deprecated
 ### Removed

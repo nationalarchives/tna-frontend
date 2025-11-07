@@ -26,7 +26,7 @@ export default {
       actions: { control: "object" },
       style: {
         control: "inline-radio",
-        options: ["none", "contrast", "tint", "accent"],
+        options: ["none", "contrast", "tint", "accent", "accent-light"],
       },
       layout: {
         control: "inline-radio",

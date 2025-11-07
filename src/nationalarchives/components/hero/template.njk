@@ -7,6 +7,8 @@
   {%- set containerClasses = containerClasses.concat('tna-background-tint') -%}
 {%- elseif params.style == "accent" -%}
   {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
+{%- elseif params.style == "accent-light" -%}
+  {%- set containerClasses = containerClasses.concat('tna-background-accent-light') -%}
 {%- endif -%}
 {%- if params.layout == "shift" -%}
   {%- set containerClasses = containerClasses.concat('tna-hero--shift') -%}

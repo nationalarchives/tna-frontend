@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Hero components can now have an `accent-light` style
+- New back link component
 
 ### Changed
 

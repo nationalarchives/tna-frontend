@@ -1,0 +1,5 @@
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- set classes = containerClasses | join(' ') -%}
+<a href="{{ parmas.href }}" class="tna-back-link{% if classes %} {{ classes }}{% endif %}"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+  <span class="tna-back-link__inner">{{ params.text or 'Back' }}</span>
+</a>

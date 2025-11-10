@@ -1,0 +1,33 @@
+{
+  "component": "back-link",
+  "fixtures": [
+    {
+      "name": "minimal",
+      "options": {
+        "text": "Back to previous page",
+        "href": "#"
+      },
+      "html": "<a href=\"\" class=\"tna-back-link\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "text": "Back to previous page",
+        "href": "#",
+        "classes": "details__test-class"
+      },
+      "html": "<a href=\"\" class=\"tna-back-link details__test-class\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "text": "Back to previous page",
+        "href": "#",
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<a href=\"\" class=\"tna-back-link\" data-testattribute=\"foobar\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
+    }
+  ]
+}

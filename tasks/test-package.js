@@ -84,6 +84,7 @@ const checkExists = [
   "nationalarchives/assets/images/tna-square-logo.svg",
   // Components
   ...componentFiles("accordion", "Accordion"),
+  ...componentFiles("back-link"),
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
   ...componentFiles("button"),
   ...componentFiles("card"),

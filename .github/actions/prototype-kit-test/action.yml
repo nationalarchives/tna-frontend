@@ -36,6 +36,7 @@ runs:
     - name: Add imports to template
       run: >
         echo -e "{% from \"nationalarchives/components/accordion/macro.njk\" import tnaAccordion %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/back-link/macro.njk\" import tnaBackLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/breadcrumbs/macro.njk\" import tnaBreadcrumbs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -76,6 +77,7 @@ runs:
       run: >
         echo "\n{% block bodyEnd %}" >> prototype/app/views/index.html &&
         echo "{{ tnaAccordion({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaBackLink({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaBreadcrumbs({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaButton({text:\"I am a button\",href:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&

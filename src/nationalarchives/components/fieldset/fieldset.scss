@@ -5,9 +5,7 @@
 .tna-fieldset {
   @include spacing.space-above;
 
-  &__inner {
-    border: none;
-  }
+  border: none;
 
   &__legend {
   }

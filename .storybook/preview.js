@@ -27,18 +27,18 @@ document.documentElement.dataset.tnaFrontendDebug = "true";
 
 export const parameters = {
   actions: {},
-  viewport: { viewports: customViewports },
+  viewport: { options: customViewports },
   options: { showPanel: true },
   a11y: {
     config: a11yConfig,
     test: "error",
   },
   backgrounds: {
-    values: [],
     grid: {
       cellSize: 16,
       cellAmount: 4,
     },
+    options: {},
   },
   controls: {
     expanded: true,

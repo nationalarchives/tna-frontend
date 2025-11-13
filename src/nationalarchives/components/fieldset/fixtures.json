@@ -10,7 +10,7 @@
         "name": "fieldset",
         "html": "<div>CONTENT</div>"
       },
-      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+      "html": "<fieldset class=\"tna-fieldset\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset>"
     },
     {
       "name": "heading level",
@@ -22,7 +22,7 @@
         "name": "fieldset",
         "html": "<div>CONTENT</div>"
       },
-      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Fieldset</h4></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+      "html": "<fieldset class=\"tna-fieldset\"><legend class=\"tna-fieldset__legend\"><h4 class=\"tna-fieldset__heading tna-heading-m\">Fieldset</h4></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset>"
     },
     {
       "name": "with hint",
@@ -34,7 +34,7 @@
         "name": "fieldset",
         "html": "<div>CONTENT</div>"
       },
-      "html": "<div class=\"tna-fieldset\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"fieldset-hint \"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><p id=\"fieldset-hint\" class=\"tna-fieldset__hint\">This is a <strong>hint</strong></p><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+      "html": "<fieldset class=\"tna-fieldset\" aria-describedby=\"fieldset-hint \"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><p id=\"fieldset-hint\" class=\"tna-fieldset__hint\">This is a <strong>hint</strong></p><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset>"
     },
     {
       "name": "with classes",
@@ -46,7 +46,7 @@
         "html": "<div>CONTENT</div>",
         "classes": "checkboxes__test-class"
       },
-      "html": "<div class=\"tna-fieldset checkboxes__test-class\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+      "html": "<fieldset class=\"tna-fieldset checkboxes__test-class\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset>"
     },
     {
       "name": "with attributes",
@@ -60,7 +60,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<div class=\"tna-fieldset\" data-testattribute=\"foobar\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset></div>"
+      "html": "<fieldset class=\"tna-fieldset\" data-testattribute=\"foobar\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Fieldset</span></legend><div class=\"tna-fieldset__body\"><div>CONTENT</div></div></fieldset>"
     }
   ]
 }

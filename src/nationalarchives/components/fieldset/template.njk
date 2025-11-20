@@ -1,15 +1,16 @@
 <fieldset class="tna-fieldset{% if params.smallerHint %} tna-fieldset--small-hint{% endif %}{% if params.error %} tna-fieldset--error{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}"{%- if params.hint or params.error %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%}"{%- endif %}{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <legend class="tna-fieldset__legend">
-    {%- if params.headingLevel %}
-    <h{{ params.headingLevel }} class="tna-fieldset__heading tna-heading-{{ params.headingSize or 'm' }}">
-      {{ params.legend }}
-    </h{{ params.headingLevel }}>
-    {%- else %}
-    <span class="tna-fieldset__heading tna-heading-{{ params.headingSize or 'm' }}">
-      {{ params.legend }}
-    </span>
-    {%- endif %}
-  </legend>
+  {#- Use a legend for assistive technologies but visually hide it to avoid styling issues -#}
+  <legend class="tna-fieldset__legend tna-visually-hidden">{{ params.legend }}</legend>
+  {#- Use a visual heading and unless it is an h1-h6, hide it from assistive technology to avoid repetition -#}
+  {%- if params.headingLevel %}
+  <h{{ params.headingLevel }} class="tna-fieldset__heading tna-heading-{{ params.headingSize or 'm' }}">
+    {{ params.legend }}
+  </h{{ params.headingLevel }}>
+  {%- else %}
+  <p class="tna-fieldset__heading tna-heading-{{ params.headingSize or 'm' }}" aria-hidden="true">
+    {{ params.legend }}
+  </p>
+  {%- endif %}
   {%- if params.hint %}
   <p id="{{ params.id }}-hint" class="tna-fieldset__hint">
     {{ params.hint | safe }}

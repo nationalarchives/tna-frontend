@@ -8,10 +8,11 @@
   border: none;
 
   &__legend {
-    display: contents;
   }
 
   &__heading {
+    margin: 0;
+    padding: 0;
   }
 
   &__hint {
@@ -19,7 +20,7 @@
     margin-bottom: spacing.space(1);
   }
 
-  &__error {
+  & &__error {
     margin-top: spacing.space(0.25);
 
     @include colour.colour-font("form-error-text");

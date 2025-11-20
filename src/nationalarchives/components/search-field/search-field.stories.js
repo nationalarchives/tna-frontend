@@ -9,7 +9,7 @@ export default {
   argTypes: Object.fromEntries(
     Object.entries({
       label: { control: "text" },
-      headingLevel: { control: { type: "number", min: 1, max: 6 } },
+      headingLevel: { control: { type: "number", min: 0, max: 6 } },
       headingSize: { control: "inline-radio", options: ["s", "m", "l", "xl"] },
       id: { control: "text" },
       name: { control: "text" },

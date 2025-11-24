@@ -15,19 +15,19 @@
     "name": "logo",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "Options for the logo link.",
     "params": [
       {
         "name": "href",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The URL the logo links to."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the logo link."
       }
     ]
   },
@@ -35,25 +35,25 @@
     "name": "navigation",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "A list of main navigation links.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text of the navigation item."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the navigation item."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the navigation item."
       }
     ]
   },
@@ -61,31 +61,31 @@
     "name": "topNavigation",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "A list of smaller navigation links displayed at the top of the header.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text of the navigation item."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the navigation item."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the navigation item."
       },
       {
         "name": "icon",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional Font Awesome icon, without the `fa-` prefix."
       }
     ]
   },
@@ -93,19 +93,19 @@
     "name": "navigationId",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional ID for the main navigation `<nav>` element."
   },
   {
     "name": "topNavigationId",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional ID for the top navigation `<nav>` element."
   },
   {
     "name": "phaseBanner",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "An optional phase banner to display at the top of the global header.",
     "paramsFrom": "phase-banner"
   },
   {

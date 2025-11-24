@@ -46,7 +46,7 @@
     "name": "imageSrc",
     "type": "string",
     "required": false,
-    "description": "The location of the card’s image."
+    "description": "The URL of the card’s image."
   },
   {
     "name": "imageAlt",
@@ -70,7 +70,7 @@
     "name": "imageType",
     "type": "string",
     "required": false,
-    "description": "The mime type of the image. Defaults to `image/jpeg`. Only required when using `imageSources`."
+    "description": "The MIME type of the image. Defaults to `image/jpeg`. Only required when using `imageSources`."
   },
   {
     "name": "imageSources",
@@ -82,13 +82,13 @@
         "name": "src",
         "type": "string",
         "required": true,
-        "description": "The location of the image."
+        "description": "The URL of the image."
       },
       {
         "name": "type",
         "type": "string",
         "required": true,
-        "description": "The mime type of the image."
+        "description": "The MIME type of the image."
       },
       {
         "name": "media",

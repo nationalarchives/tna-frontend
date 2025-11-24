@@ -15,15 +15,15 @@
     "name": "headingLevel",
     "type": "number",
     "required": false,
-    "default": 1,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`.",
+    "default": 1
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "xl",
-    "description": "The physical size of the hero title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the hero title (`xl`, `l`, `m` or `s`).",
+    "default": "xl"
   },
   {
     "name": "body",
@@ -83,7 +83,7 @@
         "name": "media",
         "type": "string",
         "required": false,
-        "description": "A media condition for the image."
+        "description": "A conditional media rule for the image."
       },
       {
         "name": "width",

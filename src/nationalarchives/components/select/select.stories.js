@@ -31,6 +31,15 @@ export default {
         ...value,
         description: macroOptions.find((option) => option.name === key)
           ?.description,
+        table: {
+          type: {
+            summary: macroOptions.find((option) => option.name === key)?.type,
+          },
+          defaultValue: {
+            summary: macroOptions.find((option) => option.name === key)
+              ?.default,
+          },
+        },
       },
     ]),
   ),
@@ -42,8 +51,8 @@ export default {
 export const Standard = {
   args: {
     label: "Sort by",
-    headingLevel: 4,
-    headingSize: "m",
+    // headingLevel: 4,
+    // headingSize: "m",
     id: "sort1",
     name: "sort1",
     items: [

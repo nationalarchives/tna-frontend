@@ -9,8 +9,8 @@
     "name": "itemHeadingSize",
     "type": "string",
     "required": false,
-    "default": "s",
-    "description": "The physical size of the accordion item titles (`xl`, `l`, `m`, `s` or `xs`). This will be ignored if JavaScript is enabled and the items will have a small heading."
+    "description": "The physical size of the accordion item titles (`xl`, `l`, `m`, `s` or `xs`). This will be ignored if JavaScript is enabled and the items will have a small heading.",
+    "default": "s"
   },
   {
     "name": "items",
@@ -40,8 +40,8 @@
         "name": "open",
         "type": "boolean",
         "required": false,
-        "default": false,
-        "description": "If `true`, open the accordion item. If a `group` is set, only one item in that group can be open."
+        "description": "If `true`, open the accordion item. If a `group` is set, only one item in that group can be open.",
+        "default": false
       }
     ]
   },
@@ -55,8 +55,8 @@
     "name": "singleOpenItem",
     "type": "boolean",
     "required": false,
-    "default": false,
-    "description": "If `true`, only one accordion items can be opened at a time."
+    "description": "If `true`, only one accordion items can be opened at a time.",
+    "default": false
   },
   {
     "name": "toggleAllButton",
@@ -74,15 +74,15 @@
         "name": "openAllLabel",
         "type": "string",
         "required": false,
-        "default": "Show all sections",
-        "description": "The label for the button when all sections are closed."
+        "description": "The label for the button when all sections are closed.",
+        "default": "Show all sections"
       },
       {
         "name": "closeAllLabel",
         "type": "string",
         "required": false,
-        "default": "Hide all sections",
-        "description": "The label for the button when all sections are open."
+        "description": "The label for the button when all sections are open.",
+        "default": "Hide all sections"
       }
     ]
   },

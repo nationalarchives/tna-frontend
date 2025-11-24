@@ -3,7 +3,7 @@
     "name": "title",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The title of the secondary navigation."
   },
   {
     "name": "headingLevel",
@@ -15,32 +15,32 @@
     "name": "visuallyHideHeading",
     "type": "boolean",
     "required": false,
-    "default": false,
-    "description": ""
+    "description": "If `true`, hide the secondary navigation heading.",
+    "default": false
   },
   {
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of navigation items.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text of the navigation item."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the navigation item."
       },
       {
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": ""
+        "description": "If `true`, highlight the navigation item as the current page."
       }
     ]
   },
@@ -48,19 +48,19 @@
     "name": "noBottomBorder",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, hide the bottom border of the secondary navigation. This can be useful when the secondary navigation is placed at the bottom of a coloured block."
   },
   {
     "name": "overflow",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, enable horizontal scrolling for the secondary navigation when the list of items becomes too long."
   },
   {
     "name": "noUnindentation",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, don't apply 'unindentation' to the secondary navigation. Used for when the secondary navigation is placed inside a nested container."
   },
   {
     "name": "classes",

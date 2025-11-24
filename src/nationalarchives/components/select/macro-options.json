@@ -54,13 +54,13 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of items for the select field.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text of the select option."
       },
       {
         "name": "value",
@@ -74,13 +74,13 @@
     "name": "selected",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "Set the value of the initial selected item."
   },
   {
     "name": "size",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "Set the width of the select. Can be `s`, `m`, `l` or `xl`."
   },
   {
     "name": "formItemClasses",

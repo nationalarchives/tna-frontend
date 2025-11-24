@@ -22,6 +22,15 @@ export default {
         ...value,
         description: macroOptions.find((option) => option.name === key)
           ?.description,
+        table: {
+          type: {
+            summary: macroOptions.find((option) => option.name === key)?.type,
+          },
+          defaultValue: {
+            summary: macroOptions.find((option) => option.name === key)
+              ?.default,
+          },
+        },
       },
     ]),
   ),

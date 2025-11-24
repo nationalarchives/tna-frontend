@@ -9,29 +9,29 @@
     "name": "title",
     "type": "string",
     "required": false,
-    "default": "This website uses cookies",
-    "description": "The main title of the cookie banner."
+    "description": "The main title of the cookie banner.",
+    "default": "This website uses cookies"
   },
   {
     "name": "body",
     "type": "string",
     "required": false,
-    "default": "We use some essential cookies to make this service work.\nWe'd also like to use analytics cookies so we can understand how you use the service and make improvements.",
-    "description": "The body text of the cookie banner."
+    "description": "The body text of the cookie banner.",
+    "default": "We use some essential cookies to make this service work.\nWe'd also like to use analytics cookies so we can understand how you use the service and make improvements."
   },
   {
     "name": "acceptedBody",
     "type": "string",
     "required": false,
-    "default": "You have accepted optional cookies. You can change your cookie settings on the [cookies page](cookiesUrl)",
-    "description": "The text to show if the user has accepts cookies."
+    "description": "The text to show if the user has accepts cookies.",
+    "default": "You have accepted optional cookies. You can change your cookie settings on the [cookies page](cookiesUrl)"
   },
   {
     "name": "rejectedBody",
     "type": "string",
     "required": false,
-    "default": "You have rejected optional cookies. You can change your cookie settings on the [cookies page](cookiesUrl)",
-    "description": "The text to show if the user declines cookies."
+    "description": "The text to show if the user declines cookies.",
+    "default": "You have rejected optional cookies. You can change your cookie settings on the [cookies page](cookiesUrl)"
   },
   {
     "name": "cookiesUrl",

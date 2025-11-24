@@ -3,31 +3,31 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of items to display as quick filters.",
     "params": [
       {
         "name": "label",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text label for the quick filter."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the quick filter item."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the quick filter."
       },
       {
         "name": "selected",
         "type": "boolean",
         "required": false,
-        "description": ""
+        "description": "If `true`, highlight the quick filter as selected."
       }
     ]
   },
@@ -35,7 +35,7 @@
     "name": "stack",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, stack the quick filters vertically."
   },
   {
     "name": "classes",

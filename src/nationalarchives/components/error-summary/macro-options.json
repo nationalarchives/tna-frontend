@@ -3,7 +3,7 @@
     "name": "title",
     "type": "string",
     "required": false,
-    "description": "",
+    "description": "The title text for the error summary.",
     "default": "There is a problem"
   },
   {

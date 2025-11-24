@@ -15,8 +15,8 @@
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "m",
-    "description": "The physical size of the gallery title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the gallery title (`xl`, `l`, `m` or `s`).",
+    "default": "m"
   },
   {
     "name": "body",

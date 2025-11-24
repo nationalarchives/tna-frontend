@@ -21,8 +21,8 @@
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "m",
-    "description": "The physical size of the card title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the card title (`xl`, `l`, `m` or `s`).",
+    "default": "m"
   },
   {
     "name": "href",
@@ -94,7 +94,7 @@
         "name": "media",
         "type": "string",
         "required": false,
-        "description": "A media condition for the image."
+        "description": "A conditional media rule for the image."
       },
       {
         "name": "width",
@@ -268,8 +268,8 @@
     "name": "htmlElement",
     "type": "string",
     "required": false,
-    "default": "article",
-    "description": "HTML element of the card."
+    "description": "HTML element of the card.",
+    "default": "article"
   },
   {
     "name": "classes",

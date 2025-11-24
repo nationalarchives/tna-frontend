@@ -3,8 +3,8 @@
     "name": "text",
     "type": "string",
     "required": false,
-    "default": "Back",
-    "description": "The text of the back link."
+    "description": "The text of the back link.",
+    "default": "Back"
   },
   {
     "name": "href",

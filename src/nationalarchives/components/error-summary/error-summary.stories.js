@@ -21,6 +21,15 @@ export default {
         ...value,
         description: macroOptions.find((option) => option.name === key)
           ?.description,
+        table: {
+          type: {
+            summary: macroOptions.find((option) => option.name === key)?.type,
+          },
+          defaultValue: {
+            summary: macroOptions.find((option) => option.name === key)
+              ?.default,
+          },
+        },
       },
     ]),
   ),
@@ -31,8 +40,6 @@ export default {
 
 export const Standard = {
   args: {
-    title: "There is a problem",
-    headingLevel: 2,
     items: [
       {
         text: "Enter your full name",
@@ -51,8 +58,6 @@ export const Standard = {
 const FormTemplate = ({ items }) =>
   `${nunjucks.renderString(Template, {
     params: {
-      title: "There is a problem",
-      headingLevel: 2,
       items: Array(items)
         .fill("")
         .map((item, index) => ({

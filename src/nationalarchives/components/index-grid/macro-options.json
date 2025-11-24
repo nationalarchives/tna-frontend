@@ -58,55 +58,55 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of items to display in the index grid.",
     "params": [
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the item."
       },
       {
         "name": "src",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the item image."
       },
       {
         "name": "alt",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "Alternative text for the item image."
       },
       {
         "name": "width",
         "type": "number",
         "required": true,
-        "description": ""
+        "description": "The width of the image in pixels."
       },
       {
         "name": "height",
         "type": "number",
         "required": true,
-        "description": ""
+        "description": "The height of the image in pixels."
       },
       {
         "name": "label",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional label for the item, displayed in the top left."
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The main title of the item."
       },
       {
         "name": "subtitle",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional subtitle for the item."
       }
     ]
   },
@@ -120,31 +120,25 @@
     "name": "columns",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The number of columns to display on large devices."
   },
   {
     "name": "columnsMedium",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The number of columns to display on medium devices."
   },
   {
     "name": "columnsSmall",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The number of columns to display on small devices."
   },
   {
     "name": "columnsTiny",
     "type": "string",
     "required": false,
-    "description": ""
-  },
-  {
-    "name": "plainSupertitle",
-    "type": "boolean",
-    "required": false,
-    "description": "Use a plain supertitle, removing the accented background colour."
+    "description": "The number of columns to display on tiny devices."
   },
   {
     "name": "classes",

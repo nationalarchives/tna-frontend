@@ -2,32 +2,34 @@
   {
     "name": "title",
     "type": "string",
-    "required": true,
-    "description": ""
+    "required": false,
+    "description": "",
+    "default": "There is a problem"
   },
   {
     "name": "headingLevel",
     "type": "number",
-    "required": true,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "required": false,
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`.",
+    "default": 2
   },
   {
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "The list of items to display in the error summary.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The error message text."
       },
       {
         "name": "href",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The ID of the form field related to this error message. (Requires a `#` prefix.)"
       }
     ]
   },
@@ -35,7 +37,7 @@
     "name": "disableAutoFocus",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, disables the automatic focusing of the error summary when the page loads."
   },
   {
     "name": "classes",

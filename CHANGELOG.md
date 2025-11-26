@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed pointer events from images in index grid components to avoid dragging an image that overlaps the chip
 - Add `aria-current="page"` attribute to the current page on the pagination component
+- Fixed small border radius discrepancy on card images
 
 ### Security
 

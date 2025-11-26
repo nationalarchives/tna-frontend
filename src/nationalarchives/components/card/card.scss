@@ -159,8 +159,8 @@
 
     order: 1;
 
-    border-radius: #{bordersVars.$rounded-border-radius - 1px}
-      #{bordersVars.$rounded-border-radius - 1px} 0 0;
+    border-radius: bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius 0 0;
 
     @include colour.image-loader-background;
   }
@@ -267,8 +267,8 @@
     }
 
     &__image-container {
-      border-radius: #{bordersVars.$rounded-border-radius - 1px}
-        #{bordersVars.$rounded-border-radius - 1px} 0 0;
+      border-radius: bordersVars.$rounded-border-radius
+        bordersVars.$rounded-border-radius 0 0;
     }
 
     &:not(:has(&__image-container)) {

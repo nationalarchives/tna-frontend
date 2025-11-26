@@ -3,13 +3,13 @@
     "name": "phase",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The phase to display in the banner. This should either be 'Proof of concept', 'Prototype', 'Alpha' or 'Beta'."
   },
   {
     "name": "message",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "A message to explain the phase of the service. Include a link to provide feedback."
   },
   {
     "name": "classes",

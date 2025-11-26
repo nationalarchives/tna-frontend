@@ -3,7 +3,7 @@
     "name": "title",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The title of the sidebar."
   },
   {
     "name": "headingLevel",
@@ -15,50 +15,50 @@
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "m",
-    "description": "The physical size of the sidebar title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the sidebar title (`xl`, `l`, `m` or `s`).",
+    "default": "m"
   },
   {
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of sidebar items.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The text of the sidebar item."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the sidebar item."
       },
       {
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": ""
+        "description": "If `true`, highlight the item as the current page or section."
       },
       {
         "name": "children",
         "type": "array",
         "required": false,
-        "description": "",
+        "description": "A list of sidebar child items.",
         "params": [
           {
             "name": "text",
             "type": "string",
             "required": true,
-            "description": ""
+            "description": "The text of the child sidebar item."
           },
           {
             "name": "href",
             "type": "string",
             "required": true,
-            "description": ""
+            "description": "The URL of the child sidebar item."
           }
         ]
       }
@@ -74,7 +74,7 @@
     "name": "sticky",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, allows the sidebar to 'stick' to the top of the screen when scrolling."
   },
   {
     "name": "classes",

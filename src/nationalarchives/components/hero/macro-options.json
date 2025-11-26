@@ -15,87 +15,87 @@
     "name": "headingLevel",
     "type": "number",
     "required": false,
-    "default": 1,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`.",
+    "default": 1
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "xl",
-    "description": "The physical size of the hero title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the hero title (`xl`, `l`, `m` or `s`).",
+    "default": "xl"
   },
   {
     "name": "body",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The HTML for the main body of the hero. Not displayed if `text` is set."
   },
   {
     "name": "text",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "The text for the hero which will be inserted into a `<p>` element. Overwrites `body` if it is set."
   },
   {
     "name": "imageSrc",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The URL of the hero image."
   },
   {
     "name": "imageAlt",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "Alternative text for the image in the event that it can’t be displayed."
   },
   {
     "name": "imageWidth",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The width of the image in pixels."
   },
   {
     "name": "imageHeight",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The height of the image in pixels."
   },
   {
     "name": "imageSources",
     "type": "array",
     "required": true,
-    "description": "Alternative sources of the image which can include WebP files.",
+    "description": "Alternative sources of the image.",
     "params": [
       {
         "name": "src",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the image."
       },
       {
         "name": "type",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The MIME type of the image."
       },
       {
         "name": "media",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "A conditional media rule for the image."
       },
       {
         "name": "width",
         "type": "number",
         "required": false,
-        "description": ""
+        "description": "The width of the image in pixels."
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
-        "description": ""
+        "description": "The height of the image in pixels."
       }
     ]
   },
@@ -103,7 +103,7 @@
     "name": "imageCaption",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional caption for the hero image, displayed under an expandable section in the top right."
   },
   {
     "name": "actions",

@@ -60,52 +60,51 @@
     "name": "type",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "Set the type of the text input (for example `text`, `email`, `tel`, etc.). Use with caution to avoid enforcing HTML5 validation.",
+    "default": "text"
   },
   {
     "name": "password",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, the text input will be a password field."
   },
   {
     "name": "inputmode",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "Change the [`inputmode` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) to allow user devices to display the most appropriate input method. For example, use `numeric` for number inputs."
   },
   {
     "name": "spellcheck",
     "type": "boolean",
     "required": false,
-    "default": false,
-    "description": ""
+    "description": "If `true`, enable [spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) for the text input. Disabled when `password` is `true`."
   },
   {
     "name": "autocapitalize",
     "type": "string",
     "required": false,
-    "default": "off",
-    "description": ""
+    "description": "If `true`, enable [automatic capitalization](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) for the text input. Disabled when `password` is `true`. This is not supported in all browsers.",
+    "default": "off"
   },
   {
     "name": "autocorrect",
     "type": "boolean",
     "required": false,
-    "default": "off",
-    "description": ""
+    "description": "If `true`, enable [autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) for the text input. Disabled when `password` is `true`. This is not supported in all browsers."
   },
   {
     "name": "autocomplete",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "Set the [`autocomplete` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) to control browser autofill behaviour. Disabled when `password` is `true`."
   },
   {
     "name": "size",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "Set the width of the text input. Can be `xs`, `s`, `m`, `l` or `xl`."
   },
   {
     "name": "formItemClasses",

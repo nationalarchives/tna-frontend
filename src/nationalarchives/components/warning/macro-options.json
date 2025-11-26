@@ -3,8 +3,8 @@
     "name": "heading",
     "type": "string",
     "required": false,
-    "default": "Important information",
-    "description": "If set, the visually hidden heading for the warning which will be suffixed with an exclamation mark."
+    "description": "If set, the visually hidden heading for the warning which will be suffixed with an exclamation mark.",
+    "default": "Important information"
   },
   {
     "name": "headingLevel",

@@ -3,15 +3,15 @@
     "name": "text",
     "type": "string",
     "required": false,
-    "default": "Skip to main content",
-    "description": "If set, the text to appear in the skip link."
+    "description": "If set, the text to appear in the skip link.",
+    "default": "Skip to main content"
   },
   {
     "name": "href",
     "type": "string",
     "required": false,
-    "default": "#main-content",
-    "description": "If set, the ID of the element to skip to."
+    "description": "If set, the ID of the element to skip to.",
+    "default": "#main-content"
   },
   {
     "name": "classes",

@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed icon on search field to magnifying glass
 - Simplify form input element styles with `colour.colour-input()` mixin
 - Refactor the structure of the fieldset component to ensure the `<fieldset>` is the top-level element
+- Set a default heading level and title for the error summary component
+- Remove the option for a plain supertitle from the index grid component
 
 ### Deprecated
 ### Removed
@@ -27,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed pointer events from images in index grid components to avoid dragging an image that overlaps the chip
 - Add `aria-current="page"` attribute to the current page on the pagination component
+- Fixed small border radius discrepancy on card images
 
 ### Security
 

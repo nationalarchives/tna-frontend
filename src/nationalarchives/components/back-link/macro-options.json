@@ -3,14 +3,14 @@
     "name": "text",
     "type": "string",
     "required": false,
-    "default": "Back",
-    "description": ""
+    "description": "The text of the back link.",
+    "default": "Back"
   },
   {
     "name": "href",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The URL of the back link."
   },
   {
     "name": "classes",

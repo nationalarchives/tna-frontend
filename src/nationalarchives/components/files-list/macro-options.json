@@ -9,7 +9,7 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "The list of files to display.",
     "params": [
       {
         "name": "id",
@@ -21,43 +21,43 @@
         "name": "title",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The name of the file to show."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL to the file."
       },
       {
         "name": "fileType",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "A short name for the file type (for example, PDF, DOCX, ZIP)."
       },
       {
         "name": "fileSize",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The physical size of the file including the units (for example, 2MB, 512KB)."
       },
       {
         "name": "fileExtent",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The human-readable size of the file (for example, number of pages, duration)."
       },
       {
         "name": "icon",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional Font Awesome icon, without the `fa-` prefix."
       },
       {
         "name": "description",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "A short description of the file."
       }
     ]
   },

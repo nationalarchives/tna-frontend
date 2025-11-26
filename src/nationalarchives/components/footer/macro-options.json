@@ -145,8 +145,8 @@
     "name": "currentTheme",
     "type": "string",
     "required": false,
-    "default": "light",
-    "description": "The current theme which has been selected. Options are `system`, `light` and `dark`."
+    "description": "The current theme which has been selected. Options are `system`, `light` and `dark`.",
+    "default": "light"
   },
   {
     "name": "classes",

@@ -3,25 +3,26 @@
     "name": "previous",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "An optional 'Previous' button.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The text for the previous button.",
+        "default": "Previous"
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL for the previous page."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the previous button."
       }
     ]
   },
@@ -29,25 +30,25 @@
     "name": "items",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "A list of pagination items.",
     "params": [
       {
         "name": "number",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The number of the page."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the page."
       },
       {
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": ""
+        "description": "If `true`, highlight this item as the current page."
       },
       {
         "name": "ellipsis",
@@ -61,25 +62,26 @@
     "name": "next",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "An optional 'Next' button.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The text for the next button.",
+        "default": "Next"
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL for the next page."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the next button."
       }
     ]
   },
@@ -87,19 +89,26 @@
     "name": "landmarkLabel",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional label for the pagination region.",
+    "default": "Pagination"
+  },
+  {
+    "name": "currentItemText",
+    "type": "string",
+    "required": false,
+    "description": "If no `items` are provided, this text will be used to indicate the current page."
   },
   {
     "name": "solid",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, use a solid background for the pagination buttons."
   },
   {
     "name": "spaced",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "If `true`, add spacing between the pagination buttons and align the previous and next buttons to the extreme left and right of the component respectively."
   },
   {
     "name": "classes",

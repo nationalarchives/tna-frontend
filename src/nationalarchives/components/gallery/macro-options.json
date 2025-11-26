@@ -15,8 +15,8 @@
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "m",
-    "description": "The physical size of the gallery title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the gallery title (`xl`, `l`, `m` or `s`).",
+    "default": "m"
   },
   {
     "name": "body",
@@ -34,37 +34,37 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "The list of images to display.",
     "params": [
       {
         "name": "src",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the image."
       },
       {
         "name": "alt",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "Alternative text for the image."
       },
       {
         "name": "width",
         "type": "number",
         "required": true,
-        "description": ""
+        "description": "The width of the image in pixels."
       },
       {
         "name": "height",
         "type": "number",
         "required": true,
-        "description": ""
+        "description": "The height of the image in pixels."
       },
       {
         "name": "description",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "A caption or description for the image."
       }
     ]
   },

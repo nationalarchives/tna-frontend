@@ -3,61 +3,61 @@
     "name": "src",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "The URL of the image."
   },
   {
     "name": "alt",
     "type": "string",
     "required": true,
-    "description": ""
+    "description": "Alternative text for the image."
   },
   {
     "name": "width",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The width of the image in pixels."
   },
   {
     "name": "height",
     "type": "number",
     "required": true,
-    "description": ""
+    "description": "The height of the image in pixels."
   },
   {
     "name": "sources",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "Alternative sources of the image.",
     "params": [
       {
         "name": "src",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the image."
       },
       {
         "name": "type",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The MIME type of the image."
       },
       {
         "name": "media",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "A conditional media rule for the image."
       },
       {
         "name": "width",
         "type": "number",
         "required": false,
-        "description": ""
+        "description": "The width of the image in pixels."
       },
       {
         "name": "height",
         "type": "number",
         "required": false,
-        "description": ""
+        "description": "The height of the image in pixels."
       }
     ]
   },
@@ -65,19 +65,21 @@
     "name": "caption",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional caption for the picture."
   },
   {
     "name": "informationLabelOpen",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional label for the button which shows information about the picture.",
+    "default": "Open transcript"
   },
   {
     "name": "informationLabelClose",
     "type": "string",
     "required": false,
-    "description": ""
+    "description": "An optional label for the button which hides information about the picture.",
+    "default": "Close transcript"
   },
   {
     "name": "informationItemHeadingLevel",
@@ -89,7 +91,7 @@
     "name": "information",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "A list of information tabs related to the picture.",
     "params": [
       {
         "name": "id",
@@ -101,13 +103,13 @@
         "name": "title",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The title of the picture information item."
       },
       {
         "name": "body",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The body text of the picture information item."
       }
     ]
   },

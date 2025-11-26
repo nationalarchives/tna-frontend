@@ -9,15 +9,15 @@
     "name": "headingLevel",
     "type": "number",
     "required": false,
-    "default": 1,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`.",
+    "default": 1
   },
   {
     "name": "headingSize",
     "type": "string",
     "required": false,
-    "default": "m",
-    "description": "The physical size of the panel title (`xl`, `l`, `m` or `s`)."
+    "description": "The physical size of the panel title (`xl`, `l`, `m` or `s`).",
+    "default": "m"
   },
   {
     "name": "body",

@@ -11,12 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Hero components can now have an `accent-light` style
 - New back link component
+- Checkbox, date input and radio components now have `fieldsetClasses` and `fieldsetAttributes` options
+
+
+
+      fieldsetClasses: { control: "text" },
+      fieldsetAttributes: { control: "object" },
 
 ### Changed
 
 - Changed icon on search field to magnifying glass
 - Simplify form input element styles with `colour.colour-input()` mixin
-- Refactor the structure of the fieldset component to ensure the `<fieldset>` is the top-level element
 - Set a default heading level and title for the error summary component
 - Remove the option for a plain supertitle from the index grid component
 

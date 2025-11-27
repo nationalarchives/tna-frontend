@@ -12,7 +12,9 @@
   smallerHint: true,
   error: params.error,
   classes: params.formItemClasses,
-  attributes: params.formItemAttributes
+  attributes: params.formItemAttributes,
+  fieldsetClasses: params.fieldsetClasses,
+  fieldsetAttributes: params.fieldsetAttributes
 }) %}
   <div class="tna-date-input" id="{{ params.id }}"{% if params.progressive %} data-module="tna-date-input-progressive"{% endif %}>
     {%- set fields = params.fields if params.fields else ['d', 'm', 'y'] -%}

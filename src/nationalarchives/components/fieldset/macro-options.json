@@ -43,6 +43,32 @@
     "description": "If `true`, make the fieldset hint smaller to match other form field components."
   },
   {
+    "name": "error",
+    "type": "object",
+    "required": false,
+    "description": "If set, the details of any errors. This is used primarily to display errors on checkbox, date input and radio components and generally not on custom fieldsets.",
+    "params": [
+      {
+        "name": "text",
+        "type": "string",
+        "required": true,
+        "description": "The error text to display."
+      }
+    ]
+  },
+  {
+    "name": "fieldsetClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the `<fieldset>` element."
+  },
+  {
+    "name": "fieldsetAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the `<fieldset>` element."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

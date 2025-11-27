@@ -22,6 +22,10 @@ export default {
       selected: { control: "text" },
       small: { control: "boolean" },
       inline: { control: "boolean" },
+      formItemClasses: { control: "text" },
+      formItemAttributes: { control: "object" },
+      fieldsetClasses: { control: "text" },
+      fieldsetAttributes: { control: "object" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [

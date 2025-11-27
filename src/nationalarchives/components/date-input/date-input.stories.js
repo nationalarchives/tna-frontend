@@ -22,6 +22,10 @@ export default {
       error: { control: "object" },
       autofillDateOfBirth: { control: "boolean" },
       progressive: { control: "boolean" },
+      formItemClasses: { control: "text" },
+      formItemAttributes: { control: "object" },
+      fieldsetClasses: { control: "text" },
+      fieldsetAttributes: { control: "object" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [

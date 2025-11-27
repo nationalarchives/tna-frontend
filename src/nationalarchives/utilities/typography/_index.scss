@@ -16,6 +16,10 @@
   text-size-adjust: none;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+  @include colour.on-high-contrast {
+    @include typography.main-font-weight-medium;
+  }
 }
 
 .tna-template__body {

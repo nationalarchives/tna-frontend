@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Simplify form input element styles with `colour.colour-input()` mixin
 - Set a default heading level and title for the error summary component
 - Remove the option for a plain supertitle from the index grid component
+- In higher contrast mode, the base font weight is increased
 
 ### Deprecated
 ### Removed

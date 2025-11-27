@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.28.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.29.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.29.0](https://github.com/nationalarchives/tna-frontend/compare/v0.28.1...v0.29.0) - 2025-11-27
 
 ### Added
 
@@ -21,15 +30,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove the option for a plain supertitle from the index grid component
 - In higher contrast mode, the base font weight is increased
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Removed pointer events from images in index grid components to avoid dragging an image that overlaps the chip
 - Add `aria-current="page"` attribute to the current page on the pagination component
 - Fixed small border radius discrepancy on card images
-
-### Security
 
 ## [0.28.1](https://github.com/nationalarchives/tna-frontend/compare/v0.28.0...v0.28.1) - 2025-10-28
 

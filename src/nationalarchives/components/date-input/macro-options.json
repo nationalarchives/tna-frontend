@@ -101,6 +101,18 @@
     "description": "HTML attributes (for example data attributes) to add to the date input form group."
   },
   {
+    "name": "fieldsetClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the `<fieldset>` element."
+  },
+  {
+    "name": "fieldsetAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the `<fieldset>` element."
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

@@ -7,7 +7,7 @@
         "text": "Back to previous page",
         "href": "#"
       },
-      "html": "<a href=\"\" class=\"tna-back-link\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
+      "html": "<a href=\"#\" class=\"tna-back-link\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
     },
     {
       "name": "with classes",
@@ -16,7 +16,7 @@
         "href": "#",
         "classes": "details__test-class"
       },
-      "html": "<a href=\"\" class=\"tna-back-link details__test-class\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
+      "html": "<a href=\"#\" class=\"tna-back-link details__test-class\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
     },
     {
       "name": "with attributes",
@@ -27,7 +27,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<a href=\"\" class=\"tna-back-link\" data-testattribute=\"foobar\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
+      "html": "<a href=\"#\" class=\"tna-back-link\" data-testattribute=\"foobar\"><span class=\"tna-back-link__inner\">Back to previous page</span></a>"
     }
   ]
 }

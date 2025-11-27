@@ -6,7 +6,9 @@
         {{ params.legend }}
       </h{{ params.headingLevel }}>
       {%- else %}
+      <span class="tna-fieldset__heading tna-heading-{{ params.headingSize or 'm' }}">
         {{ params.legend }}
+      </span>
       {%- endif %}
     </legend>
     {%- if params.hint %}

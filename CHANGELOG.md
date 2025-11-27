@@ -13,11 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New back link component
 - Checkbox, date input and radio components now have `fieldsetClasses` and `fieldsetAttributes` options
 
-
-
-      fieldsetClasses: { control: "text" },
-      fieldsetAttributes: { control: "object" },
-
 ### Changed
 
 - Changed icon on search field to magnifying glass

@@ -23,9 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
-
-- Removed `error` option from main fieldset component
-
 ### Fixed
 
 - Removed pointer events from images in index grid components to avoid dragging an image that overlaps the chip

@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Change height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility
+
 ### Security
 
 ## [0.29.1](https://github.com/nationalarchives/tna-frontend/compare/v0.29.0...v0.29.1) - 2025-11-27

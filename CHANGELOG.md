@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 
-- Change height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility
+- Set height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility
 
 ### Security
 

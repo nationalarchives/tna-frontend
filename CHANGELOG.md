@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated the default `title` and `aria-label` of the global header logo link from "The National Archives" to "The National Archives home page"
+- Improved design of horizontal scrollable tables
 
 ### Deprecated
 ### Removed

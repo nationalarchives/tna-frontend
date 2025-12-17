@@ -11,9 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated the default `title` and `aria-label` of the global header logo link from "The National Archives" to "The National Archives home page"
+- Hero content will not use contrast background on smaller devices
 
 ### Deprecated
 ### Removed
+
+- `leftBorder` option removed from hero components
+
 ### Fixed
 
 - Set height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility

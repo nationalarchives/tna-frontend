@@ -13,8 +13,6 @@ $padding-units-top: 10 !default;
 $padding-units-bottom: 2 !default;
 $padding-units-narrow: 3 !default;
 $shift-units: 5 !default;
-$layer-padding-units: 3 !default;
-$layer-shift-units: 2 !default;
 
 .tna-hero {
   &__figure {
@@ -158,7 +156,7 @@ $layer-shift-units: 2 !default;
   }
 
   &:not(.tna-background-accent, .tna-background-tint) &__inner {
-    @include colour.contrast-on-mobile;
+    // @include colour.contrast-on-mobile;
   }
 
   &__content {
@@ -170,10 +168,6 @@ $layer-shift-units: 2 !default;
     @include colour.colour-background("background");
 
     @include borders.rounded-border;
-  }
-
-  &--left-border &__content-inner {
-    @include colour.thick-keyline-accent(left, true);
   }
 
   &__heading {
@@ -241,6 +235,15 @@ $layer-shift-units: 2 !default;
   }
 
   @include media.on-mobile {
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    &.tna-background-tint,
+    &.tna-background-contrast,
+    &.tna-background-accent,
+    &.tna-background-accent-light {
+      border-bottom: none;
+    }
+
     & &__figure {
       min-height: auto;
       padding: 0;

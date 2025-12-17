@@ -30,9 +30,8 @@ export default {
       },
       layout: {
         control: "inline-radio",
-        options: ["plain", "shift", "split", "layer"],
+        options: ["plain", "shift", "split"],
       },
-      leftBorder: { control: "boolean" },
       narrow: { control: "boolean" },
       classes: { control: "text" },
       attributes: { control: "object" },

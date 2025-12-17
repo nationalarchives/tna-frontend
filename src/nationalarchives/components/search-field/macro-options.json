@@ -43,6 +43,13 @@
     "description": "The form field value."
   },
   {
+    "name": "buttonText",
+    "type": "string",
+    "required": false,
+    "description": "The value of the visually hidden search button text.",
+    "default": "Search"
+  },
+  {
     "name": "formItemClasses",
     "type": "string",
     "required": false,

@@ -15,6 +15,7 @@ export default {
       name: { control: "text" },
       hint: { control: "text" },
       value: { control: "text" },
+      buttonText: { control: "text" },
       formItemClasses: { control: "text" },
       formItemAttributes: { control: "object" },
       classes: { control: "text" },

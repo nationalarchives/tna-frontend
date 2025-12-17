@@ -123,13 +123,12 @@ const initAll = (options) => {
 
   const checkTableForScroll = ($tableWrapper) => {
     const scrollable = $tableWrapper.scrollWidth > $tableWrapper.clientWidth;
-    const $tableCaption = $tableWrapper.querySelector(".tna-table__caption");
     if (scrollable) {
       $tableWrapper.setAttribute("tabindex", "0");
-      $tableCaption?.classList.add("tna-table__caption--scroll");
+      $tableWrapper?.classList.add("tna-table-wrapper--scroll");
     } else {
       $tableWrapper.removeAttribute("tabindex");
-      $tableCaption?.classList.remove("tna-table__caption--scroll");
+      $tableWrapper?.classList.remove("tna-table-wrapper--scroll");
     }
   };
 

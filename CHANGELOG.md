@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Set height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility
+- Add JS Firefox polyfill for scrollable tables (no support for [`scroll-timeline`](https://caniuse.com/?search=css-scroll-timeline))
 
 ### Security
 

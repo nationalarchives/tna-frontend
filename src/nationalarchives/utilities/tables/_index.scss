@@ -8,35 +8,37 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
+$table-overflow-shadow-width: 1.5rem;
+
 @property --left-fade {
-  syntax: "<percentage>";
+  syntax: "<color>";
   inherits: false;
-  initial-value: 0;
+  initial-value: rgb(0 0 0 / 0%);
 }
 
 @property --right-fade {
-  syntax: "<percentage>";
+  syntax: "<color>";
   inherits: false;
-  initial-value: 0;
+  initial-value: rgb(0 0 0 / 0%);
 }
 
 @keyframes scrollfade {
   0% {
-    --left-fade: 0%;
-    --right-fade: 100%;
+    --left-fade: rgb(0 0 0 / 0%);
+    --right-fade: rgb(0 0 0 / 40%);
   }
 
-  1% {
-    --left-fade: 100%;
+  10% {
+    --left-fade: rgb(0 0 0 / 40%);
   }
 
-  99% {
-    --right-fade: 100%;
+  90% {
+    --right-fade: rgb(0 0 0 / 40%);
   }
 
   100% {
-    --right-fade: 0%;
-    --left-fade: 100%;
+    --right-fade: rgb(0 0 0 / 0%);
+    --left-fade: rgb(0 0 0 / 40%);
   }
 }
 
@@ -150,18 +152,25 @@
 
 .tna-table-wrapper {
   &--scroll {
-    width: calc(100% + #{grid.gutter-width-double()});
-    margin-left: -#{grid.gutter-width()};
-
     display: flex;
 
     overflow: auto;
 
-    position: relative;
-
-    animation: scrollfade;
+    animation: scrollfade ease-out;
     animation-timeline: --scrollfade;
     scroll-timeline: --scrollfade x;
+
+    background-image:
+      radial-gradient(
+        ellipse $table-overflow-shadow-width 50% at left center,
+        var(--left-fade),
+        rgb(0 0 0 / 0%)
+      ),
+      radial-gradient(
+        ellipse $table-overflow-shadow-width 50% at right center,
+        var(--right-fade),
+        rgb(0 0 0 / 0%)
+      );
 
     &[tabindex="0"] {
       border-radius: 0.1px;
@@ -171,78 +180,18 @@
       }
     }
 
-    &::before,
-    &::after {
-      content: "";
-
-      width: grid.gutter-width();
-
-      align-self: stretch;
-
-      display: block;
-
-      position: sticky;
-      z-index: 2;
-
-      opacity: 0;
-      flex-shrink: 0;
-      transition: opacity 200ms ease;
-    }
-
-    &::before {
-      left: 0;
-
-      background-image: radial-gradient(
-        ellipse farthest-side at left center,
-        colour.colour-var("table-overflow-shadow-from"),
-        colour.colour-var("table-overflow-shadow-to")
-      );
-
-      opacity: var(--left-fade);
-    }
-
-    &::after {
-      right: 0;
-
-      background-image: radial-gradient(
-        ellipse farthest-side at right center,
-        colour.colour-var("table-overflow-shadow-from"),
-        colour.colour-var("table-overflow-shadow-to")
-      );
-
-      opacity: var(--right-fade);
-    }
-
     .tna-table__caption {
       max-width: calc(100vw - #{grid.gutter-width-double()});
 
       position: sticky;
-      left: grid.gutter-width();
+      left: 0;
 
       &::after {
         content: " (scroll to see more)";
       }
-    }
-  }
-}
 
-@include media.on-tiny {
-  .tna-table-wrapper {
-    &--scroll {
-      width: calc(100% + #{grid.gutter-width-tiny-double()});
-      margin-left: -#{grid.gutter-width-tiny()};
-
-      &::before,
-      &::after {
-        width: grid.gutter-width-tiny();
-      }
-
-      .tna-table {
-        &__caption {
-          max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
-
-          left: grid.gutter-width-tiny();
-        }
+      @include media.on-tiny {
+        max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
       }
     }
   }

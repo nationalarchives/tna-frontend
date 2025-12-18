@@ -98,6 +98,8 @@ $colour-palette-default: (
   "accent-button-hover-background": brand-colour("white"),
   "button-accented-text": brand-colour("black"),
   "button-accented-background": brand-colour("grey"),
+  "table-overflow-shadow-from": brand-colour("black", 0.4),
+  "table-overflow-shadow-to": brand-colour("black", 0),
 ) !default;
 
 /*
@@ -130,6 +132,7 @@ $colour-palette-dark: map.merge(
     "button-hover-background": brand-colour("black"),
     "contrast-background": #101112,
     "accent-border": brand-colour("white"),
+    "table-overflow-shadow-from": brand-colour("black", 0.65),
   )
 ) !default;
 

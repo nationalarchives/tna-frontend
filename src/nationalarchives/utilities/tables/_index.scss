@@ -193,9 +193,9 @@
       left: 0;
 
       background-image: radial-gradient(
-        farthest-side at left center,
-        rgb(0 0 0 / 35%),
-        rgb(0 0 0 / 0%)
+        ellipse farthest-side at left center,
+        colour.colour-var("table-overflow-shadow-from"),
+        colour.colour-var("table-overflow-shadow-to")
       );
 
       opacity: var(--left-fade);
@@ -205,9 +205,9 @@
       right: 0;
 
       background-image: radial-gradient(
-        farthest-side at right center,
-        rgb(0 0 0 / 35%),
-        rgb(0 0 0 / 0%)
+        ellipse farthest-side at right center,
+        colour.colour-var("table-overflow-shadow-from"),
+        colour.colour-var("table-overflow-shadow-to")
       );
 
       opacity: var(--right-fade);

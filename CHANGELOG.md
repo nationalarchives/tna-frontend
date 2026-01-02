@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.29.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.30.0...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.30.0](https://github.com/nationalarchives/tna-frontend/compare/v0.29.1...v0.30.0) - 2026-01-02
+
 ### Changed
 
 - Updated the default `title` and `aria-label` of the global header logo link from "The National Archives" to "The National Archives home page"
@@ -15,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hero content will not use contrast background on smaller devices
 - Add a `title` attribute to icon-only button components
 
-### Deprecated
 ### Removed
 
 - `leftBorder` option removed from hero components
@@ -24,8 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Set height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility
 - Add JS Firefox polyfill for scrollable tables (no support for [`scroll-timeline`](https://caniuse.com/?search=css-scroll-timeline))
-
-### Security
 
 ## [0.29.1](https://github.com/nationalarchives/tna-frontend/compare/v0.29.0...v0.29.1) - 2025-11-27
 

@@ -1,7 +1,7 @@
 module.exports = {
   extends: ["stylelint-config-standard-scss"],
   plugins: ["stylelint-selector-bem-pattern", "stylelint-order"],
-  ignoreFiles: ["src/nationalarchives/lib/font-awesome/**/*.scss"],
+  ignoreFiles: ["src/nationalarchives/lib/font-awesome/**/*.scss", "**/*.css"],
   rules: {
     "at-rule-empty-line-before": null,
     "block-no-empty": null,

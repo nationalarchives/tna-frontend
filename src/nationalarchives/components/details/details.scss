@@ -61,36 +61,6 @@
 
   &__content {
     padding: 0 0 0 spacing.space(2.75);
-
-    &:has(.tna-table-wrapper):has(.tna-table) {
-      padding-right: 0;
-      padding-left: 0;
-
-      .tna-table {
-        &__caption {
-          padding-top: 0;
-          padding-bottom: spacing.space(1);
-
-          font-size: inherit;
-          line-height: inherit;
-          text-align: left;
-          caption-side: top;
-        }
-      }
-
-      .tna-table-wrapper {
-        padding-right: 0;
-        padding-left: 0;
-
-        left: 0;
-
-        .tna-table {
-          width: calc(100% - #{spacing.space(3.75)});
-          margin-right: spacing.space(1);
-          margin-left: spacing.space(2.75);
-        }
-      }
-    }
   }
 
   &__details[open] &__summary {

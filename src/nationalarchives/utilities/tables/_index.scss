@@ -43,7 +43,9 @@ $table-overflow-shadow-width: 1.5rem;
 }
 
 .tna-table {
+  @include spacing.space-above;
   max-width: 100%;
+  margin-bottom: spacing.space(4);
 
   position: relative;
   z-index: 1;
@@ -51,6 +53,10 @@ $table-overflow-shadow-width: 1.5rem;
   text-align: left;
 
   border-collapse: collapse;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__caption {
     width: 100%;
@@ -151,36 +157,56 @@ $table-overflow-shadow-width: 1.5rem;
 }
 
 .tna-table-wrapper {
-  &--scroll {
-    display: flex;
+  @include spacing.space-above;
+  margin-bottom: spacing.space(4);
 
-    overflow: auto;
+  overflow: auto;
+
+  border-radius: 0.1px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:focus {
+    @include a11y.focus-outline;
+  }
+
+  &--scroll {
+    --background:
+      radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at left center,
+        var(--left-fade),
+        rgb(0 0 0 / 0%)
+      ),
+      radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at right center,
+        var(--right-fade),
+        rgb(0 0 0 / 0%)
+      );
 
     animation: scrollfade ease-out;
     animation-timeline: --scrollfade;
     scroll-timeline: --scrollfade x;
 
-    background-image:
-      radial-gradient(
-        ellipse $table-overflow-shadow-width 50% at left center,
-        var(--left-fade),
-        rgb(0 0 0 / 0%)
-      ),
-      radial-gradient(
-        ellipse $table-overflow-shadow-width 50% at right center,
-        var(--right-fade),
-        rgb(0 0 0 / 0%)
-      );
+    &::before {
+      content: "";
 
-    &[tabindex="0"] {
-      border-radius: 0.1px;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
 
-      &:active {
-        @include a11y.focus-outline;
-      }
+      z-index: 2;
+
+      background-image: var(--background);
     }
+  }
 
-    .tna-table__caption {
+  .tna-table {
+    position: relative;
+    z-index: 1;
+
+    &__caption {
       max-width: calc(100vw - #{grid.gutter-width-double()});
 
       position: sticky;
@@ -194,15 +220,5 @@ $table-overflow-shadow-width: 1.5rem;
         max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
       }
     }
-  }
-}
-
-.tna-table,
-.tna-table-wrapper {
-  @include spacing.space-above;
-  margin-bottom: spacing.space(4);
-
-  &:last-child {
-    margin-bottom: 0;
   }
 }

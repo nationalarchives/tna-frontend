@@ -9,9 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Improve rendering of shadows on scrollable tables
+- Ignore all compiled CSS files in Stylelint config
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed layout of tables inside accordion and details components
+
 ### Security
 
 ## [0.30.0](https://github.com/nationalarchives/tna-frontend/compare/v0.29.1...v0.30.0) - 2026-01-02

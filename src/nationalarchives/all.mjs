@@ -13,6 +13,7 @@ import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInput } from "./components/text-input/text-input.mjs";
 import Cookies from "./lib/cookies.mjs";
+import { checkTableForScroll } from "./lib/tables.mjs";
 
 const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};
@@ -26,6 +27,7 @@ const initAll = (options) => {
     window.removeEventListener("touchstart", onFirstTouch);
     $body.classList.add("tna-template--touched");
   };
+  window.addEventListener("touchstart", onFirstTouch);
 
   const onKeyDown = (e) => {
     if (e.key === "Tab") {
@@ -33,15 +35,25 @@ const initAll = (options) => {
       $body.classList.remove("tna-template--clicked");
     }
   };
+  window.addEventListener("keydown", onKeyDown);
 
   const onMouseDown = () => {
     $body.classList.add("tna-template--clicked");
     $body.classList.remove("tna-template--tabbed");
   };
-
-  window.addEventListener("touchstart", onFirstTouch);
-  window.addEventListener("keydown", onKeyDown);
   window.addEventListener("mousedown", onMouseDown);
+
+  const $tableWrappers = $scope.querySelectorAll(
+    ".tna-table-wrapper:has(.tna-table__caption)",
+  );
+  $tableWrappers.forEach(($tableWrapper) =>
+    checkTableForScroll($tableWrapper, true),
+  );
+  window.addEventListener("resize", () => {
+    $tableWrappers.forEach(($tableWrapper) =>
+      checkTableForScroll($tableWrapper),
+    );
+  });
 
   const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
   $accordions.forEach(($accordion) => {
@@ -121,66 +133,15 @@ const initAll = (options) => {
     new TextInput($textInput);
   });
 
-  const checkTableForScroll = ($tableWrapper, setUpListener = false) => {
-    const scrollable = $tableWrapper.scrollWidth > $tableWrapper.clientWidth;
-    if (scrollable) {
-      $tableWrapper.setAttribute("tabindex", "0");
-      $tableWrapper.classList.add("tna-table-wrapper--scroll");
-      if (
-        !window.CSS?.supports("scroll-timeline", "--scrollfade x") &&
-        setUpListener
-      ) {
-        const updateScrollShadows = ($tableWrapper) => {
-          $tableWrapper.style.setProperty(
-            "--left-fade",
-            $tableWrapper.scrollLeft > 1
-              ? "rgb(0 0 0 / 40%)"
-              : "rgb(0 0 0 / 0%)",
-          );
-          $tableWrapper.style.setProperty(
-            "--right-fade",
-            $tableWrapper.scrollWidth -
-              ($tableWrapper.clientWidth + $tableWrapper.scrollLeft) >
-              1
-              ? "rgb(0 0 0 / 40%)"
-              : "rgb(0 0 0 / 0%)",
-          );
-        };
-        updateScrollShadows($tableWrapper);
-        $tableWrapper.addEventListener("scroll", () =>
-          updateScrollShadows($tableWrapper),
-        );
-        window.addEventListener("resize", () =>
-          updateScrollShadows($tableWrapper),
-        );
-      }
-    } else {
-      $tableWrapper.removeAttribute("tabindex");
-      $tableWrapper.classList.remove("tna-table-wrapper--scroll");
-    }
-  };
-
-  const $tableWrappers = document.querySelectorAll(
-    ".tna-table-wrapper:has(.tna-table__caption)",
-  );
-  $tableWrappers.forEach(($tableWrapper) =>
-    checkTableForScroll($tableWrapper, true),
-  );
-  window.addEventListener("resize", () => {
-    $tableWrappers.forEach(($tableWrapper) =>
-      checkTableForScroll($tableWrapper),
-    );
-  });
-
   window.matchMedia("print").addEventListener("change", (evt) => {
     if (evt.matches) {
-      document
+      $scope
         .querySelectorAll(".tna-details__details:not([open])")
         .forEach((e) => {
           e.setAttribute("open", "");
           e.dataset.wasClosed = "";
         });
-      document
+      $scope
         .querySelectorAll(
           ".tna-accordion__content[hidden], .tna-picture__transcript[hidden]",
         )
@@ -189,13 +150,13 @@ const initAll = (options) => {
           e.dataset.wasClosed = "";
         });
     } else {
-      document
+      $scope
         .querySelectorAll(".tna-details__details[data-was-closed]")
         .forEach((e) => {
           e.removeAttribute("open");
           delete e.dataset.wasClosed;
         });
-      document
+      $scope
         .querySelectorAll(
           ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )

@@ -173,39 +173,25 @@ $table-overflow-shadow-width: 1.5rem;
   }
 
   &--scroll {
-    --background:
+    background:
       radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at left center,
         var(--left-fade),
         rgb(0 0 0 / 0%)
       ),
       radial-gradient(
-        ellipse #{$table-overflow-shadow-width} 50% at right center,
-        var(--right-fade),
-        rgb(0 0 0 / 0%)
-      );
+          ellipse #{$table-overflow-shadow-width} 50% at right center,
+          var(--right-fade),
+          rgb(0 0 0 / 0%)
+        )
+        transparent;
 
     animation: scrollfade ease-out;
     animation-timeline: --scrollfade;
     scroll-timeline: --scrollfade x;
-
-    &::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-
-      z-index: 2;
-
-      background-image: var(--background);
-    }
   }
 
   .tna-table {
-    position: relative;
-    z-index: 1;
-
     &__caption {
       max-width: calc(100vw - #{grid.gutter-width-double()});
 

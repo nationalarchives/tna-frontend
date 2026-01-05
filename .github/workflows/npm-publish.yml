@@ -135,7 +135,7 @@ jobs:
         env:
           SLACK_TITLE: "`v${{ needs.version-check.outputs.version }}` of `tna-frontend` has just been published"
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/apple-touch-icon.png"
+          SLACK_ICON: "https://raw.githubusercontent.com/nationalarchives/tna-frontend/main/src/nationalarchives/assets/images/icon-1024x1024.png"
           MSG_MINIMAL: true
           SLACKIFY_MARKDOWN: true
           SLACK_MESSAGE: ${{ steps.release-notes.outputs.RELEASE_NOTES }}

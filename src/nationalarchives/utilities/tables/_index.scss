@@ -189,21 +189,21 @@ $table-overflow-shadow-width: 1.5rem;
     animation: scrollfade ease-out;
     animation-timeline: --scrollfade;
     scroll-timeline: --scrollfade x;
-  }
 
-  .tna-table {
-    &__caption {
-      max-width: calc(100vw - #{grid.gutter-width-double()});
+    .tna-table {
+      &__caption {
+        max-width: calc(100vw - #{grid.gutter-width-double()});
 
-      position: sticky;
-      left: 0;
+        position: sticky;
+        left: 0;
 
-      &::after {
-        content: " (scroll to see more)";
-      }
+        &::after {
+          content: " (scroll to see more)";
+        }
 
-      @include media.on-tiny {
-        max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+        @include media.on-tiny {
+          max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+        }
       }
     }
   }

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - When using `tna-!--no-focus-style`, only that element has focus styles removed and its children can continue to show focus
+- Improved width calculation for scrollable table captions when the page has a vertical scrollbar
 
 ### Deprecated
 ### Removed

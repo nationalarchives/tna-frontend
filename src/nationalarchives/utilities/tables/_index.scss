@@ -173,6 +173,8 @@ $table-overflow-shadow-width: 1.5rem;
   }
 
   &--scroll {
+    container-type: inline-size;
+
     background:
       radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at left center,
@@ -193,6 +195,7 @@ $table-overflow-shadow-width: 1.5rem;
     .tna-table {
       &__caption {
         max-width: calc(100vw - #{grid.gutter-width-double()});
+        max-width: 100cqw;
 
         position: sticky;
         left: 0;
@@ -203,6 +206,7 @@ $table-overflow-shadow-width: 1.5rem;
 
         @include media.on-tiny {
           max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+          max-width: 100cqw;
         }
       }
     }

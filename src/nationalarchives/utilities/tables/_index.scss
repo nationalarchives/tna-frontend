@@ -162,7 +162,26 @@ $table-overflow-shadow-width: 1.5rem;
 
   overflow: auto;
 
+  background:
+    radial-gradient(
+      ellipse #{$table-overflow-shadow-width} 50% at left center,
+      var(--left-fade),
+      rgb(0 0 0 / 0%)
+    ),
+    radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at right center,
+        var(--right-fade),
+        rgb(0 0 0 / 0%)
+      )
+      transparent;
+
   border-radius: 0.1px;
+
+  container-type: inline-size;
+
+  animation: scrollfade ease-out;
+  animation-timeline: --scrollfade;
+  scroll-timeline: --scrollfade x;
 
   &:last-child {
     margin-bottom: 0;
@@ -172,42 +191,23 @@ $table-overflow-shadow-width: 1.5rem;
     @include a11y.focus-outline;
   }
 
+  .tna-table__caption {
+    max-width: calc(100vw - #{grid.gutter-width-double()});
+    max-width: 100cqw;
+
+    position: sticky;
+    left: 0;
+
+    @include media.on-tiny {
+      max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+      max-width: 100cqw;
+    }
+  }
+
   &--scroll {
-    container-type: inline-size;
-
-    background:
-      radial-gradient(
-        ellipse #{$table-overflow-shadow-width} 50% at left center,
-        var(--left-fade),
-        rgb(0 0 0 / 0%)
-      ),
-      radial-gradient(
-          ellipse #{$table-overflow-shadow-width} 50% at right center,
-          var(--right-fade),
-          rgb(0 0 0 / 0%)
-        )
-        transparent;
-
-    animation: scrollfade ease-out;
-    animation-timeline: --scrollfade;
-    scroll-timeline: --scrollfade x;
-
-    .tna-table {
-      &__caption {
-        max-width: calc(100vw - #{grid.gutter-width-double()});
-        max-width: 100cqw;
-
-        position: sticky;
-        left: 0;
-
-        &::after {
-          content: " (scroll to see more)";
-        }
-
-        @include media.on-tiny {
-          max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
-          max-width: 100cqw;
-        }
+    .tna-table__caption {
+      &::after {
+        content: " (scroll to see more)";
       }
     }
   }

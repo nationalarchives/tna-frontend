@@ -154,7 +154,7 @@ export const Reject = {
   },
 };
 
-export const Existing = {
+export const ExistingNotComplete = {
   args: {
     serviceName: "My service",
     cookiesUrl: "#",
@@ -204,7 +204,7 @@ export const Existing = {
   },
 };
 
-export const ExistingAndHidden = {
+export const ExistingAndComplete = {
   args: {
     serviceName: "My service",
     cookiesUrl: "#",
@@ -364,7 +364,7 @@ export const Malformed = {
   },
 };
 
-export const UnexpectedHidden = {
+export const FalseCompletion = {
   args: {
     serviceName: "My service",
     cookiesUrl: "#",

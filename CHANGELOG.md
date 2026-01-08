@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- When using `tna-!--no-focus-style`, only that element has focus styles removed and its children can continue to show focus
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed issue with focusing not being applied to cookie banners after accepting or rejecting cookies
+
 ### Security
 
 ## [0.30.2](https://github.com/nationalarchives/tna-frontend/compare/v0.30.1...v0.30.2) - 2026-01-05

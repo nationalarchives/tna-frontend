@@ -34,10 +34,9 @@ summary {
   }
 }
 
-.tna-\!--no-focus-style,
-*[tabindex="-1"] {
-  *:focus-visible,
-  &:focus {
-    @include a11y.no-focus-outline;
-  }
+[tabindex="-1"] *:focus-visible,
+[tabindex="-1"] *:focus,
+.tna-\!--no-focus-style:focus-visible,
+.tna-\!--no-focus-style:focus {
+  @include a11y.no-focus-outline;
 }

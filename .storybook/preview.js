@@ -74,18 +74,18 @@ export const parameters = {
 //   }
 // }
 
-// export const decorators = [
-//   (Story, ctx) => {
-//     window.dataLayer = [];
-//     const cookies = new Cookies();
-//     cookies.deleteAll();
-//     const story = Story();
-//     if (window && ctx.args.disableMockAnalytics !== true) {
-//       setTimeout(() => {
-//         new MockEventTracker(ctx.canvasElement);
-//         new MockGA4Tracking(ctx.canvasElement);
-//       }, 1);
-//     }
-//     return story;
-//   },
-// ];
+export const decorators = [
+  (Story, ctx) => {
+    window.dataLayer = [];
+    const cookies = new Cookies();
+    cookies.deleteAll();
+    const story = Story();
+    // if (window && ctx.args.disableMockAnalytics !== true) {
+    //   setTimeout(() => {
+    //     new MockEventTracker(ctx.canvasElement);
+    //     new MockGA4Tracking(ctx.canvasElement);
+    //   }, 1);
+    // }
+    return story;
+  },
+];

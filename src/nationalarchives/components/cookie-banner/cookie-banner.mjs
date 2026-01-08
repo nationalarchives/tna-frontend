@@ -50,19 +50,25 @@ export class CookieBanner {
   accept() {
     this.$prompt.setAttribute("hidden", "");
     this.complete();
-    this.$acceptedMessage.removeAttribute("hidden");
-    this.$acceptedMessage.focus();
-    this.$acceptedMessage.setAttribute("tabindex", "-1");
     this.cookies.acceptAllPolicies();
+    this.$acceptedMessage.removeAttribute("hidden");
+    this.$acceptedMessage.setAttribute("tabindex", "0");
+    this.$acceptedMessage.focus();
+    this.$acceptedMessage.addEventListener("blur", () => {
+      this.$acceptedMessage.removeAttribute("tabindex");
+    });
   }
 
   reject() {
     this.$prompt.setAttribute("hidden", "");
     this.complete();
-    this.$rejectedMessage.removeAttribute("hidden");
-    this.$rejectedMessage.focus();
-    this.$rejectedMessage.setAttribute("tabindex", "-1");
     this.cookies.rejectAllPolicies();
+    this.$rejectedMessage.removeAttribute("hidden");
+    this.$rejectedMessage.setAttribute("tabindex", "0");
+    this.$rejectedMessage.focus();
+    this.$rejectedMessage.addEventListener("blur", () => {
+      this.$rejectedMessage.removeAttribute("tabindex");
+    });
   }
 
   complete() {

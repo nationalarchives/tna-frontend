@@ -5,7 +5,7 @@ export default {
 const TableTemplate = () =>
   `<div class="tna-container">
   <div class="tna-column tna-column--full">
-    <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-1">
+    <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-1" tabindex="0">
       <table class="tna-table">
         <caption id="table-example-1" class="tna-table__caption">
           Records added and removed between 2020 and 2022.
@@ -48,7 +48,7 @@ const TableTemplate = () =>
         </tfoot>
       </table>
     </div>
-    <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-2">
+    <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-2" tabindex="0">
       <table class="tna-table">
         <caption id="table-example-2" class="tna-table__caption">
           Some long words in the English language

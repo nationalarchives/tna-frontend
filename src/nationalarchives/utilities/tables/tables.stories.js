@@ -5,9 +5,9 @@ export default {
 const TableTemplate = () =>
   `<div class="tna-container">
   <div class="tna-column tna-column--full">
-    <div class="tna-table-wrapper">
+    <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-1">
       <table class="tna-table">
-        <caption class="tna-table__caption">
+        <caption id="table-example-1" class="tna-table__caption">
           Records added and removed between 2020 and 2022.
         </caption>
         <thead class="tna-table__head">
@@ -48,9 +48,9 @@ const TableTemplate = () =>
         </tfoot>
       </table>
     </div>
-    <div class="tna-table-wrapper">
+    <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-2">
       <table class="tna-table">
-        <caption class="tna-table__caption">
+        <caption id="table-example-2" class="tna-table__caption">
           Some long words in the English language
         </caption>
         <thead class="tna-table__head">

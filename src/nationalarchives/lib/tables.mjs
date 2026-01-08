@@ -1,12 +1,21 @@
-export const checkTableForScroll = ($tableWrapper, setUpListener = false) => {
+import uuidv4 from "./uuid.mjs";
+
+export const checkTableForScroll = ($tableWrapper, init = false) => {
   const scrollable = $tableWrapper.scrollWidth > $tableWrapper.clientWidth;
+  const $caption = $tableWrapper.querySelector("caption");
+  if (init) {
+    if (!$caption) {
+      console.warn("Missing <caption> element on table", $tableWrapper);
+    } else if (!$caption.id) {
+      $caption.id = `table-caption-${uuidv4()}`;
+    }
+  }
   if (scrollable) {
     $tableWrapper.setAttribute("tabindex", "0");
+    $tableWrapper.setAttribute("role", "region");
+    $tableWrapper.setAttribute("aria-labelledby", $caption?.id || "");
     $tableWrapper.classList.add("tna-table-wrapper--scroll");
-    if (
-      !window.CSS?.supports("scroll-timeline", "--scrollfade x") &&
-      setUpListener
-    ) {
+    if (!window.CSS?.supports("scroll-timeline", "--scrollfade x") && init) {
       const updateScrollShadows = ($tableWrapper) => {
         $tableWrapper.style.setProperty(
           "--left-fade",
@@ -31,6 +40,8 @@ export const checkTableForScroll = ($tableWrapper, setUpListener = false) => {
     }
   } else {
     $tableWrapper.removeAttribute("tabindex");
+    $tableWrapper.removeAttribute("role");
+    $tableWrapper.removeAttribute("aria-labelledby");
     $tableWrapper.classList.remove("tna-table-wrapper--scroll");
   }
 };

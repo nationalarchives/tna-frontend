@@ -168,7 +168,7 @@ $table-overflow-shadow-width: 1.5rem;
     margin-bottom: 0;
   }
 
-  &:focus {
+  &:focus-visible {
     @include a11y.focus-outline;
   }
 

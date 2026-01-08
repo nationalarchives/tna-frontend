@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - When using `tna-!--no-focus-style`, only that element has focus styles removed and its children can continue to show focus
 - Improved width calculation for scrollable table captions when the page has a vertical scrollbar
+- Improved accessibility of scrollable tables with `role` and `aria-describedby` attributes
+- All table wrappers can be scrolled if too wide and ones without a `<caption>` will produce a warning in the console
 
 ### Deprecated
 ### Removed

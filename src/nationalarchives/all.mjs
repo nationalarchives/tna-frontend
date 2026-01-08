@@ -43,9 +43,7 @@ const initAll = (options) => {
   };
   window.addEventListener("mousedown", onMouseDown);
 
-  const $tableWrappers = $scope.querySelectorAll(
-    ".tna-table-wrapper:has(.tna-table__caption)",
-  );
+  const $tableWrappers = $scope.querySelectorAll(".tna-table-wrapper");
   $tableWrappers.forEach(($tableWrapper) =>
     checkTableForScroll($tableWrapper, true),
   );

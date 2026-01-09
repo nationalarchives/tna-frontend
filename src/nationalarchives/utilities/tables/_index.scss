@@ -10,13 +10,13 @@
 
 $table-overflow-shadow-width: 1.5rem;
 
-@property --left-fade {
+@property --left-shadow {
   syntax: "<color>";
   inherits: false;
   initial-value: rgb(0 0 0 / 0%);
 }
 
-@property --right-fade {
+@property --right-shadow {
   syntax: "<color>";
   inherits: false;
   initial-value: rgb(0 0 0 / 0%);
@@ -24,21 +24,21 @@ $table-overflow-shadow-width: 1.5rem;
 
 @keyframes scrollfade {
   0% {
-    --left-fade: rgb(0 0 0 / 0%);
-    --right-fade: rgb(0 0 0 / 40%);
+    --left-shadow: rgb(0 0 0 / 0%);
+    --right-shadow: rgb(0 0 0 / 40%);
   }
 
   10% {
-    --left-fade: rgb(0 0 0 / 40%);
+    --left-shadow: rgb(0 0 0 / 40%);
   }
 
   90% {
-    --right-fade: rgb(0 0 0 / 40%);
+    --right-shadow: rgb(0 0 0 / 40%);
   }
 
   100% {
-    --right-fade: rgb(0 0 0 / 0%);
-    --left-fade: rgb(0 0 0 / 40%);
+    --right-shadow: rgb(0 0 0 / 0%);
+    --left-shadow: rgb(0 0 0 / 40%);
   }
 }
 
@@ -165,12 +165,12 @@ $table-overflow-shadow-width: 1.5rem;
   background:
     radial-gradient(
       ellipse #{$table-overflow-shadow-width} 50% at left center,
-      var(--left-fade),
+      var(--left-shadow),
       rgb(0 0 0 / 0%)
     ),
     radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at right center,
-        var(--right-fade),
+        var(--right-shadow),
         rgb(0 0 0 / 0%)
       )
       transparent;
@@ -191,23 +191,67 @@ $table-overflow-shadow-width: 1.5rem;
     @include a11y.focus-outline;
   }
 
-  .tna-table__caption {
-    max-width: calc(100vw - #{grid.gutter-width-double()});
-    max-width: 100cqw;
-
-    position: sticky;
-    left: 0;
-
-    @include media.on-tiny {
-      max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+  .tna-table {
+    &__caption {
+      max-width: calc(100vw - #{grid.gutter-width-double()});
       max-width: 100cqw;
+
+      position: sticky;
+      left: 0;
+
+      @include media.on-tiny {
+        max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
+        max-width: 100cqw;
+      }
+    }
+  }
+
+  &--sticky-first-column {
+    .tna-table {
+      &__header,
+      &__cell {
+        &:first-child {
+          max-width: 50vw;
+          max-width: 50cqw;
+
+          position: sticky;
+          left: 0;
+          z-index: 1;
+
+          overflow-wrap: break-word;
+
+          hyphens: auto;
+          @include colour.colour-background("background");
+
+          &::after {
+            content: "";
+
+            width: 0.75rem;
+
+            position: absolute;
+            top: 0;
+            bottom: -1px;
+            left: 100%;
+
+            background: linear-gradient(
+              90deg,
+              var(--left-shadow) 0%,
+              rgb(0 0 0 / 0%) 100%
+            );
+            animation: scrollfade ease-out;
+            animation-timeline: --scrollfade;
+          }
+        }
+      }
     }
   }
 
   &--scroll {
-    .tna-table__caption {
-      &::after {
-        content: " (scroll to see more)";
+    .tna-table {
+      &__caption {
+        &::after {
+          content: " (scroll to see more)";
+        }
       }
     }
   }

@@ -207,6 +207,13 @@ $table-overflow-shadow-width: 1.5rem;
   }
 
   &--sticky-first-column {
+    background: radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at right center,
+        var(--right-shadow),
+        rgb(0 0 0 / 0%)
+      )
+      transparent;
+
     .tna-table {
       &__header,
       &__cell {

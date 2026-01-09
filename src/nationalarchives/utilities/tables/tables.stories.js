@@ -83,6 +83,41 @@ const TableTemplate = () =>
         </tbody>
       </table>
     </div>
+    <div class="tna-table-wrapper tna-table-wrapper--sticky-first-column" role="region" aria-labelledby="table-example-3" tabindex="0">
+      <table class="tna-table">
+        <caption id="table-example-3" class="tna-table__caption">
+          Some long words in the English language (sticky first column)
+        </caption>
+        <thead class="tna-table__head">
+          <tr class="tna-table__row">
+            <th class="tna-table__header">Word</th>
+            <th class="tna-table__header tna-table__header--numeric">Letters</th>
+            <th class="tna-table__header">In context</th>
+            <th class="tna-table__header">Definition</th>
+          </tr>
+        </thead>
+        <tbody class="tna-table__body">
+          <tr class="tna-table__row">
+            <th class="tna-table__header">Pneumonoultramicroscopicsilicovolcanoconiosis</th>
+            <td class="tna-table__cell tna-table__cell--numeric">45</td>
+            <td class="tna-table__cell">&quot;He died from pneumonoultramicroscopicsilicovolcanoconiosis&quot;</td>
+            <td class="tna-table__header">&quot;a lung disease caused by inhalation of very fine silicate or quartz dust&quot;</td>
+          </tr>
+          <tr class="tna-table__row">
+            <th class="tna-table__header">Supercalifragilisticexpialidocious</th>
+            <td class="tna-table__cell tna-table__cell--numeric">34</td>
+            <td class="tna-table__cell">&quot;Supercalifragilisticexpialidocious; even if the sound of it is something quite atrocious&quot;</td>
+            <td class="tna-table__header"></td>
+          </tr>
+          <tr class="tna-table__row">
+            <th class="tna-table__header">Floccinaucinihilipilification</th>
+            <td class="tna-table__cell tna-table__cell--numeric">29</td>
+            <td class="tna-table__cell">&quot;I am very offended by my friend's floccinaucinihilipilification of my amazing new vocabulary&quot;</td>
+            <td class="tna-table__header">&quot;the act or habit of assessing something as worthless&quot;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>`;
 export const Table = TableTemplate.bind({});

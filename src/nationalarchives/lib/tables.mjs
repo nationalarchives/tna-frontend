@@ -18,11 +18,11 @@ export const checkTableForScroll = ($tableWrapper, init = false) => {
     if (!window.CSS?.supports("scroll-timeline", "--scrollfade x") && init) {
       const updateScrollShadows = ($tableWrapper) => {
         $tableWrapper.style.setProperty(
-          "--left-fade",
+          "--left-shadow",
           $tableWrapper.scrollLeft > 1 ? "rgb(0 0 0 / 40%)" : "rgb(0 0 0 / 0%)",
         );
         $tableWrapper.style.setProperty(
-          "--right-fade",
+          "--right-shadow",
           $tableWrapper.scrollWidth -
             ($tableWrapper.clientWidth + $tableWrapper.scrollLeft) >
             1

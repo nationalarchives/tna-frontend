@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed padding for tables inside accordions
+
 ### Security
 
 ## [0.31.0](https://github.com/nationalarchives/tna-frontend/compare/v0.30.2...v0.31.0) - 2026-01-08

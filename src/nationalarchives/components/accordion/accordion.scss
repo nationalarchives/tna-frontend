@@ -121,11 +121,6 @@
     position: relative;
 
     border-radius: 0.1px;
-
-    &:has(.tna-table-wrapper) {
-      padding-right: 0;
-      padding-left: 0;
-    }
   }
 
   @include colour.on-forced-colours {

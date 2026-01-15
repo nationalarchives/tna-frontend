@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:map";
+@use "sass:meta";
 @use "../variables/borders";
 @use "../variables/forms";
 @use "../variables/colour";
@@ -85,16 +86,17 @@ $base-colours: (
 }
 
 @mixin colour-font($colour, $important: false) {
-  color: colour-var($colour) if($important, !important, null);
+  color: colour-var($colour) if(sass($important): !important; else: null);
 }
 
 @mixin colour-background($colour, $important: false) {
-  background-color: colour-var($colour) if($important, !important, null);
+  background-color: colour-var($colour)
+    if(sass($important): !important; else: null);
 }
 
 @mixin colour-background-brand($brandColour, $important: false) {
   background-color: #{brand-colour($brandColour)}
-    if($important, !important, null);
+    if(sass($important): !important; else: null);
 }
 
 @mixin colour-border(
@@ -109,37 +111,41 @@ $base-colours: (
       border-#{$direction}: $width
         colour-var($colour)
         $style
-        if($important, !important, null);
+        if(sass($important): !important; else: null);
     } @else {
       border-#{$direction}-color: colour-var($colour)
-        if($important, !important, null);
+        if(sass($important): !important; else: null);
     }
   } @else {
     @if $width != "" {
       border: $width
         colour-var($colour)
         $style
-        if($important, !important, null);
+        if(sass($important): !important; else: null);
     } @else {
       border-color: var(
           --#{$colour},
           #{map.get(colour.$colour-palette-default, $colour)}
         )
-        if($important, !important, null);
+        if(sass($important): !important; else: null);
     }
   }
 }
 
 @mixin colour-outline($colour, $width: "", $style: solid, $important: false) {
   @if $width != "" {
-    outline: $width colour-var($colour) $style if($important, !important, null);
+    outline: $width
+      colour-var($colour)
+      $style
+      if(sass($important): !important; else: null);
   } @else {
-    outline-color: colour-var($colour) if($important, !important, null);
+    outline-color: colour-var($colour)
+      if(sass($important): !important; else: null);
   }
 }
 
 @mixin colour-fill($colour, $important: false) {
-  fill: colour-var($colour) if($important, !important, null);
+  fill: colour-var($colour) if(sass($important): !important; else: null);
 }
 
 %colour-input {

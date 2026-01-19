@@ -10,35 +10,35 @@
 
 $table-overflow-shadow-width: 1.5rem;
 
-@property --left-shadow {
+@property --overflow-shadow-start {
   syntax: "<color>";
   inherits: false;
   initial-value: rgb(0 0 0 / 0%);
 }
 
-@property --right-shadow {
+@property --overflow-shadow-end {
   syntax: "<color>";
   inherits: false;
   initial-value: rgb(0 0 0 / 0%);
 }
 
-@keyframes scrollfade {
+@keyframes overflow-shadows {
   0% {
-    --left-shadow: rgb(0 0 0 / 0%);
-    --right-shadow: rgb(0 0 0 / 40%);
+    --overflow-shadow-start: rgb(0 0 0 / 0%);
+    --overflow-shadow-end: rgb(0 0 0 / 40%);
   }
 
   10% {
-    --left-shadow: rgb(0 0 0 / 40%);
+    --overflow-shadow-start: rgb(0 0 0 / 40%);
   }
 
   90% {
-    --right-shadow: rgb(0 0 0 / 40%);
+    --overflow-shadow-end: rgb(0 0 0 / 40%);
   }
 
   100% {
-    --right-shadow: rgb(0 0 0 / 0%);
-    --left-shadow: rgb(0 0 0 / 40%);
+    --overflow-shadow-end: rgb(0 0 0 / 0%);
+    --overflow-shadow-start: rgb(0 0 0 / 40%);
   }
 }
 
@@ -165,12 +165,12 @@ $table-overflow-shadow-width: 1.5rem;
   background:
     radial-gradient(
       ellipse #{$table-overflow-shadow-width} 50% at left center,
-      var(--left-shadow),
+      var(--overflow-shadow-start),
       rgb(0 0 0 / 0%)
     ),
     radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at right center,
-        var(--right-shadow),
+        var(--overflow-shadow-end),
         rgb(0 0 0 / 0%)
       )
       transparent;
@@ -179,9 +179,9 @@ $table-overflow-shadow-width: 1.5rem;
 
   container-type: inline-size;
 
-  animation: scrollfade linear;
-  animation-timeline: --scrollfade;
-  scroll-timeline: --scrollfade x;
+  animation: overflow-shadows linear;
+  animation-timeline: --overflow-shadows;
+  scroll-timeline: --overflow-shadows x;
 
   &:last-child {
     margin-bottom: 0;
@@ -209,7 +209,7 @@ $table-overflow-shadow-width: 1.5rem;
   &--sticky-first-column {
     background: radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at right center,
-        var(--right-shadow),
+        var(--overflow-shadow-end),
         rgb(0 0 0 / 0%)
       )
       transparent;
@@ -242,11 +242,11 @@ $table-overflow-shadow-width: 1.5rem;
 
             background: linear-gradient(
               90deg,
-              var(--left-shadow) 0%,
+              var(--overflow-shadow-start) 0%,
               rgb(0 0 0 / 0%) 100%
             );
-            animation: scrollfade linear;
-            animation-timeline: --scrollfade;
+            animation: overflow-shadows linear;
+            animation-timeline: --overflow-shadows;
           }
         }
       }

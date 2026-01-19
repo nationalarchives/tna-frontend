@@ -44,9 +44,7 @@ const initAll = (options) => {
   window.addEventListener("mousedown", onMouseDown);
 
   const $tableWrappers = $scope.querySelectorAll(".tna-table-wrapper");
-  $tableWrappers.forEach(($tableWrapper) =>
-    checkTableForScroll($tableWrapper, true),
-  );
+  $tableWrappers.forEach(($tableWrapper) => checkTableForScroll($tableWrapper));
   window.addEventListener("resize", () => {
     $tableWrappers.forEach(($tableWrapper) =>
       checkTableForScroll($tableWrapper),

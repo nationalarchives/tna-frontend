@@ -95,7 +95,7 @@ export class Accordion {
     const $tableWrapper = $content.querySelectorAll(".tna-table-wrapper");
     if ($tableWrapper) {
       $tableWrapper.forEach(($wrapper) => {
-        checkTableForScroll($wrapper, true);
+        checkTableForScroll($wrapper);
       });
     }
   }

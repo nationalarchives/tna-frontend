@@ -179,7 +179,7 @@ $table-overflow-shadow-width: 1.5rem;
 
   container-type: inline-size;
 
-  animation: scrollfade ease-out;
+  animation: scrollfade linear;
   animation-timeline: --scrollfade;
   scroll-timeline: --scrollfade x;
 
@@ -245,7 +245,7 @@ $table-overflow-shadow-width: 1.5rem;
               var(--left-shadow) 0%,
               rgb(0 0 0 / 0%) 100%
             );
-            animation: scrollfade ease-out;
+            animation: scrollfade linear;
             animation-timeline: --scrollfade;
           }
         }

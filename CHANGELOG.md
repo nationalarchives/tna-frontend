@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Scrollable tables can now have sticky first columns using `tna-table-wrapper--sticky-first-column`
 
 ### Changed
+
+- Changed animation timing function for scrollable table shadows to `linear`
+
 ### Deprecated
 ### Removed
 ### Fixed

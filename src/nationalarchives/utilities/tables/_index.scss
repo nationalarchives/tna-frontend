@@ -10,37 +10,37 @@
 
 $table-overflow-shadow-width: 1.5rem;
 
-@property --overflow-shadow-start {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: rgb(0 0 0 / 0%);
-}
+// @property --overflow-shadow-start {
+//   syntax: "<color>";
+//   inherits: false;
+//   initial-value: rgb(0 0 0 / 0%);
+// }
 
-@property --overflow-shadow-end {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: rgb(0 0 0 / 0%);
-}
+// @property --overflow-shadow-end {
+//   syntax: "<color>";
+//   inherits: false;
+//   initial-value: rgb(0 0 0 / 0%);
+// }
 
-@keyframes overflow-shadows {
-  0% {
-    --overflow-shadow-start: rgb(0 0 0 / 0%);
-    --overflow-shadow-end: rgb(0 0 0 / 40%);
-  }
+// @keyframes overflow-shadows {
+//   0% {
+//     --overflow-shadow-start: rgb(0 0 0 / 0%);
+//     --overflow-shadow-end: rgb(0 0 0 / 40%);
+//   }
 
-  10% {
-    --overflow-shadow-start: rgb(0 0 0 / 40%);
-  }
+//   10% {
+//     --overflow-shadow-start: rgb(0 0 0 / 40%);
+//   }
 
-  90% {
-    --overflow-shadow-end: rgb(0 0 0 / 40%);
-  }
+//   90% {
+//     --overflow-shadow-end: rgb(0 0 0 / 40%);
+//   }
 
-  100% {
-    --overflow-shadow-end: rgb(0 0 0 / 0%);
-    --overflow-shadow-start: rgb(0 0 0 / 40%);
-  }
-}
+//   100% {
+//     --overflow-shadow-end: rgb(0 0 0 / 0%);
+//     --overflow-shadow-start: rgb(0 0 0 / 40%);
+//   }
+// }
 
 .tna-table {
   @include spacing.space-above;
@@ -163,32 +163,53 @@ $table-overflow-shadow-width: 1.5rem;
   overflow: auto;
 
   background:
+    linear-gradient(
+      to right,
+      colour.colour-var("background") 50%,
+      rgb(255 255 255 / 0%)
+    ),
+    linear-gradient(
+        to right,
+        rgb(255 255 255 / 0%),
+        colour.colour-var("background") 50%
+      )
+      0 100%,
     radial-gradient(
       ellipse #{$table-overflow-shadow-width} 50% at left center,
-      var(--overflow-shadow-start),
+      rgb(0 0 0 / 40%),
       rgb(0 0 0 / 0%)
     ),
     radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at right center,
-        var(--overflow-shadow-end),
+        rgb(0 0 0 / 40%),
         rgb(0 0 0 / 0%)
       )
-      transparent;
+      0 100% transparent;
+  background-size:
+    #{$table-overflow-shadow-width * 2} 100%,
+    #{$table-overflow-shadow-width * 2} 100%,
+    100% 100%,
+    100% 100%;
+  background-repeat: no-repeat;
 
   border-radius: 0.1px;
+  background-position:
+    0 0,
+    100%,
+    0 0,
+    100%;
+  background-attachment: local, local, scroll, scroll;
 
   container-type: inline-size;
 
-  animation: overflow-shadows linear;
-  animation-timeline: --overflow-shadows;
-  scroll-timeline: --overflow-shadows x;
+  contain: paint;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  &:focus-visible {
-    @include a11y.focus-outline;
+  &:focus:not(:focus-visible) {
+    @include a11y.no-focus-outline;
   }
 
   .tna-table {
@@ -206,52 +227,52 @@ $table-overflow-shadow-width: 1.5rem;
     }
   }
 
-  &--sticky-first-column {
-    background: radial-gradient(
-        ellipse #{$table-overflow-shadow-width} 50% at right center,
-        var(--overflow-shadow-end),
-        rgb(0 0 0 / 0%)
-      )
-      transparent;
+  // &--sticky-first-column {
+  //   background: radial-gradient(
+  //       ellipse #{$table-overflow-shadow-width} 50% at right center,
+  //       var(--overflow-shadow-end),
+  //       rgb(0 0 0 / 0%)
+  //     )
+  //     transparent;
 
-    .tna-table {
-      &__header,
-      &__cell {
-        &:first-child {
-          max-width: 50vw;
-          max-width: 50cqw;
+  //   .tna-table {
+  //     &__header,
+  //     &__cell {
+  //       &:first-child {
+  //         max-width: 50vw;
+  //         max-width: 50cqw;
 
-          position: sticky;
-          left: 0;
-          z-index: 1;
+  //         position: sticky;
+  //         left: 0;
+  //         z-index: 1;
 
-          overflow-wrap: break-word;
+  //         overflow-wrap: break-word;
 
-          hyphens: auto;
-          @include colour.colour-background("background");
+  //         hyphens: auto;
+  //         @include colour.colour-background("background");
 
-          &::after {
-            content: "";
+  //         &::after {
+  //           content: "";
 
-            width: 0.75rem;
+  //           width: 0.75rem;
 
-            position: absolute;
-            top: 0;
-            bottom: -1px;
-            left: 100%;
+  //           position: absolute;
+  //           top: 0;
+  //           bottom: -1px;
+  //           left: 100%;
 
-            background: linear-gradient(
-              90deg,
-              var(--overflow-shadow-start) 0%,
-              rgb(0 0 0 / 0%) 100%
-            );
-            animation: overflow-shadows linear;
-            animation-timeline: --overflow-shadows;
-          }
-        }
-      }
-    }
-  }
+  //           background: linear-gradient(
+  //             90deg,
+  //             var(--overflow-shadow-start) 0%,
+  //             rgb(0 0 0 / 0%) 100%
+  //           );
+  //           animation: overflow-shadows linear;
+  //           animation-timeline: --overflow-shadows;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   &--scroll {
     .tna-table {

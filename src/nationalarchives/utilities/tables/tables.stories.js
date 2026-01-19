@@ -83,6 +83,7 @@ const TableTemplate = () =>
         </tbody>
       </table>
     </div>
+    <!--
     <div class="tna-table-wrapper tna-table-wrapper--sticky-first-column" role="region" aria-labelledby="table-example-3" tabindex="0">
       <table class="tna-table">
         <caption id="table-example-3" class="tna-table__caption">
@@ -118,6 +119,7 @@ const TableTemplate = () =>
         </tbody>
       </table>
     </div>
+    -->
   </div>
 </div>`;
 export const Table = TableTemplate.bind({});

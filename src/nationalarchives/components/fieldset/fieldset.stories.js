@@ -70,31 +70,3 @@ export const Standard = {
     id: "fieldset-1",
   },
 };
-
-export const WithErrors = {
-  args: {
-    legend: "Fieldset",
-    headingLevel: 1,
-    headingSize: "xl",
-    hint: "This is a <strong>hint</strong>.",
-    html: Array(6)
-      .fill("")
-      .reduce(
-        (prev, value, index) =>
-          prev +
-          nunjucks.renderString(TextInput, {
-            params: {
-              label: "Text input",
-              headingSize: "xs",
-              hint: "This is a hint",
-              error: { text: "This is an error" },
-              name: `text-input${index + 1}`,
-              id: `text-input${index + 1}`,
-              size: [null, "xl", "l", "m", "s", "xs"][index] || null,
-            },
-          }),
-        "",
-      ),
-    id: "fieldset-1",
-  },
-};

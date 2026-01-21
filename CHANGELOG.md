@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed animation timing function for scrollable table shadows to `linear`
 - Use CSS scroll-driven animation for scrollable tables if the browser supports it
 - Image loading animations joined into a single rule
+- Whitespace has been removed from the interactable area of checkbox and radio items
 
 ### Deprecated
 

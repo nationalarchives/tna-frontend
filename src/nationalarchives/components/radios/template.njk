@@ -19,6 +19,9 @@
       <input type="radio" id="{{ params.id }}-{{ item.value }}"{% if params.classes %} class="{{ params.classes }}"{% endif %} value="{{ item.value }}" name="{{ params.name }}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}{% if params.selected and item.value === params.selected %} checked{% endif %}>
       <label for="{{ params.id }}-{{ item.value }}" class="tna-radios__item-label">
         {{ item.text }}
+        {%- if item.hint %}
+        <span class="tna-radios__item-hint"><span class="tna-visually-hidden">(</span>{{ item.hint }}<span class="tna-visually-hidden">)</span></span>
+        {%- endif %}
       </label>
     </div>
     {%- endfor %}

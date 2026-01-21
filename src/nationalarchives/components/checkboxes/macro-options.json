@@ -69,10 +69,10 @@
         "description": "The form field value."
       },
       {
-        "name": "name",
+        "name": "hint",
         "type": "string",
         "required": false,
-        "description": "The name of the form field item. If set, this will override the main `name` property."
+        "description": "An extra hint to display inside the checkbox item."
       },
       {
         "name": "checked",

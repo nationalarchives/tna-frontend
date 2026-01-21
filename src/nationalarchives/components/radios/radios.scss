@@ -3,6 +3,7 @@
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-radios {
   align-self: stretch;
@@ -14,6 +15,8 @@
   gap: spacing.space(1);
 
   &__item {
+    padding-left: spacing.space(3);
+
     position: relative;
 
     input {
@@ -30,8 +33,6 @@
     }
 
     &-label {
-      padding-left: spacing.space(3);
-
       display: block;
 
       line-height: 2rem;
@@ -73,6 +74,14 @@
         @include colour.colour-border("input-foreground", 0.5rem);
       }
     }
+
+    &-hint {
+      display: block;
+
+      @include typography.font-size(16);
+      @include colour.colour-font("font-light");
+      line-height: 1.25;
+    }
   }
 
   &--small {
@@ -80,9 +89,9 @@
   }
 
   &--small &__item {
-    &-label {
-      padding-left: spacing.space(2.25);
+    padding-left: spacing.space(2.25);
 
+    &-label {
       line-height: 1.5rem;
 
       &::before {
@@ -101,7 +110,7 @@
   &--inline {
     flex-flow: row wrap;
 
-    align-items: center;
+    align-items: flex-start;
     gap: spacing.space(1) spacing.space(2);
 
     @include media.on-tiny {

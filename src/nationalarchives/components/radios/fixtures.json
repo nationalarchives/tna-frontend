@@ -129,6 +129,33 @@
       "html": "<div class=\"tna-fieldset tna-fieldset--small-hint\"><fieldset class=\"tna-fieldset__inner\" aria-describedby=\"type-hint\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Type</span></legend><p id=\"type-hint\" class=\"tna-fieldset__hint\">You can only select one.</p><div class=\"tna-fieldset__body\"><div class=\"tna-radios\" id=\"type\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-audio\" value=\"audio\" name=\"type\"><label for=\"type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-image\" value=\"image\" name=\"type\"><label for=\"type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-video\" value=\"video\" name=\"type\"><label for=\"type-video\" class=\"tna-radios__item-label\">Video</label></div></div></div></fieldset></div>"
     },
     {
+      "name": "with item hints",
+      "options": {
+        "label": "Type",
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio",
+            "hint": "Includes music, speeches, and oral histories."
+          },
+          {
+            "text": "Image",
+            "value": "image",
+            "hint": "Includes photographs, maps, and drawings."
+          },
+          {
+            "text": "Video",
+            "value": "video",
+            "hint": "Includes films, documentaries, and newsreels."
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset tna-fieldset--small-hint\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Type</span></legend><div class=\"tna-fieldset__body\"><div class=\"tna-radios\" id=\"type\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-audio\" value=\"audio\" name=\"type\"><label for=\"type-audio\" class=\"tna-radios__item-label\">Audio<span class=\"tna-radios__item-hint\"><span class=\"tna-visually-hidden\">(</span>Includes music, speeches, and oral histories.<span class=\"tna-visually-hidden\">)</span></span></label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-image\" value=\"image\" name=\"type\"><label for=\"type-image\" class=\"tna-radios__item-label\">Image<span class=\"tna-radios__item-hint\"><span class=\"tna-visually-hidden\">(</span>Includes photographs, maps, and drawings.<span class=\"tna-visually-hidden\">)</span></span></label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-video\" value=\"video\" name=\"type\"><label for=\"type-video\" class=\"tna-radios__item-label\">Video<span class=\"tna-radios__item-hint\"><span class=\"tna-visually-hidden\">(</span>Includes films, documentaries, and newsreels.<span class=\"tna-visually-hidden\">)</span></span></label></div></div></div></fieldset></div>"
+    },
+    {
       "name": "with an error",
       "options": {
         "label": "Type",

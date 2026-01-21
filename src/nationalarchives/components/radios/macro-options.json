@@ -67,6 +67,12 @@
         "type": "string",
         "required": true,
         "description": "The form field value."
+      },
+      {
+        "name": "hint",
+        "type": "string",
+        "required": false,
+        "description": "An extra hint to display inside the checkbox item."
       }
     ]
   },

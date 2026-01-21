@@ -185,13 +185,40 @@ export const WithHint = {
   },
 };
 
-export const Error = {
+export const WithItemHints = {
   args: {
     label: "Type",
     headingLevel: 4,
     headingSize: "m",
     id: "type5",
     name: "type5",
+    items: [
+      {
+        text: "Audio",
+        value: "audio",
+        hint: "This is an audio file.",
+      },
+      {
+        text: "Image",
+        value: "image",
+      },
+      {
+        text: "Video",
+        value: "video",
+        hint: "This is a video file.",
+      },
+    ],
+    classes: "tna-radios--demo",
+  },
+};
+
+export const Error = {
+  args: {
+    label: "Type",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "type6",
+    name: "type6",
     error: {
       text: "You must select a type",
     },
@@ -218,8 +245,8 @@ export const Inline = {
     label: "Type",
     headingLevel: 4,
     headingSize: "xs",
-    id: "type6",
-    name: "type6",
+    id: "type7",
+    name: "type7",
     items: [
       {
         text: "Audio",

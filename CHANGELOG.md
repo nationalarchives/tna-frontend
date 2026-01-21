@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.31.0...HEAD)
 
 ### Added
+
+- Checkbox and radio items can now have hints
+
 ### Changed
 
 - Changed animation timing function for scrollable table shadows to `linear`
@@ -15,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Image loading animations joined into a single rule
 
 ### Deprecated
+
+- Removed the ability for a checkbox item to have a separate `name` attribute
+
 ### Removed
 
 - Removed unilateral reset of transitions and animations in `reset.scss` for `@media (prefers-reduced-motion)`

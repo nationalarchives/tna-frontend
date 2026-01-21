@@ -181,13 +181,40 @@ export const WithHint = {
   },
 };
 
-export const Error = {
+export const WithItemHints = {
   args: {
     label: "Categories",
     headingLevel: 4,
     headingSize: "m",
     id: "categories5",
     name: "categories5",
+    items: [
+      {
+        text: "Alpha",
+        value: "alpha",
+        hint: "This is the first category.",
+      },
+      {
+        text: "Beta",
+        value: "beta",
+      },
+      {
+        text: "Gamma",
+        value: "gamma",
+        hint: "This is the third category.",
+      },
+    ],
+    classes: "tna-checkboxes--demo",
+  },
+};
+
+export const Error = {
+  args: {
+    label: "Categories",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "categories6",
+    name: "categories6",
     error: {
       text: "You must select a category",
     },
@@ -214,8 +241,8 @@ export const Inline = {
     label: "Categories",
     headingLevel: 4,
     headingSize: "xs",
-    id: "categories6",
-    name: "categories6",
+    id: "categories7",
+    name: "categories7",
     items: [
       {
         text: "Alpha",
@@ -237,8 +264,8 @@ export const Inline = {
 
 export const Single = {
   args: {
-    id: "terms",
-    name: "terms",
+    id: "terms1",
+    name: "terms1",
     items: [
       {
         text: "I agree to the terms and conditions",
@@ -254,8 +281,8 @@ export const SingleWithLabel = {
     label: "Terms and conditions",
     headingLevel: 4,
     headingSize: "m",
-    id: "terms",
-    name: "terms",
+    id: "terms2",
+    name: "terms2",
     items: [
       {
         text: "I agree to the terms and conditions",

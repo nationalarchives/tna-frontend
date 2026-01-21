@@ -11,9 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Changed animation timing function for scrollable table shadows to `linear`
+- Use CSS scroll-driven animation for scrollable tables if the browser supports it
+- Image loading animations joined into a single rule
 
 ### Deprecated
 ### Removed
+
+- Removed unilateral reset of transitions and animations in `reset.scss` for `@media (prefers-reduced-motion)`
+
 ### Fixed
 
 - Fixed padding for tables inside accordions

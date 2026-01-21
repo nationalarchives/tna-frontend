@@ -5,15 +5,6 @@
   margin: 0;
   padding: 0;
 
-  @media (prefers-reduced-motion) {
-    &,
-    &::before,
-    &::after {
-      animation: none !important;
-      transition: none !important;
-    }
-  }
-
   @media (prefers-contrast: more) {
     background-image: none;
   }

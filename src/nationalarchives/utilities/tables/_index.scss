@@ -8,39 +8,41 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-$table-overflow-shadow-width: 1.5rem;
+$table-overflow-shadow-width: 1.25rem;
+$table-overflow-shadow-colour: rgb(0 0 0 / 40%);
+$table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
-// @property --overflow-shadow-start {
-//   syntax: "<color>";
-//   inherits: false;
-//   initial-value: rgb(0 0 0 / 0%);
-// }
+@property --overflow-shadow-start {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #{$table-overflow-shadow-colour-hidden};
+}
 
-// @property --overflow-shadow-end {
-//   syntax: "<color>";
-//   inherits: false;
-//   initial-value: rgb(0 0 0 / 0%);
-// }
+@property --overflow-shadow-end {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #{$table-overflow-shadow-colour-hidden};
+}
 
-// @keyframes overflow-shadows {
-//   0% {
-//     --overflow-shadow-start: rgb(0 0 0 / 0%);
-//     --overflow-shadow-end: rgb(0 0 0 / 40%);
-//   }
+@keyframes overflow-shadows {
+  0% {
+    --overflow-shadow-start: #{$table-overflow-shadow-colour-hidden};
+    --overflow-shadow-end: #{$table-overflow-shadow-colour};
+  }
 
-//   10% {
-//     --overflow-shadow-start: rgb(0 0 0 / 40%);
-//   }
+  10% {
+    --overflow-shadow-start: #{$table-overflow-shadow-colour};
+  }
 
-//   90% {
-//     --overflow-shadow-end: rgb(0 0 0 / 40%);
-//   }
+  90% {
+    --overflow-shadow-end: #{$table-overflow-shadow-colour};
+  }
 
-//   100% {
-//     --overflow-shadow-end: rgb(0 0 0 / 0%);
-//     --overflow-shadow-start: rgb(0 0 0 / 40%);
-//   }
-// }
+  100% {
+    --overflow-shadow-start: #{$table-overflow-shadow-colour};
+    --overflow-shadow-end: #{$table-overflow-shadow-colour-hidden};
+  }
+}
 
 .tna-table {
   @include spacing.space-above;
@@ -176,13 +178,13 @@ $table-overflow-shadow-width: 1.5rem;
       0 100%,
     radial-gradient(
       ellipse #{$table-overflow-shadow-width} 50% at left center,
-      rgb(0 0 0 / 40%),
-      rgb(0 0 0 / 0%)
+      #{$table-overflow-shadow-colour},
+      #{$table-overflow-shadow-colour-hidden}
     ),
     radial-gradient(
         ellipse #{$table-overflow-shadow-width} 50% at right center,
-        rgb(0 0 0 / 40%),
-        rgb(0 0 0 / 0%)
+        #{$table-overflow-shadow-colour},
+        #{$table-overflow-shadow-colour-hidden}
       )
       0 100% transparent;
   background-size:
@@ -203,6 +205,36 @@ $table-overflow-shadow-width: 1.5rem;
   container-type: inline-size;
 
   contain: paint;
+
+  /*
+  * ------------------------------------------
+  * Can remove the @supports rule when support
+  * for the scroll-driven animations below has
+  * been enabled by default in Firefox and the
+  * documented scroll-timeline syntax (x and y
+  * as opposed to vertical and horizontal) can
+  * be used
+  * https://caniuse.com/mdn-css_properties_animation-timeline_view
+  * ------------------------------------------
+  */
+  @supports (scroll-timeline: --overflow-shadows x) {
+    background:
+      radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at left center,
+        var(--overflow-shadow-start),
+        #{$table-overflow-shadow-colour-hidden}
+      ),
+      radial-gradient(
+          ellipse #{$table-overflow-shadow-width} 50% at right center,
+          var(--overflow-shadow-end),
+          #{$table-overflow-shadow-colour-hidden}
+        )
+        transparent;
+
+    animation: overflow-shadows 1ms linear;
+    animation-timeline: --overflow-shadows;
+    scroll-timeline: --overflow-shadows x;
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -231,7 +263,7 @@ $table-overflow-shadow-width: 1.5rem;
   //   background: radial-gradient(
   //       ellipse #{$table-overflow-shadow-width} 50% at right center,
   //       var(--overflow-shadow-end),
-  //       rgb(0 0 0 / 0%)
+  //       #{$table-overflow-shadow-colour-hidden}
   //     )
   //     transparent;
 
@@ -264,7 +296,7 @@ $table-overflow-shadow-width: 1.5rem;
   //           background: linear-gradient(
   //             90deg,
   //             var(--overflow-shadow-start) 0%,
-  //             rgb(0 0 0 / 0%) 100%
+  //             #{$table-overflow-shadow-colour-hidden} 100%
   //           );
   //           animation: overflow-shadows linear;
   //           animation-timeline: --overflow-shadows;

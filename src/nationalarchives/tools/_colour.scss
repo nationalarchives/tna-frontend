@@ -540,17 +540,25 @@ $base-colours: (
   }
 }
 
+%image-loader-background {
+  background: linear-gradient(
+    -45deg,
+    rgb(0 0 0 / 25%),
+    rgb(255 255 255 / 25%),
+    rgb(0 0 0 / 25%)
+  );
+  background-size: 500% 500%;
+  background-position: 0 50%;
+
+  animation: image-loader-background ease-in-out 1.2s infinite;
+
+  @media (prefers-reduced-motion) {
+    animation: none !important;
+  }
+}
+
 @mixin image-loader-background {
   @if features.$image-loader-animations {
-    background: linear-gradient(
-      -45deg,
-      rgb(0 0 0 / 25%),
-      rgb(255 255 255 / 25%),
-      rgb(0 0 0 / 25%)
-    );
-    background-size: 500% 500%;
-    background-position: 0 50%;
-
-    animation: image-loader-background ease-in-out 1.2s infinite;
+    @extend %image-loader-background;
   }
 }

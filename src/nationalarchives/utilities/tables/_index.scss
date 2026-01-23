@@ -30,11 +30,11 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
     --overflow-shadow-end: #{$table-overflow-shadow-colour};
   }
 
-  10% {
+  5% {
     --overflow-shadow-start: #{$table-overflow-shadow-colour};
   }
 
-  90% {
+  95% {
     --overflow-shadow-end: #{$table-overflow-shadow-colour};
   }
 
@@ -193,14 +193,14 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
     100% 100%,
     100% 100%;
   background-repeat: no-repeat;
-
-  border-radius: 0.1px;
   background-position:
     0 0,
     100%,
     0 0,
     100%;
   background-attachment: local, local, scroll, scroll;
+
+  border-radius: 0.1px;
 
   container-type: inline-size;
 
@@ -230,6 +230,7 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
           #{$table-overflow-shadow-colour-hidden}
         )
         transparent;
+    background-position: 0;
 
     animation: overflow-shadows 1ms linear;
     animation-timeline: --overflow-shadows;

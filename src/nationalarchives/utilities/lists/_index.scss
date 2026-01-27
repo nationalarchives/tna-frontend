@@ -10,10 +10,6 @@ ol {
   padding: 0;
 }
 
-.tna-ul {
-  list-style-type: disc;
-}
-
 .tna-ul,
 .tna-ol {
   margin-top: spacing.space(1);
@@ -25,16 +21,12 @@ ol {
 
   &--plain {
     padding-left: 0;
-  }
 
-  &--plain,
-  &--no-list-style {
-    list-style: none;
-  }
+    list-style: none !important;
 
-  & > li > & {
-    margin-top: 0;
-    padding-left: spacing.space(1.25);
+    > li::marker {
+      content: "";
+    }
   }
 
   > li {
@@ -43,20 +35,57 @@ ol {
     }
   }
 
-  &--spaced > li + li {
-    margin-top: spacing.space(0.5);
-  }
-
-  &--spaced > li > & {
-    margin-top: spacing.space(1);
-    margin-bottom: spacing.space(1);
-  }
-
   &--dashed {
     > li::marker {
       content: "—  ";
       @include typography.main-font-weight;
     }
+  }
+
+  &--spaced > li + li {
+    margin-top: spacing.space(0.5);
+  }
+
+  // &--spaced > li > & {
+  //   margin-top: spacing.space(1);
+  //   margin-bottom: spacing.space(1);
+  // }
+
+  &:not(&--plain) > li > & {
+    margin-top: 0;
+    padding-left: spacing.space(1.25);
+  }
+}
+
+.tna-ul {
+  list-style-type: disc;
+
+  & & {
+    list-style-type: circle;
+  }
+
+  & & & {
+    list-style-type: square;
+  }
+
+  & & & & {
+    list-style-type: disc;
+  }
+}
+
+.tna-ol {
+  list-style-type: decimal;
+
+  & & {
+    list-style-type: lower-alpha;
+  }
+
+  & & & {
+    list-style-type: lower-roman;
+  }
+
+  & & & & {
+    list-style-type: decimal;
   }
 }
 
@@ -105,210 +134,130 @@ ol {
 }
 
 @mixin stacked-dl {
-  > dt,
-  > dd {
-    width: 100%;
-    margin-left: 0;
-  }
+  display: block;
 
-  > dd {
-    padding-left: spacing.space(1);
-  }
-
-  &.tna-dl--plain {
+  &--zebra {
     > dt {
-      padding-top: 0;
-      padding-bottom: 0;
+      --background: var(--background-tint);
 
-      .fa-solid {
-        margin-top: 0;
-      }
+      @include colour.colour-background("background");
     }
 
-    > dd {
-      margin-left: 0;
-      padding-top: 0;
+    > dd:nth-child(1n) {
+      background: none;
     }
   }
 
-  &:not(.tna-dl--plain) {
-    > dt {
-      @include colour.colour-background("background-tint");
-
-      @include colour.colour-font("font-base");
-    }
+  &--lined {
+    padding-bottom: 0;
 
     > dd {
-      margin-left: 0;
+      border-top: none;
 
-      background: transparent !important;
-    }
-  }
-
-  @include colour.on-high-contrast-and-forced-colours {
-    > dd {
-      border-top: none !important;
-    }
-
-    &.tna-dl--plain {
-      > dt {
-        padding-top: spacing.space(0.5) !important;
-      }
-    }
-
-    &.tna-dl--icon-padding.tna-dl--plain {
-      > dt {
-        .fa-solid {
-          margin-top: spacing.space(0.5) !important;
-        }
-      }
-    }
-
-    &.tna-dl--stacked:not(.tna-dl--plain) {
-      > dt {
-        padding-bottom: 0 !important;
-      }
+      padding-top: 0;
+      padding-bottom: spacing.space(0.5);
     }
   }
 }
 
 .tna-dl {
-  @include spacing.space-above(true);
+  @include spacing.space-above;
 
-  display: flex;
-  flex-wrap: wrap;
-
-  &:first-child {
-    margin-top: 0;
-  }
+  display: grid;
+  grid-template-columns: max-content;
+  gap: spacing.space(0.5) 0;
 
   > dt,
   > dd {
     margin: 0;
-    padding: spacing.space(0.5) spacing.space(1);
-
-    box-sizing: border-box;
-
-    position: relative;
 
     overflow-wrap: break-word;
   }
 
-  &--plain {
-    > dt {
-      padding-top: 0;
-      padding-left: 0;
-    }
-
-    > dd {
-      padding-top: 0;
-      padding-right: 0;
-    }
-  }
-
-  &--plain#{&}--spaced {
-    > dt,
-    > dd {
-      padding-bottom: spacing.space(1.25);
-    }
-  }
-
   > dt {
-    width: 30%;
-
     @include typography.main-font-weight-bold;
+
+    .fa-solid,
+    .fa-brands {
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      line-height: inherit;
+      @include colour.colour-font("icon-light");
+    }
   }
 
   > dd {
-    width: 70%;
+    padding-left: spacing.space(2);
 
-    + dd {
-      margin-left: 30%;
-    }
+    grid-column-start: 2;
   }
 
-  &--icon-padding {
-    > dt {
-      padding-left: 3rem !important;
+  &:has(:is(.fa-solid, .fa-brands)) {
+    dt {
+      padding-left: spacing.space(2);
 
       position: relative;
+    }
+  }
 
-      .fa-solid {
-        overflow: visible;
-
-        position: absolute;
+  &--zebra,
+  &--lined {
+    dt {
+      .fa-solid,
+      .fa-brands {
         top: spacing.space(0.5);
-        left: spacing.space(1);
-
-        line-height: inherit;
-
-        @include colour.colour-font("icon-light");
       }
     }
   }
 
-  &--icon-padding#{&}--plain {
-    > dt {
-      padding-left: spacing.space(2) !important;
+  &--zebra {
+    gap: 0;
 
-      .fa-solid {
-        top: 0;
-        left: 0;
-      }
+    dt,
+    dd {
+      padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
+        spacing.space(1);
     }
 
-    > dd {
-      padding-left: spacing.space(2);
-    }
-  }
-
-  &:not(&--plain) {
     > dt:first-child,
     > dd:nth-of-type(2n) + dt,
     > dd:nth-of-type(2n + 1) {
       @include colour.tint;
     }
-  }
 
-  @include media.on-small {
-    > dt {
-      width: 35%;
-    }
+    &:has(:is(.fa-solid, .fa-brands)) {
+      dt {
+        padding-left: spacing.space(3);
 
-    > dd {
-      width: 65%;
-
-      + dd {
-        margin-left: 35%;
+        .fa-solid,
+        .fa-brands {
+          left: spacing.space(1);
+        }
       }
     }
   }
 
-  &--stacked {
-    @include stacked-dl;
-  }
-
-  @include media.on-tiny {
-    @include stacked-dl;
-  }
-
-  @include colour.on-high-contrast-and-forced-colours {
-    @include colour.colour-border("keyline-dark", 1px, solid, bottom);
+  &--lined {
+    padding-bottom: spacing.space(0.5);
+    @include colour.colour-border("keyline", 1px, solid, bottom);
 
     > dt,
     > dd {
-      background: transparent !important;
-
-      @include colour.colour-border("keyline-dark", 1px, solid, top);
+      padding-top: spacing.space(0.5);
+      @include colour.colour-border("keyline", 1px, solid, top);
     }
+  }
 
-    &--plain {
-      > dt,
-      > dt .fa-solid,
-      > dd {
-        padding-top: spacing.space(0.5);
-      }
-    }
+  &--stacked#{&} {
+    @include stacked-dl;
+  }
+
+  @include media.on-mobile {
+    @include stacked-dl;
   }
 }
 

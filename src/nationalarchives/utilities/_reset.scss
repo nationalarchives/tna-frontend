@@ -25,27 +25,16 @@
  * If the browser supports -apple-system-body
  * which at the moment is just iOS then using
  * the system body font we can respond to the
- * Dynamic Type setting in iOS
+ * Dynamic Type setting in iOS, however we do
+ * disable it for any non-touch Apple devices
+ * such as Mac OS, because the default system
+ * font size is set to 13px rather than 16px
  * ------------------------------------------
  */
-@supports (font: -apple-system-body) {
+@supports (font: -apple-system-body) and (-webkit-touch-callout: default) {
   html {
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font: -apple-system-body;
-  }
-}
-
-/*
- * ------------------------------------------
- * Disable Apple's Dynamic Type for non-touch
- * devices (like Mac OS), because the default
- * system body size is defined as 13px rather
- * than 16px like on other devices
- * ------------------------------------------
- */
-@supports (font: -apple-system-body) and (not (-webkit-touch-callout: default)) {
-  html {
-    @include typography.font-size(16);
   }
 }
 

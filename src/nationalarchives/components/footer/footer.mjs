@@ -1,15 +1,32 @@
 import Cookies from "../../lib/cookies.mjs";
 
 export class Footer {
-  constructor($module) {
+  constructor($module, themeCookieName = "theme") {
     this.$module = $module;
     this.$themeSelector =
       $module && $module.querySelector(".tna-footer__theme-selector");
+    this.$themeSelectorNotice =
+      $module && $module.querySelector(".tna-footer__theme-selector-notice");
+    this.$themeSelectorEnableSettingsCookiesButton =
+      this.$themeSelectorNotice &&
+      this.$themeSelectorNotice.querySelector(
+        ".tna-footer__theme-selector-enable-settings-cookies",
+      );
     this.$tnaTemplate = document.querySelector(".tna-template");
 
-    if (!this.$module || !this.$themeSelector || !this.$tnaTemplate) {
+    if (
+      !this.$module ||
+      !this.$themeSelector ||
+      !this.$themeSelectorNotice ||
+      !this.$themeSelectorEnableSettingsCookiesButton ||
+      !this.$tnaTemplate
+    ) {
       return;
     }
+
+    this.themeCookieName = themeCookieName;
+
+    this.cookies = new Cookies();
 
     this.$themeSelectorButtons = this.$themeSelector.querySelectorAll(
       "button.tna-footer__theme-selector-button[value]",
@@ -20,20 +37,27 @@ export class Footer {
         const $button = e.target;
         this.setTheme($button.value);
         this.selectThemeSelectorButton($button);
+        console.log(document.cookie);
+        console.log(this.cookies.all);
+        console.log(this.cookies.policies);
       });
     });
 
-    this.cookies = new Cookies();
-    if (this.cookies.isPolicyAccepted("settings")) {
-      this.showThemeSelector();
-    }
+    this.$themeSelectorEnableSettingsCookiesButton.addEventListener(
+      "click",
+      () => {
+        this.cookies.acceptPolicy("settings");
+      },
+    );
+
+    this.showThemeSelector();
     this.cookies.on("changePolicy", (data) => {
       if (Object.hasOwn(data, "settings")) {
         if (data.settings === true) {
-          this.showThemeSelector();
+          this.$themeSelectorNotice.setAttribute("hidden", "");
         } else {
-          this.cookies.delete("theme");
-          this.hideThemeSelector();
+          this.cookies.delete(this.themecookiename);
+          this.$themeSelectorNotice.removeAttribute("hidden");
         }
       }
     });
@@ -41,18 +65,17 @@ export class Footer {
 
   showThemeSelector() {
     this.$themeSelector.removeAttribute("hidden");
-    if (this.cookies.exists("theme")) {
+    if (this.cookies.exists(this.themecookiename)) {
       const $currentThemeButton = Array.from(this.$themeSelectorButtons).find(
-        ($button) => $button.value === this.cookies.get("theme"),
+        ($button) => $button.value === this.cookies.get(this.themecookiename),
       );
       if ($currentThemeButton) {
         this.selectThemeSelectorButton($currentThemeButton);
       }
     }
-  }
-
-  hideThemeSelector() {
-    this.$themeSelector.setAttribute("hidden", "");
+    if (!this.cookies.isPolicyAccepted("settings")) {
+      this.$themeSelectorNotice.removeAttribute("hidden");
+    }
   }
 
   setTheme(theme) {
@@ -70,7 +93,11 @@ export class Footer {
     } else {
       return;
     }
-    this.cookies.set("theme", theme);
+    if (this.cookies.isPolicyAccepted("settings")) {
+      this.cookies.set(this.themecookiename, theme);
+    } else {
+      this.$themeSelectorNotice.removeAttribute("hidden");
+    }
   }
 
   selectThemeSelectorButton($selectedButton) {

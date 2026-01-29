@@ -26,6 +26,40 @@
     @include typography.main-font-weight-bold;
   }
 
+  &__theme-selector-notice {
+    margin-top: spacing.space(0.5);
+    margin-bottom: spacing.space(0.25);
+    padding: spacing.space(0.5) spacing.space(0.75);
+
+    @include typography.font-size(16);
+    line-height: 1.5;
+
+    @include colour.blue-accent;
+    @include colour.accent-light;
+
+    @include borders.rounded-border;
+    @include colour.thick-keyline-accent(left);
+  }
+
+  &__theme-selector-enable-settings-cookies {
+    appearance: none;
+
+    line-height: inherit;
+    text-decoration: underline;
+
+    background: none;
+
+    border: none;
+    border-radius: 0.1px;
+
+    cursor: pointer;
+    @include colour.colour-font("link");
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
   .tna-logo {
     margin-top: spacing.space(2);
 

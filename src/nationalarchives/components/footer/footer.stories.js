@@ -22,6 +22,7 @@ export default {
         control: "inline-radio",
         options: ["system", "light", "dark", ""],
       },
+      cookiesURL: { control: "text" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [
@@ -62,37 +63,32 @@ export const ThemeSelector = {
   args: {
     themeSelector: true,
     currentTheme: "",
+    cookiesUrl: "#",
   },
   decorators: [
     (Story) => {
-      const cookies = new Cookies({ secure: false, noInit: true });
+      const cookies = new Cookies({
+        newInstance: true,
+        secure: false,
+        noInit: true,
+      });
       cookies.acceptPolicy("settings");
       return Story();
     },
   ],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const systemLightButton = canvas.getByText("System theme");
-    const themeLightButton = canvas.getByText("Light theme");
-    const darkLightButton = canvas.getByText("Dark theme");
-
-    await expect(systemLightButton).toBeVisible();
-    await expect(themeLightButton).toBeVisible();
-    await expect(darkLightButton).toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+    const $systemLightButton = canvas.getByText("System theme");
+    const $themeLightButton = canvas.getByText("Light theme");
+    const $darkLightButton = canvas.getByText("Dark theme");
+    const $themeSelectorNotice = canvasElement.querySelector(
+      `.tna-footer__theme-selector-notice`,
     );
+
+    await expect($systemLightButton).toBeVisible();
+    await expect($themeLightButton).toBeVisible();
+    await expect($darkLightButton).toBeVisible();
+    await expect($themeSelectorNotice).not.toBeVisible();
   },
 };
 
@@ -103,6 +99,7 @@ export const ThemeSelectorWithoutCookies = {
   args: {
     themeSelector: true,
     currentTheme: "",
+    cookiesUrl: "#",
   },
   decorators: [
     (Story) => {
@@ -118,12 +115,29 @@ export const ThemeSelectorWithoutCookies = {
   ],
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const systemLightButton = canvas.getByText("System theme");
-    const themeLightButton = canvas.getByText("Light theme");
-    const darkLightButton = canvas.getByText("Dark theme");
+    const $systemLightButton = canvas.getByText("System theme");
+    const $themeLightButton = canvas.getByText("Light theme");
+    const $darkLightButton = canvas.getByText("Dark theme");
+    const $themeSelectorNotice = canvasElement.querySelector(
+      `.tna-footer__theme-selector-notice`,
+    );
+    const $enableSettingsCookiesButton = canvas.getByText(
+      "enable settings cookies",
+    );
 
-    await expect(systemLightButton).not.toBeVisible();
-    await expect(themeLightButton).not.toBeVisible();
-    await expect(darkLightButton).not.toBeVisible();
+    await expect($systemLightButton).toBeVisible();
+    await expect($themeLightButton).toBeVisible();
+    await expect($darkLightButton).toBeVisible();
+    await expect($themeSelectorNotice).toBeVisible();
+
+    await $enableSettingsCookiesButton.click();
+    await expect($themeSelectorNotice).not.toBeVisible();
+
+    const cookies = new Cookies({
+      newInstance: true,
+      secure: false,
+      noInit: true,
+    });
+    cookies.rejectAllPolicies();
   },
 };

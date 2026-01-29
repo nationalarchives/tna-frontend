@@ -169,9 +169,18 @@
   {% set showNewsletter = false %}
 {%- endif %}
 
+{% set cookiesUrl = "" %}
+{% if params.themeSelector %}
+  {% if "cookiesUrl" in params %}
+    {% set cookiesUrl = params.cookiesUrl %}
+  {% elif params.defaultContent %}
+    {% set cookiesUrl = (params.defaultContentBaseURL or "") ~ "/cookies/" %}
+  {%- endif %}
+{%- endif %}
+
 <footer class="tna-footer{% if classes %} {{ classes }}{% endif %}" data-module="tna-footer" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.themeSelector %}
-  <section class="tna-footer__theme-selector tna-background-tint" hidden>
+  <section class="tna-footer__theme-selector tna-background-tint" data-loaded-theme="{{ params.currentTheme or 'light' }}" hidden>
     <div class="tna-container tna-!--padding-vertical-xs">
       <div class="tna-column tna-column--flex-1">
         <h2 class="tna-visually-hidden">Change the site theme</h2>
@@ -214,6 +223,9 @@
               "aria-current": params.currentTheme == "dark"
             }
           }) }}
+        </div>
+        <div class="tna-footer__theme-selector-notice" hidden>
+          <p>To save your preference, <button type="button" class="tna-footer__theme-selector-enable-settings-cookies">enable settings cookies</button>. Review your <a href="{{ cookiesUrl }}">cookie preferences</a>.</p>
         </div>
       </div>
     </div>

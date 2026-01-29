@@ -68,9 +68,7 @@ export const ThemeSelector = {
   decorators: [
     (Story) => {
       const cookies = new Cookies({
-        newInstance: true,
         secure: false,
-        noInit: true,
       });
       cookies.acceptPolicy("settings");
       return Story();
@@ -93,27 +91,18 @@ export const ThemeSelector = {
 };
 
 export const ThemeSelectorWithoutCookies = {
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     themeSelector: true,
     currentTheme: "",
     cookiesUrl: "#",
   },
-  decorators: [
-    (Story) => {
-      const cookies = new Cookies({
-        newInstance: true,
-        secure: false,
-        noInit: true,
-      });
-      cookies.set("cookie_preferences_set", true);
-      cookies.rejectPolicy("settings");
-      return Story();
-    },
-  ],
   play: async ({ canvasElement }) => {
+    const cookies = new Cookies({
+      newInstance: true,
+      secure: false,
+    });
+    cookies.set("cookie_preferences_set", true);
+
     const canvas = within(canvasElement);
     const $systemLightButton = canvas.getByText("System theme");
     const $themeLightButton = canvas.getByText("Light theme");
@@ -130,14 +119,24 @@ export const ThemeSelectorWithoutCookies = {
     await expect($darkLightButton).toBeVisible();
     await expect($themeSelectorNotice).toBeVisible();
 
+    await expect(cookies.isPolicyAccepted("settings")).toBe(false);
+    await expect(cookies.exists("theme")).toBe(false);
+
     await $enableSettingsCookiesButton.click();
     await expect($themeSelectorNotice).not.toBeVisible();
+    await expect(cookies.isPolicyAccepted("settings")).toBe(true);
+    await expect(cookies.exists("theme")).toBe(true);
+    await expect(cookies.get("theme")).toBe("light");
 
-    const cookies = new Cookies({
-      newInstance: true,
-      secure: false,
-      noInit: true,
-    });
+    await $darkLightButton.click();
+    await expect(cookies.get("theme")).toBe("dark");
+
+    await $systemLightButton.click();
+    await expect(cookies.get("theme")).toBe("system");
+
+    await $themeLightButton.click();
+    await expect(cookies.get("theme")).toBe("light");
+
     cookies.rejectAllPolicies();
   },
 };

@@ -16,6 +16,7 @@ export default {
       <div data-module="tna-skip-link"></div>
       <div data-module="tna-text-input"></div>
       <div data-module="tna-tabs"></div>
+      <div class="tna-table-wrapper"></div>
     `;
   },
 };

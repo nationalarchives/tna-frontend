@@ -108,7 +108,7 @@
         ],
         "type": "pages"
       },
-      "html": "<nav class=\"tna-sidebar tna-sidebar--pages\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+      "html": "<nav class=\"tna-sidebar tna-sidebar--pages\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\" aria-current=\"page\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
     },
     {
       "name": "sticky",

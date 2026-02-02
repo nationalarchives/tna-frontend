@@ -17,7 +17,7 @@
   <ul class="tna-sidebar__items">
     {%- for item in params.items %}
     <li class="tna-sidebar__item{% if item.current %} tna-sidebar__item--current{% endif %}">
-      <a href="{{ item.href }}" class="tna-sidebar__link">{{ item.text }}</a>
+      <a href="{{ item.href }}" class="tna-sidebar__link"{%- if params.type == "pages" and item.current %} aria-current="page"{% endif %}>{{ item.text }}</a>
       {%- if item.children and params.type !== "sections" %}
       <ul class="tna-sidebar__item-children">
         {%- for child in item.children %}

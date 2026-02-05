@@ -37,7 +37,6 @@ export default {
     ]),
   ),
   parameters: {
-    chromatic: { delay: 1000 },
     viewport: {
       options: customViewports,
     },

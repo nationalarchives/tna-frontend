@@ -23,6 +23,12 @@
         "type": "string",
         "required": false,
         "description": "An optional title attribute for the previous button."
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "An optional description to show below the previous button text."
       }
     ]
   },
@@ -82,6 +88,12 @@
         "type": "string",
         "required": false,
         "description": "An optional title attribute for the next button."
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "An optional description to show below the next button text."
       }
     ]
   },
@@ -91,24 +103,6 @@
     "required": false,
     "description": "An optional label for the pagination region.",
     "default": "Pagination"
-  },
-  {
-    "name": "currentItemText",
-    "type": "string",
-    "required": false,
-    "description": "If no `items` are provided, this text will be used to indicate the current page."
-  },
-  {
-    "name": "solid",
-    "type": "boolean",
-    "required": false,
-    "description": "If `true`, use a solid background for the pagination buttons."
-  },
-  {
-    "name": "spaced",
-    "type": "boolean",
-    "required": false,
-    "description": "If `true`, add spacing between the pagination buttons and align the previous and next buttons to the extreme left and right of the component respectively."
   },
   {
     "name": "classes",

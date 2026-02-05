@@ -13,39 +13,77 @@
 
   @include spacing.space-above;
 
-  &--spaced {
+  &:not(:has(&__list)) {
+    flex-wrap: nowrap;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: spacing.space(2);
   }
 
-  &__prev {
+  &__prev-next {
+    &--prev {
+      text-align: left;
+    }
+
+    &--next {
+      text-align: right;
+    }
+
+    &-button {
+      text-align: inherit;
+      text-wrap: wrap;
+
+      &--prev {
+      }
+
+      &--next {
+      }
+
+      svg {
+        margin-top: 0.35em;
+
+        align-self: flex-start;
+      }
+
+      &-text {
+        display: block;
+      }
+
+      &-title {
+        display: block;
+      }
+
+      &-description {
+        padding-bottom: spacing.space(0.25);
+
+        display: block;
+
+        line-height: 1.25;
+        @include typography.font-size(16);
+      }
+    }
   }
 
-  &__next {
+  :has(&__prev-next-button-description) &__prev-next-button-title {
+    @include typography.main-font-weight-bold;
+  }
+
+  &:not(:has(&__list)) &__prev-next {
+    flex: 1;
+
+    &-button {
+      padding: 0;
+
+      border-width: 0;
+
+      &-title {
+        @include typography.main-font-weight-bold;
+      }
+    }
   }
 
   &__link {
     min-width: 1.5rem;
-    padding-right: spacing.space(0.5);
-    padding-left: spacing.space(0.5);
-  }
-
-  &__icon {
-    display: inline-block;
-
-    path {
-      fill: currentColor;
-    }
-
-    &--prev {
-      margin-left: spacing.space(0.5);
-    }
-
-    &--next {
-      margin-right: spacing.space(0.5);
-    }
-  }
-
-  &__link-title {
     padding-right: spacing.space(0.5);
     padding-left: spacing.space(0.5);
   }
@@ -73,30 +111,32 @@
     }
   }
 
-  &__item--current &__link {
-    .tna-background-accent & {
+  @include media.on-mobile {
+    flex-direction: column;
+    gap: spacing.space(0.5);
+
+    &:not(:has(&__list)) {
+      align-items: flex-start;
+      gap: spacing.space(1);
+    }
+
+    &:not(:has(&__list)) &__prev-next {
+      &--next {
+        text-align: left;
+      }
+
+      &-button {
+        &--next {
+          flex-direction: row;
+        }
+      }
     }
   }
 
-  &__current-item-text {
-    margin-top: 0;
-
-    @include typography.main-font-weight-medium;
-  }
-
-  @include media.on-mobile {
-    flex-direction: column;
-  }
-
   @include media.on-tiny {
-    &__item {
-      display: none;
-
-      &:first-child,
-      &:last-child,
-      &--current,
-      &--ellipses {
-        display: block;
+    &:has(&__list) &__item {
+      &:not(:is(&:first-child, &:last-child, &--current, &--ellipses)) {
+        display: none;
       }
     }
   }

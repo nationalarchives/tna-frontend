@@ -10,10 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - If enabled, always show the theme selector in the footer with a message to accept settings cookies if they haven't been
+- `previous` and `next` items in pagination components can now have a `description` for when no page items are used and an alternative layout is presented
 
 ### Changed
 ### Deprecated
 ### Removed
+
+- Pagination components no longer have `currentItemText`, `solid` or `spaced` options
+
 ### Fixed
 
 - Added `aria-current="page"` to current page in pages-style sidebar

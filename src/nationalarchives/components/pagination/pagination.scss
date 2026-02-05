@@ -39,12 +39,6 @@
       &--next {
       }
 
-      svg {
-        margin-top: 0.35em;
-
-        align-self: flex-start;
-      }
-
       &-text {
         display: block;
       }
@@ -60,6 +54,14 @@
 
         line-height: 1.25;
         @include typography.font-size(16);
+      }
+
+      &:has(&-description) {
+        svg {
+          margin-top: 0.35em;
+
+          align-self: flex-start;
+        }
       }
     }
   }

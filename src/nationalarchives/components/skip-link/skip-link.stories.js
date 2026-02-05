@@ -31,9 +31,6 @@ export default {
       },
     ]),
   ),
-  parameters: {
-    chromatic: { delay: 1000 },
-  },
   render: (params) => {
     return `<p>To view the skip link component tab to this example, or click inside this example and press tab.</p>
   ${nunjucks.renderString(Template, {

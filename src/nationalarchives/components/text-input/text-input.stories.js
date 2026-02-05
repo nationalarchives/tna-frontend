@@ -113,9 +113,6 @@ export default {
       },
     ]),
   ),
-  parameters: {
-    chromatic: { delay: 1000 },
-  },
   render: (params) => {
     return nunjucks.renderString(Template, { params });
   },

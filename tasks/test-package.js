@@ -47,6 +47,9 @@ const checkExists = [
   "nationalarchives/analytics.js",
   "nationalarchives/analytics.js.map",
   "nationalarchives/analytics.mjs",
+  "nationalarchives/email.css",
+  "nationalarchives/email.css.map",
+  "nationalarchives/email.scss",
   "nationalarchives/font-awesome.css",
   "nationalarchives/font-awesome.css.map",
   "nationalarchives/font-awesome.scss",
@@ -166,6 +169,7 @@ const checkExists = [
   "nationalarchives/templates/index-grid.njk",
   "nationalarchives/templates/list.njk",
   "nationalarchives/templates/plain.njk",
+  "nationalarchives/templates/email.njk",
   // Config
   "config/.babelrc.json",
   "config/.eslintrc.js",

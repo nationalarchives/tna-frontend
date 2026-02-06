@@ -2,6 +2,7 @@
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-text-input {
   padding: 0 spacing.space(0.375);
@@ -59,6 +60,28 @@
       svg {
         width: 28px;
         margin: 0;
+      }
+    }
+  }
+
+  &--show-autofill:is(:-webkit-autofill, :autofill) {
+    .tna-form-item__body:has(&) {
+      &::after {
+        content: "Autofilled";
+
+        width: min-content;
+        margin-top: spacing.space(0.25);
+        margin-left: auto;
+        padding: spacing.space(0.25) spacing.space(0.375);
+
+        display: block;
+
+        line-height: 1;
+        @include typography.font-size(14);
+
+        @include colour.blue-accent;
+        @include colour.accent;
+        @include borders.rounded-border;
       }
     }
   }

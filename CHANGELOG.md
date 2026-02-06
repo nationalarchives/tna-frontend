@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - If enabled, always show the theme selector in the footer with a message to accept settings cookies if they haven't been
 - `previous` and `next` items in pagination components can now have a `description` for when no page items are used and an alternative layout is presented
+- Style added to show autofilled text inputs
 
 ### Changed
 ### Deprecated

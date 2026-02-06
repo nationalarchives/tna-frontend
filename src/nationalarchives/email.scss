@@ -72,6 +72,9 @@
   }
 
   &__title {
+    margin-bottom: spacing.space(0.25);
+
+    line-height: 1.125;
   }
 
   &__address {

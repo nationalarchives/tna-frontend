@@ -1,6 +1,7 @@
 import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
 import macroOptions from "./macro-options.json";
+import { within, expect } from "storybook/test";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -112,9 +113,6 @@ export default {
       },
     ]),
   ),
-  parameters: {
-    chromatic: { delay: 1000 },
-  },
   render: (params) => {
     return nunjucks.renderString(Template, { params });
   },
@@ -178,5 +176,28 @@ export const Password = {
     name: "password",
     password: true,
     classes: "tna-text-input--demo",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const $input = canvas.getByLabelText("Enter your password");
+    const $button = canvas.getByRole("button");
+
+    await expect($input.type).toEqual("password");
+    await expect($button.ariaLabel).toEqual("Show password");
+
+    await $input.focus();
+    await expect($input).toHaveFocus();
+
+    await $button.click();
+
+    await expect($input).toHaveFocus();
+    await expect($input.type).toEqual("text");
+    await expect($button.ariaLabel).toEqual("Hide password");
+
+    await $button.click();
+
+    await expect($input).toHaveFocus();
+    await expect($input.type).toEqual("password");
+    await expect($button.ariaLabel).toEqual("Show password");
   },
 };

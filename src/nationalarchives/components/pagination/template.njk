@@ -1,19 +1,17 @@
 {% from "nationalarchives/components/button/macro.njk" import tnaButton %}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
-{%- if params.spaced -%}
-  {%- set containerClasses = containerClasses.concat('tna-pagination--spaced') -%}
-{%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <nav class="tna-pagination{% if classes %} {{ classes }}{% endif %}" aria-label="{{ params.landmarkLabel if params.landmarkLabel else 'Pagination' }}" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {% if params.previous -%}
-  <div class="tna-pagination__prev">
+  <div class="tna-pagination__prev-next tna-pagination__prev-next--prev">
     {{ tnaButton({
-      text: params.previous.text if params.previous.text else 'Previous',
+      html: '<span class="tna-pagination__prev-next-button-text"><span class="tna-pagination__prev-next-button-title">' ~ (params.previous.text if params.previous.text else 'Previous') ~ '</span>' ~ ('<span class="tna-pagination__prev-next-button-description">' ~ params.previous.description ~ '</span>' if params.previous.description else '') ~ '</span>',
       href: params.previous.href,
       title: params.previous.title,
       iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="24" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"/></svg>',
-      plain: not params.solid,
+      plain: true,
+      classes: 'tna-pagination__prev-next-button tna-pagination__prev-next-button--prev',
       attributes: {
         rel: 'prev'
       }
@@ -31,8 +29,7 @@
           text: item.number,
           href: item.href,
           title: 'Page ' ~ item.number,
-          accent: params.solid and item.current,
-          plain: not params.solid and not item.current,
+          plain: not item.current,
           classes: 'tna-pagination__link',
           attributes: { 'aria-current': 'page' } if item.current else {}
         }) }}
@@ -44,14 +41,14 @@
     <p class="tna-pagination__current-item-text">{{ params.currentItemText }}</p>
   {% endif -%}
   {% if params.next -%}
-  <div class="tna-pagination__next">
+  <div class="tna-pagination__prev-next tna-pagination__prev-next--next">
     {{ tnaButton({
-      text: params.next.text if params.next.text else 'Next',
+      html: '<span class="tna-pagination__prev-next-button-text"><span class="tna-pagination__prev-next-button-title">' ~ (params.next.text if params.next.text else 'Next') ~ '</span>' ~ ('<span class="tna-pagination__prev-next-button-description">' ~ params.next.description ~ '</span>' if params.next.description else '') ~ '</span>',
       href: params.next.href,
       title: params.next.title,
       iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="24" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg>',
-      plain: not params.solid,
-      classes: 'tna-button--icon-right',
+      plain: true,
+      classes: 'tna-pagination__prev-next-button tna-pagination__prev-next-button--next tna-button--icon-right',
       attributes: {
         rel: 'next'
       }

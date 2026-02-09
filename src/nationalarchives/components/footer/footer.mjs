@@ -24,6 +24,8 @@ export class Footer {
       return;
     }
 
+    this.currentTheme = this.$themeSelector.dataset.themeOnLoad;
+
     this.themeCookieName = themeCookieName;
 
     this.cookies = new Cookies();
@@ -37,9 +39,6 @@ export class Footer {
         const $button = e.target;
         this.setTheme($button.value);
         this.selectThemeSelectorButton($button);
-        console.log(document.cookie);
-        console.log(this.cookies.all);
-        console.log(this.cookies.policies);
       });
     });
 
@@ -54,9 +53,10 @@ export class Footer {
     this.cookies.on("changePolicy", (data) => {
       if (Object.hasOwn(data, "settings")) {
         if (data.settings === true) {
+          this.cookies.set(this.themeCookieName, this.currentTheme);
           this.$themeSelectorNotice.setAttribute("hidden", "");
         } else {
-          this.cookies.delete(this.themecookiename);
+          this.cookies.delete(this.themeCookieName);
           this.$themeSelectorNotice.removeAttribute("hidden");
         }
       }
@@ -65,9 +65,9 @@ export class Footer {
 
   showThemeSelector() {
     this.$themeSelector.removeAttribute("hidden");
-    if (this.cookies.exists(this.themecookiename)) {
+    if (this.cookies.exists(this.themeCookieName)) {
       const $currentThemeButton = Array.from(this.$themeSelectorButtons).find(
-        ($button) => $button.value === this.cookies.get(this.themecookiename),
+        ($button) => $button.value === this.cookies.get(this.themeCookieName),
       );
       if ($currentThemeButton) {
         this.selectThemeSelectorButton($currentThemeButton);
@@ -93,8 +93,9 @@ export class Footer {
     } else {
       return;
     }
+    this.currentTheme = theme;
     if (this.cookies.isPolicyAccepted("settings")) {
-      this.cookies.set(this.themecookiename, theme);
+      this.cookies.set(this.themeCookieName, this.currentTheme);
     } else {
       this.$themeSelectorNotice.removeAttribute("hidden");
     }

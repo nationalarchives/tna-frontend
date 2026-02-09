@@ -77,7 +77,11 @@ export const parameters = {
 export const decorators = [
   (Story, ctx) => {
     window.dataLayer = [];
-    const cookies = new Cookies();
+    const cookies = new Cookies({
+      newInstance: true,
+      secure: false,
+      noInit: true,
+    });
     cookies.deleteAll();
     const story = Story();
     // if (window && ctx.args.disableMockAnalytics !== true) {

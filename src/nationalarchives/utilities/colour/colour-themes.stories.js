@@ -797,7 +797,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -891,7 +891,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -985,7 +985,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -1079,7 +1079,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -1173,7 +1173,7 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {

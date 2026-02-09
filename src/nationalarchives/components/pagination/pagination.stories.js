@@ -11,9 +11,6 @@ export default {
       previous: { control: "object" },
       items: { control: "object" },
       next: { control: "object" },
-      currentItemText: { control: "text" },
-      solid: { control: "boolean" },
-      spaced: { control: "boolean" },
       landmarkLabel: { control: "text" },
       classes: { control: "text" },
       attributes: { control: "object" },
@@ -35,9 +32,6 @@ export default {
       },
     ]),
   ),
-  parameters: {
-    chromatic: { delay: 1000 },
-  },
   render: (params) => {
     return nunjucks.renderString(Template, { params });
   },
@@ -80,7 +74,6 @@ export const Standard = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -110,7 +103,6 @@ export const First = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -147,7 +139,6 @@ export const Second = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -188,7 +179,6 @@ export const Third = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -233,7 +223,6 @@ export const Forth = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -277,7 +266,6 @@ export const Fifth = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -321,7 +309,6 @@ export const LastMinus4 = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -366,7 +353,6 @@ export const LastMinus3 = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -407,7 +393,6 @@ export const LastMinus2 = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -444,7 +429,6 @@ export const LastMinus1 = {
     next: {
       href: "#",
     },
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -474,49 +458,6 @@ export const Last = {
         href: "#",
       },
     ],
-    classes: "tna-pagination--demo",
-  },
-};
-
-export const Solid = {
-  args: {
-    previous: {
-      href: "#",
-    },
-    items: [
-      {
-        number: 1,
-        href: "#",
-      },
-      {
-        ellipsis: true,
-      },
-      {
-        number: 6,
-        href: "#",
-      },
-      {
-        number: 7,
-        current: true,
-        href: "#",
-      },
-      {
-        number: 8,
-        href: "#",
-      },
-      {
-        ellipsis: true,
-      },
-      {
-        number: 42,
-        href: "#",
-      },
-    ],
-    next: {
-      href: "#",
-    },
-    solid: true,
-    classes: "tna-pagination--demo",
   },
 };
 
@@ -524,16 +465,14 @@ export const NoNumbers = {
   args: {
     previous: {
       href: "#",
-      text: "TS 11/45/166",
-      title: "From the catalogue: TS 11/45/166",
+      text: "Previous: TS 11/45/166",
+      description: "Previous item description",
     },
-    currentItemText: "From the catalogue: TS 11/45/167",
     next: {
       href: "#",
-      text: "TS 11/45/168",
-      title: "From the catalogue: TS 11/45/168",
+      text: "Next: TS 11/45/168",
+      description:
+        "Next item description which is quite long and should wrap onto multiple lines to test the layout of the pagination component when this happens",
     },
-    spaced: true,
-    classes: "tna-pagination--demo",
   },
 };

@@ -180,7 +180,7 @@
 
 <footer class="tna-footer{% if classes %} {{ classes }}{% endif %}" data-module="tna-footer" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.themeSelector %}
-  <section class="tna-footer__theme-selector tna-background-tint" hidden>
+  <section class="tna-footer__theme-selector tna-background-tint" data-theme-on-load="{{ params.currentTheme or 'light' }}" hidden>
     <div class="tna-container tna-!--padding-vertical-xs">
       <div class="tna-column tna-column--flex-1">
         <h2 class="tna-visually-hidden">Change the site theme</h2>

@@ -362,6 +362,8 @@ export const Test = {
         await expectButtonAndSectionAToBeCurrent();
       });
 
+      await userEvent.keyboard("[Space]");
+
       await buttonA.blur();
     });
   },

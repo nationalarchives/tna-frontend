@@ -154,6 +154,42 @@ export const Reject = {
   },
 };
 
+export const RejectAndClose = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    serviceName: "My service",
+    cookiesUrl: "#",
+    classes: "tna-cookie-banner--demo",
+    disableMockAnalytics: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const rejectButton = canvas.getByText("Reject cookies");
+    await userEvent.click(rejectButton);
+
+    const closeButton = canvas.getAllByText("Hide cookies message")[1];
+    await expect(closeButton).toBeVisible();
+    await closeButton.click();
+    await expect(closeButton).not.toBeVisible();
+
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+      location.hostname
+        .split(".")
+        .reverse()
+        .reduce(
+          (domain) => (
+            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
+            domain
+          ),
+          location.hostname,
+        ),
+    );
+  },
+};
+
 export const ExistingNotComplete = {
   args: {
     serviceName: "My service",

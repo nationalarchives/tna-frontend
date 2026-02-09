@@ -4,10 +4,36 @@
 @use "../../tools/typography";
 @use "../../utilities/typography" as typographyUtils;
 
-ul,
+ul {
+  list-style-type: disc;
+
+  & & {
+    list-style-type: circle;
+  }
+
+  & & & {
+    list-style-type: square;
+  }
+
+  & & & & {
+    list-style-type: disc;
+  }
+}
+
 ol {
-  margin: 0;
-  padding: 0;
+  list-style-type: decimal;
+
+  & & {
+    list-style-type: lower-alpha;
+  }
+
+  & & & {
+    list-style-type: lower-roman;
+  }
+
+  & & & & {
+    list-style-type: decimal;
+  }
 }
 
 .tna-ul,
@@ -46,46 +72,8 @@ ol {
     margin-top: spacing.space(0.5);
   }
 
-  // &--spaced > li > & {
-  //   margin-top: spacing.space(1);
-  //   margin-bottom: spacing.space(1);
-  // }
-
   &:not(&--plain) > li > & {
-    margin-top: 0;
     padding-left: spacing.space(1.25);
-  }
-}
-
-.tna-ul {
-  list-style-type: disc;
-
-  & & {
-    list-style-type: circle;
-  }
-
-  & & & {
-    list-style-type: square;
-  }
-
-  & & & & {
-    list-style-type: disc;
-  }
-}
-
-.tna-ol {
-  list-style-type: decimal;
-
-  & & {
-    list-style-type: lower-alpha;
-  }
-
-  & & & {
-    list-style-type: lower-roman;
-  }
-
-  & & & & {
-    list-style-type: decimal;
   }
 }
 
@@ -136,6 +124,17 @@ ol {
 @mixin stacked-dl {
   display: block;
 
+  &--lined {
+    padding-bottom: 0;
+
+    > dd {
+      border-top: none;
+
+      padding-top: 0;
+      padding-bottom: spacing.space(0.5);
+    }
+  }
+
   &--zebra {
     > dt {
       --background: var(--background-tint);
@@ -145,17 +144,6 @@ ol {
 
     > dd:nth-child(1n) {
       background: none;
-    }
-  }
-
-  &--lined {
-    padding-bottom: 0;
-
-    > dd {
-      border-top: none;
-
-      padding-top: 0;
-      padding-bottom: spacing.space(0.5);
     }
   }
 }
@@ -176,6 +164,7 @@ ol {
 
   > dt {
     @include typography.main-font-weight-bold;
+    position: relative;
 
     .fa-solid,
     .fa-brands {
@@ -190,23 +179,28 @@ ol {
     }
   }
 
+  &:has(> dt > .fa-solid, > dt > .fa-brands) {
+    > dt {
+      padding-left: spacing.space(2);
+    }
+  }
+
   > dd {
     padding-left: spacing.space(2);
 
     grid-column-start: 2;
   }
 
-  &:has(:is(.fa-solid, .fa-brands)) {
-    dt {
-      padding-left: spacing.space(2);
-
-      position: relative;
-    }
-  }
-
-  &--zebra,
   &--lined {
-    dt {
+    padding-bottom: spacing.space(0.5);
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    > dt,
+    > dd {
+      padding-top: spacing.space(0.5);
+      @include colour.colour-border("keyline", 1px, solid, top);
+
       .fa-solid,
       .fa-brands {
         top: spacing.space(0.5);
@@ -217,10 +211,19 @@ ol {
   &--zebra {
     gap: 0;
 
-    dt,
-    dd {
+    /* stylelint-disable-next-line no-descending-specificity */
+    > dt,
+    > dd {
       padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
         spacing.space(1);
+    }
+
+    > dt {
+      .fa-solid,
+      .fa-brands {
+        top: spacing.space(0.5);
+        left: spacing.space(1);
+      }
     }
 
     > dt:first-child,
@@ -229,26 +232,10 @@ ol {
       @include colour.tint;
     }
 
-    &:has(:is(.fa-solid, .fa-brands)) {
-      dt {
+    &:has(> dt > .fa-solid, > dt > .fa-brands) {
+      > dt {
         padding-left: spacing.space(3);
-
-        .fa-solid,
-        .fa-brands {
-          left: spacing.space(1);
-        }
       }
-    }
-  }
-
-  &--lined {
-    padding-bottom: spacing.space(0.5);
-    @include colour.colour-border("keyline", 1px, solid, bottom);
-
-    > dt,
-    > dd {
-      padding-top: spacing.space(0.5);
-      @include colour.colour-border("keyline", 1px, solid, top);
     }
   }
 

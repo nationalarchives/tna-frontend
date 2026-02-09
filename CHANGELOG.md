@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added `aria-current="page"` to current page in pages-style sidebar
+- Spacing has changed from `px` to `rem` in order to match the typography to fix layout issues that occur when the font is scaled on certain operating systems or browsers
 
 ### Security
 

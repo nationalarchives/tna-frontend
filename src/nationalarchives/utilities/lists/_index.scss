@@ -151,7 +151,7 @@ ol {
 .tna-dl {
   @include spacing.space-above;
 
-  display: inline-grid;
+  display: grid;
   grid-template-columns: auto;
   gap: spacing.space(0.5) 0;
 

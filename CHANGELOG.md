@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed layout of description lists with very long content and balanced columns as 1:2
+- Fixed layout of description lists with very long content
 
 ## [0.33.0](https://github.com/nationalarchives/tna-frontend/compare/v0.32.0...v0.33.0) - 2026-02-10
 

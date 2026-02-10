@@ -11,12 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - If enabled, always show the theme selector in the footer with a message to accept settings cookies if they haven't been
 - `previous` and `next` items in pagination components can now have a `description` for when no page items are used and an alternative layout is presented
+- Description lists now have `.tna-dl--zebra` and `.tna-dl--lined` styles
 
 ### Changed
+
+- The default `.tna-dl` style is now a plain description list
+
 ### Deprecated
 ### Removed
 
 - Pagination components no longer have `currentItemText`, `solid` or `spaced` options
+- `.tna-dl--plain` is no longer needed
 
 ### Fixed
 

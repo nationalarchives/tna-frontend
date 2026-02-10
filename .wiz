@@ -1,0 +1,7 @@
+# https://docs.wiz.io/docs/exception-management-with-wiz-code#configuration-file-wiz
+
+ignore:
+  sast:
+    WS-I013-JAVASCRIPT-00113:
+      src/nationalarchives/utilities/lists/ordered-lists.stories.js:
+        reason: RISK_ACCEPTED

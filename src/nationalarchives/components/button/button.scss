@@ -62,6 +62,7 @@ $button-border-width: 4px !default;
 
   &--plain {
     @include typography.main-font-weight;
+    text-decoration: underline;
 
     background-color: transparent;
 

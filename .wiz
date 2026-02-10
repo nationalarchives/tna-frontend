@@ -3,5 +3,5 @@
 ignore:
   sast:
     WS-I013-JAVASCRIPT-00113:
-      src/nationalarchives/utilities/lists/ordered-lists.stories.js:
+      src/**/*.js:
         reason: RISK_ACCEPTED

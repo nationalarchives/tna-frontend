@@ -151,9 +151,17 @@ ol {
 .tna-dl {
   @include spacing.space-above;
 
-  display: grid;
-  grid-template-columns: max-content;
+  display: inline-grid;
+  grid-template-columns: auto;
   gap: spacing.space(0.5) 0;
+
+  &--left-weighted {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &--right-weighted {
+    grid-template-columns: 1fr 2fr;
+  }
 
   > dt,
   > dd {

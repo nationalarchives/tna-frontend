@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Plain buttons are now underlined
+- Updated sun icon in theme selector
 
 ### Deprecated
 ### Removed

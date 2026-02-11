@@ -45,7 +45,7 @@
   "sass": "nationalarchives/all.scss",
   "homepage": "https://github.com/nationalarchives/tna-frontend#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.1"
+    "@fortawesome/fontawesome-free": "^7.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.8",

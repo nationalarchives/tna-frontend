@@ -247,7 +247,6 @@
 
   .tna-logo {
     width: 6.75rem;
-    height: 6.75rem;
 
     flex-shrink: 0;
   }
@@ -285,7 +284,6 @@
 
     &--collapse-on-medium .tna-logo {
       width: 5rem;
-      height: 5rem;
     }
 
     &--collapse-on-medium &__logo-strapline {
@@ -380,7 +378,6 @@
   @include media.on-small {
     .tna-logo {
       width: 4rem;
-      height: 4rem;
     }
 
     &__logo-strapline {
@@ -401,7 +398,6 @@
   @include media.on-tiny {
     .tna-logo {
       width: 3.5rem;
-      height: 3.5rem;
     }
 
     &__logo-strapline {

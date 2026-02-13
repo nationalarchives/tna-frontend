@@ -70,7 +70,9 @@ const newTemplateFixtures = {
     ...fixture,
     html: nunjucks
       .renderString(
-        require(`../${templatesDirectory}${fixture.template}`),
+        fixture.template
+          ? require(`../${templatesDirectory}${fixture.template}`)
+          : fixture.string,
         fixture.options,
       )
       .trim()

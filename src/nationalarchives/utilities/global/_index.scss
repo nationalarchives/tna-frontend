@@ -39,8 +39,9 @@
 
 .tna-logo {
   width: 6rem;
+  aspect-ratio: 1;
 
-  display: inline-block;
+  display: block;
 
   svg {
     width: 100%;

@@ -135,7 +135,7 @@ const checkExists = [
   "nationalarchives/utilities/_columns.scss",
   "nationalarchives/utilities/_debug.scss",
   "nationalarchives/utilities/forms/_index.scss",
-  "nationalarchives/utilities/_global.scss",
+  "nationalarchives/utilities/global/_index.scss",
   "nationalarchives/utilities/grid/_index.scss",
   "nationalarchives/utilities/grid/fixtures.json",
   "nationalarchives/utilities/grid/macro-options.json",
@@ -162,6 +162,7 @@ const checkExists = [
   // Templates
   "nationalarchives/templates/layouts/_generic.njk",
   "nationalarchives/templates/layouts/_prototype-kit.njk",
+  "nationalarchives/templates/partials/logo.njk",
   "nationalarchives/templates/error-page-not-found.njk",
   "nationalarchives/templates/index-grid.njk",
   "nationalarchives/templates/list.njk",

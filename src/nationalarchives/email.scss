@@ -1,0 +1,143 @@
+@use "utilities";
+@use "tools/borders";
+@use "tools/colour";
+@use "tools/media";
+@use "tools/shadows";
+@use "tools/spacing";
+@use "tools/typography";
+@use "components/button";
+@use "components/panel";
+
+.tna-template {
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  &__body {
+    padding: spacing.space(2) spacing.space(1);
+  }
+
+  &__main {
+    min-width: 320px;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+    @include borders.rounded-border;
+    @include shadows.drop-shadow;
+
+    @media (prefers-color-scheme: dark) {
+      @include colour.colour-border("keyline", 1px, solid);
+    }
+  }
+
+  &__content {
+    padding: spacing.space(2);
+
+    @include typography.font-size(19);
+  }
+}
+
+.tna-logo {
+  width: 5rem;
+}
+
+.tna-email-header {
+  width: 100%;
+  padding: spacing.space(1) spacing.space(2);
+
+  box-sizing: border-box;
+  @include colour.contrast;
+}
+
+.tna-email-footer {
+  padding: spacing.space(1.5) spacing.space(2);
+
+  @include typography.font-size(16);
+  @include colour.contrast;
+
+  &__title {
+    margin-bottom: spacing.space(0.25);
+
+    line-height: 1.125;
+  }
+
+  &__address {
+  }
+
+  &__email {
+    margin-top: 0;
+  }
+
+  &__social {
+    &-items {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: spacing.space(1) spacing.space(2);
+    }
+
+    &-item {
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: spacing.space(0.5);
+
+        line-height: 1.25;
+        text-decoration: none;
+
+        svg {
+          height: 1.5em;
+
+          path {
+            fill: currentColor;
+          }
+        }
+
+        &:hover {
+          @include typography.interacted-text-decoration;
+        }
+
+        &-text {
+        }
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+
+  color: inherit;
+  font-size: inherit;
+
+  border-collapse: separate;
+  /* stylelint-disable property-no-unknown */
+  mso-table-lspace: 0;
+  mso-table-rspace: 0;
+  /* stylelint-enable property-no-unknown */
+}
+
+@include media.on-small {
+  .tna-email-header {
+    .tna-logo {
+      width: 4rem;
+    }
+  }
+}
+
+@include media.on-tiny {
+  .tna-template__content,
+  .tna-email-header,
+  .tna-email-footer {
+    padding: spacing.space(1);
+  }
+
+  .tna-email-header {
+    .tna-logo {
+      width: 3.5rem;
+    }
+  }
+}

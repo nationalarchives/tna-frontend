@@ -1,0 +1,147 @@
+{%- from 'nationalarchives/components/button/macro.njk' import tnaButton -%}
+{%- from 'nationalarchives/components/panel/macro.njk' import tnaPanel -%}
+{% from "nationalarchives/templates/partials/logo.njk" import tnaLogo %}
+
+<!DOCTYPE html>
+<html lang="en" class="tna-template tna-template--green-accent tna-template--system-theme">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{{ subject }}</title>
+    <link rel="preconnect" href="https://use.typekit.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- COMPILED_CSS -->
+    <link rel="stylesheet" href="https://use.typekit.net/kaq6qqh.css" media="screen,print">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&family=Roboto+Mono:wght@400..500&display=swap">
+    <link rel="stylesheet" href="https://www.nationalarchives.gov.uk/enrichment/css/logo-adornments.css" media="screen">
+  </head>
+  <body class="tna-template__body">
+    <div class="tna-template__main">
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+          <td>
+            <div class="tna-email-header">
+              {{ tnaLogo({size: 80, adornable: true}) }}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tna-template__content">
+              {%- if panel %}
+              {{ tnaPanel(panel) }}
+              {%- endif %}
+              {{ content | safe }}
+              {%- if cta_buttons %}
+              <div class="tna-button-group">
+                {%- for button in cta_buttons %}
+                {{ tnaButton(button) }}
+                {%- endfor %}
+              </div>
+              {%- endif %}
+              {{ signoff | safe }}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="tna-email-footer">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="80" valign="middle">
+                          {{ tnaLogo({size: 80}) }}
+                        </td>
+                        <td width="24"></td>
+                        <td valign="middle">
+                          <h2 class="tna-heading-s tna-email-footer__title" translate="no">The National Archives</h2>
+                          <address class="tna-email-footer__address" translate="no">
+                            Kew, Richmond<br>
+                            TW9 4DU
+                          </address>
+                          <p class="tna-email-footer__email"><a href="https://www.nationalarchives.gov.uk">nationalarchives.gov.uk</a></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="24"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <hr>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="24"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <h3 class="tna-!--visually-hidden">
+                            Follow us on social media
+                          </h3>
+                          <nav class="tna-email-footer__social" aria-label="Social">
+                            <ul class="tna-ul tna-ul--plain tna-email-footer__social-items">
+                              <li class="tna-email-footer__social-item">
+                                <a href="https://twitter.com/UKNatArchives" class="tna-email-footer__social-item-link">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="32" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"></path></svg>
+                                  <span class="tna-email-footer__social-item-link-text">
+                                    X (formerly Twitter)
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="tna-email-footer__social-item">
+                                <a href="https://www.youtube.com/c/TheNationalArchivesUK" class="tna-email-footer__social-item-link">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="32" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z"></path></svg>
+                                  <span class="tna-email-footer__social-item-link-text">
+                                    YouTube
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="tna-email-footer__social-item">
+                                <a href="https://www.facebook.com/TheNationalArchives" class="tna-email-footer__social-item-link">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="32" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 440 146.7 540.8 258.2 568.5L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 574.1C477.8 558.8 576 450.9 576 320z"></path></svg>
+                                  <span class="tna-email-footer__social-item-link-text">
+                                    Facebook
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="tna-email-footer__social-item">
+                                <a href="https://www.flickr.com/photos/nationalarchives" class="tna-email-footer__social-item-link">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="32" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M496 96L144 96C117.5 96 96 117.5 96 144L96 496C96 522.5 117.5 544 144 544L496 544C522.5 544 544 522.5 544 496L544 144C544 117.5 522.5 96 496 96zM240.5 256C275.6 256 304 284.4 304 319.5C304 354.6 275.6 383 240.5 383C205.4 383 177 354.6 177 319.5C177 284.4 205.4 256 240.5 256zM399.5 256C434.6 256 463 284.4 463 319.5C463 354.6 434.6 383 399.5 383C364.4 383 336 354.6 336 319.5C336 284.4 364.4 256 399.5 256z"></path></svg>
+                                  <span class="tna-email-footer__social-item-link-text">
+                                    Flickr
+                                  </span>
+                                </a>
+                              </li>
+                              <li class="tna-email-footer__social-item">
+                                <a href="https://www.instagram.com/nationalarchivesuk/" class="tna-email-footer__social-item-link">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" height="32" aria-hidden="true" focusable="false"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z"></path></svg>
+                                  <span class="tna-email-footer__social-item-link-text">
+                                    Instagram
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script type="module" src="https://www.nationalarchives.gov.uk/enrichment/js/logo-adornments.js" defer></script>
+  </body>
+</html>

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Reusable `tnaLogo` macro in `nationalarchives/templates/partials/logo.njk` added to header, global header and footer components
+- New email template and styles created
 
 ### Changed
 

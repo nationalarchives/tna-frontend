@@ -5,3 +5,13 @@ ignore:
     WS-I013-JAVASCRIPT-00113:
       src/**/*.js:
         reason: RISK_ACCEPTED
+      tasks/**/*.js:
+        reason: RISK_ACCEPTED
+
+    WS-I013-JAVASCRIPT-00093:
+      tasks/**/*.js:
+        reason: RISK_ACCEPTED
+
+    WS-I011-TYPESCRIPT-00001:
+      tasks/**/*.js:
+        reason: RISK_ACCEPTED

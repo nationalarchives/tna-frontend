@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `tnaLogo` macro added in `nationalarchives/templates/partials/logo.njk`
+- Reusable `tnaLogo` macro in `nationalarchives/templates/partials/logo.njk` added to header, global header and footer components
 
 ### Changed
 

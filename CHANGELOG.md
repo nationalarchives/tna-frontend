@@ -5,26 +5,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.32.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.33.2...HEAD)
+
+### Added
+
+- Reusable `tnaLogo` macro in `nationalarchives/templates/partials/logo.njk` added to header, global header and footer components
+- New email template and styles created
+
+### Changed
+
+- Plain buttons are now underlined
+- Updated sun icon in theme selector
+
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.33.2](https://github.com/nationalarchives/tna-frontend/compare/v0.33.1...v0.33.2) - 2026-02-10
+
+### Fixed
+
+- Changed description list from `inline-grid` to `grid` to avoid side-by-side layouts
+
+## [0.33.1](https://github.com/nationalarchives/tna-frontend/compare/v0.33.0...v0.33.1) - 2026-02-10
+
+### Added
+
+- Added `tna-dl--left-weighted` and `tna-dl--right-weighted` as options to balance and size description list columns
+
+### Fixed
+
+- Fixed layout of description lists with very long content
+
+## [0.33.0](https://github.com/nationalarchives/tna-frontend/compare/v0.32.0...v0.33.0) - 2026-02-10
 
 ### Added
 
 - If enabled, always show the theme selector in the footer with a message to accept settings cookies if they haven't been
 - `previous` and `next` items in pagination components can now have a `description` for when no page items are used and an alternative layout is presented
-- New email template and styles created
+- Description lists now have `.tna-dl--zebra` and `.tna-dl--lined` styles
 
 ### Changed
-### Deprecated
+
+- The default `.tna-dl` style is now a plain description list
+
 ### Removed
 
 - Pagination components no longer have `currentItemText`, `solid` or `spaced` options
+- `.tna-dl--plain` is no longer needed
 
 ### Fixed
 
 - Added `aria-current="page"` to current page in pages-style sidebar
 - Spacing has changed from `px` to `rem` in order to match the typography to fix layout issues that occur when the font is scaled on certain operating systems or browsers
-
-### Security
 
 ## [0.32.0](https://github.com/nationalarchives/tna-frontend/compare/v0.31.0...v0.32.0) - 2026-01-21
 

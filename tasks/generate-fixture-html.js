@@ -49,9 +49,9 @@ const templatesDirectory = "../src/nationalarchives/templates/";
 require(`${templatesDirectory}fixtures.json`)
   .fixtures.filter((fixture) => fixture.template !== "email.njk")
   .forEach((fixture) => {
-    const templateNunjucks = require(
-      `${templatesDirectory}${fixture.template}`,
-    );
+    const templateNunjucks = fixture.template
+      ? require(`${templatesDirectory}${fixture.template}`)
+      : fixture.string;
     const result = renderNunjucks(templateNunjucks, {
       ...fixture.options,
     });

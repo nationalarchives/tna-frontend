@@ -72,9 +72,9 @@ const templatesDirectory = "src/nationalarchives/templates/";
 const templateFixturesFile = `${templatesDirectory}fixtures.json`;
 const templateFixtures = require(`../${templateFixturesFile}`);
 const failedTemplates = templateFixtures.fixtures.filter((fixture) => {
-  const templateNunjucks = require(
-    `../${templatesDirectory}${fixture.template}`,
-  );
+  const templateNunjucks = fixture.template
+    ? require(`../${templatesDirectory}${fixture.template}`)
+    : fixture.string;
   const result = renderNunjucks(templateNunjucks, fixture.options, true);
   const mismatch = result !== fixture.html;
   if (mismatch) {

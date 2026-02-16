@@ -35,20 +35,12 @@
   &__content {
     padding: spacing.space(2);
 
-    font-size: 19px;
+    @include typography.font-size(19);
   }
 }
 
 .tna-logo {
   width: 5rem;
-  height: 5rem;
-
-  display: block;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .tna-email-header {
@@ -57,19 +49,13 @@
 
   box-sizing: border-box;
   @include colour.contrast;
-
-  .tna-logo {
-  }
 }
 
 .tna-email-footer {
   padding: spacing.space(1.5) spacing.space(2);
 
-  font-size: 16px;
+  @include typography.font-size(16);
   @include colour.contrast;
-
-  .tna-logo {
-  }
 
   &__title {
     margin-bottom: spacing.space(0.25);
@@ -98,7 +84,6 @@
         align-items: center;
         gap: spacing.space(0.5);
 
-        @include typography.font-size(16);
         line-height: 1.25;
         text-decoration: none;
 
@@ -139,7 +124,6 @@ table {
   .tna-email-header {
     .tna-logo {
       width: 4rem;
-      height: 4rem;
     }
   }
 }
@@ -154,7 +138,6 @@ table {
   .tna-email-header {
     .tna-logo {
       width: 3.5rem;
-      height: 3.5rem;
     }
   }
 }

@@ -50,7 +50,7 @@ export const CallsToAction = {
   args: {
     subject: "Respond to a request to access a record",
     content:
-      '<p>You have received a request to access the following record:</p><dl class="tna-dl tna-dl--plain"><dt>Record IAID</dt><dd>C1234</dd><dt>Record name</dt><dd>Example record</dd></dl><p>Please review the request and either accept or reject it.</p>',
+      '<p>You have received a request to access the following record:</p><dl class="tna-dl"><dt>Record IAID</dt><dd>C1234</dd><dt>Record name</dt><dd>Example record</dd></dl><p>Please review the request and either accept or reject it.</p>',
     cta_buttons: [
       {
         text: "Accept this request",

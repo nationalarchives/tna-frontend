@@ -1,10 +1,10 @@
-import Template from "../../templates/partials/logo.njk?raw";
+import Template from "./partials/logo.njk?raw";
 import nunjucks from "nunjucks";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
-  title: "Utilities/Globals",
+  title: "Templates/Logo",
   argTypes: {
     solid: { control: "boolean" },
     size: { control: "number" },

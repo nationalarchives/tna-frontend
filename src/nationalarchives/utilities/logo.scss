@@ -1,0 +1,27 @@
+.tna-logo {
+  width: 6rem;
+  aspect-ratio: 1;
+
+  display: block;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__background {
+    fill: transparent;
+  }
+
+  &__foreground {
+    fill: currentColor;
+  }
+
+  &--solid &__background {
+    fill: #fff;
+  }
+
+  &--solid &__foreground {
+    fill: #010101;
+  }
+}

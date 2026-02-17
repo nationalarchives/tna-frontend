@@ -1,7 +1,7 @@
-@use "../tools/borders";
-@use "../tools/colour";
-@use "../tools/media";
-@use "../tools/spacing";
+@use "../../tools/borders";
+@use "../../tools/colour";
+@use "../../tools/media";
+@use "../../tools/spacing";
 
 .tna-section {
   padding-top: spacing.space(3);

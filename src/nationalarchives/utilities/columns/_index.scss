@@ -1,5 +1,5 @@
-@use "../tools/media";
-@use "../tools/grid";
+@use "../../tools/media";
+@use "../../tools/grid";
 
 .tna-columns {
   column-gap: grid.gutter-width();

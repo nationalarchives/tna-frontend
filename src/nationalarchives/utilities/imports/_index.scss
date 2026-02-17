@@ -1,6 +1,6 @@
-@use "../variables/assets";
-@use "../variables/typography";
-@use "../lib/functions";
+@use "../../variables/assets";
+@use "../../variables/typography";
+@use "../../lib/functions";
 
 @if typography.$use-local-fonts {
   @font-face {

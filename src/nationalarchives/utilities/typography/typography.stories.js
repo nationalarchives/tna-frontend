@@ -60,18 +60,6 @@ SceneSetter.args = {
   text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
 };
 
-const SceneSetterSmallTemplate = ({ text }) =>
-  `<p class="tna-scene-setter tna-scene-setter--small">
-    ${text}
-  </p>`;
-export const SceneSetterSmall = SceneSetterSmallTemplate.bind({});
-SceneSetterSmall.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-SceneSetterSmall.args = {
-  text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
-};
-
 const BlockquoteTemplate = ({
   html,
   author,

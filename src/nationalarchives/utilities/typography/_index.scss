@@ -442,6 +442,17 @@ small {
 
   @include colour.thick-keyline-accent(left);
 
+  // &::before {
+  //   content: "\201C";
+
+  //   display: block;
+
+  //   font-family: Georgia, "Times New Roman", Times, serif;
+  //   font-size: 3em;
+  //   line-height: 1;
+  //   @include colour.colour-font("font-light");
+  // }
+
   &__quote {
     @include typography.main-font-weight-medium;
     quotes: auto;

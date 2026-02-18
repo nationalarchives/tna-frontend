@@ -117,9 +117,9 @@ runs:
       shell: bash
     - name: Copy page templates
       run: >
-        cp package/nationalarchives/templates/plain.njk prototype/app/views/template-plain.html &&
-        cp package/nationalarchives/templates/list.njk prototype/app/views/template-list.html &&
-        cp package/nationalarchives/templates/index-grid.njk prototype/app/views/template-index-grid.html
+        cp package/nationalarchives/templates/prototype-kit/plain.njk prototype/app/views/template-plain.html &&
+        cp package/nationalarchives/templates/prototype-kit/list.njk prototype/app/views/template-list.html &&
+        cp package/nationalarchives/templates/prototype-kit/index-grid.njk prototype/app/views/template-index-grid.html
       shell: bash
     - name: Run prototype
       run: >

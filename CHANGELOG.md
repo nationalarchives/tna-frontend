@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Refactored templates directory - moved `email.njk` template to `layouts/email.njk` and `partials/logo.njk` template to `partials/logo/macro.njk` and moved the Prototype Kit templates to a subdirectory
+
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Compiled CSS added to packaged email template fixtures
+
 ### Security
 
 ## [0.34.1](https://github.com/nationalarchives/tna-frontend/compare/v0.34.0...v0.34.1) - 2026-02-17

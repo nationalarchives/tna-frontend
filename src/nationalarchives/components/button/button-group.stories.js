@@ -9,7 +9,7 @@ export default {
   },
   render: (params) => {
     return nunjucks.renderString(
-      `{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+      `{%- from "nationalarchives/components/button/macro.njk" import tnaButton -%}
       <div class="tna-button-group{% if params.small %} tna-button-group--small{% endif %}">
         {% for button in params.buttons %}
           {{ tnaButton(button) }}

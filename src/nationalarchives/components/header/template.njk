@@ -1,5 +1,5 @@
-{% from "nationalarchives/components/phase-banner/macro.njk" import tnaPhaseBanner %}
-{% from "nationalarchives/templates/partials/logo.njk" import tnaLogo %}
+{%- from "nationalarchives/components/phase-banner/macro.njk" import tnaPhaseBanner -%}
+{%- from "nationalarchives/templates/partials/logo/macro.njk" import tnaLogo -%}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.accent -%}

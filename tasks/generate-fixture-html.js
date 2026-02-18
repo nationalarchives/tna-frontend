@@ -47,11 +47,11 @@ components.forEach((component) => {
 const templatesDirectory = "../src/nationalarchives/templates/";
 
 require(`${templatesDirectory}fixtures.json`)
-  .fixtures.filter((fixture) => fixture.template !== "email.njk")
+  .fixtures.filter((fixture) => fixture.omitFixtureHtmlValidation !== true)
   .forEach((fixture) => {
-    const templateNunjucks = fixture.template
-      ? require(`${templatesDirectory}${fixture.template}`)
-      : fixture.string;
+    const templateNunjucks = require(
+      `${templatesDirectory}${fixture.template}`,
+    );
     const result = renderNunjucks(templateNunjucks, {
       ...fixture.options,
     });

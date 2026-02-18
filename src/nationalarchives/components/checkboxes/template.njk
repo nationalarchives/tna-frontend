@@ -1,5 +1,5 @@
-{% from "nationalarchives/components/fieldset/macro.njk" import tnaFieldset %}
-{% from "nationalarchives/utilities/forms/form-item.njk" import tnaFormItem %}
+{%- from "nationalarchives/components/fieldset/macro.njk" import tnaFieldset -%}
+{%- from "nationalarchives/utilities/forms/form-item.njk" import tnaFormItem -%}
 
 {% macro checkboxes(params) %}
   <div class="tna-checkboxes{% if params.small or params.inline %} tna-checkboxes--small{% endif %}{% if params.inline %} tna-checkboxes--inline{% endif %}"{% if (params.items | length != 1) %} id="{{ params.id }}"{% endif %}>

@@ -1,6 +1,6 @@
-{% extends 'nationalarchives/templates/layouts/_prototype-kit.njk' %}
+{%- extends "nationalarchives/templates/prototype-kit/_base.njk" -%}
 
-{% from 'nationalarchives/components/breadcrumbs/macro.njk' import tnaBreadcrumbs %}
+{%- from "nationalarchives/components/breadcrumbs/macro.njk" import tnaBreadcrumbs -%}
 
 {% set pageTitle = 'Plain page' %}
 {% set theme = 'light' %}
@@ -18,7 +18,7 @@
     classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
   }) }}
 </div>
-{% endblock %}
+{% endblock beforeContent %}
 
 {% block content %}
 <div class="tna-section">
@@ -32,4 +32,4 @@
     </div>
   </div>
 </div>
-{% endblock %}
+{% endblock content %}

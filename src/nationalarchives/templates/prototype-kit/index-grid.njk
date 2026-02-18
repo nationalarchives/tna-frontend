@@ -1,8 +1,8 @@
-{% extends 'nationalarchives/templates/layouts/_prototype-kit.njk' %}
+{%- extends "nationalarchives/templates/prototype-kit/_base.njk" -%}
 
-{% from 'nationalarchives/components/breadcrumbs/macro.njk' import tnaBreadcrumbs %}
-{% from 'nationalarchives/components/card/macro.njk' import tnaCard %}
-{% from 'nationalarchives/components/index-grid/macro.njk' import tnaIndexGrid %}
+{%- from "nationalarchives/components/breadcrumbs/macro.njk" import tnaBreadcrumbs -%}
+{%- from "nationalarchives/components/card/macro.njk" import tnaCard -%}
+{%- from "nationalarchives/components/index-grid/macro.njk" import tnaIndexGrid -%}
 
 {% set pageTitle = 'Index list page' %}
 {% set theme = 'light' %}
@@ -22,7 +22,7 @@
     }) }}
   </div>
 </div>
-{% endblock %}
+{% endblock beforeContent %}
 
 {% block content %}
 <div class="tna-background-accent tna-!--padding-vertical-xl">
@@ -143,4 +143,4 @@
     columnsTiny: 1
   }) }}
 </section>
-{% endblock %}
+{% endblock content %}

@@ -1,4 +1,4 @@
-import Template from "./email.njk?raw";
+import Template from "./layouts/email.njk?raw";
 import nunjucks from "nunjucks";
 import "../email.scss";
 

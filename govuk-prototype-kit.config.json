@@ -9,22 +9,22 @@
   "templates": [
     {
       "name": "Plain text",
-      "path": "/nationalarchives/templates/plain.njk",
+      "path": "/nationalarchives/templates/prototype-kit/plain.njk",
       "type": "nunjucks"
     },
     {
       "name": "Listing page",
-      "path": "/nationalarchives/templates/list.njk",
+      "path": "/nationalarchives/templates/prototype-kit/list.njk",
       "type": "nunjucks"
     },
     {
       "name": "Index grid page",
-      "path": "/nationalarchives/templates/index-grid.njk",
+      "path": "/nationalarchives/templates/prototype-kit/index-grid.njk",
       "type": "nunjucks"
     },
     {
       "name": "Page not found error page",
-      "path": "/nationalarchives/templates/error-page-not-found.njk",
+      "path": "/nationalarchives/templates/prototype-kit/error-page-not-found.njk",
       "type": "nunjucks"
     }
   ]

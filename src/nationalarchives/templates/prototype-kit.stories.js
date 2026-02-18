@@ -1,13 +1,13 @@
-import PlainTemplate from "./plain.njk?raw";
-import ListTemplate from "./list.njk?raw";
-import IndexGridTemplate from "./index-grid.njk?raw";
-import ErrorPageNotFoundTemplate from "./error-page-not-found.njk?raw";
+import PlainTemplate from "./prototype-kit/plain.njk?raw";
+import ListTemplate from "./prototype-kit/list.njk?raw";
+import IndexGridTemplate from "./prototype-kit/index-grid.njk?raw";
+import ErrorPageNotFoundTemplate from "./prototype-kit/error-page-not-found.njk?raw";
 import nunjucks from "nunjucks";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
-  title: "Templates/Prototype kit",
+  title: "Templates/Prototype Kit",
 };
 
 export const Plain = (params) => {

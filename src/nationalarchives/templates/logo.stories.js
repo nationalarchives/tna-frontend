@@ -1,4 +1,4 @@
-import Template from "./partials/logo.njk?raw";
+import Template from "./partials/logo/template.njk?raw";
 import nunjucks from "nunjucks";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
@@ -11,7 +11,7 @@ export default {
     adornable: { control: "boolean" },
   },
   render: (params) => {
-    return nunjucks.renderString(`${Template} {{ tnaLogo(params) }}`, {
+    return nunjucks.renderString(Template, {
       params,
     });
   },

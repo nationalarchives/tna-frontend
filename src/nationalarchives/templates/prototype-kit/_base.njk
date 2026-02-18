@@ -1,4 +1,4 @@
-{% extends 'nationalarchives/templates/layouts/_generic.njk' %}
+{%- extends "nationalarchives/templates/layouts/_generic.njk" -%}
 
 {% set assetPath = '/plugin-assets/%40nationalarchives%2Ffrontend/nationalarchives/assets/' %}
 
@@ -6,7 +6,7 @@
   {% include 'govuk-prototype-kit/includes/stylesheets-plugins.njk' ignore missing %}
   <link rel="stylesheet" href="https://use.typekit.net/hkj3kuz.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&family=Roboto+Mono:wght@400..500&display=swap">
-{% endblock %}
+{% endblock stylesheets %}
 
 {% block bodyEnd %}
   {% include 'govuk-prototype-kit/includes/scripts.njk' ignore missing %}
@@ -32,4 +32,4 @@
       });
     }
   </script>
-{% endblock %}
+{% endblock bodyEnd %}

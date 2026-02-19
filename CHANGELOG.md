@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.34.1...HEAD)
 
 ### Added
+
+- Password text input components have a default `autocomplete` of `current-password` but can be changed to `new-password` with `newPassword: true`
+
 ### Changed
 
 - Refactored templates directory - moved `email.njk` template to `layouts/email.njk` and `partials/logo.njk` template to `partials/logo/macro.njk` and moved the Prototype Kit templates to a subdirectory
@@ -17,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Compiled CSS added to packaged email template fixtures
+- Password text input component attributes now pass updated HTML validation rules
 
 ### Security
 

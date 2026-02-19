@@ -67,7 +67,20 @@
         "size": "m",
         "password": true
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"password\">Enter your password</label></div><div class=\"tna-form-item__body\"><input id=\"password\" class=\"tna-text-input tna-text-input--m\" name=\"password\" value=\"\" type=\"password\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"off\" spellcheck=\"false\"></div></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"password\">Enter your password</label></div><div class=\"tna-form-item__body\"><input id=\"password\" class=\"tna-text-input tna-text-input--m\" name=\"password\" value=\"\" type=\"password\" autocomplete=\"current-password\"></div></div>"
+    },
+    {
+      "name": "new password",
+      "options": {
+        "label": "Enter a new password",
+        "headingSize": "m",
+        "id": "password",
+        "name": "password",
+        "size": "m",
+        "password": true,
+        "newPassword": true
+      },
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-text-input\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"password\">Enter a new password</label></div><div class=\"tna-form-item__body\"><input id=\"password\" class=\"tna-text-input tna-text-input--m\" name=\"password\" value=\"\" type=\"password\" autocomplete=\"new-password\"></div></div>"
     },
     {
       "name": "type",

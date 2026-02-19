@@ -67,7 +67,15 @@
     "name": "password",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, the text input will be a password field."
+    "description": "If `true`, the text input will be a password field.",
+    "default": false
+  },
+  {
+    "name": "newPassword",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, the browser may try to autofill the password field with a new password. If left as `false`, the browser may try to autofill the password field with an existing password. Ignored when `password` is `false`.",
+    "default": false
   },
   {
     "name": "inputmode",
@@ -79,26 +87,29 @@
     "name": "spellcheck",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, enable [spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) for the text input. Disabled when `password` is `true`."
+    "description": "If `true`, enable [spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) for the text input. Ignored when `password` is `true`.",
+    "default": false
   },
   {
     "name": "autocapitalize",
     "type": "string",
     "required": false,
-    "description": "If `true`, enable [automatic capitalization](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) for the text input. Disabled when `password` is `true`. This is not supported in all browsers.",
+    "description": "If `true`, enable [automatic capitalization](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) for the text input. Ignored when `password` is `true`. This is not supported in all browsers.",
     "default": "off"
   },
   {
     "name": "autocorrect",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, enable [autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) for the text input. Disabled when `password` is `true`. This is not supported in all browsers."
+    "description": "If `true`, enable [autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) for the text input. Ignored when `password` is `true`. This is not supported in all browsers.",
+    "default": false
   },
   {
     "name": "autocomplete",
     "type": "string",
     "required": false,
-    "description": "Set the [`autocomplete` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) to control browser autofill behaviour. Disabled when `password` is `true`."
+    "description": "Set the [`autocomplete` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) to control browser autofill behaviour. Ignored when `password` is `true`.",
+    "default": false
   },
   {
     "name": "size",

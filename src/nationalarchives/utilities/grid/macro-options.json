@@ -135,7 +135,8 @@
         "name": "noPadding",
         "type": "boolean",
         "required": false,
-        "description": ""
+        "description": "",
+        "default": false
       },
       {
         "name": "classes",
@@ -155,19 +156,22 @@
     "name": "maxWidth",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "",
+    "default": false
   },
   {
     "name": "noPadding",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "",
+    "default": false
   },
   {
     "name": "nested",
     "type": "boolean",
     "required": false,
-    "description": ""
+    "description": "",
+    "default": false
   },
   {
     "name": "htmlElement",

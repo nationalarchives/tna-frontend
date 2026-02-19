@@ -27,7 +27,8 @@
         "name": "selected",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, highlight the quick filter as selected."
+        "description": "If `true`, highlight the quick filter as selected.",
+        "default": false
       }
     ]
   },
@@ -35,7 +36,8 @@
     "name": "stack",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, stack the quick filters vertically."
+    "description": "If `true`, stack the quick filters vertically.",
+    "default": false
   },
   {
     "name": "classes",

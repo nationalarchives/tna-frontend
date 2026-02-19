@@ -40,7 +40,8 @@
     "name": "smallerHint",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, make the fieldset hint smaller to match other form field components."
+    "description": "If `true`, make the fieldset hint smaller to match other form field components.",
+    "default": false
   },
   {
     "name": "error",

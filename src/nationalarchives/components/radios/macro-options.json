@@ -86,13 +86,15 @@
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show smaller radios."
+    "description": "If `true`, show smaller radios.",
+    "default": false
   },
   {
     "name": "inline",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show the radios inline rather than vertical."
+    "description": "If `true`, show the radios inline rather than vertical.",
+    "default": false
   },
   {
     "name": "formItemClasses",

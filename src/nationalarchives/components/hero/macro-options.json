@@ -139,7 +139,8 @@
         "name": "rightAlignIcon",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, align the icon to the right hand side of the button."
+        "description": "If `true`, align the icon to the right hand side of the button.",
+        "default": false
       },
       {
         "name": "classes",
@@ -171,7 +172,8 @@
     "name": "narrow",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, use a narrower style hero image."
+    "description": "If `true`, use a narrower style hero image.",
+    "default": false
   },
   {
     "name": "classes",

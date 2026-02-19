@@ -78,7 +78,8 @@
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, the checkbox will be checked."
+        "description": "If `true`, the checkbox will be checked.",
+        "default": false
       }
     ]
   },
@@ -86,13 +87,15 @@
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show smaller checkboxes."
+    "description": "If `true`, show smaller checkboxes.",
+    "default": false
   },
   {
     "name": "inline",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show the checkboxes inline rather than vertical."
+    "description": "If `true`, show the checkboxes inline rather than vertical.",
+    "default": false
   },
   {
     "name": "formItemClasses",

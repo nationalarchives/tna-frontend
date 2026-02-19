@@ -78,7 +78,8 @@
     "name": "bounded",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, add a background to the gallery to separate it from surrounding contnet."
+    "description": "If `true`, add a background to the gallery to separate it from surrounding contnet.",
+    "default": false
   },
   {
     "name": "classes",

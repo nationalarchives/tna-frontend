@@ -37,7 +37,8 @@
     "name": "disableAutoFocus",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, disables the automatic focusing of the error summary when the page loads."
+    "description": "If `true`, disables the automatic focusing of the error summary when the page loads.",
+    "default": false
   },
   {
     "name": "classes",

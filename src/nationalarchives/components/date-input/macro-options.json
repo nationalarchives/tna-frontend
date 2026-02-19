@@ -86,7 +86,8 @@
     "name": "progressive",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, order the date fields in a year-month-day order and only show the next field when the previous has a valid value."
+    "description": "If `true`, order the date fields in a year-month-day order and only show the next field when the previous has a valid value.",
+    "default": false
   },
   {
     "name": "formItemClasses",

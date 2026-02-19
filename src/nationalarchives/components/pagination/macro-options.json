@@ -54,13 +54,15 @@
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, highlight this item as the current page."
+        "description": "If `true`, highlight this item as the current page.",
+        "default": false
       },
       {
         "name": "ellipsis",
         "type": "boolean",
         "required": false,
-        "description": "Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored."
+        "description": "Use this option to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored.",
+        "default": false
       }
     ]
   },

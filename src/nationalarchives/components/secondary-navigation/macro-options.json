@@ -40,7 +40,8 @@
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, highlight the navigation item as the current page."
+        "description": "If `true`, highlight the navigation item as the current page.",
+        "default": false
       }
     ]
   },
@@ -48,19 +49,22 @@
     "name": "noBottomBorder",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, hide the bottom border of the secondary navigation. This can be useful when the secondary navigation is placed at the bottom of a coloured block."
+    "description": "If `true`, hide the bottom border of the secondary navigation. This can be useful when the secondary navigation is placed at the bottom of a coloured block.",
+    "default": false
   },
   {
     "name": "overflow",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, enable horizontal scrolling for the secondary navigation when the list of items becomes too long."
+    "description": "If `true`, enable horizontal scrolling for the secondary navigation when the list of items becomes too long.",
+    "default": false
   },
   {
     "name": "noUnindentation",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, don't apply 'unindentation' to the secondary navigation. Used for when the secondary navigation is placed inside a nested container."
+    "description": "If `true`, don't apply 'unindentation' to the secondary navigation. Used for when the secondary navigation is placed inside a nested container.",
+    "default": false
   },
   {
     "name": "classes",

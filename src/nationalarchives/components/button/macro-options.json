@@ -39,43 +39,50 @@
     "name": "accent",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, set the colour of the button to the page’s accent colour."
+    "description": "If `true`, set the colour of the button to the page’s accent colour.",
+    "default": false
   },
   {
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, make the button smaller."
+    "description": "If `true`, make the button smaller.",
+    "default": false
   },
   {
     "name": "plain",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, remove the background colour of the button and make it look more like a link."
+    "description": "If `true`, remove the background colour of the button and make it look more like a link.",
+    "default": false
   },
   {
     "name": "iconOnly",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, don’t show the text of the button."
+    "description": "If `true`, don’t show the text of the button.",
+    "default": false
   },
   {
     "name": "iconOnlyOnMobile",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show both the text and icon on larger devices but only show the icon on smaller devices."
+    "description": "If `true`, show both the text and icon on larger devices but only show the icon on smaller devices.",
+    "default": false
   },
   {
     "name": "rightAlignIcon",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, align the icon to the right hand side of the button."
+    "description": "If `true`, align the icon to the right hand side of the button.",
+    "default": false
   },
   {
     "name": "buttonElement",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, use a `<button>` element for the button. This makes the `href` attribute redundant."
+    "description": "If `true`, use a `<button>` element for the button. This makes the `href` attribute redundant.",
+    "default": false
   },
   {
     "name": "buttonType",

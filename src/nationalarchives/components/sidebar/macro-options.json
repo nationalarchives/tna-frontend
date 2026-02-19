@@ -40,7 +40,8 @@
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, highlight the item as the current page or section."
+        "description": "If `true`, highlight the item as the current page or section.",
+        "default": false
       },
       {
         "name": "children",
@@ -74,7 +75,8 @@
     "name": "sticky",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, allows the sidebar to 'stick' to the top of the screen when scrolling."
+    "description": "If `true`, allows the sidebar to 'stick' to the top of the screen when scrolling.",
+    "default": false
   },
   {
     "name": "classes",

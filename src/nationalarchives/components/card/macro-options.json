@@ -114,7 +114,8 @@
     "name": "lazyImage",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, make the image a lazily-loaded image."
+    "description": "If `true`, make the image a lazily-loaded image.",
+    "default": false
   },
   {
     "name": "label",
@@ -158,13 +159,15 @@
     "name": "metaStacked",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, stack the list of meta information vertically."
+    "description": "If `true`, stack the list of meta information vertically.",
+    "default": false
   },
   {
     "name": "accentMeta",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, apply an accented background to the meta items."
+    "description": "If `true`, apply an accented background to the meta items.",
+    "default": false
   },
   {
     "name": "body",
@@ -220,31 +223,36 @@
     "name": "fullAreaClick",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, `href` is set and there are no actions, allow users to click anywhere on the card to follow the link."
+    "description": "If `true`, `href` is set and there are no actions, allow users to click anywhere on the card to follow the link.",
+    "default": false
   },
   {
     "name": "horizontal",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices."
+    "description": "If `true`, change the card to a horizontal layout, placing the image to the left of the content. This layout changes back to vertical on smaller devices.",
+    "default": false
   },
   {
     "name": "horizontalOnSmall",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, use a horizontal layout on small devices."
+    "description": "If `true`, use a horizontal layout on small devices.",
+    "default": false
   },
   {
     "name": "horizontalFlipped",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, place the image on the right when using horizontal layouts."
+    "description": "If `true`, place the image on the right when using horizontal layouts.",
+    "default": false
   },
   {
     "name": "horizontalSmallImage",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, use a smaller image when using horizontal layouts."
+    "description": "If `true`, use a smaller image when using horizontal layouts.",
+    "default": false
   },
   {
     "name": "style",
@@ -256,13 +264,15 @@
     "name": "plainSupertitle",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, remove the accent or contrast colour from the card supertitle."
+    "description": "If `true`, remove the accent or contrast colour from the card supertitle.",
+    "default": false
   },
   {
     "name": "accentMeta",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, meta tags adopt an accented style."
+    "description": "If `true`, meta tags adopt an accented style.",
+    "default": false
   },
   {
     "name": "htmlElement",

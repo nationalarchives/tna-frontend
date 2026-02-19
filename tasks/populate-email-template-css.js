@@ -24,7 +24,7 @@ fs.readFile(
       }
       fs.writeFile(
         emailNunjucksLocation,
-        data.replace(replacementString, compiledCSS),
+        data.replaceAll(replacementString, compiledCSS),
         (err) => {
           if (err) {
             return console.error(err);
@@ -42,9 +42,9 @@ fs.readFile(
       }
       fs.writeFile(
         templateFixturesLocation,
-        data.replace(
+        data.replaceAll(
           replacementString,
-          compiledCSS.replace(/\\/g, "\\\\").replace(/"/g, '\\"'),
+          compiledCSS.replaceAll("\\", "\\\\").replaceAll('"', '\\"'),
         ),
         (err) => {
           if (err) {

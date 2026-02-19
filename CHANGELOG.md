@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Incorrect email fixures rectified
+
 ### Security
 
 ## [0.35.0](https://github.com/nationalarchives/tna-frontend/compare/v0.34.1...v0.35.0) - 2026-02-19

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const replacementString = "<!-- COMPILED_EMAIL_CSS -->";
+const replacementString = "/* COMPILED_EMAIL_CSS */";
 
 fs.readFile(
   "package/nationalarchives/email.css",
@@ -24,10 +24,7 @@ fs.readFile(
       }
       fs.writeFile(
         emailNunjucksLocation,
-        data.replace(
-          replacementString,
-          `<style media="all" type="text/css">${compiledCSS}</style>`,
-        ),
+        data.replace(replacementString, compiledCSS),
         (err) => {
           if (err) {
             return console.error(err);
@@ -47,7 +44,7 @@ fs.readFile(
         templateFixturesLocation,
         data.replace(
           replacementString,
-          `<style media=\\"all\\" type=\\"text/css\\">${compiledCSS.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}</style>`,
+          compiledCSS.replace(/\\/g, "\\\\").replace(/"/g, '\\"'),
         ),
         (err) => {
           if (err) {

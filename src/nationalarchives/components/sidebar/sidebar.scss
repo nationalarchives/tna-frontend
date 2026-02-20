@@ -82,7 +82,7 @@
   &--pages &__item--current {
     padding-left: spacing.space(0.75);
 
-    @include colour.thick-keyline-accent("left");
+    @include colour.thick-keyline-accent(left);
   }
 
   &--pages &__item--current > &__link {

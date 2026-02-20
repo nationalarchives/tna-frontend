@@ -53,7 +53,7 @@
       top: 100%;
       right: 0;
       left: 0;
-      @include colour.thick-keyline-accent("bottom");
+      @include colour.thick-keyline-accent(bottom);
     }
   }
 
@@ -61,7 +61,7 @@
     padding-left: 0.75rem;
 
     border-bottom-width: 0;
-    @include colour.thick-keyline-accent("left");
+    @include colour.thick-keyline-accent(left);
 
     &::after {
       display: none;

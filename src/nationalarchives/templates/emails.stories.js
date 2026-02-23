@@ -11,7 +11,7 @@ export default {
     panel: { control: "object" },
     content: { control: "text" },
     cta_buttons: { control: "object" },
-    final_content: { control: "text" },
+    signoff: { control: "text" },
   },
   render: (params) => {
     return nunjucks.renderString(Template, { ...params });

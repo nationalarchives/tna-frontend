@@ -14,14 +14,14 @@
   -webkit-text-size-adjust: 100%;
 
   &__body {
-    padding: spacing.space(2) spacing.space(1);
+    padding: 0 spacing.space(1);
   }
 
   &__main {
     min-width: 320px;
     width: 600px;
     max-width: 100%;
-    margin: 0 auto;
+    margin: spacing.space(2) auto;
 
     box-sizing: border-box;
     @include borders.rounded-border;

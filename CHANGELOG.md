@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Incorrect email fixures rectified
+- Email page height issue fixed
+- Nested list spacing fixed
 
 ### Security
 

@@ -71,10 +71,12 @@ ol {
   &--spaced > li + li {
     margin-top: spacing.space(0.5);
   }
+}
 
-  &:not(&--plain) > li > & {
-    padding-left: spacing.space(1.25);
-  }
+.tna-ul:not(.tna-ul--plain) > li > .tna-ul,
+.tna-ol:not(.tna-ol--plain) > li > .tna-ol {
+  margin-bottom: spacing.space(1);
+  padding-left: spacing.space(1.25);
 }
 
 .tna-dl-chips {

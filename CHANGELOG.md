@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Default footer content updated: new links for News, Podcasts, and Freedom of information
+
 ### Deprecated
 ### Removed
 ### Fixed

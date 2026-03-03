@@ -5,22 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.35.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.36.0...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.36.0](https://github.com/nationalarchives/tna-frontend/compare/v0.35.1...v0.36.0) - 2026-03-03
+
 ### Changed
 
 - Default footer content updated: new links for News, Podcasts, and Freedom of information
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Incorrect email fixures rectified
 - Email page height issue fixed
 - Nested list spacing fixed
-
-### Security
 
 ## [0.35.1](https://github.com/nationalarchives/tna-frontend/compare/v0.35.0...v0.35.1) - 2026-02-19
 

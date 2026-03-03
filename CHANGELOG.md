@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Improved nested list styles don't require classes on child lists
+
 ### Security
 
 ## [0.36.0](https://github.com/nationalarchives/tna-frontend/compare/v0.35.1...v0.36.0) - 2026-03-03

@@ -59,13 +59,13 @@ OrderedListSpaced.args = {
 const OrderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
   `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}
-      <ol class="tna-ol">${items.reduce(
+      <ol>${items.reduce(
         (list, item) => `${list}
         <li>${item}
-          <ol class="tna-ol">${items.reduce(
+          <ol>${items.reduce(
             (list, item) => `${list}
             <li>${item}
-              <ol class="tna-ol">${items.reduce(
+              <ol>${items.reduce(
                 (list, item) => `${list}
                 <li>${item}</li>`,
                 "",

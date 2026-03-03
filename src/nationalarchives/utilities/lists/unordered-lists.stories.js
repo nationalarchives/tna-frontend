@@ -59,13 +59,13 @@ UnorderedListSpaced.args = {
 const UnorderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
   `<ul class="tna-ul${style ? ` tna-ul--${style}` : ""}${spaced ? " tna-ul--spaced" : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}
-      <ul class="tna-ul">${items.reduce(
+      <ul>${items.reduce(
         (list, item) => `${list}
         <li>${item}
-          <ul class="tna-ul">${items.reduce(
+          <ul>${items.reduce(
             (list, item) => `${list}
             <li>${item}
-              <ul class="tna-ul">${items.reduce(
+              <ul>${items.reduce(
                 (list, item) => `${list}
                 <li>${item}</li>`,
                 "",
@@ -85,4 +85,52 @@ UnorderedListNested.parameters = {
 };
 UnorderedListNested.args = {
   items: ["Alpha", "Beta"],
+};
+
+const UnorderedListNestedClasslessChildrenTemplate = ({
+  style,
+  spaced,
+  classes = "",
+}) => `<ul class="tna-ul${style ? ` tna-ul--${style}` : ""}${spaced ? " tna-ul--spaced" : ""} ${classes}">
+  <li>&lt;html&gt;
+    <ul>
+      <li>&lt;head&gt;
+        <ul>
+          <li>pageTitle</li>
+          <li>headIcons</li>
+          <li>head</li>
+          <li>stylesheets</li>
+        </ul>
+      </li>
+      <li>&lt;body&gt;
+        <ul>
+          <li>bodyStart
+            <ul>
+              <li>cookies</li>
+              <li>skipLink</li>
+            </ul>
+          </li>
+          <li>header</li>
+          <li>main
+            <ul>
+              <li>beforeContent</li>
+              <li>&lt;main&gt;
+                <ul>
+                  <li>content</li>
+                </ul>
+              </li>
+              <li>afterContent</li>
+            </ul>
+          </li>
+          <li>footer</li>
+          <li>bodyEnd</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>`;
+export const UnorderedListNestedClasslessChildren =
+  UnorderedListNestedClasslessChildrenTemplate.bind({});
+UnorderedListNestedClasslessChildren.parameters = {
+  chromatic: { disableSnapshot: true },
 };

@@ -473,7 +473,7 @@ $base-colours: (
 %pink-accent {
   --accent-background: #{colour.brand-colour("maroon")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
-  --accent-border: #{colour.brand-colour("pink")} !important;
+  --accent-border: #{colour.brand-colour("maroon")} !important;
   --button-accented-background: #{colour.brand-colour("maroon")} !important;
 }
 
@@ -485,7 +485,7 @@ $base-colours: (
 %orange-accent {
   --accent-background: #{colour.brand-colour("chestnut")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
-  --accent-border: #{colour.brand-colour("orange")} !important;
+  --accent-border: #{colour.brand-colour("chestnut")} !important;
   --button-accented-background: #{colour.brand-colour("chestnut")} !important;
 }
 
@@ -497,7 +497,7 @@ $base-colours: (
 %green-accent {
   --accent-background: #{colour.brand-colour("forest")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
-  --accent-border: #{colour.brand-colour("green")} !important;
+  --accent-border: #{colour.brand-colour("forest")} !important;
   --button-accented-background: #{colour.brand-colour("forest")} !important;
 }
 
@@ -509,7 +509,7 @@ $base-colours: (
 %blue-accent {
   --accent-background: #{colour.brand-colour("navy")} !important;
   --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
-  --accent-border: #{colour.brand-colour("blue")} !important;
+  --accent-border: #{colour.brand-colour("navy")} !important;
   --button-accented-background: #{colour.brand-colour("navy")} !important;
 }
 

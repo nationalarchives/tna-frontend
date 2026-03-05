@@ -14,6 +14,7 @@ import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInput } from "./components/text-input/text-input.mjs";
 import Cookies from "./lib/cookies.mjs";
 import { checkTableForScroll } from "./lib/tables.mjs";
+import { updateTimeElement } from "./lib/helpers.mjs";
 
 const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};
@@ -50,6 +51,15 @@ const initAll = (options) => {
       checkTableForScroll($tableWrapper),
     );
   });
+
+  /*
+  Transform any <time> elements with a datetime attribute to a human readable format, and add the original text as a title attribute for reference.
+  For example:
+    <time datetime="2026-03-05 13:48:29Z">5 March 2026, 13:48 (UTC)</time>
+  would become:
+    <time datetime="2026-03-05 13:48:29Z" title="5 March 2026, 13:48 (UTC)">5 March 2026, 14:48:29</time>
+  */
+  document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
 
   const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
   $accordions.forEach(($accordion) => {

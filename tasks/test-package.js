@@ -122,6 +122,13 @@ const checkExists = [
   ...componentFiles("text-input", "TextInput"),
   ...componentFiles("textarea"),
   ...componentFiles("warning"),
+  // Libraries
+  "nationalarchives/lib/analytics-helpers.mjs",
+  "nationalarchives/lib/cookies.mjs",
+  "nationalarchives/lib/_functions.scss",
+  "nationalarchives/lib/helpers.mjs",
+  "nationalarchives/lib/tables.mjs",
+  "nationalarchives/lib/uuid.mjs",
   // Tools
   "nationalarchives/tools/_a11y.scss",
   "nationalarchives/tools/_colour.scss",

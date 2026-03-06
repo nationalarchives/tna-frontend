@@ -11,7 +11,10 @@ export class FileInputDroppable {
     this.acceptMutltipleFiles = this.$input.hasAttribute("multiple");
 
     this.$droppableArea = document.createElement("div");
-    this.$droppableArea.classList.add("tna-file-input__droppable");
+    this.$droppableArea.classList.add(
+      "tna-file-input__droppable",
+      "tna-file-input__droppable--empty",
+    );
     this.$body.insertBefore(this.$droppableArea, this.$input);
     this.$droppableArea.appendChild(this.$input);
 
@@ -94,6 +97,11 @@ export class FileInputDroppable {
     } else {
       this.$pseudoSelectFileText.textContent =
         files[0]?.name || `No file chosen`;
+    }
+    if (files.length === 0) {
+      this.$droppableArea.classList.add("tna-file-input__droppable--empty");
+    } else {
+      this.$droppableArea.classList.remove("tna-file-input__droppable--empty");
     }
     this.hideDropTarget(false);
   }

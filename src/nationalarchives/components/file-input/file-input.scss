@@ -33,10 +33,13 @@
 
     @include colour.colour-border(
       "keyline",
-      formsVars.$form-field-border-width,
-      dashed
+      formsVars.$form-field-border-width
     );
     @include borders.rounded-border;
+
+    &--empty {
+      border-style: dashed;
+    }
   }
 
   &__droppable:has(&:focus-visible) {

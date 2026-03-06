@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated accent border colour
+- Droppable file input component border turns solid on selection of file for improved visual feedback
 
 ### Deprecated
 ### Removed

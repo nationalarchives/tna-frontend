@@ -96,7 +96,7 @@ export const Multiple = {
   },
 };
 
-export const Dropable = {
+export const Droppable = {
   args: {
     label: "Upload a file",
     headingLevel: 4,

@@ -42,11 +42,11 @@
     }
   }
 
-  &__droppable:has(:is(:hover, :active, :focus-visible)) {
+  &__droppable:has(:is(&:hover, &:active)) {
     @include colour.colour-border("keyline-dark");
   }
 
-  &__droppable:has(&:focus-visible) {
+  &__droppable:has(&:focus) {
     @include a11y.focus-outline;
   }
 

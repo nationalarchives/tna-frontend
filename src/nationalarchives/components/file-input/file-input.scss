@@ -90,6 +90,7 @@
   &__droppable:not(&__droppable--empty) &__droppable-status {
     @include colour.blue-accent;
     @include colour.accent-light;
+    @include typography.main-font-weight-medium;
   }
 
   &__droppable &:hover ~ &__droppable-buttons {

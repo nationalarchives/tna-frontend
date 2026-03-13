@@ -23,14 +23,14 @@ export class FileInputDroppable {
     this.$pseudoSelectFileText.classList.add(
       "tna-file-input__droppable-status",
     );
-    this.$pseudoSelectFileText.textContent = `No file${this.acceptMutltipleFiles ? "s" : ""} chosen`;
+    this.$pseudoSelectFileText.textContent = `No file${this.acceptMutltipleFiles ? "s" : ""} selected`;
     this.$droppableArea.appendChild(this.$pseudoSelectFileText);
 
     const $droppableButtons = document.createElement("div");
     $droppableButtons.classList.add(
       "tna-button-group",
       "tna-button-group--small",
-      "tna-!--margin-top-xs",
+      "tna-!--margin-top-s",
       "tna-file-input__droppable-buttons",
     );
     this.$droppableArea.appendChild($droppableButtons);
@@ -90,13 +90,13 @@ export class FileInputDroppable {
     const files = this.$input.files;
     if (this.acceptMutltipleFiles) {
       if (files.length === 0) {
-        this.$pseudoSelectFileText.textContent = `No files chosen`;
+        this.$pseudoSelectFileText.textContent = `No files selected`;
       } else {
-        this.$pseudoSelectFileText.textContent = `${files.length} file${files.length > 1 ? "s" : ""} chosen`;
+        this.$pseudoSelectFileText.textContent = `${files.length} file${files.length > 1 ? "s" : ""} selected`;
       }
     } else {
       this.$pseudoSelectFileText.textContent =
-        files[0]?.name || `No file chosen`;
+        files[0]?.name || `No file selected`;
     }
     if (files.length === 0) {
       this.$droppableArea.classList.add("tna-file-input__droppable--empty");

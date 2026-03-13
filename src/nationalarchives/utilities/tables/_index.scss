@@ -62,9 +62,9 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
   &__caption {
     width: 100%;
-    padding: spacing.space(1) 0 0;
+    padding: 0 0 spacing.space(1);
 
-    caption-side: bottom;
+    caption-side: top;
 
     @include typography.font-size(16);
   }

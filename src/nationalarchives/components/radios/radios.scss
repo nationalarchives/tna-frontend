@@ -14,8 +14,6 @@
   gap: spacing.space(1);
 
   &__item {
-    padding-left: spacing.space(3);
-
     position: relative;
 
     input {
@@ -32,6 +30,8 @@
     }
 
     &-label {
+      padding-left: spacing.space(3);
+
       display: block;
 
       line-height: 2rem;
@@ -87,22 +87,20 @@
     gap: spacing.space(0.5);
   }
 
-  &--small &__item {
+  &--small &__item-label {
     padding-left: spacing.space(2.25);
 
-    &-label {
-      line-height: 1.5rem;
+    line-height: 1.5rem;
 
-      &::before {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
+    &::before {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
 
-      &::after {
-        margin: 0.3125rem;
+    &::after {
+      margin: 0.3125rem;
 
-        @include colour.colour-border("input-foreground", 0.4375rem);
-      }
+      @include colour.colour-border("input-foreground", 0.4375rem);
     }
   }
 

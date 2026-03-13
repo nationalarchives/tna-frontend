@@ -9,18 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `<time datetime="[ISO 8601]">` elements get updated to localised time on `initAll()`
+- `<time datetime="[ISO 8601]">` HTML elements get updated to localised time on `initAll()`
 
 ### Changed
 
 - Updated accent border colour
 - Droppable file input component border turns solid on selection of file for improved visual feedback
+- Moved table captions above tables rather than below
 
 ### Deprecated
 ### Removed
 ### Fixed
 
 - Improved nested list styles don't require classes on child lists
+- Modified padding of checkbox and radios components to remove inactive/unselectable space between fields and labels
 
 ### Security
 

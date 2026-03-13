@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Improved nested list styles don't require classes on child lists
+- Modified padding of checkbox and radios components to remove inactive/unselectable space between fields and labels
 
 ### Security
 

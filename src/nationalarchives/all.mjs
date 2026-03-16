@@ -21,29 +21,37 @@ const initAll = (options) => {
   const $scope =
     options.scope instanceof HTMLElement ? options.scope : document;
 
-  const $body = document.documentElement;
-  $body.classList.add("tna-template--js-enabled");
+  const $html = document.documentElement;
+  $html.classList.add("tna-template--js-enabled");
 
   const onFirstTouch = () => {
     window.removeEventListener("touchstart", onFirstTouch);
-    $body.classList.add("tna-template--touched");
+    $html.classList.add("tna-template--touched");
   };
   window.addEventListener("touchstart", onFirstTouch);
 
   const onKeyDown = (e) => {
     if (e.key === "Tab") {
-      $body.classList.add("tna-template--tabbed");
-      $body.classList.remove("tna-template--clicked");
+      $html.classList.add("tna-template--tabbed");
+      $html.classList.remove("tna-template--clicked");
     }
   };
   window.addEventListener("keydown", onKeyDown);
 
   const onMouseDown = () => {
-    $body.classList.add("tna-template--clicked");
-    $body.classList.remove("tna-template--tabbed");
+    $html.classList.add("tna-template--clicked");
+    $html.classList.remove("tna-template--tabbed");
   };
   window.addEventListener("mousedown", onMouseDown);
 
+  /*
+   * ==========================================
+   * Checks if widths of all tables on the page
+   * are wider than their parent container, and
+   * allowing horizontal scrolling if they are.
+   * This is done both on load and on resize.
+   * ==========================================
+   */
   const $tableWrappers = $scope.querySelectorAll(".tna-table-wrapper");
   $tableWrappers.forEach(($tableWrapper) => checkTableForScroll($tableWrapper));
   window.addEventListener("resize", () => {
@@ -52,14 +60,10 @@ const initAll = (options) => {
     );
   });
 
-  /*
-  Transform any <time> elements with a datetime attribute to a human readable format, and add the original text as a title attribute for reference.
-  For example:
-    <time datetime="2026-03-05 13:48:29Z">5 March 2026, 13:48 (UTC)</time>
-  would become:
-    <time datetime="2026-03-05 13:48:29Z" title="5 March 2026, 13:48 (UTC)">5 March 2026, 14:48:29</time>
-  */
-  document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
+  // TODO: Remove this opt-in class in a later release
+  if ($html.classList.contains("tna-template--enhance-time-elements")) {
+    document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
+  }
 
   const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
   $accordions.forEach(($accordion) => {
@@ -191,4 +195,6 @@ export {
   SkipLink,
   Tabs,
   TextInput,
+  checkTableForScroll,
+  updateTimeElement,
 };

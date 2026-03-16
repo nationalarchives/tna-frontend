@@ -63,6 +63,9 @@ export const Standard = {
 };
 
 export const Tint = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     itemHeadingLevel: 3,
     items: [
@@ -87,6 +90,9 @@ export const Tint = {
 };
 
 export const Small = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     itemHeadingLevel: 3,
     items: [

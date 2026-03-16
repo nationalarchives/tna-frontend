@@ -28,9 +28,9 @@ const accents = [
 const blocks = [
   "",
   "tna-background-tint",
-  "tna-background-contrast",
-  "tna-background-accent",
   "tna-background-accent-light",
+  "tna-background-accent",
+  "tna-background-contrast",
 ];
 
 const Template = ({ theme }) => {
@@ -64,9 +64,8 @@ const Template = ({ theme }) => {
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
           <div class="accent-border-example">
-            <h1 class="tna-heading-s">Heading</h1>
-            <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
-            <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
+            <h2 class="tna-heading-s">Heading</h2>
+            <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
             <ul class="tna-ul">
               <li>Alpha</li>
             </ul>
@@ -91,18 +90,6 @@ const Template = ({ theme }) => {
                 James
               </a>
             </dd>
-            <dt>Category</dt>
-            <dd>
-              <a href="#" class="tna-dl-chips__item">
-                Research
-              </a>
-            </dd>
-            <dt>Comments</dt>
-            <dd>
-              <span class="tna-dl-chips__item">
-                3 comments
-              </span>
-            </dd>
           </dl>
           <dl class="tna-dl-chips tna-dl-chips--plain">
             <dt>Published</dt>
@@ -118,18 +105,6 @@ const Template = ({ theme }) => {
                 <i class="fa-solid fa-user"></i>
                 James
               </a>
-            </dd>
-            <dt>Category</dt>
-            <dd>
-              <a href="#" class="tna-dl-chips__item">
-                Research
-              </a>
-            </dd>
-            <dt>Comments</dt>
-            <dd>
-              <span class="tna-dl-chips__item">
-                3 comments
-              </span>
             </dd>
           </dl>
           <div class="tna-button-group">

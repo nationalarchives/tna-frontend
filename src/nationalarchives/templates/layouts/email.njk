@@ -14,7 +14,9 @@
     <style media="all" type="text/css">/* COMPILED_EMAIL_CSS */</style>
     <link rel="stylesheet" href="https://use.typekit.net/kaq6qqh.css" media="screen,print">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&family=Roboto+Mono:wght@400..500&display=swap">
+    {%- if disableAdornableLogo !== true %}
     <link rel="stylesheet" href="https://www.nationalarchives.gov.uk/enrichment/css/logo-adornments.css" media="screen">
+    {%- endif %}
   </head>
   <body class="tna-template__body">
     <div class="tna-template__main">
@@ -142,6 +144,8 @@
         </tr>
       </table>
     </div>
+    {%- if disableAdornableLogo !== true %}
     <script type="module" src="https://www.nationalarchives.gov.uk/enrichment/js/logo-adornments.js" defer></script>
+    {%- endif %}
   </body>
 </html>

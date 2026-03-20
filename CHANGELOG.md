@@ -8,10 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.37.0...HEAD)
 
 ### Added
+
+- `.tna-dl--even` class added for balanced columns
+
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Improved lined description list styles to avoid hanging lines
+
 ### Security
 
 ## [0.37.0](https://github.com/nationalarchives/tna-frontend/compare/v0.36.0...v0.37.0) - 2026-03-16

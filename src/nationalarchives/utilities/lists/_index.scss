@@ -129,10 +129,10 @@ ol {
     padding-bottom: 0;
 
     > dd {
-      border-top: none;
-
       padding-top: 0;
       padding-bottom: spacing.space(0.5);
+
+      border-top: none;
     }
   }
 
@@ -164,6 +164,10 @@ ol {
     grid-template-columns: 1fr 2fr;
   }
 
+  &--even {
+    grid-template-columns: 1fr 1fr;
+  }
+
   > dt,
   > dd {
     margin: 0;
@@ -172,6 +176,7 @@ ol {
   }
 
   > dt {
+    padding-right: spacing.space(1);
     @include typography.main-font-weight-bold;
     position: relative;
 
@@ -195,7 +200,7 @@ ol {
   }
 
   > dd {
-    padding-left: spacing.space(2);
+    padding-left: spacing.space(1);
 
     grid-column-start: 2;
   }

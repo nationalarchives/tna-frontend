@@ -91,6 +91,13 @@
     "default": 5
   },
   {
+    "name": "itemiseRows",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, when JavaScript is available, parse each row of the textarea content into a list of items.",
+    "default": false
+  },
+  {
     "name": "formItemClasses",
     "type": "string",
     "required": false,

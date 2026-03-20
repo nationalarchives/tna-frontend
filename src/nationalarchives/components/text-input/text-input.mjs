@@ -1,38 +1,37 @@
-export class TextInput {
+export class TextInputPassword {
   constructor($module) {
     this.$module = $module;
     this.$input = $module && $module.querySelector(".tna-text-input");
 
-    if (!this.$module || !this.$input) {
+    if (
+      !this.$module ||
+      !this.$input ||
+      this.$input.getAttribute("type") !== "password"
+    ) {
       return;
     }
 
-    if (this.$input.getAttribute("type") === "password") {
-      this.$textInputWrapper = document.createElement("div");
-      this.$textInputWrapper.classList.add("tna-text-input-wrapper");
+    this.$textInputWrapper = document.createElement("div");
+    this.$textInputWrapper.classList.add("tna-text-input-wrapper");
 
-      this.$textInputPasswordToggle = document.createElement("button");
-      this.$textInputPasswordToggle.setAttribute("type", "button");
-      this.$textInputPasswordToggle.classList.add(
-        "tna-button",
-        "tna-button--small",
-        "tna-button--icon-only",
-      );
-      this.$textInputPasswordToggle.setAttribute(
-        "aria-controls",
-        this.$input.id,
-      );
-      this.updateTogglePasswordButtonText();
+    this.$textInputPasswordToggle = document.createElement("button");
+    this.$textInputPasswordToggle.setAttribute("type", "button");
+    this.$textInputPasswordToggle.classList.add(
+      "tna-button",
+      "tna-button--small",
+      "tna-button--icon-only",
+    );
+    this.$textInputPasswordToggle.setAttribute("aria-controls", this.$input.id);
+    this.updateTogglePasswordButtonText();
 
-      this.$textInputWrapper.appendChild(this.$input);
-      this.$textInputWrapper.appendChild(this.$textInputPasswordToggle);
-      this.$module.appendChild(this.$textInputWrapper);
+    this.$textInputWrapper.appendChild(this.$input);
+    this.$textInputWrapper.appendChild(this.$textInputPasswordToggle);
+    this.$module.appendChild(this.$textInputWrapper);
 
-      this.$textInputPasswordToggle.addEventListener("click", () => {
-        this.togglePasswordType();
-        this.$input.focus();
-      });
-    }
+    this.$textInputPasswordToggle.addEventListener("click", () => {
+      this.togglePasswordType();
+      this.$input.focus();
+    });
   }
 
   togglePasswordType() {

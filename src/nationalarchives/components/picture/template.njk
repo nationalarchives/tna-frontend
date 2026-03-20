@@ -1,3 +1,4 @@
+{%- from "nationalarchives/components/button/macro.njk" import tnaButton -%}
 {%- from "nationalarchives/components/tabs/macro.njk" import tnaTabs -%}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
@@ -11,7 +12,16 @@
       <img class="tna-picture__image" width="{{ params.width }}" height="{{ params.height }}" src="{{ params.src }}" alt="{{ params.alt }}" loading="lazy">
     </picture>
     {%- if params.information %}
-    <button type="button" class="tna-picture__toggle-transcript tna-button tna-button--small tna-button--solid-hover" aria-expanded="false" hidden>Open transcript</button>
+    {{ tnaButton({
+      text: params.informationLabelOpen if params.informationLabelOpen else "Open transcript",
+      small: true,
+      buttonElement: true,
+      classes: "tna-picture__toggle-transcript tna-button--solid-hover",
+      attributes: {
+        "aria-expanded": "false",
+        hidden: ""
+      }
+    }) }}
     {%- endif %}
   </div>
 {%- if params.information %}

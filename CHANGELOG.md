@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `.tna-dl--even` class added for balanced columns
+- Textarea can split lines into selectable items
 
 ### Changed
 
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Improved lined description list styles to avoid hanging lines
+- Individual component CSS includes all other relevant component styles when used in isolation
 
 ### Security
 

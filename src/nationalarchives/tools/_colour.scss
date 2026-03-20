@@ -440,8 +440,8 @@ $base-colours: (
   --accent-link-visited: #{colour.brand-colour("black")} !important;
   --accent-keyline: #{colour.brand-colour("black", 0.5)} !important;
   --accent-keyline-dark: #{colour.brand-colour("black", 0.8)} !important;
-  --button-accented-text: #{colour.brand-colour("white")} !important;
-  --button-accented-background: #{colour.brand-colour("brown")} !important;
+  --button-accented-text: #{colour.brand-colour("black")} !important;
+  --button-accented-background: #{colour.brand-colour("yellow")} !important;
 }
 
 @mixin yellow-accent {

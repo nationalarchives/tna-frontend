@@ -43,6 +43,8 @@ strong {
 p {
   @include spacing.space-above;
 
+  text-wrap: pretty;
+
   + p {
     margin-top: spacing.space(1);
   }

@@ -1,8 +1,12 @@
+@use "../../tools/colour";
+
 .tna-logo {
   width: 6rem;
   aspect-ratio: 1;
 
   display: block;
+
+  @include colour.colour-font("font-dark");
 
   svg {
     width: 100%;

@@ -183,6 +183,6 @@ export class TextAreaItemisedRows {
         return $item;
       })
       .forEach(($item) => this.$valuesList.appendChild($item));
-    this.$formFieldCounter.innerText = `${this.values.length} items added`;
+    this.$formFieldCounter.innerText = `${this.values.length} item${this.values.length !== 1 ? "s" : ""} added`;
   }
 }

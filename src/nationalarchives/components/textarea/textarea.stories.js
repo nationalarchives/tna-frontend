@@ -126,18 +126,67 @@ export const ItemiseRows = {
     const $input = canvas.getByRole("textbox");
     const $button = canvas.getByRole("button", { name: "Add to list" });
     const $helper = canvasElement.querySelector("#feedback5-list-helper");
+    const $ariaLive = canvasElement.querySelector("[aria-live]");
     const $list = canvas.getByRole("list");
+
+    await expect($ariaLive).toHaveAttribute("aria-live", "assertive");
 
     await expect($helper).toHaveTextContent("3 items added");
     await expect($list.children).toHaveLength(3);
+    await expect($ariaLive).toHaveTextContent("");
 
     await userEvent.type($input, "Series 4");
     await userEvent.click($button);
     await expect($helper).toHaveTextContent("4 items added");
+    await expect($ariaLive).toHaveTextContent("'Series 4' added");
     await expect($list.children).toHaveLength(4);
+    await expect($input).toHaveValue("");
+    await expect($input).toHaveFocus();
 
     await userEvent.type($input, "Series 5{enter}");
     await expect($helper).toHaveTextContent("5 items added");
+    await expect($ariaLive).toHaveTextContent("'Series 5' added");
     await expect($list.children).toHaveLength(5);
+    await expect($input).toHaveValue("");
+    await expect($input).toHaveFocus();
+
+    await userEvent.click($list.querySelector("li:nth-child(2) button"));
+    await expect($helper).toHaveTextContent("4 items added");
+    await expect($ariaLive).toHaveTextContent("'Series 2' removed");
+    await expect($list.children).toHaveLength(4);
+    await expect($input).toHaveValue("");
+    await expect($list).toHaveFocus();
+
+    while ($list.children.length > 0) {
+      await userEvent.click($list.querySelector("li:first-child button"));
+    }
+    await expect($helper).toHaveTextContent("0 items added");
+    await expect($list.children).toHaveLength(0);
+    await expect($input).toHaveValue("");
+    await expect($input).toHaveFocus();
+
+    await userEvent.type($input, "Test");
+    await userEvent.click($button);
+    await expect($helper).toHaveTextContent("1 item added");
+    await expect($ariaLive).toHaveTextContent("'Test' added");
+    await expect($list.children).toHaveLength(1);
+    await expect($input).toHaveValue("");
+    await expect($input).toHaveFocus();
+
+    await userEvent.type($input, "Test");
+    await userEvent.click($button);
+    await expect($helper).toHaveTextContent("1 item added");
+    await expect($ariaLive).toHaveTextContent("'Test' already added");
+    await expect($list.children).toHaveLength(1);
+    await expect($input).toHaveValue("");
+    await expect($input).toHaveFocus();
+
+    await userEvent.type($input, "  tEST   ");
+    await userEvent.click($button);
+    await expect($helper).toHaveTextContent("1 item added");
+    await expect($ariaLive).toHaveTextContent("'tEST' already added");
+    await expect($list.children).toHaveLength(1);
+    await expect($input).toHaveValue("");
+    await expect($input).toHaveFocus();
   },
 };

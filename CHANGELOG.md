@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Yellow accent buttons have changed from white on brown to black on yellow
+- Logo forground colour changed to dark font
 - Solid logo forground colour changed from `#010101` to `#000`
 - Pretty text balancing for `<p>` elements
 

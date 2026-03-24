@@ -316,12 +316,12 @@ const Template = ({ theme, accent }) => {
           <p class="tna-scene-setter">
             We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.
           </p>
-          <blockquote class="tna-blockquote">
-            <div class="tna-blockquote__quote">
+          <div class="tna-blockquote">
+            <blockquote class="tna-blockquote__quote">
               <p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>
-            </div>
-            <p class="tna-blockquote__citation">Douglas Adams, Mostly Harmless</p>
-          </blockquote>
+            </blockquote>
+            <p class="tna-blockquote__attribution">Douglas Adams, <cite class="tna-blockquote__citation">Mostly Harmless</cite></p>
+          </div>
           <h2 class="tna-heading-m">
             <a href="#">Researching with The National Archives</a>
           </h2>

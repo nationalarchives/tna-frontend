@@ -64,7 +64,7 @@
     "babel-jest": "^30.1.1",
     "babel-loader": "^10.0.0",
     "chromatic": "^13.1.3",
-    "copy-webpack-plugin": "^14.0.0",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "diff": "^8.0.0",
     "eslint": "^8.57.1",
@@ -88,9 +88,9 @@
     "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
     "stylelint-selector-bem-pattern": "^4.0.1",
-    "vite-plugin-static-copy": "^4.0.0",
+    "vite-plugin-static-copy": "^3.1.4",
     "vitest": "^4.0.6",
     "webpack": "^5.95.0",
-    "webpack-cli": "^7.0.0"
+    "webpack-cli": "^6.0.1"
   }
 }

@@ -63,17 +63,19 @@ SceneSetter.args = {
 const BlockquoteTemplate = ({
   html,
   author,
-}) => `<blockquote class="tna-blockquote">
-  <div class="tna-blockquote__quote">
+  work,
+}) => `<div class="tna-blockquote">
+  <blockquote class="tna-blockquote__quote">
     ${html}
-  </div>
-  <p class="tna-blockquote__citation">${author}</p>
-</blockquote>`;
+  </blockquote>
+  <p class="tna-blockquote__attribution">${author}${work ? `, <cite class="tna-blockquote__citation">${work}</cite>` : ""}</p>
+</div>`;
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Blockquote.args = {
   html: "<p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>",
-  author: "Douglas Adams, Mostly Harmless",
+  author: "Douglas Adams",
+  work: "Mostly Harmless",
 };

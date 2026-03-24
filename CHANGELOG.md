@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `.tna-dl--even` class added for balanced columns
+- Italicise alternative text in images
 
 ### Changed
 
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Logo forground colour changed to dark font
 - Solid logo forground colour changed from `#010101` to `#000`
 - Pretty text balancing for `<p>` elements
+- **Breaking:** Updated blockquote HTML structure and classes
 
 ### Deprecated
 ### Removed

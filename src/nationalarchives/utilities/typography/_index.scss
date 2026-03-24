@@ -473,7 +473,7 @@ small {
     }
   }
 
-  &__citation {
+  &__attribution {
     margin-top: spacing.space(1);
 
     @include typography.font-size(16);
@@ -482,6 +482,10 @@ small {
       content: "\2014" " ";
       content: "\2014" " " / "";
     }
+  }
+
+  &__citation {
+    font-style: inherit;
   }
 
   @include media.on-tiny {

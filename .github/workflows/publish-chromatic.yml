@@ -34,6 +34,7 @@ jobs:
         run: npm ci
       - uses: chromaui/action@latest
         with:
+          buildScriptName: build:storybook
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitZeroOnChanges: true
           autoAcceptChanges: true

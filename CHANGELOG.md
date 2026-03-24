@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Logo forground colour changed to dark font
 - Solid logo forground colour changed from `#010101` to `#000`
 - Pretty text balancing for `<p>` elements
+- JavaScript class `TextInput` changed to `TextInputPassword` and module changed from `data-module="tna-text-input"` to `data-module="tna-text-input-password"`
 - **Breaking:** Updated blockquote HTML structure and classes
 
 ### Deprecated

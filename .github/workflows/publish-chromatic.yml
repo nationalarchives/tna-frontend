@@ -23,19 +23,16 @@ jobs:
   chromatic:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
       - name: Install dependencies
         run: npm ci
-      - name: Build Storybook
-        run: npm run build:storybook
       - uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook
           exitZeroOnChanges: true
           autoAcceptChanges: true

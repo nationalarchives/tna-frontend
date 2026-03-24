@@ -11,7 +11,8 @@ import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
 import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
-import { TextInput } from "./components/text-input/text-input.mjs";
+import { TextInputPassword } from "./components/text-input/text-input.mjs";
+import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
 import Cookies from "./lib/cookies.mjs";
 import { checkTableForScroll } from "./lib/tables.mjs";
 import { updateTimeElement } from "./lib/helpers.mjs";
@@ -138,9 +139,19 @@ const initAll = (options) => {
     new Tabs($tabModule);
   });
 
-  const $textInputs = $scope.querySelectorAll('[data-module="tna-text-input"]');
-  $textInputs.forEach(($textInput) => {
-    new TextInput($textInput);
+  const $textInputPasswords = $scope.querySelectorAll(
+    '[data-module="tna-text-input-password"]',
+  );
+  $textInputPasswords.forEach(($textInputPassword) => {
+    new TextInputPassword($textInputPassword);
+  });
+
+  const $textAreaItemisedRows = $scope.querySelectorAll(
+    '[data-module="tna-textarea-itemised-rows"]',
+  );
+  $textAreaItemisedRows.forEach(($textAreaItemisedRows) => {
+    const enhancedHint = $textAreaItemisedRows.dataset.enhancedHint;
+    new TextAreaItemisedRows($textAreaItemisedRows, { enhancedHint });
   });
 
   window.matchMedia("print").addEventListener("change", (evt) => {
@@ -194,7 +205,8 @@ export {
   Picture,
   SkipLink,
   Tabs,
-  TextInput,
+  TextInputPassword,
+  TextAreaItemisedRows,
   checkTableForScroll,
   updateTimeElement,
 };

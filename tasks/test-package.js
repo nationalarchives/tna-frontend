@@ -119,8 +119,8 @@ const checkExists = [
   ...componentFiles("sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
-  ...componentFiles("text-input", "TextInput"),
-  ...componentFiles("textarea"),
+  ...componentFiles("text-input", "TextInputPassword"),
+  ...componentFiles("textarea", "TextAreaItemisedRows"),
   ...componentFiles("warning"),
   // Libraries
   "nationalarchives/lib/analytics-helpers.mjs",

@@ -14,7 +14,8 @@ import {
   Picture,
   SkipLink,
   Tabs,
-  TextInput,
+  TextInputPassword,
+  TextAreaItemisedRows,
 } from "./all.mjs";
 import { EventTracker, GA4, helpers } from "./analytics.mjs";
 
@@ -34,7 +35,8 @@ export {
   Picture,
   SkipLink,
   Tabs,
-  TextInput,
+  TextInputPassword,
+  TextAreaItemisedRows,
   EventTracker,
   GA4,
   helpers,

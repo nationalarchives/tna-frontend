@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `.tna-dl--even` class added for balanced columns
 - Italicise alternative text in images
+- Textarea can split lines into separate, selectable items
 
 ### Changed
 
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Logo forground colour changed to dark font
 - Solid logo forground colour changed from `#010101` to `#000`
 - Pretty text balancing for `<p>` elements
+- JavaScript class `TextInput` changed to `TextInputPassword` and module changed from `data-module="tna-text-input"` to `data-module="tna-text-input-password"`
 - **Breaking:** Updated blockquote HTML structure and classes
 
 ### Deprecated
@@ -25,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Improved lined description list styles to avoid hanging lines
+- Individual component CSS includes all other relevant component styles when used in isolation
 
 ### Security
 

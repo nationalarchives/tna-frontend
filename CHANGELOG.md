@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.37.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.38.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.38.0](https://github.com/nationalarchives/tna-frontend/compare/v0.37.0...v0.38.0) - 2026-03-24
 
 ### Added
 
@@ -17,19 +26,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Yellow accent buttons have changed from white on brown to black on yellow
 - Logo forground colour changed to dark font
-- Solid logo forground colour changed from `#010101` to `#000`
 - Pretty text balancing for `<p>` elements
 - JavaScript class `TextInput` changed to `TextInputPassword` and module changed from `data-module="tna-text-input"` to `data-module="tna-text-input-password"`
+- Updated references of `#000` to `colour.brand-colour("black")` (`#010101`)
 - **Breaking:** Updated blockquote HTML structure and classes
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Improved lined description list styles to avoid hanging lines
 - Individual component CSS includes all other relevant component styles when used in isolation
-
-### Security
 
 ## [0.37.0](https://github.com/nationalarchives/tna-frontend/compare/v0.36.0...v0.37.0) - 2026-03-16
 

@@ -9,7 +9,7 @@ describe("iso8601ToPrettyDatetime", () => {
     expect(() => iso8601ToPrettyDatetime()).toThrow("No datetime provided");
   });
 
-  ["innvalid", "2001", "2001-02", "2001-02-03T12", "2001-02-03 12"].forEach(
+  ["invalid", "2001", "2001-02", "2001-02-03T12", "2001-02-03 12"].forEach(
     (datetime) => {
       test(`Invalid datetime (${datetime})`, async () => {
         expect(() => iso8601ToPrettyDatetime(datetime)).toThrow(

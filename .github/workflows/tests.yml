@@ -24,28 +24,28 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Lint
         uses: ./.github/actions/lint
 
   tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Tests
         uses: ./.github/actions/tests
 
   storybook-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Tests
         uses: ./.github/actions/storybook-tests
 
   test-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Test build package
         uses: ./.github/actions/test-package
 
@@ -54,6 +54,6 @@ jobs:
     needs:
       - test-package
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: GOV.UK prototype kit test
         uses: ./.github/actions/prototype-kit-test

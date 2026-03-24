@@ -13,7 +13,7 @@ jobs:
   version-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Get and validate version number
         id: get-version
         run: |
@@ -30,7 +30,7 @@ jobs:
     needs:
       - version-check
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Lint
         uses: ./.github/actions/lint
       
@@ -39,7 +39,7 @@ jobs:
     needs:
       - version-check
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Tests
         uses: ./.github/actions/tests
       
@@ -48,7 +48,7 @@ jobs:
     needs:
       - version-check
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Tests
         uses: ./.github/actions/storybook-tests
 
@@ -57,7 +57,7 @@ jobs:
     needs:
       - version-check
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Test build package
         uses: ./.github/actions/test-package
 
@@ -66,7 +66,7 @@ jobs:
     needs:
       - version-check
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: GOV.UK prototype kit test
         uses: ./.github/actions/prototype-kit-test
         
@@ -83,8 +83,8 @@ jobs:
       - test-package
       - prototype-kit
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
           registry-url: https://registry.npmjs.org/
@@ -122,7 +122,7 @@ jobs:
       - version-check
       - publish-npm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Get the release notes
         id: release-notes
         run: |

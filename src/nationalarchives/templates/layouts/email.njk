@@ -3,10 +3,11 @@
 {%- from "nationalarchives/templates/partials/logo/macro.njk" import tnaLogo -%}
 
 <!DOCTYPE html>
-<html lang="en" class="tna-template tna-template--green-accent tna-template--system-theme">
+<html lang="en" class="tna-template tna-template--green-accent tna-template--system-theme" xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="x-apple-disable-message-reformatting">
     <title>{{ subject }}</title>
     <link rel="preconnect" href="https://use.typekit.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +18,7 @@
     {%- if disableAdornableLogo !== true %}
     <link rel="stylesheet" href="https://www.nationalarchives.gov.uk/enrichment/css/logo-adornments.css" media="screen">
     {%- endif %}
+    <!--[if mso]> <noscript> <xml> <o:OfficeDocumentSettings> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml> </noscript> <![endif]-->
   </head>
   <body class="tna-template__body">
     <div class="tna-template__main">

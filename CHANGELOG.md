@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Updated email template markup with fixes for automatic sizing and message reformatting
+
 ### Deprecated
 ### Removed
 ### Fixed

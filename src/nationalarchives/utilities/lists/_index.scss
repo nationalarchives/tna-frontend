@@ -147,6 +147,12 @@ ol {
       background: none;
     }
   }
+
+  &:has(> dt > .fa-solid, > dt > .fa-brands):not(&--zebra) {
+    > dd {
+      padding-left: spacing.space(2);
+    }
+  }
 }
 
 .tna-dl {

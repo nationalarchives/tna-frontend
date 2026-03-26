@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Spacing fixed for stacked description list with icons
+
 ### Security
 
 ## [0.38.0](https://github.com/nationalarchives/tna-frontend/compare/v0.37.0...v0.38.0) - 2026-03-24

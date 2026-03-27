@@ -1,0 +1,388 @@
+@use "tools/borders";
+@use "tools/colour";
+@use "tools/spacing";
+@use "tools/typography";
+
+code,
+pre {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+code {
+  color: #905;
+
+  background-color: #f1ece9;
+
+  .tna-template--dark-theme & {
+    color: #d49;
+
+    background-color: #111;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      color: #d49;
+
+      background-color: #111;
+    }
+  }
+
+  p &,
+  li &,
+  dd &,
+  table & {
+    font-size: 0.95em;
+  }
+}
+
+.tna-code-block {
+  @include spacing.space-above;
+  @include typography.font-size(16);
+    padding: spacing.space(1);
+
+  overflow: auto;
+
+    // position: relative;
+
+  @include colour.colour-border("keyline", 1px);
+  @include borders.rounded-border;
+
+  code[class*="language-"] {
+    background: transparent;
+  }
+
+  // &[title] {
+  //     padding-top: spacing.space(3);
+  //   &::before {
+  //     content: attr(title);
+
+  //     // height: spacing.space(1);
+  //     padding: spacing.space(0.5) spacing.space(1);
+
+  //     display: block;
+
+  //     position: absolute;
+  //     top: 0;
+  //     margin-top: 0;
+  //     // margin-bottom: 1rem;
+  //     // margin-left: -1rem;
+  //     left: 0;
+  //     // width: calc(100% + 2rem);
+
+  //     line-height: spacing.space(1);
+  //     @include colour.tint;
+  //   }
+
+  //   code[class*="language-"] {
+  //     display: block;
+  //   }
+  // }
+}
+
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #393a34;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  line-height: 1.5;
+  text-align: left;
+  direction: ltr;
+  word-break: normal;
+  white-space: pre;
+  word-spacing: normal;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+pre > code[class*="language-"] {
+  //  font-size: 1em;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  // margin: 0.5em 0;
+  // padding: 1em;
+
+  overflow: auto;
+  //  border: 1px solid #dddddd;
+  background-color: #f5f2f0;
+}
+
+/* Inline code */
+// :not(pre) > code[class*="language-"] {
+//   padding: 0.2em;
+//   padding-top: 1px;
+//   padding-bottom: 1px;
+
+//   background: #f8f8f8;
+
+//   border: 1px solid #ddd;
+// }
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #998;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #be0e5a;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393a34; /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #247a78;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name,
+.language-autohotkey .token.selector {
+  color: #00759d;
+}
+
+.token.function,
+.token.deleted,
+.language-autohotkey .token.tag {
+  color: #9a050f;
+}
+
+.token.tag,
+.token.selector,
+.language-autohotkey .token.keyword {
+  color: #00009f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+@mixin dark-theme-code {
+  /**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: #f8f8f2;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    line-height: 1.5;
+    text-align: left;
+    overflow-wrap: normal;
+
+    word-break: normal;
+    white-space: pre;
+    word-spacing: normal;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+
+    background: none;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  }
+
+  /* Code blocks */
+  pre[class*="language-"] {
+    margin: 0.5em 0;
+    padding: 1em;
+
+    overflow: auto;
+    // border-radius: 0.3em;
+  }
+
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: #2b2b2b;
+  }
+
+  /* Inline code */
+  // :not(pre) > code[class*="language-"] {
+  //   padding: 0.1em;
+  //   // border-radius: 0.3em;
+  //   white-space: normal;
+  // }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #d4d0ab;
+  }
+
+  .token.punctuation {
+    color: #fefefe;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #ffa07a;
+  }
+
+  .token.boolean,
+  .token.number {
+    color: #00e0e0;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #abe338;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #00e0e0;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.function {
+    color: #ffd700;
+  }
+
+  .token.keyword {
+    color: #00e0e0;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #ffd700;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
+
+  @media screen and (-ms-high-contrast: active) {
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: CanvasText;
+
+      background: window;
+    }
+
+    :not(pre) > code[class*="language-"],
+    pre[class*="language-"] {
+      background: window;
+    }
+
+    .token.important {
+      color: canvas;
+      font-weight: normal;
+
+      background: highlight;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.function,
+    .token.keyword,
+    .token.operator,
+    .token.selector {
+      font-weight: bold;
+    }
+
+    .token.attr-value,
+    .token.comment,
+    .token.doctype,
+    .token.function,
+    .token.keyword,
+    .token.operator,
+    .token.property,
+    .token.string {
+      color: highlight;
+    }
+
+    .token.attr-value,
+    .token.url {
+      font-weight: normal;
+    }
+  }
+}
+
+.tna-template--dark-theme {
+  @include dark-theme-code;
+}
+
+.tna-template--system-theme {
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme-code;
+  }
+}

@@ -45,7 +45,8 @@
   "sass": "nationalarchives/all.scss",
   "homepage": "https://github.com/nationalarchives/tna-frontend#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.2.0"
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "prismjs": "^1.30.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.8",
@@ -78,7 +79,6 @@
     "nunjucks": "^3.2.4",
     "playwright": "^1.56.1",
     "prettier": "^3.3.3",
-    "prismjs": "^1.30.0",
     "sass": "^1.79.5",
     "sass-embedded": "^1.91.0",
     "sass-loader": "^16.0.2",

@@ -47,6 +47,9 @@ const checkExists = [
   "nationalarchives/analytics.js",
   "nationalarchives/analytics.js.map",
   "nationalarchives/analytics.mjs",
+  "nationalarchives/code.js",
+  "nationalarchives/code.js.map",
+  "nationalarchives/code.mjs",
   "nationalarchives/email.css",
   "nationalarchives/email.css.map",
   "nationalarchives/email.scss",
@@ -281,7 +284,7 @@ Object.defineProperty(window, "matchMedia", {
 });
 global.window = window;
 global.document = window.document;
-["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
+["all.js", "analytics.js", "all+analytics.js", "code.js"].forEach((file) => {
   const jsAllPackage = require(`../package/nationalarchives/${file}`);
   let exports = [];
   if (file === "all.js" || file === "all+analytics.js") {
@@ -380,7 +383,12 @@ const cssFilesToCheckSize = [
   "print.css",
   "ie.css",
 ];
-const jsFilesToCheckSize = ["all.js", "analytics.js", "all+analytics.js"];
+const jsFilesToCheckSize = [
+  "all.js",
+  "analytics.js",
+  "all+analytics.js",
+  "code.js",
+];
 const longestFilenameToCheckSize = [
   ...cssFilesToCheckSize,
   ...jsFilesToCheckSize,

@@ -27,6 +27,14 @@ module.exports = {
         type: "umd",
       },
     },
+    "code": {
+      import: "./src/nationalarchives/code.mjs",
+      filename: "code.js",
+      library: {
+        name: "TNAFrontendCode",
+        type: "umd",
+      },
+    },
     ...glob
       .sync("./src/nationalarchives/components/**/*.mjs")
       .reduce((acc, path) => {

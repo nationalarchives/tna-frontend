@@ -1,7 +1,13 @@
-import Prism from "prismjs";
+const argTypes = {
+  language: { control: "text" },
+  filename: { control: "text" },
+  content: { control: "text" },
+  allowCopy: { control: "boolean" },
+};
 
 export default {
-  title: "Utilities/Code",
+  title: "Utilities/Typography/Code",
+  argTypes,
 };
 
 const InlineCodeTemplate = ({ content }) =>
@@ -12,21 +18,41 @@ InlineCode.parameters = {
 };
 InlineCode.args = { content: "<main>" };
 
-const CodeBlockTemplate = ({ language, filename, content }) =>
-  `<pre class="tna-code-block" title="${filename}"><code class="language-${language}">${content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`;
+const CodeBlockTemplate = ({ language, filename, content, allowCopy }) =>
+  `<div class="tna-code-block${allowCopy ? " tna-code-block--copy" : ""}" ${filename ? `title="${filename}"` : ""}>
+  <pre class="tna-code-block__pre"><code class="language-${language}">${content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+</div>`;
 export const CodeBlock = CodeBlockTemplate.bind({});
 CodeBlock.parameters = {
   chromatic: { disableSnapshot: true },
 };
 CodeBlock.args = {
-  language: "javascript",
-  filename: "example.js",
-  content: `import { initAll } from "@nationalarchives/frontend/nationalarchives/all.mjs";
-
-initAll();`,
+  language: "html",
+  content: `<a href="#" class="tna-back-link">
+  <span class="tna-back-link__inner">Back to previous page</span>
+</a>`,
 };
-CodeBlock.play = async ({ canvasElement }) => {
-  canvasElement.querySelectorAll("pre code").forEach((block) => {
-    Prism.highlightElement(block);
-  });
+
+export const CodeBlockWithFilename = CodeBlockTemplate.bind({});
+CodeBlockWithFilename.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+CodeBlockWithFilename.args = {
+  language: "html",
+  filename: "example.html",
+  content: `<a href="#" class="tna-back-link">
+  <span class="tna-back-link__inner">Back to previous page</span>
+</a>`,
+};
+
+export const CodeBlockWithCopy = CodeBlockTemplate.bind({});
+CodeBlockWithCopy.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+CodeBlockWithCopy.args = {
+  language: "html",
+  content: `<a href="#" class="tna-back-link">
+  <span class="tna-back-link__inner">Back to previous page</span>
+</a>`,
+  allowCopy: true,
 };

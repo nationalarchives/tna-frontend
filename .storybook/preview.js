@@ -8,12 +8,14 @@ import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
+import { init } from "../src/nationalarchives/code.mjs";
 
 // For cookie banner tests
 window.global = window;
 
 // window.addEventListener("onload", initAll);
 document.addEventListener("DOMContentLoaded", initAll, false);
+document.addEventListener("DOMContentLoaded", init, false);
 
 document.documentElement.classList.add(
   "tna-template",

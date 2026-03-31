@@ -1,3 +1,4 @@
+@use "tools/a11y";
 @use "tools/borders";
 @use "tools/colour";
 @use "tools/spacing";
@@ -59,6 +60,8 @@ pre[class*="language-"] {
   overflow: auto;
 
   background-color: #f5f2f0;
+
+  @include a11y.focus-indicator-only-on-keyboard-focus;
 }
 
 .token.comment,

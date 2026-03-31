@@ -206,6 +206,8 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
   contain: paint;
 
+  @include a11y.focus-indicator-only-on-keyboard-focus;
+
   /*
   * ------------------------------------------
   * Can remove the @supports rule when support
@@ -239,10 +241,6 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  &:focus:not(:focus-visible) {
-    @include a11y.no-focus-outline;
   }
 
   .tna-table {

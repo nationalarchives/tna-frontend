@@ -132,3 +132,13 @@
     @extend %faux-full-outline-anchor;
   }
 }
+
+%focus-indicator-only-on-keyboard-focus {
+  &:focus:not(:focus-visible) {
+    @include no-focus-outline;
+  }
+}
+
+@mixin focus-indicator-only-on-keyboard-focus {
+  @extend %focus-indicator-only-on-keyboard-focus;
+}

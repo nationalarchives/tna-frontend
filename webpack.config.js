@@ -27,7 +27,7 @@ module.exports = {
         type: "umd",
       },
     },
-    "code": {
+    code: {
       import: "./src/nationalarchives/code.mjs",
       filename: "code.js",
       library: {

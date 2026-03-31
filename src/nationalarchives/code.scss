@@ -3,11 +3,12 @@
 @use "tools/spacing";
 @use "tools/typography";
 
-$font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$code-block-top-bar-height: spacing.space(2);
+$code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
 code,
 pre {
-  font-family: $font-family;
+  font-family: $code-font-family;
 }
 
 code {
@@ -64,7 +65,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #998;
+  color: #6e6e5e;
   font-style: italic;
 }
 
@@ -228,6 +229,8 @@ pre[class*="language-"] {
 
     overflow: auto;
 
+    position: relative;
+
     border-radius: 0.1px;
 
     code[class*="language-"] {
@@ -235,35 +238,21 @@ pre[class*="language-"] {
     }
   }
 
-  &__copy {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-  }
-
+  &:has(&__copy),
   &[title] {
-    &::before {
-      content: attr(title);
+    padding-top: $code-block-top-bar-height;
 
-      margin-top: 0;
+    &::after {
+      content: "";
 
-      padding: spacing.space(0.5) spacing.space(7) spacing.space(0.5)
-        spacing.space(1);
-
-      display: block;
+      height: $code-block-top-bar-height;
 
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
+      z-index: 1;
 
-      pointer-events: none;
-
-      // @include typography.main-font-weight-medium;
-      font-family: $font-family;
-      line-height: spacing.space(1);
-      text-wrap: nowrap;
       @include colour.tint;
 
       @include colour.on-high-contrast-and-forced-colours {
@@ -272,8 +261,36 @@ pre[class*="language-"] {
     }
   }
 
-  :has(&__copy) &__pre,
-  &[title] &__pre {
-    padding-top: spacing.space(3);
+  &[title] {
+    &::before {
+      content: attr(title);
+
+      margin-top: 0;
+
+      padding: 0 spacing.space(7) 0 spacing.space(1);
+
+      display: block;
+      overflow: hidden;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+
+      font-family: $code-font-family;
+      line-height: $code-block-top-bar-height;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+
+      pointer-events: none;
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
   }
 }

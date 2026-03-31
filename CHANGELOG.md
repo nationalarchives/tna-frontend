@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Spacing fixed for stacked description list with icons
+- Sub-pixel alignment issues fixed in SVG logo
 
 ### Security
 

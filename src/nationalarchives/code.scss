@@ -1,0 +1,282 @@
+@use "tools/borders";
+@use "tools/colour";
+@use "tools/spacing";
+@use "tools/typography";
+
+$code-block-top-bar-height: spacing.space(2);
+$code-font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+code,
+pre {
+  font-family: $code-font-family;
+}
+
+code {
+  color: #be0e5a;
+  font-size: 0.95em;
+
+  background-color: #f1ece9;
+
+  .tna-template--dark-theme & {
+    // color: #ffa07a;
+    color: #d49;
+
+    // background-color: #2b2b2b;
+    background-color: #111;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      // color: #ffa07a;
+      color: #d49;
+
+      // background-color: #2b2b2b;
+      background-color: #111;
+    }
+  }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #393a34;
+  text-align: left;
+  direction: ltr;
+  word-break: normal;
+  white-space: pre;
+  word-spacing: normal;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+pre[class*="language-"] {
+  overflow: auto;
+
+  background-color: #f5f2f0;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6e6e5e;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #be0e5a;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393a34; /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #247a78;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name {
+  color: #00759d;
+}
+
+.token.tag,
+.token.selector {
+  color: #00009f;
+}
+
+.token.function,
+.token.deleted {
+  color: #9a050f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+@mixin dark-theme-code {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: #f8f8f2;
+  }
+
+  pre[class*="language-"] {
+    background: #2b2b2b;
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #d4d0ab;
+  }
+
+  .token.punctuation {
+    color: #fefefe;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #ffa07a;
+  }
+
+  .token.boolean,
+  .token.number {
+    color: #00e0e0;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #abe338;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #00e0e0;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.function {
+    color: #ffd700;
+  }
+
+  .token.keyword {
+    color: #00e0e0;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #ffd700;
+  }
+}
+
+.tna-template--dark-theme {
+  @include dark-theme-code;
+}
+
+.tna-template--system-theme {
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme-code;
+  }
+}
+
+.tna-code-block {
+  @include spacing.space-above;
+
+  position: relative;
+
+  @include typography.font-size(16);
+  line-height: 1.5;
+
+  @include colour.colour-border("keyline", 1px);
+  @include borders.rounded-border;
+
+  &__pre {
+    padding: spacing.space(1);
+
+    overflow: auto;
+
+    position: relative;
+
+    border-radius: 0.1px;
+
+    code[class*="language-"] {
+      background: transparent;
+    }
+  }
+
+  &:has(&__copy),
+  &[title] {
+    padding-top: $code-block-top-bar-height;
+
+    &::after {
+      content: "";
+
+      height: $code-block-top-bar-height;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+
+      @include colour.tint;
+
+      @include colour.on-high-contrast-and-forced-colours {
+        @include colour.colour-border("keyline", 1px, solid, bottom);
+      }
+    }
+  }
+
+  &[title] {
+    &::before {
+      content: attr(title);
+
+      margin-top: 0;
+
+      padding: 0 spacing.space(7) 0 spacing.space(1);
+
+      display: block;
+      overflow: hidden;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+
+      font-family: $code-font-family;
+      line-height: $code-block-top-bar-height;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+
+      pointer-events: none;
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
+}

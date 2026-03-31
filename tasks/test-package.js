@@ -47,6 +47,9 @@ const checkExists = [
   "nationalarchives/analytics.js",
   "nationalarchives/analytics.js.map",
   "nationalarchives/analytics.mjs",
+  "nationalarchives/code.js",
+  "nationalarchives/code.js.map",
+  "nationalarchives/code.mjs",
   "nationalarchives/email.css",
   "nationalarchives/email.css.map",
   "nationalarchives/email.scss",
@@ -281,7 +284,8 @@ Object.defineProperty(window, "matchMedia", {
 });
 global.window = window;
 global.document = window.document;
-["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
+global.Element = { prototype: { matches: () => {} } };
+["all.js", "analytics.js", "all+analytics.js", "code.js"].forEach((file) => {
   const jsAllPackage = require(`../package/nationalarchives/${file}`);
   let exports = [];
   if (file === "all.js" || file === "all+analytics.js") {
@@ -311,6 +315,9 @@ global.document = window.document;
       { name: "GA4", type: "function" },
       { name: "helpers", type: "object" },
     ];
+  }
+  if (file === "code.js") {
+    exports = [...exports, { name: "init", type: "function" }];
   }
   exports.forEach((eachExport) => {
     if (
@@ -375,12 +382,18 @@ console.log("Testing file sizes...");
 console.log("\n");
 const cssFilesToCheckSize = [
   "all.css",
-  "prototype-kit.css",
+  "code.css",
   "font-awesome.css",
-  "print.css",
   "ie.css",
+  "print.css",
+  "prototype-kit.css",
 ];
-const jsFilesToCheckSize = ["all.js", "analytics.js", "all+analytics.js"];
+const jsFilesToCheckSize = [
+  "all.js",
+  "all+analytics.js",
+  "analytics.js",
+  "code.js",
+];
 const longestFilenameToCheckSize = [
   ...cssFilesToCheckSize,
   ...jsFilesToCheckSize,

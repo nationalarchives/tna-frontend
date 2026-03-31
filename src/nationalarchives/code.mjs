@@ -20,7 +20,7 @@ const init = () => {
           "tna-button--small",
         );
         copyButton.setAttribute("aria-live", "assertive");
-        $codeBlock.appendChild(copyButton);
+        $codeBlock.prepend(copyButton);
         copyButton.addEventListener("click", async () => {
           try {
             await navigator.clipboard.writeText($codeBlockContent.innerText);

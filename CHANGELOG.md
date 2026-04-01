@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Inline `<code>` elements can be used
 - New code block styles with [Prism](https://prismjs.com/) integration available
+- Dark PNG icons added
 
 ### Changed
 

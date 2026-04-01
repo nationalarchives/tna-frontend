@@ -527,3 +527,33 @@ address {
   line-height: 1.375;
   font-style: inherit;
 }
+
+code,
+pre {
+  font-family: typographyVars.$code-font-family;
+}
+
+code {
+  color: #be0e5a;
+  font-size: 0.95em;
+
+  background-color: #f1ece9;
+
+  .tna-template--dark-theme & {
+    // color: #ffa07a;
+    color: #d49;
+
+    // background-color: #2b2b2b;
+    background-color: #111;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      // color: #ffa07a;
+      color: #d49;
+
+      // background-color: #2b2b2b;
+      background-color: #111;
+    }
+  }
+}

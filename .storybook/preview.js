@@ -1,6 +1,6 @@
 import "../src/nationalarchives/all.scss";
 import "../src/nationalarchives/font-awesome.scss";
-import "../src/nationalarchives/code.scss";
+import "../src/nationalarchives/code-blocks.scss";
 import "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2";
 import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";

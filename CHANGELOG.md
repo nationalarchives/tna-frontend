@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated `code.scss` to `code-blocks.scss` and moved inline code styles to `utilities/typography`
+- Updated "Visit" link in global header
 
 ### Deprecated
 ### Removed

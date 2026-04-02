@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Move code block initialisation from `code.mjs` to `initAll()` in `all.mjs`
 - Remove Prism from `dependencies` to `devDependencies` and don't instanciate as part of TNA Frontend (it has to be instantiated in the consuming application)
 - Remove `lib/tables.mjs` and move `checkTableForScroll()` to `lib/helpers.mjs`
+- Improved `<code>` rendering in forced colours mode
 
 ### Deprecated
 ### Removed

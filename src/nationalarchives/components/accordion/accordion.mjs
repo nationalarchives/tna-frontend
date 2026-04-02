@@ -1,4 +1,4 @@
-import { checkTableForScroll } from "../../lib/tables.mjs";
+import { checkTableForScroll } from "../../lib/helpers.mjs";
 
 export class Accordion {
   constructor($module) {

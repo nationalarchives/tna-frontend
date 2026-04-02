@@ -14,8 +14,11 @@ import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
 import Cookies from "./lib/cookies.mjs";
-import { checkTableForScroll } from "./lib/tables.mjs";
-import { updateTimeElement } from "./lib/helpers.mjs";
+import {
+  updateTimeElement,
+  initCodeBlock,
+  checkTableForScroll,
+} from "./lib/helpers.mjs";
 
 const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};
@@ -60,6 +63,18 @@ const initAll = (options) => {
       checkTableForScroll($tableWrapper),
     );
   });
+
+  /*
+   * ==========================================
+   * Add "Copy code" buttons to all code blocks
+   * and enable copying the code to clipboard
+   * ==========================================
+   */
+  document
+    .querySelectorAll(".tna-code-block:has(pre > code)")
+    .forEach(($codeBlock) => {
+      initCodeBlock($codeBlock);
+    });
 
   // TODO: Remove this opt-in class in a later release
   if ($html.classList.contains("tna-template--enhance-time-elements")) {

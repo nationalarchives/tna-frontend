@@ -47,9 +47,9 @@ const checkExists = [
   "nationalarchives/analytics.js",
   "nationalarchives/analytics.js.map",
   "nationalarchives/analytics.mjs",
-  "nationalarchives/code.js",
-  "nationalarchives/code.js.map",
-  "nationalarchives/code.mjs",
+  "nationalarchives/code-block.css",
+  "nationalarchives/code-block.css.map",
+  "nationalarchives/code-block.scss",
   "nationalarchives/email.css",
   "nationalarchives/email.css.map",
   "nationalarchives/email.scss",
@@ -72,22 +72,36 @@ const checkExists = [
   "nationalarchives/assets/fonts/RobotoMono-Medium.ttf",
   "nationalarchives/assets/fonts/RobotoMono-Regular.ttf",
   "nationalarchives/assets/images/icon-48x48.png",
+  "nationalarchives/assets/images/icon-48x48-dark.png",
   "nationalarchives/assets/images/icon-72x72.png",
+  "nationalarchives/assets/images/icon-72x72-dark.png",
   "nationalarchives/assets/images/icon-96x96.png",
+  "nationalarchives/assets/images/icon-96x96-dark.png",
   "nationalarchives/assets/images/icon-120x120.png",
+  "nationalarchives/assets/images/icon-120x120-dark.png",
   "nationalarchives/assets/images/icon-144x144.png",
+  "nationalarchives/assets/images/icon-144x144-dark.png",
   "nationalarchives/assets/images/icon-152x152.png",
+  "nationalarchives/assets/images/icon-152x152-dark.png",
   "nationalarchives/assets/images/icon-167x167.png",
+  "nationalarchives/assets/images/icon-167x167-dark.png",
   "nationalarchives/assets/images/icon-180x180.png",
+  "nationalarchives/assets/images/icon-180x180-dark.png",
   "nationalarchives/assets/images/icon-192x192.png",
+  "nationalarchives/assets/images/icon-192x192-dark.png",
   "nationalarchives/assets/images/icon-256x256.png",
+  "nationalarchives/assets/images/icon-256x256-dark.png",
   "nationalarchives/assets/images/icon-512x512.png",
+  "nationalarchives/assets/images/icon-512x512-dark.png",
   "nationalarchives/assets/images/icon-1024x1024.png",
+  "nationalarchives/assets/images/icon-1024x1024-dark.png",
   "nationalarchives/assets/images/favicon.ico",
   "nationalarchives/assets/images/mask-icon.svg",
   "nationalarchives/assets/images/mstile-150x150.png",
   "nationalarchives/assets/images/nationalarchives-opengraph-image.png",
   "nationalarchives/assets/images/tna-square-logo.svg",
+  "nationalarchives/assets/images/tna-square-logo-dark.svg",
+  "nationalarchives/assets/images/tna-square-logo-light.svg",
   // Components
   ...componentFiles("accordion", "Accordion"),
   ...componentFiles("back-link"),
@@ -130,7 +144,6 @@ const checkExists = [
   "nationalarchives/lib/cookies.mjs",
   "nationalarchives/lib/_functions.scss",
   "nationalarchives/lib/helpers.mjs",
-  "nationalarchives/lib/tables.mjs",
   "nationalarchives/lib/uuid.mjs",
   // Tools
   "nationalarchives/tools/_a11y.scss",
@@ -285,7 +298,7 @@ Object.defineProperty(window, "matchMedia", {
 global.window = window;
 global.document = window.document;
 global.Element = { prototype: { matches: () => {} } };
-["all.js", "analytics.js", "all+analytics.js", "code.js"].forEach((file) => {
+["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
   const jsAllPackage = require(`../package/nationalarchives/${file}`);
   let exports = [];
   if (file === "all.js" || file === "all+analytics.js") {
@@ -315,9 +328,6 @@ global.Element = { prototype: { matches: () => {} } };
       { name: "GA4", type: "function" },
       { name: "helpers", type: "object" },
     ];
-  }
-  if (file === "code.js") {
-    exports = [...exports, { name: "init", type: "function" }];
   }
   exports.forEach((eachExport) => {
     if (
@@ -382,18 +392,13 @@ console.log("Testing file sizes...");
 console.log("\n");
 const cssFilesToCheckSize = [
   "all.css",
-  "code.css",
+  "code-block.css",
   "font-awesome.css",
   "ie.css",
   "print.css",
   "prototype-kit.css",
 ];
-const jsFilesToCheckSize = [
-  "all.js",
-  "all+analytics.js",
-  "analytics.js",
-  "code.js",
-];
+const jsFilesToCheckSize = ["all.js", "all+analytics.js", "analytics.js"];
 const longestFilenameToCheckSize = [
   ...cssFilesToCheckSize,
   ...jsFilesToCheckSize,

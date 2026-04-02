@@ -10,8 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 
-- Updated `code.scss` to `code-blocks.scss` and moved inline code styles to `utilities/typography`
+- Updated `code.scss` to `code-block.scss` and moved inline code styles to `utilities/typography`
 - Updated "Visit" link in global header
+- Move code block initialisation from `code.mjs` to `initAll()` in `all.mjs`
+- Remove Prism from `dependencies` to `devDependencies` and don't instanciate as part of TNA Frontend (it has to be instantiated in the consuming application)
+- Remove `lib/tables.mjs` and move `checkTableForScroll()` to `lib/helpers.mjs`
 
 ### Deprecated
 ### Removed

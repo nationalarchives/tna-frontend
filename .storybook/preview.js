@@ -1,6 +1,6 @@
 import "../src/nationalarchives/all.scss";
 import "../src/nationalarchives/font-awesome.scss";
-import "../src/nationalarchives/code-blocks.scss";
+import "../src/nationalarchives/code-block.scss";
 import "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2";
 import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
@@ -8,14 +8,21 @@ import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
-import { init } from "../src/nationalarchives/code.mjs";
+import Prism from "prismjs";
 
 // For cookie banner tests
 window.global = window;
 
-// window.addEventListener("onload", initAll);
-document.addEventListener("DOMContentLoaded", initAll, false);
-document.addEventListener("DOMContentLoaded", init, false);
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    initAll();
+    document
+      .querySelectorAll('.tna-code-block > pre > code[class*="language-"]')
+      .forEach(($block) => Prism.highlightElement($block));
+  },
+  false,
+);
 
 document.documentElement.classList.add(
   "tna-template",
@@ -26,7 +33,7 @@ if (window.self !== window.top) {
 }
 document.body.classList.add("tna-template__body");
 
-document.documentElement.dataset.tnaFrontendDebug = "true";
+// document.documentElement.dataset.tnaFrontendDebug = "true";
 
 export const parameters = {
   actions: {},

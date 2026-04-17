@@ -556,4 +556,8 @@ code {
       background-color: #111;
     }
   }
+
+  @include colour.on-forced-colours {
+    @include colour.colour-border("keyline", 1px);
+  }
 }

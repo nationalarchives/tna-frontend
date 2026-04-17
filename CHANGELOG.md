@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 ### Changed
 
+- Replaced macro-based `email.njk` layout with a safe, table-based inline-HTML version for improved email client compatibility
 - Updated `code.scss` to `code-block.scss` and moved inline code styles to `utilities/typography`
 - Updated "Visit" link in global header
 - Move code block initialisation from `code.mjs` to `initAll()` in `all.mjs`

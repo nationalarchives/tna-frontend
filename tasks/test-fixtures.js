@@ -72,6 +72,11 @@ const templatesDirectory = "src/nationalarchives/templates/";
 const templateFixturesFile = `${templatesDirectory}fixtures.json`;
 const templateFixtures = require(`../${templateFixturesFile}`);
 const failedTemplates = templateFixtures.fixtures.filter((fixture) => {
+  if (fixture.omitFixtureHtmlValidation === true) {
+    pass(`${fixture.name} (${fixture.template}) (validation skipped)`);
+    return false;
+  }
+
   const templateNunjucks = require(
     `../${templatesDirectory}${fixture.template}`,
   );

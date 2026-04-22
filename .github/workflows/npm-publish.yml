@@ -144,7 +144,7 @@ jobs:
         run: |
           {
             echo 'RELEASE_NOTES<<EOF'
-            ./tasks/get-release-notes.sh ${{ needs.version-check.outputs.version }}
+            ./tasks/get-release-notes.sh ${NEEDS_VERSION_CHECK_OUTPUTS_VERSION}
             echo EOF
           } >> "$GITHUB_OUTPUT"
       - uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # v2.3.3
@@ -155,3 +155,4 @@ jobs:
           MSG_MINIMAL: true
           SLACKIFY_MARKDOWN: true
           SLACK_MESSAGE: ${{ steps.release-notes.outputs.RELEASE_NOTES }}
+          NEEDS_VERSION_CHECK_OUTPUTS_VERSION: ${{ needs.version-check.outputs.version }}

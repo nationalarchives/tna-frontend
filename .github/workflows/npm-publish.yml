@@ -147,6 +147,8 @@ jobs:
             ./tasks/get-release-notes.sh ${NEEDS_VERSION_CHECK_OUTPUTS_VERSION}
             echo EOF
           } >> "$GITHUB_OUTPUT"
+        env:
+          NEEDS_VERSION_CHECK_OUTPUTS_VERSION: ${{ needs.version-check.outputs.version }}
       - uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # v2.3.3
         env:
           SLACK_TITLE: "`v${{ needs.version-check.outputs.version }}` of `tna-frontend` has just been published"
@@ -155,4 +157,3 @@ jobs:
           MSG_MINIMAL: true
           SLACKIFY_MARKDOWN: true
           SLACK_MESSAGE: ${{ steps.release-notes.outputs.RELEASE_NOTES }}
-          NEEDS_VERSION_CHECK_OUTPUTS_VERSION: ${{ needs.version-check.outputs.version }}

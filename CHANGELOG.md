@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove `lib/tables.mjs` and move `checkTableForScroll()` to `lib/helpers.mjs`
 - Improved `<code>` rendering in forced colours mode
 - Updated Design System link and legal links in default footer content
+- Resized left margin of lists
 
 ### Deprecated
 ### Removed

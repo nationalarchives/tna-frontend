@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Updated email template for better email client compatibility (@rzarrouk)
+- Updated maximum default picture height from `40rem` to `50rem`
+
 ### Deprecated
 ### Removed
 ### Fixed

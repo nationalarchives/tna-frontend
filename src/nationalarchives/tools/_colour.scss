@@ -9,25 +9,14 @@
 
 $base-colours: (
   "background",
-  // "background-tint",
   "font-base",
   "font-dark",
   "font-light",
   "icon-light",
   "link",
   "link-visited",
-  // "focus-outline",
   "keyline",
-  "keyline-dark",
-  // "input-foreground",
-  // "input-background",
-  // "input-border",
-  // "form-error-border",
-  // "form-error-text",
-  // "button-text",
-  // "button-background",
-  // "button-hover-text",
-   // "button-hover-background",
+  "keyline-dark"
 );
 
 @function brand-colour($colour, $opacity: 1) {

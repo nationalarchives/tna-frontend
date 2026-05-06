@@ -1,6 +1,5 @@
 import Template from "./layouts/email.njk?raw";
 import nunjucks from "nunjucks";
-import "../email.scss";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 

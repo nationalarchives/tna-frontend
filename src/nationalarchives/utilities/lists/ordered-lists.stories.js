@@ -86,3 +86,51 @@ OrderedListNested.parameters = {
 OrderedListNested.args = {
   items: ["Alpha", "Beta"],
 };
+
+const OrderedListNestedClasslessChildrenTemplate = ({
+  style,
+  spaced,
+  classes = "",
+}) => `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">
+  <li>&lt;html&gt;
+    <ol>
+      <li>&lt;head&gt;
+        <ol>
+          <li>pageTitle</li>
+          <li>headIcons</li>
+          <li>head</li>
+          <li>stylesheets</li>
+        </ol>
+      </li>
+      <li>&lt;body&gt;
+        <ol>
+          <li>bodyStart
+            <ol>
+              <li>cookies</li>
+              <li>skipLink</li>
+            </ol>
+          </li>
+          <li>header</li>
+          <li>main
+            <ol>
+              <li>beforeContent</li>
+              <li>&lt;main&gt;
+                <ol>
+                  <li>content</li>
+                </ol>
+              </li>
+              <li>afterContent</li>
+            </ol>
+          </li>
+          <li>footer</li>
+          <li>bodyEnd</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>`;
+export const OrderedListNestedClasslessChildren =
+  OrderedListNestedClasslessChildrenTemplate.bind({});
+OrderedListNestedClasslessChildren.parameters = {
+  chromatic: { disableSnapshot: true },
+};

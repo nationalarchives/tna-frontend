@@ -4,8 +4,12 @@
 @use "../../tools/typography";
 @use "../../utilities/typography" as typographyUtils;
 
+/* stylelint-disable no-descending-specificity */
 ul {
-  list-style-type: disc;
+  &,
+  & & & & {
+    list-style-type: disc;
+  }
 
   & & {
     list-style-type: circle;
@@ -14,14 +18,13 @@ ul {
   & & & {
     list-style-type: square;
   }
-
-  & & & & {
-    list-style-type: disc;
-  }
 }
 
 ol {
-  list-style-type: decimal;
+  &,
+  & & & & {
+    list-style-type: decimal;
+  }
 
   & & {
     list-style-type: lower-alpha;
@@ -30,16 +33,13 @@ ol {
   & & & {
     list-style-type: lower-roman;
   }
-
-  & & & & {
-    list-style-type: decimal;
-  }
 }
+/* stylelint-enable no-descending-specificity */
 
 .tna-ul,
 .tna-ol {
   margin-top: spacing.space(1);
-  padding-left: spacing.space(2.5);
+  padding-left: spacing.space(2);
 
   &:first-child {
     margin-top: 0;

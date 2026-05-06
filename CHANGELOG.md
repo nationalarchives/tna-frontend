@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.39.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.40.0...HEAD)
 
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.40.0](https://github.com/nationalarchives/tna-frontend/compare/v0.39.0...v0.40.0) - 2026-04-30
+
 ### Changed
 
 - Replaced macro-based `email.njk` layout with a safe, table-based inline-HTML version for improved email client compatibility
@@ -18,11 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove `lib/tables.mjs` and move `checkTableForScroll()` to `lib/helpers.mjs`
 - Improved `<code>` rendering in forced colours mode
 - Updated Design System link and legal links in default footer content
-
-### Deprecated
-### Removed
-### Fixed
-### Security
+- Resized left margin of lists
 
 ## [0.39.0](https://github.com/nationalarchives/tna-frontend/compare/v0.38.0...v0.39.0) - 2026-04-01
 

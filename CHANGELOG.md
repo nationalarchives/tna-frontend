@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.40.0...HEAD)
 
 ### Added
+
+- New code block component (moved from root level `code-block.scss` file)
+
 ### Changed
 
 - Updated email template for better email client compatibility (@rzarrouk)
@@ -15,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 ### Removed
+
+- Removed root level `code-block.scss`
+
 ### Fixed
 ### Security
 

@@ -47,9 +47,6 @@ const checkExists = [
   "nationalarchives/analytics.js",
   "nationalarchives/analytics.js.map",
   "nationalarchives/analytics.mjs",
-  "nationalarchives/code-block.css",
-  "nationalarchives/code-block.css.map",
-  "nationalarchives/code-block.scss",
   "nationalarchives/font-awesome.css",
   "nationalarchives/font-awesome.css.map",
   "nationalarchives/font-awesome.scss",
@@ -105,6 +102,7 @@ const checkExists = [
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
   ...componentFiles("button"),
   ...componentFiles("card"),
+  ...componentFiles("code-block", "CodeBlock"),
   ...componentFiles("checkboxes"),
   ...componentFiles("compound-filters"),
   ...componentFiles("cookie-banner", "CookieBanner"),
@@ -389,7 +387,6 @@ console.log("Testing file sizes...");
 console.log("\n");
 const cssFilesToCheckSize = [
   "all.css",
-  "code-block.css",
   "font-awesome.css",
   "ie.css",
   "print.css",

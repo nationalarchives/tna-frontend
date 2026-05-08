@@ -1,5 +1,6 @@
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
+import { CodeBlock } from "./components/code-block/code-block.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
 import { DateInputProgressive } from "./components/date-input/date-input.mjs";
 import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
@@ -14,11 +15,7 @@ import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
 import Cookies from "./lib/cookies.mjs";
-import {
-  updateTimeElement,
-  initCodeBlock,
-  checkTableForScroll,
-} from "./lib/helpers.mjs";
+import { updateTimeElement, checkTableForScroll } from "./lib/helpers.mjs";
 
 const initAll = (options) => {
   options = typeof options !== "undefined" ? options : {};
@@ -64,18 +61,6 @@ const initAll = (options) => {
     );
   });
 
-  /*
-   * ==========================================
-   * Add "Copy code" buttons to all code blocks
-   * and enable copying the code to clipboard
-   * ==========================================
-   */
-  document
-    .querySelectorAll(".tna-code-block:has(pre > code)")
-    .forEach(($codeBlock) => {
-      initCodeBlock($codeBlock);
-    });
-
   // TODO: Remove this opt-in class in a later release
   if ($html.classList.contains("tna-template--enhance-time-elements")) {
     document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
@@ -90,6 +75,11 @@ const initAll = (options) => {
   if ($breadcrumbs) {
     new Breadcrumbs($breadcrumbs);
   }
+
+  const $codeBlocks = $scope.querySelectorAll('[data-module="tna-code-block"]');
+  $codeBlocks.forEach(($codeBlock) => {
+    new CodeBlock($codeBlock);
+  });
 
   const $cookieBanner = $scope.querySelector(
     '[data-module="tna-cookie-banner"]',
@@ -209,6 +199,7 @@ export {
   Cookies,
   Accordion,
   Breadcrumbs,
+  CodeBlock,
   CookieBanner,
   DateInputProgressive,
   ErrorSummary,

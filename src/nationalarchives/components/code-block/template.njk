@@ -1,0 +1,18 @@
+{%- from "nationalarchives/components/button/macro.njk" import tnaButton -%}
+
+{%- set containerClasses = [params.classes] if params.classes else [] -%}
+{%- set classes = containerClasses | join(' ') -%}
+<div class="tna-code-block{% if classes %} {{ classes }}{% endif %}"{% if params.filename %} title="{{ params.filename }}"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}{% if params.copy %} data-module="tna-code-block"{% endif %}>
+    {{ tnaButton({
+      text: "Copy code",
+      plain: true,
+      small: true,
+      buttonElement: true,
+      classes: "tna-code-block__copy",
+      attributes: {
+        hidden: "",
+        "aria-live": "assertive"
+      }
+    }) }}
+  <pre class="tna-code-block__pre"><code class="language-{{ params.language or 'plain' }}">{{ params.code }}</code></pre>
+</div>

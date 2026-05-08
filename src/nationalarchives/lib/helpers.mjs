@@ -121,34 +121,3 @@ export const checkTableForScroll = ($tableWrapper) => {
     $tableWrapper.classList.remove("tna-table-wrapper--scroll");
   }
 };
-
-export const initCodeBlock = ($codeBlock) => {
-  if (
-    navigator.clipboard &&
-    $codeBlock.classList.contains("tna-code-block--copy")
-  ) {
-    const copyButton = document.createElement("button");
-    copyButton.innerText = "Copy code";
-    copyButton.classList.add(
-      "tna-code-block__copy",
-      "tna-button",
-      "tna-button--plain",
-      "tna-button--small",
-    );
-    copyButton.setAttribute("aria-live", "assertive");
-    $codeBlock.prepend(copyButton);
-    copyButton.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(
-          $codeBlock.querySelector("pre code").innerText,
-        );
-      } catch (err) {
-        console.error("Failed to copy: ", err);
-      }
-      copyButton.innerText = "Code copied";
-    });
-    copyButton.addEventListener("blur", () => {
-      copyButton.innerText = "Copy code";
-    });
-  }
-};

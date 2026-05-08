@@ -43,6 +43,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/checkboxes/macro.njk\" import tnaCheckboxes %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/code-block/macro.njk\" import tnaCodeBlock %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/compound-filters/macro.njk\" import tnaCompoundFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/date-input/macro.njk\" import tnaDateInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -84,6 +85,7 @@ runs:
         echo "{{ tnaButton({text:\"I am a button\",href:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCheckboxes({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaCodeBlock({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCompoundFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCookieBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaDateInput({}) }}" >> prototype/app/views/index.html &&
@@ -136,9 +138,43 @@ runs:
         interval: 500
     - name: Test prototype components
       run: >
+        curl --silent http://localhost:3000 | grep '<nav class="tna-accordion' &&
+        curl --silent http://localhost:3000 | grep '<nav class="tna-back-link' &&
         curl --silent http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
         curl --silent http://localhost:3000 | grep '<a href="#" class="tna-button' &&
-        curl --silent http://localhost:3000 | grep '<article class="tna-card'
+        curl --silent http://localhost:3000 | grep '<article class="tna-card' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-checkboxes' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-code-block' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-compound-filters' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-cookie-banner' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-date-input' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-date-search' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-details' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-error-summary' &&
+        curl --silent http://localhost:3000 | grep '<fieldset class="tna-fieldset' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-file-input' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-files-list' &&
+        curl --silent http://localhost:3000 | grep '<footer class="tna-footer' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-gallery' &&
+        curl --silent http://localhost:3000 | grep '<header class="tna-global-header' &&
+        curl --silent http://localhost:3000 | grep '<header class="tna-header' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-hero' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-index-grid' &&
+        curl --silent http://localhost:3000 | grep '<nav class="tna-pagination' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-panel' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-phase-banner' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-picture' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-quick-filters' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-radios' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-search-field' &&
+        curl --silent http://localhost:3000 | grep '<nav class="tna-secondary-navigation' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-select' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-sidebar' &&
+        curl --silent http://localhost:3000 | grep '<a href="#" class="tna-skip-link' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-tabs' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-text-input' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-textarea' &&
+        curl --silent http://localhost:3000 | grep '<div class="tna-warning'
       shell: bash
     - name: Test templates
       run: >

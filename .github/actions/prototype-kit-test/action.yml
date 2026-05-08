@@ -135,7 +135,7 @@ runs:
         timeout: 30000
         interval: 500
     - name: Test prototype components
-      run: >
+      run: |
         curl --silent http://localhost:3000 | grep '<div class="tna-accordion' || (echo "Accordion component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<a href="" class="tna-back-link' || (echo "Back link component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<nav class="tna-breadcrumbs' || (echo "Breadcrumbs component not found" && exit 1)

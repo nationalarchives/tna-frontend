@@ -143,7 +143,7 @@ runs:
         curl --silent http://localhost:3000 | grep '<article class="tna-card' || (echo "Card component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<div class="tna-checkboxes' || (echo "Checkboxes component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<div class="tna-code-block' || (echo "Code block component not found" && exit 1)
-        curl --silent http://localhost:3000 | grep '<div class="tna-compound-filters' || (echo "Compound filters component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep '<ul class="tna-compound-filters' || (echo "Compound filters component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<div class="tna-cookie-banner' || (echo "Cookie banner component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<div class="tna-date-input' || (echo "Date input component not found" && exit 1)
         curl --silent http://localhost:3000 | grep '<div class="tna-date-search' || (echo "Date search component not found" && exit 1)

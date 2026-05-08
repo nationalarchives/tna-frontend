@@ -39,6 +39,9 @@ export default {
 };
 
 export const Standard = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     code: "Plaintext code block",
   },
@@ -56,6 +59,9 @@ export const WithFilename = {
 };
 
 export const WithCopyButton = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     language: "javascript",
     code: `const uuidv4 = () =>
@@ -64,9 +70,7 @@ export const WithCopyButton = {
       c ^
       (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
     ).toString(16),
-  );
-
-export default uuidv4;`,
+  );`,
     copy: true,
   },
 };

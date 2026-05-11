@@ -6,6 +6,7 @@
 @use "../../tools/typography";
 
 $code-block-top-bar-height: spacing.space(2);
+$code-block-top-bar-blob-radius: 0.5rem;
 
 .tna-code-block {
   @include spacing.space-above;
@@ -51,6 +52,33 @@ $code-block-top-bar-height: spacing.space(2);
 
       @include colour.tint;
 
+      background-image:
+        radial-gradient(
+          circle at calc(#{$code-block-top-bar-height} * 0.5)
+            calc(#{$code-block-top-bar-height} * 0.5),
+          #ff5c5f $code-block-top-bar-blob-radius,
+          transparent 0
+        ),
+        radial-gradient(
+          circle at
+            calc(
+              #{$code-block-top-bar-height} + #{$code-block-top-bar-blob-radius}
+            )
+            calc(#{$code-block-top-bar-height} * 0.5),
+          #fac800 $code-block-top-bar-blob-radius,
+          transparent 0
+        ),
+        radial-gradient(
+          circle at
+            calc(
+              (#{$code-block-top-bar-height} * 1.5) +
+                #{$code-block-top-bar-blob-radius * 2}
+            )
+            calc(#{$code-block-top-bar-height} * 0.5),
+          #34c759 $code-block-top-bar-blob-radius,
+          transparent 0
+        );
+
       @include colour.on-high-contrast-and-forced-colours {
         @include colour.colour-border("keyline", 1px, solid, bottom);
       }
@@ -63,7 +91,11 @@ $code-block-top-bar-height: spacing.space(2);
 
       margin-top: 0;
 
-      padding: 0 spacing.space(7) 0 spacing.space(1);
+      padding: 0 spacing.space(7) 0
+        calc(
+          #{$code-block-top-bar-blob-radius * 3} +
+            (#{$code-block-top-bar-height} * 2)
+        );
 
       display: block;
       overflow: hidden;

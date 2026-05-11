@@ -50,6 +50,10 @@
     }
   }
 
+  &__details:has(&__summary:focus) {
+    z-index: 2;
+  }
+
   &__summary {
     width: 100%;
     margin: 0;
@@ -108,10 +112,6 @@
       &::before {
         border-width: 0 0.5rem #{math.div(math.sqrt(3), 2)}rem 0.5rem;
       }
-    }
-
-    &:active {
-      z-index: 1;
     }
   }
 

@@ -23,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed root level `code-block.scss`
 
 ### Fixed
+
+- Stacking order issue fixed in accordions between focused and hovered items
+
 ### Security
 
 ## [0.40.0](https://github.com/nationalarchives/tna-frontend/compare/v0.39.0...v0.40.0) - 2026-04-30

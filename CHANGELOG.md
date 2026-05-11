@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - New code block component (moved from root level `code-block.scss` file)
+- Add optional `ariaLabel` property to sidebar component
 
 ### Changed
 

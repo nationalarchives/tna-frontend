@@ -72,6 +72,13 @@
     "description": "The type of sidebar style to use. Can be `contents`, `sections` or  `pages`."
   },
   {
+    "name": "ariaLabel",
+    "type": "string",
+    "required": false,
+    "description": "The ARIA label for the sidebar.",
+    "default": "Sidebar"
+  },
+  {
     "name": "sticky",
     "type": "boolean",
     "required": false,

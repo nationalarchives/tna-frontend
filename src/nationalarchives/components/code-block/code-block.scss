@@ -245,11 +245,11 @@ $code-block-top-bar-height: spacing.space(2);
     }
   }
 
-  .tna-template--dark-theme {
+  .tna-template--dark-theme & {
     @include dark-theme-code;
   }
 
-  .tna-template--system-theme {
+  .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
       @include dark-theme-code;
     }

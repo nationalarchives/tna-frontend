@@ -14,5 +14,5 @@
         "aria-live": "assertive"
       }
     }) }}
-  <pre class="tna-code-block__pre"><code class="language-{{ params.language or 'plain' }}">{{ params.code }}</code></pre>
+  <pre class="tna-code-block__pre"><code class="language-{{ params.language or 'plain' }}">{%- if caller -%}{{ caller() }}{%- else -%}{{ params.code }}{%- endif -%}</code></pre>
 </div>

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.41.1...HEAD)
 
 ### Added
+
+- Added the ability to use a `caller` function in the code block component
+
 ### Changed
 ### Deprecated
 ### Removed

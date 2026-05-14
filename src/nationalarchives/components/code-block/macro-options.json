@@ -10,7 +10,7 @@
     "name": "code",
     "type": "string",
     "required": true,
-    "description": "The code content to display in the code block."
+    "description": "The code content to display in the code block. An alternative is to use the `caller` function to include content from a block."
   },
   {
     "name": "language",

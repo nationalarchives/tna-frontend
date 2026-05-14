@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added the ability to use a `caller` function in the code block component
 
 ### Changed
+
+- Updated default links to "About us" pages in the footer component
+
 ### Deprecated
 ### Removed
 ### Fixed

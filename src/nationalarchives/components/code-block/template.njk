@@ -14,5 +14,5 @@
         "aria-live": "assertive"
       }
     }) }}
-  <pre class="tna-code-block__pre"><code class="language-{{ params.language or 'plain' }}">{%- if caller -%}{{ caller() }}{%- else -%}{{ params.code }}{%- endif -%}</code></pre>
+  <pre class="tna-code-block__pre" tabindex="0" role="region" aria-label="Code block{% if params.filename %}: {{ params.filename }}{% endif %}"><code class="language-{{ params.language or 'plain' }}">{%- if caller -%}{{ caller() }}{%- else -%}{{ params.code }}{%- endif -%}</code></pre>
 </div>

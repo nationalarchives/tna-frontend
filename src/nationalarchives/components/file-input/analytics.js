@@ -18,7 +18,7 @@ export default [
         data: {
           value: getFileDetails,
           state: ($el) => $el.files.length,
-          // eslint-disable-next-line no-unused-vars
+
           group: ($el, $scope) =>
             $scope
               .closest(".tna-form-item")
@@ -32,7 +32,7 @@ export default [
         data: {
           value: getFileDetails,
           state: ($el) => $el.files.length,
-          // eslint-disable-next-line no-unused-vars
+
           group: ($el, $scope) =>
             $scope
               .closest(".tna-form-item")
@@ -46,7 +46,7 @@ export default [
         data: {
           value: getFileDetails,
           state: ($el) => $el.files.length,
-          // eslint-disable-next-line no-unused-vars
+
           group: ($el, $scope) =>
             $scope
               .closest(".tna-form-item")

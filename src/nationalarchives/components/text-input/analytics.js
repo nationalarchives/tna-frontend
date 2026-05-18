@@ -10,7 +10,7 @@ export default [
         on: "blur",
         data: {
           value: valueGetters.value,
-          // eslint-disable-next-line no-unused-vars
+
           group: ($el, $scope) =>
             $scope
               .closest(".tna-form-item")

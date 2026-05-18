@@ -91,6 +91,7 @@ export const updateTimeElement = ($el) => {
       $el.setAttribute("title", $el.textContent);
       $el.textContent = prettyDatetime;
     }
+    // eslint-disable-next-line no-unused-vars
   } catch (e) {
     // Do nothing if the datetime is invalid or not provided
   }

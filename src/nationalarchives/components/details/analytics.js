@@ -18,7 +18,7 @@ export default [
                 ?.hasAttribute("open") ?? false;
             return wasExpanded ? "closed" : "opened";
           },
-          // eslint-disable-next-line no-unused-vars
+
           value: valueGetters.text,
         },
       },

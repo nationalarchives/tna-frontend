@@ -6,11 +6,11 @@ npm run compile:sass
 npm run compile:scripts
 cp -R src/nationalarchives package.json package-lock.json README.md LICENCE govuk-prototype-kit.config.json package
 mkdir package/config
-cp -R .babelrc.json .eslintrc.js .htmlvalidate.json stylelint.config.js package/config
+cp -R .babelrc.json eslint.config.js .htmlvalidate.json stylelint.config.js package/config
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  sed -i '' -e 's/, "plugin:storybook\/recommended"//g' package/config/.eslintrc.js
+  sed -i '' -e 's/, "plugin:storybook\/recommended"//g' package/config/eslint.config.js
 else
-  sed -i -e 's/, "plugin:storybook\/recommended"//g' package/config/.eslintrc.js
+  sed -i -e 's/, "plugin:storybook\/recommended"//g' package/config/eslint.config.js
 fi
 find package -name "*.mdx" -type f -delete
 find package -name "*.stories.js" -type f -delete

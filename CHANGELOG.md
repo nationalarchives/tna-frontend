@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated default links to "About us" pages in the footer component
 - Improved markup of code block component for better accessibility
+- Updated ESLint config from `.eslintrc.js` to `eslint.config.js` for compatibility with ESLint 9+
 
 ### Deprecated
 ### Removed

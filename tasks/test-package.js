@@ -193,8 +193,8 @@ const checkExists = [
   "nationalarchives/templates/prototype-kit/plain.njk",
   // Config
   "config/.babelrc.json",
-  "config/.eslintrc.js",
   "config/.htmlvalidate.json",
+  "config/eslint.config.js",
   "config/stylelint.config.js",
 ];
 

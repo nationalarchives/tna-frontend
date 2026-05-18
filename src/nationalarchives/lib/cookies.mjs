@@ -215,6 +215,7 @@ export default class Cookies {
   get policies() {
     try {
       return JSON.parse(this.get(this.policiesKey) || "{}");
+      // eslint-disable-next-line no-unused-vars
     } catch (e) {
       return {};
     }

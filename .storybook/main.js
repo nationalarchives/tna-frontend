@@ -30,9 +30,8 @@ export default {
             },
             {
               src: "src/nationalarchives/**/*.njk",
-              dest: "nationalarchives",
-              rename: (fileName, fileExtension, fullPath) =>
-                fullPath.replace(/^.*\/src\/nationalarchives\//, "./"),
+              dest: ".",
+              rename: { stripBase: 1 },
             },
           ],
         }),

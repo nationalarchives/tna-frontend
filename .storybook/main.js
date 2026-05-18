@@ -26,7 +26,8 @@ export default {
           targets: [
             {
               src: "node_modules/@fortawesome/fontawesome-free/webfonts/*.woff2",
-              dest: "assets/assets/fonts",
+              dest: "fonts",
+              rename: { stripBase: 4 },
             },
             {
               src: "src/nationalarchives/**/*.njk",

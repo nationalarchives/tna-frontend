@@ -440,7 +440,7 @@ class GA4 extends EventTracker {
 
 const ga4Id = document.documentElement.dataset.ga4;
 if (ga4Id) {
-  GA4({ id: ga4Id });
+  new GA4({ id: ga4Id });
 }
 
 const helpers = {

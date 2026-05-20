@@ -1,7 +1,8 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+import { expect, userEvent, within } from "storybook/test";
+
 import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "storybook/test";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -51,9 +52,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -121,13 +120,12 @@ export const ItemiseRows = {
     },
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    const $input = canvas.getByRole("textbox");
-    const $button = canvas.getByRole("button", { name: "Add to list" });
-    const $helper = canvasElement.querySelector("#feedback5-list-helper");
-    const $ariaLive = canvasElement.querySelector("[aria-live]");
-    const $list = canvas.getByRole("list");
+    const canvas = within(canvasElement),
+      $input = canvas.getByRole("textbox"),
+      $button = canvas.getByRole("button", { name: "Add to list" }),
+      $helper = canvasElement.querySelector("#feedback5-list-helper"),
+      $ariaLive = canvasElement.querySelector("[aria-live]"),
+      $list = canvas.getByRole("list");
 
     await expect($ariaLive).toHaveAttribute("aria-live", "assertive");
 

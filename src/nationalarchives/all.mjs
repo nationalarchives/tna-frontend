@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CodeBlock } from "./components/code-block/code-block.mjs";
@@ -15,13 +16,18 @@ import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
 import Cookies from "./lib/cookies.mjs";
-import { updateTimeElement, checkTableForScroll } from "./lib/helpers.mjs";
+import { checkTableForScroll, updateTimeElement } from "./lib/helpers.mjs";
 
-const initAll = (options) => {
-  options = typeof options !== "undefined" ? options : {};
-  const $scope =
-    options.scope instanceof HTMLElement ? options.scope : document;
-
+const initAll = (options = {}) => {
+  const { scope } = options;
+  let $scope = document;
+  if (scope) {
+    if (scope instanceof HTMLElement) {
+      $scope = scope;
+    } else {
+      throw new Error("Scope must be an HTMLElement");
+    }
+  }
   const $html = document.documentElement;
   $html.classList.add("tna-template--js-enabled");
 
@@ -31,8 +37,8 @@ const initAll = (options) => {
   };
   window.addEventListener("touchstart", onFirstTouch);
 
-  const onKeyDown = (e) => {
-    if (e.key === "Tab") {
+  const onKeyDown = (event) => {
+    if (event.key === "Tab") {
       $html.classList.add("tna-template--tabbed");
       $html.classList.remove("tna-template--clicked");
     }
@@ -61,7 +67,7 @@ const initAll = (options) => {
     );
   });
 
-  // TODO: Remove this opt-in class in a later release
+  // Remove this opt-in class in a later release
   if ($html.classList.contains("tna-template--enhance-time-elements")) {
     document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
   }
@@ -144,6 +150,14 @@ const initAll = (options) => {
     new Tabs($tabModule);
   });
 
+  const $textAreaItemisedRows = $scope.querySelectorAll(
+    '[data-module="tna-textarea-itemised-rows"]',
+  );
+  $textAreaItemisedRows.forEach(($textAreaWithItemisedRows) => {
+    const { enhancedHint } = $textAreaWithItemisedRows.dataset;
+    new TextAreaItemisedRows($textAreaWithItemisedRows, { enhancedHint });
+  });
+
   const $textInputPasswords = $scope.querySelectorAll(
     '[data-module="tna-text-input-password"]',
   );
@@ -151,44 +165,36 @@ const initAll = (options) => {
     new TextInputPassword($textInputPassword);
   });
 
-  const $textAreaItemisedRows = $scope.querySelectorAll(
-    '[data-module="tna-textarea-itemised-rows"]',
-  );
-  $textAreaItemisedRows.forEach(($textAreaItemisedRows) => {
-    const enhancedHint = $textAreaItemisedRows.dataset.enhancedHint;
-    new TextAreaItemisedRows($textAreaItemisedRows, { enhancedHint });
-  });
-
   window.matchMedia("print").addEventListener("change", (evt) => {
     if (evt.matches) {
       $scope
         .querySelectorAll(".tna-details__details:not([open])")
-        .forEach((e) => {
-          e.setAttribute("open", "");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.setAttribute("open", "");
+          $element.dataset.wasClosed = "";
         });
       $scope
         .querySelectorAll(
           ".tna-accordion__content[hidden], .tna-picture__transcript[hidden]",
         )
-        .forEach((e) => {
-          e.removeAttribute("hidden");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.removeAttribute("hidden");
+          $element.dataset.wasClosed = "";
         });
     } else {
       $scope
         .querySelectorAll(".tna-details__details[data-was-closed]")
-        .forEach((e) => {
-          e.removeAttribute("open");
-          delete e.dataset.wasClosed;
+        .forEach(($element) => {
+          $element.removeAttribute("open");
+          delete $element.dataset.wasClosed;
         });
       $scope
         .querySelectorAll(
           ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )
-        .forEach((e) => {
-          e.setAttribute("hidden", "");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.setAttribute("hidden", "");
+          $element.dataset.wasClosed = "";
         });
     }
   });

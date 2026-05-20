@@ -10,7 +10,6 @@ on:
       - '.babelrc.json'
       - '.nvmrc'
       - '.stylelintrc'
-      - 'eslint.config.js'
       - 'govuk-prototype-kit.config.json'
       - 'package-lock.json'
       - 'package.json'

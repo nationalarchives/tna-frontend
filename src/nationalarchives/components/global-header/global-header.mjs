@@ -37,13 +37,11 @@ export class GlobalHeader {
       this.mql.addListener(() => this.syncState());
     }
 
-    this.$module.addEventListener("keyup", (e) => {
-      if (e.code === "Escape" && this.mql.matches) {
-        if (this.menuOpened) {
-          this.menuOpened = false;
-          this.syncState();
-          this.$toggleButton.focus();
-        }
+    this.$module.addEventListener("keyup", (event) => {
+      if (event.code === "Escape" && this.mql.matches && this.menuOpened) {
+        this.menuOpened = false;
+        this.syncState();
+        this.$toggleButton.focus();
       }
     });
   }
@@ -79,8 +77,9 @@ export class GlobalHeader {
     this.$toggleButton.classList.remove(
       "tna-global-header__navigation-button--opened",
     );
-    for (let i = 0; i < this.$links.length; i++) {
-      this.$links[i].setAttribute("tabindex", "-1");
+    /* eslint-disable-next-line no-magic-numbers */
+    for (let index = 0; index < this.$links.length; index += 1) {
+      this.$links[index].setAttribute("tabindex", "-1");
     }
   }
 
@@ -98,8 +97,9 @@ export class GlobalHeader {
     this.$toggleButton.classList.add(
       "tna-global-header__navigation-button--opened",
     );
-    for (let i = 0; i < this.$links.length; i++) {
-      this.$links[i].setAttribute("tabindex", "0");
+    /* eslint-disable-next-line no-magic-numbers */
+    for (let index = 0; index < this.$links.length; index += 1) {
+      this.$links[index].setAttribute("tabindex", "0");
     }
   }
 }

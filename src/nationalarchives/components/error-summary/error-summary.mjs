@@ -18,18 +18,12 @@ export class ErrorSummary {
     this.$module.addEventListener("click", (event) => this.handleClick(event));
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   setFocus($element, options = {}) {
     const isFocusable = $element.getAttribute("tabindex");
 
     if (!isFocusable) {
       $element.setAttribute("tabindex", "-1");
-    }
-
-    /**
-     * Handle element focus
-     */
-    function onFocus() {
-      $element.addEventListener("blur", onBlur, { once: true });
     }
 
     /**
@@ -41,6 +35,13 @@ export class ErrorSummary {
       if (!isFocusable) {
         $element.removeAttribute("tabindex");
       }
+    }
+
+    /**
+     * Handle element focus
+     */
+    function onFocus() {
+      $element.addEventListener("blur", onBlur, { once: true });
     }
 
     // Add listener to reset element on blur, after focus
@@ -58,9 +59,10 @@ export class ErrorSummary {
     }
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   getFragmentFromUrl(url) {
     if (!url.includes("#")) {
-      return undefined;
+      return null;
     }
 
     return url.split("#").pop();
@@ -88,7 +90,7 @@ export class ErrorSummary {
     }
 
     // Scroll the legend or label into view *before* calling focus on the input
-    // to avoid extra scrolling in browsers that don't support `preventScroll`
+    // To avoid extra scrolling in browsers that don't support `preventScroll`
     // (which at time of writing is most of them...)
     $legendOrLabel.scrollIntoView();
     $input.focus({ preventScroll: true });
@@ -112,6 +114,7 @@ export class ErrorSummary {
    * @returns {Element | null} Associated legend or label, or null if no
    *   associated legend or label can be found
    */
+  /* eslint-disable-next-line class-methods-use-this */
   getAssociatedLegendOrLabel($input) {
     const $fieldset = $input.closest("fieldset");
 
@@ -119,10 +122,10 @@ export class ErrorSummary {
       const $legends = $fieldset.getElementsByTagName("legend");
 
       if ($legends.length) {
-        const $candidateLegend = $legends[0];
+        const [$candidateLegend] = $legends;
 
         // If the input type is radio or checkbox, always use the legend if
-        // there is one.
+        // There is one.
         if (
           $input instanceof HTMLInputElement &&
           ($input.type === "checkbox" || $input.type === "radio")
@@ -131,19 +134,20 @@ export class ErrorSummary {
         }
 
         // For other input types, only scroll to the fieldset’s legend (instead
-        // of the label associated with the input) if the input would end up in
-        // the top half of the screen.
+        // Of the label associated with the input) if the input would end up in
+        // The top half of the screen.
         //
         // This should avoid situations where the input either ends up off the
-        // screen, or obscured by a software keyboard.
+        // Screen, or obscured by a software keyboard.
         const legendTop = $candidateLegend.getBoundingClientRect().top;
         const inputRect = $input.getBoundingClientRect();
 
         // If the browser doesn't support Element.getBoundingClientRect().height
-        // or window.innerHeight (like IE8), bail and just link to the label.
+        // Or window.innerHeight (like IE8), bail and just link to the label.
         if (inputRect.height && window.innerHeight) {
           const inputBottom = inputRect.top + inputRect.height;
 
+          /* eslint-disable no-magic-numbers */
           if (inputBottom - legendTop < window.innerHeight / 2) {
             return $candidateLegend;
           }

@@ -35,8 +35,8 @@ export class Footer {
     );
 
     Array.from(this.$themeSelectorButtons).forEach(($themeSelectorButton) => {
-      $themeSelectorButton.addEventListener("click", (e) => {
-        const $button = e.target;
+      $themeSelectorButton.addEventListener("click", (event) => {
+        const $button = event.target;
         this.setTheme($button.value);
         this.selectThemeSelectorButton($button);
       });

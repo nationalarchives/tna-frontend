@@ -12,11 +12,11 @@ export class Breadcrumbs {
 
     if (this.$module && this.$breadcrumbsList && this.$breadcrumbs) {
       if (
+        /* eslint-disable-next-line no-magic-numbers */
         this.$breadcrumbs.length > 2 &&
         !this.$module.classList.contains("tna-breadcrumbs--no-collapse")
       ) {
         const uniqueId = `tna-breadcrumbs-${uuidv4()}`;
-
         const $expandable = document.createElement("li");
         $expandable.classList.add(
           "tna-breadcrumbs__item",
@@ -49,6 +49,7 @@ export class Breadcrumbs {
         this.$breadcrumbsList.setAttribute("id", uniqueId);
         this.$breadcrumbsList.insertBefore(
           $expandable,
+          /* eslint-disable-next-line no-magic-numbers */
           this.$breadcrumbs[this.$breadcrumbs.length - 2].nextSibling,
         );
 

@@ -9,20 +9,19 @@ export default {
 };
 
 const HeadingTemplate = ({ params }, level) => `<h${level} class="tna-heading-${
-  params.size
-}">
+    params.size
+  }">
   ${params.text} (${params.size.toUpperCase()})
 </h${level}>
-`;
-
-const HeadingsTemplate = ({ text }) =>
-  `${HeadingTemplate({ params: { text, size: "xl" } }, 1)}${HeadingTemplate(
-    { params: { text, size: "l" } },
-    2,
-  )}${HeadingTemplate({ params: { text, size: "m" } }, 3)}${HeadingTemplate(
-    { params: { text, size: "s" } },
-    4,
-  )}`;
+`,
+  HeadingsTemplate = ({ text }) =>
+    `${HeadingTemplate({ params: { text, size: "xl" } }, 1)}${HeadingTemplate(
+      { params: { text, size: "l" } },
+      2,
+    )}${HeadingTemplate({ params: { text, size: "m" } }, 3)}${HeadingTemplate(
+      { params: { text, size: "s" } },
+      4,
+    )}`;
 
 export const Headings = HeadingsTemplate.bind({});
 Headings.parameters = {

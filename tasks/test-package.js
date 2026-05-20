@@ -194,7 +194,6 @@ const checkExists = [
   // Config
   "config/.babelrc.json",
   "config/.htmlvalidate.json",
-  "config/eslint.config.js",
 ];
 
 console.log("Testing package file structure...");
@@ -205,7 +204,7 @@ checkExists.forEach((checkFile) => {
     pass(
       `${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
-      } exists: ${checkFilePath.replace(/\/$/, "")}`,
+      } exists: ${checkFilePath.replace(/\/$/u, "")}`,
     );
   } catch (err) {
     fail(err);
@@ -369,12 +368,12 @@ checkForClasses.forEach((cssClass) => {
   const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}{`, "g"));
   if (regExp) {
     pass(
-      `${cssClass.replace(/\{$/, "")} selector occurs ${regExp.length} time${
+      `${cssClass.replace(/\{$/u, "")} selector occurs ${regExp.length} time${
         regExp.length === 1 ? "" : "s"
       } in compiled CSS`,
     );
   } else {
-    fail(`${cssClass.replace(/\{$/, "")} selector missing from compiled CSS`);
+    fail(`${cssClass.replace(/\{$/u, "")} selector missing from compiled CSS`);
     process.exitCode = 1;
     throw new Error("CSS test failed");
   }

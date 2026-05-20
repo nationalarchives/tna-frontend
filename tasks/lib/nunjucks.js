@@ -15,6 +15,6 @@ exports.renderNunjucks = (string, params, trimWhitespace = false) =>
     ? nunjucks
         .renderString(string, params)
         .trim()
-        .replace(/>\n\s*/g, ">")
-        .replace(/\n\s*</g, "<")
+        .replace(/>\n\s*/gu, ">")
+        .replace(/\n\s*</gu, "<")
     : nunjucks.renderString(string, params);

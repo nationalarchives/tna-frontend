@@ -7,8 +7,7 @@ export default {
   argTypes,
 };
 
-const Template = () => {
-  return `<div class="tna-spacing-demo">
+const Template = () => `<div class="tna-spacing-demo">
   <p>Lorem ipsum</p>
   <p class="tna-!--no-margin-top">Lorem ipsum (tna-!--no-margin-top)</p>
   <p class="tna-!--margin-top-xs">Lorem ipsum (tna-!--margin-top-xs)</p>
@@ -18,7 +17,6 @@ const Template = () => {
   <p class="tna-!--margin-top-xl">Lorem ipsum (tna-!--margin-top-xl)</p>
   <p class="tna-!--margin-top-xxl">Lorem ipsum (tna-!--margin-top-xxl)</p>
 </div>`;
-};
 
 export const Margin = Template.bind({});
 Margin.parameters = {
@@ -32,7 +30,7 @@ MarginMobile.parameters = {
 };
 MarginMobile.parameters = {
   chromatic: {
-    viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+    viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     disableSnapshot: true,
   },
 };

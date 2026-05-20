@@ -1,63 +1,9 @@
-window.TNAFrontendCookies = window.TNAFrontendCookies || null;
-window.TNAFrontendCookieEvents = window.TNAFrontendCookieEvents || null;
+/* eslint-disable max-lines */
+/* eslint-disable no-console */
 
-export class CookieEventHandler {
-  events = {};
-  oneTimeEvents = {};
-  debug = false;
+import { CookieEventHandler } from "./cookie-events.mjs";
 
-  constructor(debug = false) {
-    this.debug = debug;
-    if (window.TNAFrontendCookieEvents) {
-      this.log("Using existing TNAFrontendCookieEvents instance");
-      return window.TNAFrontendCookieEvents;
-    }
-    window.TNAFrontendCookieEvents = this;
-  }
-
-  log(...args) {
-    if (this.debug) {
-      console.log("[TNA Frontend Cookie Events]", ...args);
-    }
-  }
-
-  /**
-   * Add an event listener.
-   * @param {String} event - The event to add a listener for.
-   * @param {Function} callback - The callback function to call when the event is triggered.
-   */
-  on(event, callback) {
-    if (!Object.hasOwn(this.events, event)) {
-      this.events[event] = [];
-    }
-    this.events[event] = [...this.events[event], callback];
-  }
-
-  once(event, callback) {
-    if (!Object.hasOwn(this.oneTimeEvents, event)) {
-      this.oneTimeEvents[event] = [];
-    }
-    this.oneTimeEvents[event] = [...this.oneTimeEvents[event], callback];
-  }
-
-  /** @protected */
-  trigger(event, data = {}) {
-    if (Object.hasOwn(this.events, event)) {
-      this.log(`Triggering event: ${event}`, data);
-      this.events[event].forEach((eventToTrigger) =>
-        eventToTrigger.call(this, data),
-      );
-    }
-    if (Object.hasOwn(this.oneTimeEvents, event)) {
-      this.log(`Triggering one-time event: ${event}`, data);
-      for (let i = this.oneTimeEvents[event].length - 1; i >= 0; i--) {
-        const eventToTrigger = this.oneTimeEvents[event][i];
-        eventToTrigger.call(this, data);
-        this.oneTimeEvents[event].splice(i, 1);
-      }
-    }
-  }
-}
+window.TNAFrontendCookies ||= null;
 
 const tnaCookiePolicies = ["usage", "settings", "marketing", "essential"];
 
@@ -106,39 +52,42 @@ export default class Cookies {
       noInit = false,
     } = options;
     if (!newInstance && window.TNAFrontendCookies) {
+      /* eslint-disable-next-line no-constructor-return */
       return window.TNAFrontendCookies;
     }
-    if (defaultDomain === undefined) {
+    if (defaultDomain) {
+      this.defaultDomain = defaultDomain;
+    } else {
       this.defaultDomain =
         document.documentElement.dataset.tnaCookiesDomain ||
         window.location.hostname;
-    } else {
-      this.defaultDomain = defaultDomain;
     }
-    if (defaultPath === undefined) {
-      this.defaultPath = document.documentElement.dataset.tnaCookiesPath || "/";
-    } else {
+    if (defaultPath) {
       this.defaultPath = defaultPath;
+    } else {
+      this.defaultPath = document.documentElement.dataset.tnaCookiesPath || "/";
     }
-    if (secure === undefined) {
+    if (secure) {
+      this.secure = secure;
+    } else {
       this.secure =
         document.documentElement.dataset.tnaCookiesInsecure !== "true";
-    } else {
-      this.secure = secure;
     }
-    if (policiesKey === undefined) {
+    if (policiesKey) {
+      this.policiesKey = policiesKey;
+    } else {
       this.policiesKey =
         document.documentElement.dataset.tnaCookiesPoliciesKey ||
         "cookies_policy";
-    } else {
-      this.policiesKey = policiesKey;
     }
-    if (defaultAge === undefined) {
-      this.defaultAge =
-        parseInt(document.documentElement.dataset.tnaCookiesDefaultAge) ||
-        31536000; // 365 days;
-    } else {
+    if (defaultAge) {
       this.defaultAge = defaultAge;
+    } else {
+      /* eslint-disable-next-line no-magic-numbers */
+      const secondsInAYear = 365 * 24 * 60 * 60;
+      this.defaultAge =
+        parseInt(document.documentElement.dataset.tnaCookiesDefaultAge, 10) ||
+        secondsInAYear;
     }
     this.events = new CookieEventHandler(this.debug);
     this.policiesCorrectOnInit =
@@ -173,7 +122,7 @@ export default class Cookies {
         .filter((policy) => tnaCookiePolicies.includes(policy))
         .map((policy) => [policy, existingPolicies[policy]]),
     );
-    if (Object.keys(filteredExistingPolicies).length > 0) {
+    if (Object.keys(filteredExistingPolicies).length) {
       this.log("Filtered existing policies:", filteredExistingPolicies);
     }
     this.savePolicies({
@@ -197,15 +146,17 @@ export default class Cookies {
   }
 
   /** @protected */
+  /* eslint-disable-next-line class-methods-use-this */
   get all() {
     const deserialised = {};
     document.cookie
       .split("; ")
-      .filter((x) => x)
+      .filter((cookie) => cookie.trim() !== "")
       .forEach((cookie) => {
         const parts = cookie.trim().split("=");
-        if (parts[0]) {
-          deserialised[parts[0]] = parts[1];
+        const [key, value] = parts;
+        if (key) {
+          deserialised[key] = decodeURIComponent(value || "");
         }
       });
     return deserialised;
@@ -216,7 +167,7 @@ export default class Cookies {
     try {
       return JSON.parse(this.get(this.policiesKey) || "{}");
       // eslint-disable-next-line no-unused-vars
-    } catch (e) {
+    } catch (error) {
       return {};
     }
   }
@@ -237,16 +188,19 @@ export default class Cookies {
    * @returns
    */
   hasValue(key, value) {
-    return this.get(key) == value;
+    return this.get(key) === value;
   }
 
   /**
    * Get a cookie.
    * @param {String} key - The cookie name.
-   * @returns {String|Number|Boolean}
+   * @returns {String|Number|Boolean|null}
    */
   get(key) {
-    return this.exists(key) ? decodeURIComponent(this.all[key]) : null;
+    if (this.exists(key)) {
+      return decodeURIComponent(this.all[key]);
+    }
+    return null;
   }
 
   /**
@@ -274,9 +228,15 @@ export default class Cookies {
     if (!key) {
       return;
     }
-    const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}; domain=${domain}; samesite=${sameSite}; path=${path}${!session ? `; max-age=${maxAge}` : ""}${
-      secure ? "; secure" : ""
-    }`;
+    let secureString = "";
+    if (secure) {
+      secureString = "; secure";
+    }
+    let sessionString = "";
+    if (!session) {
+      sessionString = `; max-age=${maxAge}`;
+    }
+    const cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}; domain=${domain}; samesite=${sameSite}; path=${path}${sessionString}${secureString}`;
     document.cookie = cookie;
     this.log("Set cookie:", {
       key,
@@ -308,7 +268,7 @@ export default class Cookies {
    * @param {String} [path=/] - The path to the cookie is registered on.
    */
   delete(key, path = "/", domain = this.defaultDomain) {
-    const options = { maxAge: -1, path, domain: domain || undefined };
+    const options = { maxAge: -1, path, domain: domain || this.defaultDomain };
     this.set(key, "", options);
     this.log("Deleted cookie:", { key, path, domain, ...options });
     this.events.trigger("deleteCookie", { key, ...options });
@@ -372,7 +332,7 @@ export default class Cookies {
   acceptAllPolicies() {
     this.log("Accepting all policies");
     const allPolicies = Object.fromEntries(
-      Object.keys(this.policies).map((k) => [k.toLowerCase(), true]),
+      Object.keys(this.policies).map((key) => [key.toLowerCase(), true]),
     );
     this.savePolicies(allPolicies);
     this.events.trigger("acceptAllPolicies");
@@ -386,7 +346,7 @@ export default class Cookies {
     this.log("Rejecting all policies");
     const allPolicies = {
       ...Object.fromEntries(
-        Object.keys(this.policies).map((k) => [k.toLowerCase(), false]),
+        Object.keys(this.policies).map((key) => [key.toLowerCase(), false]),
       ),
       essential: true,
     };
@@ -410,9 +370,10 @@ export default class Cookies {
    * @returns {Boolean}
    */
   isPolicyAccepted(policy) {
-    return Object.hasOwn(this.policies, policy)
-      ? this.policies[policy] === true
-      : null;
+    if (Object.hasOwn(this.policies, policy)) {
+      return this.policies[policy] === true;
+    }
+    return null;
   }
 
   /**

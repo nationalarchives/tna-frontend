@@ -1,8 +1,10 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
-import { within, expect } from "storybook/test";
+import { expect, within } from "storybook/test";
+
 import Cookies from "../../lib/cookies.mjs";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -43,9 +45,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -75,13 +75,13 @@ export const ThemeSelector = {
     },
   ],
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const $systemLightButton = canvas.getByText("System theme");
-    const $themeLightButton = canvas.getByText("Light theme");
-    const $darkLightButton = canvas.getByText("Dark theme");
-    const $themeSelectorNotice = canvasElement.querySelector(
-      `.tna-footer__theme-selector-notice`,
-    );
+    const canvas = within(canvasElement),
+      $systemLightButton = canvas.getByText("System theme"),
+      $themeLightButton = canvas.getByText("Light theme"),
+      $darkLightButton = canvas.getByText("Dark theme"),
+      $themeSelectorNotice = canvasElement.querySelector(
+        `.tna-footer__theme-selector-notice`,
+      );
 
     await expect($systemLightButton).toBeVisible();
     await expect($themeLightButton).toBeVisible();
@@ -103,16 +103,16 @@ export const ThemeSelectorWithoutCookies = {
     });
     cookies.set("cookie_preferences_set", true);
 
-    const canvas = within(canvasElement);
-    const $systemLightButton = canvas.getByText("System theme");
-    const $themeLightButton = canvas.getByText("Light theme");
-    const $darkLightButton = canvas.getByText("Dark theme");
-    const $themeSelectorNotice = canvasElement.querySelector(
-      `.tna-footer__theme-selector-notice`,
-    );
-    const $enableSettingsCookiesButton = canvas.getByText(
-      "enable settings cookies",
-    );
+    const canvas = within(canvasElement),
+      $systemLightButton = canvas.getByText("System theme"),
+      $themeLightButton = canvas.getByText("Light theme"),
+      $darkLightButton = canvas.getByText("Dark theme"),
+      $themeSelectorNotice = canvasElement.querySelector(
+        `.tna-footer__theme-selector-notice`,
+      ),
+      $enableSettingsCookiesButton = canvas.getByText(
+        "enable settings cookies",
+      );
 
     await expect($systemLightButton).toBeVisible();
     await expect($themeLightButton).toBeVisible();

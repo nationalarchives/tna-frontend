@@ -38,9 +38,9 @@ export class TextAreaItemisedRows {
     this.$formFieldBody.appendChild(this.$formFieldNewInput);
     this.$formFieldInput.setAttribute("hidden", "");
     this.$formFieldInput.addEventListener("keyup", () => this.updateList());
-    this.$formFieldNewInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        this.appendValue(e.target.value);
+    this.$formFieldNewInput.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        this.appendValue(event.target.value);
       }
     });
 
@@ -114,28 +114,27 @@ export class TextAreaItemisedRows {
     this.$formFieldLiveAria.innerText = content;
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   normaliseValue(value) {
-    return value.replace(/\s{2,}/, " ").trim();
+    return value.replace(/\s{2,}/u, " ").trim();
   }
 
   isValueInList(value) {
-    return (
-      this.values
-        .map((value) => this.normaliseValue(value).toLowerCase())
-        .indexOf(value.toLowerCase().trim()) > -1
-    );
+    return this.values
+      .map((eachValue) => this.normaliseValue(eachValue).toLowerCase())
+      .includes(value.toLowerCase().trim());
   }
 
   appendValue(value) {
     const newValue = this.normaliseValue(value);
     if (newValue) {
-      if (!this.isValueInList(newValue)) {
+      if (this.isValueInList(newValue)) {
+        this.updateAriaText(`'${newValue}' already added`);
+      } else {
         this.values.push(newValue);
         this.$formFieldInput.value = this.values.join("\n");
         this.updateList();
         this.updateAriaText(`'${newValue}' added`);
-      } else {
-        this.updateAriaText(`'${newValue}' already added`);
       }
     } else {
       this.updateAriaText("Enter an item to add");
@@ -183,6 +182,13 @@ export class TextAreaItemisedRows {
         return $item;
       })
       .forEach(($item) => this.$valuesList.appendChild($item));
-    this.$formFieldCounter.innerText = `${this.values.length} item${this.values.length !== 1 ? "s" : ""} added`;
+
+    let innerTextItemValue = "item";
+    /* eslint-disable-next-line no-magic-numbers */
+    if (this.values.length !== 1) {
+      innerTextItemValue += "s";
+    }
+    const innerTextValue = `${this.values.length} ${innerTextItemValue} added`;
+    this.$formFieldCounter.innerText = innerTextValue;
   }
 }

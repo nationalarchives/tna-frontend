@@ -33,10 +33,10 @@ module.exports = {
         acc[
           path
             .replace(
-              /^(\.\/)?src\/nationalarchives\/components\/([\w\-]+\/)/,
+              /^(\.\/)?src\/nationalarchives\/components\/([\w\-]+\/)/u,
               "",
             )
-            .replace(/.mjs$/, "")
+            .replace(/.mjs$/u, "")
         ] = {
           import: `./${path}`.replace("././", "./"),
           filename: `components/[name]/[name].js`,
@@ -48,8 +48,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.m?js$/u,
+        exclude: /(node_modules|bower_components)/u,
         use: {
           loader: "babel-loader",
           options: {

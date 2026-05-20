@@ -1,6 +1,7 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+
 import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -43,9 +44,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 const exampleItem = {
@@ -89,13 +88,11 @@ export const Basic = {
     title: "My dogs",
     items: Array(6)
       .fill({ ...exampleItem })
-      .map((item, index) => {
-        return {
-          ...item,
-          href: `#/category-${index}`,
-          title: `Category #${index + 101}`,
-        };
-      }),
+      .map((item, index) => ({
+        ...item,
+        href: `#/category-${index}`,
+        title: `Category #${index + 101}`,
+      })),
     columns: 3,
     columnsMedium: 3,
     columnsSmall: 2,

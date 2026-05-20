@@ -92,14 +92,11 @@ export const Accept = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -142,14 +139,11 @@ export const Reject = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -169,7 +163,7 @@ export const RejectAndClose = {
       rejectButton = canvas.getByText("Reject cookies");
     await userEvent.click(rejectButton);
 
-    const closeButton = canvas.getAllByText("Hide cookies message")[1];
+    const [, closeButton] = canvas.getAllByText("Hide cookies message");
     await expect(closeButton).toBeVisible();
     await closeButton.click();
     await expect(closeButton).not.toBeVisible();
@@ -178,14 +172,11 @@ export const RejectAndClose = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -228,14 +219,11 @@ export const ExistingNotComplete = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -280,14 +268,11 @@ export const ExistingAndComplete = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -335,14 +320,11 @@ export const Partial = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -388,14 +370,11 @@ export const Malformed = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };
@@ -443,14 +422,11 @@ export const FalseCompletion = {
       location.hostname
         .split(".")
         .reverse()
-        .reduce(
-          (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/u, "")),
-            (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-            domain
-          ),
-          location.hostname,
-        ),
+        .reduce((domain) => {
+          const newDomain = domain.replace(/^\.?[^.]+/u, "");
+          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
+          return newDomain;
+        }, location.hostname),
     );
   },
 };

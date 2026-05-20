@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CodeBlock } from "./components/code-block/code-block.mjs";
@@ -73,80 +74,80 @@ const initAll = (options = {}) => {
 
   const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
   $accordions.forEach(($accordion) => {
-    Accordion($accordion);
+    new Accordion($accordion);
   });
 
   const $breadcrumbs = $scope.querySelector('[data-module="tna-breadcrumbs"]');
   if ($breadcrumbs) {
-    Breadcrumbs($breadcrumbs);
+    new Breadcrumbs($breadcrumbs);
   }
 
   const $codeBlocks = $scope.querySelectorAll('[data-module="tna-code-block"]');
   $codeBlocks.forEach(($codeBlock) => {
-    CodeBlock($codeBlock);
+    new CodeBlock($codeBlock);
   });
 
   const $cookieBanner = $scope.querySelector(
     '[data-module="tna-cookie-banner"]',
   );
   if ($cookieBanner) {
-    CookieBanner($cookieBanner);
+    new CookieBanner($cookieBanner);
   }
 
   const $progressiveDateInputs = $scope.querySelectorAll(
     '[data-module="tna-date-input-progressive"]',
   );
   $progressiveDateInputs.forEach(($dateInput) => {
-    DateInputProgressive($dateInput);
+    new DateInputProgressive($dateInput);
   });
 
   const $errorSummary = $scope.querySelector(
     '[data-module="tna-error-summary"]',
   );
   if ($errorSummary) {
-    ErrorSummary($errorSummary).init();
+    new ErrorSummary($errorSummary).init();
   }
 
   const $fileInputs = $scope.querySelectorAll('[data-module="tna-file-input"]');
   $fileInputs.forEach(($fileInput) => {
-    FileInputDroppable($fileInput);
+    new FileInputDroppable($fileInput);
   });
 
   const $footer = $scope.querySelector('[data-module="tna-footer"]');
   if ($footer) {
-    Footer($footer);
+    new Footer($footer);
   }
 
   const $galleries = $scope.querySelectorAll('[data-module="tna-gallery"]');
   $galleries.forEach(($gallery) => {
-    Gallery($gallery);
+    new Gallery($gallery);
   });
 
   const $globalHeader = $scope.querySelector(
     '[data-module="tna-global-header"]',
   );
   if ($globalHeader) {
-    GlobalHeader($globalHeader);
+    new GlobalHeader($globalHeader);
   }
 
   const $header = $scope.querySelector('[data-module="tna-header"]');
   if ($header) {
-    Header($header);
+    new Header($header);
   }
 
   const $pictures = $scope.querySelectorAll('[data-module="tna-picture"]');
   $pictures.forEach(($picture) => {
-    Picture($picture);
+    new Picture($picture);
   });
 
   const $skipLinks = $scope.querySelectorAll('[data-module="tna-skip-link"]');
   $skipLinks.forEach(($skipLink) => {
-    SkipLink($skipLink);
+    new SkipLink($skipLink);
   });
 
   const $tabs = $scope.querySelectorAll('[data-module="tna-tabs"]');
   $tabs.forEach(($tabModule) => {
-    Tabs($tabModule);
+    new Tabs($tabModule);
   });
 
   const $textAreaItemisedRows = $scope.querySelectorAll(
@@ -154,14 +155,14 @@ const initAll = (options = {}) => {
   );
   $textAreaItemisedRows.forEach(($textAreaWithItemisedRows) => {
     const { enhancedHint } = $textAreaWithItemisedRows.dataset;
-    TextAreaItemisedRows($textAreaWithItemisedRows, { enhancedHint });
+    new TextAreaItemisedRows($textAreaWithItemisedRows, { enhancedHint });
   });
 
   const $textInputPasswords = $scope.querySelectorAll(
     '[data-module="tna-text-input-password"]',
   );
   $textInputPasswords.forEach(($textInputPassword) => {
-    TextInputPassword($textInputPassword);
+    new TextInputPassword($textInputPassword);
   });
 
   window.matchMedia("print").addEventListener("change", (evt) => {

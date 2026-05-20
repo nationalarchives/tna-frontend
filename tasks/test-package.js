@@ -194,7 +194,6 @@ const checkExists = [
   // Config
   "config/.babelrc.json",
   "config/.htmlvalidate.json",
-  "config/eslint.config.js",
   "config/stylelint.config.js",
 ];
 
@@ -366,7 +365,7 @@ const cssAllPackage = fs
   .toString();
 const checkForClasses = ["tna-template", "tna-template__body"];
 checkForClasses.forEach((cssClass) => {
-  const escapedClass = cssClass.replace(/\-/gu, "\\-");
+  const escapedClass = cssClass.replace(/[-]/gu, "\\-");
   const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}{`, "g"));
   if (regExp) {
     pass(

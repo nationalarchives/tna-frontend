@@ -24,7 +24,7 @@ const initAll = (options = {}) => {
   if (scope) {
     if (scope instanceof HTMLElement) {
       $scope = scope;
-    } else if (scope) {
+    } else {
       throw new Error("Scope must be an HTMLElement");
     }
   }

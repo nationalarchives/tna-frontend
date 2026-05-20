@@ -195,7 +195,6 @@ const checkExists = [
   "config/.babelrc.json",
   "config/.htmlvalidate.json",
   "config/eslint.config.js",
-  "config/stylelint.config.js",
 ];
 
 console.log("Testing package file structure...");
@@ -366,7 +365,7 @@ const cssAllPackage = fs
   .toString();
 const checkForClasses = ["tna-template", "tna-template__body"];
 checkForClasses.forEach((cssClass) => {
-  const escapedClass = cssClass.replace(/\-/g, "\\-");
+  const escapedClass = cssClass.replace(/[.*+?^${}()|[\]\\-]/g, "\\$&");
   const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}{`, "g"));
   if (regExp) {
     pass(

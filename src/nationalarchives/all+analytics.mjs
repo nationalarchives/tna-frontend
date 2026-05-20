@@ -1,10 +1,9 @@
 import {
-  initAll,
-  Cookies,
   Accordion,
   Breadcrumbs,
   CodeBlock,
   CookieBanner,
+  Cookies,
   DateInputProgressive,
   ErrorSummary,
   FileInputDroppable,
@@ -15,8 +14,9 @@ import {
   Picture,
   SkipLink,
   Tabs,
-  TextInputPassword,
   TextAreaItemisedRows,
+  TextInputPassword,
+  initAll,
 } from "./all.mjs";
 import { EventTracker, GA4, helpers } from "./analytics.mjs";
 

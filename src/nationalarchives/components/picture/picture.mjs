@@ -44,11 +44,13 @@ export class Picture {
     this.$transcript.setAttribute("id", uniqueId);
     this.$transcript.setAttribute("hidden", "");
 
-    this.$transcript.addEventListener("keydown", (e) => {
-      switch (e.key) {
+    this.$transcript.addEventListener("keydown", (event) => {
+      switch (event.key) {
         case "Escape":
           this.toggleTranscript();
           this.$transcriptToggle.focus();
+          break;
+        default:
           break;
       }
     });

@@ -23,7 +23,13 @@ export class FileInputDroppable {
     this.$pseudoSelectFileText.classList.add(
       "tna-file-input__droppable-status",
     );
-    this.$pseudoSelectFileText.textContent = `No file${this.acceptMutltipleFiles ? "s" : ""} selected`;
+
+    let fileText = "file";
+    if (this.acceptMutltipleFiles) {
+      fileText += "s";
+    }
+
+    this.$pseudoSelectFileText.textContent = `No ${fileText} selected`;
     this.$droppableArea.appendChild(this.$pseudoSelectFileText);
 
     const $droppableButtons = document.createElement("div");
@@ -37,11 +43,11 @@ export class FileInputDroppable {
 
     const $pseudoSelectFileButton = document.createElement("span");
     $pseudoSelectFileButton.classList.add("tna-button");
-    $pseudoSelectFileButton.textContent = `Choose file${this.acceptMutltipleFiles ? "s" : ""}`;
+    $pseudoSelectFileButton.textContent = `Choose ${fileText}`;
     $droppableButtons.appendChild($pseudoSelectFileButton);
 
     const $pseudoDropFileButton = document.createElement("span");
-    $pseudoDropFileButton.textContent = `or drop file${this.acceptMutltipleFiles ? "s" : ""}`;
+    $pseudoDropFileButton.textContent = `or drop ${fileText}`;
     $droppableButtons.appendChild($pseudoDropFileButton);
 
     this.$droppableAreaAriaLabel = document.createElement("span");
@@ -49,26 +55,29 @@ export class FileInputDroppable {
     this.$droppableAreaAriaLabel.setAttribute("aria-live", "assertive");
     this.$droppableArea.appendChild(this.$droppableAreaAriaLabel);
 
-    this.$input.addEventListener("dragenter", (e) => this.showDropTarget(e));
+    this.$input.addEventListener("dragenter", (event) =>
+      this.showDropTarget(event),
+    );
     this.$input.addEventListener("dragleave", () => this.hideDropTarget());
     this.$input.addEventListener("dragend", () => this.hideDropTarget());
     this.$input.addEventListener("change", () => this.onChange());
     this.$input.addEventListener("drop", () => this.onChange());
   }
 
+  /* eslint-disable-next-line class-methods-use-this */
   isContainingFiles(dataTransfer) {
-    const hasNoTypesInfo = dataTransfer.types.length === 0;
+    const hasNoTypesInfo = !dataTransfer.types.length;
     const isDraggingFiles = dataTransfer.types.some((type) => type === "Files");
     return hasNoTypesInfo || isDraggingFiles;
   }
 
   showDropTarget(event, updateAriaLabel = true) {
     if (event.dataTransfer && this.isContainingFiles(event.dataTransfer)) {
-      this.$droppableArea.classList.add(
-        event.dataTransfer.items.length > 1
-          ? "tna-file-input__droppable--over-multiple"
-          : "tna-file-input__droppable--over",
-      );
+      let classToAdd = "tna-file-input__droppable--over";
+      if (event.dataTransfer.items.length) {
+        classToAdd = "tna-file-input__droppable--over-multiple";
+      }
+      this.$droppableArea.classList.add(classToAdd);
 
       if (updateAriaLabel) {
         this.$droppableAreaAriaLabel.textContent = "Entered drop zone";
@@ -87,21 +96,28 @@ export class FileInputDroppable {
   }
 
   onChange() {
-    const files = this.$input.files;
+    const { files } = this.$input;
     if (this.acceptMutltipleFiles) {
-      if (files.length === 0) {
-        this.$pseudoSelectFileText.textContent = `No files selected`;
+      if (files.length) {
+        let fileText = "file";
+        /* eslint-disable-next-line no-magic-numbers */
+        if (files.length > 1) {
+          fileText += "s";
+        }
+        const textContent = `${files.length} ${fileText} selected`;
+        this.$pseudoSelectFileText.textContent = textContent;
       } else {
-        this.$pseudoSelectFileText.textContent = `${files.length} file${files.length > 1 ? "s" : ""} selected`;
+        this.$pseudoSelectFileText.textContent = `No files selected`;
       }
     } else {
       this.$pseudoSelectFileText.textContent =
+        /* eslint-disable-next-line no-magic-numbers */
         files[0]?.name || `No file selected`;
     }
-    if (files.length === 0) {
-      this.$droppableArea.classList.add("tna-file-input__droppable--empty");
-    } else {
+    if (files.length) {
       this.$droppableArea.classList.remove("tna-file-input__droppable--empty");
+    } else {
+      this.$droppableArea.classList.add("tna-file-input__droppable--empty");
     }
     this.hideDropTarget(false);
   }

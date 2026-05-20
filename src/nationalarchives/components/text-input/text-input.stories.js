@@ -1,7 +1,8 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+import { expect, within } from "storybook/test";
+
 import macroOptions from "./macro-options.json";
-import { within, expect } from "storybook/test";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -113,9 +114,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -178,9 +177,9 @@ export const Password = {
     classes: "tna-text-input--demo",
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const $input = canvas.getByLabelText("Enter your password");
-    const $button = canvas.getByRole("button");
+    const canvas = within(canvasElement),
+      $input = canvas.getByLabelText("Enter your password"),
+      $button = canvas.getByRole("button");
 
     await expect($input.type).toEqual("password");
     await expect($button.ariaLabel).toEqual("Show password");

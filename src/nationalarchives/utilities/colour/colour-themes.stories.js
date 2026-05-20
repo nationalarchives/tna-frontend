@@ -1,3 +1,5 @@
+import nunjucks from "nunjucks";
+
 import Accordion from "../../components/accordion/template.njk?raw";
 import Breadcrumbs from "../../components/breadcrumbs/template.njk?raw";
 import Button from "../../components/button/template.njk?raw";
@@ -20,7 +22,6 @@ import Tabs from "../../components/tabs/template.njk?raw";
 import TextInput from "../../components/text-input/template.njk?raw";
 import Textarea from "../../components/textarea/template.njk?raw";
 import Warning from "../../components/warning/template.njk?raw";
-import nunjucks from "nunjucks";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 

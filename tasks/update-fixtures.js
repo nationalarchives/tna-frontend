@@ -33,8 +33,8 @@ components.forEach((component) => {
           params: fixture.options,
         })
         .trim()
-        .replace(/>\n\s*/g, ">")
-        .replace(/\n\s*</g, "<"),
+        .replace(/>\n\s*/gu, ">")
+        .replace(/\n\s*</gu, "<"),
     })),
   };
 
@@ -76,8 +76,8 @@ const newTemplateFixtures = {
         fixture.options,
       )
       .trim()
-      .replace(/>\n\s*/g, ">")
-      .replace(/\n\s*</g, "<"),
+      .replace(/>\n\s*/gu, ">")
+      .replace(/\n\s*</gu, "<"),
   })),
 };
 const allFixtureDifferences = newTemplateFixtures.fixtures.reduce(

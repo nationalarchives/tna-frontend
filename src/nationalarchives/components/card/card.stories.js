@@ -1,7 +1,9 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
+
 import { customViewports } from "../../../../.storybook/viewports";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -78,9 +80,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -323,7 +323,7 @@ export const HorizontalMinimal = {
 export const HorizontalMobile = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["tiny"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.tiny.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -347,7 +347,7 @@ export const HorizontalMobile = {
 export const HorizontalContrastMobile = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["tiny"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.tiny.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -571,7 +571,7 @@ export const Sources = {
   },
 };
 
-// export const All = () => `
+// Export const All = () => `
 // <div class="tna-container">
 //   <div class="tna-column tna-column--width-1-6">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null })}
@@ -722,5 +722,5 @@ export const Sources = {
 //   </div>
 // </div>`;
 // All.parameters = {
-//   chromatic: { disableSnapshot: true },
+//   Chromatic: { disableSnapshot: true },
 // };

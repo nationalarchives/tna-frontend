@@ -1,8 +1,10 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "storybook/test";
+import { expect, userEvent, within } from "storybook/test";
+
 import Cookies from "../../lib/cookies.mjs";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -37,9 +39,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -66,9 +66,9 @@ export const Accept = {
     await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
     await userEvent.click(acceptButton);
@@ -82,19 +82,19 @@ export const Accept = {
     await expect(acceptButton).not.toBeVisible();
     await expect(rejectButton).not.toBeVisible();
 
-    // const closeButton = canvas.getByText("Hide cookies message");
-    // await expect(closeButton).toBeVisible();
-    // await userEvent.click(closeButton);
+    // Const closeButton = canvas.getByText("Hide cookies message");
+    // Await expect(closeButton).toBeVisible();
+    // Await userEvent.click(closeButton);
 
-    // await expect(closeButton).not.toBeVisible();
+    // Await expect(closeButton).not.toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -119,9 +119,9 @@ export const Reject = {
     await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
     await userEvent.click(rejectButton);
@@ -138,13 +138,13 @@ export const Reject = {
     await expect(acceptButton).not.toBeVisible();
     await expect(rejectButton).not.toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -165,8 +165,8 @@ export const RejectAndClose = {
     disableMockAnalytics: true,
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      rejectButton = canvas.getByText("Reject cookies");
     await userEvent.click(rejectButton);
 
     const closeButton = canvas.getAllByText("Hide cookies message")[1];
@@ -174,13 +174,13 @@ export const RejectAndClose = {
     await closeButton.click();
     await expect(closeButton).not.toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -218,19 +218,19 @@ export const ExistingNotComplete = {
     await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -270,19 +270,19 @@ export const ExistingAndComplete = {
     await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
     await expect(cookies.get("cookie_preferences_set")).toEqual("true");
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).not.toBeVisible();
     await expect(rejectButton).not.toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -325,19 +325,19 @@ export const Partial = {
     await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -378,19 +378,19 @@ export const Malformed = {
     await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),
@@ -433,19 +433,19 @@ export const FalseCompletion = {
     await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
-    const canvas = within(canvasElement);
-    const acceptButton = canvas.getByText("Accept cookies");
-    const rejectButton = canvas.getByText("Reject cookies");
+    const canvas = within(canvasElement),
+      acceptButton = canvas.getByText("Accept cookies"),
+      rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
 
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
+    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
       location.hostname
         .split(".")
         .reverse()
         .reduce(
           (domain) => (
-            (domain = domain.replace(/^\.?[^.]+/, "")),
+            (domain = domain.replace(/^\.?[^.]+/u, "")),
             (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
             domain
           ),

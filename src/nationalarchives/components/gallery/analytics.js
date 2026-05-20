@@ -18,6 +18,7 @@ export default [
           $scope.querySelectorAll(".tna-gallery__navigation-item"),
         ).findIndex(
           ($itemButton) => $itemButton.getAttribute("aria-current") === "true",
+          /* eslint-disable-next-line no-magic-numbers */
         ) || -1) + 1,
     },
     events: [

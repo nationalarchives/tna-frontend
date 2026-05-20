@@ -1,8 +1,10 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "storybook/test";
+import { expect, userEvent, within } from "storybook/test";
+
 import { customViewports } from "../../../../.storybook/viewports";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -43,9 +45,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -83,13 +83,13 @@ export const Standard = {
     classes: "tna-header--demo",
   },
   play: async ({ canvasElement }) => {
-    await new Promise((r) => setTimeout(r, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
     const $navigationItems = canvasElement.querySelector(
-      `.tna-header__navigation-items`,
-    );
-    const $navigationToggle = canvasElement.querySelector(
-      `.tna-header__navigation-button`,
-    );
+        `.tna-header__navigation-items`,
+      ),
+      $navigationToggle = canvasElement.querySelector(
+        `.tna-header__navigation-button`,
+      );
     await expect($navigationItems).toBeVisible();
     await expect($navigationToggle).not.toBeVisible();
   },
@@ -98,7 +98,7 @@ export const Standard = {
 export const Mobile = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -143,19 +143,18 @@ export const Mobile = {
     classes: "tna-header--demo",
   },
   play: async ({ args, canvasElement, step }) => {
-    await new Promise((r) => setTimeout(r, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const canvas = within(canvasElement);
-
-    const $navigationItems = canvasElement.querySelector(
-      `.tna-header__navigation-items`,
-    );
-    const [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
-      canvas.getByText(navigationItem.text),
-    );
-    const $navigationToggle = canvasElement.querySelector(
-      `.tna-header__navigation-button`,
-    );
+    const canvas = within(canvasElement),
+      $navigationItems = canvasElement.querySelector(
+        `.tna-header__navigation-items`,
+      ),
+      [$linkA, $linkB, $linkC] = args.navigation.map((navigationItem) =>
+        canvas.getByText(navigationItem.text),
+      ),
+      $navigationToggle = canvasElement.querySelector(
+        `.tna-header__navigation-button`,
+      );
 
     await step("Initial load", async () => {
       await expect($navigationItems).not.toBeVisible();

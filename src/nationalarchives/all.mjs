@@ -15,13 +15,18 @@ import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
 import Cookies from "./lib/cookies.mjs";
-import { updateTimeElement, checkTableForScroll } from "./lib/helpers.mjs";
+import { checkTableForScroll, updateTimeElement } from "./lib/helpers.mjs";
 
-const initAll = (options) => {
-  options = typeof options !== "undefined" ? options : {};
-  const $scope =
-    options.scope instanceof HTMLElement ? options.scope : document;
-
+const initAll = (options = {}) => {
+  const { scope } = options;
+  let $scope = document;
+  if (scope) {
+    if (scope instanceof HTMLElement) {
+      $scope = scope;
+    } else if (scope) {
+      throw new Error("Scope must be an HTMLElement");
+    }
+  }
   const $html = document.documentElement;
   $html.classList.add("tna-template--js-enabled");
 
@@ -31,8 +36,8 @@ const initAll = (options) => {
   };
   window.addEventListener("touchstart", onFirstTouch);
 
-  const onKeyDown = (e) => {
-    if (e.key === "Tab") {
+  const onKeyDown = (event) => {
+    if (event.key === "Tab") {
       $html.classList.add("tna-template--tabbed");
       $html.classList.remove("tna-template--clicked");
     }
@@ -61,134 +66,134 @@ const initAll = (options) => {
     );
   });
 
-  // TODO: Remove this opt-in class in a later release
+  // Remove this opt-in class in a later release
   if ($html.classList.contains("tna-template--enhance-time-elements")) {
     document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
   }
 
   const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
   $accordions.forEach(($accordion) => {
-    new Accordion($accordion);
+    Accordion($accordion);
   });
 
   const $breadcrumbs = $scope.querySelector('[data-module="tna-breadcrumbs"]');
   if ($breadcrumbs) {
-    new Breadcrumbs($breadcrumbs);
+    Breadcrumbs($breadcrumbs);
   }
 
   const $codeBlocks = $scope.querySelectorAll('[data-module="tna-code-block"]');
   $codeBlocks.forEach(($codeBlock) => {
-    new CodeBlock($codeBlock);
+    CodeBlock($codeBlock);
   });
 
   const $cookieBanner = $scope.querySelector(
     '[data-module="tna-cookie-banner"]',
   );
   if ($cookieBanner) {
-    new CookieBanner($cookieBanner);
+    CookieBanner($cookieBanner);
   }
 
   const $progressiveDateInputs = $scope.querySelectorAll(
     '[data-module="tna-date-input-progressive"]',
   );
   $progressiveDateInputs.forEach(($dateInput) => {
-    new DateInputProgressive($dateInput);
+    DateInputProgressive($dateInput);
   });
 
   const $errorSummary = $scope.querySelector(
     '[data-module="tna-error-summary"]',
   );
   if ($errorSummary) {
-    new ErrorSummary($errorSummary).init();
+    ErrorSummary($errorSummary).init();
   }
 
   const $fileInputs = $scope.querySelectorAll('[data-module="tna-file-input"]');
   $fileInputs.forEach(($fileInput) => {
-    new FileInputDroppable($fileInput);
+    FileInputDroppable($fileInput);
   });
 
   const $footer = $scope.querySelector('[data-module="tna-footer"]');
   if ($footer) {
-    new Footer($footer);
+    Footer($footer);
   }
 
   const $galleries = $scope.querySelectorAll('[data-module="tna-gallery"]');
   $galleries.forEach(($gallery) => {
-    new Gallery($gallery);
+    Gallery($gallery);
   });
 
   const $globalHeader = $scope.querySelector(
     '[data-module="tna-global-header"]',
   );
   if ($globalHeader) {
-    new GlobalHeader($globalHeader);
+    GlobalHeader($globalHeader);
   }
 
   const $header = $scope.querySelector('[data-module="tna-header"]');
   if ($header) {
-    new Header($header);
+    Header($header);
   }
 
   const $pictures = $scope.querySelectorAll('[data-module="tna-picture"]');
   $pictures.forEach(($picture) => {
-    new Picture($picture);
+    Picture($picture);
   });
 
   const $skipLinks = $scope.querySelectorAll('[data-module="tna-skip-link"]');
   $skipLinks.forEach(($skipLink) => {
-    new SkipLink($skipLink);
+    SkipLink($skipLink);
   });
 
   const $tabs = $scope.querySelectorAll('[data-module="tna-tabs"]');
   $tabs.forEach(($tabModule) => {
-    new Tabs($tabModule);
+    Tabs($tabModule);
+  });
+
+  const $textAreaItemisedRows = $scope.querySelectorAll(
+    '[data-module="tna-textarea-itemised-rows"]',
+  );
+  $textAreaItemisedRows.forEach(($textAreaWithItemisedRows) => {
+    const { enhancedHint } = $textAreaWithItemisedRows.dataset;
+    TextAreaItemisedRows($textAreaWithItemisedRows, { enhancedHint });
   });
 
   const $textInputPasswords = $scope.querySelectorAll(
     '[data-module="tna-text-input-password"]',
   );
   $textInputPasswords.forEach(($textInputPassword) => {
-    new TextInputPassword($textInputPassword);
-  });
-
-  const $textAreaItemisedRows = $scope.querySelectorAll(
-    '[data-module="tna-textarea-itemised-rows"]',
-  );
-  $textAreaItemisedRows.forEach(($textAreaItemisedRows) => {
-    const enhancedHint = $textAreaItemisedRows.dataset.enhancedHint;
-    new TextAreaItemisedRows($textAreaItemisedRows, { enhancedHint });
+    TextInputPassword($textInputPassword);
   });
 
   window.matchMedia("print").addEventListener("change", (evt) => {
     if (evt.matches) {
       $scope
         .querySelectorAll(".tna-details__details:not([open])")
-        .forEach((e) => {
-          e.setAttribute("open", "");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.setAttribute("open", "");
+          $element.dataset.wasClosed = "";
         });
       $scope
         .querySelectorAll(
           ".tna-accordion__content[hidden], .tna-picture__transcript[hidden]",
         )
-        .forEach((e) => {
-          e.removeAttribute("hidden");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.removeAttribute("hidden");
+          $element.dataset.wasClosed = "";
         });
     } else {
       $scope
         .querySelectorAll(".tna-details__details[data-was-closed]")
-        .forEach((e) => {
-          e.removeAttribute("open");
-          delete e.dataset.wasClosed;
+        .forEach(($element) => {
+          $element.removeAttribute("open");
+          delete $element.dataset.wasClosed;
         });
       $scope
         .querySelectorAll(
           ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )
-        .forEach((e) => {
-          e.setAttribute("hidden", "");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.setAttribute("hidden", "");
+          $element.dataset.wasClosed = "";
         });
     }
   });

@@ -15,3 +15,7 @@ ignore:
     WS-I011-TYPESCRIPT-00001:
       tasks/**/*.js:
         reason: RISK_ACCEPTED
+
+    BUILTIN-401:
+      src/nationalarchives/templates/fixtures.json:
+        reason: RISK_ACCEPTED

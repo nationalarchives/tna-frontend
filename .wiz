@@ -18,6 +18,10 @@ ignore:
       tasks/**/*.js:
         reason: RISK_ACCEPTED
 
+    BUILTIN-401:
+      src/nationalarchives/templates/fixtures.json:
+        reason: FALSE_POSITIVE
+
     WS-I011-JAVASCRIPT-00003:
       src/nationalarchives/analytics.js:
         reason: RISK_ACCEPTED

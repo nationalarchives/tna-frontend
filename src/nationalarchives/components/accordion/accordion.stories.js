@@ -1,7 +1,8 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+import { expect, fireEvent, within } from "storybook/test";
+
 import macroOptions from "./macro-options.json";
-import { fireEvent, expect, within } from "storybook/test";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -34,9 +35,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -207,17 +206,16 @@ export const ToggleAllButton = {
     ...Standard.args,
     toggleAllButton: {
       enabled: true,
-      // openAllLabel: "Expand all",
-      // closeAllLabel: "Collapse all",
+      // OpenAllLabel: "Expand all",
+      // CloseAllLabel: "Collapse all",
     },
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const $toggleAllButton = canvas.getByText("Show all sections");
-
-    const $allDetails = Array.from(
-      document.querySelectorAll(".tna-accordion__details"),
-    );
+    const canvas = within(canvasElement),
+      $toggleAllButton = canvas.getByText("Show all sections"),
+      $allDetails = Array.from(
+        document.querySelectorAll(".tna-accordion__details"),
+      );
 
     await $allDetails.forEach(async ($details) => {
       await expect(

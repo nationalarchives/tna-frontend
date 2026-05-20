@@ -18,6 +18,7 @@ export class Gallery {
       !this.$module ||
       !this.$itemsContainer ||
       !this.$items ||
+      /* eslint-disable-next-line no-magic-numbers */
       this.$items.length < 2 ||
       !this.$navigation ||
       !this.$navigationItems ||
@@ -36,6 +37,7 @@ export class Gallery {
     );
 
     this.setup();
+    /* eslint-disable-next-line no-magic-numbers */
     this.currentId = this.$items[0].id;
     this.showItem(this.currentId);
   }
@@ -56,9 +58,9 @@ export class Gallery {
         this.$itemsContainer.focus();
       });
     });
-    this.$module.addEventListener("keydown", (e) => {
+    this.$module.addEventListener("keydown", (event) => {
       let preventDefaultKeyAction = false;
-      switch (e.key) {
+      switch (event.key) {
         case "ArrowLeft":
         case "ArrowUp":
           this.showPreviousItem();
@@ -77,10 +79,12 @@ export class Gallery {
           this.showLastItem();
           preventDefaultKeyAction = true;
           break;
+        default:
+          break;
       }
       if (preventDefaultKeyAction) {
-        e.stopPropagation();
-        e.preventDefault();
+        event.stopPropagation();
+        event.preventDefault();
       }
     });
 
@@ -125,6 +129,7 @@ export class Gallery {
       }
     });
     this.currentId = id;
+    /* eslint-disable-next-line no-magic-numbers */
     this.$liveRegion.textContent = `Image ${this.getCurrentItemIndex() + 1} of ${this.$items.length}`;
   }
 
@@ -135,26 +140,33 @@ export class Gallery {
   }
 
   showPreviousItem() {
+    /* eslint-disable-next-line no-magic-numbers */
     let nextIndexToShow = this.getCurrentItemIndex() - 1;
+    /* eslint-disable-next-line no-magic-numbers */
     if (nextIndexToShow < 0) {
+      /* eslint-disable-next-line no-magic-numbers */
       nextIndexToShow = this.$items.length - 1;
     }
     this.showItem(this.$items[nextIndexToShow].id);
   }
 
   showNextItem() {
+    /* eslint-disable-next-line no-magic-numbers */
     let nextIndexToShow = this.getCurrentItemIndex() + 1;
     if (nextIndexToShow >= this.$items.length) {
+      /* eslint-disable-next-line no-magic-numbers */
       nextIndexToShow = 0;
     }
     this.showItem(this.$items[nextIndexToShow].id);
   }
 
   showFirstItem() {
+    /* eslint-disable-next-line no-magic-numbers */
     this.showItem(this.$items[0].id);
   }
 
   showLastItem() {
+    /* eslint-disable-next-line no-magic-numbers */
     this.showItem(this.$items[this.$items.length - 1].id);
   }
 }

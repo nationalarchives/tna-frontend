@@ -7,6 +7,8 @@ ignore:
         reason: RISK_ACCEPTED
       tasks/**/*.js:
         reason: RISK_ACCEPTED
+      src/**/*.stories.js:
+        reason: RISK_ACCEPTED
 
     WS-I013-JAVASCRIPT-00093:
       tasks/**/*.js:
@@ -14,4 +16,8 @@ ignore:
 
     WS-I011-TYPESCRIPT-00001:
       tasks/**/*.js:
+        reason: RISK_ACCEPTED
+
+    WS-I011-JAVASCRIPT-00003:
+      src/nationalarchives/analytics.js:
         reason: RISK_ACCEPTED

@@ -33,13 +33,13 @@ export class Tabs {
       $tabPanel.setAttribute("role", "tabpanel");
       $tabListItemLink.addEventListener(
         "click",
-        (e) => this.handleItemLinkClick(e),
+        (event) => this.handleItemLinkClick(event),
         true,
       );
     });
     this.switchTabByIndex(this.currentTabIndex);
-    this.$module.addEventListener("keydown", (e) =>
-      this.handleItemLinkKeyDown(e),
+    this.$module.addEventListener("keydown", (event) =>
+      this.handleItemLinkKeyDown(event),
     );
   }
 
@@ -64,10 +64,12 @@ export class Tabs {
         preventDefaultKeyAction = true;
         break;
       case "Home":
+        /* eslint-disable-next-line no-magic-numbers */
         this.switchTabByIndex(0, true);
         preventDefaultKeyAction = true;
         break;
       case "End":
+        /* eslint-disable-next-line no-magic-numbers */
         this.switchTabByIndex(this.$tabListItemLinks.length - 1, true);
         preventDefaultKeyAction = true;
         break;
@@ -81,17 +83,23 @@ export class Tabs {
   }
 
   nextTab() {
+    /* eslint-disable-next-line no-magic-numbers */
     if (this.currentTabIndex < this.$tabListItemLinks.length - 1) {
+      /* eslint-disable-next-line no-magic-numbers */
       this.switchTabByIndex(this.currentTabIndex + 1, true);
     } else {
+      /* eslint-disable-next-line no-magic-numbers */
       this.switchTabByIndex(0, true);
     }
   }
 
   previousTab() {
+    /* eslint-disable-next-line no-magic-numbers */
     if (this.currentTabIndex >= 1) {
+      /* eslint-disable-next-line no-magic-numbers */
       this.switchTabByIndex(this.currentTabIndex - 1, true);
     } else {
+      /* eslint-disable-next-line no-magic-numbers */
       this.switchTabByIndex(this.$tabListItemLinks.length - 1, true);
     }
   }

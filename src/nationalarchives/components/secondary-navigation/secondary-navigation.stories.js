@@ -1,7 +1,9 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
+
 import { customViewports } from "../../../../.storybook/viewports";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -41,13 +43,11 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => {
-    return `<div class="tna-container">
+  render: (params) => `<div class="tna-container">
   <div class="tna-column tna-column--full">
     ${nunjucks.renderString(Template, { params })}
   </div>
-</div>`;
-  },
+</div>`,
 };
 
 export const Default = {
@@ -79,7 +79,7 @@ export const Default = {
 export const Medium = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["medium"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.medium.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -91,7 +91,7 @@ export const Medium = {
 export const Mobile = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {

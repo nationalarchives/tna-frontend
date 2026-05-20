@@ -20,8 +20,8 @@ export class CodeBlock {
       try {
         await navigator.clipboard.writeText(this.$code.innerText);
         this.$copyButton.innerText = "Code copied";
-      } catch (err) {
-        console.error("Failed to copy: ", err);
+      } catch {
+        // Continue regardless of error
       }
     });
 

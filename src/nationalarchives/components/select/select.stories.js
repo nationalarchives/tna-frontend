@@ -1,6 +1,7 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+
 import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -43,16 +44,14 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
   args: {
     label: "Sort by",
-    // headingLevel: 4,
-    // headingSize: "m",
+    // HeadingLevel: 4,
+    // HeadingSize: "m",
     id: "sort1",
     name: "sort1",
     items: [

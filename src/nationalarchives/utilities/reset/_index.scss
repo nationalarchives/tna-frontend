@@ -1,3 +1,4 @@
+@use "../../variables/media" as mediaVars;
 @use "../../tools/colour";
 @use "../../tools/typography";
 
@@ -17,6 +18,9 @@
  * ------------------------------------------
  */
 :root {
+  --media-breakpoint-tiny: #{mediaVars.$largest-tiny-device-px}px;
+  --media-breakpoint-small: #{mediaVars.$largest-small-device-px}px;
+  --media-breakpoint-medium: #{mediaVars.$largest-medium-device-px}px;
   color-scheme: only light;
 }
 

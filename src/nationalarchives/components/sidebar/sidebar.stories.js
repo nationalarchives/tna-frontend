@@ -15,6 +15,7 @@ export default {
       items: { control: "object" },
       type: { control: "radio", options: ["contents", "sections", "pages"] },
       sticky: { control: "boolean" },
+      disableSectionHighlightOnScroll: { control: "boolean" },
       ariaLabel: { control: "text" },
       classes: { control: "text" },
       attributes: { control: "object" },

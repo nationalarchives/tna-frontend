@@ -86,6 +86,13 @@
     "default": false
   },
   {
+    "name": "disableSectionHighlightOnScroll",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, disables highlighting the current section in the sidebar as the user scrolls. Only applies when `type` is `sections` and `sticky` is `true`.",
+    "default": false
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

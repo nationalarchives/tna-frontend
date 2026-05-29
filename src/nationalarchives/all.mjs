@@ -11,6 +11,7 @@ import { Gallery } from "./components/gallery/gallery.mjs";
 import { GlobalHeader } from "./components/global-header/global-header.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
+import { Sidebar } from "./components/sidebar/sidebar.mjs";
 import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
@@ -140,6 +141,12 @@ const initAll = (options = {}) => {
     new Picture($picture);
   });
 
+  const $sidebar = $scope.querySelector('[data-module="tna-sidebar-sections"]');
+  if ($sidebar) {
+    const { scrollTopThreshold, disableHighlightSize } = $sidebar.dataset;
+    new Sidebar($sidebar, { scrollTopThreshold, disableHighlightSize });
+  }
+
   const $skipLinks = $scope.querySelectorAll('[data-module="tna-skip-link"]');
   $skipLinks.forEach(($skipLink) => {
     new SkipLink($skipLink);
@@ -215,6 +222,7 @@ export {
   GlobalHeader,
   Header,
   Picture,
+  Sidebar,
   SkipLink,
   Tabs,
   TextInputPassword,

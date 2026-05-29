@@ -128,7 +128,7 @@ const checkExists = [
   ...componentFiles("search-field"),
   ...componentFiles("secondary-navigation"),
   ...componentFiles("select"),
-  ...componentFiles("sidebar"),
+  ...componentFiles("sidebar", "Sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input", "TextInputPassword"),

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added the ability to use a `caller` function in the code block component
+- Added automatic section highlighting on the sections style sidebar component
 
 ### Changed
 

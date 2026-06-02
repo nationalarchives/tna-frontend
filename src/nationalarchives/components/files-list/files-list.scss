@@ -31,7 +31,9 @@
   }
 
   &__item {
-    padding: 0 0 0 spacing.space(0.5);
+    @include colour.thick-keyline-transparent(left);
+
+    padding: 0 0 0 spacing.space(0.25);
 
     display: grid;
     grid-template-columns: auto 1fr;
@@ -76,11 +78,7 @@
 
   @include a11y.faux-full-outline("&--full-click &__link");
 
-  &--full-click &__link {
-    &:hover {
-      &::before {
-        @include colour.thick-keyline(left);
-      }
-    }
+  &--full-click &__item:has(&__link:hover) {
+    @include colour.thick-keyline(left);
   }
 }

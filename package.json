@@ -81,7 +81,7 @@
     "prismjs": "^1.30.0",
     "sass": "^1.79.5",
     "sass-embedded": "^1.91.0",
-    "sass-loader": "^16.0.2",
+    "sass-loader": "^17.0.0",
     "simple-nunjucks-loader": "^3.2.0",
     "storybook": "^10.4.0",
     "style-loader": "^4.0.0",

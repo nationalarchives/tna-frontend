@@ -24,9 +24,10 @@
 
     list-style: none;
 
-    border-left-width: 1px;
-
+    /* stylelint-disable */
     @include colour.colour-border("keyline", 0, solid);
+    border-left-width: 1px;
+    /* stylelint-enable */
   }
 
   &__item {

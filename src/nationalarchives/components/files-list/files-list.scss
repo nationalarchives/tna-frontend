@@ -18,14 +18,15 @@
     padding: 0;
 
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: spacing.space(1);
-    flex: 1;
 
     list-style: none;
 
-    @include colour.colour-border("keyline", 0, solid);
     border-left-width: 1px;
+
+    @include colour.colour-border("keyline", 0, solid);
   }
 
   &__item {

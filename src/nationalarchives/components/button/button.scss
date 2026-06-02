@@ -53,9 +53,10 @@ $button-border-width: 4px !default;
 
   svg {
     height: 1.1em;
-    flex-shrink: 0;
 
     align-self: center;
+
+    flex-shrink: 0;
 
     fill: currentColor;
   }

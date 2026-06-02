@@ -17,9 +17,9 @@
 
     display: block;
 
-    line-height: 2rem;
-
     flex: 1;
+
+    line-height: 2rem;
 
     @include colour.colour-input;
     @include borders.rounded-border;

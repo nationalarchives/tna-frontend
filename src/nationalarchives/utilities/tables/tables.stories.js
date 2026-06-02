@@ -3,6 +3,7 @@ export default {
 };
 
 const TableTemplate = () =>
+  /* eslint-disable-next-line no-secrets/no-secrets */
   `<div class="tna-container">
   <div class="tna-column tna-column--full">
     <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-1" tabindex="0">

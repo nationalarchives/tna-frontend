@@ -5,6 +5,9 @@
 @use "../../tools/typography";
 
 .tna-date-search {
+  @include colour.colour-input;
+  @include borders.rounded-border;
+
   max-width: 100%;
   padding: 0 spacing.space(0.375);
 
@@ -12,10 +15,6 @@
   box-sizing: border-box;
 
   line-height: 2rem;
-
-  @include colour.colour-input;
-
-  @include borders.rounded-border;
 
   .tna-form-item--error & {
     @include colour.colour-border("form-error-border");

@@ -27,10 +27,6 @@
 }
 
 @mixin columns-generator($count, $suffix: "") {
-  @if $suffix != "" {
-    $suffix: "-" + $suffix;
-  }
-
   .tna-column {
     &--full#{$suffix} {
       width: 100%;
@@ -45,6 +41,8 @@
         @if (
           $count % $j == 0 and $i % $j == 0 and $simplest-fraction-found != true
         ) {
+          $simplest-fraction-found: true;
+
           &--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
             width: math.div(100%, $count) * $i;
 
@@ -58,8 +56,6 @@
           &--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
             margin-left: math.div(100%, $count) * $i;
           }
-
-          $simplest-fraction-found: true;
         }
       }
 
@@ -103,5 +99,8 @@
         order: $i;
       }
     }
+  }
+  @if $suffix != "" {
+    $suffix: "-" + $suffix;
   }
 }

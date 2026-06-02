@@ -17,9 +17,9 @@
 
 @supports not selector(:focus-visible) {
   *:focus {
-    z-index: 9;
-
     @include a11y.focus-outline;
+
+    z-index: 9;
   }
 }
 

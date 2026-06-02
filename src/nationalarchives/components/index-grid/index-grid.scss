@@ -25,6 +25,7 @@
 
   &__item {
     @include colour.contrast;
+    @include borders.rounded-border;
 
     height: 100%;
 
@@ -34,8 +35,6 @@
     position: relative;
 
     text-decoration: none;
-
-    @include borders.rounded-border;
 
     .tna-background-contrast & {
       @include colour.accent;
@@ -47,6 +46,8 @@
   }
 
   &__item-image {
+    @include colour.image-loader-background;
+
     width: 100%;
     height: auto;
 
@@ -54,8 +55,6 @@
       bordersVars.$rounded-border-radius 0 0;
 
     pointer-events: none;
-
-    @include colour.image-loader-background;
   }
 
   &__item-content {
@@ -72,6 +71,7 @@
 
   &__item-title {
     @include typography.main-font-weight-bold;
+
     text-decoration: underline;
 
     .tna-index-grid__item:hover & {
@@ -84,7 +84,7 @@
   }
 
   &__item-subtitle {
-    @include colour.colour-font("font-light");
     @include typography.font-size(16);
+    @include colour.colour-font("font-light");
   }
 }

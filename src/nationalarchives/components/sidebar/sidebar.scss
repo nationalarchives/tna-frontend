@@ -6,9 +6,9 @@
 @use "../../tools/typography";
 
 .tna-sidebar {
-  width: 100%;
-
   @include typography.font-size(16);
+
+  width: 100%;
 
   &__heading {
   }
@@ -47,10 +47,10 @@
    * ------------------------------------------
    */
   &--contents &__item-children {
+    @include colour.thick-keyline("left");
+
     margin-top: spacing.space(0.25);
     padding-left: spacing.space(2);
-
-    @include colour.thick-keyline("left");
   }
 
   /*
@@ -70,7 +70,6 @@
 
   &--sections &__item--current &__link {
     @include colour.accent;
-
     @include borders.rounded-border;
   }
 
@@ -80,9 +79,9 @@
    * ------------------------------------------
    */
   &--pages &__item--current {
-    padding-left: spacing.space(0.75);
-
     @include colour.thick-keyline-accent(left);
+
+    padding-left: spacing.space(0.75);
   }
 
   &--pages &__item--current > &__link {
@@ -130,24 +129,6 @@
     top: 0;
   }
 
-  @include media.on-small {
-    &--static-on-mobile,
-    &--static-on-small {
-      max-height: none;
-
-      position: static;
-    }
-  }
-
-  @include media.on-tiny {
-    &--static-on-mobile,
-    &--static-on-tiny {
-      max-height: none;
-
-      position: static;
-    }
-  }
-
   &--sticky &__items {
     margin: 0;
     padding-bottom: a11yVars.$focus-outline-total-width;
@@ -172,5 +153,23 @@
 
     position: relative;
     left: -#{a11yVars.$focus-outline-total-width};
+  }
+
+  @include media.on-small {
+    &--static-on-mobile,
+    &--static-on-small {
+      max-height: none;
+
+      position: static;
+    }
+  }
+
+  @include media.on-tiny {
+    &--static-on-mobile,
+    &--static-on-tiny {
+      max-height: none;
+
+      position: static;
+    }
   }
 }

@@ -68,8 +68,9 @@
     cursor: pointer;
 
     &:hover {
-      color: inherit;
       @include typography.interacted-text-decoration;
+
+      color: inherit;
 
       background-color: transparent;
     }

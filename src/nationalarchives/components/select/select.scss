@@ -4,6 +4,9 @@
 @use "../../tools/spacing";
 
 .tna-select {
+  @include colour.colour-input;
+  @include borders.rounded-border;
+
   max-width: 100%;
   height: calc(2rem + 6px);
   padding: 0 spacing.space(1) 0 spacing.space(0.5);
@@ -11,10 +14,6 @@
   display: block;
 
   line-height: 2rem;
-
-  @include colour.colour-input;
-
-  @include borders.rounded-border;
 
   // &--styled {
   //   padding: 0 spacing.space(2.5) 0 spacing.space(0.75);

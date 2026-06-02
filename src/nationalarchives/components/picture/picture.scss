@@ -10,17 +10,18 @@
 
 .tna-picture {
   @include spacing.space-above;
+
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
   padding: 0;
 
   &__image-wrapper {
+    @include borders.rounded-border;
+
     padding: spacing.space(1.5);
 
     position: relative;
-
-    @include borders.rounded-border;
   }
 
   &__image-wrapper:has(+ #{&}__transcript:not([hidden])) {
@@ -29,14 +30,14 @@
   }
 
   &__image {
+    @include colour.image-loader-background;
+
     width: auto;
     height: auto;
     max-height: 50rem;
     margin: 0 auto;
 
     @include shadows.drop-shadow;
-
-    @include colour.image-loader-background;
   }
 
   &__toggle-transcript {
@@ -59,12 +60,11 @@
   }
 
   &__caption {
+    @include typography.font-size(16);
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
     margin: 0 spacing.space(1);
     padding: spacing.space(1);
-
-    @include typography.font-size(16);
-
-    @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
   &--plain &__image-wrapper {
@@ -94,10 +94,10 @@
     }
 
     &__caption {
+      @include typography.font-size(14);
+
       margin-right: 0;
       margin-left: 0;
-
-      @include typography.font-size(14);
     }
   }
 

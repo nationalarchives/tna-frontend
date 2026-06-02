@@ -53,10 +53,10 @@
 }
 
 @mixin detail-font-small {
-  @include detail-font;
-  @include font-size(14);
   line-height: 1.1;
   text-transform: uppercase;
+  @include detail-font;
+  @include font-size(14);
 }
 
 @mixin interactable-text-decoration {
@@ -87,10 +87,6 @@
 
   @if $all-identical != true {
     @if $medium-small-and-tiny-identical != true {
-      @include media.on-medium {
-        @include font-size($font-size-medium);
-      }
-
       @if $small-and-tiny-identical != true {
         @include media.on-small {
           @include font-size($font-size-small);
@@ -103,6 +99,10 @@
         @include media.on-mobile {
           @include font-size($font-size-small);
         }
+      }
+
+      @include media.on-medium {
+        @include font-size($font-size-medium);
       }
     } @else {
       @include media.on-smaller-than-large {

@@ -27,21 +27,22 @@
   }
 
   &__theme-selector-notice {
+    @include typography.font-size(16);
+    @include colour.blue-accent;
+    @include colour.accent-light;
+    @include colour.thick-keyline-accent(left);
+    @include borders.rounded-border;
+
     margin-top: spacing.space(0.5);
     margin-bottom: spacing.space(0.25);
     padding: spacing.space(0.5) spacing.space(0.75);
 
-    @include typography.font-size(16);
     line-height: 1.5;
-
-    @include colour.blue-accent;
-    @include colour.accent-light;
-
-    @include borders.rounded-border;
-    @include colour.thick-keyline-accent(left);
   }
 
   &__theme-selector-enable-settings-cookies {
+    @include colour.colour-font("link");
+
     appearance: none;
 
     line-height: inherit;
@@ -53,7 +54,6 @@
     border-radius: 0.1px;
 
     cursor: pointer;
-    @include colour.colour-font("link");
 
     &:hover {
       @include typography.interacted-text-decoration;
@@ -74,9 +74,9 @@
   }
 
   &__meta {
-    margin-top: spacing.space(1);
-
     @include typography.font-size(16);
+
+    margin-top: spacing.space(1);
   }
 
   &__social {
@@ -91,11 +91,12 @@
 
     &-item {
       &-link {
+        @include typography.font-size(16);
+
         display: flex;
         align-items: center;
         gap: spacing.space(0.5);
 
-        @include typography.font-size(16);
         line-height: 1.25;
         text-decoration: none;
 
@@ -118,14 +119,13 @@
   }
 
   &__mailing-list {
+    @include typography.font-size(16);
+    @include borders.rounded-border;
+
     margin-top: spacing.space(2);
     padding: spacing.space(1);
 
-    @include typography.font-size(16);
-
     background-color: rgb(255 255 255 / 14%);
-
-    @include borders.rounded-border;
   }
 
   &__navigation {
@@ -139,12 +139,11 @@
       }
 
       &-item {
+        @include typography.font-size(16);
+        @include colour.colour-border("keyline", 1px, solid, bottom);
+
         padding-top: spacing.space(0.375);
         padding-bottom: spacing.space(0.375);
-
-        @include typography.font-size(16);
-
-        @include colour.colour-border("keyline", 1px, solid, bottom);
 
         &-link {
           display: inline-block;
@@ -164,9 +163,9 @@
   }
 
   &__legal {
-    padding-top: spacing.space(3);
-
     @include typography.font-size(16);
+
+    padding-top: spacing.space(3);
 
     &-items {
       margin-bottom: 0;
@@ -183,11 +182,11 @@
 
       display: inline-block;
 
-      @include media.on-tiny {
-        display: block;
+      &-link {
       }
 
-      &-link {
+      @include media.on-tiny {
+        display: block;
       }
     }
   }
@@ -262,9 +261,9 @@
     }
 
     &__mailing-list {
-      background-color: transparent;
-
       @include colour.colour-border("keyline-dark", 1px);
+
+      background-color: transparent;
     }
   }
 }

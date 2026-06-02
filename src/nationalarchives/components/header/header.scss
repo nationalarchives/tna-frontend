@@ -26,10 +26,6 @@
     }
   }
 
-  @include colour.on-high-contrast {
-    background: colour.brand-colour("black");
-  }
-
   &__contents {
     &.tna-container {
       justify-content: space-between;
@@ -56,22 +52,24 @@
       }
 
       &:hover:not(:focus) {
+        @include colour.colour-outline("font-dark", 0.3125rem, solid);
+
         text-decoration: none;
 
-        @include colour.colour-outline("font-dark", 0.3125rem, solid);
         outline-offset: 1px;
       }
     }
   }
 
   &__logo-strapline {
+    @include typography.heading-font;
+    @include typography.font-size(20);
+
     margin: 0 spacing.space(0.75);
 
     display: inline-block;
 
     line-height: 1.625rem;
-    @include typography.heading-font;
-    @include typography.font-size(20);
     text-transform: uppercase;
   }
 
@@ -82,12 +80,12 @@
   }
 
   &__hamburger {
+    @include colour.colour-background("font-dark");
+
     width: 2rem;
     height: 0.25rem;
 
     display: inline-block;
-
-    @include colour.colour-background("font-dark");
 
     &::before,
     &::after {
@@ -114,6 +112,9 @@
   }
 
   &__navigation-button {
+    @include typography.main-font-weight-bold;
+    @include typography.font-size(16);
+
     height: 2rem;
     padding: 0;
 
@@ -126,8 +127,6 @@
     position: relative;
 
     color: inherit;
-    @include typography.main-font-weight-bold;
-    @include typography.font-size(16);
 
     background: none;
 
@@ -171,6 +170,8 @@
   }
 
   &__top-navigation-items {
+    @include typography.font-size(15);
+
     margin: 0;
     padding: spacing.space(1.25) 0;
 
@@ -181,8 +182,6 @@
     line-height: 1;
 
     list-style: none;
-
-    @include typography.font-size(15);
   }
 
   &__top-navigation-item {
@@ -238,6 +237,8 @@
   }
 
   &__navigation-item-link {
+    @include typography.main-font-weight-medium;
+
     padding: spacing.space(0.5) 0;
 
     display: inline-block;
@@ -247,9 +248,9 @@
     line-height: 2;
     text-decoration: none;
 
-    @include typography.main-font-weight-medium;
-
     &::after {
+      @include colour.colour-background("font-dark");
+
       content: "";
 
       height: 0;
@@ -258,8 +259,6 @@
       right: 0;
       bottom: 0;
       left: 0;
-
-      @include colour.colour-background("font-dark");
     }
 
     &,
@@ -321,11 +320,11 @@
     }
 
     &__top-navigation-items {
+      @include colour.colour-border("keyline", 1px, solid, bottom);
+
       padding: spacing.space(0.5) spacing.space(1);
 
       justify-content: flex-start;
-
-      @include colour.colour-border("keyline", 1px, solid, bottom);
     }
 
     &__top-navigation-item {
@@ -348,23 +347,23 @@
     }
 
     &__navigation-items {
+      @include colour.colour-border("keyline-dark", 2px, solid, top);
+      @include colour.colour-border("keyline-dark", 2px, solid, bottom);
+
       width: 100%;
 
       flex-direction: column;
       gap: 0;
 
       background-color: rgb(255 255 255 / 10%);
-
-      @include colour.colour-border("keyline-dark", 2px, solid, top);
-      @include colour.colour-border("keyline-dark", 2px, solid, bottom);
     }
 
     &__navigation-item {
+      @include colour.colour-border("keyline", 1px, solid, top);
+
       margin: 0;
 
       display: block;
-
-      @include colour.colour-border("keyline", 1px, solid, top);
 
       &:first-child {
         border-top: none;
@@ -451,17 +450,22 @@
     }
   }
 
+  @include colour.on-high-contrast {
+    background: colour.brand-colour("black");
+  }
+
   @include colour.on-high-contrast-and-forced-colours {
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
   @include colour.on-forced-colours {
     &__navigation-button {
+      @include typography.font-size(18);
+      @include typography.main-font-weight-bold;
+
       height: auto;
 
       line-height: 2;
-      @include typography.font-size(18);
-      @include typography.main-font-weight-bold;
 
       border: none;
     }

@@ -56,7 +56,6 @@ $shift-units: 5 !default;
 
     &:hover {
       @include colour.colour-font("font-dark", true);
-
       @include colour.colour-background("background", true);
     }
   }
@@ -65,6 +64,9 @@ $shift-units: 5 !default;
   }
 
   &__information {
+    @include typography.font-size(16);
+    @include colour.contrast;
+
     width: 45rem;
     max-width: 75vw;
     padding: spacing.space(0.625) spacing.space(3.25) spacing.space(0.625)
@@ -75,10 +77,6 @@ $shift-units: 5 !default;
     right: 0;
     z-index: 1;
 
-    @include colour.contrast;
-
-    @include typography.font-size(16);
-
     border-bottom-left-radius: bordersVars.$rounded-border-radius;
 
     p + p {
@@ -87,11 +85,11 @@ $shift-units: 5 !default;
   }
 
   &__image {
+    @include colour.image-loader-background;
+
     position: absolute;
     inset: 0;
     z-index: 1;
-
-    @include colour.image-loader-background;
 
     img {
       width: 100%;
@@ -102,6 +100,8 @@ $shift-units: 5 !default;
   }
 
   &__details[open] &__details-summary {
+    @include colour.contrast;
+
     width: 2rem;
     height: 2rem;
     padding: 0;
@@ -112,10 +112,10 @@ $shift-units: 5 !default;
 
     border: none;
 
-    @include colour.contrast;
-
     &::before,
     &::after {
+      @include colour.colour-background("font-dark");
+
       content: "";
 
       width: 1.5rem;
@@ -126,8 +126,6 @@ $shift-units: 5 !default;
       position: absolute;
       top: 50%;
       left: 50%;
-
-      @include colour.colour-background("font-dark");
     }
 
     &::before {
@@ -163,11 +161,10 @@ $shift-units: 5 !default;
   }
 
   &__content-inner {
-    padding: spacing.space(2);
-
     @include colour.colour-background("background");
-
     @include borders.rounded-border;
+
+    padding: spacing.space(2);
   }
 
   &__heading {
@@ -210,16 +207,6 @@ $shift-units: 5 !default;
     border-left: none;
   }
 
-  @include media.on-larger-than-mobile {
-    &--shift {
-      margin-bottom: spacing.space($shift-units - $padding-units-bottom);
-    }
-
-    &--shift#{&}--narrow {
-      margin-bottom: spacing.space($shift-units - $padding-units-narrow);
-    }
-  }
-
   &--shift &__content-inner {
     position: relative;
     top: spacing.space($shift-units);
@@ -232,6 +219,16 @@ $shift-units: 5 !default;
     min-height: max(#{spacing.space($padding-units-narrow * 2)}, 20rem);
     padding-top: spacing.space($padding-units-narrow);
     padding-bottom: spacing.space($padding-units-narrow);
+  }
+
+  @include media.on-larger-than-mobile {
+    &--shift {
+      margin-bottom: spacing.space($shift-units - $padding-units-bottom);
+    }
+
+    &--shift#{&}--narrow {
+      margin-bottom: spacing.space($shift-units - $padding-units-narrow);
+    }
   }
 
   @include media.on-mobile {

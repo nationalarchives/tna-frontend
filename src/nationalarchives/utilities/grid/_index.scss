@@ -76,7 +76,6 @@
 }
 
 @include grid.columns-generator(gridVars.$column-count);
-
 @include media.on-medium {
   @include grid.columns-generator(gridVars.$column-count-medium, "medium");
 }

@@ -46,6 +46,7 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
 .tna-table {
   @include spacing.space-above;
+
   max-width: 100%;
   margin-bottom: spacing.space(4);
 
@@ -61,12 +62,12 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   }
 
   &__caption {
+    @include typography.font-size(16);
+
     width: 100%;
     padding: 0 0 spacing.space(1);
 
     caption-side: top;
-
-    @include typography.font-size(16);
   }
 
   &__head {
@@ -79,6 +80,7 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
   &__foot {
     @include typography.main-font-weight-bold;
+
     vertical-align: top;
   }
 
@@ -93,9 +95,9 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
   &__header,
   &__cell {
-    padding: spacing.space(0.25) spacing.space(1);
-
     @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    padding: spacing.space(0.25) spacing.space(1);
 
     &:first-child {
       padding-left: 0;
@@ -160,6 +162,8 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
 .tna-table-wrapper {
   @include spacing.space-above;
+  @include a11y.focus-indicator-only-on-keyboard-focus;
+
   margin-bottom: spacing.space(4);
 
   container-type: inline-size;
@@ -205,40 +209,6 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   border-radius: 0.1px;
 
   contain: paint;
-
-  @include a11y.focus-indicator-only-on-keyboard-focus;
-
-  /*
-  * ------------------------------------------
-  * Can remove the @supports rule when support
-  * for the scroll-driven animations below has
-  * been enabled by default in Firefox and the
-  * documented scroll-timeline syntax (x and y
-  * as opposed to vertical and horizontal) can
-  * be used
-  * https://caniuse.com/mdn-css_properties_animation-timeline_view
-  * ------------------------------------------
-  */
-  @supports (scroll-timeline: --overflow-shadows x) {
-    background:
-      radial-gradient(
-        ellipse #{$table-overflow-shadow-width} 50% at left center,
-        var(--overflow-shadow-start),
-        #{$table-overflow-shadow-colour-hidden}
-      ),
-      radial-gradient(
-          ellipse #{$table-overflow-shadow-width} 50% at right center,
-          var(--overflow-shadow-end),
-          #{$table-overflow-shadow-colour-hidden}
-        )
-        transparent;
-    background-position: 0;
-
-    animation: overflow-shadows 1ms linear;
-    animation-timeline: --overflow-shadows;
-
-    scroll-timeline: --overflow-shadows x;
-  }
 
   &:last-child {
     margin-bottom: 0;
@@ -314,5 +284,37 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
         }
       }
     }
+  }
+
+  /*
+  * ------------------------------------------
+  * Can remove the @supports rule when support
+  * for the scroll-driven animations below has
+  * been enabled by default in Firefox and the
+  * documented scroll-timeline syntax (x and y
+  * as opposed to vertical and horizontal) can
+  * be used
+  * https://caniuse.com/mdn-css_properties_animation-timeline_view
+  * ------------------------------------------
+  */
+  @supports (scroll-timeline: --overflow-shadows x) {
+    background:
+      radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at left center,
+        var(--overflow-shadow-start),
+        #{$table-overflow-shadow-colour-hidden}
+      ),
+      radial-gradient(
+          ellipse #{$table-overflow-shadow-width} 50% at right center,
+          var(--overflow-shadow-end),
+          #{$table-overflow-shadow-colour-hidden}
+        )
+        transparent;
+    background-position: 0;
+
+    animation: overflow-shadows 1ms linear;
+    animation-timeline: --overflow-shadows;
+
+    scroll-timeline: --overflow-shadows x;
   }
 }

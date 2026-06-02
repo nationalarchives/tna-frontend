@@ -7,12 +7,11 @@
 
 .tna-error-summary {
   @include spacing.space-above;
-  padding: spacing.space(1);
-
   @include colour.colour-background("background");
-
   @include colour.colour-border("form-error-border", 0.3125rem, solid);
   @include borders.rounded-border;
+
+  padding: spacing.space(1);
 
   &:focus {
     @include a11y.focus-outline;

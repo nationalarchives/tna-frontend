@@ -21,6 +21,9 @@
 
   // INTERACTIVE
   &__toggle-all {
+    @include typography.font-size(16);
+    @include colour.colour-font("link");
+
     margin-bottom: spacing.space(1);
     padding: 0;
 
@@ -30,9 +33,6 @@
     border-radius: 0.1px;
 
     cursor: pointer;
-
-    @include colour.colour-font("link");
-    @include typography.font-size(16);
 
     &:hover {
       @include typography.interacted-text-decoration;
@@ -55,6 +55,10 @@
   }
 
   &__summary {
+    @include typography.font-size(18);
+    @include typography.main-font(true);
+    @include colour.colour-font("font-dark");
+
     width: 100%;
     margin: 0;
     padding: spacing.space(0.5) spacing.space(3) spacing.space(0.5)
@@ -75,10 +79,6 @@
     border-radius: 0.1px;
 
     cursor: pointer;
-
-    @include colour.colour-font("font-dark");
-    @include typography.font-size(18);
-    @include typography.main-font(true);
 
     * {
       font-size: inherit;

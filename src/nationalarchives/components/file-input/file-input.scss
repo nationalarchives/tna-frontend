@@ -24,18 +24,18 @@
   }
 
   &__droppable {
+    @include colour.colour-border(
+      "keyline",
+      formsVars.$form-field-border-width
+    );
+    @include borders.rounded-border;
+
     width: 100%;
     padding: spacing.space(0.5) spacing.space(1) spacing.space(1);
 
     box-sizing: border-box;
 
     position: relative;
-
-    @include colour.colour-border(
-      "keyline",
-      formsVars.$form-field-border-width
-    );
-    @include borders.rounded-border;
 
     &--empty {
       border-style: dashed;
@@ -62,6 +62,7 @@
 
   &__droppable-buttons {
     @include typography.font-size(14);
+
     line-height: 1.5rem;
 
     @include media.on-tiny {
@@ -71,6 +72,9 @@
   }
 
   &__droppable-status {
+    @include colour.tint;
+    @include borders.rounded-border;
+
     margin-top: spacing.space(0.5);
     padding: spacing.space(0.5);
 
@@ -81,22 +85,19 @@
     text-overflow: ellipsis;
 
     white-space: nowrap;
-
-    @include borders.rounded-border;
-
-    @include colour.tint;
   }
 
   &__droppable:not(&__droppable--empty) &__droppable-status {
+    @include typography.main-font-weight-medium;
     @include colour.blue-accent;
     @include colour.accent-light;
-    @include typography.main-font-weight-medium;
   }
 
   &__droppable &:hover ~ &__droppable-buttons {
     .tna-button {
       &:not(.tna-button--plain) {
         @include colour.colour-font("button-hover-text");
+
         text-decoration: none;
 
         background: transparent;
@@ -109,6 +110,11 @@
     @include colour.colour-border("keyline-dark");
 
     &::before {
+      @include typography.main-font-weight-bold;
+      @include colour.green-accent;
+      @include colour.colour-font("accent-font-base");
+      @include colour.colour-background("accent-background");
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,13 +124,6 @@
       z-index: 2;
 
       pointer-events: none;
-
-      @include colour.green-accent;
-
-      @include colour.colour-font("accent-font-base");
-      @include typography.main-font-weight-bold;
-
-      @include colour.colour-background("accent-background");
     }
   }
 

@@ -98,13 +98,13 @@
 
 %faux-full-outline-anchor {
   &::before {
+    @include borders.rounded-border;
+
     content: "";
 
     position: absolute;
     inset: 0;
     z-index: 9;
-
-    @include borders.rounded-border;
   }
 
   &:focus,
@@ -126,11 +126,10 @@
 }
 
 @mixin faux-full-outline($anchor_selector) {
-  @extend %faux-full-outline;
-
   #{$anchor_selector} {
     @extend %faux-full-outline-anchor;
   }
+  @extend %faux-full-outline;
 }
 
 %focus-indicator-only-on-keyboard-focus {

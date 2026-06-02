@@ -50,6 +50,8 @@
       }
 
       &::before {
+        @include colour.colour-input;
+
         width: 2rem;
         height: 2rem;
 
@@ -57,28 +59,26 @@
         box-sizing: border-box;
 
         z-index: 1;
-
-        @include colour.colour-input;
       }
 
       &::after {
+        @include colour.colour-background("input-foreground");
+        @include colour.colour-border("input-foreground", 0.5rem);
+
         margin: 0.5rem;
 
         display: none;
 
         z-index: 2;
-
-        @include colour.colour-background("input-foreground");
-
-        @include colour.colour-border("input-foreground", 0.5rem);
       }
     }
 
     &-hint {
-      display: block;
-
       @include typography.font-size(16);
       @include colour.colour-font("font-light");
+
+      display: block;
+
       line-height: 1.25;
     }
   }
@@ -98,9 +98,9 @@
     }
 
     &::after {
-      margin: 0.3125rem;
-
       @include colour.colour-border("input-foreground", 0.4375rem);
+
+      margin: 0.3125rem;
     }
   }
 

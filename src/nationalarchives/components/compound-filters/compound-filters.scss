@@ -6,6 +6,7 @@
 
 .tna-compound-filters {
   @include spacing.space-above;
+  @include a11y.focus-indicator-only-on-keyboard-focus;
 
   display: flex;
   flex-wrap: wrap;
@@ -16,13 +17,15 @@
 
   border-radius: 0.1px;
 
-  @include a11y.focus-indicator-only-on-keyboard-focus;
-
   &:empty {
     display: none;
   }
 
   &__item {
+    @include typography.font-size(16);
+    @include colour.colour-border("keyline", 1px);
+    @include borders.rounded-border;
+
     padding: 0 spacing.space(0.125) 0 spacing.space(0.75);
 
     display: flex;
@@ -30,12 +33,6 @@
     gap: spacing.space(0.5);
 
     line-height: 1.75;
-
-    @include borders.rounded-border;
-
-    @include typography.font-size(16);
-
-    @include colour.colour-border("keyline", 1px);
 
     &--remove {
       padding-right: 0;
@@ -49,6 +46,8 @@
   }
 
   &__link {
+    @include borders.rounded-border;
+
     width: 1.5rem;
     height: 1.5rem;
 
@@ -67,10 +66,10 @@
 
     cursor: pointer;
 
-    @include borders.rounded-border;
-
     &::before,
     &::after {
+      @include colour.colour-border("font-base", 2px, solid, left);
+
       content: "";
 
       height: 1rem;
@@ -81,8 +80,6 @@
       position: absolute;
       top: 0.25rem;
       left: 50%;
-
-      @include colour.colour-border("font-base", 2px, solid, left);
     }
 
     &::before {

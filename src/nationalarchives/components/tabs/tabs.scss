@@ -52,11 +52,13 @@
     }
 
     &[aria-selected="true"] {
-      padding-top: 0;
-
       @include colour.colour-border("keyline");
 
+      padding-top: 0;
+
       &::after {
+        @include colour.colour-background("background");
+
         content: "";
 
         height: 1px;
@@ -65,26 +67,24 @@
         top: 100%;
         right: 0;
         left: 0;
-
-        @include colour.colour-background("background");
       }
     }
   }
 
   &__button-inner {
+    @include colour.colour-font("font-dark");
+
     padding: spacing.space(0.5) spacing.space(0.75);
 
     display: block;
 
     text-decoration: underline;
-
-    @include colour.colour-font("font-dark");
   }
 
   &--small &__button-inner {
-    padding: spacing.space(0.25) spacing.space(0.5) spacing.space(0.125);
-
     @include typography.font-size(16);
+
+    padding: spacing.space(0.25) spacing.space(0.5) spacing.space(0.125);
   }
 
   &__button:hover &__button-inner,
@@ -93,9 +93,10 @@
   }
 
   &__button[aria-selected="true"] &__button-inner {
+    @include colour.thick-keyline-accent(top);
+
     text-decoration: none;
 
-    @include colour.thick-keyline-accent(top);
     border-radius: #{bordersVars.$rounded-border-radius - 1px}
       #{bordersVars.$rounded-border-radius - 1px} 0 0;
   }
@@ -115,8 +116,9 @@
   }
 
   &--interactive &__item {
-    padding: spacing.space(1);
     @include colour.colour-border("keyline", 1px, solid);
+
+    padding: spacing.space(1);
   }
 
   &--tint#{&}--interactive &__button[aria-selected="true"],

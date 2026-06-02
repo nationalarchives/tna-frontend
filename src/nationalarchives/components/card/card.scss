@@ -81,6 +81,8 @@
 
 .tna-card {
   @include spacing.space-above;
+  @include borders.rounded-border;
+  @include a11y.faux-full-outline("&--full-click &__heading-link");
 
   display: flex;
   flex-direction: column;
@@ -89,12 +91,11 @@
   position: relative;
   z-index: 1;
 
-  @include borders.rounded-border;
-
   &:not(:has(&__image-container)) {
+    @include colour.thick-keyline-dark(top);
+
     padding-top: spacing.space(0.5);
 
-    @include colour.thick-keyline-dark(top);
     border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius;
   }
@@ -124,8 +125,6 @@
     }
   }
 
-  @include a11y.faux-full-outline("&--full-click &__heading-link");
-
   &--full-click#{&}:not(:has(&__image-container)) &__heading-link::before {
     border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius;
@@ -150,6 +149,8 @@
   }
 
   &__image-container {
+    @include colour.image-loader-background;
+
     aspect-ratio: 3/2;
     margin-bottom: spacing.space(0.25);
 
@@ -161,8 +162,6 @@
       bordersVars.$rounded-border-radius 0 0;
 
     order: 1;
-
-    @include colour.image-loader-background;
   }
 
   &__image {
@@ -230,6 +229,8 @@
 
   &--plain {
     &::after {
+      @include colour.colour-border("keyline", 1px, solid);
+
       content: "";
 
       position: absolute;
@@ -237,7 +238,6 @@
       z-index: -1;
 
       border-radius: inherit;
-      @include colour.colour-border("keyline", 1px, solid);
     }
   }
 
@@ -247,9 +247,34 @@
     }
   }
 
+  @include media.on-larger-than-mobile {
+    &--horizontal-small-image {
+      grid-template-columns: max(10rem, 25%) 1fr;
+    }
+
+    &--horizontal-small-image#{&}--flipped {
+      grid-template-columns: 1fr max(10rem, 25%);
+    }
+
+    @include horizontal-card-layout("--horizontal", 1.25);
+  }
+
+  @include media.on-small {
+    &--horizontal-small-image {
+      grid-template-columns: max(10rem, 25%) 1fr;
+    }
+
+    &--horizontal-small-image#{&}--flipped {
+      grid-template-columns: 1fr max(10rem, 25%);
+    }
+
+    @include horizontal-card-layout("--horizontal-on-small", 1);
+  }
+
   @include colour.on-high-contrast {
-    padding-bottom: spacing.space(1);
     @include borders.rounded-border;
+
+    padding-bottom: spacing.space(1);
 
     &:not(&--padded),
     &--plain {
@@ -294,9 +319,10 @@
   }
 
   @include colour.on-forced-colours {
-    padding-bottom: spacing.space(1);
     @include colour.colour-border("keyline-dark", 1px, solid);
     @include borders.rounded-border;
+
+    padding-bottom: spacing.space(1);
 
     &__heading,
     &__body {
@@ -308,30 +334,6 @@
       &::before {
         top: -#{bordersVars.$thick-border-width - 1px};
       }
-    }
-  }
-
-  @include media.on-larger-than-mobile {
-    @include horizontal-card-layout("--horizontal", 1.25);
-
-    &--horizontal-small-image {
-      grid-template-columns: max(10rem, 25%) 1fr;
-    }
-
-    &--horizontal-small-image#{&}--flipped {
-      grid-template-columns: 1fr max(10rem, 25%);
-    }
-  }
-
-  @include media.on-small {
-    @include horizontal-card-layout("--horizontal-on-small", 1);
-
-    &--horizontal-small-image {
-      grid-template-columns: max(10rem, 25%) 1fr;
-    }
-
-    &--horizontal-small-image#{&}--flipped {
-      grid-template-columns: 1fr max(10rem, 25%);
     }
   }
 }

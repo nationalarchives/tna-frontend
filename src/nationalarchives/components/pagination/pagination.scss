@@ -5,13 +5,13 @@
 @use "../../tools/typography";
 
 .tna-pagination {
+  @include spacing.space-above;
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: spacing.space(1);
-
-  @include spacing.space-above;
 
   &:not(:has(&__list)) {
     flex-wrap: nowrap;
@@ -48,12 +48,13 @@
       }
 
       &-description {
+        @include typography.font-size(16);
+
         padding-bottom: spacing.space(0.25);
 
         display: block;
 
         line-height: 1.25;
-        @include typography.font-size(16);
       }
 
       &:has(&-description) {

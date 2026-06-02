@@ -7,13 +7,6 @@
   padding-top: spacing.space(2);
   padding-bottom: spacing.space(2);
 
-  @include media.on-tiny {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-
-    @include typography.font-size(16);
-  }
-
   &__message {
     &--prompt {
     }
@@ -23,5 +16,12 @@
 
     &--rejected {
     }
+  }
+
+  @include media.on-tiny {
+    @include typography.font-size(16);
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }

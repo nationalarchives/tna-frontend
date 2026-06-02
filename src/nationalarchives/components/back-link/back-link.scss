@@ -18,8 +18,9 @@
   }
 
   &__inner {
-    text-decoration: underline;
     @include typography.interactable-text-decoration;
+
+    text-decoration: underline;
   }
 
   &:hover &__inner {

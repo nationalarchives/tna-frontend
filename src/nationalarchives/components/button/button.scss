@@ -9,112 +9,6 @@
 $button-border-width: 4px !default;
 
 .tna-button {
-  padding: spacing.space(0.25) spacing.space(1);
-
-  display: inline-flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: spacing.space(0.75);
-
-  line-height: 2rem;
-  text-align: center;
-  text-decoration: none;
-  text-wrap: balance;
-
-  cursor: pointer;
-
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-
-  @include typography.font-size(18);
-  @include typography.main-font-weight-bold;
-
-  @include colour.colour-background("button-background");
-
-  @include colour.colour-border("button-background", $button-border-width);
-  @include borders.rounded-border;
-
-  &,
-  &:link,
-  &:visited {
-    @include colour.colour-font("button-text");
-  }
-
-  &:hover {
-    @include colour.colour-font("button-hover-text");
-    text-decoration: none;
-
-    background: transparent;
-  }
-
-  .fa-solid {
-    display: block;
-  }
-
-  svg {
-    height: 1.1em;
-
-    align-self: center;
-
-    flex-shrink: 0;
-
-    fill: currentColor;
-  }
-
-  &--plain {
-    @include typography.main-font-weight;
-    text-decoration: underline;
-
-    background-color: transparent;
-
-    border-color: transparent;
-    border-radius: 0.1px;
-
-    &,
-    &:link,
-    &:visited,
-    &:hover {
-      @include colour.colour-font("link");
-    }
-
-    &:hover {
-      @include typography.interacted-text-decoration;
-    }
-  }
-
-  &--accent {
-    @include colour.colour-background("button-accented-background");
-
-    @include colour.colour-border("button-accented-background");
-
-    &,
-    &:link,
-    &:visited {
-      @include colour.colour-font("button-accented-text");
-    }
-
-    &:hover {
-      @include colour.colour-font("font-dark");
-    }
-  }
-
-  &--icon-right {
-    flex-direction: row-reverse;
-
-    &:has(.fa-solid) {
-      align-items: center;
-      // justify-content: space-between;
-    }
-  }
-
-  &--small,
-  &-group--small & {
-    padding: 0 spacing.space(0.5);
-
-    @include typography.font-size(14);
-    line-height: 1.5rem;
-  }
-
   @mixin icon-only {
     padding-right: 0;
     padding-left: 0;
@@ -125,11 +19,11 @@ $button-border-width: 4px !default;
     line-height: 0 !important;
 
     .fa-solid {
+      @include typography.font-size(18);
+
       width: 2.5rem;
 
       line-height: 2rem;
-
-      @include typography.font-size(18);
     }
 
     svg {
@@ -154,6 +48,112 @@ $button-border-width: 4px !default;
     }
   }
 
+  @include typography.font-size(18);
+  @include typography.main-font-weight-bold;
+  @include colour.colour-background("button-background");
+  @include colour.colour-border("button-background", $button-border-width);
+  @include borders.rounded-border;
+
+  padding: spacing.space(0.25) spacing.space(1);
+
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: spacing.space(0.75);
+
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: balance;
+
+  cursor: pointer;
+
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+  &,
+  &:link,
+  &:visited {
+    @include colour.colour-font("button-text");
+  }
+
+  &:hover {
+    @include colour.colour-font("button-hover-text");
+
+    text-decoration: none;
+
+    background: transparent;
+  }
+
+  .fa-solid {
+    display: block;
+  }
+
+  svg {
+    height: 1.1em;
+
+    align-self: center;
+
+    flex-shrink: 0;
+
+    fill: currentColor;
+  }
+
+  &--plain {
+    @include typography.main-font-weight;
+
+    text-decoration: underline;
+
+    background-color: transparent;
+
+    border-color: transparent;
+    border-radius: 0.1px;
+
+    &,
+    &:link,
+    &:visited,
+    &:hover {
+      @include colour.colour-font("link");
+    }
+
+    &:hover {
+      @include typography.interacted-text-decoration;
+    }
+  }
+
+  &--accent {
+    @include colour.colour-background("button-accented-background");
+    @include colour.colour-border("button-accented-background");
+
+    &,
+    &:link,
+    &:visited {
+      @include colour.colour-font("button-accented-text");
+    }
+
+    &:hover {
+      @include colour.colour-font("font-dark");
+    }
+  }
+
+  &--icon-right {
+    flex-direction: row-reverse;
+
+    &:has(.fa-solid) {
+      align-items: center;
+      // justify-content: space-between;
+    }
+  }
+
+  &--small,
+  &-group--small & {
+    @include typography.font-size(14);
+
+    padding: 0 spacing.space(0.5);
+
+    line-height: 1.5rem;
+  }
+
   &--icon-only {
     @include icon-only;
   }
@@ -163,21 +163,9 @@ $button-border-width: 4px !default;
     @include icon-only-small;
   }
 
-  @include media.on-mobile {
-    &--icon-only-mobile {
-      @include icon-only;
-    }
-
-    &--small#{&}--icon-only-mobile,
-    &-group--small &--icon-only-mobile {
-      @include icon-only-small;
-    }
-  }
-
   &--solid-hover {
     &:not(.tna-button--plain):hover {
       @include colour.colour-font("font-dark");
-
       @include colour.colour-background("background");
     }
   }
@@ -192,7 +180,6 @@ $button-border-width: 4px !default;
   .tna-background-accent &--accent,
   .tna-template--dark-theme .tna-background-accent-light &--accent {
     @include colour.colour-background("contrast-button-background");
-
     @include colour.colour-border("contrast-button-background");
 
     &,
@@ -203,7 +190,6 @@ $button-border-width: 4px !default;
 
     &:hover {
       @include colour.colour-font("contrast-font-dark");
-
       @include colour.colour-background("contrast-background");
     }
   }
@@ -217,7 +203,6 @@ $button-border-width: 4px !default;
 
     .tna-template--system-theme .tna-background-accent-light &--accent {
       @include colour.colour-background("contrast-button-background");
-
       @include colour.colour-border("contrast-button-background");
 
       &,
@@ -228,9 +213,19 @@ $button-border-width: 4px !default;
 
       &:hover {
         @include colour.colour-font("contrast-font-dark");
-
         @include colour.colour-background("contrast-background");
       }
+    }
+  }
+
+  @include media.on-mobile {
+    &--icon-only-mobile {
+      @include icon-only;
+    }
+
+    &--small#{&}--icon-only-mobile,
+    &-group--small &--icon-only-mobile {
+      @include icon-only-small;
     }
   }
 

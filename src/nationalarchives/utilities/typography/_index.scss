@@ -8,8 +8,9 @@
 @use "../../tools/typography";
 
 .tna-template {
-  @include colour.colour-font("font-base");
   @include typography.main-font;
+  @include colour.colour-font("font-base");
+
   direction: ltr;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
@@ -24,8 +25,9 @@
 }
 
 .tna-template__body {
-  color: inherit;
   @include typography.font-size(typographyVars.$body-font-size-px);
+
+  color: inherit;
   line-height: typographyVars.$body-line-height;
 
   @include media.on-medium {
@@ -82,6 +84,10 @@ small {
 }
 
 %chip {
+  @include typography.detail-font-small;
+  @include colour.colour-font("font-base");
+  @include borders.rounded-border;
+
   max-width: max-content;
   padding: spacing.space(0.125) spacing.space(0.25);
 
@@ -89,13 +95,16 @@ small {
   align-items: center;
   gap: spacing.space(0.5);
 
-  @include colour.colour-font("font-base");
-  @include typography.detail-font-small;
   line-height: 1;
   text-align: center;
   text-wrap-style: balance;
 
-  @include borders.rounded-border;
+  .fa-solid {
+    @include colour.colour-font("icon-light");
+    @include colour.on-high-contrast {
+      @include colour.colour-font("icon");
+    }
+  }
 
   @at-root #{selector.unify("a", &)} {
     text-decoration: underline;
@@ -108,14 +117,6 @@ small {
       .fa-solid {
         color: inherit;
       }
-    }
-  }
-
-  .fa-solid {
-    @include colour.colour-font("icon-light");
-
-    @include colour.on-high-contrast {
-      @include colour.colour-font("icon");
     }
   }
 }
@@ -143,7 +144,6 @@ small {
 
 %chip-accent {
   @include colour.accent;
-
   @include colour.colour-border("accent-background", 2px);
 
   -webkit-print-color-adjust: exact;
@@ -152,9 +152,7 @@ small {
   .tna-background-accent &,
   .tna-template--dark-theme .tna-background-accent-light & {
     @include colour.colour-font("contrast-font-base");
-
     @include colour.colour-background("contrast-background");
-
     @include colour.colour-border("contrast-background");
 
     .fa-solid {
@@ -165,9 +163,7 @@ small {
   .tna-template--system-theme .tna-background-accent-light & {
     @media (prefers-color-scheme: dark) {
       @include colour.colour-font("contrast-font-base");
-
       @include colour.colour-background("contrast-background");
-
       @include colour.colour-border("contrast-background");
 
       .fa-solid {
@@ -178,8 +174,6 @@ small {
 }
 
 .tna-chip {
-  @extend %chip;
-
   &--plain {
     @extend %chip-plain;
   }
@@ -211,6 +205,7 @@ small {
   &:not(&--plain) {
     @extend %chip-accent;
   }
+  @extend %chip;
 }
 
 .tna-chip-list {
@@ -230,6 +225,7 @@ small {
 
 %heading {
   @include colour.colour-font("font-dark");
+
   text-wrap: pretty;
 
   a {
@@ -238,6 +234,9 @@ small {
     vertical-align: top;
 
     &::after {
+      @include colour.colour-border("link", 0.125em, solid, top);
+      @include colour.colour-border("link", 0.125em, solid, right);
+
       content: "";
 
       width: 0.3125em;
@@ -250,9 +249,6 @@ small {
       vertical-align: middle;
 
       transform: rotate(45deg);
-
-      @include colour.colour-border("link", 0.125em, solid, top);
-      @include colour.colour-border("link", 0.125em, solid, right);
     }
 
     &:not(.tna-link--no-visited-state):visited {
@@ -268,8 +264,6 @@ small {
 }
 
 %heading-xl {
-  @extend %heading;
-
   @include typography.heading-font;
   @include typography.heading-generator(
     typographyVars.$heading-xl-font-size-default,
@@ -278,11 +272,10 @@ small {
     typographyVars.$heading-xl-font-size-tiny,
     typographyVars.$heading-xl-line-height
   );
+  @extend %heading;
 }
 
 %heading-l {
-  @extend %heading;
-
   @include typography.heading-font;
   @include typography.heading-generator(
     typographyVars.$heading-l-font-size-default,
@@ -303,11 +296,10 @@ small {
       border-right-width: 0.1em;
     }
   }
+  @extend %heading;
 }
 
 %heading-m {
-  @extend %heading;
-
   @include typography.main-font-weight-bold;
   @include typography.heading-generator(
     typographyVars.$heading-m-font-size-default,
@@ -316,11 +308,10 @@ small {
     typographyVars.$heading-m-font-size-tiny,
     typographyVars.$heading-m-line-height
   );
+  @extend %heading;
 }
 
 %heading-s {
-  @extend %heading;
-
   @include typography.main-font-weight-bold;
   @include typography.heading-generator(
     typographyVars.$heading-s-font-size-default,
@@ -329,19 +320,20 @@ small {
     typographyVars.$heading-s-font-size-tiny,
     typographyVars.$heading-s-line-height
   );
+  @extend %heading;
 }
 
 %heading-xs {
-  @extend %heading;
-
   @include typography.main-font-weight;
 
   font-size: 1em;
   line-height: typographyVars.$heading-s-line-height;
+  @extend %heading;
 }
 
 %headings-and-heading-groups {
   @include spacing.space-above;
+
   margin-bottom: 0;
   padding: spacing.space(1) 0 0;
 
@@ -402,8 +394,6 @@ small {
   &__supertitle {
     margin: 0 0 spacing.space(0.25);
 
-    @extend %chip;
-
     &--plain {
       @extend %chip-plain;
     }
@@ -411,6 +401,8 @@ small {
     &:not(&--plain) {
       @extend %chip-accent;
     }
+
+    @extend %chip;
   }
 
   &__title {
@@ -438,12 +430,12 @@ small {
 
 .tna-blockquote {
   @include spacing.space-above;
+  @include colour.thick-keyline-accent(left);
+
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
   padding: spacing.space(1) spacing.space(1) spacing.space(1) spacing.space(2);
-
-  @include colour.thick-keyline-accent(left);
 
   // &::before {
   //   content: "\201C";
@@ -454,10 +446,12 @@ small {
   //   font-size: 3em;
   //   line-height: 1;
   //   @include colour.colour-font("font-light");
+
   // }
 
   &__quote {
     @include typography.main-font-weight-medium;
+
     quotes: auto;
     quotes: "‘" "’";
 
@@ -475,9 +469,9 @@ small {
   }
 
   &__attribution {
-    margin-top: spacing.space(1);
-
     @include typography.font-size(16);
+
+    margin-top: spacing.space(1);
 
     &::before {
       content: "\2014" " ";
@@ -497,26 +491,25 @@ small {
 
 .tna-large-paragraph {
   @include spacing.space-above;
-
   @include typography.font-size(22);
   @include colour.colour-font("font-dark");
 
-  @include media.on-mobile {
-    @include typography.font-size(20);
+  &--bold {
+    @include typography.main-font-weight-medium;
+    @include colour.colour-font("font-base");
   }
 
-  &--bold {
-    @include colour.colour-font("font-base");
-    @include typography.main-font-weight-medium;
+  @include media.on-mobile {
+    @include typography.font-size(20);
   }
 }
 
 .tna-scene-setter {
   @include spacing.space-above;
-
   @include typography.detail-font;
-  @include colour.colour-font("font-dark");
   @include typography.font-size(22);
+  @include colour.colour-font("font-dark");
+
   line-height: 1.7;
 
   @include media.on-mobile {

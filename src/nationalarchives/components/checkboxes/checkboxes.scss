@@ -51,6 +51,9 @@
       }
 
       &::before {
+        @include colour.colour-input;
+        @include borders.rounded-border;
+
         height: 2rem;
 
         display: block;
@@ -58,13 +61,12 @@
 
         z-index: 1;
 
-        @include colour.colour-input;
-
         border-radius: 0.1px;
-        @include borders.rounded-border;
       }
 
       &::after {
+        @include colour.colour-border("input-background", 0, solid);
+
         width: 1.25rem;
         height: 0.5rem;
         margin-top: -0.1875rem;
@@ -75,7 +77,6 @@
         left: 1rem;
         z-index: 2;
 
-        @include colour.colour-border("input-background", 0, solid);
         border-width: 0 0 formsVars.$checkbox-checkmark-width
           formsVars.$checkbox-checkmark-width;
 
@@ -84,10 +85,11 @@
     }
 
     &-hint {
-      display: block;
-
       @include typography.font-size(16);
       @include colour.colour-font("font-light");
+
+      display: block;
+
       line-height: 1.25;
     }
   }

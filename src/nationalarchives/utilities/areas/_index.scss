@@ -10,16 +10,16 @@
 
 .tna-aside {
   @include spacing.space-above;
-  padding: spacing.space(2);
-
   @include borders.rounded-border;
 
-  @include colour.on-high-contrast-and-forced-colours {
-    @include colour.colour-border("keyline-dark", 1px);
-  }
+  padding: spacing.space(2);
 
   &--tight {
     padding: spacing.space(1);
+  }
+
+  @include colour.on-high-contrast-and-forced-colours {
+    @include colour.colour-border("keyline-dark", 1px);
   }
 }
 

@@ -10,16 +10,19 @@
 
   &__item {
     &-label {
+      @include typography.font-size(16);
+
       padding-bottom: spacing.space(0.5);
 
       display: block;
 
       line-height: 1;
-
-      @include typography.font-size(16);
     }
 
     &-input {
+      @include colour.colour-input;
+      @include borders.rounded-border;
+
       width: 3rem;
       padding: 0 spacing.space(0.375);
 
@@ -27,10 +30,6 @@
       box-sizing: border-box;
 
       line-height: 2rem;
-
-      @include colour.colour-input;
-
-      @include borders.rounded-border;
 
       &--wider {
         width: 4.5rem;

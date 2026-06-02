@@ -15,13 +15,13 @@
   flex-flow: row wrap;
 
   &__heading {
+    @include colour.thick-keyline-transparent(bottom);
+
     padding-bottom: spacing.space(0.5);
 
     align-self: flex-end;
 
     line-height: inherit;
-
-    @include colour.thick-keyline-transparent(bottom);
   }
 
   &__items {
@@ -37,6 +37,9 @@
   }
 
   &__link {
+    @include colour.thick-keyline-transparent(top);
+    @include colour.thick-keyline-transparent(bottom);
+
     width: 100%;
     padding: spacing.space(0.5) 0;
 
@@ -52,8 +55,6 @@
     background: none;
 
     border: none;
-    @include colour.thick-keyline-transparent(top);
-    @include colour.thick-keyline-transparent(bottom);
 
     cursor: pointer;
 
@@ -73,8 +74,9 @@
 
   &__item--current &__link {
     @include colour.colour-font("font-base");
-    text-decoration: none;
     @include colour.thick-keyline-accent(bottom);
+
+    text-decoration: none;
 
     &:hover {
       @include typography.interacted-text-decoration;
@@ -86,11 +88,11 @@
   }
 
   &::after {
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+
     content: "";
 
     width: 100%;
-
-    @include colour.colour-border("keyline", 1px, solid, bottom);
   }
 
   &--no-bottom-border::after {
@@ -129,19 +131,20 @@
     }
 
     &__item {
-      position: relative;
-
       @include colour.colour-border("keyline", 1px, solid, top);
+
+      position: relative;
 
       &--current {
         &::before {
+          @include colour.thick-keyline-accent(left);
+
           content: "";
 
           position: absolute;
           top: 0;
           bottom: 0;
           left: 0;
-          @include colour.thick-keyline-accent(left);
         }
       }
     }

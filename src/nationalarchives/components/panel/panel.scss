@@ -4,10 +4,10 @@
 @use "../../tools/typography";
 
 .tna-panel {
-  padding: spacing.space(2);
-
   @include colour.green-accent;
   @include colour.accent;
+
+  padding: spacing.space(2);
 
   text-align: center;
 
@@ -15,9 +15,9 @@
   }
 
   &__content {
-    margin-top: spacing.space(1);
-
     @include typography.font-size(22);
+
+    margin-top: spacing.space(1);
 
     p + p {
       margin-top: spacing.space(0.5);

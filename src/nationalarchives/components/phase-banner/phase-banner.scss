@@ -4,12 +4,11 @@
 @use "../../tools/typography";
 
 .tna-phase-banner {
+  @include typography.font-size(16);
   @include colour.contrast;
 
   padding-top: spacing.space(0.5);
   padding-bottom: spacing.space(0.5);
-
-  @include typography.font-size(16);
 
   .tna-container {
     align-items: center;
@@ -17,6 +16,7 @@
 
   &__phase {
     @include typography.main-font-weight-bold;
+
     text-transform: uppercase;
   }
 

@@ -25,10 +25,10 @@
   }
 
   & &__error {
-    margin-top: spacing.space(0.25);
-
-    @include colour.colour-font("form-error-text");
     @include typography.main-font-weight-bold;
+    @include colour.colour-font("form-error-text");
+
+    margin-top: spacing.space(0.25);
   }
 
   &__body {
@@ -44,16 +44,16 @@
   }
 
   &--error {
-    padding-left: spacing.space(1);
-
     @include colour.thick-keyline-error(left);
+
+    padding-left: spacing.space(1);
   }
 
   &--small-hint &__hint {
-    margin-top: spacing.space(0.125);
-    margin-bottom: 0;
-
     @include typography.font-size(16);
     @include colour.colour-font("font-light");
+
+    margin-top: spacing.space(0.125);
+    margin-bottom: 0;
   }
 }

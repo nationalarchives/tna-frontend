@@ -11,6 +11,9 @@
   gap: formsVars.$form-field-border-width;
 
   &__input {
+    @include colour.colour-input;
+    @include borders.rounded-border;
+
     min-width: 8rem;
     width: 0;
     padding: 0 spacing.space(0.375);
@@ -20,9 +23,6 @@
     flex: 1;
 
     line-height: 2rem;
-
-    @include colour.colour-input;
-    @include borders.rounded-border;
   }
 
   &__button {

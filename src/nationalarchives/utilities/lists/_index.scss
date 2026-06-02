@@ -63,8 +63,9 @@ ol {
 
   &--dashed {
     > li::marker {
-      content: "—  ";
       @include typography.main-font-weight;
+
+      content: "—  ";
     }
   }
 
@@ -84,8 +85,6 @@ ol {
   display: flex;
   flex-wrap: wrap;
   gap: spacing.space(0.75) spacing.space(1.5);
-
-  @extend %chip-plain;
 
   > dt {
     position: absolute;
@@ -120,6 +119,8 @@ ol {
   &--stacked {
     flex-direction: column;
   }
+
+  @extend %chip-plain;
 }
 
 @mixin stacked-dl {
@@ -138,9 +139,9 @@ ol {
 
   &--zebra {
     > dt {
-      --background: var(--background-tint);
-
       @include colour.colour-background("background");
+
+      --background: var(--background-tint);
     }
 
     > dd:nth-child(1n) {
@@ -182,12 +183,16 @@ ol {
   }
 
   > dt {
-    padding-right: spacing.space(1);
     @include typography.main-font-weight-bold;
+
+    padding-right: spacing.space(1);
+
     position: relative;
 
     .fa-solid,
     .fa-brands {
+      @include colour.colour-font("icon-light");
+
       display: block;
 
       position: absolute;
@@ -195,7 +200,6 @@ ol {
       left: 0;
 
       line-height: inherit;
-      @include colour.colour-font("icon-light");
     }
   }
 
@@ -212,14 +216,16 @@ ol {
   }
 
   &--lined {
-    padding-bottom: spacing.space(0.5);
     @include colour.colour-border("keyline", 1px, solid, bottom);
+
+    padding-bottom: spacing.space(0.5);
 
     /* stylelint-disable-next-line no-descending-specificity */
     > dt,
     > dd {
-      padding-top: spacing.space(0.5);
       @include colour.colour-border("keyline", 1px, solid, top);
+
+      padding-top: spacing.space(0.5);
 
       .fa-solid,
       .fa-brands {

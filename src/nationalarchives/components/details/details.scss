@@ -15,6 +15,8 @@
   }
 
   &__summary {
+    @include colour.colour-font("link");
+
     width: fit-content;
     padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
       spacing.space(2.75);
@@ -24,7 +26,6 @@
     position: relative;
     z-index: 2;
 
-    @include colour.colour-font("link");
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
 
@@ -78,14 +79,14 @@
     z-index: 1;
 
     &::before {
+      @include colour.thick-keyline(left);
+
       content: "";
 
       display: block;
 
       position: absolute;
       inset: 0 auto 0 calc(1.5rem - #{math.div(borders.$thick-border-width, 2)});
-
-      @include colour.thick-keyline(left);
     }
   }
 

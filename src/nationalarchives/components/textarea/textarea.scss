@@ -8,6 +8,9 @@ $textarea-line-height: 1.5rem !default;
 $textarea-vertical-padding: 0.25 !default;
 
 .tna-textarea {
+  @include colour.colour-input;
+  @include borders.rounded-border;
+
   width: 100%;
   min-height: calc(
     #{$textarea-line-height * $textarea-minimum-lines-visible} +
@@ -21,10 +24,6 @@ $textarea-vertical-padding: 0.25 !default;
   resize: vertical;
 
   line-height: 1.5;
-
-  @include colour.colour-input;
-
-  @include borders.rounded-border;
 
   .tna-form-item--error & {
     @include colour.colour-border("form-error-border");

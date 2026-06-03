@@ -57,6 +57,12 @@
     "description": "A list of checkbox items.",
     "params": [
       {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "A unique ID for the checkbox item. If not provided, the ID will be generated using the main `id` and the item's `value`."
+      },
+      {
         "name": "text",
         "type": "string",
         "required": true,

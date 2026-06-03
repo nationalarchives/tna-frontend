@@ -14,10 +14,6 @@ export default defineConfig([
       "max-lines-per-function": ["warn"],
       "max-params": ["warn", 5],
       "max-statements": ["warn", 20, { ignoreTopLevelFunctions: true }],
-      "one-var": ["error", "never"],
-      "sort-keys": "off",
-      "sort-imports": ["error", { ignoreDeclarationSort: true }],
-      "new-cap": ["error", { capIsNew: false }],
     },
   },
   {
@@ -30,6 +26,7 @@ export default defineConfig([
   {
     files: ["**/*.stories.{js,jsx,ts,tsx}"],
     rules: {
+      "import-x/no-unresolved": "off",
       "max-lines": "off",
       "max-lines-per-function": "off",
       "max-statements": "off",
@@ -40,8 +37,6 @@ export default defineConfig([
       "no-promise-executor-return": "off",
       "no-ternary": "off",
       "no-warning-comments": "off",
-      "one-var": "off",
-      "sort-imports": "off",
       "sort-vars": "off",
     },
   },

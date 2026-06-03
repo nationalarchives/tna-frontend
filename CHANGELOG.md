@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added the ability to use a `caller` function in the code block component
 - Added automatic section highlighting on sticky section sidebar components
+- Checkboxes can have a specific `id` set rather than having one generated using their `value`
 
 ### Changed
 
@@ -21,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Removed `autocapitalize` attribute from text inputs with `type: "email"`
+
 ### Security
 
 ## [0.41.1](https://github.com/nationalarchives/tna-frontend/compare/v0.41.0...v0.41.1) - 2026-05-12

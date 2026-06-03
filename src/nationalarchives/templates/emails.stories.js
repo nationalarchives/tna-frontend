@@ -39,6 +39,7 @@ export const Confirmation = {
       body: "<p>Your reference number is <strong>TNA1756716690J57</strong>.</p>",
     },
     content:
+      /* eslint-disable-next-line no-secrets/no-secrets */
       '<p>Thank you for contacting The National Archives with your application to film or record here.</p><p>You will receive a response from us about your application within 10 working days.</p><p>The details you have provided to us are listed below. If any of these are incorrect or if you have any questions regarding your enquiry, please email us at <a href="#">enquiry@nationalarchives.gov.uk</a> or call <a href="#">+44 (0) 20 8876 3444</a>, quoting your reference number.</p>',
     disableAdornableLogo: true,
   },

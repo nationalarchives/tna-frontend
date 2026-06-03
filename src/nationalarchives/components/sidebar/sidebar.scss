@@ -152,9 +152,9 @@
     margin: 0;
     padding-bottom: a11yVars.$focus-outline-total-width;
 
-    overflow-y: auto;
-
     flex: 1;
+
+    overflow-y: auto;
   }
 
   &--sticky#{&}--contents &__items,

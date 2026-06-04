@@ -188,9 +188,9 @@ const checkExists = [
   "nationalarchives/templates/partials/logo/template.njk",
   "nationalarchives/templates/prototype-kit/_base.njk",
   "nationalarchives/templates/prototype-kit/error-page-not-found.njk",
-  "nationalarchives/templates/prototype-kit/index-grid.njk",
   "nationalarchives/templates/prototype-kit/list.njk",
   "nationalarchives/templates/prototype-kit/plain.njk",
+  "nationalarchives/templates/prototype-kit/plain-with-sidebar.njk",
   // Config
   "config/.babelrc.json",
   "config/.htmlvalidate.json",

@@ -1,0 +1,74 @@
+{%- extends "nationalarchives/templates/prototype-kit/_base.njk" -%}
+
+{%- from "nationalarchives/components/breadcrumbs/macro.njk" import tnaBreadcrumbs -%}
+{%- from "nationalarchives/components/sidebar/macro.njk" import tnaSidebar -%}
+
+{% set pageTitle = 'Plain page with sidebar' %}
+{% set theme = 'light' %}
+{% set themeAccent = 'blue' %}
+
+{% block beforeContent %}
+<div class="tna-container">
+  {{ tnaBreadcrumbs({
+    items: [
+      {
+        text: 'Home',
+        href: '/'
+      }
+    ],
+    classes: 'tna-column tna-column--full tna-!--padding-top-s'
+  }) }}
+</div>
+{% endblock beforeContent %}
+
+{% block content %}
+<div class="tna-container tna-!--padding-top-l tna-!--padding-bottom-xl">
+  <div class="tna-column tna-column--full">
+    <h1 class="tna-heading-xl">{{ pageTitle }}</h1>
+    <p class="tna-large-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet luctus libero. Cras nec mauris ex. Fusce nisl erat, efficitur sed auctor ornare, varius fermentum arcu.</p>
+  </div>
+  {% set sidebar_example_items = [
+    {
+      text: 'Alpha',
+      href: '#alpha'
+    },
+    {
+      text: 'Beta',
+      href: '#beta'
+    },
+    {
+      text: 'Gamma',
+      href: '#gamma'
+    },
+    {
+      text: 'Delta',
+      href: '#delta'
+    },
+    {
+      text: 'Epsilon',
+      href: '#epsilon'
+    },
+    {
+      text: 'Zeta',
+      href: '#zeta'
+    }
+  ] %}
+  <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny">
+    {{ tnaSidebar({
+      title: 'On this page',
+      headingLevel: 2,
+      items: sidebar_example_items,
+      type: 'sections',
+      sticky: true,
+      classes: 'tna-!--margin-top-m tna-!--padding-top-s'
+    }) }}
+  </div>
+  <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-!--padding-bottom-xl tna-!--margin-top-m">
+    {%- for item in sidebar_example_items %}
+    <h2 class="tna-heading-l tna-!--padding-top-s" id="{{ item.href.slice(1) }}">{{ item.text }}</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p>
+    {%- endfor %}
+  </div>
+</div>
+{% endblock content %}

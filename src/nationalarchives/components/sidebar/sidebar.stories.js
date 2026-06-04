@@ -118,7 +118,6 @@ export const Sections = {
       {
         text: "A band of guerrillas",
         href: "#",
-        current: true,
       },
       {
         text: "War begins",
@@ -281,7 +280,9 @@ HighlightSections.args = {
   sticky: true,
   classes: "tna-!--padding-top-s",
   attributes: {
+    // Highlight when the section is within 16px from the top of the viewport
     "data-scroll-top-threshold": "16",
+    // Highlight on all device sizes
     "data-disable-highlight-size": "",
   },
 };

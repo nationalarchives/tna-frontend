@@ -57,6 +57,12 @@
     "description": "A list of radio items.",
     "params": [
       {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "A unique ID for the radio item. If not provided, the ID will be generated using the main `id` and the item's `value`."
+      },
+      {
         "name": "text",
         "type": "string",
         "required": true,
@@ -72,7 +78,7 @@
         "name": "hint",
         "type": "string",
         "required": false,
-        "description": "An extra hint to display inside the checkbox item."
+        "description": "An extra hint to display inside the radio item."
       }
     ]
   },

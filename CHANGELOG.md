@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added the ability to use a `caller` function in the code block component
 - Added automatic section highlighting on sticky section sidebar components
-- Checkboxes can have a specific `id` set rather than having one generated using their `value`
+- Checkboxes and radio items can have a specific `id` set rather than having one generated using their `value`
 - "Plain page with sidebar" Prototype Kit template added
 
 ### Changed

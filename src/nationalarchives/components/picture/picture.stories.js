@@ -66,3 +66,36 @@ export const Standard = {
     classes: "tna-picture--demo",
   },
 };
+
+
+export const ResponsiveImages = {
+  args: {
+    src: "https://placehold.co/1200x800/00623b/fff?text=1200x800&font=museo&font_size=48",
+    alt: "A placeholder image",
+    width: 1200,
+    height: 800,
+    srcSet: [
+      {
+        src: "https://placehold.co/300x200/f00/fff?text=300x200&font=museo&font_size=32",
+        width: 300,
+        size: "(max-width: 300px) and (max-resolution: 1x)",
+      },
+      {
+        src: "https://placehold.co/300x200/0f0/fff?text=300x200&font=museo&font_size=32",
+        width: 600,
+        size: "(max-width: 600px) and (min-resolution: 1.25x)",
+      },
+      // {
+      //   src: "https://placehold.co/600x400/00623b/fff?text=600x400&font=museo&font_size=32",
+      //   width: 600,
+      //   size: "(max-width: 2000px)",
+      // },
+      {
+        src: "https://placehold.co/900x600/00623b/fff?text=900x600&font=museo&font_size=48",
+        width: 900,
+        size: "100vw",
+      }
+    ],
+    caption: "<p>This is a pretty image</p>",
+  },
+};

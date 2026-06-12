@@ -1,5 +1,7 @@
 {%- extends "nationalarchives/templates/layouts/_generic.njk" -%}
 
+{% set theme = theme or 'light' %}
+{% set themeAccent = themeAccent or 'green' %}
 {% set assetPath = '/plugin-assets/%40nationalarchives%2Ffrontend/nationalarchives/assets/' %}
 
 {% block stylesheets %}

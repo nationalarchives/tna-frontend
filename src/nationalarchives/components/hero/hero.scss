@@ -167,10 +167,6 @@ $over-overflow: $shift-overflow !default;
   }
 
   @include media.on-larger-than-mobile {
-    &::before {
-      display: none;
-    }
-
     &__figure {
       min-height: clamp(5rem, 30vw, 20rem);
     }
@@ -275,17 +271,18 @@ $over-overflow: $shift-overflow !default;
       margin-right: 32px;
 
       overflow: hidden;
-      z-index: 5;
 
       bottom: spacing.space($over-overflow * -1);
 
       left: 50%;
+      z-index: 5;
       @include borders.rounded-border;
     }
 
     &--split &__figure,
     &--over &__figure {
-    justify-content: center;}
+      justify-content: center;
+    }
 
     &--shift &__content-inner,
     &--over &__image {

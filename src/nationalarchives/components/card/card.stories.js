@@ -52,7 +52,14 @@ export default {
       horizontalSmallImage: { control: "boolean" },
       style: {
         control: "inline-radio",
-        options: ["none", "plain", "contrast", "tint", "accent"],
+        options: [
+          "none",
+          "plain",
+          "contrast",
+          "tint",
+          "accent",
+          "accent-light",
+        ],
       },
       htmlElement: { control: "text" },
       classes: { control: "text" },

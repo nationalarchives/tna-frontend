@@ -8,38 +8,40 @@
   display: flex;
   gap: spacing.space(2);
 
-
   &__wrapper {
-  display: flex;
-  gap: spacing.space(0.25);
+    padding: 0;
 
-  padding: 0;
+    display: flex;
+    gap: spacing.space(0.25);
 
-  // display: block;
-  box-sizing: border-box;
+    // display: block;
+    box-sizing: border-box;
 
-  @include colour.always-light;
-  @include colour.colour-font("input-foreground");
-  line-height: 2rem;
+    line-height: 2rem;
 
-  @include colour.colour-background("input-background");
+    @include colour.always-light;
+    @include colour.colour-font("input-foreground");
 
-  @include colour.colour-border(
-    "input-border",
-    formVars.$form-field-border-width
-  );
-  @include borders.rounded-border;
+    @include colour.colour-background("input-background");
+
+    @include colour.colour-border(
+      "input-border",
+      formVars.$form-field-border-width
+    );
+    @include borders.rounded-border;
   }
 
   input[type="text"] {
     // appearance: none;
     width: 3.5rem;
-    text-align: center;
     padding: 0;
-    border: none;
+
     line-height: 1;
+    text-align: center;
 
     background-color: transparent;
+
+    border: none;
   }
 
   &__item {
@@ -78,5 +80,6 @@
     }
   }
 
-  &__separator {}
+  &__separator {
+  }
 }

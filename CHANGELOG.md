@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Hero components are "narrow" by default and can now be made larger with `large: true`
+- Updated OpenGraph image with light and dark variants
 
 ### Deprecated
 ### Removed

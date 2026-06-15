@@ -1,0 +1,33 @@
+{%- extends "nationalarchives/templates/prototype-kit/_base.njk" -%}
+
+{%- from "nationalarchives/components/breadcrumbs/macro.njk" import tnaBreadcrumbs -%}
+
+{% set pageTitle = 'Plain page' %}
+
+{% block beforeContent %}
+<div class="tna-container">
+  {{ tnaBreadcrumbs({
+    items: [
+      {
+        text: 'Home',
+        href: '/'
+      }
+    ],
+    classes: 'tna-column tna-column--full tna-!--padding-top-s'
+  }) }}
+</div>
+{% endblock beforeContent %}
+
+{% block content %}
+<div class="tna-section">
+  <div class="tna-container">
+    <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
+      <h1 class="tna-heading-xl">
+        {{ pageTitle }}
+      </h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at magna est. Sed vel fermentum arcu. Suspendisse viverra est nec interdum tincidunt. Phasellus dictum, turpis eget iaculis tincidunt, ex metus porttitor turpis, ut pulvinar risus erat quis dui. Nam semper sapien a ipsum congue pharetra.</p>
+      <p>Donec cursus, eros eu egestas aliquam, ipsum ligula suscipit metus, eget maximus turpis nisl vitae ex. Etiam ornare convallis quam a consequat. Etiam sodales aliquet nulla, id rutrum justo accumsan sed.</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

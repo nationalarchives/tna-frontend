@@ -1,10 +1,5 @@
-import Cookies from "./lib/cookies.mjs";
-import {
-  getXPathTo,
-  getClosestHeading,
-  getClosestElement,
-  valueGetters,
-} from "./lib/analytics-helpers.mjs";
+/* eslint-disable max-classes-per-file, no-ternary, no-nested-ternary */
+
 import AccordionAnalytics from "./components/accordion/analytics.js";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
 import CheckboxesAnalytics from "./components/checkboxes/analytics.js";
@@ -22,6 +17,13 @@ import SearchFieldAnalytics from "./components/search-field/analytics.js";
 import SidebarAnalytics from "./components/sidebar/analytics.js";
 import TextInputAnalytics from "./components/text-input/analytics.js";
 import TextareaAnalytics from "./components/textarea/analytics.js";
+import {
+  getClosestElement,
+  getClosestHeading,
+  getXPathTo,
+  valueGetters,
+} from "./lib/analytics-helpers.mjs";
+import Cookies from "./lib/cookies.mjs";
 
 const componentAnalytics = [
   ...AccordionAnalytics,
@@ -70,13 +72,14 @@ class EventTracker {
   }
 
   start(initAll) {
+    /* eslint-disable-next-line no-magic-numbers */
     if (!navigator.doNotTrack || navigator.doNotTrack !== 1) {
       if (this.cookies.isPolicyAccepted("usage")) {
         this.enableTracking();
       }
       this.cookies.on("changePolicy", (policies) => {
         if (Object.hasOwn(policies, "usage")) {
-          if (policies["usage"]) {
+          if (policies.usage) {
             this.enableTracking();
           } else {
             this.disableTracking();
@@ -89,8 +92,12 @@ class EventTracker {
     }
   }
 
+  /** @protected */
+  /* eslint-disable-next-line class-methods-use-this, no-empty-function */
   enableTracking() {}
 
+  /** @protected */
+  /* eslint-disable-next-line class-methods-use-this, no-empty-function */
   disableTracking() {}
 
   /**
@@ -123,12 +130,13 @@ class EventTracker {
     rootEventName = "",
     rootDefaultData = {},
   ) {
-    let scopeArray;
+    let scopeArray = [];
     if (typeof scope === "string") {
       scopeArray = Array.from(this.document.querySelectorAll(scope));
     } else if (typeof scope === "object") {
       scopeArray = [scope];
     }
+    /* eslint-disable-next-line no-magic-numbers */
     if (scopeArray.length === 0) {
       return;
     }
@@ -147,7 +155,9 @@ class EventTracker {
                 eventConfig,
                 scope,
                 areaName,
+                /* eslint-disable-next-line no-magic-numbers */
                 index + 1,
+                /* eslint-disable-next-line no-magic-numbers */
                 scopeIndex + 1,
               ),
             );
@@ -160,7 +170,9 @@ class EventTracker {
               eventConfig,
               scope,
               areaName,
+              /* eslint-disable-next-line no-magic-numbers */
               1,
+              /* eslint-disable-next-line no-magic-numbers */
               scopeIndex + 1,
             );
           }
@@ -218,7 +230,7 @@ class EventTracker {
               ? this.computedValue(data.group, ...computedValueParameters)
               : null,
             xPath: getXPathTo($el),
-            targetElement: targetElement,
+            targetElement,
             timeSincePageLoad: new Date() - this.startTime,
             index,
             instance,
@@ -264,7 +276,7 @@ class EventTracker {
       ).map(($metaEl) => [
         $metaEl
           .getAttribute("name")
-          .replace(new RegExp(`^${this.prefix}_root:`), ""),
+          .replace(new RegExp(`^${this.prefix}_root:`, "u"), ""),
         $metaEl.getAttribute("content"),
       ]),
       ...Array.from(
@@ -288,12 +300,13 @@ class EventTracker {
     userPreferences[`${this.prefix}.pref.forced-colors`] = window.matchMedia?.(
       "(forced-colors: active)",
     ).matches;
-    userPreferences[`${this.prefix}.pref.prefers-contrast`] =
-      window.matchMedia?.("(prefers-contrast: more)").matches
-        ? "more"
-        : window.matchMedia?.("(prefers-contrast: less)").matches
-          ? "less"
-          : "normal";
+    let prefersContrast = "no-preference";
+    if (window.matchMedia?.("(prefers-contrast: more)").matches) {
+      prefersContrast = "more";
+    } else if (window.matchMedia?.("(prefers-contrast: less)").matches) {
+      prefersContrast = "less";
+    }
+    userPreferences[`${this.prefix}.pref.prefers-contrast`] = prefersContrast;
     userPreferences[`${this.prefix}.pref.prefers-reduced-motion`] =
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     userPreferences[`${this.prefix}.pref.prefers-reduced-transparency`] =
@@ -324,6 +337,7 @@ class GA4 extends EventTracker {
 
   constructor(options = {}) {
     if (window.TNAFrontendAnalyticsGA4) {
+      /* eslint-disable-next-line no-constructor-return */
       return window.TNAFrontendAnalyticsGA4;
     }
     const {
@@ -335,7 +349,7 @@ class GA4 extends EventTracker {
     super({ prefix });
     window.TNAFrontendAnalyticsGA4 = this;
     this.addTrackingCode = addTrackingCode;
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer ||= [];
     if (id) {
       this.gTagId = id;
       this.ga4Disable = `ga-disable-${this.gTagId}`;
@@ -347,6 +361,8 @@ class GA4 extends EventTracker {
     this.start(initAll);
   }
 
+  /** @protected */
+  /* eslint-disable-next-line class-methods-use-this */
   destroy() {
     window.TNAFrontendAnalyticsGA4 = null;
   }
@@ -367,11 +383,12 @@ class GA4 extends EventTracker {
   }
 
   /** @protected */
-  gtag() {
-    this.pushToDataLayer(arguments);
+  gtag(...args) {
+    this.pushToDataLayer(args);
   }
 
   /** @protected */
+  /* eslint-disable-next-line class-methods-use-this */
   pushToDataLayer(data) {
     window.dataLayer.push(data);
   }
@@ -391,7 +408,7 @@ class GA4 extends EventTracker {
           "gtm.start": new Date().getTime(),
           event: "gtm.js",
         });
-        const firstScript = document.getElementsByTagName("script")[0];
+        const [firstScript] = document.getElementsByTagName("script");
         const script = document.createElement("script");
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtm.js?id=${this.gTagId}&l=dataLayer`;
@@ -423,6 +440,7 @@ class GA4 extends EventTracker {
 
 const ga4Id = document.documentElement.dataset.ga4;
 if (ga4Id) {
+  /* eslint-disable-next-line no-new */
   new GA4({ id: ga4Id });
 }
 

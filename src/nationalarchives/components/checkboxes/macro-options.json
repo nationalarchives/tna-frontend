@@ -2,14 +2,14 @@
   {
     "name": "label",
     "type": "string",
-    "required": true,
-    "description": "The label for the checkboxes field."
+    "required": false,
+    "description": "The label for the checkboxes field. Required if there are multiple checkboxes. Optional for only one checkbox."
   },
   {
     "name": "headingLevel",
     "type": "number",
     "required": false,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Leave blank or set to `0` to use a plain `<label>` element with no heading."
   },
   {
     "name": "headingSize",
@@ -54,8 +54,14 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "A list of checkbox items to render.",
+    "description": "A list of checkbox items.",
     "params": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "A unique ID for the checkbox item. If not provided, the ID will be generated using the main `id` and the item's `value`."
+      },
       {
         "name": "text",
         "type": "string",
@@ -69,16 +75,17 @@
         "description": "The form field value."
       },
       {
-        "name": "name",
+        "name": "hint",
         "type": "string",
         "required": false,
-        "description": "The name of the form field item. If set, this will override the main `name` property."
+        "description": "An extra hint to display inside the checkbox item."
       },
       {
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "description": "If true, the checkbox will be checked."
+        "description": "If `true`, the checkbox will be checked.",
+        "default": false
       }
     ]
   },
@@ -86,13 +93,15 @@
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "If true, show smaller checkboxes."
+    "description": "If `true`, show smaller checkboxes.",
+    "default": false
   },
   {
     "name": "inline",
     "type": "boolean",
     "required": false,
-    "description": "If true, show the checkboxes inline rather than vertical."
+    "description": "If `true`, show the checkboxes inline rather than vertical.",
+    "default": false
   },
   {
     "name": "formItemClasses",
@@ -105,6 +114,18 @@
     "type": "object",
     "required": false,
     "description": "HTML attributes (for example data attributes) to add to the checkboxes form group."
+  },
+  {
+    "name": "fieldsetClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the `<fieldset>` element when there is more than one item."
+  },
+  {
+    "name": "fieldsetAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the `<fieldset>` element when there is more than one item."
   },
   {
     "name": "classes",

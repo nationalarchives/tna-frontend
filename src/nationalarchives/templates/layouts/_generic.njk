@@ -1,9 +1,9 @@
 {# Based on https://github.com/alphagov/govuk-frontend/blob/8b6bf304b9fc891f64459c25a08f3d623f3fea72/packages/govuk-frontend/src/govuk/template.njk #}
 
-{%- from 'nationalarchives/components/cookie-banner/macro.njk' import tnaCookieBanner -%}
-{%- from 'nationalarchives/components/footer/macro.njk' import tnaFooter -%}
-{%- from 'nationalarchives/components/header/macro.njk' import tnaHeader -%}
-{%- from 'nationalarchives/components/skip-link/macro.njk' import tnaSkipLink -%}
+{%- from "nationalarchives/components/cookie-banner/macro.njk" import tnaCookieBanner -%}
+{%- from "nationalarchives/components/footer/macro.njk" import tnaFooter -%}
+{%- from "nationalarchives/components/header/macro.njk" import tnaHeader -%}
+{%- from "nationalarchives/components/skip-link/macro.njk" import tnaSkipLink -%}
 
 {%- set defaultSiteTitle = 'The National Archives' -%}
 
@@ -11,7 +11,7 @@
 <html lang="{{ htmlLang | default('en') }}" class="tna-template{% if theme and theme != 'light' %} tna-template--{{ theme }}-theme{% endif %}{% if themeAccent %} tna-template--{{ themeAccent }}-accent{% endif %}{% if htmlClasses %} {{ htmlClasses }}{% endif %}"{% for attribute, value in htmlAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <head>
     <meta charset="utf-8">
-    <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle or defaultSiteTitle }}{% else %}{{ siteTitle or defaultSiteTitle }}{% endif %}{% endblock %}</title>
+    <title>{% block pageTitle %}{% if pageTitle %}{{ pageTitle }} - {{ siteTitle or defaultSiteTitle }}{% else %}{{ siteTitle or defaultSiteTitle }}{% endif %}{% endblock pageTitle %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#010101') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,11 +31,11 @@
     <link rel="apple-touch-icon" sizes="256x256" href="{{ assetPath | default('/assets/') }}images/icon-256x256.png">
     <link rel="apple-touch-icon" sizes="512x512" href="{{ assetPath | default('/assets/') }}images/icon-512x512.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="{{ assetPath | default('/assets/') }}images/icon-1024x1024.png">
-    {% endblock %}
+    {% endblock headIcons %}
 
-    {% block head %}{% endblock %}
+    {% block head %}{% endblock head %}
 
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}{% endblock stylesheets %}
   </head>
   <body class="tna-template__body{% if bodyClasses %} {{ bodyClasses }}{% endif %}"{% for attribute, value in bodyAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
     {% block bodyStart %}
@@ -45,32 +45,32 @@
         {{ tnaCookieBanner({
           cookiesUrl: '#/cookies'
         }) | indent(6) }}
-      {% endblock %}
+      {% endblock cookies %}
       
       {% block skipLink %}
       {{ tnaSkipLink({
         href: 'main-content',
         text: 'Skip to main content'
       }) | indent(6) }}
-      {% endblock %}
-    {% endblock %}
+      {% endblock skipLink %}
+    {% endblock bodyStart %}
 
     {% block header %}
       {{ tnaHeader({}) | indent(4) }}
-    {% endblock %}
+    {% endblock header %}
 
     {% block main %}
-      {% block beforeContent %}{% endblock %}
+      {% block beforeContent %}{% endblock beforeContent %}
       <main class="tna-main{% if mainClasses %} {{ mainClasses }}{% endif %}" id="main-content">
-        {% block content %}{% endblock %}
+        {% block content %}{% endblock content %}
       </main>
-      {% block afterContent %}{% endblock %}
-    {% endblock %}
+      {% block afterContent %}{% endblock afterContent %}
+    {% endblock main %}
 
     {% block footer %}
       {{ tnaFooter({}) | indent(4) }}
-    {% endblock %}
+    {% endblock footer %}
 
-    {% block bodyEnd %}{% endblock %}
+    {% block bodyEnd %}{% endblock bodyEnd %}
   </body>
 </html>

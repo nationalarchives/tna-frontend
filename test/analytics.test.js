@@ -46,7 +46,7 @@ describe("Initialisation", () => {
       "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
 
     const id = "example";
-    const ga4 = new GA4({ id, addTrackingCode: false });
+    new GA4({ id, addTrackingCode: false });
 
     const scripts = document.querySelectorAll("script");
     expect(scripts).toHaveLength(0);

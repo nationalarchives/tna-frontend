@@ -1,38 +1,42 @@
-import PhaseBanner from "./template.njk";
+import nunjucks from "nunjucks";
+
 import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
-const argTypes = {
-  phase: {
-    control: "text",
-  },
-  message: { control: "text" },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
-
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Phase banner",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      phase: { control: "text" },
+      message: { control: "text" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+        table: {
+          type: {
+            summary: macroOptions.find((option) => option.name === key)?.type,
+          },
+          defaultValue: {
+            summary: macroOptions.find((option) => option.name === key)
+              ?.default,
+          },
+        },
+      },
+    ]),
+  ),
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
-const Template = ({ phase, message, classes, attributes }) =>
-  PhaseBanner({
-    params: {
-      phase,
-      message,
-      classes,
-      attributes,
-    },
-  });
-
-export const Standard = Template.bind({});
-Standard.args = {
-  phase: "beta",
-  message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+export const Standard = {
+  args: {
+    phase: "beta",
+    message: `This is a new service – <a href="#">give us your feedback</a> to help improve it.`,
+  },
 };

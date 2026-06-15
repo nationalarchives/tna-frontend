@@ -1,25 +1,29 @@
-import Accordion from "../../components/accordion/template.njk";
-import Breadcrumbs from "../../components/breadcrumbs/template.njk";
-import Button from "../../components/button/template.njk";
-import Card from "../../components/card/template.njk";
-import Checkboxes from "../../components/checkboxes/template.njk";
-import ErrorSummary from "../../components/error-summary/template.njk";
-import Footer from "../../components/footer/template.njk";
-import Gallery from "../../components/gallery/template.njk";
-import GlobalHeader from "../../components/global-header/template.njk";
-import Hero from "../../components/hero/template.njk";
-import IndexGrid from "../../components/index-grid/template.njk";
-import Pagination from "../../components/pagination/template.njk";
-import PhaseBanner from "../../components/phase-banner/template.njk";
-import Picture from "../../components/picture/template.njk";
-import Radios from "../../components/radios/template.njk";
-import SearchField from "../../components/search-field/template.njk";
-import Select from "../../components/select/template.njk";
-import SkipLink from "../../components/skip-link/template.njk";
-import Tabs from "../../components/tabs/template.njk";
-import TextInput from "../../components/text-input/template.njk";
-import Textarea from "../../components/textarea/template.njk";
-import Warning from "../../components/warning/template.njk";
+import nunjucks from "nunjucks";
+
+import Accordion from "../../components/accordion/template.njk?raw";
+import Breadcrumbs from "../../components/breadcrumbs/template.njk?raw";
+import Button from "../../components/button/template.njk?raw";
+import Card from "../../components/card/template.njk?raw";
+import Checkboxes from "../../components/checkboxes/template.njk?raw";
+import ErrorSummary from "../../components/error-summary/template.njk?raw";
+import Footer from "../../components/footer/template.njk?raw";
+import Gallery from "../../components/gallery/template.njk?raw";
+import GlobalHeader from "../../components/global-header/template.njk?raw";
+import Hero from "../../components/hero/template.njk?raw";
+import IndexGrid from "../../components/index-grid/template.njk?raw";
+import Pagination from "../../components/pagination/template.njk?raw";
+import PhaseBanner from "../../components/phase-banner/template.njk?raw";
+import Picture from "../../components/picture/template.njk?raw";
+import Radios from "../../components/radios/template.njk?raw";
+import SearchField from "../../components/search-field/template.njk?raw";
+import Select from "../../components/select/template.njk?raw";
+import SkipLink from "../../components/skip-link/template.njk?raw";
+import Tabs from "../../components/tabs/template.njk?raw";
+import TextInput from "../../components/text-input/template.njk?raw";
+import Textarea from "../../components/textarea/template.njk?raw";
+import Warning from "../../components/warning/template.njk?raw";
+
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 const argTypes = {
   theme: {
@@ -89,12 +93,12 @@ const Template = ({ theme, accent }) => {
               : ""
   }">
   <div class="tna-template__body tna-template__body--padded">
-    ${SkipLink({
+    ${nunjucks.renderString(SkipLink, {
       params: {
         href: "main-content",
       },
     })}
-    ${PhaseBanner({
+    ${nunjucks.renderString(PhaseBanner, {
       params: {
         phase: "beta",
         message:
@@ -102,7 +106,7 @@ const Template = ({ theme, accent }) => {
         classes: "tna-background-accent",
       },
     })}
-    ${GlobalHeader({
+    ${nunjucks.renderString(GlobalHeader, {
       params: {
         logo: {
           href: "#/",
@@ -153,7 +157,7 @@ const Template = ({ theme, accent }) => {
       },
     })}
     <div class="tna-container">
-      ${Breadcrumbs({
+      ${nunjucks.renderString(Breadcrumbs, {
         params: {
           items: [
             {
@@ -182,18 +186,21 @@ const Template = ({ theme, accent }) => {
       })}
     </div>
     <main class="tna-main" id="main-content">
-      ${Hero({
-        params: {
-          title: "Title",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          imageSrc:
-            "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
-          imageAlt: "The National Archives office",
-          imageWidth: 600,
-          imageHeight: 400,
-          imageCaption: "An interesting photo by a famous photographer ©2023",
-        },
-      })}
+      ${
+        nunjucks.renderString(Hero, {
+          params: {
+            title: "Title",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            imageSrc:
+              "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+            imageAlt: "The National Archives office",
+            imageWidth: 600,
+            imageHeight: 400,
+            imageCaption: "An interesting photo by a famous photographer ©2023",
+          },
+        })
+        /* eslint-disable-next-line no-secrets/no-secrets */
+      }
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
           <hgroup class="tna-hgroup-l">
@@ -210,27 +217,27 @@ const Template = ({ theme, accent }) => {
             <li>Gamma</li>
           </ul>
           <div class="tna-button-group">
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Primary button",
                 href: "#",
               },
             })}
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Accent button",
                 href: "#",
                 accent: true,
               },
             })}
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Explore the collection",
                 href: "#",
                 icon: "map-location-dot",
               },
             })}
-            ${Button({
+            ${nunjucks.renderString(Button, {
               params: {
                 text: "Plain button",
                 plain: true,
@@ -244,7 +251,7 @@ const Template = ({ theme, accent }) => {
               <div class="tna-aside tna-background-contrast">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
-                  ${Button({
+                  ${nunjucks.renderString(Button, {
                     params: {
                       text: "Accent button",
                       href: "#",
@@ -258,12 +265,15 @@ const Template = ({ theme, accent }) => {
               <div class="tna-aside tna-background-accent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
-                  ${Button({
-                    params: {
-                      text: "Primary button",
-                      href: "#",
-                    },
-                  })}
+                  ${
+                    nunjucks.renderString(Button, {
+                      params: {
+                        text: "Primary button",
+                        href: "#",
+                      },
+                    })
+                    /* eslint-disable-next-line no-secrets/no-secrets */
+                  }
                 </div>
               </div>
             </div>
@@ -313,12 +323,12 @@ const Template = ({ theme, accent }) => {
           <p class="tna-scene-setter">
             We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.
           </p>
-          <blockquote class="tna-blockquote">
-            <div class="tna-blockquote__quote">
+          <div class="tna-blockquote">
+            <blockquote class="tna-blockquote__quote">
               <p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>
-            </div>
-            <p class="tna-blockquote__citation">Douglas Adams, Mostly Harmless</p>
-          </blockquote>
+            </blockquote>
+            <p class="tna-blockquote__attribution">Douglas Adams, <cite class="tna-blockquote__citation">Mostly Harmless</cite></p>
+          </div>
           <h2 class="tna-heading-m">
             <a href="#">Researching with The National Archives</a>
           </h2>
@@ -465,7 +475,7 @@ const Template = ({ theme, accent }) => {
               </span>
             </dd>
           </dl>
-          ${Warning({
+          ${nunjucks.renderString(Warning, {
             params: {
               body: "Please note this page references hunger strikes and force feeding, which some people may find upsetting.",
             },
@@ -473,7 +483,7 @@ const Template = ({ theme, accent }) => {
           <h2 class="tna-heading-l">
             Accordion
           </h2>
-          ${Accordion({
+          ${nunjucks.renderString(Accordion, {
             params: {
               items: [
                 {
@@ -557,7 +567,7 @@ const Template = ({ theme, accent }) => {
           <p class="tna-!--margin-top-xl">Lorem ipsum (tna-!--margin-top-xl)</p>
         </div>
       </div>
-      ${Hero({
+      ${nunjucks.renderString(Hero, {
         params: {
           imageSrc:
             "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
@@ -570,7 +580,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section tna-!--padding-bottom-s">
         <ul class="tna-container">
           <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-            ${Card({
+            ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
                 classes: "tna-!--margin-bottom-m",
@@ -578,7 +588,7 @@ const Template = ({ theme, accent }) => {
             })}
           </li>
           <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-            ${Card({
+            ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
                 style: "contrast",
@@ -587,7 +597,7 @@ const Template = ({ theme, accent }) => {
             })}
           </li>
           <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
-            ${Card({
+            ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
                 style: "accent",
@@ -601,7 +611,7 @@ const Template = ({ theme, accent }) => {
       <div class="tna-section">
         <ul class="tna-container">
           <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-            ${Card({
+            ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
                 horizontal: true,
@@ -610,7 +620,7 @@ const Template = ({ theme, accent }) => {
             })}
           </li>
           <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-            ${Card({
+            ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
                 horizontal: true,
@@ -620,7 +630,7 @@ const Template = ({ theme, accent }) => {
             })}
           </li>
           <li class="tna-column tna-column--width-2-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
-            ${Card({
+            ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
                 horizontal: true,
@@ -633,7 +643,7 @@ const Template = ({ theme, accent }) => {
       <hr>
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
-          ${Tabs({
+          ${nunjucks.renderString(Tabs, {
             params: {
               title: "Example tabs",
               items: [
@@ -661,7 +671,7 @@ const Template = ({ theme, accent }) => {
       <hr>
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
-          ${Picture({
+          ${nunjucks.renderString(Picture, {
             params: {
               src: "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
               alt: "The National Archives office",
@@ -687,7 +697,7 @@ const Template = ({ theme, accent }) => {
       </div>
       <div class="tna-container">
         <div class="tna-column tna-column--full">
-          ${Gallery({
+          ${nunjucks.renderString(Gallery, {
             params: {
               title: "My gallery",
               headingLevel: 2,
@@ -722,7 +732,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <div class="tna-section">
-        ${IndexGrid({
+        ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 1",
             headingLevel: 3,
@@ -756,7 +766,7 @@ const Template = ({ theme, accent }) => {
         })}
         <div class="tna-container">
           <div class="tna-column tna-column--full">
-            ${Pagination({
+            ${nunjucks.renderString(Pagination, {
               params: {
                 landmarkLabel: "My dogs 1 results",
                 previous: {
@@ -794,10 +804,10 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
-            ${SearchField({
+            ${nunjucks.renderString(SearchField, {
               params: {
                 label: "Catalogue search results",
                 headingLevel: 3,
@@ -816,7 +826,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <div class="tna-section tna-background-tint">
-        ${IndexGrid({
+        ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 2",
             headingLevel: 3,
@@ -850,7 +860,7 @@ const Template = ({ theme, accent }) => {
         })}
         <div class="tna-container">
           <div class="tna-column tna-column--full">
-            ${Pagination({
+            ${nunjucks.renderString(Pagination, {
               params: {
                 landmarkLabel: "My dogs 2 results",
                 previous: {
@@ -888,10 +898,10 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
-            ${SearchField({
+            ${nunjucks.renderString(SearchField, {
               params: {
                 label: "Catalogue search results",
                 headingLevel: 3,
@@ -910,7 +920,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <div class="tna-section tna-background-contrast">
-        ${IndexGrid({
+        ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 3",
             headingLevel: 3,
@@ -944,7 +954,7 @@ const Template = ({ theme, accent }) => {
         })}
         <div class="tna-container">
           <div class="tna-column tna-column--full">
-            ${Pagination({
+            ${nunjucks.renderString(Pagination, {
               params: {
                 landmarkLabel: "My dogs 3 results",
                 previous: {
@@ -982,10 +992,10 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
-            ${SearchField({
+            ${nunjucks.renderString(SearchField, {
               params: {
                 label: "Catalogue search results",
                 headingLevel: 3,
@@ -1004,7 +1014,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <div class="tna-section tna-background-accent-light">
-        ${IndexGrid({
+        ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 4",
             headingLevel: 3,
@@ -1038,7 +1048,7 @@ const Template = ({ theme, accent }) => {
         })}
         <div class="tna-container">
           <div class="tna-column tna-column--full">
-            ${Pagination({
+            ${nunjucks.renderString(Pagination, {
               params: {
                 landmarkLabel: "My dogs 4 results",
                 previous: {
@@ -1076,10 +1086,10 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
-            ${SearchField({
+            ${nunjucks.renderString(SearchField, {
               params: {
                 label: "Catalogue search results",
                 headingLevel: 3,
@@ -1098,7 +1108,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
       <div class="tna-section tna-background-accent">
-        ${IndexGrid({
+        ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 5",
             headingLevel: 3,
@@ -1132,7 +1142,7 @@ const Template = ({ theme, accent }) => {
         })}
         <div class="tna-container">
           <div class="tna-column tna-column--full">
-            ${Pagination({
+            ${nunjucks.renderString(Pagination, {
               params: {
                 landmarkLabel: "My dogs 5 results",
                 previous: {
@@ -1170,10 +1180,10 @@ const Template = ({ theme, accent }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-pagination--demo tna-!--margin-top-m",
+                classes: "tna-!--margin-top-m",
               },
             })}
-            ${SearchField({
+            ${nunjucks.renderString(SearchField, {
               params: {
                 label: "Catalogue search results",
                 headingLevel: 3,
@@ -1198,7 +1208,7 @@ const Template = ({ theme, accent }) => {
               <h2 class="tna-heading tna-heading--l">
                 Forms
               </h2>
-              ${ErrorSummary({
+              ${nunjucks.renderString(ErrorSummary, {
                 params: {
                   title: "There is a problem",
                   headingLevel: 2,
@@ -1211,7 +1221,7 @@ const Template = ({ theme, accent }) => {
                   disableAutoFocus: true,
                 },
               })}
-              ${TextInput({
+              ${nunjucks.renderString(TextInput, {
                 params: {
                   label: "Enter your name",
                   headingLevel: 3,
@@ -1221,7 +1231,7 @@ const Template = ({ theme, accent }) => {
                   autocomplete: "name",
                 },
               })}
-              ${TextInput({
+              ${nunjucks.renderString(TextInput, {
                 params: {
                   label: "Enter your email",
                   headingLevel: 3,
@@ -1234,7 +1244,7 @@ const Template = ({ theme, accent }) => {
                   },
                 },
               })}
-              ${Select({
+              ${nunjucks.renderString(Select, {
                 params: {
                   label: "Sort by",
                   headingLevel: 3,
@@ -1257,7 +1267,7 @@ const Template = ({ theme, accent }) => {
                   ],
                 },
               })}
-              ${Radios({
+              ${nunjucks.renderString(Radios, {
                 params: {
                   label: "Type",
                   headingLevel: 3,
@@ -1280,7 +1290,7 @@ const Template = ({ theme, accent }) => {
                   ],
                 },
               })}
-              ${Checkboxes({
+              ${nunjucks.renderString(Checkboxes, {
                 params: {
                   label: "Categories",
                   headingLevel: 3,
@@ -1303,7 +1313,7 @@ const Template = ({ theme, accent }) => {
                   ],
                 },
               })}
-              ${Textarea({
+              ${nunjucks.renderString(Textarea, {
                 params: {
                   label: "Enter your feedback",
                   headingLevel: 3,
@@ -1325,7 +1335,7 @@ const Template = ({ theme, accent }) => {
         </div>
       </div>
     </main>
-    ${Footer({
+    ${nunjucks.renderString(Footer, {
       params: {
         social: [
           {

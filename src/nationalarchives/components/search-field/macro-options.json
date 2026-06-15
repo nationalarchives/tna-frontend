@@ -9,7 +9,7 @@
     "name": "headingLevel",
     "type": "number",
     "required": false,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Leave blank or set to `0` to use a plain `<label>` element with no heading."
   },
   {
     "name": "headingSize",
@@ -41,6 +41,13 @@
     "type": "string",
     "required": false,
     "description": "The form field value."
+  },
+  {
+    "name": "buttonText",
+    "type": "string",
+    "required": false,
+    "description": "The value of the visually hidden search button text.",
+    "default": "Search"
   },
   {
     "name": "formItemClasses",

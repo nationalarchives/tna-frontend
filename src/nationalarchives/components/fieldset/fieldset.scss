@@ -13,14 +13,18 @@
   }
 
   &__heading {
+    margin: 0;
+    padding: 0;
+
+    display: block;
   }
 
-  &__hint {
+  & &__hint {
     margin-top: spacing.space(0.5);
     margin-bottom: spacing.space(1);
   }
 
-  &__error {
+  & &__error {
     margin-top: spacing.space(0.25);
 
     @include colour.colour-font("form-error-text");

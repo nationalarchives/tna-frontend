@@ -3,25 +3,32 @@
     "name": "previous",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "An optional 'Previous' button.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The text for the previous button.",
+        "default": "Previous"
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL for the previous page."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the previous button."
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "An optional description to show below the previous button text."
       }
     ]
   },
@@ -29,31 +36,33 @@
     "name": "items",
     "type": "array",
     "required": false,
-    "description": "",
+    "description": "A list of pagination items.",
     "params": [
       {
         "name": "number",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The number of the page."
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL of the page."
       },
       {
         "name": "current",
         "type": "boolean",
         "required": false,
-        "description": ""
+        "description": "If `true`, highlight this item as the current page.",
+        "default": false
       },
       {
         "name": "ellipsis",
         "type": "boolean",
         "required": false,
-        "description": "Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored."
+        "description": "Use this option to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored.",
+        "default": false
       }
     ]
   },
@@ -61,25 +70,32 @@
     "name": "next",
     "type": "object",
     "required": false,
-    "description": "",
+    "description": "An optional 'Next' button.",
     "params": [
       {
         "name": "text",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "The text for the next button.",
+        "default": "Next"
       },
       {
         "name": "href",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The URL for the next page."
       },
       {
         "name": "title",
         "type": "string",
         "required": false,
-        "description": ""
+        "description": "An optional title attribute for the next button."
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "An optional description to show below the next button text."
       }
     ]
   },
@@ -87,19 +103,8 @@
     "name": "landmarkLabel",
     "type": "string",
     "required": false,
-    "description": ""
-  },
-  {
-    "name": "solid",
-    "type": "boolean",
-    "required": false,
-    "description": ""
-  },
-  {
-    "name": "spaced",
-    "type": "boolean",
-    "required": false,
-    "description": ""
+    "description": "An optional label for the pagination region.",
+    "default": "Pagination"
   },
   {
     "name": "classes",

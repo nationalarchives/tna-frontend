@@ -4,8 +4,65 @@
     {
       "name": "default",
       "options": {
-        "title": "There is a problem",
+        "items": [
+          {
+            "text": "Enter your full name",
+            "href": "#"
+          },
+          {
+            "text": "The date of the record cannot be in the future",
+            "href": "#"
+          },
+          {
+            "text": "Try submitting the form again"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-error-summary\" data-module=\"tna-error-summary\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\">There is a problem</h2><ul class=\"tna-error-summary__list\"><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">Enter your full name</a></li><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">The date of the record cannot be in the future</a></li><li class=\"tna-error-summary__item\"><span class=\"tna-error-summary__link\">Try submitting the form again</span></li></ul></div></div>"
+    },
+    {
+      "name": "with custom title",
+      "options": {
+        "title": "Something went wrong",
+        "items": [
+          {
+            "text": "Enter your full name",
+            "href": "#"
+          },
+          {
+            "text": "The date of the record cannot be in the future",
+            "href": "#"
+          },
+          {
+            "text": "Try submitting the form again"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-error-summary\" data-module=\"tna-error-summary\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\">Something went wrong</h2><ul class=\"tna-error-summary__list\"><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">Enter your full name</a></li><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">The date of the record cannot be in the future</a></li><li class=\"tna-error-summary__item\"><span class=\"tna-error-summary__link\">Try submitting the form again</span></li></ul></div></div>"
+    },
+    {
+      "name": "with heading level",
+      "options": {
         "headingLevel": 2,
+        "items": [
+          {
+            "text": "Enter your full name",
+            "href": "#"
+          },
+          {
+            "text": "The date of the record cannot be in the future",
+            "href": "#"
+          },
+          {
+            "text": "Try submitting the form again"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-error-summary\" data-module=\"tna-error-summary\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\">There is a problem</h2><ul class=\"tna-error-summary__list\"><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">Enter your full name</a></li><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">The date of the record cannot be in the future</a></li><li class=\"tna-error-summary__item\"><span class=\"tna-error-summary__link\">Try submitting the form again</span></li></ul></div></div>"
+    },
+    {
+      "name": "with disabled autofocus",
+      "options": {
         "items": [
           {
             "text": "Enter your full name",
@@ -22,6 +79,48 @@
         "disableAutoFocus": true
       },
       "html": "<div class=\"tna-error-summary\" data-module=\"tna-error-summary\" data-disable-autofocus=\"true\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\">There is a problem</h2><ul class=\"tna-error-summary__list\"><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">Enter your full name</a></li><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">The date of the record cannot be in the future</a></li><li class=\"tna-error-summary__item\"><span class=\"tna-error-summary__link\">Try submitting the form again</span></li></ul></div></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "items": [
+          {
+            "text": "Enter your full name",
+            "href": "#"
+          },
+          {
+            "text": "The date of the record cannot be in the future",
+            "href": "#"
+          },
+          {
+            "text": "Try submitting the form again"
+          }
+        ],
+        "classes": "error-summary__test-class"
+      },
+      "html": "<div class=\"tna-error-summary error-summary__test-class\" data-module=\"tna-error-summary\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\">There is a problem</h2><ul class=\"tna-error-summary__list\"><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">Enter your full name</a></li><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">The date of the record cannot be in the future</a></li><li class=\"tna-error-summary__item\"><span class=\"tna-error-summary__link\">Try submitting the form again</span></li></ul></div></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "items": [
+          {
+            "text": "Enter your full name",
+            "href": "#"
+          },
+          {
+            "text": "The date of the record cannot be in the future",
+            "href": "#"
+          },
+          {
+            "text": "Try submitting the form again"
+          }
+        ],
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-error-summary\" data-module=\"tna-error-summary\" data-testattribute=\"foobar\"><div role=\"alert\"><h2 class=\"tna-error-summary__heading tna-heading-m\">There is a problem</h2><ul class=\"tna-error-summary__list\"><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">Enter your full name</a></li><li class=\"tna-error-summary__item\"><a href=\"#\" class=\"tna-error-summary__link\">The date of the record cannot be in the future</a></li><li class=\"tna-error-summary__item\"><span class=\"tna-error-summary__link\">Try submitting the form again</span></li></ul></div></div>"
     }
   ]
 }

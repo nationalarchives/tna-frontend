@@ -3,13 +3,14 @@
     "name": "defaultContent",
     "type": "boolean",
     "required": false,
-    "description": "If true, use the default content for the footer."
+    "description": "If `true`, use the default content for the footer.",
+    "default": false
   },
   {
     "name": "defaultContentBaseURL",
     "type": "string",
     "required": false,
-    "description": "Set the base URL for the `defaultContent` links."
+    "description": "Set the base URL for the `defaultContent` links. Do not include a trailing slash."
   },
   {
     "name": "meta",
@@ -73,7 +74,8 @@
         "name": "hideTitle",
         "type": "boolean",
         "required": false,
-        "description": "If true, hide the title of the navigation section."
+        "description": "If `true`, hide the title of the navigation section.",
+        "default": false
       },
       {
         "name": "items",
@@ -103,7 +105,8 @@
             "name": "newTab",
             "type": "boolean",
             "required": false,
-            "description": "If true, open the link in a new tab."
+            "description": "If `true`, open the link in a new tab.",
+            "default": false
           }
         ]
       }
@@ -139,14 +142,21 @@
     "name": "themeSelector",
     "type": "boolean",
     "required": false,
-    "description": "Enable the theme selector (once settings cookies have been accepted)."
+    "description": "If `true`, display the theme selector.",
+    "default": false
   },
   {
     "name": "currentTheme",
     "type": "string",
     "required": false,
-    "default": "light",
-    "description": "The current theme which has been selected. Options are `system`, `light` and `dark`."
+    "description": "The current theme which has been selected. Options are `system`, `light` and `dark`.",
+    "default": "light"
+  },
+  {
+    "name": "cookiesUrl",
+    "type": "string",
+    "required": false,
+    "description": "The URL of the cookie preferences page for the service. Required if `themeSelector` is `true`."
   },
   {
     "name": "classes",

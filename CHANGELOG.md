@@ -5,14 +5,465 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.25.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.42.1...HEAD)
 
 ### Added
+
+- Cards can now have a `style` of `accent-light`
+- New hero components layout option `over` added
+
 ### Changed
+
+- Hero components are "narrow" by default and can now be made larger with `large: true`
+- Updated OpenGraph image with light and dark variants
+
 ### Deprecated
 ### Removed
+
+- `narrow` option on hero components
+
 ### Fixed
+
+- Removed unnecessary focus indicator when clicking on expand breadcrumb button
+
 ### Security
+
+## [0.42.0](https://github.com/nationalarchives/tna-frontend/compare/v0.41.1...v0.42.0) - 2026-06-04
+
+### Added
+
+- Added the ability to use a `caller` function in the code block component
+- Added automatic section highlighting on sticky section sidebar components
+- Checkboxes and radio items can have a specific `id` set rather than having one generated using their `value`
+- "Plain page with sidebar" Prototype Kit template added
+
+### Changed
+
+- Updated default links to "About us" pages in the footer component
+- Improved markup of code block component for better accessibility
+- Updated ESLint config from `.eslintrc.js` to `eslint.config.js` for compatibility with ESLint 9+
+
+### Removed
+
+- "Index grid" Prototype Kit template removed
+
+### Fixed
+
+- Removed `autocapitalize` attribute from text inputs with `type="email"`
+
+## [0.41.1](https://github.com/nationalarchives/tna-frontend/compare/v0.41.0...v0.41.1) - 2026-05-12
+
+### Fixed
+
+- Dark mode support for code block
+
+## [0.41.0](https://github.com/nationalarchives/tna-frontend/compare/v0.40.0...v0.41.0) - 2026-05-11
+
+### Added
+
+- New code block component (moved from root level `code-block.scss` file)
+- Add optional `ariaLabel` property to sidebar component
+
+### Changed
+
+- Updated email template for better email client compatibility (@rzarrouk)
+- Updated maximum default picture height from `40rem` to `50rem`
+
+### Removed
+
+- Removed root level `code-block.scss`
+
+### Fixed
+
+- Stacking order issue fixed in accordions between focused and hovered items
+
+## [0.40.0](https://github.com/nationalarchives/tna-frontend/compare/v0.39.0...v0.40.0) - 2026-04-30
+
+### Changed
+
+- Replaced macro-based `email.njk` layout with a safe, table-based inline-HTML version for improved email client compatibility
+- Updated `code.scss` to `code-block.scss` and moved inline code styles to `utilities/typography`
+- Updated "Visit" link in global header
+- Move code block initialisation from `code.mjs` to `initAll()` in `all.mjs`
+- Remove Prism from `dependencies` to `devDependencies` and don't instanciate as part of TNA Frontend (it has to be instantiated in the consuming application)
+- Remove `lib/tables.mjs` and move `checkTableForScroll()` to `lib/helpers.mjs`
+- Improved `<code>` rendering in forced colours mode
+- Updated Design System link and legal links in default footer content
+- Resized left margin of lists
+
+## [0.39.0](https://github.com/nationalarchives/tna-frontend/compare/v0.38.0...v0.39.0) - 2026-04-01
+
+### Added
+
+- Inline `<code>` elements can be used
+- New code block styles with [Prism](https://prismjs.com/) integration available
+- Dark PNG icons added
+
+### Changed
+
+- Updated email template markup with fixes for automatic sizing and message reformatting
+
+### Fixed
+
+- Spacing fixed for stacked description list with icons
+- Sub-pixel alignment issues fixed in SVG logo
+
+## [0.38.0](https://github.com/nationalarchives/tna-frontend/compare/v0.37.0...v0.38.0) - 2026-03-24
+
+### Added
+
+- `.tna-dl--even` class added for balanced columns
+- Italicise alternative text in images
+- Textarea can split lines into separate, selectable items
+
+### Changed
+
+- Yellow accent buttons have changed from white on brown to black on yellow
+- Logo forground colour changed to dark font
+- Pretty text balancing for `<p>` elements
+- JavaScript class `TextInput` changed to `TextInputPassword` and module changed from `data-module="tna-text-input"` to `data-module="tna-text-input-password"`
+- Updated references of `#000` to `colour.brand-colour("black")` (`#010101`)
+- **Breaking:** Updated blockquote HTML structure and classes
+
+### Fixed
+
+- Improved lined description list styles to avoid hanging lines
+- Individual component CSS includes all other relevant component styles when used in isolation
+
+## [0.37.0](https://github.com/nationalarchives/tna-frontend/compare/v0.36.0...v0.37.0) - 2026-03-16
+
+### Added
+
+- `<time datetime="[ISO 8601]">` HTML elements get updated to localised time on `initAll()`
+
+### Changed
+
+- Updated accent border colour
+- Improvements to droppable file input component for improved visual feedback
+- Moved table captions above tables rather than below
+
+### Fixed
+
+- Improved nested list styles don't require classes on child lists
+- Modified padding of checkbox and radios components to remove inactive/unselectable space between fields and labels
+
+## [0.36.0](https://github.com/nationalarchives/tna-frontend/compare/v0.35.1...v0.36.0) - 2026-03-03
+
+### Changed
+
+- Default footer content updated: new links for News, Podcasts, and Freedom of information
+
+### Fixed
+
+- Incorrect email fixures rectified
+- Email page height issue fixed
+- Nested list spacing fixed
+
+## [0.35.1](https://github.com/nationalarchives/tna-frontend/compare/v0.35.0...v0.35.1) - 2026-02-19
+
+### Changed
+
+- Simplified email CSS replacement string
+
+### Fixed
+
+- Incorrect email fixtures rectified
+
+## [0.35.0](https://github.com/nationalarchives/tna-frontend/compare/v0.34.1...v0.35.0) - 2026-02-19
+
+### Added
+
+- Password text input components have a default `autocomplete` of `current-password` but can be changed to `new-password` with `newPassword: true`
+
+### Changed
+
+- Refactored templates directory - moved `email.njk` template to `layouts/email.njk` and `partials/logo.njk` template to `partials/logo/macro.njk` and moved the Prototype Kit templates to a subdirectory
+
+### Fixed
+
+- Compiled CSS added to packaged email template fixtures
+- Password text input component attributes now pass updated HTML validation rules
+
+## [0.34.1](https://github.com/nationalarchives/tna-frontend/compare/v0.34.0...v0.34.1) - 2026-02-17
+
+### Fixed
+
+- Import missing logo styles
+
+## [0.34.0](https://github.com/nationalarchives/tna-frontend/compare/v0.33.2...v0.34.0) - 2026-02-17
+
+### Added
+
+- Reusable `tnaLogo` macro in `nationalarchives/templates/partials/logo.njk` added to header, global header and footer components
+- New email template and styles created
+
+### Changed
+
+- Plain buttons are now underlined
+- Updated sun icon in theme selector
+
+## [0.33.2](https://github.com/nationalarchives/tna-frontend/compare/v0.33.1...v0.33.2) - 2026-02-10
+
+### Fixed
+
+- Changed description list from `inline-grid` to `grid` to avoid side-by-side layouts
+
+## [0.33.1](https://github.com/nationalarchives/tna-frontend/compare/v0.33.0...v0.33.1) - 2026-02-10
+
+### Added
+
+- Added `tna-dl--left-weighted` and `tna-dl--right-weighted` as options to balance and size description list columns
+
+### Fixed
+
+- Fixed layout of description lists with very long content
+
+## [0.33.0](https://github.com/nationalarchives/tna-frontend/compare/v0.32.0...v0.33.0) - 2026-02-10
+
+### Added
+
+- If enabled, always show the theme selector in the footer with a message to accept settings cookies if they haven't been
+- `previous` and `next` items in pagination components can now have a `description` for when no page items are used and an alternative layout is presented
+- Description lists now have `.tna-dl--zebra` and `.tna-dl--lined` styles
+
+### Changed
+
+- The default `.tna-dl` style is now a plain description list
+
+### Removed
+
+- Pagination components no longer have `currentItemText`, `solid` or `spaced` options
+- `.tna-dl--plain` is no longer needed
+
+### Fixed
+
+- Added `aria-current="page"` to current page in pages-style sidebar
+- Spacing has changed from `px` to `rem` in order to match the typography to fix layout issues that occur when the font is scaled on certain operating systems or browsers
+
+## [0.32.0](https://github.com/nationalarchives/tna-frontend/compare/v0.31.0...v0.32.0) - 2026-01-21
+
+### Added
+
+- Checkbox and radio items can now have hints
+
+### Changed
+
+- Changed animation timing function for scrollable table shadows to `linear`
+- Use CSS scroll-driven animation for scrollable tables if the browser supports it
+- Image loading animations joined into a single rule
+- Whitespace has been removed from the interactable area of checkbox and radio items
+
+### Deprecated
+
+- Removed the ability for a checkbox item to have a separate `name` attribute
+
+### Removed
+
+- Removed unilateral reset of transitions and animations in `reset.scss` for `@media (prefers-reduced-motion)`
+
+### Fixed
+
+- Fixed padding for tables inside accordions
+- Updated SCSS `if()` to official CSS syntax for better support with Dart SASS
+- Scrollable table shadows now work without JavaScript polyfill
+
+## [0.31.0](https://github.com/nationalarchives/tna-frontend/compare/v0.30.2...v0.31.0) - 2026-01-08
+
+### Changed
+
+- When using `tna-!--no-focus-style`, only that element has focus styles removed and its children can continue to show focus
+- Improved width calculation for scrollable table captions when the page has a vertical scrollbar
+- Improved accessibility of scrollable tables with `role` and `aria-describedby` attributes
+- All table wrappers can be scrolled if too wide and ones without a `<caption>` will produce a warning in the console
+
+### Fixed
+
+- Fixed issue with focusing not being applied to cookie banners after accepting or rejecting cookies
+
+## [0.30.2](https://github.com/nationalarchives/tna-frontend/compare/v0.30.1...v0.30.2) - 2026-01-05
+
+### Fixed
+
+- Scrollable table caption message appears only when table is scrollable
+
+## [0.30.1](https://github.com/nationalarchives/tna-frontend/compare/v0.30.0...v0.30.1) - 2026-01-05
+
+### Changed
+
+- Improve rendering of shadows on scrollable tables
+- Ignore all compiled CSS files in Stylelint config
+
+### Fixed
+
+- Fixed layout of tables inside accordion and details components
+
+## [0.30.0](https://github.com/nationalarchives/tna-frontend/compare/v0.29.1...v0.30.0) - 2026-01-02
+
+### Changed
+
+- Updated the default `title` and `aria-label` of the global header logo link from "The National Archives" to "The National Archives home page"
+- Improved design of horizontal scrollable tables
+- Hero content will not use contrast background on smaller devices
+- Add a `title` attribute to icon-only button components
+
+### Removed
+
+- `leftBorder` option removed from hero components
+
+### Fixed
+
+- Set height of icon in search field and add `aria-hidden="true" focusable="false"` for improved accessibility
+- Add JS Firefox polyfill for scrollable tables (no support for [`scroll-timeline`](https://caniuse.com/?search=css-scroll-timeline))
+
+## [0.29.1](https://github.com/nationalarchives/tna-frontend/compare/v0.29.0...v0.29.1) - 2025-11-27
+
+### Fixed
+
+- Fixed a spelling mistake in `parmas` to `params` on back link component
+
+## [0.29.0](https://github.com/nationalarchives/tna-frontend/compare/v0.28.1...v0.29.0) - 2025-11-27
+
+### Added
+
+- Hero components can now have an `accent-light` style
+- New back link component
+- Checkbox, date input and radio components now have `fieldsetClasses` and `fieldsetAttributes` options
+
+### Changed
+
+- Changed icon on search field to magnifying glass
+- Simplify form input element styles with `colour.colour-input()` mixin
+- Set a default heading level and title for the error summary component
+- Remove the option for a plain supertitle from the index grid component
+- In higher contrast mode, the base font weight is increased
+
+### Fixed
+
+- Removed pointer events from images in index grid components to avoid dragging an image that overlaps the chip
+- Add `aria-current="page"` attribute to the current page on the pagination component
+- Fixed small border radius discrepancy on card images
+
+## [0.28.1](https://github.com/nationalarchives/tna-frontend/compare/v0.28.0...v0.28.1) - 2025-10-28
+
+### Fixed
+
+- Fixed active item `z-index` issue
+
+## [0.28.0](https://github.com/nationalarchives/tna-frontend/compare/v0.27.6...v0.28.0) - 2025-10-28
+
+### Added
+
+- Added `faux-full-outline` mixin for full-click cards and other elements that need a larger, pseudo-clickable area
+
+### Changed
+
+- Added back in the right border to search input textboxes and text input password components and spacing between text input and button
+- Set header background to black in high contrast mode
+- Simplify focus styles and remove some unrequired code
+
+### Fixed
+
+- Fixed focusable items `z-index` issue
+- Removed focus style on droppable file input component button to match other button focus/hover styles
+
+## [0.27.6](https://github.com/nationalarchives/tna-frontend/compare/v0.27.5...v0.27.6) - 2025-10-23
+
+### Fixed
+
+- Fixed focus styles after skip link is clicked
+
+## [0.27.5](https://github.com/nationalarchives/tna-frontend/compare/v0.27.4...v0.27.5) - 2025-10-23
+
+### Changed
+
+- Improved focus indicator for cards
+- Added small transition to focus indicators
+
+## [0.27.4](https://github.com/nationalarchives/tna-frontend/compare/v0.27.3...v0.27.4) - 2025-10-23
+
+### Fixed
+
+- Fixed colour of active focus borders
+
+## [0.27.3](https://github.com/nationalarchives/tna-frontend/compare/v0.27.2...v0.27.3) - 2025-10-23
+
+### Fixed
+
+- Improved skip link design in forced color mode
+
+## [0.27.2](https://github.com/nationalarchives/tna-frontend/compare/v0.27.1...v0.27.2) - 2025-10-23
+
+### Changed
+
+- Improved colour of skip links
+- Improved colour of focus indicator
+
+### Removed
+
+- Removed a11y variables `$focus-outline-width` and `$focus-outline-offset` in favour of `$focus-outline-inner-width` and `$focus-outline-outer-width`
+
+## [0.27.1](https://github.com/nationalarchives/tna-frontend/compare/v0.27.0...v0.27.1) - 2025-10-22
+
+### Changed
+
+- Full-height cards remain the same height in high contrast mode
+
+### Fixed
+
+- Fix icon position for plain description lists in high contrast mode
+
+## [0.27.0](https://github.com/nationalarchives/tna-frontend/compare/v0.26.2...v0.27.0) - 2025-10-22
+
+### Changed
+
+- Focus indicator refactored to be more visible and guarantee contrast with surrounding elements
+- The label/heading for single checkboxes is now optional
+- Improved styling of higher contrast cards
+- Changed the colour of list item markers from light text to normal
+- Increased indent of ordered and unordered lists
+
+### Removed
+
+- Full screen and index view options in gallery components have been removed
+
+### Fixed
+
+- Fixed vertical alignment of multiline buttons with icons on small devices
+
+## [0.26.2](https://github.com/nationalarchives/tna-frontend/compare/v0.26.1...v0.26.2) - 2025-10-07
+
+### Fixed
+
+- Fixed issue with scrollable table captions in columns appearing wider than required
+
+## [0.26.1](https://github.com/nationalarchives/tna-frontend/compare/v0.26.0...v0.26.1) - 2025-10-07
+
+### Fixed
+
+- Overwriting default global header and footer content with null values is more robust
+
+## [0.26.0](https://github.com/nationalarchives/tna-frontend/compare/v0.25.1...v0.26.0) - 2025-10-07
+
+### Added
+
+- Table wrappers now have faded sides when scrolling is active
+
+### Changed
+
+- Reduced default border radius from `4px` to `2px`
+- Table captions on scrollable tables now stay within the viewport so are always visible
+- Allow `defaultContent` in global headers and footers to be overwritten
+- Replaced deprecated `clip` properties with `clip-path` and `word-wrap` with `overflow-wrap`
+
+### Fixed
+
+- Remove unused element IDs from `aria-controls` attribute of hamburger menu in global header
+
+## [0.25.1](https://github.com/nationalarchives/tna-frontend/compare/v0.25.0...v0.25.1) - 2025-09-16
+
+### Fixed
+
+- Removed relative paths for Font Awesome imports (`../../node_modules/`)
 
 ## [0.25.0](https://github.com/nationalarchives/tna-frontend/compare/v0.24.0...v0.25.0) - 2025-09-15
 

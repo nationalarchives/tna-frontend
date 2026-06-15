@@ -1,0 +1,33 @@
+@use "../../tools/colour";
+@use "../../tools/spacing";
+@use "../../tools/typography";
+
+.tna-back-link {
+  display: inline-flex;
+  gap: spacing.space(0.5);
+
+  &,
+  &:visited {
+    @include colour.colour-font("font-base");
+  }
+
+  &,
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+  }
+
+  &__inner {
+    text-decoration: underline;
+    @include typography.interactable-text-decoration;
+  }
+
+  &:hover &__inner {
+    @include typography.interacted-text-decoration;
+  }
+
+  &::before {
+    content: "\2039";
+    content: "\2039" / "";
+  }
+}

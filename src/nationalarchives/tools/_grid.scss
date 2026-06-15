@@ -34,6 +34,7 @@
   .tna-column {
     &--full#{$suffix} {
       width: 100%;
+
       flex: none;
     }
 
@@ -46,6 +47,7 @@
         ) {
           &--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
             width: math.div(100%, $count) * $i;
+
             flex: none;
           }
 
@@ -64,6 +66,7 @@
       @if $simplest-fraction-found != true {
         &--width-#{$i}-#{$count}#{$suffix} {
           width: math.div(100%, $count) * $i;
+
           flex: none;
         }
 

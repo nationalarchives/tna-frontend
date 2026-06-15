@@ -7,11 +7,12 @@
 
 .tna-secondary-navigation {
   display: flex;
-  flex-flow: row wrap;
 
   gap: 0 spacing.space(2);
 
   line-height: 1.35;
+
+  flex-flow: row wrap;
 
   &__heading {
     padding-bottom: spacing.space(0.5);
@@ -65,8 +66,7 @@
       @include colour.colour-font("link-visited");
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }
@@ -76,8 +76,7 @@
     text-decoration: none;
     @include colour.thick-keyline-accent(bottom);
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
   }
@@ -110,10 +109,10 @@
 
     &__heading {
       width: 100%;
-      // padding-bottom: 0;
-      border-bottom: none;
 
       align-self: flex-start;
+      // padding-bottom: 0;
+      border-bottom: none;
     }
   }
 

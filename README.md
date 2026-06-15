@@ -12,9 +12,6 @@ TNA Frontend contains the code you need to start building a user interface for N
 ## Quickstart
 
 ```sh
-# Node version
-nvm use
-
 # Install dependencies
 npm install
 

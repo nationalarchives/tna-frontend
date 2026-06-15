@@ -6,7 +6,7 @@
     <div class="tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny">
     {%- if params.supertitle %}
       <hgroup class="tna-hgroup-{{ params.headingSize or 'l' }} tna-index-grid__heading">
-        <p class="tna-hgroup__supertitle{% if params.plainSupertitle %} tna-hgroup__supertitle--plain{% endif %}">{{ params.supertitle }}</p>
+        <p class="tna-hgroup__supertitle">{{ params.supertitle }}</p>
         <h{{ params.headingLevel }} class="tna-hgroup__title">
           {%- if params.href %}
           <a href="{{ params.href }}" class="tna-index-grid__heading-link{% if params.hrefClasses %} {{ params.hrefClasses }}{% endif %}" {%- for attribute, value in params.hrefAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.title }}</a>

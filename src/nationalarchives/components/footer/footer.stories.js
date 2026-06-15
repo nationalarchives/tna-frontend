@@ -1,138 +1,142 @@
-import Footer from "./template.njk";
-import macroOptions from "./macro-options.json";
-import { within, expect } from "@storybook/test";
+import nunjucks from "nunjucks";
+import { expect, within } from "storybook/test";
+
 import Cookies from "../../lib/cookies.mjs";
 
-const argTypes = {
-  meta: { control: "text" },
-  defaultContent: { control: "boolean" },
-  defaultContentBaseURL: { control: "text" },
-  social: { control: "object" },
-  navigation: { control: "object" },
-  showNewsletter: { control: "boolean" },
-  legal: { control: "object" },
-  themeSelector: { control: "boolean" },
-  currentTheme: {
-    control: "inline-radio",
-    options: ["system", "light", "dark", ""],
-  },
-  classes: { control: "text" },
-  attributes: { control: "object" },
-};
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
-Object.keys(argTypes).forEach((argType) => {
-  argTypes[argType].description = macroOptions.find(
-    (option) => option.name === argType,
-  )?.description;
-});
+nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Footer",
-  argTypes,
+  argTypes: Object.fromEntries(
+    Object.entries({
+      defaultContent: { control: "boolean" },
+      defaultContentBaseURL: { control: "text" },
+      meta: { control: "text" },
+      social: { control: "object" },
+      navigation: { control: "object" },
+      showNewsletter: { control: "boolean" },
+      legal: { control: "object" },
+      themeSelector: { control: "boolean" },
+      currentTheme: {
+        control: "inline-radio",
+        options: ["system", "light", "dark", ""],
+      },
+      cookiesURL: { control: "text" },
+      classes: { control: "text" },
+      attributes: { control: "object" },
+    }).map(([key, value]) => [
+      key,
+      {
+        ...value,
+        description: macroOptions.find((option) => option.name === key)
+          ?.description,
+        table: {
+          type: {
+            summary: macroOptions.find((option) => option.name === key)?.type,
+          },
+          defaultValue: {
+            summary: macroOptions.find((option) => option.name === key)
+              ?.default,
+          },
+        },
+      },
+    ]),
+  ),
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
-const Template = ({
-  defaultContent,
-  defaultContentBaseURL,
-  meta,
-  social,
-  navigation,
-  showNewsletter,
-  legal,
-  themeSelector,
-  currentTheme,
-  classes,
-  attributes,
-}) =>
-  Footer({
-    params: {
-      defaultContent,
-      defaultContentBaseURL,
-      meta,
-      social,
-      navigation,
-      showNewsletter,
-      legal,
-      themeSelector,
-      currentTheme,
-      classes,
-      attributes,
-    },
-  });
-
-export const Standard = Template.bind({});
-Standard.args = {
-  defaultContent: true,
-  defaultContentBaseURL: "#",
-};
-
-export const Minimal = Template.bind({});
-Minimal.args = {};
-
-export const ThemeSelector = Template.bind({});
-ThemeSelector.args = {
-  themeSelector: true,
-  currentTheme: "",
-};
-ThemeSelector.decorators = [
-  (Story) => {
-    const cookies = new Cookies({ secure: false, noInit: true });
-    cookies.acceptPolicy("settings");
-    return Story();
+export const Standard = {
+  args: {
+    defaultContent: true,
+    defaultContentBaseURL: "#",
   },
-];
-ThemeSelector.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  const systemLightButton = canvas.getByText("System theme");
-  const themeLightButton = canvas.getByText("Light theme");
-  const darkLightButton = canvas.getByText("Dark theme");
-
-  await expect(systemLightButton).toBeVisible();
-  await expect(themeLightButton).toBeVisible();
-  await expect(darkLightButton).toBeVisible();
-
-  document.cookie.replace(/(?<=^|;).+?(?==|;|$)/g, (name) =>
-    location.hostname
-      .split(".")
-      .reverse()
-      .reduce(
-        (domain) => (
-          (domain = domain.replace(/^\.?[^.]+/, "")),
-          (document.cookie = `${name}=;max-age=0;path=/;domain=${domain}`),
-          domain
-        ),
-        location.hostname,
-      ),
-  );
 };
 
-export const ThemeSelectorWithoutCookies = Template.bind({});
-ThemeSelectorWithoutCookies.parameters = {
-  chromatic: { disableSnapshot: true },
+export const Minimal = {
+  args: {},
 };
-ThemeSelectorWithoutCookies.args = {
-  themeSelector: true,
-  currentTheme: "",
+
+export const ThemeSelector = {
+  args: {
+    themeSelector: true,
+    currentTheme: "",
+    cookiesUrl: "#",
+  },
+  decorators: [
+    (Story) => {
+      const cookies = new Cookies({
+        secure: false,
+      });
+      cookies.acceptPolicy("settings");
+      return Story();
+    },
+  ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement),
+      $systemLightButton = canvas.getByText("System theme"),
+      $themeLightButton = canvas.getByText("Light theme"),
+      $darkLightButton = canvas.getByText("Dark theme"),
+      $themeSelectorNotice = canvasElement.querySelector(
+        `.tna-footer__theme-selector-notice`,
+      );
+
+    await expect($systemLightButton).toBeVisible();
+    await expect($themeLightButton).toBeVisible();
+    await expect($darkLightButton).toBeVisible();
+    await expect($themeSelectorNotice).not.toBeVisible();
+  },
 };
-ThemeSelectorWithoutCookies.decorators = [
-  (Story) => {
+
+export const ThemeSelectorWithoutCookies = {
+  args: {
+    themeSelector: true,
+    currentTheme: "",
+    cookiesUrl: "#",
+  },
+  play: async ({ canvasElement }) => {
     const cookies = new Cookies({
       newInstance: true,
       secure: false,
-      noInit: true,
     });
     cookies.set("cookie_preferences_set", true);
-    cookies.rejectPolicy("settings");
-    return Story();
-  },
-];
-ThemeSelectorWithoutCookies.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  const systemLightButton = canvas.getByText("System theme");
-  const themeLightButton = canvas.getByText("Light theme");
-  const darkLightButton = canvas.getByText("Dark theme");
 
-  await expect(systemLightButton).not.toBeVisible();
-  await expect(themeLightButton).not.toBeVisible();
-  await expect(darkLightButton).not.toBeVisible();
+    const canvas = within(canvasElement),
+      $systemLightButton = canvas.getByText("System theme"),
+      $themeLightButton = canvas.getByText("Light theme"),
+      $darkLightButton = canvas.getByText("Dark theme"),
+      $themeSelectorNotice = canvasElement.querySelector(
+        `.tna-footer__theme-selector-notice`,
+      ),
+      $enableSettingsCookiesButton = canvas.getByText(
+        "enable settings cookies",
+      );
+
+    await expect($systemLightButton).toBeVisible();
+    await expect($themeLightButton).toBeVisible();
+    await expect($darkLightButton).toBeVisible();
+    await expect($themeSelectorNotice).toBeVisible();
+
+    await expect(cookies.isPolicyAccepted("settings")).toBe(false);
+    await expect(cookies.exists("theme")).toBe(false);
+
+    await $enableSettingsCookiesButton.click();
+    await expect($themeSelectorNotice).not.toBeVisible();
+    await expect(cookies.isPolicyAccepted("settings")).toBe(true);
+    await expect(cookies.exists("theme")).toBe(true);
+    await expect(cookies.get("theme")).toBe("light");
+
+    await $darkLightButton.click();
+    await expect(cookies.get("theme")).toBe("dark");
+
+    await $systemLightButton.click();
+    await expect(cookies.get("theme")).toBe("system");
+
+    await $themeLightButton.click();
+    await expect(cookies.get("theme")).toBe("light");
+
+    cookies.rejectAllPolicies();
+  },
 };

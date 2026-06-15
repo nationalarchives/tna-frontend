@@ -1,3 +1,5 @@
+import { checkTableForScroll } from "../../lib/helpers.mjs";
+
 export class Accordion {
   constructor($module) {
     this.$module = $module;
@@ -66,7 +68,7 @@ export class Accordion {
 
   initState() {
     this.$items.forEach(($item) => {
-      if ($item.dataset["isopen"] === "true") {
+      if ($item.dataset.isopen === "true") {
         this.openItem($item);
       } else {
         this.closeItem($item);
@@ -89,6 +91,13 @@ export class Accordion {
     $content.removeAttribute("hidden");
     // $content.setAttribute("tabindex", "0");
     this.syncToggleAllButton();
+
+    const $tableWrapper = $content.querySelectorAll(".tna-table-wrapper");
+    if ($tableWrapper) {
+      $tableWrapper.forEach(($wrapper) => {
+        checkTableForScroll($wrapper);
+      });
+    }
   }
 
   closeItem($item) {

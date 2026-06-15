@@ -1,5 +1,7 @@
+/* eslint-disable no-new */
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
+import { CodeBlock } from "./components/code-block/code-block.mjs";
 import { CookieBanner } from "./components/cookie-banner/cookie-banner.mjs";
 import { DateInputProgressive } from "./components/date-input/date-input.mjs";
 import { ErrorSummary } from "./components/error-summary/error-summary.mjs";
@@ -9,39 +11,67 @@ import { Gallery } from "./components/gallery/gallery.mjs";
 import { GlobalHeader } from "./components/global-header/global-header.mjs";
 import { Header } from "./components/header/header.mjs";
 import { Picture } from "./components/picture/picture.mjs";
+import { Sidebar } from "./components/sidebar/sidebar.mjs";
 import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
-import { TextInput } from "./components/text-input/text-input.mjs";
+import { TextInputPassword } from "./components/text-input/text-input.mjs";
+import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
 import Cookies from "./lib/cookies.mjs";
+import { checkTableForScroll, updateTimeElement } from "./lib/helpers.mjs";
 
-const initAll = (options) => {
-  options = typeof options !== "undefined" ? options : {};
-  const $scope =
-    options.scope instanceof HTMLElement ? options.scope : document;
-
-  const $body = document.documentElement;
-  $body.classList.add("tna-template--js-enabled");
+const initAll = (options = {}) => {
+  const { scope } = options;
+  let $scope = document;
+  if (scope) {
+    if (scope instanceof HTMLElement) {
+      $scope = scope;
+    } else {
+      throw new Error("Scope must be an HTMLElement");
+    }
+  }
+  const $html = document.documentElement;
+  $html.classList.add("tna-template--js-enabled");
 
   const onFirstTouch = () => {
     window.removeEventListener("touchstart", onFirstTouch);
-    $body.classList.add("tna-template--touched");
+    $html.classList.add("tna-template--touched");
   };
+  window.addEventListener("touchstart", onFirstTouch);
 
-  const onKeyDown = (e) => {
-    if (e.key === "Tab") {
-      $body.classList.add("tna-template--tabbed");
-      $body.classList.remove("tna-template--clicked");
+  const onKeyDown = (event) => {
+    if (event.key === "Tab") {
+      $html.classList.add("tna-template--tabbed");
+      $html.classList.remove("tna-template--clicked");
     }
   };
+  window.addEventListener("keydown", onKeyDown);
 
   const onMouseDown = () => {
-    $body.classList.add("tna-template--clicked");
-    $body.classList.remove("tna-template--tabbed");
+    $html.classList.add("tna-template--clicked");
+    $html.classList.remove("tna-template--tabbed");
   };
-
-  window.addEventListener("touchstart", onFirstTouch);
-  window.addEventListener("keydown", onKeyDown);
   window.addEventListener("mousedown", onMouseDown);
+
+  /*
+   * ==========================================
+   * Checks if widths of all tables on the page
+   * are wider than their parent container, and
+   * allowing horizontal scrolling if they are.
+   * This is done both on load and on resize.
+   * ==========================================
+   */
+  const $tableWrappers = $scope.querySelectorAll(".tna-table-wrapper");
+  $tableWrappers.forEach(($tableWrapper) => checkTableForScroll($tableWrapper));
+  window.addEventListener("resize", () => {
+    $tableWrappers.forEach(($tableWrapper) =>
+      checkTableForScroll($tableWrapper),
+    );
+  });
+
+  // Remove this opt-in class in a later release
+  if ($html.classList.contains("tna-template--enhance-time-elements")) {
+    document.querySelectorAll("time[datetime]").forEach(updateTimeElement);
+  }
 
   const $accordions = $scope.querySelectorAll('[data-module="tna-accordion"]');
   $accordions.forEach(($accordion) => {
@@ -52,6 +82,11 @@ const initAll = (options) => {
   if ($breadcrumbs) {
     new Breadcrumbs($breadcrumbs);
   }
+
+  const $codeBlocks = $scope.querySelectorAll('[data-module="tna-code-block"]');
+  $codeBlocks.forEach(($codeBlock) => {
+    new CodeBlock($codeBlock);
+  });
 
   const $cookieBanner = $scope.querySelector(
     '[data-module="tna-cookie-banner"]',
@@ -106,6 +141,12 @@ const initAll = (options) => {
     new Picture($picture);
   });
 
+  const $sidebar = $scope.querySelector('[data-module="tna-sidebar-sections"]');
+  if ($sidebar) {
+    const { scrollTopThreshold, disableHighlightSize } = $sidebar.dataset;
+    new Sidebar($sidebar, { scrollTopThreshold, disableHighlightSize });
+  }
+
   const $skipLinks = $scope.querySelectorAll('[data-module="tna-skip-link"]');
   $skipLinks.forEach(($skipLink) => {
     new SkipLink($skipLink);
@@ -116,63 +157,51 @@ const initAll = (options) => {
     new Tabs($tabModule);
   });
 
-  const $textInputs = $scope.querySelectorAll('[data-module="tna-text-input"]');
-  $textInputs.forEach(($textInput) => {
-    new TextInput($textInput);
+  const $textAreaItemisedRows = $scope.querySelectorAll(
+    '[data-module="tna-textarea-itemised-rows"]',
+  );
+  $textAreaItemisedRows.forEach(($textAreaWithItemisedRows) => {
+    const { enhancedHint } = $textAreaWithItemisedRows.dataset;
+    new TextAreaItemisedRows($textAreaWithItemisedRows, { enhancedHint });
   });
 
-  const checkTableForScroll = ($tableWrapper) => {
-    const scrollable = $tableWrapper.scrollWidth > $tableWrapper.clientWidth;
-    const $tableCaption = $tableWrapper.querySelector(".tna-table__caption");
-    if (scrollable) {
-      $tableWrapper.setAttribute("tabindex", "0");
-      $tableCaption?.classList.add("tna-table__caption--scroll");
-    } else {
-      $tableWrapper.removeAttribute("tabindex");
-      $tableCaption?.classList.remove("tna-table__caption--scroll");
-    }
-  };
-
-  const $tableWrappers = document.querySelectorAll(
-    ".tna-table-wrapper:has(.tna-table__caption)",
+  const $textInputPasswords = $scope.querySelectorAll(
+    '[data-module="tna-text-input-password"]',
   );
-  $tableWrappers.forEach(($tableWrapper) => checkTableForScroll($tableWrapper));
-  window.addEventListener("resize", () => {
-    $tableWrappers.forEach(($tableWrapper) =>
-      checkTableForScroll($tableWrapper),
-    );
+  $textInputPasswords.forEach(($textInputPassword) => {
+    new TextInputPassword($textInputPassword);
   });
 
   window.matchMedia("print").addEventListener("change", (evt) => {
     if (evt.matches) {
-      document
+      $scope
         .querySelectorAll(".tna-details__details:not([open])")
-        .forEach((e) => {
-          e.setAttribute("open", "");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.setAttribute("open", "");
+          $element.dataset.wasClosed = "";
         });
-      document
+      $scope
         .querySelectorAll(
           ".tna-accordion__content[hidden], .tna-picture__transcript[hidden]",
         )
-        .forEach((e) => {
-          e.removeAttribute("hidden");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.removeAttribute("hidden");
+          $element.dataset.wasClosed = "";
         });
     } else {
-      document
+      $scope
         .querySelectorAll(".tna-details__details[data-was-closed]")
-        .forEach((e) => {
-          e.removeAttribute("open");
-          delete e.dataset.wasClosed;
+        .forEach(($element) => {
+          $element.removeAttribute("open");
+          delete $element.dataset.wasClosed;
         });
-      document
+      $scope
         .querySelectorAll(
           ".tna-accordion__content[data-was-closed], .tna-picture__transcript[data-was-closed]",
         )
-        .forEach((e) => {
-          e.setAttribute("hidden", "");
-          e.dataset.wasClosed = "";
+        .forEach(($element) => {
+          $element.setAttribute("hidden", "");
+          $element.dataset.wasClosed = "";
         });
     }
   });
@@ -183,6 +212,7 @@ export {
   Cookies,
   Accordion,
   Breadcrumbs,
+  CodeBlock,
   CookieBanner,
   DateInputProgressive,
   ErrorSummary,
@@ -192,7 +222,11 @@ export {
   GlobalHeader,
   Header,
   Picture,
+  Sidebar,
   SkipLink,
   Tabs,
-  TextInput,
+  TextInputPassword,
+  TextAreaItemisedRows,
+  checkTableForScroll,
+  updateTimeElement,
 };

@@ -1,4 +1,4 @@
-{% from "nationalarchives/components/button/macro.njk" import tnaButton %}
+{%- from "nationalarchives/components/button/macro.njk" import tnaButton -%}
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.style == "contrast" -%}
@@ -43,7 +43,7 @@
         }) | indent(8) }}
       </div>
     </div>
-    <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--accepted" tabindex="0" hidden>
+    <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--accepted tna-!--no-focus-style" hidden>
       {% if params.acceptedBody %}
       {{ params.acceptedBody | safe }}
       {% else %}
@@ -59,7 +59,7 @@
         }) | indent(8) }}
       </div>
     </div>
-    <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--rejected" tabindex="0" hidden>
+    <div class="tna-column tna-column--full tna-cookie-banner__message tna-cookie-banner__message--rejected tna-!--no-focus-style" hidden>
       {% if params.rejectedBody %}
       {{ params.rejectedBody | safe }}
       {% else %}

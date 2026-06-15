@@ -1,0 +1,40 @@
+[
+  {
+    "name": "filename",
+    "type": "string",
+    "required": false,
+    "description": "The filename to display in the code block's title bar.",
+    "default": "plain"
+  },
+  {
+    "name": "code",
+    "type": "string",
+    "required": true,
+    "description": "The code content to display in the code block. An alternative is to use the `caller` function to include content from a block."
+  },
+  {
+    "name": "language",
+    "type": "string",
+    "required": false,
+    "description": "If set, adds the programming language of the code block which enables syntax highlighting with Prism.js."
+  },
+  {
+    "name": "copy",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, show a copy button in the code block.",
+    "default": false
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the code block element."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the code block element."
+  }
+]

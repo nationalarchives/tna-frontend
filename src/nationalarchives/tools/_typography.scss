@@ -26,9 +26,9 @@
 
 @mixin main-font($bold: false) {
   font-family: typography.$main-font-family;
+  font-variation-settings: "wdth" 100;
   font-style: normal;
   font-optical-sizing: auto;
-  font-variation-settings: "wdth" 100;
   @if $bold {
     @include main-font-weight-bold;
   } @else {

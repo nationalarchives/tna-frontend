@@ -18,18 +18,22 @@
     padding: 0;
 
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: spacing.space(1);
-    flex: 1;
 
     list-style: none;
 
+    /* stylelint-disable */
     @include colour.colour-border("keyline", 0, solid);
     border-left-width: 1px;
+    /* stylelint-enable */
   }
 
   &__item {
-    padding: 0 0 0 spacing.space(0.5);
+    @include colour.thick-keyline-transparent(left);
+
+    padding: 0 0 0 spacing.space(0.25);
 
     display: grid;
     grid-template-columns: auto 1fr;
@@ -72,38 +76,9 @@
   &--full-click {
   }
 
-  &--full-click &__link {
-    &::before {
-      content: "";
+  @include a11y.faux-full-outline("&--full-click &__link");
 
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-
-      border-radius: 0.1px;
-    }
-
-    &:hover,
-    &:focus-visible,
-    &:active {
-      &::before {
-        @include colour.thick-keyline(left);
-      }
-    }
-
-    &:focus-visible,
-    &:active {
-      outline: none;
-
-      &::before {
-        @include a11y.focus-outline;
-      }
-    }
-
-    &:active {
-      &::before {
-        @include a11y.active-outline;
-      }
-    }
+  &--full-click &__item:has(&__link:hover) {
+    @include colour.thick-keyline(left);
   }
 }

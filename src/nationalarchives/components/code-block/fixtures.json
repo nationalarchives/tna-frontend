@@ -1,0 +1,88 @@
+{
+  "component": "code-block",
+  "fixtures": [
+    {
+      "name": "plain code block",
+      "options": {
+        "code": "Plaintext code block"
+      },
+      "html": "<div class=\"tna-code-block\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
+    },
+    {
+      "name": "with filename",
+      "options": {
+        "filename": "example.txt",
+        "code": "Plaintext code block"
+      },
+      "html": "<div class=\"tna-code-block\" title=\"example.txt\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block: example.txt\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
+    },
+    {
+      "name": "with language",
+      "options": {
+        "language": "json",
+        "code": "{\"foo\": \"bar\"}"
+      },
+      "html": "<div class=\"tna-code-block\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-json\">{&quot;foo&quot;: &quot;bar&quot;}</code></pre></div>"
+    },
+    {
+      "name": "with copy button",
+      "options": {
+        "code": "Plaintext code block",
+        "copy": true
+      },
+      "html": "<div class=\"tna-code-block\" data-module=\"tna-code-block\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "label": "Categories",
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "classes": "code-block__test-class"
+      },
+      "html": "<div class=\"tna-code-block code-block__test-class\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-plain\"></code></pre></div>"
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "label": "Categories",
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ],
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<div class=\"tna-code-block\" data-testattribute=\"foobar\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-plain\"></code></pre></div>"
+    }
+  ]
+}

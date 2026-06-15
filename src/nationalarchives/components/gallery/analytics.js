@@ -18,6 +18,7 @@ export default [
           $scope.querySelectorAll(".tna-gallery__navigation-item"),
         ).findIndex(
           ($itemButton) => $itemButton.getAttribute("aria-current") === "true",
+          /* eslint-disable-next-line no-magic-numbers */
         ) || -1) + 1,
     },
     events: [
@@ -88,27 +89,6 @@ export default [
           data_link: "keypress",
           media_action: "progress",
         },
-      },
-      {
-        eventName: "enter-fullscreen",
-        targetElement: '.tna-gallery__options button[value="enter-fullscreen"]',
-        on: "click",
-        rootData: {
-          data_link: "enter_full_screen_button",
-        },
-      },
-      {
-        eventName: "exit-fullscreen",
-        targetElement: '.tna-gallery__options button[value="exit-fullscreen"]',
-        on: "click",
-        rootData: {
-          data_link: "exit_full_screen_button",
-        },
-      },
-      {
-        eventName: "index",
-        targetElement: '.tna-gallery__options button[value="show-index"]',
-        on: "click",
       },
     ],
   },

@@ -57,7 +57,8 @@ export class DateInputProgressive {
     if (!this.$yearInput) {
       return true;
     }
-    const yearValue = parseInt(this.$yearInput.value.trim());
+    const yearValue = parseInt(this.$yearInput.value.trim(), 10);
+    /* eslint-disable-next-line no-magic-numbers */
     return !isNaN(this.$yearInput.value) && !isNaN(yearValue) && yearValue > 0;
   }
 
@@ -66,7 +67,7 @@ export class DateInputProgressive {
       return true;
     }
     const monthRawValue = this.$monthInput.value.trim();
-    const monthIntValue = parseInt(monthRawValue);
+    const monthIntValue = parseInt(monthRawValue, 10);
     const validMonthStrings = [
       "january",
       "february",
@@ -95,7 +96,9 @@ export class DateInputProgressive {
     return (
       (!isNaN(this.$monthInput.value) &&
         !isNaN(monthIntValue) &&
+        /* eslint-disable-next-line no-magic-numbers */
         monthIntValue > 0 &&
+        /* eslint-disable-next-line no-magic-numbers */
         monthIntValue <= 12) ||
       validMonthStrings.includes(monthRawValue.toLowerCase())
     );

@@ -1,31 +1,29 @@
-@use "../../variables/forms";
+@use "../../variables/forms" as formsVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
 
-$textarea-minimum-lines-visible: 5.5 !default;
+$textarea-minimum-lines-visible: 5 !default;
 $textarea-line-height: 1.5rem !default;
 $textarea-vertical-padding: 0.25 !default;
 
 .tna-textarea {
   width: 100%;
-  min-height: #{($textarea-line-height * $textarea-minimum-lines-visible) +
-    (spacing.space($textarea-vertical-padding * 2))};
+  min-height: calc(
+    #{$textarea-line-height * $textarea-minimum-lines-visible} +
+      #{spacing.space($textarea-vertical-padding * 2)}
+  );
   padding: spacing.space($textarea-vertical-padding) spacing.space(0.5);
 
   display: block;
   box-sizing: border-box;
 
-  line-height: 1.5rem;
-
   resize: vertical;
 
-  @include colour.always-light;
-  @include colour.colour-font("input-foreground");
+  line-height: 1.5;
 
-  @include colour.colour-background("input-background");
+  @include colour.colour-input;
 
-  @include colour.colour-border("input-border", forms.$form-field-border-width);
   @include borders.rounded-border;
 
   .tna-form-item--error & {
@@ -42,5 +40,21 @@ $textarea-vertical-padding: 0.25 !default;
 
   &--xl {
     max-width: 80rem;
+  }
+}
+
+[data-module="tna-textarea-itemised-rows"] {
+  .tna-form-item__body {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+
+    .tna-text-input {
+      flex: 1;
+    }
+
+    .tna-button {
+      align-items: center;
+    }
   }
 }

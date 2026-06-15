@@ -14,8 +14,13 @@
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+  @include colour.on-high-contrast {
+    @include typography.main-font-weight-medium;
+  }
 }
 
 .tna-template__body {
@@ -39,6 +44,8 @@ strong {
 p {
   @include spacing.space-above;
 
+  text-wrap: pretty;
+
   + p {
     margin-top: spacing.space(1);
   }
@@ -59,7 +66,6 @@ a {
   }
 
   &:hover,
-  &:focus-visible,
   &:active {
     @include typography.interacted-text-decoration;
   }
@@ -87,14 +93,14 @@ small {
   @include typography.detail-font-small;
   line-height: 1;
   text-align: center;
+  text-wrap-style: balance;
 
   @include borders.rounded-border;
 
   @at-root #{selector.unify("a", &)} {
     text-decoration: underline;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       text-decoration: underline;
       text-decoration-thickness: 0.1875em;
       text-underline-offset: 0.0625em;
@@ -125,8 +131,7 @@ small {
   border-radius: 0.1px;
 
   @at-root #{selector.unify("a", &)} {
-    &:hover,
-    &:focus-visible {
+    &:hover {
       @include typography.interacted-text-decoration;
     }
 
@@ -440,6 +445,17 @@ small {
 
   @include colour.thick-keyline-accent(left);
 
+  // &::before {
+  //   content: "\201C";
+
+  //   display: block;
+
+  //   font-family: Georgia, "Times New Roman", Times, serif;
+  //   font-size: 3em;
+  //   line-height: 1;
+  //   @include colour.colour-font("font-light");
+  // }
+
   &__quote {
     @include typography.main-font-weight-medium;
     quotes: auto;
@@ -458,7 +474,7 @@ small {
     }
   }
 
-  &__citation {
+  &__attribution {
     margin-top: spacing.space(1);
 
     @include typography.font-size(16);
@@ -467,6 +483,10 @@ small {
       content: "\2014" " ";
       content: "\2014" " " / "";
     }
+  }
+
+  &__citation {
+    font-style: inherit;
   }
 
   @include media.on-tiny {
@@ -507,4 +527,38 @@ small {
 address {
   line-height: 1.375;
   font-style: inherit;
+}
+
+code,
+pre {
+  font-family: typographyVars.$code-font-family;
+}
+
+code {
+  color: #be0e5a;
+  font-size: 0.95em;
+
+  background-color: #f1ece9;
+
+  .tna-template--dark-theme & {
+    // color: #ffa07a;
+    color: #d49;
+
+    // background-color: #2b2b2b;
+    background-color: #111;
+  }
+
+  .tna-template--system-theme & {
+    @media (prefers-color-scheme: dark) {
+      // color: #ffa07a;
+      color: #d49;
+
+      // background-color: #2b2b2b;
+      background-color: #111;
+    }
+  }
+
+  @include colour.on-forced-colours {
+    @include colour.colour-border("keyline", 1px);
+  }
 }

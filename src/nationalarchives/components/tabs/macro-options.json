@@ -9,25 +9,25 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "",
+    "description": "A list of tab items.",
     "params": [
       {
         "name": "id",
         "type": "string",
         "required": true,
-        "description": "A unique ID for the tabs item."
+        "description": "A unique ID for the tab item."
       },
       {
         "name": "title",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The title of the tab item."
       },
       {
         "name": "body",
         "type": "string",
         "required": true,
-        "description": ""
+        "description": "The body content of the tab item."
       }
     ]
   },

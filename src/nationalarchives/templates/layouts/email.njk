@@ -1,0 +1,155 @@
+{%- set tna_logo_png_src = tna_logo_png_src or "https://design-system.nationalarchives.gov.uk/static/assets/images/icon-1024x1024-dark.png" -%}
+{%- set tna_footer_logo_png_src = tna_footer_logo_png_src or tna_logo_png_src -%}
+
+<!doctype html>
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>{{ subject | default("Email from The National Archives") | e }}</title>
+    <!--[if mso]> <noscript> <xml> <o:OfficeDocumentSettings> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml> </noscript> <![endif]-->
+  </head>
+  <body class="email-page" style="margin:0; padding:0; background-color:#f3f2f1; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif; color:#343338;">
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#f3f2f1; border-collapse:collapse;">
+      <tr>
+        <td align="center" style="padding:32px 0;">
+          <table class="email-container" role="presentation" width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="width:100%; max-width:600px; background-color:#ffffff; border-collapse:collapse;box-shadow: 0 .25rem 1rem -.25rem #00000040, 0 .125rem .5rem -.25rem #000000bf;">
+            <tr>
+              <td style="padding:0;">
+                <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#1E1E1E" style="border-collapse:collapse; background-color:#1E1E1E;">
+                  <tr>
+                    <td align="left" style="padding:16px 32px;">
+                      <img src="{{ tna_logo_png_src | e }}" width="80" height="80" alt="The National Archives" style="display:block; border:0; outline:none; text-decoration:none; height:auto;">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            {% if panel is defined and panel %}
+            <tr>
+              <td style="padding:32px 32px 0;">
+                <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#00623b" style="border-collapse:collapse; background-color:#00623b;">
+                  <tr>
+                    <td align="center" style="padding:24px; font-size:19px; line-height:1.6; color:#ffffff; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif; text-align:center;">
+                      <h1 style="margin:0; padding:0; font-size:36px; line-height:1.25; font-weight:600; font-family:'Arial Narrow', 'Trebuchet MS', Arial, Helvetica, sans-serif; color:#ffffff; text-align:center;">{{ panel.title | default("Email from The National Archives") | e }}</h1>
+                      {% if panel.body is defined and panel.body %}
+                      {{ panel.body | safe }}
+                      {% endif %}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            {% endif %}
+
+            <tr>
+              <td style="padding:0;">
+                <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                  {% if content is defined and content %}
+                  <tr>
+                    <td class="email-text" style="padding:32px; font-size:19px; line-height:1.6; color:#343338; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                      {{ content | safe }}
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  {% if ctaButtons is defined and ctaButtons %}
+                  <tr>
+                    <td style="padding:0 32px 32px;">
+                      {% for button in ctaButtons %}
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                        <tr>
+                          <td style="padding:0 0 12px 0;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                              <tr>
+                                <td class="email-cta-cell" bgcolor="#1E1E1E" style="border-radius:2px; background-color:#1E1E1E;">
+                                  <a class="email-cta-link" href="{{ button.href | default('#') | e }}" style="display:inline-block; padding:12px 20px; font-size:19px; line-height:1.35; font-weight:bold; color:#ffffff; text-decoration:none; background-color:#1E1E1E; border:1px solid #1E1E1E; border-radius:2px;">{{ button.text | default(button.label) | default('View details') | e }}</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  {% endif %}
+
+                  {% if signoff is defined and signoff %}
+                  <tr>
+                    <td class="email-text" style="padding:0 32px 32px; font-size:19px; line-height:1.6; color:#343338; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif;">
+                      {{ signoff | safe }}
+                    </td>
+                  </tr>
+                  {% endif %}
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:0;">
+                <table class="email-footer" role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#1E1E1E" style="border-collapse:collapse; background-color:#1E1E1E;">
+                  <tr>
+                    <td style="padding:32px 32px 24px;">
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                        <tr>
+                          <td width="80" valign="top" style="padding:0 24px 0 0;">
+                            <img src="{{ tna_footer_logo_png_src | e }}" width="80" height="80" alt="The National Archives" style="display:block; border:0; outline:none; text-decoration:none; height:auto;">
+                          </td>
+                          <td valign="top">
+                            <h2 class="email-footer-title" style="margin:0 0 8px 0; font-size:16px; line-height:1.3; font-weight:bold; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif; color:#ffffff;">The National Archives</h2>
+                            <p class="email-footer-text" style="margin:0; font-size:14px; line-height:1.5; color:#ffffff;">Kew, Richmond<br>TW9 4DU</p>
+                            <p style="margin:8px 0 0 0; font-size:14px; line-height:1.5;"><a class="email-link" href="https://www.nationalarchives.gov.uk" style="color:#ffffff; text-decoration:underline;">nationalarchives.gov.uk</a></p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0 32px;">
+                      <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                        <tr>
+                          <td class="email-divider" style="border-top:1px solid #626262;"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:16px 32px 32px;">
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                        <tr>
+                          <td style="padding:0;">
+                            <h3 class="email-social-title" style="margin:0 0 8px; font-size:14px; line-height:1.4; font-weight:bold; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif; color:#ffffff;">Follow us on social media</h3>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:0;">
+                            <p style="margin:0; font-size:12px; line-height:1.5; font-family:'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif; color:#ffffff;">
+                              <a class="email-social-link" href="https://twitter.com/UKNatArchives" style="color:#ffffff; text-decoration:underline;">X (formerly Twitter)</a>
+                              <span style="color:#626262">|</span>
+                              <a class="email-social-link" href="https://www.youtube.com/c/TheNationalArchivesUK" style="color:#ffffff; text-decoration:underline;">YouTube</a>
+                              <span style="color:#626262">|</span>
+                              <a class="email-social-link" href="https://www.facebook.com/TheNationalArchives" style="color:#ffffff; text-decoration:underline;">Facebook</a>
+                              <span style="color:#626262">|</span>
+                              <a class="email-social-link" href="https://www.flickr.com/photos/nationalarchives" style="color:#ffffff; text-decoration:underline;">Flickr</a>
+                              <span style="color:#626262">|</span>
+                              <a class="email-social-link" href="https://www.instagram.com/nationalarchivesuk/" style="color:#ffffff; text-decoration:underline;">Instagram</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

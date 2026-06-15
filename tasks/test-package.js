@@ -66,27 +66,43 @@ const checkExists = [
   "nationalarchives/assets/fonts/RobotoMono-Medium.ttf",
   "nationalarchives/assets/fonts/RobotoMono-Regular.ttf",
   "nationalarchives/assets/images/icon-48x48.png",
+  "nationalarchives/assets/images/icon-48x48-dark.png",
   "nationalarchives/assets/images/icon-72x72.png",
+  "nationalarchives/assets/images/icon-72x72-dark.png",
   "nationalarchives/assets/images/icon-96x96.png",
+  "nationalarchives/assets/images/icon-96x96-dark.png",
   "nationalarchives/assets/images/icon-120x120.png",
+  "nationalarchives/assets/images/icon-120x120-dark.png",
   "nationalarchives/assets/images/icon-144x144.png",
+  "nationalarchives/assets/images/icon-144x144-dark.png",
   "nationalarchives/assets/images/icon-152x152.png",
+  "nationalarchives/assets/images/icon-152x152-dark.png",
   "nationalarchives/assets/images/icon-167x167.png",
+  "nationalarchives/assets/images/icon-167x167-dark.png",
   "nationalarchives/assets/images/icon-180x180.png",
+  "nationalarchives/assets/images/icon-180x180-dark.png",
   "nationalarchives/assets/images/icon-192x192.png",
+  "nationalarchives/assets/images/icon-192x192-dark.png",
   "nationalarchives/assets/images/icon-256x256.png",
+  "nationalarchives/assets/images/icon-256x256-dark.png",
   "nationalarchives/assets/images/icon-512x512.png",
+  "nationalarchives/assets/images/icon-512x512-dark.png",
   "nationalarchives/assets/images/icon-1024x1024.png",
+  "nationalarchives/assets/images/icon-1024x1024-dark.png",
   "nationalarchives/assets/images/favicon.ico",
   "nationalarchives/assets/images/mask-icon.svg",
   "nationalarchives/assets/images/mstile-150x150.png",
   "nationalarchives/assets/images/nationalarchives-opengraph-image.png",
   "nationalarchives/assets/images/tna-square-logo.svg",
+  "nationalarchives/assets/images/tna-square-logo-dark.svg",
+  "nationalarchives/assets/images/tna-square-logo-light.svg",
   // Components
   ...componentFiles("accordion", "Accordion"),
+  ...componentFiles("back-link"),
   ...componentFiles("breadcrumbs", "Breadcrumbs"),
   ...componentFiles("button"),
   ...componentFiles("card"),
+  ...componentFiles("code-block", "CodeBlock"),
   ...componentFiles("checkboxes"),
   ...componentFiles("compound-filters"),
   ...componentFiles("cookie-banner", "CookieBanner"),
@@ -112,13 +128,19 @@ const checkExists = [
   ...componentFiles("search-field"),
   ...componentFiles("secondary-navigation"),
   ...componentFiles("select"),
-  ...componentFiles("sidebar"),
+  ...componentFiles("sidebar", "Sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
-  ...componentFiles("text-input", "TextInput"),
-  ...componentFiles("textarea"),
+  ...componentFiles("text-input", "TextInputPassword"),
+  ...componentFiles("textarea", "TextAreaItemisedRows"),
   ...componentFiles("time-input"),
   ...componentFiles("warning"),
+  // Libraries
+  "nationalarchives/lib/analytics-helpers.mjs",
+  "nationalarchives/lib/cookies.mjs",
+  "nationalarchives/lib/_functions.scss",
+  "nationalarchives/lib/helpers.mjs",
+  "nationalarchives/lib/uuid.mjs",
   // Tools
   "nationalarchives/tools/_a11y.scss",
   "nationalarchives/tools/_colour.scss",
@@ -128,14 +150,14 @@ const checkExists = [
   "nationalarchives/tools/_spacing.scss",
   "nationalarchives/tools/_typography.scss",
   // Utilities
-  "nationalarchives/utilities/_a11y.scss",
-  "nationalarchives/utilities/_animations.scss",
-  "nationalarchives/utilities/_areas.scss",
+  "nationalarchives/utilities/a11y/_index.scss",
+  "nationalarchives/utilities/animations/_index.scss",
+  "nationalarchives/utilities/areas/_index.scss",
   "nationalarchives/utilities/colour/_index.scss",
-  "nationalarchives/utilities/_columns.scss",
-  "nationalarchives/utilities/_debug.scss",
+  "nationalarchives/utilities/columns/_index.scss",
+  "nationalarchives/utilities/debug/_index.scss",
   "nationalarchives/utilities/forms/_index.scss",
-  "nationalarchives/utilities/_global.scss",
+  "nationalarchives/utilities/global/_index.scss",
   "nationalarchives/utilities/grid/_index.scss",
   "nationalarchives/utilities/grid/fixtures.json",
   "nationalarchives/utilities/grid/macro-options.json",
@@ -143,8 +165,9 @@ const checkExists = [
   "nationalarchives/utilities/grid/template.njk",
   "nationalarchives/utilities/_index.scss",
   "nationalarchives/utilities/lists/_index.scss",
+  "nationalarchives/utilities/logo/_index.scss",
   "nationalarchives/utilities/overrides/_index.scss",
-  "nationalarchives/utilities/_reset.scss",
+  "nationalarchives/utilities/reset/_index.scss",
   "nationalarchives/utilities/tables/_index.scss",
   "nationalarchives/utilities/typography/_index.scss",
   // Variables
@@ -161,16 +184,17 @@ const checkExists = [
   "nationalarchives/variables/_typography.scss",
   // Templates
   "nationalarchives/templates/layouts/_generic.njk",
-  "nationalarchives/templates/layouts/_prototype-kit.njk",
-  "nationalarchives/templates/error-page-not-found.njk",
-  "nationalarchives/templates/index-grid.njk",
-  "nationalarchives/templates/list.njk",
-  "nationalarchives/templates/plain.njk",
+  "nationalarchives/templates/layouts/email.njk",
+  "nationalarchives/templates/partials/logo/macro.njk",
+  "nationalarchives/templates/partials/logo/template.njk",
+  "nationalarchives/templates/prototype-kit/_base.njk",
+  "nationalarchives/templates/prototype-kit/error-page-not-found.njk",
+  "nationalarchives/templates/prototype-kit/list.njk",
+  "nationalarchives/templates/prototype-kit/plain.njk",
+  "nationalarchives/templates/prototype-kit/plain-with-sidebar.njk",
   // Config
   "config/.babelrc.json",
-  "config/.eslintrc.js",
   "config/.htmlvalidate.json",
-  "config/stylelint.config.js",
 ];
 
 console.log("Testing package file structure...");
@@ -181,7 +205,7 @@ checkExists.forEach((checkFile) => {
     pass(
       `${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
-      } exists: ${checkFilePath.replace(/\/$/, "")}`,
+      } exists: ${checkFilePath.replace(/\/$/u, "")}`,
     );
   } catch (err) {
     fail(err);
@@ -267,6 +291,7 @@ Object.defineProperty(window, "matchMedia", {
 });
 global.window = window;
 global.document = window.document;
+global.Element = { prototype: { matches: () => {} } };
 ["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
   const jsAllPackage = require(`../package/nationalarchives/${file}`);
   let exports = [];
@@ -340,16 +365,16 @@ const cssAllPackage = fs
   .toString();
 const checkForClasses = ["tna-template", "tna-template__body"];
 checkForClasses.forEach((cssClass) => {
-  const escapedClass = cssClass.replace("-", "\\-");
-  const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}\{`, "g"));
+  const escapedClass = cssClass.replace(/[.*+?^${}()|[\]\\-]/g, "\\$&");
+  const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}{`, "g"));
   if (regExp) {
     pass(
-      `${cssClass.replace(/`{$/, "")} selector occurs ${regExp.length} time${
+      `${cssClass.replace(/\{$/u, "")} selector occurs ${regExp.length} time${
         regExp.length === 1 ? "" : "s"
       } in compiled CSS`,
     );
   } else {
-    fail(`${cssClass.replace(/`{$/, "")} selector missing from compiled CSS`);
+    fail(`${cssClass.replace(/\{$/u, "")} selector missing from compiled CSS`);
     process.exitCode = 1;
     throw new Error("CSS test failed");
   }
@@ -361,12 +386,12 @@ console.log("Testing file sizes...");
 console.log("\n");
 const cssFilesToCheckSize = [
   "all.css",
-  "prototype-kit.css",
   "font-awesome.css",
-  "print.css",
   "ie.css",
+  "print.css",
+  "prototype-kit.css",
 ];
-const jsFilesToCheckSize = ["all.js", "analytics.js", "all+analytics.js"];
+const jsFilesToCheckSize = ["all.js", "all+analytics.js", "analytics.js"];
 const longestFilenameToCheckSize = [
   ...cssFilesToCheckSize,
   ...jsFilesToCheckSize,

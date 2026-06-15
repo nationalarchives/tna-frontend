@@ -50,10 +50,12 @@
     width: 100%;
     height: auto;
 
-    @include colour.image-loader-background;
-
     border-radius: bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius 0 0;
+
+    pointer-events: none;
+
+    @include colour.image-loader-background;
   }
 
   &__item-content {
@@ -72,8 +74,7 @@
     @include typography.main-font-weight-bold;
     text-decoration: underline;
 
-    .tna-index-grid__item:hover &,
-    .tna-index-grid__item:focus-visible & {
+    .tna-index-grid__item:hover & {
       &,
       &:link,
       &:visited {

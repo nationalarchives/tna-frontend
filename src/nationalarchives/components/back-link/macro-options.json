@@ -1,0 +1,27 @@
+[
+  {
+    "name": "text",
+    "type": "string",
+    "required": false,
+    "description": "The text of the back link.",
+    "default": "Back"
+  },
+  {
+    "name": "href",
+    "type": "string",
+    "required": true,
+    "description": "The URL of the back link."
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the back link."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the back link."
+  }
+]

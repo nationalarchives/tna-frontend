@@ -1,11 +1,31 @@
 import "../src/nationalarchives/all.scss";
+import "../src/nationalarchives/font-awesome.scss";
+import "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2";
+import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
+import { initAll } from "../src/nationalarchives/all.mjs";
+import Prism from "prismjs";
+
+// For cookie banner tests
+window.global = window;
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    initAll();
+    document
+      .querySelectorAll('.tna-code-block > pre > code[class*="language-"]')
+      .forEach(($block) => Prism.highlightElement($block));
+  },
+  false,
+);
 
 document.documentElement.classList.add(
   "tna-template",
+  // "tna-template--system-theme",
   "tna-template--blue-accent",
 );
 if (window.self !== window.top) {
@@ -13,68 +33,73 @@ if (window.self !== window.top) {
 }
 document.body.classList.add("tna-template__body");
 
-document.documentElement.dataset.tnaFrontendDebug = "true";
+// document.documentElement.dataset.tnaFrontendDebug = "true";
 
 export const parameters = {
   actions: {},
-  viewport: { viewports: customViewports },
+  viewport: { options: customViewports },
   options: { showPanel: true },
   a11y: {
     config: a11yConfig,
+    test: "error",
   },
   backgrounds: {
-    values: [],
     grid: {
       cellSize: 16,
       cellAmount: 4,
     },
+    options: {},
   },
   controls: {
     expanded: true,
   },
 };
 
-class MockEventTracker extends EventTracker {
-  constructor(documentScope) {
-    super({ documentScope });
-    this.initAll();
-    console.log({
-      ...this.getTnaMetaTags(),
-      ...this.getUserPreferences(),
-      "gtm.start": new Date().getTime(),
-      event: "gtm.js",
-    });
-  }
+// class MockEventTracker extends EventTracker {
+//   constructor(documentScope) {
+//     super({ documentScope });
+//     this.initAll();
+//     console.log({
+//       ...this.getTnaMetaTags(),
+//       ...this.getUserPreferences(),
+//       "gtm.start": new Date().getTime(),
+//       event: "gtm.js",
+//     });
+//   }
 
-  recordEvent(eventName, data, rootData = {}) {
-    super.recordEvent(eventName, data, rootData);
-    console.log("EventTracker", this.events[this.events.length - 1]);
-  }
-}
+//   recordEvent(eventName, data, rootData = {}) {
+//     super.recordEvent(eventName, data, rootData);
+//     console.log("EventTracker", this.events[this.events.length - 1]);
+//   }
+// }
 
-class MockGA4Tracking extends GA4 {
-  constructor(documentScope) {
-    super({ documentScope });
-  }
+// class MockGA4Tracking extends GA4 {
+//   constructor(documentScope) {
+//     super({ documentScope });
+//   }
 
-  pushToDataLayer(data) {
-    super.pushToDataLayer();
-    console.log("GA4", data);
-  }
-}
+//   pushToDataLayer(data) {
+//     super.pushToDataLayer();
+//     console.log("GA4", data);
+//   }
+// }
 
 export const decorators = [
   (Story, ctx) => {
     window.dataLayer = [];
-    const cookies = new Cookies();
+    const cookies = new Cookies({
+      newInstance: true,
+      secure: false,
+      noInit: true,
+    });
     cookies.deleteAll();
     const story = Story();
-    if (window && ctx.args.disableMockAnalytics !== true) {
-      setTimeout(() => {
-        new MockEventTracker(ctx.canvasElement);
-        new MockGA4Tracking(ctx.canvasElement);
-      }, 1);
-    }
+    // if (window && ctx.args.disableMockAnalytics !== true) {
+    //   setTimeout(() => {
+    //     new MockEventTracker(ctx.canvasElement);
+    //     new MockGA4Tracking(ctx.canvasElement);
+    //   }, 1);
+    // }
     return story;
   },
 ];

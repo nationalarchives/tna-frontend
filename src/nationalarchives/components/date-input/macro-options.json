@@ -9,7 +9,7 @@
     "name": "headingLevel",
     "type": "number",
     "required": false,
-    "description": "The heading level which represents an element from `<h1>` through to `<h6>`."
+    "description": "The heading level which represents an element from `<h1>` through to `<h6>`. Leave blank or set to `0` to use a plain `<label>` element with no heading."
   },
   {
     "name": "headingSize",
@@ -86,7 +86,8 @@
     "name": "progressive",
     "type": "boolean",
     "required": false,
-    "description": "If true, order the date fields in a year-month-day order and only show the next field when the previous has a valid value."
+    "description": "If `true`, order the date fields in a year-month-day order and only show the next field when the previous has a valid value.",
+    "default": false
   },
   {
     "name": "formItemClasses",
@@ -99,6 +100,18 @@
     "type": "object",
     "required": false,
     "description": "HTML attributes (for example data attributes) to add to the date input form group."
+  },
+  {
+    "name": "fieldsetClasses",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the `<fieldset>` element."
+  },
+  {
+    "name": "fieldsetAttributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the `<fieldset>` element."
   },
   {
     "name": "classes",

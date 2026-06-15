@@ -3,16 +3,15 @@ export class SkipLink {
 
   constructor($module) {
     this.$module = $module;
-    this.linkedElementId = $module.getAttribute("href").split("#").pop();
+    this.linkedElementId = $module.getAttribute("href")?.split("#").pop();
     this.$linkedElement =
       $module &&
       this.linkedElementId &&
       document.getElementById(this.linkedElementId);
 
-    if (!this.$module || !this.$linkedElement) {
-      return;
+    if (this.$module && this.$linkedElement) {
+      this.$module.addEventListener("click", () => this.focusLinkedElement());
     }
-    this.$module.addEventListener("click", () => this.focusLinkedElement());
   }
 
   focusLinkedElement() {

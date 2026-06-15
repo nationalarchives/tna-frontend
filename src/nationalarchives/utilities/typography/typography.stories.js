@@ -60,32 +60,22 @@ SceneSetter.args = {
   text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
 };
 
-const SceneSetterSmallTemplate = ({ text }) =>
-  `<p class="tna-scene-setter tna-scene-setter--small">
-    ${text}
-  </p>`;
-export const SceneSetterSmall = SceneSetterSmallTemplate.bind({});
-SceneSetterSmall.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-SceneSetterSmall.args = {
-  text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
-};
-
 const BlockquoteTemplate = ({
   html,
   author,
-}) => `<blockquote class="tna-blockquote">
-  <div class="tna-blockquote__quote">
+  work,
+}) => `<div class="tna-blockquote">
+  <blockquote class="tna-blockquote__quote">
     ${html}
-  </div>
-  <p class="tna-blockquote__citation">${author}</p>
-</blockquote>`;
+  </blockquote>
+  <p class="tna-blockquote__attribution">${author}${work ? `, <cite class="tna-blockquote__citation">${work}</cite>` : ""}</p>
+</div>`;
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.parameters = {
   chromatic: { disableSnapshot: true },
 };
 Blockquote.args = {
   html: "<p>A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.</p>",
-  author: "Douglas Adams, Mostly Harmless",
+  author: "Douglas Adams",
+  work: "Mostly Harmless",
 };

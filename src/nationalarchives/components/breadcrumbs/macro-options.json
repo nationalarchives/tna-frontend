@@ -29,15 +29,15 @@
     "name": "noCollapse",
     "type": "boolean",
     "required": false,
-    "default": false,
-    "description": "When true, the breadcrumbs will not collapse to the first and last item only on smaller devices."
+    "description": "When true, the breadcrumbs will not collapse to the first and last item only on smaller devices.",
+    "default": false
   },
   {
     "name": "labelText",
     "type": "string",
     "required": false,
-    "default": "Breadcrumbs",
-    "description": "A custom value to use as the `aria-label`."
+    "description": "A custom value to use as the `aria-label`.",
+    "default": "Breadcrumbs"
   },
   {
     "name": "classes",

@@ -40,7 +40,7 @@ const failedComponents = components.filter((component) => {
             }${part.value}`,
         )
         .join("");
-      console.log(diff.replace(/></g, ">\n<"));
+      console.log(diff.replace(/></gu, ">\n<"));
       console.log("\n");
       return true;
     }
@@ -67,7 +67,7 @@ if (failedComponents.length) {
 }
 console.log("------------------------------------------");
 
-console.log("Templates");
+console.log("\nTemplates");
 const templatesDirectory = "src/nationalarchives/templates/";
 const templateFixturesFile = `${templatesDirectory}fixtures.json`;
 const templateFixtures = require(`../${templateFixturesFile}`);
@@ -88,7 +88,7 @@ const failedTemplates = templateFixtures.fixtures.filter((fixture) => {
           }${part.value}`,
       )
       .join("");
-    console.log(diff.replace(/></g, ">\n<"));
+    console.log(diff.replace(/></gu, ">\n<"));
     console.log("\n");
     return true;
   }

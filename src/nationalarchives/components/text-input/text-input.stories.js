@@ -124,6 +124,7 @@ export const Standard = {
     headingSize: "m",
     id: "firstname1",
     name: "firstname1",
+    autocomplete: "given-name",
     classes: "tna-text-input--demo",
   },
 };

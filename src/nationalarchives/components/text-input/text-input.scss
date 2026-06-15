@@ -64,7 +64,7 @@
     }
   }
 
-  &--show-autofill:is(:-webkit-autofill, :autofill) {
+  &:is(:-webkit-autofill, :autofill) {
     .tna-form-item__body:has(&) {
       &::after {
         content: "Autofilled";

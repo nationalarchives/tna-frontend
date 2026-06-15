@@ -13,13 +13,13 @@
       "type": "nunjucks"
     },
     {
-      "name": "Listing page",
-      "path": "/nationalarchives/templates/prototype-kit/list.njk",
+      "name": "Plain page with sidebar",
+      "path": "/nationalarchives/templates/prototype-kit/plain-with-sidebar.njk",
       "type": "nunjucks"
     },
     {
-      "name": "Index grid page",
-      "path": "/nationalarchives/templates/prototype-kit/index-grid.njk",
+      "name": "Listing page",
+      "path": "/nationalarchives/templates/prototype-kit/list.njk",
       "type": "nunjucks"
     },
     {

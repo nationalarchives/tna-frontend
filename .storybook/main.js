@@ -26,13 +26,13 @@ export default {
           targets: [
             {
               src: "node_modules/@fortawesome/fontawesome-free/webfonts/*.woff2",
-              dest: "assets/assets/fonts",
+              dest: "fonts",
+              rename: { stripBase: 4 },
             },
             {
               src: "src/nationalarchives/**/*.njk",
-              dest: "nationalarchives",
-              rename: (fileName, fileExtension, fullPath) =>
-                fullPath.replace(/^.*\/src\/nationalarchives\//, "./"),
+              dest: ".",
+              rename: { stripBase: 1 },
             },
           ],
         }),

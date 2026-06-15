@@ -119,6 +119,18 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div><div class=\"tna-form-item__body\"><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"text\" spellcheck=\"false\" autocapitalize=\"on\" autocorrect=\"off\"></div></div>"
     },
     {
+      "name": "no autocapitalize (e.g. type=email)",
+      "options": {
+        "label": "Enter some text",
+        "headingSize": "m",
+        "id": "text",
+        "name": "text",
+        "size": "m",
+        "type": "email"
+      },
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"text\">Enter some text</label></div><div class=\"tna-form-item__body\"><input id=\"text\" class=\"tna-text-input tna-text-input--m\" name=\"text\" value=\"\" type=\"email\" spellcheck=\"false\" autocorrect=\"off\"></div></div>"
+    },
+    {
       "name": "autocorrect",
       "options": {
         "label": "Enter some text",
@@ -141,7 +153,7 @@
         "type": "email",
         "autocomplete": "email"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"email\">Enter an email address</label></div><div class=\"tna-form-item__body\"><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" autocomplete=\"email\"></div></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"email\">Enter an email address</label></div><div class=\"tna-form-item__body\"><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocorrect=\"off\" autocomplete=\"email\"></div></div>"
     },
     {
       "name": "heading level",
@@ -154,7 +166,7 @@
         "size": "m",
         "type": "email"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"email\">Enter an email address</label></h4></div><div class=\"tna-form-item__body\"><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\"></div></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><h4 class=\"tna-form-item__label tna-heading-m\"><label for=\"email\">Enter an email address</label></h4></div><div class=\"tna-form-item__body\"><input id=\"email\" class=\"tna-text-input tna-text-input--m\" name=\"email\" value=\"\" type=\"email\" spellcheck=\"false\" autocorrect=\"off\"></div></div>"
     },
     {
       "name": "with classes",

@@ -1,7 +1,6 @@
 export default {
   title: "Tests/Blank",
-  render: () => {
-    return `
+  render: () => `
       <div data-module="tna-accordion"></div>
       <div data-module="tna-breadcrumbs"></div>
       <div data-module="tna-cookie-banner"></div>
@@ -17,8 +16,7 @@ export default {
       <div data-module="tna-text-input"></div>
       <div data-module="tna-tabs"></div>
       <div class="tna-table-wrapper"></div>
-    `;
-  },
+    `,
 };
 
 export const Standard = {

@@ -1,5 +1,6 @@
-import Template from "./partials/logo/template.njk?raw";
 import nunjucks from "nunjucks";
+
+import Template from "./partials/logo/template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -10,11 +11,10 @@ export default {
     size: { control: "number" },
     adornable: { control: "boolean" },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, {
+  render: (params) =>
+    nunjucks.renderString(Template, {
       params,
-    });
-  },
+    }),
 };
 
 export const Logo = {

@@ -7,8 +7,8 @@ export default {
   argTypes: {
     small: { control: "boolean" },
   },
-  render: (params) => {
-    return nunjucks.renderString(
+  render: (params) =>
+    nunjucks.renderString(
       `{%- from "nationalarchives/components/button/macro.njk" import tnaButton -%}
       <div class="tna-button-group{% if params.small %} tna-button-group--small{% endif %}">
         {% for button in params.buttons %}
@@ -16,8 +16,7 @@ export default {
         {% endfor %}
       </div>`,
       { params },
-    );
-  },
+    ),
 };
 
 export const Group = {

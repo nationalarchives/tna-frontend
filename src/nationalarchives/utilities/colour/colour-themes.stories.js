@@ -1,3 +1,5 @@
+import nunjucks from "nunjucks";
+
 import Accordion from "../../components/accordion/template.njk?raw";
 import Breadcrumbs from "../../components/breadcrumbs/template.njk?raw";
 import Button from "../../components/button/template.njk?raw";
@@ -20,7 +22,6 @@ import Tabs from "../../components/tabs/template.njk?raw";
 import TextInput from "../../components/text-input/template.njk?raw";
 import Textarea from "../../components/textarea/template.njk?raw";
 import Warning from "../../components/warning/template.njk?raw";
-import nunjucks from "nunjucks";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -185,18 +186,21 @@ const Template = ({ theme, accent }) => {
       })}
     </div>
     <main class="tna-main" id="main-content">
-      ${nunjucks.renderString(Hero, {
-        params: {
-          title: "Title",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          imageSrc:
-            "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
-          imageAlt: "The National Archives office",
-          imageWidth: 600,
-          imageHeight: 400,
-          imageCaption: "An interesting photo by a famous photographer ©2023",
-        },
-      })}
+      ${
+        nunjucks.renderString(Hero, {
+          params: {
+            title: "Title",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            imageSrc:
+              "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+            imageAlt: "The National Archives office",
+            imageWidth: 600,
+            imageHeight: 400,
+            imageCaption: "An interesting photo by a famous photographer ©2023",
+          },
+        })
+        /* eslint-disable-next-line no-secrets/no-secrets */
+      }
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny">
           <hgroup class="tna-hgroup-l">
@@ -261,12 +265,15 @@ const Template = ({ theme, accent }) => {
               <div class="tna-aside tna-background-accent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
-                  ${nunjucks.renderString(Button, {
-                    params: {
-                      text: "Primary button",
-                      href: "#",
-                    },
-                  })}
+                  ${
+                    nunjucks.renderString(Button, {
+                      params: {
+                        text: "Primary button",
+                        href: "#",
+                      },
+                    })
+                    /* eslint-disable-next-line no-secrets/no-secrets */
+                  }
                 </div>
               </div>
             </div>

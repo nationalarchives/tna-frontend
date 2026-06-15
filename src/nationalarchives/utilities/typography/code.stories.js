@@ -11,7 +11,7 @@ export default {
 };
 
 const InlineCodeTemplate = ({ content }) =>
-  `<p>Always place the main body of content in the <code>${content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code> element.</p>`;
+  `<p>Always place the main body of content in the <code>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code> element.</p>`;
 export const InlineCode = InlineCodeTemplate.bind({});
 InlineCode.parameters = {
   chromatic: { disableSnapshot: true },
@@ -20,7 +20,7 @@ InlineCode.args = { content: "<main>" };
 
 const CodeBlockTemplate = ({ language, filename, content, allowCopy }) =>
   `<div class="tna-code-block${allowCopy ? " tna-code-block--copy" : ""}" ${filename ? `title="${filename}"` : ""}>
-  <pre class="tna-code-block__pre"><code class="language-${language}">${content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
+  <pre class="tna-code-block__pre"><code class="language-${language}">${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code></pre>
 </div>`;
 
 export const CodeBlock = CodeBlockTemplate.bind({});

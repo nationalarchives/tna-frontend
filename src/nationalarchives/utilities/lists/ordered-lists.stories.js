@@ -60,14 +60,14 @@ const OrderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
   `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}
       <ol>${items.reduce(
-        (list, item) => `${list}
-        <li>${item}
+        (list2, item2) => `${list2}
+        <li>${item2}
           <ol>${items.reduce(
-            (list, item) => `${list}
-            <li>${item}
+            (list3, item3) => `${list3}
+            <li>${item3}
               <ol>${items.reduce(
-                (list, item) => `${list}
-                <li>${item}</li>`,
+                (list4, item4) => `${list4}
+                <li>${item4}</li>`,
                 "",
               )}</ol>
             </li>`,

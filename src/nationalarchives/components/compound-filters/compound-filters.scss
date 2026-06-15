@@ -52,6 +52,8 @@
     width: 1.5rem;
     height: 1.5rem;
 
+    flex-shrink: 0;
+
     position: relative;
 
     font-size: 0;
@@ -64,8 +66,6 @@
     border: none;
 
     cursor: pointer;
-
-    flex-shrink: 0;
 
     @include borders.rounded-border;
 

@@ -117,10 +117,10 @@
   }
 
   &--inline {
-    flex-flow: row wrap;
-
     align-items: flex-start;
     gap: spacing.space(1) spacing.space(2);
+
+    flex-flow: row wrap;
 
     @include media.on-tiny {
       flex-direction: column;

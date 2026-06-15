@@ -121,7 +121,8 @@ runs:
       run: >
         cp package/nationalarchives/templates/prototype-kit/plain.njk prototype/app/views/template-plain.html &&
         cp package/nationalarchives/templates/prototype-kit/list.njk prototype/app/views/template-list.html &&
-        cp package/nationalarchives/templates/prototype-kit/index-grid.njk prototype/app/views/template-index-grid.html
+        cp package/nationalarchives/templates/prototype-kit/plain-with-sidebar.njk prototype/app/views/template-index-grid.html &&
+        cp package/nationalarchives/templates/prototype-kit/error-page-not-found.njk prototype/app/views/template-index-grid.html
       shell: bash
     - name: Run prototype
       run: >

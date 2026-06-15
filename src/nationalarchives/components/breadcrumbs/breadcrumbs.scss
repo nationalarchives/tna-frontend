@@ -1,3 +1,4 @@
+@use "../../tools/a11y";
 @use "../../tools/colour";
 @use "../../tools/media";
 @use "../../tools/spacing";
@@ -5,6 +6,8 @@
 
 .tna-breadcrumbs {
   border-radius: 0.1px;
+
+  @include a11y.focus-indicator-only-on-keyboard-focus;
 
   &__list {
     margin: 0;

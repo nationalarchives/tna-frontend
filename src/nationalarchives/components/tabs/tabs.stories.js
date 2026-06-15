@@ -1,7 +1,8 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+import { expect, userEvent, within } from "storybook/test";
+
 import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "storybook/test";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -34,9 +35,7 @@ export default {
   parameters: {
     chromatic: { delay: 1000 },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -141,80 +140,72 @@ export const Test = {
     ],
   },
   play: async ({ args, canvasElement, step }) => {
-    await new Promise((r) => setTimeout(r, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const canvas = within(canvasElement);
+    const canvas = within(canvasElement),
+      tablist = canvas.getByRole("tablist"),
+      [buttonA, buttonB, buttonC] = args.items.map((item) =>
+        document.getElementById(`${item.id}-tab`),
+      ),
+      [sectionA, sectionB, sectionC] = args.items.map((item) =>
+        canvasElement.querySelector(`#${item.id}`),
+      ),
+      expectButtonToBeCurrent = async (button) => {
+        await expect(button).toHaveAttribute("tabindex", "0");
+        await expect(button).toHaveAttribute("aria-selected", "true");
+        await expect(button).toHaveFocus();
+      },
+      expectButtonNotToBeCurrent = async (button) => {
+        await expect(button).toHaveAttribute("tabindex", "-1");
+        await expect(button).toHaveAttribute("aria-selected", "false");
+      },
+      expectSectionToBeCurrent = async (section) => {
+        await expect(section).toBeVisible();
+        await expect(section).toHaveAttribute("tabindex", "0");
+      },
+      expectSectionNotToBeCurrent = async (section) => {
+        await expect(section).not.toBeVisible();
+        await expect(section).toHaveAttribute("tabindex", "-1");
+      },
+      expectButtonAndSectionAToBeCurrent = async () => {
+        await step("Test tab buttons", async () => {
+          await expectButtonToBeCurrent(buttonA);
+          await expectButtonNotToBeCurrent(buttonB);
+          await expectButtonNotToBeCurrent(buttonC);
+        });
 
-    const tablist = canvas.getByRole("tablist");
-    const [buttonA, buttonB, buttonC] = args.items.map((item) =>
-      document.getElementById(`${item.id}-tab`),
-    );
-    const [sectionA, sectionB, sectionC] = args.items.map((item) =>
-      canvasElement.querySelector(`#${item.id}`),
-    );
+        await step("Test tab sections", async () => {
+          await expectSectionToBeCurrent(sectionA);
+          await expectSectionNotToBeCurrent(sectionB);
+          await expectSectionNotToBeCurrent(sectionC);
+        });
+      },
+      expectButtonAndSectionBToBeCurrent = async () => {
+        await step("Test tab buttons", async () => {
+          await expectButtonNotToBeCurrent(buttonA);
+          await expectButtonToBeCurrent(buttonB);
+          await expectButtonNotToBeCurrent(buttonC);
+        });
 
-    const expectButtonToBeCurrent = async (button) => {
-      await expect(button).toHaveAttribute("tabindex", "0");
-      await expect(button).toHaveAttribute("aria-selected", "true");
-      await expect(button).toHaveFocus();
-    };
+        await step("Test tab sections", async () => {
+          await expectSectionNotToBeCurrent(sectionA);
+          await expectSectionToBeCurrent(sectionB);
+          await expectSectionNotToBeCurrent(sectionC);
+        });
+      },
+      expectButtonAndSectionCToBeCurrent = async () => {
+        await step("Test tab buttons", async () => {
+          await expectButtonNotToBeCurrent(buttonA);
+          await expectButtonNotToBeCurrent(buttonB);
+          await expectButtonToBeCurrent(buttonC);
+        });
 
-    const expectButtonNotToBeCurrent = async (button) => {
-      await expect(button).toHaveAttribute("tabindex", "-1");
-      await expect(button).toHaveAttribute("aria-selected", "false");
-    };
-
-    const expectSectionToBeCurrent = async (section) => {
-      await expect(section).toBeVisible();
-      await expect(section).toHaveAttribute("tabindex", "0");
-    };
-
-    const expectSectionNotToBeCurrent = async (section) => {
-      await expect(section).not.toBeVisible();
-      await expect(section).toHaveAttribute("tabindex", "-1");
-    };
-
-    const expectButtonAndSectionAToBeCurrent = async () => {
-      await step("Test tab buttons", async () => {
-        await expectButtonToBeCurrent(buttonA);
-        await expectButtonNotToBeCurrent(buttonB);
-        await expectButtonNotToBeCurrent(buttonC);
-      });
-
-      await step("Test tab sections", async () => {
-        await expectSectionToBeCurrent(sectionA);
-        await expectSectionNotToBeCurrent(sectionB);
-        await expectSectionNotToBeCurrent(sectionC);
-      });
-    };
-
-    const expectButtonAndSectionBToBeCurrent = async () => {
-      await step("Test tab buttons", async () => {
-        await expectButtonNotToBeCurrent(buttonA);
-        await expectButtonToBeCurrent(buttonB);
-        await expectButtonNotToBeCurrent(buttonC);
-      });
-
-      await step("Test tab sections", async () => {
-        await expectSectionNotToBeCurrent(sectionA);
-        await expectSectionToBeCurrent(sectionB);
-        await expectSectionNotToBeCurrent(sectionC);
-      });
-    };
-
-    const expectButtonAndSectionCToBeCurrent = async () => {
-      await step("Test tab buttons", async () => {
-        await expectButtonNotToBeCurrent(buttonA);
-        await expectButtonNotToBeCurrent(buttonB);
-        await expectButtonToBeCurrent(buttonC);
-      });
-
-      await step("Test tab sections", async () => {
-        await expectSectionNotToBeCurrent(sectionA);
-        await expectSectionNotToBeCurrent(sectionB);
-        await expectSectionToBeCurrent(sectionC);
-      });
-    };
+        await step("Test tab sections", async () => {
+          await expectSectionNotToBeCurrent(sectionA);
+          await expectSectionNotToBeCurrent(sectionB);
+          await expectSectionToBeCurrent(sectionC);
+        });
+      };
 
     await step("Initial load", async () => {
       await step("Test tablist", async () => {

@@ -7,10 +7,10 @@ export const iso8601ToPrettyDatetime = (dateStr) => {
     throw new Error("No datetime provided");
   }
   const isDateTime =
-    /^\d{4}(-\d{2}){2}(T| )\d{2}(:\d{2}){1,2}(\.\d+)?(Z|((\+|-)\d{2}:\d{2}))?$/.test(
+    /^\d{4}(?:-\d{2}){2}(?:T| )\d{2}(?::\d{2}){1,2}(?:\.\d+)?(?:Z|(?:[+-]\d{2}:\d{2}))?$/u.test(
       datetime,
     );
-  const isDate = /^\d{4}(-\d{2}){2}$/.test(datetime);
+  const isDate = /^\d{4}(?:-\d{2}){2}$/u.test(datetime);
   if (!isDateTime && !isDate) {
     throw new Error("Invalid datetime provided");
   }
@@ -23,7 +23,6 @@ export const iso8601ToPrettyDatetime = (dateStr) => {
   const dayString = date.toLocaleDateString("en-GB", {
     weekday: "long",
   });
-
   const dateString = date.toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
@@ -43,9 +42,8 @@ export const iso8601ToPrettyDatetime = (dateStr) => {
       });
     }
     return `${dayString} ${dateString}, ${timeString}`;
-  } else {
-    return `${dayString} ${dateString}`;
   }
+  return `${dayString} ${dateString}`;
 };
 
 /*
@@ -91,20 +89,16 @@ export const updateTimeElement = ($el) => {
       $el.setAttribute("title", $el.textContent);
       $el.textContent = prettyDatetime;
     }
-  } catch (e) {
+    // eslint-disable-next-line no-unused-vars
+  } catch (error) {
     // Do nothing if the datetime is invalid or not provided
   }
 };
 
 export const checkTableForScroll = ($tableWrapper) => {
-  const isUninitialised = !(
-    $tableWrapper.dataset.tableScrollInitialised === "true"
-  );
   const $caption = $tableWrapper.querySelector("caption");
-  if (isUninitialised) {
-    if (!$caption) {
-      console.warn("Missing <caption> element on table", $tableWrapper);
-    } else if (!$caption.id) {
+  if (!($tableWrapper.dataset.tableScrollInitialised === "true")) {
+    if ($caption && !$caption.id) {
       $caption.id = `table-caption-${uuidv4()}`;
     }
     $tableWrapper.dataset.tableScrollInitialised = "true";

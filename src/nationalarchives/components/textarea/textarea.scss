@@ -18,9 +18,9 @@ $textarea-vertical-padding: 0.25 !default;
   display: block;
   box-sizing: border-box;
 
-  line-height: 1.5;
-
   resize: vertical;
+
+  line-height: 1.5;
 
   @include colour.colour-input;
 

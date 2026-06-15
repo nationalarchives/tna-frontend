@@ -60,14 +60,14 @@ const UnorderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
   `<ul class="tna-ul${style ? ` tna-ul--${style}` : ""}${spaced ? " tna-ul--spaced" : ""} ${classes}">${items.reduce(
     (list, item) => `${list}<li>${item}
       <ul>${items.reduce(
-        (list, item) => `${list}
-        <li>${item}
+        (list2, item2) => `${list2}
+        <li>${item2}
           <ul>${items.reduce(
-            (list, item) => `${list}
-            <li>${item}
+            (list3, item3) => `${list3}
+            <li>${item3}
               <ul>${items.reduce(
-                (list, item) => `${list}
-                <li>${item}</li>`,
+                (list4, item4) => `${list4}
+                <li>${item4}</li>`,
                 "",
               )}</ul>
             </li>`,

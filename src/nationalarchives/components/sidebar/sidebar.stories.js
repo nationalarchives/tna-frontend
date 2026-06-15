@@ -1,6 +1,7 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+
 import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -14,6 +15,7 @@ export default {
       items: { control: "object" },
       type: { control: "radio", options: ["contents", "sections", "pages"] },
       sticky: { control: "boolean" },
+      disableSectionHighlightOnScroll: { control: "boolean" },
       ariaLabel: { control: "text" },
       classes: { control: "text" },
       attributes: { control: "object" },
@@ -38,9 +40,7 @@ export default {
   parameters: {
     chromatic: { delay: 1000 },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Contents = {
@@ -118,7 +118,6 @@ export const Sections = {
       {
         text: "A band of guerrillas",
         href: "#",
-        current: true,
       },
       {
         text: "War begins",
@@ -229,5 +228,61 @@ export const Pages = {
     ],
     type: "pages",
     classes: "tna-sidebar--demo",
+  },
+};
+
+const HighlightSectionsTemplate = (params) =>
+  `<div class="tna-container tna-!--padding-top-m tna-!--padding-bottom-xl">
+    <div class="tna-column tna-column--full tna-!--padding-bottom-m">
+      <h1 class="tna-heading-xl">Highlighting sections on scroll</h1>
+    </div>
+    <div class="tna-column tna-column--width-1-3">
+    ${nunjucks.renderString(Template, { params })}
+    </div>
+    <div class="tna-column tna-column--width-2-3 tna-!--padding-bottom-xl">
+      ${params.items?.map((item) => `<h2 class="tna-heading-l tna-!--padding-top-s" id="${item.href.substring(1)}">${item.text}</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p>`).join("")}
+    </div>
+  </div>`;
+export const HighlightSections = HighlightSectionsTemplate.bind({});
+HighlightSections.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+HighlightSections.args = {
+  title: "Sections",
+  headingLevel: 2,
+  items: [
+    {
+      text: "Alpha",
+      href: "#alpha",
+    },
+    {
+      text: "Beta",
+      href: "#beta",
+    },
+    {
+      text: "Gamma",
+      href: "#gamma",
+    },
+    {
+      text: "Delta",
+      href: "#delta",
+    },
+    {
+      text: "Epsilon",
+      href: "#epsilon",
+    },
+    {
+      text: "Zeta",
+      href: "#zeta",
+    },
+  ],
+  type: "sections",
+  sticky: true,
+  classes: "tna-!--padding-top-s",
+  attributes: {
+    // Highlight when the section is within 16px from the top of the viewport
+    "data-scroll-top-threshold": "16",
+    // Highlight on all device sizes
+    "data-disable-highlight-size": "",
   },
 };

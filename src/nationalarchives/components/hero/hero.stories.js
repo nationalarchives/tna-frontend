@@ -1,8 +1,10 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "storybook/test";
+import { expect, userEvent, within } from "storybook/test";
+
 import { customViewports } from "../../../../.storybook/viewports";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -30,9 +32,9 @@ export default {
       },
       layout: {
         control: "inline-radio",
-        options: ["plain", "shift", "split"],
+        options: ["plain", "shift", "split", "over"],
       },
-      narrow: { control: "boolean" },
+      large: { control: "boolean" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [
@@ -58,9 +60,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -75,13 +75,13 @@ export const Standard = {
     imageCaption: "An interesting photo by a famous photographer ©2023",
   },
   play: async ({ args, canvasElement, step }) => {
-    await new Promise((r) => setTimeout(r, 100));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const canvas = within(canvasElement);
-    const image = canvas.getByAltText(args.imageAlt);
-    const content = canvasElement.querySelector(".tna-hero__content");
-    const summary = canvasElement.querySelector(".tna-hero__details-summary");
-    const information = canvas.getByText(args.imageCaption);
+    const canvas = within(canvasElement),
+      image = canvas.getByAltText(args.imageAlt),
+      content = canvasElement.querySelector(".tna-hero__content"),
+      summary = canvasElement.querySelector(".tna-hero__details-summary"),
+      information = canvas.getByText(args.imageCaption);
 
     await step("Initial load", async () => {
       await expect(image).toBeVisible();
@@ -203,7 +203,7 @@ export const Split = {
   },
 };
 
-export const Narrow = {
+export const Over = {
   args: {
     title: "Title",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -214,8 +214,22 @@ export const Narrow = {
     imageHeight: 400,
     imageCaption: "An interesting photo by a famous photographer ©2023",
     style: "accent",
-    // layout: "split",
-    narrow: true,
+    layout: "over",
+  },
+};
+
+export const Large = {
+  args: {
+    title: "Title",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    imageSrc:
+      "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+    imageAlt: "The National Archives office",
+    imageWidth: 600,
+    imageHeight: 400,
+    imageCaption: "An interesting photo by a famous photographer ©2023",
+    style: "accent",
+    large: true,
   },
 };
 
@@ -293,7 +307,7 @@ export const Sources = {
 export const Mobile = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {

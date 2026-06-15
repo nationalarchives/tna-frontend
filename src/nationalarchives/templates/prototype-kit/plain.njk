@@ -3,8 +3,6 @@
 {%- from "nationalarchives/components/breadcrumbs/macro.njk" import tnaBreadcrumbs -%}
 
 {% set pageTitle = 'Plain page' %}
-{% set theme = 'light' %}
-{% set themeAccent = 'blue' %}
 
 {% block beforeContent %}
 <div class="tna-container">
@@ -15,7 +13,7 @@
         href: '/'
       }
     ],
-    classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
+    classes: 'tna-column tna-column--full tna-!--padding-top-s'
   }) }}
 </div>
 {% endblock beforeContent %}

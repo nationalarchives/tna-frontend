@@ -128,7 +128,7 @@ const checkExists = [
   ...componentFiles("search-field"),
   ...componentFiles("secondary-navigation"),
   ...componentFiles("select"),
-  ...componentFiles("sidebar"),
+  ...componentFiles("sidebar", "Sidebar"),
   ...componentFiles("skip-link", "SkipLink"),
   ...componentFiles("tabs", "Tabs"),
   ...componentFiles("text-input", "TextInputPassword"),
@@ -188,14 +188,12 @@ const checkExists = [
   "nationalarchives/templates/partials/logo/template.njk",
   "nationalarchives/templates/prototype-kit/_base.njk",
   "nationalarchives/templates/prototype-kit/error-page-not-found.njk",
-  "nationalarchives/templates/prototype-kit/index-grid.njk",
   "nationalarchives/templates/prototype-kit/list.njk",
   "nationalarchives/templates/prototype-kit/plain.njk",
+  "nationalarchives/templates/prototype-kit/plain-with-sidebar.njk",
   // Config
   "config/.babelrc.json",
-  "config/.eslintrc.js",
   "config/.htmlvalidate.json",
-  "config/stylelint.config.js",
 ];
 
 console.log("Testing package file structure...");
@@ -206,7 +204,7 @@ checkExists.forEach((checkFile) => {
     pass(
       `${
         fs.lstatSync(checkFilePath).isDirectory() ? "Directory" : "File"
-      } exists: ${checkFilePath.replace(/\/$/, "")}`,
+      } exists: ${checkFilePath.replace(/\/$/u, "")}`,
     );
   } catch (err) {
     fail(err);
@@ -366,16 +364,16 @@ const cssAllPackage = fs
   .toString();
 const checkForClasses = ["tna-template", "tna-template__body"];
 checkForClasses.forEach((cssClass) => {
-  const escapedClass = cssClass.replace(/\-/g, "\\-");
+  const escapedClass = cssClass.replace(/[.*+?^${}()|[\]\\-]/g, "\\$&");
   const regExp = cssAllPackage.match(new RegExp(`.${escapedClass}{`, "g"));
   if (regExp) {
     pass(
-      `${cssClass.replace(/\{$/, "")} selector occurs ${regExp.length} time${
+      `${cssClass.replace(/\{$/u, "")} selector occurs ${regExp.length} time${
         regExp.length === 1 ? "" : "s"
       } in compiled CSS`,
     );
   } else {
-    fail(`${cssClass.replace(/\{$/, "")} selector missing from compiled CSS`);
+    fail(`${cssClass.replace(/\{$/u, "")} selector missing from compiled CSS`);
     process.exitCode = 1;
     throw new Error("CSS test failed");
   }

@@ -8,6 +8,7 @@
         "shared": ["radio", "checkbox"]
       }
     ],
-    "no-trailing-whitespace": 0
+    "no-trailing-whitespace": 0,
+    "prefer-native-element": "warn"
   }
 }

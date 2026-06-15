@@ -5,14 +5,57 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.41.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.42.1...HEAD)
 
 ### Added
+
+- Cards can now have a `style` of `accent-light`
+- New hero components layout option `over` added
+
 ### Changed
+
+- Hero components are "narrow" by default and can now be made larger with `large: true`
+- Updated OpenGraph image with light and dark variants
+
 ### Deprecated
 ### Removed
+
+- `narrow` option on hero components
+
 ### Fixed
+
+- Removed unnecessary focus indicator when clicking on expand breadcrumb button
+
 ### Security
+
+## [0.42.0](https://github.com/nationalarchives/tna-frontend/compare/v0.41.1...v0.42.0) - 2026-06-04
+
+### Added
+
+- Added the ability to use a `caller` function in the code block component
+- Added automatic section highlighting on sticky section sidebar components
+- Checkboxes and radio items can have a specific `id` set rather than having one generated using their `value`
+- "Plain page with sidebar" Prototype Kit template added
+
+### Changed
+
+- Updated default links to "About us" pages in the footer component
+- Improved markup of code block component for better accessibility
+- Updated ESLint config from `.eslintrc.js` to `eslint.config.js` for compatibility with ESLint 9+
+
+### Removed
+
+- "Index grid" Prototype Kit template removed
+
+### Fixed
+
+- Removed `autocapitalize` attribute from text inputs with `type="email"`
+
+## [0.41.1](https://github.com/nationalarchives/tna-frontend/compare/v0.41.0...v0.41.1) - 2026-05-12
+
+### Fixed
+
+- Dark mode support for code block
 
 ## [0.41.0](https://github.com/nationalarchives/tna-frontend/compare/v0.40.0...v0.41.0) - 2026-05-11
 

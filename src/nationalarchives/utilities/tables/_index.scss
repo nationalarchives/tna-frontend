@@ -13,15 +13,15 @@ $table-overflow-shadow-colour: rgb(0 0 0 / 40%);
 $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
 @property --overflow-shadow-start {
-  syntax: "<color>";
   inherits: false;
   initial-value: #{$table-overflow-shadow-colour-hidden};
+  syntax: "<color>";
 }
 
 @property --overflow-shadow-end {
-  syntax: "<color>";
   inherits: false;
   initial-value: #{$table-overflow-shadow-colour-hidden};
+  syntax: "<color>";
 }
 
 @keyframes overflow-shadows {
@@ -162,6 +162,8 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   @include spacing.space-above;
   margin-bottom: spacing.space(4);
 
+  container-type: inline-size;
+
   overflow: auto;
 
   background:
@@ -193,16 +195,14 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
     100% 100%,
     100% 100%;
   background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
   background-position:
     0 0,
     100%,
     0 0,
     100%;
-  background-attachment: local, local, scroll, scroll;
 
   border-radius: 0.1px;
-
-  container-type: inline-size;
 
   contain: paint;
 
@@ -236,6 +236,7 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
     animation: overflow-shadows 1ms linear;
     animation-timeline: --overflow-shadows;
+
     scroll-timeline: --overflow-shadows x;
   }
 

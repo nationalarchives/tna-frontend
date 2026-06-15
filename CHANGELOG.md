@@ -8,10 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.42.1...HEAD)
 
 ### Added
+
+- Cards can now have a `style` of `accent-light`
+- New hero components layout option `over` added
+
 ### Changed
+
+- Hero components are "narrow" by default and can now be made larger with `large: true`
+- Updated OpenGraph image with light and dark variants
+
 ### Deprecated
 ### Removed
+
+- `narrow` option on hero components
+
 ### Fixed
+
+- Removed unnecessary focus indicator when clicking on expand breadcrumb button
+
 ### Security
 
 ## [0.42.0](https://github.com/nationalarchives/tna-frontend/compare/v0.41.1...v0.42.0) - 2026-06-04

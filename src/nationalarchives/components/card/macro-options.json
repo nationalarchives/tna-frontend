@@ -258,7 +258,7 @@
     "name": "style",
     "type": "string",
     "required": false,
-    "description": "The style of card to use which can be either `contrast` for an inverted card, `tint` for a tinted one or `accent` for a card that matches the page’s accent colour."
+    "description": "The colour style of the card which can be `plain`, `contrast`, `tint`, `accent` or `accent-light`."
   },
   {
     "name": "plainSupertitle",

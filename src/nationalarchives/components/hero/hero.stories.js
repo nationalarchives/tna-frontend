@@ -32,9 +32,9 @@ export default {
       },
       layout: {
         control: "inline-radio",
-        options: ["plain", "shift", "split"],
+        options: ["plain", "shift", "split", "over"],
       },
-      narrow: { control: "boolean" },
+      large: { control: "boolean" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [
@@ -203,7 +203,7 @@ export const Split = {
   },
 };
 
-export const Narrow = {
+export const Over = {
   args: {
     title: "Title",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -214,8 +214,22 @@ export const Narrow = {
     imageHeight: 400,
     imageCaption: "An interesting photo by a famous photographer ©2023",
     style: "accent",
-    // Layout: "split",
-    narrow: true,
+    layout: "over",
+  },
+};
+
+export const Large = {
+  args: {
+    title: "Title",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    imageSrc:
+      "https://www.nationalarchives.gov.uk/wp-content/uploads/2024/12/tna-building-800px.jpg",
+    imageAlt: "The National Archives office",
+    imageWidth: 600,
+    imageHeight: 400,
+    imageCaption: "An interesting photo by a famous photographer ©2023",
+    style: "accent",
+    large: true,
   },
 };
 

@@ -335,6 +335,16 @@
       "html": "<article class=\"tna-card tna-card--padded tna-background-accent\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
+      "name": "with a accent-light style",
+      "options": {
+        "title": "Card title",
+        "headingLevel": 3,
+        "body": "<p>Card body</p>",
+        "style": "accent-light"
+      },
+      "html": "<article class=\"tna-card tna-card--padded tna-background-accent-light\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+    },
+    {
       "name": "with an unknown style",
       "options": {
         "title": "Card title",

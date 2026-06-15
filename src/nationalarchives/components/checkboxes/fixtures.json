@@ -263,6 +263,33 @@
       "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-xs\" for=\"terms\">Terms and conditions</label></div><div class=\"tna-form-item__body\"><div class=\"tna-checkboxes\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"terms\" value=\"agree\" name=\"terms\"><label for=\"terms\" class=\"tna-checkboxes__item-label\">I agree to the terms and conditions</label></div></div></div></div>"
     },
     {
+      "name": "with specific IDs",
+      "options": {
+        "label": "Categories",
+        "headingSize": "m",
+        "id": "categories",
+        "name": "categories",
+        "items": [
+          {
+            "id": "cat-option-1",
+            "text": "Alpha",
+            "value": "alpha"
+          },
+          {
+            "id": "cat-option-2",
+            "text": "Beta",
+            "value": "beta"
+          },
+          {
+            "id": "cat-option-3",
+            "text": "Gamma",
+            "value": "gamma"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset tna-fieldset--small-hint\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Categories</span></legend><div class=\"tna-fieldset__body\"><div class=\"tna-checkboxes\" id=\"categories\"><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"cat-option-1\" value=\"alpha\" name=\"categories\"><label for=\"cat-option-1\" class=\"tna-checkboxes__item-label\">Alpha</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"cat-option-2\" value=\"beta\" name=\"categories\"><label for=\"cat-option-2\" class=\"tna-checkboxes__item-label\">Beta</label></div><div class=\"tna-checkboxes__item\"><input type=\"checkbox\" id=\"cat-option-3\" value=\"gamma\" name=\"categories\"><label for=\"cat-option-3\" class=\"tna-checkboxes__item-label\">Gamma</label></div></div></div></fieldset></div>"
+    },
+    {
       "name": "with classes",
       "options": {
         "label": "Categories",

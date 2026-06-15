@@ -9,7 +9,7 @@
     "name": "body",
     "type": "string",
     "required": false,
-    "description": "The HTML for the main body of the details. Not displayed if `text` is set."
+    "description": "The HTML for the main body of the details. Not displayed if `text` is set. An alternative is to use the `caller` function to include content from a block."
   },
   {
     "name": "text",
@@ -21,7 +21,8 @@
     "name": "open",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, open the details component."
+    "description": "If `true`, open the details component by default.",
+    "default": false
   },
   {
     "name": "classes",

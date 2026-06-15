@@ -33,13 +33,20 @@
 
     @include colour.colour-border(
       "keyline",
-      formsVars.$form-field-border-width,
-      dashed
+      formsVars.$form-field-border-width
     );
     @include borders.rounded-border;
+
+    &--empty {
+      border-style: dashed;
+    }
   }
 
-  &__droppable:has(&:focus-visible) {
+  &__droppable:has(:is(&:hover, &:active)) {
+    @include colour.colour-border("keyline-dark");
+  }
+
+  &__droppable:has(&:focus) {
     @include a11y.focus-outline;
   }
 
@@ -64,13 +71,26 @@
   }
 
   &__droppable-status {
+    margin-top: spacing.space(0.5);
+    padding: spacing.space(0.5);
+
     display: block;
     overflow: hidden;
 
-    line-height: 2;
+    line-height: 1.25;
     text-overflow: ellipsis;
 
     white-space: nowrap;
+
+    @include borders.rounded-border;
+
+    @include colour.tint;
+  }
+
+  &__droppable:not(&__droppable--empty) &__droppable-status {
+    @include colour.blue-accent;
+    @include colour.accent-light;
+    @include typography.main-font-weight-medium;
   }
 
   &__droppable &:hover ~ &__droppable-buttons {

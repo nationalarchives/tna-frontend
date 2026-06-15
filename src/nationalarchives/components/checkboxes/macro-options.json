@@ -57,6 +57,12 @@
     "description": "A list of checkbox items.",
     "params": [
       {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "A unique ID for the checkbox item. If not provided, the ID will be generated using the main `id` and the item's `value`."
+      },
+      {
         "name": "text",
         "type": "string",
         "required": true,
@@ -78,7 +84,8 @@
         "name": "checked",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, the checkbox will be checked."
+        "description": "If `true`, the checkbox will be checked.",
+        "default": false
       }
     ]
   },
@@ -86,13 +93,15 @@
     "name": "small",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show smaller checkboxes."
+    "description": "If `true`, show smaller checkboxes.",
+    "default": false
   },
   {
     "name": "inline",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, show the checkboxes inline rather than vertical."
+    "description": "If `true`, show the checkboxes inline rather than vertical.",
+    "default": false
   },
   {
     "name": "formItemClasses",

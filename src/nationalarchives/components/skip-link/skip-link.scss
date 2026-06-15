@@ -24,7 +24,7 @@
 
   background-color: colour.brand-colour("yellow");
 
-  border: a11yVars.$focus-outline-outer-width #000 solid;
+  border: a11yVars.$focus-outline-outer-width colour.brand-colour("black") solid;
 
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;

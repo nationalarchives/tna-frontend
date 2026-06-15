@@ -1,8 +1,10 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
-import macroOptions from "./macro-options.json";
-import { within, userEvent, expect } from "storybook/test";
+import { expect, userEvent, within } from "storybook/test";
+
 import { customViewports } from "../../../../.storybook/viewports";
+
+import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -38,9 +40,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -74,7 +74,7 @@ export const Standard = {
 export const NoCollapse = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -89,7 +89,7 @@ export const NoCollapse = {
 export const Mobile = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -103,7 +103,7 @@ export const Mobile = {
 export const MobileExpanded = {
   parameters: {
     chromatic: {
-      viewports: [customViewports["small"].styles.width.replace(/px$/, "")],
+      viewports: [customViewports.small.styles.width.replace(/px$/u, "")],
     },
   },
   globals: {
@@ -113,13 +113,12 @@ export const MobileExpanded = {
     ...Standard.args,
   },
   play: async ({ args, canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    const $module = document.querySelector('[data-module="tna-breadcrumbs"]');
-    const $items = args.items.map((item) => canvas.getByText(item.text));
-    const $expandButton = document.querySelector(
-      ".tna-breadcrumbs__item--expandable button",
-    );
+    const canvas = within(canvasElement),
+      $module = document.querySelector('[data-module="tna-breadcrumbs"]'),
+      $items = args.items.map((item) => canvas.getByText(item.text)),
+      $expandButton = document.querySelector(
+        ".tna-breadcrumbs__item--expandable button",
+      );
 
     await expect($items[0]).toBeVisible();
     await expect($items[1]).not.toBeVisible();
@@ -142,7 +141,7 @@ export const MobileExpanded = {
 
     await expect($module).toHaveFocus();
 
-    // await $module.blur();
+    // Await $module.blur();
     await userEvent.keyboard("{Tab}");
     await expect($module).not.toHaveFocus();
     await expect($module).not.toHaveAttribute("tabindex");

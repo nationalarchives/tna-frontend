@@ -60,20 +60,22 @@
     "name": "spellcheck",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, enable [spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) for the text input. Disabled when `password` is `true`."
+    "description": "If `true`, enable [spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) for the text input.",
+    "default": false
   },
   {
     "name": "autocapitalize",
     "type": "string",
     "required": false,
-    "description": "If `true`, enable [automatic capitalization](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) for the text input. Disabled when `password` is `true`. This is not supported in all browsers.",
+    "description": "If `true`, enable [automatic capitalization](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) for the text input. This is not supported in all browsers.",
     "default": "off"
   },
   {
     "name": "autocorrect",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, enable [autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) for the text input. Disabled when `password` is `true`. This is not supported in all browsers."
+    "description": "If `true`, enable [autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) for the text input. This is not supported in all browsers.",
+    "default": false
   },
   {
     "name": "size",
@@ -87,6 +89,13 @@
     "required": false,
     "description": "Set the number of visible text lines for the textarea. A scrollbar will appear if the content exceeds the height.",
     "default": 5
+  },
+  {
+    "name": "itemiseRows",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, when JavaScript is available, parse each row of the textarea content into a list of items.",
+    "default": false
   },
   {
     "name": "formItemClasses",

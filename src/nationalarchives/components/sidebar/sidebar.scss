@@ -82,7 +82,7 @@
   &--pages &__item--current {
     padding-left: spacing.space(0.75);
 
-    @include colour.thick-keyline-accent("left");
+    @include colour.thick-keyline-accent(left);
   }
 
   &--pages &__item--current > &__link {
@@ -152,9 +152,9 @@
     margin: 0;
     padding-bottom: a11yVars.$focus-outline-total-width;
 
-    overflow-y: auto;
-
     flex: 1;
+
+    overflow-y: auto;
   }
 
   &--sticky#{&}--contents &__items,

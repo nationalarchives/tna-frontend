@@ -137,7 +137,7 @@
 
   @include media.on-tiny {
     &:has(&__list) &__item {
-      &:not(:is(&:first-child, &:last-child, &--current, &--ellipses)) {
+      &:not(:is(:first-child, :last-child, &--current, &--ellipses)) {
         display: none;
       }
     }

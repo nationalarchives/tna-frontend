@@ -7,15 +7,25 @@ import { customViewports } from "./viewports";
 import Cookies from "../src/nationalarchives/lib/cookies.mjs";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
+import Prism from "prismjs";
 
 // For cookie banner tests
 window.global = window;
 
-// window.addEventListener("onload", initAll);
-document.addEventListener("DOMContentLoaded", initAll, false);
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    initAll();
+    document
+      .querySelectorAll('.tna-code-block > pre > code[class*="language-"]')
+      .forEach(($block) => Prism.highlightElement($block));
+  },
+  false,
+);
 
 document.documentElement.classList.add(
   "tna-template",
+  // "tna-template--system-theme",
   "tna-template--blue-accent",
 );
 if (window.self !== window.top) {
@@ -23,7 +33,7 @@ if (window.self !== window.top) {
 }
 document.body.classList.add("tna-template__body");
 
-document.documentElement.dataset.tnaFrontendDebug = "true";
+// document.documentElement.dataset.tnaFrontendDebug = "true";
 
 export const parameters = {
   actions: {},

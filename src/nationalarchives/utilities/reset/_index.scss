@@ -1,0 +1,79 @@
+@use "../../variables/media" as mediaVars;
+@use "../../tools/colour";
+@use "../../tools/typography";
+
+* {
+  margin: 0;
+  padding: 0;
+
+  @media (prefers-contrast: more) {
+    background-image: none;
+  }
+}
+
+/*
+ * ------------------------------------------
+ * Disable the "Auto dark mode" feature as we
+ * have our own dark theme
+ * ------------------------------------------
+ */
+:root {
+  --media-breakpoint-tiny: #{mediaVars.$largest-tiny-device-px}px;
+  --media-breakpoint-small: #{mediaVars.$largest-small-device-px}px;
+  --media-breakpoint-medium: #{mediaVars.$largest-medium-device-px}px;
+  color-scheme: only light;
+}
+
+/*
+ * ------------------------------------------
+ * If the browser supports -apple-system-body
+ * which at the moment is just iOS then using
+ * the system body font we can respond to the
+ * Dynamic Type setting in iOS, however we do
+ * disable it for any non-touch Apple devices
+ * such as Mac OS, because the default system
+ * font size is set to 13px rather than 16px
+ * ------------------------------------------
+ */
+@supports (font: -apple-system-body) and (-webkit-touch-callout: default) {
+  html {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font: -apple-system-body;
+  }
+}
+
+img,
+svg,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+img {
+  font-style: italic;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+hr {
+  @include colour.colour-border("keyline", 0, solid);
+  border-top-width: 1px;
+
+  &.tna-hr-dark {
+    @include colour.colour-border("keyline-dark");
+  }
+}

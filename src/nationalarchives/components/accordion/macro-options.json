@@ -68,7 +68,8 @@
         "name": "enabled",
         "type": "boolean",
         "required": true,
-        "description": "If `true`, add a button above the accordion that allows the user to open or close all sections."
+        "description": "If `true`, add a button above the accordion that allows the user to open or close all sections.",
+        "default": false
       },
       {
         "name": "openAllLabel",

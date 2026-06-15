@@ -1,7 +1,9 @@
-import Template from "./template.njk?raw";
 import nunjucks from "nunjucks";
+
 import TextInput from "../text-input/template.njk?raw";
+
 import macroOptions from "./macro-options.json";
+import Template from "./template.njk?raw";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -33,9 +35,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => {
-    return nunjucks.renderString(Template, { params });
-  },
+  render: (params) => nunjucks.renderString(Template, { params }),
 };
 
 export const Standard = {

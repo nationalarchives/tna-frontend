@@ -32,8 +32,8 @@ HeadingGroup.parameters = {
 HeadingGroup.args = {
   supertitle: "Record revealed",
   title: "The Monteagle Letter",
-  level: 3,
-  size: "l",
+  level: 1,
+  size: "xl",
   plainSupertitle: false,
 };
 
@@ -61,34 +61,7 @@ HeadingGroupSingleSentence.parameters = {
 HeadingGroupSingleSentence.args = {
   supertitle: "The story of",
   title: "Alice Hawkins",
-  level: 3,
-  size: "l",
+  level: 1,
+  size: "xl",
   plainSupertitle: false,
-};
-
-const HeadingGroupPlainSupertitleTemplate = ({
-  supertitle,
-  title,
-  level,
-  size,
-  plainSupertitle,
-}) =>
-  `<hgroup class="tna-hgroup-${size}">
-  <p class="tna-hgroup__supertitle${
-    plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
-  }">${supertitle}</p>
-  <h${level} class="tna-hgroup__title">${title}</h${level}>
-</hgroup>`;
-
-export const HeadingGroupPlainSupertitle =
-  HeadingGroupPlainSupertitleTemplate.bind({});
-HeadingGroupPlainSupertitle.parameters = {
-  chromatic: { disableSnapshot: true },
-};
-HeadingGroupPlainSupertitle.args = {
-  supertitle: "Record revealed",
-  title: "The Monteagle Letter",
-  level: 3,
-  size: "l",
-  plainSupertitle: true,
 };

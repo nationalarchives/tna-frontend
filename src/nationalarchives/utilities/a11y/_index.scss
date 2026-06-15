@@ -1,0 +1,42 @@
+@use "../../tools/a11y";
+
+.tna-visually-hidden,
+.tna-\!--visually-hidden {
+  @include a11y.visually-hidden;
+}
+
+*:focus,
+*:focus-visible,
+*:active {
+  z-index: 9;
+}
+
+*:focus-visible {
+  @include a11y.focus-outline;
+}
+
+@supports not selector(:focus-visible) {
+  *:focus {
+    z-index: 9;
+
+    @include a11y.focus-outline;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+select,
+summary {
+  &:active {
+    @include a11y.active-outline;
+  }
+}
+
+[tabindex="-1"] *:focus-visible,
+[tabindex="-1"] *:focus,
+.tna-\!--no-focus-style:focus-visible,
+.tna-\!--no-focus-style:focus {
+  @include a11y.no-focus-outline;
+}

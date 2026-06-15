@@ -1,19 +1,19 @@
 @use "sass:math";
 
+@use "../src/nationalarchives/variables/assets" with (
+  $tna-font-path: "../fonts"
+);
+
 @use "../src/nationalarchives/tools/colour";
 @use "../src/nationalarchives/tools/media";
 @use "../src/nationalarchives/tools/spacing";
 @use "../src/nationalarchives/tools/typography";
 
-@use "@fortawesome/fontawesome-free/scss/variables" with (
-  $font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts"
-);
-@use "@fortawesome/fontawesome-free/scss/fontawesome";
-@use "@fortawesome/fontawesome-free/scss/solid";
-@use "@fortawesome/fontawesome-free/scss/brands";
+@use "../src/nationalarchives/font-awesome";
 
 @import "https://use.typekit.net/kaq6qqh.css";
 @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&family=Roboto+Mono:wght@400..500&display=swap";
+// @import "https://www.nationalarchives.gov.uk/enrichment/css/logo-adornments.css";
 
 .sb-show-main.sb-main-padded {
   padding: 0;

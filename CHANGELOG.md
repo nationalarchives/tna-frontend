@@ -5,25 +5,240 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.32.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.42.1...HEAD)
+
+### Added
+
+- Cards can now have a `style` of `accent-light`
+- New hero components layout option `over` added
+- Style added to show autofilled text inputs
+
+### Changed
+
+- Hero components are "narrow" by default and can now be made larger with `large: true`
+- Updated OpenGraph image with light and dark variants
+
+### Deprecated
+### Removed
+
+- `narrow` option on hero components
+
+### Fixed
+
+- Removed unnecessary focus indicator when clicking on expand breadcrumb button
+
+### Security
+
+## [0.42.0](https://github.com/nationalarchives/tna-frontend/compare/v0.41.1...v0.42.0) - 2026-06-04
+
+### Added
+
+- Added the ability to use a `caller` function in the code block component
+- Added automatic section highlighting on sticky section sidebar components
+- Checkboxes and radio items can have a specific `id` set rather than having one generated using their `value`
+- "Plain page with sidebar" Prototype Kit template added
+
+### Changed
+
+- Updated default links to "About us" pages in the footer component
+- Improved markup of code block component for better accessibility
+- Updated ESLint config from `.eslintrc.js` to `eslint.config.js` for compatibility with ESLint 9+
+
+### Removed
+
+- "Index grid" Prototype Kit template removed
+
+### Fixed
+
+- Removed `autocapitalize` attribute from text inputs with `type="email"`
+
+## [0.41.1](https://github.com/nationalarchives/tna-frontend/compare/v0.41.0...v0.41.1) - 2026-05-12
+
+### Fixed
+
+- Dark mode support for code block
+
+## [0.41.0](https://github.com/nationalarchives/tna-frontend/compare/v0.40.0...v0.41.0) - 2026-05-11
+
+### Added
+
+- New code block component (moved from root level `code-block.scss` file)
+- Add optional `ariaLabel` property to sidebar component
+
+### Changed
+
+- Updated email template for better email client compatibility (@rzarrouk)
+- Updated maximum default picture height from `40rem` to `50rem`
+
+### Removed
+
+- Removed root level `code-block.scss`
+
+### Fixed
+
+- Stacking order issue fixed in accordions between focused and hovered items
+
+## [0.40.0](https://github.com/nationalarchives/tna-frontend/compare/v0.39.0...v0.40.0) - 2026-04-30
+
+### Changed
+
+- Replaced macro-based `email.njk` layout with a safe, table-based inline-HTML version for improved email client compatibility
+- Updated `code.scss` to `code-block.scss` and moved inline code styles to `utilities/typography`
+- Updated "Visit" link in global header
+- Move code block initialisation from `code.mjs` to `initAll()` in `all.mjs`
+- Remove Prism from `dependencies` to `devDependencies` and don't instanciate as part of TNA Frontend (it has to be instantiated in the consuming application)
+- Remove `lib/tables.mjs` and move `checkTableForScroll()` to `lib/helpers.mjs`
+- Improved `<code>` rendering in forced colours mode
+- Updated Design System link and legal links in default footer content
+- Resized left margin of lists
+
+## [0.39.0](https://github.com/nationalarchives/tna-frontend/compare/v0.38.0...v0.39.0) - 2026-04-01
+
+### Added
+
+- Inline `<code>` elements can be used
+- New code block styles with [Prism](https://prismjs.com/) integration available
+- Dark PNG icons added
+
+### Changed
+
+- Updated email template markup with fixes for automatic sizing and message reformatting
+
+### Fixed
+
+- Spacing fixed for stacked description list with icons
+- Sub-pixel alignment issues fixed in SVG logo
+
+## [0.38.0](https://github.com/nationalarchives/tna-frontend/compare/v0.37.0...v0.38.0) - 2026-03-24
+
+### Added
+
+- `.tna-dl--even` class added for balanced columns
+- Italicise alternative text in images
+- Textarea can split lines into separate, selectable items
+
+### Changed
+
+- Yellow accent buttons have changed from white on brown to black on yellow
+- Logo forground colour changed to dark font
+- Pretty text balancing for `<p>` elements
+- JavaScript class `TextInput` changed to `TextInputPassword` and module changed from `data-module="tna-text-input"` to `data-module="tna-text-input-password"`
+- Updated references of `#000` to `colour.brand-colour("black")` (`#010101`)
+- **Breaking:** Updated blockquote HTML structure and classes
+
+### Fixed
+
+- Improved lined description list styles to avoid hanging lines
+- Individual component CSS includes all other relevant component styles when used in isolation
+
+## [0.37.0](https://github.com/nationalarchives/tna-frontend/compare/v0.36.0...v0.37.0) - 2026-03-16
+
+### Added
+
+- `<time datetime="[ISO 8601]">` HTML elements get updated to localised time on `initAll()`
+
+### Changed
+
+- Updated accent border colour
+- Improvements to droppable file input component for improved visual feedback
+- Moved table captions above tables rather than below
+
+### Fixed
+
+- Improved nested list styles don't require classes on child lists
+- Modified padding of checkbox and radios components to remove inactive/unselectable space between fields and labels
+
+## [0.36.0](https://github.com/nationalarchives/tna-frontend/compare/v0.35.1...v0.36.0) - 2026-03-03
+
+### Changed
+
+- Default footer content updated: new links for News, Podcasts, and Freedom of information
+
+### Fixed
+
+- Incorrect email fixures rectified
+- Email page height issue fixed
+- Nested list spacing fixed
+
+## [0.35.1](https://github.com/nationalarchives/tna-frontend/compare/v0.35.0...v0.35.1) - 2026-02-19
+
+### Changed
+
+- Simplified email CSS replacement string
+
+### Fixed
+
+- Incorrect email fixtures rectified
+
+## [0.35.0](https://github.com/nationalarchives/tna-frontend/compare/v0.34.1...v0.35.0) - 2026-02-19
+
+### Added
+
+- Password text input components have a default `autocomplete` of `current-password` but can be changed to `new-password` with `newPassword: true`
+
+### Changed
+
+- Refactored templates directory - moved `email.njk` template to `layouts/email.njk` and `partials/logo.njk` template to `partials/logo/macro.njk` and moved the Prototype Kit templates to a subdirectory
+
+### Fixed
+
+- Compiled CSS added to packaged email template fixtures
+- Password text input component attributes now pass updated HTML validation rules
+
+## [0.34.1](https://github.com/nationalarchives/tna-frontend/compare/v0.34.0...v0.34.1) - 2026-02-17
+
+### Fixed
+
+- Import missing logo styles
+
+## [0.34.0](https://github.com/nationalarchives/tna-frontend/compare/v0.33.2...v0.34.0) - 2026-02-17
+
+### Added
+
+- Reusable `tnaLogo` macro in `nationalarchives/templates/partials/logo.njk` added to header, global header and footer components
+- New email template and styles created
+
+### Changed
+
+- Plain buttons are now underlined
+- Updated sun icon in theme selector
+
+## [0.33.2](https://github.com/nationalarchives/tna-frontend/compare/v0.33.1...v0.33.2) - 2026-02-10
+
+### Fixed
+
+- Changed description list from `inline-grid` to `grid` to avoid side-by-side layouts
+
+## [0.33.1](https://github.com/nationalarchives/tna-frontend/compare/v0.33.0...v0.33.1) - 2026-02-10
+
+### Added
+
+- Added `tna-dl--left-weighted` and `tna-dl--right-weighted` as options to balance and size description list columns
+
+### Fixed
+
+- Fixed layout of description lists with very long content
+
+## [0.33.0](https://github.com/nationalarchives/tna-frontend/compare/v0.32.0...v0.33.0) - 2026-02-10
 
 ### Added
 
 - If enabled, always show the theme selector in the footer with a message to accept settings cookies if they haven't been
 - `previous` and `next` items in pagination components can now have a `description` for when no page items are used and an alternative layout is presented
-- Style added to show autofilled text inputs
 
 ### Changed
-### Deprecated
+
+- The default `.tna-dl` style is now a plain description list
+
 ### Removed
 
 - Pagination components no longer have `currentItemText`, `solid` or `spaced` options
+- `.tna-dl--plain` is no longer needed
 
 ### Fixed
 
 - Added `aria-current="page"` to current page in pages-style sidebar
-
-### Security
+- Spacing has changed from `px` to `rem` in order to match the typography to fix layout issues that occur when the font is scaled on certain operating systems or browsers
 
 ## [0.32.0](https://github.com/nationalarchives/tna-frontend/compare/v0.31.0...v0.32.0) - 2026-01-21
 

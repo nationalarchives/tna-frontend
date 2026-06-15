@@ -3,7 +3,8 @@
     "name": "defaultContent",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, use the default content for the footer."
+    "description": "If `true`, use the default content for the footer.",
+    "default": false
   },
   {
     "name": "defaultContentBaseURL",
@@ -73,7 +74,8 @@
         "name": "hideTitle",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, hide the title of the navigation section."
+        "description": "If `true`, hide the title of the navigation section.",
+        "default": false
       },
       {
         "name": "items",
@@ -103,7 +105,8 @@
             "name": "newTab",
             "type": "boolean",
             "required": false,
-            "description": "If `true`, open the link in a new tab."
+            "description": "If `true`, open the link in a new tab.",
+            "default": false
           }
         ]
       }
@@ -139,7 +142,8 @@
     "name": "themeSelector",
     "type": "boolean",
     "required": false,
-    "description": "Enable the theme selector (once settings cookies have been accepted)."
+    "description": "If `true`, display the theme selector.",
+    "default": false
   },
   {
     "name": "currentTheme",

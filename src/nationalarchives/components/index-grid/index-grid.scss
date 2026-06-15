@@ -50,12 +50,12 @@
     width: 100%;
     height: auto;
 
-    @include colour.image-loader-background;
+    border-radius: bordersVars.$rounded-border-radius
+      bordersVars.$rounded-border-radius 0 0;
 
     pointer-events: none;
 
-    border-radius: bordersVars.$rounded-border-radius
-      bordersVars.$rounded-border-radius 0 0;
+    @include colour.image-loader-background;
   }
 
   &__item-content {

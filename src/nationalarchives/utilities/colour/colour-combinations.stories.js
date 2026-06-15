@@ -1,10 +1,11 @@
+import nunjucks from "nunjucks";
+
 import Button from "../../components/button/template.njk?raw";
 import Checkboxes from "../../components/checkboxes/template.njk?raw";
 import ErrorSummary from "../../components/error-summary/template.njk?raw";
 import Radios from "../../components/radios/template.njk?raw";
 import Select from "../../components/select/template.njk?raw";
 import TextInput from "../../components/text-input/template.njk?raw";
-import nunjucks from "nunjucks";
 
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
@@ -16,25 +17,22 @@ export default {
 };
 
 const accents = [
-  "",
-  "tna-accent-pink",
-  "tna-accent-orange",
-  "tna-accent-yellow",
-  "tna-accent-green",
-  "tna-accent-blue",
-  "tna-accent-black",
-];
-
-const blocks = [
-  "",
-  "tna-background-tint",
-  "tna-background-contrast",
-  "tna-background-accent",
-  "tna-background-accent-light",
-];
-
-const Template = ({ theme }) => {
-  return `<div class="tna-colour-contrast-demo">
+    "",
+    "tna-accent-pink",
+    "tna-accent-orange",
+    "tna-accent-yellow",
+    "tna-accent-green",
+    "tna-accent-blue",
+    "tna-accent-black",
+  ],
+  blocks = [
+    "",
+    "tna-background-tint",
+    "tna-background-accent-light",
+    "tna-background-accent",
+    "tna-background-contrast",
+  ],
+  Template = ({ theme }) => `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
     <div class="tna-colour-contrast-demo__block">
       Blocks
@@ -42,7 +40,7 @@ const Template = ({ theme }) => {
     ${blocks.reduce(
       (blockOutput, block) =>
         `${blockOutput}<div class="tna-colour-contrast-demo__block">
-      ${block.replace(/^tna-background-/, "") || "Base"}
+      ${block.replace(/^tna-background-/u, "") || "Base"}
     </div>`,
       "",
     )}
@@ -55,7 +53,7 @@ const Template = ({ theme }) => {
     ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
     <div class="tna-colour-contrast-demo__example">
       <p>Accent: <strong>${
-        accent.replace(/tna-accent-/g, "") || "[none]"
+        accent.replace(/tna-accent-/gu, "") || "[none]"
       }</strong></p>
     </div>
     ${blocks.reduce(
@@ -64,9 +62,8 @@ const Template = ({ theme }) => {
       <div class="tna-template__body">
         <div class="tna-colour-contrast-demo__example-content ${block}">
           <div class="accent-border-example">
-            <h1 class="tna-heading-s">Heading</h1>
-            <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
-            <p><a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a></p>
+            <h2 class="tna-heading-s">Heading</h2>
+            <p>Text / <span class="dark-text">Dark</span> / <span class="light-text">Light</span> / <a href="#">Link</a> / <a href="#" class="tna-colour-contrast-demo__link--visited">Link (visited)</a> / <i class="fa-solid fa-heart" aria-hidden="true"></i> <i class="fa-solid fa-heart light-icon" aria-hidden="true"></i></p>
             <ul class="tna-ul">
               <li>Alpha</li>
             </ul>
@@ -91,18 +88,6 @@ const Template = ({ theme }) => {
                 James
               </a>
             </dd>
-            <dt>Category</dt>
-            <dd>
-              <a href="#" class="tna-dl-chips__item">
-                Research
-              </a>
-            </dd>
-            <dt>Comments</dt>
-            <dd>
-              <span class="tna-dl-chips__item">
-                3 comments
-              </span>
-            </dd>
           </dl>
           <dl class="tna-dl-chips tna-dl-chips--plain">
             <dt>Published</dt>
@@ -118,18 +103,6 @@ const Template = ({ theme }) => {
                 <i class="fa-solid fa-user"></i>
                 James
               </a>
-            </dd>
-            <dt>Category</dt>
-            <dd>
-              <a href="#" class="tna-dl-chips__item">
-                Research
-              </a>
-            </dd>
-            <dt>Comments</dt>
-            <dd>
-              <span class="tna-dl-chips__item">
-                3 comments
-              </span>
             </dd>
           </dl>
           <div class="tna-button-group">
@@ -163,20 +136,17 @@ const Template = ({ theme }) => {
     "",
   )}
   </div>
-</div>`;
-};
+</div>`,
+  FormsTemplate = ({ theme }) => {
+    const themeSlug = theme.replace(" ", "-").toLowerCase(),
+      formBlocks = blocks.filter(
+        (block) =>
+          block !== "tna-background-contrast" &&
+          block !== "tna-background-accent" &&
+          block !== "tna-background-accent-light",
+      );
 
-const FormsTemplate = ({ theme }) => {
-  const themeSlug = theme.replace(" ", "-").toLowerCase();
-
-  const formBlocks = blocks.filter(
-    (block) =>
-      block !== "tna-background-contrast" &&
-      block !== "tna-background-accent" &&
-      block !== "tna-background-accent-light",
-  );
-
-  return `<div class="tna-colour-contrast-demo">
+    return `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
     <div class="tna-colour-contrast-demo__block">
       Blocks
@@ -184,7 +154,7 @@ const FormsTemplate = ({ theme }) => {
     ${formBlocks.reduce(
       (blockOutput, block) =>
         `${blockOutput}<div class="tna-colour-contrast-demo__block">
-      ${block.replace(/^tna-background-/, "") || "Base"}
+      ${block.replace(/^tna-background-/u, "") || "Base"}
     </div>`,
       "",
     )}
@@ -306,7 +276,7 @@ const FormsTemplate = ({ theme }) => {
     </div>
   </div>
 </div>`;
-};
+  };
 
 export const Light = Template.bind({});
 Light.args = {
@@ -318,9 +288,9 @@ Dark.args = {
   theme: "tna-template--dark-theme",
 };
 
-// export const System = Template.bind({});
+// Export const System = Template.bind({});
 // System.args = {
-//   theme: "tna-template--system-theme",
+//   Theme: "tna-template--system-theme",
 // };
 
 export const HighContrast = Template.bind({});

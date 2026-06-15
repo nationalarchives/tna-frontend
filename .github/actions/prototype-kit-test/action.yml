@@ -1,13 +1,13 @@
 name: GOV.UK prototype kit test
-
-on:
-  workflow_call:
+description: Test the package with the GOV.UK prototype kit
 
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        persist-credentials: false
+    - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
@@ -41,6 +41,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/button/macro.njk\" import tnaButton %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/card/macro.njk\" import tnaCard %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/checkboxes/macro.njk\" import tnaCheckboxes %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/code-block/macro.njk\" import tnaCodeBlock %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/compound-filters/macro.njk\" import tnaCompoundFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/cookie-banner/macro.njk\" import tnaCookieBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/date-input/macro.njk\" import tnaDateInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -82,6 +83,7 @@ runs:
         echo "{{ tnaButton({text:\"I am a button\",href:\"#\"}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCard({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCheckboxes({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaCodeBlock({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCompoundFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaCookieBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaDateInput({}) }}" >> prototype/app/views/index.html &&
@@ -117,26 +119,61 @@ runs:
       shell: bash
     - name: Copy page templates
       run: >
-        cp package/nationalarchives/templates/plain.njk prototype/app/views/template-plain.html &&
-        cp package/nationalarchives/templates/list.njk prototype/app/views/template-list.html &&
-        cp package/nationalarchives/templates/index-grid.njk prototype/app/views/template-index-grid.html
+        cp package/nationalarchives/templates/prototype-kit/plain.njk prototype/app/views/template-plain.html &&
+        cp package/nationalarchives/templates/prototype-kit/list.njk prototype/app/views/template-list.html &&
+        cp package/nationalarchives/templates/prototype-kit/plain-with-sidebar.njk prototype/app/views/template-index-grid.html &&
+        cp package/nationalarchives/templates/prototype-kit/error-page-not-found.njk prototype/app/views/template-index-grid.html
       shell: bash
     - name: Run prototype
       run: >
         cd prototype &&
         npm run dev &
       shell: bash
-    - uses: nev7n/wait_for_response@v1
+    - uses: nev7n/wait_for_response@7fef3c1a6e8939d0b09062f14fec50d3c5d15fa1 # v1.0.1
       with:
         url: "http://localhost:3000"
         responseCode: 200
         timeout: 30000
         interval: 500
     - name: Test prototype components
-      run: >
-        curl --silent http://localhost:3000 | grep '<nav class="tna-breadcrumbs' &&
-        curl --silent http://localhost:3000 | grep '<a href="#" class="tna-button' &&
-        curl --silent http://localhost:3000 | grep '<article class="tna-card'
+      run: |
+        curl --silent http://localhost:3000 | grep 'class="tna-accordion' || (echo "Accordion component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-back-link' || (echo "Back link component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-breadcrumbs' || (echo "Breadcrumbs component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-button' || (echo "Button component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-card' || (echo "Card component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-checkboxes' || (echo "Checkboxes component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-code-block' || (echo "Code block component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-compound-filters' || (echo "Compound filters component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-cookie-banner' || (echo "Cookie banner component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-date-input' || (echo "Date input component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-date-search' || (echo "Date search component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-details' || (echo "Details component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-error-summary' || (echo "Error summary component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-fieldset' || (echo "Fieldset component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-file-input' || (echo "File input component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-files-list' || (echo "Files list component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-footer' || (echo "Footer component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-gallery' || (echo "Gallery component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-global-header' || (echo "Global header component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-header' || (echo "Header component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-hero' || (echo "Hero component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-index-grid' || (echo "Index grid component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-pagination' || (echo "Pagination component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-panel' || (echo "Panel component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-phase-banner' || (echo "Phase banner component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-picture' || (echo "Picture component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-quick-filters' || (echo "Quick filters component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-radios' || (echo "Radios component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-search-field' || (echo "Search field component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-secondary-navigation' || (echo "Secondary navigation component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-select' || (echo "Select component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-sidebar' || (echo "Sidebar component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-skip-link' || (echo "Skip link component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-tabs' || (echo "Tabs component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-text-input' || (echo "Text input component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-textarea' || (echo "Textarea component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-warning' || (echo "Warning component not found" && exit 1)
       shell: bash
     - name: Test templates
       run: >

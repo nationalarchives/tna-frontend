@@ -1,3 +1,4 @@
+@use "../../tools/a11y";
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
@@ -12,6 +13,14 @@
   gap: spacing.space(0.5) spacing.space(0.75);
 
   list-style: none;
+
+  border-radius: 0.1px;
+
+  @include a11y.focus-indicator-only-on-keyboard-focus;
+
+  &:empty {
+    display: none;
+  }
 
   &__item {
     padding: 0 spacing.space(0.125) 0 spacing.space(0.75);
@@ -43,14 +52,20 @@
     width: 1.5rem;
     height: 1.5rem;
 
-    position: relative;
-
     flex-shrink: 0;
+
+    position: relative;
 
     font-size: 0;
     line-height: 0;
 
     text-decoration: none;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
 
     @include borders.rounded-border;
 

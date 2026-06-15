@@ -1,4 +1,4 @@
-import { checkTableForScroll } from "../../lib/tables.mjs";
+import { checkTableForScroll } from "../../lib/helpers.mjs";
 
 export class Accordion {
   constructor($module) {
@@ -68,7 +68,7 @@ export class Accordion {
 
   initState() {
     this.$items.forEach(($item) => {
-      if ($item.dataset["isopen"] === "true") {
+      if ($item.dataset.isopen === "true") {
         this.openItem($item);
       } else {
         this.closeItem($item);

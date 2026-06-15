@@ -9,7 +9,6 @@ export default [
         eventName: "blurred",
         on: "blur",
         data: {
-          // eslint-disable-next-line no-unused-vars
           value: valueGetters.value,
           // eslint-disable-next-line no-unused-vars
           group: ($el, $scope, event) =>

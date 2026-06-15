@@ -53,7 +53,8 @@
         "name": "selected",
         "type": "boolean",
         "required": false,
-        "description": "If `true`, highlight this navigation item as the currently selected page or section."
+        "description": "If `true`, highlight this navigation item as the currently selected page or section.",
+        "default": false
       }
     ]
   },
@@ -93,7 +94,8 @@
     "name": "accent",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, use the page's accent colour as the background colour for the header."
+    "description": "If `true`, use the page's accent colour as the background colour for the header.",
+    "default": false
   },
   {
     "name": "navigationId",

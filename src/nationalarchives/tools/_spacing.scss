@@ -4,21 +4,37 @@
 @use "../variables/typography";
 @use "../tools/media";
 
+/*
+ * ------------------------------------------
+ * Spacing is created with rem rather than px
+ * units as when users use a custom font size
+ * some browsers handle the resize of rem and
+ * em separately from px which causes spacing
+ * and layout issues, so to ensure everything
+ * remaians consistent we use rem for spacing
+ * and typography. The original intention was
+ * separation so that we could scale the type
+ * without affecting spacing, but in practice
+ * there are too many ways to change the font
+ * size in various browsers and devices
+ * ------------------------------------------
+ */
 @function space($size) {
-  @return #{$size * spacing.$spacing-unit-px}px;
+  // @return #{$size * spacing.$spacing-unit-px}px;
+  @return #{$size}rem;
 }
 
 %space-above {
   margin-top: space(2);
-
-  &:first-child {
-    margin-top: 0;
-  }
+  @extend %no-space-above-for-first-children;
 }
 
 %space-only-above {
   margin: #{space(2)} 0 0;
+  @extend %no-space-above-for-first-children;
+}
 
+%no-space-above-for-first-children {
   &:first-child {
     margin-top: 0;
   }

@@ -9,26 +9,30 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-$padding-units-top: 10 !default;
-$padding-units-bottom: 2 !default;
-$padding-units-narrow: 3 !default;
-$shift-units: 5 !default;
+$vertical-padding-small: 2 !default;
+$vertical-padding-large: 2 !default;
+$plain-top-padding: 12 !default;
+$split-vertical-padding: 3 !default;
+$shift-overflow: $vertical-padding-large !default;
+$over-overflow: $shift-overflow !default;
 
 .tna-hero {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset: auto 0 0;
+    z-index: -1;
+    @include colour.colour-border("keyline", 1px, solid, bottom);
+  }
+
   &__figure {
-    min-height: clamp(
-      #{spacing.space($padding-units-top + $padding-units-bottom)},
-      calc(40vw - #{spacing.space($padding-units-top + $padding-units-bottom)}),
-      50rem
-    );
-    margin: 0;
-    padding-top: spacing.space($padding-units-top);
-    padding-bottom: spacing.space($padding-units-bottom);
-
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
-
-    position: relative;
+    justify-content: flex-end;
   }
 
   &__caption {
@@ -39,7 +43,9 @@ $shift-units: 5 !default;
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 5;
+    z-index: 10;
+
+    order: 2;
   }
 
   &__details {
@@ -58,46 +64,6 @@ $shift-units: 5 !default;
       @include colour.colour-font("font-dark", true);
 
       @include colour.colour-background("background", true);
-    }
-  }
-
-  &__details-summary-icon {
-  }
-
-  &__information {
-    width: 45rem;
-    max-width: 75vw;
-    padding: spacing.space(0.625) spacing.space(3.25) spacing.space(0.625)
-      spacing.space(1);
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-
-    @include colour.contrast;
-
-    @include typography.font-size(16);
-
-    border-bottom-left-radius: bordersVars.$rounded-border-radius;
-
-    p + p {
-      margin-top: spacing.space(0.5);
-    }
-  }
-
-  &__image {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-
-    @include colour.image-loader-background;
-
-    img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
     }
   }
 
@@ -150,191 +116,179 @@ $shift-units: 5 !default;
     }
   }
 
-  &__inner {
-    position: relative;
-    z-index: 4;
+  &__details-summary-icon {
   }
 
-  &:not(.tna-background-accent, .tna-background-tint) &__inner {
-    // @include colour.contrast-on-mobile;
+  &__information {
+    padding: spacing.space(0.625) spacing.space(3.25) spacing.space(0.625)
+      spacing.space(1);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    @include colour.contrast;
+
+    @include typography.font-size(16);
+
+    p + p {
+      margin-top: spacing.space(0.5);
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    order: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    order: 3;
   }
 
   &__content {
+    padding-top: spacing.space($vertical-padding-small);
+    padding-bottom: spacing.space($vertical-padding-small);
   }
 
   &__content-inner {
-    padding: spacing.space(2);
-
-    @include colour.colour-background("background");
-
-    @include borders.rounded-border;
-  }
-
-  &__heading {
-  }
-
-  &__body {
-  }
-
-  &--split {
-  }
-
-  &--split &__figure {
-    min-height: clamp(15rem, #{math.div(100vw, 3)}, 50rem);
-    padding-top: spacing.space(2);
-    padding-bottom: spacing.space(2);
-
-    align-items: center;
-
-    box-sizing: border-box;
-  }
-
-  &--split &__information {
-    max-width: 50%;
-
-    box-sizing: border-box;
-  }
-
-  &--split &__image {
-    left: 50%;
-  }
-
-  &--split &__content {
-    width: 50%;
-    padding-right: grid.gutter-width();
-  }
-
-  &--split &__content-inner {
-    padding: 0;
+    padding-right: 0;
+    padding-left: 0;
 
     border-left: none;
+
+    @include colour.colour-background("background");
   }
 
   @include media.on-larger-than-mobile {
-    &--shift {
-      margin-bottom: spacing.space($shift-units - $padding-units-bottom);
+    &__figure {
+      min-height: clamp(5rem, 30vw, 20rem);
     }
 
-    &--shift#{&}--narrow {
-      margin-bottom: spacing.space($shift-units - $padding-units-narrow);
-    }
-  }
-
-  &--shift &__content-inner {
-    position: relative;
-    top: spacing.space($shift-units);
-  }
-
-  &--narrow {
-  }
-
-  &--narrow &__figure {
-    min-height: max(#{spacing.space($padding-units-narrow * 2)}, 20rem);
-    padding-top: spacing.space($padding-units-narrow);
-    padding-bottom: spacing.space($padding-units-narrow);
-  }
-
-  @include media.on-mobile {
-    @include colour.colour-border("keyline", 1px, solid, bottom);
-
-    &.tna-background-tint,
-    &.tna-background-contrast,
-    &.tna-background-accent,
-    &.tna-background-accent-light {
-      border-bottom: none;
-    }
-
-    & &__figure {
-      min-height: auto;
-      padding: 0;
-
-      flex-direction: column;
-    }
-
-    &__caption {
-      order: 2;
-    }
-
-    &__details {
-    }
-
-    &__details-summary {
-      top: spacing.space(0.25);
-      right: spacing.space(0.25);
-    }
-
-    &__details[open] &__details-summary {
-      top: spacing.space(0.5);
-      right: spacing.space(0.5);
-    }
-
-    &__details-summary-icon {
-    }
-
-    &__information,
-    &--split &__information {
-      width: auto;
-      max-width: none;
-
-      left: 0;
-
-      border-bottom-left-radius: 0;
-    }
-
-    &__image {
-      width: 100%;
-
-      position: static;
-
-      order: 1;
-
-      img {
-        height: auto;
-      }
+    &--large &__figure {
+      min-height: clamp(12rem, 33vw, 50rem);
     }
 
     &__inner {
-      order: 3;
+      z-index: 4;
+    }
+
+    &__image {
+      width: auto;
+
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      img {
+        height: 100%;
+
+        object-fit: cover;
+      }
     }
 
     &__content {
+      padding-top: spacing.space($plain-top-padding);
+      padding-bottom: spacing.space($vertical-padding-large);
     }
 
     &__content-inner {
-      padding-right: 0;
-      padding-left: 0;
-
-      border-left: none;
-    }
-
-    &__heading {
-    }
-
-    &__body {
-      margin-top: spacing.space(1);
-    }
-
-    &--shift {
+      padding: spacing.space(2);
+      @include borders.rounded-border;
     }
 
     &--split &__content {
-      width: 100%;
-      padding-right: grid.gutter-width-half();
-    }
-
-    &--shift &__content-inner {
-      position: static;
-    }
-
-    &--split &__figure {
-      min-height: auto;
-      padding-top: 0;
-      padding-bottom: 0;
+      width: 50%;
+      padding-top: spacing.space($vertical-padding-large);
+      padding-bottom: spacing.space($vertical-padding-large);
     }
 
     &--split &__content-inner {
-      padding-top: spacing.space(2);
-      padding-bottom: spacing.space(2);
+      padding: 0 spacing.space(math.div(gridVars.$gutter-width, 2)) 0 0;
+    }
+
+    &--split &__image {
+      left: 50%;
+    }
+
+    &--shift {
+      margin-bottom: spacing.space($shift-overflow);
+    }
+
+    &--shift &__content-inner {
+      position: relative;
+      top: spacing.space($vertical-padding-large + $shift-overflow);
+    }
+
+    &--over {
+      margin-bottom: spacing.space($over-overflow);
+    }
+
+    &--over &__details {
+      max-width: gridVars.$largest-container-width;
+      margin: 0 auto;
+
+      position: relative;
+    }
+
+    &--over &__details-summary {
+      top: spacing.space(0.5);
+      right: spacing.space(gridVars.$gutter-width + 0.5);
+    }
+
+    &--over &__information {
+      max-width: calc(50% - #{spacing.space(gridVars.$gutter-width)});
+
+      box-sizing: border-box;
+
+      top: 0;
+      right: spacing.space(gridVars.$gutter-width);
+      left: auto;
+
+      @include borders.rounded-border;
+    }
+
+    &--over &__content {
+      width: 50%;
+      padding-top: spacing.space($vertical-padding-large);
+    }
+
+    &--over &__content-inner {
+      padding: 0;
+    }
+
+    &--over &__image {
+      max-width: calc(
+        #{math.div(gridVars.$largest-container-width, 2)} -
+          #{grid.gutter-width()}
+      );
+      margin-right: 32px;
+
+      overflow: hidden;
+
+      bottom: spacing.space($over-overflow * -1);
+
+      left: 50%;
+      z-index: 5;
+      @include borders.rounded-border;
+    }
+
+    &--split &__figure,
+    &--over &__figure {
+      justify-content: center;
+    }
+
+    &--shift &__content-inner,
+    &--over &__image {
+      box-shadow:
+        0 0.25rem 1rem -0.25rem rgb(0 0 0 / 25%),
+        0 0.125rem 0.5rem -0.25rem rgb(0 0 0 / 75%);
     }
   }
 }

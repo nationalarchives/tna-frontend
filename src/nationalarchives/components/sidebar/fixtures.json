@@ -139,10 +139,113 @@
             ]
           }
         ],
+        "type": "contents",
+        "sticky": true
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--contents tna-sidebar--sticky\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+    },
+    {
+      "name": "sticky sections",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
         "type": "sections",
         "sticky": true
       },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--sections tna-sidebar--sticky\" data-module=\"tna-sidebar-sections\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a></li></ul></nav>"
+    },
+    {
+      "name": "sticky sections with no highlight on scroll",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "sections",
+        "sticky": true,
+        "disableSectionHighlightOnScroll": true
+      },
       "html": "<nav class=\"tna-sidebar tna-sidebar--sections tna-sidebar--sticky\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a></li></ul></nav>"
+    },
+    {
+      "name": "custom aria-label",
+      "options": {
+        "title": "Heading",
+        "headingLevel": 2,
+        "items": [
+          {
+            "text": "Alpha",
+            "href": "#"
+          },
+          {
+            "text": "Beta",
+            "href": "#",
+            "current": true
+          },
+          {
+            "text": "Gamma",
+            "children": [
+              {
+                "text": "Alpha",
+                "href": "#"
+              },
+              {
+                "text": "Beta",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "type": "sections",
+        "ariaLabel": "Custom sidebar label"
+      },
+      "html": "<nav class=\"tna-sidebar tna-sidebar--sections\" aria-label=\"Custom sidebar label\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a></li></ul></nav>"
     },
     {
       "name": "with classes",

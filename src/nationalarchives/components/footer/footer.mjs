@@ -24,9 +24,13 @@ export class Footer {
       return;
     }
 
-    this.currentTheme = this.$themeSelector.dataset.themeOnLoad;
-
     this.themeCookieName = themeCookieName;
+
+    this.init();
+  }
+
+  init() {
+    this.currentTheme = this.$themeSelector.dataset.themeOnLoad;
 
     this.cookies = new Cookies();
 

@@ -8,6 +8,10 @@ export class FileInputDroppable {
       return;
     }
 
+    this.init();
+  }
+
+  init() {
     this.acceptMutltipleFiles = this.$input.hasAttribute("multiple");
 
     this.$droppableArea = document.createElement("div");

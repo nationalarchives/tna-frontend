@@ -23,6 +23,15 @@ export class Sidebar {
       return;
     }
 
+    /* eslint-disable-next-line no-magic-numbers */
+    const { scrollTopThreshold = 0, disableHighlightSize = "small" } = options;
+    this.scrollTopThreshold = scrollTopThreshold;
+    this.disableHighlightSize = disableHighlightSize;
+
+    this.init();
+  }
+
+  init() {
     this.breakpoints = {
       tiny:
         getComputedStyle(document.documentElement).getPropertyValue(
@@ -38,28 +47,19 @@ export class Sidebar {
         ) || "1024px",
     };
 
-    /* eslint-disable-next-line no-magic-numbers */
-    const { scrollTopThreshold = 0, disableHighlightSize = "small" } = options;
-
-    if (disableHighlightSize) {
-      if (!Object.keys(this.breakpoints).includes(disableHighlightSize)) {
+    if (this.disableHighlightSize) {
+      if (!Object.keys(this.breakpoints).includes(this.disableHighlightSize)) {
         throw new Error(
-          `Invalid value for disableHighlightSize: ${disableHighlightSize}. Expected one of: ${Object.keys(this.breakpoints).join(", ")}`,
+          `Invalid value for disableHighlightSize: ${this.disableHighlightSize}. Expected one of: ${Object.keys(this.breakpoints).join(", ")}`,
         );
       }
       this.hideOnDevice = window.matchMedia(
-        `(max-width: ${this.breakpoints[disableHighlightSize]})`,
+        `(max-width: ${this.breakpoints[this.disableHighlightSize]})`,
       );
     } else {
       this.hideOnDevice = null;
     }
 
-    this.scrollTopThreshold = scrollTopThreshold;
-
-    this.init();
-  }
-
-  init() {
     this.currentItem = null;
 
     window.addEventListener("scroll", () => this.highlightCurrentSection());

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.42.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.43.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [0.43.0](https://github.com/nationalarchives/tna-frontend/compare/v0.42.0...v0.43.0) - 2026-06-16
 
 ### Added
 
@@ -17,7 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Hero components are "narrow" by default and can now be made larger with `large: true`
 - Updated OpenGraph image with light and dark variants
 
-### Deprecated
 ### Removed
 
 - `narrow` option on hero components
@@ -25,8 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed unnecessary focus indicator when clicking on expand breadcrumb button
-
-### Security
 
 ## [0.42.0](https://github.com/nationalarchives/tna-frontend/compare/v0.41.1...v0.42.0) - 2026-06-04
 

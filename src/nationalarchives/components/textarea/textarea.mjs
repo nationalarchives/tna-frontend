@@ -18,7 +18,12 @@ export class TextAreaItemisedRows {
     }
 
     const { enhancedHint } = options;
+    this.enhancedHint = enhancedHint || "Enter an item and press enter";
 
+    this.init();
+  }
+
+  init() {
     this.values = this.$formFieldInput.value
       .split("\n")
       .map((value) => value.trim())
@@ -104,8 +109,7 @@ export class TextAreaItemisedRows {
         this.$formFieldBody,
       );
     }
-    this.$formFieldInputHint.innerText =
-      enhancedHint || "Enter an item and press enter";
+    this.$formFieldInputHint.innerText = this.enhancedHint;
 
     this.updateList();
   }

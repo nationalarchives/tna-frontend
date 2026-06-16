@@ -203,6 +203,12 @@ $over-overflow: $shift-overflow !default;
       @include borders.rounded-border;
     }
 
+    &__information {
+      max-width: math.div(gridVars.$largest-container-width, 2);
+
+      left: auto;
+    }
+
     &--split &__content {
       width: 50%;
       padding-top: spacing.space($vertical-padding-large);
@@ -210,7 +216,7 @@ $over-overflow: $shift-overflow !default;
     }
 
     &--split &__content-inner {
-      padding: 0 spacing.space(math.div(gridVars.$gutter-width, 2)) 0 0;
+      padding: 0 grid.gutter-width-half() 0 0;
     }
 
     &--split &__image {

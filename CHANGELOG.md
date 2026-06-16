@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.43.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v0.44.0...HEAD)
 
 ### Added
 ### Changed
@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 ### Security
+
+## [0.44.0](https://github.com/nationalarchives/tna-frontend/compare/v0.43.0...v0.44.0) - 2026-06-16
+
+### Changed
+
+- Limited the width of the hero component information box on larger devices
+
+### Removed
+
+- Removed the classes `tna-sidebar--static-on-mobile` and `tna-sidebar--static-on-tiny` in favour of automatic media queries and column container selectors
 
 ## [0.43.0](https://github.com/nationalarchives/tna-frontend/compare/v0.42.0...v0.43.0) - 2026-06-16
 

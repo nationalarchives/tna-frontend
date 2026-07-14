@@ -111,8 +111,10 @@ $button-border-width: 4px !default;
   &-group--small & {
     padding: 0 spacing.space(0.5);
 
-    @include typography.font-size(14);
+    gap: spacing.space(0.375);
+
     line-height: 1.5rem;
+    @include typography.font-size(14);
   }
 
   @mixin icon-only {

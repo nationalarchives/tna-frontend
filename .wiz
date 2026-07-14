@@ -21,6 +21,8 @@ ignore:
     BUILTIN-401:
       src/nationalarchives/templates/fixtures.json:
         reason: FALSE_POSITIVE
+      src/nationalarchives/components/footer/fixtures.json:
+        reason: FALSE_POSITIVE
 
     WS-I011-JAVASCRIPT-00003:
       src/nationalarchives/analytics.js:

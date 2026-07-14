@@ -260,6 +260,31 @@
       "html": "<div class=\"tna-fieldset tna-fieldset--small-hint\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Type</span></legend><div class=\"tna-fieldset__body\"><div class=\"tna-radios\" id=\"type\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-option-1\" value=\"audio\" name=\"type\"><label for=\"type-option-1\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-option-2\" value=\"image\" name=\"type\"><label for=\"type-option-2\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-option-3\" value=\"video\" name=\"type\"><label for=\"type-option-3\" class=\"tna-radios__item-label\">Video</label></div></div></div></fieldset></div>"
     },
     {
+      "name": "with overriding names",
+      "options": {
+        "label": "Type",
+        "headingSize": "m",
+        "id": "type",
+        "name": "type",
+        "items": [
+          {
+            "text": "Audio",
+            "value": "audio"
+          },
+          {
+            "text": "Image",
+            "value": "image"
+          },
+          {
+            "text": "Video",
+            "value": "video",
+            "name": "other-type"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-fieldset tna-fieldset--small-hint\"><fieldset class=\"tna-fieldset__inner\"><legend class=\"tna-fieldset__legend\"><span class=\"tna-fieldset__heading tna-heading-m\">Type</span></legend><div class=\"tna-fieldset__body\"><div class=\"tna-radios\" id=\"type\"><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-audio\" value=\"audio\" name=\"type\"><label for=\"type-audio\" class=\"tna-radios__item-label\">Audio</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-image\" value=\"image\" name=\"type\"><label for=\"type-image\" class=\"tna-radios__item-label\">Image</label></div><div class=\"tna-radios__item\"><input type=\"radio\" id=\"type-video\" value=\"video\" name=\"other-type\"><label for=\"type-video\" class=\"tna-radios__item-label\">Video</label></div></div></div></fieldset></div>"
+    },
+    {
       "name": "with classes",
       "options": {
         "label": "Type",

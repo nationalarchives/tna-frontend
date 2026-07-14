@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.0.0...HEAD)
 
 ### Added
+
+- Individual checkbox and radio items can have a custom `name` property rather than using the `name` property of the component
+
 ### Changed
 ### Deprecated
 ### Removed

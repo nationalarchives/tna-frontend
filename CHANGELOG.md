@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated default "Jobs" link in footer
+- Updated the size of the gap in small buttons with icons
 
 ### Deprecated
 ### Removed

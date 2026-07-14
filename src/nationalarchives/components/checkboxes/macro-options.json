@@ -54,7 +54,7 @@
     "name": "items",
     "type": "array",
     "required": true,
-    "description": "A list of checkbox items.",
+    "description": "A list of checkboxes.",
     "params": [
       {
         "name": "id",
@@ -66,13 +66,19 @@
         "name": "text",
         "type": "string",
         "required": true,
-        "description": "The label of the checkbox item."
+        "description": "The label of the checkbox."
       },
       {
         "name": "value",
         "type": "string",
         "required": true,
-        "description": "The form field value."
+        "description": "The checkbox value."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "An optional override for the checkbox name. If not set, the main `name` will be used."
       },
       {
         "name": "hint",

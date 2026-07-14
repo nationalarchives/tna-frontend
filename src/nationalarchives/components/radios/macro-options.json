@@ -72,7 +72,13 @@
         "name": "value",
         "type": "string",
         "required": true,
-        "description": "The form field value."
+        "description": "The radio value."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "An optional override for the radio name. If not set, the main `name` will be used."
       },
       {
         "name": "hint",

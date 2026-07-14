@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Individual checkbox and radio items can have a custom `name` property rather than using the `name` property of the component
 
 ### Changed
+
+- Updated default "Jobs" link in footer
+
 ### Deprecated
 ### Removed
 ### Fixed

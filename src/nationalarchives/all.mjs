@@ -1,4 +1,6 @@
 /* eslint-disable no-new */
+import Cookies from "@nationalarchives/cookies";
+
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CodeBlock } from "./components/code-block/code-block.mjs";
@@ -16,7 +18,6 @@ import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
-import Cookies from "./lib/cookies.mjs";
 import { checkTableForScroll, updateTimeElement } from "./lib/helpers.mjs";
 
 const initAll = (options = {}) => {

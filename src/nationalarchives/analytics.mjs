@@ -1,5 +1,7 @@
 /* eslint-disable max-classes-per-file, no-ternary, no-nested-ternary */
 
+import Cookies from "@nationalarchives/cookies";
+
 import AccordionAnalytics from "./components/accordion/analytics.js";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
 import CheckboxesAnalytics from "./components/checkboxes/analytics.js";
@@ -23,7 +25,6 @@ import {
   getXPathTo,
   valueGetters,
 } from "./lib/analytics-helpers.mjs";
-import Cookies from "./lib/cookies.mjs";
 
 const componentAnalytics = [
   ...AccordionAnalytics,

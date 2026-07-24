@@ -136,7 +136,6 @@ const checkExists = [
   ...componentFiles("warning"),
   // Libraries
   "nationalarchives/lib/analytics-helpers.mjs",
-  "nationalarchives/lib/cookies.mjs",
   "nationalarchives/lib/_functions.scss",
   "nationalarchives/lib/helpers.mjs",
   "nationalarchives/lib/uuid.mjs",

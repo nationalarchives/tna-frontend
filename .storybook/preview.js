@@ -4,7 +4,7 @@ import "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff
 import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
-import Cookies from "../src/nationalarchives/lib/cookies.mjs";
+import Cookies from "@nationalarchives/cookies";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
 import Prism from "prismjs";

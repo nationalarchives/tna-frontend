@@ -1,7 +1,6 @@
+import Cookies from "@nationalarchives/cookies";
 import nunjucks from "nunjucks";
 import { expect, userEvent, within } from "storybook/test";
-
-import Cookies from "../../lib/cookies.mjs";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";

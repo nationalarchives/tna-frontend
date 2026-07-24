@@ -1,4 +1,4 @@
-import Cookies from "../../lib/cookies.mjs";
+import Cookies from "@nationalarchives/cookies";
 
 export { Cookies };
 

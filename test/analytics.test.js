@@ -1,7 +1,26 @@
 import { describe, expect, test, beforeEach } from "@jest/globals";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
-import { addCookiesToDocument } from "./cookies.test";
 import { valueGetters } from "../src/nationalarchives/lib/analytics-helpers.mjs";
+
+const addCookiesToDocument = (document) => {
+  let _cookies = {};
+  document.__defineGetter__("cookie", () => {
+    return Object.keys(_cookies)
+      .map((key) => `${key}=${_cookies[key]}`)
+      .join("; ");
+  });
+  document.__defineSetter__("cookie", (s) => {
+    const keyValue = s.trim().split("=");
+    const key = keyValue[0].trim();
+    const values = keyValue[1].trim().split(";");
+    const value = values[0];
+    _cookies[key] = value;
+    return `${key}=${value}`;
+  });
+  document.clearAllCookies = () => {
+    _cookies = {};
+  };
+};
 
 addCookiesToDocument(document);
 

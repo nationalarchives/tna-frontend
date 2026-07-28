@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Various fixes and improvements for print styles
 - Made `.tna-!--hide-on-print` class `!important`
+- Alignment of image caption on `over` styled hero components
 
 ### Security
 

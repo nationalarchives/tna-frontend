@@ -249,7 +249,7 @@ $over-overflow: $shift-overflow !default;
     }
 
     &--over &__information {
-      max-width: calc(50% - #{spacing.space(gridVars.$gutter-width)});
+      max-width: calc(50% - #{spacing.space(gridVars.$gutter-width * 1.5)});
 
       box-sizing: border-box;
 

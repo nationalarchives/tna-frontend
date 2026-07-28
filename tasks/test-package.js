@@ -294,11 +294,7 @@ global.Element = { prototype: { matches: () => {} } };
   const jsAllPackage = require(`../package/nationalarchives/${file}`);
   let exports = [];
   if (file === "all.js" || file === "all+analytics.js") {
-    exports = [
-      ...exports,
-      { name: "initAll", type: "function" },
-      { name: "Cookies", type: "function" },
-    ];
+    exports = [...exports, { name: "initAll", type: "function" }];
     Object.keys(componentsWithJavaScript).forEach((component) => {
       const componentClass = componentsWithJavaScript[component];
       if (

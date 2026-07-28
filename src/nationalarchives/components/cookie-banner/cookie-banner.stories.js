@@ -1,4 +1,4 @@
-import Cookies from "@nationalarchives/cookies";
+import Cookies from "@nationalarchives/cookies/src/index.js";
 import nunjucks from "nunjucks";
 import { expect, userEvent, within } from "storybook/test";
 
@@ -59,10 +59,10 @@ export const Accept = {
   },
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({ secure: false, noInit: true });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(false);
+    await expect(cookies.preference("settings")).toEqual(false);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
     const canvas = within(canvasElement),
@@ -72,31 +72,14 @@ export const Accept = {
     await expect(rejectButton).toBeVisible();
     await userEvent.click(acceptButton);
 
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(true);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(true);
+    await expect(cookies.preference("settings")).toEqual(true);
+    await expect(cookies.preference("marketing")).toEqual(true);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
     await expect(cookies.get("cookie_preferences_set")).toEqual("true");
     await expect(acceptButton).not.toBeVisible();
     await expect(rejectButton).not.toBeVisible();
-
-    // Const closeButton = canvas.getByText("Hide cookies message");
-    // Await expect(closeButton).toBeVisible();
-    // Await userEvent.click(closeButton);
-
-    // Await expect(closeButton).not.toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -109,10 +92,10 @@ export const Reject = {
   },
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({ secure: false, noInit: true });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(false);
+    await expect(cookies.preference("settings")).toEqual(false);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
     const canvas = within(canvasElement),
@@ -122,10 +105,10 @@ export const Reject = {
     await expect(rejectButton).toBeVisible();
     await userEvent.click(rejectButton);
 
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(false);
+    await expect(cookies.preference("settings")).toEqual(false);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
     await expect(cookies.get("cookie_preferences_set")).toEqual("true");
     await expect(cookies.hasValue("cookie_preferences_set", "true")).toEqual(
@@ -133,17 +116,6 @@ export const Reject = {
     );
     await expect(acceptButton).not.toBeVisible();
     await expect(rejectButton).not.toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -166,17 +138,6 @@ export const RejectAndClose = {
     await expect(closeButton).toBeVisible();
     await closeButton.click();
     await expect(closeButton).not.toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -189,23 +150,21 @@ export const ExistingNotComplete = {
   },
   decorators: [
     (Story) => {
-      const cookies = new Cookies({ secure: false, noInit: true });
-      cookies.init();
-      cookies.acceptPolicy("settings");
-      cookies.acceptPolicy("usage");
+      document.cookie =
+        /* eslint-disable-next-line no-secrets/no-secrets */
+        "cookie_preferences=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22marketing%22%3Afalse%2C%22essential%22%3Atrue%7D";
       return Story();
     },
   ],
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({
-      newInstance: true,
       secure: false,
       noInit: true,
     });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(true);
+    await expect(cookies.preference("settings")).toEqual(true);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
     const canvas = within(canvasElement),
@@ -213,17 +172,6 @@ export const ExistingNotComplete = {
       rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -236,24 +184,22 @@ export const ExistingAndComplete = {
   },
   decorators: [
     (Story) => {
-      const cookies = new Cookies({ secure: false, noInit: true });
-      cookies.init();
-      cookies.acceptPolicy("settings");
-      cookies.acceptPolicy("usage");
-      cookies.set("cookie_preferences_set", "true");
+      document.cookie =
+        /* eslint-disable-next-line no-secrets/no-secrets */
+        "cookie_preferences=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22marketing%22%3Afalse%2C%22essential%22%3Atrue%7D";
+      document.cookie = "cookie_preferences_set=true";
       return Story();
     },
   ],
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({
-      newInstance: true,
       secure: false,
       noInit: true,
     });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(true);
+    await expect(cookies.preference("settings")).toEqual(true);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(true);
     await expect(cookies.get("cookie_preferences_set")).toEqual("true");
 
@@ -262,17 +208,6 @@ export const ExistingAndComplete = {
       rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).not.toBeVisible();
     await expect(rejectButton).not.toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -285,28 +220,20 @@ export const Partial = {
   },
   decorators: [
     (Story) => {
-      const cookies = new Cookies({ secure: false, noInit: true });
-      cookies.set(
-        "cookies_policy",
-        JSON.stringify({
-          usage: true,
-          essential: false,
-        }),
-      );
-      cookies.set("cookie_preferences_set", "true");
+      document.cookie =
+        /* eslint-disable-next-line no-secrets/no-secrets */
+        "cookie_preferences=%7B%22usage%22%3Atrue%2C%22essential%22%3Atrue%7D";
       return Story();
     },
   ],
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({
-      newInstance: true,
       secure: false,
-      noInit: true,
     });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(true);
+    await expect(cookies.preference("settings")).toEqual(false);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
     const canvas = within(canvasElement),
@@ -314,17 +241,6 @@ export const Partial = {
       rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -337,26 +253,19 @@ export const Malformed = {
   },
   decorators: [
     (Story) => {
-      document.documentElement.setAttribute(
-        "data-tna-cookies-insecure",
-        "true",
-      );
-      const cookies = new Cookies({ secure: false, noInit: true });
-      cookies.set("cookies_policy", "foobar");
-      cookies.set("cookie_preferences_set", "true");
+      document.cookie = "cookie_preferences=foobar";
       return Story();
     },
   ],
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({
-      newInstance: true,
       secure: false,
       noInit: true,
     });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(false);
+    await expect(cookies.preference("settings")).toEqual(false);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
     const canvas = within(canvasElement),
@@ -364,17 +273,6 @@ export const Malformed = {
       rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };
 
@@ -391,24 +289,20 @@ export const FalseCompletion = {
   },
   decorators: [
     (Story) => {
-      document.documentElement.setAttribute(
-        "data-tna-cookies-insecure",
-        "true",
-      );
+      document.cookie = "cookie_preferences=%7B%7D";
       document.cookie = "cookie_preferences_set=true";
       return Story();
     },
   ],
   play: async ({ canvasElement }) => {
     const cookies = new Cookies({
-      newInstance: true,
       secure: false,
       noInit: true,
     });
-    await expect(cookies.isPolicyAccepted("essential")).toEqual(true);
-    await expect(cookies.isPolicyAccepted("usage")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("settings")).toEqual(false);
-    await expect(cookies.isPolicyAccepted("marketing")).toEqual(false);
+    await expect(cookies.preference("essential")).toEqual(true);
+    await expect(cookies.preference("usage")).toEqual(false);
+    await expect(cookies.preference("settings")).toEqual(false);
+    await expect(cookies.preference("marketing")).toEqual(false);
     await expect(cookies.exists("cookie_preferences_set")).toEqual(false);
 
     const canvas = within(canvasElement),
@@ -416,16 +310,5 @@ export const FalseCompletion = {
       rejectButton = canvas.getByText("Reject cookies");
     await expect(acceptButton).toBeVisible();
     await expect(rejectButton).toBeVisible();
-
-    document.cookie.replace(/(?<=^|;).+?(?==|;|$)/gu, (name) =>
-      location.hostname
-        .split(".")
-        .reverse()
-        .reduce((domain) => {
-          const newDomain = domain.replace(/^\.?[^.]+/u, "");
-          document.cookie = `${name}=;max-age=0;path=/;domain=${newDomain}`;
-          return newDomain;
-        }, location.hostname),
-    );
   },
 };

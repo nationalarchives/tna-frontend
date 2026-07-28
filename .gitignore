@@ -1,12 +1,13 @@
 .DS_Store
 .idea/
 .vscode/
-__snapshots__
-node_modules
-package
+.vitest-attachments/
+__snapshots__/
+node_modules/
+package/
 package-cookie-banner
 package-global-header
-storybook
+storybook/
 *.zip
 *.tgz
 build-storybook.log
@@ -14,5 +15,6 @@ debug-storybook.log
 chromatic.config.json
 chromatic.log
 RELEASE_NOTES.txt
-error-pages
-fixtures-html
+error-pages/
+fixtures-html/
+coverage/

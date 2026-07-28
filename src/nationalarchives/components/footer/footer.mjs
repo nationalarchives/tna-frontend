@@ -1,4 +1,4 @@
-import Cookies from "@nationalarchives/cookies";
+import Cookies from "@nationalarchives/cookies/src/index.js";
 
 export class Footer {
   constructor($module, themeCookieName = "theme") {
@@ -49,12 +49,12 @@ export class Footer {
     this.$themeSelectorEnableSettingsCookiesButton.addEventListener(
       "click",
       () => {
-        this.cookies.acceptPolicy("settings");
+        this.cookies.enablePreference("settings");
       },
     );
 
     this.showThemeSelector();
-    this.cookies.on("changePolicy", (data) => {
+    this.cookies.on("changePreference", (data) => {
       if (Object.hasOwn(data, "settings")) {
         if (data.settings === true) {
           this.cookies.set(this.themeCookieName, this.currentTheme);
@@ -77,7 +77,7 @@ export class Footer {
         this.selectThemeSelectorButton($currentThemeButton);
       }
     }
-    if (!this.cookies.isPolicyAccepted("settings")) {
+    if (!this.cookies.preference("settings")) {
       this.$themeSelectorNotice.removeAttribute("hidden");
     }
   }
@@ -98,7 +98,7 @@ export class Footer {
       return;
     }
     this.currentTheme = theme;
-    if (this.cookies.isPolicyAccepted("settings")) {
+    if (this.cookies.preference("settings")) {
       this.cookies.set(this.themeCookieName, this.currentTheme);
     } else {
       this.$themeSelectorNotice.removeAttribute("hidden");

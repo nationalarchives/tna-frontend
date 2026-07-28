@@ -21,7 +21,7 @@ runs:
     - name: Start Storybook
       run: npm start &
       shell: bash
-    - name: Install Platwright
+    - name: Install Playwright
       run: npx playwright install
       shell: bash
     - uses: nev7n/wait_for_response@7fef3c1a6e8939d0b09062f14fec50d3c5d15fa1 # v1.0.1
@@ -31,5 +31,5 @@ runs:
         timeout: 30000
         interval: 500
     - name: Run Storybook tests
-      run: npm run test:storybook
+      run: npm run test:vitest
       shell: bash

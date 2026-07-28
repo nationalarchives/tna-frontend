@@ -1,7 +1,3 @@
-import Cookies from "@nationalarchives/cookies";
-
-export { Cookies };
-
 export class DateInputProgressive {
   constructor($module) {
     this.$module = $module;

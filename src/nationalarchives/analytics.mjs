@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file, no-ternary, no-nested-ternary */
 
-import Cookies from "@nationalarchives/cookies";
+import Cookies from "@nationalarchives/cookies/src/index.js";
 
 import AccordionAnalytics from "./components/accordion/analytics.js";
 import BreadcrumbAnalytics from "./components/breadcrumbs/analytics.js";
@@ -75,7 +75,7 @@ class EventTracker {
   start(initAll) {
     /* eslint-disable-next-line no-magic-numbers */
     if (!navigator.doNotTrack || navigator.doNotTrack !== 1) {
-      if (this.cookies.isPolicyAccepted("usage")) {
+      if (this.cookies.preference("usage")) {
         this.enableTracking();
       }
       this.cookies.on("changePolicy", (policies) => {
@@ -354,7 +354,7 @@ class GA4 extends EventTracker {
     if (id) {
       this.gTagId = id;
       this.ga4Disable = `ga-disable-${this.gTagId}`;
-      if (!this.cookies.isPolicyAccepted("usage")) {
+      if (!this.cookies.preference("usage")) {
         window[this.ga4Disable] = true;
         this.cookies.set(this.ga4Disable, "true");
       }

@@ -11,6 +11,13 @@ const dirname =
 
 export default defineConfig({
   test: {
+    browser: {
+      enabled: true,
+      headless: true,
+      provider: playwright({}),
+      instances: [{ browser: "chromium" }],
+      screenshotFailures: false,
+    },
     projects: [
       {
         extends: true,
@@ -19,17 +26,18 @@ export default defineConfig({
         ],
         test: {
           name: "storybook",
-          browser: {
-            enabled: true,
-            headless: true,
-            provider: playwright({}),
-            instances: [{ browser: "chromium" }],
-          },
-          setupFiles: [".storybook/vitest.setup.js"],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          include: ["test/*.test.js"],
         },
       },
     ],
     coverage: {
+      enabled: true,
       provider: "v8",
       include: ["src/**/*.js", "src/**/*.mjs"],
       exclude: ["**/analytics.js", "**/*.json"],

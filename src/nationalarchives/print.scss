@@ -8,10 +8,26 @@
 @use "tools/colour";
 @use "tools/media";
 
+.tna-\!--hide-on-print {
+  display: none !important;
+}
+
 .tna-template,
 .tna-background-accent,
 .tna-background-contrast,
-.tna-hero:not(.tna-background-accent, .tna-background-tint) .tna-hero__inner {
+.tna-hero:not(
+    .tna-background-accent,
+    .tna-background-accent-light,
+    .tna-background-contrast,
+    .tna-background-tint,
+    .tna-background-tint-light
+  )
+  .tna-hero__inner,
+.tna-picture__transcript,
+.tna-index-grid__item,
+.tna-hero__details-summary,
+.tna-gallery__item-figure-inner,
+.tna-gallery__navigation-item {
   @include colour.colour-css-vars;
 }
 

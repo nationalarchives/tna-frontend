@@ -8,12 +8,12 @@ export class FileInputDroppable {
       return;
     }
 
+    this.acceptMutltipleFiles = this.$input.hasAttribute("multiple");
+
     this.init();
   }
 
   init() {
-    this.acceptMutltipleFiles = this.$input.hasAttribute("multiple");
-
     this.$droppableArea = document.createElement("div");
     this.$droppableArea.classList.add(
       "tna-file-input__droppable",
@@ -21,21 +21,14 @@ export class FileInputDroppable {
     );
     this.$body.insertBefore(this.$droppableArea, this.$input);
     this.$droppableArea.appendChild(this.$input);
-
     this.$pseudoSelectFileText = document.createElement("span");
     this.$pseudoSelectFileText.setAttribute("aria-live", "polite");
     this.$pseudoSelectFileText.classList.add(
       "tna-file-input__droppable-status",
     );
-
-    let fileText = "file";
-    if (this.acceptMutltipleFiles) {
-      fileText += "s";
-    }
-
+    const fileText = this.acceptMutltipleFiles ? "files" : "file";
     this.$pseudoSelectFileText.textContent = `No ${fileText} selected`;
     this.$droppableArea.appendChild(this.$pseudoSelectFileText);
-
     const $droppableButtons = document.createElement("div");
     $droppableButtons.classList.add(
       "tna-button-group",
@@ -44,16 +37,13 @@ export class FileInputDroppable {
       "tna-file-input__droppable-buttons",
     );
     this.$droppableArea.appendChild($droppableButtons);
-
     const $pseudoSelectFileButton = document.createElement("span");
     $pseudoSelectFileButton.classList.add("tna-button");
     $pseudoSelectFileButton.textContent = `Choose ${fileText}`;
     $droppableButtons.appendChild($pseudoSelectFileButton);
-
     const $pseudoDropFileButton = document.createElement("span");
     $pseudoDropFileButton.textContent = `or drop ${fileText}`;
     $droppableButtons.appendChild($pseudoDropFileButton);
-
     this.$droppableAreaAriaLabel = document.createElement("span");
     this.$droppableAreaAriaLabel.classList.add("tna-visually-hidden");
     this.$droppableAreaAriaLabel.setAttribute("aria-live", "assertive");

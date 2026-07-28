@@ -16,7 +16,6 @@ import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
-import Cookies from "./lib/cookies.mjs";
 import { checkTableForScroll, updateTimeElement } from "./lib/helpers.mjs";
 
 const initAll = (options = {}) => {
@@ -209,7 +208,6 @@ const initAll = (options = {}) => {
 
 export {
   initAll,
-  Cookies,
   Accordion,
   Breadcrumbs,
   CodeBlock,

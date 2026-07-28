@@ -1,4 +1,4 @@
-import Cookies from "../../lib/cookies.mjs";
+import Cookies from "@nationalarchives/cookies/src/index.js";
 
 export { Cookies };
 
@@ -27,12 +27,12 @@ export class CookieBanner {
       return;
     }
 
-    this.cookies = new Cookies({ newInstance: true });
+    this.cookies = new Cookies();
 
     this.cookiePreferencesSetKey =
       this.$module.dataset.preferencesKey || "cookie_preferences_set";
 
-    if (!this.cookies.policiesCorrectOnInit) {
+    if (!this.cookies.preferencesCorrectOnInit) {
       this.cookies.delete(this.cookiePreferencesSetKey);
     }
 
@@ -50,7 +50,7 @@ export class CookieBanner {
   accept() {
     this.$prompt.setAttribute("hidden", "");
     this.complete();
-    this.cookies.acceptAllPolicies();
+    this.cookies.enableAllPreferences();
     this.$acceptedMessage.removeAttribute("hidden");
     this.$acceptedMessage.setAttribute("tabindex", "0");
     this.$acceptedMessage.focus();
@@ -62,7 +62,7 @@ export class CookieBanner {
   reject() {
     this.$prompt.setAttribute("hidden", "");
     this.complete();
-    this.cookies.rejectAllPolicies();
+    this.cookies.disableAllPreferences();
     this.$rejectedMessage.removeAttribute("hidden");
     this.$rejectedMessage.setAttribute("tabindex", "0");
     this.$rejectedMessage.focus();

@@ -3,7 +3,6 @@ import {
   Breadcrumbs,
   CodeBlock,
   CookieBanner,
-  Cookies,
   DateInputProgressive,
   ErrorSummary,
   FileInputDroppable,
@@ -23,7 +22,6 @@ import { EventTracker, GA4, helpers } from "./analytics.mjs";
 
 export {
   initAll,
-  Cookies,
   Accordion,
   Breadcrumbs,
   CodeBlock,

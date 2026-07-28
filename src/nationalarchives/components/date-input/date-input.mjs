@@ -1,7 +1,3 @@
-import Cookies from "../../lib/cookies.mjs";
-
-export { Cookies };
-
 export class DateInputProgressive {
   constructor($module) {
     this.$module = $module;

@@ -4,7 +4,7 @@ import "../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff
 import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
-import Cookies from "../src/nationalarchives/lib/cookies.mjs";
+import Cookies from "@nationalarchives/cookies/src/index.js";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
 import Prism from "prismjs";
@@ -87,12 +87,7 @@ export const parameters = {
 export const decorators = [
   (Story, ctx) => {
     window.dataLayer = [];
-    const cookies = new Cookies({
-      newInstance: true,
-      secure: false,
-      noInit: true,
-    });
-    cookies.deleteAll();
+    new Cookies({ secure: false }).deleteAll();
     const story = Story();
     // if (window && ctx.args.disableMockAnalytics !== true) {
     //   setTimeout(() => {

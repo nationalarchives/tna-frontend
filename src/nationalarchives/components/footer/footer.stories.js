@@ -1,7 +1,6 @@
+import Cookies from "@nationalarchives/cookies/src/index.js";
 import nunjucks from "nunjucks";
 import { expect, within } from "storybook/test";
-
-import Cookies from "../../lib/cookies.mjs";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
@@ -70,7 +69,7 @@ export const ThemeSelector = {
       const cookies = new Cookies({
         secure: false,
       });
-      cookies.acceptPolicy("settings");
+      cookies.enablePreference("settings");
       return Story();
     },
   ],
@@ -119,12 +118,12 @@ export const ThemeSelectorWithoutCookies = {
     await expect($darkLightButton).toBeVisible();
     await expect($themeSelectorNotice).toBeVisible();
 
-    await expect(cookies.isPolicyAccepted("settings")).toBe(false);
+    await expect(cookies.preference("settings")).toBe(false);
     await expect(cookies.exists("theme")).toBe(false);
 
     await $enableSettingsCookiesButton.click();
     await expect($themeSelectorNotice).not.toBeVisible();
-    await expect(cookies.isPolicyAccepted("settings")).toBe(true);
+    await expect(cookies.preference("settings")).toBe(true);
     await expect(cookies.exists("theme")).toBe(true);
     await expect(cookies.get("theme")).toBe("light");
 
@@ -137,6 +136,6 @@ export const ThemeSelectorWithoutCookies = {
     await $themeLightButton.click();
     await expect(cookies.get("theme")).toBe("light");
 
-    cookies.rejectAllPolicies();
+    cookies.disableAllPreferences();
   },
 };

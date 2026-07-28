@@ -1,9 +1,6 @@
-import { describe, expect, test, beforeEach } from "@jest/globals";
+import { describe, expect, test, beforeEach } from "vitest";
 import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
-import { addCookiesToDocument } from "./cookies.test";
 import { valueGetters } from "../src/nationalarchives/lib/analytics-helpers.mjs";
-
-addCookiesToDocument(document);
 
 describe("Initialisation", () => {
   beforeEach(() => {
@@ -21,7 +18,7 @@ describe("Initialisation", () => {
 
   test("GA4", async () => {
     document.cookie =
-      "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
+      "cookie_preferences=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
 
     expect(window.dataLayer).toEqual(undefined);
 
@@ -43,7 +40,7 @@ describe("Initialisation", () => {
 
   test("GA4 without adding tracking code", async () => {
     document.cookie =
-      "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
+      "cookie_preferences=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
 
     const id = "example";
     new GA4({ id, addTrackingCode: false });
@@ -70,9 +67,9 @@ describe("With consent", () => {
 
   beforeEach(() => {
     window.dataLayer = [];
-    document.clearAllCookies();
+    // document.clearAllCookies();
     document.cookie =
-      "cookies_policy=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
+      "cookie_preferences=%7B%22usage%22%3Atrue%2C%22settings%22%3Atrue%2C%22essential%22%3Atrue%7D";
     window.TNAFrontendAnalyticsGA4 = null;
     document.head.innerHTML = "";
     document.body.innerHTML = "";

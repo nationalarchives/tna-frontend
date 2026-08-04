@@ -18,7 +18,7 @@
         "description": "A unique ID for the file item."
       },
       {
-        "name": "title",
+        "name": "text",
         "type": "string",
         "required": true,
         "description": "The name of the file to show."

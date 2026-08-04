@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.1.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.2.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.2.0](https://github.com/nationalarchives/tna-frontend/compare/v1.0.0...v1.1.0) - 2026-08-04
 
 ### Added
 
@@ -16,15 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the accessibility statement link in the footer
 - Intergrated [TNA Frontend Cookies](https://github.com/nationalarchives/tna-frontend-cookies) and removed the built-in cookie library
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Various fixes and improvements for print styles
 - Made `.tna-!--hide-on-print` class `!important`
 - Alignment of image caption on `over` styled hero components
-
-### Security
 
 ## [1.1.0](https://github.com/nationalarchives/tna-frontend/compare/v1.0.0...v1.1.0) - 2026-07-14
 

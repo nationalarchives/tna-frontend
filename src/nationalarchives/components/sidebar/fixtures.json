@@ -255,7 +255,8 @@
         "items": [
           {
             "text": "Alpha",
-            "href": "#"
+            "href": "#",
+            "classes": "sidebar__test-class-2"
           },
           {
             "text": "Beta",
@@ -267,7 +268,8 @@
             "children": [
               {
                 "text": "Alpha",
-                "href": "#"
+                "href": "#",
+                "classes": "sidebar__test-class3"
               },
               {
                 "text": "Beta",
@@ -279,7 +281,7 @@
         "type": "contents",
         "classes": "sidebar__test-class"
       },
-      "html": "<nav class=\"tna-sidebar sidebar__test-class tna-sidebar--contents\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+      "html": "<nav class=\"tna-sidebar sidebar__test-class tna-sidebar--contents\" aria-label=\"Sidebar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item sidebar__test-class-2\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child sidebar__test-class3\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
     },
     {
       "name": "with attributes",
@@ -289,7 +291,10 @@
         "items": [
           {
             "text": "Alpha",
-            "href": "#"
+            "href": "#",
+            "attributes": {
+              "data-testattribute2": "foobar2"
+            }
           },
           {
             "text": "Beta",
@@ -301,7 +306,10 @@
             "children": [
               {
                 "text": "Alpha",
-                "href": "#"
+                "href": "#",
+                "attributes": {
+                  "data-testattribute3": "foobar3"
+                }
               },
               {
                 "text": "Beta",
@@ -315,7 +323,7 @@
           "data-testattribute": "foobar"
         }
       },
-      "html": "<nav class=\"tna-sidebar tna-sidebar--contents\" aria-label=\"Sidebar\" data-testattribute=\"foobar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
+      "html": "<nav class=\"tna-sidebar tna-sidebar--contents\" aria-label=\"Sidebar\" data-testattribute=\"foobar\"><h2 class=\"tna-sidebar__heading tna-heading-m\">Heading</h2><ul class=\"tna-sidebar__items\"><li class=\"tna-sidebar__item\" data-testattribute2=\"foobar2\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item tna-sidebar__item--current\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li><li class=\"tna-sidebar__item\"><a href=\"\" class=\"tna-sidebar__link\">Gamma</a><ul class=\"tna-sidebar__item-children\"><li class=\"tna-sidebar__item-child\" data-testattribute3=\"foobar3\"><a href=\"#\" class=\"tna-sidebar__link\">Alpha</a></li><li class=\"tna-sidebar__item-child\"><a href=\"#\" class=\"tna-sidebar__link\">Beta</a></li></ul></li></ul></nav>"
     }
   ]
 }

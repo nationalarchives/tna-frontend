@@ -60,8 +60,64 @@
             "type": "string",
             "required": true,
             "description": "The URL of the child sidebar item."
+          },
+          {
+            "name": "children",
+            "type": "array",
+            "required": false,
+            "description": "A list of sidebar grandchild items.",
+            "params": [
+              {
+                "name": "text",
+                "type": "string",
+                "required": true,
+                "description": "The text of the grandchild sidebar item."
+              },
+              {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The URL of the grandchild sidebar item."
+              },
+              {
+                "name": "classes",
+                "type": "string",
+                "required": false,
+                "description": "Classes to add to the grandchild sidebar item."
+              },
+              {
+                "name": "attributes",
+                "type": "object",
+                "required": false,
+                "description": "HTML attributes (for example data attributes) to add to the grandchild sidebar item."
+              }
+            ]
+          },
+          {
+            "name": "classes",
+            "type": "string",
+            "required": false,
+            "description": "Classes to add to the child sidebar item."
+          },
+          {
+            "name": "attributes",
+            "type": "object",
+            "required": false,
+            "description": "HTML attributes (for example data attributes) to add to the child sidebar item."
           }
         ]
+      },
+      {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the sidebar item."
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the sidebar item."
       }
     ]
   },

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.1.0...HEAD)
 
 ### Added
+
+- Sidebar items, children and grandchildren can have classes and attributes
+
 ### Changed
 
 - Updated the accessibility statement link in the footer

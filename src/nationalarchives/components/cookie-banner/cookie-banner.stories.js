@@ -13,7 +13,6 @@ export default {
     Object.entries({
       serviceName: { control: "text" },
       cookiesUrl: { control: "text" },
-      preferencesSetKey: { control: "text" },
       style: {
         control: "inline-radio",
         options: ["none", "contrast", "accent", "tint"],

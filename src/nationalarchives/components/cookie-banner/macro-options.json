@@ -40,13 +40,6 @@
     "description": "The URL of the cookie preferences page for the service."
   },
   {
-    "name": "preferencesSetKey",
-    "type": "string",
-    "required": false,
-    "description": "If set, the name of the cookie used to indicate that the user has set their cookie preferences.",
-    "default": "cookie_preferences_set"
-  },
-  {
     "name": "style",
     "type": "string",
     "required": false,

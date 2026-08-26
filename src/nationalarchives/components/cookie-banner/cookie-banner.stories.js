@@ -58,7 +58,7 @@ export const Accept = {
     disableMockAnalytics: true,
   },
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({ secure: false, noInit: true });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(false);
     await expect(cookies.preference("settings")).toEqual(false);
@@ -91,7 +91,7 @@ export const Reject = {
     disableMockAnalytics: true,
   },
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({ secure: false, noInit: true });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(false);
     await expect(cookies.preference("settings")).toEqual(false);
@@ -157,10 +157,7 @@ export const ExistingNotComplete = {
     },
   ],
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({
-      secure: false,
-      noInit: true,
-    });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(true);
     await expect(cookies.preference("settings")).toEqual(true);
@@ -192,10 +189,7 @@ export const ExistingAndComplete = {
     },
   ],
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({
-      secure: false,
-      noInit: true,
-    });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(true);
     await expect(cookies.preference("settings")).toEqual(true);
@@ -227,9 +221,7 @@ export const Partial = {
     },
   ],
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({
-      secure: false,
-    });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(true);
     await expect(cookies.preference("settings")).toEqual(false);
@@ -258,10 +250,7 @@ export const Malformed = {
     },
   ],
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({
-      secure: false,
-      noInit: true,
-    });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(false);
     await expect(cookies.preference("settings")).toEqual(false);
@@ -295,10 +284,7 @@ export const FalseCompletion = {
     },
   ],
   play: async ({ canvasElement }) => {
-    const cookies = new Cookies({
-      secure: false,
-      noInit: true,
-    });
+    const cookies = new Cookies({ secure: false });
     await expect(cookies.preference("essential")).toEqual(true);
     await expect(cookies.preference("usage")).toEqual(false);
     await expect(cookies.preference("settings")).toEqual(false);

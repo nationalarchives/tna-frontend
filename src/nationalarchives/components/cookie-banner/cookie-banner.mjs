@@ -29,52 +29,35 @@ export class CookieBanner {
 
     this.cookies = new Cookies();
 
-    this.cookiePreferencesSetKey =
-      this.$module.dataset.preferencesKey || "cookie_preferences_set";
-
-    if (!this.cookies.preferencesCorrectOnInit) {
-      this.cookies.delete(this.cookiePreferencesSetKey);
-    }
-
-    if (
-      !this.cookies.exists(this.cookiePreferencesSetKey) ||
-      !this.cookies.hasValue(this.cookiePreferencesSetKey, "true")
-    ) {
+    if (!this.cookies.preferencesSet) {
       this.$module.removeAttribute("hidden");
 
       this.$acceptButton.addEventListener("click", () => this.accept());
       this.$rejectButton.addEventListener("click", () => this.reject());
+
+      this.$closeButtons.forEach(($closeButton) => {
+        $closeButton.addEventListener("click", () => this.close());
+      });
     }
   }
 
   accept() {
-    this.$prompt.setAttribute("hidden", "");
-    this.complete();
     this.cookies.enableAllPreferences();
-    this.$acceptedMessage.removeAttribute("hidden");
-    this.$acceptedMessage.setAttribute("tabindex", "0");
-    this.$acceptedMessage.focus();
-    this.$acceptedMessage.addEventListener("blur", () => {
-      this.$acceptedMessage.removeAttribute("tabindex");
-    });
+    this.showPanel(this.$acceptedMessage);
   }
 
   reject() {
-    this.$prompt.setAttribute("hidden", "");
-    this.complete();
     this.cookies.disableAllPreferences();
-    this.$rejectedMessage.removeAttribute("hidden");
-    this.$rejectedMessage.setAttribute("tabindex", "0");
-    this.$rejectedMessage.focus();
-    this.$rejectedMessage.addEventListener("blur", () => {
-      this.$rejectedMessage.removeAttribute("tabindex");
-    });
+    this.showPanel(this.$rejectedMessage);
   }
 
-  complete() {
-    this.cookies.set(this.cookiePreferencesSetKey, true);
-    this.$closeButtons.forEach(($closeButton) => {
-      $closeButton.addEventListener("click", () => this.close());
+  showPanel($panel) {
+    this.$prompt.setAttribute("hidden", "");
+    $panel.removeAttribute("hidden");
+    $panel.setAttribute("tabindex", "0");
+    $panel.focus();
+    $panel.addEventListener("blur", () => {
+      $panel.removeAttribute("tabindex");
     });
   }
 

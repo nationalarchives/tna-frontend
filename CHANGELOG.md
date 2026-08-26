@@ -8,10 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.2.0...HEAD)
 
 ### Added
+
+- Quick filters now have a `small` option
+
 ### Changed
+
+- Quick filter styles have been updated
+
 ### Deprecated
 ### Removed
+
+- Removed `preferencesSetKey` from cookie banner and use new `cookie_preferences_set` feature from TNA Frontend Cookies
+
 ### Fixed
+
+- Fixed issue with Dragon not being able to select checkbox and radio items
+
 ### Security
 
 ## [1.2.0](https://github.com/nationalarchives/tna-frontend/compare/v1.1.0...v1.2.0) - 2026-08-04

@@ -40,6 +40,13 @@
     "default": false
   },
   {
+    "name": "small",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, reduce the font size and padding of the quick filter items.",
+    "default": false
+  },
+  {
     "name": "classes",
     "type": "string",
     "required": false,

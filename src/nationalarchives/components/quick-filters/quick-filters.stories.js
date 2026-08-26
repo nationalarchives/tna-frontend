@@ -11,6 +11,7 @@ export default {
     Object.entries({
       items: { control: "object" },
       stack: { control: "boolean" },
+      small: { control: "boolean" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [

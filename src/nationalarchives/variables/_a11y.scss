@@ -4,3 +4,5 @@ $focus-outline-total-width: $focus-outline-inner-width +
   $focus-outline-outer-width;
 $focus-outline-active-inner-width: $focus-outline-inner-width - 1px !default;
 $focus-outline-active-outer-width: $focus-outline-outer-width - 1px !default;
+$focus-outline-active-total-width: $focus-outline-active-inner-width +
+  $focus-outline-active-outer-width;

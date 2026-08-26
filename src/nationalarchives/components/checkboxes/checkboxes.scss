@@ -1,3 +1,4 @@
+@use "../../variables/a11y" as a11yVars;
 @use "../../variables/forms" as formsVars;
 @use "../../tools/a11y";
 @use "../../tools/borders";
@@ -18,24 +19,27 @@
     position: relative;
 
     input {
-      width: 1px;
-      height: 1px;
+      width: formsVars.$checkbox-radio-size;
+      height: formsVars.$checkbox-radio-size;
       margin: 0;
       padding: 0;
 
       position: absolute;
-      top: -1px;
-      left: -1px;
+      top: 0;
+      left: 0;
+      z-index: 2;
 
       opacity: 0;
+
+      cursor: pointer;
     }
 
     &-label {
-      padding-left: spacing.space(3);
+      padding-left: calc(formsVars.$checkbox-radio-size + spacing.space(1));
 
       display: block;
 
-      line-height: 2rem;
+      line-height: formsVars.$checkbox-radio-size;
 
       cursor: pointer;
 
@@ -43,7 +47,7 @@
       &::after {
         content: "";
 
-        width: 2rem;
+        width: formsVars.$checkbox-radio-size;
 
         position: absolute;
         top: 0;
@@ -51,7 +55,7 @@
       }
 
       &::before {
-        height: 2rem;
+        height: formsVars.$checkbox-radio-size;
 
         display: block;
         box-sizing: border-box;
@@ -96,14 +100,23 @@
     gap: spacing.space(0.5);
   }
 
-  &--small &__item-label {
-    padding-left: spacing.space(2.25);
+  &--small &__item {
+    input {
+      width: formsVars.$checkbox-radio-size-small;
+      height: formsVars.$checkbox-radio-size-small;
+    }
+  }
 
-    line-height: 1.5rem;
+  &--small &__item-label {
+    padding-left: calc(
+      formsVars.$checkbox-radio-size-small + spacing.space(0.75)
+    );
+
+    line-height: formsVars.$checkbox-radio-size-small;
 
     &::before {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: formsVars.$checkbox-radio-size-small;
+      height: formsVars.$checkbox-radio-size-small;
     }
 
     &::after {
@@ -153,7 +166,8 @@
   input:focus + &__item-label,
   &__item:hover &__item-label {
     &::before {
-      box-shadow: 0 0 0 0.125rem var(--input-border);
+      box-shadow: 0 0 0 a11yVars.$focus-outline-active-total-width
+        var(--keyline);
     }
   }
 }

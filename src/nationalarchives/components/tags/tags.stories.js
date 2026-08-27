@@ -6,7 +6,7 @@ import Template from "./template.njk?raw";
 nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
-  title: "Components/Quick filters",
+  title: "Components/Tags",
   argTypes: Object.fromEntries(
     Object.entries({
       items: { control: "object" },
@@ -76,6 +76,45 @@ export const Standard = {
         href: "#?filter=theta",
       },
     ],
-    classes: "tna-quick-filters--demo",
+    classes: "tna-tags--demo",
+  },
+};
+
+export const NoLinks = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+  args: {
+    items: [
+      {
+        label: "All",
+        selected: true,
+      },
+      {
+        label: "Medieval (974—1485)",
+      },
+      {
+        label: "Early Modern (1485—1714)",
+      },
+      {
+        label: "Georgians (1714—1837)",
+      },
+      {
+        label: "Victorians (1837—1901)",
+      },
+      {
+        label: "Early 20th century (1901—1918)",
+      },
+      {
+        label: "Interwar (1918—1939)",
+      },
+      {
+        label: "Second World War (1939—1945)",
+      },
+      {
+        label: "Postwar (1945—2000)",
+      },
+    ],
+    classes: "tna-tags--demo",
   },
 };

@@ -9,13 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Quick filters now have a `small` option
+- Tags have a `small` option and the `href` of the items is optional
 - Allow tabs to be closed
 - Added truncation to longer page titles to ensure a maximum length of 70 characters for the `<title>` element (['Require title not to have too long text' on HTML-Validate](https://html-validate.org/rules/long-title.html))
 
 ### Changed
 
-- Quick filter styles have been updated
+- Quick filters component has been renamed to tags
 - Improved hover styles for form items and cards
 - Improved tabs component
 

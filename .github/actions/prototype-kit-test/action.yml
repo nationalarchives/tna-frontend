@@ -61,7 +61,6 @@ runs:
         echo -e "{% from \"nationalarchives/components/panel/macro.njk\" import tnaPanel %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/phase-banner/macro.njk\" import tnaPhaseBanner %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/picture/macro.njk\" import tnaPicture %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
-        echo -e "{% from \"nationalarchives/components/quick-filters/macro.njk\" import tnaQuickFilters %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/radios/macro.njk\" import tnaRadios %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/search-field/macro.njk\" import tnaSearchField %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/secondary-navigation/macro.njk\" import tnaSecondaryNavigation %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -69,6 +68,7 @@ runs:
         echo -e "{% from \"nationalarchives/components/sidebar/macro.njk\" import tnaSidebar %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/skip-link/macro.njk\" import tnaSkipLink %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/tabs/macro.njk\" import tnaTabs %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
+        echo -e "{% from \"nationalarchives/components/tags/macro.njk\" import tnaTags %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/text-input/macro.njk\" import tnaTextInput %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/textarea/macro.njk\" import tnaTextarea %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
         echo -e "{% from \"nationalarchives/components/warning/macro.njk\" import tnaWarning %}\n$(cat prototype/app/views/index.html)" > prototype/app/views/index.html &&
@@ -104,7 +104,6 @@ runs:
         echo "{{ tnaPanel({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPhaseBanner({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaPicture({}) }}" >> prototype/app/views/index.html &&
-        echo "{{ tnaQuickFilters({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaRadios({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSearchField({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSecondaryNavigation({}) }}" >> prototype/app/views/index.html &&
@@ -112,6 +111,7 @@ runs:
         echo "{{ tnaSidebar({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaSkipLink({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTabs({}) }}" >> prototype/app/views/index.html &&
+        echo "{{ tnaTags({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextInput({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaTextarea({}) }}" >> prototype/app/views/index.html &&
         echo "{{ tnaWarning({}) }}" >> prototype/app/views/index.html &&
@@ -163,7 +163,7 @@ runs:
         curl --silent http://localhost:3000 | grep 'class="tna-panel' || (echo "Panel component not found" && exit 1)
         curl --silent http://localhost:3000 | grep 'class="tna-phase-banner' || (echo "Phase banner component not found" && exit 1)
         curl --silent http://localhost:3000 | grep 'class="tna-picture' || (echo "Picture component not found" && exit 1)
-        curl --silent http://localhost:3000 | grep 'class="tna-quick-filters' || (echo "Quick filters component not found" && exit 1)
+        curl --silent http://localhost:3000 | grep 'class="tna-tags' || (echo "Tags component not found" && exit 1)
         curl --silent http://localhost:3000 | grep 'class="tna-radios' || (echo "Radios component not found" && exit 1)
         curl --silent http://localhost:3000 | grep 'class="tna-search-field' || (echo "Search field component not found" && exit 1)
         curl --silent http://localhost:3000 | grep 'class="tna-secondary-navigation' || (echo "Secondary navigation component not found" && exit 1)

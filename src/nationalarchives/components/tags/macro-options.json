@@ -1,0 +1,73 @@
+[
+  {
+    "name": "items",
+    "type": "array",
+    "required": true,
+    "description": "A list of items to display as tags.",
+    "params": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "description": "The text label for the tag."
+      },
+      {
+        "name": "href",
+        "type": "string",
+        "required": false,
+        "description": "An optional URL for the tag item. If not provided, the tag will be rendered as a plain text item."
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "If an `href` is specified, this is an optional title attribute for the tag item."
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, highlight the tag as selected.",
+        "default": false
+      },
+      {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the tag item."
+      },
+      {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the tag item."
+      }
+    ]
+  },
+  {
+    "name": "stack",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, stack the tags vertically.",
+    "default": false
+  },
+  {
+    "name": "small",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, reduce the font size and padding of the tag items.",
+    "default": false
+  },
+  {
+    "name": "classes",
+    "type": "string",
+    "required": false,
+    "description": "Classes to add to the tags."
+  },
+  {
+    "name": "attributes",
+    "type": "object",
+    "required": false,
+    "description": "HTML attributes (for example data attributes) to add to the tags."
+  }
+]

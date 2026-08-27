@@ -1,0 +1,194 @@
+{
+  "component": "tags",
+  "fixtures": [
+    {
+      "name": "plain",
+      "options": {
+        "items": [
+          {
+            "label": "All",
+            "href": "#?filter=all",
+            "selected": true
+          },
+          {
+            "label": "Medieval (974—1485)",
+            "title": "Medieval",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Early Modern (1485—1714)",
+            "href": "#?filter=beta"
+          },
+          {
+            "label": "Georgians (1714—1837)"
+          },
+          {
+            "label": "Victorians (1837—1901)",
+            "title": "Victorians"
+          }
+        ]
+      },
+      "html": "<ul class=\"tna-tags\"><li class=\"tna-tags__item tna-tags__item--selected\"><a href=\"#?filter=all\" class=\"tna-tags__link\">All</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=alpha\" aria-label=\"Medieval\" title=\"Medieval\" class=\"tna-tags__link\">Medieval (974—1485)</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=beta\" class=\"tna-tags__link\">Early Modern (1485—1714)</a></li><li class=\"tna-tags__item\"><span class=\"tna-tags__link\">Georgians (1714—1837)</span></li><li class=\"tna-tags__item\"><span class=\"tna-tags__link\">Victorians (1837—1901)</span></li></ul>",
+      "hidden": false
+    },
+    {
+      "name": "stacked",
+      "options": {
+        "items": [
+          {
+            "label": "All",
+            "href": "#?filter=all",
+            "selected": true
+          },
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Beta",
+            "href": "#?filter=beta"
+          },
+          {
+            "label": "Gamma",
+            "href": "#?filter=gamma"
+          }
+        ],
+        "stack": true
+      },
+      "html": "<ul class=\"tna-tags tna-tags--stacked\"><li class=\"tna-tags__item tna-tags__item--selected\"><a href=\"#?filter=all\" class=\"tna-tags__link\">All</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=alpha\" class=\"tna-tags__link\">Alpha</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=beta\" class=\"tna-tags__link\">Beta</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=gamma\" class=\"tna-tags__link\">Gamma</a></li></ul>",
+      "hidden": false
+    },
+    {
+      "name": "small",
+      "options": {
+        "items": [
+          {
+            "label": "All",
+            "href": "#?filter=all",
+            "selected": true
+          },
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Beta",
+            "href": "#?filter=beta"
+          },
+          {
+            "label": "Gamma",
+            "href": "#?filter=gamma"
+          }
+        ],
+        "small": true
+      },
+      "html": "<ul class=\"tna-tags tna-tags--small\"><li class=\"tna-tags__item tna-tags__item--selected\"><a href=\"#?filter=all\" class=\"tna-tags__link\">All</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=alpha\" class=\"tna-tags__link\">Alpha</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=beta\" class=\"tna-tags__link\">Beta</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=gamma\" class=\"tna-tags__link\">Gamma</a></li></ul>",
+      "hidden": false
+    },
+    {
+      "name": "items with classes",
+      "options": {
+        "items": [
+          {
+            "label": "All",
+            "href": "#?filter=all",
+            "classes": "test-class-1"
+          },
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha",
+            "classes": "test-class-2"
+          },
+          {
+            "label": "Beta",
+            "classes": "test-class-3"
+          }
+        ]
+      },
+      "html": "<ul class=\"tna-tags\"><li class=\"tna-tags__item\"><a href=\"#?filter=all\" class=\"tna-tags__link test-class-1\">All</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=alpha\" class=\"tna-tags__link test-class-2\">Alpha</a></li><li class=\"tna-tags__item\"><span class=\"tna-tags__link test-class-3\">Beta</span></li></ul>",
+      "hidden": false
+    },
+    {
+      "name": "items with attributes",
+      "options": {
+        "items": [
+          {
+            "label": "All",
+            "href": "#?filter=all",
+            "attributes": {
+              "data-test-1": "test-attribute-1"
+            }
+          },
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha",
+            "attributes": {
+              "data-test-2": "test-attribute-2"
+            }
+          },
+          {
+            "label": "Beta",
+            "classes": "test-class-3",
+            "attributes": {
+              "data-test-3": "test-attribute-3"
+            }
+          }
+        ]
+      },
+      "html": "<ul class=\"tna-tags\"><li class=\"tna-tags__item\"><a href=\"#?filter=all\" class=\"tna-tags__link\" data-test-1=\"test-attribute-1\">All</a></li><li class=\"tna-tags__item\"><a href=\"#?filter=alpha\" class=\"tna-tags__link\" data-test-2=\"test-attribute-2\">Alpha</a></li><li class=\"tna-tags__item\"><span class=\"tna-tags__link test-class-3\" data-test-3=\"test-attribute-3\">Beta</span></li></ul>",
+      "hidden": false
+    },
+    {
+      "name": "with classes",
+      "options": {
+        "items": [
+          {
+            "label": "Alpha",
+            "href": "?alpha",
+            "selected": true
+          },
+          {
+            "label": "Beta",
+            "href": "?beta",
+            "classes": "test-class-2"
+          },
+          {
+            "label": "Gamma",
+            "href": "?gamma"
+          }
+        ],
+        "classes": "test-class"
+      },
+      "html": "<ul class=\"tna-tags test-class\"><li class=\"tna-tags__item tna-tags__item--selected\"><a href=\"?alpha\" class=\"tna-tags__link\">Alpha</a></li><li class=\"tna-tags__item\"><a href=\"?beta\" class=\"tna-tags__link test-class-2\">Beta</a></li><li class=\"tna-tags__item\"><a href=\"?gamma\" class=\"tna-tags__link\">Gamma</a></li></ul>",
+      "hidden": false
+    },
+    {
+      "name": "with attributes",
+      "options": {
+        "items": [
+          {
+            "label": "Alpha",
+            "href": "?alpha",
+            "selected": true
+          },
+          {
+            "label": "Beta",
+            "href": "?beta",
+            "attributes": {
+              "data-testattribute2": "foobar2"
+            }
+          },
+          {
+            "label": "Gamma",
+            "href": "?gamma"
+          }
+        ],
+        "attributes": {
+          "data-testattribute": "foobar"
+        }
+      },
+      "html": "<ul class=\"tna-tags\" data-testattribute=\"foobar\"><li class=\"tna-tags__item tna-tags__item--selected\"><a href=\"?alpha\" class=\"tna-tags__link\">Alpha</a></li><li class=\"tna-tags__item\"><a href=\"?beta\" class=\"tna-tags__link\" data-testattribute2=\"foobar2\">Beta</a></li><li class=\"tna-tags__item\"><a href=\"?gamma\" class=\"tna-tags__link\">Gamma</a></li></ul>",
+      "hidden": false
+    }
+  ]
+}

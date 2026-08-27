@@ -4,7 +4,7 @@
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.tna-quick-filters {
+.tna-tags {
   @include spacing.space-above;
 
   display: flex;

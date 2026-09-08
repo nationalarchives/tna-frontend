@@ -71,6 +71,11 @@ export const Group = {
         classes: "tna-button--demo",
       },
       {
+        text: "Plain no visited state",
+        plain: true,
+        classes: "tna-button--no-visited-state",
+      },
+      {
         text: "Plain With Icon",
         href: "#",
         iconSvg:

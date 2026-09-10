@@ -78,7 +78,7 @@ class EventTracker {
       if (this.cookies.preference("usage")) {
         this.enableTracking();
       }
-      this.cookies.on("changePolicy", (policies) => {
+      this.cookies.on("changePreference", (policies) => {
         if (Object.hasOwn(policies, "usage")) {
           if (policies.usage) {
             this.enableTracking();

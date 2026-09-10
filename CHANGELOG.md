@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tab buttons will inherit font weight which fixes the issue with them not appearing bolder when the user has a preference for higher contrast
 - Fixed issue with closed tabs not opening the correct tab when the left or right arrow keys are pressed
 - Plain buttons (not `<button>` types) now have a visited state by default with the option to not have one by adding the class `tna-button--no-visited-state`
+- Analytics now start tracking once the cookie preferences have been changed (switched the old event `changePolicy` to the new `changePreference`)
 
 ### Security
 

@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.3.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.4.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.4.0](https://github.com/nationalarchives/tna-frontend/compare/v1.3.1...v1.4.0) - 2026-09-10
 
 ### Added
 
@@ -15,16 +24,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - "Copy code" button on code blocks has an improved `aria-label` and `title` if a `filename` is set
 
-### Deprecated
-### Removed
 ### Fixed
 
 - Tab buttons will inherit font weight which fixes the issue with them not appearing bolder when the user has a preference for higher contrast
 - Fixed issue with closed tabs not opening the correct tab when the left or right arrow keys are pressed
 - Plain buttons (not `<button>` types) now have a visited state by default with the option to not have one by adding the class `tna-button--no-visited-state`
 - Analytics now start tracking once the cookie preferences have been changed (switched the old event `changePolicy` to the new `changePreference`)
-
-### Security
 
 ## [1.3.1](https://github.com/nationalarchives/tna-frontend/compare/v1.3.0...v1.3.1) - 2026-09-02
 

@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Updated `@nationalarchives/cookies` to `v0.2.0`, solving an issue with multiple script contexts not sharing cookie events
+- Updated `@nationalarchives/cookies` to `v0.2.1`, solving an issue with multiple script contexts not sharing cookie events and to fix import issues
 
 ## [1.4.0](https://github.com/nationalarchives/tna-frontend/compare/v1.3.1...v1.4.0) - 2026-09-10
 

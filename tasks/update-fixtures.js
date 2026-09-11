@@ -1,10 +1,10 @@
-const { globSync } = require("glob");
-var fs = require("fs");
-const nunjucks = require("nunjucks");
+import { globSync } from "glob";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import nunjucks from "nunjucks";
 
-require.extensions[".njk"] = function (module, filename) {
-  module.exports = fs.readFileSync(filename, "utf8");
-};
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 nunjucks.configure(__dirname + "/../src");
 
@@ -18,11 +18,15 @@ const components = globSync(
     .replace(new RegExp(`${componentFixturesFile}$`), ""),
 );
 components.forEach((component) => {
-  const componentFixtures = require(
-    `../${componentsDirectory}${component}${componentFixturesFile}`,
+  const componentFixtures = JSON.parse(
+    fs.readFileSync(
+      `${componentsDirectory}${component}${componentFixturesFile}`,
+      "utf8",
+    ),
   );
-  const componentNunjucks = require(
-    `../${componentsDirectory}${component}/template.njk`,
+  const componentNunjucks = fs.readFileSync(
+    `${componentsDirectory}${component}/template.njk`,
+    "utf8",
   );
   const newComponentFixtures = {
     ...componentFixtures,
@@ -63,7 +67,9 @@ components.forEach((component) => {
 
 const templatesDirectory = "src/nationalarchives/templates/";
 const templateFixturesFile = `${templatesDirectory}fixtures.json`;
-const templateFixtures = require(`../${templateFixturesFile}`);
+const templateFixtures = JSON.parse(
+  fs.readFileSync(templateFixturesFile, "utf8"),
+);
 const newTemplateFixtures = {
   ...templateFixtures,
   fixtures: templateFixtures.fixtures.map((fixture) => ({
@@ -71,7 +77,7 @@ const newTemplateFixtures = {
     html: nunjucks
       .renderString(
         fixture.template
-          ? require(`../${templatesDirectory}${fixture.template}`)
+          ? fs.readFileSync(`${templatesDirectory}${fixture.template}`, "utf8")
           : fixture.string,
         fixture.options,
       )

@@ -1,7 +1,8 @@
-const { globSync } = require("glob");
-const Diff = require("diff");
-const { pass, fail } = require("./lib/passfail");
-const { renderNunjucks } = require("./lib/nunjucks");
+import fs from "fs";
+import { globSync } from "glob";
+import * as Diff from "diff";
+import { pass, fail } from "./lib/passfail.js";
+import { renderNunjucks } from "./lib/nunjucks.js";
 
 const componentsDirectory = "src/nationalarchives/components/";
 const componentFixturesFile = "/fixtures.json";
@@ -16,11 +17,15 @@ const components = globSync(`${componentsDirectory}*${componentFixturesFile}`)
 
 const failedComponents = components.filter((component) => {
   console.log(`\nComponent: ${component}`);
-  const componentFixtures = require(
-    `../${componentsDirectory}${component}${componentFixturesFile}`,
+  const componentFixtures = JSON.parse(
+    fs.readFileSync(
+      `${componentsDirectory}${component}${componentFixturesFile}`,
+      "utf8",
+    ),
   );
-  const componentNunjucks = require(
-    `../${componentsDirectory}${component}/template.njk`,
+  const componentNunjucks = fs.readFileSync(
+    `${componentsDirectory}${component}/template.njk`,
+    "utf8",
   );
   const failedFixtures = componentFixtures.fixtures.filter((fixture) => {
     const result = renderNunjucks(
@@ -70,10 +75,13 @@ console.log("------------------------------------------");
 console.log("\nTemplates");
 const templatesDirectory = "src/nationalarchives/templates/";
 const templateFixturesFile = `${templatesDirectory}fixtures.json`;
-const templateFixtures = require(`../${templateFixturesFile}`);
+const templateFixtures = JSON.parse(
+  fs.readFileSync(templateFixturesFile, "utf8"),
+);
 const failedTemplates = templateFixtures.fixtures.filter((fixture) => {
-  const templateNunjucks = require(
-    `../${templatesDirectory}${fixture.template}`,
+  const templateNunjucks = fs.readFileSync(
+    `${templatesDirectory}${fixture.template}`,
+    "utf8",
   );
   const result = renderNunjucks(templateNunjucks, fixture.options, true);
   const mismatch = result !== fixture.html;

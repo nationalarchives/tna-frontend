@@ -92,11 +92,25 @@
   @include borders.rounded-border;
 
   &:not(:has(&__image-container)) {
-    padding-top: spacing.space(0.5);
+    padding-top: spacing.space(0.75);
 
-    @include colour.thick-keyline-dark(top);
-    border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
-      bordersVars.$rounded-border-radius;
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+
+      @include colour.thick-keyline-dark(top);
+    }
+  }
+  &--plain#{&}:not(:has(&__image-container)) {
+    &::before {
+      top: -1px;
+      right: -1px;
+      left: -1px;
+    }
   }
 
   &__heading {
@@ -120,7 +134,6 @@
         a11yVars.$focus-outline-active-total-width,
         solid
       );
-      // outline-offset: a11yVars.$focus-outline-active-inner-width;
     }
   }
 
@@ -135,12 +148,6 @@
     &__heading-link::before {
     border-radius: 0.1px 0.1px bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius;
-  }
-
-  &--full-click:not(:has(&__image-container)) &__heading-link {
-    &::before {
-      top: -#{bordersVars.$thick-border-width};
-    }
   }
 
   &--full-height {
@@ -229,22 +236,7 @@
   }
 
   &--plain {
-    &::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-
-      border-radius: inherit;
-      @include colour.colour-border("keyline", 1px, solid);
-    }
-  }
-
-  &--plain:not(:has(&__image-container)) {
-    &::after {
-      border-top-width: 0;
-    }
+    @include colour.colour-border("keyline", 1px, solid);
   }
 
   @include colour.on-high-contrast {

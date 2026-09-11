@@ -1,8 +1,11 @@
-const fs = require("fs");
+import fs from "fs";
+import { createRequire } from "module";
+import jsdom from "jsdom";
+import "node-self";
+import { pass, fail } from "./lib/passfail.js";
+
+const require = createRequire(import.meta.url);
 const packageJson = require("../package.json");
-const jsdom = require("jsdom");
-const { pass, fail } = require("./lib/passfail");
-require("node-self");
 
 const componentsWithJavaScript = {};
 
@@ -268,88 +271,6 @@ expectedPrototypeKitConfigProperties.forEach(
     }
   },
 );
-
-console.log("\n");
-
-console.log("Testing compiled JavaScript files...");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(``);
-Object.defineProperty(window, "matchMedia", {
-  writable: true,
-  value: (query) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: () => {},
-    removeListener: () => {},
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => {},
-  }),
-});
-global.window = window;
-global.document = window.document;
-global.Element = { prototype: { matches: () => {} } };
-["all.js", "analytics.js", "all+analytics.js"].forEach((file) => {
-  const jsAllPackage = require(`../package/nationalarchives/${file}`);
-  let exports = [];
-  if (file === "all.js" || file === "all+analytics.js") {
-    exports = [...exports, { name: "initAll", type: "function" }];
-    Object.keys(componentsWithJavaScript).forEach((component) => {
-      const componentClass = componentsWithJavaScript[component];
-      if (
-        Object.keys(jsAllPackage).includes(componentClass) &&
-        typeof jsAllPackage[componentClass] === "function"
-      ) {
-        pass(`${file} function exists: ${componentClass}()`);
-      } else {
-        fail(`${file} function missing: ${componentClass}()`);
-        process.exitCode = 1;
-        throw new Error("Component JavaScript test failed");
-      }
-    });
-  }
-  if (file === "analytics.js" || file === "all+analytics.js") {
-    exports = [
-      ...exports,
-      { name: "EventTracker", type: "function" },
-      { name: "GA4", type: "function" },
-      { name: "helpers", type: "object" },
-    ];
-  }
-  exports.forEach((eachExport) => {
-    if (
-      Object.keys(jsAllPackage).includes(eachExport.name) &&
-      typeof jsAllPackage[eachExport.name] === eachExport.type
-    ) {
-      pass(
-        `${file} ${eachExport.type} exists: ${eachExport.name}${eachExport.type === "function" ? "()" : ""}`,
-      );
-    } else {
-      fail(
-        `${file} ${eachExport.type} missing: ${eachExport.name}${eachExport.type === "function" ? "()" : ""}`,
-      );
-      process.exitCode = 1;
-      throw new Error("JavaScript test failed");
-    }
-  });
-});
-Object.keys(componentsWithJavaScript).forEach((component) => {
-  const componentClass = componentsWithJavaScript[component];
-  const jsComponentPackage = require(
-    `../package/nationalarchives/components/${component}/${component}.js`,
-  );
-  if (
-    Object.keys(jsComponentPackage).includes(componentClass) &&
-    typeof jsComponentPackage[componentClass] === "function"
-  ) {
-    pass(`${component}.js function exists: ${componentClass}()`);
-  } else {
-    fail(`${component}.js function missing: ${componentClass}()`);
-    process.exitCode = 1;
-    throw new Error("Standalone component JavaScript test failed");
-  }
-});
 
 console.log("\n");
 

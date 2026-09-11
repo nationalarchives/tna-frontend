@@ -1,13 +1,20 @@
-const fs = require("fs");
-const { renderNunjucks } = require("../lib/nunjucks");
-const packageJson = require("../../package.json");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { renderNunjucks } from "../lib/nunjucks.js";
+import packageJson from "../../package.json" with { type: "json" };
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const outputDirectory = "error-pages";
 if (!fs.existsSync(outputDirectory)) {
   fs.mkdirSync(outputDirectory);
 }
 
-const errorPageNunjucks = require("./template.njk");
+const errorPageNunjucks = fs.readFileSync(
+  path.join(__dirname, "template.njk"),
+  "utf8",
+);
 const compiledCSS = fs
   .readFileSync("package/nationalarchives/error-page.css", "utf8")
   .replace("/*# sourceMappingURL=all.css.map */", "");

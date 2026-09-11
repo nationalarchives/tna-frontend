@@ -1,14 +1,17 @@
-const path = require("path");
-const glob = require("glob");
+import path from "path";
+import { fileURLToPath } from "url";
+import { globSync } from "glob";
 
-module.exports = {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default {
   entry: {
     main: {
       import: "./src/nationalarchives/all.mjs",
       filename: "all.js",
       library: {
         name: "TNAFrontend",
-        type: "umd",
+        type: "var",
       },
     },
     analytics: {
@@ -27,9 +30,8 @@ module.exports = {
         type: "umd",
       },
     },
-    ...glob
-      .sync("./src/nationalarchives/components/**/*.mjs")
-      .reduce((acc, path) => {
+    ...globSync("./src/nationalarchives/components/**/*.mjs").reduce(
+      (acc, path) => {
         acc[
           path
             .replace(
@@ -42,7 +44,9 @@ module.exports = {
           filename: `components/[name]/[name].js`,
         };
         return acc;
-      }, {}),
+      },
+      {},
+    ),
   },
   mode: "production",
   module: {
@@ -63,6 +67,7 @@ module.exports = {
     library: "TNAFrontend",
     libraryTarget: "umd",
     umdNamedDefine: true,
+    iife: true,
     path: path.resolve(__dirname, "package/nationalarchives"),
   },
   devtool: "source-map",

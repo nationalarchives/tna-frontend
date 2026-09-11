@@ -1,6 +1,6 @@
-const { globSync } = require("glob");
-const fs = require("fs");
-const { renderNunjucks } = require("./lib/nunjucks");
+import { globSync } from "glob";
+import fs from "fs";
+import { renderNunjucks } from "./lib/nunjucks.js";
 
 const fixturesOutputDirectory = "fixtures-html";
 
@@ -20,11 +20,15 @@ const components = globSync(
 );
 
 components.forEach((component) => {
-  const componentFixtures = require(
-    `../${componentsDirectory}${component}${componentFixturesFile}`,
+  const componentFixtures = JSON.parse(
+    fs.readFileSync(
+      `${componentsDirectory}${component}${componentFixturesFile}`,
+      "utf8",
+    ),
   );
-  const componentNunjucks = require(
-    `../${componentsDirectory}${component}/template.njk`,
+  const componentNunjucks = fs.readFileSync(
+    `${componentsDirectory}${component}/template.njk`,
+    "utf8",
   );
   componentFixtures.fixtures.forEach((fixture) => {
     const result = renderNunjucks(componentNunjucks, {
@@ -44,13 +48,14 @@ components.forEach((component) => {
   });
 });
 
-const templatesDirectory = "../src/nationalarchives/templates/";
+const templatesDirectory = "src/nationalarchives/templates/";
 
-require(`${templatesDirectory}fixtures.json`)
+JSON.parse(fs.readFileSync(`${templatesDirectory}fixtures.json`, "utf8"))
   .fixtures.filter((fixture) => fixture.omitFixtureHtmlValidation !== true)
   .forEach((fixture) => {
-    const templateNunjucks = require(
+    const templateNunjucks = fs.readFileSync(
       `${templatesDirectory}${fixture.template}`,
+      "utf8",
     );
     const result = renderNunjucks(templateNunjucks, {
       ...fixture.options,

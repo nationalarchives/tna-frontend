@@ -1,16 +1,12 @@
-const nunjucks = require("nunjucks");
-const path = require("path");
-const fs = require("fs");
+import nunjucks from "nunjucks";
+import path from "path";
+import { fileURLToPath } from "url";
 
-require.extensions[".njk"] = function (module, filename) {
-  module.exports = fs.readFileSync(filename, "utf8");
-};
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 nunjucks.configure(path.join(__dirname, "../..", "src"));
 
-exports.nunjucks = nunjucks;
-
-exports.renderNunjucks = (string, params, trimWhitespace = false) =>
+export const renderNunjucks = (string, params, trimWhitespace = false) =>
   trimWhitespace
     ? nunjucks
         .renderString(string, params)

@@ -35,7 +35,8 @@
 }
 
 %no-space-above-for-first-children {
-  &:first-child {
+  &:first-child,
+  &:first-child.tna-visually-hidden + * {
     margin-top: 0;
   }
 }

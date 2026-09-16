@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.4.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.5.0...HEAD)
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.5.0](https://github.com/nationalarchives/tna-frontend/compare/v1.4.1...v1.5.0) - 2026-09-16
 
 ### Added
 
@@ -21,12 +30,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The class `tna-!--visually-hidden` is deprecated in favour of `tna-visually-hidden`
 
-### Removed
 ### Fixed
 
 - Focusing inside a tab item and pressing the arrow keys will not change tab, meaning you can now interact with scrollable elements inside tabs
-
-### Security
 
 ## [1.4.1](https://github.com/nationalarchives/tna-frontend/compare/v1.4.0...v1.4.1) - 2026-09-11
 

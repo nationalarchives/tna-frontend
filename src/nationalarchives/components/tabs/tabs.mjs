@@ -1,6 +1,8 @@
 export class Tabs {
   constructor($module) {
     this.$module = $module;
+    this.$tabListHeading =
+      $module && $module.querySelector(".tna-tabs__list-heading");
     this.$tabList = $module && $module.querySelector(".tna-tabs__list");
     this.$tabListItemLinks =
       $module &&
@@ -28,23 +30,24 @@ export class Tabs {
 
   init() {
     this.$module.classList.add("tna-tabs--interactive");
-    this.$tabList.removeAttribute("hidden");
+    this.$tabListHeading.remove();
+    const clickEventHandler = (event) => this.handleItemLinkClick(event);
     this.$tabListItemLinks.forEach(($tabListItemLink) => {
       const tabPanelID = $tabListItemLink.getAttribute("aria-controls");
       $tabListItemLink.setAttribute("aria-selected", false);
       const $tabPanel = document.getElementById(tabPanelID);
       $tabPanel.setAttribute("aria-labelledby", $tabListItemLink.id);
       $tabPanel.setAttribute("role", "tabpanel");
-      $tabListItemLink.addEventListener(
-        "click",
-        (event) => this.handleItemLinkClick(event),
-        true,
-      );
+      $tabListItemLink.addEventListener("click", clickEventHandler, {
+        capture: true,
+      });
     });
-    this.switchTabByIndex(this.currentTabIndex);
-    this.$module.addEventListener("keydown", (event) =>
-      this.handleItemLinkKeyDown(event),
+    this.$tabList.addEventListener(
+      "keydown",
+      (event) => this.handleItemLinkKeyDown(event),
+      { capture: true },
     );
+    this.switchTabByIndex(this.currentTabIndex);
   }
 
   handleItemLinkClick(itemLinkClickEvent) {
@@ -58,12 +61,10 @@ export class Tabs {
     let preventDefaultKeyAction = false;
     switch (itemLinkKeyDownEvent.key) {
       case "ArrowLeft":
-      case "ArrowUp":
         this.previousTab();
         preventDefaultKeyAction = true;
         break;
       case "ArrowRight":
-      case "ArrowDown":
         this.nextTab();
         preventDefaultKeyAction = true;
         break;

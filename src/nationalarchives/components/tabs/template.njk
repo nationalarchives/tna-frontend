@@ -4,15 +4,18 @@
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <div class="tna-tabs{% if classes %} {{ classes }}{% endif %}" data-module="tna-tabs"{% if params.activeTabOnLoad %} data-active-tab-on-load="{{ params.activeTabOnLoad }}"{% endif %}{% if params.allowClose %} data-allow-close="true"{% endif %}{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
-  <div class="tna-tabs__list" role="tablist" hidden>
+  <h{{ params.itemHeadingLevel }} class="tna-tabs__list-heading tna-heading-m">{{ params.tabsTitle or 'Contents' }}</h{{ params.itemHeadingLevel }}>
+  <ul class="tna-tabs__list" role="tablist">
   {%- for item in params.items %}
-      <button type="button" class="tna-tabs__button{% if item.classes %} {{ item.classes }}{% endif %}" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab"{% if item.ariaLabel %} aria-label="{{ item.ariaLabel }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+    <li class="tna-tabs__button-wrapper" role="presentation">
+      <a href="#{{ item.id }}" class="tna-tabs__button{% if item.classes %} {{ item.classes }}{% endif %}" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab"{% if item.ariaLabel %} aria-label="{{ item.ariaLabel }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
         <span class="tna-tabs__button-inner">
-          {{ item.title }}
+          {{ item.tabTitle or item.title }}
         </span>
-      </button>
+      </a>
+    </li>
   {%- endfor %}
-  </div>
+  </ul>
   <div class="tna-tabs__items">
   {%- for item in params.items %}
     <section id="{{ item.id }}" class="tna-tabs__item">

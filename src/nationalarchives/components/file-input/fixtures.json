@@ -33,7 +33,7 @@
           "file": "Enter a name"
         }
       },
-      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> </p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\" file-error\"></div></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"file\">Upload a file</label></div><p id=\"file-error\" class=\"tna-form-item__error\"><span class=\"tna-visually-hidden\">Error:</span> </p><div class=\"tna-form-item__body\"><input id=\"file\" class=\"tna-file-input\" name=\"file\" type=\"file\" aria-describedby=\" file-error\"></div></div>"
     },
     {
       "name": "multiple",

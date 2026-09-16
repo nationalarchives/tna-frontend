@@ -44,7 +44,7 @@
           "text": "Date is not valid"
         }
       },
-      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"date\">Enter a start date</label></div><p id=\"date-error\" class=\"tna-form-item__error\"><span class=\"tna-!--visually-hidden\">Error:</span> Date is not valid</p><div class=\"tna-form-item__body\"><input type=\"date\" id=\"date\" class=\"tna-date-search\" name=\"date\" value=\"\" aria-describedby=\" date-error\"></div></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"date\">Enter a start date</label></div><p id=\"date-error\" class=\"tna-form-item__error\"><span class=\"tna-visually-hidden\">Error:</span> Date is not valid</p><div class=\"tna-form-item__body\"><input type=\"date\" id=\"date\" class=\"tna-date-search\" name=\"date\" value=\"\" aria-describedby=\" date-error\"></div></div>"
     },
     {
       "name": "max width date search",

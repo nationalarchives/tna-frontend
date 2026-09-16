@@ -1,7 +1,6 @@
 @use "../../tools/a11y";
 
-.tna-visually-hidden,
-.tna-\!--visually-hidden {
+.tna-visually-hidden {
   @include a11y.visually-hidden;
 }
 

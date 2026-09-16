@@ -23,6 +23,10 @@
     list-style: none;
   }
 
+  &__button-wrapper {
+    display: flex;
+  }
+
   &__button {
     position: relative;
 
@@ -47,6 +51,8 @@
     &[aria-selected="true"] {
       padding-top: 0;
 
+      text-decoration: none;
+
       @include colour.colour-border("keyline");
       border-radius: bordersVars.$rounded-border-radius
         bordersVars.$rounded-border-radius 0 0;
@@ -70,8 +76,6 @@
 
     @include colour.colour-font("font-base");
 
-    // @include colour.base;
-    // @include colour.tint;
     @include colour.colour-background("background-tint");
 
     @include borders.rounded-border;
@@ -123,6 +127,13 @@
 
   &--interactive &__item {
     padding: spacing.space(1);
+
     @include colour.colour-border("keyline", 1px, solid);
+  }
+
+  @include colour.on-forced-colours {
+    &__button[aria-selected="false"] {
+      border-width: 0;
+    }
   }
 }

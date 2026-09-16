@@ -23,7 +23,34 @@
           }
         ]
       },
-      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><div class=\"tna-tabs__list\" role=\"tablist\" hidden><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></button></div><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+    },
+    {
+      "name": "with item tab titles",
+      "options": {
+        "itemHeadingLevel": 3,
+        "items": [
+          {
+            "id": "unique-id-a",
+            "title": "Alpha section tab",
+            "tabTitle": "Alpha",
+            "body": "<p>Lorem ipsum</p>"
+          },
+          {
+            "id": "unique-id-b",
+            "title": "Beta section tab",
+            "tabTitle": "Beta",
+            "body": "<p>Lorem ipsum</p>"
+          },
+          {
+            "id": "unique-id-c",
+            "title": "Gamma section tab",
+            "tabTitle": "Gamma",
+            "body": "<p>Lorem ipsum</p>"
+          }
+        ]
+      },
+      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section tab</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section tab</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section tab</h3><p>Lorem ipsum</p></section></div></div>"
     },
     {
       "name": "with item aria labels",
@@ -50,7 +77,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><div class=\"tna-tabs__list\" role=\"tablist\" hidden><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\" aria-label=\"Alpha section tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\" aria-label=\"Beta section tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\" aria-label=\"Gamma section tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></button></div><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\" aria-label=\"Alpha section tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\" aria-label=\"Beta section tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\" aria-label=\"Gamma section tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
     },
     {
       "name": "with item classes",
@@ -77,7 +104,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><div class=\"tna-tabs__list\" role=\"tablist\" hidden><button type=\"button\" class=\"tna-tabs__button tna-tabs__item--test-1\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></button><button type=\"button\" class=\"tna-tabs__button tna-tabs__item--test-2\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></button><button type=\"button\" class=\"tna-tabs__button tna-tabs__item--test-3\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></button></div><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button tna-tabs__item--test-1\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button tna-tabs__item--test-2\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button tna-tabs__item--test-3\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
     },
     {
       "name": "with item attributes",
@@ -113,7 +140,7 @@
           }
         ]
       },
-      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><div class=\"tna-tabs__list\" role=\"tablist\" hidden><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\" data-fixturetest-a=\"pass\" data-fixturetest1><span class=\"tna-tabs__button-inner\">Alpha section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\" data-fixturetest-b=\"pass\" data-fixturetest2><span class=\"tna-tabs__button-inner\">Beta section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\" data-fixturetest-c=\"pass\" data-fixturetest3><span class=\"tna-tabs__button-inner\">Gamma section</span></button></div><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\"><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\" data-fixturetest-a=\"pass\" data-fixturetest1><span class=\"tna-tabs__button-inner\">Alpha section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\" data-fixturetest-b=\"pass\" data-fixturetest2><span class=\"tna-tabs__button-inner\">Beta section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\" data-fixturetest-c=\"pass\" data-fixturetest3><span class=\"tna-tabs__button-inner\">Gamma section</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
     },
     {
       "name": "with classes",
@@ -123,25 +150,22 @@
           {
             "id": "unique-id-a",
             "title": "Alpha section",
-            "ariaLabel": "Alpha section tab",
             "body": "<p>Lorem ipsum</p>"
           },
           {
             "id": "unique-id-b",
             "title": "Beta section",
-            "ariaLabel": "Beta section tab",
             "body": "<p>Lorem ipsum</p>"
           },
           {
             "id": "unique-id-c",
             "title": "Gamma section",
-            "ariaLabel": "Gamma section tab",
             "body": "<p>Lorem ipsum</p>"
           }
         ],
         "classes": "tna-tabs--test"
       },
-      "html": "<div class=\"tna-tabs tna-tabs--test\" data-module=\"tna-tabs\"><div class=\"tna-tabs__list\" role=\"tablist\" hidden><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\" aria-label=\"Alpha section tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\" aria-label=\"Beta section tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\" aria-label=\"Gamma section tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></button></div><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+      "html": "<div class=\"tna-tabs tna-tabs--test\" data-module=\"tna-tabs\"><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
     },
     {
       "name": "with attributes",
@@ -151,19 +175,16 @@
           {
             "id": "unique-id-a",
             "title": "Alpha section",
-            "ariaLabel": "Alpha section tab",
             "body": "<p>Lorem ipsum</p>"
           },
           {
             "id": "unique-id-b",
             "title": "Beta section",
-            "ariaLabel": "Beta section tab",
             "body": "<p>Lorem ipsum</p>"
           },
           {
             "id": "unique-id-c",
             "title": "Gamma section",
-            "ariaLabel": "Gamma section tab",
             "body": "<p>Lorem ipsum</p>"
           }
         ],
@@ -172,7 +193,7 @@
           "data-fixturetest2": ""
         }
       },
-      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\" data-fixturetest=\"pass\" data-fixturetest2><div class=\"tna-tabs__list\" role=\"tablist\" hidden><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\" aria-label=\"Alpha section tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\" aria-label=\"Beta section tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></button><button type=\"button\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\" aria-label=\"Gamma section tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></button></div><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
+      "html": "<div class=\"tna-tabs\" data-module=\"tna-tabs\" data-fixturetest=\"pass\" data-fixturetest2><h3 class=\"tna-tabs__list-heading tna-heading-m\">Contents</h3><ul class=\"tna-tabs__list\" role=\"tablist\"><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-a\" class=\"tna-tabs__button\" id=\"unique-id-a-tab\" aria-controls=\"unique-id-a\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Alpha section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-b\" class=\"tna-tabs__button\" id=\"unique-id-b-tab\" aria-controls=\"unique-id-b\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Beta section</span></a></li><li class=\"tna-tabs__button-wrapper\" role=\"presentation\"><a href=\"#unique-id-c\" class=\"tna-tabs__button\" id=\"unique-id-c-tab\" aria-controls=\"unique-id-c\" role=\"tab\"><span class=\"tna-tabs__button-inner\">Gamma section</span></a></li></ul><div class=\"tna-tabs__items\"><section id=\"unique-id-a\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Alpha section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-b\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Beta section</h3><p>Lorem ipsum</p></section><section id=\"unique-id-c\" class=\"tna-tabs__item\"><h3 class=\"tna-tabs__heading tna-heading-m\">Gamma section</h3><p>Lorem ipsum</p></section></div></div>"
     }
   ]
 }

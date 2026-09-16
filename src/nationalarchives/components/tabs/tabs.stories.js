@@ -47,17 +47,20 @@ export const Standard = {
     items: [
       {
         id: "unique-id-a",
-        title: "Alpha section",
+        title: "Alpha section tab",
+        tabTitle: "Alpha",
         body: "<p>Lorem ipsum</p>",
       },
       {
         id: "unique-id-b",
-        title: "Beta section",
+        title: "Beta section tab",
+        tabTitle: "Beta",
         body: "<p>Lorem ipsum</p>",
       },
       {
         id: "unique-id-c",
-        title: "Gamma section",
+        title: "Gamma section tab",
+        tabTitle: "Gamma",
         body: "<p>Lorem ipsum</p>",
       },
     ],

@@ -1,5 +1,12 @@
 [
   {
+    "name": "tabsTitle",
+    "type": "string",
+    "required": false,
+    "description": "A heading to add above the tabs. Only used when JavaScript is not available.",
+    "default": "Contents"
+  },
+  {
     "name": "itemHeadingLevel",
     "type": "number",
     "required": true,
@@ -28,6 +35,12 @@
         "type": "string",
         "required": false,
         "description": "An optional aria-label for the button of the tab item."
+      },
+      {
+        "name": "tabTitle",
+        "type": "string",
+        "required": false,
+        "description": "An optional, shorter heading to use in the tab instead of the `title`."
       },
       {
         "name": "body",

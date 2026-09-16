@@ -530,7 +530,8 @@ address {
 }
 
 code,
-pre {
+pre,
+kbd {
   font-family: typographyVars.$code-font-family;
 }
 
@@ -541,19 +542,15 @@ code {
   background-color: #f1ece9;
 
   .tna-template--dark-theme & {
-    // color: #ffa07a;
     color: #d49;
 
-    // background-color: #2b2b2b;
     background-color: #111;
   }
 
   .tna-template--system-theme & {
     @media (prefers-color-scheme: dark) {
-      // color: #ffa07a;
       color: #d49;
 
-      // background-color: #2b2b2b;
       background-color: #111;
     }
   }
@@ -561,4 +558,15 @@ code {
   @include colour.on-forced-colours {
     @include colour.colour-border("keyline", 1px);
   }
+}
+
+kbd {
+  padding-inline: 0.25em;
+
+  font-size: 0.95em;
+
+  @include colour.colour-border("keyline", 1px);
+  @include borders.rounded-border;
+
+  box-shadow: 0 0.1875em 0 var(--keyline);
 }

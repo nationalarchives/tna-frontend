@@ -85,3 +85,11 @@ span {
 }`,
   allowCopy: true,
 };
+
+const KeyboardTemplate = ({ content }) =>
+  `<p>Press the <kbd>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</kbd> key.</p>`;
+export const Keyboard = KeyboardTemplate.bind({});
+Keyboard.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+Keyboard.args = { content: "Enter" };

@@ -8,10 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.4.1...HEAD)
 
 ### Added
+
+- Tab items now have `tabTitle` which is an optional, short title for the tab rather than using the full `title`
+- Added support for `<kbd>` elements
+
 ### Changed
+
+- Improved the styling of tabs for users with forced colors
+- When using `space-above()`, the first item has always had no margin top - this now extends to the next element if the first child has a `tna-visually-hidden` class
+
 ### Deprecated
+
+- The class `tna-!--visually-hidden` is deprecated in favour of `tna-visually-hidden`
+
 ### Removed
 ### Fixed
+
+- Focusing inside a tab item and pressing the arrow keys will not change tab, meaning you can now interact with scrollable elements inside tabs
+
 ### Security
 
 ## [1.4.1](https://github.com/nationalarchives/tna-frontend/compare/v1.4.0...v1.4.1) - 2026-09-11
@@ -2116,7 +2130,7 @@ Version bump
 ### Changed
 
 - Tweaked dark theme colours
-- `tna-visually-hidden` could instead use the class `tna-!--visually-hidden` (will deprecate one of these in the future)
+- `tna-visually-hidden` could instead use the class `tna-visually-hidden` (will deprecate one of these in the future)
 - Changed Node version from `lts/hydrogen` to `lts/iron`
 - Update the `spacing` and `spacing-mobile` functions in `spacing` to `space` and `space-mobile`
 - Mixin `colour.invert` changed to `colour.contrast`

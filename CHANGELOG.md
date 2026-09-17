@@ -9,8 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 ### Changed
+
+- Updated favicons and the default open graph image
+
 ### Deprecated
 ### Removed
+
+- Removed the image asset `nationalarchives-opengraph-image-dark.png`
+
 ### Fixed
 ### Security
 

@@ -1,6 +1,6 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set classes = containerClasses | join(' ') -%}
-<div class="tna-accordion{% if classes %} {{ classes }}{% endif %}" data-single-open-item="{{ params.singleOpenItem or 'false' }}" data-module="tna-accordion"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
+<div class="tna-accordion{% if classes %} {{ classes }}{% endif %}" data-single-open-item="{{ params.singleOpenItem or 'false' }}"{% if params.openLabel %} data-open-item-label="{{ params.openLabel }}"{% endif %}{% if params.closeLabel %} data-close-item-label="{{ params.closeLabel }}"{% endif %} data-module="tna-accordion"{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.toggleAllButton.enabled %}
   <button class="tna-accordion__toggle-all" type="button" data-open-all-label="{{ params.toggleAllButton.openAllLabel or 'Show all sections' }}" data-close-all-label="{{ params.toggleAllButton.closeAllLabel or 'Hide all sections' }}" hidden></button>
   {%- endif %}

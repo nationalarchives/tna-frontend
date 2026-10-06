@@ -93,13 +93,15 @@
           }
         ],
         "id": "test",
+        "openLabel": "Expand this section",
+        "closeLabel": "Collapse this section",
         "toggleAllButton": {
           "enabled": true,
           "openAllLabel": "Open everything",
           "closeAllLabel": "Close everything"
         }
       },
-      "html": "<div class=\"tna-accordion\" data-single-open-item=\"false\" data-module=\"tna-accordion\"><button class=\"tna-accordion__toggle-all\" type=\"button\" data-open-all-label=\"Open everything\" data-close-all-label=\"Close everything\" hidden></button><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div>"
+      "html": "<div class=\"tna-accordion\" data-single-open-item=\"false\" data-open-item-label=\"Expand this section\" data-close-item-label=\"Collapse this section\" data-module=\"tna-accordion\"><button class=\"tna-accordion__toggle-all\" type=\"button\" data-open-all-label=\"Open everything\" data-close-all-label=\"Close everything\" hidden></button><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Alpha</h2><div class=\"tna-accordion__body\" id=\"test-content-1\"><p>Content</p></div></div><div class=\"tna-accordion__item\" data-isopen=\"false\"><h2 class=\"tna-accordion__heading tna-heading-s\">Beta</h2><div class=\"tna-accordion__body\" id=\"test-content-2\"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div>"
     },
     {
       "name": "different heading size",

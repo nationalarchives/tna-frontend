@@ -14,6 +14,8 @@ export default {
       items: { control: "object" },
       id: { control: "text" },
       singleOpenItem: { control: "boolean" },
+      openLabel: { control: "text" },
+      closeLabel: { control: "text" },
       toggleAllButton: { control: "object" },
       classes: { control: "text" },
       attributes: { control: "object" },
@@ -206,8 +208,8 @@ export const ToggleAllButton = {
     ...Standard.args,
     toggleAllButton: {
       enabled: true,
-      // OpenAllLabel: "Expand all",
-      // CloseAllLabel: "Collapse all",
+      openAllLabel: "Expand all",
+      closeAllLabel: "Collapse all",
     },
   },
   play: async ({ canvasElement }) => {

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.5.0...HEAD)
 
 ### Added
+
+- Allow changing the title text for the buttons of an accordion
+
 ### Changed
 
 - Updated favicons and the default open graph image

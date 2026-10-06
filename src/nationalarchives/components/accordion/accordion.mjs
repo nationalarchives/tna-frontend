@@ -11,6 +11,11 @@ export class Accordion {
     this.allowMultipleItemsOpen =
       this.$module.dataset.singleOpenItem !== "true";
 
+    this.openItemText =
+      this.$module.dataset.openItemLabel || "Show this section";
+    this.closeItemText =
+      this.$module.dataset.closeItemLabel || "Hide this section";
+
     this.$items.forEach(($item) => this.initItem($item));
     this.initState();
 
@@ -18,6 +23,10 @@ export class Accordion {
       ".tna-accordion__toggle-all",
     );
     if (this.$toggleAllButton) {
+      this.toggleAllOpenText =
+        this.$toggleAllButton.dataset.openAllLabel || "Show all sections";
+      this.toggleAllCloseText =
+        this.$toggleAllButton.dataset.closeAllLabel || "Hide all sections";
       this.syncToggleAllButton();
       this.$toggleAllButton.removeAttribute("hidden");
       this.$toggleAllButton.addEventListener("click", () => {
@@ -86,10 +95,9 @@ export class Accordion {
     $headingButton.setAttribute("aria-expanded", "true");
     $headingButton.setAttribute(
       "aria-label",
-      `${$headingButton.innerText.trim()}, Hide this section`,
+      `${$headingButton.innerText.trim()}, ${this.closeItemText}`,
     );
     $content.removeAttribute("hidden");
-    // $content.setAttribute("tabindex", "0");
     this.syncToggleAllButton();
 
     const $tableWrapper = $content.querySelectorAll(".tna-table-wrapper");
@@ -106,10 +114,9 @@ export class Accordion {
     $headingButton.setAttribute("aria-expanded", "false");
     $headingButton.setAttribute(
       "aria-label",
-      `${$headingButton.innerText.trim()}, Show this section`,
+      `${$headingButton.innerText.trim()}, ${this.openItemText}`,
     );
     $content.setAttribute("hidden", "");
-    // $content.setAttribute("tabindex", "-1");
     this.syncToggleAllButton();
   }
 
@@ -137,11 +144,9 @@ export class Accordion {
   syncToggleAllButton() {
     if (this.$toggleAllButton) {
       if (this.isAllOpen()) {
-        this.$toggleAllButton.innerText =
-          this.$toggleAllButton.dataset.closeAllLabel || "Hide all sections";
+        this.$toggleAllButton.innerText = this.toggleAllCloseText;
       } else {
-        this.$toggleAllButton.innerText =
-          this.$toggleAllButton.dataset.openAllLabel || "Show all sections";
+        this.$toggleAllButton.innerText = this.toggleAllOpenText;
       }
     }
   }

@@ -59,6 +59,20 @@
     "default": false
   },
   {
+    "name": "openLabel",
+    "type": "string",
+    "required": false,
+    "description": "The label for the button when an accordion item is closed.",
+    "default": "Show this section"
+  },
+  {
+    "name": "closeLabel",
+    "type": "string",
+    "required": false,
+    "description": "The label for the button when an accordion item is open.",
+    "default": "Hide this section"
+  },
+  {
     "name": "toggleAllButton",
     "type": "object",
     "required": false,

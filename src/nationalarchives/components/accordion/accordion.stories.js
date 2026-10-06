@@ -214,7 +214,7 @@ export const ToggleAllButton = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement),
-      $toggleAllButton = canvas.getByText("Show all sections"),
+      $toggleAllButton = canvas.getByText("Expand all"),
       $allDetails = Array.from(
         document.querySelectorAll(".tna-accordion__details"),
       );

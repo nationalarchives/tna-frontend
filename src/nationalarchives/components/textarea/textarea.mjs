@@ -20,10 +20,6 @@ export class TextAreaItemisedRows {
     const { enhancedHint } = options;
     this.enhancedHint = enhancedHint || "Enter an item and press enter";
 
-    this.init();
-  }
-
-  init() {
     this.values = this.$formFieldInput.value
       .split("\n")
       .map((value) => value.trim())
@@ -31,6 +27,10 @@ export class TextAreaItemisedRows {
 
     this.id = this.$formFieldInput.id;
 
+    this.init();
+  }
+
+  init() {
     this.$formFieldNewInput = document.createElement("input");
     this.$formFieldNewInput.classList.add("tna-text-input");
     ["id", "aria-describedby"].forEach((attribute) => {

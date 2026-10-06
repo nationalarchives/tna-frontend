@@ -1,4 +1,4 @@
-/* eslint-disable no-new */
+/* eslint-disable no-new, max-lines-per-function */
 import { Accordion } from "./components/accordion/accordion.mjs";
 import { Breadcrumbs } from "./components/breadcrumbs/breadcrumbs.mjs";
 import { CodeBlock } from "./components/code-block/code-block.mjs";

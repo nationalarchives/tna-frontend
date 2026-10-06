@@ -11,6 +11,14 @@ export class FileInputDroppable {
     this.acceptMutltipleFiles = this.$input.hasAttribute("multiple");
 
     this.init();
+
+    this.$input.addEventListener("dragenter", (event) =>
+      this.showDropTarget(event),
+    );
+    this.$input.addEventListener("dragleave", () => this.hideDropTarget());
+    this.$input.addEventListener("dragend", () => this.hideDropTarget());
+    this.$input.addEventListener("change", () => this.onChange());
+    this.$input.addEventListener("drop", () => this.onChange());
   }
 
   init() {
@@ -26,7 +34,10 @@ export class FileInputDroppable {
     this.$pseudoSelectFileText.classList.add(
       "tna-file-input__droppable-status",
     );
-    const fileText = this.acceptMutltipleFiles ? "files" : "file";
+    let fileText = "file";
+    if (this.acceptMutltipleFiles) {
+      fileText = "files";
+    }
     this.$pseudoSelectFileText.textContent = `No ${fileText} selected`;
     this.$droppableArea.appendChild(this.$pseudoSelectFileText);
     const $droppableButtons = document.createElement("div");
@@ -48,14 +59,6 @@ export class FileInputDroppable {
     this.$droppableAreaAriaLabel.classList.add("tna-visually-hidden");
     this.$droppableAreaAriaLabel.setAttribute("aria-live", "assertive");
     this.$droppableArea.appendChild(this.$droppableAreaAriaLabel);
-
-    this.$input.addEventListener("dragenter", (event) =>
-      this.showDropTarget(event),
-    );
-    this.$input.addEventListener("dragleave", () => this.hideDropTarget());
-    this.$input.addEventListener("dragend", () => this.hideDropTarget());
-    this.$input.addEventListener("change", () => this.onChange());
-    this.$input.addEventListener("drop", () => this.onChange());
   }
 
   /* eslint-disable-next-line class-methods-use-this */

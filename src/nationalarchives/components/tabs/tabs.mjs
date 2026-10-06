@@ -20,11 +20,14 @@ export class Tabs {
       return;
     }
 
-    this.currentTabIndex = this.$module.dataset.activeTabOnLoad
-      ? parseInt(this.$module.dataset.activeTabOnLoad, 10)
-      : 0;
+    this.currentTabIndex = 0;
+    if (this.$module.dataset.activeTabOnLoad) {
+      this.currentTabIndex = parseInt(this.$module.dataset.activeTabOnLoad, 10);
+    }
     this.previousTabIndex = this.currentTabIndex;
+
     this.allowClose = this.$module.dataset.allowClose === "true";
+
     this.init();
   }
 
@@ -128,10 +131,12 @@ export class Tabs {
         }
       } else {
         $tabListItemLink.setAttribute("aria-selected", false);
-        $tabListItemLink.setAttribute(
-          "tabindex",
-          this.currentTabIndex === -1 ? "0" : "-1",
-        );
+        let newTabIndex = "-1";
+        /* eslint-disable-next-line no-magic-numbers */
+        if (this.currentTabIndex === -1) {
+          newTabIndex = "0";
+        }
+        $tabListItemLink.setAttribute("tabindex", newTabIndex);
       }
     });
     this.$tabItems.forEach(($tabItem, index) => {
@@ -140,10 +145,12 @@ export class Tabs {
         $tabItem.setAttribute("tabindex", "0");
       } else {
         $tabItem.setAttribute("hidden", "");
-        $tabItem.setAttribute(
-          "tabindex",
-          this.currentTabIndex === -1 ? "0" : "-1",
-        );
+        let newTabIndex = "-1";
+        /* eslint-disable-next-line no-magic-numbers */
+        if (this.currentTabIndex === -1) {
+          newTabIndex = "0";
+        }
+        $tabItem.setAttribute("tabindex", newTabIndex);
       }
     });
   }

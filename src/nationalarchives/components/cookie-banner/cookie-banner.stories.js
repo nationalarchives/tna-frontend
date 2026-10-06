@@ -13,6 +13,14 @@ export default {
     Object.entries({
       serviceName: { control: "text" },
       cookiesUrl: { control: "text" },
+      title: { control: "text" },
+      body: { control: "text" },
+      acceptCookiesText: { control: "text" },
+      rejectCookiesText: { control: "text" },
+      setCookiePreferencesText: { control: "text" },
+      hideCookieBannerText: { control: "text" },
+      acceptedBody: { control: "text" },
+      rejectedBody: { control: "text" },
       style: {
         control: "inline-radio",
         options: ["none", "contrast", "accent", "tint"],

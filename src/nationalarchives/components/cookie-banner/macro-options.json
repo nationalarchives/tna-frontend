@@ -20,6 +20,34 @@
     "default": "We use some essential cookies to make this service work.\nWe'd also like to use analytics cookies so we can understand how you use the service and make improvements."
   },
   {
+    "name": "acceptCookiesText",
+    "type": "string",
+    "required": false,
+    "description": "The text to show for the 'Accept cookies' button.",
+    "default": "Accept cookies"
+  },
+  {
+    "name": "rejectCookiesText",
+    "type": "string",
+    "required": false,
+    "description": "The text to show for the 'Reject cookies' button.",
+    "default": "Reject cookies"
+  },
+  {
+    "name": "setCookiePreferencesText",
+    "type": "string",
+    "required": false,
+    "description": "The text to show for the 'Set cookie preferences' button.",
+    "default": "Set cookie preferences"
+  },
+  {
+    "name": "hideCookieBannerText",
+    "type": "string",
+    "required": false,
+    "description": "The text to show for the 'Hide cookies message' button.",
+    "default": "Hide cookies message"
+  },
+  {
     "name": "acceptedBody",
     "type": "string",
     "required": false,

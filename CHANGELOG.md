@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Allow changing the title text for the buttons of an accordion
+- The buttons on the cookie banner component can be customised
 
 ### Changed
 

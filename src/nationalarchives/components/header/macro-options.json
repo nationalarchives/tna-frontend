@@ -26,6 +26,13 @@
     ]
   },
   {
+    "name": "menuButtonText",
+    "type": "string",
+    "required": false,
+    "description": "The text for the menu button.",
+    "default": "Menu"
+  },
+  {
     "name": "navigation",
     "type": "array",
     "required": false,
@@ -89,6 +96,13 @@
         "description": "An optional Font Awesome icon, without the `fa-` prefix."
       }
     ]
+  },
+  {
+    "name": "navigationAriaLabel",
+    "type": "string",
+    "required": false,
+    "description": "The ARIA label for the main navigation `<nav>` element.",
+    "default": "Primary"
   },
   {
     "name": "accent",

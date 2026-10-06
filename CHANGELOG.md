@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The buttons on the cookie banner component can be customised
 - The "Page" prefix of the buttons in a pagination component can be customised
 - Date input labels can be customised
+- More header and phase banner component content can be customised
 
 ### Changed
 

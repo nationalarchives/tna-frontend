@@ -6,6 +6,13 @@
     "description": "The phase to display in the banner. This should either be 'Proof of concept', 'Prototype', 'Alpha' or 'Beta'."
   },
   {
+    "name": "phasePrefix",
+    "type": "string",
+    "required": false,
+    "description": "A visually hidden prefix for the phase.",
+    "default": "Service phase:"
+  },
+  {
     "name": "message",
     "type": "string",
     "required": true,

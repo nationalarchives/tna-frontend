@@ -4,7 +4,7 @@
   <div class="tna-container">
     <div class="tna-column tna-column--full-tiny">
       <strong class="tna-phase-banner__phase">
-        <span class="tna-visually-hidden">Service phase:</span>
+        <span class="tna-visually-hidden">{{ params.phasePrefix or 'Service phase:' }} </span>
         {{ params.phase | lower | capitalize }}
       </strong>
     </div>

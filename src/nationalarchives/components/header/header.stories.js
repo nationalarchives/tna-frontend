@@ -14,6 +14,7 @@ export default {
     Object.entries({
       logo: { control: "object" },
       topNavigation: { control: "object" },
+      menuButtonText: { control: "text" },
       navigation: { control: "object" },
       accent: {
         control: "boolean",

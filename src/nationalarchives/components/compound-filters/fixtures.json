@@ -6,40 +6,92 @@
       "options": {
         "items": [
           {
-            "label": "Medieval (974—1485)",
+            "label": "Alpha",
             "href": "#?filter=alpha"
           },
           {
-            "label": "Early Modern (1485—1714)",
-            "href": "#?filter=beta"
+            "label": "Beta",
+            "href": "#?filter=beta",
+            "title": "Remove the beta filter"
           },
           {
-            "label": "Georgians (1714—1837)",
+            "label": "Gamma",
             "href": "#?filter=gamma"
-          },
-          {
-            "label": "Victorians (1837—1901)",
-            "href": "#?filter=delta"
-          },
-          {
-            "label": "Early 20th century (1901—1918)",
-            "href": "#?filter=epsilon"
-          },
-          {
-            "label": "Interwar (1918—1939)",
-            "href": "#?filter=zeta"
-          },
-          {
-            "label": "Second World War (1939—1945)",
-            "href": "#?filter=eta"
-          },
-          {
-            "label": "Postwar (1945—2000)",
-            "href": "#?filter=theta"
           }
         ]
       },
-      "html": "<ul class=\"tna-compound-filters\"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Medieval (974—1485)</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Early Modern (1485—1714)</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Georgians (1714—1837)</span><a href=\"#?filter=gamma\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Victorians (1837—1901)</span><a href=\"#?filter=delta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Early 20th century (1901—1918)</span><a href=\"#?filter=epsilon\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Interwar (1918—1939)</span><a href=\"#?filter=zeta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Second World War (1939—1945)</span><a href=\"#?filter=eta\" class=\"tna-compound-filters__link\">Remove filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Postwar (1945—2000)</span><a href=\"#?filter=theta\" class=\"tna-compound-filters__link\">Remove filter</a></li></ul>"
+      "html": "<ul class=\"tna-compound-filters\"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Alpha</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter: Alpha</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Beta</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove the beta filter</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Gamma</span><a href=\"#?filter=gamma\" class=\"tna-compound-filters__link\">Remove filter: Gamma</a></li></ul>"
+    },
+    {
+      "name": "compound filters with remove all link",
+      "options": {
+        "items": [
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Beta",
+            "href": "#?filter=beta"
+          }
+        ],
+        "removeAllHref": "#?filter=none"
+      },
+      "html": "<ul class=\"tna-compound-filters\"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Alpha</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter: Alpha</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Beta</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove filter: Beta</a></li><li class=\"tna-compound-filters__item tna-compound-filters__item--remove\"><a href=\"#?filter=none\">Remove all filters</a></li></ul>"
+    },
+    {
+      "name": "compound filters with remove all link and custom text",
+      "options": {
+        "items": [
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Beta",
+            "href": "#?filter=beta"
+          }
+        ],
+        "removeAllText": "Remove all",
+        "removeAllHref": "#?filter=none"
+      },
+      "html": "<ul class=\"tna-compound-filters\"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Alpha</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter: Alpha</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Beta</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove filter: Beta</a></li><li class=\"tna-compound-filters__item tna-compound-filters__item--remove\"><a href=\"#?filter=none\">Remove all</a></li></ul>"
+    },
+    {
+      "name": "compound filters with classes",
+      "options": {
+        "items": [
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Beta",
+            "href": "#?filter=beta"
+          }
+        ],
+        "classes": "custom-class"
+      },
+      "html": "<ul class=\"tna-compound-filters custom-class\"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Alpha</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter: Alpha</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Beta</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove filter: Beta</a></li></ul>"
+    },
+    {
+      "name": "compound filters with attributes",
+      "options": {
+        "items": [
+          {
+            "label": "Alpha",
+            "href": "#?filter=alpha"
+          },
+          {
+            "label": "Beta",
+            "href": "#?filter=beta"
+          }
+        ],
+        "attributes": {
+          "data-test": "value"
+        }
+      },
+      "html": "<ul class=\"tna-compound-filters\" data-test=\"value\"><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Alpha</span><a href=\"#?filter=alpha\" class=\"tna-compound-filters__link\">Remove filter: Alpha</a></li><li class=\"tna-compound-filters__item\"><span class=\"tna-compound-filters__label\">Beta</span><a href=\"#?filter=beta\" class=\"tna-compound-filters__link\">Remove filter: Beta</a></li></ul>"
     }
   ]
 }

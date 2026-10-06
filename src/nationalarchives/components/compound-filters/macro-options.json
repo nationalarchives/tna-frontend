@@ -21,7 +21,7 @@
         "name": "title",
         "type": "string",
         "required": false,
-        "description": "An optional title for the filter item."
+        "description": "An optional title for the link to remove the filter item."
       }
     ]
   },

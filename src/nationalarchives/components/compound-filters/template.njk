@@ -4,7 +4,7 @@
   {%- for item in params.items %}
   <li class="tna-compound-filters__item">
     <span class="tna-compound-filters__label">{{ item.label }}</span>
-    <a href="{{ item.href }}" class="tna-compound-filters__link">{{ item.title if item.title else 'Remove filter' }}</a>
+    <a href="{{ item.href }}" class="tna-compound-filters__link">{{ item.title or ('Remove filter: ' ~ item.label) }}</a>
   </li>
   {%- endfor %}
   {%- if params.removeAllHref %}

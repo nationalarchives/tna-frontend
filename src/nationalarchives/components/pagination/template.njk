@@ -28,7 +28,7 @@
         {{ tnaButton({
           text: item.number,
           href: item.href,
-          title: 'Page ' ~ item.number,
+          title: (params.pageButtonPrefix or 'Page') ~ ' ' ~ item.number,
           plain: not item.current,
           classes: 'tna-pagination__link',
           attributes: { 'aria-current': 'page' } if item.current else {}

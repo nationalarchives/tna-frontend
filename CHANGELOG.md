@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Allow changing the title text for the buttons of an accordion
 - The buttons on the cookie banner component can be customised
+- The "Page" prefix of the buttons in a pagination component can be customised
 
 ### Changed
 

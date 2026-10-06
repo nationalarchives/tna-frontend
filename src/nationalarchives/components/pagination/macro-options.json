@@ -100,6 +100,13 @@
     ]
   },
   {
+    "name": "pageButtonPrefix",
+    "type": "string",
+    "required": false,
+    "description": "The prefix to use for the page buttons.",
+    "default": "Page"
+  },
+  {
     "name": "landmarkLabel",
     "type": "string",
     "required": false,

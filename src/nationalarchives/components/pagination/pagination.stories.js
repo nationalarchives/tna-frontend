@@ -12,6 +12,7 @@ export default {
       previous: { control: "object" },
       items: { control: "object" },
       next: { control: "object" },
+      pageButtonPrefix: { control: "text" },
       landmarkLabel: { control: "text" },
       classes: { control: "text" },
       attributes: { control: "object" },

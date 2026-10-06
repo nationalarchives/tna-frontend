@@ -13,7 +13,7 @@ export default {
       filename: { control: "text" },
       language: { control: "select", options: Object.keys(languages) },
       code: { control: "text" },
-      copy: { control: "boolean" },
+      copy: { control: "object" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [
@@ -70,6 +70,10 @@ export const WithCopyButton = {
       (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
     ).toString(16),
   );`,
-    copy: true,
+    copy: {
+      enabled: true,
+      label: "Copy this code",
+      titlePrefix: "Copy this code block for",
+    },
   },
 };

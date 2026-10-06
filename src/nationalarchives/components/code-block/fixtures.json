@@ -28,9 +28,36 @@
       "name": "with copy button",
       "options": {
         "code": "Plaintext code block",
-        "copy": true
+        "copy": {
+          "enabled": true
+        }
       },
       "html": "<div class=\"tna-code-block\" data-module=\"tna-code-block\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
+    },
+    {
+      "name": "with custom copy button",
+      "options": {
+        "code": "Plaintext code block",
+        "copy": {
+          "enabled": true,
+          "label": "Copy this code",
+          "titlePrefix": "Copy this code block for"
+        }
+      },
+      "html": "<div class=\"tna-code-block\" data-module=\"tna-code-block\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" hidden aria-live=\"assertive\">Copy this code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
+    },
+    {
+      "name": "with custom copy button and filename",
+      "options": {
+        "code": "Plaintext code block",
+        "filename": "index.html",
+        "copy": {
+          "enabled": true,
+          "label": "Copy this code",
+          "titlePrefix": "Copy this code block for"
+        }
+      },
+      "html": "<div class=\"tna-code-block\" title=\"index.html\" data-module=\"tna-code-block\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" aria-label=\"Copy this code block for index.html\" title=\"Copy this code block for index.html\" hidden aria-live=\"assertive\">Copy this code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block: index.html\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
     },
     {
       "name": "with classes",

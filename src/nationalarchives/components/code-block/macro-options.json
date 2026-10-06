@@ -20,10 +20,29 @@
   },
   {
     "name": "copy",
-    "type": "boolean",
+    "type": "object",
     "required": false,
-    "description": "If `true`, show a copy button in the code block.",
-    "default": false
+    "description": "Set the properties of the code copy feature.",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, show a copy button in the code block.",
+        "default": false
+      },
+      "label": {
+        "type": "string",
+        "required": false,
+        "description": "The visible label for the copy button.",
+        "default": "Copy code"
+      },
+      "titlePrefix": {
+        "type": "string",
+        "required": false,
+        "description": "The prefix for the title attribute of the copy button.",
+        "default": "Copy code for"
+      }
+    }
   },
   {
     "name": "classes",

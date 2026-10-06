@@ -40,7 +40,8 @@
     "name": "fields",
     "type": "array",
     "required": false,
-    "description": "An array of fields to display. Can be `d`, `m` or `y`. Order is preserved unless `progressive` is true."
+    "description": "An array of fields to display. Can be `d`, `m` or `y`. Order is preserved unless `progressive` is true.",
+    "default": ["d", "m", "y"]
   },
   {
     "name": "value",

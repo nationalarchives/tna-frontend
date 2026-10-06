@@ -92,9 +92,9 @@ export const Progressive = {
   },
 };
 
-export const OnlySomeFields = {
+export const OnlyMonthYear = {
   args: {
-    label: "Enter a start date",
+    label: "Enter a month",
     headingLevel: 4,
     headingSize: "m",
     id: "date14",
@@ -104,13 +104,25 @@ export const OnlySomeFields = {
   },
 };
 
+export const OnlyYear = {
+  args: {
+    label: "Enter a year",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "date15",
+    name: "date15",
+    fields: ["y"],
+    classes: "tna-date-input--demo",
+  },
+};
+
 export const WithHint = {
   args: {
     label: "Enter a start date",
     headingLevel: 4,
     headingSize: "m",
-    id: "date15",
-    name: "date15",
+    id: "date16",
+    name: "date16",
     hint: "The earliest date of the record",
     classes: "tna-date-input--demo",
   },
@@ -121,8 +133,8 @@ export const Error = {
     label: "Enter a start date",
     headingLevel: 4,
     headingSize: "m",
-    id: "date16",
-    name: "date16",
+    id: "date17",
+    name: "date17",
     error: {
       text: "Date is not valid",
     },

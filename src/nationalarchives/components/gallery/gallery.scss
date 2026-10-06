@@ -158,8 +158,9 @@
 
     &,
     &:hover {
-      @include colour.colour-font("button-accented-text");
-      @include colour.colour-background("button-accented-background");
+      color: var(--button-accented-text);
+
+      background-color: var(--button-accented-background);
       @include colour.colour-border("button-accented-background");
     }
   }
@@ -263,17 +264,17 @@
     position: absolute;
     z-index: 4;
 
+    color: var(--font-dark);
+
     text-transform: capitalize;
     inset-block-start: 0;
     inset-inline-start: 0;
 
-    border-radius: 0 0 bordersVars.$rounded-border-radius 0;
+    background-color: var(--background);
 
-    @include colour.colour-font("font-dark");
+    border-radius: 0 0 bordersVars.$rounded-border-radius 0;
     @include typography.font-size(24);
     @include typography.main-font-weight-bold;
-
-    @include colour.colour-background("background");
   }
 
   &--interactive &__item-figure-inner {

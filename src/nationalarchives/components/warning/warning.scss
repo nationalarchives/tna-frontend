@@ -12,15 +12,17 @@
   align-items: flex-start;
   gap: spacing.space(1);
 
-  @include colour.accent-light;
-  @include colour.always-light;
+  background-color: var(--brand-cream);
 
-  @include colour.colour-background-brand("cream");
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  color-scheme: light only;
+
+  @include colour.accent-light;
 
   @include colour.thick-keyline-brand(left, "yellow");
   @include borders.rounded-border;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 
   @include media.on-tiny {
     flex-direction: column;
@@ -36,13 +38,13 @@
 
     display: block;
 
+    color: var(--font-dark);
+
     line-height: 2rem;
     text-align: center;
     text-transform: lowercase;
 
     border-radius: 100%;
-
-    @include colour.colour-font("font-dark");
     @include typography.font-size(24);
     @include typography.main-font-weight-bold;
 

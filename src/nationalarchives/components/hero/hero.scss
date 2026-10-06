@@ -63,9 +63,9 @@ $over-overflow: $shift-overflow !default;
     inset-inline-end: spacing.space(0.5);
 
     &:hover {
-      @include colour.colour-font("font-dark", true);
+      color: var(--font-dark) !important;
 
-      @include colour.colour-background("background", true);
+      background-color: var(--background) !important;
     }
   }
 
@@ -96,7 +96,7 @@ $over-overflow: $shift-overflow !default;
       inset-block-start: 50%;
       inset-inline-start: 50%;
 
-      @include colour.colour-background("font-dark");
+      background-color: var(--font-dark);
     }
 
     &::before {
@@ -163,9 +163,9 @@ $over-overflow: $shift-overflow !default;
   &__content-inner {
     padding-inline: 0;
 
-    border-inline-start: none;
+    background-color: var(--background);
 
-    @include colour.colour-background("background");
+    border-inline-start: none;
   }
 
   @include media.on-larger-than-mobile {

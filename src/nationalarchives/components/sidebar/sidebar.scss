@@ -109,7 +109,7 @@
     list-style: "—  " outside;
 
     &::marker {
-      @include colour.colour-font("font-light");
+      color: var(--font-light);
     }
   }
 

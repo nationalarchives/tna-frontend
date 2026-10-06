@@ -53,11 +53,12 @@
 
       text-decoration: none;
 
-      @include colour.colour-border("keyline");
+      background-color: var(--background);
+
       border-radius: bordersVars.$rounded-border-radius
         bordersVars.$rounded-border-radius 0 0;
 
-      @include colour.colour-background("background");
+      @include colour.colour-border("keyline");
 
       &:focus {
         @include borders.rounded-border;
@@ -72,11 +73,11 @@
 
     display: block;
 
+    color: var(--font-base);
+
     text-decoration: underline;
 
-    @include colour.colour-font("font-base");
-
-    @include colour.colour-background("background-tint");
+    background-color: var(--background-tint);
 
     @include borders.rounded-border;
   }

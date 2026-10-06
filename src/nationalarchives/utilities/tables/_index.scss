@@ -167,17 +167,9 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   overflow: auto;
 
   background:
-    linear-gradient(
-      to right,
-      colour.colour-var("background") 50%,
-      rgb(255 255 255 / 0%)
-    ),
-    linear-gradient(
-        to right,
-        rgb(255 255 255 / 0%),
-        colour.colour-var("background") 50%
-      )
-      0 100%,
+    linear-gradient(to right, var(--background) 50%, rgb(255 255 255 / 0%)),
+    linear-gradient(to right, rgb(255 255 255 / 0%), var(--background) 50%) 0
+      100%,
     radial-gradient(
       ellipse #{$table-overflow-shadow-width} 50% at left center,
       #{$table-overflow-shadow-colour},
@@ -282,7 +274,7 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   //         overflow-wrap: break-word;
 
   //         hyphens: auto;
-  //         @include colour.colour-background("background");
+  //         background-color: var(--background);
 
   //         &::after {
   //           content: "";

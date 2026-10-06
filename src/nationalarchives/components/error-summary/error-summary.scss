@@ -9,7 +9,7 @@
   @include spacing.space-above;
   padding: spacing.space(1);
 
-  @include colour.colour-background("background");
+  background-color: var(--background);
 
   @include colour.colour-border("form-error-border", 0.3125rem, solid);
   @include borders.rounded-border;
@@ -33,7 +33,7 @@
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("form-error-text");
+      color: var(--form-error-text);
     }
   }
 }

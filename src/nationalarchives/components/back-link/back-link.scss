@@ -8,7 +8,7 @@
 
   &,
   &:visited {
-    @include colour.colour-font("font-base");
+    color: var(--font-base);
   }
 
   &,

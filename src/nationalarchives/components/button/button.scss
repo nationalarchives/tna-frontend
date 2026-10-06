@@ -21,6 +21,8 @@ $button-border-width: 4px !default;
   text-decoration: none;
   text-wrap: balance;
 
+  background-color: var(--button-background);
+
   cursor: pointer;
 
   -webkit-print-color-adjust: exact;
@@ -29,19 +31,17 @@ $button-border-width: 4px !default;
   @include typography.font-size(18);
   @include typography.main-font-weight-bold;
 
-  @include colour.colour-background("button-background");
-
   @include colour.colour-border("button-background", $button-border-width);
   @include borders.rounded-border;
 
   &,
   &:link,
   &:visited {
-    @include colour.colour-font("button-text");
+    color: var(--button-text);
   }
 
   &:hover {
-    @include colour.colour-font("button-hover-text");
+    color: var(--button-hover-text);
     text-decoration: none;
 
     background: transparent;
@@ -73,11 +73,11 @@ $button-border-width: 4px !default;
     &,
     &:link,
     &:hover {
-      @include colour.colour-font("link");
+      color: var(--link);
     }
 
     &:visited {
-      @include colour.colour-font("link-visited");
+      color: var(--link-visited);
     }
 
     &:hover {
@@ -87,23 +87,23 @@ $button-border-width: 4px !default;
 
   &--plain#{&}--no-visited-state {
     &:visited {
-      @include colour.colour-font("link");
+      color: var(--link);
     }
   }
 
   &--accent {
-    @include colour.colour-background("button-accented-background");
+    background-color: var(--button-accented-background);
 
     @include colour.colour-border("button-accented-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("button-accented-text");
+      color: var(--button-accented-text);
     }
 
     &:hover {
-      @include colour.colour-font("font-dark");
+      color: var(--font-dark);
     }
   }
 
@@ -184,60 +184,64 @@ $button-border-width: 4px !default;
 
   &--solid-hover {
     &:not(.tna-button--plain):hover {
-      @include colour.colour-font("font-dark");
+      color: var(--font-dark);
 
-      @include colour.colour-background("background");
+      background-color: var(--background);
     }
   }
 
   .tna-background-accent &,
   .tna-template--dark-theme .tna-background-accent-light & {
     &:hover {
-      @include colour.colour-font("font-dark");
+      color: var(--font-dark);
     }
   }
 
   .tna-background-accent &--accent,
   .tna-template--dark-theme .tna-background-accent-light &--accent {
-    @include colour.colour-background("contrast-button-background");
+    background-color: var(--contrast-button-background);
 
     @include colour.colour-border("contrast-button-background");
 
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("contrast-button-text");
+      color: var(--contrast-button-text);
     }
 
     &:hover {
-      @include colour.colour-font("contrast-font-dark");
+      color: var(--contrast-font-dark);
 
-      @include colour.colour-background("contrast-background");
+      background-color: var(--contrast-background);
     }
   }
 
   @media (prefers-color-scheme: dark) {
-    .tna-template--system-theme .tna-background-accent-light & {
+    .tna-template:not(.tna-template--light-theme)
+      .tna-background-accent-light
+      & {
       &:hover {
-        @include colour.colour-font("font-dark");
+        color: var(--font-dark);
       }
     }
 
-    .tna-template--system-theme .tna-background-accent-light &--accent {
-      @include colour.colour-background("contrast-button-background");
+    .tna-template:not(.tna-template--light-theme)
+      .tna-background-accent-light
+      &--accent {
+      background-color: var(--contrast-button-background);
 
       @include colour.colour-border("contrast-button-background");
 
       &,
       &:link,
       &:visited {
-        @include colour.colour-font("contrast-button-text");
+        color: var(--contrast-button-text);
       }
 
       &:hover {
-        @include colour.colour-font("contrast-font-dark");
+        color: var(--contrast-font-dark);
 
-        @include colour.colour-background("contrast-background");
+        background-color: var(--contrast-background);
       }
     }
   }

@@ -6,7 +6,7 @@
 
   display: block;
 
-  @include colour.colour-font("font-dark");
+  color: var(--font-dark);
 
   svg {
     inline-size: 100%;

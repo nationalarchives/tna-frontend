@@ -114,7 +114,7 @@ ol {
   }
 
   &--plain a#{&}__item {
-    @include colour.colour-font("link");
+    color: var(--link);
   }
 
   &--stacked {
@@ -139,7 +139,7 @@ ol {
     > dt {
       --background: var(--background-tint);
 
-      @include colour.colour-background("background");
+      background-color: var(--background);
     }
 
     > dd:nth-child(1n) {
@@ -191,10 +191,11 @@ ol {
 
       position: absolute;
 
+      color: var(--icon-light);
+
       line-height: inherit;
       inset-block-start: 0;
       inset-inline-start: 0;
-      @include colour.colour-font("icon-light");
     }
   }
 

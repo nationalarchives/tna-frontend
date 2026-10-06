@@ -59,11 +59,11 @@
 
     &,
     &:link {
-      @include colour.colour-font("link");
+      color: var(--link);
     }
 
     &:visited {
-      @include colour.colour-font("link-visited");
+      color: var(--link-visited);
     }
 
     &:hover {
@@ -72,7 +72,7 @@
   }
 
   &__item--current &__link {
-    @include colour.colour-font("font-base");
+    color: var(--font-base);
     text-decoration: none;
     @include colour.thick-keyline-accent(bottom);
 

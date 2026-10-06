@@ -50,7 +50,7 @@
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("font-base");
+      color: var(--font-base);
     }
   }
 
@@ -89,7 +89,7 @@
       &,
       &:link,
       &:visited {
-        @include colour.colour-font("link");
+        color: var(--link);
       }
     }
   }

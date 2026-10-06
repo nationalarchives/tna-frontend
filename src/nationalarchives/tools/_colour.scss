@@ -8,40 +8,21 @@
 @use "../variables/features";
 @use "../tools/media";
 
-$base-colours: (
-  "background",
-  "font-base",
-  "font-dark",
-  "font-light",
-  "icon-light",
-  "link",
-  "link-visited",
-  "keyline",
-  "keyline-dark"
-);
-
 @function brand-colour($colour, $opacity: 1) {
   @return colour.brand-colour($colour, $opacity);
 }
 
 @mixin colour-css-vars($excludes...) {
+  @each $name, $value in colour.$colour-palette-brand {
+    --brand-#{$name}: #{$value};
+  }
+
   @each $name, $value in colour.$colour-palette-default {
     @if not list.index($excludes, $name) {
-      --#{$name}: #{$value};
-      @if list.index($base-colours, $name) {
-        --base-#{$name}: #{$value};
-      }
-    }
-  }
-}
-
-@mixin colour-css-vars-dark($excludes...) {
-  @each $name, $value in colour.$colour-palette-dark {
-    @if not list.index($excludes, $name) {
-      --#{$name}: #{$value};
-      @if list.index($base-colours, $name) {
-        --base-#{$name}: #{$value};
-      }
+      --#{$name}: light-dark(
+        #{$value},
+        #{map.get(colour.$colour-palette-dark, $name)}
+      );
     }
   }
 }
@@ -49,44 +30,12 @@ $base-colours: (
 @mixin colour-css-vars-high-contrast($excludes...) {
   @each $name, $value in colour.$colour-palette-high-contrast {
     @if not list.index($excludes, $name) {
-      --#{$name}: #{$value};
-      @if list.index($base-colours, $name) {
-        --base-#{$name}: #{$value};
-      }
+      --#{$name}: light-dark(
+        #{$value},
+        #{map.get(colour.$colour-palette-high-contrast-dark, $name)}
+      );
     }
   }
-}
-
-@mixin colour-css-vars-high-contrast-dark($excludes...) {
-  @each $name, $value in colour.$colour-palette-high-contrast-dark {
-    @if not list.index($excludes, $name) {
-      --#{$name}: #{$value};
-      @if list.index(("keyline", "keyline-dark"), $name) {
-        --base-#{$name}: #{$value};
-      }
-    }
-  }
-}
-
-@function colour-var($colour) {
-  @return var(
-    --#{$colour},
-    #{map.get(colour.$colour-palette-default, $colour)}
-  );
-}
-
-@mixin colour-font($colour, $important: false) {
-  color: colour-var($colour) if(sass($important): !important; else: null);
-}
-
-@mixin colour-background($colour, $important: false) {
-  background-color: colour-var($colour)
-    if(sass($important): !important; else: null);
-}
-
-@mixin colour-background-brand($brandColour, $important: false) {
-  background-color: #{brand-colour($brandColour)}
-    if(sass($important): !important; else: null);
 }
 
 @mixin colour-border(
@@ -99,24 +48,21 @@ $base-colours: (
   @if $direction != "" {
     @if $width != "" {
       border-#{$direction}: $width
-        colour-var($colour)
+        var(--#{$colour})
         $style
         if(sass($important): !important; else: null);
     } @else {
-      border-#{$direction}-color: colour-var($colour)
+      border-#{$direction}-color: var(--#{$colour})
         if(sass($important): !important; else: null);
     }
   } @else {
     @if $width != "" {
       border: $width
-        colour-var($colour)
+        var(--#{$colour})
         $style
         if(sass($important): !important; else: null);
     } @else {
-      border-color: var(
-          --#{$colour},
-          #{map.get(colour.$colour-palette-default, $colour)}
-        )
+      border-color: var(--#{$colour})
         if(sass($important): !important; else: null);
     }
   }
@@ -125,22 +71,19 @@ $base-colours: (
 @mixin colour-outline($colour, $width: "", $style: solid, $important: false) {
   @if $width != "" {
     outline: $width
-      colour-var($colour)
+      var(--#{$colour})
       $style
       if(sass($important): !important; else: null);
   } @else {
-    outline-color: colour-var($colour)
+    outline-color: var(--#{$colour})
       if(sass($important): !important; else: null);
   }
 }
 
-@mixin colour-fill($colour, $important: false) {
-  fill: colour-var($colour) if(sass($important): !important; else: null);
-}
-
 %colour-input {
-  @include colour-font("input-foreground");
-  @include colour-background("input-background");
+  color: var(--input-foreground);
+
+  background-color: var(--input-background);
   @include colour-border("input-border", forms.$form-field-border-width);
 
   &:hover {
@@ -229,18 +172,6 @@ $base-colours: (
   }
 }
 
-%always-light {
-  @include colour-css-vars;
-
-  @media (prefers-contrast: more) {
-    @include colour-css-vars-high-contrast;
-  }
-}
-
-@mixin always-light {
-  @extend %always-light;
-}
-
 %contrast {
   --background: var(--contrast-background);
   --font-base: var(--contrast-font-base);
@@ -257,9 +188,9 @@ $base-colours: (
   --button-hover-background: var(--contrast-button-hover-background);
   --accent-border: var(--accent-border-bright);
 
-  @include colour-background("background");
+  color: var(--font-base);
 
-  @include colour-font("font-base");
+  background-color: var(--background);
 }
 
 @mixin contrast {
@@ -283,9 +214,9 @@ $base-colours: (
     --button-hover-background: var(--contrast-button-hover-background);
     --accent-border: var(--accent-border-bright);
 
-    @include colour-background("background");
+    color: var(--font-base);
 
-    @include colour-font("font-base");
+    background-color: var(--background);
   }
 }
 
@@ -293,24 +224,10 @@ $base-colours: (
   @extend %contrast-on-mobile;
 }
 
-%base {
-  @each $name, $value in $base-colours {
-    --#{$name}: var(--base-#{$value});
-  }
-
-  @include colour-background("background");
-
-  @include colour-font("font-base");
-}
-
-@mixin base {
-  @extend %base;
-}
-
 %tint {
   --background: var(--background-tint);
 
-  @include colour-background("background");
+  background-color: var(--background);
 }
 
 @mixin tint {
@@ -333,9 +250,9 @@ $base-colours: (
   --button-hover-text: var(--accent-button-hover-text);
   --button-hover-background: var(--accent-button-hover-background);
 
-  @include colour-background("background");
+  color: var(--font-base);
 
-  @include colour-font("font-base");
+  background-color: var(--background);
 }
 
 @mixin accent {
@@ -344,70 +261,34 @@ $base-colours: (
 
 %accent-light {
   --background: var(--accent-background-light);
-  --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
-  --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
-  --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
-  --icon-light: #{map.get(colour.$colour-palette-default, "icon-light")};
-  --keyline: #{map.get(colour.$colour-palette-default, "keyline")};
-  --keyline-dark: #{map.get(colour.$colour-palette-default, "keyline-dark")};
-  --button-text: #{map.get(colour.$colour-palette-default, "button-text")};
-  --button-background: #{map.get(
-      colour.$colour-palette-default,
-      "button-background"
-    )};
-  --button-hover-text: #{map.get(
-      colour.$colour-palette-default,
-      "button-hover-text"
-    )};
-  --button-hover-background: #{map.get(
-      colour.$colour-palette-default,
-      "button-hover-background"
-    )};
+  // --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
+  // --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
+  // --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
+  // --icon-light: #{map.get(colour.$colour-palette-default, "icon-light")};
+  // --keyline: #{map.get(colour.$colour-palette-default, "keyline")};
+  // --keyline-dark: #{map.get(colour.$colour-palette-default, "keyline-dark")};
+  // --button-text: #{map.get(colour.$colour-palette-default, "button-text")};
+  // --button-background: #{map.get(
+  //     colour.$colour-palette-default,
+  //     "button-background"
+  //   )};
+  // --button-hover-text: #{map.get(
+  //     colour.$colour-palette-default,
+  //     "button-hover-text"
+  //   )};
+  // --button-hover-background: #{map.get(
+  //     colour.$colour-palette-default,
+  //     "button-hover-background"
+  //   )};
   --accent-border: var(--accent-background);
+  color: var(--font-base);
 
-  @include colour-background("background");
-  @include colour-font("font-base");
+  background-color: var(--background);
 
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
-      // --link: #{map.get(colour.$colour-palette-default, "link")};
-      // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
-
-      --background: var(--accent-background);
-      --font-base: var(--accent-font-base);
-      --font-dark: var(--accent-font-dark);
-      --font-light: var(--accent-font-light);
-      --icon-light: var(--accent-icon-light);
-      --link: var(--accent-link);
-      --link-visited: var(--accent-link);
-      --keyline: var(--accent-keyline);
-      --keyline-dark: var(--accent-keyline-dark);
-      --accent-border: var(--accent-font-dark);
-      --button-text: var(--accent-button-text);
-      --button-background: var(--accent-button-background);
-      --button-hover-text: var(--accent-button-hover-text);
-      --button-hover-background: var(--accent-button-hover-background);
+  @media (prefers-color-scheme: dark) {
+    .tna-template:not(.tna-template--light-theme) & {
+      color-scheme: dark only;
     }
-  }
-
-  .tna-template--dark-theme & {
-    // --link: #{map.get(colour.$colour-palette-default, "link")};
-    // --link-visited: #{map.get(colour.$colour-palette-default, "link-visited")};
-
-    --background: var(--accent-background);
-    --font-base: var(--accent-font-base);
-    --font-dark: var(--accent-font-dark);
-    --font-light: var(--accent-font-light);
-    --icon-light: var(--accent-icon-light);
-    --link: var(--accent-link);
-    --link-visited: var(--accent-link);
-    --keyline: var(--accent-keyline);
-    --keyline-dark: var(--accent-keyline-dark);
-    --accent-border: var(--accent-font-dark);
-    --button-text: var(--accent-button-text);
-    --button-background: var(--accent-button-background);
-    --button-hover-text: var(--accent-button-hover-text);
-    --button-hover-background: var(--accent-button-hover-background);
   }
 }
 
@@ -416,20 +297,20 @@ $base-colours: (
 }
 
 %yellow-accent {
-  --accent-background: #{colour.brand-colour("yellow")} !important;
-  --accent-background-light: #{colour.brand-colour("cream")} !important;
-  --accent-border: #{colour.brand-colour("yellow")} !important;
-  --accent-border-bright: #{colour.brand-colour("yellow")} !important;
-  --accent-font-base: #{colour.brand-colour("black")} !important;
-  --accent-font-dark: #{colour.brand-colour("black")} !important;
+  --accent-background: #{var(--brand-yellow)} !important;
+  --accent-background-light: #{var(--brand-cream)} !important;
+  --accent-border: #{var(--brand-yellow)} !important;
+  --accent-border-bright: #{var(--brand-yellow)} !important;
+  --accent-font-base: #{var(--brand-black)} !important;
+  --accent-font-dark: #{var(--brand-black)} !important;
   --accent-font-light: #{colour.brand-colour("black", 0.7)} !important;
   --accent-icon-light: #{colour.brand-colour("black", 0.7)} !important;
-  --accent-link: #{colour.brand-colour("black")} !important;
-  --accent-link-visited: #{colour.brand-colour("black")} !important;
+  --accent-link: #{var(--brand-black)} !important;
+  --accent-link-visited: #{var(--brand-black)} !important;
   --accent-keyline: #{colour.brand-colour("black", 0.5)} !important;
   --accent-keyline-dark: #{colour.brand-colour("black", 0.8)} !important;
-  --button-accented-text: #{colour.brand-colour("black")} !important;
-  --button-accented-background: #{colour.brand-colour("yellow")} !important;
+  --button-accented-text: #{var(--brand-black)} !important;
+  --button-accented-background: #{var(--brand-yellow)} !important;
 }
 
 @mixin yellow-accent {
@@ -437,24 +318,24 @@ $base-colours: (
 }
 
 %accent-lighter-text {
-  --accent-font-base: #{colour.brand-colour("white")} !important;
-  --accent-font-dark: #{colour.brand-colour("white")} !important;
+  --accent-font-base: #{var(--brand-white)} !important;
+  --accent-font-dark: #{var(--brand-white)} !important;
   --accent-font-light: #{colour.brand-colour("white", 0.7)} !important;
   --accent-icon-light: #{colour.brand-colour("white", 0.7)} !important;
-  --accent-link: #{colour.brand-colour("white")} !important;
-  --accent-link-visited: #{colour.brand-colour("white")} !important;
+  --accent-link: #{var(--brand-white)} !important;
+  --accent-link-visited: #{var(--brand-white)} !important;
   --accent-keyline: #{colour.brand-colour("white", 0.5)} !important;
   --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
-  --button-accented-text: #{colour.brand-colour("white")} !important;
+  --button-accented-text: #{var(--brand-white)} !important;
 }
 
 %black-accent {
-  --accent-background: #{colour.brand-colour("black")} !important;
-  --accent-background-light: #{colour.brand-colour("light-grey")} !important;
-  --accent-border: #{colour.brand-colour("black")} !important;
-  --accent-border-bright: #{colour.brand-colour("grey")} !important;
-  --button-accented-text: #{colour.brand-colour("black")} !important;
-  --button-accented-background: #{colour.brand-colour("grey")} !important;
+  --accent-background: #{var(--brand-black)} !important;
+  --accent-background-light: #{var(--brand-light-grey)} !important;
+  --accent-border: #{var(--brand-black)} !important;
+  --accent-border-bright: #{var(--brand-grey)} !important;
+  --button-accented-text: #{var(--brand-black)} !important;
+  --button-accented-background: #{var(--brand-grey)} !important;
 }
 
 @mixin black-accent {
@@ -463,11 +344,11 @@ $base-colours: (
 }
 
 %pink-accent {
-  --accent-background: #{colour.brand-colour("maroon")} !important;
-  --accent-background-light: #{colour.brand-colour("pastel-pink")} !important;
-  --accent-border: #{colour.brand-colour("maroon")} !important;
-  --accent-border-bright: #{colour.brand-colour("pink")} !important;
-  --button-accented-background: #{colour.brand-colour("maroon")} !important;
+  --accent-background: #{var(--brand-maroon)} !important;
+  --accent-background-light: #{var(--brand-pastel-pink)} !important;
+  --accent-border: #{var(--brand-maroon)} !important;
+  --accent-border-bright: #{var(--brand-pink)} !important;
+  --button-accented-background: #{var(--brand-maroon)} !important;
 }
 
 @mixin pink-accent {
@@ -476,11 +357,11 @@ $base-colours: (
 }
 
 %orange-accent {
-  --accent-background: #{colour.brand-colour("chestnut")} !important;
-  --accent-background-light: #{colour.brand-colour("pastel-orange")} !important;
-  --accent-border: #{colour.brand-colour("chestnut")} !important;
-  --accent-border-bright: #{colour.brand-colour("orange")} !important;
-  --button-accented-background: #{colour.brand-colour("chestnut")} !important;
+  --accent-background: #{var(--brand-chestnut)} !important;
+  --accent-background-light: #{var(--brand-pastel-orange)} !important;
+  --accent-border: #{var(--brand-chestnut)} !important;
+  --accent-border-bright: #{var(--brand-orange)} !important;
+  --button-accented-background: #{var(--brand-chestnut)} !important;
 }
 
 @mixin orange-accent {
@@ -489,11 +370,11 @@ $base-colours: (
 }
 
 %green-accent {
-  --accent-background: #{colour.brand-colour("forest")} !important;
-  --accent-background-light: #{colour.brand-colour("pastel-green")} !important;
-  --accent-border: #{colour.brand-colour("forest")} !important;
-  --accent-border-bright: #{colour.brand-colour("green")} !important;
-  --button-accented-background: #{colour.brand-colour("forest")} !important;
+  --accent-background: #{var(--brand-forest)} !important;
+  --accent-background-light: #{var(--brand-pastel-green)} !important;
+  --accent-border: #{var(--brand-forest)} !important;
+  --accent-border-bright: #{var(--brand-green)} !important;
+  --button-accented-background: #{var(--brand-forest)} !important;
 }
 
 @mixin green-accent {
@@ -502,11 +383,11 @@ $base-colours: (
 }
 
 %blue-accent {
-  --accent-background: #{colour.brand-colour("navy")} !important;
-  --accent-background-light: #{colour.brand-colour("pastel-blue")} !important;
-  --accent-border: #{colour.brand-colour("navy")} !important;
-  --accent-border-bright: #{colour.brand-colour("blue")} !important;
-  --button-accented-background: #{colour.brand-colour("navy")} !important;
+  --accent-background: #{var(--brand-navy)} !important;
+  --accent-background-light: #{var(--brand-pastel-blue)} !important;
+  --accent-border: #{var(--brand-navy)} !important;
+  --accent-border-bright: #{var(--brand-blue)} !important;
+  --button-accented-background: #{var(--brand-navy)} !important;
 }
 
 @mixin blue-accent {

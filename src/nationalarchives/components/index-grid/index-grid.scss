@@ -85,7 +85,7 @@
   }
 
   &__item-subtitle {
-    @include colour.colour-font("font-light");
+    color: var(--font-light);
     @include typography.font-size(16);
   }
 }

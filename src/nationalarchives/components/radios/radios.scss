@@ -76,7 +76,7 @@
 
         z-index: 2;
 
-        @include colour.colour-background("input-foreground");
+        background-color: var(--input-foreground);
 
         @include colour.colour-border("input-foreground", 0.5rem);
       }
@@ -86,7 +86,7 @@
       display: block;
 
       @include typography.font-size(16);
-      @include colour.colour-font("font-light");
+      color: var(--font-light);
       line-height: 1.25;
     }
   }

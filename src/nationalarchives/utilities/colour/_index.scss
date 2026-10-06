@@ -1,26 +1,20 @@
 @use "../../tools/colour";
 
 .tna-template {
-  @include colour.always-light;
+  @include colour.colour-css-vars;
 
-  @include colour.colour-background("background");
+  background-color: var(--background);
 
-  &--system-theme {
-    @media (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-dark;
-    }
-
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
+  &--light-theme {
+    color-scheme: light !important;
   }
 
   &--dark-theme {
-    @include colour.colour-css-vars-dark;
+    color-scheme: dark !important;
+  }
 
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
+  @media (prefers-contrast: more) {
+    @include colour.colour-css-vars-high-contrast;
   }
 
   &--black-accent {
@@ -64,10 +58,38 @@
 
   &-accent-light {
     @include colour.accent-light;
-  }
 
-  &-base {
-    @include colour.base;
+    .tna-template--dark-theme & {
+      @include colour.accent;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .tna-template:not(.tna-template--light-theme) & {
+        // @include colour.accent;
+
+        --background: var(--accent-background);
+        --font-base: var(--accent-font-base);
+        --font-dark: var(--accent-font-dark);
+        --font-light: var(--accent-font-light);
+        --icon-light: var(--accent-icon-light);
+        --link: var(--accent-link);
+        --link-visited: var(--accent-link);
+        --keyline: var(--accent-keyline);
+        --keyline-dark: var(--accent-keyline-dark);
+        --accent-border: var(--accent-font-dark);
+        --button-text: var(--accent-button-text);
+        --button-background: var(--accent-button-background);
+        --button-hover-text: var(--accent-button-hover-text);
+        --button-hover-background: var(--accent-button-hover-background);
+
+        // --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
+        // --button-accented-text: #{var(--brand-white)} !important;
+
+        color: var(--font-base);
+
+        background-color: var(--background);
+      }
+    }
   }
 }
 

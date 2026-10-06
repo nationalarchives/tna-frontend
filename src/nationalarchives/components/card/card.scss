@@ -113,16 +113,17 @@
     }
   }
 
-  &--full-click {
-    &:hover {
-      @include colour.colour-outline(
-        "base-keyline",
-        a11yVars.$focus-outline-active-total-width,
-        solid
-      );
-      // outline-offset: a11yVars.$focus-outline-active-inner-width;
-    }
-  }
+  // TODO
+  // &--full-click {
+  //   &:hover {
+  //     @include colour.colour-outline(
+  //       "keyline",
+  //       a11yVars.$focus-outline-active-total-width,
+  //       solid
+  //     );
+  //     // outline-offset: a11yVars.$focus-outline-active-inner-width;
+  //   }
+  // }
 
   @include a11y.faux-full-outline("&--full-click &__heading-link");
 

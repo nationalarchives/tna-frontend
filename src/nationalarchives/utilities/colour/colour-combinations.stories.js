@@ -32,14 +32,16 @@ const accents = [
     "tna-background-accent",
     "tna-background-contrast",
   ],
-  Template = ({ theme }) => `<div class="tna-colour-contrast-demo">
+  Template = ({ theme }) => {
+    document.documentElement.classList.remove("tna-template");
+    return `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
-    <div class="tna-colour-contrast-demo__block">
+    <div class="tna-colour-contrast-demo__block tna-template ${theme}">
       Blocks
     </div>
     ${blocks.reduce(
       (blockOutput, block) =>
-        `${blockOutput}<div class="tna-colour-contrast-demo__block">
+        `${blockOutput}<div class="tna-colour-contrast-demo__block tna-template ${theme}">
       ${block.replace(/^tna-background-/u, "") || "Base"}
     </div>`,
       "",
@@ -51,7 +53,7 @@ const accents = [
       accentOutput,
       accent,
     ) => `${accentOutput}<div class="tna-colour-contrast-demo__theme-accent">
-    <div class="tna-colour-contrast-demo__example">
+    <div class="tna-colour-contrast-demo__example tna-template ${theme}">
       <p>Accent: <strong>${
         accent.replace(/tna-accent-/gu, "") || "[none]"
       }</strong></p>
@@ -136,7 +138,8 @@ const accents = [
     "",
   )}
   </div>
-</div>`,
+</div>`;
+  },
   FormsTemplate = ({ theme }) => {
     const themeSlug = theme.replace(" ", "-").toLowerCase(),
       formBlocks = blocks.filter(
@@ -280,7 +283,7 @@ const accents = [
 
 export const Light = Template.bind({});
 Light.args = {
-  theme: "",
+  theme: "tna-template--light-theme",
 };
 
 export const Dark = Template.bind({});
@@ -288,14 +291,14 @@ Dark.args = {
   theme: "tna-template--dark-theme",
 };
 
-// Export const System = Template.bind({});
-// System.args = {
-//   Theme: "tna-template--system-theme",
-// };
+export const System = Template.bind({});
+System.args = {
+  theme: "",
+};
 
-export const HighContrast = Template.bind({});
-HighContrast.args = {
-  theme: "tna-template--high-contrast-theme",
+export const LightHighContrast = Template.bind({});
+LightHighContrast.args = {
+  theme: "tna-template--light-theme tna-template--high-contrast-theme",
 };
 
 export const DarkHighContrast = Template.bind({});
@@ -305,7 +308,7 @@ DarkHighContrast.args = {
 
 export const LightForms = FormsTemplate.bind({});
 LightForms.args = {
-  theme: "",
+  theme: "tna-template--light-theme",
 };
 
 export const DarkForms = FormsTemplate.bind({});
@@ -313,9 +316,9 @@ DarkForms.args = {
   theme: "tna-template--dark-theme",
 };
 
-export const HighContrastForms = FormsTemplate.bind({});
-HighContrastForms.args = {
-  theme: "tna-template--high-contrast-theme",
+export const LightHighContrastForms = FormsTemplate.bind({});
+LightHighContrastForms.args = {
+  theme: "tna-template--light-theme tna-template--high-contrast-theme",
 };
 
 export const DarkHighContrastForms = FormsTemplate.bind({});

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated favicons and the default open graph image
+- Removed the redundant `aria-label` from the button component
 - Changed to use [CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
 - Changed the `copy` property of code block components to an object and allow editing of the button text
 

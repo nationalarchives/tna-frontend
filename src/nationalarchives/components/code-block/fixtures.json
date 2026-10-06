@@ -14,7 +14,7 @@
         "filename": "example.txt",
         "code": "Plaintext code block"
       },
-      "html": "<div class=\"tna-code-block\" title=\"example.txt\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" aria-label=\"Copy code for example.txt\" title=\"Copy code for example.txt\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block: example.txt\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
+      "html": "<div class=\"tna-code-block\" title=\"example.txt\"><button class=\"tna-button tna-code-block__copy tna-button--small tna-button--plain\" type=\"button\" title=\"Copy code for example.txt\" hidden aria-live=\"assertive\">Copy code</button><pre class=\"tna-code-block__pre\" tabindex=\"0\" role=\"region\" aria-label=\"Code block: example.txt\"><code class=\"language-plain\">Plaintext code block</code></pre></div>"
     },
     {
       "name": "with language",

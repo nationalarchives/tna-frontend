@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated favicons and the default open graph image
+- Removed the redundant `aria-label` from the button component
 
 ### Deprecated
 ### Removed

@@ -40,7 +40,9 @@
   }
 
   &__item--selected &__link {
-    padding-left: calc(spacing.space(0.625) + bordersVars.$thick-border-width);
+    padding-inline-start: calc(
+      spacing.space(0.625) + bordersVars.$thick-border-width
+    );
 
     @include typography.main-font-weight-bold;
 
@@ -48,13 +50,14 @@
       content: "";
 
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
 
-      @include colour.thick-keyline-accent(left);
+      inset-block: 0;
+      inset-inline-start: 0;
+
       border-radius: bordersVars.$rounded-border-radius 0 0
         bordersVars.$rounded-border-radius;
+
+      @include colour.thick-keyline-accent(left);
     }
   }
 
@@ -63,6 +66,8 @@
   }
 
   &--small &__item--selected &__link {
-    padding-left: calc(spacing.space(0.5) + bordersVars.$thick-border-width);
+    padding-inline-start: calc(
+      spacing.space(0.5) + bordersVars.$thick-border-width
+    );
   }
 }

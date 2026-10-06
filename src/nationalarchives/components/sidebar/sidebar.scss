@@ -6,7 +6,7 @@
 @use "../../tools/typography";
 
 .tna-sidebar {
-  width: 100%;
+  inline-size: 100%;
 
   @include typography.font-size(16);
 
@@ -23,7 +23,7 @@
   }
 
   &__items {
-    padding-top: max(
+    padding-block-start: max(
       spacing.space(0.5),
       #{a11yVars.$focus-outline-total-width}
     );
@@ -47,8 +47,8 @@
    * ------------------------------------------
    */
   &--contents &__item-children {
-    margin-top: spacing.space(0.25);
-    padding-left: spacing.space(2);
+    margin-block-start: spacing.space(0.25);
+    padding-inline-start: spacing.space(2);
 
     @include colour.thick-keyline("left");
   }
@@ -80,7 +80,7 @@
    * ------------------------------------------
    */
   &--pages &__item--current {
-    padding-left: spacing.space(0.75);
+    padding-inline-start: spacing.space(0.75);
 
     @include colour.thick-keyline-accent(left);
   }
@@ -100,7 +100,7 @@
    */
   &--contents &__items,
   &--pages &__item-children {
-    padding-left: spacing.space(1.5);
+    padding-inline-start: spacing.space(1.5);
   }
 
   &--contents &__item,
@@ -119,58 +119,60 @@
    * ------------------------------------------
    */
   &--sticky {
-    max-height: 100vh;
-    max-height: 100dvh;
+    max-block-size: 100vh;
+    max-block-size: 100dvh;
 
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
 
     position: sticky;
-    top: 0;
+
+    inset-block-start: 0;
 
     @include media.on-medium {
       .tna-column--full-medium & {
-        max-height: none;
+        max-block-size: none;
       }
     }
 
     @include media.on-small {
       .tna-column--full-small & {
-        max-height: none;
+        max-block-size: none;
       }
     }
 
     @include media.on-tiny {
       .tna-column--full-tiny & {
-        max-height: none;
+        max-block-size: none;
       }
     }
   }
 
   &--sticky &__items {
     margin: 0;
-    padding-bottom: a11yVars.$focus-outline-total-width;
+    padding-block-end: a11yVars.$focus-outline-total-width;
 
     flex: 1;
 
-    overflow-y: auto;
+    overflow-block: auto;
   }
 
   &--sticky#{&}--contents &__items,
   &--sticky#{&}--pages &__items {
-    padding-right: spacing.space(1);
+    padding-inline-end: spacing.space(1);
   }
 
   &--sticky#{&}--sections &__items,
   &--sticky#{&}--pages &__items {
-    width: calc(100% - #{a11yVars.$focus-outline-total-width});
-    padding-right: a11yVars.$focus-outline-total-width;
-    padding-left: a11yVars.$focus-outline-total-width;
+    inline-size: calc(100% - #{a11yVars.$focus-outline-total-width});
+    padding-inline: a11yVars.$focus-outline-total-width
+      a11yVars.$focus-outline-total-width;
 
     box-sizing: content-box;
 
     position: relative;
-    left: -#{a11yVars.$focus-outline-total-width};
+
+    inset-inline-start: -#{a11yVars.$focus-outline-total-width};
   }
 }

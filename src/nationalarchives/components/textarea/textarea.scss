@@ -8,8 +8,8 @@ $textarea-line-height: 1.5rem !default;
 $textarea-vertical-padding: 0.25 !default;
 
 .tna-textarea {
-  width: 100%;
-  min-height: calc(
+  inline-size: 100%;
+  min-block-size: calc(
     #{$textarea-line-height * $textarea-minimum-lines-visible} +
       #{spacing.space($textarea-vertical-padding * 2)}
   );
@@ -18,7 +18,7 @@ $textarea-vertical-padding: 0.25 !default;
   display: block;
   box-sizing: border-box;
 
-  resize: vertical;
+  resize: block;
 
   line-height: 1.5;
 
@@ -31,15 +31,15 @@ $textarea-vertical-padding: 0.25 !default;
   }
 
   &--m {
-    max-width: 20rem;
+    max-inline-size: 20rem;
   }
 
   &--l {
-    max-width: 40rem;
+    max-inline-size: 40rem;
   }
 
   &--xl {
-    max-width: 80rem;
+    max-inline-size: 80rem;
   }
 }
 

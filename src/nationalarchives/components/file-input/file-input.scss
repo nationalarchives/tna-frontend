@@ -7,7 +7,7 @@
 @use "../../tools/typography";
 
 .tna-file-input {
-  width: 100%;
+  inline-size: 100%;
 
   display: block;
 
@@ -18,13 +18,13 @@
   cursor: pointer;
 
   &::file-selector-button {
-    margin-right: spacing.space(0.5);
+    margin-inline-end: spacing.space(0.5);
 
     cursor: inherit;
   }
 
   &__droppable {
-    width: 100%;
+    inline-size: 100%;
     padding: spacing.space(0.5) spacing.space(1) spacing.space(1);
 
     box-sizing: border-box;
@@ -71,7 +71,7 @@
   }
 
   &__droppable-status {
-    margin-top: spacing.space(0.5);
+    margin-block-start: spacing.space(0.5);
     padding: spacing.space(0.5);
 
     display: block;

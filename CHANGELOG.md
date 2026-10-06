@@ -11,8 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated favicons and the default open graph image
+- Changed to use [CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
 
 ### Deprecated
+
+- Remove separate Internet Explorer stylesheet (`ie.scss`)
+
 ### Removed
 
 - Removed the image asset `nationalarchives-opengraph-image-dark.png`

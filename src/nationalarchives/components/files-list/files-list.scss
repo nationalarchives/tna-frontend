@@ -64,11 +64,11 @@
   }
 
   &__item-meta {
-    padding-bottom: spacing.space(0.25);
+    padding-block-end: spacing.space(0.25);
   }
 
   &__item-description {
-    margin-top: 0;
+    margin-block-start: 0;
 
     @include typography.font-size(16);
   }

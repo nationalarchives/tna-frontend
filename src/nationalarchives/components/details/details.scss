@@ -5,17 +5,17 @@
 @use "../../tools/typography";
 
 .tna-details {
-  margin-top: spacing.space(1);
+  margin-block-start: spacing.space(1);
 
   &:first-child {
-    margin-top: 0;
+    margin-block-start: 0;
   }
 
   &__details {
   }
 
   &__summary {
-    width: fit-content;
+    inline-size: fit-content;
     padding: spacing.space(0.5) spacing.space(1) spacing.space(0.5)
       spacing.space(2.75);
 
@@ -41,12 +41,13 @@
     &::before {
       content: "";
 
-      width: 0;
-      height: 0;
+      inline-size: 0;
+      block-size: 0;
 
       position: absolute;
-      top: calc(50% - 0.5rem);
-      left: 0.75rem;
+
+      inset-block-start: calc(50% - 0.5rem);
+      inset-inline-start: 0.75rem;
 
       border-width: 0.5rem 0 0.5rem #{math.div(math.sqrt(3), 2)}rem;
       border-color: transparent transparent transparent
@@ -65,7 +66,7 @@
 
   &__details[open] &__summary {
     &::before {
-      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
+      inset-block-start: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
 
       border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
       border-color: colour.colour-var("link") transparent transparent
@@ -94,12 +95,12 @@
       &::before {
         content: "\2192";
 
-        width: auto;
-        height: auto;
-
-        top: calc(50% - 0.5rem);
+        inline-size: auto;
+        block-size: auto;
 
         line-height: 1rem;
+
+        inset-block-start: calc(50% - 0.5rem);
 
         border: none;
       }

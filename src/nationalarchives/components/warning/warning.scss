@@ -31,8 +31,8 @@
   }
 
   &__heading-icon {
-    width: 2rem;
-    height: 2rem;
+    inline-size: 2rem;
+    block-size: 2rem;
 
     display: block;
 
@@ -49,8 +49,8 @@
     @include colour.colour-border("font-dark", 0.1875rem);
 
     @include media.on-mobile {
-      width: 1.5rem;
-      height: 1.5rem;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
 
       @include typography.font-size(19);
       line-height: 1.5rem;
@@ -60,8 +60,8 @@
   }
 
   &__body {
-    width: 100%;
-    margin-top: 0;
+    inline-size: 100%;
+    margin-block-start: 0;
 
     align-self: center;
 

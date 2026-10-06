@@ -4,8 +4,8 @@
 @use "../../tools/spacing";
 
 .tna-select {
-  max-width: 100%;
-  height: calc(2rem + 6px);
+  max-inline-size: 100%;
+  block-size: calc(2rem + 6px);
   padding: 0 spacing.space(1) 0 spacing.space(0.5);
 
   display: block;
@@ -32,18 +32,18 @@
   }
 
   &--s {
-    width: 10rem;
+    inline-size: 10rem;
   }
 
   &--m {
-    width: 20rem;
+    inline-size: 20rem;
   }
 
   &--l {
-    width: 40rem;
+    inline-size: 40rem;
   }
 
   &--xl {
-    width: 80rem;
+    inline-size: 80rem;
   }
 }

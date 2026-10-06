@@ -20,8 +20,8 @@
 }
 
 #storybook-docs {
-  width: 800px;
-  max-width: calc(100% - 4rem);
+  inline-size: 800px;
+  max-inline-size: calc(100% - 4rem);
   margin: 0 auto;
   padding: 2rem;
 
@@ -32,8 +32,8 @@
 
 .sbdocs {
   &.sbdocs-wrapper {
-    max-width: 100%;
-    min-height: 0;
+    max-inline-size: 100%;
+    min-block-size: 0;
     margin: 0;
     padding: 2rem;
 
@@ -45,7 +45,7 @@
   }
 
   &.sbdocs-content {
-    max-width: none;
+    max-inline-size: none;
   }
 }
 
@@ -97,13 +97,13 @@
 }
 
 .tna-grid--demo {
-  padding-top: 2rem;
+  padding-block-start: 2rem;
 
   background-color: #bbb;
 
   .tna-column {
-    min-height: 6rem;
-    margin-bottom: 2rem;
+    min-block-size: 6rem;
+    margin-block-end: 2rem;
 
     position: relative;
 
@@ -114,9 +114,9 @@
       padding: 0.5rem;
 
       position: absolute;
-      right: 1rem;
-      bottom: 0;
-      left: 1rem;
+      inset-inline-end: 1rem;
+      inset-block-end: 0;
+      inset-inline-start: 1rem;
 
       color: #fff;
       line-height: 1;
@@ -128,13 +128,13 @@
       content: attr(class);
 
       @include media.on-tiny {
-        right: 0.5rem;
-        left: 0.5rem;
+        inset-inline-end: 0.5rem;
+        inset-inline-start: 0.5rem;
       }
     }
 
     &::after {
-      height: 1.75rem;
+      block-size: 1.75rem;
 
       display: block;
 
@@ -153,63 +153,63 @@
   &.tna-container--no-padding-all {
     .tna-column {
       &::before {
-        right: 0;
-        left: 0;
+        inset-inline-end: 0;
+        inset-inline-start: 0;
       }
     }
   }
 
   &-tall {
     .tna-column {
-      min-height: 10rem;
+      min-block-size: 10rem;
     }
   }
 }
 
 .tna-card--demo {
-  max-width: 400px;
+  max-inline-size: 400px;
 
   &.tna-card--horizontal {
-    max-width: none;
+    max-inline-size: none;
   }
 }
 
 .tna-sensitive-image--demo {
-  max-width: 480px;
+  max-inline-size: 480px;
 }
 
 .tna-spacing-demo {
   p {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-end: 0.5rem;
+    padding-inline-start: 0.5rem;
 
     @include colour.colour-background("background-tint");
   }
 }
 
 .tna-colour-contrast-demo {
-  width: 0;
-  max-width: calc(100% - 1px);
+  inline-size: 0;
+  max-inline-size: calc(100% - 1px);
   display: table;
   table-layout: auto;
 
-  border-top: rgb(0 0 0/0.25) 1px solid;
-  border-left: rgb(0 0 0/0.25) 1px solid;
+  border-block-start: rgb(0 0 0/0.25) 1px solid;
+  border-inline-start: rgb(0 0 0/0.25) 1px solid;
 
   &__header {
     display: table-header-group;
   }
 
   &__block {
-    // width: #{math.div(100%, 6)};
+    // inline-size: #{math.div(100%, 6)};
     padding: 1rem;
 
     display: table-cell;
 
     @include typography.main-font-weight-bold;
 
-    border-right: rgb(0 0 0/0.25) 1px solid;
-    border-bottom: rgb(0 0 0/0.25) 1px solid;
+    border-inline-end: rgb(0 0 0/0.25) 1px solid;
+    border-block-end: rgb(0 0 0/0.25) 1px solid;
   }
 
   &__examples {
@@ -223,24 +223,24 @@
   &__example {
     display: table-cell;
 
-    border-right: rgb(0 0 0/0.25) 1px solid;
-    border-bottom: rgb(0 0 0/0.25) 1px solid;
+    border-inline-end: rgb(0 0 0/0.25) 1px solid;
+    border-block-end: rgb(0 0 0/0.25) 1px solid;
 
     .accent-border-example {
-      padding-left: spacing.space(1);
+      padding-inline-start: spacing.space(1);
 
       @include colour.thick-keyline-accent(left);
     }
 
     &:first-child {
-      min-width: 7rem;
+      min-inline-size: 7rem;
       padding: 1rem;
 
       @include typography.font-size(14);
     }
 
     &-content {
-      height: 100%;
+      block-size: 100%;
       padding: 1rem;
     }
   }
@@ -252,27 +252,27 @@
   }
 
   .tna-template {
-    min-width: 15.25rem;
+    min-inline-size: 15.25rem;
 
     p:not(:first-child) {
-      margin-top: 0.25rem;
+      margin-block-start: 0.25rem;
     }
 
     .tna-ul {
-      margin-top: 0.25rem;
+      margin-block-start: 0.25rem;
     }
   }
 
   .tna-form-item {
-    margin-top: 0.5rem;
+    margin-block-start: 0.5rem;
   }
 
   .tna-dl-chips {
-    margin-top: 1rem;
+    margin-block-start: 1rem;
   }
 
   p .fa-solid {
-    // margin-left: 0.5rem;
+    // margin-inline-start: 0.5rem;
 
     &.light-icon {
       @include colour.colour-font("icon-light", true);
@@ -280,14 +280,14 @@
   }
 
   .tna-button-group {
-    margin-top: 1rem;
+    margin-block-start: 1rem;
 
     gap: 0.5rem;
     flex-wrap: nowrap;
   }
 
   .tna-pagination {
-    margin-top: 1rem;
+    margin-block-start: 1rem;
   }
 
   .dark-text {

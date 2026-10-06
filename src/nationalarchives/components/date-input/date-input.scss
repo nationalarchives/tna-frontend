@@ -10,7 +10,7 @@
 
   &__item {
     &-label {
-      padding-bottom: spacing.space(0.5);
+      padding-block-end: spacing.space(0.5);
 
       display: block;
 
@@ -20,7 +20,7 @@
     }
 
     &-input {
-      width: 3rem;
+      inline-size: 3rem;
       padding: 0 spacing.space(0.375);
 
       display: block;
@@ -33,7 +33,7 @@
       @include borders.rounded-border;
 
       &--wider {
-        width: 4.5rem;
+        inline-size: 4.5rem;
       }
 
       .tna-form-item--error & {

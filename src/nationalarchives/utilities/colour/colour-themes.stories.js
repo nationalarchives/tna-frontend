@@ -34,6 +34,11 @@ const argTypes = {
     control: "radio",
     options: ["none", "yellow", "pink", "orange", "green", "blue"],
   },
+  direction: {
+    control: "radio",
+    options: ["ltr", "rtl"],
+    defaultValue: "ltr",
+  },
 };
 
 export default {
@@ -41,11 +46,40 @@ export default {
   argTypes,
 };
 
-const Template = ({ theme, accent }) => {
+const Template = ({ theme, accent, direction }) => {
   document.documentElement.classList.remove(
-    "tna-template",
+    "tna-template--system-theme",
+    "tna-template--dark-theme",
+    "tna-template--high-contrast-theme",
+    "tna-template--pink-accent",
+    "tna-template--orange-accent",
     "tna-template--yellow-accent",
+    "tna-template--green-accent",
+    "tna-template--blue-accent",
   );
+
+  document.documentElement.classList.add("tna-template__body--padded");
+
+  if (theme === "system") {
+    document.documentElement.classList.add("tna-template--system-theme");
+  } else if (theme === "dark") {
+    document.documentElement.classList.add("tna-template--dark-theme");
+  } else if (theme === "high-contrast") {
+    document.documentElement.classList.add("tna-template--high-contrast-theme");
+  } else if (theme === "dark high-contrast") {
+    document.documentElement.classList.add("tna-template--dark-theme");
+    document.documentElement.classList.add("tna-template--high-contrast-theme");
+  }
+
+  if (accent) {
+    document.documentElement.classList.add(`tna-template--${accent}-accent`);
+  }
+
+  if (direction === "rtl") {
+    document.documentElement.setAttribute("dir", "rtl");
+  } else {
+    document.documentElement.removeAttribute("dir");
+  }
 
   const cardDefaultOptions = {
     supertitle: "Card supertitle",
@@ -69,30 +103,7 @@ const Template = ({ theme, accent }) => {
     ],
   };
 
-  return `<div class="tna-template ${
-    theme === "system"
-      ? "tna-template--system-theme"
-      : theme === "dark"
-        ? "tna-template--dark-theme"
-        : theme === "high-contrast"
-          ? "tna-template--high-contrast-theme"
-          : theme === "dark high-contrast"
-            ? "tna-template--dark-theme tna-template--high-contrast-theme"
-            : ""
-  } ${
-    accent === "yellow"
-      ? "tna-template--yellow-accent"
-      : accent === "pink"
-        ? "tna-template--pink-accent"
-        : accent === "orange"
-          ? "tna-template--orange-accent"
-          : accent === "green"
-            ? "tna-template--green-accent"
-            : accent === "blue"
-              ? "tna-template--blue-accent"
-              : ""
-  }">
-  <div class="tna-template__body tna-template__body--padded">
+  return `
     ${nunjucks.renderString(SkipLink, {
       params: {
         href: "main-content",
@@ -1473,9 +1484,7 @@ const Template = ({ theme, accent }) => {
           },
         ],
       },
-    })}
-  </div>
-</div>`;
+    })}`;
 };
 
 export const System = Template.bind({});
@@ -1485,16 +1494,19 @@ System.parameters = {
 System.args = {
   theme: "system",
   accent: "pink",
+  direction: "ltr",
 };
 
 export const Light = Template.bind({});
 Light.args = {
   theme: "light",
   accent: "pink",
+  direction: "ltr",
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   theme: "dark",
   accent: "pink",
+  direction: "ltr",
 };

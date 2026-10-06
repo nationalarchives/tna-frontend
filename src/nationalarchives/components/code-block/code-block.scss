@@ -25,6 +25,8 @@ $code-block-top-bar-height: spacing.space(2);
 
     position: relative;
 
+    direction: ltr;
+
     border-radius: 0.1px;
 
     code[class*="language-"] {
@@ -36,18 +38,18 @@ $code-block-top-bar-height: spacing.space(2);
 
   &__copyable,
   &[title] {
-    padding-top: $code-block-top-bar-height;
+    padding-block-start: $code-block-top-bar-height;
 
     &::after {
       content: "";
 
-      height: $code-block-top-bar-height;
+      block-size: $code-block-top-bar-height;
 
       position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
       z-index: 1;
+
+      inset-block-start: 0;
+      inset-inline: 0;
 
       @include colour.tint;
 
@@ -61,7 +63,7 @@ $code-block-top-bar-height: spacing.space(2);
     &::before {
       content: attr(title);
 
-      margin-top: 0;
+      margin-block-start: 0;
 
       padding: 0 spacing.space(7) 0 spacing.space(1);
 
@@ -69,15 +71,14 @@ $code-block-top-bar-height: spacing.space(2);
       overflow: hidden;
 
       position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
       z-index: 2;
 
       font-family: typographyVars.$code-font-family;
       line-height: $code-block-top-bar-height;
       text-overflow: ellipsis;
       text-wrap: nowrap;
+      inset-block-start: 0;
+      inset-inline: 0;
 
       pointer-events: none;
     }
@@ -85,9 +86,10 @@ $code-block-top-bar-height: spacing.space(2);
 
   &__copy {
     position: absolute;
-    top: 0;
-    right: 0;
     z-index: 3;
+
+    inset-block-start: 0;
+    inset-inline-end: 0;
   }
 
   code[class*="language-"],

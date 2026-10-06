@@ -48,7 +48,7 @@
       }
 
       &-description {
-        padding-bottom: spacing.space(0.25);
+        padding-block-end: spacing.space(0.25);
 
         display: block;
 
@@ -58,7 +58,7 @@
 
       &:has(&-description) {
         svg {
-          margin-top: 0.35em;
+          margin-block-start: 0.35em;
 
           align-self: flex-start;
         }
@@ -85,9 +85,8 @@
   }
 
   &__link {
-    min-width: 1.5rem;
-    padding-right: spacing.space(0.5);
-    padding-left: spacing.space(0.5);
+    min-inline-size: 1.5rem;
+    padding-inline: spacing.space(0.5) spacing.space(0.5);
   }
 
   &__list {
@@ -103,7 +102,7 @@
 
   &__item {
     &--ellipses {
-      min-width: 2rem;
+      min-inline-size: 2rem;
       padding: spacing.space(0.5);
 
       text-align: center;

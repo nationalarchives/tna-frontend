@@ -17,7 +17,7 @@
 
   &,
   &-wrapper {
-    width: 100%;
+    inline-size: 100%;
   }
 
   .tna-form-item--error & {
@@ -25,23 +25,23 @@
   }
 
   &--xs {
-    max-width: 5rem;
+    max-inline-size: 5rem;
   }
 
   &--s {
-    max-width: 10rem;
+    max-inline-size: 10rem;
   }
 
   &--m {
-    max-width: 20rem;
+    max-inline-size: 20rem;
   }
 
   &--l {
-    max-width: 40rem;
+    max-inline-size: 40rem;
   }
 
   &--xl {
-    max-width: 80rem;
+    max-inline-size: 80rem;
   }
 
   &-wrapper & {
@@ -57,7 +57,7 @@
       white-space: nowrap;
 
       svg {
-        width: 28px;
+        inline-size: 28px;
         margin: 0;
       }
     }

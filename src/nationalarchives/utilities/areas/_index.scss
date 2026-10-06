@@ -4,8 +4,7 @@
 @use "../../tools/spacing";
 
 .tna-section {
-  padding-top: spacing.space(3);
-  padding-bottom: spacing.space(3);
+  padding-block: spacing.space(3) spacing.space(3);
 }
 
 .tna-aside {
@@ -25,8 +24,7 @@
 
 @include media.on-mobile {
   .tna-section {
-    padding-top: spacing.space(2);
-    padding-bottom: spacing.space(2);
+    padding-block: spacing.space(2) spacing.space(2);
   }
 
   .tna-aside {

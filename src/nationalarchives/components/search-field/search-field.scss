@@ -11,8 +11,8 @@
   gap: formsVars.$form-field-border-width;
 
   &__input {
-    min-width: 8rem;
-    width: 0;
+    min-inline-size: 8rem;
+    inline-size: 0;
     padding: 0 spacing.space(0.375);
 
     display: block;
@@ -26,7 +26,6 @@
   }
 
   &__button {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-block: 0;
   }
 }

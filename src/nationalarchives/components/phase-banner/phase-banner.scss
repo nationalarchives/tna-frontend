@@ -6,8 +6,7 @@
 .tna-phase-banner {
   @include colour.contrast;
 
-  padding-top: spacing.space(0.5);
-  padding-bottom: spacing.space(0.5);
+  padding-block: spacing.space(0.5) spacing.space(0.5);
 
   @include typography.font-size(16);
 

@@ -25,7 +25,7 @@
 }
 
 %space-above {
-  margin-top: space(2);
+  margin-block-start: space(2);
   @extend %no-space-above-for-first-children;
 }
 
@@ -37,7 +37,7 @@
 %no-space-above-for-first-children {
   &:first-child,
   &:first-child.tna-visually-hidden + * {
-    margin-top: 0;
+    margin-block-start: 0;
   }
 }
 

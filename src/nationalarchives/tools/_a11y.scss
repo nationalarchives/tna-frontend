@@ -3,17 +3,18 @@
 @use "borders";
 
 @mixin visually-hidden {
-  width: 1px !important;
-  height: 1px !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
   margin: 0 !important;
   padding: 0 !important;
 
   overflow: hidden !important;
 
   position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
   z-index: -1 !important;
+
+  inset-block-start: -9999px !important;
+  inset-inline-start: -9999px !important;
 
   background-color: transparent !important;
 

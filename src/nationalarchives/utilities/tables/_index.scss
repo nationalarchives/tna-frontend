@@ -46,8 +46,8 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
 .tna-table {
   @include spacing.space-above;
-  max-width: 100%;
-  margin-bottom: spacing.space(4);
+  max-inline-size: 100%;
+  margin-block-end: spacing.space(4);
 
   position: relative;
   z-index: 1;
@@ -57,11 +57,11 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   border-collapse: collapse;
 
   &:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   &__caption {
-    width: 100%;
+    inline-size: 100%;
     padding: 0 0 spacing.space(1);
 
     caption-side: top;
@@ -98,11 +98,11 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
     @include colour.colour-border("keyline", 1px, solid, bottom);
 
     &:first-child {
-      padding-left: 0;
+      padding-inline-start: 0;
     }
 
     &:last-child {
-      padding-right: 0;
+      padding-inline-end: 0;
     }
 
     &--numeric {
@@ -149,18 +149,18 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
 
   p {
     + p {
-      margin-top: spacing.space(0.25);
+      margin-block-start: spacing.space(0.25);
     }
   }
 
   &--full {
-    width: 100%;
+    inline-size: 100%;
   }
 }
 
 .tna-table-wrapper {
   @include spacing.space-above;
-  margin-bottom: spacing.space(4);
+  margin-block-end: spacing.space(4);
 
   container-type: inline-size;
 
@@ -241,20 +241,21 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   }
 
   &:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   .tna-table {
     &__caption {
-      max-width: calc(100vw - #{grid.gutter-width-double()});
-      max-width: 100cqw;
+      max-inline-size: calc(100vw - #{grid.gutter-width-double()});
+      max-inline-size: 100cqw;
 
       position: sticky;
-      left: 0;
+
+      inset-inline-start: 0;
 
       @include media.on-tiny {
-        max-width: calc(100vw - #{grid.gutter-width-tiny-double()});
-        max-width: 100cqw;
+        max-inline-size: calc(100vw - #{grid.gutter-width-tiny-double()});
+        max-inline-size: 100cqw;
       }
     }
   }
@@ -271,11 +272,11 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   //     &__header,
   //     &__cell {
   //       &:first-child {
-  //         max-width: 50vw;
-  //         max-width: 50cqw;
+  //         max-inline-size: 50vw;
+  //         max-inline-size: 50cqw;
 
   //         position: sticky;
-  //         left: 0;
+  //         inset-inline-start: 0;
   //         z-index: 1;
 
   //         overflow-wrap: break-word;
@@ -286,12 +287,12 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
   //         &::after {
   //           content: "";
 
-  //           width: 0.75rem;
+  //           inline-size: 0.75rem;
 
   //           position: absolute;
-  //           top: 0;
-  //           bottom: -1px;
-  //           left: 100%;
+  //           inset-block-start: 0;
+  //           inset-block-end: -1px;
+  //           inset-inline-start: 100%;
 
   //           background: linear-gradient(
   //             90deg,

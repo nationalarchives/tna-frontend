@@ -39,7 +39,7 @@
     border: none;
 
     border: 1px transparent solid;
-    border-bottom: none;
+    border-block-end: none;
 
     cursor: pointer;
     @include borders.rounded-border;
@@ -49,7 +49,7 @@
     }
 
     &[aria-selected="true"] {
-      padding-top: 0;
+      padding-block-start: 0;
 
       text-decoration: none;
 
@@ -117,7 +117,7 @@
   }
 
   &__item {
-    margin-top: -1px;
+    margin-block-start: -1px;
 
     border-radius: 0.1px 0.1px #{bordersVars.$rounded-border-radius}
       #{bordersVars.$rounded-border-radius};

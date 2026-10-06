@@ -33,7 +33,7 @@
 
   .tna-column {
     &--full#{$suffix} {
-      width: 100%;
+      inline-size: 100%;
 
       flex: none;
     }
@@ -46,17 +46,17 @@
           $count % $j == 0 and $i % $j == 0 and $simplest-fraction-found != true
         ) {
           &--width-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-            width: math.div(100%, $count) * $i;
+            inline-size: math.div(100%, $count) * $i;
 
             flex: none;
           }
 
-          &--margin-right-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-            margin-right: math.div(100%, $count) * $i;
+          &--margin-inline-end-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+            margin-inline-end: math.div(100%, $count) * $i;
           }
 
-          &--margin-left-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
-            margin-left: math.div(100%, $count) * $i;
+          &--margin-inline-start-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+            margin-inline-start: math.div(100%, $count) * $i;
           }
 
           $simplest-fraction-found: true;
@@ -65,34 +65,34 @@
 
       @if $simplest-fraction-found != true {
         &--width-#{$i}-#{$count}#{$suffix} {
-          width: math.div(100%, $count) * $i;
+          inline-size: math.div(100%, $count) * $i;
 
           flex: none;
         }
 
-        &--margin-right-#{$i}-#{$count}#{$suffix} {
-          margin-right: math.div(100%, $count) * $i;
+        &--margin-inline-end-#{$i}-#{$count}#{$suffix} {
+          margin-inline-end: math.div(100%, $count) * $i;
         }
 
-        &--margin-left-#{$i}-#{$count}#{$suffix} {
-          margin-left: math.div(100%, $count) * $i;
+        &--margin-inline-start-#{$i}-#{$count}#{$suffix} {
+          margin-inline-start: math.div(100%, $count) * $i;
         }
       }
     }
 
     @if $suffix != "" {
-      &--no-margin-right#{$suffix} {
-        margin-right: 0;
+      &--no-margin-inline-end#{$suffix} {
+        margin-inline-end: 0;
       }
 
-      &--no-margin-left#{$suffix} {
-        margin-left: 0;
+      &--no-margin-inline-start#{$suffix} {
+        margin-inline-start: 0;
       }
     }
 
     @for $i from 1 through 3 {
       &--flex-#{$i}#{$suffix} {
-        width: auto;
+        inline-size: auto;
 
         flex: $i 0;
       }

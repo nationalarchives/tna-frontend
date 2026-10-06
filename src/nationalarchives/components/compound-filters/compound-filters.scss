@@ -38,8 +38,7 @@
     @include colour.colour-border("keyline", 1px);
 
     &--remove {
-      padding-right: 0;
-      padding-left: 0;
+      padding-inline: 0;
 
       background: none;
 
@@ -49,8 +48,8 @@
   }
 
   &__link {
-    width: 1.5rem;
-    height: 1.5rem;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
 
     flex-shrink: 0;
 
@@ -73,16 +72,17 @@
     &::after {
       content: "";
 
-      height: 1rem;
-      margin-left: -1px;
+      block-size: 1rem;
+      margin-inline-start: -1px;
 
       display: block;
 
       position: absolute;
-      top: 0.25rem;
-      left: 50%;
 
-      @include colour.colour-border("font-base", 2px, solid, left);
+      inset-block-start: 0.25rem;
+      inset-inline-start: 50%;
+
+      @include colour.colour-border("font-base", 2px, solid, inline-start);
     }
 
     &::before {

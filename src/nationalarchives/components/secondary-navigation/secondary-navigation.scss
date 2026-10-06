@@ -15,7 +15,7 @@
   flex-flow: row wrap;
 
   &__heading {
-    padding-bottom: spacing.space(0.5);
+    padding-block-end: spacing.space(0.5);
 
     align-self: flex-end;
 
@@ -37,7 +37,7 @@
   }
 
   &__link {
-    width: 100%;
+    inline-size: 100%;
     padding: spacing.space(0.5) 0;
 
     display: block;
@@ -82,13 +82,13 @@
   }
 
   &--overflow {
-    overflow-x: auto;
+    overflow-inline: auto;
   }
 
   &::after {
     content: "";
 
-    width: 100%;
+    inline-size: 100%;
 
     @include colour.colour-border("keyline", 1px, solid, bottom);
   }
@@ -98,9 +98,8 @@
   }
 
   &--unindent::after {
-    width: calc(100% + #{grid.gutter-width-double()});
-    margin-right: -#{grid.gutter-width()};
-    margin-left: -#{grid.gutter-width()};
+    inline-size: calc(100% + #{grid.gutter-width-double()});
+    margin-inline: -#{grid.gutter-width()} -#{grid.gutter-width()};
   }
 
   @include media.on-smaller-than-large {
@@ -108,16 +107,16 @@
     gap: 0;
 
     &__heading {
-      width: 100%;
+      inline-size: 100%;
 
       align-self: flex-start;
-      // padding-bottom: 0;
-      border-bottom: none;
+      // padding-block-end: 0;
+      border-block-end: none;
     }
   }
 
   @include media.on-mobile {
-    border-bottom: none;
+    border-block-end: none;
 
     &__items {
       flex-direction: column;
@@ -131,16 +130,16 @@
     &__item {
       position: relative;
 
-      @include colour.colour-border("keyline", 1px, solid, top);
+      @include colour.colour-border("keyline", 1px, solid, block-start);
 
       &--current {
         &::before {
           content: "";
 
           position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
+
+          inset-block: 0;
+          inset-inline-start: 0;
           @include colour.thick-keyline-accent(left);
         }
       }
@@ -152,19 +151,18 @@
 
     &__link,
     &__item--current &__link {
-      border-top: none;
-      border-bottom: none;
+      border-block-end: none;
+      border-block-start: none;
     }
 
     &--overflow {
-      overflow-x: visible;
+      overflow-inline: visible;
     }
   }
 
   @include media.on-small {
     &--unindent &__items {
-      margin-right: -#{grid.gutter-width()};
-      margin-left: -#{grid.gutter-width()};
+      margin-inline: -#{grid.gutter-width()} -#{grid.gutter-width()};
     }
 
     &--unindent &__link {
@@ -174,13 +172,12 @@
 
   @include media.on-tiny {
     &--unindent::after {
-      width: calc(100% + #{grid.gutter-width-tiny-double()});
+      inline-size: calc(100% + #{grid.gutter-width-tiny-double()});
     }
 
     &--unindent::after,
     &--unindent &__items {
-      margin-right: -#{grid.gutter-width-tiny()};
-      margin-left: -#{grid.gutter-width-tiny()};
+      margin-inline: -#{grid.gutter-width-tiny()} -#{grid.gutter-width-tiny()};
     }
 
     &--unindent &__link {

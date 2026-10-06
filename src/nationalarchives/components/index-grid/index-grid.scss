@@ -15,7 +15,7 @@
   &__items {
     @include spacing.space-above;
 
-    margin-bottom: 0;
+    margin-block-end: 0;
 
     display: flex;
     gap: spacing.space(2) 0;
@@ -26,7 +26,7 @@
   &__item {
     @include colour.contrast;
 
-    height: 100%;
+    block-size: 100%;
 
     display: flex;
     flex-direction: column;
@@ -47,8 +47,8 @@
   }
 
   &__item-image {
-    width: 100%;
-    height: auto;
+    inline-size: 100%;
+    block-size: auto;
 
     border-radius: bordersVars.$rounded-border-radius
       bordersVars.$rounded-border-radius 0 0;
@@ -66,8 +66,9 @@
 
   &__item-label {
     position: absolute;
-    top: spacing.space(0.5);
-    left: spacing.space(0.5);
+
+    inset-block-start: spacing.space(0.5);
+    inset-inline-start: spacing.space(0.5);
   }
 
   &__item-title {

@@ -18,6 +18,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
+  &[dir="rtl"] {
+    direction: rtl;
+  }
+
   @include colour.on-high-contrast {
     @include typography.main-font-weight-medium;
   }
@@ -47,7 +51,7 @@ p {
   text-wrap: pretty;
 
   + p {
-    margin-top: spacing.space(1);
+    margin-block-start: spacing.space(1);
   }
 }
 
@@ -82,7 +86,7 @@ small {
 }
 
 %chip {
-  max-width: max-content;
+  max-inline-size: max-content;
   padding: spacing.space(0.125) spacing.space(0.25);
 
   display: flex;
@@ -240,10 +244,10 @@ small {
     &::after {
       content: "";
 
-      width: 0.3125em;
-      height: 0.3125em;
-      margin-bottom: 0.1em;
-      margin-left: 0.375em;
+      inline-size: 0.3125em;
+      block-size: 0.3125em;
+      margin-block-end: 0.1em;
+      margin-inline-start: 0.375em;
 
       display: inline-block;
 
@@ -251,8 +255,8 @@ small {
 
       transform: rotate(45deg);
 
-      @include colour.colour-border("link", 0.125em, solid, top);
-      @include colour.colour-border("link", 0.125em, solid, right);
+      @include colour.colour-border("link", 0.125em, solid, block-start);
+      @include colour.colour-border("link", 0.125em, solid, inline-end);
     }
 
     &:not(.tna-link--no-visited-state):visited {
@@ -294,10 +298,10 @@ small {
 
   a {
     &::after {
-      width: 0.275em;
-      height: 0.275em;
-      margin-bottom: 0;
-      margin-left: 0.25em;
+      inline-size: 0.275em;
+      block-size: 0.275em;
+      margin-block-end: 0;
+      margin-inline-start: 0.25em;
 
       border-top-width: 0.1em;
       border-right-width: 0.1em;
@@ -342,17 +346,17 @@ small {
 
 %headings-and-heading-groups {
   @include spacing.space-above;
-  margin-bottom: 0;
+  margin-block-end: 0;
   padding: spacing.space(1) 0 0;
 
   &:first-child {
-    padding-top: 0;
+    padding-block-start: 0;
   }
 
   + p,
   + .tna-large-paragraph,
   + .tna-scene-setter {
-    margin-top: spacing.space(1);
+    margin-block-start: spacing.space(1);
   }
 }
 
@@ -438,9 +442,8 @@ small {
 
 .tna-blockquote {
   @include spacing.space-above;
-  margin-right: 0;
-  margin-bottom: 0;
-  margin-left: 0;
+  margin-block-end: 0;
+  margin-inline: 0;
   padding: spacing.space(1) spacing.space(1) spacing.space(1) spacing.space(2);
 
   @include colour.thick-keyline-accent(left);
@@ -475,7 +478,7 @@ small {
   }
 
   &__attribution {
-    margin-top: spacing.space(1);
+    margin-block-start: spacing.space(1);
 
     @include typography.font-size(16);
 

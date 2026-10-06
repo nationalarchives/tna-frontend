@@ -12,16 +12,16 @@
   }
 
   &__heading {
-    padding-top: spacing.space(1);
+    padding-block-start: spacing.space(1);
   }
 
   &__body {
-    padding-top: spacing.space(1);
+    padding-block-start: spacing.space(1);
   }
 
   // INTERACTIVE
   &__toggle-all {
-    margin-bottom: spacing.space(1);
+    margin-block-end: spacing.space(1);
     padding: 0;
 
     background: transparent;
@@ -46,7 +46,7 @@
     z-index: 1;
 
     &:first-of-type {
-      @include colour.colour-border("keyline", 1px, solid, top);
+      @include colour.colour-border("keyline", 1px, solid, block-start);
     }
   }
 
@@ -55,7 +55,7 @@
   }
 
   &__summary {
-    width: 100%;
+    inline-size: 100%;
     margin: 0;
     padding: spacing.space(0.5) spacing.space(3) spacing.space(0.5)
       spacing.space(1);
@@ -87,12 +87,13 @@
     &::before {
       content: "";
 
-      width: 0;
-      height: 0;
+      inline-size: 0;
+      block-size: 0;
 
       position: absolute;
-      top: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
-      right: 0.75rem;
+
+      inset-block-start: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
+      inset-inline-end: 0.75rem;
 
       border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
       border-color: colour.colour-var("font-light") transparent;
@@ -128,12 +129,12 @@
       &::before {
         content: "\2193";
 
-        width: auto;
-        height: auto;
-
-        top: calc(50% - 0.5rem);
+        inline-size: auto;
+        block-size: auto;
 
         line-height: 1rem;
+
+        inset-block-start: calc(50% - 0.5rem);
 
         border: none;
       }

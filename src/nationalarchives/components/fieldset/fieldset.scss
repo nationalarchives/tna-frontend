@@ -20,38 +20,36 @@
   }
 
   & &__hint {
-    margin-top: spacing.space(0.5);
-    margin-bottom: spacing.space(1);
+    margin-block: spacing.space(0.5) spacing.space(1);
   }
 
   & &__error {
-    margin-top: spacing.space(0.25);
+    margin-block-start: spacing.space(0.25);
 
     @include colour.colour-font("form-error-text");
     @include typography.main-font-weight-bold;
   }
 
   &__body {
-    margin-top: spacing.space(0.5);
+    margin-block-start: spacing.space(0.5);
 
     display: flex;
     flex-direction: column;
     gap: spacing.space(1);
 
     > * {
-      margin-top: 0;
+      margin-block-start: 0;
     }
   }
 
   &--error {
-    padding-left: spacing.space(1);
+    padding-inline-start: spacing.space(1);
 
     @include colour.thick-keyline-error(left);
   }
 
   &--small-hint &__hint {
-    margin-top: spacing.space(0.125);
-    margin-bottom: 0;
+    margin-block: spacing.space(0.125) 0;
 
     @include typography.font-size(16);
     @include colour.colour-font("font-light");

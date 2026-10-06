@@ -36,29 +36,31 @@ $over-overflow: $shift-overflow !default;
   }
 
   &__caption {
-    width: 100%;
+    inline-size: 100%;
 
     overflow: visible;
 
     position: absolute;
-    top: 0;
-    right: 0;
     z-index: 10;
+
+    inset-block-start: 0;
+    inset-inline-end: 0;
 
     order: 2;
   }
 
   &__details {
-    width: 100%;
+    inline-size: 100%;
 
     overflow: visible;
   }
 
   &__details-summary {
     position: absolute;
-    top: spacing.space(0.5);
-    right: spacing.space(0.5);
     z-index: 2;
+
+    inset-block-start: spacing.space(0.5);
+    inset-inline-end: spacing.space(0.5);
 
     &:hover {
       @include colour.colour-font("font-dark", true);
@@ -68,8 +70,8 @@ $over-overflow: $shift-overflow !default;
   }
 
   &__details[open] &__details-summary {
-    width: 2rem;
-    height: 2rem;
+    inline-size: 2rem;
+    block-size: 2rem;
     padding: 0;
 
     font-size: 0;
@@ -84,14 +86,15 @@ $over-overflow: $shift-overflow !default;
     &::after {
       content: "";
 
-      width: 1.5rem;
-      height: 0.125rem;
+      inline-size: 1.5rem;
+      block-size: 0.125rem;
 
       display: block;
 
       position: absolute;
-      top: 50%;
-      left: 50%;
+
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
 
       @include colour.colour-background("font-dark");
     }
@@ -107,7 +110,7 @@ $over-overflow: $shift-overflow !default;
     &:hover {
       &::before,
       &::after {
-        height: 0.25rem;
+        block-size: 0.25rem;
       }
     }
 
@@ -124,27 +127,27 @@ $over-overflow: $shift-overflow !default;
       spacing.space(1);
 
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     z-index: 1;
+
+    inset-block-start: 0;
+    inset-inline: 0;
 
     @include colour.contrast;
 
     @include typography.font-size(16);
 
     p + p {
-      margin-top: spacing.space(0.5);
+      margin-block-start: spacing.space(0.5);
     }
   }
 
   &__image {
-    width: 100%;
+    inline-size: 100%;
 
     order: 1;
 
     img {
-      width: 100%;
+      inline-size: 100%;
     }
   }
 
@@ -153,26 +156,25 @@ $over-overflow: $shift-overflow !default;
   }
 
   &__content {
-    padding-top: spacing.space($vertical-padding-small);
-    padding-bottom: spacing.space($vertical-padding-small);
+    padding-block: spacing.space($vertical-padding-small)
+      spacing.space($vertical-padding-small);
   }
 
   &__content-inner {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: 0;
 
-    border-left: none;
+    border-inline-start: none;
 
     @include colour.colour-background("background");
   }
 
   @include media.on-larger-than-mobile {
     &__figure {
-      min-height: clamp(5rem, 30vw, 20rem);
+      min-block-size: clamp(5rem, 30vw, 20rem);
     }
 
     &--large &__figure {
-      min-height: clamp(12rem, 33vw, 50rem);
+      min-block-size: clamp(12rem, 33vw, 50rem);
     }
 
     &__inner {
@@ -180,22 +182,22 @@ $over-overflow: $shift-overflow !default;
     }
 
     &__image {
-      width: auto;
+      inline-size: auto;
 
       position: absolute;
       inset: 0;
       z-index: 1;
 
       img {
-        height: 100%;
+        block-size: 100%;
 
         object-fit: cover;
       }
     }
 
     &__content {
-      padding-top: spacing.space($plain-top-padding);
-      padding-bottom: spacing.space($vertical-padding-large);
+      padding-block: spacing.space($plain-top-padding)
+        spacing.space($vertical-padding-large);
     }
 
     &__content-inner {
@@ -204,15 +206,15 @@ $over-overflow: $shift-overflow !default;
     }
 
     &__information {
-      max-width: math.div(gridVars.$largest-container-width, 2);
+      max-inline-size: math.div(gridVars.$largest-container-width, 2);
 
-      left: auto;
+      inset-inline-start: auto;
     }
 
     &--split &__content {
-      width: 50%;
-      padding-top: spacing.space($vertical-padding-large);
-      padding-bottom: spacing.space($vertical-padding-large);
+      inline-size: 50%;
+      padding-block: spacing.space($vertical-padding-large)
+        spacing.space($vertical-padding-large);
     }
 
     &--split &__content-inner {
@@ -220,49 +222,53 @@ $over-overflow: $shift-overflow !default;
     }
 
     &--split &__image {
-      left: 50%;
+      inset-inline-start: 50%;
     }
 
     &--shift {
-      margin-bottom: spacing.space($shift-overflow);
+      margin-block-end: spacing.space($shift-overflow);
     }
 
     &--shift &__content-inner {
       position: relative;
-      top: spacing.space($vertical-padding-large + $shift-overflow);
+
+      inset-block-start: spacing.space(
+        $vertical-padding-large + $shift-overflow
+      );
     }
 
     &--over {
-      margin-bottom: spacing.space($over-overflow);
+      margin-block-end: spacing.space($over-overflow);
     }
 
     &--over &__details {
-      max-width: gridVars.$largest-container-width;
+      max-inline-size: gridVars.$largest-container-width;
       margin: 0 auto;
 
       position: relative;
     }
 
     &--over &__details-summary {
-      top: spacing.space(0.5);
-      right: spacing.space(gridVars.$gutter-width + 0.5);
+      inset-block-start: spacing.space(0.5);
+      inset-inline-end: spacing.space(gridVars.$gutter-width + 0.5);
     }
 
     &--over &__information {
-      max-width: calc(50% - #{spacing.space(gridVars.$gutter-width * 1.5)});
+      max-inline-size: calc(
+        50% - #{spacing.space(gridVars.$gutter-width * 1.5)}
+      );
 
       box-sizing: border-box;
 
-      top: 0;
-      right: spacing.space(gridVars.$gutter-width);
-      left: auto;
+      inset-block-start: 0;
+      inset-inline: auto spacing.space(gridVars.$gutter-width);
 
       @include borders.rounded-border;
     }
 
     &--over &__content {
-      width: 50%;
-      padding-top: spacing.space($vertical-padding-large);
+      inline-size: 50%;
+      padding-block-start: spacing.space($vertical-padding-large);
     }
 
     &--over &__content-inner {
@@ -270,18 +276,19 @@ $over-overflow: $shift-overflow !default;
     }
 
     &--over &__image {
-      max-width: calc(
+      max-inline-size: calc(
         #{math.div(gridVars.$largest-container-width, 2)} -
           (#{grid.gutter-width()} + #{grid.gutter-width-half()})
       );
-      margin-right: 32px;
+      margin-inline-end: 32px;
 
       overflow: hidden;
 
-      bottom: spacing.space($over-overflow * -1);
-
-      left: calc(50% + #{grid.gutter-width-half()});
       z-index: 5;
+
+      inset-block-end: spacing.space($over-overflow * -1);
+
+      inset-inline-start: calc(50% + #{grid.gutter-width-half()});
       @include borders.rounded-border;
     }
 

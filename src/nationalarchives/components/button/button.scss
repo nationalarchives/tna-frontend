@@ -52,7 +52,7 @@ $button-border-width: 4px !default;
   }
 
   svg {
-    height: 1.1em;
+    block-size: 1.1em;
 
     align-self: center;
 
@@ -126,8 +126,7 @@ $button-border-width: 4px !default;
   }
 
   @mixin icon-only {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: 0;
 
     gap: 0;
 
@@ -135,7 +134,7 @@ $button-border-width: 4px !default;
     line-height: 0 !important;
 
     .fa-solid {
-      width: 2.5rem;
+      inline-size: 2.5rem;
 
       line-height: 2rem;
 
@@ -143,23 +142,22 @@ $button-border-width: 4px !default;
     }
 
     svg {
-      height: 1.5rem;
+      block-size: 1.5rem;
       margin: 0.5rem;
     }
   }
 
   @mixin icon-only-small {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: 0;
 
     .fa-solid {
-      width: 1.5rem;
+      inline-size: 1.5rem;
 
       line-height: 1.5rem;
     }
 
     svg {
-      height: 1.2rem;
+      block-size: 1.2rem;
       margin: 0.5rem;
     }
   }

@@ -8,8 +8,7 @@
   &__inner {
     @include colour.contrast;
 
-    padding-top: spacing.space(1);
-    padding-bottom: spacing.space(3);
+    padding-block: spacing.space(1) spacing.space(3);
   }
 
   &__theme-selector {
@@ -27,12 +26,12 @@
   }
 
   &__theme-selector-notice {
-    margin-top: spacing.space(0.5);
-    margin-bottom: spacing.space(0.25);
+    margin-block: spacing.space(0.5) spacing.space(0.25);
     padding: spacing.space(0.5) spacing.space(0.75);
 
-    @include typography.font-size(16);
     line-height: 1.5;
+
+    @include typography.font-size(16);
 
     @include colour.blue-accent;
     @include colour.accent-light;
@@ -61,26 +60,25 @@
   }
 
   .tna-logo {
-    margin-top: spacing.space(2);
+    margin-block-start: spacing.space(2);
   }
 
   &__title {
-    margin-top: spacing.space(1);
-    margin-bottom: 0;
-    padding-top: 0;
+    margin-block: spacing.space(1) 0;
+    padding-block-start: 0;
   }
 
   &__address {
   }
 
   &__meta {
-    margin-top: spacing.space(1);
+    margin-block-start: spacing.space(1);
 
     @include typography.font-size(16);
   }
 
   &__social {
-    margin-top: spacing.space(2);
+    margin-block-start: spacing.space(2);
 
     &-items {
       display: flex;
@@ -100,7 +98,7 @@
         text-decoration: none;
 
         svg {
-          height: 1.5em;
+          block-size: 1.5em;
 
           path {
             fill: currentColor;
@@ -118,7 +116,7 @@
   }
 
   &__mailing-list {
-    margin-top: spacing.space(2);
+    margin-block-start: spacing.space(2);
     padding: spacing.space(1);
 
     @include typography.font-size(16);
@@ -130,7 +128,7 @@
 
   &__navigation {
     &-block {
-      padding-top: spacing.space(2);
+      padding-block-start: spacing.space(2);
 
       &-heading {
       }
@@ -139,8 +137,7 @@
       }
 
       &-item {
-        padding-top: spacing.space(0.375);
-        padding-bottom: spacing.space(0.375);
+        padding-block: spacing.space(0.375) spacing.space(0.375);
 
         @include typography.font-size(16);
 
@@ -156,7 +153,7 @@
           }
 
           .fa-solid {
-            margin-left: spacing.space(0.75);
+            margin-inline-start: spacing.space(0.75);
           }
         }
       }
@@ -164,12 +161,12 @@
   }
 
   &__legal {
-    padding-top: spacing.space(3);
+    padding-block-start: spacing.space(3);
 
     @include typography.font-size(16);
 
     &-items {
-      margin-bottom: 0;
+      margin-block-end: 0;
 
       text-align: center;
 
@@ -193,8 +190,7 @@
   }
 
   hr {
-    margin-top: spacing.space(1.5);
-    margin-bottom: spacing.space(0.5);
+    margin-block: spacing.space(1.5) spacing.space(0.5);
   }
 
   &__licence {
@@ -205,7 +201,7 @@
     }
 
     .tna-column {
-      margin-top: spacing.space(1);
+      margin-block-start: spacing.space(1);
     }
   }
 
@@ -229,8 +225,7 @@
 
   @include media.on-mobile {
     &__inner {
-      padding-top: 0;
-      padding-bottom: spacing.space(2);
+      padding-block: 0 spacing.space(2);
     }
   }
 

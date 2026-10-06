@@ -5,12 +5,10 @@
 @use "../../tools/media";
 
 .tna-container {
-  width: 100%;
-  max-width: gridVars.$largest-container-width;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: grid.gutter-width-half();
-  padding-left: grid.gutter-width-half();
+  inline-size: 100%;
+  max-inline-size: gridVars.$largest-container-width;
+  margin-inline: auto;
+  padding-inline: grid.gutter-width-half() grid.gutter-width-half();
 
   display: flex;
   flex-wrap: wrap;
@@ -20,15 +18,14 @@
   box-sizing: border-box;
 
   & &--no-padding {
-    max-width: calc(
+    max-inline-size: calc(
       #{gridVars.$largest-container-width} - #{grid.gutter-width-double()}
     );
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: 0;
   }
 
   &--max {
-    max-width: none;
+    max-inline-size: none;
   }
 
   &--centred,
@@ -41,9 +38,8 @@
   }
 
   & &--nested {
-    width: auto;
-    margin-right: -#{grid.gutter-width()};
-    margin-left: -#{grid.gutter-width()};
+    inline-size: auto;
+    margin-inline: -#{grid.gutter-width()} -#{grid.gutter-width()};
   }
 
   @at-root #{selector.unify("ul, ol", &)} {
@@ -52,14 +48,12 @@
 }
 
 .tna-column {
-  padding-right: grid.gutter-width-half();
-  padding-left: grid.gutter-width-half();
+  padding-inline: grid.gutter-width-half() grid.gutter-width-half();
 
   box-sizing: border-box;
 
   & &--no-padding {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline: 0;
   }
 
   &--align-top {
@@ -87,19 +81,16 @@
 
 @include media.on-tiny {
   .tna-container {
-    padding-right: grid.gutter-width-tiny-half();
-    padding-left: grid.gutter-width-tiny-half();
+    padding-inline: grid.gutter-width-tiny-half() grid.gutter-width-tiny-half();
 
     & &--nested {
-      width: auto;
-      margin-right: -#{grid.gutter-width-tiny()};
-      margin-left: -#{grid.gutter-width-tiny()};
+      inline-size: auto;
+      margin-inline: -#{grid.gutter-width-tiny()} -#{grid.gutter-width-tiny()};
     }
   }
 
   .tna-column {
-    padding-right: grid.gutter-width-tiny-half();
-    padding-left: grid.gutter-width-tiny-half();
+    padding-inline: grid.gutter-width-tiny-half() grid.gutter-width-tiny-half();
   }
 
   @include grid.columns-generator(gridVars.$column-count-tiny, "tiny");

@@ -7,8 +7,8 @@
 @use "../../components/button/button" as button;
 
 .tna-skip-link {
-  width: 1px !important;
-  height: 1px !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
   margin: 0 !important;
   padding: 0 !important;
 
@@ -17,8 +17,9 @@
   overflow: hidden !important;
 
   position: absolute !important;
-  top: -100vh !important;
-  left: -100vw !important;
+
+  inset-block-start: -100vh !important;
+  inset-inline-start: -100vw !important;
 
   white-space: nowrap !important;
 
@@ -37,8 +38,8 @@
 
   &:active,
   &:focus {
-    width: auto !important;
-    height: auto !important;
+    inline-size: auto !important;
+    block-size: auto !important;
     margin: inherit !important;
     padding: spacing.space(1) spacing.space(1.5) !important;
 

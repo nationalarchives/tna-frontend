@@ -18,15 +18,16 @@
     position: relative;
 
     input {
-      width: formsVars.$checkbox-radio-size;
-      height: formsVars.$checkbox-radio-size;
+      inline-size: formsVars.$checkbox-radio-size;
+      block-size: formsVars.$checkbox-radio-size;
       margin: 0;
       padding: 0;
 
       position: absolute;
-      top: 0;
-      left: 0;
       z-index: 2;
+
+      inset-block-start: 0;
+      inset-inline-start: 0;
 
       opacity: 0;
 
@@ -34,7 +35,9 @@
     }
 
     &-label {
-      padding-left: calc(formsVars.$checkbox-radio-size + spacing.space(1));
+      padding-inline-start: calc(
+        formsVars.$checkbox-radio-size + spacing.space(1)
+      );
 
       display: block;
 
@@ -47,15 +50,16 @@
         content: "";
 
         position: absolute;
-        top: 0;
-        left: 0;
+
+        inset-block-start: 0;
+        inset-inline-start: 0;
 
         border-radius: 100%;
       }
 
       &::before {
-        width: formsVars.$checkbox-radio-size;
-        height: formsVars.$checkbox-radio-size;
+        inline-size: formsVars.$checkbox-radio-size;
+        block-size: formsVars.$checkbox-radio-size;
 
         display: block;
         box-sizing: border-box;
@@ -93,21 +97,21 @@
 
   &--small &__item {
     input {
-      width: formsVars.$checkbox-radio-size-small;
-      height: formsVars.$checkbox-radio-size-small;
+      inline-size: formsVars.$checkbox-radio-size-small;
+      block-size: formsVars.$checkbox-radio-size-small;
     }
   }
 
   &--small &__item-label {
-    padding-left: calc(
+    padding-inline-start: calc(
       formsVars.$checkbox-radio-size-small + spacing.space(0.75)
     );
 
     line-height: formsVars.$checkbox-radio-size-small;
 
     &::before {
-      width: formsVars.$checkbox-radio-size-small;
-      height: formsVars.$checkbox-radio-size-small;
+      inline-size: formsVars.$checkbox-radio-size-small;
+      block-size: formsVars.$checkbox-radio-size-small;
     }
 
     &::after {

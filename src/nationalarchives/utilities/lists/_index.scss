@@ -38,15 +38,15 @@ ol {
 
 .tna-ul,
 .tna-ol {
-  margin-top: spacing.space(1);
-  padding-left: spacing.space(2);
+  margin-block-start: spacing.space(1);
+  padding-inline-start: spacing.space(2);
 
   &:first-child {
-    margin-top: 0;
+    margin-block-start: 0;
   }
 
   &--plain {
-    padding-left: 0;
+    padding-inline-start: 0;
 
     list-style: none !important;
 
@@ -69,12 +69,12 @@ ol {
   }
 
   &--spaced > li + li {
-    margin-top: spacing.space(0.5);
+    margin-block-start: spacing.space(0.5);
   }
 
   & ul,
   & ol {
-    padding-left: spacing.space(1.25);
+    padding-inline-start: spacing.space(1.25);
   }
 }
 
@@ -126,13 +126,12 @@ ol {
   display: block;
 
   &--lined {
-    padding-bottom: 0;
+    padding-block-end: 0;
 
     > dd {
-      padding-top: 0;
-      padding-bottom: spacing.space(0.5);
+      padding-block: 0 spacing.space(0.5);
 
-      border-top: none;
+      border-block-start: none;
     }
   }
 
@@ -150,7 +149,7 @@ ol {
 
   &:has(> dt > .fa-solid, > dt > .fa-brands):not(&--zebra) {
     > dd {
-      padding-left: spacing.space(2);
+      padding-inline-start: spacing.space(2);
     }
   }
 }
@@ -182,7 +181,7 @@ ol {
   }
 
   > dt {
-    padding-right: spacing.space(1);
+    padding-inline-end: spacing.space(1);
     @include typography.main-font-weight-bold;
     position: relative;
 
@@ -191,39 +190,39 @@ ol {
       display: block;
 
       position: absolute;
-      top: 0;
-      left: 0;
 
       line-height: inherit;
+      inset-block-start: 0;
+      inset-inline-start: 0;
       @include colour.colour-font("icon-light");
     }
   }
 
   &:has(> dt > .fa-solid, > dt > .fa-brands) {
     > dt {
-      padding-left: spacing.space(2);
+      padding-inline-start: spacing.space(2);
     }
   }
 
   > dd {
-    padding-left: spacing.space(1);
+    padding-inline-start: spacing.space(1);
 
     grid-column-start: 2;
   }
 
   &--lined {
-    padding-bottom: spacing.space(0.5);
+    padding-block-end: spacing.space(0.5);
     @include colour.colour-border("keyline", 1px, solid, bottom);
 
     /* stylelint-disable-next-line no-descending-specificity */
     > dt,
     > dd {
-      padding-top: spacing.space(0.5);
-      @include colour.colour-border("keyline", 1px, solid, top);
+      padding-block-start: spacing.space(0.5);
+      @include colour.colour-border("keyline", 1px, solid, block-start);
 
       .fa-solid,
       .fa-brands {
-        top: spacing.space(0.5);
+        inset-block-start: spacing.space(0.5);
       }
     }
   }
@@ -241,8 +240,8 @@ ol {
     > dt {
       .fa-solid,
       .fa-brands {
-        top: spacing.space(0.5);
-        left: spacing.space(1);
+        inset-block-start: spacing.space(0.5);
+        inset-inline-start: spacing.space(1);
       }
     }
 
@@ -254,7 +253,7 @@ ol {
 
     &:has(> dt > .fa-solid, > dt > .fa-brands) {
       > dt {
-        padding-left: spacing.space(3);
+        padding-inline-start: spacing.space(3);
       }
     }
   }
@@ -271,10 +270,10 @@ ol {
 li,
 dd {
   p {
-    margin-top: spacing.space(0.25);
+    margin-block-start: spacing.space(0.25);
 
     &:first-child {
-      margin-top: 0;
+      margin-block-start: 0;
     }
   }
 }

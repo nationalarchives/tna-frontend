@@ -44,6 +44,35 @@
     "default": ["d", "m", "y"]
   },
   {
+    "name": "fieldLabels",
+    "type": "object",
+    "required": false,
+    "description": "An object containing the labels for each date field.",
+    "params": [
+      {
+        "name": "day",
+        "type": "string",
+        "required": false,
+        "description": "The label for the day field.",
+        "default": "Day"
+      },
+      {
+        "name": "month",
+        "type": "string",
+        "required": false,
+        "description": "The label for the month field.",
+        "default": "Month"
+      },
+      {
+        "name": "year",
+        "type": "string",
+        "required": false,
+        "description": "The label for the year field.",
+        "default": "Year"
+      }
+    ]
+  },
+  {
     "name": "value",
     "type": "object",
     "required": false,

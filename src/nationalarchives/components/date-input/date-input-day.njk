@@ -1,7 +1,7 @@
 {%- macro tnaDateInputDayElement(params) -%}
 <div class="tna-date-input__item tna-date-input__item--day">
   <label for="{{ params.id }}-day" class="tna-date-input__item-label">
-    Day
+    {{ params.fieldLabels.day or 'Day' }}
   </label>
   <input type="text" id="{{ params.id }}-day" value="{{ params.value.day if params.value }}" name="{{ params.name }}-day" class="tna-date-input__item-input{% if params.classes %} {{ params.classes }}{% endif %}" inputmode="numeric"{% if params.autofillDateOfBirth %} autocomplete="bday-day"{% endif %}{%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
 </div>

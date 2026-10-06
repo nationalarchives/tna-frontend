@@ -19,6 +19,7 @@ export default {
       name: { control: "text" },
       hint: { control: "text" },
       fields: { control: "object" },
+      fieldLabels: { control: "object" },
       value: { control: "object" },
       error: { control: "object" },
       autofillDateOfBirth: { control: "boolean" },

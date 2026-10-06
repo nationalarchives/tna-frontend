@@ -53,9 +53,6 @@ const checkExists = [
   "nationalarchives/font-awesome.css",
   "nationalarchives/font-awesome.css.map",
   "nationalarchives/font-awesome.scss",
-  "nationalarchives/ie.css",
-  "nationalarchives/ie.css.map",
-  "nationalarchives/ie.scss",
   "nationalarchives/print.css",
   "nationalarchives/print.css.map",
   "nationalarchives/prototype-kit.css",
@@ -302,7 +299,6 @@ console.log("\n");
 const cssFilesToCheckSize = [
   "all.css",
   "font-awesome.css",
-  "ie.css",
   "print.css",
   "prototype-kit.css",
 ];

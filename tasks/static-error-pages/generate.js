@@ -18,9 +18,6 @@ const errorPageNunjucks = fs.readFileSync(
 const compiledCSS = fs
   .readFileSync("package/nationalarchives/error-page.css", "utf8")
   .replace("/*# sourceMappingURL=all.css.map */", "");
-const compiledCSSIE = fs
-  .readFileSync("package/nationalarchives/ie.css", "utf8")
-  .replace("/*# sourceMappingURL=ie.css.map */", "");
 
 [
   {
@@ -55,9 +52,7 @@ const compiledCSSIE = fs
   const html = renderNunjucks(errorPageNunjucks, {
     ...params,
     tna_frontend_version: packageJson.version,
-  })
-    .replace("/* COMPILED_CSS */", compiledCSS)
-    .replace("/* COMPILED_CSS_IE */", compiledCSSIE);
+  }).replace("/* COMPILED_CSS */", compiledCSS);
   fs.writeFile(`${outputDirectory}/${errorPage.name}.html`, html, (err) => {
     if (err) {
       return console.log(err);

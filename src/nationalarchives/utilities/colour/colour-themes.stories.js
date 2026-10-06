@@ -1460,7 +1460,9 @@ const Template = ({ theme, accent, direction }) => {
             ],
           },
         ],
-        showNewsletter: true,
+        newsletter: {
+          enabled: true,
+        },
         legal: [
           {
             text: "Accessibility statement",

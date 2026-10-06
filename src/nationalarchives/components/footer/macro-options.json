@@ -13,6 +13,101 @@
     "description": "Set the base URL for the `defaultContent` links. Do not include a trailing slash."
   },
   {
+    "name": "themeSelector",
+    "type": "object",
+    "required": false,
+    "description": "Settings for the theme selector.",
+    "params": [
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, show the theme selector in the footer.",
+        "default": false
+      },
+      {
+        "name": "currentTheme",
+        "type": "string",
+        "required": false,
+        "description": "The current theme which has been selected. Options are `system`, `light` and `dark`.",
+        "default": "light"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "The visually hidden title for the theme selector, used for accessibility.",
+        "default": "Change the site theme"
+      },
+      {
+        "name": "system",
+        "type": "object",
+        "required": false,
+        "description": "Settings for the system theme.",
+        "params": [
+          {
+            "name": "label",
+            "type": "string",
+            "required": false,
+            "description": "The label for the system theme option.",
+            "default": "System theme"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": false,
+            "description": "The title for the system theme option.",
+            "default": "Change to using the system theme"
+          }
+        ]
+      },
+      {
+        "name": "light",
+        "type": "object",
+        "required": false,
+        "description": "Settings for the light theme.",
+        "params": [
+          {
+            "name": "label",
+            "type": "string",
+            "required": false,
+            "description": "The label for the light theme option.",
+            "default": "Light theme"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": false,
+            "description": "The title for the light theme option.",
+            "default": "Change to using the light theme"
+          }
+        ]
+      },
+      {
+        "name": "dark",
+        "type": "object",
+        "required": false,
+        "description": "Settings for the dark theme.",
+        "params": [
+          {
+            "name": "label",
+            "type": "string",
+            "required": false,
+            "description": "The label for the dark theme option.",
+            "default": "Dark theme"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": false,
+            "description": "The title for the dark theme option.",
+            "default": "Change to using the dark theme"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "meta",
     "type": "string",
     "required": false,
@@ -24,6 +119,20 @@
     "required": false,
     "description": "An optional object of social media.",
     "params": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "The title of the social media section.",
+        "default": "Follow us on social media"
+      },
+      {
+        "name": "ariaLabel",
+        "type": "string",
+        "required": false,
+        "description": "An optional ARIA label for the social media section.",
+        "default": "Social"
+      },
       {
         "name": "items",
         "type": "array",
@@ -139,24 +248,75 @@
     ]
   },
   {
-    "name": "themeSelector",
-    "type": "boolean",
-    "required": false,
-    "description": "If `true`, display the theme selector.",
-    "default": false
-  },
-  {
-    "name": "currentTheme",
-    "type": "string",
-    "required": false,
-    "description": "The current theme which has been selected. Options are `system`, `light` and `dark`.",
-    "default": "light"
-  },
-  {
     "name": "cookiesUrl",
     "type": "string",
     "required": false,
-    "description": "The URL of the cookie preferences page for the service. Required if `themeSelector` is `true`."
+    "description": "The URL of the cookie preferences page for the service. Required if the theme selector is enabled."
+  },
+  {
+    "name": "openInNewTabText",
+    "type": "string",
+    "required": false,
+    "description": "The text to display for the 'open in new tab' option for footer links.",
+    "default": "(opens in new tab)"
+  },
+  {
+    "name": "newsletter",
+    "type": "object",
+    "required": false,
+    "description": "Configuration options for the newsletter section of the footer.",
+    "params": [
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Indicates whether the newsletter section is enabled.",
+        "default": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "description": "The title of the newsletter section.",
+        "default": "Sign up to our emails"
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "required": false,
+        "description": "The text of the newsletter section.",
+        "default": "Hear about our latest news, stories from the collection and priority booking for events."
+      },
+      {
+        "name": "button",
+        "type": "object",
+        "required": false,
+        "description": "Configuration options for the newsletter button.",
+        "params": [
+          {
+            "name": "text",
+            "type": "string",
+            "required": false,
+            "description": "The text of the newsletter button.",
+            "default": "Subscribe"
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "required": false,
+            "description": "The URL to which the newsletter form should submit.",
+            "default": "https://pages.enews.nationalarchives.gov.uk/pages/subscribe"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": false,
+            "description": "The title attribute for the newsletter button.",
+            "default": "Subscribe to the National Archives newsletter"
+          }
+        ]
+      }
+    ]
   },
   {
     "name": "classes",

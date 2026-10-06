@@ -16,14 +16,11 @@ export default {
       meta: { control: "text" },
       social: { control: "object" },
       navigation: { control: "object" },
-      showNewsletter: { control: "boolean" },
+      newsletter: { control: "object" },
       legal: { control: "object" },
-      themeSelector: { control: "boolean" },
-      currentTheme: {
-        control: "inline-radio",
-        options: ["system", "light", "dark", ""],
-      },
+      themeSelector: { control: "object" },
       cookiesURL: { control: "text" },
+      openInNewTabText: { control: "text" },
       classes: { control: "text" },
       attributes: { control: "object" },
     }).map(([key, value]) => [
@@ -60,8 +57,10 @@ export const Minimal = {
 
 export const ThemeSelector = {
   args: {
-    themeSelector: true,
-    currentTheme: "",
+    themeSelector: {
+      enabled: true,
+      currentTheme: "light",
+    },
     cookiesUrl: "#",
   },
   decorators: [
@@ -91,8 +90,9 @@ export const ThemeSelector = {
 
 export const ThemeSelectorWithoutCookies = {
   args: {
-    themeSelector: true,
-    currentTheme: "",
+    themeSelector: {
+      enabled: true,
+    },
     cookiesUrl: "#",
   },
   play: async ({ canvasElement }) => {

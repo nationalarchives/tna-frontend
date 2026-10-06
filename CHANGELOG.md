@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed the redundant `aria-label` from the button component
 - Changed to use [CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
 - Changed the `copy` property of code block components to an object and allow editing of the button text
+- Updated the format of the `themeSelector` and `social` properties in the footer component and `showNewsletter` changed to `newsletter` with an updated format
 
 ### Deprecated
 

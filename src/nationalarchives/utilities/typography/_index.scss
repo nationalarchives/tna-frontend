@@ -8,7 +8,7 @@
 @use "../../tools/typography";
 
 .tna-template {
-  @include colour.colour-font("font-base");
+  color: var(--font-base);
   @include typography.main-font;
   direction: ltr;
   text-rendering: optimizeLegibility;
@@ -62,11 +62,11 @@ a {
 
   &,
   &:link {
-    @include colour.colour-font("link");
+    color: var(--link);
   }
 
   &:visited {
-    @include colour.colour-font("link-visited");
+    color: var(--link-visited);
   }
 
   &:hover,
@@ -76,7 +76,7 @@ a {
 
   &.tna-link--no-visited-state {
     &:visited {
-      @include colour.colour-font("link");
+      color: var(--link);
     }
   }
 }
@@ -93,7 +93,7 @@ small {
   align-items: center;
   gap: spacing.space(0.5);
 
-  @include colour.colour-font("font-base");
+  color: var(--font-base);
   @include typography.detail-font-small;
   line-height: 1;
   text-align: center;
@@ -116,10 +116,10 @@ small {
   }
 
   .fa-solid {
-    @include colour.colour-font("icon-light");
+    color: var(--icon-light);
 
     @include colour.on-high-contrast {
-      @include colour.colour-font("icon");
+      color: var(--icon);
     }
   }
 }
@@ -153,29 +153,29 @@ small {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 
-  .tna-background-accent &,
-  .tna-template--dark-theme .tna-background-accent-light & {
-    @include colour.colour-font("contrast-font-base");
+  .tna-block-accent &,
+  .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
+    color: var(--contrast-font-base);
 
-    @include colour.colour-background("contrast-background");
+    background-color: var(--contrast-background);
 
     @include colour.colour-border("contrast-background");
 
     .fa-solid {
-      @include colour.colour-font("contrast-icon-light");
+      color: var(--contrast-icon-light);
     }
   }
 
-  .tna-template--system-theme .tna-background-accent-light & {
-    @media (prefers-color-scheme: dark) {
-      @include colour.colour-font("contrast-font-base");
+  @media (prefers-color-scheme: dark) {
+    .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
+      color: var(--contrast-font-base);
 
-      @include colour.colour-background("contrast-background");
+      background-color: var(--contrast-background);
 
       @include colour.colour-border("contrast-background");
 
       .fa-solid {
-        @include colour.colour-font("contrast-icon-light");
+        color: var(--contrast-icon-light);
       }
     }
   }
@@ -233,7 +233,7 @@ small {
 }
 
 %heading {
-  @include colour.colour-font("font-dark");
+  color: var(--font-dark);
   text-wrap: pretty;
 
   a {
@@ -456,7 +456,7 @@ small {
   //   font-family: Georgia, "Times New Roman", Times, serif;
   //   font-size: 3em;
   //   line-height: 1;
-  //   @include colour.colour-font("font-light");
+  //   color: var(--font-light);
   // }
 
   &__quote {
@@ -502,14 +502,14 @@ small {
   @include spacing.space-above;
 
   @include typography.font-size(22);
-  @include colour.colour-font("font-dark");
+  color: var(--font-dark);
 
   @include media.on-mobile {
     @include typography.font-size(20);
   }
 
   &--bold {
-    @include colour.colour-font("font-base");
+    color: var(--font-base);
     @include typography.main-font-weight-medium;
   }
 }
@@ -518,7 +518,7 @@ small {
   @include spacing.space-above;
 
   @include typography.detail-font;
-  @include colour.colour-font("font-dark");
+  color: var(--font-dark);
   @include typography.font-size(22);
   line-height: 1.7;
 
@@ -544,14 +544,8 @@ code {
 
   background-color: #f1ece9;
 
-  .tna-template--dark-theme & {
-    color: #d49;
-
-    background-color: #111;
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
+    .tna-template:not(.tna-template--light-theme) {
       color: #d49;
 
       background-color: #111;

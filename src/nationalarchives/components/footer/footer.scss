@@ -43,6 +43,8 @@
   &__theme-selector-enable-settings-cookies {
     appearance: none;
 
+    color: var(--link);
+
     line-height: inherit;
     text-decoration: underline;
 
@@ -52,7 +54,6 @@
     border-radius: 0.1px;
 
     cursor: pointer;
-    @include colour.colour-font("link");
 
     &:hover {
       @include typography.interacted-text-decoration;

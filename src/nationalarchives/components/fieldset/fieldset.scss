@@ -26,7 +26,7 @@
   & &__error {
     margin-block-start: spacing.space(0.25);
 
-    @include colour.colour-font("form-error-text");
+    color: var(--form-error-text);
     @include typography.main-font-weight-bold;
   }
 
@@ -52,6 +52,6 @@
     margin-block: spacing.space(0.125) 0;
 
     @include typography.font-size(16);
-    @include colour.colour-font("font-light");
+    color: var(--font-light);
   }
 }

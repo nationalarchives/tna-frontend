@@ -24,14 +24,14 @@
     margin-block-end: spacing.space(1);
     padding: 0;
 
+    color: var(--link);
+
     background: transparent;
 
     border: none;
     border-radius: 0.1px;
 
     cursor: pointer;
-
-    @include colour.colour-font("link");
     @include typography.font-size(16);
 
     &:hover {
@@ -64,6 +64,8 @@
 
     position: relative;
 
+    color: var(--font-dark);
+
     line-height: inherit;
     text-align: left;
 
@@ -75,8 +77,6 @@
     border-radius: 0.1px;
 
     cursor: pointer;
-
-    @include colour.colour-font("font-dark");
     @include typography.font-size(18);
     @include typography.main-font(true);
 
@@ -96,16 +96,16 @@
       inset-inline-end: 0.75rem;
 
       border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
-      border-color: colour.colour-var("font-light") transparent;
+      border-color: var(--font-light) transparent;
       border-style: solid;
     }
 
     &:hover {
       @include typography.interacted-text-decoration;
-      @include colour.colour-background("background-tint");
+      background-color: var(--background-tint);
 
       &::before {
-        border-color: colour.colour-var("font-dark") transparent;
+        border-color: var(--font-dark) transparent;
       }
     }
 

@@ -3,13 +3,13 @@
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- set backgroundClasses = [] -%}
 {%- if params.style == "contrast" -%}
-  {%- set backgroundClasses = backgroundClasses.concat('tna-background-contrast') -%}
+  {%- set backgroundClasses = backgroundClasses.concat('tna-block-contrast') -%}
 {%- elseif params.style == "tint" -%}
-  {%- set backgroundClasses = backgroundClasses.concat('tna-background-tint') -%}
+  {%- set backgroundClasses = backgroundClasses.concat('tna-block-tint') -%}
 {%- elseif params.style == "accent" -%}
-  {%- set backgroundClasses = backgroundClasses.concat('tna-background-accent') -%}
+  {%- set backgroundClasses = backgroundClasses.concat('tna-block-accent') -%}
 {%- elseif params.style == "accent-light" -%}
-  {%- set backgroundClasses = backgroundClasses.concat('tna-background-accent-light') -%}
+  {%- set backgroundClasses = backgroundClasses.concat('tna-block-accent-light') -%}
 {%- endif -%}
 {%- if params.layout == "shift" -%}
   {%- set containerClasses = containerClasses.concat('tna-hero--shift') -%}

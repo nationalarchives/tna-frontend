@@ -91,7 +91,7 @@
         "imageHeight": 333,
         "style": "accent"
       },
-      "html": "<header class=\"tna-hero tna-background-accent\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-accent\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "accent-light style",
@@ -104,7 +104,7 @@
         "imageHeight": 333,
         "style": "accent-light"
       },
-      "html": "<header class=\"tna-hero tna-background-accent-light\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-accent-light\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-accent-light\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-accent-light\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "contrast style",
@@ -117,7 +117,7 @@
         "imageHeight": 333,
         "style": "contrast"
       },
-      "html": "<header class=\"tna-hero tna-background-contrast\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-contrast\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-contrast\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-contrast\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "tint style",
@@ -130,7 +130,7 @@
         "imageHeight": 333,
         "style": "tint"
       },
-      "html": "<header class=\"tna-hero tna-background-tint\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-tint\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-tint\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-tint\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "shifted",
@@ -183,7 +183,7 @@
         "style": "accent",
         "layout": "split"
       },
-      "html": "<header class=\"tna-hero tna-background-accent tna-hero--split\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-accent tna-hero--split\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "over",
@@ -210,7 +210,7 @@
         "style": "accent",
         "layout": "over"
       },
-      "html": "<header class=\"tna-hero tna-background-accent tna-hero--over\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-accent tna-hero--over\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "large",
@@ -238,7 +238,7 @@
         "style": "accent",
         "layout": "split"
       },
-      "html": "<header class=\"tna-hero tna-background-accent tna-hero--split tna-hero--large\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-background-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
+      "html": "<header class=\"tna-hero tna-block-accent tna-hero--split tna-hero--large\"><figure class=\"tna-hero__figure\"><div class=\"tna-container tna-hero__inner\"><div class=\"tna-column tna-column--width-2-3 tna-column--width-5-6-medium tna-column--full-small tna-column--full-tiny tna-hero__content\"><div class=\"tna-hero__content-inner tna-block-accent\"><h1 class=\"tna-heading-xl tna-hero__heading\">Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><picture class=\"tna-hero__image\"><img src=\"https://www.nationalarchives.gov.uk/wp-content/uploads/sites/24/2023/07/tna-building-compress.jpg\" alt=\"The National Archives office\" width=\"499\" height=\"333\"></picture></figure></header>"
     },
     {
       "name": "with caption",

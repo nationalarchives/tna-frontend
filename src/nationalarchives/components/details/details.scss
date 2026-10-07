@@ -24,7 +24,7 @@
     position: relative;
     z-index: 2;
 
-    @include colour.colour-font("link");
+    color: var(--link);
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
 
@@ -50,8 +50,7 @@
       inset-inline-start: 0.75rem;
 
       border-width: 0.5rem 0 0.5rem #{math.div(math.sqrt(3), 2)}rem;
-      border-color: transparent transparent transparent
-        colour.colour-var("link");
+      border-color: transparent transparent transparent var(--link);
       border-style: solid;
     }
 
@@ -69,8 +68,7 @@
       inset-block-start: calc(50% - #{math.div(math.sqrt(3), 4)}rem);
 
       border-width: #{math.div(math.sqrt(3), 2)}rem 0.5rem 0 0.5rem;
-      border-color: colour.colour-var("link") transparent transparent
-        transparent;
+      border-color: var(--link) transparent transparent transparent;
     }
   }
 

@@ -47,38 +47,27 @@ export default {
 };
 
 const Template = ({ theme, accent, direction }) => {
-  document.documentElement.classList.remove(
-    "tna-template--system-theme",
-    "tna-template--dark-theme",
-    "tna-template--high-contrast-theme",
-    "tna-template--pink-accent",
-    "tna-template--orange-accent",
-    "tna-template--yellow-accent",
-    "tna-template--green-accent",
-    "tna-template--blue-accent",
-  );
+  const tnaTemplateClasses = ["tna-template"];
+  const tnaTemplateBodyClasses = ["tna-template__body"];
 
-  document.documentElement.classList.add("tna-template__body--padded");
-
-  if (theme === "system") {
-    document.documentElement.classList.add("tna-template--system-theme");
+  if (theme === "light") {
+    tnaTemplateClasses.push("tna-template--light-theme");
   } else if (theme === "dark") {
-    document.documentElement.classList.add("tna-template--dark-theme");
+    tnaTemplateClasses.push("tna-template--dark-theme");
   } else if (theme === "high-contrast") {
-    document.documentElement.classList.add("tna-template--high-contrast-theme");
+    tnaTemplateClasses.push(
+      "tna-template--light-theme",
+      "tna-template--high-contrast-theme",
+    );
   } else if (theme === "dark high-contrast") {
-    document.documentElement.classList.add("tna-template--dark-theme");
-    document.documentElement.classList.add("tna-template--high-contrast-theme");
+    tnaTemplateClasses.push(
+      "tna-template--dark-theme",
+      "tna-template--high-contrast-theme",
+    );
   }
 
   if (accent) {
-    document.documentElement.classList.add(`tna-template--${accent}-accent`);
-  }
-
-  if (direction === "rtl") {
-    document.documentElement.setAttribute("dir", "rtl");
-  } else {
-    document.documentElement.removeAttribute("dir");
+    tnaTemplateClasses.push(`tna-template--${accent}-accent`);
   }
 
   const cardDefaultOptions = {
@@ -103,7 +92,8 @@ const Template = ({ theme, accent, direction }) => {
     ],
   };
 
-  return `
+  return `<div class="${tnaTemplateClasses.join(" ")}"${direction === "rtl" ? ' dir="rtl"' : ""}>
+  <div class="${tnaTemplateBodyClasses.join(" ")}">
     ${nunjucks.renderString(SkipLink, {
       params: {
         href: "main-content",
@@ -114,57 +104,12 @@ const Template = ({ theme, accent, direction }) => {
         phase: "beta",
         message:
           'This is a new service - <a href="#">give us your feedback</a> to help improve it.',
-        classes: "tna-background-accent",
+        classes: "tna-block-accent",
       },
     })}
     ${nunjucks.renderString(GlobalHeader, {
       params: {
-        logo: {
-          href: "#/",
-        },
-        topNavigation: [
-          {
-            text: "Search",
-            href: "https://www.nationalarchives.gov.uk/search/",
-            icon: "search",
-          },
-          {
-            text: "Shop",
-            href: "#/shop",
-            icon: "bag-shopping",
-          },
-          {
-            text: "Sign in",
-            href: "#/sign-in",
-            icon: "user",
-          },
-        ],
-        navigation: [
-          {
-            text: "Visit",
-            href: "#/visit",
-          },
-          {
-            text: "What’s on",
-            href: "#/whats-on",
-          },
-          {
-            text: "Explore the collection",
-            href: "#/explore-the-collection",
-          },
-          {
-            text: "Help using the archive",
-            href: "#/using-the-archives",
-          },
-          {
-            text: "Education",
-            href: "#/education",
-          },
-          {
-            text: "Professional guidance and services",
-            href: "#/professional-guidance-and-services",
-          },
-        ],
+        defaultContent: true,
       },
     })}
     <div class="tna-container">
@@ -259,7 +204,7 @@ const Template = ({ theme, accent, direction }) => {
         <div class="tna-column tna-column--no-padding tna-column--width-1-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           <div class="tna-container tna-container--nested">
             <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large">
-              <div class="tna-aside tna-background-contrast">
+              <div class="tna-aside tna-block-contrast">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
                   ${nunjucks.renderString(Button, {
@@ -273,7 +218,7 @@ const Template = ({ theme, accent, direction }) => {
               </div>
             </div>
             <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large tna-!--no-margin-bottom-large">
-              <div class="tna-aside tna-background-accent">
+              <div class="tna-aside tna-block-accent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
                   ${
@@ -836,7 +781,7 @@ const Template = ({ theme, accent, direction }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background-tint">
+      <div class="tna-section tna-block-tint">
         ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 2",
@@ -930,7 +875,7 @@ const Template = ({ theme, accent, direction }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background-contrast">
+      <div class="tna-section tna-block-contrast">
         ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 3",
@@ -1024,7 +969,7 @@ const Template = ({ theme, accent, direction }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background-accent-light">
+      <div class="tna-section tna-block-accent-light">
         ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 4",
@@ -1118,7 +1063,7 @@ const Template = ({ theme, accent, direction }) => {
           </div>
         </div>
       </div>
-      <div class="tna-section tna-background-accent">
+      <div class="tna-section tna-block-accent">
         ${nunjucks.renderString(IndexGrid, {
           params: {
             title: "My dogs 5",
@@ -1348,145 +1293,11 @@ const Template = ({ theme, accent, direction }) => {
     </main>
     ${nunjucks.renderString(Footer, {
       params: {
-        social: [
-          {
-            href: "https://twitter.com/UKNatArchives",
-            icon: "twitter",
-            title: "The National Archives X feed (formerly known as Twitter)",
-            shortTitle: "X (formerly Twitter)",
-          },
-          {
-            href: "https://www.youtube.com/c/TheNationalArchivesUK",
-            icon: "youtube",
-            title: "The National Archives YouTube channel",
-            shortTitle: "YouTube",
-          },
-          {
-            href: "https://www.facebook.com/TheNationalArchives",
-            icon: "facebook",
-            title: "The National Archives Facebook page",
-            shortTitle: "Facebook",
-          },
-          {
-            href: "https://www.flickr.com/photos/nationalarchives",
-            icon: "flickr",
-            title: "The National Archives Flickr feed",
-            shortTitle: "Flickr",
-          },
-          {
-            href: "https://www.instagram.com/nationalarchivesuk/",
-            icon: "instagram",
-            title: "The National Archives Instagram feed",
-            shortTitle: "Instagram",
-          },
-        ],
-        navigation: [
-          {
-            title: "Quick links",
-            items: [
-              {
-                text: "About us",
-                href: "https://www.nationalarchives.gov.uk/about/",
-              },
-              {
-                text: "Contact us",
-                href: "https://www.nationalarchives.gov.uk/contact-us/",
-              },
-              {
-                text: "News",
-                href: "https://www.nationalarchives.gov.uk/about/news/",
-              },
-              {
-                text: "Blogs",
-                href: "https://www.nationalarchives.gov.uk/blogs/",
-              },
-              {
-                text: "Podcasts",
-                href: "https://media.nationalarchives.gov.uk/index.php/category/podcasts-2/",
-              },
-              {
-                text: "Image library",
-                href: "https://images.nationalarchives.gov.uk/",
-              },
-              {
-                text: "Press room",
-                href: "https://www.nationalarchives.gov.uk/about/press-room/",
-              },
-              {
-                text: "Jobs",
-                href: "https://www.nationalarchives.gov.uk/about/jobs/",
-              },
-              {
-                text: "British citizenship services",
-                href: "https://www.nationalarchives.gov.uk/contact-us/british-citizenship-services/",
-              },
-              {
-                text: "Historical Manuscripts Commission",
-                href: "https://www.nationalarchives.gov.uk/archives-sector/our-archives-sector-role/historical-manuscripts-commission/",
-              },
-            ],
-          },
-          {
-            title: "Other websites",
-            items: [
-              {
-                text: "UK Government Web Archive",
-                href: "https://www.nationalarchives.gov.uk/webarchive/",
-              },
-              {
-                text: "Legislation.gov.uk",
-                href: "https://www.legislation.gov.uk/",
-              },
-              {
-                text: "Find Case Law",
-                href: "https://caselaw.nationalarchives.gov.uk/",
-              },
-              {
-                text: "The Gazette",
-                href: "https://www.thegazette.co.uk/",
-              },
-              {
-                text: "The National Archives Trust",
-                href: "https://www.nationalarchivestrust.org.uk/",
-              },
-              {
-                text: "Friends of The National Archives",
-                href: "https://ftna.org.uk/",
-              },
-              {
-                text: "The National Archives Design System",
-                href: "https://design-system.nationalarchives.gov.uk/",
-              },
-            ],
-          },
-        ],
-        newsletter: {
-          enabled: true,
-        },
-        legal: [
-          {
-            text: "Accessibility statement",
-            href: "#/accessibility",
-          },
-          {
-            text: "Freedom of information",
-            href: "#/freedom-of-information",
-          },
-          {
-            text: "Terms and conditions",
-            href: "#/terms-and-conditions",
-          },
-          {
-            text: "Privacy policy",
-            href: "#/privacy",
-          },
-          {
-            text: "Cookies",
-            href: "#/cookies",
-          },
-        ],
+        defaultContent: true,
       },
-    })}`;
+    })}
+  </div>
+</div>`;
 };
 
 export const System = Template.bind({});

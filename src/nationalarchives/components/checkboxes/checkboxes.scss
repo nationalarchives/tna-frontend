@@ -96,7 +96,7 @@
       display: block;
 
       @include typography.font-size(16);
-      @include colour.colour-font("font-light");
+      color: var(--font-light);
       line-height: 1.25;
     }
   }
@@ -160,7 +160,7 @@
 
   input:checked + &__item-label {
     &::before {
-      @include colour.colour-background("input-foreground");
+      background-color: var(--input-foreground);
     }
 
     &::after {

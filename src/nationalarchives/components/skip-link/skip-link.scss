@@ -23,9 +23,9 @@
 
   white-space: nowrap !important;
 
-  background-color: colour.brand-colour("yellow");
+  background-color: var(--brand-yellow);
 
-  border: a11yVars.$focus-outline-outer-width colour.brand-colour("black") solid;
+  border: a11yVars.$focus-outline-outer-width var(--brand-black) solid;
 
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
@@ -33,7 +33,7 @@
   &,
   &:link,
   &:visited {
-    color: colour.brand-colour("black");
+    color: var(--brand-black);
   }
 
   &:active,

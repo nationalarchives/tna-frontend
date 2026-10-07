@@ -185,7 +185,7 @@
 
 <footer class="tna-footer{% if classes %} {{ classes }}{% endif %}" data-module="tna-footer" {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   {%- if params.themeSelector %}
-  <section class="tna-footer__theme-selector tna-background-tint" data-theme-on-load="{{ params.themeSelector.currentTheme or 'light' }}" hidden>
+  <section class="tna-footer__theme-selector tna-block-tint" data-theme-on-load="{{ params.themeSelector.currentTheme or 'light' }}" hidden>
     <div class="tna-container tna-!--padding-vertical-xs">
       <div class="tna-column tna-column--flex-1">
         <h2 class="tna-visually-hidden">{{ params.themeSelector.title or 'Change the site theme' }}</h2>
@@ -257,7 +257,7 @@
           {{ params.meta | safe }}
         </div>
         {%- endif %}
-        {%- if social %}
+        {%- if social and social.items | length %}
           <h3 class="tna-visually-hidden">
             {{ social.title or "Follow us on social media" }}
           </h3>

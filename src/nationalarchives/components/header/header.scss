@@ -16,18 +16,14 @@
     rgb(0 0 0 / 100%) 100%
   );
 
-  .tna-template--dark-theme & {
-    background: colour.brand-colour("black");
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
-      background: colour.brand-colour("black");
+  @media (prefers-color-scheme: dark) {
+    .tna-template:not(.tna-template--light-theme) {
+      background: var(--brand-black);
     }
   }
 
   @include colour.on-high-contrast {
-    background: colour.brand-colour("black");
+    background: var(--brand-black);
   }
 
   &__contents {
@@ -86,7 +82,7 @@
 
     display: inline-block;
 
-    @include colour.colour-background("font-dark");
+    background-color: var(--font-dark);
 
     &::before,
     &::after {
@@ -198,7 +194,7 @@
     &,
     &:link,
     &:visited {
-      @include colour.colour-font("font-light");
+      color: var(--font-light);
     }
 
     &:hover,
@@ -207,7 +203,7 @@
       &,
       &:link,
       &:visited {
-        @include colour.colour-font("font-base");
+        color: var(--font-base);
       }
     }
 
@@ -259,7 +255,7 @@
       inset-block-end: 0;
       inset-inline: 0;
 
-      @include colour.colour-background("font-dark");
+      background-color: var(--font-dark);
     }
 
     &,
@@ -275,12 +271,8 @@
     }
   }
 
-  &.tna-background-accent {
-    background: colour.colour-var("background");
-  }
-
-  &.tna-background-accent &__navigation {
-    @include colour.contrast-on-mobile;
+  &.tna-block-accent {
+    background: var(--background);
   }
 
   .tna-logo {
@@ -335,12 +327,12 @@
       &,
       &:link,
       &:visited {
-        @include colour.colour-font("font-light");
+        color: var(--font-light);
       }
 
       &:hover,
       &:focus-visible {
-        @include colour.colour-font("font-dark");
+        color: var(--font-dark);
       }
     }
 

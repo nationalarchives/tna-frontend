@@ -96,7 +96,7 @@
   &__droppable &:hover ~ &__droppable-buttons {
     .tna-button {
       &:not(.tna-button--plain) {
-        @include colour.colour-font("button-hover-text");
+        color: var(--button-hover-text);
         text-decoration: none;
 
         background: transparent;
@@ -117,14 +117,14 @@
       inset: spacing.space(0.5);
       z-index: 2;
 
+      color: var(--accent-font-base);
+
+      background-color: var(--accent-background);
+
       pointer-events: none;
 
       @include colour.green-accent;
-
-      @include colour.colour-font("accent-font-base");
       @include typography.main-font-weight-bold;
-
-      @include colour.colour-background("accent-background");
     }
   }
 

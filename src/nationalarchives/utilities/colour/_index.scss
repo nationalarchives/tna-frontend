@@ -1,26 +1,22 @@
 @use "../../tools/colour";
 
 .tna-template {
-  @include colour.always-light;
+  @include colour.colour-css-vars;
 
-  @include colour.colour-background("background");
+  background-color: var(--background);
 
-  &--system-theme {
-    @media (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-dark;
-    }
+  color-scheme: light dark;
 
-    @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
+  &--light-theme {
+    color-scheme: only light;
   }
 
   &--dark-theme {
-    @include colour.colour-css-vars-dark;
+    color-scheme: only dark;
+  }
 
-    @media (prefers-contrast: more) {
-      @include colour.colour-css-vars-high-contrast-dark;
-    }
+  @media (prefers-contrast: more) {
+    @include colour.colour-css-vars-high-contrast;
   }
 
   &--black-accent {
@@ -48,7 +44,6 @@
   }
 }
 
-.tna-background,
 .tna-block {
   &-tint {
     @include colour.tint;
@@ -64,10 +59,48 @@
 
   &-accent-light {
     @include colour.accent-light;
-  }
 
-  &-base {
-    @include colour.base;
+    .tna-template--dark-theme & {
+      // Mirrors colour.accent
+      --background: var(--accent-background);
+      --font-base: var(--accent-font-base);
+      --font-dark: var(--accent-font-dark);
+      --font-light: var(--accent-font-light);
+      --icon-light: var(--accent-icon-light);
+      --link: var(--accent-link);
+      --link-visited: var(--accent-link);
+      --keyline: var(--accent-keyline);
+      --keyline-dark: var(--accent-keyline-dark);
+      --accent-border: var(--accent-font-dark);
+      --button-text: var(--accent-button-text);
+      --button-background: var(--accent-button-background);
+      --button-hover-text: var(--accent-button-hover-text);
+      --button-hover-background: var(--accent-button-hover-background);
+
+      // color-scheme: only dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .tna-template:not(.tna-template--light-theme) & {
+        // Mirrors colour.accent
+        --background: var(--accent-background);
+        --font-base: var(--accent-font-base);
+        --font-dark: var(--accent-font-dark);
+        --font-light: var(--accent-font-light);
+        --icon-light: var(--accent-icon-light);
+        --link: var(--accent-link);
+        --link-visited: var(--accent-link);
+        --keyline: var(--accent-keyline);
+        --keyline-dark: var(--accent-keyline-dark);
+        --accent-border: var(--accent-font-dark);
+        --button-text: var(--accent-button-text);
+        --button-background: var(--accent-button-background);
+        --button-hover-text: var(--accent-button-hover-text);
+        --button-hover-background: var(--accent-button-hover-background);
+
+        // color-scheme: only dark;
+      }
+    }
   }
 }
 

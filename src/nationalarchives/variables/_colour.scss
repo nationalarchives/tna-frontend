@@ -44,7 +44,7 @@ $colour-palette-brand: (
 
 /*
 =========================================
-LIGHT THEME (DEFAULT)
+LIGHT THEME
 =========================================
 */
 $colour-palette-default: (
@@ -135,7 +135,7 @@ $colour-palette-dark: map.merge(
 
 /*
 =========================================
-LIGHT, HIGH_CONTRAST THEME
+HIGH_CONTRAST THEME - LIGHT
 =========================================
 */
 $colour-palette-high-contrast: map.merge(
@@ -163,7 +163,7 @@ $colour-palette-high-contrast: map.merge(
 
 /*
 =========================================
-DARK, HIGH_CONTRAST THEME
+HIGH_CONTRAST THEME - DARK
 =========================================
 */
 $colour-palette-high-contrast-dark: map.merge(

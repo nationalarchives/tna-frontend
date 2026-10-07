@@ -225,7 +225,7 @@
     "name": "legal",
     "type": "array",
     "required": false,
-    "description": "A list of 'legal' links to display in the footer such as the cookie page, accessibility statement, privacy policy and terms and conditions.",
+    "description": "A list of 'legal' links to display in the footer such as the cookie page, accessibility statement, privacy notice and terms and conditions.",
     "params": [
       {
         "name": "text",

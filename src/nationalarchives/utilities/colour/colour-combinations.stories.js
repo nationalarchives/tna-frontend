@@ -292,6 +292,9 @@ export const System = Template.bind({});
 System.args = {
   theme: "",
 };
+System.parameters = {
+  chromatic: { disableSnapshot: true },
+};
 
 export const LightHighContrast = Template.bind({});
 LightHighContrast.args = {

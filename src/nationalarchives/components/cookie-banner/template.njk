@@ -2,11 +2,11 @@
 
 {%- set containerClasses = [params.classes] if params.classes else [] -%}
 {%- if params.style == "contrast" -%}
-  {%- set containerClasses = containerClasses.concat('tna-background-contrast') -%}
+  {%- set containerClasses = containerClasses.concat('tna-block-contrast') -%}
 {%- elseif params.style == "accent" -%}
-  {%- set containerClasses = containerClasses.concat('tna-background-accent') -%}
+  {%- set containerClasses = containerClasses.concat('tna-block-accent') -%}
 {%- elseif params.style == "tint" -%}
-  {%- set containerClasses = containerClasses.concat('tna-background-tint') -%}
+  {%- set containerClasses = containerClasses.concat('tna-block-tint') -%}
 {%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <section class="tna-cookie-banner{% if classes %} {{ classes }}{% endif %}" data-module="tna-cookie-banner" aria-label="Cookies on {{ params.serviceName }}"

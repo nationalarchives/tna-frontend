@@ -17,7 +17,9 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 
-  color-scheme: light only;
+  color-scheme: only light;
+
+  // color: var(--font-base);
 
   @include colour.accent-light;
 

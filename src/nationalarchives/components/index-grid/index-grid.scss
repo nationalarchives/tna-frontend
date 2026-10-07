@@ -37,7 +37,7 @@
 
     @include borders.rounded-border;
 
-    .tna-background-contrast & {
+    .tna-block-contrast & {
       @include colour.accent;
     }
 

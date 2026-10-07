@@ -83,18 +83,15 @@ export class Footer {
   }
 
   setTheme(theme) {
+    this.$tnaTemplate.classList.remove(
+      "tna-template--light-theme",
+      "tna-template--dark-theme",
+    );
     if (theme === "light") {
-      this.$tnaTemplate.classList.remove(
-        "tna-template--system-theme",
-        "tna-template--dark-theme",
-      );
+      this.$tnaTemplate.classList.add(`tna-template--light-theme`);
     } else if (theme === "dark") {
-      this.$tnaTemplate.classList.remove("tna-template--system-theme");
       this.$tnaTemplate.classList.add(`tna-template--dark-theme`);
-    } else if (theme === "system") {
-      this.$tnaTemplate.classList.remove("tna-template--dark-theme");
-      this.$tnaTemplate.classList.add(`tna-template--system-theme`);
-    } else {
+    } else if (theme !== "system") {
       return;
     }
     this.currentTheme = theme;

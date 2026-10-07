@@ -312,7 +312,7 @@
         "body": "<p>Card body</p>",
         "style": "contrast"
       },
-      "html": "<article class=\"tna-card tna-card--padded tna-background-contrast\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-block-contrast\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with a tint style",
@@ -322,7 +322,7 @@
         "body": "<p>Card body</p>",
         "style": "tint"
       },
-      "html": "<article class=\"tna-card tna-card--padded tna-background-tint\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-block-tint\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with a accent style",
@@ -332,7 +332,7 @@
         "body": "<p>Card body</p>",
         "style": "accent"
       },
-      "html": "<article class=\"tna-card tna-card--padded tna-background-accent\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-block-accent\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with a accent-light style",
@@ -342,7 +342,7 @@
         "body": "<p>Card body</p>",
         "style": "accent-light"
       },
-      "html": "<article class=\"tna-card tna-card--padded tna-background-accent-light\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
+      "html": "<article class=\"tna-card tna-card--padded tna-block-accent-light\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p></div></article>"
     },
     {
       "name": "with an unknown style",

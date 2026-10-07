@@ -5,12 +5,14 @@
 
   background-color: var(--background);
 
+  color-scheme: light dark;
+
   &--light-theme {
-    color-scheme: light !important;
+    color-scheme: only light;
   }
 
   &--dark-theme {
-    color-scheme: dark !important;
+    color-scheme: only dark;
   }
 
   @media (prefers-contrast: more) {
@@ -42,7 +44,6 @@
   }
 }
 
-.tna-background,
 .tna-block {
   &-tint {
     @include colour.tint;
@@ -60,13 +61,28 @@
     @include colour.accent-light;
 
     .tna-template--dark-theme & {
-      @include colour.accent;
+      // Mirrors colour.accent
+      --background: var(--accent-background);
+      --font-base: var(--accent-font-base);
+      --font-dark: var(--accent-font-dark);
+      --font-light: var(--accent-font-light);
+      --icon-light: var(--accent-icon-light);
+      --link: var(--accent-link);
+      --link-visited: var(--accent-link);
+      --keyline: var(--accent-keyline);
+      --keyline-dark: var(--accent-keyline-dark);
+      --accent-border: var(--accent-font-dark);
+      --button-text: var(--accent-button-text);
+      --button-background: var(--accent-button-background);
+      --button-hover-text: var(--accent-button-hover-text);
+      --button-hover-background: var(--accent-button-hover-background);
+
+      // color-scheme: only dark;
     }
 
     @media (prefers-color-scheme: dark) {
       .tna-template:not(.tna-template--light-theme) & {
-        // @include colour.accent;
-
+        // Mirrors colour.accent
         --background: var(--accent-background);
         --font-base: var(--accent-font-base);
         --font-dark: var(--accent-font-dark);
@@ -82,12 +98,7 @@
         --button-hover-text: var(--accent-button-hover-text);
         --button-hover-background: var(--accent-button-hover-background);
 
-        // --accent-keyline-dark: #{colour.brand-colour("white", 0.8)} !important;
-        // --button-accented-text: #{var(--brand-white)} !important;
-
-        color: var(--font-base);
-
-        background-color: var(--background);
+        // color-scheme: only dark;
       }
     }
   }

@@ -27,14 +27,12 @@ const accents = [
   ],
   blocks = [
     "",
-    "tna-background-tint",
-    "tna-background-accent-light",
-    "tna-background-accent",
-    "tna-background-contrast",
+    "tna-block-tint",
+    "tna-block-accent-light",
+    "tna-block-accent",
+    "tna-block-contrast",
   ],
-  Template = ({ theme }) => {
-    document.documentElement.classList.remove("tna-template");
-    return `<div class="tna-colour-contrast-demo">
+  Template = ({ theme }) => `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
     <div class="tna-colour-contrast-demo__block tna-template ${theme}">
       Blocks
@@ -42,7 +40,7 @@ const accents = [
     ${blocks.reduce(
       (blockOutput, block) =>
         `${blockOutput}<div class="tna-colour-contrast-demo__block tna-template ${theme}">
-      ${block.replace(/^tna-background-/u, "") || "Base"}
+      ${block.replace(/^tna-block-/u, "") || "Base"}
     </div>`,
       "",
     )}
@@ -138,15 +136,14 @@ const accents = [
     "",
   )}
   </div>
-</div>`;
-  },
+</div>`,
   FormsTemplate = ({ theme }) => {
     const themeSlug = theme.replace(" ", "-").toLowerCase(),
       formBlocks = blocks.filter(
         (block) =>
-          block !== "tna-background-contrast" &&
-          block !== "tna-background-accent" &&
-          block !== "tna-background-accent-light",
+          block !== "tna-block-contrast" &&
+          block !== "tna-block-accent" &&
+          block !== "tna-block-accent-light",
       );
 
     return `<div class="tna-colour-contrast-demo">
@@ -157,7 +154,7 @@ const accents = [
     ${formBlocks.reduce(
       (blockOutput, block) =>
         `${blockOutput}<div class="tna-colour-contrast-demo__block">
-      ${block.replace(/^tna-background-/u, "") || "Base"}
+      ${block.replace(/^tna-block-/u, "") || "Base"}
     </div>`,
       "",
     )}

@@ -16,12 +16,8 @@
     rgb(0 0 0 / 100%) 100%
   );
 
-  .tna-template--dark-theme & {
-    background: var(--brand-black);
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
+    .tna-template:not(.tna-template--light-theme) {
       background: var(--brand-black);
     }
   }
@@ -275,12 +271,8 @@
     }
   }
 
-  &.tna-background-accent {
+  &.tna-block-accent {
     background: var(--background);
-  }
-
-  &.tna-background-accent &__navigation {
-    @include colour.contrast-on-mobile;
   }
 
   .tna-logo {

@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Removed the image asset `nationalarchives-opengraph-image-dark.png`
+- Removed support for `tna-background-[tint|contrast|accent|accent-light]` classes - use `tna-block-` instead
 
 ### Fixed
 ### Security

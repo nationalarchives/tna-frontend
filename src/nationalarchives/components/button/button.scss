@@ -190,15 +190,15 @@ $button-border-width: 4px !default;
     }
   }
 
-  .tna-background-accent &,
-  .tna-template--dark-theme .tna-background-accent-light & {
+  .tna-block-accent &,
+  .tna-template--dark-theme .tna-block-accent-light & {
     &:hover {
       color: var(--font-dark);
     }
   }
 
-  .tna-background-accent &--accent,
-  .tna-template--dark-theme .tna-background-accent-light &--accent {
+  .tna-block-accent &--accent,
+  .tna-template--dark-theme .tna-block-accent-light &--accent {
     background-color: var(--contrast-button-background);
 
     @include colour.colour-border("contrast-button-background");
@@ -217,16 +217,14 @@ $button-border-width: 4px !default;
   }
 
   @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme)
-      .tna-background-accent-light
-      & {
+    .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
       &:hover {
         color: var(--font-dark);
       }
     }
 
     .tna-template:not(.tna-template--light-theme)
-      .tna-background-accent-light
+      .tna-block-accent-light
       &--accent {
       background-color: var(--contrast-button-background);
 

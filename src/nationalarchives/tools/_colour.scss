@@ -197,43 +197,6 @@
   @extend %contrast;
 }
 
-%contrast-on-mobile {
-  @include media.on-mobile {
-    --background: var(--contrast-background);
-    --font-base: var(--contrast-font-base);
-    --font-dark: var(--contrast-font-dark);
-    --font-light: var(--contrast-font-light);
-    --icon-light: var(--contrast-icon-light);
-    --link: var(--contrast-link);
-    --link-visited: var(--contrast-link-visited);
-    --keyline: var(--contrast-keyline);
-    --keyline-dark: var(--contrast-keyline-dark);
-    --button-text: var(--contrast-button-text);
-    --button-background: var(--contrast-button-background);
-    --button-hover-text: var(--contrast-button-hover-text);
-    --button-hover-background: var(--contrast-button-hover-background);
-    --accent-border: var(--accent-border-bright);
-
-    color: var(--font-base);
-
-    background-color: var(--background);
-  }
-}
-
-@mixin contrast-on-mobile {
-  @extend %contrast-on-mobile;
-}
-
-%tint {
-  --background: var(--background-tint);
-
-  background-color: var(--background);
-}
-
-@mixin tint {
-  @extend %tint;
-}
-
 %accent {
   --background: var(--accent-background);
   --font-base: var(--accent-font-base);
@@ -261,39 +224,25 @@
 
 %accent-light {
   --background: var(--accent-background-light);
-  // --font-base: #{map.get(colour.$colour-palette-default, "font-base")};
-  // --font-dark: #{map.get(colour.$colour-palette-default, "font-dark")};
-  // --font-light: #{map.get(colour.$colour-palette-default, "font-light")};
-  // --icon-light: #{map.get(colour.$colour-palette-default, "icon-light")};
-  // --keyline: #{map.get(colour.$colour-palette-default, "keyline")};
-  // --keyline-dark: #{map.get(colour.$colour-palette-default, "keyline-dark")};
-  // --button-text: #{map.get(colour.$colour-palette-default, "button-text")};
-  // --button-background: #{map.get(
-  //     colour.$colour-palette-default,
-  //     "button-background"
-  //   )};
-  // --button-hover-text: #{map.get(
-  //     colour.$colour-palette-default,
-  //     "button-hover-text"
-  //   )};
-  // --button-hover-background: #{map.get(
-  //     colour.$colour-palette-default,
-  //     "button-hover-background"
-  //   )};
   --accent-border: var(--accent-background);
+
   color: var(--font-base);
 
   background-color: var(--background);
-
-  @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme) & {
-      color-scheme: dark only;
-    }
-  }
 }
 
 @mixin accent-light {
   @extend %accent-light;
+}
+
+%tint {
+  --background: var(--background-tint);
+
+  background-color: var(--background);
+}
+
+@mixin tint {
+  @extend %tint;
 }
 
 %yellow-accent {

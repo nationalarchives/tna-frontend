@@ -153,8 +153,8 @@ small {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 
-  .tna-background-accent &,
-  .tna-template:not(.tna-template--light-theme) .tna-background-accent-light & {
+  .tna-block-accent &,
+  .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
     color: var(--contrast-font-base);
 
     background-color: var(--contrast-background);
@@ -167,9 +167,7 @@ small {
   }
 
   @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme)
-      .tna-background-accent-light
-      & {
+    .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
       color: var(--contrast-font-base);
 
       background-color: var(--contrast-background);
@@ -546,14 +544,8 @@ code {
 
   background-color: #f1ece9;
 
-  .tna-template--dark-theme & {
-    color: #d49;
-
-    background-color: #111;
-  }
-
-  .tna-template--system-theme & {
-    @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
+    .tna-template:not(.tna-template--light-theme) {
       color: #d49;
 
       background-color: #111;

@@ -13,14 +13,13 @@
 }
 
 .tna-template,
-.tna-background-accent,
-.tna-background-contrast,
+.tna-block-accent,
+.tna-block-contrast,
 .tna-hero:not(
-    .tna-background-accent,
-    .tna-background-accent-light,
-    .tna-background-contrast,
-    .tna-background-tint,
-    .tna-background-tint-light
+    .tna-block-accent,
+    .tna-block-accent-light,
+    .tna-block-contrast,
+    .tna-block-tint
   )
   .tna-hero__inner,
 .tna-picture__transcript,

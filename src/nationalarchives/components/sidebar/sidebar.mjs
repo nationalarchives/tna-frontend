@@ -1,3 +1,5 @@
+import { breakpoints } from "../../lib/media.mjs";
+
 export class Sidebar {
   constructor($module, options = {}) {
     this.$module = $module;
@@ -32,20 +34,7 @@ export class Sidebar {
   }
 
   init() {
-    this.breakpoints = {
-      tiny:
-        getComputedStyle(document.documentElement).getPropertyValue(
-          "--media-breakpoint-tiny",
-        ) || "480px",
-      small:
-        getComputedStyle(document.documentElement).getPropertyValue(
-          "--media-breakpoint-small",
-        ) || "768px",
-      medium:
-        getComputedStyle(document.documentElement).getPropertyValue(
-          "--media-breakpoint-medium",
-        ) || "1024px",
-    };
+    this.breakpoints = breakpoints();
 
     if (this.disableHighlightSize) {
       if (!Object.keys(this.breakpoints).includes(this.disableHighlightSize)) {

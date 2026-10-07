@@ -29,6 +29,7 @@ export default {
       autocorrect: { control: "boolean" },
       size: { control: "inline-radio", options: ["m", "l", "xl"] },
       rows: { control: "number" },
+      autoVerticalResize: { control: "boolean" },
       itemiseRows: { control: "boolean" },
       formItemClasses: { control: "text" },
       formItemAttributes: { control: "object" },

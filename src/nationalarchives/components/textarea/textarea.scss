@@ -3,17 +3,9 @@
 @use "../../tools/colour";
 @use "../../tools/spacing";
 
-$textarea-minimum-lines-visible: 5 !default;
-$textarea-line-height: 1.5rem !default;
-$textarea-vertical-padding: 0.25 !default;
-
 .tna-textarea {
   inline-size: 100%;
-  min-block-size: calc(
-    #{$textarea-line-height * $textarea-minimum-lines-visible} +
-      #{spacing.space($textarea-vertical-padding * 2)}
-  );
-  padding: spacing.space($textarea-vertical-padding) spacing.space(0.5);
+  padding: spacing.space(0.25) spacing.space(0.5);
 
   display: block;
   box-sizing: border-box;
@@ -41,10 +33,16 @@ $textarea-vertical-padding: 0.25 !default;
   &--xl {
     max-inline-size: 80rem;
   }
+
+  &--auto-vertical-resize {
+    min-block-size: attr(data-rows lh, 5lh);
+
+    field-sizing: content;
+  }
 }
 
-[data-module="tna-textarea-itemised-rows"] {
-  .tna-form-item__body {
+.tna-form-item {
+  &[data-module="tna-textarea-itemised-rows"] &__body {
     display: flex;
     align-items: stretch;
     gap: 2px;

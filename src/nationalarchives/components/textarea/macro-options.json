@@ -91,6 +91,13 @@
     "default": 5
   },
   {
+    "name": "autoVerticalResize",
+    "type": "boolean",
+    "required": false,
+    "description": "If `true`, the textarea will automatically resize vertically based on its content.",
+    "default": false
+  },
+  {
     "name": "itemiseRows",
     "type": "boolean",
     "required": false,

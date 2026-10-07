@@ -2,6 +2,12 @@
 @use "../../tools/colour";
 @use "../../tools/typography";
 
+:root {
+  --media-breakpoint-tiny: #{mediaVars.$largest-tiny-device-px}px;
+  --media-breakpoint-small: #{mediaVars.$largest-small-device-px}px;
+  --media-breakpoint-medium: #{mediaVars.$largest-medium-device-px}px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,19 +15,6 @@
   @media (prefers-contrast: more) {
     background-image: none;
   }
-}
-
-/*
- * ------------------------------------------
- * Disable the "Auto dark mode" feature as we
- * have our own dark theme
- * ------------------------------------------
- */
-:root {
-  --media-breakpoint-tiny: #{mediaVars.$largest-tiny-device-px}px;
-  --media-breakpoint-small: #{mediaVars.$largest-small-device-px}px;
-  --media-breakpoint-medium: #{mediaVars.$largest-medium-device-px}px;
-  // color-scheme: light dark;
 }
 
 /*
@@ -39,6 +32,12 @@
   html {
     /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font: -apple-system-body;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 

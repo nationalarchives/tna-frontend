@@ -7,7 +7,7 @@
   --media-breakpoint-tiny: #{mediaVars.$largest-tiny-device-px}px;
   --media-breakpoint-small: #{mediaVars.$largest-small-device-px}px;
   --media-breakpoint-medium: #{mediaVars.$largest-medium-device-px}px;
-  --spacing-base: #{spacingVars.$base-spacing-factor-rem};
+  --spacing-base: #{spacingVars.$base-spacing-rem};
 
   @include colour.colour-css-vars;
 

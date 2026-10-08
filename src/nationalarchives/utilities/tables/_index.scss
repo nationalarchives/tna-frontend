@@ -106,8 +106,8 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
     }
 
     &--numeric {
-      text-align: right;
       font-variant-numeric: tabular-nums;
+      text-align: right;
     }
 
     &--align-left {
@@ -253,52 +253,54 @@ $table-overflow-shadow-colour-hidden: rgb(0 0 0 / 0%);
     }
   }
 
-  // &--sticky-first-column {
-  //   background: radial-gradient(
-  //       ellipse #{$table-overflow-shadow-width} 50% at right center,
-  //       var(--overflow-shadow-end),
-  //       #{$table-overflow-shadow-colour-hidden}
-  //     )
-  //     transparent;
+  &--sticky-first-column {
+    background: radial-gradient(
+        ellipse #{$table-overflow-shadow-width} 50% at right center,
+        var(--overflow-shadow-end),
+        #{$table-overflow-shadow-colour-hidden}
+      )
+      transparent;
 
-  //   .tna-table {
-  //     &__header,
-  //     &__cell {
-  //       &:first-child {
-  //         max-inline-size: 50vw;
-  //         max-inline-size: 50cqw;
+    .tna-table {
+      &__header,
+      &__cell {
+        &:first-child {
+          max-inline-size: 50vw;
+          max-inline-size: 50cqw;
 
-  //         position: sticky;
-  //         inset-inline-start: 0;
-  //         z-index: 1;
+          position: sticky;
+          inset-inline-start: 0;
+          z-index: 1;
 
-  //         overflow-wrap: break-word;
+          overflow-wrap: break-word;
 
-  //         hyphens: auto;
-  //         background-color: var(--background);
+          hyphens: auto;
 
-  //         &::after {
-  //           content: "";
+          background-color: var(--background);
 
-  //           inline-size: 0.75rem;
+          &::after {
+            content: "";
 
-  //           position: absolute;
-  //           inset-block-start: 0;
-  //           inset-block-end: -1px;
-  //           inset-inline-start: 100%;
+            inline-size: 0.75rem;
 
-  //           background: linear-gradient(
-  //             90deg,
-  //             var(--overflow-shadow-start) 0%,
-  //             #{$table-overflow-shadow-colour-hidden} 100%
-  //           );
-  //           animation: overflow-shadows linear;
-  //           animation-timeline: --overflow-shadows;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+            position: absolute;
+
+            inset-block: 0 -1px;
+            inset-inline-start: 100%;
+
+            background: linear-gradient(
+              90deg,
+              var(--overflow-shadow-start) 0%,
+              #{$table-overflow-shadow-colour-hidden} 100%
+            );
+
+            animation: overflow-shadows linear;
+            animation-timeline: --overflow-shadows;
+          }
+        }
+      }
+    }
+  }
 
   &--scroll {
     .tna-table {

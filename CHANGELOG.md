@@ -15,7 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Date input labels can be customised
 - More header and phase banner component content can be customised
 - Smooth scrolling added for users who don't share a preference for reduced motion
-- Added a `autoVerticalResize` option to the textarea component that automatically resizes the area on modern browsers
+- Added a `autoVerticalResize` option to the textarea component that automatically resizes the area on modern browsers (requires support for [`field-sizing`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/field-sizing))
+- Added support for a sticky first column on scrollable tables using `tna-table-wrapper--sticky-first-column`
 
 ### Changed
 

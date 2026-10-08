@@ -193,7 +193,7 @@
   @extend %contrast;
 }
 
-%accent {
+@mixin accent-vars {
   --background: var(--accent-background);
   --font-base: var(--accent-font-base);
   --font-dark: var(--accent-font-dark);
@@ -203,15 +203,24 @@
   --link-visited: var(--accent-link);
   --keyline: var(--accent-keyline);
   --keyline-dark: var(--accent-keyline-dark);
+  --accent-chip-text: var(--brand-white);
+  --accent-chip-icon: color-mix(in srgb, var(--brand-white) 58%, transparent);
+  --accent-chip-background: var(--brand-black);
   --accent-border: var(--accent-font-dark);
   --button-text: var(--accent-button-text);
   --button-background: var(--accent-button-background);
   --button-hover-text: var(--accent-button-hover-text);
   --button-hover-background: var(--accent-button-hover-background);
+  --button-accented-text: var(--brand-black);
+  --button-accented-background: var(--brand-white);
 
   color: var(--font-base);
 
   background-color: var(--background);
+}
+
+%accent {
+  @include accent-vars;
 }
 
 @mixin accent {
@@ -242,24 +251,38 @@
 }
 
 %yellow-accent {
-  --accent-background: var(--brand-yellow);
-  --accent-background-light: var(--brand-cream);
-  --accent-border: var(--brand-yellow);
-  --accent-border-bright: var(--brand-yellow);
-  --accent-font-base: var(--brand-black);
-  --accent-font-dark: var(--brand-black);
-  --accent-font-light: color-mix(in srgb, var(--brand-black) 70%, transparent);
-  --accent-icon-light: color-mix(in srgb, var(--brand-black) 70%, transparent);
-  --accent-link: var(--brand-black);
-  --accent-link-visited: var(--brand-black);
-  --accent-keyline: color-mix(in srgb, var(--brand-black) 50%, transparent);
+  --accent-chip-background: var(--brand-yellow) !important;
+  --accent-background: var(--brand-yellow) !important;
+  --accent-background-light: var(--brand-cream) !important;
+  --accent-border: var(--brand-yellow) !important;
+  --accent-border-bright: var(--brand-yellow) !important;
+  --accent-font-base: var(--brand-black) !important;
+  --accent-font-dark: var(--brand-black) !important;
+  --accent-font-light: color-mix(
+    in srgb,
+    var(--brand-black) 70%,
+    transparent
+  ) !important;
+  --accent-icon-light: color-mix(
+    in srgb,
+    var(--brand-black) 70%,
+    transparent
+  ) !important;
+  --accent-link: var(--brand-black) !important;
+  --accent-link-visited: var(--brand-black) !important;
+  --accent-keyline: color-mix(
+    in srgb,
+    var(--brand-black) 50%,
+    transparent
+  ) !important;
   --accent-keyline-dark: color-mix(
     in srgb,
     var(--brand-black) 80%,
     transparent
-  );
-  --button-accented-text: var(--brand-black);
-  --button-accented-background: var(--brand-yellow);
+  ) !important;
+  --accent-button-hover-text: var(--brand-black) !important;
+  --button-accented-text: var(--brand-black) !important;
+  --button-accented-background: var(--brand-yellow) !important;
 }
 
 @mixin yellow-accent {
@@ -267,28 +290,48 @@
 }
 
 %accent-lighter-text {
-  --accent-font-base: var(--brand-white);
-  --accent-font-dark: var(--brand-white);
-  --accent-font-light: color-mix(in srgb, var(--brand-white) 70%, transparent);
-  --accent-icon-light: color-mix(in srgb, var(--brand-white) 70%, transparent);
-  --accent-link: var(--brand-white);
-  --accent-link-visited: var(--brand-white);
-  --accent-keyline: color-mix(in srgb, var(--brand-white) 50%, transparent);
+  --accent-chip-text: var(--brand-white) !important;
+  --accent-chip-icon: color-mix(
+    in srgb,
+    var(--brand-white) 58%,
+    transparent
+  ) !important;
+  --accent-font-base: var(--brand-white) !important;
+  --accent-font-dark: var(--brand-white) !important;
+  --accent-font-light: color-mix(
+    in srgb,
+    var(--brand-white) 70%,
+    transparent
+  ) !important;
+  --accent-icon-light: color-mix(
+    in srgb,
+    var(--brand-white) 70%,
+    transparent
+  ) !important;
+  --accent-link: var(--brand-white) !important;
+  --accent-link-visited: var(--brand-white) !important;
+  --accent-keyline: color-mix(
+    in srgb,
+    var(--brand-white) 50%,
+    transparent
+  ) !important;
   --accent-keyline-dark: color-mix(
     in srgb,
     var(--brand-white) 80%,
     transparent
-  );
-  --button-accented-text: var(--brand-white);
+  ) !important;
+  --accent-button-hover-text: var(--brand-white) !important;
+  --button-accented-text: var(--brand-white) !important;
 }
 
 %black-accent {
-  --accent-background: var(--brand-black);
-  --accent-background-light: var(--brand-light-grey);
-  --accent-border: var(--brand-black);
-  --accent-border-bright: var(--brand-grey);
-  --button-accented-text: var(--brand-black);
-  --button-accented-background: var(--brand-grey);
+  --accent-chip-background: var(--brand-black) !important;
+  --accent-background: var(--brand-black) !important;
+  --accent-background-light: var(--brand-light-grey) !important;
+  --accent-border: var(--brand-black) !important;
+  --accent-border-bright: var(--brand-grey) !important;
+  --button-accented-text: var(--brand-black) !important;
+  --button-accented-background: var(--brand-grey) !important;
 }
 
 @mixin black-accent {
@@ -297,11 +340,12 @@
 }
 
 %pink-accent {
-  --accent-background: var(--brand-maroon);
-  --accent-background-light: var(--brand-pastel-pink);
-  --accent-border: var(--brand-maroon);
-  --accent-border-bright: var(--brand-pink);
-  --button-accented-background: var(--brand-maroon);
+  --accent-chip-background: var(--brand-maroon) !important;
+  --accent-background: var(--brand-maroon) !important;
+  --accent-background-light: var(--brand-pastel-pink) !important;
+  --accent-border: var(--brand-maroon) !important;
+  --accent-border-bright: var(--brand-pink) !important;
+  --button-accented-background: var(--brand-maroon) !important;
 }
 
 @mixin pink-accent {
@@ -310,11 +354,12 @@
 }
 
 %orange-accent {
-  --accent-background: var(--brand-chestnut);
-  --accent-background-light: var(--brand-pastel-orange);
-  --accent-border: var(--brand-chestnut);
-  --accent-border-bright: var(--brand-orange);
-  --button-accented-background: var(--brand-chestnut);
+  --accent-chip-background: var(--brand-chestnut) !important;
+  --accent-background: var(--brand-chestnut) !important;
+  --accent-background-light: var(--brand-pastel-orange) !important;
+  --accent-border: var(--brand-chestnut) !important;
+  --accent-border-bright: var(--brand-orange) !important;
+  --button-accented-background: var(--brand-chestnut) !important;
 }
 
 @mixin orange-accent {
@@ -323,11 +368,12 @@
 }
 
 %green-accent {
-  --accent-background: var(--brand-forest);
-  --accent-background-light: var(--brand-pastel-green);
-  --accent-border: var(--brand-forest);
-  --accent-border-bright: var(--brand-green);
-  --button-accented-background: var(--brand-forest);
+  --accent-chip-background: var(--brand-forest) !important;
+  --accent-background: var(--brand-forest) !important;
+  --accent-background-light: var(--brand-pastel-green) !important;
+  --accent-border: var(--brand-forest) !important;
+  --accent-border-bright: var(--brand-green) !important;
+  --button-accented-background: var(--brand-forest) !important;
 }
 
 @mixin green-accent {
@@ -336,11 +382,12 @@
 }
 
 %blue-accent {
-  --accent-background: var(--brand-navy);
-  --accent-background-light: var(--brand-pastel-blue);
-  --accent-border: var(--brand-navy);
-  --accent-border-bright: var(--brand-blue);
-  --button-accented-background: var(--brand-navy);
+  --accent-chip-background: var(--brand-navy) !important;
+  --accent-background: var(--brand-navy) !important;
+  --accent-background-light: var(--brand-pastel-blue) !important;
+  --accent-border: var(--brand-navy) !important;
+  --accent-border-bright: var(--brand-blue) !important;
+  --button-accented-background: var(--brand-navy) !important;
 }
 
 @mixin blue-accent {

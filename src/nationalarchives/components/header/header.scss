@@ -10,14 +10,10 @@
 
   position: relative;
 
-  background: linear-gradient(
-    0deg,
-    rgb(34 34 34 / 100%) 0%,
-    rgb(0 0 0 / 100%) 100%
-  );
+  background: linear-gradient(rgb(0 0 0 / 100%), rgb(34 34 34 / 100%));
 
-  @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme) {
+  .tna-template:not(.tna-template--light-theme) {
+    @media (prefers-color-scheme: dark) {
       background: var(--brand-black);
     }
   }

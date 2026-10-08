@@ -84,7 +84,7 @@
         @if $direction == all {
           .tna-\!--#{$property}-#{$size} {
             #{$property}: calc(
-              var(--spacing-#{$size}) * var(--spacing-base)
+              var(--spacing-#{$size}) * var(--spacing-base) * 1rem
             ) !important;
           }
         } @else {
@@ -98,13 +98,13 @@
             .tna-\!--#{$property}-#{$direction}-#{$size},
             .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
               #{$property}-#{$direction}: calc(
-                var(--spacing-#{$size}) * var(--spacing-base)
+                var(--spacing-#{$size}) * var(--spacing-base) * 1rem
               ) !important;
             }
           } @else {
             .tna-\!--#{$property}-#{$direction}-#{$size} {
               #{$property}-#{$direction}: calc(
-                var(--spacing-#{$size}) * var(--spacing-base)
+                var(--spacing-#{$size}) * var(--spacing-base) * 1rem
               ) !important;
             }
           }

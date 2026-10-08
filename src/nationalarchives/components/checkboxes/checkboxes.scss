@@ -80,14 +80,15 @@
 
         inset-block-start: 1rem;
         inset-inline-start: 1rem;
+
         z-index: 2;
 
+        @include colour.colour-border("input-background");
         border-width: 0 0 formsVars.$checkbox-checkmark-width
           formsVars.$checkbox-checkmark-width;
+        border-style: solid;
 
         transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-
-        @include colour.colour-border("input-background", 0, solid);
       }
     }
 

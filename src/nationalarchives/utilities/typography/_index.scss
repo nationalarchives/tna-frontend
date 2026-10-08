@@ -146,38 +146,17 @@ small {
 }
 
 %chip-accent {
-  @include colour.accent;
+  color: var(--accent-chip-text);
 
-  @include colour.colour-border("accent-background", 2px);
+  background-color: var(--accent-chip-background);
+
+  @include colour.colour-border("accent-chip-background", 2px);
 
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 
-  .tna-block-accent &,
-  .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
-    color: var(--contrast-font-base);
-
-    background-color: var(--contrast-background);
-
-    @include colour.colour-border("contrast-background");
-
-    .fa-solid {
-      color: var(--contrast-icon-light);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
-      color: var(--contrast-font-base);
-
-      background-color: var(--contrast-background);
-
-      @include colour.colour-border("contrast-background");
-
-      .fa-solid {
-        color: var(--contrast-icon-light);
-      }
-    }
+  .fa-solid {
+    color: var(--accent-chip-icon);
   }
 }
 
@@ -448,16 +427,17 @@ small {
 
   @include colour.thick-keyline-accent(left);
 
-  // &::before {
-  //   content: "\201C";
+  &::before {
+    content: "\201C";
 
-  //   display: block;
+    display: block;
 
-  //   font-family: Georgia, "Times New Roman", Times, serif;
-  //   font-size: 3em;
-  //   line-height: 1;
-  //   color: var(--font-light);
-  // }
+    color: var(--font-light);
+
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 3em;
+    line-height: 1;
+  }
 
   &__quote {
     @include typography.main-font-weight-medium;
@@ -539,18 +519,10 @@ kbd {
 }
 
 code {
-  color: #be0e5a;
+  color: var(--code-text);
   font-size: 0.95em;
 
-  background-color: #f1ece9;
-
-  @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme) {
-      color: #d49;
-
-      background-color: #111;
-    }
-  }
+  background-color: var(--code-background);
 
   @include colour.on-forced-colours {
     @include colour.colour-border("keyline", 1px);

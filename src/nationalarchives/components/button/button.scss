@@ -190,60 +190,6 @@ $button-border-width: 4px !default;
     }
   }
 
-  .tna-block-accent &,
-  .tna-template--dark-theme .tna-block-accent-light & {
-    &:hover {
-      color: var(--font-dark);
-    }
-  }
-
-  .tna-block-accent &--accent,
-  .tna-template--dark-theme .tna-block-accent-light &--accent {
-    background-color: var(--contrast-button-background);
-
-    @include colour.colour-border("contrast-button-background");
-
-    &,
-    &:link,
-    &:visited {
-      color: var(--contrast-button-text);
-    }
-
-    &:hover {
-      color: var(--contrast-font-dark);
-
-      background-color: var(--contrast-background);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .tna-template:not(.tna-template--light-theme) .tna-block-accent-light & {
-      &:hover {
-        color: var(--font-dark);
-      }
-    }
-
-    .tna-template:not(.tna-template--light-theme)
-      .tna-block-accent-light
-      &--accent {
-      background-color: var(--contrast-button-background);
-
-      @include colour.colour-border("contrast-button-background");
-
-      &,
-      &:link,
-      &:visited {
-        color: var(--contrast-button-text);
-      }
-
-      &:hover {
-        color: var(--contrast-font-dark);
-
-        background-color: var(--contrast-background);
-      }
-    }
-  }
-
   @include colour.on-forced-colours {
     &:hover {
       @include typography.interacted-text-decoration;

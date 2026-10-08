@@ -54,33 +54,13 @@
   &-accent-light {
     @include colour.accent-light;
 
-    @mixin accent-light-vars {
-      // Mirrors colour.accent
-      --background: var(--accent-background);
-      --font-base: var(--accent-font-base);
-      --font-dark: var(--accent-font-dark);
-      --font-light: var(--accent-font-light);
-      --icon-light: var(--accent-icon-light);
-      --link: var(--accent-link);
-      --link-visited: var(--accent-link);
-      --keyline: var(--accent-keyline);
-      --keyline-dark: var(--accent-keyline-dark);
-      --accent-border: var(--accent-font-dark);
-      --button-text: var(--accent-button-text);
-      --button-background: var(--accent-button-background);
-      --button-hover-text: var(--accent-button-hover-text);
-      --button-hover-background: var(--accent-button-hover-background);
-
-      // color-scheme: only dark;
-    }
-
     .tna-template--dark-theme & {
-      @include accent-light-vars;
+      @include colour.accent-vars;
     }
 
-    @media (prefers-color-scheme: dark) {
-      .tna-template:not(.tna-template--light-theme) & {
-        @include accent-light-vars;
+    .tna-template:not(.tna-template--light-theme) & {
+      @media (prefers-color-scheme: dark) {
+        @include colour.accent-vars;
       }
     }
   }

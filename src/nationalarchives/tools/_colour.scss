@@ -8,28 +8,49 @@
 @use "../variables/features";
 @use "../tools/media";
 
-@mixin colour-css-vars($excludes...) {
+@mixin colour-css-vars() {
   @each $name, $value in colour.$colour-palette-brand {
     --brand-#{$name}: #{$value};
   }
 
-  @each $name, $value in colour.$colour-palette-default {
-    @if not list.index($excludes, $name) {
+  @each $name,
+    $value
+      in map.merge(colour.$colour-palette-light, colour.$colour-palette-dark)
+  {
+    @if map.has-key(colour.$colour-palette-light, $name) and
+      map.has-key(colour.$colour-palette-dark, $name)
+    {
       --#{$name}: light-dark(
-        #{$value},
+        #{map.get(colour.$colour-palette-light, $name)},
         #{map.get(colour.$colour-palette-dark, $name)}
       );
+    } @else if map.has-key(colour.$colour-palette-dark, $name) {
+      --#{$name}: #{map.get(colour.$colour-palette-dark, $name)};
+    } @else if map.has-key(colour.$colour-palette-light, $name) {
+      --#{$name}: #{map.get(colour.$colour-palette-light, $name)};
     }
   }
 }
 
-@mixin colour-css-vars-high-contrast($excludes...) {
-  @each $name, $value in colour.$colour-palette-high-contrast {
-    @if not list.index($excludes, $name) {
+@mixin colour-css-vars-high-contrast() {
+  @each $name,
+    $value
+      in map.merge(
+        colour.$colour-palette-high-contrast-light,
+        colour.$colour-palette-high-contrast-dark
+      )
+  {
+    @if map.has-key(colour.$colour-palette-high-contrast-light, $name) and
+      map.has-key(colour.$colour-palette-high-contrast-dark, $name)
+    {
       --#{$name}: light-dark(
-        #{$value},
+        #{map.get(colour.$colour-palette-high-contrast-light, $name)},
         #{map.get(colour.$colour-palette-high-contrast-dark, $name)}
       );
+    } @else if map.has-key(colour.$colour-palette-high-contrast-dark, $name) {
+      --#{$name}: #{map.get(colour.$colour-palette-high-contrast-dark, $name)};
+    } @else if map.has-key(colour.$colour-palette-high-contrast-light, $name) {
+      --#{$name}: #{map.get(colour.$colour-palette-high-contrast-light, $name)};
     }
   }
 }

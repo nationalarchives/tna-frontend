@@ -278,6 +278,14 @@ const accents = [
 </div>`;
   };
 
+export const System = Template.bind({});
+System.args = {
+  theme: "",
+};
+System.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
 export const Light = Template.bind({});
 Light.args = {
   theme: "tna-template--light-theme",
@@ -286,14 +294,6 @@ Light.args = {
 export const Dark = Template.bind({});
 Dark.args = {
   theme: "tna-template--dark-theme",
-};
-
-export const System = Template.bind({});
-System.args = {
-  theme: "",
-};
-System.parameters = {
-  chromatic: { disableSnapshot: true },
 };
 
 export const LightHighContrast = Template.bind({});

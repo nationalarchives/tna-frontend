@@ -25,7 +25,7 @@ document.addEventListener(
 
 document.documentElement.classList.add(
   "tna-template",
-  // "tna-template--light-theme",
+  "tna-template--light-theme",
   // "tna-template--blue-accent",
 );
 if (window.self !== window.top) {

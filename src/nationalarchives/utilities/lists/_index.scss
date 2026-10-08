@@ -190,12 +190,12 @@ ol {
       display: block;
 
       position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
 
       color: var(--icon-light);
 
       line-height: inherit;
-      inset-block-start: 0;
-      inset-inline-start: 0;
     }
   }
 

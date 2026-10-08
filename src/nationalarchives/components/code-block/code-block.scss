@@ -46,10 +46,9 @@ $code-block-top-bar-height: spacing.space(2);
       block-size: $code-block-top-bar-height;
 
       position: absolute;
-      z-index: 1;
-
-      inset-block-start: 0;
       inset-inline: 0;
+      inset-block-start: 0;
+      z-index: 1;
 
       @include colour.tint;
 
@@ -71,14 +70,14 @@ $code-block-top-bar-height: spacing.space(2);
       overflow: hidden;
 
       position: absolute;
+      inset-inline: 0;
+      inset-block-start: 0;
       z-index: 2;
 
       font-family: typographyVars.$code-font-family;
       line-height: $code-block-top-bar-height;
       text-overflow: ellipsis;
       text-wrap: nowrap;
-      inset-block-start: 0;
-      inset-inline: 0;
 
       pointer-events: none;
     }
@@ -86,10 +85,9 @@ $code-block-top-bar-height: spacing.space(2);
 
   &__copy {
     position: absolute;
-    z-index: 3;
-
     inset-block-start: 0;
     inset-inline-end: 0;
+    z-index: 3;
   }
 
   code[class*="language-"],

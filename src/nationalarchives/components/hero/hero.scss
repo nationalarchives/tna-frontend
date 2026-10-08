@@ -41,10 +41,9 @@ $over-overflow: $shift-overflow !default;
     overflow: visible;
 
     position: absolute;
-    z-index: 10;
-
     inset-block-start: 0;
     inset-inline-end: 0;
+    z-index: 10;
 
     order: 2;
   }
@@ -57,10 +56,9 @@ $over-overflow: $shift-overflow !default;
 
   &__details-summary {
     position: absolute;
-    z-index: 2;
-
     inset-block-start: spacing.space(0.5);
     inset-inline-end: spacing.space(0.5);
+    z-index: 2;
 
     &:hover {
       color: var(--font-dark) !important;
@@ -127,10 +125,9 @@ $over-overflow: $shift-overflow !default;
       spacing.space(1);
 
     position: absolute;
-    z-index: 1;
-
-    inset-block-start: 0;
     inset-inline: 0;
+    inset-block-start: 0;
+    z-index: 1;
 
     @include colour.contrast;
 
@@ -260,8 +257,8 @@ $over-overflow: $shift-overflow !default;
 
       box-sizing: border-box;
 
-      inset-block-start: 0;
       inset-inline: auto spacing.space(gridVars.$gutter-width);
+      inset-block-start: 0;
 
       @include borders.rounded-border;
     }
@@ -284,11 +281,9 @@ $over-overflow: $shift-overflow !default;
 
       overflow: hidden;
 
-      z-index: 5;
-
       inset-block-end: spacing.space($over-overflow * -1);
-
       inset-inline-start: calc(50% + #{grid.gutter-width-half()});
+      z-index: 5;
       @include borders.rounded-border;
     }
 

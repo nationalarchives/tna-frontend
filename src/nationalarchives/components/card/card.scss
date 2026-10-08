@@ -181,10 +181,9 @@
 
   &__image-label {
     position: absolute;
-    z-index: 2;
-
     inset-block-start: spacing.space(0.5);
     inset-inline-start: spacing.space(0.5);
+    z-index: 2;
   }
 
   &__body {

@@ -40,9 +40,8 @@
 
   &__toggle-transcript {
     position: absolute;
-
-    inset-block-end: spacing.space(1);
     inset-inline-end: spacing.space(1);
+    inset-block-end: spacing.space(1);
   }
 
   &__transcript {

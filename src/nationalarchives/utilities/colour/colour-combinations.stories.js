@@ -40,7 +40,7 @@ const accents = [
     ${blocks.reduce(
       (blockOutput, block) =>
         `${blockOutput}<div class="tna-colour-contrast-demo__block tna-template ${theme}">
-      ${block.replace(/^tna-block-/u, "") || "Base"}
+      ${block.replace(/^tna-block-/u, "") || "base"}
     </div>`,
       "",
     )}

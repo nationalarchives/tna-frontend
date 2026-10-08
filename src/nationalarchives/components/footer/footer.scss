@@ -12,6 +12,8 @@
   }
 
   &__theme-selector {
+    padding-block: spacing.space(0.5);
+
     .tna-button-group {
       justify-content: flex-end;
     }
@@ -142,7 +144,7 @@
 
         @include typography.font-size(16);
 
-        @include colour.colour-border("keyline", 1px, solid, bottom);
+        @include colour.colour-border("keyline", 1px, solid, block-end);
 
         &-link {
           display: inline-block;
@@ -242,7 +244,7 @@
 
   @include colour.on-high-contrast {
     &__theme-selector {
-      @include colour.colour-border("keyline", 1px, solid, bottom);
+      @include colour.colour-border("keyline", 1px, solid, block-end);
     }
   }
 

@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated favicons and the default open graph image
 - Changed to use [CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
 - Spacing classes have changed to their logical variants (e.g. `tna-!--no-padding-top` -> `tna-!--no-padding-block-start` and `tna-!--margin-bottom-l` -> `tna-!--margin-block-end-l`)
+- Column margin classes have changed to their logical variants (e.g. `tna-column--no-margin-left` -> `tna-column--no-margin-start` and `tna-column--margin-right-1-12` -> `tna-column--margin-end-1-12`)
 - Changed the `copy` property of code block components to an object and allow editing of the button text
 - Updated the format of the `themeSelector` and `social` properties in the footer component and `showNewsletter` changed to `newsletter` with an updated format
 - Updated the SCSS variable `$spacing-unit-rem` to `$base-spacing-factor-rem`

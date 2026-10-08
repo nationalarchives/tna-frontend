@@ -53,7 +53,7 @@ $code-block-top-bar-height: spacing.space(2);
       @include colour.tint;
 
       @include colour.on-high-contrast-and-forced-colours {
-        @include colour.colour-border("keyline", 1px, solid, bottom);
+        @include colour.colour-border("keyline", 1px, solid, block-end);
       }
     }
   }

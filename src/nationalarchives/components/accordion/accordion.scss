@@ -40,7 +40,7 @@
   }
 
   &__details {
-    @include colour.colour-border("keyline", 1px, solid, bottom);
+    @include colour.colour-border("keyline", 1px, solid, block-end);
 
     position: relative;
     z-index: 1;

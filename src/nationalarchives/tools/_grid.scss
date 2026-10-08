@@ -51,11 +51,11 @@
             flex: none;
           }
 
-          &--margin-inline-end-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+          &--margin-end-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
             margin-inline-end: math.div(100%, $count) * $i;
           }
 
-          &--margin-inline-start-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
+          &--margin-start-#{math.div($i, $j)}-#{math.div($count, $j)}#{$suffix} {
             margin-inline-start: math.div(100%, $count) * $i;
           }
 
@@ -70,22 +70,22 @@
           flex: none;
         }
 
-        &--margin-inline-end-#{$i}-#{$count}#{$suffix} {
+        &--margin-end-#{$i}-#{$count}#{$suffix} {
           margin-inline-end: math.div(100%, $count) * $i;
         }
 
-        &--margin-inline-start-#{$i}-#{$count}#{$suffix} {
+        &--margin-start-#{$i}-#{$count}#{$suffix} {
           margin-inline-start: math.div(100%, $count) * $i;
         }
       }
     }
 
     @if $suffix != "" {
-      &--no-margin-inline-end#{$suffix} {
+      &--no-margin-end#{$suffix} {
         margin-inline-end: 0;
       }
 
-      &--no-margin-inline-start#{$suffix} {
+      &--no-margin-start#{$suffix} {
         margin-inline-start: 0;
       }
     }

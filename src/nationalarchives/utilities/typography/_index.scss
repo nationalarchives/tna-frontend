@@ -303,8 +303,8 @@ small {
       margin-block-end: 0;
       margin-inline-start: 0.25em;
 
-      border-top-width: 0.1em;
-      border-right-width: 0.1em;
+      border-block-start-width: 0.1em;
+      border-inline-end-width: 0.1em;
     }
   }
 }
@@ -347,10 +347,10 @@ small {
 %headings-and-heading-groups {
   @include spacing.space-above;
   margin-block-end: 0;
-  padding: 0;
+  padding: spacing.space(1) 0 0;
 
-  &:not(:first-child) {
-    padding-block-start: spacing.space(1);
+  &:first-child {
+    padding-block-start: 0;
   }
 
   + p,

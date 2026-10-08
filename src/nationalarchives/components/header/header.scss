@@ -313,7 +313,7 @@
 
       justify-content: flex-start;
 
-      @include colour.colour-border("keyline", 1px, solid, bottom);
+      @include colour.colour-border("keyline", 1px, solid, block-end);
     }
 
     &__top-navigation-item {
@@ -344,7 +344,7 @@
       background-color: rgb(255 255 255 / 10%);
 
       @include colour.colour-border("keyline-dark", 2px, solid, block-start);
-      @include colour.colour-border("keyline-dark", 2px, solid, bottom);
+      @include colour.colour-border("keyline-dark", 2px, solid, block-end);
     }
 
     &__navigation-item {
@@ -439,7 +439,7 @@
   }
 
   @include colour.on-high-contrast-and-forced-colours {
-    @include colour.colour-border("keyline", 1px, solid, bottom);
+    @include colour.colour-border("keyline", 1px, solid, block-end);
   }
 
   @include colour.on-forced-colours {

@@ -213,7 +213,7 @@ ol {
 
   &--lined {
     padding-block-end: spacing.space(0.5);
-    @include colour.colour-border("keyline", 1px, solid, bottom);
+    @include colour.colour-border("keyline", 1px, solid, block-end);
 
     /* stylelint-disable-next-line no-descending-specificity */
     > dt,

@@ -90,7 +90,7 @@
 
     inline-size: 100%;
 
-    @include colour.colour-border("keyline", 1px, solid, bottom);
+    @include colour.colour-border("keyline", 1px, solid, block-end);
   }
 
   &--no-bottom-border::after {
@@ -124,7 +124,7 @@
       gap: 0;
 
       position: relative;
-      // @include colour.colour-border("keyline", 1px, solid, bottom);
+      // @include colour.colour-border("keyline", 1px, solid, block-end);
     }
 
     &__item {

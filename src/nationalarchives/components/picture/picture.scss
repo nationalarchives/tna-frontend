@@ -63,7 +63,7 @@
 
     @include typography.font-size(16);
 
-    @include colour.colour-border("keyline", 1px, solid, bottom);
+    @include colour.colour-border("keyline", 1px, solid, block-end);
   }
 
   &--plain &__image-wrapper {

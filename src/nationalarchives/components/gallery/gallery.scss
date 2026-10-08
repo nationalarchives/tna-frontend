@@ -256,7 +256,7 @@
   }
 
   &__navigation-item-label {
-    padding: spacing.space(0.25) spacing.space(0.75);
+    padding: spacing.space(0.25, true) spacing.space(0.75, true);
 
     display: inline-block;
 

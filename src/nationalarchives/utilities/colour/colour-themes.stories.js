@@ -203,7 +203,7 @@ const Template = ({ theme, accent, direction }) => {
         </div>
         <div class="tna-column tna-column--no-padding tna-column--width-1-3 tna-column--full-medium tna-column--full-small tna-column--full-tiny">
           <div class="tna-container tna-container--nested">
-            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large">
+            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-block-start-large">
               <div class="tna-aside tna-block-contrast">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
@@ -217,7 +217,7 @@ const Template = ({ theme, accent, direction }) => {
                 </div>
               </div>
             </div>
-            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-top-large tna-!--no-margin-bottom-large">
+            <div class="tna-column tna-column--full tna-column--width-1-2-medium tna-column--width-1-2-small tna-!--margin-vertical-m tna-!--no-margin-block-start-large tna-!--no-margin-block-end-large">
               <div class="tna-aside tna-block-accent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt velit, a molestie turpis. Sed odio libero, sodales eleifend lorem sit amet, feugiat consequat nibh.</p>
                 <div class="tna-button-group">
@@ -297,7 +297,7 @@ const Template = ({ theme, accent, direction }) => {
           </hgroup>
           <p>Lorem ipsum <a href="#">link</a></p>
         </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-block-start-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -310,7 +310,7 @@ const Template = ({ theme, accent, direction }) => {
             <dd>Lorem ipsum</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-block-start-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -323,7 +323,7 @@ const Template = ({ theme, accent, direction }) => {
             <dd>Lorem ipsum</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-block-start-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -336,7 +336,7 @@ const Template = ({ theme, accent, direction }) => {
             <dd>Lorem ipsum</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-1-3 tna-column--full-small tna-column--full-tiny tna-!--margin-block-start-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -349,7 +349,7 @@ const Template = ({ theme, accent, direction }) => {
             <dd>Lorem ipsum</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-!--margin-top-m">
+        <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-!--margin-block-start-m">
           <h3 class="tna-heading-m">
             Descriptions
           </h3>
@@ -371,7 +371,7 @@ const Template = ({ theme, accent, direction }) => {
             <dd>LC 4</dd>
           </dl>
         </div>
-        <div class="tna-column tna-column--full tna-!--margin-top-m">
+        <div class="tna-column tna-column--full tna-!--margin-block-start-m">
           <h2 class="tna-heading-l">
             Categories
           </h2>
@@ -515,12 +515,12 @@ const Template = ({ theme, accent, direction }) => {
       <div class="tna-container tna-section">
         <div class="tna-column tna-column--full">
           <p>Lorem ipsum</p>
-          <p class="tna-!--no-margin-top">Lorem ipsum (tna-!--no-margin-top)</p>
-          <p class="tna-!--margin-top-xs">Lorem ipsum (tna-!--margin-top-xs)</p>
-          <p class="tna-!--margin-top-s">Lorem ipsum (tna-!--margin-top-s)</p>
-          <p class="tna-!--margin-top-m">Lorem ipsum (tna-!--margin-top-m)</p>
-          <p class="tna-!--margin-top-l">Lorem ipsum (tna-!--margin-top-l)</p>
-          <p class="tna-!--margin-top-xl">Lorem ipsum (tna-!--margin-top-xl)</p>
+          <p class="tna-!--no-margin-block-start">Lorem ipsum (tna-!--no-margin-block-start)</p>
+          <p class="tna-!--margin-block-start-xs">Lorem ipsum (tna-!--margin-block-start-xs)</p>
+          <p class="tna-!--margin-block-start-s">Lorem ipsum (tna-!--margin-block-start-s)</p>
+          <p class="tna-!--margin-block-start-m">Lorem ipsum (tna-!--margin-block-start-m)</p>
+          <p class="tna-!--margin-block-start-l">Lorem ipsum (tna-!--margin-block-start-l)</p>
+          <p class="tna-!--margin-block-start-xl">Lorem ipsum (tna-!--margin-block-start-xl)</p>
         </div>
       </div>
       ${nunjucks.renderString(Hero, {
@@ -533,13 +533,13 @@ const Template = ({ theme, accent, direction }) => {
           imageCaption: "An interesting photo by a famous photographer ©2023",
         },
       })}
-      <div class="tna-section tna-!--padding-bottom-s">
+      <div class="tna-section tna-!--padding-block-end-s">
         <ul class="tna-container">
           <li class="tna-column tna-column--width-1-3 tna-column--width-1-2-small tna-column--full-tiny">
             ${nunjucks.renderString(Card, {
               params: {
                 ...cardDefaultOptions,
-                classes: "tna-!--margin-bottom-m",
+                classes: "tna-!--margin-block-end-m",
               },
             })}
           </li>
@@ -548,7 +548,7 @@ const Template = ({ theme, accent, direction }) => {
               params: {
                 ...cardDefaultOptions,
                 style: "contrast",
-                classes: "tna-!--margin-bottom-m",
+                classes: "tna-!--margin-block-end-m",
               },
             })}
           </li>
@@ -557,7 +557,7 @@ const Template = ({ theme, accent, direction }) => {
               params: {
                 ...cardDefaultOptions,
                 style: "accent",
-                classes: "tna-!--margin-bottom-m",
+                classes: "tna-!--margin-block-end-m",
               },
             })}
           </li>
@@ -571,7 +571,7 @@ const Template = ({ theme, accent, direction }) => {
               params: {
                 ...cardDefaultOptions,
                 horizontal: true,
-                classes: "tna-!--margin-bottom-m",
+                classes: "tna-!--margin-block-end-m",
               },
             })}
           </li>
@@ -581,7 +581,7 @@ const Template = ({ theme, accent, direction }) => {
                 ...cardDefaultOptions,
                 horizontal: true,
                 style: "contrast",
-                classes: "tna-!--margin-bottom-m",
+                classes: "tna-!--margin-block-end-m",
               },
             })}
           </li>
@@ -760,7 +760,7 @@ const Template = ({ theme, accent, direction }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-!--margin-top-m",
+                classes: "tna-!--margin-block-start-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -854,7 +854,7 @@ const Template = ({ theme, accent, direction }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-!--margin-top-m",
+                classes: "tna-!--margin-block-start-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -948,7 +948,7 @@ const Template = ({ theme, accent, direction }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-!--margin-top-m",
+                classes: "tna-!--margin-block-start-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -1042,7 +1042,7 @@ const Template = ({ theme, accent, direction }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-!--margin-top-m",
+                classes: "tna-!--margin-block-start-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {
@@ -1136,7 +1136,7 @@ const Template = ({ theme, accent, direction }) => {
                 next: {
                   href: "#",
                 },
-                classes: "tna-!--margin-top-m",
+                classes: "tna-!--margin-block-start-m",
               },
             })}
             ${nunjucks.renderString(SearchField, {

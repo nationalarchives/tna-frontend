@@ -4,7 +4,7 @@
 @use "../../tools/spacing";
 
 .tna-text-input {
-  padding: 0 spacing.space(0.375);
+  padding: 0 spacing.space(0.375, true);
 
   display: block;
   box-sizing: border-box;

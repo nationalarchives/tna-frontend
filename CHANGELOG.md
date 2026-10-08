@@ -17,19 +17,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Smooth scrolling added for users who don't share a preference for reduced motion
 - Added a `autoVerticalResize` option to the textarea component that automatically resizes the area on modern browsers (requires support for [`field-sizing`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/field-sizing))
 - Added support for a sticky first column on scrollable tables using `tna-table-wrapper--sticky-first-column`
+- Support for spacing on a per-element basis using a CSS variable
+- `spacing.space()` now accepts a parameter to ensure the space value is consistent and doesn't change with `--spacing-base`
 
 ### Changed
 
-- All CSS colours, tools and utilities updated to use [`light-dark`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark)
+- Refactored colours in tools and utilities to use [`light-dark`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark)
 - Updated favicons and the default open graph image
-- Removed the redundant `aria-label` from the button component
 - Changed to use [CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
+- Spacing classes have changed to their logical variants (e.g. `tna-!--no-padding-top` -> `tna-!--no-padding-block-start` and `tna-!--margin-bottom-l` -> `tna-!--margin-block-end-l`)
 - Changed the `copy` property of code block components to an object and allow editing of the button text
 - Updated the format of the `themeSelector` and `social` properties in the footer component and `showNewsletter` changed to `newsletter` with an updated format
+- Updated the SCSS variable `$spacing-unit-rem` to `$base-spacing-factor-rem`
+- Refactored spacing to use CSS variables
 
 ### Deprecated
 
 - Remove separate Internet Explorer stylesheet (`ie.scss`)
+- Remove support for `relative-font-size` SCSS mixins
 
 ### Removed
 
@@ -37,6 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed support for `tna-background-[tint|contrast|accent|accent-light]` classes - use `tna-block-` instead
 
 ### Fixed
+
+- Removed the redundant `aria-label` from the button component
+
 ### Security
 
 ## [1.5.0](https://github.com/nationalarchives/tna-frontend/compare/v1.4.1...v1.5.0) - 2026-09-16

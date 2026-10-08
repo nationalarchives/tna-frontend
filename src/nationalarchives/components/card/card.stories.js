@@ -394,7 +394,7 @@ export const All = () => `
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
-<div class="tna-container tna-!--margin-top-m">
+<div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null } })}
   </div>
@@ -411,7 +411,7 @@ export const All = () => `
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
-<div class="tna-container tna-!--margin-top-m">
+<div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum" } })}
   </div>
@@ -428,7 +428,7 @@ export const All = () => `
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" } })}
   </div>
 </div>
-<div class="tna-container tna-!--margin-top-m">
+<div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum" } })}
   </div>
@@ -445,7 +445,7 @@ export const All = () => `
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast" } })}
   </div>
 </div>
-<div class="tna-container tna-!--margin-top-m">
+<div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true } })}
   </div>
@@ -462,7 +462,7 @@ export const All = () => `
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true } })}
   </div>
 </div>
-<div class="tna-container tna-!--margin-top-m">
+<div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", fullAreaClick: true } })}
   </div>
@@ -480,52 +480,52 @@ export const All = () => `
   </div>
 </div>
 <div class="tna-container">
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
   </div>
-  <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-2-3 tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-2-3 tna-!--margin-block-start-m">
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, fullAreaClick: true } })}
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "plain", fullAreaClick: true } })}
     ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true } })}
@@ -596,7 +596,7 @@ export const Sources = {
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
 //   </div>
 // </div>
-// <div class="tna-container tna-!--margin-top-m">
+// <div class="tna-container tna-!--margin-block-start-m">
 //   <div class="tna-column tna-column--width-1-6">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null })}
 //   </div>
@@ -613,7 +613,7 @@ export const Sources = {
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" })}
 //   </div>
 // </div>
-// <div class="tna-container tna-!--margin-top-m">
+// <div class="tna-container tna-!--margin-block-start-m">
 //   <div class="tna-column tna-column--width-1-6">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum" })}
 //   </div>
@@ -630,7 +630,7 @@ export const Sources = {
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" })}
 //   </div>
 // </div>
-// <div class="tna-container tna-!--margin-top-m">
+// <div class="tna-container tna-!--margin-block-start-m">
 //   <div class="tna-column tna-column--width-1-6">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum" })}
 //   </div>
@@ -647,7 +647,7 @@ export const Sources = {
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", style: "contrast" })}
 //   </div>
 // </div>
-// <div class="tna-container tna-!--margin-top-m">
+// <div class="tna-container tna-!--margin-block-start-m">
 //   <div class="tna-column tna-column--width-1-6">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true })}
 //   </div>
@@ -664,7 +664,7 @@ export const Sources = {
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true })}
 //   </div>
 // </div>
-// <div class="tna-container tna-!--margin-top-m">
+// <div class="tna-container tna-!--margin-block-start-m">
 //   <div class="tna-column tna-column--width-1-6">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", fullAreaClick: true })}
 //   </div>
@@ -682,49 +682,49 @@ export const Sources = {
 //   </div>
 // </div>
 // <div class="tna-container">
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" })}
 //   </div>
-//   <div class="tna-column tna-column--width-1-3 tna-!--margin-top-m">
+//   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
 //     ${Standard({params: {...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true })}
 //   </div>
 // </div>`;

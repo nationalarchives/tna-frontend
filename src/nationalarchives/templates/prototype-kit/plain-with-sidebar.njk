@@ -14,13 +14,13 @@
         href: '/'
       }
     ],
-    classes: 'tna-column tna-column--full tna-!--padding-top-s'
+    classes: 'tna-column tna-column--full tna-!--padding-block-start-s'
   }) }}
 </div>
 {% endblock beforeContent %}
 
 {% block content %}
-<div class="tna-container tna-!--padding-top-l tna-!--padding-bottom-xl">
+<div class="tna-container tna-!--padding-block-start-l tna-!--padding-block-end-xl">
   <div class="tna-column tna-column--full">
     <h1 class="tna-heading-xl">{{ pageTitle }}</h1>
     <p class="tna-large-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet luctus libero. Cras nec mauris ex. Fusce nisl erat, efficitur sed auctor ornare, varius fermentum arcu.</p>
@@ -58,12 +58,12 @@
       items: sidebar_example_items,
       type: 'sections',
       sticky: true,
-      classes: 'tna-!--margin-top-m tna-!--padding-top-s'
+      classes: 'tna-!--margin-block-start-m tna-!--padding-block-start-s'
     }) }}
   </div>
-  <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-!--padding-bottom-xl tna-!--margin-top-m">
+  <div class="tna-column tna-column--width-2-3 tna-column--full-small tna-column--full-tiny tna-!--padding-block-end-xl tna-!--margin-block-start-m">
     {%- for item in sidebar_example_items %}
-    <h2 class="tna-heading-l tna-!--padding-top-s" id="{{ item.href.slice(1) }}">{{ item.text }}</h2>
+    <h2 class="tna-heading-l tna-!--padding-block-start-s" id="{{ item.href.slice(1) }}">{{ item.text }}</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p>
     {%- endfor %}

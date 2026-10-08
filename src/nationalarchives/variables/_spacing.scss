@@ -1,6 +1,6 @@
 @use "sass:map";
 
-$spacing-unit-px: 16 !default;
+$base-spacing-factor-rem: 1 !default;
 
 $spacing: (
   "xs": 0.5,

@@ -7,11 +7,6 @@
   font-size: #{math.div($font-size-px, typography.$relative-1rem-px)}rem;
 }
 
-@mixin relative-font-size($font-size-px) {
-  @warn "relative-font-size() will soon be deprecated in favour of font-size().";
-  @include font-size($font-size-px);
-}
-
 @mixin main-font-weight {
   font-weight: typography.$main-font-weight;
 }

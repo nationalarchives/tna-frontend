@@ -11,17 +11,19 @@
  * some browsers handle the resize of rem and
  * em separately from px which causes spacing
  * and layout issues, so to ensure everything
- * remaians consistent we use rem for spacing
+ * remains consistent, we use rem for spacing
  * and typography. The original intention was
  * separation so that we could scale the type
  * without affecting spacing, but in practice
  * there are too many ways to change the font
- * size in various browsers and devices
+ * size in various browsers and devices.
  * ------------------------------------------
  */
-@function space($size) {
-  // @return #{$size * spacing.$spacing-unit-px}px;
-  @return #{$size}rem;
+@function space($size, $constant: false) {
+  @if $constant {
+    @return #{$size}rem;
+  }
+  @return calc(#{$size}rem * var(--spacing-base));
 }
 
 %space-above {
@@ -54,12 +56,12 @@
     $suffix: "-" + $suffix;
   }
   @each $property in margin, padding {
-    @each $direction in top, bottom {
+    @each $direction in block-start, block-end {
       $combined-direction: "";
-      @if $direction == top or $direction == bottom {
-        $combined-direction: vertical;
-      } @else if $direction == right or $direction == left {
-        $combined-direction: horizontal;
+      @if $direction == block-start or $direction == block-end {
+        $combined-direction: block;
+      } @else if $direction == inline-start or $direction == inline-end {
+        $combined-direction: inline;
       }
       @if $combined-direction {
         .tna-\!--no-#{$property}-#{$direction}#{$suffix},
@@ -77,58 +79,33 @@
 
 @mixin spacing-generator($suffix: "") {
   @each $property in margin, padding {
-    @each $direction in top, bottom {
+    @each $direction in block-start, block-end {
       @each $size, $amount in spacing.$spacing {
         @if $direction == all {
           .tna-\!--#{$property}-#{$size} {
-            #{$property}: #{space($amount)} !important;
+            #{$property}: calc(
+              var(--spacing-#{$size}) * var(--spacing-base) * 1rem
+            ) !important;
           }
         } @else {
           $combined-direction: "";
-          @if $direction == top or $direction == bottom {
-            $combined-direction: vertical;
-          } @else if $direction == right or $direction == left {
-            $combined-direction: horizontal;
+          @if $direction == block-start or $direction == block-end {
+            $combined-direction: block;
+          } @else if $direction == inline-start or $direction == inline-end {
+            $combined-direction: inline;
           }
           @if $combined-direction {
             .tna-\!--#{$property}-#{$direction}-#{$size},
             .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
-              #{$property}-#{$direction}: #{space($amount)} !important;
+              #{$property}-#{$direction}: calc(
+                var(--spacing-#{$size}) * var(--spacing-base) * 1rem
+              ) !important;
             }
           } @else {
             .tna-\!--#{$property}-#{$direction}-#{$size} {
-              #{$property}-#{$direction}: #{space($amount)} !important;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  @include media.on-mobile {
-    @each $property in margin, padding {
-      @each $direction in top, bottom {
-        @each $size, $amount in spacing.$spacing-mobile {
-          @if $direction == all {
-            .tna-\!--#{$property}-#{$size} {
-              #{$property}: #{space($amount)} !important;
-            }
-          } @else {
-            $combined-direction: "";
-            @if $direction == top or $direction == bottom {
-              $combined-direction: vertical;
-            } @else if $direction == right or $direction == left {
-              $combined-direction: horizontal;
-            }
-            @if $combined-direction {
-              .tna-\!--#{$property}-#{$direction}-#{$size},
-              .tna-\!--#{$property}-#{$combined-direction}-#{$size} {
-                #{$property}-#{$direction}: #{space($amount)} !important;
-              }
-            } @else {
-              .tna-\!--#{$property}-#{$direction}-#{$size} {
-                #{$property}-#{$direction}: #{space($amount)} !important;
-              }
+              #{$property}-#{$direction}: calc(
+                var(--spacing-#{$size}) * var(--spacing-base) * 1rem
+              ) !important;
             }
           }
         }

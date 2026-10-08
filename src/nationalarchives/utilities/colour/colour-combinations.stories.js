@@ -67,12 +67,12 @@ const accents = [
             <ul class="tna-ul">
               <li>Alpha</li>
             </ul>
-            <ol class="tna-ol tna-!--no-margin-top">
+            <ol class="tna-ol tna-!--no-margin-block-start">
               <li>Alpha</li>
             </ol>
           </div>
-          <hr class="tna-!--margin-top-s">
-          <hr class="tna-hr-dark tna-!--margin-top-xs">
+          <hr class="tna-!--margin-block-start-s">
+          <hr class="tna-hr-dark tna-!--margin-block-start-xs">
           <dl class="tna-dl-chips">
             <dt>Published</dt>
             <dd>
@@ -183,7 +183,7 @@ const accents = [
                   },
                 ],
                 disableAutoFocus: true,
-                classes: "tna-!--margin-top-s",
+                classes: "tna-!--margin-block-start-s",
               },
             })}
             ${nunjucks.renderString(TextInput, {

@@ -1,0 +1,27 @@
+@use "../../variables/media" as mediaVars;
+@use "../../variables/spacing" as spacingVars;
+@use "../../tools/colour";
+@use "../../tools/media";
+
+:root {
+  --media-breakpoint-tiny: #{mediaVars.$largest-tiny-device-px}px;
+  --media-breakpoint-small: #{mediaVars.$largest-small-device-px}px;
+  --media-breakpoint-medium: #{mediaVars.$largest-medium-device-px}px;
+  --spacing-base: #{spacingVars.$base-spacing-factor-rem};
+
+  @include colour.colour-css-vars;
+
+  @each $size, $amount in spacingVars.$spacing {
+    --spacing-#{$size}: #{$amount};
+  }
+
+  @media (prefers-contrast: more) {
+    @include colour.colour-css-vars-high-contrast;
+  }
+
+  @include media.on-mobile {
+    @each $size, $amount in spacingVars.$spacing-mobile {
+      --spacing-#{$size}: #{$amount};
+    }
+  }
+}

@@ -80,7 +80,7 @@ export class TextAreaItemisedRows {
 
     this.$formFieldCounter = document.createElement("p");
     this.$formFieldCounter.id = `${this.id}-list-helper`;
-    this.$formFieldCounter.classList.add("tna-!--margin-top-xs");
+    this.$formFieldCounter.classList.add("tna-!--margin-block-start-xs");
     this.$module.appendChild(this.$formFieldCounter);
 
     this.$formFieldNewInput.setAttribute(
@@ -93,7 +93,7 @@ export class TextAreaItemisedRows {
     this.$valuesList = document.createElement("ul");
     this.$valuesList.classList.add(
       "tna-compound-filters",
-      "tna-!--margin-top-xs",
+      "tna-!--margin-block-start-xs",
     );
     this.$valuesList.addEventListener("blur", () => {
       this.$valuesList.removeAttribute("tabindex");

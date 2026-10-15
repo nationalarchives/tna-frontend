@@ -16,7 +16,9 @@ export class DateInputProgressive {
 
     if (
       !this.$module ||
-      (!this.$yearInput && !this.$monthInput && !this.$dayInput)
+      !this.$yearInput ||
+      !this.$monthInput ||
+      !this.$dayInput
     ) {
       return;
     }
@@ -27,14 +29,12 @@ export class DateInputProgressive {
     if (this.$yearInput) {
       this.$yearInput.addEventListener("keyup", () => this.update());
       this.$yearInput.addEventListener("change", () => this.update());
+      this.$yearInput.addEventListener("blur", () => this.update());
     }
     if (this.$monthInput) {
       this.$monthInput.addEventListener("keyup", () => this.update());
       this.$monthInput.addEventListener("change", () => this.update());
-    }
-    if (this.$dayInput) {
-      this.$dayInput.addEventListener("keyup", () => this.update());
-      this.$dayInput.addEventListener("change", () => this.update());
+      this.$monthInput.addEventListener("blur", () => this.update());
     }
   }
 
@@ -53,18 +53,12 @@ export class DateInputProgressive {
   }
 
   isValidYear() {
-    if (!this.$yearInput) {
-      return true;
-    }
     const yearValue = parseInt(this.$yearInput.value.trim(), 10);
     /* eslint-disable-next-line no-magic-numbers */
     return !isNaN(this.$yearInput.value) && !isNaN(yearValue) && yearValue > 0;
   }
 
   isValidMonth() {
-    if (!this.$monthInput) {
-      return true;
-    }
     const monthRawValue = this.$monthInput.value.trim();
     const monthIntValue = parseInt(monthRawValue, 10);
     const validMonthStrings = [

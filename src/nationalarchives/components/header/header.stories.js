@@ -184,6 +184,11 @@ export const Mobile = {
       await expect($linkC).not.toBeVisible();
     });
 
+    await userEvent.click($navigationToggle);
+    await expect($navigationItems).toBeVisible();
+    await userEvent.keyboard("{Escape}");
+    await expect($navigationItems).not.toBeVisible();
+
     await $navigationToggle.blur();
   },
 };

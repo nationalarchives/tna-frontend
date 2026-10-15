@@ -23,14 +23,10 @@ $relative-1rem-px: 16; // 16px = 1rem
  */
 $use-local-fonts: false !default;
 
-$body-font-size-px: 19 !default;
-$body-font-size-px-medium: 18 !default;
-$body-font-size-px-mobile: 17 !default;
+$body-font-size-largest: 1.1875rem !default;
+$body-font-size-ideal: 2.25vw !default;
+$body-font-size-smallest: 1.0625rem !default;
 $body-line-height: 1.75 !default;
-
-$interactable-text-decoration-offset: 0.125em !default;
-$interactable-text-decoration-thickness: #{math.div(1.5, $relative-1rem-px)}rem !default;
-$interactive-text-decoration-thickness: #{math.div(4, $relative-1rem-px)}rem !default;
 
 $main-font-family-name: "Open Sans" !default;
 $main-font-family:
@@ -61,6 +57,26 @@ $heading-font-family:
   sans-serif;
 $heading-font-weight: 500 !default;
 
+$heading-xl-font-size-largest: 4rem !default;
+$heading-xl-font-size-ideal: 5vw !default;
+$heading-xl-font-size-smallest: 2.25rem !default;
+$heading-xl-line-height: 1.1 !default;
+
+$heading-l-font-size-largest: 2.25rem !default;
+$heading-l-font-size-ideal: 4vw !default;
+$heading-l-font-size-smallest: 1.8125rem !default;
+$heading-l-line-height: 1.15 !default;
+
+$heading-m-font-size-largest: 1.375rem !default;
+$heading-m-font-size-ideal: 2.875vw !default;
+$heading-m-font-size-smallest: 1.3125rem !default;
+$heading-m-line-height: 1.4 !default;
+
+$heading-s-font-size-largest: 1.1875rem !default;
+$heading-s-font-size-ideal: 2.75vw !default;
+$heading-s-font-size-smallest: $heading-s-font-size-largest !default;
+$heading-s-line-height: 1.5 !default;
+
 /*
  * ------------------------------------------
  * The detail font should be a monospace font
@@ -77,28 +93,8 @@ $detail-font-weight-bold: 500 !default;
 $detail-font-file: "RobotoMono-Regular.ttf" !default;
 $detail-font-file-bold: "RobotoMono-Medium.ttf" !default;
 
-$heading-xl-font-size-default: 64 !default;
-$heading-xl-font-size-medium: 48 !default;
-$heading-xl-font-size-small: 36 !default;
-$heading-xl-font-size-tiny: $heading-xl-font-size-small !default;
-$heading-xl-line-height: 1.1 !default;
-
-$heading-l-font-size-default: 36 !default;
-$heading-l-font-size-medium: 32 !default;
-$heading-l-font-size-small: 29 !default;
-$heading-l-font-size-tiny: $heading-l-font-size-small !default;
-$heading-l-line-height: 1.15 !default;
-
-$heading-m-font-size-default: 22 !default;
-$heading-m-font-size-medium: $heading-m-font-size-default !default;
-$heading-m-font-size-small: 21 !default;
-$heading-m-font-size-tiny: $heading-m-font-size-small !default;
-$heading-m-line-height: 1.4 !default;
-
-$heading-s-font-size-default: 19 !default;
-$heading-s-font-size-medium: $heading-s-font-size-default !default;
-$heading-s-font-size-small: $heading-s-font-size-default !default;
-$heading-s-font-size-tiny: $heading-s-font-size-default !default;
-$heading-s-line-height: 1.5 !default;
-
 $code-font-family: Consolas, Monaco, "Ubuntu Mono", monospace !default;
+
+$interactable-text-decoration-offset: 0.125em !default;
+$interactable-text-decoration-thickness: #{math.div(1.5, $relative-1rem-px)}rem !default;
+$interactive-text-decoration-thickness: #{math.div(4, $relative-1rem-px)}rem !default;

@@ -6,9 +6,9 @@
 
 .tna-container {
   inline-size: 100%;
-  max-inline-size: gridVars.$largest-container-width;
+  max-inline-size: var(--container-width);
   margin-inline: auto;
-  padding-inline: grid.gutter-width-half() grid.gutter-width-half();
+  padding-inline: calc(var(--container-gap) / 2);
 
   display: flex;
   flex-wrap: wrap;
@@ -18,9 +18,7 @@
   box-sizing: border-box;
 
   & &--no-padding {
-    max-inline-size: calc(
-      #{gridVars.$largest-container-width} - #{grid.gutter-width-double()}
-    );
+    max-inline-size: calc(var(--container-width) - (var(--container-gap) * 2));
     padding-inline: 0;
   }
 
@@ -39,7 +37,7 @@
 
   & &--nested {
     inline-size: auto;
-    margin-inline: -#{grid.gutter-width()} -#{grid.gutter-width()};
+    margin-inline: calc(var(--container-gap) * -1);
   }
 
   @at-root #{selector.unify("ul, ol", &)} {
@@ -48,7 +46,7 @@
 }
 
 .tna-column {
-  padding-inline: grid.gutter-width-half() grid.gutter-width-half();
+  padding-inline: calc(var(--container-gap) / 2);
 
   box-sizing: border-box;
 
@@ -81,16 +79,16 @@
 
 @include media.on-tiny {
   .tna-container {
-    padding-inline: grid.gutter-width-tiny-half() grid.gutter-width-tiny-half();
+    // padding-inline: calc(var(--container-gap) / 2);
 
     & &--nested {
       inline-size: auto;
-      margin-inline: -#{grid.gutter-width-tiny()} -#{grid.gutter-width-tiny()};
+      // margin-inline: calc(var(--container-gap) / -2);
     }
   }
 
   .tna-column {
-    padding-inline: grid.gutter-width-tiny-half() grid.gutter-width-tiny-half();
+    // padding-inline: calc(var(--container-gap) / 2);
   }
 
   @include grid.columns-generator(gridVars.$column-count-tiny, "tiny");

@@ -5,9 +5,6 @@
 {%- if params.overflow -%}
   {%- set containerClasses = containerClasses.concat('tna-secondary-navigation--overflow') -%}
 {%- endif -%}
-{%- if not params.noUnindentation -%}
-  {%- set containerClasses = containerClasses.concat('tna-secondary-navigation--unindent') -%}
-{%- endif -%}
 {%- set classes = containerClasses | join(' ') -%}
 <nav class="tna-secondary-navigation{% if classes %} {{ classes }}{% endif %}" aria-label="{{ params.title }}"{% for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <h{{ params.headingLevel }} class="tna-secondary-navigation__heading tna-heading-s{% if params.visuallyHideHeading %} tna-visually-hidden{% endif %}">

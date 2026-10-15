@@ -2,7 +2,7 @@
 @use "../../tools/grid";
 
 .tna-columns {
-  column-gap: grid.gutter-width();
+  column-gap: var(--container-gap);
 
   &--2 {
     column-count: 2;
@@ -10,10 +10,6 @@
 
   &--3 {
     column-count: 3;
-  }
-
-  @include media.on-tiny {
-    column-gap: grid.gutter-width-tiny();
   }
 
   @include media.on-small {

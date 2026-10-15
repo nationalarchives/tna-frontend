@@ -83,11 +83,11 @@
     }
 
     .tna-column & {
-      inline-size: calc(100% + #{grid.gutter-width-tiny-double()});
+      inline-size: calc(100% + (var(--container-gap) * 2));
 
       position: relative;
 
-      inset-inline-start: -#{grid.gutter-width-tiny()};
+      inset-inline-start: calc(var(--container-gap) * -1);
     }
 
     &__image {

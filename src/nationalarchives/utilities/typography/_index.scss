@@ -29,16 +29,21 @@
 
 .tna-template__body {
   color: inherit;
-  @include typography.font-size(typographyVars.$body-font-size-px);
+  // @include typography.font-size(typographyVars.$body-font-size-px);
+  font-size: clamp(
+    #{typographyVars.$body-font-size-smallest},
+    #{typographyVars.$body-font-size-ideal},
+    #{typographyVars.$body-font-size-largest}
+  );
   line-height: typographyVars.$body-line-height;
 
-  @include media.on-medium {
-    @include typography.font-size(typographyVars.$body-font-size-px-medium);
-  }
+  // @include media.on-medium {
+  //   @include typography.font-size(typographyVars.$body-font-size-px-medium);
+  // }
 
-  @include media.on-mobile {
-    @include typography.font-size(typographyVars.$body-font-size-px-mobile);
-  }
+  // @include media.on-mobile {
+  //   @include typography.font-size(typographyVars.$body-font-size-px-mobile);
+  // }
 }
 
 strong {
@@ -82,7 +87,8 @@ a {
 }
 
 small {
-  @include typography.font-size(typographyVars.$body-font-size-px * 0.85);
+  // @include typography.font-size(typographyVars.$body-font-size-px * 0.85);
+  font-size: 0.85em;
 }
 
 %chip {
@@ -254,26 +260,38 @@ small {
   @extend %heading;
 
   @include typography.heading-font;
-  @include typography.heading-generator(
-    typographyVars.$heading-xl-font-size-default,
-    typographyVars.$heading-xl-font-size-medium,
-    typographyVars.$heading-xl-font-size-small,
-    typographyVars.$heading-xl-font-size-tiny,
-    typographyVars.$heading-xl-line-height
+  // @include typography.heading-generator(
+  //   typographyVars.$heading-xl-font-size-default,
+  //   typographyVars.$heading-xl-font-size-medium,
+  //   typographyVars.$heading-xl-font-size-small,
+  //   typographyVars.$heading-xl-font-size-tiny,
+  //   typographyVars.$heading-xl-line-height
+  // );
+  font-size: clamp(
+    #{typographyVars.$heading-xl-font-size-smallest},
+    #{typographyVars.$heading-xl-font-size-ideal},
+    #{typographyVars.$heading-xl-font-size-largest}
   );
+  line-height: typographyVars.$heading-xl-line-height;
 }
 
 %heading-l {
   @extend %heading;
 
   @include typography.heading-font;
-  @include typography.heading-generator(
-    typographyVars.$heading-l-font-size-default,
-    typographyVars.$heading-l-font-size-medium,
-    typographyVars.$heading-l-font-size-small,
-    typographyVars.$heading-l-font-size-tiny,
-    typographyVars.$heading-l-line-height
+  // @include typography.heading-generator(
+  //   typographyVars.$heading-l-font-size-default,
+  //   typographyVars.$heading-l-font-size-medium,
+  //   typographyVars.$heading-l-font-size-small,
+  //   typographyVars.$heading-l-font-size-tiny,
+  //   typographyVars.$heading-l-line-height
+  // );
+  font-size: clamp(
+    #{typographyVars.$heading-l-font-size-smallest},
+    #{typographyVars.$heading-l-font-size-ideal},
+    #{typographyVars.$heading-l-font-size-largest}
   );
+  line-height: typographyVars.$heading-l-line-height;
 
   a {
     &::after {
@@ -292,26 +310,38 @@ small {
   @extend %heading;
 
   @include typography.main-font-weight-bold;
-  @include typography.heading-generator(
-    typographyVars.$heading-m-font-size-default,
-    typographyVars.$heading-m-font-size-medium,
-    typographyVars.$heading-m-font-size-small,
-    typographyVars.$heading-m-font-size-tiny,
-    typographyVars.$heading-m-line-height
+  // @include typography.heading-generator(
+  //   typographyVars.$heading-m-font-size-default,
+  //   typographyVars.$heading-m-font-size-medium,
+  //   typographyVars.$heading-m-font-size-small,
+  //   typographyVars.$heading-m-font-size-tiny,
+  //   typographyVars.$heading-m-line-height
+  // );
+  font-size: clamp(
+    #{typographyVars.$heading-m-font-size-smallest},
+    #{typographyVars.$heading-m-font-size-ideal},
+    #{typographyVars.$heading-m-font-size-largest}
   );
+  line-height: typographyVars.$heading-m-line-height;
 }
 
 %heading-s {
   @extend %heading;
 
   @include typography.main-font-weight-bold;
-  @include typography.heading-generator(
-    typographyVars.$heading-s-font-size-default,
-    typographyVars.$heading-s-font-size-medium,
-    typographyVars.$heading-s-font-size-small,
-    typographyVars.$heading-s-font-size-tiny,
-    typographyVars.$heading-s-line-height
+  // @include typography.heading-generator(
+  //   typographyVars.$heading-s-font-size-default,
+  //   typographyVars.$heading-s-font-size-medium,
+  //   typographyVars.$heading-s-font-size-small,
+  //   typographyVars.$heading-s-font-size-tiny,
+  //   typographyVars.$heading-s-line-height
+  // );
+  font-size: clamp(
+    #{typographyVars.$heading-s-font-size-smallest},
+    #{typographyVars.$heading-s-font-size-ideal},
+    #{typographyVars.$heading-s-font-size-largest}
   );
+  line-height: typographyVars.$heading-s-line-height;
 }
 
 %heading-xs {

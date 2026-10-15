@@ -14,13 +14,13 @@
   @include a11y.focus-outline;
 }
 
-@supports not selector(:focus-visible) {
-  *:focus {
-    z-index: 9;
+// @supports not selector(:focus-visible) {
+//   *:focus {
+//     z-index: 9;
 
-    @include a11y.focus-outline;
-  }
-}
+//     @include a11y.focus-outline;
+//   }
+// }
 
 a,
 button,

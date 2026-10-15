@@ -3,8 +3,12 @@
 @use "colour";
 @use "media";
 
+@function font-size-value($font-size-px) {
+  @return #{math.div($font-size-px, typography.$relative-1rem-px)}rem;
+}
+
 @mixin font-size($font-size-px) {
-  font-size: #{math.div($font-size-px, typography.$relative-1rem-px)}rem;
+  font-size: font-size-value($font-size-px);
 }
 
 @mixin main-font-weight {

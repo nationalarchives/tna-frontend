@@ -388,27 +388,27 @@
     &__logo-wrapper,
     &__navigation-item-link,
     &__navigation-button-wrapper {
-      padding-inline-end: grid.gutter-width();
+      padding-inline-end: var(--container-gap);
     }
 
     &__logo-wrapper,
     &__navigation-item-link {
-      padding-inline-start: grid.gutter-width();
+      padding-inline-start: var(--container-gap);
     }
 
     &__top-navigation-items {
-      padding-inline: grid.gutter-width() grid.gutter-width();
+      padding-inline: var(--container-gap);
     }
   }
 
   @include media.on-tiny {
     &__navigation-button-wrapper,
     &__logo-wrapper {
-      padding-inline-end: grid.gutter-width-tiny();
+      padding-inline-end: var(--container-gap);
     }
 
     &__logo-wrapper {
-      padding-inline-start: grid.gutter-width-tiny();
+      padding-inline-start: var(--container-gap);
     }
 
     .tna-logo {
@@ -429,8 +429,7 @@
     }
 
     &__navigation-item-link {
-      padding-inline: calc(#{grid.gutter-width-tiny()} + 0.5rem)
-        grid.gutter-width-tiny();
+      padding-inline: calc(var(--container-gap) + 0.5rem) var(--container-gap);
     }
   }
 

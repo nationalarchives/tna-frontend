@@ -16,7 +16,6 @@ export default {
       items: { control: "object" },
       noBottomBorder: { control: "boolean" },
       overflow: { control: "boolean" },
-      noUnindentation: { control: "boolean" },
       visuallyHideHeading: { control: "boolean" },
       classes: { control: "text" },
       attributes: { control: "object" },

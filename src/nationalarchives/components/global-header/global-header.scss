@@ -380,13 +380,13 @@
     }
 
     &__navigation {
-      inline-size: calc(100% + #{grid.gutter-width-double()});
+      inline-size: calc(100% + (var(--container-gap) * 2));
 
-      inset-inline-start: -#{grid.gutter-width()};
+      inset-inline-start: calc(var(--container-gap) * -1);
     }
 
     &__navigation-item-link {
-      padding: spacing.space(0.5) grid.gutter-width();
+      padding: spacing.space(0.5) var(--container-gap);
     }
   }
 
@@ -404,13 +404,13 @@
     }
 
     &__navigation {
-      inline-size: calc(100% + #{grid.gutter-width-tiny-double()});
+      inline-size: calc(100% + (var(--container-gap) * 2));
 
-      inset-inline-start: -#{grid.gutter-width-tiny()};
+      inset-inline-start: calc(var(--container-gap) * -1);
     }
 
     &__navigation-item-link {
-      padding: spacing.space(0.5) grid.gutter-width-tiny();
+      padding: spacing.space(0.5) var(--container-gap);
     }
   }
 

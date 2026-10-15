@@ -203,7 +203,8 @@ $over-overflow: $shift-overflow !default;
     }
 
     &__information {
-      max-inline-size: math.div(gridVars.$largest-container-width, 2);
+      // max-inline-size: math.div(gridVars.$largest-container-width, 2);
+      max-inline-size: calc(var(--container-width) / 2);
 
       inset-inline-start: auto;
     }
@@ -215,7 +216,7 @@ $over-overflow: $shift-overflow !default;
     }
 
     &--split &__content-inner {
-      padding: 0 grid.gutter-width-half() 0 0;
+      padding: 0 var(--container-gap / 2) 0 0;
     }
 
     &--split &__image {
@@ -247,17 +248,15 @@ $over-overflow: $shift-overflow !default;
 
     &--over &__details-summary {
       inset-block-start: spacing.space(0.5);
-      inset-inline-end: spacing.space(gridVars.$gutter-width + 0.5);
+      inset-inline-end: calc(var(--container-gap) + #{spacing.space(0.5)});
     }
 
     &--over &__information {
-      max-inline-size: calc(
-        50% - #{spacing.space(gridVars.$gutter-width * 1.5)}
-      );
+      max-inline-size: calc(50% - (var(--container-gap) * 1.5));
 
       box-sizing: border-box;
 
-      inset-inline: auto spacing.space(gridVars.$gutter-width);
+      inset-inline: auto var(--container-gap);
       inset-block-start: 0;
 
       @include borders.rounded-border;
@@ -275,14 +274,14 @@ $over-overflow: $shift-overflow !default;
     &--over &__image {
       max-inline-size: calc(
         #{math.div(gridVars.$largest-container-width, 2)} -
-          (#{grid.gutter-width()} + #{grid.gutter-width-half()})
+          (var(--container-gap) + var(--container-gap) / 2)
       );
       margin-inline-end: 32px;
 
       overflow: hidden;
 
       inset-block-end: spacing.space($over-overflow * -1);
-      inset-inline-start: calc(50% + #{grid.gutter-width-half()});
+      inset-inline-start: calc(50% + (var(--container-gap) / 2));
       z-index: 5;
       @include borders.rounded-border;
     }

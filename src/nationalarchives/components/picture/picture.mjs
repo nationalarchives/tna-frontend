@@ -3,15 +3,15 @@ import uuidv4 from "../../lib/uuid.mjs";
 export class Picture {
   constructor($module) {
     this.$module = $module;
-    this.$imageWrapper =
-      this.$module?.querySelector(".tna-picture__image-wrapper");
+    this.$imageWrapper = this.$module?.querySelector(
+      ".tna-picture__image-wrapper",
+    );
 
-    this.$transcriptToggle =
-      this.$imageWrapper &&
-      this.$imageWrapper.querySelector(".tna-picture__toggle-transcript");
+    this.$transcriptToggle = this.$imageWrapper?.querySelector(
+      ".tna-picture__toggle-transcript",
+    );
 
-    this.$transcript =
-      this.$module?.querySelector(".tna-picture__transcript");
+    this.$transcript = this.$module?.querySelector(".tna-picture__transcript");
     this.transcriptOpened = false;
 
     if (

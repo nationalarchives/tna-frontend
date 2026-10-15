@@ -1,19 +1,15 @@
 export class Gallery {
   constructor($module) {
     this.$module = $module;
-    this.$itemsContainer =
-      this.$module?.querySelector(".tna-gallery__items");
-    this.$items =
-      this.$itemsContainer &&
-      this.$itemsContainer.querySelectorAll(".tna-gallery__item");
-    this.$navigation =
-      this.$module?.querySelector(".tna-gallery__navigation");
-    this.$navigationItems =
-      this.$navigation &&
-      this.$module.querySelectorAll(".tna-gallery__navigation-item");
-    this.$navigationButtons =
-      this.$module &&
-      this.$module.querySelector(".tna-gallery__navigation-buttons");
+    this.$itemsContainer = this.$module?.querySelector(".tna-gallery__items");
+    this.$items = this.$itemsContainer?.querySelectorAll(".tna-gallery__item");
+    this.$navigation = this.$module?.querySelector(".tna-gallery__navigation");
+    this.$navigationItems = this.$navigation?.querySelectorAll(
+      ".tna-gallery__navigation-item",
+    );
+    this.$navigationButtons = this.$module?.querySelector(
+      ".tna-gallery__navigation-buttons",
+    );
 
     if (
       !this.$module ||

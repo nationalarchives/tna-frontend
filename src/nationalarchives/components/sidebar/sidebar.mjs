@@ -3,23 +3,23 @@ import { breakpoints } from "../../lib/media.mjs";
 export class Sidebar {
   constructor($module, options = {}) {
     this.$module = $module;
-    this.items =
-      this.$module &&
-      Array.from(this.$module.querySelectorAll(".tna-sidebar__item"))
-        .map(($item) => {
-          const id = $item
-            .querySelector(".tna-sidebar__link[href^='#']")
-            .getAttribute("href")
-            /* eslint-disable-next-line no-magic-numbers */
-            .substring(1);
-          const target = document.getElementById(id);
-          return {
-            $item,
-            id,
-            target,
-          };
-        })
-        .filter((item) => item.target);
+    this.items = Array.from(
+      this.$module?.querySelectorAll(".tna-sidebar__item") || [],
+    )
+      .map(($item) => {
+        const id = $item
+          .querySelector(".tna-sidebar__link[href^='#']")
+          .getAttribute("href")
+          /* eslint-disable-next-line no-magic-numbers */
+          .substring(1);
+        const target = document.getElementById(id);
+        return {
+          $item,
+          id,
+          target,
+        };
+      })
+      .filter((item) => item.target);
 
     if (!this.$module || !this.items) {
       return;

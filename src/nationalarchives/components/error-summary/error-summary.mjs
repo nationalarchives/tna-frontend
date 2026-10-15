@@ -1,9 +1,7 @@
 export class ErrorSummary {
   constructor($module) {
     this.$module = $module;
-  }
 
-  init() {
     if (!this.$module) {
       return;
     }

@@ -3,12 +3,12 @@ import uuidv4 from "../../lib/uuid.mjs";
 export class Breadcrumbs {
   constructor($module) {
     this.$module = $module;
-    this.$breadcrumbsList =
-      this.$module?.querySelector(".tna-breadcrumbs__list");
-    this.$breadcrumbs =
-      this.$module &&
-      this.$breadcrumbsList &&
-      this.$module.querySelectorAll(".tna-breadcrumbs__item");
+    this.$breadcrumbsList = this.$module?.querySelector(
+      ".tna-breadcrumbs__list",
+    );
+    this.$breadcrumbs = this.$breadcrumbsList?.querySelectorAll(
+      ".tna-breadcrumbs__item",
+    );
 
     if (!this.$module || !this.$breadcrumbsList || !this.$breadcrumbs) {
       return;

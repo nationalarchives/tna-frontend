@@ -2,8 +2,7 @@ export class CodeBlock {
   constructor($module) {
     this.$module = $module;
     this.$code = this.$module?.querySelector("pre code");
-    this.$copyButton =
-      this.$module?.querySelector(".tna-code-block__copy");
+    this.$copyButton = this.$module?.querySelector(".tna-code-block__copy");
 
     if (
       !this.$module ||
@@ -18,7 +17,7 @@ export class CodeBlock {
 
     this.$copyButton.removeAttribute("hidden");
     this.copyButtonStartingText = this.$copyButton.innerText;
-    
+
     this.$copyButton.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(this.$code.innerText);

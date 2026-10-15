@@ -1,21 +1,18 @@
 export class GlobalHeader {
   constructor($module) {
     this.$module = $module;
-    this.$toggleButton =
-      this.$module &&
-      this.$module.querySelector(".tna-global-header__navigation-button");
-    this.$navigation =
-      this.$module &&
-      this.$module.querySelector(".tna-global-header__navigation-wrapper");
-    this.$topNavigation =
-      this.$module &&
-      this.$module.querySelector(".tna-global-header__top-navigation-wrapper");
+    this.$toggleButton = this.$module?.querySelector(
+      ".tna-global-header__navigation-button",
+    );
+    this.$navigation = this.$module?.querySelector(
+      ".tna-global-header__navigation-wrapper",
+    );
+    this.$topNavigation = this.$module?.querySelector(
+      ".tna-global-header__top-navigation-wrapper",
+    );
     this.$links =
-      this.$module &&
-      ((this.$navigation &&
-        this.$navigation.querySelectorAll("[tabindex='0']")) ||
-        (this.$topNavigation &&
-          this.$topNavigation.querySelectorAll("[tabindex='0']")));
+      this.$navigation?.querySelectorAll("[tabindex='0']") ||
+      this.$topNavigation?.querySelectorAll("[tabindex='0']");
     this.menuOpened = false;
     this.mql = window.matchMedia("(max-width: 48em)");
 

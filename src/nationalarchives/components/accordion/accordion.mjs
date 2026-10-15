@@ -3,15 +3,14 @@ import { checkTableForScroll } from "../../lib/helpers.mjs";
 export class Accordion {
   constructor($module) {
     this.$module = $module;
-    this.$items =
-      this.$module?.querySelectorAll(".tna-accordion__item");
+    this.$items = this.$module?.querySelectorAll(".tna-accordion__item");
+
     if (!this.$module || !this.$items) {
       return;
     }
 
     this.allowMultipleItemsOpen =
       this.$module.dataset.singleOpenItem !== "true";
-
     this.openItemText =
       this.$module.dataset.openItemLabel || "Show this section";
     this.closeItemText =

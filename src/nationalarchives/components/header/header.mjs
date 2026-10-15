@@ -1,15 +1,11 @@
 export class Header {
   constructor($module) {
     this.$module = $module;
-    this.$toggleButton =
-      this.$module &&
-      this.$module.querySelector(".tna-header__navigation-button");
-    this.$navigation =
-      this.$module?.querySelector(".tna-header__navigation");
-    this.$links =
-      this.$module &&
-      this.$navigation &&
-      this.$navigation.querySelectorAll("[tabindex='0']");
+    this.$toggleButton = this.$module?.querySelector(
+      ".tna-header__navigation-button",
+    );
+    this.$navigation = this.$module?.querySelector(".tna-header__navigation");
+    this.$links = this.$navigation?.querySelectorAll("[tabindex='0']");
     this.menuOpened = false;
     this.mql = window.matchMedia("(max-width: 48em)");
 

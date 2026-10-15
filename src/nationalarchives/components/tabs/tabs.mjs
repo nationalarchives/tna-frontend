@@ -1,16 +1,13 @@
 export class Tabs {
   constructor($module) {
     this.$module = $module;
-    this.$tabListHeading =
-      this.$module?.querySelector(".tna-tabs__list-heading");
-    this.$tabList =
-      this.$module?.querySelector(".tna-tabs__list");
+    this.$tabListHeading = this.$module?.querySelector(
+      ".tna-tabs__list-heading",
+    );
+    this.$tabList = this.$module?.querySelector(".tna-tabs__list");
     this.$tabListItemLinks =
-      this.$module &&
-      this.$tabList &&
-      this.$tabList.querySelectorAll(".tna-tabs__button");
-    this.$tabItems =
-      this.$module?.querySelectorAll(".tna-tabs__item");
+      this.$tabList?.querySelectorAll(".tna-tabs__button");
+    this.$tabItems = this.$module?.querySelectorAll(".tna-tabs__item");
 
     if (
       !this.$module ||

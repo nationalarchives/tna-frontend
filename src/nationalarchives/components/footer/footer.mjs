@@ -3,11 +3,12 @@ import Cookies from "@nationalarchives/cookies/src/index.js";
 export class Footer {
   constructor($module, themeCookieName = "theme") {
     this.$module = $module;
-    this.$themeSelector =
-      this.$module?.querySelector(".tna-footer__theme-selector");
-    this.$themeSelectorNotice =
-      this.$module &&
-      this.$module.querySelector(".tna-footer__theme-selector-notice");
+    this.$themeSelector = this.$module?.querySelector(
+      ".tna-footer__theme-selector",
+    );
+    this.$themeSelectorNotice = this.$module?.querySelector(
+      ".tna-footer__theme-selector-notice",
+    );
     this.$themeSelectorEnableSettingsCookiesButton =
       this.$themeSelectorNotice &&
       this.$themeSelectorNotice.querySelector(

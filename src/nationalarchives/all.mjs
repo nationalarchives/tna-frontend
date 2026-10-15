@@ -105,7 +105,7 @@ const initAll = (options = {}) => {
     '[data-module="tna-error-summary"]',
   );
   if ($errorSummary) {
-    new ErrorSummary($errorSummary).init();
+    new ErrorSummary($errorSummary);
   }
 
   const $fileInputs = $scope.querySelectorAll('[data-module="tna-file-input"]');

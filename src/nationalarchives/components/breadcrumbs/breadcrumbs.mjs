@@ -4,7 +4,7 @@ export class Breadcrumbs {
   constructor($module) {
     this.$module = $module;
     this.$breadcrumbsList =
-      this.$module && this.$module.querySelector(".tna-breadcrumbs__list");
+      this.$module?.querySelector(".tna-breadcrumbs__list");
     this.$breadcrumbs =
       this.$module &&
       this.$breadcrumbsList &&

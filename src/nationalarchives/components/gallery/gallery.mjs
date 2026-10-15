@@ -2,12 +2,12 @@ export class Gallery {
   constructor($module) {
     this.$module = $module;
     this.$itemsContainer =
-      this.$module && this.$module.querySelector(".tna-gallery__items");
+      this.$module?.querySelector(".tna-gallery__items");
     this.$items =
       this.$itemsContainer &&
       this.$itemsContainer.querySelectorAll(".tna-gallery__item");
     this.$navigation =
-      this.$module && this.$module.querySelector(".tna-gallery__navigation");
+      this.$module?.querySelector(".tna-gallery__navigation");
     this.$navigationItems =
       this.$navigation &&
       this.$module.querySelectorAll(".tna-gallery__navigation-item");

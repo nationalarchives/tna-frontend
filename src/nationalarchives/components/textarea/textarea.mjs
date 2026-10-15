@@ -2,11 +2,11 @@ export class TextAreaItemisedRows {
   constructor($module, options = {}) {
     this.$module = $module;
     this.$formFieldInput =
-      this.$module && this.$module.querySelector(".tna-textarea");
+      this.$module?.querySelector(".tna-textarea");
     this.$formFieldInputHint =
-      this.$module && this.$module.querySelector(".tna-form-item__hint");
+      this.$module?.querySelector(".tna-form-item__hint");
     this.$formFieldBody =
-      this.$module && this.$module.querySelector(".tna-form-item__body");
+      this.$module?.querySelector(".tna-form-item__body");
 
     if (
       !this.$module ||

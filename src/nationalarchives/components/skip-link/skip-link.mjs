@@ -4,7 +4,7 @@ export class SkipLink {
   constructor($module) {
     this.$module = $module;
     this.linkedElementId =
-      this.$module && this.$module.getAttribute("href")?.split("#").pop();
+      this.$module?.getAttribute("href")?.split("#").pop();
     this.$linkedElement =
       this.$module &&
       this.linkedElementId &&

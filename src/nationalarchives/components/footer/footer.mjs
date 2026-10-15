@@ -4,7 +4,7 @@ export class Footer {
   constructor($module, themeCookieName = "theme") {
     this.$module = $module;
     this.$themeSelector =
-      this.$module && this.$module.querySelector(".tna-footer__theme-selector");
+      this.$module?.querySelector(".tna-footer__theme-selector");
     this.$themeSelectorNotice =
       this.$module &&
       this.$module.querySelector(".tna-footer__theme-selector-notice");

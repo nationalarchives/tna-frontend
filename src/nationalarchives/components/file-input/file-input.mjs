@@ -2,7 +2,7 @@ export class FileInputDroppable {
   constructor($module) {
     this.$module = $module;
     this.$body =
-      this.$module && this.$module.querySelector(".tna-form-item__body");
+      this.$module?.querySelector(".tna-form-item__body");
     this.$input = this.$body && this.$body.querySelector(".tna-file-input");
 
     if (!this.$module || !this.$body || !this.$input) {

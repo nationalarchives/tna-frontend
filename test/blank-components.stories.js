@@ -22,6 +22,14 @@ export default {
   title: "Tests/Blank components",
   render: () => `
       <div data-module="tna-accordion"></div>
+      <div data-module="tna-accordion">
+        <div class="tna-accordion__item"></div>
+      </div>
+      <div data-module="tna-accordion">
+        <button class="tna-accordion__toggle-all"></button>
+        <div class="tna-accordion__item"></div>
+      </div>
+
       <div data-module="tna-breadcrumbs"></div>
       <div data-module="tna-code-block"></div>
       <div data-module="tna-cookie-banner"></div>

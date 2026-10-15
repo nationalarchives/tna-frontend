@@ -5,7 +5,7 @@ export class Header {
       this.$module &&
       this.$module.querySelector(".tna-header__navigation-button");
     this.$navigation =
-      this.$module && this.$module.querySelector(".tna-header__navigation");
+      this.$module?.querySelector(".tna-header__navigation");
     this.$links =
       this.$module &&
       this.$navigation &&

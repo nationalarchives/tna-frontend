@@ -4,7 +4,7 @@ export class Accordion {
   constructor($module) {
     this.$module = $module;
     this.$items =
-      this.$module && this.$module.querySelectorAll(".tna-accordion__item");
+      this.$module?.querySelectorAll(".tna-accordion__item");
     if (!this.$module || !this.$items) {
       return;
     }
@@ -112,6 +112,9 @@ export class Accordion {
   closeItem($item) {
     const $headingButton = $item.querySelector(".tna-accordion__summary");
     const $content = $item.querySelector(".tna-accordion__content");
+    if (!$headingButton || !$content) {
+      return;
+    }
     $headingButton.setAttribute("aria-expanded", "false");
     $headingButton.setAttribute(
       "aria-label",
@@ -138,7 +141,7 @@ export class Accordion {
       ($item) =>
         $item
           .querySelector(".tna-accordion__summary")
-          .getAttribute("aria-expanded") === "true",
+          ?.getAttribute("aria-expanded") === "true",
     );
   }
 

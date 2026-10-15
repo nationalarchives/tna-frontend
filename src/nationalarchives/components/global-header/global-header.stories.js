@@ -174,19 +174,12 @@ export const Mobile = {
       await expect($linkC).not.toBeVisible();
     });
 
-    // Await step("Open the menu", async () => {
-    //   Await userEvent.click($navigationToggle);
-    // });
-
-    // TODO
-    // Await step("Press the escape key", async () => {
-    //   Await expect($navigationItems).not.toBeVisible();
-    //   Await expect($navigationToggle).toBeVisible();
-    //   Await expect($navigationToggle).toHaveAttribute("aria-expanded", "false");
-    //   Await expect($linkA).not.toBeVisible();
-    //   Await expect($linkB).not.toBeVisible();
-    //   Await expect($linkC).not.toBeVisible();
-    // });
+    await step("Close the menu with Escape key", async () => {
+      await userEvent.click($navigationToggle);
+      await expect($navigationItems).toBeVisible();
+      await userEvent.keyboard("{Escape}");
+      await expect($navigationItems).not.toBeVisible();
+    });
 
     await $navigationToggle.blur();
   },

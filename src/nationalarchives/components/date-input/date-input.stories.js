@@ -88,7 +88,7 @@ export const Progressive = {
     progressive: true,
     classes: "tna-date-input--demo",
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement),
       yearInput = canvas.getByLabelText("Year"),
       monthInput = canvas.getByLabelText("Month"),
@@ -100,52 +100,62 @@ export const Progressive = {
     await expect(monthInput).not.toBeVisible();
     await expect(dayInput).not.toBeVisible();
 
-    const invalidYears = ["a", " ", "2oo3", "0", "-1"];
-    for (const year of invalidYears) {
+    await step("Try invalid years", async () => {
+      const invalidYears = ["a", " ", "2oo3", "0", "-1"];
+      for (const year of invalidYears) {
+        await userEvent.clear(yearInput);
+        await userEvent.type(yearInput, year);
+        await expect(yearInput).toBeVisible();
+        await expect(monthInput).not.toBeVisible();
+        await expect(dayInput).not.toBeVisible();
+      }
+    });
+
+    await step("Try valid years", async () => {
+      const validYears = ["2003", "2"];
+      for (const year of validYears) {
+        await userEvent.clear(yearInput);
+        await userEvent.type(yearInput, year);
+        await expect(yearInput).toBeVisible();
+        await expect(monthInput).toBeVisible();
+        await expect(dayInput).not.toBeVisible();
+      }
+    });
+
+    await step("Try invalid months", async () => {
+      const invalidMonths = ["a", " ", "janu", "13", "0", "-1"];
+      for (const month of invalidMonths) {
+        await userEvent.clear(monthInput);
+        await userEvent.type(monthInput, month);
+        await expect(yearInput).toBeVisible();
+        await expect(monthInput).toBeVisible();
+        await expect(dayInput).not.toBeVisible();
+      }
+    });
+
+    await step("Try valid months", async () => {
+      const validMonths = ["01", "12", "jan", " jan", "6"];
+      for (const month of validMonths) {
+        await userEvent.clear(monthInput);
+        await userEvent.type(monthInput, month);
+        await expect(yearInput).toBeVisible();
+        await expect(monthInput).toBeVisible();
+        await expect(dayInput).toBeVisible();
+      }
+    });
+
+    await step("Clear and restore the year", async () => {
+      await userEvent.type(dayInput, "01");
       await userEvent.clear(yearInput);
-      await userEvent.type(yearInput, year);
-      await expect(yearInput).toBeVisible();
+      await fireEvent.change(yearInput);
       await expect(monthInput).not.toBeVisible();
       await expect(dayInput).not.toBeVisible();
-    }
-
-    const validYears = ["2003", "2"];
-    for (const year of validYears) {
-      await userEvent.clear(yearInput);
-      await userEvent.type(yearInput, year);
-      await expect(yearInput).toBeVisible();
-      await expect(monthInput).toBeVisible();
-      await expect(dayInput).not.toBeVisible();
-    }
-
-    const invalidMonths = ["a", " ", "janu", "13", "0", "-1"];
-    for (const month of invalidMonths) {
-      await userEvent.clear(monthInput);
-      await userEvent.type(monthInput, month);
-      await expect(yearInput).toBeVisible();
-      await expect(monthInput).toBeVisible();
-      await expect(dayInput).not.toBeVisible();
-    }
-
-    const validMonths = ["01", "12", "jan", " jan", "6"];
-    for (const month of validMonths) {
-      await userEvent.clear(monthInput);
-      await userEvent.type(monthInput, month);
-      await expect(yearInput).toBeVisible();
-      await expect(monthInput).toBeVisible();
-      await expect(dayInput).toBeVisible();
-    }
-
-    await userEvent.type(dayInput, "01");
-    await userEvent.clear(yearInput);
-    await fireEvent.change(yearInput);
-    await expect(monthInput).not.toBeVisible();
-    await expect(dayInput).not.toBeVisible();
-    await userEvent.type(yearInput, "2004");
-    expect(monthInput).toBeVisible();
-    expect(monthInput).toHaveValue("6");
-    expect(dayInput).toBeVisible();
-    expect(dayInput).toHaveValue("01");
+      await userEvent.type(yearInput, "2004");
+      expect(monthInput).toBeVisible();
+      expect(monthInput).toHaveValue("6");
+      expect(dayInput).toBeVisible();
+      expect(dayInput).toHaveValue("01");
+    });
 
     await userEvent.clear(dayInput);
     await userEvent.clear(monthInput);

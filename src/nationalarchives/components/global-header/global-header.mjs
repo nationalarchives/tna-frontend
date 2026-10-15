@@ -2,15 +2,16 @@ export class GlobalHeader {
   constructor($module) {
     this.$module = $module;
     this.$toggleButton =
-      $module && $module.querySelector(".tna-global-header__navigation-button");
+      this.$module &&
+      this.$module.querySelector(".tna-global-header__navigation-button");
     this.$navigation =
-      $module &&
-      $module.querySelector(".tna-global-header__navigation-wrapper");
+      this.$module &&
+      this.$module.querySelector(".tna-global-header__navigation-wrapper");
     this.$topNavigation =
-      $module &&
-      $module.querySelector(".tna-global-header__top-navigation-wrapper");
+      this.$module &&
+      this.$module.querySelector(".tna-global-header__top-navigation-wrapper");
     this.$links =
-      $module &&
+      this.$module &&
       ((this.$navigation &&
         this.$navigation.querySelectorAll("[tabindex='0']")) ||
         (this.$topNavigation &&

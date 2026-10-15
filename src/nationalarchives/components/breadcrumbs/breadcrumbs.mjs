@@ -4,11 +4,11 @@ export class Breadcrumbs {
   constructor($module) {
     this.$module = $module;
     this.$breadcrumbsList =
-      $module && $module.querySelector(".tna-breadcrumbs__list");
+      this.$module && this.$module.querySelector(".tna-breadcrumbs__list");
     this.$breadcrumbs =
-      $module &&
+      this.$module &&
       this.$breadcrumbsList &&
-      $module.querySelectorAll(".tna-breadcrumbs__item");
+      this.$module.querySelectorAll(".tna-breadcrumbs__item");
 
     if (!this.$module || !this.$breadcrumbsList || !this.$breadcrumbs) {
       return;

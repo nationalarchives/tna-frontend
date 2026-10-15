@@ -1,8 +1,9 @@
 export class CodeBlock {
   constructor($module) {
     this.$module = $module;
-    this.$code = this.$module.querySelector("pre code");
-    this.$copyButton = this.$module.querySelector(".tna-code-block__copy");
+    this.$code = this.$module && this.$module.querySelector("pre code");
+    this.$copyButton =
+      this.$module && this.$module.querySelector(".tna-code-block__copy");
 
     if (
       !this.$module ||

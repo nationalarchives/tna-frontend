@@ -2,11 +2,12 @@ export class Header {
   constructor($module) {
     this.$module = $module;
     this.$toggleButton =
-      $module && $module.querySelector(".tna-header__navigation-button");
+      this.$module &&
+      this.$module.querySelector(".tna-header__navigation-button");
     this.$navigation =
-      $module && $module.querySelector(".tna-header__navigation");
+      this.$module && this.$module.querySelector(".tna-header__navigation");
     this.$links =
-      $module &&
+      this.$module &&
       this.$navigation &&
       this.$navigation.querySelectorAll("[tabindex='0']");
     this.menuOpened = false;

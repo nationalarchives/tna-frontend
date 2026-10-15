@@ -3,7 +3,8 @@ import { checkTableForScroll } from "../../lib/helpers.mjs";
 export class Accordion {
   constructor($module) {
     this.$module = $module;
-    this.$items = $module && $module.querySelectorAll(".tna-accordion__item");
+    this.$items =
+      this.$module && this.$module.querySelectorAll(".tna-accordion__item");
     if (!this.$module || !this.$items) {
       return;
     }

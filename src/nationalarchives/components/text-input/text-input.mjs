@@ -1,7 +1,7 @@
 export class TextInputPassword {
   constructor($module) {
     this.$module = $module;
-    this.$input = $module && $module.querySelector(".tna-text-input");
+    this.$input = this.$module && this.$module.querySelector(".tna-text-input");
 
     if (
       !this.$module ||

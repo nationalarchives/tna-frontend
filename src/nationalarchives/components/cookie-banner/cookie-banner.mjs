@@ -5,15 +5,21 @@ export { Cookies };
 export class CookieBanner {
   constructor($module) {
     this.$module = $module;
-    this.$acceptButton = $module && $module.querySelector('[value="accept"]');
-    this.$rejectButton = $module && $module.querySelector('[value="reject"]');
+    this.$acceptButton =
+      this.$module && this.$module.querySelector('[value="accept"]');
+    this.$rejectButton =
+      this.$module && this.$module.querySelector('[value="reject"]');
     this.$prompt =
-      $module && $module.querySelector(".tna-cookie-banner__message--prompt");
+      this.$module &&
+      this.$module.querySelector(".tna-cookie-banner__message--prompt");
     this.$acceptedMessage =
-      $module && $module.querySelector(".tna-cookie-banner__message--accepted");
+      this.$module &&
+      this.$module.querySelector(".tna-cookie-banner__message--accepted");
     this.$rejectedMessage =
-      $module && $module.querySelector(".tna-cookie-banner__message--rejected");
-    this.$closeButtons = $module && $module.querySelectorAll('[value="close"]');
+      this.$module &&
+      this.$module.querySelector(".tna-cookie-banner__message--rejected");
+    this.$closeButtons =
+      this.$module && this.$module.querySelectorAll('[value="close"]');
 
     if (
       !this.$module ||

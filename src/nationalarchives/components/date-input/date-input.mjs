@@ -2,15 +2,16 @@ export class DateInputProgressive {
   constructor($module) {
     this.$module = $module;
     this.$yearWrapper =
-      $module && $module.querySelector(".tna-date-input__item--year");
+      this.$module && this.$module.querySelector(".tna-date-input__item--year");
     this.$yearInput =
       this.$yearWrapper && this.$yearWrapper.querySelector("input");
     this.$monthWrapper =
-      $module && $module.querySelector(".tna-date-input__item--month");
+      this.$module &&
+      this.$module.querySelector(".tna-date-input__item--month");
     this.$monthInput =
       this.$monthWrapper && this.$monthWrapper.querySelector("input");
     this.$dayWrapper =
-      $module && $module.querySelector(".tna-date-input__item--day");
+      this.$module && this.$module.querySelector(".tna-date-input__item--day");
     this.$dayInput =
       this.$dayWrapper && this.$dayWrapper.querySelector("input");
 

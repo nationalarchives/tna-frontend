@@ -18,7 +18,9 @@ export class TextAreaItemisedRows {
     }
 
     const { enhancedHint } = options;
-    this.enhancedHint = enhancedHint || "Enter an item and press enter";
+    this.enhancedHint = enhancedHint
+      ? enhancedHint
+      : "Enter an item and press enter";
 
     this.values = this.$formFieldInput.value
       .split("\n")

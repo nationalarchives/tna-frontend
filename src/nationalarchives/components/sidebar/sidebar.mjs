@@ -4,8 +4,8 @@ export class Sidebar {
   constructor($module, options = {}) {
     this.$module = $module;
     this.items =
-      $module &&
-      Array.from($module.querySelectorAll(".tna-sidebar__item"))
+      this.$module &&
+      Array.from(this.$module.querySelectorAll(".tna-sidebar__item"))
         .map(($item) => {
           const id = $item
             .querySelector(".tna-sidebar__link[href^='#']")

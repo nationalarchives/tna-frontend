@@ -14,7 +14,7 @@
 
   flex-flow: row wrap;
 
-      @include colour.colour-border("keyline", 1px, solid, block-end);
+  @include colour.colour-border("keyline", 1px, solid, block-end);
 
   &__heading {
     padding-block-end: spacing.space(0.5);
@@ -87,34 +87,25 @@
     overflow-inline: auto;
   }
 
-  // &::after {
-  //   content: "";
-
-  //   inline-size: 100%;
-
-  //   @include colour.colour-border("keyline", 1px, solid, block-end);
-  // }
-
-  &--no-bottom-border::after {
-    display: none;
+  &--no-bottom-border {
+    border-block-end: none;
   }
 
   @include media.on-mobile {
-    // border-block-end: none;
+    inline-size: calc(100% + (var(--container-gap) * 2));
+    margin-inline: calc(var(--container-gap) * -1);
+
     flex-direction: column;
 
-      inline-size: calc(100% + (var(--container-gap) * 2));
-      margin-inline: calc(var(--container-gap) * -1);
+    overflow-inline: visible;
 
+    &__heading {
+      padding-inline: var(--container-gap);
 
-  &__heading {
-    padding-inline: var(--container-gap);
-    align-self: flex-start;
-  }
-
+      align-self: flex-start;
+    }
 
     &__items {
-
       flex-direction: column;
       align-items: stretch;
       gap: 0;
@@ -148,10 +139,6 @@
     &__item--current &__link {
       border-block-end: none;
       border-block-start: none;
-    }
-
-    &--overflow {
-      overflow-inline: visible;
     }
   }
 }

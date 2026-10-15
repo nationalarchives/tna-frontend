@@ -216,7 +216,7 @@ $over-overflow: $shift-overflow !default;
     }
 
     &--split &__content-inner {
-      padding: 0 var(--container-gap / 2) 0 0;
+      padding: 0 calc(var(--container-gap) / 2) 0 0;
     }
 
     &--split &__image {

@@ -54,7 +54,7 @@ Running only selected stories collects coverage only for that selection.
 Run the same tests and generate a combined coverage report from the command line:
 
 ```sh
-npm run test:vitest
+npm run test:stories
 ```
 
 The HTML coverage report is written to `coverage/index.html`.

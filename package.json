@@ -12,11 +12,11 @@
     "compile:scripts": "webpack",
     "lint:check": "prettier --check '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint 'src/**/*.scss' && eslint 'src/**/*.{js,mjs}'",
     "lint:fix": "prettier --write --list-different '{src,.storybook,tasks,.}/**/*.{js,mjs,scss,json,html}' && stylelint --fix 'src/**/*.scss' && eslint --fix 'src/**/*.{js,mjs}'",
-    "test:all": "npm run lint:check && npm run test:statichtml && npm run test:fixtures && npm run test:vitest && npm run build:package && npm run test:package",
+    "test": "npm run lint:check && npm run test:statichtml && npm run test:fixtures && npm run test:stories && npm run build:package && npm run test:package",
     "test:fixtures": "node tasks/test-fixtures.js",
     "test:statichtml": "node tasks/generate-fixture-html.js && html-validate fixtures-html",
+    "test:stories": "vitest run",
     "test:package": "node tasks/test-package.js",
-    "test:vitest": "vitest run",
     "update:fixtures": "node tasks/update-fixtures.js"
   },
   "repository": {

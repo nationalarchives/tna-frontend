@@ -34,5 +34,5 @@ runs:
         timeout: 30000
         interval: 500
     - name: Run Vitest tests
-      run: npm run test:vitest
+      run: npm run test:stories
       shell: bash

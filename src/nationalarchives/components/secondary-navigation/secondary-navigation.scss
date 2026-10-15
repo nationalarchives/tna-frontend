@@ -14,6 +14,8 @@
 
   flex-flow: row wrap;
 
+      @include colour.colour-border("keyline", 1px, solid, block-end);
+
   &__heading {
     padding-block-end: spacing.space(0.5);
 
@@ -85,31 +87,39 @@
     overflow-inline: auto;
   }
 
-  &::after {
-    content: "";
+  // &::after {
+  //   content: "";
 
-    inline-size: 100%;
+  //   inline-size: 100%;
 
-    @include colour.colour-border("keyline", 1px, solid, block-end);
-  }
+  //   @include colour.colour-border("keyline", 1px, solid, block-end);
+  // }
 
   &--no-bottom-border::after {
     display: none;
   }
 
   @include media.on-mobile {
-    border-block-end: none;
+    // border-block-end: none;
+    flex-direction: column;
 
-    &__items {
       inline-size: calc(100% + (var(--container-gap) * 2));
       margin-inline: calc(var(--container-gap) * -1);
+
+
+  &__heading {
+    padding-inline: var(--container-gap);
+    align-self: flex-start;
+  }
+
+
+    &__items {
 
       flex-direction: column;
       align-items: stretch;
       gap: 0;
 
       position: relative;
-      // @include colour.colour-border("keyline", 1px, solid, block-end);
     }
 
     &__item {

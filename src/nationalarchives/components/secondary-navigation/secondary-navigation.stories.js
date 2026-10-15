@@ -75,18 +75,6 @@ export const Default = {
   },
 };
 
-export const Medium = {
-  parameters: {
-    chromatic: {
-      viewports: [customViewports.medium.styles.width.replace(/px$/u, "")],
-    },
-  },
-  globals: {
-    viewport: { value: "medium" },
-  },
-  args: { ...Default.args },
-};
-
 export const Mobile = {
   parameters: {
     chromatic: {

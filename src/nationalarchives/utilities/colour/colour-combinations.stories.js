@@ -1,13 +1,13 @@
-import nunjucks from "nunjucks";
-
+import {
+  renderInlineString,
+  wrapHtml,
+} from "../../../../.storybook/nunjucks.js";
 import Button from "../../components/button/template.njk?raw";
 import Checkboxes from "../../components/checkboxes/template.njk?raw";
 import ErrorSummary from "../../components/error-summary/template.njk?raw";
 import Radios from "../../components/radios/template.njk?raw";
 import Select from "../../components/select/template.njk?raw";
 import TextInput from "../../components/text-input/template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 const argTypes = {};
 
@@ -32,7 +32,9 @@ const accents = [
     "tna-block-accent",
     "tna-block-contrast",
   ],
-  Template = ({ theme }) => `<div class="tna-colour-contrast-demo">
+  Template = ({ theme }) =>
+    wrapHtml(
+      `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
     <div class="tna-colour-contrast-demo__block tna-template ${theme}">
       Blocks
@@ -106,20 +108,20 @@ const accents = [
             </dd>
           </dl>
           <div class="tna-button-group">
-            ${nunjucks.renderString(Button, {
+            ${renderInlineString(Button, {
               params: {
                 text: "Button",
                 small: true,
               },
             })}
-            ${nunjucks.renderString(Button, {
+            ${renderInlineString(Button, {
               params: {
                 text: "Button",
                 small: true,
                 accent: true,
               },
             })}
-            ${nunjucks.renderString(Button, {
+            ${renderInlineString(Button, {
               params: {
                 text: "Button",
                 small: true,
@@ -137,6 +139,8 @@ const accents = [
   )}
   </div>
 </div>`,
+      { accent: "" },
+    ),
   FormsTemplate = ({ theme }) => {
     const themeSlug = theme.replace(" ", "-").toLowerCase(),
       formBlocks = blocks.filter(
@@ -146,14 +150,15 @@ const accents = [
           block !== "tna-block-accent-light",
       );
 
-    return `<div class="tna-colour-contrast-demo">
+    return wrapHtml(
+      `<div class="tna-colour-contrast-demo">
   <div class="tna-colour-contrast-demo__header">
-    <div class="tna-colour-contrast-demo__block">
+    <div class="tna-colour-contrast-demo__block tna-template ${theme}">
       Blocks
     </div>
     ${formBlocks.reduce(
       (blockOutput, block) =>
-        `${blockOutput}<div class="tna-colour-contrast-demo__block">
+        `${blockOutput}<div class="tna-colour-contrast-demo__block tna-template ${theme}">
       ${block.replace(/^tna-block-/u, "") || "Base"}
     </div>`,
       "",
@@ -161,7 +166,7 @@ const accents = [
   </div>
   <div class="tna-colour-contrast-demo__examples">
     <div class="tna-colour-contrast-demo__theme-accent">
-      <div class="tna-colour-contrast-demo__example">
+      <div class="tna-colour-contrast-demo__example tna-template ${theme}">
         <p>Accent: <strong>Any</strong></p>
       </div>
       ${formBlocks.reduce(
@@ -171,7 +176,7 @@ const accents = [
         ) => `${blockOutput}<div class="tna-colour-contrast-demo__example tna-template ${theme}">
         <div class="tna-template__body">
           <div class="tna-colour-contrast-demo__example-content ${block}">
-            ${nunjucks.renderString(ErrorSummary, {
+            ${renderInlineString(ErrorSummary, {
               params: {
                 title: "Error",
                 headingLevel: 2,
@@ -186,7 +191,7 @@ const accents = [
                 classes: "tna-!--margin-block-start-s",
               },
             })}
-            ${nunjucks.renderString(TextInput, {
+            ${renderInlineString(TextInput, {
               params: {
                 headingLevel: 3,
                 headingSize: "s",
@@ -196,7 +201,7 @@ const accents = [
                 value: `Lorem ipsum`,
               },
             })}
-            ${nunjucks.renderString(TextInput, {
+            ${renderInlineString(TextInput, {
               params: {
                 label: "Input",
                 headingLevel: 3,
@@ -209,7 +214,7 @@ const accents = [
                 },
               },
             })}
-            ${nunjucks.renderString(Checkboxes, {
+            ${renderInlineString(Checkboxes, {
               params: {
                 id: `categories-${themeSlug}-${block}`,
                 name: `categories-${themeSlug}-${block}`,
@@ -228,7 +233,7 @@ const accents = [
                 inline: true,
               },
             })}
-            ${nunjucks.renderString(Radios, {
+            ${renderInlineString(Radios, {
               params: {
                 id: `type-${themeSlug}-${block}`,
                 name: `type-${themeSlug}-${block}`,
@@ -247,7 +252,7 @@ const accents = [
                 inline: true,
               },
             })}
-            ${nunjucks.renderString(Select, {
+            ${renderInlineString(Select, {
               params: {
                 label: "Select",
                 id: `sort-${themeSlug}-${block}`,
@@ -275,7 +280,9 @@ const accents = [
       )}
     </div>
   </div>
-</div>`;
+</div>`,
+      { accent: "" },
+    );
   };
 
 export const System = Template.bind({});

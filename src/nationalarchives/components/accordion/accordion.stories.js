@@ -1,10 +1,9 @@
-import nunjucks from "nunjucks";
 import { expect, fireEvent, within } from "storybook/test";
+
+import { renderString } from "../../../../.storybook/nunjucks.js";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Accordion",
@@ -37,7 +36,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => nunjucks.renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }),
 };
 
 export const Standard = {

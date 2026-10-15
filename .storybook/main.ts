@@ -5,7 +5,11 @@ export default {
     name: "@storybook/html-vite",
     options: {},
   },
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx)"],
+  stories: [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx)",
+    "../test/**/*.stories.js",
+  ],
   core: {
     builder: "@storybook/builder-vite",
   },

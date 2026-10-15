@@ -1,11 +1,11 @@
-import nunjucks from "nunjucks";
-
+import {
+  renderInlineString,
+  renderString,
+} from "../../../../.storybook/nunjucks.js";
 import TextInput from "../text-input/template.njk?raw";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Fieldset",
@@ -41,7 +41,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => nunjucks.renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -55,7 +55,7 @@ export const Standard = {
       .reduce(
         (prev, value, index) =>
           prev +
-          nunjucks.renderString(TextInput, {
+          renderInlineString(TextInput, {
             params: {
               label: "Text input",
               headingSize: "xs",

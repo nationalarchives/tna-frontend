@@ -1,3 +1,4 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
 import { customViewports } from "../../../../.storybook/viewports";
 
 const argTypes = {};
@@ -7,7 +8,8 @@ export default {
   argTypes,
 };
 
-const Template = () => `<div class="tna-spacing-demo">
+const Template = () =>
+  wrapHtml(`<div class="tna-spacing-demo">
   <p>Lorem ipsum</p>
   <p class="tna-!--no-margin-block-start">Lorem ipsum (tna-!--no-margin-block-start)</p>
   <p class="tna-!--margin-block-start-xs">Lorem ipsum (tna-!--margin-block-start-xs)</p>
@@ -16,7 +18,7 @@ const Template = () => `<div class="tna-spacing-demo">
   <p class="tna-!--margin-block-start-l">Lorem ipsum (tna-!--margin-block-start-l)</p>
   <p class="tna-!--margin-block-start-xl">Lorem ipsum (tna-!--margin-block-start-xl)</p>
   <p class="tna-!--margin-block-start-xxl">Lorem ipsum (tna-!--margin-block-start-xxl)</p>
-</div>`;
+</div>`);
 
 export const Margin = Template.bind({});
 Margin.parameters = {

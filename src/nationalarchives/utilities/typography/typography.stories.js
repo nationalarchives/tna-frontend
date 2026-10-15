@@ -1,3 +1,5 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 const argTypes = {
   text: { control: "text" },
 };
@@ -8,7 +10,7 @@ export default {
 };
 
 const ParagraphTemplate = ({ paragraphs }) =>
-  paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
+  wrapHtml(paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join(""));
 export const Paragraph = ParagraphTemplate.bind({});
 Paragraph.parameters = {
   chromatic: { disableSnapshot: true },
@@ -22,9 +24,11 @@ Paragraph.args = {
 };
 
 const LargeParagraphTemplate = ({ paragraphs }) =>
-  paragraphs
-    .map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`)
-    .join("");
+  wrapHtml(
+    paragraphs
+      .map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`)
+      .join(""),
+  );
 export const LargeParagraph = LargeParagraphTemplate.bind({});
 LargeParagraph.parameters = {
   chromatic: { disableSnapshot: true },
@@ -36,9 +40,9 @@ LargeParagraph.args = {
 };
 
 const HeadingLinkTemplate = ({ text, href }) =>
-  `<h2 class="tna-heading-s">
+  wrapHtml(`<h2 class="tna-heading-s">
     <a href="${href}">${text}</a>
-  </h2>`;
+  </h2>`);
 export const HeadingLink = HeadingLinkTemplate.bind({});
 HeadingLink.parameters = {
   chromatic: { disableSnapshot: true },
@@ -49,9 +53,9 @@ HeadingLink.args = {
 };
 
 const SceneSetterTemplate = ({ text }) =>
-  `<p class="tna-scene-setter">
+  wrapHtml(`<p class="tna-scene-setter">
     ${text}
-  </p>`;
+  </p>`);
 export const SceneSetter = SceneSetterTemplate.bind({});
 SceneSetter.parameters = {
   chromatic: { disableSnapshot: true },
@@ -60,16 +64,13 @@ SceneSetter.args = {
   text: `We are the official archive of England and Wales. Discover 1,000 years of history through <a href="#">fascinating stories</a> from the past or <a href="#">start your own research</a> and <a href="#">search our catalogue</a> of 32 million records. <a href="#">Plan a visit</a> to access original historic documents from our collections then enjoy the grounds, café, and <a href="#">free exhibitions</a>.`,
 };
 
-const BlockquoteTemplate = ({
-  html,
-  author,
-  work,
-}) => `<div class="tna-blockquote">
+const BlockquoteTemplate = ({ html, author, work }) =>
+  wrapHtml(`<div class="tna-blockquote">
   <blockquote class="tna-blockquote__quote">
     ${html}
   </blockquote>
   <p class="tna-blockquote__attribution">${author}${work ? `, <cite class="tna-blockquote__citation">${work}</cite>` : ""}</p>
-</div>`;
+</div>`);
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.parameters = {
   chromatic: { disableSnapshot: true },

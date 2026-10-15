@@ -110,9 +110,8 @@
       padding: 0.5rem;
 
       position: absolute;
-      inset-inline-end: 1rem;
+      inset-inline: calc(var(--container-gap) / 2);
       inset-block-end: 0;
-      inset-inline-start: 1rem;
 
       color: #fff;
       line-height: 1;
@@ -122,11 +121,6 @@
       background-color: #111;
 
       content: attr(class);
-
-      @include media.on-tiny {
-        inset-inline-end: 0.5rem;
-        inset-inline-start: 0.5rem;
-      }
     }
 
     &::after {
@@ -176,8 +170,7 @@
 
 .tna-spacing-demo {
   p {
-    padding-inline-end: 0.5rem;
-    padding-inline-start: 0.5rem;
+    padding-inline: 0.5rem;
 
     background-color: var(--background-tint);
   }

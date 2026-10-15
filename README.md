@@ -40,3 +40,21 @@ You can also read the [accessibility statement for the National Archives Design 
 ### Accessibility warnings
 
 If you get a warning from a linter or accessibility checker, check our list of [issues you should not need to fix](https://nationalarchives.github.io/tna-frontend-docs/contributing/accessibility/#accessibility-issues-you-should-not-need-to-fix).
+
+## Tests and coverage
+
+The suites in [test/](./test/) are Storybook stories with `play` tests, listed
+under **Tests** in the sidebar. Individual assertions and cases appear as steps
+in the Interactions panel.
+
+Start Storybook with `npm start`, enable coverage in the test panel, and run all
+tests to collect coverage from both the component stories and these suites.
+Running only selected stories collects coverage only for that selection.
+
+Run the same tests and generate a combined coverage report from the command line:
+
+```sh
+npm run test:vitest
+```
+
+The HTML coverage report is written to `coverage/index.html`.

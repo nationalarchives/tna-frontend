@@ -14,7 +14,7 @@ export default defineConfig({
     browser: {
       enabled: true,
       headless: true,
-      provider: playwright({}),
+      provider: playwright({ contextOptions: { timezoneId: "UTC" } }),
       instances: [{ browser: "chromium" }],
       screenshotFailures: false,
     },
@@ -26,13 +26,6 @@ export default defineConfig({
         ],
         test: {
           name: "storybook",
-        },
-      },
-      {
-        extends: true,
-        test: {
-          name: "unit",
-          include: ["test/*.test.js"],
         },
       },
     ],

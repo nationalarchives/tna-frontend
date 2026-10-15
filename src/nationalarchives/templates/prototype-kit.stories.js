@@ -1,24 +1,20 @@
-import nunjucks from "nunjucks";
+import { renderString } from "../../../.storybook/nunjucks.js";
 
 import ErrorPageNotFoundTemplate from "./prototype-kit/error-page-not-found.njk?raw";
 import ListTemplate from "./prototype-kit/list.njk?raw";
 import PlainWithSidebarTemplate from "./prototype-kit/plain-with-sidebar.njk?raw";
 import PlainTemplate from "./prototype-kit/plain.njk?raw";
 
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
-
 export default {
   title: "Templates/Prototype Kit",
 };
 
-export const Plain = (params) =>
-  nunjucks.renderString(PlainTemplate, { ...params });
+export const Plain = (params) => renderString(PlainTemplate, params);
 
 export const PlainWithSidebar = (params) =>
-  nunjucks.renderString(PlainWithSidebarTemplate, { ...params });
+  renderString(PlainWithSidebarTemplate, params);
 
-export const List = (params) =>
-  nunjucks.renderString(ListTemplate, { ...params });
+export const List = (params) => renderString(ListTemplate, params);
 
 export const ErrorPageNotFound = (params) =>
-  nunjucks.renderString(ErrorPageNotFoundTemplate, { ...params });
+  renderString(ErrorPageNotFoundTemplate, params);

@@ -1,3 +1,5 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 const argTypes = {
   items: { control: "object" },
   style: {
@@ -16,10 +18,12 @@ export default {
 };
 
 const OrderedListTemplate = ({ items, style, spaced, classes = "" }) =>
-  `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
-    (list, item) => `${list}<li>${item}</li>`,
-    "",
-  )}</ol>`;
+  wrapHtml(
+    `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
+      (list, item) => `${list}<li>${item}</li>`,
+      "",
+    )}</ol>`,
+  );
 
 export const OrderedList = OrderedListTemplate.bind({});
 OrderedList.parameters = {
@@ -57,8 +61,9 @@ OrderedListSpaced.args = {
 };
 
 const OrderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
-  `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
-    (list, item) => `${list}<li>${item}
+  wrapHtml(
+    `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
+      (list, item) => `${list}<li>${item}
       <ol>${items.reduce(
         (list2, item2) => `${list2}
         <li>${item2}
@@ -77,8 +82,9 @@ const OrderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
         "",
       )}</ol>
     </li>`,
-    "",
-  )}</ol>`;
+      "",
+    )}</ol>`,
+  );
 export const OrderedListNested = OrderedListNestedTemplate.bind({});
 OrderedListNested.parameters = {
   chromatic: { disableSnapshot: true },
@@ -91,7 +97,8 @@ const OrderedListNestedClasslessChildrenTemplate = ({
   style,
   spaced,
   classes = "",
-}) => `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">
+}) =>
+  wrapHtml(`<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">
   <li>&lt;html&gt;
     <ol>
       <li>&lt;head&gt;
@@ -128,7 +135,7 @@ const OrderedListNestedClasslessChildrenTemplate = ({
       </li>
     </ol>
   </li>
-</ol>`;
+</ol>`);
 export const OrderedListNestedClasslessChildren =
   OrderedListNestedClasslessChildrenTemplate.bind({});
 OrderedListNestedClasslessChildren.parameters = {

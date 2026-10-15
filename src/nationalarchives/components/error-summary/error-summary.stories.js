@@ -1,11 +1,12 @@
-import nunjucks from "nunjucks";
-
+import {
+  renderInlineString,
+  renderString,
+  wrapHtml,
+} from "../../../../.storybook/nunjucks.js";
 import TextInput from "../text-input/template.njk?raw";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Error summary",
@@ -35,7 +36,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => nunjucks.renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -56,32 +57,34 @@ export const Standard = {
 };
 
 const FormTemplate = ({ items }) =>
-  `${nunjucks.renderString(Template, {
-    params: {
-      items: Array(items)
-        .fill("")
-        .map((item, index) => ({
-          text: `Error on field ${index + 1}`,
-          href: `#input-${index + 1}`,
-        })),
-      disableAutoFocus: true,
-      classes: "tna-error-summary--demo",
-    },
-  })}${Array(items)
-    .fill("")
-    .map((item, index) =>
-      nunjucks.renderString(TextInput, {
-        params: {
-          label: `Field ${index + 1}`,
-          id: `input-${index + 1}`,
-          name: `input-${index + 1}`,
-          error: {
-            text: "There is a problem",
+  wrapHtml(
+    `${renderInlineString(Template, {
+      params: {
+        items: Array(items)
+          .fill("")
+          .map((item, index) => ({
+            text: `Error on field ${index + 1}`,
+            href: `#input-${index + 1}`,
+          })),
+        disableAutoFocus: true,
+        classes: "tna-error-summary--demo",
+      },
+    })}${Array(items)
+      .fill("")
+      .map((item, index) =>
+        renderInlineString(TextInput, {
+          params: {
+            label: `Field ${index + 1}`,
+            id: `input-${index + 1}`,
+            name: `input-${index + 1}`,
+            error: {
+              text: "There is a problem",
+            },
           },
-        },
-      }),
-    )
-    .join("")}`;
+        }),
+      )
+      .join("")}`,
+  );
 
 export const ScrollExample = FormTemplate.bind({});
 ScrollExample.args = {

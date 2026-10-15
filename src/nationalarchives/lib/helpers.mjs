@@ -1,8 +1,6 @@
 import uuidv4 from "./uuid.mjs";
 
-export const iso8601ToPrettyDatetime = (dateStr) => {
-  const datetime = dateStr;
-
+export const iso8601ToPrettyDatetime = (datetime) => {
   if (!datetime) {
     throw new Error("No datetime provided");
   }
@@ -16,7 +14,7 @@ export const iso8601ToPrettyDatetime = (dateStr) => {
   }
 
   const date = new Date(datetime);
-  if (!(date instanceof Date) || isNaN(date)) {
+  if (!(date instanceof Date)) {
     throw new Error("Invalid datetime provided");
   }
 

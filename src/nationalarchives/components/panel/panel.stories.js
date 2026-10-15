@@ -1,9 +1,7 @@
-import nunjucks from "nunjucks";
+import { renderString } from "../../../../.storybook/nunjucks.js";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Panel",
@@ -37,7 +35,7 @@ export default {
   parameters: {
     chromatic: { delay: 1000 },
   },
-  render: (params) => nunjucks.renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }),
 };
 
 export const Standard = {

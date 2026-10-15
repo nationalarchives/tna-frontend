@@ -1,12 +1,10 @@
-import nunjucks from "nunjucks";
 import { expect, userEvent, within } from "storybook/test";
 
+import { renderString } from "../../../../.storybook/nunjucks.js";
 import { customViewports } from "../../../../.storybook/viewports";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Header",
@@ -46,7 +44,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => nunjucks.renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }),
 };
 
 export const Standard = {

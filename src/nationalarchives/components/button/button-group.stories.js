@@ -1,6 +1,4 @@
-import nunjucks from "nunjucks";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
+import { renderString } from "../../../../.storybook/nunjucks.js";
 
 export default {
   title: "Components/Button group",
@@ -8,7 +6,7 @@ export default {
     small: { control: "boolean" },
   },
   render: (params) =>
-    nunjucks.renderString(
+    renderString(
       `{%- from "nationalarchives/components/button/macro.njk" import tnaButton -%}
       <div class="tna-button-group{% if params.small %} tna-button-group--small{% endif %}">
         {% for button in params.buttons %}

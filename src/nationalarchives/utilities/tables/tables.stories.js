@@ -1,10 +1,12 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 export default {
   title: "Utilities/Tables",
 };
 
 const TableTemplate = () =>
   /* eslint-disable-next-line no-secrets/no-secrets */
-  `<div class="tna-container">
+  wrapHtml(`<div class="tna-container">
   <div class="tna-column tna-column--full">
     <div class="tna-table-wrapper" role="region" aria-labelledby="table-example-1" tabindex="0">
       <table class="tna-table">
@@ -122,5 +124,5 @@ const TableTemplate = () =>
     </div>
     -->
   </div>
-</div>`;
+</div>`);
 export const Table = TableTemplate.bind({});

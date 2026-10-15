@@ -1,3 +1,5 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 const argTypes = {
   items: { control: "object" },
   style: {
@@ -16,7 +18,7 @@ export default {
 };
 
 const DescriptionListTemplate = ({ items, style, stacked, classes = "" }) =>
-  `<dl class="tna-dl${style ? ` tna-dl--${style}` : ""}${stacked ? " tna-dl--stacked" : ""}${
+  wrapHtml(`<dl class="tna-dl${style ? ` tna-dl--${style}` : ""}${stacked ? " tna-dl--stacked" : ""}${
     items.some((item) => item.icon) ? " tna-dl--icon-padding" : ""
   } ${classes}">${items.reduce(
     (list, item) => `${list}
@@ -39,7 +41,7 @@ const DescriptionListTemplate = ({ items, style, stacked, classes = "" }) =>
     }`,
     "",
   )}
-</dl>`;
+</dl>`);
 
 export const DescriptionList = DescriptionListTemplate.bind({});
 DescriptionList.parameters = {

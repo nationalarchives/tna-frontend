@@ -1,11 +1,8 @@
-import nunjucks from "nunjucks";
-
+import { renderString } from "../../../../.storybook/nunjucks.js";
 import { customViewports } from "../../../../.storybook/viewports";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Secondary navigation",
@@ -42,11 +39,8 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => `<div class="tna-container">
-  <div class="tna-column tna-column--full">
-    ${nunjucks.renderString(Template, { params })}
-  </div>
-</div>`,
+  render: (params) =>
+    renderString(Template, { params }, { containerWrapper: true }),
 };
 
 export const Default = {

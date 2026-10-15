@@ -1,3 +1,5 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 const argTypes = {
   supertitle: { control: "text" },
   title: { control: "text" },
@@ -18,12 +20,12 @@ const HeadingGroupTemplate = ({
   size,
   plainSupertitle,
 }) =>
-  `<hgroup class="tna-hgroup-${size}">
+  wrapHtml(`<hgroup class="tna-hgroup-${size}">
   <p class="tna-hgroup__supertitle${
     plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
   }">${supertitle}</p>
   <h${level} class="tna-hgroup__title">${title}</h${level}>
-</hgroup>`;
+</hgroup>`);
 
 export const HeadingGroup = HeadingGroupTemplate.bind({});
 HeadingGroup.parameters = {
@@ -44,14 +46,14 @@ const HeadingGroupSingleSentenceTemplate = ({
   size,
   plainSupertitle,
 }) =>
-  `<hgroup class="tna-hgroup-${size}">
+  wrapHtml(`<hgroup class="tna-hgroup-${size}">
   <h${level} class="tna-hgroup__title">
     <span class="tna-hgroup__supertitle${
       plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
     }">${supertitle}</span>
     <span class="tna-hgroup__title">${title}</span>
   </h${level}>
-</hgroup>`;
+</hgroup>`);
 
 export const HeadingGroupSingleSentence =
   HeadingGroupSingleSentenceTemplate.bind({});

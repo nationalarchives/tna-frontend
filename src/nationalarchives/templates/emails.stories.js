@@ -1,8 +1,6 @@
-import nunjucks from "nunjucks";
+import { renderString } from "../../../.storybook/nunjucks.js";
 
 import Template from "./layouts/email.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Templates/Emails",
@@ -14,7 +12,7 @@ export default {
     signoff: { control: "text" },
     disableAdornableLogo: { control: "boolean" },
   },
-  render: (params) => nunjucks.renderString(Template, { ...params }),
+  render: (params) => renderString(Template, params),
 };
 
 export const Basic = {

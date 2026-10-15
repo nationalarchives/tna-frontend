@@ -5,7 +5,7 @@ import "./storybook.scss";
 import { a11yConfig } from "./storybook-config";
 import { customViewports } from "./viewports";
 import Cookies from "@nationalarchives/cookies/src/index.js";
-import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
+// import { EventTracker, GA4 } from "../src/nationalarchives/analytics.mjs";
 import { initAll } from "../src/nationalarchives/all.mjs";
 import Prism from "prismjs";
 
@@ -22,18 +22,6 @@ document.addEventListener(
   },
   false,
 );
-
-document.documentElement.classList.add(
-  "tna-template",
-  "tna-template--light-theme",
-  // "tna-template--blue-accent",
-);
-if (window.self !== window.top) {
-  document.documentElement.classList.add("tna-template--padded");
-}
-document.body.classList.add("tna-template__body");
-
-// document.documentElement.dataset.tnaFrontendDebug = "true";
 
 export const parameters = {
   actions: {},

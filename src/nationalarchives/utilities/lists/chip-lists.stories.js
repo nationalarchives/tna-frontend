@@ -1,3 +1,5 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 const argTypes = {
   items: { control: "object" },
   classes: { control: "text" },
@@ -9,8 +11,9 @@ export default {
 };
 
 const ChipListTemplate = ({ items, plain, classes = "" }) =>
-  `<dl class="tna-dl-chips${plain ? " tna-dl-chips--plain" : ""} ${classes}">${items.reduce(
-    (list, item) => `${list}
+  wrapHtml(
+    `<dl class="tna-dl-chips${plain ? " tna-dl-chips--plain" : ""} ${classes}">${items.reduce(
+      (list, item) => `${list}
     <dt>${item.title}</dt>
     <dd>
       <${item.href ? "a" : "span"} class="tna-dl-chips__item">
@@ -18,8 +21,9 @@ const ChipListTemplate = ({ items, plain, classes = "" }) =>
         ${item.text}
       </${item.href ? "a" : "span"}>
     </dd>`,
-    "",
-  )}</dl>`;
+      "",
+    )}</dl>`,
+  );
 export const ChipList = ChipListTemplate.bind({});
 ChipList.parameters = {
   chromatic: { disableSnapshot: true },

@@ -1,11 +1,12 @@
-import nunjucks from "nunjucks";
-
+import {
+  renderInlineString,
+  renderString,
+  wrapHtml,
+} from "../../../../.storybook/nunjucks.js";
 import { customViewports } from "../../../../.storybook/viewports";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
-
-nunjucks.configure(import.meta.env.PROD ? "" : "src");
 
 export default {
   title: "Components/Card",
@@ -87,7 +88,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => nunjucks.renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }),
 };
 
 export const Standard = {
@@ -376,162 +377,163 @@ export const HorizontalContrastMobile = {
   },
 };
 
-export const All = () => `
+export const All = () =>
+  wrapHtml(`
 <div class="tna-container">
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
-  </div>
-</div>
-<div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" } })}
-  </div>
-</div>
-<div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint" } })}
-  </div>
-  <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-6">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast" } })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-block-start-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true } })}
+  </div>
+</div>
+<div class="tna-container tna-!--margin-block-start-m">
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true } })}
+  </div>
+  <div class="tna-column tna-column--width-1-6">
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true } })}
   </div>
 </div>
 <div class="tna-container">
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "plain", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "accent", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "tint", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast" } })}
   </div>
   <div class="tna-column tna-column--width-1-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, style: "contrast", fullAreaClick: true } })}
   </div>
   <div class="tna-column tna-column--width-2-3 tna-!--margin-block-start-m">
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, fullAreaClick: true } })}
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "plain", fullAreaClick: true } })}
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true } })}
-    ${nunjucks.renderString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "contrast", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "plain", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true } })}
+    ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "contrast", fullAreaClick: true } })}
   </div>
-</div>`;
+</div>`);
 All.parameters = {
   chromatic: { disableSnapshot: true },
 };

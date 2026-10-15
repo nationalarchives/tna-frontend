@@ -1,3 +1,5 @@
+import { wrapHtml } from "../../../../.storybook/nunjucks.js";
+
 const argTypes = {
   language: { control: "text" },
   filename: { control: "text" },
@@ -11,7 +13,9 @@ export default {
 };
 
 const InlineCodeTemplate = ({ content }) =>
-  `<p>Always place the main body of content in the <code>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code> element.</p>`;
+  wrapHtml(
+    `<p>Always place the main body of content in the <code>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code> element.</p>`,
+  );
 export const InlineCode = InlineCodeTemplate.bind({});
 InlineCode.parameters = {
   chromatic: { disableSnapshot: true },
@@ -19,9 +23,9 @@ InlineCode.parameters = {
 InlineCode.args = { content: "<main>" };
 
 const CodeBlockTemplate = ({ language, filename, content, allowCopy }) =>
-  `<div class="tna-code-block${allowCopy ? " tna-code-block--copy" : ""}" ${filename ? `title="${filename}"` : ""}>
+  wrapHtml(`<div class="tna-code-block${allowCopy ? " tna-code-block--copy" : ""}" ${filename ? `title="${filename}"` : ""}>
   <pre class="tna-code-block__pre"><code class="language-${language}">${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code></pre>
-</div>`;
+</div>`);
 
 export const CodeBlock = CodeBlockTemplate.bind({});
 CodeBlock.parameters = {
@@ -87,7 +91,9 @@ span {
 };
 
 const KeyboardTemplate = ({ content }) =>
-  `<p>Press the <kbd>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</kbd> key.</p>`;
+  wrapHtml(
+    `<p>Press the <kbd>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</kbd> key.</p>`,
+  );
 export const Keyboard = KeyboardTemplate.bind({});
 Keyboard.parameters = {
   chromatic: { disableSnapshot: true },

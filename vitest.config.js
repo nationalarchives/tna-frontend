@@ -32,6 +32,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: "v8",
+      reportOnFailure: true,
       include: ["src/**/*.js", "src/**/*.mjs"],
       exclude: ["**/analytics.js", "**/*.json"],
     },

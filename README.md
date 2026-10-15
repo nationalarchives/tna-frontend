@@ -58,3 +58,9 @@ npm run test:stories
 ```
 
 The HTML coverage report is written to `coverage/index.html`.
+
+GitHub CI uploads the combined coverage report as the **coverage-report**
+artifact, retained for 14 days. Open a CI workflow run in the **Actions** tab,
+download the artifact, extract it, and open `index.html` to browse the report.
+Coverage is also reported when tests fail, provided the test run produces
+coverage data.

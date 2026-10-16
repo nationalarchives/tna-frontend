@@ -441,7 +441,7 @@ HighlightSectionsInvalid.play = async ({ canvasElement }) => {
   await expect(firstHeadingLink.parentElement.classList).not.toContain(
     "tna-sidebar__item--current",
   );
-  await expect(fourthHeadingLink.parentElement.classList).not.toContain(
+  await expect(fourthHeadingLink.parentElement.classList).toContain(
     "tna-sidebar__item--current",
   );
 

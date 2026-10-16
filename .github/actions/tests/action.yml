@@ -25,7 +25,7 @@ runs:
       run: npm start &
       shell: bash
     - name: Install Playwright
-      run: npx playwright install
+      run: npx playwright install --with-deps chromium
       shell: bash
     - uses: nev7n/wait_for_response@7fef3c1a6e8939d0b09062f14fec50d3c5d15fa1 # v1.0.1
       with:

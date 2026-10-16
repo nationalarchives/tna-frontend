@@ -36,12 +36,10 @@ export class Sidebar {
   init() {
     this.breakpoints = breakpoints();
 
-    if (this.disableHighlightSize) {
-      if (!Object.keys(this.breakpoints).includes(this.disableHighlightSize)) {
-        throw new Error(
-          `Invalid value for disableHighlightSize: ${this.disableHighlightSize}. Expected one of: ${Object.keys(this.breakpoints).join(", ")}`,
-        );
-      }
+    if (
+      this.disableHighlightSize &&
+      Object.keys(this.breakpoints).includes(this.disableHighlightSize)
+    ) {
       this.hideOnDevice = window.matchMedia(
         `(max-width: ${this.breakpoints[this.disableHighlightSize]})`,
       );

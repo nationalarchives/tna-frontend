@@ -1,7 +1,10 @@
+import { expect, within } from "storybook/test";
+
 import {
   renderInlineString,
   renderString,
 } from "../../../../.storybook/nunjucks.js";
+import { customViewports } from "../../../../.storybook/viewports";
 
 import macroOptions from "./macro-options.json";
 import Template from "./template.njk?raw";
@@ -239,20 +242,20 @@ const HighlightSectionsTemplate = (params) =>
       <div class="tna-column tna-column--full tna-!--padding-block-end-m">
         <h1 class="tna-heading-xl">Highlighting sections on scroll</h1>
       </div>
-      <div class="tna-column tna-column--width-1-3">
+      <div class="tna-column tna-column--width-1-3 tna-column--full-tiny tna-!--padding-block-end-m">
       ${renderInlineString(Template, { params })}
       </div>
-      <div class="tna-column tna-column--width-2-3 tna-!--padding-block-end-xl">
+      <div class="tna-column tna-column--width-2-3 tna-column--full-tiny tna-!--padding-block-end-xl">
         ${params.items?.map((item) => `<h2 class="tna-heading-l tna-!--padding-block-start-s" id="${item.href.substring(1)}">${item.text}</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis vulputate nulla, nec aliquet velit. Aliquam tristique lorem tortor, et volutpat diam fringilla vel. Etiam aliquet pulvinar justo, a aliquet sem rhoncus non. Donec non felis elementum, accumsan eros ut, feugiat elit. Integer suscipit, sapien elementum vulputate pretium, risus nunc imperdiet purus, ut sagittis tellus velit vel magna. Etiam mauris massa, fringilla eu tincidunt sit amet, commodo bibendum tortor. Curabitur aliquam scelerisque ex, id fringilla metus ultricies cursus. Curabitur eget malesuada dui. Etiam vel iaculis nibh, tincidunt ullamcorper lectus. Integer sed efficitur erat.</p>`).join("")}
       </div>
     </div>
   </div>
 </div>`;
-export const HighlightSections = HighlightSectionsTemplate.bind({});
-HighlightSections.parameters = {
+export const HighlightSectionsDesktop = HighlightSectionsTemplate.bind({});
+HighlightSectionsDesktop.parameters = {
   chromatic: { disableSnapshot: true },
 };
-HighlightSections.args = {
+HighlightSectionsDesktop.args = {
   title: "Sections",
   headingLevel: 2,
   items: [
@@ -285,9 +288,162 @@ HighlightSections.args = {
   sticky: true,
   classes: "tna-!--padding-block-start-s",
   attributes: {
-    // Highlight when the section is within 16px from the top of the viewport
     "data-scroll-top-threshold": "16",
-    // Highlight on all device sizes
     "data-disable-highlight-size": "",
   },
+};
+HighlightSectionsDesktop.play = async ({ canvasElement }) => {
+  const isInViewport = ($element) => {
+    const rect = $element.getBoundingClientRect();
+    const view = $element.ownerDocument.defaultView;
+
+    return (
+      rect.bottom > 0 &&
+      rect.right > 0 &&
+      rect.top < view.innerHeight &&
+      rect.left < view.innerWidth
+    );
+  };
+
+  const canvas = within(canvasElement),
+    firstHeadingLink = await canvas.getByRole("link", { name: "Alpha" }),
+    fourthHeadingLink = await canvas.getByRole("link", { name: "Delta" });
+
+  await window.scrollTo(0, 0);
+
+  await expect(firstHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+  await expect(fourthHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+
+  const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
+  await expect(isInViewport(fourthHeading)).toBe(false);
+  await fourthHeading.scrollIntoView();
+  await expect(isInViewport(fourthHeading)).toBe(true);
+  await expect(firstHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+  await expect(fourthHeadingLink.parentElement.classList).toContain(
+    "tna-sidebar__item--current",
+  );
+
+  // await firstHeadingLink.addEventListener(
+  //   "click",
+  //   (event) => event.preventDefault(),
+  // );
+  // await userEvent.click(firstHeadingLink);
+  // await firstHeadingLink.dispatchEvent(
+  //   new MouseEvent("click", { bubbles: true, cancelable: true }),
+  // );
+  // await expect(firstHeadingLink.parentElement.classList).toContain(
+  //   "tna-sidebar__item--current",
+  // );
+  // await expect(fourthHeadingLink.parentElement.classList).not.toContain(
+  //   "tna-sidebar__item--current",
+  // );
+
+  await window.scrollTo(0, 0);
+};
+
+export const HighlightSectionsTiny = HighlightSectionsTemplate.bind({});
+HighlightSectionsTiny.parameters = {
+  ...HighlightSectionsDesktop.parameters,
+  chromatic: {
+    ...HighlightSectionsDesktop.parameters.chromatic,
+    viewports: [customViewports.tiny.styles.width.replace(/px$/u, "")],
+  },
+};
+HighlightSectionsTiny.args = { ...HighlightSectionsDesktop.args };
+HighlightSectionsTiny.globals = {
+  ...HighlightSectionsDesktop.globals,
+  viewport: { value: "tiny" },
+};
+HighlightSectionsTiny.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement),
+    firstHeadingLink = await canvas.getByRole("link", { name: "Alpha" }),
+    fourthHeadingLink = await canvas.getByRole("link", { name: "Delta" });
+
+  await window.scrollTo(0, 0);
+
+  const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
+  await fourthHeading.scrollIntoView();
+  await expect(firstHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+  await expect(fourthHeadingLink.parentElement.classList).toContain(
+    "tna-sidebar__item--current",
+  );
+
+  await window.scrollTo(0, 0);
+};
+
+export const HighlightSectionsTinyHidden = HighlightSectionsTemplate.bind({});
+HighlightSectionsTinyHidden.parameters = {
+  ...HighlightSectionsDesktop.parameters,
+  chromatic: {
+    ...HighlightSectionsDesktop.parameters.chromatic,
+    viewports: [customViewports.tiny.styles.width.replace(/px$/u, "")],
+  },
+};
+HighlightSectionsTinyHidden.args = {
+  ...HighlightSectionsDesktop.args,
+  attributes: {
+    ...HighlightSectionsDesktop.args.attributes,
+    "data-disable-highlight-size": "tiny",
+  },
+};
+HighlightSectionsTinyHidden.globals = {
+  ...HighlightSectionsDesktop.globals,
+  viewport: { value: "tiny" },
+};
+HighlightSectionsTinyHidden.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement),
+    firstHeadingLink = await canvas.getByRole("link", { name: "Alpha" }),
+    fourthHeadingLink = await canvas.getByRole("link", { name: "Delta" });
+
+  await window.scrollTo(0, 0);
+
+  const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
+  await fourthHeading.scrollIntoView();
+  await expect(firstHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+  await expect(fourthHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+
+  await window.scrollTo(0, 0);
+};
+
+export const HighlightSectionsInvalid = HighlightSectionsTemplate.bind({});
+HighlightSectionsInvalid.parameters = {
+  ...HighlightSectionsDesktop.parameters,
+};
+HighlightSectionsInvalid.args = {
+  ...HighlightSectionsDesktop.args,
+  attributes: {
+    ...HighlightSectionsDesktop.args.attributes,
+    "data-disable-highlight-size": "foobar",
+  },
+};
+HighlightSectionsInvalid.globals = { ...HighlightSectionsDesktop.globals };
+HighlightSectionsInvalid.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement),
+    firstHeadingLink = await canvas.getByRole("link", { name: "Alpha" }),
+    fourthHeadingLink = await canvas.getByRole("link", { name: "Delta" });
+
+  await window.scrollTo(0, 0);
+
+  const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
+  await fourthHeading.scrollIntoView();
+  await expect(firstHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+  await expect(fourthHeadingLink.parentElement.classList).not.toContain(
+    "tna-sidebar__item--current",
+  );
+
+  await window.scrollTo(0, 0);
 };

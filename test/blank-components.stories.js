@@ -73,7 +73,6 @@ export const Initialised = {
     new Header();
     new Picture();
     new Sidebar();
-    new Sidebar(null, { disableHighlightSize: "foobar" });
     new SkipLink();
     new Tabs();
     new TextInputPassword();

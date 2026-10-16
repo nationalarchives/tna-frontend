@@ -27,7 +27,7 @@ runs:
     - name: Install Playwright
       run: npx playwright install --with-deps chromium
       shell: bash
-    - uses: nev7n/wait_for_response@7fef3c1a6e8939d0b09062f14fec50d3c5d15fa1 # v1.0.1
+    - uses: nev7n/wait_for_response@8bfc0523300e46e24e1b42d6783680aa921ee6cc # v1.2.0
       with:
         url: "http://localhost:6006"
         responseCode: 200
@@ -36,11 +36,11 @@ runs:
     - name: Run Storybook tests
       run: npm run test:stories
       shell: bash
-    - name: Upload coverage report
-      if: ${{ !cancelled() }}
-      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-      with:
-        name: coverage-report
-        path: coverage/
-        if-no-files-found: warn
-        retention-days: 14
+    # - name: Upload coverage report
+    #   if: ${{ !cancelled() }}
+    #   uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+    #   with:
+    #     name: coverage-report
+    #     path: coverage/
+    #     if-no-files-found: warn
+    #     retention-days: 14

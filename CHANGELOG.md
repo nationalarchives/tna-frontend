@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the format of the `themeSelector` and `social` properties in the footer component and `showNewsletter` changed to `newsletter` with an updated format
 - Updated the SCSS variable `$spacing-unit-rem` to `$base-spacing-factor-rem`
 - Refactored spacing to use CSS variables
+- Improved accessibility of ellipses in pagination components
 
 ### Deprecated
 

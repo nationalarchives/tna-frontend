@@ -22,7 +22,10 @@
   <ul class="tna-pagination__list">
     {% for item in params.items -%}
       {% if item.ellipsis -%}
-      <li class="tna-pagination__item tna-pagination__item--ellipses">&ctdot;</li>
+      <li class="tna-pagination__item tna-pagination__item--ellipses">
+        <span aria-hidden="true">&ctdot;</span>
+        <span class="tna-visually-hidden">Ellipsis</span>
+      </li>
       {% else -%}
       <li class="tna-pagination__item{{ ' tna-pagination__item--current' if item.current }}">
         {{ tnaButton({

@@ -12,6 +12,7 @@ export default {
   ],
   core: {
     builder: "@storybook/builder-vite",
+    allowedHosts: ["localhost"],
   },
   addons: [
     "@storybook/addon-links",

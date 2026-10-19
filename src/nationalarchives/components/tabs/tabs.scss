@@ -85,7 +85,7 @@
   &--small &__button-inner {
     margin: spacing.space(0.125) spacing.space(0.125)
       calc(spacing.space(0.125) + 1px);
-    padding: spacing.space(0.25) spacing.space(0.5);
+    padding: spacing.space(0.125) spacing.space(0.5);
 
     @include typography.font-size(16);
   }

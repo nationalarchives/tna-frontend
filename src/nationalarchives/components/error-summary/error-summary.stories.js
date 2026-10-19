@@ -36,7 +36,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }, { padded: true }),
 };
 
 export const Standard = {
@@ -83,7 +83,7 @@ const FormTemplate = ({ items }) =>
           },
         }),
       )
-      .join("")}`,
+      .join("")}`, { padded: true },
   );
 
 export const ScrollExample = FormTemplate.bind({});

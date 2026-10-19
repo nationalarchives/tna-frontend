@@ -10,7 +10,7 @@ export default {
 };
 
 const ParagraphTemplate = ({ paragraphs }) =>
-  wrapHtml(paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join(""));
+  wrapHtml(paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join(""), { padded: true });
 export const Paragraph = ParagraphTemplate.bind({});
 Paragraph.parameters = {
   chromatic: { disableSnapshot: true },
@@ -28,6 +28,7 @@ const LargeParagraphTemplate = ({ paragraphs }) =>
     paragraphs
       .map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`)
       .join(""),
+    { padded: true }
   );
 export const LargeParagraph = LargeParagraphTemplate.bind({});
 LargeParagraph.parameters = {
@@ -42,7 +43,7 @@ LargeParagraph.args = {
 const HeadingLinkTemplate = ({ text, href }) =>
   wrapHtml(`<h2 class="tna-heading-s">
     <a href="${href}">${text}</a>
-  </h2>`);
+  </h2>`, { padded: true });
 export const HeadingLink = HeadingLinkTemplate.bind({});
 HeadingLink.parameters = {
   chromatic: { disableSnapshot: true },
@@ -55,7 +56,7 @@ HeadingLink.args = {
 const SceneSetterTemplate = ({ text }) =>
   wrapHtml(`<p class="tna-scene-setter">
     ${text}
-  </p>`);
+  </p>`, { padded: true });
 export const SceneSetter = SceneSetterTemplate.bind({});
 SceneSetter.parameters = {
   chromatic: { disableSnapshot: true },
@@ -70,7 +71,7 @@ const BlockquoteTemplate = ({ html, author, work }) =>
     ${html}
   </blockquote>
   <p class="tna-blockquote__attribution">${author}${work ? `, <cite class="tna-blockquote__citation">${work}</cite>` : ""}</p>
-</div>`);
+</div>`, { padded: true });
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.parameters = {
   chromatic: { disableSnapshot: true },

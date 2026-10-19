@@ -15,6 +15,15 @@
 @import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&family=Roboto+Mono:wght@400..500&display=swap";
 // @import "https://www.nationalarchives.gov.uk/enrichment/css/logo-adornments.css";
 
+.tna-storybook {
+  &,
+  > body,
+  #storybook-root,
+  #storybook-root > .tna-template {
+    min-block-size: 100vh;
+  }
+}
+
 .sb-show-main.sb-main-padded {
   padding: 0;
 }
@@ -28,6 +37,24 @@
   background-color: #ddd;
 
   outline: #ddd 100vmax solid;
+  div.docs-story {
+    background-position:
+      16px 16px,
+      16px 16px,
+      16px 16px,
+      16px 16px !important;
+
+    > div {
+      margin: 0;
+      padding: 1rem;
+
+      .innerZoomElementWrapper {
+        > * {
+          border: none !important;
+        }
+      }
+    }
+  }
 }
 
 .sbdocs {
@@ -49,27 +76,6 @@
   }
 }
 
-#storybook-docs {
-  div.docs-story {
-    background-position:
-      16px 16px,
-      16px 16px,
-      16px 16px,
-      16px 16px !important;
-
-    > div {
-      margin: 0;
-      padding: 1rem;
-
-      .innerZoomElementWrapper {
-        > * {
-          border: none !important;
-        }
-      }
-    }
-  }
-}
-
 .sb-story.sb-unstyled {
   @include colour.colour-css-vars;
 
@@ -87,7 +93,13 @@
 
   &--padded {
     > .tna-template__body {
-      padding: 16px;
+      padding: 1rem;
+    }
+  }
+
+  &--padded-vertical {
+    > .tna-template__body {
+      padding-block: 1rem;
     }
   }
 }
@@ -264,8 +276,6 @@
   }
 
   p .fa-solid {
-    // margin-inline-start: 0.5rem;
-
     &.light-icon {
       color: var(--icon-light) !important;
     }

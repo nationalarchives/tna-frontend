@@ -40,7 +40,7 @@ export default {
     },
   },
   render: (params) =>
-    renderString(Template, { params }, { containerWrapper: true }),
+    renderString(Template, { params }, { containerWrapper: true, paddedVertical: true }),
 };
 
 export const Default = {

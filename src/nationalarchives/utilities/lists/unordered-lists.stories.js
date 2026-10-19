@@ -22,7 +22,7 @@ const UnorderedListTemplate = ({ items, style, spaced, classes = "" }) =>
     `<ul class="tna-ul${style ? ` tna-ul--${style}` : ""}${spaced ? " tna-ul--spaced" : ""} ${classes}">${items.reduce(
       (list, item) => `${list}<li>${item}</li>`,
       "",
-    )}</ul>`,
+    )}</ul>`, { padded: true }
   );
 
 export const UnorderedList = UnorderedListTemplate.bind({});
@@ -83,7 +83,7 @@ const UnorderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
       )}</ul>
     </li>`,
       "",
-    )}</ul>`,
+    )}</ul>`, { padded: true }
   );
 export const UnorderedListNested = UnorderedListNestedTemplate.bind({});
 UnorderedListNested.parameters = {
@@ -135,7 +135,7 @@ const UnorderedListNestedClasslessChildrenTemplate = ({
       </li>
     </ul>
   </li>
-</ul>`);
+</ul>`, { padded: true });
 export const UnorderedListNestedClasslessChildren =
   UnorderedListNestedClasslessChildrenTemplate.bind({});
 UnorderedListNestedClasslessChildren.parameters = {

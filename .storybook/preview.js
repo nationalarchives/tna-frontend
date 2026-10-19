@@ -12,6 +12,8 @@ import Prism from "prismjs";
 // For cookie banner tests
 window.global = window;
 
+document.documentElement.classList.add("tna-storybook");
+
 document.addEventListener(
   "DOMContentLoaded",
   () => {

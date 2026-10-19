@@ -44,7 +44,7 @@ export default {
   parameters: {
     chromatic: { delay: 1000 },
   },
-  render: (params) => renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }, { padded: true }),
 };
 
 export const Contents = {

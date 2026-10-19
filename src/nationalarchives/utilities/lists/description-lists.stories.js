@@ -41,7 +41,7 @@ const DescriptionListTemplate = ({ items, style, stacked, classes = "" }) =>
     }`,
     "",
   )}
-</dl>`);
+</dl>`, { padded: true });
 
 export const DescriptionList = DescriptionListTemplate.bind({});
 DescriptionList.parameters = {

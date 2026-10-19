@@ -32,7 +32,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }, { padded: true }),
 };
 
 export const Standard = {

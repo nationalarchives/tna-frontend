@@ -88,7 +88,7 @@ export default {
       options: customViewports,
     },
   },
-  render: (params) => renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }, { padded: true }),
 };
 
 export const Standard = {
@@ -378,106 +378,107 @@ export const HorizontalContrastMobile = {
 };
 
 export const All = () =>
-  wrapHtml(`
+  wrapHtml(
+    `
 <div class="tna-container">
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "plain" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "accent" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "tint" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, supertitle: null, text: "Lorem ipsum", style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint" } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast" } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "plain", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "accent", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "tint", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", imageSrc: null, style: "contrast", fullAreaClick: true } })}
   </div>
 </div>
 <div class="tna-container tna-!--margin-block-start-m">
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "plain", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "accent", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "tint", fullAreaClick: true } })}
   </div>
-  <div class="tna-column tna-column--width-1-6">
+  <div class="tna-column tna-column--flex-1">
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", style: "contrast", fullAreaClick: true } })}
   </div>
 </div>
@@ -533,7 +534,9 @@ export const All = () =>
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "accent", fullAreaClick: true } })}
     ${renderInlineString(Template, { params: { ...Standard.args, text: "Lorem ipsum", horizontal: true, horizontalOnSmall: true, horizontalSmallImage: true, style: "contrast", fullAreaClick: true } })}
   </div>
-</div>`);
+</div>`,
+    { padded: true },
+  );
 All.parameters = {
   chromatic: { disableSnapshot: true },
 };

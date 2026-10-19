@@ -25,7 +25,7 @@ const HeadingGroupTemplate = ({
     plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
   }">${supertitle}</p>
   <h${level} class="tna-hgroup__title">${title}</h${level}>
-</hgroup>`);
+</hgroup>`, { padded: true });
 
 export const HeadingGroup = HeadingGroupTemplate.bind({});
 HeadingGroup.parameters = {
@@ -53,7 +53,7 @@ const HeadingGroupSingleSentenceTemplate = ({
     }">${supertitle}</span>
     <span class="tna-hgroup__title">${title}</span>
   </h${level}>
-</hgroup>`);
+</hgroup>`, { padded: true });
 
 export const HeadingGroupSingleSentence =
   HeadingGroupSingleSentenceTemplate.bind({});

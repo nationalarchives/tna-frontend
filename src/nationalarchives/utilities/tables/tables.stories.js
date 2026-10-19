@@ -124,5 +124,5 @@ const TableTemplate = () =>
     </div>
     -->
   </div>
-</div>`);
+</div>`, { paddedVertical: true });
 export const Table = TableTemplate.bind({});

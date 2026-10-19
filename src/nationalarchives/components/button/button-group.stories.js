@@ -14,6 +14,7 @@ export default {
         {% endfor %}
       </div>`,
       { params },
+      { padded: true },
     ),
 };
 

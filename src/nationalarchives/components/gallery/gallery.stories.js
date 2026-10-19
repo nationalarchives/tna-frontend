@@ -35,7 +35,7 @@ export default {
       },
     ]),
   ),
-  render: (params) => renderString(Template, { params }),
+  render: (params) => renderString(Template, { params }, { padded: true }),
 };
 
 const exampleHeight = 400,

@@ -13,9 +13,10 @@ export const wrapHtml = (html, options = {}) => {
     theme = "light",
     accent = "blue",
     padded = false,
+    paddedVertical = false,
     templateClasses = "",
   } = options;
-  return `<div class="tna-template${theme ? ` tna-template--${theme}-theme` : ""}${accent ? ` tna-template--${accent}-accent` : ""}${padded ? ` tna-template--padded` : ""}${templateClasses ? ` ${templateClasses}` : ""}">
+  return `<div class="tna-template${theme ? ` tna-template--${theme}-theme` : ""}${accent ? ` tna-template--${accent}-accent` : ""}${padded ? ` tna-template--padded` : ""}${paddedVertical ? ` tna-template--padded-vertical` : ""}${templateClasses ? ` ${templateClasses}` : ""}">
   <div class="tna-template__body">
     ${containerWrapper ? `<div class="tna-container"><div class="tna-column tna-column--full">` : ""}
       ${html}

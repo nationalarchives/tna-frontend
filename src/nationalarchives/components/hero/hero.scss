@@ -85,7 +85,7 @@ $over-overflow: $shift-overflow !default;
       content: "";
 
       inline-size: 1.5rem;
-      block-size: 0.125rem;
+      block-size: 0;
 
       display: block;
 
@@ -95,6 +95,8 @@ $over-overflow: $shift-overflow !default;
       inset-inline-start: 50%;
 
       background-color: var(--font-dark);
+
+      @include colour.colour-border("font-dark", 0.125rem, solid, block-end);
     }
 
     &::before {
@@ -108,7 +110,7 @@ $over-overflow: $shift-overflow !default;
     &:hover {
       &::before,
       &::after {
-        block-size: 0.25rem;
+        border-block-end-width: 0.25rem;
       }
     }
 

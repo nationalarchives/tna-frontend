@@ -48,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed the redundant `aria-label` from the button component
 - Fixed lazy loaded picture elements not rendering at their correct sizes before loading
+- Improved close button visibility on hero details for forced-colors mode
 
 ### Security
 

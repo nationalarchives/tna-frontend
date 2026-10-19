@@ -22,7 +22,8 @@ const OrderedListTemplate = ({ items, style, spaced, classes = "" }) =>
     `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">${items.reduce(
       (list, item) => `${list}<li>${item}</li>`,
       "",
-    )}</ol>`, { padded: true }
+    )}</ol>`,
+    { padded: true },
   );
 
 export const OrderedList = OrderedListTemplate.bind({});
@@ -83,7 +84,8 @@ const OrderedListNestedTemplate = ({ items, style, spaced, classes = "" }) =>
       )}</ol>
     </li>`,
       "",
-    )}</ol>`, { padded: true }
+    )}</ol>`,
+    { padded: true },
   );
 export const OrderedListNested = OrderedListNestedTemplate.bind({});
 OrderedListNested.parameters = {
@@ -98,7 +100,8 @@ const OrderedListNestedClasslessChildrenTemplate = ({
   spaced,
   classes = "",
 }) =>
-  wrapHtml(`<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">
+  wrapHtml(
+    `<ol class="tna-ol${style ? ` tna-ol--${style}` : ""}${spaced ? " tna-ol--spaced" : ""} ${classes}">
   <li>&lt;html&gt;
     <ol>
       <li>&lt;head&gt;
@@ -135,7 +138,9 @@ const OrderedListNestedClasslessChildrenTemplate = ({
       </li>
     </ol>
   </li>
-</ol>`, { padded: true });
+</ol>`,
+    { padded: true },
+  );
 export const OrderedListNestedClasslessChildren =
   OrderedListNestedClasslessChildrenTemplate.bind({});
 OrderedListNestedClasslessChildren.parameters = {

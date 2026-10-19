@@ -18,10 +18,11 @@ export default {
 };
 
 const DescriptionListTemplate = ({ items, style, stacked, classes = "" }) =>
-  wrapHtml(`<dl class="tna-dl${style ? ` tna-dl--${style}` : ""}${stacked ? " tna-dl--stacked" : ""}${
-    items.some((item) => item.icon) ? " tna-dl--icon-padding" : ""
-  } ${classes}">${items.reduce(
-    (list, item) => `${list}
+  wrapHtml(
+    `<dl class="tna-dl${style ? ` tna-dl--${style}` : ""}${stacked ? " tna-dl--stacked" : ""}${
+      items.some((item) => item.icon) ? " tna-dl--icon-padding" : ""
+    } ${classes}">${items.reduce(
+      (list, item) => `${list}
     <dt>
       ${
         item.icon
@@ -39,9 +40,11 @@ const DescriptionListTemplate = ({ items, style, stacked, classes = "" }) =>
           )
         : `<dd>${item.description}</dd>`
     }`,
-    "",
-  )}
-</dl>`, { padded: true });
+      "",
+    )}
+</dl>`,
+    { padded: true },
+  );
 
 export const DescriptionList = DescriptionListTemplate.bind({});
 DescriptionList.parameters = {

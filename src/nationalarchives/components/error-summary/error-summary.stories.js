@@ -83,7 +83,8 @@ const FormTemplate = ({ items }) =>
           },
         }),
       )
-      .join("")}`, { padded: true },
+      .join("")}`,
+    { padded: true },
   );
 
 export const ScrollExample = FormTemplate.bind({});

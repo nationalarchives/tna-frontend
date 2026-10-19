@@ -20,12 +20,15 @@ const HeadingGroupTemplate = ({
   size,
   plainSupertitle,
 }) =>
-  wrapHtml(`<hgroup class="tna-hgroup-${size}">
+  wrapHtml(
+    `<hgroup class="tna-hgroup-${size}">
   <p class="tna-hgroup__supertitle${
     plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
   }">${supertitle}</p>
   <h${level} class="tna-hgroup__title">${title}</h${level}>
-</hgroup>`, { padded: true });
+</hgroup>`,
+    { padded: true },
+  );
 
 export const HeadingGroup = HeadingGroupTemplate.bind({});
 HeadingGroup.parameters = {
@@ -46,14 +49,17 @@ const HeadingGroupSingleSentenceTemplate = ({
   size,
   plainSupertitle,
 }) =>
-  wrapHtml(`<hgroup class="tna-hgroup-${size}">
+  wrapHtml(
+    `<hgroup class="tna-hgroup-${size}">
   <h${level} class="tna-hgroup__title">
     <span class="tna-hgroup__supertitle${
       plainSupertitle ? " tna-hgroup__supertitle--plain" : ""
     }">${supertitle}</span>
     <span class="tna-hgroup__title">${title}</span>
   </h${level}>
-</hgroup>`, { padded: true });
+</hgroup>`,
+    { padded: true },
+  );
 
 export const HeadingGroupSingleSentence =
   HeadingGroupSingleSentenceTemplate.bind({});

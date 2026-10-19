@@ -15,7 +15,7 @@ export default {
 const InlineCodeTemplate = ({ content }) =>
   wrapHtml(
     `<p>Always place the main body of content in the <code>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code> element.</p>`,
-    { padded: true }
+    { padded: true },
   );
 export const InlineCode = InlineCodeTemplate.bind({});
 InlineCode.parameters = {
@@ -24,9 +24,12 @@ InlineCode.parameters = {
 InlineCode.args = { content: "<main>" };
 
 const CodeBlockTemplate = ({ language, filename, content, allowCopy }) =>
-  wrapHtml(`<div class="tna-code-block${allowCopy ? " tna-code-block--copy" : ""}" ${filename ? `title="${filename}"` : ""}>
+  wrapHtml(
+    `<div class="tna-code-block${allowCopy ? " tna-code-block--copy" : ""}" ${filename ? `title="${filename}"` : ""}>
   <pre class="tna-code-block__pre"><code class="language-${language}">${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</code></pre>
-</div>`, { padded: true });
+</div>`,
+    { padded: true },
+  );
 
 export const CodeBlock = CodeBlockTemplate.bind({});
 CodeBlock.parameters = {
@@ -93,7 +96,8 @@ span {
 
 const KeyboardTemplate = ({ content }) =>
   wrapHtml(
-    `<p>Press the <kbd>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</kbd> key.</p>`, { padded: true }
+    `<p>Press the <kbd>${content.replace(/</gu, "&lt;").replace(/>/gu, "&gt;")}</kbd> key.</p>`,
+    { padded: true },
   );
 export const Keyboard = KeyboardTemplate.bind({});
 Keyboard.parameters = {

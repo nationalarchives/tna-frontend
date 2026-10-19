@@ -25,7 +25,7 @@ const HeadingTemplate = ({ params }, level) => `<h${level} class="tna-heading-${
         { params: { text, size: "s" } },
         4,
       )}`,
-      { padded: true }
+      { padded: true },
     );
 
 export const Headings = HeadingsTemplate.bind({});

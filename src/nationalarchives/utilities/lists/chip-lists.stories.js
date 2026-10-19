@@ -22,7 +22,8 @@ const ChipListTemplate = ({ items, plain, classes = "" }) =>
       </${item.href ? "a" : "span"}>
     </dd>`,
       "",
-    )}</dl>`, { padded: true }
+    )}</dl>`,
+    { padded: true },
   );
 export const ChipList = ChipListTemplate.bind({});
 ChipList.parameters = {

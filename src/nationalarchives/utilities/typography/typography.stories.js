@@ -10,7 +10,9 @@ export default {
 };
 
 const ParagraphTemplate = ({ paragraphs }) =>
-  wrapHtml(paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join(""), { padded: true });
+  wrapHtml(paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join(""), {
+    padded: true,
+  });
 export const Paragraph = ParagraphTemplate.bind({});
 Paragraph.parameters = {
   chromatic: { disableSnapshot: true },
@@ -28,7 +30,7 @@ const LargeParagraphTemplate = ({ paragraphs }) =>
     paragraphs
       .map((paragraph) => `<p class="tna-large-paragraph">${paragraph}</p>`)
       .join(""),
-    { padded: true }
+    { padded: true },
   );
 export const LargeParagraph = LargeParagraphTemplate.bind({});
 LargeParagraph.parameters = {
@@ -41,9 +43,12 @@ LargeParagraph.args = {
 };
 
 const HeadingLinkTemplate = ({ text, href }) =>
-  wrapHtml(`<h2 class="tna-heading-s">
+  wrapHtml(
+    `<h2 class="tna-heading-s">
     <a href="${href}">${text}</a>
-  </h2>`, { padded: true });
+  </h2>`,
+    { padded: true },
+  );
 export const HeadingLink = HeadingLinkTemplate.bind({});
 HeadingLink.parameters = {
   chromatic: { disableSnapshot: true },
@@ -54,9 +59,12 @@ HeadingLink.args = {
 };
 
 const SceneSetterTemplate = ({ text }) =>
-  wrapHtml(`<p class="tna-scene-setter">
+  wrapHtml(
+    `<p class="tna-scene-setter">
     ${text}
-  </p>`, { padded: true });
+  </p>`,
+    { padded: true },
+  );
 export const SceneSetter = SceneSetterTemplate.bind({});
 SceneSetter.parameters = {
   chromatic: { disableSnapshot: true },
@@ -66,12 +74,15 @@ SceneSetter.args = {
 };
 
 const BlockquoteTemplate = ({ html, author, work }) =>
-  wrapHtml(`<div class="tna-blockquote">
+  wrapHtml(
+    `<div class="tna-blockquote">
   <blockquote class="tna-blockquote__quote">
     ${html}
   </blockquote>
   <p class="tna-blockquote__attribution">${author}${work ? `, <cite class="tna-blockquote__citation">${work}</cite>` : ""}</p>
-</div>`, { padded: true });
+</div>`,
+    { padded: true },
+  );
 export const Blockquote = BlockquoteTemplate.bind({});
 Blockquote.parameters = {
   chromatic: { disableSnapshot: true },

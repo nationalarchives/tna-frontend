@@ -17,6 +17,7 @@ import { SkipLink } from "../src/nationalarchives/components/skip-link/skip-link
 import { Tabs } from "../src/nationalarchives/components/tabs/tabs.mjs";
 import { TextInputPassword } from "../src/nationalarchives/components/text-input/text-input.mjs";
 import { TextAreaItemisedRows } from "../src/nationalarchives/components/textarea/textarea.mjs";
+import { render } from "nunjucks";
 
 export default {
   title: "Tests/Blank components",
@@ -29,7 +30,6 @@ export default {
         <button class="tna-accordion__toggle-all"></button>
         <div class="tna-accordion__item"></div>
       </div>
-
       <div data-module="tna-breadcrumbs"></div>
       <div data-module="tna-code-block"></div>
       <div data-module="tna-cookie-banner"></div>
@@ -46,6 +46,10 @@ export default {
       <div data-module="tna-text-input"></div>
       <div data-module="tna-textarea-itemised-rows"></div>
       <div class="tna-table-wrapper"></div>
+      <div class="tna-table-wrapper">
+        <table class="tna-table">
+        </table>
+      </div>
     `,
 };
 
@@ -59,6 +63,7 @@ export const Initialised = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
+  render: () => ``,
   play: async () => {
     new Accordion();
     new Breadcrumbs();

@@ -18,13 +18,7 @@ export const Iso8601ToPrettyDatetime = {
       expect(() => iso8601ToPrettyDatetime()).toThrow("No datetime provided");
     });
 
-    for (const testDatetime of [
-      "invalid",
-      "2001",
-      "2001-02",
-      "2001-02-03T12",
-      "2001-02-03 12",
-    ]) {
+    for (const testDatetime of ["invalid", "2001-02-03T12", "2001-02-03 12"]) {
       await step(`Invalid datetime (${testDatetime})`, async () => {
         expect(() => iso8601ToPrettyDatetime(testDatetime)).toThrow(
           "Invalid datetime provided",
@@ -33,6 +27,8 @@ export const Iso8601ToPrettyDatetime = {
     }
 
     for (const [input, expected] of [
+      ["2001", "Monday 1 January 2001"],
+      ["2001-02", "Thursday 1 February 2001"],
       ["2001-02-03", "Saturday 3 February 2001"],
       ["2001-02-03T12:30", "Saturday 3 February 2001, 12:30"],
       ["2001-02-03T12:30Z", "Saturday 3 February 2001, 12:30"],
@@ -46,6 +42,7 @@ export const Iso8601ToPrettyDatetime = {
       ["2001-02-03T12:30+01:00", "Saturday 3 February 2001, 11:30"],
       ["2001-02-03T12:30-00:00", "Saturday 3 February 2001, 12:30"],
       ["2001-02-03T12:30-01:00", "Saturday 3 February 2001, 13:30"],
+      ["2001-02-03T00:00", "Saturday 3 February 2001, 00:00"],
       ["2001-02-03 12:30", "Saturday 3 February 2001, 12:30"],
       ["2001-02-03 12:30Z", "Saturday 3 February 2001, 12:30"],
       ["2001-02-03 12:30:45", "Saturday 3 February 2001, 12:30:45"],
@@ -58,6 +55,10 @@ export const Iso8601ToPrettyDatetime = {
       ["2001-02-03 12:30+01:00", "Saturday 3 February 2001, 11:30"],
       ["2001-02-03 12:30-00:00", "Saturday 3 February 2001, 12:30"],
       ["2001-02-03 12:30-01:00", "Saturday 3 February 2001, 13:30"],
+      ["2001-02-03 00:00", "Saturday 3 February 2001, 00:00"],
+      [100000000000, "Saturday 3 March 1973, 09:46:40"],
+      [100000020000, "Saturday 3 March 1973, 09:47"],
+      [99964800000, "Saturday 3 March 1973, 00:00"],
     ]) {
       await step(`Valid datetime (${input})`, async () => {
         expect(() => iso8601ToPrettyDatetime(input)).not.toThrow();

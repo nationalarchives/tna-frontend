@@ -4,17 +4,9 @@ export const iso8601ToPrettyDatetime = (datetime) => {
   if (!datetime) {
     throw new Error("No datetime provided");
   }
-  const isDateTime =
-    /^\d{4}(?:-\d{2}){2}(?:T| )\d{2}(?::\d{2}){1,2}(?:\.\d+)?(?:Z|(?:[+-]\d{2}:\d{2}))?$/u.test(
-      datetime,
-    );
-  const isDate = /^\d{4}(?:-\d{2}){2}$/u.test(datetime);
-  if (!isDateTime && !isDate) {
-    throw new Error("Invalid datetime provided");
-  }
 
   const date = new Date(datetime);
-  if (!(date instanceof Date)) {
+  if (isNaN(date.valueOf())) {
     throw new Error("Invalid datetime provided");
   }
 
@@ -27,7 +19,11 @@ export const iso8601ToPrettyDatetime = (datetime) => {
     year: "numeric",
   });
 
-  if (isDateTime && (date.getHours() || date.getMinutes())) {
+  const hasTime =
+    typeof datetime === "number" ||
+    /([0-1][0-9]|2[0-3]):[0-5][0-9]/.test(datetime);
+
+  if (hasTime) {
     let timeString = date.toLocaleTimeString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
@@ -104,7 +100,9 @@ export const checkTableForScroll = ($tableWrapper) => {
   if ($tableWrapper.scrollWidth > $tableWrapper.clientWidth) {
     $tableWrapper.setAttribute("tabindex", "0");
     $tableWrapper.setAttribute("role", "region");
-    $tableWrapper.setAttribute("aria-labelledby", $caption?.id || "");
+    if ($caption) {
+      $tableWrapper.setAttribute("aria-labelledby", $caption.id);
+    }
     $tableWrapper.classList.add("tna-table-wrapper--scroll");
   } else {
     $tableWrapper.removeAttribute("tabindex");

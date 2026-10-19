@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the SCSS variable `$spacing-unit-rem` to `$base-spacing-factor-rem`
 - Refactored spacing to use CSS variables
 - Improved accessibility of ellipses in pagination components
+- Simplify `iso8601ToPrettyDatetime` and expand to work with years, year/months and timestamps
 
 ### Deprecated
 

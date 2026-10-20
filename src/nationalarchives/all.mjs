@@ -15,7 +15,10 @@ import { Sidebar } from "./components/sidebar/sidebar.mjs";
 import { SkipLink } from "./components/skip-link/skip-link.mjs";
 import { Tabs } from "./components/tabs/tabs.mjs";
 import { TextInputPassword } from "./components/text-input/text-input.mjs";
-import { TextAreaItemisedRows } from "./components/textarea/textarea.mjs";
+import {
+  TextAreaCharacterCount,
+  TextAreaItemisedRows,
+} from "./components/textarea/textarea.mjs";
 import { checkTableForScroll, updateTimeElement } from "./lib/helpers.mjs";
 
 const initAll = (options = {}) => {
@@ -162,6 +165,13 @@ const initAll = (options = {}) => {
   $textAreaItemisedRows.forEach(($textAreaWithItemisedRows) => {
     const { enhancedHint } = $textAreaWithItemisedRows.dataset;
     new TextAreaItemisedRows($textAreaWithItemisedRows, { enhancedHint });
+  });
+
+  const $textAreaCharacterCounts = $scope.querySelectorAll(
+    '[data-module="tna-textarea-character-count"]',
+  );
+  $textAreaCharacterCounts.forEach(($textAreaCharacterCount) => {
+    new TextAreaCharacterCount($textAreaCharacterCount);
   });
 
   const $textInputPasswords = $scope.querySelectorAll(

@@ -2,6 +2,7 @@
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 $textarea-minimum-lines-visible: 5 !default;
 $textarea-line-height: 1.5rem !default;
@@ -26,7 +27,8 @@ $textarea-vertical-padding: 0.25 !default;
 
   @include borders.rounded-border;
 
-  .tna-form-item--error & {
+  .tna-form-item--error &,
+  &--error {
     @include colour.colour-border("form-error-border");
   }
 
@@ -56,5 +58,14 @@ $textarea-vertical-padding: 0.25 !default;
     .tna-button {
       align-items: center;
     }
+  }
+}
+
+.tna-textarea-count {
+  margin-top: spacing.space(0.5);
+
+  &--error {
+    @include colour.colour-font("form-error-text");
+    @include typography.main-font-weight-bold;
   }
 }

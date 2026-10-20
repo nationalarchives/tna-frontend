@@ -21,6 +21,7 @@ export default {
       hint: { control: "text" },
       value: { control: "text" },
       error: { control: "object" },
+      characterCount: { control: "object" },
       spellcheck: { control: "boolean" },
       autocapitalize: {
         control: "select",
@@ -104,14 +105,43 @@ export const Error = {
   },
 };
 
+export const CharacterCount = {
+  args: {
+    label: "Enter your feedback",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "feedback5",
+    name: "feedback5",
+    characterCount: {
+      max: 10,
+    },
+    classes: "tna-textarea--demo",
+  },
+};
+
+export const CharacterCountWords = {
+  args: {
+    label: "Enter your feedback",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "feedback6",
+    name: "feedback6",
+    characterCount: {
+      max: 10,
+      countType: "words",
+    },
+    classes: "tna-textarea--demo",
+  },
+};
+
 export const ItemiseRows = {
   args: {
     label: "Search series",
     headingLevel: 4,
     headingSize: "m",
     hint: "Enter each series on a separate line",
-    id: "feedback5",
-    name: "feedback5",
+    id: "feedback7",
+    name: "feedback7",
     value: "   Series 1\n   \nSeries 2   \n   Series 3   ",
     itemiseRows: true,
     classes: "tna-textarea--demo",

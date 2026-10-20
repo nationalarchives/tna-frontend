@@ -57,6 +57,27 @@
     ]
   },
   {
+    "name": "characterCount",
+    "type": "object",
+    "required": false,
+    "description": "Configuration for the character count feature. Can not be used with `itemiseRows`.",
+    "params": [
+      {
+        "name": "max",
+        "type": "number",
+        "required": true,
+        "description": "The maximum number of characters (or words if countType is set to `words`)."
+      },
+      {
+        "name": "countType",
+        "type": "string",
+        "required": false,
+        "description": "The type of character count to display. Can be `characters` or `words`.",
+        "default": "characters"
+      }
+    ]
+  },
+  {
     "name": "spellcheck",
     "type": "boolean",
     "required": false,
@@ -94,7 +115,7 @@
     "name": "itemiseRows",
     "type": "boolean",
     "required": false,
-    "description": "If `true`, when JavaScript is available, parse each row of the textarea content into a list of items.",
+    "description": "If `true`, when JavaScript is available, parse each row of the textarea content into a list of items. Ignored if `characterCount` is enabled.",
     "default": false
   },
   {

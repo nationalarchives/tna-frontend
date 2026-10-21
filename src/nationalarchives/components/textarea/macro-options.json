@@ -74,6 +74,13 @@
         "required": false,
         "description": "The type of character count to display. Can be `characters` or `words`.",
         "default": "characters"
+      },
+      {
+        "name": "debounceDuration",
+        "type": "number",
+        "required": false,
+        "description": "The debounce duration in milliseconds for updating the character count.",
+        "default": 1000
       }
     ]
   },

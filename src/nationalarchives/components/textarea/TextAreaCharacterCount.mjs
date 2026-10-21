@@ -21,8 +21,11 @@ export default class TextAreaCharacterCount {
       return;
     }
 
-    /* eslint-disable-next-line no-magic-numbers */
-    this.debounceDuration = options.debounceDuration || 1000;
+    this.debounceDuration =
+      options.debounceDuration ||
+      this.$formFieldInput?.dataset?.debounceDuration ||
+      /* eslint-disable-next-line no-magic-numbers */
+      1000;
     /* eslint-disable-next-line no-magic-numbers */
     this.intervalChecker = options.intervalChecker || 1000;
     this.debounceTimeout = null;
@@ -42,6 +45,8 @@ export default class TextAreaCharacterCount {
     this.$formFieldInput.addEventListener("blur", () => {
       this.handleBlur();
     });
+    this.updateVisualCharacterCount();
+    this.updateScreenReaderCharacterCount();
   }
 
   handleFocus() {
@@ -60,6 +65,7 @@ export default class TextAreaCharacterCount {
     if (this.valueChecker) {
       window.clearInterval(this.valueChecker);
     }
+    this.updateScreenReaderCharacterCount();
   }
 
   updateIfValueChanged() {
@@ -103,10 +109,13 @@ export default class TextAreaCharacterCount {
     return `You have ${this.max - currentLength} ${typeLabel} remaining`;
   }
 
+  isOverThreshold() {
+    return this.getCurrentLength() > this.max;
+  }
+
   updateVisualCharacterCount() {
     this.$formFieldCharacterCount.innerText = this.getCurrentLengthMessage();
-    const error = this.getCurrentLength() > this.max;
-    if (error) {
+    if (this.isOverThreshold()) {
       this.$formFieldInput.classList.add("tna-textarea--error");
       this.$formFieldCharacterCount.classList.add("tna-textarea-count--error");
     } else {
@@ -118,13 +127,16 @@ export default class TextAreaCharacterCount {
   }
 
   updateScreenReaderCharacterCount() {
+    if (this.isOverThreshold()) {
+      this.$formFieldCharacterCountScreenReader.removeAttribute("aria-hidden");
+    } else {
+      this.$formFieldCharacterCountScreenReader.setAttribute(
+        "aria-hidden",
+        "true",
+      );
+    }
+
     const currentLengthMessage = this.getCurrentLengthMessage();
     this.$formFieldCharacterCountScreenReader.innerText = currentLengthMessage;
-
-    if (this.isOverThreshold()) {
-      this.$screenReaderCountMessage.removeAttribute("aria-hidden");
-    } else {
-      this.$screenReaderCountMessage.setAttribute("aria-hidden", "true");
-    }
   }
 }

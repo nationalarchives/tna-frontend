@@ -78,7 +78,7 @@ export default class TextAreaItemisedRows {
     });
 
     this.$formFieldLiveAria = document.createElement("div");
-    this.$formFieldLiveAria.setAttribute("aria-live", "assertive");
+    this.$formFieldLiveAria.setAttribute("aria-live", "polite");
     this.$formFieldLiveAria.classList.add("tna-visually-hidden");
     this.$module.appendChild(this.$formFieldLiveAria);
 

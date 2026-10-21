@@ -196,7 +196,7 @@ export default class TextAreaItemisedRows {
     if (this.values.length !== 1) {
       innerTextItemValue += "s";
     }
-    const innerTextValue = `${this.values.length} ${innerTextItemValue} added`;
+    const innerTextValue = `${new Intl.NumberFormat().format(this.values.length)} ${innerTextItemValue} added`;
     this.$formFieldCounter.innerText = innerTextValue;
   }
 }

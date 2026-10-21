@@ -104,9 +104,9 @@ export default class TextAreaCharacterCount {
       typeLabel = typeLabel.replace(/s$/, "");
     }
     if (currentLength > this.max) {
-      return `You have ${currentLength - this.max} ${typeLabel} too many`;
+      return `You have ${new Intl.NumberFormat().format(currentLength - this.max)} ${typeLabel} too many`;
     }
-    return `You have ${this.max - currentLength} ${typeLabel} remaining`;
+    return `You have ${new Intl.NumberFormat().format(this.max - currentLength)} ${typeLabel} remaining`;
   }
 
   isOverThreshold() {

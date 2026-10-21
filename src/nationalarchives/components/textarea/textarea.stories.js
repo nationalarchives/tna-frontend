@@ -313,6 +313,9 @@ export const CharacterCount = {
 };
 
 export const CharacterCountWords = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: "Enter your feedback",
     headingLevel: 4,

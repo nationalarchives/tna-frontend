@@ -8,7 +8,7 @@ export default class TextAreaCharacterCount {
     this.$formFieldCharacterCountScreenReader =
       this.$module &&
       this.$module.querySelector(".tna-textarea-count__screen-reader-status");
-    this.max = this.$formFieldInput?.dataset?.maxLength;
+    this.max = parseInt(this.$formFieldInput?.dataset?.maxLength, 10);
     this.countType = this.$formFieldInput?.dataset?.countType || "characters";
 
     if (
@@ -21,9 +21,18 @@ export default class TextAreaCharacterCount {
       return;
     }
 
+    this.init(options);
+  }
+
+  init(options) {
+    this.threshold =
+      options.threshold ||
+      parseInt(this.$formFieldInput?.dataset?.countThreshold, 10) ||
+      /* eslint-disable-next-line no-magic-numbers */
+      0;
     this.debounceDuration =
       options.debounceDuration ||
-      this.$formFieldInput?.dataset?.debounceDuration ||
+      parseInt(this.$formFieldInput?.dataset?.debounceDuration, 10) ||
       /* eslint-disable-next-line no-magic-numbers */
       1000;
     /* eslint-disable-next-line no-magic-numbers */
@@ -31,10 +40,6 @@ export default class TextAreaCharacterCount {
     this.debounceTimeout = null;
     this.lastInputValue = "";
 
-    this.init();
-  }
-
-  init() {
     this.$formFieldInput.addEventListener("input", () => {
       this.handleInput();
       this.lastInputTimestamp = Date.now();
@@ -114,6 +119,15 @@ export default class TextAreaCharacterCount {
   }
 
   updateVisualCharacterCount() {
+    if (this.threshold) {
+      /* eslint-disable-next-line no-magic-numbers */
+      if (this.getCurrentLength() > this.max * (this.threshold / 100)) {
+        this.showCharacterCount();
+      } else {
+        this.hideCharacterCount();
+      }
+    }
+
     this.$formFieldCharacterCount.innerText = this.getCurrentLengthMessage();
     if (this.isOverThreshold()) {
       this.$formFieldInput.classList.add("tna-textarea--error");
@@ -127,16 +141,20 @@ export default class TextAreaCharacterCount {
   }
 
   updateScreenReaderCharacterCount() {
-    if (this.isOverThreshold()) {
-      this.$formFieldCharacterCountScreenReader.removeAttribute("aria-hidden");
-    } else {
-      this.$formFieldCharacterCountScreenReader.setAttribute(
-        "aria-hidden",
-        "true",
-      );
-    }
-
     const currentLengthMessage = this.getCurrentLengthMessage();
     this.$formFieldCharacterCountScreenReader.innerText = currentLengthMessage;
+  }
+
+  showCharacterCount() {
+    this.$formFieldCharacterCount.removeAttribute("hidden");
+    this.$formFieldCharacterCountScreenReader.removeAttribute("aria-hidden");
+  }
+
+  hideCharacterCount() {
+    this.$formFieldCharacterCount.setAttribute("hidden", "");
+    this.$formFieldCharacterCountScreenReader.setAttribute(
+      "aria-hidden",
+      "true",
+    );
   }
 }

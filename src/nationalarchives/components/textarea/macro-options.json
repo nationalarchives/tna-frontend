@@ -76,6 +76,13 @@
         "default": "characters"
       },
       {
+        "name": "threshold",
+        "type": "number",
+        "required": false,
+        "description": "The character count threshold in percent at which to start displaying a warning.",
+        "default": 80
+      },
+      {
         "name": "debounceDuration",
         "type": "number",
         "required": false,

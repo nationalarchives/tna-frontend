@@ -309,6 +309,8 @@ export const CharacterCount = {
       );
       await expect($ariaCount).not.toHaveAttribute("aria-hidden");
     });
+
+    await $input.blur();
   },
 };
 
@@ -384,6 +386,8 @@ export const CharacterCountWithThreshold = {
       );
       await expect($ariaCount).toHaveAttribute("aria-hidden", "true");
     });
+
+    await $input.blur();
   },
 };
 

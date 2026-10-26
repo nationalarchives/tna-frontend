@@ -432,7 +432,7 @@ export const ItemiseRows = {
       $ariaLive = canvasElement.querySelector("[aria-live]"),
       $list = canvas.getByRole("list");
 
-    await expect($ariaLive).toHaveAttribute("aria-live", "polite");
+    await expect($ariaLive).toHaveAttribute("aria-live", "assertive");
 
     await expect($helper).toHaveTextContent("3 items added");
     await expect($list.children).toHaveLength(3);

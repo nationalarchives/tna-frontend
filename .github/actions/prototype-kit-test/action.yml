@@ -129,8 +129,8 @@ runs:
         cd prototype &&
         npm run dev &
       shell: bash
-    - name: Wait for Prototype to be ready
-      run: npx wait-on http://localhost:3000
+    - name: Wait for the prototype to be ready
+      run: npx wait-on http://127.0.0.1:3000
       shell: bash
     - name: Test prototype components
       run: |

@@ -9,7 +9,6 @@
   padding: spacing.space(0.25, true) spacing.space(0.5, true);
 
   display: block;
-  box-sizing: border-box;
 
   resize: block;
 
@@ -37,7 +36,10 @@
   }
 
   &--auto-vertical-resize {
-    min-block-size: attr(data-rows lh, 5lh);
+    min-block-size: calc(
+      attr(data-rows lh, 5lh) + #{spacing.space(0.5, true)} +
+        #{formsVars.$form-field-border-width * 2}
+    );
 
     field-sizing: content;
   }

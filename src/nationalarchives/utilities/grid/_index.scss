@@ -15,8 +15,6 @@
   align-items: stretch;
   justify-content: flex-start;
 
-  box-sizing: border-box;
-
   & &--no-padding {
     max-inline-size: calc(var(--container-width) - (var(--container-gap) * 2));
     padding-inline: 0;
@@ -47,8 +45,6 @@
 
 .tna-column {
   padding-inline: calc(var(--container-gap) / 2);
-
-  box-sizing: border-box;
 
   & &--no-padding {
     padding-inline: 0;

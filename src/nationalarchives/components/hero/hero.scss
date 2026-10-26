@@ -256,8 +256,6 @@ $over-overflow: $shift-overflow !default;
     &--over &__information {
       max-inline-size: calc(50% - (var(--container-gap) * 1.5));
 
-      box-sizing: border-box;
-
       inset-inline: auto var(--container-gap);
       inset-block-start: 0;
 

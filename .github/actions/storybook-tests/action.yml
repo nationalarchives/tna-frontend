@@ -24,12 +24,9 @@ runs:
     - name: Install Playwright
       run: npx playwright install
       shell: bash
-    - uses: nev7n/wait_for_response@7fef3c1a6e8939d0b09062f14fec50d3c5d15fa1 # v1.0.1
-      with:
-        url: "http://localhost:6006"
-        responseCode: 200
-        timeout: 30000
-        interval: 500
+    - name: Wait for Storybook to be ready
+      run: npx wait-on http://127.0.0.1:6006
+      shell: bash
     - name: Run Storybook tests
       run: npm run test:vitest
       shell: bash

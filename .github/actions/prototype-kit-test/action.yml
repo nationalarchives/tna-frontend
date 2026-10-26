@@ -129,12 +129,9 @@ runs:
         cd prototype &&
         npm run dev &
       shell: bash
-    - uses: nev7n/wait_for_response@7fef3c1a6e8939d0b09062f14fec50d3c5d15fa1 # v1.0.1
-      with:
-        url: "http://localhost:3000"
-        responseCode: 200
-        timeout: 30000
-        interval: 500
+    - name: Wait for the prototype to be ready
+      run: npx wait-on http://127.0.0.1:3000
+      shell: bash
     - name: Test prototype components
       run: |
         curl --silent http://localhost:3000 | grep 'class="tna-accordion' || (echo "Accordion component not found" && exit 1)

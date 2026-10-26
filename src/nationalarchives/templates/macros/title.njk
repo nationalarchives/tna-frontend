@@ -1,0 +1,63 @@
+{% macro title(pageTitle, siteTitle, maxTitleLength, separator, ellipsis) %}
+  {#-
+      Truncate any pageTitle that would cause the length of the <title> to exceed 70 characters
+      See https://html-validate.org/rules/long-title.html
+  -#}
+
+  {# 1. Define inputs and default values #}
+  {%- set pageTitle = pageTitle or '' -%}
+  {%- set siteTitle = siteTitle or 'The National Archives' -%}
+  {%- set separator = separator or ' - ' -%}
+  {%- set ellipsis = ellipsis or '…' -%}
+  {%- set maxLength = maxLength or 70 -%}
+
+  {# 2. Reusable macro for smart truncation #}
+  {%- macro smartTruncate(str, budget, ellipsis) -%}
+    {%- if str.length <= budget -%}
+      {{- str -}}
+    {%- else -%}
+      {%- set ellipsisLength = ellipsis | length -%}
+      {%- set targetLength = budget - ellipsisLength -%}
+      {%- if targetLength < 0 -%}{%- set targetLength = 0 -%}{%- endif -%}
+      {%- set sliced = str.slice(0, targetLength) -%}
+      {%- set lastSpace = sliced.lastIndexOf(' ') -%}
+      {# Only clip to last space if it leaves enough room for meaningful word text #}
+      {%- if lastSpace > (ellipsisLength + 1) -%}
+        {{- sliced.slice(0, lastSpace) | trim }}{{ ellipsis }}
+      {%- else -%}
+        {{- sliced | trim }}{{ ellipsis }}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endmacro -%}
+
+  {# 3. Check if the ENTIRE combined title fits without any truncation #}
+  {%- set fullCombined = (pageTitle + separator + siteTitle) if pageTitle else siteTitle -%}
+  {%- if fullCombined.length <= maxLength -%}
+    {# Everything fits completely—output raw with zero truncation! #}
+    {{- fullCombined -}}
+  {%- else -%}
+    {# 4. If it overflows, handle based on whether pageTitle exists #}
+    {%- if pageTitle -%}
+      {# Both exist: dynamically allocate space (fair share with redistribution) #}
+      {%- set separatorLen = separator | length -%}
+      {%- set availableLength = maxLength - separatorLen -%}
+      {%- set halfBudget = (availableLength / 2) | int -%}
+
+      {# If siteTitle is short, let pageTitle use its leftover budget #}
+      {%- set siteBudget = halfBudget -%}
+      {%- if siteTitle.length < halfBudget -%}
+        {%- set siteBudget = siteTitle.length -%}
+      {%- endif -%}
+
+      {%- set remainingForPage = availableLength - siteBudget -%}
+
+      {%- set truncatedSiteTitle = smartTruncate(siteTitle, siteBudget, ellipsis) -%}
+      {%- set truncatedPageTitle = smartTruncate(pageTitle, remainingForPage, ellipsis) -%}
+
+      {{- truncatedPageTitle -}}{{ separator }}{{- truncatedSiteTitle -}}
+    {%- else -%}
+      {# Only siteTitle exists: it gets the full maxLength budget #}
+      {{- smartTruncate(siteTitle, maxLength, ellipsis) -}}
+    {%- endif -%}
+  {%- endif -%}
+{% endmacro %}

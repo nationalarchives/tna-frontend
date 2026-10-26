@@ -2,6 +2,7 @@
 @use "../../tools/borders";
 @use "../../tools/colour";
 @use "../../tools/spacing";
+@use "../../tools/typography";
 
 .tna-textarea {
   inline-size: 100%;
@@ -18,7 +19,8 @@
 
   @include borders.rounded-border;
 
-  .tna-form-item--error & {
+  .tna-form-item--error &,
+  &--error {
     @include colour.colour-border("form-error-border");
   }
 
@@ -54,5 +56,14 @@
     .tna-button {
       align-items: center;
     }
+  }
+}
+
+.tna-textarea-count {
+  margin-top: spacing.space(0.5);
+
+  &--error {
+    @include colour.colour-font("form-error-text");
+    @include typography.main-font-weight-bold;
   }
 }

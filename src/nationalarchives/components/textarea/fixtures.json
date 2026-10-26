@@ -135,6 +135,47 @@
       "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-itemised-rows\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\"></textarea></div></div>"
     },
     {
+      "name": "with character count",
+      "options": {
+        "label": "Enter your feedback",
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "characterCount": {
+          "max": 200
+        }
+      },
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" \" data-max-length=\"200\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 characters</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 characters</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 characters</div></div></div>"
+    },
+    {
+      "name": "with word count",
+      "options": {
+        "label": "Enter your feedback",
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "characterCount": {
+          "max": 200,
+          "countType": "words"
+        }
+      },
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" \" data-max-length=\"200\" data-count-type=\"words\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 words</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 words</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 words</div></div></div>"
+    },
+    {
+      "name": "with character count and custom debounce duration",
+      "options": {
+        "label": "Enter your feedback",
+        "headingSize": "m",
+        "id": "feedback",
+        "name": "feedback",
+        "characterCount": {
+          "max": 200,
+          "debounceDuration": 500
+        }
+      },
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" \" data-max-length=\"200\" data-debounce-duration=\"500\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 characters</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 characters</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 characters</div></div></div>"
+    },
+    {
       "name": "with classes",
       "options": {
         "label": "Enter your feedback",

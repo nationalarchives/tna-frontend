@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.5.0...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.6.0...HEAD)
 
 ### Added
 
@@ -52,6 +52,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved close button visibility on hero details for forced-colors mode
 
 ### Security
+
+## [1.6.0](https://github.com/nationalarchives/tna-frontend/compare/v1.5.1...v1.6.0) - 2026-10-26
+
+### Added
+
+- Added basic character and word count functionality to textarea components
+
+### Changed
+
+- Updated favicons and the default open graph image
+- Removed the redundant `aria-label` from the button component
+- Fixed the title truncation in the base template and included a new `title` macro
+
+### Removed
+
+- Removed the image asset `nationalarchives-opengraph-image-dark.png`
 
 ## [1.5.0](https://github.com/nationalarchives/tna-frontend/compare/v1.4.1...v1.5.0) - 2026-09-16
 

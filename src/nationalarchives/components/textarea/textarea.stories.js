@@ -20,6 +20,7 @@ export default {
       hint: { control: "text" },
       value: { control: "text" },
       error: { control: "object" },
+      characterCount: { control: "object" },
       spellcheck: { control: "boolean" },
       autocapitalize: {
         control: "select",
@@ -104,14 +105,318 @@ export const Error = {
   },
 };
 
+export const CharacterCount = {
+  args: {
+    label: "Enter your feedback",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "feedback5",
+    name: "feedback5",
+    value: "I think this is a good idea",
+    characterCount: {
+      max: 100,
+      debounceDuration: 100,
+    },
+    classes: "tna-textarea--demo",
+  },
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement),
+      $input = canvas.getByRole("textbox"),
+      $staticCountLabel = canvasElement.querySelector("#feedback5-count"),
+      $liveCount = canvasElement.querySelector(".tna-textarea-count"),
+      $ariaCount = canvasElement.querySelector("[aria-live]");
+
+    const { debounceDuration } = args.characterCount;
+
+    const initialValue = $input.value;
+
+    await step("Check initial state", async () => {
+      await expect($input).toHaveValue("I think this is a good idea");
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 73 characters remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 73 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Type some text", async () => {
+      await userEvent.type($input, " and some more text");
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 54 characters remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 73 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+      // Wait for the debounce
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceDuration * 1.5),
+      );
+      await expect($ariaCount).toHaveTextContent(
+        "You have 54 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Type more text to reach near limit", async () => {
+      await userEvent.type(
+        $input,
+        " and some more text and some more text and some more ",
+      );
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 1 character remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 54 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+      // Wait for the debounce
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceDuration * 1.5),
+      );
+      await expect($ariaCount).toHaveTextContent(
+        "You have 1 character remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Type text to reach the limit", async () => {
+      await userEvent.type($input, "t");
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 0 characters remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 1 character remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+      // Wait for the debounce
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceDuration * 1.5),
+      );
+      await expect($ariaCount).toHaveTextContent(
+        "You have 0 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Type text to exceed the limit", async () => {
+      await userEvent.type($input, "e");
+      await expect($input).toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 1 character too many",
+      );
+      await expect($liveCount).toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 0 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+      // Wait for the debounce
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceDuration * 1.5),
+      );
+      await expect($ariaCount).toHaveTextContent(
+        "You have 1 character too many",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Type more text to exceed the limit further", async () => {
+      await userEvent.type($input, "xt");
+      await expect($input).toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 3 characters too many",
+      );
+      await expect($liveCount).toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 1 character too many",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+      // Wait for the debounce
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceDuration * 1.5),
+      );
+      await expect($ariaCount).toHaveTextContent(
+        "You have 3 characters too many",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Remove some text to go back within the limit", async () => {
+      await userEvent.keyboard("{Backspace}{Backspace}{Backspace}");
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 0 characters remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 3 characters too many",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+      // Wait for the debounce
+      await new Promise((resolve) =>
+        setTimeout(resolve, debounceDuration * 1.5),
+      );
+      await expect($ariaCount).toHaveTextContent(
+        "You have 0 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Clear the input and type the initial value", async () => {
+      await userEvent.clear($input);
+      await userEvent.type($input, initialValue);
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 73 characters remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 0 characters remaining",
+      );
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await $input.blur();
+  },
+};
+
+export const CharacterCountWithThreshold = {
+  args: {
+    label: "Enter your feedback",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "feedback6",
+    name: "feedback6",
+    value: "I think this is a good idea",
+    characterCount: {
+      max: 100,
+      debounceDuration: 100,
+      threshold: 80,
+    },
+    classes: "tna-textarea--demo",
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement),
+      $input = canvas.getByRole("textbox"),
+      $staticCountLabel = canvasElement.querySelector("#feedback6-count"),
+      $liveCount = canvasElement.querySelector(".tna-textarea-count"),
+      $ariaCount = canvasElement.querySelector("[aria-live]");
+
+    const initialValue = $input.value;
+
+    await step("Check initial state", async () => {
+      await expect($input).toHaveValue("I think this is a good idea");
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($liveCount).not.toBeVisible();
+      await expect($ariaCount).toHaveAttribute("aria-hidden", "true");
+    });
+
+    await step("Type some text", async () => {
+      await userEvent.type($input, " and some more text");
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($liveCount).not.toBeVisible();
+      await expect($ariaCount).toHaveAttribute("aria-hidden", "true");
+    });
+
+    await step("Type more text to reach threshold", async () => {
+      await userEvent.type(
+        $input,
+        " and some more text and some more text and ",
+      );
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($liveCount).toBeVisible();
+      await expect($ariaCount).not.toHaveAttribute("aria-hidden");
+    });
+
+    await step("Remove some text to go back within the threshold", async () => {
+      await userEvent.keyboard(
+        "{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}{Backspace}",
+      );
+      await expect($liveCount).not.toBeVisible();
+      await expect($ariaCount).toHaveAttribute("aria-hidden", "true");
+    });
+
+    await step("Clear the input and type the initial value", async () => {
+      await userEvent.clear($input);
+      await userEvent.type($input, initialValue);
+      await expect($input).not.toHaveClass("tna-textarea--error");
+      await expect($staticCountLabel).toHaveTextContent(
+        "You can enter up to 100 characters",
+      );
+      await expect($liveCount).toHaveTextContent(
+        "You have 73 characters remaining",
+      );
+      await expect($liveCount).not.toHaveClass("tna-textarea-count--error");
+      await expect($ariaCount).toHaveTextContent(
+        "You have 73 characters remaining",
+      );
+      await expect($ariaCount).toHaveAttribute("aria-hidden", "true");
+    });
+
+    await $input.blur();
+  },
+};
+
+export const CharacterCountWords = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    label: "Enter your feedback",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "feedback7",
+    name: "feedback7",
+    characterCount: {
+      max: 10,
+      countType: "words",
+    },
+    classes: "tna-textarea--demo",
+  },
+};
+
 export const ItemiseRows = {
   args: {
     label: "Search series",
     headingLevel: 4,
     headingSize: "m",
     hint: "Enter each series on a separate line",
-    id: "feedback5",
-    name: "feedback5",
+    id: "feedback8",
+    name: "feedback8",
     value: "   Series 1\n   \nSeries 2   \n   Series 3   ",
     itemiseRows: true,
     classes: "tna-textarea--demo",
@@ -123,11 +428,11 @@ export const ItemiseRows = {
     const canvas = within(canvasElement),
       $input = canvas.getByRole("textbox"),
       $button = canvas.getByRole("button", { name: "Add to list" }),
-      $helper = canvasElement.querySelector("#feedback5-list-helper"),
+      $helper = canvasElement.querySelector("#feedback8-list-helper"),
       $ariaLive = canvasElement.querySelector("[aria-live]"),
       $list = canvas.getByRole("list");
 
-    await expect($ariaLive).toHaveAttribute("aria-live", "assertive");
+    await expect($ariaLive).toHaveAttribute("aria-live", "polite");
 
     await expect($helper).toHaveTextContent("3 items added");
     await expect($list.children).toHaveLength(3);

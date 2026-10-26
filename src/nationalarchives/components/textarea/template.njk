@@ -11,8 +11,12 @@
   attributes: params.formItemAttributes
 }, 'tna-textarea-character-count' if params.characterCount else ('tna-textarea-itemised-rows' if params.itemiseRows else '')) %}
   <textarea id="{{ params.id }}" class="tna-textarea{% if params.size %} tna-textarea--{{ params.size }}{% endif %}{% if params.classes %} {{ params.classes }}{% endif %}" name="{{ params.name }}" spellcheck="{{ params.spellcheck if params.spellcheck else false }}" autocapitalize="{{ params.autocapitalize if params.autocapitalize else 'off' }}" autocorrect="{{ 'on' if params.autocorrect else 'off' }}" rows="{{ params.rows if params.rows else 5 }}"
-  {%- if params.hint or params.error or params.characterCount %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif -%} {% if params.params.characterCount -%}{{ params.id }}-count{%- endif -%}"{%- endif %}
-  {%- if params.characterCount %} data-max-length="{{ params.characterCount.max }}"{%- if params.characterCount.countType %} data-count-type="{{ params.characterCount.countType }}"{%- endif %}{%- if params.characterCount.threshold %} data-count-threshold="{{ params.characterCount.threshold }}"{%- endif %}{%- if params.characterCount.debounceDuration %} data-debounce-duration="{{ params.characterCount.debounceDuration }}"{%- endif %}{%- endif %}
+  {%- if params.hint or params.error or params.characterCount %} aria-describedby="{%- if params.hint -%}{{ params.id }}-hint{%- endif %} {% if params.error -%}{{ params.id }}-error{%- endif %} {% if params.characterCount -%}{{ params.id }}-count{%- endif -%}"{%- endif %}
+  {%- if params.characterCount %} data-max-length="{{ params.characterCount.max }}"
+  {%- if params.characterCount.countType %} data-count-type="{{ params.characterCount.countType }}"{%- endif %}
+  {%- if params.characterCount.threshold %} data-count-threshold="{{ params.characterCount.threshold }}"{%- endif %}
+  {%- if params.characterCount.debounceDuration %} data-debounce-duration="{{ params.characterCount.debounceDuration }}"{%- endif %}
+  {%- endif %}
   {%- for attribute, value in params.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>{{ params.value }}</textarea>
   {%- if params.characterCount %}
   {%- set characterCountMessage %}

@@ -31,7 +31,7 @@
         "name": "feedback",
         "hint": "What did you think?"
       },
-      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-hint\" class=\"tna-form-item__hint\">What did you think?</p><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"feedback-hint \"></textarea></div></div>"
+      "html": "<div class=\"tna-form-item\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-hint\" class=\"tna-form-item__hint\">What did you think?</p><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"feedback-hint  \"></textarea></div></div>"
     },
     {
       "name": "with an error",
@@ -44,7 +44,7 @@
           "text": "Enter some feedback"
         }
       },
-      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-error\" class=\"tna-form-item__error\"><span class=\"tna-visually-hidden\">Error:</span> Enter some feedback</p><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" feedback-error\"></textarea></div></div>"
+      "html": "<div class=\"tna-form-item tna-form-item--error\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><p id=\"feedback-error\" class=\"tna-form-item__error\"><span class=\"tna-visually-hidden\">Error:</span> Enter some feedback</p><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" feedback-error \"></textarea></div></div>"
     },
     {
       "name": "textarea size",
@@ -134,7 +134,7 @@
           "max": 200
         }
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" \" data-max-length=\"200\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 characters</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 characters</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 characters</div></div></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"  feedback-count\" data-max-length=\"200\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 characters</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 characters</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 characters</div></div></div>"
     },
     {
       "name": "with word count",
@@ -148,7 +148,7 @@
           "countType": "words"
         }
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" \" data-max-length=\"200\" data-count-type=\"words\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 words</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 words</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 words</div></div></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"  feedback-count\" data-max-length=\"200\" data-count-type=\"words\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 words</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 words</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 words</div></div></div>"
     },
     {
       "name": "with character count and custom debounce duration",
@@ -162,7 +162,7 @@
           "debounceDuration": 500
         }
       },
-      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\" \" data-max-length=\"200\" data-debounce-duration=\"500\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 characters</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 characters</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 characters</div></div></div>"
+      "html": "<div class=\"tna-form-item\" data-module=\"tna-textarea-character-count\"><div class=\"tna-form-item__header\"><label class=\"tna-form-item__label tna-heading-m\" for=\"feedback\">Enter your feedback</label></div><div class=\"tna-form-item__body\"><textarea id=\"feedback\" class=\"tna-textarea\" name=\"feedback\" spellcheck=\"false\" autocapitalize=\"off\" autocorrect=\"off\" rows=\"5\" aria-describedby=\"  feedback-count\" data-max-length=\"200\" data-debounce-duration=\"500\"></textarea><div id=\"feedback-count\" class=\"tna-visually-hidden\">You can enter up to 200 characters</div><p class=\"tna-textarea-count\" aria-hidden=\"true\">You can enter up to 200 characters</p><div class=\"tna-textarea-count__screen-reader-status tna-visually-hidden\" aria-live=\"polite\">You can enter up to 200 characters</div></div></div>"
     },
     {
       "name": "with classes",

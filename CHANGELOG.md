@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.6.1...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.6.2...HEAD)
 
 ### Added
 ### Changed
@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 ### Security
+
+## [1.6.2](https://github.com/nationalarchives/tna-frontend/compare/v1.6.1...v1.6.2) - 2026-10-26
+
+### Changed
+
+- Updated the title macro from `title` to `tnaPageSiteTitleDisplay` to avoid conflict with the common `title` data attribute
+- When counting characters in the textarea component, count emojis and line breaks as single characters
 
 ## [1.6.1](https://github.com/nationalarchives/tna-frontend/compare/v1.6.0...v1.6.1) - 2026-10-26
 

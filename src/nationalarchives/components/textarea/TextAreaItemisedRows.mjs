@@ -61,13 +61,9 @@ export default class TextAreaItemisedRows {
     );
     this.$formFieldNewInputAddButtonInner = document.createElement("span");
     this.$formFieldNewInputAddButtonInner.innerText = "Add";
-    this.$formFieldNewInputAddButtonInnerExtra = document.createElement("span");
-    this.$formFieldNewInputAddButtonInnerExtra.classList.add(
-      "tna-visually-hidden",
-    );
-    this.$formFieldNewInputAddButtonInnerExtra.innerText = " to list";
-    this.$formFieldNewInputAddButtonInner.appendChild(
-      this.$formFieldNewInputAddButtonInnerExtra,
+    this.$formFieldNewInputAddButton.setAttribute(
+      "aria-label",
+      'Add item to list for "TODO"',
     );
     this.$formFieldNewInputAddButton.appendChild(
       this.$formFieldNewInputAddButtonInner,

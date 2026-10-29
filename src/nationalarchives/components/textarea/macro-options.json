@@ -72,8 +72,8 @@
         "name": "countType",
         "type": "string",
         "required": false,
-        "description": "The type of character count to display. Can be `characters` or `words`.",
-        "default": "characters"
+        "description": "The type of character count to display. Can be `length`, `characters` or `words`. `length` counts the number of raw characters used, `characters` counts the number of visual characters, and `words` counts the number of words.",
+        "default": "length"
       },
       {
         "name": "threshold",

@@ -20,6 +20,26 @@
    * ------------------------------------------
    */
   -webkit-overflow-scrolling: touch;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  /*
+ * ------------------------------------------
+ * If the browser supports -apple-system-body
+ * which at the moment is just iOS then using
+ * the system body font we can respond to the
+ * Dynamic Type setting in iOS, however we do
+ * disable it for any non-touch Apple devices
+ * such as Mac OS, because the default system
+ * font size is set to 13px rather than 16px
+ * ------------------------------------------
+ */
+  @supports (font: -apple-system-body) and (-webkit-touch-callout: default) {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font: -apple-system-body;
+  }
 }
 
 .tna-template__body {

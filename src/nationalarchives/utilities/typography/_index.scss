@@ -8,15 +8,19 @@
 @use "../../tools/typography";
 
 .tna-template {
+  box-sizing: border-box;
+
   color: var(--font-base);
-  @include typography.main-font;
   direction: ltr;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 
+  overflow-wrap: break-word;
+
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  @include typography.main-font;
 
   &[dir="rtl"] {
     direction: rtl;
@@ -520,6 +524,11 @@ code {
   @include colour.on-forced-colours {
     @include colour.colour-border("keyline", 1px);
   }
+}
+
+hr {
+  @include colour.colour-border("keyline", 0, solid);
+  border-block-start-width: 1px;
 }
 
 kbd {

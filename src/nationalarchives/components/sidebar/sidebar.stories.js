@@ -320,7 +320,7 @@ HighlightSectionsDesktop.play = async ({ canvasElement }) => {
 
   const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
   await expect(isInViewport(fourthHeading)).toBe(false);
-  await fourthHeading.scrollIntoView();
+  await fourthHeading.scrollIntoView({ behavior: "smooth", block: "start" });
   await expect(isInViewport(fourthHeading)).toBe(true);
   await expect(firstHeadingLink.parentElement.classList).not.toContain(
     "tna-sidebar__item--current",
@@ -368,7 +368,7 @@ HighlightSectionsTiny.play = async ({ canvasElement }) => {
   await window.scrollTo(0, 0);
 
   const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
-  await fourthHeading.scrollIntoView();
+  await fourthHeading.scrollIntoView({ behavior: "smooth", block: "start" });
   await expect(firstHeadingLink.parentElement.classList).not.toContain(
     "tna-sidebar__item--current",
   );
@@ -406,7 +406,7 @@ HighlightSectionsTinyHidden.play = async ({ canvasElement }) => {
   await window.scrollTo(0, 0);
 
   const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
-  await fourthHeading.scrollIntoView();
+  await fourthHeading.scrollIntoView({ behavior: "smooth", block: "start" });
   await expect(firstHeadingLink.parentElement.classList).not.toContain(
     "tna-sidebar__item--current",
   );
@@ -434,10 +434,10 @@ HighlightSectionsInvalid.play = async ({ canvasElement }) => {
     firstHeadingLink = await canvas.getByRole("link", { name: "Alpha" }),
     fourthHeadingLink = await canvas.getByRole("link", { name: "Delta" });
 
-  await window.scrollTo(0, 0);
+  await window.scrollTo({ top: 0 });
 
   const fourthHeading = await canvas.getByRole("heading", { name: "Delta" });
-  await fourthHeading.scrollIntoView();
+  await fourthHeading.scrollIntoView({ behavior: "smooth", block: "start" });
   await expect(firstHeadingLink.parentElement.classList).not.toContain(
     "tna-sidebar__item--current",
   );
@@ -445,5 +445,5 @@ HighlightSectionsInvalid.play = async ({ canvasElement }) => {
     "tna-sidebar__item--current",
   );
 
-  await window.scrollTo(0, 0);
+  await window.scrollTo({ top: 0 });
 };

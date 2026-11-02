@@ -9,7 +9,6 @@ export default class TextAreaCharacterCount {
       this.$module &&
       this.$module.querySelector(".tna-textarea-count__screen-reader-status");
     this.max = parseInt(this.$formFieldInput?.dataset?.maxLength, 10);
-    this.countType = this.$formFieldInput?.dataset?.countType || "characters";
 
     if (
       !this.$module ||
@@ -21,10 +20,36 @@ export default class TextAreaCharacterCount {
       return;
     }
 
+    const countConfigOptions = {
+      length: { labels: ["character", "characters"] },
+      characters: {
+        labels: ["character", "characters"],
+        segmenterGranularity: "grapheme",
+      },
+      words: { labels: ["word", "words"], segmenterGranularity: "word" },
+    };
+
+    this.countType = this.$formFieldInput?.dataset?.countType || "length";
+    if (!countConfigOptions[this.countType]) {
+      throw new Error(`Unsupported count type: ${this.countType}`);
+    }
+    this.config = countConfigOptions[this.countType];
+
     this.init(options);
   }
 
   init(options) {
+    this.segmenter = null;
+    if (
+      typeof Intl !== "undefined" &&
+      typeof Intl.Segmenter === "function" &&
+      this.config.segmenterGranularity
+    ) {
+      const language = options.language || navigator.language || "en";
+      this.segmenter = new Intl.Segmenter(language, {
+        granularity: this.config.segmenterGranularity,
+      });
+    }
     this.threshold =
       options.threshold ||
       parseInt(this.$formFieldInput?.dataset?.countThreshold, 10) ||
@@ -91,23 +116,37 @@ export default class TextAreaCharacterCount {
 
   getCurrentLength() {
     const rawValue = this.$formFieldInput.value;
-    if (this.countType === "words") {
-      const trimmedValue = rawValue.trim();
-      if (trimmedValue === "") {
-        /* eslint-disable-next-line no-magic-numbers */
-        return 0;
-      }
-      return trimmedValue.split(/\s+/).length;
+
+    if (this.countType === "length") {
+      return rawValue.length;
     }
-    return Array.from(rawValue).length;
+
+    if (this.countType === "characters") {
+      if (this.segmenter) {
+        const segments = Array.from(this.segmenter.segment(rawValue));
+        return segments.length;
+      }
+      return Array.from(rawValue).length;
+    }
+
+    if (this.countType === "words") {
+      if (this.segmenter) {
+        const segments = Array.from(this.segmenter.segment(rawValue));
+        return segments.filter((segment) => segment.isWordLike).length;
+      }
+      return rawValue.trim().split(/\s+/).length;
+    }
+    return 0;
   }
 
   getCurrentLengthMessage() {
     const currentLength = this.getCurrentLength();
-    let typeLabel = this.countType;
+
+    const [singularLabel, pluralLabel] = this.config.labels;
+    let typeLabel = pluralLabel;
     /* eslint-disable-next-line no-magic-numbers */
     if (Math.abs(this.max - currentLength) === 1) {
-      typeLabel = typeLabel.replace(/s$/, "");
+      typeLabel = singularLabel;
     }
     if (currentLength > this.max) {
       return `You have ${new Intl.NumberFormat().format(currentLength - this.max)} ${typeLabel} too many`;

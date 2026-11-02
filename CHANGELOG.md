@@ -5,18 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.6.2...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.6.3...HEAD)
 
 ### Added
 ### Changed
-
-- Improved character count with options for `length`, `characters` and `words` using [`Intl.Segmenter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter)
-- Improved "Add" label markup in itemised rows textarea
-
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## [1.6.3](https://github.com/nationalarchives/tna-frontend/compare/v1.6.2...v1.6.3) - 2026-11-02
+
+### Changed
+
+- Improved character count with options for `length`, `characters` and `words` using [`Intl.Segmenter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter)
+- Improved "Add" label markup in itemised rows textarea
 
 ## [1.6.2](https://github.com/nationalarchives/tna-frontend/compare/v1.6.1...v1.6.2) - 2026-10-26
 

@@ -1,35 +1,38 @@
 export default class TextAreaItemisedRows {
   constructor($module, options = {}) {
     this.$module = $module;
-    this.$formFieldInput =
+    this.$formItemInput =
       this.$module && this.$module.querySelector(".tna-textarea");
-    this.$formFieldInputHint =
+    this.$formItemHeader =
+      this.$module && this.$module.querySelector(".tna-form-item__header");
+    this.$formItemInputHint =
       this.$module && this.$module.querySelector(".tna-form-item__hint");
-    this.$formFieldBody =
+    this.$formItemBody =
       this.$module && this.$module.querySelector(".tna-form-item__body");
 
     if (
       !this.$module ||
-      !this.$formFieldInput ||
-      !this.$formFieldBody ||
-      this.$formFieldInput.getAttribute("hidden") !== null
+      !this.$formItemHeader ||
+      !this.$formItemInput ||
+      !this.$formItemBody ||
+      this.$formItemInput.getAttribute("hidden") !== null
     ) {
       return;
     }
 
-    if (!(this.$formFieldInput instanceof HTMLTextAreaElement)) {
+    if (!(this.$formItemInput instanceof HTMLTextAreaElement)) {
       throw new Error("Expected a textarea element");
     }
 
     const { enhancedHint } = options;
     this.enhancedHint = enhancedHint || "Enter an item and press enter";
 
-    this.values = this.$formFieldInput.value
+    this.values = this.$formItemInput.value
       .split("\n")
       .map((value) => value.trim())
       .filter((value) => value);
 
-    this.id = this.$formFieldInput.id;
+    this.id = this.$formItemInput.id;
 
     this.init();
   }
@@ -40,13 +43,13 @@ export default class TextAreaItemisedRows {
     ["id", "aria-describedby"].forEach((attribute) => {
       this.$formFieldNewInput.setAttribute(
         attribute,
-        this.$formFieldInput.getAttribute(attribute),
+        this.$formItemInput.getAttribute(attribute),
       );
-      this.$formFieldInput.removeAttribute(attribute);
+      this.$formItemInput.removeAttribute(attribute);
     });
-    this.$formFieldBody.appendChild(this.$formFieldNewInput);
-    this.$formFieldInput.setAttribute("hidden", "");
-    this.$formFieldInput.addEventListener("keyup", () => this.updateList());
+    this.$formItemBody.appendChild(this.$formFieldNewInput);
+    this.$formItemInput.setAttribute("hidden", "");
+    this.$formItemInput.addEventListener("keyup", () => this.updateList());
     this.$formFieldNewInput.addEventListener("keypress", (event) => {
       if (event.key === "Enter") {
         this.appendValue(event.target.value);
@@ -59,16 +62,12 @@ export default class TextAreaItemisedRows {
       "tna-button",
       "tna-button--small",
     );
-    this.$formFieldNewInputAddButtonInner = document.createElement("span");
-    this.$formFieldNewInputAddButtonInner.innerText = "Add";
+    this.$formFieldNewInputAddButton.innerText = "Add";
     this.$formFieldNewInputAddButton.setAttribute(
       "aria-label",
-      'Add item to list for "TODO"',
+      `Add to list for '${this.$formItemHeader.innerText}'`,
     );
-    this.$formFieldNewInputAddButton.appendChild(
-      this.$formFieldNewInputAddButtonInner,
-    );
-    this.$formFieldBody.appendChild(this.$formFieldNewInputAddButton);
+    this.$formItemBody.appendChild(this.$formFieldNewInputAddButton);
     this.$formFieldNewInputAddButton.addEventListener("click", () => {
       this.appendValue(this.$formFieldNewInput.value);
     });
@@ -101,15 +100,15 @@ export default class TextAreaItemisedRows {
     });
     this.$module.appendChild(this.$valuesList);
 
-    if (!this.$formFieldInputHint) {
-      this.$formFieldInputHint = document.createElement("p");
-      this.$formFieldInputHint.classList.add("tna-form-item__hint");
-      this.$formFieldBody.parentNode.insertBefore(
-        this.$formFieldInputHint,
-        this.$formFieldBody,
+    if (!this.$formItemInputHint) {
+      this.$formItemInputHint = document.createElement("p");
+      this.$formItemInputHint.classList.add("tna-form-item__hint");
+      this.$formItemBody.parentNode.insertBefore(
+        this.$formItemInputHint,
+        this.$formItemBody,
       );
     }
-    this.$formFieldInputHint.innerText = this.enhancedHint;
+    this.$formItemInputHint.innerText = this.enhancedHint;
 
     this.updateList();
   }
@@ -136,7 +135,7 @@ export default class TextAreaItemisedRows {
         this.updateAriaText(`'${newValue}' already added`);
       } else {
         this.values.push(newValue);
-        this.$formFieldInput.value = this.values.join("\n");
+        this.$formItemInput.value = this.values.join("\n");
         this.updateList();
         this.updateAriaText(`'${newValue}' added`);
       }
@@ -153,7 +152,7 @@ export default class TextAreaItemisedRows {
       this.values = this.values.filter(
         (existingValue) => existingValue !== removeValue,
       );
-      this.$formFieldInput.value = this.values.join("\n");
+      this.$formItemInput.value = this.values.join("\n");
       this.updateList();
       this.updateAriaText(`'${removeValue}' removed`);
     }

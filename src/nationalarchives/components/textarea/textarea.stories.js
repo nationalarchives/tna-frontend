@@ -563,7 +563,9 @@ export const ItemiseRows = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement),
       $input = canvas.getByRole("textbox"),
-      $button = canvas.getByRole("button", { name: "Add to list" }),
+      $button = canvas.getByRole("button", {
+        name: "Add to list for 'Search series'",
+      }),
       $helper = canvasElement.querySelector("#feedback8-list-helper"),
       $ariaLive = canvasElement.querySelector("[aria-live]"),
       $list = canvas.getByRole("list");

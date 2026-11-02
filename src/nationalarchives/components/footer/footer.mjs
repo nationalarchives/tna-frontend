@@ -1,7 +1,7 @@
 import Cookies from "@nationalarchives/cookies/src/index.js";
 
 export class Footer {
-  constructor($module, themeCookieName = "theme") {
+  constructor($module, options = {}) {
     this.$module = $module;
     this.$themeSelector = this.$module?.querySelector(
       ".tna-footer__theme-selector",
@@ -26,7 +26,7 @@ export class Footer {
       return;
     }
 
-    this.themeCookieName = themeCookieName;
+    this.themeCookieName = options.themeCookieName || "theme";
 
     this.init();
   }
@@ -55,7 +55,6 @@ export class Footer {
       },
     );
 
-    this.showThemeSelector();
     this.cookies.on("changePreference", (data) => {
       if (Object.hasOwn(data, "settings")) {
         if (data.settings === true) {
@@ -67,6 +66,9 @@ export class Footer {
         }
       }
     });
+
+    this.showThemeSelector();
+    this.setTheme(this.currentTheme);
   }
 
   showThemeSelector() {

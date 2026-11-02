@@ -5,13 +5,13 @@
 {%- from "nationalarchives/components/header/macro.njk" import tnaHeader -%}
 {%- from "nationalarchives/components/skip-link/macro.njk" import tnaSkipLink -%}
 
-{%- from "nationalarchives/templates/macros/title.njk" import title -%}
+{%- from "nationalarchives/templates/macros/page-site-title-display.njk" import tnaPageSiteTitleDisplay -%}
 
 <!DOCTYPE html>
 <html lang="{{ htmlLang | default('en') }}" class="tna-template{% if theme and theme != 'light' %} tna-template--{{ theme }}-theme{% endif %}{% if themeAccent %} tna-template--{{ themeAccent }}-accent{% endif %}{% if htmlClasses %} {{ htmlClasses }}{% endif %}"{% for attribute, value in htmlAttributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
   <head>
     <meta charset="utf-8">
-    <title>{% block pageTitle %}{{ title(pageTitle, siteTitle) }}{% endblock pageTitle %}</title>
+    <title>{% block pageTitle %}{{ tnaPageSiteTitleDisplay(pageTitle, siteTitle) }}{% endblock pageTitle %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="{{ themeColor | default('#010101') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

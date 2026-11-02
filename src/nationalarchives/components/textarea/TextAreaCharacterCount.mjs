@@ -90,15 +90,16 @@ export default class TextAreaCharacterCount {
   }
 
   getCurrentLength() {
+    const rawValue = this.$formFieldInput.value;
     if (this.countType === "words") {
-      const trimmedValue = this.$formFieldInput.value.trim();
+      const trimmedValue = rawValue.trim();
       if (trimmedValue === "") {
         /* eslint-disable-next-line no-magic-numbers */
         return 0;
       }
       return trimmedValue.split(/\s+/).length;
     }
-    return this.$formFieldInput.value.length;
+    return Array.from(rawValue).length;
   }
 
   getCurrentLengthMessage() {

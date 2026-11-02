@@ -8,8 +8,6 @@
 @use "../../tools/typography";
 
 .tna-template {
-  box-sizing: border-box;
-
   color: var(--font-base);
   direction: ltr;
   text-rendering: optimizeLegibility;
@@ -20,6 +18,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   @include typography.main-font;
+
+  * {
+    box-sizing: border-box;
+  }
 
   &[dir="rtl"] {
     direction: rtl;

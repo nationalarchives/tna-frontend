@@ -6,6 +6,7 @@
 
 .tna-textarea {
   inline-size: 100%;
+  min-block-size: 8.75rem;
   padding: spacing.space(0.25, true) spacing.space(0.5, true);
 
   display: block;
@@ -35,12 +36,14 @@
     max-inline-size: 80rem;
   }
 
-  &--auto-vertical-resize {
+  &[rows] {
     min-block-size: calc(
-      attr(data-rows lh, 5lh) + #{spacing.space(0.5, true)} +
+      attr(rows lh, 5lh) + #{spacing.space(0.5, true)} +
         #{formsVars.$form-field-border-width * 2}
     );
+  }
 
+  &--auto-vertical-resize {
     field-sizing: content;
   }
 }

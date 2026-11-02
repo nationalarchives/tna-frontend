@@ -105,13 +105,25 @@ export const Error = {
   },
 };
 
-export const CharacterCount = {
+export const AutoResize = {
   args: {
     label: "Enter your feedback",
     headingLevel: 4,
     headingSize: "m",
     id: "feedback5",
     name: "feedback5",
+    autoVerticalResize: true,
+    classes: "tna-textarea--demo",
+  },
+};
+
+export const CharacterCount = {
+  args: {
+    label: "Enter your feedback",
+    headingLevel: 4,
+    headingSize: "m",
+    id: "feedback6",
+    name: "feedback6",
     value: "I think this is a good idea",
     characterCount: {
       max: 100,
@@ -122,7 +134,7 @@ export const CharacterCount = {
   play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement),
       $input = canvas.getByRole("textbox"),
-      $staticCountLabel = canvasElement.querySelector("#feedback5-count"),
+      $staticCountLabel = canvasElement.querySelector("#feedback6-count"),
       $liveCount = canvasElement.querySelector(".tna-textarea-count"),
       $ariaCount = canvasElement.querySelector("[aria-live]");
 
@@ -373,8 +385,8 @@ export const CharacterCountWithThreshold = {
     label: "Enter your feedback",
     headingLevel: 4,
     headingSize: "m",
-    id: "feedback6",
-    name: "feedback6",
+    id: "feedback7",
+    name: "feedback7",
     value: "I think this is a good idea",
     characterCount: {
       max: 100,
@@ -386,7 +398,7 @@ export const CharacterCountWithThreshold = {
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement),
       $input = canvas.getByRole("textbox"),
-      $staticCountLabel = canvasElement.querySelector("#feedback6-count"),
+      $staticCountLabel = canvasElement.querySelector("#feedback7-count"),
       $liveCount = canvasElement.querySelector(".tna-textarea-count"),
       $ariaCount = canvasElement.querySelector("[aria-live]");
 
@@ -453,8 +465,8 @@ export const CharacterCountWords = {
     label: "Enter your feedback",
     headingLevel: 4,
     headingSize: "m",
-    id: "feedback7",
-    name: "feedback7",
+    id: "feedback8",
+    name: "feedback8",
     characterCount: {
       max: 10,
       countType: "words",
@@ -469,8 +481,8 @@ export const ItemiseRows = {
     headingLevel: 4,
     headingSize: "m",
     hint: "Enter each series on a separate line",
-    id: "feedback8",
-    name: "feedback8",
+    id: "feedback9",
+    name: "feedback9",
     value: "   Series 1\n   \nSeries 2   \n   Series 3   ",
     itemiseRows: true,
     classes: "tna-textarea--demo",
@@ -482,7 +494,7 @@ export const ItemiseRows = {
     const canvas = within(canvasElement),
       $input = canvas.getByRole("textbox"),
       $button = canvas.getByRole("button", { name: "Add to list" }),
-      $helper = canvasElement.querySelector("#feedback8-list-helper"),
+      $helper = canvasElement.querySelector("#feedback9-list-helper"),
       $ariaLive = canvasElement.querySelector("[aria-live]"),
       $list = canvas.getByRole("list");
 

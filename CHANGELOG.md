@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 ### Removed
 ### Fixed
+
+- Fixed intermittant font weight issue on theme selector buttons
+
 ### Security
 
 ## [1.6.3](https://github.com/nationalarchives/tna-frontend/compare/v1.6.2...v1.6.3) - 2026-11-02

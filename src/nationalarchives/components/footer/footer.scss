@@ -21,44 +21,43 @@
     @include colour.on-forced-colours {
       display: none;
     }
-  }
 
-  &__theme-selector-button {
-    @include typography.main-font-weight-bold;
-  }
+    &-button.tna-button {
+      @include typography.main-font-weight-bold;
+    }
 
-  &__theme-selector-notice {
-    margin-block: spacing.space(0.5) spacing.space(0.25);
-    padding: spacing.space(0.5) spacing.space(0.75);
+    &-notice {
+      margin-block: spacing.space(0.5) spacing.space(0.25);
+      padding: spacing.space(0.5) spacing.space(0.75);
 
-    line-height: 1.5;
+      line-height: 1.5;
 
-    @include typography.font-size(16);
+      @include typography.font-size(16);
 
-    @include colour.blue-accent;
-    @include colour.accent-light;
+      @include colour.blue-accent;
+      @include colour.accent-light;
 
-    @include borders.rounded-border;
-    @include colour.thick-keyline-accent(left);
-  }
+      @include borders.rounded-border;
+      @include colour.thick-keyline-accent(left);
+    }
 
-  &__theme-selector-enable-settings-cookies {
-    appearance: none;
+    &-enable-settings-cookies {
+      appearance: none;
+      color: var(--link);
 
-    color: var(--link);
+      line-height: inherit;
+      text-decoration: underline;
 
-    line-height: inherit;
-    text-decoration: underline;
+      background: none;
 
-    background: none;
+      border: none;
+      border-radius: 0.1px;
 
-    border: none;
-    border-radius: 0.1px;
+      cursor: pointer;
 
-    cursor: pointer;
-
-    &:hover {
-      @include typography.interacted-text-decoration;
+      &:hover {
+        @include typography.interacted-text-decoration;
+      }
     }
   }
 

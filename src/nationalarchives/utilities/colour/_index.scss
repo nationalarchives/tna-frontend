@@ -6,11 +6,11 @@
   color-scheme: light dark;
 
   &--light-theme {
-    color-scheme: only light;
+    color-scheme: light only;
   }
 
   &--dark-theme {
-    color-scheme: only dark;
+    color-scheme: dark only;
   }
 
   &--black-accent {

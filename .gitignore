@@ -15,6 +15,5 @@ debug-storybook.log
 chromatic.config.json
 chromatic.log
 RELEASE_NOTES.txt
-error-pages/
 fixtures-html/
 coverage/

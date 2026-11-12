@@ -89,12 +89,14 @@
 
         inset-block-start: calc(
           #{math.div(formsVars.$checkbox-radio-size, 2) - math.div(
-              formsVars.$checkbox-checkmark-thickness,
-              1.414
+              math.hypot(
+                formsVars.$checkbox-checkmark-thickness,
+                formsVars.$checkbox-checkmark-thickness
+              ),
+              2
             )} +
             formsVars.$form-field-border-width
         );
-
         inset-inline-start: calc(
           #{math.div(formsVars.$checkbox-radio-size, 2)} +
             formsVars.$form-field-border-width
@@ -153,13 +155,15 @@
       block-size: formsVars.$checkbox-checkmark-width-small;
 
       inset-block-start: calc(
-        #{math.div(formsVars.$checkbox-radio-size-small, 2)} +
-          formsVars.$form-field-border-width - math.div(
-            formsVars.$checkbox-checkmark-thickness-small,
-            1.414
-          )
+        #{math.div(formsVars.$checkbox-radio-size-small, 2) - math.div(
+            math.hypot(
+              formsVars.$checkbox-checkmark-thickness-small,
+              formsVars.$checkbox-checkmark-thickness-small
+            ),
+            2
+          )} +
+          formsVars.$form-field-border-width
       );
-
       inset-inline-start: calc(
         #{math.div(formsVars.$checkbox-radio-size-small, 2)} +
           formsVars.$form-field-border-width

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use "../../variables/a11y" as a11yVars;
 @use "../../variables/forms" as formsVars;
 @use "../../tools/a11y";
@@ -12,14 +14,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: spacing.space(1);
+  gap: spacing.space(0.75);
 
   &__item {
     position: relative;
 
     input {
-      inline-size: formsVars.$checkbox-radio-size;
-      block-size: formsVars.$checkbox-radio-size;
+      inline-size: calc(
+        formsVars.$checkbox-radio-size +
+          (formsVars.$form-field-border-width * 2)
+      );
+      block-size: calc(
+        formsVars.$checkbox-radio-size +
+          (formsVars.$form-field-border-width * 2)
+      );
       margin: 0;
       padding: 0;
 
@@ -40,7 +48,10 @@
 
       display: block;
 
-      line-height: formsVars.$checkbox-radio-size;
+      line-height: calc(
+        formsVars.$checkbox-radio-size +
+          (formsVars.$form-field-border-width * 2)
+      );
 
       cursor: pointer;
 
@@ -68,7 +79,7 @@
       }
 
       &::after {
-        margin: 0.5rem;
+        margin: formsVars.$radio-padding;
 
         display: none;
 
@@ -76,7 +87,19 @@
 
         background-color: var(--input-foreground);
 
-        @include colour.colour-border("input-foreground", 0.5rem);
+        @include colour.colour-border(
+          "input-foreground",
+          calc(
+            #{math.div(
+                (
+                  formsVars.$checkbox-radio-size -
+                    (formsVars.$radio-padding * 2)
+                ),
+                2
+              )} +
+              #{formsVars.$form-field-border-width}
+          )
+        );
       }
     }
 
@@ -102,10 +125,14 @@
 
   &--small &__item-label {
     padding-inline-start: calc(
-      formsVars.$checkbox-radio-size-small + spacing.space(0.75)
+      formsVars.$checkbox-radio-size-small +
+        (formsVars.$form-field-border-width * 2) + spacing.space(0.75)
     );
 
-    line-height: formsVars.$checkbox-radio-size-small;
+    line-height: calc(
+      formsVars.$checkbox-radio-size-small +
+        (formsVars.$form-field-border-width * 2)
+    );
 
     &::before {
       inline-size: formsVars.$checkbox-radio-size-small;
@@ -113,9 +140,18 @@
     }
 
     &::after {
-      margin: 0.3125rem;
+      margin: formsVars.$radio-padding-small;
 
-      @include colour.colour-border("input-foreground", 0.4375rem);
+      border-width: calc(
+        #{math.div(
+            (
+              formsVars.$checkbox-radio-size-small -
+                (formsVars.$radio-padding-small * 2)
+            ),
+            2
+          )} +
+          #{formsVars.$form-field-border-width}
+      );
     }
   }
 

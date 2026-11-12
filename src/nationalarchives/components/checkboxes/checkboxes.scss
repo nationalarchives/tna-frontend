@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use "../../variables/a11y" as a11yVars;
 @use "../../variables/forms" as formsVars;
 @use "../../tools/a11y";
@@ -13,14 +15,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: spacing.space(1);
+  gap: spacing.space(0.75);
 
   &__item {
     position: relative;
 
     input {
-      inline-size: formsVars.$checkbox-radio-size;
-      block-size: formsVars.$checkbox-radio-size;
+      inline-size: calc(
+        formsVars.$checkbox-radio-size +
+          (formsVars.$form-field-border-width * 2)
+      );
+      block-size: calc(
+        formsVars.$checkbox-radio-size +
+          (formsVars.$form-field-border-width * 2)
+      );
       margin: 0;
       padding: 0;
 
@@ -41,7 +49,10 @@
 
       display: block;
 
-      line-height: formsVars.$checkbox-radio-size;
+      line-height: calc(
+        formsVars.$checkbox-radio-size +
+          (formsVars.$form-field-border-width * 2)
+      );
 
       cursor: pointer;
 
@@ -71,23 +82,33 @@
       }
 
       &::after {
-        inline-size: 1.25rem;
-        block-size: 0.5rem;
-        margin-block-start: -0.1875rem;
+        inline-size: formsVars.$checkbox-checkmark-length;
+        block-size: formsVars.$checkbox-checkmark-width;
 
         display: none;
 
-        inset-block-start: 1rem;
-        inset-inline-start: 1rem;
+        inset-block-start: calc(
+          #{math.div(formsVars.$checkbox-radio-size, 2) - math.div(
+              formsVars.$checkbox-checkmark-thickness,
+              1.414
+            )} +
+            formsVars.$form-field-border-width
+        );
+
+        inset-inline-start: calc(
+          #{math.div(formsVars.$checkbox-radio-size, 2)} +
+            formsVars.$form-field-border-width
+        );
 
         z-index: 2;
 
-        @include colour.colour-border("input-background");
-        border-width: 0 0 formsVars.$checkbox-checkmark-width
-          formsVars.$checkbox-checkmark-width;
+        border-width: 0 0 formsVars.$checkbox-checkmark-thickness
+          formsVars.$checkbox-checkmark-thickness;
         border-style: solid;
 
-        transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        transform: translate(-50%, -50%) rotate(-45deg);
+
+        @include colour.colour-border("input-background");
       }
     }
 
@@ -113,10 +134,14 @@
 
   &--small &__item-label {
     padding-inline-start: calc(
-      formsVars.$checkbox-radio-size-small + spacing.space(0.75)
+      formsVars.$checkbox-radio-size-small +
+        (formsVars.$form-field-border-width * 2) + spacing.space(0.75)
     );
 
-    line-height: formsVars.$checkbox-radio-size-small;
+    line-height: calc(
+      formsVars.$checkbox-radio-size-small +
+        (formsVars.$form-field-border-width * 2)
+    );
 
     &::before {
       inline-size: formsVars.$checkbox-radio-size-small;
@@ -124,12 +149,24 @@
     }
 
     &::after {
-      inline-size: 0.825rem;
-      block-size: 0.375rem;
-      margin-block-start: -0.125rem;
+      inline-size: formsVars.$checkbox-checkmark-length-small;
+      block-size: formsVars.$checkbox-checkmark-width-small;
 
-      inset-block-start: 0.75rem;
-      inset-inline-start: 0.75rem;
+      inset-block-start: calc(
+        #{math.div(formsVars.$checkbox-radio-size-small, 2)} +
+          formsVars.$form-field-border-width - math.div(
+            formsVars.$checkbox-checkmark-thickness-small,
+            1.414
+          )
+      );
+
+      inset-inline-start: calc(
+        #{math.div(formsVars.$checkbox-radio-size-small, 2)} +
+          formsVars.$form-field-border-width
+      );
+
+      border-width: 0 0 formsVars.$checkbox-checkmark-thickness-small
+        formsVars.$checkbox-checkmark-thickness-small;
     }
   }
 

@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Simplify `iso8601ToPrettyDatetime` and expand to work with years, year/months and timestamps
 - `Footer` class accepts an object of options as the second parameter
 - When the footer component loads, it will use JavaScript to set the theme (in the case where a cached page has the wrong classes applied)
+- Refactored checkbox and radio styles for improved sizing and spacing consistency
 
 ### Deprecated
 

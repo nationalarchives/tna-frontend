@@ -24,7 +24,7 @@ $relative-1rem-px: 16; // 16px = 1rem
 $use-local-fonts: false !default;
 
 $body-font-size-largest: 1.1875rem !default;
-$body-font-size-ideal: 2.25vw !default;
+$body-font-size-ideal: calc(0.952rem + 0.368vw) !default;
 $body-font-size-smallest: 1.0625rem !default;
 $body-line-height: 1.75 !default;
 
@@ -58,22 +58,22 @@ $heading-font-family:
 $heading-font-weight: 500 !default;
 
 $heading-xl-font-size-largest: 4rem !default;
-$heading-xl-font-size-ideal: 5.25vw !default;
+$heading-xl-font-size-ideal: calc(0.706rem + 5.147vw) !default;
 $heading-xl-font-size-smallest: 2.25rem !default;
 $heading-xl-line-height: 1.1 !default;
 
 $heading-l-font-size-largest: 2.25rem !default;
-$heading-l-font-size-ideal: 4vw !default;
+$heading-l-font-size-ideal: calc(1.426rem + 1.287vw) !default;
 $heading-l-font-size-smallest: 1.8125rem !default;
 $heading-l-line-height: 1.15 !default;
 
 $heading-m-font-size-largest: 1.375rem !default;
-$heading-m-font-size-ideal: 2.875vw !default;
+$heading-m-font-size-ideal: calc(1.257rem + 0.184vw) !default;
 $heading-m-font-size-smallest: 1.3125rem !default;
 $heading-m-line-height: 1.4 !default;
 
 $heading-s-font-size-largest: 1.1875rem !default;
-$heading-s-font-size-ideal: 2.75vw !default;
+$heading-s-font-size-ideal: calc(1.423rem - 0.368vw) !default;
 $heading-s-font-size-smallest: $heading-s-font-size-largest !default;
 $heading-s-line-height: 1.5 !default;
 

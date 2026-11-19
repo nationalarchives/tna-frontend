@@ -65,7 +65,7 @@
 
 @mixin interacted-text-decoration {
   text-decoration: underline;
-  text-decoration-thickness: typography.$interactive-text-decoration-thickness;
+  text-decoration-thickness: typography.$interacted-text-decoration-thickness;
   text-underline-offset: typography.$interactable-text-decoration-offset;
 }
 

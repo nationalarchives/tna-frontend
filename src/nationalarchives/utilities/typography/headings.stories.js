@@ -2,6 +2,7 @@ import { wrapHtml } from "../../../../.storybook/nunjucks.js";
 
 const argTypes = {
   text: { control: "text" },
+  link: { control: "text" },
   size: { control: "text" },
 };
 
@@ -13,16 +14,16 @@ export default {
 const HeadingTemplate = ({ params }, level) => `<h${level} class="tna-heading-${
     params.size
   }">
-  ${params.text} (${params.size.toUpperCase()})
+  ${params.link ? `<a href="${params.link}">` : ""}${params.text} (${params.size.toUpperCase()})${params.link ? `</a>` : ""}
 </h${level}>
 `,
-  HeadingsTemplate = ({ text }) =>
+  HeadingsTemplate = ({ text, link }) =>
     wrapHtml(
-      `${HeadingTemplate({ params: { text, size: "xl" } }, 1)}${HeadingTemplate(
-        { params: { text, size: "l" } },
+      `${HeadingTemplate({ params: { text, link, size: "xl" } }, 1)}${HeadingTemplate(
+        { params: { text, link, size: "l" } },
         2,
-      )}${HeadingTemplate({ params: { text, size: "m" } }, 3)}${HeadingTemplate(
-        { params: { text, size: "s" } },
+      )}${HeadingTemplate({ params: { text, link, size: "m" } }, 3)}${HeadingTemplate(
+        { params: { text, link, size: "s" } },
         4,
       )}`,
       { padded: true },

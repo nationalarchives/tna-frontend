@@ -1,4 +1,8 @@
+@use "sass:math";
 @use "sass:string";
+
+@use "../variables/media";
+@use "../variables/typography";
 
 @function str-replace($string, $search, $replace: "") {
   $index: string.index($string, $search);
@@ -13,4 +17,28 @@
   }
 
   @return $string;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function responsive-font-size(
+  $min,
+  $max,
+  $viewport-min: media.$largest-tiny-device-px,
+  $viewport-max: media.$largest-medium-device-px
+) {
+  @if $min == $max {
+    @return $min;
+  }
+
+  $viewport-min-rem: math.div($viewport-min, typography.$relative-1rem-px);
+  $viewport-max-rem: math.div($viewport-max, typography.$relative-1rem-px);
+
+  $slope: strip-units($max - $min) / ($viewport-max-rem - $viewport-min-rem);
+  $a: $max - ($viewport-max-rem * $slope);
+  $b: 100vi * $slope;
+
+  @return clamp($min, $a + $b, $max);
 }

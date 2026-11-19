@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:selector";
+@use "../../lib/functions";
 @use "../../variables/typography" as typographyVars;
 @use "../../tools/borders";
 @use "../../tools/colour";
@@ -34,11 +35,9 @@
 
 .tna-template__body {
   color: inherit;
-  // @include typography.font-size(typographyVars.$body-font-size-px);
-  font-size: clamp(
-    #{typographyVars.$body-font-size-smallest},
-    #{typographyVars.$body-font-size-ideal},
-    #{typographyVars.$body-font-size-largest}
+  font-size: functions.responsive-font-size(
+    typographyVars.$body-font-size-smallest,
+    typographyVars.$body-font-size-largest
   );
   line-height: typographyVars.$body-line-height;
 }
@@ -256,10 +255,9 @@ small {
   @extend %heading;
 
   @include typography.heading-font;
-  font-size: clamp(
-    #{typographyVars.$heading-xl-font-size-smallest},
-    #{typographyVars.$heading-xl-font-size-ideal},
-    #{typographyVars.$heading-xl-font-size-largest}
+  font-size: functions.responsive-font-size(
+    typographyVars.$heading-xl-font-size-smallest,
+    typographyVars.$heading-xl-font-size-largest
   );
   line-height: typographyVars.$heading-xl-line-height;
 }
@@ -268,34 +266,32 @@ small {
   @extend %heading;
 
   @include typography.heading-font;
-  font-size: clamp(
-    #{typographyVars.$heading-l-font-size-smallest},
-    #{typographyVars.$heading-l-font-size-ideal},
-    #{typographyVars.$heading-l-font-size-largest}
+  font-size: functions.responsive-font-size(
+    typographyVars.$heading-l-font-size-smallest,
+    typographyVars.$heading-l-font-size-largest
   );
   line-height: typographyVars.$heading-l-line-height;
 
-  a {
-    &::after {
-      inline-size: 0.275em;
-      block-size: 0.275em;
-      margin-block-end: 0;
-      margin-inline-start: 0.25em;
+  // a {
+  //   &::after {
+  //     inline-size: 0.275em;
+  //     block-size: 0.275em;
+  //     margin-block-end: 0;
+  //     margin-inline-start: 0.25em;
 
-      border-block-start-width: 0.1em;
-      border-inline-end-width: 0.1em;
-    }
-  }
+  //     border-block-start-width: 0.1em;
+  //     border-inline-end-width: 0.1em;
+  //   }
+  // }
 }
 
 %heading-m {
   @extend %heading;
 
   @include typography.main-font-weight-bold;
-  font-size: clamp(
-    #{typographyVars.$heading-m-font-size-smallest},
-    #{typographyVars.$heading-m-font-size-ideal},
-    #{typographyVars.$heading-m-font-size-largest}
+  font-size: functions.responsive-font-size(
+    typographyVars.$heading-m-font-size-smallest,
+    typographyVars.$heading-m-font-size-largest
   );
   line-height: typographyVars.$heading-m-line-height;
 }
@@ -304,10 +300,9 @@ small {
   @extend %heading;
 
   @include typography.main-font-weight-bold;
-  font-size: clamp(
-    #{typographyVars.$heading-s-font-size-smallest},
-    #{typographyVars.$heading-s-font-size-ideal},
-    #{typographyVars.$heading-s-font-size-largest}
+  font-size: functions.responsive-font-size(
+    typographyVars.$heading-s-font-size-smallest,
+    typographyVars.$heading-s-font-size-largest
   );
   line-height: typographyVars.$heading-s-line-height;
 }

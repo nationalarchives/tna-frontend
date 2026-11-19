@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - When the footer component loads, it will use JavaScript to set the theme (in the case where a cached page has the wrong classes applied)
 - Refactored checkbox and radio styles for improved sizing and spacing consistency
 - Simplified icons in base template
+- Changed SCSS variable `$interactive-text-decoration-thickness` to `$interacted-text-decoration-thickness` in tools and utilities
 
 ### Deprecated
 

@@ -20,7 +20,7 @@
 }
 
 @function strip-units($number) {
-  @return $number / ($number * 0 + 1);
+  @return math.div($number, ($number * 0 + 1));
 }
 
 @function responsive-font-size(
@@ -36,9 +36,12 @@
   $viewport-min-rem: math.div($viewport-min, typography.$relative-1rem-px);
   $viewport-max-rem: math.div($viewport-max, typography.$relative-1rem-px);
 
-  $slope: strip-units($max - $min) / ($viewport-max-rem - $viewport-min-rem);
+  $slope: math.div(
+    strip-units($max - $min),
+    ($viewport-max-rem - $viewport-min-rem)
+  );
   $a: $max - ($viewport-max-rem * $slope);
-  $b: 100vi * $slope;
+  $b: math.div(100vi * $slope, 1);
 
   @return clamp($min, $a + $b, $max);
 }

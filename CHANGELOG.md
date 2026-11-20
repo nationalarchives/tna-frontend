@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Simplified icons in base template
 - Changed SCSS variable `$interactive-text-decoration-thickness` to `$interacted-text-decoration-thickness` in tools and utilities
 - Update footer to specify schema organisation type and add Wikipedia link
+- Updated the schema.org markup in the footer component to JSON-LD
 
 ### Deprecated
 

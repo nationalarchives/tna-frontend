@@ -242,7 +242,7 @@ export const Actions = {
       {
         text: "Card action 2",
         href: "#",
-        title: "Go and do the action",
+        title: "Go and do action 2",
       },
     ],
     htmlElement: "article",

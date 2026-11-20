@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.6.3...HEAD)
+## [Unreleased](https://github.com/nationalarchives/tna-frontend/compare/v1.7.0...HEAD)
 
 ### Added
 
@@ -58,6 +58,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved close button visibility on hero details for forced-colors mode
 
 ### Security
+
+## [1.7.0](https://github.com/nationalarchives/tna-frontend/compare/v1.6.3...v1.7.0) - 2026-11-20
+
+### Changed
+
+- Added the `aria-label` attribute back into the button component
+- Changed `role="presentation"` to `role="none"` in tabs component
+
+### Fixed
+
+- Fixed intermittent font weight issue on theme selector buttons
 
 ## [1.6.3](https://github.com/nationalarchives/tna-frontend/compare/v1.6.2...v1.6.3) - 2026-11-02
 

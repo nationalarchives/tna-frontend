@@ -7,7 +7,7 @@
   <h{{ params.itemHeadingLevel }} class="tna-tabs__list-heading tna-heading-m">{{ params.tabsTitle or 'Contents' }}</h{{ params.itemHeadingLevel }}>
   <ul class="tna-tabs__list" role="tablist">
   {%- for item in params.items %}
-    <li class="tna-tabs__button-wrapper" role="presentation">
+    <li class="tna-tabs__button-wrapper" role="none">
       <a href="#{{ item.id }}" class="tna-tabs__button{% if item.classes %} {{ item.classes }}{% endif %}" id="{{ item.id }}-tab" aria-controls="{{ item.id }}" role="tab"{% if item.ariaLabel %} aria-label="{{ item.ariaLabel }}"{% endif %} {%- for attribute, value in item.attributes %} {{ attribute }}{% if value !== '' %}="{{ value }}"{% endif %}{% endfor %}>
         <span class="tna-tabs__button-inner">
           {{ item.tabTitle or item.title }}

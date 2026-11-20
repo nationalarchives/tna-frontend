@@ -24,7 +24,16 @@
         "href": "#",
         "title": "Log in to the service"
       },
-      "html": "<a href=\"#\" class=\"tna-button\" title=\"Log in to the service\">Log in</a>"
+      "html": "<a href=\"#\" class=\"tna-button\" title=\"Log in to the service\" aria-label=\"Log in to the service\">Log in</a>"
+    },
+    {
+      "name": "with identical title and text",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "title": "Log in"
+      },
+      "html": "<a href=\"#\" class=\"tna-button\">Log in</a>"
     },
     {
       "name": "accent",
@@ -65,6 +74,17 @@
       "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only\" title=\"Log in\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
     },
     {
+      "name": "icon only with title",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "title": "Log in to the service",
+        "icon": "heart",
+        "iconOnly": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only\" title=\"Log in to the service\" aria-label=\"Log in to the service\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
       "name": "icon only on mobile",
       "options": {
         "text": "Log in",
@@ -72,7 +92,18 @@
         "icon": "heart",
         "iconOnlyOnMobile": true
       },
-      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only-mobile\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only-mobile\" title=\"Log in\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
+    },
+    {
+      "name": "icon only on mobile with title",
+      "options": {
+        "text": "Log in",
+        "href": "#",
+        "title": "Log in to the service",
+        "icon": "heart",
+        "iconOnlyOnMobile": true
+      },
+      "html": "<a href=\"#\" class=\"tna-button tna-button--icon-only-mobile\" title=\"Log in to the service\" aria-label=\"Log in to the service\"><i class=\"fa-solid fa-heart\" aria-hidden=\"true\"></i>Log in</a>"
     },
     {
       "name": "icon only and right aligned (ignore rightAlignIcon)",

@@ -64,7 +64,7 @@ const Template = ({ theme, accent }) => {
       {
         text: "Card action",
         href: "#",
-        title: "Go and do the action",
+        title: "Go and do the card action",
       },
     ],
   };

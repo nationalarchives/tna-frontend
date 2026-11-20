@@ -225,11 +225,11 @@
           {
             "text": "Card action",
             "href": "#",
-            "title": "Go and do the action"
+            "title": "Go and do the card action"
           }
         ]
       },
-      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the action\">Card action</a></div></div></article>"
+      "html": "<article class=\"tna-card\"><h3 class=\"tna-heading-m tna-card__heading\">Card title</h3><div class=\"tna-card__body\"><p>Card body</p><div class=\"tna-card__actions\"><a href=\"#\" class=\"tna-card__action\" title=\"Go and do the card action\">Card action</a></div></div></article>"
     },
     {
       "name": "with actions with classes",

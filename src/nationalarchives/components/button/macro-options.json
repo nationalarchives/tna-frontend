@@ -21,7 +21,7 @@
     "name": "title",
     "type": "string",
     "required": false,
-    "description": "A title attribute for the button."
+    "description": "A title attribute for the button. Also used for the `aria-label`. If the `title` is identical to the `text`, it will be ignored."
   },
   {
     "name": "icon",

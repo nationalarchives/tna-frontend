@@ -257,7 +257,7 @@ export const Actions = {
       {
         text: "Action 3",
         href: "#",
-        title: "Go and do the action",
+        title: "Go and do action 3",
         icon: "chevron-right",
         rightAlignIcon: true,
       },
